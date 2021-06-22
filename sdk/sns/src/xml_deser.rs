@@ -187,14 +187,16 @@ pub fn deser_operation_check_if_phone_number_is_opted_out(
             match tag.start_el() {
             s if s.matches("isOptedOut") /* isOptedOut com.amazonaws.sns#CheckIfPhoneNumberIsOptedOutOutput$isOptedOut */ =>  {
                 let var_6 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.sns#boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.sns#boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_opted_out(var_6);
             }
@@ -926,14 +928,16 @@ pub fn deser_operation_get_sms_sandbox_account_status(
             match tag.start_el() {
             s if s.matches("IsInSandbox") /* IsInSandbox com.amazonaws.sns#GetSMSSandboxAccountStatusOutput$IsInSandbox */ =>  {
                 let var_25 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.sns#boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.sns#boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_in_sandbox(var_25);
             }

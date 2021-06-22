@@ -2454,14 +2454,16 @@ pub fn deser_operation_get_account_limit(
             ,
             s if s.matches("Count") /* Count com.amazonaws.route53#GetAccountLimitOutput$Count */ =>  {
                 let var_82 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_count(var_82);
             }
@@ -3018,14 +3020,16 @@ pub fn deser_operation_get_hosted_zone_limit(
             ,
             s if s.matches("Count") /* Count com.amazonaws.route53#GetHostedZoneLimitOutput$Count */ =>  {
                 let var_101 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_count(var_101);
             }
@@ -3141,14 +3145,16 @@ pub fn deser_operation_get_reusable_delegation_set_limit(
             ,
             s if s.matches("Count") /* Count com.amazonaws.route53#GetReusableDelegationSetLimitOutput$Count */ =>  {
                 let var_105 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_count(var_105);
             }
@@ -3331,14 +3337,16 @@ pub fn deser_operation_list_geo_locations(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListGeoLocationsOutput$IsTruncated */ =>  {
                 let var_112 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_112);
             }
@@ -3409,14 +3417,16 @@ pub fn deser_operation_list_health_checks(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListHealthChecksOutput$IsTruncated */ =>  {
                 let var_116 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_116);
             }
@@ -3500,14 +3510,16 @@ pub fn deser_operation_list_hosted_zones(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListHostedZonesOutput$IsTruncated */ =>  {
                 let var_121 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_121);
             }
@@ -3618,14 +3630,16 @@ pub fn deser_operation_list_hosted_zones_by_name(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListHostedZonesByNameOutput$IsTruncated */ =>  {
                 let var_128 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_128);
             }
@@ -3883,14 +3897,16 @@ pub fn deser_operation_list_resource_record_sets(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListResourceRecordSetsOutput$IsTruncated */ =>  {
                 let var_141 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_141);
             }
@@ -3951,14 +3967,16 @@ pub fn deser_operation_list_reusable_delegation_sets(
         match tag.start_el() {
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListReusableDelegationSetsOutput$IsTruncated */ =>  {
                 let var_144 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_144);
             }
@@ -4135,14 +4153,16 @@ pub fn deser_operation_list_traffic_policies(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListTrafficPoliciesOutput$IsTruncated */ =>  {
                 let var_153 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_153);
             }
@@ -4230,14 +4250,16 @@ pub fn deser_operation_list_traffic_policy_instances(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListTrafficPolicyInstancesOutput$IsTruncated */ =>  {
                 let var_158 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_158);
             }
@@ -4338,14 +4360,16 @@ pub fn deser_operation_list_traffic_policy_instances_by_hosted_zone(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListTrafficPolicyInstancesByHostedZoneOutput$IsTruncated */ =>  {
                 let var_164 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_164);
             }
@@ -4433,14 +4457,16 @@ pub fn deser_operation_list_traffic_policy_instances_by_policy(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListTrafficPolicyInstancesByPolicyOutput$IsTruncated */ =>  {
                 let var_169 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_169);
             }
@@ -4525,14 +4551,16 @@ pub fn deser_operation_list_traffic_policy_versions(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.route53#ListTrafficPolicyVersionsOutput$IsTruncated */ =>  {
                 let var_174 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_174);
             }
@@ -5317,14 +5345,16 @@ pub fn deser_structure_key_signing_key(
             ,
             s if s.matches("Flag") /* Flag com.amazonaws.route53#KeySigningKey$Flag */ =>  {
                 let var_214 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_flag(var_214);
             }
@@ -5344,14 +5374,16 @@ pub fn deser_structure_key_signing_key(
             ,
             s if s.matches("SigningAlgorithmType") /* SigningAlgorithmType com.amazonaws.route53#KeySigningKey$SigningAlgorithmType */ =>  {
                 let var_216 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_signing_algorithm_type(var_216);
             }
@@ -5371,28 +5403,32 @@ pub fn deser_structure_key_signing_key(
             ,
             s if s.matches("DigestAlgorithmType") /* DigestAlgorithmType com.amazonaws.route53#KeySigningKey$DigestAlgorithmType */ =>  {
                 let var_218 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_digest_algorithm_type(var_218);
             }
             ,
             s if s.matches("KeyTag") /* KeyTag com.amazonaws.route53#KeySigningKey$KeyTag */ =>  {
                 let var_219 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyTag`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyTag`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_key_tag(var_219);
             }
@@ -5816,14 +5852,16 @@ pub fn deser_structure_account_limit(
             ,
             s if s.matches("Value") /* Value com.amazonaws.route53#AccountLimit$Value */ =>  {
                 let var_247 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_value(var_247);
             }
@@ -6066,14 +6104,16 @@ pub fn deser_structure_hosted_zone_limit(
             ,
             s if s.matches("Value") /* Value com.amazonaws.route53#HostedZoneLimit$Value */ =>  {
                 let var_257 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_value(var_257);
             }
@@ -6107,14 +6147,16 @@ pub fn deser_structure_reusable_delegation_set_limit(
             ,
             s if s.matches("Value") /* Value com.amazonaws.route53#ReusableDelegationSetLimit$Value */ =>  {
                 let var_259 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_value(var_259);
             }
@@ -6843,14 +6885,16 @@ pub fn deser_structure_hosted_zone_config(
             ,
             s if s.matches("PrivateZone") /* PrivateZone com.amazonaws.route53#HostedZoneConfig$PrivateZone */ =>  {
                 let var_291 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#IsPrivateZone`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#IsPrivateZone`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_private_zone(var_291);
             }
@@ -7560,14 +7604,16 @@ pub fn deser_structure_alias_target(
             ,
             s if s.matches("EvaluateTargetHealth") /* EvaluateTargetHealth com.amazonaws.route53#AliasTarget$EvaluateTargetHealth */ =>  {
                 let var_327 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#AliasHealthEnabled`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#AliasHealthEnabled`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_evaluate_target_health(var_327);
             }

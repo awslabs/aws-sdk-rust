@@ -10,48 +10,49 @@ pub fn parse_generic_error(
 }
 
 pub fn client_exception(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::client_error::Builder,
-) -> Result<crate::error::client_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ClientError = if inp.is_empty() {
+) -> std::result::Result<crate::error::client_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ClientError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn server_exception(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::server_error::Builder,
-) -> Result<crate::error::server_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ServerError = if inp.is_empty() {
+) -> std::result::Result<crate::error::server_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ServerError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn create_compute_environment_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::create_compute_environment_output::Builder,
-) -> Result<crate::output::create_compute_environment_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::CreateComputeEnvironmentOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::create_compute_environment_output::Builder, serde_json::Error>
+{
+    let parsed_body: crate::serializer::CreateComputeEnvironmentOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_compute_environment_name(parsed_body.compute_environment_name);
     builder = builder.set_compute_environment_arn(parsed_body.compute_environment_arn);
@@ -59,16 +60,16 @@ pub fn create_compute_environment_deser_operation(
 }
 
 pub fn create_job_queue_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::create_job_queue_output::Builder,
-) -> Result<crate::output::create_job_queue_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::CreateJobQueueOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::create_job_queue_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::CreateJobQueueOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_job_queue_name(parsed_body.job_queue_name);
     builder = builder.set_job_queue_arn(parsed_body.job_queue_arn);
@@ -76,16 +77,20 @@ pub fn create_job_queue_deser_operation(
 }
 
 pub fn describe_compute_environments_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::describe_compute_environments_output::Builder,
-) -> Result<crate::output::describe_compute_environments_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::DescribeComputeEnvironmentsOutputBody = if inp.is_empty() {
+) -> std::result::Result<
+    crate::output::describe_compute_environments_output::Builder,
+    serde_json::Error,
+> {
+    let parsed_body: crate::serializer::DescribeComputeEnvironmentsOutputBody = if input.is_empty()
+    {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_compute_environments(parsed_body.compute_environments);
     builder = builder.set_next_token(parsed_body.next_token);
@@ -93,16 +98,17 @@ pub fn describe_compute_environments_deser_operation(
 }
 
 pub fn describe_job_definitions_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::describe_job_definitions_output::Builder,
-) -> Result<crate::output::describe_job_definitions_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::DescribeJobDefinitionsOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::describe_job_definitions_output::Builder, serde_json::Error>
+{
+    let parsed_body: crate::serializer::DescribeJobDefinitionsOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_job_definitions(parsed_body.job_definitions);
     builder = builder.set_next_token(parsed_body.next_token);
@@ -110,16 +116,16 @@ pub fn describe_job_definitions_deser_operation(
 }
 
 pub fn describe_job_queues_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::describe_job_queues_output::Builder,
-) -> Result<crate::output::describe_job_queues_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::DescribeJobQueuesOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::describe_job_queues_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::DescribeJobQueuesOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_job_queues(parsed_body.job_queues);
     builder = builder.set_next_token(parsed_body.next_token);
@@ -127,32 +133,32 @@ pub fn describe_job_queues_deser_operation(
 }
 
 pub fn describe_jobs_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::describe_jobs_output::Builder,
-) -> Result<crate::output::describe_jobs_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::DescribeJobsOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::describe_jobs_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::DescribeJobsOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_jobs(parsed_body.jobs);
     Ok(builder)
 }
 
 pub fn list_jobs_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::list_jobs_output::Builder,
-) -> Result<crate::output::list_jobs_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::ListJobsOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::list_jobs_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::ListJobsOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_job_summary_list(parsed_body.job_summary_list);
     builder = builder.set_next_token(parsed_body.next_token);
@@ -160,50 +166,51 @@ pub fn list_jobs_deser_operation(
 }
 
 pub fn list_tags_for_resource_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
-) -> Result<crate::output::list_tags_for_resource_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::ListTagsForResourceOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::list_tags_for_resource_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::ListTagsForResourceOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_tags(parsed_body.tags);
     Ok(builder)
 }
 
 pub fn register_job_definition_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::register_job_definition_output::Builder,
-) -> Result<crate::output::register_job_definition_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::RegisterJobDefinitionOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::register_job_definition_output::Builder, serde_json::Error>
+{
+    let parsed_body: crate::serializer::RegisterJobDefinitionOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_job_definition_name(parsed_body.job_definition_name);
     builder = builder.set_job_definition_arn(parsed_body.job_definition_arn);
-    builder = builder.set_revision(parsed_body.revision);
+    builder = builder.set_revision(Some(parsed_body.revision));
     Ok(builder)
 }
 
 pub fn submit_job_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::submit_job_output::Builder,
-) -> Result<crate::output::submit_job_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::SubmitJobOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::submit_job_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::SubmitJobOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_job_arn(parsed_body.job_arn);
     builder = builder.set_job_name(parsed_body.job_name);
@@ -212,16 +219,17 @@ pub fn submit_job_deser_operation(
 }
 
 pub fn update_compute_environment_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::update_compute_environment_output::Builder,
-) -> Result<crate::output::update_compute_environment_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::UpdateComputeEnvironmentOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::update_compute_environment_output::Builder, serde_json::Error>
+{
+    let parsed_body: crate::serializer::UpdateComputeEnvironmentOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_compute_environment_name(parsed_body.compute_environment_name);
     builder = builder.set_compute_environment_arn(parsed_body.compute_environment_arn);
@@ -229,16 +237,16 @@ pub fn update_compute_environment_deser_operation(
 }
 
 pub fn update_job_queue_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::update_job_queue_output::Builder,
-) -> Result<crate::output::update_job_queue_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::UpdateJobQueueOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::update_job_queue_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::UpdateJobQueueOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_job_queue_name(parsed_body.job_queue_name);
     builder = builder.set_job_queue_arn(parsed_body.job_queue_arn);

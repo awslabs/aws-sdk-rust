@@ -416,7 +416,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateApiKeyOutput,
             smithy_http::result::SdkError<crate::error::CreateApiKeyError>,
         >
@@ -433,48 +433,48 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <a>ApiKey</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The description of the <a>ApiKey</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_enabled(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enabled(input);
             self
         }
         /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
-        pub fn generate_distinct_id(mut self, inp: bool) -> Self {
-            self.inner = self.inner.generate_distinct_id(inp);
+        pub fn generate_distinct_id(mut self, input: bool) -> Self {
+            self.inner = self.inner.generate_distinct_id(input);
             self
         }
-        pub fn set_generate_distinct_id(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_generate_distinct_id(inp);
+        pub fn set_generate_distinct_id(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_generate_distinct_id(input);
             self
         }
         /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input);
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_value(inp);
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_value(input);
             self
         }
         /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
@@ -484,18 +484,18 @@ pub mod fluent_builders {
         }
         pub fn set_stage_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StageKey>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StageKey>>,
         ) -> Self {
-            self.inner = self.inner.set_stage_keys(inp);
+            self.inner = self.inner.set_stage_keys(input);
             self
         }
         /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-        pub fn customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_id(inp);
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_id(input);
             self
         }
-        pub fn set_customer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_customer_id(inp);
+        pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_customer_id(input);
             self
         }
         /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -509,11 +509,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -532,7 +532,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAuthorizerOutput,
             smithy_http::result::SdkError<crate::error::CreateAuthorizerError>,
         >
@@ -549,30 +549,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the authorizer.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
-        pub fn r#type(mut self, inp: crate::model::AuthorizerType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::AuthorizerType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::AuthorizerType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthorizerType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
@@ -582,78 +585,81 @@ pub mod fluent_builders {
         }
         pub fn set_provider_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_provider_ar_ns(inp);
+            self.inner = self.inner.set_provider_ar_ns(input);
             self
         }
         /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
-        pub fn auth_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auth_type(inp);
+        pub fn auth_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_type(input);
             self
         }
-        pub fn set_auth_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_auth_type(inp);
+        pub fn set_auth_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_auth_type(input);
             self
         }
         /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
-        pub fn authorizer_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_uri(inp);
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_uri(input);
             self
         }
-        pub fn set_authorizer_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_authorizer_uri(inp);
+        pub fn set_authorizer_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authorizer_uri(input);
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
-        pub fn authorizer_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_credentials(inp);
+        pub fn authorizer_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_credentials(input);
             self
         }
         pub fn set_authorizer_credentials(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_authorizer_credentials(inp);
+            self.inner = self.inner.set_authorizer_credentials(input);
             self
         }
         /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
-        pub fn identity_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_source(inp);
+        pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_source(input);
             self
         }
         pub fn set_identity_source(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_identity_source(inp);
+            self.inner = self.inner.set_identity_source(input);
             self
         }
         /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn identity_validation_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_validation_expression(inp);
+            self.inner = self.inner.identity_validation_expression(input);
             self
         }
         pub fn set_identity_validation_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_identity_validation_expression(inp);
+            self.inner = self.inner.set_identity_validation_expression(input);
             self
         }
         /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
-        pub fn authorizer_result_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.authorizer_result_ttl_in_seconds(inp);
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.authorizer_result_ttl_in_seconds(input);
             self
         }
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_authorizer_result_ttl_in_seconds(inp);
+            self.inner = self.inner.set_authorizer_result_ttl_in_seconds(input);
             self
         }
     }
@@ -672,7 +678,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateBasePathMappingOutput,
             smithy_http::result::SdkError<crate::error::CreateBasePathMappingError>,
         >
@@ -689,39 +695,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to create.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_path(inp);
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_path(input);
             self
         }
-        pub fn set_base_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_base_path(inp);
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_base_path(input);
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
-        pub fn stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage(inp);
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
-        pub fn set_stage(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stage(inp);
+        pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage(input);
             self
         }
     }
@@ -740,7 +746,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDeploymentOutput,
             smithy_http::result::SdkError<crate::error::CreateDeploymentError>,
         >
@@ -757,63 +763,63 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
         /// <p>The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
-        pub fn stage_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_description(inp);
+        pub fn stage_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_description(input);
             self
         }
         pub fn set_stage_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stage_description(inp);
+            self.inner = self.inner.set_stage_description(input);
             self
         }
         /// <p>The description for the <a>Deployment</a> resource to create.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Enables a cache cluster for the <a>Stage</a> resource specified in the input.</p>
-        pub fn cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cache_cluster_enabled(inp);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cache_cluster_enabled(input);
             self
         }
-        pub fn set_cache_cluster_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_cache_cluster_enabled(inp);
+        pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_cache_cluster_enabled(input);
             self
         }
         /// <p>Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is enabled.</p>
-        pub fn cache_cluster_size(mut self, inp: crate::model::CacheClusterSize) -> Self {
-            self.inner = self.inner.cache_cluster_size(inp);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.inner = self.inner.cache_cluster_size(input);
             self
         }
         pub fn set_cache_cluster_size(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterSize>,
+            input: std::option::Option<crate::model::CacheClusterSize>,
         ) -> Self {
-            self.inner = self.inner.set_cache_cluster_size(inp);
+            self.inner = self.inner.set_cache_cluster_size(input);
             self
         }
         /// <p>A map that defines the stage variables for the <a>Stage</a> resource that is associated
@@ -829,32 +835,32 @@ pub mod fluent_builders {
         }
         pub fn set_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_variables(inp);
+            self.inner = self.inner.set_variables(input);
             self
         }
         /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-        pub fn canary_settings(mut self, inp: crate::model::DeploymentCanarySettings) -> Self {
-            self.inner = self.inner.canary_settings(inp);
+        pub fn canary_settings(mut self, input: crate::model::DeploymentCanarySettings) -> Self {
+            self.inner = self.inner.canary_settings(input);
             self
         }
         pub fn set_canary_settings(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentCanarySettings>,
+            input: std::option::Option<crate::model::DeploymentCanarySettings>,
         ) -> Self {
-            self.inner = self.inner.set_canary_settings(inp);
+            self.inner = self.inner.set_canary_settings(input);
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.tracing_enabled(inp);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.tracing_enabled(input);
             self
         }
-        pub fn set_tracing_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_tracing_enabled(inp);
+        pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_tracing_enabled(input);
             self
         }
     }
@@ -873,7 +879,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDocumentationPartOutput,
             smithy_http::result::SdkError<crate::error::CreateDocumentationPartError>,
         >
@@ -890,33 +896,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
-        pub fn location(mut self, inp: crate::model::DocumentationPartLocation) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::DocumentationPartLocation) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         pub fn set_location(
             mut self,
-            inp: std::option::Option<crate::model::DocumentationPartLocation>,
+            input: std::option::Option<crate::model::DocumentationPartLocation>,
         ) -> Self {
-            self.inner = self.inner.set_location(inp);
+            self.inner = self.inner.set_location(input);
             self
         }
         /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
-        pub fn properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.properties(inp);
+        pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.properties(input);
             self
         }
-        pub fn set_properties(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_properties(inp);
+        pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_properties(input);
             self
         }
     }
@@ -935,7 +941,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDocumentationVersionOutput,
             smithy_http::result::SdkError<crate::error::CreateDocumentationVersionError>,
         >
@@ -952,42 +958,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The version identifier of the new snapshot.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(inp);
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input);
             self
         }
         pub fn set_documentation_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_documentation_version(inp);
+            self.inner = self.inner.set_documentation_version(input);
             self
         }
         /// <p>The stage name to be associated with the new documentation snapshot.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
         /// <p>A description about the new documentation snapshot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }
@@ -1006,7 +1012,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDomainNameOutput,
             smithy_http::result::SdkError<crate::error::CreateDomainNameError>,
         >
@@ -1023,108 +1029,111 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(input);
             self
         }
         pub fn set_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_name(inp);
+            self.inner = self.inner.set_certificate_name(input);
             self
         }
         /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
-        pub fn certificate_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_body(inp);
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_body(input);
             self
         }
         pub fn set_certificate_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_body(inp);
+            self.inner = self.inner.set_certificate_body(input);
             self
         }
         /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
-        pub fn certificate_private_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_private_key(inp);
+        pub fn certificate_private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_private_key(input);
             self
         }
         pub fn set_certificate_private_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_private_key(inp);
+            self.inner = self.inner.set_certificate_private_key(input);
             self
         }
         /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
-        pub fn certificate_chain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_chain(inp);
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_chain(input);
             self
         }
         pub fn set_certificate_chain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_chain(inp);
+            self.inner = self.inner.set_certificate_chain(input);
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(input);
             self
         }
         pub fn set_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_arn(inp);
+            self.inner = self.inner.set_certificate_arn(input);
             self
         }
         /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
-        pub fn regional_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regional_certificate_name(inp);
+        pub fn regional_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regional_certificate_name(input);
             self
         }
         pub fn set_regional_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_regional_certificate_name(inp);
+            self.inner = self.inner.set_regional_certificate_name(input);
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn regional_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regional_certificate_arn(inp);
+        pub fn regional_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regional_certificate_arn(input);
             self
         }
         pub fn set_regional_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_regional_certificate_arn(inp);
+            self.inner = self.inner.set_regional_certificate_arn(input);
             self
         }
         /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.inner = self.inner.endpoint_configuration(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.inner = self.inner.endpoint_configuration(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_endpoint_configuration(inp);
+            self.inner = self.inner.set_endpoint_configuration(input);
             self
         }
         /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -1138,38 +1147,38 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
-        pub fn security_policy(mut self, inp: crate::model::SecurityPolicy) -> Self {
-            self.inner = self.inner.security_policy(inp);
+        pub fn security_policy(mut self, input: crate::model::SecurityPolicy) -> Self {
+            self.inner = self.inner.security_policy(input);
             self
         }
         pub fn set_security_policy(
             mut self,
-            inp: std::option::Option<crate::model::SecurityPolicy>,
+            input: std::option::Option<crate::model::SecurityPolicy>,
         ) -> Self {
-            self.inner = self.inner.set_security_policy(inp);
+            self.inner = self.inner.set_security_policy(input);
             self
         }
         /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
         pub fn mutual_tls_authentication(
             mut self,
-            inp: crate::model::MutualTlsAuthenticationInput,
+            input: crate::model::MutualTlsAuthenticationInput,
         ) -> Self {
-            self.inner = self.inner.mutual_tls_authentication(inp);
+            self.inner = self.inner.mutual_tls_authentication(input);
             self
         }
         pub fn set_mutual_tls_authentication(
             mut self,
-            inp: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
+            input: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
         ) -> Self {
-            self.inner = self.inner.set_mutual_tls_authentication(inp);
+            self.inner = self.inner.set_mutual_tls_authentication(input);
             self
         }
     }
@@ -1188,7 +1197,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateModelOutput,
             smithy_http::result::SdkError<crate::error::CreateModelError>,
         >
@@ -1205,48 +1214,48 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the model. Must be alphanumeric.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The description of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schema(inp);
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_schema(input);
             self
         }
         /// <p>[Required] The content-type for the model.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input);
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content_type(inp);
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content_type(input);
             self
         }
     }
@@ -1265,7 +1274,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateRequestValidatorOutput,
             smithy_http::result::SdkError<crate::error::CreateRequestValidatorError>,
         >
@@ -1282,39 +1291,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The name of the to-be-created <a>RequestValidator</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
-        pub fn validate_request_body(mut self, inp: bool) -> Self {
-            self.inner = self.inner.validate_request_body(inp);
+        pub fn validate_request_body(mut self, input: bool) -> Self {
+            self.inner = self.inner.validate_request_body(input);
             self
         }
-        pub fn set_validate_request_body(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_validate_request_body(inp);
+        pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_validate_request_body(input);
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
-        pub fn validate_request_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.validate_request_parameters(inp);
+        pub fn validate_request_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.validate_request_parameters(input);
             self
         }
-        pub fn set_validate_request_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_validate_request_parameters(inp);
+        pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_validate_request_parameters(input);
             self
         }
     }
@@ -1333,7 +1342,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateResourceOutput,
             smithy_http::result::SdkError<crate::error::CreateResourceError>,
         >
@@ -1350,30 +1359,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The parent resource's identifier.</p>
-        pub fn parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_id(inp);
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_id(input);
             self
         }
-        pub fn set_parent_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_parent_id(inp);
+        pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_parent_id(input);
             self
         }
         /// <p>The last path segment for this resource.</p>
-        pub fn path_part(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_part(inp);
+        pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_part(input);
             self
         }
-        pub fn set_path_part(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_part(inp);
+        pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_part(input);
             self
         }
     }
@@ -1392,7 +1401,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateRestApiOutput,
             smithy_http::result::SdkError<crate::error::CreateRestApiError>,
         >
@@ -1409,39 +1418,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>RestApi</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The description of the <a>RestApi</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_version(inp);
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
         /// <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
-        pub fn clone_from(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.clone_from(inp);
+        pub fn clone_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.clone_from(input);
             self
         }
-        pub fn set_clone_from(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_clone_from(inp);
+        pub fn set_clone_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_clone_from(input);
             self
         }
         /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
@@ -1451,51 +1460,54 @@ pub mod fluent_builders {
         }
         pub fn set_binary_media_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_binary_media_types(inp);
+            self.inner = self.inner.set_binary_media_types(input);
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-        pub fn minimum_compression_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.minimum_compression_size(inp);
+        pub fn minimum_compression_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_compression_size(input);
             self
         }
-        pub fn set_minimum_compression_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_minimum_compression_size(inp);
+        pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_minimum_compression_size(input);
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
-        pub fn api_key_source(mut self, inp: crate::model::ApiKeySourceType) -> Self {
-            self.inner = self.inner.api_key_source(inp);
+        pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
+            self.inner = self.inner.api_key_source(input);
             self
         }
         pub fn set_api_key_source(
             mut self,
-            inp: std::option::Option<crate::model::ApiKeySourceType>,
+            input: std::option::Option<crate::model::ApiKeySourceType>,
         ) -> Self {
-            self.inner = self.inner.set_api_key_source(inp);
+            self.inner = self.inner.set_api_key_source(input);
             self
         }
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.inner = self.inner.endpoint_configuration(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.inner = self.inner.endpoint_configuration(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_endpoint_configuration(inp);
+            self.inner = self.inner.set_endpoint_configuration(input);
             self
         }
         /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input);
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy(inp);
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy(input);
             self
         }
         /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -1509,20 +1521,23 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_execute_api_endpoint(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_execute_api_endpoint(input);
             self
         }
-        pub fn set_disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_disable_execute_api_endpoint(inp);
+        pub fn set_disable_execute_api_endpoint(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_disable_execute_api_endpoint(input);
             self
         }
     }
@@ -1541,7 +1556,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateStageOutput,
             smithy_http::result::SdkError<crate::error::CreateStageError>,
         >
@@ -1558,60 +1573,63 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input);
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_deployment_id(inp);
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_id(input);
             self
         }
         /// <p>The description of the <a>Stage</a> resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Whether cache clustering is enabled for the stage.</p>
-        pub fn cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cache_cluster_enabled(inp);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cache_cluster_enabled(input);
             self
         }
-        pub fn set_cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_cache_cluster_enabled(inp);
+        pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_cache_cluster_enabled(input);
             self
         }
         /// <p>The stage's cache cluster size.</p>
-        pub fn cache_cluster_size(mut self, inp: crate::model::CacheClusterSize) -> Self {
-            self.inner = self.inner.cache_cluster_size(inp);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.inner = self.inner.cache_cluster_size(input);
             self
         }
         pub fn set_cache_cluster_size(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterSize>,
+            input: std::option::Option<crate::model::CacheClusterSize>,
         ) -> Self {
-            self.inner = self.inner.set_cache_cluster_size(inp);
+            self.inner = self.inner.set_cache_cluster_size(input);
             self
         }
         /// <p>A map that defines the stage variables for the new <a>Stage</a> resource. Variable names
@@ -1627,44 +1645,44 @@ pub mod fluent_builders {
         }
         pub fn set_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_variables(inp);
+            self.inner = self.inner.set_variables(input);
             self
         }
         /// <p>The version of the associated API documentation.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(inp);
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input);
             self
         }
         pub fn set_documentation_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_documentation_version(inp);
+            self.inner = self.inner.set_documentation_version(input);
             self
         }
         /// <p>The canary deployment settings of this stage.</p>
-        pub fn canary_settings(mut self, inp: crate::model::CanarySettings) -> Self {
-            self.inner = self.inner.canary_settings(inp);
+        pub fn canary_settings(mut self, input: crate::model::CanarySettings) -> Self {
+            self.inner = self.inner.canary_settings(input);
             self
         }
         pub fn set_canary_settings(
             mut self,
-            inp: std::option::Option<crate::model::CanarySettings>,
+            input: std::option::Option<crate::model::CanarySettings>,
         ) -> Self {
-            self.inner = self.inner.set_canary_settings(inp);
+            self.inner = self.inner.set_canary_settings(input);
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.tracing_enabled(inp);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.tracing_enabled(input);
             self
         }
-        pub fn set_tracing_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_tracing_enabled(inp);
+        pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_tracing_enabled(input);
             self
         }
         /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -1678,11 +1696,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1701,7 +1719,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateUsagePlanOutput,
             smithy_http::result::SdkError<crate::error::CreateUsagePlanError>,
         >
@@ -1718,21 +1736,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the usage plan.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The description of the usage plan.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The associated API stages of the usage plan.</p>
@@ -1742,30 +1760,33 @@ pub mod fluent_builders {
         }
         pub fn set_api_stages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
         ) -> Self {
-            self.inner = self.inner.set_api_stages(inp);
+            self.inner = self.inner.set_api_stages(input);
             self
         }
         /// <p>The throttling limits of the usage plan.</p>
-        pub fn throttle(mut self, inp: crate::model::ThrottleSettings) -> Self {
-            self.inner = self.inner.throttle(inp);
+        pub fn throttle(mut self, input: crate::model::ThrottleSettings) -> Self {
+            self.inner = self.inner.throttle(input);
             self
         }
         pub fn set_throttle(
             mut self,
-            inp: std::option::Option<crate::model::ThrottleSettings>,
+            input: std::option::Option<crate::model::ThrottleSettings>,
         ) -> Self {
-            self.inner = self.inner.set_throttle(inp);
+            self.inner = self.inner.set_throttle(input);
             self
         }
         /// <p>The quota of the usage plan.</p>
-        pub fn quota(mut self, inp: crate::model::QuotaSettings) -> Self {
-            self.inner = self.inner.quota(inp);
+        pub fn quota(mut self, input: crate::model::QuotaSettings) -> Self {
+            self.inner = self.inner.quota(input);
             self
         }
-        pub fn set_quota(mut self, inp: std::option::Option<crate::model::QuotaSettings>) -> Self {
-            self.inner = self.inner.set_quota(inp);
+        pub fn set_quota(
+            mut self,
+            input: std::option::Option<crate::model::QuotaSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_quota(input);
             self
         }
         /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -1779,11 +1800,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1802,7 +1823,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateUsagePlanKeyOutput,
             smithy_http::result::SdkError<crate::error::CreateUsagePlanKeyError>,
         >
@@ -1819,30 +1840,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
         /// <p>[Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.</p>
-        pub fn key_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_type(inp);
+        pub fn key_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_type(input);
             self
         }
-        pub fn set_key_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_type(inp);
+        pub fn set_key_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_type(input);
             self
         }
     }
@@ -1861,7 +1885,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateVpcLinkOutput,
             smithy_http::result::SdkError<crate::error::CreateVpcLinkError>,
         >
@@ -1878,21 +1902,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name used to label and identify the VPC link.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The description of the VPC link.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>[Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
@@ -1902,9 +1926,9 @@ pub mod fluent_builders {
         }
         pub fn set_target_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_target_arns(inp);
+            self.inner = self.inner.set_target_arns(input);
             self
         }
         /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -1918,11 +1942,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1941,7 +1965,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteApiKeyOutput,
             smithy_http::result::SdkError<crate::error::DeleteApiKeyError>,
         >
@@ -1958,12 +1982,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
-        pub fn api_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_key(inp);
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_key(input);
             self
         }
-        pub fn set_api_key(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_api_key(inp);
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_api_key(input);
             self
         }
     }
@@ -1982,7 +2006,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAuthorizerOutput,
             smithy_http::result::SdkError<crate::error::DeleteAuthorizerError>,
         >
@@ -1999,21 +2023,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input);
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_authorizer_id(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authorizer_id(input);
             self
         }
     }
@@ -2032,7 +2059,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteBasePathMappingOutput,
             smithy_http::result::SdkError<crate::error::DeleteBasePathMappingError>,
         >
@@ -2049,22 +2076,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to delete.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>[Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_path(inp);
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_path(input);
             self
         }
-        pub fn set_base_path(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_base_path(inp);
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_base_path(input);
             self
         }
     }
@@ -2083,7 +2110,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteClientCertificateOutput,
             smithy_http::result::SdkError<crate::error::DeleteClientCertificateError>,
         >
@@ -2100,12 +2127,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(inp);
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input);
             self
         }
-        pub fn set_client_certificate_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_client_certificate_id(inp);
+        pub fn set_client_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_certificate_id(input);
             self
         }
     }
@@ -2124,7 +2154,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDeploymentOutput,
             smithy_http::result::SdkError<crate::error::DeleteDeploymentError>,
         >
@@ -2141,21 +2171,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input);
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_deployment_id(inp);
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_id(input);
             self
         }
     }
@@ -2174,7 +2207,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDocumentationPartOutput,
             smithy_http::result::SdkError<crate::error::DeleteDocumentationPartError>,
         >
@@ -2191,21 +2224,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
-        pub fn documentation_part_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_part_id(inp);
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_part_id(input);
             self
         }
-        pub fn set_documentation_part_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_documentation_part_id(inp);
+        pub fn set_documentation_part_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_documentation_part_id(input);
             self
         }
     }
@@ -2224,7 +2260,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDocumentationVersionOutput,
             smithy_http::result::SdkError<crate::error::DeleteDocumentationVersionError>,
         >
@@ -2241,21 +2277,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(inp);
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input);
             self
         }
-        pub fn set_documentation_version(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_documentation_version(inp);
+        pub fn set_documentation_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_documentation_version(input);
             self
         }
     }
@@ -2274,7 +2313,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDomainNameOutput,
             smithy_http::result::SdkError<crate::error::DeleteDomainNameError>,
         >
@@ -2291,12 +2330,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
     }
@@ -2315,7 +2354,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteGatewayResponseOutput,
             smithy_http::result::SdkError<crate::error::DeleteGatewayResponseError>,
         >
@@ -2332,21 +2371,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.response_type(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.inner = self.inner.response_type(input);
             self
         }
-        pub fn set_response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.set_response_type(inp);
+        pub fn set_response_type(
+            mut self,
+            input: std::option::Option<crate::model::GatewayResponseType>,
+        ) -> Self {
+            self.inner = self.inner.set_response_type(input);
             self
         }
     }
@@ -2365,7 +2407,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteIntegrationOutput,
             smithy_http::result::SdkError<crate::error::DeleteIntegrationError>,
         >
@@ -2382,30 +2424,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
     }
@@ -2424,7 +2466,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteIntegrationResponseOutput,
             smithy_http::result::SdkError<crate::error::DeleteIntegrationResponseError>,
         >
@@ -2441,39 +2483,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] Specifies a delete integration response request's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
     }
@@ -2492,7 +2534,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteMethodOutput,
             smithy_http::result::SdkError<crate::error::DeleteMethodError>,
         >
@@ -2509,30 +2551,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
     }
@@ -2551,7 +2593,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteMethodResponseOutput,
             smithy_http::result::SdkError<crate::error::DeleteMethodResponseError>,
         >
@@ -2568,39 +2610,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] The status code identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
     }
@@ -2619,7 +2661,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteModelOutput,
             smithy_http::result::SdkError<crate::error::DeleteModelError>,
         >
@@ -2636,21 +2678,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the model to delete.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
     }
@@ -2669,7 +2711,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteRequestValidatorOutput,
             smithy_http::result::SdkError<crate::error::DeleteRequestValidatorError>,
         >
@@ -2686,21 +2728,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_validator_id(inp);
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_validator_id(input);
             self
         }
-        pub fn set_request_validator_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_request_validator_id(inp);
+        pub fn set_request_validator_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_validator_id(input);
             self
         }
     }
@@ -2719,7 +2764,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteResourceOutput,
             smithy_http::result::SdkError<crate::error::DeleteResourceError>,
         >
@@ -2736,21 +2781,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
     }
@@ -2769,7 +2814,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteRestApiOutput,
             smithy_http::result::SdkError<crate::error::DeleteRestApiError>,
         >
@@ -2786,12 +2831,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
     }
@@ -2810,7 +2855,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteStageOutput,
             smithy_http::result::SdkError<crate::error::DeleteStageError>,
         >
@@ -2827,21 +2872,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to delete.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
     }
@@ -2860,7 +2905,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteUsagePlanOutput,
             smithy_http::result::SdkError<crate::error::DeleteUsagePlanError>,
         >
@@ -2877,12 +2922,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
     }
@@ -2901,7 +2949,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteUsagePlanKeyOutput,
             smithy_http::result::SdkError<crate::error::DeleteUsagePlanKeyError>,
         >
@@ -2918,21 +2966,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
         /// <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -2951,7 +3002,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteVpcLinkOutput,
             smithy_http::result::SdkError<crate::error::DeleteVpcLinkError>,
         >
@@ -2968,12 +3019,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(inp);
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input);
             self
         }
-        pub fn set_vpc_link_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_vpc_link_id(inp);
+        pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_vpc_link_id(input);
             self
         }
     }
@@ -2992,7 +3043,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::FlushStageAuthorizersCacheOutput,
             smithy_http::result::SdkError<crate::error::FlushStageAuthorizersCacheError>,
         >
@@ -3009,21 +3060,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The name of the stage to flush.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
     }
@@ -3042,7 +3093,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::FlushStageCacheOutput,
             smithy_http::result::SdkError<crate::error::FlushStageCacheError>,
         >
@@ -3059,21 +3110,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the stage to flush its cache.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
     }
@@ -3092,7 +3143,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateClientCertificateOutput,
             smithy_http::result::SdkError<crate::error::GenerateClientCertificateError>,
         >
@@ -3109,12 +3160,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the <a>ClientCertificate</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -3128,11 +3179,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3151,7 +3202,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAccountOutput,
             smithy_http::result::SdkError<crate::error::GetAccountError>,
         >
@@ -3183,7 +3234,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetApiKeyOutput,
             smithy_http::result::SdkError<crate::error::GetApiKeyError>,
         >
@@ -3200,21 +3251,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
-        pub fn api_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_key(inp);
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_key(input);
             self
         }
-        pub fn set_api_key(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_api_key(inp);
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_api_key(input);
             self
         }
         /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
-        pub fn include_value(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_value(inp);
+        pub fn include_value(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_value(input);
             self
         }
-        pub fn set_include_value(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_include_value(inp);
+        pub fn set_include_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_value(input);
             self
         }
     }
@@ -3233,7 +3284,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetApiKeysOutput,
             smithy_http::result::SdkError<crate::error::GetApiKeysError>,
         >
@@ -3250,48 +3301,48 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The name of queried API keys.</p>
-        pub fn name_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_query(inp);
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_query(input);
             self
         }
-        pub fn set_name_query(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_query(inp);
+        pub fn set_name_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name_query(input);
             self
         }
         /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
-        pub fn customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_id(inp);
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_id(input);
             self
         }
-        pub fn set_customer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_customer_id(inp);
+        pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_customer_id(input);
             self
         }
         /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
-        pub fn include_values(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_values(inp);
+        pub fn include_values(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_values(input);
             self
         }
-        pub fn set_include_values(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_include_values(inp);
+        pub fn set_include_values(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_values(input);
             self
         }
     }
@@ -3310,7 +3361,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAuthorizerOutput,
             smithy_http::result::SdkError<crate::error::GetAuthorizerError>,
         >
@@ -3327,21 +3378,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input);
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_authorizer_id(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authorizer_id(input);
             self
         }
     }
@@ -3360,7 +3414,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAuthorizersOutput,
             smithy_http::result::SdkError<crate::error::GetAuthorizersError>,
         >
@@ -3377,30 +3431,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -3419,7 +3473,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetBasePathMappingOutput,
             smithy_http::result::SdkError<crate::error::GetBasePathMappingError>,
         >
@@ -3436,21 +3490,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be described.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_path(inp);
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_path(input);
             self
         }
-        pub fn set_base_path(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_base_path(inp);
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_base_path(input);
             self
         }
     }
@@ -3469,7 +3523,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetBasePathMappingsOutput,
             smithy_http::result::SdkError<crate::error::GetBasePathMappingsError>,
         >
@@ -3486,30 +3540,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -3528,7 +3582,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetClientCertificateOutput,
             smithy_http::result::SdkError<crate::error::GetClientCertificateError>,
         >
@@ -3545,12 +3599,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be described.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(inp);
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input);
             self
         }
-        pub fn set_client_certificate_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_client_certificate_id(inp);
+        pub fn set_client_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_certificate_id(input);
             self
         }
     }
@@ -3569,7 +3626,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetClientCertificatesOutput,
             smithy_http::result::SdkError<crate::error::GetClientCertificatesError>,
         >
@@ -3586,21 +3643,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -3619,7 +3676,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDeploymentOutput,
             smithy_http::result::SdkError<crate::error::GetDeploymentError>,
         >
@@ -3636,21 +3693,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource to get information about.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input);
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_deployment_id(inp);
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_id(input);
             self
         }
         /// <p>A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in  <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string.  For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
@@ -3660,9 +3720,9 @@ pub mod fluent_builders {
         }
         pub fn set_embed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_embed(inp);
+            self.inner = self.inner.set_embed(input);
             self
         }
     }
@@ -3681,7 +3741,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDeploymentsOutput,
             smithy_http::result::SdkError<crate::error::GetDeploymentsError>,
         >
@@ -3698,30 +3758,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -3740,7 +3800,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDocumentationPartOutput,
             smithy_http::result::SdkError<crate::error::GetDocumentationPartError>,
         >
@@ -3757,21 +3817,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn documentation_part_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_part_id(inp);
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_part_id(input);
             self
         }
-        pub fn set_documentation_part_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_documentation_part_id(inp);
+        pub fn set_documentation_part_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_documentation_part_id(input);
             self
         }
     }
@@ -3790,7 +3853,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDocumentationPartsOutput,
             smithy_http::result::SdkError<crate::error::GetDocumentationPartsError>,
         >
@@ -3807,72 +3870,72 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
-        pub fn r#type(mut self, inp: crate::model::DocumentationPartType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::DocumentationPartType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::DocumentationPartType>,
+            input: std::option::Option<crate::model::DocumentationPartType>,
         ) -> Self {
-            self.inner = self.inner.set_type(inp);
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
-        pub fn name_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_query(inp);
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_query(input);
             self
         }
-        pub fn set_name_query(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_query(inp);
+        pub fn set_name_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name_query(input);
             self
         }
         /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input);
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(inp);
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources without content.</p>
-        pub fn location_status(mut self, inp: crate::model::LocationStatusType) -> Self {
-            self.inner = self.inner.location_status(inp);
+        pub fn location_status(mut self, input: crate::model::LocationStatusType) -> Self {
+            self.inner = self.inner.location_status(input);
             self
         }
         pub fn set_location_status(
             mut self,
-            inp: std::option::Option<crate::model::LocationStatusType>,
+            input: std::option::Option<crate::model::LocationStatusType>,
         ) -> Self {
-            self.inner = self.inner.set_location_status(inp);
+            self.inner = self.inner.set_location_status(input);
             self
         }
     }
@@ -3891,7 +3954,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDocumentationVersionOutput,
             smithy_http::result::SdkError<crate::error::GetDocumentationVersionError>,
         >
@@ -3908,21 +3971,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(inp);
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input);
             self
         }
-        pub fn set_documentation_version(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_documentation_version(inp);
+        pub fn set_documentation_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_documentation_version(input);
             self
         }
     }
@@ -3941,7 +4007,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDocumentationVersionsOutput,
             smithy_http::result::SdkError<crate::error::GetDocumentationVersionsError>,
         >
@@ -3958,30 +4024,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -4000,7 +4066,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDomainNameOutput,
             smithy_http::result::SdkError<crate::error::GetDomainNameError>,
         >
@@ -4017,12 +4083,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
     }
@@ -4041,7 +4107,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDomainNamesOutput,
             smithy_http::result::SdkError<crate::error::GetDomainNamesError>,
         >
@@ -4058,21 +4124,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -4091,7 +4157,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetExportOutput,
             smithy_http::result::SdkError<crate::error::GetExportError>,
         >
@@ -4108,30 +4174,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
         /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
-        pub fn export_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_type(inp);
+        pub fn export_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_type(input);
             self
         }
-        pub fn set_export_type(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_export_type(inp);
+        pub fn set_export_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_export_type(input);
             self
         }
         /// <p>A key-value map of query string parameters that specify properties of the export, depending on the requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination of the following parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export the API with  x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool</p>
@@ -4145,20 +4211,20 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
-        pub fn accepts(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accepts(inp);
+        pub fn accepts(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accepts(input);
             self
         }
-        pub fn set_accepts(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_accepts(inp);
+        pub fn set_accepts(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_accepts(input);
             self
         }
     }
@@ -4177,7 +4243,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetGatewayResponseOutput,
             smithy_http::result::SdkError<crate::error::GetGatewayResponseError>,
         >
@@ -4194,21 +4260,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.response_type(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.inner = self.inner.response_type(input);
             self
         }
-        pub fn set_response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.set_response_type(inp);
+        pub fn set_response_type(
+            mut self,
+            input: std::option::Option<crate::model::GatewayResponseType>,
+        ) -> Self {
+            self.inner = self.inner.set_response_type(input);
             self
         }
     }
@@ -4227,7 +4296,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetGatewayResponsesOutput,
             smithy_http::result::SdkError<crate::error::GetGatewayResponsesError>,
         >
@@ -4244,30 +4313,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -4286,7 +4355,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetIntegrationOutput,
             smithy_http::result::SdkError<crate::error::GetIntegrationError>,
         >
@@ -4303,30 +4372,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies a get integration request's resource identifier</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies a get integration request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
     }
@@ -4345,7 +4414,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetIntegrationResponseOutput,
             smithy_http::result::SdkError<crate::error::GetIntegrationResponseError>,
         >
@@ -4362,39 +4431,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] Specifies a get integration response request's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
     }
@@ -4413,7 +4482,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetMethodOutput,
             smithy_http::result::SdkError<crate::error::GetMethodError>,
         >
@@ -4430,30 +4499,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies the method request's HTTP method type.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
     }
@@ -4472,7 +4541,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetMethodResponseOutput,
             smithy_http::result::SdkError<crate::error::GetMethodResponseError>,
         >
@@ -4489,39 +4558,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
     }
@@ -4540,7 +4609,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetModelOutput,
             smithy_http::result::SdkError<crate::error::GetModelError>,
         >
@@ -4557,30 +4626,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the model as an identifier.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
         /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
-        pub fn flatten(mut self, inp: bool) -> Self {
-            self.inner = self.inner.flatten(inp);
+        pub fn flatten(mut self, input: bool) -> Self {
+            self.inner = self.inner.flatten(input);
             self
         }
-        pub fn set_flatten(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_flatten(inp);
+        pub fn set_flatten(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_flatten(input);
             self
         }
     }
@@ -4599,7 +4668,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetModelsOutput,
             smithy_http::result::SdkError<crate::error::GetModelsError>,
         >
@@ -4616,30 +4685,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -4658,7 +4727,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetModelTemplateOutput,
             smithy_http::result::SdkError<crate::error::GetModelTemplateError>,
         >
@@ -4675,21 +4744,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the model for which to generate a template.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
     }
@@ -4708,7 +4777,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRequestValidatorOutput,
             smithy_http::result::SdkError<crate::error::GetRequestValidatorError>,
         >
@@ -4725,21 +4794,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_validator_id(inp);
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_validator_id(input);
             self
         }
-        pub fn set_request_validator_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_request_validator_id(inp);
+        pub fn set_request_validator_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_validator_id(input);
             self
         }
     }
@@ -4758,7 +4830,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRequestValidatorsOutput,
             smithy_http::result::SdkError<crate::error::GetRequestValidatorsError>,
         >
@@ -4775,30 +4847,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -4817,7 +4889,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetResourceOutput,
             smithy_http::result::SdkError<crate::error::GetResourceError>,
         >
@@ -4834,21 +4906,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier for the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
@@ -4858,9 +4930,9 @@ pub mod fluent_builders {
         }
         pub fn set_embed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_embed(inp);
+            self.inner = self.inner.set_embed(input);
             self
         }
     }
@@ -4879,7 +4951,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetResourcesOutput,
             smithy_http::result::SdkError<crate::error::GetResourcesError>,
         >
@@ -4896,30 +4968,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in the response.  This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
@@ -4929,9 +5001,9 @@ pub mod fluent_builders {
         }
         pub fn set_embed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_embed(inp);
+            self.inner = self.inner.set_embed(input);
             self
         }
     }
@@ -4950,7 +5022,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRestApiOutput,
             smithy_http::result::SdkError<crate::error::GetRestApiError>,
         >
@@ -4967,12 +5039,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
     }
@@ -4991,7 +5063,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRestApisOutput,
             smithy_http::result::SdkError<crate::error::GetRestApisError>,
         >
@@ -5008,21 +5080,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -5041,7 +5113,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSdkOutput,
             smithy_http::result::SdkError<crate::error::GetSdkError>,
         >
@@ -5058,30 +5130,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
         /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code>  are supported.</p>
-        pub fn sdk_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sdk_type(inp);
+        pub fn sdk_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sdk_type(input);
             self
         }
-        pub fn set_sdk_type(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_sdk_type(inp);
+        pub fn set_sdk_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sdk_type(input);
             self
         }
         /// <p>A string-to-string key-value map of query parameters <code>sdkType</code>-dependent properties of the SDK. For <code>sdkType</code> of <code>objectivec</code> or <code>swift</code>,  a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and <code>invokerPackage</code> are required. For <code>sdkType</code> of <code>java</code>, parameters named <code>serviceName</code> and <code>javaPackageName</code> are required. </p>
@@ -5095,11 +5167,11 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
     }
@@ -5118,7 +5190,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSdkTypeOutput,
             smithy_http::result::SdkError<crate::error::GetSdkTypeError>,
         >
@@ -5135,12 +5207,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -5159,7 +5231,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSdkTypesOutput,
             smithy_http::result::SdkError<crate::error::GetSdkTypesError>,
         >
@@ -5176,21 +5248,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -5209,7 +5281,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetStageOutput,
             smithy_http::result::SdkError<crate::error::GetStageError>,
         >
@@ -5226,21 +5298,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to get information about.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
     }
@@ -5259,7 +5331,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetStagesOutput,
             smithy_http::result::SdkError<crate::error::GetStagesError>,
         >
@@ -5276,21 +5348,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The stages' deployment identifiers.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input);
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_deployment_id(inp);
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_id(input);
             self
         }
     }
@@ -5309,7 +5384,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetTagsOutput,
             smithy_http::result::SdkError<crate::error::GetTagsError>,
         >
@@ -5326,30 +5401,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -5368,7 +5443,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetUsageOutput,
             smithy_http::result::SdkError<crate::error::GetUsageError>,
         >
@@ -5385,57 +5460,60 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
         /// <p>The Id of the API key associated with the resultant usage data.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
-        pub fn start_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_start_date(inp);
+        pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_start_date(input);
             self
         }
         /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
-        pub fn end_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_end_date(inp);
+        pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_end_date(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -5454,7 +5532,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetUsagePlanOutput,
             smithy_http::result::SdkError<crate::error::GetUsagePlanError>,
         >
@@ -5471,12 +5549,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
     }
@@ -5495,7 +5576,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetUsagePlanKeyOutput,
             smithy_http::result::SdkError<crate::error::GetUsagePlanKeyError>,
         >
@@ -5512,21 +5593,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
         /// <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -5545,7 +5629,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetUsagePlanKeysOutput,
             smithy_http::result::SdkError<crate::error::GetUsagePlanKeysError>,
         >
@@ -5562,39 +5646,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
-        pub fn name_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_query(inp);
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_query(input);
             self
         }
-        pub fn set_name_query(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_query(inp);
+        pub fn set_name_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name_query(input);
             self
         }
     }
@@ -5613,7 +5700,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetUsagePlansOutput,
             smithy_http::result::SdkError<crate::error::GetUsagePlansError>,
         >
@@ -5630,30 +5717,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The identifier of the API key associated with the usage plans.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -5672,7 +5759,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetVpcLinkOutput,
             smithy_http::result::SdkError<crate::error::GetVpcLinkError>,
         >
@@ -5689,12 +5776,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(inp);
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input);
             self
         }
-        pub fn set_vpc_link_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_vpc_link_id(inp);
+        pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_vpc_link_id(input);
             self
         }
     }
@@ -5713,7 +5800,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetVpcLinksOutput,
             smithy_http::result::SdkError<crate::error::GetVpcLinksError>,
         >
@@ -5730,21 +5817,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_position(inp);
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_position(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -5763,7 +5850,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ImportApiKeysOutput,
             smithy_http::result::SdkError<crate::error::ImportApiKeysError>,
         >
@@ -5780,30 +5867,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_body(inp);
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(input);
             self
         }
         /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
-        pub fn format(mut self, inp: crate::model::ApiKeysFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::ApiKeysFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        pub fn set_format(mut self, inp: std::option::Option<crate::model::ApiKeysFormat>) -> Self {
-            self.inner = self.inner.set_format(inp);
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::ApiKeysFormat>,
+        ) -> Self {
+            self.inner = self.inner.set_format(input);
             self
         }
         /// <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
-        pub fn set_fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_fail_on_warnings(inp);
+        pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_fail_on_warnings(input);
             self
         }
     }
@@ -5822,7 +5912,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ImportDocumentationPartsOutput,
             smithy_http::result::SdkError<crate::error::ImportDocumentationPartsError>,
         >
@@ -5839,39 +5929,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
-        pub fn mode(mut self, inp: crate::model::PutMode) -> Self {
-            self.inner = self.inner.mode(inp);
+        pub fn mode(mut self, input: crate::model::PutMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
-        pub fn set_mode(mut self, inp: std::option::Option<crate::model::PutMode>) -> Self {
-            self.inner = self.inner.set_mode(inp);
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::PutMode>) -> Self {
+            self.inner = self.inner.set_mode(input);
             self
         }
         /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
-        pub fn set_fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_fail_on_warnings(inp);
+        pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_fail_on_warnings(input);
             self
         }
         /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_body(inp);
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(input);
             self
         }
     }
@@ -5890,7 +5980,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ImportRestApiOutput,
             smithy_http::result::SdkError<crate::error::ImportRestApiError>,
         >
@@ -5908,12 +5998,12 @@ pub mod fluent_builders {
         }
         /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>)
         /// when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
-        pub fn set_fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_fail_on_warnings(inp);
+        pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_fail_on_warnings(input);
             self
         }
         /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
@@ -5934,20 +6024,20 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_body(inp);
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(input);
             self
         }
     }
@@ -5966,7 +6056,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutGatewayResponseOutput,
             smithy_http::result::SdkError<crate::error::PutGatewayResponseError>,
         >
@@ -5983,30 +6073,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.response_type(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.inner = self.inner.response_type(input);
             self
         }
-        pub fn set_response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.set_response_type(inp);
+        pub fn set_response_type(
+            mut self,
+            input: std::option::Option<crate::model::GatewayResponseType>,
+        ) -> Self {
+            self.inner = self.inner.set_response_type(input);
             self
         }
         /// The HTTP status code of the <a>GatewayResponse</a>.
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
         /// <p><p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p></p>
@@ -6020,11 +6113,11 @@ pub mod fluent_builders {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_response_parameters(inp);
+            self.inner = self.inner.set_response_parameters(input);
             self
         }
         /// <p><p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p></p>
@@ -6038,11 +6131,11 @@ pub mod fluent_builders {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_response_templates(inp);
+            self.inner = self.inner.set_response_templates(input);
             self
         }
     }
@@ -6061,7 +6154,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutIntegrationOutput,
             smithy_http::result::SdkError<crate::error::PutIntegrationError>,
         >
@@ -6078,51 +6171,54 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies a put integration request's resource ID.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies a put integration request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] Specifies a put integration input's type.</p>
-        pub fn r#type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::IntegrationType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::IntegrationType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
-        pub fn integration_http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_http_method(inp);
+        pub fn integration_http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_http_method(input);
             self
         }
         pub fn set_integration_http_method(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_integration_http_method(inp);
+            self.inner = self.inner.set_integration_http_method(input);
             self
         }
         /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
@@ -6131,42 +6227,45 @@ pub mod fluent_builders {
         /// </li>
         /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
         /// </li></ul>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(input);
             self
         }
-        pub fn set_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_uri(inp);
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_uri(input);
             self
         }
         /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
-        pub fn connection_type(mut self, inp: crate::model::ConnectionType) -> Self {
-            self.inner = self.inner.connection_type(inp);
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.inner = self.inner.connection_type(input);
             self
         }
         pub fn set_connection_type(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionType>,
+            input: std::option::Option<crate::model::ConnectionType>,
         ) -> Self {
-            self.inner = self.inner.set_connection_type(inp);
+            self.inner = self.inner.set_connection_type(input);
             self
         }
         /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input);
             self
         }
-        pub fn set_connection_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_connection_id(inp);
+        pub fn set_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connection_id(input);
             self
         }
         /// <p>Specifies whether credentials are required for a put integration.</p>
-        pub fn credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.credentials(inp);
+        pub fn credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.credentials(input);
             self
         }
-        pub fn set_credentials(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_credentials(inp);
+        pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_credentials(input);
             self
         }
         /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
@@ -6180,11 +6279,11 @@ pub mod fluent_builders {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_request_parameters(inp);
+            self.inner = self.inner.set_request_parameters(input);
             self
         }
         /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
@@ -6198,11 +6297,11 @@ pub mod fluent_builders {
         }
         pub fn set_request_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_request_templates(inp);
+            self.inner = self.inner.set_request_templates(input);
             self
         }
         /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values:  <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.
@@ -6212,27 +6311,27 @@ pub mod fluent_builders {
         /// <li><p><code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media Type' response.</p></li>
         /// <li><p><code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content types mapped to templates. However if there is at least one content type defined, unmapped content types will be rejected with the same 415 response.</p></li>
         /// </ul>
-        pub fn passthrough_behavior(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.passthrough_behavior(inp);
+        pub fn passthrough_behavior(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.passthrough_behavior(input);
             self
         }
         pub fn set_passthrough_behavior(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_passthrough_behavior(inp);
+            self.inner = self.inner.set_passthrough_behavior(input);
             self
         }
         /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
-        pub fn cache_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_namespace(inp);
+        pub fn cache_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_namespace(input);
             self
         }
         pub fn set_cache_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_cache_namespace(inp);
+            self.inner = self.inner.set_cache_namespace(input);
             self
         }
         /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
@@ -6242,9 +6341,9 @@ pub mod fluent_builders {
         }
         pub fn set_cache_key_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_cache_key_parameters(inp);
+            self.inner = self.inner.set_cache_key_parameters(input);
             self
         }
         /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -6253,32 +6352,35 @@ pub mod fluent_builders {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.inner = self.inner.content_handling(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.inner = self.inner.content_handling(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.inner = self.inner.set_content_handling(inp);
+            self.inner = self.inner.set_content_handling(input);
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
-        pub fn timeout_in_millis(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_millis(inp);
+        pub fn timeout_in_millis(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_millis(input);
             self
         }
-        pub fn set_timeout_in_millis(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_timeout_in_millis(inp);
+        pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout_in_millis(input);
             self
         }
-        pub fn tls_config(mut self, inp: crate::model::TlsConfig) -> Self {
-            self.inner = self.inner.tls_config(inp);
+        pub fn tls_config(mut self, input: crate::model::TlsConfig) -> Self {
+            self.inner = self.inner.tls_config(input);
             self
         }
-        pub fn set_tls_config(mut self, inp: std::option::Option<crate::model::TlsConfig>) -> Self {
-            self.inner = self.inner.set_tls_config(inp);
+        pub fn set_tls_config(
+            mut self,
+            input: std::option::Option<crate::model::TlsConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_tls_config(input);
             self
         }
     }
@@ -6297,7 +6399,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutIntegrationResponseOutput,
             smithy_http::result::SdkError<crate::error::PutIntegrationResponseError>,
         >
@@ -6314,51 +6416,51 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
         /// <p>Specifies the selection pattern of a put integration response.</p>
-        pub fn selection_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selection_pattern(inp);
+        pub fn selection_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selection_pattern(input);
             self
         }
         pub fn set_selection_pattern(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_selection_pattern(inp);
+            self.inner = self.inner.set_selection_pattern(input);
             self
         }
         /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
@@ -6373,11 +6475,11 @@ pub mod fluent_builders {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_response_parameters(inp);
+            self.inner = self.inner.set_response_parameters(input);
             self
         }
         /// <p>Specifies a put integration response's templates.</p>
@@ -6391,11 +6493,11 @@ pub mod fluent_builders {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_response_templates(inp);
+            self.inner = self.inner.set_response_templates(input);
             self
         }
         /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -6404,15 +6506,15 @@ pub mod fluent_builders {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.inner = self.inner.content_handling(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.inner = self.inner.content_handling(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.inner = self.inner.set_content_handling(inp);
+            self.inner = self.inner.set_content_handling(input);
             self
         }
     }
@@ -6431,7 +6533,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutMethodOutput,
             smithy_http::result::SdkError<crate::error::PutMethodError>,
         >
@@ -6448,69 +6550,75 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies the method request's HTTP method type.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-        pub fn authorization_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorization_type(inp);
+        pub fn authorization_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorization_type(input);
             self
         }
         pub fn set_authorization_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_authorization_type(inp);
+            self.inner = self.inner.set_authorization_type(input);
             self
         }
         /// <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input);
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_authorizer_id(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authorizer_id(input);
             self
         }
         /// <p>Specifies whether the method required a valid <a>ApiKey</a>.</p>
-        pub fn api_key_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.api_key_required(inp);
+        pub fn api_key_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.api_key_required(input);
             self
         }
-        pub fn set_api_key_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_api_key_required(inp);
+        pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_api_key_required(input);
             self
         }
         /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-        pub fn operation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_name(inp);
+        pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_name(input);
             self
         }
-        pub fn set_operation_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_name(inp);
+        pub fn set_operation_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_operation_name(input);
             self
         }
         /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.</p>
@@ -6524,9 +6632,9 @@ pub mod fluent_builders {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.inner = self.inner.set_request_parameters(inp);
+            self.inner = self.inner.set_request_parameters(input);
             self
         }
         /// <p>Specifies the <a>Model</a> resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a <a>Model</a> name as the value.</p>
@@ -6540,23 +6648,23 @@ pub mod fluent_builders {
         }
         pub fn set_request_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_request_models(inp);
+            self.inner = self.inner.set_request_models(input);
             self
         }
         /// <p>The identifier of a <a>RequestValidator</a> for validating the method request.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_validator_id(inp);
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_validator_id(input);
             self
         }
         pub fn set_request_validator_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_request_validator_id(inp);
+            self.inner = self.inner.set_request_validator_id(input);
             self
         }
         /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
@@ -6566,9 +6674,9 @@ pub mod fluent_builders {
         }
         pub fn set_authorization_scopes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_authorization_scopes(inp);
+            self.inner = self.inner.set_authorization_scopes(input);
             self
         }
     }
@@ -6587,7 +6695,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutMethodResponseOutput,
             smithy_http::result::SdkError<crate::error::PutMethodResponseError>,
         >
@@ -6604,39 +6712,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] The method response's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
         /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
@@ -6650,9 +6758,9 @@ pub mod fluent_builders {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.inner = self.inner.set_response_parameters(inp);
+            self.inner = self.inner.set_response_parameters(input);
             self
         }
         /// <p>Specifies the <a>Model</a> resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a <a>Model</a> name as the value.</p>
@@ -6666,11 +6774,11 @@ pub mod fluent_builders {
         }
         pub fn set_response_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_response_models(inp);
+            self.inner = self.inner.set_response_models(input);
             self
         }
     }
@@ -6689,7 +6797,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutRestApiOutput,
             smithy_http::result::SdkError<crate::error::PutRestApiError>,
         >
@@ -6706,32 +6814,32 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default,
         /// the update mode is "merge".</p>
-        pub fn mode(mut self, inp: crate::model::PutMode) -> Self {
-            self.inner = self.inner.mode(inp);
+        pub fn mode(mut self, input: crate::model::PutMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
-        pub fn set_mode(mut self, inp: std::option::Option<crate::model::PutMode>) -> Self {
-            self.inner = self.inner.set_mode(inp);
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::PutMode>) -> Self {
+            self.inner = self.inner.set_mode(input);
             self
         }
         /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>)
         /// when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
-        pub fn set_fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_fail_on_warnings(inp);
+        pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_fail_on_warnings(input);
             self
         }
         /// <p>Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
@@ -6745,20 +6853,20 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_body(inp);
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(input);
             self
         }
     }
@@ -6777,7 +6885,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -6794,12 +6902,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>[Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -6813,11 +6921,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -6836,7 +6944,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TestInvokeAuthorizerOutput,
             smithy_http::result::SdkError<crate::error::TestInvokeAuthorizerError>,
         >
@@ -6853,21 +6961,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input);
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_authorizer_id(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authorizer_id(input);
             self
         }
         /// <p>[Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
@@ -6881,11 +6992,11 @@ pub mod fluent_builders {
         }
         pub fn set_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_headers(inp);
+            self.inner = self.inner.set_headers(input);
             self
         }
         /// <p>[Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
@@ -6899,32 +7010,32 @@ pub mod fluent_builders {
         }
         pub fn set_multi_value_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_multi_value_headers(inp);
+            self.inner = self.inner.set_multi_value_headers(input);
             self
         }
         /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-        pub fn path_with_query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_with_query_string(inp);
+        pub fn path_with_query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_with_query_string(input);
             self
         }
         pub fn set_path_with_query_string(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_path_with_query_string(inp);
+            self.inner = self.inner.set_path_with_query_string(input);
             self
         }
         /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_body(inp);
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_body(input);
             self
         }
         /// <p>A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.</p>
@@ -6938,11 +7049,11 @@ pub mod fluent_builders {
         }
         pub fn set_stage_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_stage_variables(inp);
+            self.inner = self.inner.set_stage_variables(input);
             self
         }
         /// <p>[Optional] A key-value map of additional context variables.</p>
@@ -6956,11 +7067,11 @@ pub mod fluent_builders {
         }
         pub fn set_additional_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_additional_context(inp);
+            self.inner = self.inner.set_additional_context(input);
             self
         }
     }
@@ -6979,7 +7090,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TestInvokeMethodOutput,
             smithy_http::result::SdkError<crate::error::TestInvokeMethodError>,
         >
@@ -6996,51 +7107,51 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-        pub fn path_with_query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_with_query_string(inp);
+        pub fn path_with_query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_with_query_string(input);
             self
         }
         pub fn set_path_with_query_string(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_path_with_query_string(inp);
+            self.inner = self.inner.set_path_with_query_string(input);
             self
         }
         /// <p>The simulated request body of an incoming invocation request.</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_body(inp);
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_body(input);
             self
         }
         /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
@@ -7054,11 +7165,11 @@ pub mod fluent_builders {
         }
         pub fn set_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_headers(inp);
+            self.inner = self.inner.set_headers(input);
             self
         }
         /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
@@ -7072,23 +7183,23 @@ pub mod fluent_builders {
         }
         pub fn set_multi_value_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_multi_value_headers(inp);
+            self.inner = self.inner.set_multi_value_headers(input);
             self
         }
         /// <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(inp);
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input);
             self
         }
         pub fn set_client_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_certificate_id(inp);
+            self.inner = self.inner.set_client_certificate_id(input);
             self
         }
         /// <p>A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.</p>
@@ -7102,11 +7213,11 @@ pub mod fluent_builders {
         }
         pub fn set_stage_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_stage_variables(inp);
+            self.inner = self.inner.set_stage_variables(input);
             self
         }
     }
@@ -7125,7 +7236,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -7142,12 +7253,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>[Required] The Tag keys to delete.</p>
@@ -7157,9 +7268,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -7178,7 +7289,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateAccountOutput,
             smithy_http::result::SdkError<crate::error::UpdateAccountError>,
         >
@@ -7201,9 +7312,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7222,7 +7333,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateApiKeyOutput,
             smithy_http::result::SdkError<crate::error::UpdateApiKeyError>,
         >
@@ -7239,12 +7350,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
-        pub fn api_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_key(inp);
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_key(input);
             self
         }
-        pub fn set_api_key(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_api_key(inp);
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_api_key(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7254,9 +7365,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7275,7 +7386,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateAuthorizerOutput,
             smithy_http::result::SdkError<crate::error::UpdateAuthorizerError>,
         >
@@ -7292,21 +7403,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input);
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_authorizer_id(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authorizer_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7316,9 +7430,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7337,7 +7451,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateBasePathMappingOutput,
             smithy_http::result::SdkError<crate::error::UpdateBasePathMappingError>,
         >
@@ -7354,22 +7468,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to change.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>[Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_path(inp);
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_path(input);
             self
         }
-        pub fn set_base_path(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_base_path(inp);
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_base_path(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7379,9 +7493,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7400,7 +7514,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateClientCertificateOutput,
             smithy_http::result::SdkError<crate::error::UpdateClientCertificateError>,
         >
@@ -7417,12 +7531,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(inp);
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input);
             self
         }
-        pub fn set_client_certificate_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_client_certificate_id(inp);
+        pub fn set_client_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_certificate_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7432,9 +7549,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7453,7 +7570,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateDeploymentOutput,
             smithy_http::result::SdkError<crate::error::UpdateDeploymentError>,
         >
@@ -7470,21 +7587,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>The replacement identifier for the <a>Deployment</a> resource to change information about.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input);
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_deployment_id(inp);
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7494,9 +7614,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7515,7 +7635,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateDocumentationPartOutput,
             smithy_http::result::SdkError<crate::error::UpdateDocumentationPartError>,
         >
@@ -7532,21 +7652,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
-        pub fn documentation_part_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_part_id(inp);
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_part_id(input);
             self
         }
-        pub fn set_documentation_part_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_documentation_part_id(inp);
+        pub fn set_documentation_part_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_documentation_part_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7556,9 +7679,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7577,7 +7700,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateDocumentationVersionOutput,
             smithy_http::result::SdkError<crate::error::UpdateDocumentationVersionError>,
         >
@@ -7594,21 +7717,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>..</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(inp);
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input);
             self
         }
-        pub fn set_documentation_version(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_documentation_version(inp);
+        pub fn set_documentation_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_documentation_version(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7618,9 +7744,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7639,7 +7765,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateDomainNameOutput,
             smithy_http::result::SdkError<crate::error::UpdateDomainNameError>,
         >
@@ -7656,12 +7782,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource to be changed.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7671,9 +7797,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7692,7 +7818,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateGatewayResponseOutput,
             smithy_http::result::SdkError<crate::error::UpdateGatewayResponseError>,
         >
@@ -7709,21 +7835,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.response_type(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.inner = self.inner.response_type(input);
             self
         }
-        pub fn set_response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.set_response_type(inp);
+        pub fn set_response_type(
+            mut self,
+            input: std::option::Option<crate::model::GatewayResponseType>,
+        ) -> Self {
+            self.inner = self.inner.set_response_type(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7733,9 +7862,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7754,7 +7883,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateIntegrationOutput,
             smithy_http::result::SdkError<crate::error::UpdateIntegrationError>,
         >
@@ -7771,30 +7900,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Represents an update integration request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Represents an update integration request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7804,9 +7933,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7825,7 +7954,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateIntegrationResponseOutput,
             smithy_http::result::SdkError<crate::error::UpdateIntegrationResponseError>,
         >
@@ -7842,39 +7971,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] Specifies an update integration response request's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7884,9 +8013,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7905,7 +8034,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateMethodOutput,
             smithy_http::result::SdkError<crate::error::UpdateMethodError>,
         >
@@ -7922,30 +8051,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -7955,9 +8084,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -7976,7 +8105,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateMethodResponseOutput,
             smithy_http::result::SdkError<crate::error::UpdateMethodResponseError>,
         >
@@ -7993,39 +8122,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(inp);
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_http_method(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_http_method(input);
             self
         }
         /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input);
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_status_code(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status_code(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8035,9 +8164,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -8056,7 +8185,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateModelOutput,
             smithy_http::result::SdkError<crate::error::UpdateModelError>,
         >
@@ -8073,21 +8202,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the model to update.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8097,9 +8226,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -8118,7 +8247,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateRequestValidatorOutput,
             smithy_http::result::SdkError<crate::error::UpdateRequestValidatorError>,
         >
@@ -8135,21 +8264,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of <a>RequestValidator</a> to be updated.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_validator_id(inp);
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_validator_id(input);
             self
         }
-        pub fn set_request_validator_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_request_validator_id(inp);
+        pub fn set_request_validator_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_validator_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8159,9 +8291,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -8180,7 +8312,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateResourceOutput,
             smithy_http::result::SdkError<crate::error::UpdateResourceError>,
         >
@@ -8197,21 +8329,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8221,9 +8353,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -8242,7 +8374,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateRestApiOutput,
             smithy_http::result::SdkError<crate::error::UpdateRestApiError>,
         >
@@ -8259,12 +8391,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8274,9 +8406,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -8295,7 +8427,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateStageOutput,
             smithy_http::result::SdkError<crate::error::UpdateStageError>,
         >
@@ -8312,21 +8444,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(inp);
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input);
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_rest_api_id(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_rest_api_id(input);
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to change information about.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input);
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stage_name(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stage_name(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8336,9 +8468,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -8357,7 +8489,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateUsageOutput,
             smithy_http::result::SdkError<crate::error::UpdateUsageError>,
         >
@@ -8374,21 +8506,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
         /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8398,9 +8533,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -8419,7 +8554,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateUsagePlanOutput,
             smithy_http::result::SdkError<crate::error::UpdateUsagePlanError>,
         >
@@ -8436,12 +8571,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the to-be-updated usage plan.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(inp);
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input);
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_usage_plan_id(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_usage_plan_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8451,9 +8589,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }
@@ -8472,7 +8610,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateVpcLinkOutput,
             smithy_http::result::SdkError<crate::error::UpdateVpcLinkError>,
         >
@@ -8489,12 +8627,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(inp);
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input);
             self
         }
-        pub fn set_vpc_link_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_vpc_link_id(inp);
+        pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_vpc_link_id(input);
             self
         }
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
@@ -8504,9 +8642,9 @@ pub mod fluent_builders {
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_patch_operations(inp);
+            self.inner = self.inner.set_patch_operations(input);
             self
         }
     }

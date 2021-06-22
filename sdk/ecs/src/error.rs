@@ -72,6 +72,30 @@ impl CreateCapacityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, CreateCapacityProviderErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCapacityProviderErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCapacityProviderErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, CreateCapacityProviderErrorKind::ServerError(_))
+    }
+    pub fn is_update_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCapacityProviderErrorKind::UpdateInProgressError(_)
+        )
+    }
 }
 impl std::error::Error for CreateCapacityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -154,6 +178,15 @@ impl CreateClusterError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, CreateClusterErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, CreateClusterErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, CreateClusterErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for CreateClusterError {
@@ -249,6 +282,36 @@ impl CreateServiceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::AccessDeniedError(_))
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_platform_task_definition_incompatibility_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityError(_)
+        )
+    }
+    pub fn is_platform_unknown_error(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::PlatformUnknownError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::ServerError(_))
+    }
+    pub fn is_unsupported_feature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceErrorKind::UnsupportedFeatureError(_)
+        )
     }
 }
 impl std::error::Error for CreateServiceError {
@@ -356,6 +419,42 @@ impl CreateTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::AccessDeniedError(_))
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_platform_task_definition_incompatibility_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityError(_)
+        )
+    }
+    pub fn is_platform_unknown_error(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::PlatformUnknownError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::ServerError(_))
+    }
+    pub fn is_service_not_active_error(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::ServiceNotActiveError(_))
+    }
+    pub fn is_service_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::ServiceNotFoundError(_))
+    }
+    pub fn is_unsupported_feature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskSetErrorKind::UnsupportedFeatureError(_)
+        )
+    }
 }
 impl std::error::Error for CreateTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -446,6 +545,18 @@ impl DeleteAccountSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DeleteAccountSettingErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSettingErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteAccountSettingErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for DeleteAccountSettingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -527,6 +638,24 @@ impl DeleteAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAttributesErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_target_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAttributesErrorKind::TargetNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -607,6 +736,18 @@ impl DeleteCapacityProviderError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DeleteCapacityProviderErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCapacityProviderErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteCapacityProviderErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for DeleteCapacityProviderError {
@@ -699,6 +840,39 @@ impl DeleteClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DeleteClusterErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_contains_container_instances_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClusterErrorKind::ClusterContainsContainerInstancesError(_)
+        )
+    }
+    pub fn is_cluster_contains_services_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClusterErrorKind::ClusterContainsServicesError(_)
+        )
+    }
+    pub fn is_cluster_contains_tasks_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClusterErrorKind::ClusterContainsTasksError(_)
+        )
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteClusterErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, DeleteClusterErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteClusterErrorKind::ServerError(_))
+    }
+    pub fn is_update_in_progress_error(&self) -> bool {
+        matches!(&self.kind, DeleteClusterErrorKind::UpdateInProgressError(_))
+    }
 }
 impl std::error::Error for DeleteClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -788,6 +962,21 @@ impl DeleteServiceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DeleteServiceErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteServiceErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, DeleteServiceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteServiceErrorKind::ServerError(_))
+    }
+    pub fn is_service_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteServiceErrorKind::ServiceNotFoundError(_))
     }
 }
 impl std::error::Error for DeleteServiceError {
@@ -884,6 +1073,36 @@ impl DeleteTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::AccessDeniedError(_))
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::ServerError(_))
+    }
+    pub fn is_service_not_active_error(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::ServiceNotActiveError(_))
+    }
+    pub fn is_service_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::ServiceNotFoundError(_))
+    }
+    pub fn is_task_set_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::TaskSetNotFoundError(_))
+    }
+    pub fn is_unsupported_feature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskSetErrorKind::UnsupportedFeatureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -973,6 +1192,30 @@ impl DeregisterContainerInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterContainerInstanceErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterContainerInstanceErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterContainerInstanceErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterContainerInstanceErrorKind::ServerError(_)
+        )
+    }
 }
 impl std::error::Error for DeregisterContainerInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1055,6 +1298,24 @@ impl DeregisterTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTaskDefinitionErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTaskDefinitionErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTaskDefinitionErrorKind::ServerError(_)
+        )
+    }
 }
 impl std::error::Error for DeregisterTaskDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1136,6 +1397,24 @@ impl DescribeCapacityProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCapacityProvidersErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCapacityProvidersErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCapacityProvidersErrorKind::ServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeCapacityProvidersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1216,6 +1495,18 @@ impl DescribeClustersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DescribeClustersErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClustersErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeClustersErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for DescribeClustersError {
@@ -1299,6 +1590,30 @@ impl DescribeContainerInstancesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContainerInstancesErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContainerInstancesErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContainerInstancesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContainerInstancesErrorKind::ServerError(_)
+        )
     }
 }
 impl std::error::Error for DescribeContainerInstancesError {
@@ -1384,6 +1699,24 @@ impl DescribeServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DescribeServicesErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeServicesErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeServicesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeServicesErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for DescribeServicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1465,6 +1798,18 @@ impl DescribeTaskDefinitionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DescribeTaskDefinitionErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskDefinitionErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeTaskDefinitionErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for DescribeTaskDefinitionError {
@@ -1548,6 +1893,18 @@ impl DescribeTasksError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DescribeTasksErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeTasksErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, DescribeTasksErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeTasksErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for DescribeTasksError {
@@ -1641,6 +1998,45 @@ impl DescribeTaskSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(&self.kind, DescribeTaskSetsErrorKind::AccessDeniedError(_))
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DescribeTaskSetsErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskSetsErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskSetsErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeTaskSetsErrorKind::ServerError(_))
+    }
+    pub fn is_service_not_active_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskSetsErrorKind::ServiceNotActiveError(_)
+        )
+    }
+    pub fn is_service_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskSetsErrorKind::ServiceNotFoundError(_)
+        )
+    }
+    pub fn is_unsupported_feature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskSetsErrorKind::UnsupportedFeatureError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeTaskSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1724,6 +2120,12 @@ impl DiscoverPollEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DiscoverPollEndpointErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DiscoverPollEndpointErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for DiscoverPollEndpointError {
@@ -1811,6 +2213,30 @@ impl ExecuteCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(&self.kind, ExecuteCommandErrorKind::AccessDeniedError(_))
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ExecuteCommandErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, ExecuteCommandErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteCommandErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ExecuteCommandErrorKind::ServerError(_))
+    }
+    pub fn is_target_not_connected_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteCommandErrorKind::TargetNotConnectedError(_)
+        )
+    }
 }
 impl std::error::Error for ExecuteCommandError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1895,6 +2321,18 @@ impl ListAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListAccountSettingsErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAccountSettingsErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListAccountSettingsErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for ListAccountSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1973,6 +2411,15 @@ impl ListAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListAttributesErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttributesErrorKind::InvalidParameterError(_)
+        )
     }
 }
 impl std::error::Error for ListAttributesError {
@@ -2053,6 +2500,15 @@ impl ListClustersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListClustersErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, ListClustersErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListClustersErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for ListClustersError {
@@ -2136,6 +2592,24 @@ impl ListContainerInstancesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListContainerInstancesErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContainerInstancesErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContainerInstancesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListContainerInstancesErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for ListContainerInstancesError {
@@ -2221,6 +2695,18 @@ impl ListServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListServicesErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListServicesErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, ListServicesErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListServicesErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for ListServicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2305,6 +2791,24 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2387,6 +2891,24 @@ impl ListTaskDefinitionFamiliesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskDefinitionFamiliesErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskDefinitionFamiliesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskDefinitionFamiliesErrorKind::ServerError(_)
+        )
+    }
 }
 impl std::error::Error for ListTaskDefinitionFamiliesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2467,6 +2989,18 @@ impl ListTaskDefinitionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListTaskDefinitionsErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskDefinitionsErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListTaskDefinitionsErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for ListTaskDefinitionsError {
@@ -2553,6 +3087,21 @@ impl ListTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::ServerError(_))
+    }
+    pub fn is_service_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::ServiceNotFoundError(_))
+    }
 }
 impl std::error::Error for ListTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2636,6 +3185,18 @@ impl PutAccountSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, PutAccountSettingErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountSettingErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, PutAccountSettingErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for PutAccountSettingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2716,6 +3277,24 @@ impl PutAccountSettingDefaultError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountSettingDefaultErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountSettingDefaultErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountSettingDefaultErrorKind::ServerError(_)
+        )
     }
 }
 impl std::error::Error for PutAccountSettingDefaultError {
@@ -2799,6 +3378,21 @@ impl PutAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_attribute_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAttributesErrorKind::AttributeLimitExceededError(_)
+        )
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutAttributesErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, PutAttributesErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_target_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutAttributesErrorKind::TargetNotFoundError(_))
     }
 }
 impl std::error::Error for PutAttributesError {
@@ -2888,6 +3482,42 @@ impl PutClusterCapacityProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutClusterCapacityProvidersErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutClusterCapacityProvidersErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutClusterCapacityProvidersErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutClusterCapacityProvidersErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutClusterCapacityProvidersErrorKind::ServerError(_)
+        )
+    }
+    pub fn is_update_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutClusterCapacityProvidersErrorKind::UpdateInProgressError(_)
+        )
+    }
 }
 impl std::error::Error for PutClusterCapacityProvidersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2972,6 +3602,24 @@ impl RegisterContainerInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterContainerInstanceErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterContainerInstanceErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterContainerInstanceErrorKind::ServerError(_)
+        )
+    }
 }
 impl std::error::Error for RegisterContainerInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3052,6 +3700,18 @@ impl RegisterTaskDefinitionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, RegisterTaskDefinitionErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTaskDefinitionErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, RegisterTaskDefinitionErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for RegisterTaskDefinitionError {
@@ -3148,6 +3808,36 @@ impl RunTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::AccessDeniedError(_))
+    }
+    pub fn is_blocked_error(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::BlockedError(_))
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_platform_task_definition_incompatibility_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityError(_)
+        )
+    }
+    pub fn is_platform_unknown_error(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::PlatformUnknownError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::ServerError(_))
+    }
+    pub fn is_unsupported_feature_error(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::UnsupportedFeatureError(_))
+    }
 }
 impl std::error::Error for RunTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3237,6 +3927,18 @@ impl StartTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, StartTaskErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, StartTaskErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, StartTaskErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, StartTaskErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for StartTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3320,6 +4022,18 @@ impl StopTaskError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, StopTaskErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, StopTaskErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, StopTaskErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, StopTaskErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for StopTaskError {
@@ -3405,6 +4119,30 @@ impl SubmitAttachmentStateChangesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitAttachmentStateChangesErrorKind::AccessDeniedError(_)
+        )
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitAttachmentStateChangesErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitAttachmentStateChangesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitAttachmentStateChangesErrorKind::ServerError(_)
+        )
+    }
 }
 impl std::error::Error for SubmitAttachmentStateChangesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3486,6 +4224,24 @@ impl SubmitContainerStateChangeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitContainerStateChangeErrorKind::AccessDeniedError(_)
+        )
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitContainerStateChangeErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitContainerStateChangeErrorKind::ServerError(_)
+        )
     }
 }
 impl std::error::Error for SubmitContainerStateChangeError {
@@ -3569,6 +4325,24 @@ impl SubmitTaskStateChangeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitTaskStateChangeErrorKind::AccessDeniedError(_)
+        )
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, SubmitTaskStateChangeErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitTaskStateChangeErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, SubmitTaskStateChangeErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for SubmitTaskStateChangeError {
@@ -3655,6 +4429,21 @@ impl TagResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for TagResourceError {
@@ -3743,6 +4532,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3825,6 +4629,18 @@ impl UpdateCapacityProviderError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UpdateCapacityProviderErrorKind::ClientError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCapacityProviderErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateCapacityProviderErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for UpdateCapacityProviderError {
@@ -3909,6 +4725,18 @@ impl UpdateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UpdateClusterErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateClusterErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UpdateClusterErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateClusterErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for UpdateClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3992,6 +4820,24 @@ impl UpdateClusterSettingsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UpdateClusterSettingsErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClusterSettingsErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClusterSettingsErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateClusterSettingsErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for UpdateClusterSettingsError {
@@ -4083,6 +4929,42 @@ impl UpdateContainerAgentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UpdateContainerAgentErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerAgentErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerAgentErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_missing_version_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerAgentErrorKind::MissingVersionError(_)
+        )
+    }
+    pub fn is_no_update_available_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerAgentErrorKind::NoUpdateAvailableError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateContainerAgentErrorKind::ServerError(_))
+    }
+    pub fn is_update_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerAgentErrorKind::UpdateInProgressError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateContainerAgentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4169,6 +5051,30 @@ impl UpdateContainerInstancesStateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerInstancesStateErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerInstancesStateErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerInstancesStateErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerInstancesStateErrorKind::ServerError(_)
+        )
     }
 }
 impl std::error::Error for UpdateContainerInstancesStateError {
@@ -4267,6 +5173,36 @@ impl UpdateServiceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::AccessDeniedError(_))
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_platform_task_definition_incompatibility_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityError(_)
+        )
+    }
+    pub fn is_platform_unknown_error(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::PlatformUnknownError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::ServerError(_))
+    }
+    pub fn is_service_not_active_error(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::ServiceNotActiveError(_))
+    }
+    pub fn is_service_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::ServiceNotFoundError(_))
     }
 }
 impl std::error::Error for UpdateServiceError {
@@ -4369,6 +5305,60 @@ impl UpdateServicePrimaryTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedError(_)
+        )
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::ServerError(_)
+        )
+    }
+    pub fn is_service_not_active_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveError(_)
+        )
+    }
+    pub fn is_service_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundError(_)
+        )
+    }
+    pub fn is_task_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundError(_)
+        )
+    }
+    pub fn is_unsupported_feature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateServicePrimaryTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4468,6 +5458,36 @@ impl UpdateTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_error(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::AccessDeniedError(_))
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::ClientError(_))
+    }
+    pub fn is_cluster_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::ClusterNotFoundError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::ServerError(_))
+    }
+    pub fn is_service_not_active_error(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::ServiceNotActiveError(_))
+    }
+    pub fn is_service_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::ServiceNotFoundError(_))
+    }
+    pub fn is_task_set_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::TaskSetNotFoundError(_))
+    }
+    pub fn is_unsupported_feature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskSetErrorKind::UnsupportedFeatureError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4525,12 +5545,12 @@ pub mod unsupported_feature_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedFeatureError`](crate::error::UnsupportedFeatureError)
@@ -4589,12 +5609,12 @@ pub mod task_set_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TaskSetNotFoundError`](crate::error::TaskSetNotFoundError)
@@ -4653,12 +5673,12 @@ pub mod service_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceNotFoundError`](crate::error::ServiceNotFoundError)
@@ -4716,12 +5736,12 @@ pub mod service_not_active_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceNotActiveError`](crate::error::ServiceNotActiveError)
@@ -4778,12 +5798,12 @@ pub mod server_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServerError`](crate::error::ServerError)
@@ -4841,12 +5861,12 @@ pub mod invalid_parameter_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidParameterError`](crate::error::InvalidParameterError)
@@ -4904,12 +5924,12 @@ pub mod cluster_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ClusterNotFoundError`](crate::error::ClusterNotFoundError)
@@ -4968,12 +5988,12 @@ pub mod client_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ClientError`](crate::error::ClientError)
@@ -5030,12 +6050,12 @@ pub mod access_denied_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AccessDeniedError`](crate::error::AccessDeniedError)
@@ -5092,12 +6112,12 @@ pub mod platform_unknown_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PlatformUnknownError`](crate::error::PlatformUnknownError)
@@ -5155,12 +6175,12 @@ pub mod platform_task_definition_incompatibility_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PlatformTaskDefinitionIncompatibilityError`](crate::error::PlatformTaskDefinitionIncompatibilityError)
@@ -5221,12 +6241,12 @@ pub mod update_in_progress_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateInProgressError`](crate::error::UpdateInProgressError)
@@ -5285,12 +6305,12 @@ pub mod no_update_available_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoUpdateAvailableError`](crate::error::NoUpdateAvailableError)
@@ -5350,12 +6370,12 @@ pub mod missing_version_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MissingVersionError`](crate::error::MissingVersionError)
@@ -5412,12 +6432,12 @@ pub mod resource_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
@@ -5474,12 +6494,12 @@ pub mod blocked_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BlockedError`](crate::error::BlockedError)
@@ -5536,12 +6556,12 @@ pub mod resource_in_use_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
@@ -5600,12 +6620,12 @@ pub mod target_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TargetNotFoundError`](crate::error::TargetNotFoundError)
@@ -5667,12 +6687,12 @@ pub mod attribute_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AttributeLimitExceededError`](crate::error::AttributeLimitExceededError)
@@ -5730,12 +6750,12 @@ pub mod target_not_connected_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TargetNotConnectedError`](crate::error::TargetNotConnectedError)
@@ -5795,12 +6815,12 @@ pub mod cluster_contains_tasks_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ClusterContainsTasksError`](crate::error::ClusterContainsTasksError)
@@ -5862,12 +6882,12 @@ pub mod cluster_contains_services_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ClusterContainsServicesError`](crate::error::ClusterContainsServicesError)
@@ -5929,12 +6949,12 @@ pub mod cluster_contains_container_instances_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ClusterContainsContainerInstancesError`](crate::error::ClusterContainsContainerInstancesError)
@@ -5991,12 +7011,12 @@ pub mod limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)

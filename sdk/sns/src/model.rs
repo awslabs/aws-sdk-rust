@@ -27,21 +27,21 @@ pub mod tag {
     }
     impl Builder {
         /// <p>The required key portion of the tag.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The optional value portion of the tag.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -107,32 +107,32 @@ pub mod message_attribute_value {
         /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and
         /// Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
         /// Attribute Data Types</a>.</p>
-        pub fn data_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_type = Some(inp.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type = Some(input.into());
             self
         }
-        pub fn set_data_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data_type = inp;
+        pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type = input;
             self
         }
         /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable
         /// Characters</a>.</p>
-        pub fn string_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.string_value = Some(inp.into());
+        pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.string_value = Some(input.into());
             self
         }
-        pub fn set_string_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.string_value = inp;
+        pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.string_value = input;
             self
         }
         /// <p>Binary type attributes can store any binary data, for example, compressed data,
         /// encrypted data, or images.</p>
-        pub fn binary_value(mut self, inp: smithy_types::Blob) -> Self {
-            self.binary_value = Some(inp);
+        pub fn binary_value(mut self, input: smithy_types::Blob) -> Self {
+            self.binary_value = Some(input);
             self
         }
-        pub fn set_binary_value(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.binary_value = inp;
+        pub fn set_binary_value(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.binary_value = input;
             self
         }
         /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::model::MessageAttributeValue)
@@ -177,12 +177,12 @@ pub mod topic {
     }
     impl Builder {
         /// <p>The topic's ARN.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`Topic`](crate::model::Topic)
@@ -240,51 +240,51 @@ pub mod subscription {
     }
     impl Builder {
         /// <p>The subscription's ARN.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_arn = Some(inp.into());
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_arn = Some(input.into());
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_arn = inp;
+            self.subscription_arn = input;
             self
         }
         /// <p>The subscription's owner.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner = Some(inp.into());
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
             self
         }
         /// <p>The subscription's protocol.</p>
-        pub fn protocol(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.protocol = Some(inp.into());
+        pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.protocol = Some(input.into());
             self
         }
-        pub fn set_protocol(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.protocol = inp;
+        pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol = input;
             self
         }
         /// <p>The subscription's endpoint (format depends on the protocol).</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The ARN of the subscription's topic.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`Subscription`](crate::model::Subscription)
@@ -343,27 +343,27 @@ pub mod sms_sandbox_phone_number {
     }
     impl Builder {
         /// <p>The destination phone number.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.phone_number = Some(inp.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = inp;
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
             self
         }
         /// <p>The destination phone number's verification status.</p>
         pub fn status(
             mut self,
-            inp: crate::model::SmsSandboxPhoneNumberVerificationStatus,
+            input: crate::model::SmsSandboxPhoneNumberVerificationStatus,
         ) -> Self {
-            self.status = Some(inp);
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
+            input: std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
@@ -473,15 +473,15 @@ pub mod platform_application {
     }
     impl Builder {
         /// <p>PlatformApplicationArn for platform application object.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_application_arn = Some(inp.into());
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_application_arn = Some(input.into());
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_application_arn = inp;
+            self.platform_application_arn = input;
             self
         }
         pub fn attributes(
@@ -496,11 +496,11 @@ pub mod platform_application {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`PlatformApplication`](crate::model::PlatformApplication)
@@ -564,67 +564,70 @@ pub mod phone_number_information {
     }
     impl Builder {
         /// <p>The date and time when the phone number was created.</p>
-        pub fn created_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_at = Some(inp);
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_at = inp;
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
             self
         }
         /// <p>The phone number.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.phone_number = Some(inp.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = inp;
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
             self
         }
         /// <p>The status of the phone number.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
-        pub fn iso2_country_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iso2_country_code = Some(inp.into());
+        pub fn iso2_country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iso2_country_code = Some(input.into());
             self
         }
         pub fn set_iso2_country_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.iso2_country_code = inp;
+            self.iso2_country_code = input;
             self
         }
         /// <p>The list of supported routes.</p>
-        pub fn route_type(mut self, inp: crate::model::RouteType) -> Self {
-            self.route_type = Some(inp);
+        pub fn route_type(mut self, input: crate::model::RouteType) -> Self {
+            self.route_type = Some(input);
             self
         }
-        pub fn set_route_type(mut self, inp: std::option::Option<crate::model::RouteType>) -> Self {
-            self.route_type = inp;
+        pub fn set_route_type(
+            mut self,
+            input: std::option::Option<crate::model::RouteType>,
+        ) -> Self {
+            self.route_type = input;
             self
         }
         pub fn number_capabilities(
             mut self,
-            inp: impl Into<crate::model::NumberCapability>,
+            input: impl Into<crate::model::NumberCapability>,
         ) -> Self {
             let mut v = self.number_capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.number_capabilities = Some(v);
             self
         }
         pub fn set_number_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
         ) -> Self {
-            self.number_capabilities = inp;
+            self.number_capabilities = input;
             self
         }
         /// Consumes the builder and constructs a [`PhoneNumberInformation`](crate::model::PhoneNumberInformation)
@@ -801,12 +804,12 @@ pub mod endpoint {
     }
     impl Builder {
         /// <p>EndpointArn for mobile app and device.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_arn = Some(inp.into());
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_arn = Some(input.into());
             self
         }
-        pub fn set_endpoint_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_arn = inp;
+        pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_arn = input;
             self
         }
         pub fn attributes(
@@ -821,11 +824,11 @@ pub mod endpoint {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`Endpoint`](crate::model::Endpoint)

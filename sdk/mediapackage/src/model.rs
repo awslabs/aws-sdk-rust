@@ -99,45 +99,45 @@ pub mod mss_package {
     }
     impl Builder {
         /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-        pub fn encryption(mut self, inp: crate::model::MssEncryption) -> Self {
-            self.encryption = Some(inp);
+        pub fn encryption(mut self, input: crate::model::MssEncryption) -> Self {
+            self.encryption = Some(input);
             self
         }
         pub fn set_encryption(
             mut self,
-            inp: std::option::Option<crate::model::MssEncryption>,
+            input: std::option::Option<crate::model::MssEncryption>,
         ) -> Self {
-            self.encryption = inp;
+            self.encryption = input;
             self
         }
         /// The time window (in seconds) contained in each manifest.
-        pub fn manifest_window_seconds(mut self, inp: i32) -> Self {
-            self.manifest_window_seconds = Some(inp);
+        pub fn manifest_window_seconds(mut self, input: i32) -> Self {
+            self.manifest_window_seconds = Some(input);
             self
         }
-        pub fn set_manifest_window_seconds(mut self, inp: i32) -> Self {
-            self.manifest_window_seconds = Some(inp);
+        pub fn set_manifest_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.manifest_window_seconds = input;
             self
         }
         /// The duration (in seconds) of each segment.
-        pub fn segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn segment_duration_seconds(mut self, input: i32) -> Self {
+            self.segment_duration_seconds = Some(input);
             self
         }
-        pub fn set_segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.segment_duration_seconds = input;
             self
         }
         /// A StreamSelection configuration.
-        pub fn stream_selection(mut self, inp: crate::model::StreamSelection) -> Self {
-            self.stream_selection = Some(inp);
+        pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
+            self.stream_selection = Some(input);
             self
         }
         pub fn set_stream_selection(
             mut self,
-            inp: std::option::Option<crate::model::StreamSelection>,
+            input: std::option::Option<crate::model::StreamSelection>,
         ) -> Self {
-            self.stream_selection = inp;
+            self.stream_selection = input;
             self
         }
         /// Consumes the builder and constructs a [`MssPackage`](crate::model::MssPackage)
@@ -196,33 +196,33 @@ pub mod stream_selection {
     }
     impl Builder {
         /// The maximum video bitrate (bps) to include in output.
-        pub fn max_video_bits_per_second(mut self, inp: i32) -> Self {
-            self.max_video_bits_per_second = Some(inp);
+        pub fn max_video_bits_per_second(mut self, input: i32) -> Self {
+            self.max_video_bits_per_second = Some(input);
             self
         }
-        pub fn set_max_video_bits_per_second(mut self, inp: i32) -> Self {
-            self.max_video_bits_per_second = Some(inp);
+        pub fn set_max_video_bits_per_second(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_video_bits_per_second = input;
             self
         }
         /// The minimum video bitrate (bps) to include in output.
-        pub fn min_video_bits_per_second(mut self, inp: i32) -> Self {
-            self.min_video_bits_per_second = Some(inp);
+        pub fn min_video_bits_per_second(mut self, input: i32) -> Self {
+            self.min_video_bits_per_second = Some(input);
             self
         }
-        pub fn set_min_video_bits_per_second(mut self, inp: i32) -> Self {
-            self.min_video_bits_per_second = Some(inp);
+        pub fn set_min_video_bits_per_second(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_video_bits_per_second = input;
             self
         }
         /// A directive that determines the order of streams in the output.
-        pub fn stream_order(mut self, inp: crate::model::StreamOrder) -> Self {
-            self.stream_order = Some(inp);
+        pub fn stream_order(mut self, input: crate::model::StreamOrder) -> Self {
+            self.stream_order = Some(input);
             self
         }
         pub fn set_stream_order(
             mut self,
-            inp: std::option::Option<crate::model::StreamOrder>,
+            input: std::option::Option<crate::model::StreamOrder>,
         ) -> Self {
-            self.stream_order = inp;
+            self.stream_order = input;
             self
         }
         /// Consumes the builder and constructs a [`StreamSelection`](crate::model::StreamSelection)
@@ -327,15 +327,15 @@ pub mod mss_encryption {
     }
     impl Builder {
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-        pub fn speke_key_provider(mut self, inp: crate::model::SpekeKeyProvider) -> Self {
-            self.speke_key_provider = Some(inp);
+        pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
+            self.speke_key_provider = Some(input);
             self
         }
         pub fn set_speke_key_provider(
             mut self,
-            inp: std::option::Option<crate::model::SpekeKeyProvider>,
+            input: std::option::Option<crate::model::SpekeKeyProvider>,
         ) -> Self {
-            self.speke_key_provider = inp;
+            self.speke_key_provider = input;
             self
         }
         /// Consumes the builder and constructs a [`MssEncryption`](crate::model::MssEncryption)
@@ -424,15 +424,15 @@ pub mod speke_key_provider {
         /// An Amazon Resource Name (ARN) of a Certificate Manager certificate
         /// that MediaPackage will use for enforcing secure end-to-end data
         /// transfer with the key provider service.
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_arn = Some(inp.into());
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_arn = Some(input.into());
             self
         }
         pub fn set_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_arn = inp;
+            self.certificate_arn = input;
             self
         }
         /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0.
@@ -443,57 +443,57 @@ pub mod speke_key_provider {
         /// You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
         pub fn encryption_contract_configuration(
             mut self,
-            inp: crate::model::EncryptionContractConfiguration,
+            input: crate::model::EncryptionContractConfiguration,
         ) -> Self {
-            self.encryption_contract_configuration = Some(inp);
+            self.encryption_contract_configuration = Some(input);
             self
         }
         pub fn set_encryption_contract_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionContractConfiguration>,
+            input: std::option::Option<crate::model::EncryptionContractConfiguration>,
         ) -> Self {
-            self.encryption_contract_configuration = inp;
+            self.encryption_contract_configuration = input;
             self
         }
         /// The resource ID to include in key requests.
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = inp;
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
         /// MediaPackage will assume when accessing the key provider service.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn system_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn system_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.system_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.system_ids = Some(v);
             self
         }
         pub fn set_system_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.system_ids = inp;
+            self.system_ids = input;
             self
         }
         /// The URL of the external key provider service.
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::model::SpekeKeyProvider)
@@ -553,27 +553,27 @@ pub mod encryption_contract_configuration {
     }
     impl Builder {
         /// A collection of audio encryption presets.
-        pub fn preset_speke20_audio(mut self, inp: crate::model::PresetSpeke20Audio) -> Self {
-            self.preset_speke20_audio = Some(inp);
+        pub fn preset_speke20_audio(mut self, input: crate::model::PresetSpeke20Audio) -> Self {
+            self.preset_speke20_audio = Some(input);
             self
         }
         pub fn set_preset_speke20_audio(
             mut self,
-            inp: std::option::Option<crate::model::PresetSpeke20Audio>,
+            input: std::option::Option<crate::model::PresetSpeke20Audio>,
         ) -> Self {
-            self.preset_speke20_audio = inp;
+            self.preset_speke20_audio = input;
             self
         }
         /// A collection of video encryption presets.
-        pub fn preset_speke20_video(mut self, inp: crate::model::PresetSpeke20Video) -> Self {
-            self.preset_speke20_video = Some(inp);
+        pub fn preset_speke20_video(mut self, input: crate::model::PresetSpeke20Video) -> Self {
+            self.preset_speke20_video = Some(input);
             self
         }
         pub fn set_preset_speke20_video(
             mut self,
-            inp: std::option::Option<crate::model::PresetSpeke20Video>,
+            input: std::option::Option<crate::model::PresetSpeke20Video>,
         ) -> Self {
-            self.preset_speke20_video = inp;
+            self.preset_speke20_video = input;
             self
         }
         /// Consumes the builder and constructs a [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration)
@@ -830,25 +830,28 @@ pub mod hls_package {
         /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
         /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
         /// that is greater than 0.
-        pub fn ad_markers(mut self, inp: crate::model::AdMarkers) -> Self {
-            self.ad_markers = Some(inp);
+        pub fn ad_markers(mut self, input: crate::model::AdMarkers) -> Self {
+            self.ad_markers = Some(input);
             self
         }
-        pub fn set_ad_markers(mut self, inp: std::option::Option<crate::model::AdMarkers>) -> Self {
-            self.ad_markers = inp;
+        pub fn set_ad_markers(
+            mut self,
+            input: std::option::Option<crate::model::AdMarkers>,
+        ) -> Self {
+            self.ad_markers = input;
             self
         }
-        pub fn ad_triggers(mut self, inp: impl Into<crate::model::AdTriggersElement>) -> Self {
+        pub fn ad_triggers(mut self, input: impl Into<crate::model::AdTriggersElement>) -> Self {
             let mut v = self.ad_triggers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ad_triggers = Some(v);
             self
         }
         pub fn set_ad_triggers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
         ) -> Self {
-            self.ad_triggers = inp;
+            self.ad_triggers = input;
             self
         }
         /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -861,60 +864,60 @@ pub mod hls_package {
         /// and are always treated as ads if specified in AdTriggers.
         pub fn ads_on_delivery_restrictions(
             mut self,
-            inp: crate::model::AdsOnDeliveryRestrictions,
+            input: crate::model::AdsOnDeliveryRestrictions,
         ) -> Self {
-            self.ads_on_delivery_restrictions = Some(inp);
+            self.ads_on_delivery_restrictions = Some(input);
             self
         }
         pub fn set_ads_on_delivery_restrictions(
             mut self,
-            inp: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
+            input: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
         ) -> Self {
-            self.ads_on_delivery_restrictions = inp;
+            self.ads_on_delivery_restrictions = input;
             self
         }
         /// An HTTP Live Streaming (HLS) encryption configuration.
-        pub fn encryption(mut self, inp: crate::model::HlsEncryption) -> Self {
-            self.encryption = Some(inp);
+        pub fn encryption(mut self, input: crate::model::HlsEncryption) -> Self {
+            self.encryption = Some(input);
             self
         }
         pub fn set_encryption(
             mut self,
-            inp: std::option::Option<crate::model::HlsEncryption>,
+            input: std::option::Option<crate::model::HlsEncryption>,
         ) -> Self {
-            self.encryption = inp;
+            self.encryption = input;
             self
         }
         /// When enabled, an I-Frame only stream will be included in the output.
-        pub fn include_iframe_only_stream(mut self, inp: bool) -> Self {
-            self.include_iframe_only_stream = Some(inp);
+        pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
+            self.include_iframe_only_stream = Some(input);
             self
         }
-        pub fn set_include_iframe_only_stream(mut self, inp: bool) -> Self {
-            self.include_iframe_only_stream = Some(inp);
+        pub fn set_include_iframe_only_stream(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_iframe_only_stream = input;
             self
         }
         /// The HTTP Live Streaming (HLS) playlist type.
         /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
         /// entry will be included in the media playlist.
-        pub fn playlist_type(mut self, inp: crate::model::PlaylistType) -> Self {
-            self.playlist_type = Some(inp);
+        pub fn playlist_type(mut self, input: crate::model::PlaylistType) -> Self {
+            self.playlist_type = Some(input);
             self
         }
         pub fn set_playlist_type(
             mut self,
-            inp: std::option::Option<crate::model::PlaylistType>,
+            input: std::option::Option<crate::model::PlaylistType>,
         ) -> Self {
-            self.playlist_type = inp;
+            self.playlist_type = input;
             self
         }
         /// Time window (in seconds) contained in each parent manifest.
-        pub fn playlist_window_seconds(mut self, inp: i32) -> Self {
-            self.playlist_window_seconds = Some(inp);
+        pub fn playlist_window_seconds(mut self, input: i32) -> Self {
+            self.playlist_window_seconds = Some(input);
             self
         }
-        pub fn set_playlist_window_seconds(mut self, inp: i32) -> Self {
-            self.playlist_window_seconds = Some(inp);
+        pub fn set_playlist_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.playlist_window_seconds = input;
             self
         }
         /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
@@ -926,43 +929,46 @@ pub mod hls_package {
         /// ID3Timed Metadata messages will be generated. Note that irrespective
         /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
         /// it will be passed through to HLS output.
-        pub fn program_date_time_interval_seconds(mut self, inp: i32) -> Self {
-            self.program_date_time_interval_seconds = Some(inp);
+        pub fn program_date_time_interval_seconds(mut self, input: i32) -> Self {
+            self.program_date_time_interval_seconds = Some(input);
             self
         }
-        pub fn set_program_date_time_interval_seconds(mut self, inp: i32) -> Self {
-            self.program_date_time_interval_seconds = Some(inp);
+        pub fn set_program_date_time_interval_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.program_date_time_interval_seconds = input;
             self
         }
         /// Duration (in seconds) of each fragment. Actual fragments will be
         /// rounded to the nearest multiple of the source fragment duration.
-        pub fn segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn segment_duration_seconds(mut self, input: i32) -> Self {
+            self.segment_duration_seconds = Some(input);
             self
         }
-        pub fn set_segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.segment_duration_seconds = input;
             self
         }
         /// A StreamSelection configuration.
-        pub fn stream_selection(mut self, inp: crate::model::StreamSelection) -> Self {
-            self.stream_selection = Some(inp);
+        pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
+            self.stream_selection = Some(input);
             self
         }
         pub fn set_stream_selection(
             mut self,
-            inp: std::option::Option<crate::model::StreamSelection>,
+            input: std::option::Option<crate::model::StreamSelection>,
         ) -> Self {
-            self.stream_selection = inp;
+            self.stream_selection = input;
             self
         }
         /// When enabled, audio streams will be placed in rendition groups in the output.
-        pub fn use_audio_rendition_group(mut self, inp: bool) -> Self {
-            self.use_audio_rendition_group = Some(inp);
+        pub fn use_audio_rendition_group(mut self, input: bool) -> Self {
+            self.use_audio_rendition_group = Some(input);
             self
         }
-        pub fn set_use_audio_rendition_group(mut self, inp: bool) -> Self {
-            self.use_audio_rendition_group = Some(inp);
+        pub fn set_use_audio_rendition_group(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_audio_rendition_group = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsPackage`](crate::model::HlsPackage)
@@ -1111,58 +1117,61 @@ pub mod hls_encryption {
         /// When not specified the initialization vector will be periodically rotated.
         pub fn constant_initialization_vector(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.constant_initialization_vector = Some(inp.into());
+            self.constant_initialization_vector = Some(input.into());
             self
         }
         pub fn set_constant_initialization_vector(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.constant_initialization_vector = inp;
+            self.constant_initialization_vector = input;
             self
         }
         /// The encryption method to use.
-        pub fn encryption_method(mut self, inp: crate::model::EncryptionMethod) -> Self {
-            self.encryption_method = Some(inp);
+        pub fn encryption_method(mut self, input: crate::model::EncryptionMethod) -> Self {
+            self.encryption_method = Some(input);
             self
         }
         pub fn set_encryption_method(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionMethod>,
+            input: std::option::Option<crate::model::EncryptionMethod>,
         ) -> Self {
-            self.encryption_method = inp;
+            self.encryption_method = input;
             self
         }
         /// Interval (in seconds) between each encryption key rotation.
-        pub fn key_rotation_interval_seconds(mut self, inp: i32) -> Self {
-            self.key_rotation_interval_seconds = Some(inp);
+        pub fn key_rotation_interval_seconds(mut self, input: i32) -> Self {
+            self.key_rotation_interval_seconds = Some(input);
             self
         }
-        pub fn set_key_rotation_interval_seconds(mut self, inp: i32) -> Self {
-            self.key_rotation_interval_seconds = Some(inp);
+        pub fn set_key_rotation_interval_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.key_rotation_interval_seconds = input;
             self
         }
         /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
-        pub fn repeat_ext_x_key(mut self, inp: bool) -> Self {
-            self.repeat_ext_x_key = Some(inp);
+        pub fn repeat_ext_x_key(mut self, input: bool) -> Self {
+            self.repeat_ext_x_key = Some(input);
             self
         }
-        pub fn set_repeat_ext_x_key(mut self, inp: bool) -> Self {
-            self.repeat_ext_x_key = Some(inp);
+        pub fn set_repeat_ext_x_key(mut self, input: std::option::Option<bool>) -> Self {
+            self.repeat_ext_x_key = input;
             self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-        pub fn speke_key_provider(mut self, inp: crate::model::SpekeKeyProvider) -> Self {
-            self.speke_key_provider = Some(inp);
+        pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
+            self.speke_key_provider = Some(input);
             self
         }
         pub fn set_speke_key_provider(
             mut self,
-            inp: std::option::Option<crate::model::SpekeKeyProvider>,
+            input: std::option::Option<crate::model::SpekeKeyProvider>,
         ) -> Self {
-            self.speke_key_provider = inp;
+            self.speke_key_provider = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsEncryption`](crate::model::HlsEncryption)
@@ -1591,17 +1600,17 @@ pub mod dash_package {
         pub(crate) utc_timing_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn ad_triggers(mut self, inp: impl Into<crate::model::AdTriggersElement>) -> Self {
+        pub fn ad_triggers(mut self, input: impl Into<crate::model::AdTriggersElement>) -> Self {
             let mut v = self.ad_triggers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ad_triggers = Some(v);
             self
         }
         pub fn set_ad_triggers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
         ) -> Self {
-            self.ad_triggers = inp;
+            self.ad_triggers = input;
             self
         }
         /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -1614,153 +1623,165 @@ pub mod dash_package {
         /// and are always treated as ads if specified in AdTriggers.
         pub fn ads_on_delivery_restrictions(
             mut self,
-            inp: crate::model::AdsOnDeliveryRestrictions,
+            input: crate::model::AdsOnDeliveryRestrictions,
         ) -> Self {
-            self.ads_on_delivery_restrictions = Some(inp);
+            self.ads_on_delivery_restrictions = Some(input);
             self
         }
         pub fn set_ads_on_delivery_restrictions(
             mut self,
-            inp: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
+            input: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
         ) -> Self {
-            self.ads_on_delivery_restrictions = inp;
+            self.ads_on_delivery_restrictions = input;
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
-        pub fn encryption(mut self, inp: crate::model::DashEncryption) -> Self {
-            self.encryption = Some(inp);
+        pub fn encryption(mut self, input: crate::model::DashEncryption) -> Self {
+            self.encryption = Some(input);
             self
         }
         pub fn set_encryption(
             mut self,
-            inp: std::option::Option<crate::model::DashEncryption>,
+            input: std::option::Option<crate::model::DashEncryption>,
         ) -> Self {
-            self.encryption = inp;
+            self.encryption = input;
             self
         }
         /// Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-        pub fn manifest_layout(mut self, inp: crate::model::ManifestLayout) -> Self {
-            self.manifest_layout = Some(inp);
+        pub fn manifest_layout(mut self, input: crate::model::ManifestLayout) -> Self {
+            self.manifest_layout = Some(input);
             self
         }
         pub fn set_manifest_layout(
             mut self,
-            inp: std::option::Option<crate::model::ManifestLayout>,
+            input: std::option::Option<crate::model::ManifestLayout>,
         ) -> Self {
-            self.manifest_layout = inp;
+            self.manifest_layout = input;
             self
         }
         /// Time window (in seconds) contained in each manifest.
-        pub fn manifest_window_seconds(mut self, inp: i32) -> Self {
-            self.manifest_window_seconds = Some(inp);
+        pub fn manifest_window_seconds(mut self, input: i32) -> Self {
+            self.manifest_window_seconds = Some(input);
             self
         }
-        pub fn set_manifest_window_seconds(mut self, inp: i32) -> Self {
-            self.manifest_window_seconds = Some(inp);
+        pub fn set_manifest_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.manifest_window_seconds = input;
             self
         }
         /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
-        pub fn min_buffer_time_seconds(mut self, inp: i32) -> Self {
-            self.min_buffer_time_seconds = Some(inp);
+        pub fn min_buffer_time_seconds(mut self, input: i32) -> Self {
+            self.min_buffer_time_seconds = Some(input);
             self
         }
-        pub fn set_min_buffer_time_seconds(mut self, inp: i32) -> Self {
-            self.min_buffer_time_seconds = Some(inp);
+        pub fn set_min_buffer_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_buffer_time_seconds = input;
             self
         }
         /// Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).
-        pub fn min_update_period_seconds(mut self, inp: i32) -> Self {
-            self.min_update_period_seconds = Some(inp);
+        pub fn min_update_period_seconds(mut self, input: i32) -> Self {
+            self.min_update_period_seconds = Some(input);
             self
         }
-        pub fn set_min_update_period_seconds(mut self, inp: i32) -> Self {
-            self.min_update_period_seconds = Some(inp);
+        pub fn set_min_update_period_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_update_period_seconds = input;
             self
         }
         pub fn period_triggers(
             mut self,
-            inp: impl Into<crate::model::PeriodTriggersElement>,
+            input: impl Into<crate::model::PeriodTriggersElement>,
         ) -> Self {
             let mut v = self.period_triggers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.period_triggers = Some(v);
             self
         }
         pub fn set_period_triggers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
         ) -> Self {
-            self.period_triggers = inp;
+            self.period_triggers = input;
             self
         }
         /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
-        pub fn profile(mut self, inp: crate::model::Profile) -> Self {
-            self.profile = Some(inp);
+        pub fn profile(mut self, input: crate::model::Profile) -> Self {
+            self.profile = Some(input);
             self
         }
-        pub fn set_profile(mut self, inp: std::option::Option<crate::model::Profile>) -> Self {
-            self.profile = inp;
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::Profile>) -> Self {
+            self.profile = input;
             self
         }
         /// Duration (in seconds) of each segment. Actual segments will be
         /// rounded to the nearest multiple of the source segment duration.
-        pub fn segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn segment_duration_seconds(mut self, input: i32) -> Self {
+            self.segment_duration_seconds = Some(input);
             self
         }
-        pub fn set_segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.segment_duration_seconds = input;
             self
         }
         /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-        pub fn segment_template_format(mut self, inp: crate::model::SegmentTemplateFormat) -> Self {
-            self.segment_template_format = Some(inp);
+        pub fn segment_template_format(
+            mut self,
+            input: crate::model::SegmentTemplateFormat,
+        ) -> Self {
+            self.segment_template_format = Some(input);
             self
         }
         pub fn set_segment_template_format(
             mut self,
-            inp: std::option::Option<crate::model::SegmentTemplateFormat>,
+            input: std::option::Option<crate::model::SegmentTemplateFormat>,
         ) -> Self {
-            self.segment_template_format = inp;
+            self.segment_template_format = input;
             self
         }
         /// A StreamSelection configuration.
-        pub fn stream_selection(mut self, inp: crate::model::StreamSelection) -> Self {
-            self.stream_selection = Some(inp);
+        pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
+            self.stream_selection = Some(input);
             self
         }
         pub fn set_stream_selection(
             mut self,
-            inp: std::option::Option<crate::model::StreamSelection>,
+            input: std::option::Option<crate::model::StreamSelection>,
         ) -> Self {
-            self.stream_selection = inp;
+            self.stream_selection = input;
             self
         }
         /// Duration (in seconds) to delay live content before presentation.
-        pub fn suggested_presentation_delay_seconds(mut self, inp: i32) -> Self {
-            self.suggested_presentation_delay_seconds = Some(inp);
+        pub fn suggested_presentation_delay_seconds(mut self, input: i32) -> Self {
+            self.suggested_presentation_delay_seconds = Some(input);
             self
         }
-        pub fn set_suggested_presentation_delay_seconds(mut self, inp: i32) -> Self {
-            self.suggested_presentation_delay_seconds = Some(inp);
+        pub fn set_suggested_presentation_delay_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.suggested_presentation_delay_seconds = input;
             self
         }
         /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
-        pub fn utc_timing(mut self, inp: crate::model::UtcTiming) -> Self {
-            self.utc_timing = Some(inp);
+        pub fn utc_timing(mut self, input: crate::model::UtcTiming) -> Self {
+            self.utc_timing = Some(input);
             self
         }
-        pub fn set_utc_timing(mut self, inp: std::option::Option<crate::model::UtcTiming>) -> Self {
-            self.utc_timing = inp;
+        pub fn set_utc_timing(
+            mut self,
+            input: std::option::Option<crate::model::UtcTiming>,
+        ) -> Self {
+            self.utc_timing = input;
             self
         }
         /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
-        pub fn utc_timing_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.utc_timing_uri = Some(inp.into());
+        pub fn utc_timing_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.utc_timing_uri = Some(input.into());
             self
         }
-        pub fn set_utc_timing_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.utc_timing_uri = inp;
+        pub fn set_utc_timing_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.utc_timing_uri = input;
             self
         }
         /// Consumes the builder and constructs a [`DashPackage`](crate::model::DashPackage)
@@ -2112,24 +2133,27 @@ pub mod dash_encryption {
     }
     impl Builder {
         /// Time (in seconds) between each encryption key rotation.
-        pub fn key_rotation_interval_seconds(mut self, inp: i32) -> Self {
-            self.key_rotation_interval_seconds = Some(inp);
+        pub fn key_rotation_interval_seconds(mut self, input: i32) -> Self {
+            self.key_rotation_interval_seconds = Some(input);
             self
         }
-        pub fn set_key_rotation_interval_seconds(mut self, inp: i32) -> Self {
-            self.key_rotation_interval_seconds = Some(inp);
+        pub fn set_key_rotation_interval_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.key_rotation_interval_seconds = input;
             self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-        pub fn speke_key_provider(mut self, inp: crate::model::SpekeKeyProvider) -> Self {
-            self.speke_key_provider = Some(inp);
+        pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
+            self.speke_key_provider = Some(input);
             self
         }
         pub fn set_speke_key_provider(
             mut self,
-            inp: std::option::Option<crate::model::SpekeKeyProvider>,
+            input: std::option::Option<crate::model::SpekeKeyProvider>,
         ) -> Self {
-            self.speke_key_provider = inp;
+            self.speke_key_provider = input;
             self
         }
         /// Consumes the builder and constructs a [`DashEncryption`](crate::model::DashEncryption)
@@ -2201,59 +2225,62 @@ pub mod cmaf_package {
     }
     impl Builder {
         /// A Common Media Application Format (CMAF) encryption configuration.
-        pub fn encryption(mut self, inp: crate::model::CmafEncryption) -> Self {
-            self.encryption = Some(inp);
+        pub fn encryption(mut self, input: crate::model::CmafEncryption) -> Self {
+            self.encryption = Some(input);
             self
         }
         pub fn set_encryption(
             mut self,
-            inp: std::option::Option<crate::model::CmafEncryption>,
+            input: std::option::Option<crate::model::CmafEncryption>,
         ) -> Self {
-            self.encryption = inp;
+            self.encryption = input;
             self
         }
-        pub fn hls_manifests(mut self, inp: impl Into<crate::model::HlsManifest>) -> Self {
+        pub fn hls_manifests(mut self, input: impl Into<crate::model::HlsManifest>) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.hls_manifests = Some(v);
             self
         }
         pub fn set_hls_manifests(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
         ) -> Self {
-            self.hls_manifests = inp;
+            self.hls_manifests = input;
             self
         }
         /// Duration (in seconds) of each segment. Actual segments will be
         /// rounded to the nearest multiple of the source segment duration.
-        pub fn segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn segment_duration_seconds(mut self, input: i32) -> Self {
+            self.segment_duration_seconds = Some(input);
             self
         }
-        pub fn set_segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.segment_duration_seconds = input;
             self
         }
         /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-        pub fn segment_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.segment_prefix = Some(inp.into());
+        pub fn segment_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment_prefix = Some(input.into());
             self
         }
-        pub fn set_segment_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.segment_prefix = inp;
+        pub fn set_segment_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.segment_prefix = input;
             self
         }
         /// A StreamSelection configuration.
-        pub fn stream_selection(mut self, inp: crate::model::StreamSelection) -> Self {
-            self.stream_selection = Some(inp);
+        pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
+            self.stream_selection = Some(input);
             self
         }
         pub fn set_stream_selection(
             mut self,
-            inp: std::option::Option<crate::model::StreamSelection>,
+            input: std::option::Option<crate::model::StreamSelection>,
         ) -> Self {
-            self.stream_selection = inp;
+            self.stream_selection = input;
             self
         }
         /// Consumes the builder and constructs a [`CmafPackage`](crate::model::CmafPackage)
@@ -2375,62 +2402,68 @@ pub mod hls_manifest {
         /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
         /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
         /// that is greater than 0.
-        pub fn ad_markers(mut self, inp: crate::model::AdMarkers) -> Self {
-            self.ad_markers = Some(inp);
+        pub fn ad_markers(mut self, input: crate::model::AdMarkers) -> Self {
+            self.ad_markers = Some(input);
             self
         }
-        pub fn set_ad_markers(mut self, inp: std::option::Option<crate::model::AdMarkers>) -> Self {
-            self.ad_markers = inp;
+        pub fn set_ad_markers(
+            mut self,
+            input: std::option::Option<crate::model::AdMarkers>,
+        ) -> Self {
+            self.ad_markers = input;
             self
         }
         /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// When enabled, an I-Frame only stream will be included in the output.
-        pub fn include_iframe_only_stream(mut self, inp: bool) -> Self {
-            self.include_iframe_only_stream = Some(inp);
+        pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
+            self.include_iframe_only_stream = Some(input);
             self
         }
-        pub fn set_include_iframe_only_stream(mut self, inp: bool) -> Self {
-            self.include_iframe_only_stream = Some(inp);
+        pub fn set_include_iframe_only_stream(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_iframe_only_stream = input;
             self
         }
         /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-        pub fn manifest_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.manifest_name = Some(inp.into());
+        pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.manifest_name = Some(input.into());
             self
         }
-        pub fn set_manifest_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.manifest_name = inp;
+        pub fn set_manifest_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.manifest_name = input;
             self
         }
         /// The HTTP Live Streaming (HLS) playlist type.
         /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
         /// entry will be included in the media playlist.
-        pub fn playlist_type(mut self, inp: crate::model::PlaylistType) -> Self {
-            self.playlist_type = Some(inp);
+        pub fn playlist_type(mut self, input: crate::model::PlaylistType) -> Self {
+            self.playlist_type = Some(input);
             self
         }
         pub fn set_playlist_type(
             mut self,
-            inp: std::option::Option<crate::model::PlaylistType>,
+            input: std::option::Option<crate::model::PlaylistType>,
         ) -> Self {
-            self.playlist_type = inp;
+            self.playlist_type = input;
             self
         }
         /// Time window (in seconds) contained in each parent manifest.
-        pub fn playlist_window_seconds(mut self, inp: i32) -> Self {
-            self.playlist_window_seconds = Some(inp);
+        pub fn playlist_window_seconds(mut self, input: i32) -> Self {
+            self.playlist_window_seconds = Some(input);
             self
         }
-        pub fn set_playlist_window_seconds(mut self, inp: i32) -> Self {
-            self.playlist_window_seconds = Some(inp);
+        pub fn set_playlist_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.playlist_window_seconds = input;
             self
         }
         /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
@@ -2442,21 +2475,24 @@ pub mod hls_manifest {
         /// ID3Timed Metadata messages will be generated. Note that irrespective
         /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
         /// it will be passed through to HLS output.
-        pub fn program_date_time_interval_seconds(mut self, inp: i32) -> Self {
-            self.program_date_time_interval_seconds = Some(inp);
+        pub fn program_date_time_interval_seconds(mut self, input: i32) -> Self {
+            self.program_date_time_interval_seconds = Some(input);
             self
         }
-        pub fn set_program_date_time_interval_seconds(mut self, inp: i32) -> Self {
-            self.program_date_time_interval_seconds = Some(inp);
+        pub fn set_program_date_time_interval_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.program_date_time_interval_seconds = input;
             self
         }
         /// The URL of the packaged OriginEndpoint for consumption.
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsManifest`](crate::model::HlsManifest)
@@ -2529,37 +2565,40 @@ pub mod cmaf_encryption {
         /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
         pub fn constant_initialization_vector(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.constant_initialization_vector = Some(inp.into());
+            self.constant_initialization_vector = Some(input.into());
             self
         }
         pub fn set_constant_initialization_vector(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.constant_initialization_vector = inp;
+            self.constant_initialization_vector = input;
             self
         }
         /// Time (in seconds) between each encryption key rotation.
-        pub fn key_rotation_interval_seconds(mut self, inp: i32) -> Self {
-            self.key_rotation_interval_seconds = Some(inp);
+        pub fn key_rotation_interval_seconds(mut self, input: i32) -> Self {
+            self.key_rotation_interval_seconds = Some(input);
             self
         }
-        pub fn set_key_rotation_interval_seconds(mut self, inp: i32) -> Self {
-            self.key_rotation_interval_seconds = Some(inp);
+        pub fn set_key_rotation_interval_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.key_rotation_interval_seconds = input;
             self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-        pub fn speke_key_provider(mut self, inp: crate::model::SpekeKeyProvider) -> Self {
-            self.speke_key_provider = Some(inp);
+        pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
+            self.speke_key_provider = Some(input);
             self
         }
         pub fn set_speke_key_provider(
             mut self,
-            inp: std::option::Option<crate::model::SpekeKeyProvider>,
+            input: std::option::Option<crate::model::SpekeKeyProvider>,
         ) -> Self {
-            self.speke_key_provider = inp;
+            self.speke_key_provider = input;
             self
         }
         /// Consumes the builder and constructs a [`CmafEncryption`](crate::model::CmafEncryption)
@@ -2613,27 +2652,27 @@ pub mod authorization {
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.
-        pub fn cdn_identifier_secret(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cdn_identifier_secret = Some(inp.into());
+        pub fn cdn_identifier_secret(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cdn_identifier_secret = Some(input.into());
             self
         }
         pub fn set_cdn_identifier_secret(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cdn_identifier_secret = inp;
+            self.cdn_identifier_secret = input;
             self
         }
         /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-        pub fn secrets_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secrets_role_arn = Some(inp.into());
+        pub fn secrets_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secrets_role_arn = Some(input.into());
             self
         }
         pub fn set_secrets_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.secrets_role_arn = inp;
+            self.secrets_role_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`Authorization`](crate::model::Authorization)
@@ -2705,64 +2744,67 @@ pub mod cmaf_package_create_or_update_parameters {
     }
     impl Builder {
         /// A Common Media Application Format (CMAF) encryption configuration.
-        pub fn encryption(mut self, inp: crate::model::CmafEncryption) -> Self {
-            self.encryption = Some(inp);
+        pub fn encryption(mut self, input: crate::model::CmafEncryption) -> Self {
+            self.encryption = Some(input);
             self
         }
         pub fn set_encryption(
             mut self,
-            inp: std::option::Option<crate::model::CmafEncryption>,
+            input: std::option::Option<crate::model::CmafEncryption>,
         ) -> Self {
-            self.encryption = inp;
+            self.encryption = input;
             self
         }
         pub fn hls_manifests(
             mut self,
-            inp: impl Into<crate::model::HlsManifestCreateOrUpdateParameters>,
+            input: impl Into<crate::model::HlsManifestCreateOrUpdateParameters>,
         ) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.hls_manifests = Some(v);
             self
         }
         pub fn set_hls_manifests(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::HlsManifestCreateOrUpdateParameters>,
             >,
         ) -> Self {
-            self.hls_manifests = inp;
+            self.hls_manifests = input;
             self
         }
         /// Duration (in seconds) of each segment. Actual segments will be
         /// rounded to the nearest multiple of the source segment duration.
-        pub fn segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn segment_duration_seconds(mut self, input: i32) -> Self {
+            self.segment_duration_seconds = Some(input);
             self
         }
-        pub fn set_segment_duration_seconds(mut self, inp: i32) -> Self {
-            self.segment_duration_seconds = Some(inp);
+        pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.segment_duration_seconds = input;
             self
         }
         /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-        pub fn segment_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.segment_prefix = Some(inp.into());
+        pub fn segment_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment_prefix = Some(input.into());
             self
         }
-        pub fn set_segment_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.segment_prefix = inp;
+        pub fn set_segment_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.segment_prefix = input;
             self
         }
         /// A StreamSelection configuration.
-        pub fn stream_selection(mut self, inp: crate::model::StreamSelection) -> Self {
-            self.stream_selection = Some(inp);
+        pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
+            self.stream_selection = Some(input);
             self
         }
         pub fn set_stream_selection(
             mut self,
-            inp: std::option::Option<crate::model::StreamSelection>,
+            input: std::option::Option<crate::model::StreamSelection>,
         ) -> Self {
-            self.stream_selection = inp;
+            self.stream_selection = input;
             self
         }
         /// Consumes the builder and constructs a [`CmafPackageCreateOrUpdateParameters`](crate::model::CmafPackageCreateOrUpdateParameters)
@@ -2903,25 +2945,28 @@ pub mod hls_manifest_create_or_update_parameters {
         /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
         /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
         /// that is greater than 0.
-        pub fn ad_markers(mut self, inp: crate::model::AdMarkers) -> Self {
-            self.ad_markers = Some(inp);
+        pub fn ad_markers(mut self, input: crate::model::AdMarkers) -> Self {
+            self.ad_markers = Some(input);
             self
         }
-        pub fn set_ad_markers(mut self, inp: std::option::Option<crate::model::AdMarkers>) -> Self {
-            self.ad_markers = inp;
+        pub fn set_ad_markers(
+            mut self,
+            input: std::option::Option<crate::model::AdMarkers>,
+        ) -> Self {
+            self.ad_markers = input;
             self
         }
-        pub fn ad_triggers(mut self, inp: impl Into<crate::model::AdTriggersElement>) -> Self {
+        pub fn ad_triggers(mut self, input: impl Into<crate::model::AdTriggersElement>) -> Self {
             let mut v = self.ad_triggers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ad_triggers = Some(v);
             self
         }
         pub fn set_ad_triggers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
         ) -> Self {
-            self.ad_triggers = inp;
+            self.ad_triggers = input;
             self
         }
         /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -2934,66 +2979,69 @@ pub mod hls_manifest_create_or_update_parameters {
         /// and are always treated as ads if specified in AdTriggers.
         pub fn ads_on_delivery_restrictions(
             mut self,
-            inp: crate::model::AdsOnDeliveryRestrictions,
+            input: crate::model::AdsOnDeliveryRestrictions,
         ) -> Self {
-            self.ads_on_delivery_restrictions = Some(inp);
+            self.ads_on_delivery_restrictions = Some(input);
             self
         }
         pub fn set_ads_on_delivery_restrictions(
             mut self,
-            inp: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
+            input: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
         ) -> Self {
-            self.ads_on_delivery_restrictions = inp;
+            self.ads_on_delivery_restrictions = input;
             self
         }
         /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// When enabled, an I-Frame only stream will be included in the output.
-        pub fn include_iframe_only_stream(mut self, inp: bool) -> Self {
-            self.include_iframe_only_stream = Some(inp);
+        pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
+            self.include_iframe_only_stream = Some(input);
             self
         }
-        pub fn set_include_iframe_only_stream(mut self, inp: bool) -> Self {
-            self.include_iframe_only_stream = Some(inp);
+        pub fn set_include_iframe_only_stream(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_iframe_only_stream = input;
             self
         }
         /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-        pub fn manifest_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.manifest_name = Some(inp.into());
+        pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.manifest_name = Some(input.into());
             self
         }
-        pub fn set_manifest_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.manifest_name = inp;
+        pub fn set_manifest_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.manifest_name = input;
             self
         }
         /// The HTTP Live Streaming (HLS) playlist type.
         /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
         /// entry will be included in the media playlist.
-        pub fn playlist_type(mut self, inp: crate::model::PlaylistType) -> Self {
-            self.playlist_type = Some(inp);
+        pub fn playlist_type(mut self, input: crate::model::PlaylistType) -> Self {
+            self.playlist_type = Some(input);
             self
         }
         pub fn set_playlist_type(
             mut self,
-            inp: std::option::Option<crate::model::PlaylistType>,
+            input: std::option::Option<crate::model::PlaylistType>,
         ) -> Self {
-            self.playlist_type = inp;
+            self.playlist_type = input;
             self
         }
         /// Time window (in seconds) contained in each parent manifest.
-        pub fn playlist_window_seconds(mut self, inp: i32) -> Self {
-            self.playlist_window_seconds = Some(inp);
+        pub fn playlist_window_seconds(mut self, input: i32) -> Self {
+            self.playlist_window_seconds = Some(input);
             self
         }
-        pub fn set_playlist_window_seconds(mut self, inp: i32) -> Self {
-            self.playlist_window_seconds = Some(inp);
+        pub fn set_playlist_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.playlist_window_seconds = input;
             self
         }
         /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
@@ -3005,12 +3053,15 @@ pub mod hls_manifest_create_or_update_parameters {
         /// ID3Timed Metadata messages will be generated. Note that irrespective
         /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
         /// it will be passed through to HLS output.
-        pub fn program_date_time_interval_seconds(mut self, inp: i32) -> Self {
-            self.program_date_time_interval_seconds = Some(inp);
+        pub fn program_date_time_interval_seconds(mut self, input: i32) -> Self {
+            self.program_date_time_interval_seconds = Some(input);
             self
         }
-        pub fn set_program_date_time_interval_seconds(mut self, inp: i32) -> Self {
-            self.program_date_time_interval_seconds = Some(inp);
+        pub fn set_program_date_time_interval_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.program_date_time_interval_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsManifestCreateOrUpdateParameters`](crate::model::HlsManifestCreateOrUpdateParameters)
@@ -3064,12 +3115,15 @@ pub mod ingress_access_logs {
     }
     impl Builder {
         /// Customize the log group name.
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_group_name = Some(inp.into());
+        pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_name = Some(input.into());
             self
         }
-        pub fn set_log_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_group_name = inp;
+        pub fn set_log_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`IngressAccessLogs`](crate::model::IngressAccessLogs)
@@ -3113,17 +3167,17 @@ pub mod hls_ingest {
             std::option::Option<std::vec::Vec<crate::model::IngestEndpoint>>,
     }
     impl Builder {
-        pub fn ingest_endpoints(mut self, inp: impl Into<crate::model::IngestEndpoint>) -> Self {
+        pub fn ingest_endpoints(mut self, input: impl Into<crate::model::IngestEndpoint>) -> Self {
             let mut v = self.ingest_endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ingest_endpoints = Some(v);
             self
         }
         pub fn set_ingest_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IngestEndpoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IngestEndpoint>>,
         ) -> Self {
-            self.ingest_endpoints = inp;
+            self.ingest_endpoints = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsIngest`](crate::model::HlsIngest)
@@ -3185,39 +3239,39 @@ pub mod ingest_endpoint {
     }
     impl Builder {
         /// The system generated unique identifier for the IngestEndpoint
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// The system generated password for ingest authentication.
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password = Some(inp.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password = Some(input.into());
             self
         }
-        pub fn set_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password = inp;
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.password = input;
             self
         }
         /// The ingest URL to which the source stream should be sent.
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// The system generated username for ingest authentication.
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.username = Some(inp.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
             self
         }
-        pub fn set_username(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.username = inp;
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
             self
         }
         /// Consumes the builder and constructs a [`IngestEndpoint`](crate::model::IngestEndpoint)
@@ -3264,12 +3318,15 @@ pub mod egress_access_logs {
     }
     impl Builder {
         /// Customize the log group name.
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_group_name = Some(inp.into());
+        pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_name = Some(input.into());
             self
         }
-        pub fn set_log_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_group_name = inp;
+        pub fn set_log_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`EgressAccessLogs`](crate::model::EgressAccessLogs)
@@ -3410,132 +3467,135 @@ pub mod origin_endpoint {
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, inp: crate::model::Authorization) -> Self {
-            self.authorization = Some(inp);
+        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
+            self.authorization = Some(input);
             self
         }
         pub fn set_authorization(
             mut self,
-            inp: std::option::Option<crate::model::Authorization>,
+            input: std::option::Option<crate::model::Authorization>,
         ) -> Self {
-            self.authorization = inp;
+            self.authorization = input;
             self
         }
         /// The ID of the Channel the OriginEndpoint is associated with.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = inp;
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
-        pub fn cmaf_package(mut self, inp: crate::model::CmafPackage) -> Self {
-            self.cmaf_package = Some(inp);
+        pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
+            self.cmaf_package = Some(input);
             self
         }
         pub fn set_cmaf_package(
             mut self,
-            inp: std::option::Option<crate::model::CmafPackage>,
+            input: std::option::Option<crate::model::CmafPackage>,
         ) -> Self {
-            self.cmaf_package = inp;
+            self.cmaf_package = input;
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn dash_package(mut self, inp: crate::model::DashPackage) -> Self {
-            self.dash_package = Some(inp);
+        pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
+            self.dash_package = Some(input);
             self
         }
         pub fn set_dash_package(
             mut self,
-            inp: std::option::Option<crate::model::DashPackage>,
+            input: std::option::Option<crate::model::DashPackage>,
         ) -> Self {
-            self.dash_package = inp;
+            self.dash_package = input;
             self
         }
         /// A short text description of the OriginEndpoint.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn hls_package(mut self, inp: crate::model::HlsPackage) -> Self {
-            self.hls_package = Some(inp);
+        pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
+            self.hls_package = Some(input);
             self
         }
         pub fn set_hls_package(
             mut self,
-            inp: std::option::Option<crate::model::HlsPackage>,
+            input: std::option::Option<crate::model::HlsPackage>,
         ) -> Self {
-            self.hls_package = inp;
+            self.hls_package = input;
             self
         }
         /// The ID of the OriginEndpoint.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// A short string appended to the end of the OriginEndpoint URL.
-        pub fn manifest_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.manifest_name = Some(inp.into());
+        pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.manifest_name = Some(input.into());
             self
         }
-        pub fn set_manifest_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.manifest_name = inp;
+        pub fn set_manifest_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.manifest_name = input;
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-        pub fn mss_package(mut self, inp: crate::model::MssPackage) -> Self {
-            self.mss_package = Some(inp);
+        pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
+            self.mss_package = Some(input);
             self
         }
         pub fn set_mss_package(
             mut self,
-            inp: std::option::Option<crate::model::MssPackage>,
+            input: std::option::Option<crate::model::MssPackage>,
         ) -> Self {
-            self.mss_package = inp;
+            self.mss_package = input;
             self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
         /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
         /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-        pub fn origination(mut self, inp: crate::model::Origination) -> Self {
-            self.origination = Some(inp);
+        pub fn origination(mut self, input: crate::model::Origination) -> Self {
+            self.origination = Some(input);
             self
         }
         pub fn set_origination(
             mut self,
-            inp: std::option::Option<crate::model::Origination>,
+            input: std::option::Option<crate::model::Origination>,
         ) -> Self {
-            self.origination = inp;
+            self.origination = input;
             self
         }
         /// Maximum duration (seconds) of content to retain for startover playback.
         /// If not specified, startover playback will be disabled for the OriginEndpoint.
-        pub fn startover_window_seconds(mut self, inp: i32) -> Self {
-            self.startover_window_seconds = Some(inp);
+        pub fn startover_window_seconds(mut self, input: i32) -> Self {
+            self.startover_window_seconds = Some(input);
             self
         }
-        pub fn set_startover_window_seconds(mut self, inp: i32) -> Self {
-            self.startover_window_seconds = Some(inp);
+        pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.startover_window_seconds = input;
             self
         }
         pub fn tags(
@@ -3550,43 +3610,43 @@ pub mod origin_endpoint {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Amount of delay (seconds) to enforce on the playback of live content.
         /// If not specified, there will be no time delay in effect for the OriginEndpoint.
-        pub fn time_delay_seconds(mut self, inp: i32) -> Self {
-            self.time_delay_seconds = Some(inp);
+        pub fn time_delay_seconds(mut self, input: i32) -> Self {
+            self.time_delay_seconds = Some(input);
             self
         }
-        pub fn set_time_delay_seconds(mut self, inp: i32) -> Self {
-            self.time_delay_seconds = Some(inp);
+        pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.time_delay_seconds = input;
             self
         }
         /// The URL of the packaged OriginEndpoint for consumption.
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
-        pub fn whitelist(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn whitelist(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.whitelist.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.whitelist = Some(v);
             self
         }
         pub fn set_whitelist(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.whitelist = inp;
+            self.whitelist = input;
             self
         }
         /// Consumes the builder and constructs a [`OriginEndpoint`](crate::model::OriginEndpoint)
@@ -3697,94 +3757,94 @@ pub mod harvest_job {
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// The ID of the Channel that the HarvestJob will harvest from.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = inp;
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// The time the HarvestJob was submitted
-        pub fn created_at(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.created_at = Some(inp.into());
+        pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_at = Some(input.into());
             self
         }
-        pub fn set_created_at(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.created_at = inp;
+        pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_at = input;
             self
         }
         /// The end of the time-window which will be harvested.
-        pub fn end_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.end_time = Some(inp.into());
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_time = Some(input.into());
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.end_time = inp;
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_time = input;
             self
         }
         /// The ID of the HarvestJob. The ID must be unique within the region
         /// and it cannot be changed after the HarvestJob is submitted.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
         /// This cannot be changed after the HarvestJob is submitted.
-        pub fn origin_endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.origin_endpoint_id = Some(inp.into());
+        pub fn origin_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.origin_endpoint_id = Some(input.into());
             self
         }
         pub fn set_origin_endpoint_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.origin_endpoint_id = inp;
+            self.origin_endpoint_id = input;
             self
         }
         /// Configuration parameters for where in an S3 bucket to place the harvested content
-        pub fn s3_destination(mut self, inp: crate::model::S3Destination) -> Self {
-            self.s3_destination = Some(inp);
+        pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
+            self.s3_destination = Some(input);
             self
         }
         pub fn set_s3_destination(
             mut self,
-            inp: std::option::Option<crate::model::S3Destination>,
+            input: std::option::Option<crate::model::S3Destination>,
         ) -> Self {
-            self.s3_destination = inp;
+            self.s3_destination = input;
             self
         }
         /// The start of the time-window which will be harvested.
-        pub fn start_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_time = Some(inp.into());
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_time = Some(input.into());
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_time = input;
             self
         }
         /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
         /// HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
         /// include an explanation of why the HarvestJob failed.
-        pub fn status(mut self, inp: crate::model::Status) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::Status>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`HarvestJob`](crate::model::HarvestJob)
@@ -3907,30 +3967,30 @@ pub mod s3_destination {
     }
     impl Builder {
         /// The name of an S3 bucket within which harvested content will be exported
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket_name = Some(inp.into());
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
             self
         }
-        pub fn set_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = inp;
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
             self
         }
         /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
-        pub fn manifest_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.manifest_key = Some(inp.into());
+        pub fn manifest_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.manifest_key = Some(input.into());
             self
         }
-        pub fn set_manifest_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.manifest_key = inp;
+        pub fn set_manifest_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest_key = input;
             self
         }
         /// The IAM role used to write to the specified S3 bucket
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`S3Destination`](crate::model::S3Destination)
@@ -4015,63 +4075,66 @@ pub mod channel {
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// A short text description of the Channel.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, inp: crate::model::EgressAccessLogs) -> Self {
-            self.egress_access_logs = Some(inp);
+        pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
+            self.egress_access_logs = Some(input);
             self
         }
         pub fn set_egress_access_logs(
             mut self,
-            inp: std::option::Option<crate::model::EgressAccessLogs>,
+            input: std::option::Option<crate::model::EgressAccessLogs>,
         ) -> Self {
-            self.egress_access_logs = inp;
+            self.egress_access_logs = input;
             self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
-        pub fn hls_ingest(mut self, inp: crate::model::HlsIngest) -> Self {
-            self.hls_ingest = Some(inp);
+        pub fn hls_ingest(mut self, input: crate::model::HlsIngest) -> Self {
+            self.hls_ingest = Some(input);
             self
         }
-        pub fn set_hls_ingest(mut self, inp: std::option::Option<crate::model::HlsIngest>) -> Self {
-            self.hls_ingest = inp;
+        pub fn set_hls_ingest(
+            mut self,
+            input: std::option::Option<crate::model::HlsIngest>,
+        ) -> Self {
+            self.hls_ingest = input;
             self
         }
         /// The ID of the Channel.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Configure ingress access logging.
-        pub fn ingress_access_logs(mut self, inp: crate::model::IngressAccessLogs) -> Self {
-            self.ingress_access_logs = Some(inp);
+        pub fn ingress_access_logs(mut self, input: crate::model::IngressAccessLogs) -> Self {
+            self.ingress_access_logs = Some(input);
             self
         }
         pub fn set_ingress_access_logs(
             mut self,
-            inp: std::option::Option<crate::model::IngressAccessLogs>,
+            input: std::option::Option<crate::model::IngressAccessLogs>,
         ) -> Self {
-            self.ingress_access_logs = inp;
+            self.ingress_access_logs = input;
             self
         }
         pub fn tags(
@@ -4086,11 +4149,11 @@ pub mod channel {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`Channel`](crate::model::Channel)

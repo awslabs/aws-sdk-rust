@@ -74,6 +74,33 @@ impl ConfigureLogsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ConfigureLogsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfigureLogsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ConfigureLogsErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfigureLogsErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ConfigureLogsErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfigureLogsErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for ConfigureLogsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -163,6 +190,33 @@ impl CreateChannelError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for CreateChannelError {
@@ -254,6 +308,36 @@ impl CreateHarvestJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CreateHarvestJobErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHarvestJobErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateHarvestJobErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHarvestJobErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHarvestJobErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHarvestJobErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for CreateHarvestJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -343,6 +427,36 @@ impl CreateOriginEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CreateOriginEndpointErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOriginEndpointErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateOriginEndpointErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOriginEndpointErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOriginEndpointErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOriginEndpointErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for CreateOriginEndpointError {
@@ -434,6 +548,33 @@ impl DeleteChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteChannelErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteChannelErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -523,6 +664,36 @@ impl DeleteOriginEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DeleteOriginEndpointErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOriginEndpointErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteOriginEndpointErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOriginEndpointErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOriginEndpointErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOriginEndpointErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for DeleteOriginEndpointError {
@@ -614,6 +785,36 @@ impl DescribeChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChannelErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChannelErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChannelErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -703,6 +904,36 @@ impl DescribeHarvestJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeHarvestJobErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHarvestJobErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeHarvestJobErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHarvestJobErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHarvestJobErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHarvestJobErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for DescribeHarvestJobError {
@@ -794,6 +1025,42 @@ impl DescribeOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOriginEndpointErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOriginEndpointErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOriginEndpointErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOriginEndpointErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOriginEndpointErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOriginEndpointErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeOriginEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -883,6 +1150,33 @@ impl ListChannelsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for ListChannelsError {
@@ -974,6 +1268,36 @@ impl ListHarvestJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListHarvestJobsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHarvestJobsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListHarvestJobsErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHarvestJobsErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHarvestJobsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHarvestJobsErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for ListHarvestJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1063,6 +1387,36 @@ impl ListOriginEndpointsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListOriginEndpointsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginEndpointsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListOriginEndpointsErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginEndpointsErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginEndpointsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginEndpointsErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for ListOriginEndpointsError {
@@ -1226,6 +1580,42 @@ impl RotateChannelCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateChannelCredentialsErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateChannelCredentialsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateChannelCredentialsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateChannelCredentialsErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateChannelCredentialsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateChannelCredentialsErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for RotateChannelCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1321,6 +1711,42 @@ impl RotateIngestEndpointCredentialsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateIngestEndpointCredentialsErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateIngestEndpointCredentialsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateIngestEndpointCredentialsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateIngestEndpointCredentialsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for RotateIngestEndpointCredentialsError {
@@ -1562,6 +1988,33 @@ impl UpdateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1652,6 +2105,36 @@ impl UpdateOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, UpdateOriginEndpointErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOriginEndpointErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateOriginEndpointErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOriginEndpointErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOriginEndpointErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOriginEndpointErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateOriginEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1706,12 +2189,12 @@ pub mod unprocessable_entity_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
@@ -1768,12 +2251,12 @@ pub mod too_many_requests_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
@@ -1830,12 +2313,12 @@ pub mod service_unavailable_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
@@ -1892,12 +2375,12 @@ pub mod not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
@@ -1954,12 +2437,12 @@ pub mod internal_server_error_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalServerErrorError`](crate::error::InternalServerErrorError)
@@ -2016,12 +2499,12 @@ pub mod forbidden_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ForbiddenError`](crate::error::ForbiddenError)

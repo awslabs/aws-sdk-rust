@@ -19,42 +19,45 @@ pub mod invoke_endpoint_input {
     impl Builder {
         /// <p>The name of the endpoint that you specified when you created the endpoint using the
         /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API. </p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_name = Some(inp.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_name = Some(input.into());
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::string::String) -> Self {
-            self.endpoint_name = Some(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_name = input;
             self
         }
         /// <p>Provides input data, in the format specified in the <code>ContentType</code>
         /// request header. Amazon SageMaker passes all of the data in the body to the model. </p>
         /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
         /// Formats-Inference</a>.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.body = input;
             self
         }
         /// <p>The MIME type of the input data in the request body.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>The desired MIME type of the inference in the response.</p>
-        pub fn accept(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.accept = Some(inp.into());
+        pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
+            self.accept = Some(input.into());
             self
         }
-        pub fn set_accept(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.accept = inp;
+        pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.accept = input;
             self
         }
         /// <p>Provides additional information about a request for an inference submitted to a model
@@ -71,24 +74,24 @@ pub mod invoke_endpoint_input {
         /// function.</p>
         /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
-        pub fn custom_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_attributes = Some(inp.into());
+        pub fn custom_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_attributes = Some(input.into());
             self
         }
         pub fn set_custom_attributes(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_attributes = inp;
+            self.custom_attributes = input;
             self
         }
         /// <p>The model to request for inference when invoking a multi-model endpoint.</p>
-        pub fn target_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_model = Some(inp.into());
+        pub fn target_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_model = Some(input.into());
             self
         }
-        pub fn set_target_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_model = inp;
+        pub fn set_target_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_model = input;
             self
         }
         /// <p>Specify the production variant to send the inference request to when invoking an
@@ -98,42 +101,48 @@ pub mod invoke_endpoint_input {
         /// <p>For information about how to use variant targeting to perform a/b testing, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in
         /// production</a>
         /// </p>
-        pub fn target_variant(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_variant = Some(inp.into());
+        pub fn target_variant(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_variant = Some(input.into());
             self
         }
-        pub fn set_target_variant(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_variant = inp;
+        pub fn set_target_variant(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_variant = input;
             self
         }
         /// <p>If the endpoint hosts multiple containers and is configured to use direct invocation,
         /// this parameter specifies the host name of the container to invoke.</p>
-        pub fn target_container_hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_container_hostname = Some(inp.into());
+        pub fn target_container_hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_container_hostname = Some(input.into());
             self
         }
         pub fn set_target_container_hostname(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_container_hostname = inp;
+            self.target_container_hostname = input;
             self
         }
         /// <p>If you provide a value, it is added to the captured data when you enable data capture
         /// on the endpoint. For information about data capture, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
         /// Data</a>.</p>
-        pub fn inference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inference_id = Some(inp.into());
+        pub fn inference_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_id = Some(input.into());
             self
         }
-        pub fn set_inference_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inference_id = inp;
+        pub fn set_inference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_id = input;
             self
         }
         /// Consumes the builder and constructs a [`InvokeEndpointInput`](crate::input::InvokeEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::InvokeEndpointInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::InvokeEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::InvokeEndpointInput {
                 endpoint_name: self.endpoint_name.unwrap_or_default(),
                 body: self.body,
@@ -158,7 +167,7 @@ impl InvokeEndpointInput {
     pub fn make_operation(
         self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::InvokeEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -219,7 +228,7 @@ impl InvokeEndpointInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_1) = &self.content_type {
             let formatted_2 = AsRef::<str>::as_ref(inner_1);
             if !formatted_2.is_empty() {
@@ -353,7 +362,7 @@ impl InvokeEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         let builder = self.add_headers(builder)?;
@@ -362,7 +371,7 @@ impl InvokeEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)

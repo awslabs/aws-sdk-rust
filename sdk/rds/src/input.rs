@@ -12,42 +12,44 @@ pub mod add_role_to_db_cluster_input {
     }
     impl Builder {
         /// <p>The name of the DB cluster to associate the IAM role with.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB
         /// cluster, for example, <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with.
         /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_name = Some(inp.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.feature_name = inp;
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
             self
         }
         /// Consumes the builder and constructs a [`AddRoleToDBClusterInput`](crate::input::AddRoleToDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AddRoleToDBClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AddRoleToDBClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AddRoleToDBClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 role_arn: self.role_arn,
@@ -66,7 +68,7 @@ impl AddRoleToDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddRoleToDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -126,7 +128,7 @@ impl AddRoleToDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -134,7 +136,7 @@ impl AddRoleToDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -166,43 +168,45 @@ pub mod add_role_to_db_instance_input {
     }
     impl Builder {
         /// <p>The name of the DB instance to associate the IAM role with.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for
         /// example <code>arn:aws:iam::123456789012:role/AccessRole</code>. </p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be associated with.
         /// For the list of supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_name = Some(inp.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.feature_name = inp;
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
             self
         }
         /// Consumes the builder and constructs a [`AddRoleToDBInstanceInput`](crate::input::AddRoleToDBInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AddRoleToDBInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AddRoleToDBInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AddRoleToDBInstanceInput {
                 db_instance_identifier: self.db_instance_identifier,
                 role_arn: self.role_arn,
@@ -221,7 +225,7 @@ impl AddRoleToDBInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddRoleToDBInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -281,7 +285,7 @@ impl AddRoleToDBInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -289,7 +293,7 @@ impl AddRoleToDBInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -320,15 +324,15 @@ pub mod add_source_identifier_to_subscription_input {
     }
     impl Builder {
         /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_name = Some(inp.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_name = Some(input.into());
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_name = inp;
+            self.subscription_name = input;
             self
         }
         /// <p>The identifier of the event source to be added.</p>
@@ -353,21 +357,21 @@ pub mod add_source_identifier_to_subscription_input {
         /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_identifier = Some(inp.into());
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_identifier = Some(input.into());
             self
         }
         pub fn set_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_identifier = inp;
+            self.source_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionInput`](crate::input::AddSourceIdentifierToSubscriptionInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::AddSourceIdentifierToSubscriptionInput,
             smithy_http::operation::BuildError,
         > {
@@ -389,7 +393,7 @@ impl AddSourceIdentifierToSubscriptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddSourceIdentifierToSubscription,
             aws_http::AwsErrorRetryPolicy,
@@ -452,7 +456,7 @@ impl AddSourceIdentifierToSubscriptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -460,7 +464,7 @@ impl AddSourceIdentifierToSubscriptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -494,32 +498,37 @@ pub mod add_tags_to_resource_input {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_name = Some(inp.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_name = inp;
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AddTagsToResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AddTagsToResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AddTagsToResourceInput {
                 resource_name: self.resource_name,
                 tags: self.tags,
@@ -537,7 +546,7 @@ impl AddTagsToResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddTagsToResource,
             aws_http::AwsErrorRetryPolicy,
@@ -597,7 +606,7 @@ impl AddTagsToResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -605,7 +614,7 @@ impl AddTagsToResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -641,27 +650,27 @@ pub mod apply_pending_maintenance_action_input {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_identifier = Some(inp.into());
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_identifier = Some(input.into());
             self
         }
         pub fn set_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_identifier = inp;
+            self.resource_identifier = input;
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
         /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>,
         /// <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code>
         /// </p>
-        pub fn apply_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.apply_action = Some(inp.into());
+        pub fn apply_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.apply_action = Some(input.into());
             self
         }
-        pub fn set_apply_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.apply_action = inp;
+        pub fn set_apply_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.apply_action = input;
             self
         }
         /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in
@@ -683,18 +692,18 @@ pub mod apply_pending_maintenance_action_input {
         /// opt-in requests.</p>
         /// </li>
         /// </ul>
-        pub fn opt_in_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.opt_in_type = Some(inp.into());
+        pub fn opt_in_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.opt_in_type = Some(input.into());
             self
         }
-        pub fn set_opt_in_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.opt_in_type = inp;
+        pub fn set_opt_in_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_in_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionInput`](crate::input::ApplyPendingMaintenanceActionInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ApplyPendingMaintenanceActionInput,
             smithy_http::operation::BuildError,
         > {
@@ -717,7 +726,7 @@ impl ApplyPendingMaintenanceActionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ApplyPendingMaintenanceAction,
             aws_http::AwsErrorRetryPolicy,
@@ -778,7 +787,7 @@ impl ApplyPendingMaintenanceActionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -786,7 +795,7 @@ impl ApplyPendingMaintenanceActionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -820,24 +829,24 @@ pub mod authorize_db_security_group_ingress_input {
     }
     impl Builder {
         /// <p>The name of the DB security group to add authorization to.</p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_security_group_name = Some(inp.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_name = Some(input.into());
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_name = inp;
+            self.db_security_group_name = input;
             self
         }
         /// <p>The IP range to authorize.</p>
-        pub fn cidrip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cidrip = Some(inp.into());
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidrip = Some(input.into());
             self
         }
-        pub fn set_cidrip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cidrip = inp;
+        pub fn set_cidrip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidrip = input;
             self
         }
         /// <p>
@@ -846,15 +855,15 @@ pub mod authorize_db_security_group_ingress_input {
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code>
         /// or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_name = Some(inp.into());
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_security_group_name = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_name = inp;
+            self.ec2_security_group_name = input;
             self
         }
         /// <p>
@@ -862,15 +871,15 @@ pub mod authorize_db_security_group_ingress_input {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_id = Some(inp.into());
+        pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_security_group_id = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_id = inp;
+            self.ec2_security_group_id = input;
             self
         }
         /// <p>
@@ -880,21 +889,24 @@ pub mod authorize_db_security_group_ingress_input {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_owner_id = Some(inp.into());
+        pub fn ec2_security_group_owner_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ec2_security_group_owner_id = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_owner_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_owner_id = inp;
+            self.ec2_security_group_owner_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AuthorizeDBSecurityGroupIngressInput`](crate::input::AuthorizeDBSecurityGroupIngressInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::AuthorizeDBSecurityGroupIngressInput,
             smithy_http::operation::BuildError,
         > {
@@ -919,7 +931,7 @@ impl AuthorizeDBSecurityGroupIngressInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AuthorizeDBSecurityGroupIngress,
             aws_http::AwsErrorRetryPolicy,
@@ -982,7 +994,7 @@ impl AuthorizeDBSecurityGroupIngressInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -990,7 +1002,7 @@ impl AuthorizeDBSecurityGroupIngressInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1038,15 +1050,15 @@ pub mod backtrack_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
@@ -1068,44 +1080,49 @@ pub mod backtrack_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>2017-07-08T18:00Z</code>
         /// </p>
-        pub fn backtrack_to(mut self, inp: smithy_types::Instant) -> Self {
-            self.backtrack_to = Some(inp);
+        pub fn backtrack_to(mut self, input: smithy_types::Instant) -> Self {
+            self.backtrack_to = Some(input);
             self
         }
-        pub fn set_backtrack_to(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.backtrack_to = inp;
+        pub fn set_backtrack_to(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.backtrack_to = input;
             self
         }
         /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is
         /// enabled. Otherwise, an error occurs when binary logging is enabled.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.force = Some(inp);
+        pub fn force(mut self, input: bool) -> Self {
+            self.force = Some(input);
             self
         }
-        pub fn set_force(mut self, inp: std::option::Option<bool>) -> Self {
-            self.force = inp;
+        pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
+            self.force = input;
             self
         }
         /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible
         /// backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
         /// backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
         /// backtrack time, an error occurs.</p>
-        pub fn use_earliest_time_on_point_in_time_unavailable(mut self, inp: bool) -> Self {
-            self.use_earliest_time_on_point_in_time_unavailable = Some(inp);
+        pub fn use_earliest_time_on_point_in_time_unavailable(mut self, input: bool) -> Self {
+            self.use_earliest_time_on_point_in_time_unavailable = Some(input);
             self
         }
         pub fn set_use_earliest_time_on_point_in_time_unavailable(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.use_earliest_time_on_point_in_time_unavailable = inp;
+            self.use_earliest_time_on_point_in_time_unavailable = input;
             self
         }
         /// Consumes the builder and constructs a [`BacktrackDBClusterInput`](crate::input::BacktrackDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BacktrackDBClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::BacktrackDBClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BacktrackDBClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 backtrack_to: self.backtrack_to,
@@ -1126,7 +1143,7 @@ impl BacktrackDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BacktrackDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -1186,7 +1203,7 @@ impl BacktrackDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1194,7 +1211,7 @@ impl BacktrackDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1224,22 +1241,24 @@ pub mod cancel_export_task_input {
     }
     impl Builder {
         /// <p>The identifier of the snapshot export task to cancel.</p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_task_identifier = Some(inp.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_task_identifier = Some(input.into());
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.export_task_identifier = inp;
+            self.export_task_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelExportTaskInput`](crate::input::CancelExportTaskInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelExportTaskInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CancelExportTaskInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CancelExportTaskInput {
                 export_task_identifier: self.export_task_identifier,
             })
@@ -1256,7 +1275,7 @@ impl CancelExportTaskInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CancelExportTask,
             aws_http::AwsErrorRetryPolicy,
@@ -1316,7 +1335,7 @@ impl CancelExportTaskInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1324,7 +1343,7 @@ impl CancelExportTaskInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1373,16 +1392,16 @@ pub mod copy_db_cluster_parameter_group_input {
         /// </ul>
         pub fn source_db_cluster_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_cluster_parameter_group_identifier = Some(inp.into());
+            self.source_db_cluster_parameter_group_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_cluster_parameter_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_cluster_parameter_group_identifier = inp;
+            self.source_db_cluster_parameter_group_identifier = input;
             self
         }
         /// <p>The identifier for the copied DB cluster parameter group.</p>
@@ -1405,50 +1424,50 @@ pub mod copy_db_cluster_parameter_group_input {
         /// </p>
         pub fn target_db_cluster_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_db_cluster_parameter_group_identifier = Some(inp.into());
+            self.target_db_cluster_parameter_group_identifier = Some(input.into());
             self
         }
         pub fn set_target_db_cluster_parameter_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_cluster_parameter_group_identifier = inp;
+            self.target_db_cluster_parameter_group_identifier = input;
             self
         }
         /// <p>A description for the copied DB cluster parameter group.</p>
         pub fn target_db_cluster_parameter_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_db_cluster_parameter_group_description = Some(inp.into());
+            self.target_db_cluster_parameter_group_description = Some(input.into());
             self
         }
         pub fn set_target_db_cluster_parameter_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_cluster_parameter_group_description = inp;
+            self.target_db_cluster_parameter_group_description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyDBClusterParameterGroupInput`](crate::input::CopyDBClusterParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CopyDBClusterParameterGroupInput,
             smithy_http::operation::BuildError,
         > {
@@ -1475,7 +1494,7 @@ impl CopyDBClusterParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CopyDBClusterParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -1536,7 +1555,7 @@ impl CopyDBClusterParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1544,7 +1563,7 @@ impl CopyDBClusterParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1600,16 +1619,16 @@ pub mod copy_db_cluster_snapshot_input {
         /// </p>
         pub fn source_db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_cluster_snapshot_identifier = Some(inp.into());
+            self.source_db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_cluster_snapshot_identifier = inp;
+            self.source_db_cluster_snapshot_identifier = input;
             self
         }
         /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter isn't case-sensitive.</p>
@@ -1629,16 +1648,16 @@ pub mod copy_db_cluster_snapshot_input {
         /// </p>
         pub fn target_db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_db_cluster_snapshot_identifier = Some(inp.into());
+            self.target_db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_target_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_cluster_snapshot_identifier = inp;
+            self.target_db_cluster_snapshot_identifier = input;
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB cluster snapshot.
@@ -1652,12 +1671,12 @@ pub mod copy_db_cluster_snapshot_input {
         /// in another AWS Region.</p>
         /// <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
         /// an error is returned.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the AWS Region that contains the
@@ -1695,42 +1714,47 @@ pub mod copy_db_cluster_snapshot_input {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source AWS Region.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pre_signed_url = Some(inp.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pre_signed_url = Some(input.into());
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pre_signed_url = inp;
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_signed_url = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
         /// By default, tags are not copied.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.copy_tags = Some(inp);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.copy_tags = Some(input);
             self
         }
-        pub fn set_copy_tags(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags = inp;
+        pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyDBClusterSnapshotInput`](crate::input::CopyDBClusterSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CopyDBClusterSnapshotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CopyDBClusterSnapshotInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CopyDBClusterSnapshotInput {
                 source_db_cluster_snapshot_identifier: self.source_db_cluster_snapshot_identifier,
                 target_db_cluster_snapshot_identifier: self.target_db_cluster_snapshot_identifier,
@@ -1752,7 +1776,7 @@ impl CopyDBClusterSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CopyDBClusterSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -1812,7 +1836,7 @@ impl CopyDBClusterSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1820,7 +1844,7 @@ impl CopyDBClusterSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1867,16 +1891,16 @@ pub mod copy_db_parameter_group_input {
         /// </ul>
         pub fn source_db_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_parameter_group_identifier = Some(inp.into());
+            self.source_db_parameter_group_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_parameter_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_parameter_group_identifier = inp;
+            self.source_db_parameter_group_identifier = input;
             self
         }
         /// <p>The identifier for the copied DB parameter group.</p>
@@ -1899,51 +1923,53 @@ pub mod copy_db_parameter_group_input {
         /// </p>
         pub fn target_db_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_db_parameter_group_identifier = Some(inp.into());
+            self.target_db_parameter_group_identifier = Some(input.into());
             self
         }
         pub fn set_target_db_parameter_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_parameter_group_identifier = inp;
+            self.target_db_parameter_group_identifier = input;
             self
         }
         /// <p>A description for the copied DB parameter group.</p>
         pub fn target_db_parameter_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_db_parameter_group_description = Some(inp.into());
+            self.target_db_parameter_group_description = Some(input.into());
             self
         }
         pub fn set_target_db_parameter_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_parameter_group_description = inp;
+            self.target_db_parameter_group_description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyDBParameterGroupInput`](crate::input::CopyDBParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CopyDBParameterGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CopyDBParameterGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CopyDBParameterGroupInput {
                 source_db_parameter_group_identifier: self.source_db_parameter_group_identifier,
                 target_db_parameter_group_identifier: self.target_db_parameter_group_identifier,
@@ -1963,7 +1989,7 @@ impl CopyDBParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CopyDBParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -2023,7 +2049,7 @@ impl CopyDBParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2031,7 +2057,7 @@ impl CopyDBParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2093,16 +2119,16 @@ pub mod copy_db_snapshot_input {
         /// </p>
         pub fn source_db_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_snapshot_identifier = Some(inp.into());
+            self.source_db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_snapshot_identifier = inp;
+            self.source_db_snapshot_identifier = input;
             self
         }
         /// <p>The identifier for the copy of the snapshot.
@@ -2126,16 +2152,16 @@ pub mod copy_db_snapshot_input {
         /// </p>
         pub fn target_db_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_db_snapshot_identifier = Some(inp.into());
+            self.target_db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_target_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_snapshot_identifier = inp;
+            self.target_db_snapshot_identifier = input;
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB snapshot.
@@ -2157,34 +2183,34 @@ pub mod copy_db_snapshot_input {
         /// that they are created in, and you can't use CMKs from one AWS Region in another
         /// AWS Region.
         /// </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.copy_tags = Some(inp);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.copy_tags = Some(input);
             self
         }
-        pub fn set_copy_tags(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags = inp;
+        pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags = input;
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the
@@ -2235,12 +2261,15 @@ pub mod copy_db_snapshot_input {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source AWS Region.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pre_signed_url = Some(inp.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pre_signed_url = Some(input.into());
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pre_signed_url = inp;
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_signed_url = input;
             self
         }
         /// <p>The name of an option group to associate with the copy of the snapshot.</p>
@@ -2251,37 +2280,40 @@ pub mod copy_db_snapshot_input {
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
         /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
         pub fn target_custom_availability_zone(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_custom_availability_zone = Some(inp.into());
+            self.target_custom_availability_zone = Some(input.into());
             self
         }
         pub fn set_target_custom_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_custom_availability_zone = inp;
+            self.target_custom_availability_zone = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyDBSnapshotInput`](crate::input::CopyDBSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CopyDBSnapshotInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::CopyDBSnapshotInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CopyDBSnapshotInput {
                 source_db_snapshot_identifier: self.source_db_snapshot_identifier,
                 target_db_snapshot_identifier: self.target_db_snapshot_identifier,
@@ -2305,7 +2337,7 @@ impl CopyDBSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CopyDBSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -2364,7 +2396,7 @@ impl CopyDBSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2372,7 +2404,7 @@ impl CopyDBSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2414,16 +2446,16 @@ pub mod copy_option_group_input {
         /// </ul>
         pub fn source_option_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_option_group_identifier = Some(inp.into());
+            self.source_option_group_identifier = Some(input.into());
             self
         }
         pub fn set_source_option_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_option_group_identifier = inp;
+            self.source_option_group_identifier = input;
             self
         }
         /// <p>The identifier for the copied option group.</p>
@@ -2446,51 +2478,53 @@ pub mod copy_option_group_input {
         /// </p>
         pub fn target_option_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_option_group_identifier = Some(inp.into());
+            self.target_option_group_identifier = Some(input.into());
             self
         }
         pub fn set_target_option_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_option_group_identifier = inp;
+            self.target_option_group_identifier = input;
             self
         }
         /// <p>The description for the copied option group.</p>
         pub fn target_option_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_option_group_description = Some(inp.into());
+            self.target_option_group_description = Some(input.into());
             self
         }
         pub fn set_target_option_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_option_group_description = inp;
+            self.target_option_group_description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyOptionGroupInput`](crate::input::CopyOptionGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CopyOptionGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CopyOptionGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CopyOptionGroupInput {
                 source_option_group_identifier: self.source_option_group_identifier,
                 target_option_group_identifier: self.target_option_group_identifier,
@@ -2510,7 +2544,7 @@ impl CopyOptionGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CopyOptionGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -2569,7 +2603,7 @@ impl CopyOptionGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2577,7 +2611,7 @@ impl CopyOptionGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2612,61 +2646,61 @@ pub mod create_custom_availability_zone_input {
         /// <p>The name of the custom Availability Zone (AZ).</p>
         pub fn custom_availability_zone_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_name = Some(inp.into());
+            self.custom_availability_zone_name = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_name = inp;
+            self.custom_availability_zone_name = input;
             self
         }
         /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and
         /// the VMware vSphere cluster.</p>
-        pub fn existing_vpn_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.existing_vpn_id = Some(inp.into());
+        pub fn existing_vpn_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.existing_vpn_id = Some(input.into());
             self
         }
         pub fn set_existing_vpn_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.existing_vpn_id = inp;
+            self.existing_vpn_id = input;
             self
         }
         /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
         /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn new_vpn_tunnel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_vpn_tunnel_name = Some(inp.into());
+        pub fn new_vpn_tunnel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_vpn_tunnel_name = Some(input.into());
             self
         }
         pub fn set_new_vpn_tunnel_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_vpn_tunnel_name = inp;
+            self.new_vpn_tunnel_name = input;
             self
         }
         /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
         /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn vpn_tunnel_originator_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpn_tunnel_originator_ip = Some(inp.into());
+        pub fn vpn_tunnel_originator_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_tunnel_originator_ip = Some(input.into());
             self
         }
         pub fn set_vpn_tunnel_originator_ip(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.vpn_tunnel_originator_ip = inp;
+            self.vpn_tunnel_originator_ip = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCustomAvailabilityZoneInput`](crate::input::CreateCustomAvailabilityZoneInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateCustomAvailabilityZoneInput,
             smithy_http::operation::BuildError,
         > {
@@ -2690,7 +2724,7 @@ impl CreateCustomAvailabilityZoneInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateCustomAvailabilityZone,
             aws_http::AwsErrorRetryPolicy,
@@ -2751,7 +2785,7 @@ impl CreateCustomAvailabilityZoneInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2759,7 +2793,7 @@ impl CreateCustomAvailabilityZoneInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2821,17 +2855,17 @@ pub mod create_db_cluster_input {
         pub(crate) enable_global_write_forwarding: std::option::Option<bool>,
     }
     impl Builder {
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// <p>The number of days for which automated backups are retained.</p>
@@ -2842,35 +2876,38 @@ pub mod create_db_cluster_input {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.character_set_name = Some(inp.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_name = Some(input.into());
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.character_set_name = inp;
+            self.character_set_name = input;
             self
         }
         /// <p>The name for your database of up to 64 alphanumeric characters. If you do not
         /// provide a name, Amazon RDS doesn't create a database in the DB cluster you are
         /// creating.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database_name = Some(inp.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database_name = inp;
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
             self
         }
         /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -2888,15 +2925,15 @@ pub mod create_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>
@@ -2912,55 +2949,55 @@ pub mod create_db_cluster_input {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>A DB subnet group to associate with this DB cluster.</p>
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
         /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -2986,24 +3023,27 @@ pub mod create_db_cluster_input {
         /// </p>
         /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The port number on which the instances in the DB cluster accept connections.</p>
         /// <p>
         /// Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The name of the master user for the DB cluster.</p>
@@ -3019,41 +3059,41 @@ pub mod create_db_cluster_input {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_user_password = Some(inp.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_user_password = Some(input.into());
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_user_password = inp;
+            self.master_user_password = input;
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
         /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -3081,15 +3121,15 @@ pub mod create_db_cluster_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -3103,53 +3143,56 @@ pub mod create_db_cluster_input {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_maintenance_window = Some(inp.into());
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.preferred_maintenance_window = Some(input.into());
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_maintenance_window = inp;
+            self.preferred_maintenance_window = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
         /// cluster is created as a read replica.</p>
         pub fn replication_source_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.replication_source_identifier = Some(inp.into());
+            self.replication_source_identifier = Some(input.into());
             self
         }
         pub fn set_replication_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.replication_source_identifier = inp;
+            self.replication_source_identifier = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A value that indicates whether the DB cluster is encrypted.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.storage_encrypted = inp;
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB cluster.</p>
@@ -3173,12 +3216,12 @@ pub mod create_db_cluster_input {
         /// <p>If you create a read replica of an encrypted DB cluster in another AWS Region, you
         /// must set <code>KmsKeyId</code> to a AWS KMS key identifier that is valid in the destination AWS
         /// Region. This CMK is used to encrypt the read replica in that AWS Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for
@@ -3217,12 +3260,15 @@ pub mod create_db_cluster_input {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source AWS Region.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pre_signed_url = Some(inp.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pre_signed_url = Some(input.into());
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pre_signed_url = inp;
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_signed_url = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -3231,15 +3277,15 @@ pub mod create_db_cluster_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -3254,28 +3300,28 @@ pub mod create_db_cluster_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.backtrack_window = Some(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.backtrack_window = Some(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.backtrack_window = inp;
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.backtrack_window = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
@@ -3315,50 +3361,50 @@ pub mod create_db_cluster_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_mode = Some(inp.into());
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_mode = Some(input.into());
             self
         }
-        pub fn set_engine_mode(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_mode = inp;
+        pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_mode = input;
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
-        pub fn scaling_configuration(mut self, inp: crate::model::ScalingConfiguration) -> Self {
-            self.scaling_configuration = Some(inp);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.scaling_configuration = Some(input);
             self
         }
         pub fn set_scaling_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ScalingConfiguration>,
+            input: std::option::Option<crate::model::ScalingConfiguration>,
         ) -> Self {
-            self.scaling_configuration = inp;
+            self.scaling_configuration = input;
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>
         /// The global cluster ID of an Aurora cluster that becomes the primary cluster
         /// in the new global database cluster.
         /// </p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_identifier = Some(inp.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_identifier = inp;
+            self.global_cluster_identifier = input;
             self
         }
         /// <p>A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
@@ -3368,22 +3414,22 @@ pub mod create_db_cluster_input {
         /// from inside the RDS console with the query editor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
-        pub fn enable_http_endpoint(mut self, inp: bool) -> Self {
-            self.enable_http_endpoint = Some(inp);
+        pub fn enable_http_endpoint(mut self, input: bool) -> Self {
+            self.enable_http_endpoint = Some(input);
             self
         }
-        pub fn set_enable_http_endpoint(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_http_endpoint = inp;
+        pub fn set_enable_http_endpoint(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_http_endpoint = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>The Active Directory directory ID to create the DB cluster in.</p>
@@ -3392,24 +3438,24 @@ pub mod create_db_cluster_input {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
@@ -3420,22 +3466,24 @@ pub mod create_db_cluster_input {
         /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the
         /// primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
         /// </p>
-        pub fn enable_global_write_forwarding(mut self, inp: bool) -> Self {
-            self.enable_global_write_forwarding = Some(inp);
+        pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
+            self.enable_global_write_forwarding = Some(input);
             self
         }
         pub fn set_enable_global_write_forwarding(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_global_write_forwarding = inp;
+            self.enable_global_write_forwarding = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBClusterInput`](crate::input::CreateDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBClusterInput {
                 availability_zones: self.availability_zones,
                 backup_retention_period: self.backup_retention_period,
@@ -3484,7 +3532,7 @@ impl CreateDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -3543,7 +3591,7 @@ impl CreateDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3551,7 +3599,7 @@ impl CreateDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3587,85 +3635,90 @@ pub mod create_db_cluster_endpoint_input {
     impl Builder {
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = Some(inp.into());
+            self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = inp;
+            self.db_cluster_endpoint_identifier = input;
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_type = Some(inp.into());
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_type = Some(input.into());
             self
         }
-        pub fn set_endpoint_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_type = inp;
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_type = input;
             self
         }
-        pub fn static_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.static_members = Some(v);
             self
         }
         pub fn set_static_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.static_members = inp;
+            self.static_members = input;
             self
         }
-        pub fn excluded_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
         pub fn set_excluded_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.excluded_members = inp;
+            self.excluded_members = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBClusterEndpointInput`](crate::input::CreateDBClusterEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBClusterEndpointInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBClusterEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBClusterEndpointInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
@@ -3688,7 +3741,7 @@ impl CreateDBClusterEndpointInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBClusterEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -3748,7 +3801,7 @@ impl CreateDBClusterEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3756,7 +3809,7 @@ impl CreateDBClusterEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3800,16 +3853,16 @@ pub mod create_db_cluster_parameter_group_input {
         /// </note>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster
@@ -3851,43 +3904,43 @@ pub mod create_db_cluster_parameter_group_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
         /// <p>The description for the DB cluster parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBClusterParameterGroupInput`](crate::input::CreateDBClusterParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateDBClusterParameterGroupInput,
             smithy_http::operation::BuildError,
         > {
@@ -3911,7 +3964,7 @@ impl CreateDBClusterParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBClusterParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -3972,7 +4025,7 @@ impl CreateDBClusterParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3980,7 +4033,7 @@ impl CreateDBClusterParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4028,16 +4081,16 @@ pub mod create_db_cluster_snapshot_input {
         /// </p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = Some(inp.into());
+            self.db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = inp;
+            self.db_cluster_snapshot_identifier = input;
             self
         }
         /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
@@ -4049,35 +4102,37 @@ pub mod create_db_cluster_snapshot_input {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBClusterSnapshotInput`](crate::input::CreateDBClusterSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBClusterSnapshotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBClusterSnapshotInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBClusterSnapshotInput {
                 db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
                 db_cluster_identifier: self.db_cluster_identifier,
@@ -4097,7 +4152,7 @@ impl CreateDBClusterSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBClusterSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -4157,7 +4212,7 @@ impl CreateDBClusterSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4165,7 +4220,7 @@ impl CreateDBClusterSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4348,12 +4403,12 @@ pub mod create_db_instance_input {
         /// database engine.</p>
         /// </li>
         /// </ul>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_name = Some(inp.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_name = Some(input.into());
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_name = inp;
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_name = input;
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -4371,15 +4426,15 @@ pub mod create_db_instance_input {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
@@ -4493,12 +4548,12 @@ pub mod create_db_instance_input {
         /// </ul>            
         /// </li>
         /// </ul>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.allocated_storage = inp;
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
         /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
@@ -4507,15 +4562,15 @@ pub mod create_db_instance_input {
         /// and availability for your engine, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The name of the database engine to be used for this instance.
@@ -4594,12 +4649,12 @@ pub mod create_db_instance_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The name for the master user.</p>
@@ -4695,15 +4750,15 @@ pub mod create_db_instance_input {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
@@ -4732,41 +4787,41 @@ pub mod create_db_instance_input {
         /// <b>PostgreSQL</b>
         /// </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_user_password = Some(inp.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_user_password = Some(input.into());
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_user_password = inp;
+            self.master_user_password = input;
             self
         }
-        pub fn db_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn db_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_security_groups = Some(v);
             self
         }
         pub fn set_db_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.db_security_groups = inp;
+            self.db_security_groups = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>
@@ -4792,28 +4847,28 @@ pub mod create_db_instance_input {
         /// RDS on VMware User Guide.</a>
         /// </p>
         /// </note>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
         /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>The time range each week during which system maintenance can occur,
@@ -4829,15 +4884,18 @@ pub mod create_db_instance_input {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_maintenance_window = Some(inp.into());
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.preferred_maintenance_window = Some(input.into());
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_maintenance_window = inp;
+            self.preferred_maintenance_window = input;
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then
@@ -4854,15 +4912,15 @@ pub mod create_db_instance_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -4881,12 +4939,12 @@ pub mod create_db_instance_input {
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>
@@ -4916,15 +4974,15 @@ pub mod create_db_instance_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -4981,22 +5039,22 @@ pub mod create_db_instance_input {
         /// <p> Valid values: <code>1150-65535</code>
         /// </p>
         /// <p>Type: Integer</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set
         /// the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -5038,34 +5096,40 @@ pub mod create_db_instance_input {
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window.
         /// By default, minor engine upgrades are applied automatically.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.auto_minor_version_upgrade = Some(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.auto_minor_version_upgrade = inp;
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
             self
         }
         /// <p>License model information for this DB instance.</p>
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
@@ -5074,25 +5138,25 @@ pub mod create_db_instance_input {
         /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance.
         /// For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.
         /// </p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.</p>
@@ -5101,27 +5165,27 @@ pub mod create_db_instance_input {
         /// </p>
         /// <p>Not applicable. The character set is managed by
         /// the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.character_set_name = Some(inp.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_name = Some(input.into());
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.character_set_name = inp;
+            self.character_set_name = input;
             self
         }
         /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
-        pub fn nchar_character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.nchar_character_set_name = Some(inp.into());
+        pub fn nchar_character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.nchar_character_set_name = Some(input.into());
             self
         }
         pub fn set_nchar_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.nchar_character_set_name = inp;
+            self.nchar_character_set_name = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -5148,37 +5212,37 @@ pub mod create_db_instance_input {
         /// <p>If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.</p>
         /// </li>
         /// </ul>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.publicly_accessible = Some(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = inp;
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The identifier of the DB cluster that the instance will belong to.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -5193,36 +5257,36 @@ pub mod create_db_instance_input {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_arn = Some(inp.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_arn = Some(input.into());
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_arn = inp;
+            self.tde_credential_arn = input;
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_password = Some(inp.into());
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_password = Some(input.into());
             self
         }
         pub fn set_tde_credential_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_password = inp;
+            self.tde_credential_password = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
@@ -5231,12 +5295,12 @@ pub mod create_db_instance_input {
         /// </p>
         /// <p>Not applicable. The encryption for DB instances is managed by
         /// the DB cluster.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.storage_encrypted = inp;
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB instance.</p>
@@ -5252,24 +5316,24 @@ pub mod create_db_instance_input {
         /// Amazon RDS uses your default CMK. There is a  
         /// default CMK for your AWS account. Your AWS account has a different
         /// default CMK for each AWS Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -5278,12 +5342,12 @@ pub mod create_db_instance_input {
         /// </p>
         /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
         /// value for an Aurora DB instance has no effect on the DB cluster setting.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
@@ -5291,12 +5355,12 @@ pub mod create_db_instance_input {
         /// to a value other than 0.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.monitoring_interval = Some(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.monitoring_interval = Some(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.monitoring_interval = inp;
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_interval = input;
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -5304,27 +5368,27 @@ pub mod create_db_instance_input {
         /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.monitoring_role_arn = Some(inp.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_role_arn = Some(input.into());
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.monitoring_role_arn = inp;
+            self.monitoring_role_arn = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
@@ -5334,24 +5398,24 @@ pub mod create_db_instance_input {
         /// </p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
-        pub fn promotion_tier(mut self, inp: i32) -> Self {
-            self.promotion_tier = Some(inp);
+        pub fn promotion_tier(mut self, input: i32) -> Self {
+            self.promotion_tier = Some(input);
             self
         }
-        pub fn set_promotion_tier(mut self, inp: std::option::Option<i32>) -> Self {
-            self.promotion_tier = inp;
+        pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+            self.promotion_tier = input;
             self
         }
         /// <p>The time zone of the DB instance.
         /// The time zone parameter is currently supported only by
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.
         /// </p>
-        pub fn timezone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timezone = Some(inp.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timezone = Some(input.into());
             self
         }
-        pub fn set_timezone(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timezone = inp;
+        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timezone = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -5362,15 +5426,15 @@ pub mod create_db_instance_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.
@@ -5379,12 +5443,12 @@ pub mod create_db_instance_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.enable_performance_insights = Some(inp);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.enable_performance_insights = Some(input);
             self
         }
-        pub fn set_enable_performance_insights(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_performance_insights = inp;
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_performance_insights = input;
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
@@ -5394,60 +5458,60 @@ pub mod create_db_instance_input {
         /// Your AWS account has a different default CMK for each AWS Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = Some(inp.into());
+            self.performance_insights_kms_key_id = Some(input.into());
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = inp;
+            self.performance_insights_kms_key_id = input;
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.performance_insights_retention_period = Some(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.performance_insights_retention_period = Some(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.performance_insights_retention_period = inp;
+            self.performance_insights_retention_period = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -5463,12 +5527,12 @@ pub mod create_db_instance_input {
         /// For more information, see <code>CreateDBCluster</code>. DB instances in a DB
         /// cluster can be deleted even when deletion protection is enabled for the DB cluster.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -5476,12 +5540,12 @@ pub mod create_db_instance_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.max_allocated_storage = Some(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.max_allocated_storage = Some(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_allocated_storage = inp;
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_allocated_storage = input;
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS
@@ -5494,19 +5558,21 @@ pub mod create_db_instance_input {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, inp: bool) -> Self {
-            self.enable_customer_owned_ip = Some(inp);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.enable_customer_owned_ip = Some(input);
             self
         }
-        pub fn set_enable_customer_owned_ip(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_customer_owned_ip = inp;
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_customer_owned_ip = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBInstanceInput`](crate::input::CreateDBInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBInstanceInput {
                 db_name: self.db_name,
                 db_instance_identifier: self.db_instance_identifier,
@@ -5570,7 +5636,7 @@ impl CreateDBInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -5630,7 +5696,7 @@ impl CreateDBInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5638,7 +5704,7 @@ impl CreateDBInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5702,15 +5768,15 @@ pub mod create_db_instance_read_replica_input {
     impl Builder {
         /// <p>The DB instance identifier of the read replica. This identifier is the unique key
         /// that identifies a DB instance. This parameter is stored as a lowercase string.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The identifier of the DB instance that will act as the source for the read replica.
@@ -5753,16 +5819,16 @@ pub mod create_db_instance_read_replica_input {
         /// </ul>
         pub fn source_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_instance_identifier = Some(inp.into());
+            self.source_db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_instance_identifier = inp;
+            self.source_db_instance_identifier = input;
             self
         }
         /// <p>The compute and memory capacity of the read replica, for example,
@@ -5772,15 +5838,15 @@ pub mod create_db_instance_read_replica_input {
         /// Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: Inherits from the source DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The Availability Zone (AZ) where the read replica will be created.</p>
@@ -5788,27 +5854,27 @@ pub mod create_db_instance_read_replica_input {
         /// <p>
         /// Example: <code>us-east-1d</code>
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>The port number that the DB instance uses for connections.</p>
         /// <p>Default: Inherits from the source DB instance</p>
         /// <p>Valid Values: <code>1150-65535</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>A value that indicates whether the read replica is in a Multi-AZ deployment. </p>
@@ -5816,32 +5882,32 @@ pub mod create_db_instance_read_replica_input {
         /// your replica in another Availability Zone for failover support for the replica. Creating
         /// your read replica as a Multi-AZ DB instance is independent of whether the source
         /// database is a Multi-AZ DB instance. </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
         /// read replica during the maintenance window.</p>
         /// <p>Default: Inherits from the source DB instance</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.auto_minor_version_upgrade = Some(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.auto_minor_version_upgrade = inp;
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance is used.</p>
@@ -5849,15 +5915,15 @@ pub mod create_db_instance_read_replica_input {
         /// <p>For SQL Server, you must use the option group associated with the source
         /// instance.</p>
         /// </note>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -5880,15 +5946,15 @@ pub mod create_db_instance_read_replica_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -5897,25 +5963,25 @@ pub mod create_db_instance_read_replica_input {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.publicly_accessible = Some(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = inp;
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
@@ -5947,28 +6013,28 @@ pub mod create_db_instance_read_replica_input {
         /// </ul>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>Specifies the storage type to be associated with the read replica.</p>
@@ -5983,22 +6049,22 @@ pub mod create_db_instance_read_replica_input {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the read replica to snapshots of
         /// the read replica. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -6008,12 +6074,12 @@ pub mod create_db_instance_read_replica_input {
         /// to a value other than 0.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.monitoring_interval = Some(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.monitoring_interval = Some(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.monitoring_interval = inp;
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_interval = input;
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -6021,15 +6087,15 @@ pub mod create_db_instance_read_replica_input {
         /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.monitoring_role_arn = Some(inp.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_role_arn = Some(input.into());
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.monitoring_role_arn = inp;
+            self.monitoring_role_arn = input;
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted read replica.</p>
@@ -6042,12 +6108,12 @@ pub mod create_db_instance_read_replica_input {
         /// the AWS Region that they are created in, and you can't use CMKs from one
         /// AWS Region in another AWS Region.</p>       
         /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action
@@ -6109,12 +6175,15 @@ pub mod create_db_instance_read_replica_input {
         /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
         /// doesn't support cross-region read replicas.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pre_signed_url = Some(inp.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pre_signed_url = Some(input.into());
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pre_signed_url = inp;
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_signed_url = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -6123,27 +6192,27 @@ pub mod create_db_instance_read_replica_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the read replica. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
         /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.enable_performance_insights = Some(inp);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.enable_performance_insights = Some(input);
             self
         }
-        pub fn set_enable_performance_insights(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_performance_insights = inp;
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_performance_insights = input;
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
@@ -6153,73 +6222,73 @@ pub mod create_db_instance_read_replica_input {
         /// Your AWS account has a different default CMK for each AWS Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = Some(inp.into());
+            self.performance_insights_kms_key_id = Some(input.into());
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = inp;
+            self.performance_insights_kms_key_id = input;
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.performance_insights_retention_period = Some(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.performance_insights_retention_period = Some(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.performance_insights_retention_period = inp;
+            self.performance_insights_retention_period = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.use_default_processor_features = Some(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.use_default_processor_features = Some(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.use_default_processor_features = inp;
+            self.use_default_processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -6228,36 +6297,36 @@ pub mod create_db_instance_read_replica_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// <p>The open mode of the replica database: mounted or read-only.</p>
@@ -6271,15 +6340,15 @@ pub mod create_db_instance_read_replica_input {
         /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn replica_mode(mut self, inp: crate::model::ReplicaMode) -> Self {
-            self.replica_mode = Some(inp);
+        pub fn replica_mode(mut self, input: crate::model::ReplicaMode) -> Self {
+            self.replica_mode = Some(input);
             self
         }
         pub fn set_replica_mode(
             mut self,
-            inp: std::option::Option<crate::model::ReplicaMode>,
+            input: std::option::Option<crate::model::ReplicaMode>,
         ) -> Self {
-            self.replica_mode = inp;
+            self.replica_mode = input;
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -6287,18 +6356,18 @@ pub mod create_db_instance_read_replica_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.max_allocated_storage = Some(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.max_allocated_storage = Some(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_allocated_storage = inp;
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_allocated_storage = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBInstanceReadReplicaInput`](crate::input::CreateDBInstanceReadReplicaInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateDBInstanceReadReplicaInput,
             smithy_http::operation::BuildError,
         > {
@@ -6350,7 +6419,7 @@ impl CreateDBInstanceReadReplicaInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBInstanceReadReplica,
             aws_http::AwsErrorRetryPolicy,
@@ -6411,7 +6480,7 @@ impl CreateDBInstanceReadReplicaInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6419,7 +6488,7 @@ impl CreateDBInstanceReadReplicaInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6467,15 +6536,15 @@ pub mod create_db_parameter_group_input {
         /// <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
@@ -6561,44 +6630,46 @@ pub mod create_db_parameter_group_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
         /// <p>The description for the DB parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBParameterGroupInput`](crate::input::CreateDBParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBParameterGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBParameterGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBParameterGroupInput {
                 db_parameter_group_name: self.db_parameter_group_name,
                 db_parameter_group_family: self.db_parameter_group_family,
@@ -6618,7 +6689,7 @@ impl CreateDBParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -6678,7 +6749,7 @@ impl CreateDBParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6686,7 +6757,7 @@ impl CreateDBParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6725,95 +6796,98 @@ pub mod create_db_proxy_input {
     }
     impl Builder {
         /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The kinds of databases that the proxy can connect to.
         /// This value determines which database network protocol the proxy recognizes when it interprets
         /// network traffic to and from the database.
         /// The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
-        pub fn engine_family(mut self, inp: crate::model::EngineFamily) -> Self {
-            self.engine_family = Some(inp);
+        pub fn engine_family(mut self, input: crate::model::EngineFamily) -> Self {
+            self.engine_family = Some(input);
             self
         }
         pub fn set_engine_family(
             mut self,
-            inp: std::option::Option<crate::model::EngineFamily>,
+            input: std::option::Option<crate::model::EngineFamily>,
         ) -> Self {
-            self.engine_family = inp;
+            self.engine_family = input;
             self
         }
-        pub fn auth(mut self, inp: impl Into<crate::model::UserAuthConfig>) -> Self {
+        pub fn auth(mut self, input: impl Into<crate::model::UserAuthConfig>) -> Self {
             let mut v = self.auth.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.auth = Some(v);
             self
         }
         pub fn set_auth(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
         ) -> Self {
-            self.auth = inp;
+            self.auth = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn vpc_subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_subnet_ids = Some(v);
             self
         }
         pub fn set_vpc_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_subnet_ids = inp;
+            self.vpc_subnet_ids = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy.
         /// By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
-        pub fn require_tls(mut self, inp: bool) -> Self {
-            self.require_tls = Some(inp);
+        pub fn require_tls(mut self, input: bool) -> Self {
+            self.require_tls = Some(input);
             self
         }
-        pub fn set_require_tls(mut self, inp: bool) -> Self {
-            self.require_tls = Some(inp);
+        pub fn set_require_tls(mut self, input: std::option::Option<bool>) -> Self {
+            self.require_tls = input;
             self
         }
         /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this
         /// value higher or lower than the connection timeout limit for the associated database.</p>
-        pub fn idle_client_timeout(mut self, inp: i32) -> Self {
-            self.idle_client_timeout = Some(inp);
+        pub fn idle_client_timeout(mut self, input: i32) -> Self {
+            self.idle_client_timeout = Some(input);
             self
         }
-        pub fn set_idle_client_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.idle_client_timeout = inp;
+        pub fn set_idle_client_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.idle_client_timeout = input;
             self
         }
         /// <p>Whether the proxy includes detailed information about SQL statements in its logs.
@@ -6822,31 +6896,32 @@ pub mod create_db_proxy_input {
         /// SQL statements that you submit through the proxy. Thus, only enable this setting
         /// when needed for debugging, and only when you have security measures in place to
         /// safeguard any sensitive information that appears in the logs.</p>
-        pub fn debug_logging(mut self, inp: bool) -> Self {
-            self.debug_logging = Some(inp);
+        pub fn debug_logging(mut self, input: bool) -> Self {
+            self.debug_logging = Some(input);
             self
         }
-        pub fn set_debug_logging(mut self, inp: bool) -> Self {
-            self.debug_logging = Some(inp);
+        pub fn set_debug_logging(mut self, input: std::option::Option<bool>) -> Self {
+            self.debug_logging = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBProxyInput`](crate::input::CreateDBProxyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBProxyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateDBProxyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateDBProxyInput {
                 db_proxy_name: self.db_proxy_name,
                 engine_family: self.engine_family,
@@ -6872,7 +6947,7 @@ impl CreateDBProxyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBProxy,
             aws_http::AwsErrorRetryPolicy,
@@ -6931,7 +7006,7 @@ impl CreateDBProxyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6939,7 +7014,7 @@ impl CreateDBProxyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6974,83 +7049,88 @@ pub mod create_db_proxy_endpoint_input {
     }
     impl Builder {
         /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The name of the DB proxy endpoint to create.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_endpoint_name = Some(inp.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_endpoint_name = Some(input.into());
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_proxy_endpoint_name = inp;
+            self.db_proxy_endpoint_name = input;
             self
         }
-        pub fn vpc_subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_subnet_ids = Some(v);
             self
         }
         pub fn set_vpc_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_subnet_ids = inp;
+            self.vpc_subnet_ids = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write
         /// or read-only operations. The default is <code>READ_WRITE</code>.</p>
-        pub fn target_role(mut self, inp: crate::model::DbProxyEndpointTargetRole) -> Self {
-            self.target_role = Some(inp);
+        pub fn target_role(mut self, input: crate::model::DbProxyEndpointTargetRole) -> Self {
+            self.target_role = Some(input);
             self
         }
         pub fn set_target_role(
             mut self,
-            inp: std::option::Option<crate::model::DbProxyEndpointTargetRole>,
+            input: std::option::Option<crate::model::DbProxyEndpointTargetRole>,
         ) -> Self {
-            self.target_role = inp;
+            self.target_role = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBProxyEndpointInput`](crate::input::CreateDBProxyEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBProxyEndpointInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBProxyEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBProxyEndpointInput {
                 db_proxy_name: self.db_proxy_name,
                 db_proxy_endpoint_name: self.db_proxy_endpoint_name,
@@ -7072,7 +7152,7 @@ impl CreateDBProxyEndpointInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBProxyEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -7132,7 +7212,7 @@ impl CreateDBProxyEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7140,7 +7220,7 @@ impl CreateDBProxyEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7189,50 +7269,52 @@ pub mod create_db_security_group_input {
         /// </ul>
         /// <p>Example: <code>mysecuritygroup</code>
         /// </p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_security_group_name = Some(inp.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_name = Some(input.into());
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_name = inp;
+            self.db_security_group_name = input;
             self
         }
         /// <p>The description for the DB security group.</p>
         pub fn db_security_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_security_group_description = Some(inp.into());
+            self.db_security_group_description = Some(input.into());
             self
         }
         pub fn set_db_security_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_description = inp;
+            self.db_security_group_description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBSecurityGroupInput`](crate::input::CreateDBSecurityGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBSecurityGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBSecurityGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBSecurityGroupInput {
                 db_security_group_name: self.db_security_group_name,
                 db_security_group_description: self.db_security_group_description,
@@ -7251,7 +7333,7 @@ impl CreateDBSecurityGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBSecurityGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -7311,7 +7393,7 @@ impl CreateDBSecurityGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7319,7 +7401,7 @@ impl CreateDBSecurityGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7368,15 +7450,15 @@ pub mod create_db_snapshot_input {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
@@ -7386,35 +7468,37 @@ pub mod create_db_snapshot_input {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBSnapshotInput`](crate::input::CreateDBSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBSnapshotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBSnapshotInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBSnapshotInput {
                 db_snapshot_identifier: self.db_snapshot_identifier,
                 db_instance_identifier: self.db_instance_identifier,
@@ -7433,7 +7517,7 @@ impl CreateDBSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -7493,7 +7577,7 @@ impl CreateDBSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7501,7 +7585,7 @@ impl CreateDBSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7537,60 +7621,65 @@ pub mod create_db_subnet_group_input {
         /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>The description for the DB subnet group.</p>
-        pub fn db_subnet_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_description = Some(inp.into());
+        pub fn db_subnet_group_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.db_subnet_group_description = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_description = inp;
+            self.db_subnet_group_description = input;
             self
         }
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
         pub fn set_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.subnet_ids = inp;
+            self.subnet_ids = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBSubnetGroupInput`](crate::input::CreateDBSubnetGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDBSubnetGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDBSubnetGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDBSubnetGroupInput {
                 db_subnet_group_name: self.db_subnet_group_name,
                 db_subnet_group_description: self.db_subnet_group_description,
@@ -7610,7 +7699,7 @@ impl CreateDBSubnetGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDBSubnetGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -7670,7 +7759,7 @@ impl CreateDBSubnetGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7678,7 +7767,7 @@ impl CreateDBSubnetGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7715,24 +7804,27 @@ pub mod create_event_subscription_input {
     impl Builder {
         /// <p>The name of the subscription.</p>
         /// <p>Constraints: The name must be less than 255 characters.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_name = Some(inp.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_name = Some(input.into());
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_name = inp;
+            self.subscription_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sns_topic_arn = Some(inp.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_topic_arn = Some(input.into());
             self
         }
-        pub fn set_sns_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sns_topic_arn = inp;
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sns_topic_arn = input;
             self
         }
         /// <p>The type of source that is generating the events. For example, if you want to be
@@ -7741,69 +7833,71 @@ pub mod create_event_subscription_input {
         /// returned.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_type = Some(inp.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_type = Some(input.into());
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_type = inp;
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_type = input;
             self
         }
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_categories = Some(v);
             self
         }
         pub fn set_event_categories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.event_categories = inp;
+            self.event_categories = input;
             self
         }
-        pub fn source_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn source_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_ids = Some(v);
             self
         }
         pub fn set_source_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.source_ids = inp;
+            self.source_ids = input;
             self
         }
         /// <p>
         /// A value that indicates whether to activate the subscription. If the event notification subscription isn't activated, the subscription is created but not active.
         /// </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enabled = inp;
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateEventSubscriptionInput`](crate::input::CreateEventSubscriptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateEventSubscriptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateEventSubscriptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateEventSubscriptionInput {
                 subscription_name: self.subscription_name,
                 sns_topic_arn: self.sns_topic_arn,
@@ -7827,7 +7921,7 @@ impl CreateEventSubscriptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateEventSubscription,
             aws_http::AwsErrorRetryPolicy,
@@ -7887,7 +7981,7 @@ impl CreateEventSubscriptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7895,7 +7989,7 @@ impl CreateEventSubscriptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7931,90 +8025,101 @@ pub mod create_global_cluster_input {
     }
     impl Builder {
         /// <p>The cluster identifier of the new global database cluster.</p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_identifier = Some(inp.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_identifier = inp;
+            self.global_cluster_identifier = input;
             self
         }
         /// <p>
         /// The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
         /// This parameter is optional.
         /// </p>
-        pub fn source_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_db_cluster_identifier = Some(inp.into());
+        pub fn source_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.source_db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_cluster_identifier = inp;
+            self.source_db_cluster_identifier = input;
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The engine version of the Aurora global database.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>
         /// The deletion protection setting for the new global database.
         /// The global database can't be deleted when deletion protection is enabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>
         /// The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon
         /// Aurora will not create a database in the global database cluster you are creating.
         /// </p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database_name = Some(inp.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database_name = inp;
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
             self
         }
         /// <p>
         /// The storage encryption setting for the new global database cluster.
         /// </p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.storage_encrypted = inp;
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGlobalClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateGlobalClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateGlobalClusterInput {
                 global_cluster_identifier: self.global_cluster_identifier,
                 source_db_cluster_identifier: self.source_db_cluster_identifier,
@@ -8037,7 +8142,7 @@ impl CreateGlobalClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateGlobalCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -8097,7 +8202,7 @@ impl CreateGlobalClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8105,7 +8210,7 @@ impl CreateGlobalClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8153,15 +8258,15 @@ pub mod create_option_group_input {
         /// </ul>
         /// <p>Example: <code>myoptiongroup</code>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>Specifies the name of the engine that this option group should be associated with.</p>
@@ -8224,56 +8329,58 @@ pub mod create_option_group_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_name = Some(inp.into());
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_name = Some(input.into());
             self
         }
-        pub fn set_engine_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_name = inp;
+        pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_name = input;
             self
         }
         /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-        pub fn major_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.major_engine_version = Some(inp.into());
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.major_engine_version = Some(input.into());
             self
         }
         pub fn set_major_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.major_engine_version = inp;
+            self.major_engine_version = input;
             self
         }
         /// <p>The description of the option group.</p>
-        pub fn option_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_description = Some(inp.into());
+        pub fn option_group_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_description = Some(input.into());
             self
         }
         pub fn set_option_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_description = inp;
+            self.option_group_description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateOptionGroupInput`](crate::input::CreateOptionGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateOptionGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateOptionGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateOptionGroupInput {
                 option_group_name: self.option_group_name,
                 engine_name: self.engine_name,
@@ -8294,7 +8401,7 @@ impl CreateOptionGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateOptionGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -8354,7 +8461,7 @@ impl CreateOptionGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8362,7 +8469,7 @@ impl CreateOptionGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8392,21 +8499,24 @@ pub mod delete_custom_availability_zone_input {
     }
     impl Builder {
         /// <p>The custom AZ identifier.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_availability_zone_id = Some(inp.into());
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_availability_zone_id = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_id = inp;
+            self.custom_availability_zone_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteCustomAvailabilityZoneInput`](crate::input::DeleteCustomAvailabilityZoneInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteCustomAvailabilityZoneInput,
             smithy_http::operation::BuildError,
         > {
@@ -8427,7 +8537,7 @@ impl DeleteCustomAvailabilityZoneInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteCustomAvailabilityZone,
             aws_http::AwsErrorRetryPolicy,
@@ -8488,7 +8598,7 @@ impl DeleteCustomAvailabilityZoneInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8496,7 +8606,7 @@ impl DeleteCustomAvailabilityZoneInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8534,15 +8644,15 @@ pub mod delete_db_cluster_input {
         /// <p>Must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted.
@@ -8552,12 +8662,12 @@ pub mod delete_db_cluster_input {
         /// <note>
         /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
         /// </note>
-        pub fn skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.skip_final_snapshot = Some(inp);
+        pub fn skip_final_snapshot(mut self, input: bool) -> Self {
+            self.skip_final_snapshot = Some(input);
             self
         }
-        pub fn set_skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.skip_final_snapshot = Some(inp);
+        pub fn set_skip_final_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.skip_final_snapshot = input;
             self
         }
         /// <p>
@@ -8581,22 +8691,27 @@ pub mod delete_db_cluster_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn final_db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.final_db_snapshot_identifier = Some(inp.into());
+        pub fn final_db_snapshot_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.final_db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_final_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.final_db_snapshot_identifier = inp;
+            self.final_db_snapshot_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBClusterInput`](crate::input::DeleteDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 skip_final_snapshot: self.skip_final_snapshot.unwrap_or_default(),
@@ -8615,7 +8730,7 @@ impl DeleteDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -8674,7 +8789,7 @@ impl DeleteDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8682,7 +8797,7 @@ impl DeleteDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8714,23 +8829,25 @@ pub mod delete_db_cluster_endpoint_input {
         /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = Some(inp.into());
+            self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = inp;
+            self.db_cluster_endpoint_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBClusterEndpointInput`](crate::input::DeleteDBClusterEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBClusterEndpointInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBClusterEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBClusterEndpointInput {
                 db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
             })
@@ -8748,7 +8865,7 @@ impl DeleteDBClusterEndpointInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBClusterEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -8808,7 +8925,7 @@ impl DeleteDBClusterEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8816,7 +8933,7 @@ impl DeleteDBClusterEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8860,22 +8977,22 @@ pub mod delete_db_cluster_parameter_group_input {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBClusterParameterGroupInput`](crate::input::DeleteDBClusterParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteDBClusterParameterGroupInput,
             smithy_http::operation::BuildError,
         > {
@@ -8896,7 +9013,7 @@ impl DeleteDBClusterParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBClusterParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -8957,7 +9074,7 @@ impl DeleteDBClusterParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8965,7 +9082,7 @@ impl DeleteDBClusterParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8998,23 +9115,25 @@ pub mod delete_db_cluster_snapshot_input {
         /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = Some(inp.into());
+            self.db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = inp;
+            self.db_cluster_snapshot_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBClusterSnapshotInput`](crate::input::DeleteDBClusterSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBClusterSnapshotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBClusterSnapshotInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBClusterSnapshotInput {
                 db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
             })
@@ -9032,7 +9151,7 @@ impl DeleteDBClusterSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBClusterSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -9092,7 +9211,7 @@ impl DeleteDBClusterSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9100,7 +9219,7 @@ impl DeleteDBClusterSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9139,15 +9258,15 @@ pub mod delete_db_instance_input {
         /// <p>Must match the name of an existing DB instance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted.
@@ -9158,12 +9277,12 @@ pub mod delete_db_instance_input {
         /// <note>
         /// <p>The FinalDBSnapshotIdentifier parameter must be specified if skip isn't specified.</p>
         /// </note>
-        pub fn skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.skip_final_snapshot = Some(inp);
+        pub fn skip_final_snapshot(mut self, input: bool) -> Self {
+            self.skip_final_snapshot = Some(input);
             self
         }
-        pub fn set_skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.skip_final_snapshot = Some(inp);
+        pub fn set_skip_final_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.skip_final_snapshot = input;
             self
         }
         /// <p>
@@ -9188,33 +9307,38 @@ pub mod delete_db_instance_input {
         /// <p>Can't be specified when deleting a read replica.</p>
         /// </li>
         /// </ul>
-        pub fn final_db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.final_db_snapshot_identifier = Some(inp.into());
+        pub fn final_db_snapshot_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.final_db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_final_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.final_db_snapshot_identifier = inp;
+            self.final_db_snapshot_identifier = input;
             self
         }
         /// <p>A value that indicates whether to remove automated backups immediately after the DB
         /// instance is deleted. This parameter isn't case-sensitive. The default is to remove
         /// automated backups immediately after the DB instance is deleted.</p>
-        pub fn delete_automated_backups(mut self, inp: bool) -> Self {
-            self.delete_automated_backups = Some(inp);
+        pub fn delete_automated_backups(mut self, input: bool) -> Self {
+            self.delete_automated_backups = Some(input);
             self
         }
-        pub fn set_delete_automated_backups(mut self, inp: std::option::Option<bool>) -> Self {
-            self.delete_automated_backups = inp;
+        pub fn set_delete_automated_backups(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_automated_backups = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBInstanceInput`](crate::input::DeleteDBInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBInstanceInput {
                 db_instance_identifier: self.db_instance_identifier,
                 skip_final_snapshot: self.skip_final_snapshot.unwrap_or_default(),
@@ -9234,7 +9358,7 @@ impl DeleteDBInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -9294,7 +9418,7 @@ impl DeleteDBInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9302,7 +9426,7 @@ impl DeleteDBInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9333,37 +9457,37 @@ pub mod delete_db_instance_automated_backup_input {
     }
     impl Builder {
         /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dbi_resource_id = Some(inp.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dbi_resource_id = Some(input.into());
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.dbi_resource_id = inp;
+            self.dbi_resource_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example,
         /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_instance_automated_backups_arn = Some(inp.into());
+            self.db_instance_automated_backups_arn = Some(input.into());
             self
         }
         pub fn set_db_instance_automated_backups_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_automated_backups_arn = inp;
+            self.db_instance_automated_backups_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBInstanceAutomatedBackupInput`](crate::input::DeleteDBInstanceAutomatedBackupInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteDBInstanceAutomatedBackupInput,
             smithy_http::operation::BuildError,
         > {
@@ -9385,7 +9509,7 @@ impl DeleteDBInstanceAutomatedBackupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBInstanceAutomatedBackup,
             aws_http::AwsErrorRetryPolicy,
@@ -9448,7 +9572,7 @@ impl DeleteDBInstanceAutomatedBackupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9456,7 +9580,7 @@ impl DeleteDBInstanceAutomatedBackupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9498,22 +9622,24 @@ pub mod delete_db_parameter_group_input {
         /// <p>Can't be associated with any DB instances</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBParameterGroupInput`](crate::input::DeleteDBParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBParameterGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBParameterGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBParameterGroupInput {
                 db_parameter_group_name: self.db_parameter_group_name,
             })
@@ -9530,7 +9656,7 @@ impl DeleteDBParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -9590,7 +9716,7 @@ impl DeleteDBParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9598,7 +9724,7 @@ impl DeleteDBParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9628,18 +9754,22 @@ pub mod delete_db_proxy_input {
     }
     impl Builder {
         /// <p>The name of the DB proxy to delete.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBProxyInput`](crate::input::DeleteDBProxyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBProxyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteDBProxyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteDBProxyInput {
                 db_proxy_name: self.db_proxy_name,
             })
@@ -9656,7 +9786,7 @@ impl DeleteDBProxyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBProxy,
             aws_http::AwsErrorRetryPolicy,
@@ -9715,7 +9845,7 @@ impl DeleteDBProxyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9723,7 +9853,7 @@ impl DeleteDBProxyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9753,22 +9883,24 @@ pub mod delete_db_proxy_endpoint_input {
     }
     impl Builder {
         /// <p>The name of the DB proxy endpoint to delete.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_endpoint_name = Some(inp.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_endpoint_name = Some(input.into());
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_proxy_endpoint_name = inp;
+            self.db_proxy_endpoint_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBProxyEndpointInput`](crate::input::DeleteDBProxyEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBProxyEndpointInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBProxyEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBProxyEndpointInput {
                 db_proxy_endpoint_name: self.db_proxy_endpoint_name,
             })
@@ -9785,7 +9917,7 @@ impl DeleteDBProxyEndpointInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBProxyEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -9845,7 +9977,7 @@ impl DeleteDBProxyEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9853,7 +9985,7 @@ impl DeleteDBProxyEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9901,22 +10033,24 @@ pub mod delete_db_security_group_input {
         /// <p>Must not be "Default"</p>
         /// </li>
         /// </ul>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_security_group_name = Some(inp.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_name = Some(input.into());
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_name = inp;
+            self.db_security_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBSecurityGroupInput`](crate::input::DeleteDBSecurityGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBSecurityGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBSecurityGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBSecurityGroupInput {
                 db_security_group_name: self.db_security_group_name,
             })
@@ -9933,7 +10067,7 @@ impl DeleteDBSecurityGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBSecurityGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -9993,7 +10127,7 @@ impl DeleteDBSecurityGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10001,7 +10135,7 @@ impl DeleteDBSecurityGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10032,22 +10166,24 @@ pub mod delete_db_snapshot_input {
     impl Builder {
         /// <p>The DB snapshot identifier.</p>
         /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBSnapshotInput`](crate::input::DeleteDBSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBSnapshotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBSnapshotInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBSnapshotInput {
                 db_snapshot_identifier: self.db_snapshot_identifier,
             })
@@ -10064,7 +10200,7 @@ impl DeleteDBSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -10124,7 +10260,7 @@ impl DeleteDBSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10132,7 +10268,7 @@ impl DeleteDBSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10169,22 +10305,24 @@ pub mod delete_db_subnet_group_input {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBSubnetGroupInput`](crate::input::DeleteDBSubnetGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDBSubnetGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDBSubnetGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDBSubnetGroupInput {
                 db_subnet_group_name: self.db_subnet_group_name,
             })
@@ -10201,7 +10339,7 @@ impl DeleteDBSubnetGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDBSubnetGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -10261,7 +10399,7 @@ impl DeleteDBSubnetGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10269,7 +10407,7 @@ impl DeleteDBSubnetGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10299,22 +10437,24 @@ pub mod delete_event_subscription_input {
     }
     impl Builder {
         /// <p>The name of the RDS event notification subscription you want to delete.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_name = Some(inp.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_name = Some(input.into());
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_name = inp;
+            self.subscription_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteEventSubscriptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteEventSubscriptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteEventSubscriptionInput {
                 subscription_name: self.subscription_name,
             })
@@ -10332,7 +10472,7 @@ impl DeleteEventSubscriptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteEventSubscription,
             aws_http::AwsErrorRetryPolicy,
@@ -10392,7 +10532,7 @@ impl DeleteEventSubscriptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10400,7 +10540,7 @@ impl DeleteEventSubscriptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10432,22 +10572,24 @@ pub mod delete_global_cluster_input {
         /// <p>
         /// The cluster identifier of the global database cluster being deleted.
         /// </p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_identifier = Some(inp.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_identifier = inp;
+            self.global_cluster_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGlobalClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteGlobalClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteGlobalClusterInput {
                 global_cluster_identifier: self.global_cluster_identifier,
             })
@@ -10464,7 +10606,7 @@ impl DeleteGlobalClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteGlobalCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -10524,7 +10666,7 @@ impl DeleteGlobalClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10532,7 +10674,7 @@ impl DeleteGlobalClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10562,22 +10704,24 @@ pub mod delete_installation_media_input {
     }
     impl Builder {
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.installation_media_id = Some(inp.into());
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.installation_media_id = Some(input.into());
             self
         }
         pub fn set_installation_media_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.installation_media_id = inp;
+            self.installation_media_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteInstallationMediaInput`](crate::input::DeleteInstallationMediaInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteInstallationMediaInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteInstallationMediaInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteInstallationMediaInput {
                 installation_media_id: self.installation_media_id,
             })
@@ -10595,7 +10739,7 @@ impl DeleteInstallationMediaInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteInstallationMedia,
             aws_http::AwsErrorRetryPolicy,
@@ -10655,7 +10799,7 @@ impl DeleteInstallationMediaInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10663,7 +10807,7 @@ impl DeleteInstallationMediaInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10696,22 +10840,24 @@ pub mod delete_option_group_input {
         /// <note>
         /// <p>You can't delete default option groups.</p>
         /// </note>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteOptionGroupInput`](crate::input::DeleteOptionGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteOptionGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteOptionGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteOptionGroupInput {
                 option_group_name: self.option_group_name,
             })
@@ -10728,7 +10874,7 @@ impl DeleteOptionGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteOptionGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -10788,7 +10934,7 @@ impl DeleteOptionGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10796,7 +10942,7 @@ impl DeleteOptionGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10829,57 +10975,62 @@ pub mod deregister_db_proxy_targets_input {
     }
     impl Builder {
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_group_name = Some(inp.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_name = Some(input.into());
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_group_name = inp;
+            self.target_group_name = input;
             self
         }
-        pub fn db_instance_identifiers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn db_instance_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.db_instance_identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_instance_identifiers = Some(v);
             self
         }
         pub fn set_db_instance_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.db_instance_identifiers = inp;
+            self.db_instance_identifiers = input;
             self
         }
-        pub fn db_cluster_identifiers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn db_cluster_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.db_cluster_identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_identifiers = Some(v);
             self
         }
         pub fn set_db_cluster_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.db_cluster_identifiers = inp;
+            self.db_cluster_identifiers = input;
             self
         }
         /// Consumes the builder and constructs a [`DeregisterDBProxyTargetsInput`](crate::input::DeregisterDBProxyTargetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeregisterDBProxyTargetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeregisterDBProxyTargetsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeregisterDBProxyTargetsInput {
                 db_proxy_name: self.db_proxy_name,
                 target_group_name: self.target_group_name,
@@ -10900,7 +11051,7 @@ impl DeregisterDBProxyTargetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeregisterDBProxyTargets,
             aws_http::AwsErrorRetryPolicy,
@@ -10960,7 +11111,7 @@ impl DeregisterDBProxyTargetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10968,7 +11119,7 @@ impl DeregisterDBProxyTargetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10998,8 +11149,10 @@ pub mod describe_account_attributes_input {
         /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAccountAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeAccountAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeAccountAttributesInput {})
         }
     }
@@ -11015,7 +11168,7 @@ impl DescribeAccountAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeAccountAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -11075,7 +11228,7 @@ impl DescribeAccountAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11083,7 +11236,7 @@ impl DescribeAccountAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11122,28 +11275,28 @@ pub mod describe_certificates_input {
         /// <p>Must match an existing CertificateIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_identifier = Some(inp.into());
+        pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_identifier = Some(input.into());
             self
         }
         pub fn set_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_identifier = inp;
+            self.certificate_identifier = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -11153,12 +11306,12 @@ pub mod describe_certificates_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -11168,19 +11321,21 @@ pub mod describe_certificates_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCertificatesInput`](crate::input::DescribeCertificatesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeCertificatesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeCertificatesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeCertificatesInput {
                 certificate_identifier: self.certificate_identifier,
                 filters: self.filters,
@@ -11200,7 +11355,7 @@ impl DescribeCertificatesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeCertificates,
             aws_http::AwsErrorRetryPolicy,
@@ -11260,7 +11415,7 @@ impl DescribeCertificatesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11268,7 +11423,7 @@ impl DescribeCertificatesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11301,28 +11456,31 @@ pub mod describe_custom_availability_zones_input {
     }
     impl Builder {
         /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_availability_zone_id = Some(inp.into());
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_availability_zone_id = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_id = inp;
+            self.custom_availability_zone_id = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -11330,12 +11488,12 @@ pub mod describe_custom_availability_zones_input {
         /// a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -11343,18 +11501,18 @@ pub mod describe_custom_availability_zones_input {
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCustomAvailabilityZonesInput`](crate::input::DescribeCustomAvailabilityZonesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeCustomAvailabilityZonesInput,
             smithy_http::operation::BuildError,
         > {
@@ -11378,7 +11536,7 @@ impl DescribeCustomAvailabilityZonesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeCustomAvailabilityZones,
             aws_http::AwsErrorRetryPolicy,
@@ -11439,7 +11597,7 @@ impl DescribeCustomAvailabilityZonesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11447,7 +11605,7 @@ impl DescribeCustomAvailabilityZonesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11496,15 +11654,15 @@ pub mod describe_db_cluster_backtracks_input {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>If specified, this value is the backtrack identifier of the backtrack to be
@@ -11519,28 +11677,28 @@ pub mod describe_db_cluster_backtracks_input {
         /// </ul>
         /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code>
         /// </p>
-        pub fn backtrack_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.backtrack_identifier = Some(inp.into());
+        pub fn backtrack_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backtrack_identifier = Some(input.into());
             self
         }
         pub fn set_backtrack_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.backtrack_identifier = inp;
+            self.backtrack_identifier = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -11549,12 +11707,12 @@ pub mod describe_db_cluster_backtracks_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -11563,18 +11721,18 @@ pub mod describe_db_cluster_backtracks_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterBacktracksInput`](crate::input::DescribeDBClusterBacktracksInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeDBClusterBacktracksInput,
             smithy_http::operation::BuildError,
         > {
@@ -11599,7 +11757,7 @@ impl DescribeDBClusterBacktracksInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBClusterBacktracks,
             aws_http::AwsErrorRetryPolicy,
@@ -11660,7 +11818,7 @@ impl DescribeDBClusterBacktracksInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11668,7 +11826,7 @@ impl DescribeDBClusterBacktracksInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11703,43 +11861,43 @@ pub mod describe_db_cluster_endpoints_input {
     impl Builder {
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = Some(inp.into());
+            self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = inp;
+            self.db_cluster_endpoint_identifier = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -11748,12 +11906,12 @@ pub mod describe_db_cluster_endpoints_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -11762,19 +11920,21 @@ pub mod describe_db_cluster_endpoints_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterEndpointsInput`](crate::input::DescribeDBClusterEndpointsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBClusterEndpointsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBClusterEndpointsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBClusterEndpointsInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
@@ -11796,7 +11956,7 @@ impl DescribeDBClusterEndpointsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBClusterEndpoints,
             aws_http::AwsErrorRetryPolicy,
@@ -11857,7 +12017,7 @@ impl DescribeDBClusterEndpointsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11865,7 +12025,7 @@ impl DescribeDBClusterEndpointsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11906,29 +12066,29 @@ pub mod describe_db_cluster_parameter_groups_input {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -11938,12 +12098,12 @@ pub mod describe_db_cluster_parameter_groups_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -11953,18 +12113,18 @@ pub mod describe_db_cluster_parameter_groups_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterParameterGroupsInput`](crate::input::DescribeDBClusterParameterGroupsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeDBClusterParameterGroupsInput,
             smithy_http::operation::BuildError,
         > {
@@ -11988,7 +12148,7 @@ impl DescribeDBClusterParameterGroupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBClusterParameterGroups,
             aws_http::AwsErrorRetryPolicy,
@@ -12051,7 +12211,7 @@ impl DescribeDBClusterParameterGroupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12059,7 +12219,7 @@ impl DescribeDBClusterParameterGroupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12101,16 +12261,16 @@ pub mod describe_db_cluster_parameters_input {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// <p>
@@ -12118,25 +12278,25 @@ pub mod describe_db_cluster_parameters_input {
         /// Parameter sources can be <code>engine</code>, <code>service</code>,
         /// or <code>customer</code>.
         /// </p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source = Some(inp.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source = inp;
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -12146,12 +12306,12 @@ pub mod describe_db_cluster_parameters_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -12161,18 +12321,18 @@ pub mod describe_db_cluster_parameters_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterParametersInput`](crate::input::DescribeDBClusterParametersInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeDBClusterParametersInput,
             smithy_http::operation::BuildError,
         > {
@@ -12197,7 +12357,7 @@ impl DescribeDBClusterParametersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBClusterParameters,
             aws_http::AwsErrorRetryPolicy,
@@ -12258,7 +12418,7 @@ impl DescribeDBClusterParametersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12266,7 +12426,7 @@ impl DescribeDBClusterParametersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12306,28 +12466,28 @@ pub mod describe_db_clusters_input {
         /// <p>If supplied, must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -12336,12 +12496,12 @@ pub mod describe_db_clusters_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -12350,29 +12510,31 @@ pub mod describe_db_clusters_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters
         /// shared from other AWS accounts.</p>
-        pub fn include_shared(mut self, inp: bool) -> Self {
-            self.include_shared = Some(inp);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.include_shared = Some(input);
             self
         }
-        pub fn set_include_shared(mut self, inp: bool) -> Self {
-            self.include_shared = Some(inp);
+        pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_shared = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClustersInput`](crate::input::DescribeDBClustersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBClustersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBClustersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBClustersInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 filters: self.filters,
@@ -12393,7 +12555,7 @@ impl DescribeDBClustersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBClusters,
             aws_http::AwsErrorRetryPolicy,
@@ -12453,7 +12615,7 @@ impl DescribeDBClustersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12461,7 +12623,7 @@ impl DescribeDBClustersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12493,22 +12655,22 @@ pub mod describe_db_cluster_snapshot_attributes_input {
         /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = Some(inp.into());
+            self.db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = inp;
+            self.db_cluster_snapshot_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterSnapshotAttributesInput`](crate::input::DescribeDBClusterSnapshotAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeDBClusterSnapshotAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -12530,7 +12692,7 @@ impl DescribeDBClusterSnapshotAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBClusterSnapshotAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -12593,7 +12755,7 @@ impl DescribeDBClusterSnapshotAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12601,7 +12763,7 @@ impl DescribeDBClusterSnapshotAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12648,15 +12810,15 @@ pub mod describe_db_cluster_snapshots_input {
         /// <p>If supplied, must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>A specific DB cluster snapshot identifier to describe.
@@ -12675,16 +12837,16 @@ pub mod describe_db_cluster_snapshots_input {
         /// </ul>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = Some(inp.into());
+            self.db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = inp;
+            self.db_cluster_snapshot_identifier = input;
             self
         }
         /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
@@ -12715,25 +12877,28 @@ pub mod describe_db_cluster_snapshots_input {
         /// of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is
         /// set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to
         /// <code>public</code>.</p>
-        pub fn snapshot_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_type = Some(inp.into());
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_type = Some(input.into());
             self
         }
-        pub fn set_snapshot_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_type = inp;
+        pub fn set_snapshot_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_type = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -12742,12 +12907,12 @@ pub mod describe_db_cluster_snapshots_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -12756,12 +12921,12 @@ pub mod describe_db_cluster_snapshots_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>A value that indicates whether to include shared manual DB cluster snapshots
@@ -12769,30 +12934,32 @@ pub mod describe_db_cluster_snapshots_input {
         /// permission to copy or restore. By default, these snapshots are not included.</p>
         /// <p>You can give an AWS account permission to restore a manual DB cluster snapshot from
         /// another AWS account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-        pub fn include_shared(mut self, inp: bool) -> Self {
-            self.include_shared = Some(inp);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.include_shared = Some(input);
             self
         }
-        pub fn set_include_shared(mut self, inp: bool) -> Self {
-            self.include_shared = Some(inp);
+        pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_shared = input;
             self
         }
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
         /// or restored by any AWS account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB cluster snapshot  as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
-        pub fn include_public(mut self, inp: bool) -> Self {
-            self.include_public = Some(inp);
+        pub fn include_public(mut self, input: bool) -> Self {
+            self.include_public = Some(input);
             self
         }
-        pub fn set_include_public(mut self, inp: bool) -> Self {
-            self.include_public = Some(inp);
+        pub fn set_include_public(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_public = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterSnapshotsInput`](crate::input::DescribeDBClusterSnapshotsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBClusterSnapshotsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBClusterSnapshotsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBClusterSnapshotsInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
@@ -12817,7 +12984,7 @@ impl DescribeDBClusterSnapshotsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBClusterSnapshots,
             aws_http::AwsErrorRetryPolicy,
@@ -12878,7 +13045,7 @@ impl DescribeDBClusterSnapshotsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12886,7 +13053,7 @@ impl DescribeDBClusterSnapshotsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12997,23 +13164,26 @@ pub mod describe_db_engine_versions_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The database engine version to return.</p>
         /// <p>Example: <code>5.1.49</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The name of a specific DB parameter group family to return details for.</p>
@@ -13023,28 +13193,28 @@ pub mod describe_db_engine_versions_input {
         /// <p>If supplied, must match an existing DBParameterGroupFamily.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -13054,12 +13224,12 @@ pub mod describe_db_engine_versions_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -13068,61 +13238,66 @@ pub mod describe_db_engine_versions_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
-        pub fn default_only(mut self, inp: bool) -> Self {
-            self.default_only = Some(inp);
+        pub fn default_only(mut self, input: bool) -> Self {
+            self.default_only = Some(input);
             self
         }
-        pub fn set_default_only(mut self, inp: bool) -> Self {
-            self.default_only = Some(inp);
+        pub fn set_default_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.default_only = input;
             self
         }
         /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
         /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>,
         /// the response includes a list of supported character sets for each engine version.
         /// </p>
-        pub fn list_supported_character_sets(mut self, inp: bool) -> Self {
-            self.list_supported_character_sets = Some(inp);
+        pub fn list_supported_character_sets(mut self, input: bool) -> Self {
+            self.list_supported_character_sets = Some(input);
             self
         }
-        pub fn set_list_supported_character_sets(mut self, inp: std::option::Option<bool>) -> Self {
-            self.list_supported_character_sets = inp;
+        pub fn set_list_supported_character_sets(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.list_supported_character_sets = input;
             self
         }
         /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
         /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
         /// the response includes a list of supported time zones for each engine version.
         /// </p>
-        pub fn list_supported_timezones(mut self, inp: bool) -> Self {
-            self.list_supported_timezones = Some(inp);
+        pub fn list_supported_timezones(mut self, input: bool) -> Self {
+            self.list_supported_timezones = Some(input);
             self
         }
-        pub fn set_list_supported_timezones(mut self, inp: std::option::Option<bool>) -> Self {
-            self.list_supported_timezones = inp;
+        pub fn set_list_supported_timezones(mut self, input: std::option::Option<bool>) -> Self {
+            self.list_supported_timezones = input;
             self
         }
         /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
-        pub fn include_all(mut self, inp: bool) -> Self {
-            self.include_all = Some(inp);
+        pub fn include_all(mut self, input: bool) -> Self {
+            self.include_all = Some(input);
             self
         }
-        pub fn set_include_all(mut self, inp: std::option::Option<bool>) -> Self {
-            self.include_all = inp;
+        pub fn set_include_all(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_all = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBEngineVersionsInput`](crate::input::DescribeDBEngineVersionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBEngineVersionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBEngineVersionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBEngineVersionsInput {
                 engine: self.engine,
                 engine_version: self.engine_version,
@@ -13149,7 +13324,7 @@ impl DescribeDBEngineVersionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBEngineVersions,
             aws_http::AwsErrorRetryPolicy,
@@ -13209,7 +13384,7 @@ impl DescribeDBEngineVersionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13217,7 +13392,7 @@ impl DescribeDBEngineVersionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13253,85 +13428,85 @@ pub mod describe_db_instance_automated_backups_input {
     impl Builder {
         /// <p>The resource ID of the DB instance that is the source of
         /// the automated backup. This parameter isn't case-sensitive. </p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dbi_resource_id = Some(inp.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dbi_resource_id = Some(input.into());
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.dbi_resource_id = inp;
+            self.dbi_resource_id = input;
             self
         }
         /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must
         /// match the identifier of an existing DB instance. It returns information from the
         /// specific DB instance' automated backup. This parameter isn't case-sensitive. </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified
         /// <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that
         /// you can retrieve the remaining results.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>The pagination token provided in the previous request. If this parameter is specified the response
         /// includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example,
         /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_instance_automated_backups_arn = Some(inp.into());
+            self.db_instance_automated_backups_arn = Some(input.into());
             self
         }
         pub fn set_db_instance_automated_backups_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_automated_backups_arn = inp;
+            self.db_instance_automated_backups_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBInstanceAutomatedBackupsInput`](crate::input::DescribeDBInstanceAutomatedBackupsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeDBInstanceAutomatedBackupsInput,
             smithy_http::operation::BuildError,
         > {
@@ -13357,7 +13532,7 @@ impl DescribeDBInstanceAutomatedBackupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBInstanceAutomatedBackups,
             aws_http::AwsErrorRetryPolicy,
@@ -13420,7 +13595,7 @@ impl DescribeDBInstanceAutomatedBackupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13428,7 +13603,7 @@ impl DescribeDBInstanceAutomatedBackupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13467,28 +13642,28 @@ pub mod describe_db_instances_input {
         /// <p>If supplied, must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -13499,12 +13674,12 @@ pub mod describe_db_instances_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -13514,19 +13689,21 @@ pub mod describe_db_instances_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBInstancesInput`](crate::input::DescribeDBInstancesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBInstancesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBInstancesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBInstancesInput {
                 db_instance_identifier: self.db_instance_identifier,
                 filters: self.filters,
@@ -13546,7 +13723,7 @@ impl DescribeDBInstancesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBInstances,
             aws_http::AwsErrorRetryPolicy,
@@ -13606,7 +13783,7 @@ impl DescribeDBInstancesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13614,7 +13791,7 @@ impl DescribeDBInstancesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13656,83 +13833,85 @@ pub mod describe_db_log_files_input {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>Filters the available log files for log file names that contain the specified string.</p>
-        pub fn filename_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.filename_contains = Some(inp.into());
+        pub fn filename_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filename_contains = Some(input.into());
             self
         }
         pub fn set_filename_contains(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.filename_contains = inp;
+            self.filename_contains = input;
             self
         }
         /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
-        pub fn file_last_written(mut self, inp: i64) -> Self {
-            self.file_last_written = Some(inp);
+        pub fn file_last_written(mut self, input: i64) -> Self {
+            self.file_last_written = Some(input);
             self
         }
-        pub fn set_file_last_written(mut self, inp: i64) -> Self {
-            self.file_last_written = Some(inp);
+        pub fn set_file_last_written(mut self, input: std::option::Option<i64>) -> Self {
+            self.file_last_written = input;
             self
         }
         /// <p>Filters the available log files for files larger than the specified size.</p>
-        pub fn file_size(mut self, inp: i64) -> Self {
-            self.file_size = Some(inp);
+        pub fn file_size(mut self, input: i64) -> Self {
+            self.file_size = Some(input);
             self
         }
-        pub fn set_file_size(mut self, inp: i64) -> Self {
-            self.file_size = Some(inp);
+        pub fn set_file_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.file_size = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBLogFilesInput`](crate::input::DescribeDBLogFilesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBLogFilesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBLogFilesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBLogFilesInput {
                 db_instance_identifier: self.db_instance_identifier,
                 filename_contains: self.filename_contains,
@@ -13755,7 +13934,7 @@ impl DescribeDBLogFilesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBLogFiles,
             aws_http::AwsErrorRetryPolicy,
@@ -13815,7 +13994,7 @@ impl DescribeDBLogFilesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13823,7 +14002,7 @@ impl DescribeDBLogFilesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13862,28 +14041,28 @@ pub mod describe_db_parameter_groups_input {
         /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -13894,12 +14073,12 @@ pub mod describe_db_parameter_groups_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -13909,19 +14088,21 @@ pub mod describe_db_parameter_groups_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBParameterGroupsInput`](crate::input::DescribeDBParameterGroupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBParameterGroupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBParameterGroupsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBParameterGroupsInput {
                 db_parameter_group_name: self.db_parameter_group_name,
                 filters: self.filters,
@@ -13942,7 +14123,7 @@ impl DescribeDBParameterGroupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBParameterGroups,
             aws_http::AwsErrorRetryPolicy,
@@ -14003,7 +14184,7 @@ impl DescribeDBParameterGroupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14011,7 +14192,7 @@ impl DescribeDBParameterGroupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14051,40 +14232,40 @@ pub mod describe_db_parameters_input {
         /// <p>If supplied, must match the name of an existing DBParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>The parameter types to return.</p>
         /// <p>Default: All parameter types returned</p>
         /// <p>Valid Values: <code>user | system | engine-default</code>
         /// </p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source = Some(inp.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source = inp;
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -14095,12 +14276,12 @@ pub mod describe_db_parameters_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -14110,19 +14291,21 @@ pub mod describe_db_parameters_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBParametersInput`](crate::input::DescribeDBParametersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBParametersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBParametersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBParametersInput {
                 db_parameter_group_name: self.db_parameter_group_name,
                 source: self.source,
@@ -14143,7 +14326,7 @@ impl DescribeDBParametersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBParameters,
             aws_http::AwsErrorRetryPolicy,
@@ -14203,7 +14386,7 @@ impl DescribeDBParametersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14211,7 +14394,7 @@ impl DescribeDBParametersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14246,25 +14429,28 @@ pub mod describe_db_proxies_input {
         /// <p>The name of the DB proxy. If you omit this parameter,
         /// the output includes information about all DB proxies owned by
         /// your AWS account ID.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -14272,12 +14458,12 @@ pub mod describe_db_proxies_input {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -14285,19 +14471,21 @@ pub mod describe_db_proxies_input {
         /// included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBProxiesInput`](crate::input::DescribeDBProxiesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBProxiesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBProxiesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBProxiesInput {
                 db_proxy_name: self.db_proxy_name,
                 filters: self.filters,
@@ -14317,7 +14505,7 @@ impl DescribeDBProxiesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBProxies,
             aws_http::AwsErrorRetryPolicy,
@@ -14377,7 +14565,7 @@ impl DescribeDBProxiesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14385,7 +14573,7 @@ impl DescribeDBProxiesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14421,39 +14609,42 @@ pub mod describe_db_proxy_endpoints_input {
         /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit
         /// this parameter, the output includes information about all DB proxy endpoints
         /// associated with all your DB proxies.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter,
         /// the output includes information about all DB proxy endpoints associated with
         /// the specified proxy.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_endpoint_name = Some(inp.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_endpoint_name = Some(input.into());
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_proxy_endpoint_name = inp;
+            self.db_proxy_endpoint_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -14461,12 +14652,12 @@ pub mod describe_db_proxy_endpoints_input {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -14474,19 +14665,21 @@ pub mod describe_db_proxy_endpoints_input {
         /// included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBProxyEndpointsInput`](crate::input::DescribeDBProxyEndpointsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBProxyEndpointsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBProxyEndpointsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBProxyEndpointsInput {
                 db_proxy_name: self.db_proxy_name,
                 db_proxy_endpoint_name: self.db_proxy_endpoint_name,
@@ -14508,7 +14701,7 @@ impl DescribeDBProxyEndpointsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBProxyEndpoints,
             aws_http::AwsErrorRetryPolicy,
@@ -14568,7 +14761,7 @@ impl DescribeDBProxyEndpointsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14576,7 +14769,7 @@ impl DescribeDBProxyEndpointsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14610,37 +14803,40 @@ pub mod describe_db_proxy_target_groups_input {
     }
     impl Builder {
         /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_group_name = Some(inp.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_name = Some(input.into());
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_group_name = inp;
+            self.target_group_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -14648,12 +14844,12 @@ pub mod describe_db_proxy_target_groups_input {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>
@@ -14664,18 +14860,18 @@ pub mod describe_db_proxy_target_groups_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBProxyTargetGroupsInput`](crate::input::DescribeDBProxyTargetGroupsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeDBProxyTargetGroupsInput,
             smithy_http::operation::BuildError,
         > {
@@ -14700,7 +14896,7 @@ impl DescribeDBProxyTargetGroupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBProxyTargetGroups,
             aws_http::AwsErrorRetryPolicy,
@@ -14761,7 +14957,7 @@ impl DescribeDBProxyTargetGroupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14769,7 +14965,7 @@ impl DescribeDBProxyTargetGroupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14803,37 +14999,40 @@ pub mod describe_db_proxy_targets_input {
     }
     impl Builder {
         /// <p>The identifier of the <code>DBProxyTarget</code> to describe.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_group_name = Some(inp.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_name = Some(input.into());
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_group_name = inp;
+            self.target_group_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -14841,12 +15040,12 @@ pub mod describe_db_proxy_targets_input {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>
@@ -14857,19 +15056,21 @@ pub mod describe_db_proxy_targets_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBProxyTargetsInput`](crate::input::DescribeDBProxyTargetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBProxyTargetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBProxyTargetsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBProxyTargetsInput {
                 db_proxy_name: self.db_proxy_name,
                 target_group_name: self.target_group_name,
@@ -14890,7 +15091,7 @@ impl DescribeDBProxyTargetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBProxyTargets,
             aws_http::AwsErrorRetryPolicy,
@@ -14950,7 +15151,7 @@ impl DescribeDBProxyTargetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14958,7 +15159,7 @@ impl DescribeDBProxyTargetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14991,28 +15192,28 @@ pub mod describe_db_security_groups_input {
     }
     impl Builder {
         /// <p>The name of the DB security group to return details for.</p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_security_group_name = Some(inp.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_name = Some(input.into());
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_name = inp;
+            self.db_security_group_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -15023,12 +15224,12 @@ pub mod describe_db_security_groups_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -15038,19 +15239,21 @@ pub mod describe_db_security_groups_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBSecurityGroupsInput`](crate::input::DescribeDBSecurityGroupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBSecurityGroupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBSecurityGroupsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBSecurityGroupsInput {
                 db_security_group_name: self.db_security_group_name,
                 filters: self.filters,
@@ -15071,7 +15274,7 @@ impl DescribeDBSecurityGroupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBSecurityGroups,
             aws_http::AwsErrorRetryPolicy,
@@ -15131,7 +15334,7 @@ impl DescribeDBSecurityGroupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15139,7 +15342,7 @@ impl DescribeDBSecurityGroupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15169,21 +15372,21 @@ pub mod describe_db_snapshot_attributes_input {
     }
     impl Builder {
         /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBSnapshotAttributesInput`](crate::input::DescribeDBSnapshotAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeDBSnapshotAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -15204,7 +15407,7 @@ impl DescribeDBSnapshotAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBSnapshotAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -15265,7 +15468,7 @@ impl DescribeDBSnapshotAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15273,7 +15476,7 @@ impl DescribeDBSnapshotAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15320,15 +15523,15 @@ pub mod describe_db_snapshots_input {
         /// <p>If supplied, must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>
@@ -15344,15 +15547,15 @@ pub mod describe_db_snapshots_input {
         /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
         /// </li>
         /// </ul>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
@@ -15394,25 +15597,28 @@ pub mod describe_db_snapshots_input {
         /// of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is
         /// set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to
         /// <code>public</code>.</p>
-        pub fn snapshot_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_type = Some(inp.into());
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_type = Some(input.into());
             self
         }
-        pub fn set_snapshot_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_type = inp;
+        pub fn set_snapshot_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_type = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -15423,12 +15629,12 @@ pub mod describe_db_snapshots_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -15438,12 +15644,12 @@ pub mod describe_db_snapshots_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>A value that indicates whether to include shared manual DB cluster snapshots
@@ -15451,42 +15657,44 @@ pub mod describe_db_snapshots_input {
         /// permission to copy or restore. By default, these snapshots are not included.</p>
         /// <p>You can give an AWS account permission to restore a manual DB snapshot from
         /// another AWS account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-        pub fn include_shared(mut self, inp: bool) -> Self {
-            self.include_shared = Some(inp);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.include_shared = Some(input);
             self
         }
-        pub fn set_include_shared(mut self, inp: bool) -> Self {
-            self.include_shared = Some(inp);
+        pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_shared = input;
             self
         }
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
         /// or restored by any AWS account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
-        pub fn include_public(mut self, inp: bool) -> Self {
-            self.include_public = Some(inp);
+        pub fn include_public(mut self, input: bool) -> Self {
+            self.include_public = Some(input);
             self
         }
-        pub fn set_include_public(mut self, inp: bool) -> Self {
-            self.include_public = Some(inp);
+        pub fn set_include_public(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_public = input;
             self
         }
         /// <p>A specific DB resource ID to describe.</p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dbi_resource_id = Some(inp.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dbi_resource_id = Some(input.into());
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.dbi_resource_id = inp;
+            self.dbi_resource_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBSnapshotsInput`](crate::input::DescribeDBSnapshotsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBSnapshotsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBSnapshotsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBSnapshotsInput {
                 db_instance_identifier: self.db_instance_identifier,
                 db_snapshot_identifier: self.db_snapshot_identifier,
@@ -15511,7 +15719,7 @@ impl DescribeDBSnapshotsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBSnapshots,
             aws_http::AwsErrorRetryPolicy,
@@ -15571,7 +15779,7 @@ impl DescribeDBSnapshotsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15579,7 +15787,7 @@ impl DescribeDBSnapshotsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15612,28 +15820,28 @@ pub mod describe_db_subnet_groups_input {
     }
     impl Builder {
         /// <p>The name of the DB subnet group to return details for.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -15644,12 +15852,12 @@ pub mod describe_db_subnet_groups_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -15658,19 +15866,21 @@ pub mod describe_db_subnet_groups_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBSubnetGroupsInput`](crate::input::DescribeDBSubnetGroupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDBSubnetGroupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeDBSubnetGroupsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeDBSubnetGroupsInput {
                 db_subnet_group_name: self.db_subnet_group_name,
                 filters: self.filters,
@@ -15690,7 +15900,7 @@ impl DescribeDBSubnetGroupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeDBSubnetGroups,
             aws_http::AwsErrorRetryPolicy,
@@ -15750,7 +15960,7 @@ impl DescribeDBSubnetGroupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15758,7 +15968,7 @@ impl DescribeDBSubnetGroupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15791,28 +16001,28 @@ pub mod describe_engine_default_cluster_parameters_input {
     }
     impl Builder {
         /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -15822,12 +16032,12 @@ pub mod describe_engine_default_cluster_parameters_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -15837,18 +16047,18 @@ pub mod describe_engine_default_cluster_parameters_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersInput`](crate::input::DescribeEngineDefaultClusterParametersInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeEngineDefaultClusterParametersInput,
             smithy_http::operation::BuildError,
         > {
@@ -15873,7 +16083,7 @@ impl DescribeEngineDefaultClusterParametersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeEngineDefaultClusterParameters,
             aws_http::AwsErrorRetryPolicy,
@@ -15932,7 +16142,7 @@ impl DescribeEngineDefaultClusterParametersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15940,7 +16150,7 @@ impl DescribeEngineDefaultClusterParametersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15973,28 +16183,28 @@ pub mod describe_engine_default_parameters_input {
     }
     impl Builder {
         /// <p>The name of the DB parameter group family.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -16004,12 +16214,12 @@ pub mod describe_engine_default_parameters_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -16019,18 +16229,18 @@ pub mod describe_engine_default_parameters_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeEngineDefaultParametersInput,
             smithy_http::operation::BuildError,
         > {
@@ -16054,7 +16264,7 @@ impl DescribeEngineDefaultParametersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeEngineDefaultParameters,
             aws_http::AwsErrorRetryPolicy,
@@ -16115,7 +16325,7 @@ impl DescribeEngineDefaultParametersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16123,7 +16333,7 @@ impl DescribeEngineDefaultParametersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16156,32 +16366,34 @@ pub mod describe_event_categories_input {
         /// <p>The type of source that is generating the events.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_type = Some(inp.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_type = Some(input.into());
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_type = inp;
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_type = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEventCategoriesInput`](crate::input::DescribeEventCategoriesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEventCategoriesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeEventCategoriesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeEventCategoriesInput {
                 source_type: self.source_type,
                 filters: self.filters,
@@ -16200,7 +16412,7 @@ impl DescribeEventCategoriesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeEventCategories,
             aws_http::AwsErrorRetryPolicy,
@@ -16260,7 +16472,7 @@ impl DescribeEventCategoriesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16268,7 +16480,7 @@ impl DescribeEventCategoriesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16333,27 +16545,27 @@ pub mod describe_events_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_identifier = Some(inp.into());
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_identifier = Some(input.into());
             self
         }
         pub fn set_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_identifier = inp;
+            self.source_identifier = input;
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.source_type = Some(inp);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.source_type = Some(input);
             self
         }
         pub fn set_source_type(
             mut self,
-            inp: std::option::Option<crate::model::SourceType>,
+            input: std::option::Option<crate::model::SourceType>,
         ) -> Self {
-            self.source_type = inp;
+            self.source_type = input;
             self
         }
         /// <p>
@@ -16362,12 +16574,12 @@ pub mod describe_events_input {
         /// go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
         /// </p>
         /// <p>Example: 2009-07-08T18:00Z</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_time = Some(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
             self
         }
         /// <p>
@@ -16376,48 +16588,48 @@ pub mod describe_events_input {
         /// go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
         /// </p>
         /// <p>Example: 2009-07-08T18:00Z</p>
-        pub fn end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_time = Some(inp);
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.end_time = inp;
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_time = input;
             self
         }
         /// <p>The number of minutes to retrieve events for.</p>
         /// <p>Default: 60</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: std::option::Option<i32>) -> Self {
-            self.duration = inp;
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
             self
         }
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_categories = Some(v);
             self
         }
         pub fn set_event_categories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.event_categories = inp;
+            self.event_categories = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -16428,12 +16640,12 @@ pub mod describe_events_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -16443,18 +16655,21 @@ pub mod describe_events_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::input::DescribeEventsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEventsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeEventsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeEventsInput {
                 source_identifier: self.source_identifier,
                 source_type: self.source_type,
@@ -16479,7 +16694,7 @@ impl DescribeEventsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeEvents,
             aws_http::AwsErrorRetryPolicy,
@@ -16538,7 +16753,7 @@ impl DescribeEventsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16546,7 +16761,7 @@ impl DescribeEventsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16579,28 +16794,28 @@ pub mod describe_event_subscriptions_input {
     }
     impl Builder {
         /// <p>The name of the RDS event notification subscription you want to describe.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_name = Some(inp.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_name = Some(input.into());
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_name = inp;
+            self.subscription_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -16611,12 +16826,12 @@ pub mod describe_event_subscriptions_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -16626,19 +16841,21 @@ pub mod describe_event_subscriptions_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEventSubscriptionsInput`](crate::input::DescribeEventSubscriptionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEventSubscriptionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeEventSubscriptionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeEventSubscriptionsInput {
                 subscription_name: self.subscription_name,
                 filters: self.filters,
@@ -16659,7 +16876,7 @@ impl DescribeEventSubscriptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeEventSubscriptions,
             aws_http::AwsErrorRetryPolicy,
@@ -16720,7 +16937,7 @@ impl DescribeEventSubscriptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16728,7 +16945,7 @@ impl DescribeEventSubscriptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16762,37 +16979,37 @@ pub mod describe_export_tasks_input {
     }
     impl Builder {
         /// <p>The identifier of the snapshot export task to be described.</p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_task_identifier = Some(inp.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_task_identifier = Some(input.into());
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.export_task_identifier = inp;
+            self.export_task_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_arn = Some(inp.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = inp;
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -16800,12 +17017,12 @@ pub mod describe_export_tasks_input {
         /// If you specify this parameter, the response includes only records beyond the marker,
         /// up to the value specified by the <code>MaxRecords</code> parameter.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>
@@ -16816,19 +17033,21 @@ pub mod describe_export_tasks_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeExportTasksInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeExportTasksInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeExportTasksInput {
                 export_task_identifier: self.export_task_identifier,
                 source_arn: self.source_arn,
@@ -16849,7 +17068,7 @@ impl DescribeExportTasksInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeExportTasks,
             aws_http::AwsErrorRetryPolicy,
@@ -16909,7 +17128,7 @@ impl DescribeExportTasksInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16917,7 +17136,7 @@ impl DescribeExportTasksInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16958,28 +17177,28 @@ pub mod describe_global_clusters_input {
         /// <p>If supplied, must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_identifier = Some(inp.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_identifier = inp;
+            self.global_cluster_identifier = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -16989,12 +17208,12 @@ pub mod describe_global_clusters_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -17002,19 +17221,21 @@ pub mod describe_global_clusters_input {
         /// this parameter is specified, the response includes only records beyond the marker, up to the value
         /// specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeGlobalClustersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeGlobalClustersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeGlobalClustersInput {
                 global_cluster_identifier: self.global_cluster_identifier,
                 filters: self.filters,
@@ -17034,7 +17255,7 @@ impl DescribeGlobalClustersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeGlobalClusters,
             aws_http::AwsErrorRetryPolicy,
@@ -17094,7 +17315,7 @@ impl DescribeGlobalClustersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17102,7 +17323,7 @@ impl DescribeGlobalClustersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17135,58 +17356,60 @@ pub mod describe_installation_media_input {
     }
     impl Builder {
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.installation_media_id = Some(inp.into());
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.installation_media_id = Some(input.into());
             self
         }
         pub fn set_installation_media_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.installation_media_id = inp;
+            self.installation_media_id = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request.
         /// If this parameter is specified, the response includes
         /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>An optional pagination token provided by a previous request.
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstallationMediaInput`](crate::input::DescribeInstallationMediaInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeInstallationMediaInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeInstallationMediaInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeInstallationMediaInput {
                 installation_media_id: self.installation_media_id,
                 filters: self.filters,
@@ -17207,7 +17430,7 @@ impl DescribeInstallationMediaInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeInstallationMedia,
             aws_http::AwsErrorRetryPolicy,
@@ -17267,7 +17490,7 @@ impl DescribeInstallationMediaInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17275,7 +17498,7 @@ impl DescribeInstallationMediaInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17368,37 +17591,37 @@ pub mod describe_option_group_options_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_name = Some(inp.into());
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_name = Some(input.into());
             self
         }
-        pub fn set_engine_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_name = inp;
+        pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_name = input;
             self
         }
         /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-        pub fn major_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.major_engine_version = Some(inp.into());
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.major_engine_version = Some(input.into());
             self
         }
         pub fn set_major_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.major_engine_version = inp;
+            self.major_engine_version = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -17409,31 +17632,33 @@ pub mod describe_option_group_options_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>An optional pagination token provided by a previous request.
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeOptionGroupOptionsInput`](crate::input::DescribeOptionGroupOptionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeOptionGroupOptionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeOptionGroupOptionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeOptionGroupOptionsInput {
                 engine_name: self.engine_name,
                 major_engine_version: self.major_engine_version,
@@ -17455,7 +17680,7 @@ impl DescribeOptionGroupOptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeOptionGroupOptions,
             aws_http::AwsErrorRetryPolicy,
@@ -17516,7 +17741,7 @@ impl DescribeOptionGroupOptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17524,7 +17749,7 @@ impl DescribeOptionGroupOptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17559,28 +17784,28 @@ pub mod describe_option_groups_input {
     }
     impl Builder {
         /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -17589,12 +17814,12 @@ pub mod describe_option_groups_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>
@@ -17605,12 +17830,12 @@ pub mod describe_option_groups_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
@@ -17673,31 +17898,33 @@ pub mod describe_option_groups_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_name = Some(inp.into());
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_name = Some(input.into());
             self
         }
-        pub fn set_engine_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_name = inp;
+        pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_name = input;
             self
         }
         /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-        pub fn major_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.major_engine_version = Some(inp.into());
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.major_engine_version = Some(input.into());
             self
         }
         pub fn set_major_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.major_engine_version = inp;
+            self.major_engine_version = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeOptionGroupsInput`](crate::input::DescribeOptionGroupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeOptionGroupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeOptionGroupsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeOptionGroupsInput {
                 option_group_name: self.option_group_name,
                 filters: self.filters,
@@ -17719,7 +17946,7 @@ impl DescribeOptionGroupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeOptionGroups,
             aws_http::AwsErrorRetryPolicy,
@@ -17779,7 +18006,7 @@ impl DescribeOptionGroupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17787,7 +18014,7 @@ impl DescribeOptionGroupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17897,77 +18124,83 @@ pub mod describe_orderable_db_instance_options_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
         /// <p>Omit this parameter to show the available offerings in the specified AWS Region.</p>
-        pub fn availability_zone_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone_group = Some(inp.into());
+        pub fn availability_zone_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone_group = Some(input.into());
             self
         }
         pub fn set_availability_zone_group(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone_group = inp;
+            self.availability_zone_group = input;
             self
         }
         /// <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
-        pub fn vpc(mut self, inp: bool) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: bool) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<bool>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<bool>) -> Self {
+            self.vpc = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -17978,12 +18211,12 @@ pub mod describe_orderable_db_instance_options_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -17993,18 +18226,18 @@ pub mod describe_orderable_db_instance_options_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeOrderableDBInstanceOptionsInput`](crate::input::DescribeOrderableDBInstanceOptionsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeOrderableDBInstanceOptionsInput,
             smithy_http::operation::BuildError,
         > {
@@ -18033,7 +18266,7 @@ impl DescribeOrderableDBInstanceOptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeOrderableDBInstanceOptions,
             aws_http::AwsErrorRetryPolicy,
@@ -18096,7 +18329,7 @@ impl DescribeOrderableDBInstanceOptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18104,7 +18337,7 @@ impl DescribeOrderableDBInstanceOptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18137,28 +18370,28 @@ pub mod describe_pending_maintenance_actions_input {
     }
     impl Builder {
         /// <p>The ARN of a resource to return pending maintenance actions for.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_identifier = Some(inp.into());
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_identifier = Some(input.into());
             self
         }
         pub fn set_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_identifier = inp;
+            self.resource_identifier = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -18168,12 +18401,12 @@ pub mod describe_pending_maintenance_actions_input {
         /// only records beyond the marker,
         /// up to a number of records specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>
@@ -18184,18 +18417,18 @@ pub mod describe_pending_maintenance_actions_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsInput`](crate::input::DescribePendingMaintenanceActionsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribePendingMaintenanceActionsInput,
             smithy_http::operation::BuildError,
         > {
@@ -18219,7 +18452,7 @@ impl DescribePendingMaintenanceActionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribePendingMaintenanceActions,
             aws_http::AwsErrorRetryPolicy,
@@ -18282,7 +18515,7 @@ impl DescribePendingMaintenanceActionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18290,7 +18523,7 @@ impl DescribePendingMaintenanceActionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18330,110 +18563,113 @@ pub mod describe_reserved_db_instances_input {
     }
     impl Builder {
         /// <p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p>
-        pub fn reserved_db_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reserved_db_instance_id = Some(inp.into());
+        pub fn reserved_db_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_db_instance_id = Some(input.into());
             self
         }
         pub fn set_reserved_db_instance_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instance_id = inp;
+            self.reserved_db_instance_id = input;
             self
         }
         /// <p>The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = Some(inp.into());
+            self.reserved_db_instances_offering_id = Some(input.into());
             self
         }
         pub fn set_reserved_db_instances_offering_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = inp;
+            self.reserved_db_instances_offering_id = input;
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
         /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
         /// </p>
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.duration = Some(inp.into());
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.duration = Some(input.into());
             self
         }
-        pub fn set_duration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.duration = inp;
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.duration = input;
             self
         }
         /// <p>The product description filter value. Specify this parameter to show only those reservations matching the specified product description.</p>
-        pub fn product_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product_description = Some(inp.into());
+        pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_description = Some(input.into());
             self
         }
         pub fn set_product_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.product_description = inp;
+            self.product_description = input;
             self
         }
         /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
         /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
         /// </p>
-        pub fn offering_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_type = Some(inp.into());
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_type = Some(input.into());
             self
         }
-        pub fn set_offering_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.offering_type = inp;
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.offering_type = input;
             self
         }
         /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>The lease identifier filter value. Specify this parameter to show only the reservation that matches the specified lease ID.</p>
         /// <note>
         /// <p>AWS Support might request the lease ID for an issue related to a reserved DB instance.</p>
         /// </note>
-        pub fn lease_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.lease_id = Some(inp.into());
+        pub fn lease_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lease_id = Some(input.into());
             self
         }
-        pub fn set_lease_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.lease_id = inp;
+        pub fn set_lease_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lease_id = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -18443,12 +18679,12 @@ pub mod describe_reserved_db_instances_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -18457,18 +18693,18 @@ pub mod describe_reserved_db_instances_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservedDBInstancesInput`](crate::input::DescribeReservedDBInstancesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeReservedDBInstancesInput,
             smithy_http::operation::BuildError,
         > {
@@ -18499,7 +18735,7 @@ impl DescribeReservedDBInstancesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeReservedDBInstances,
             aws_http::AwsErrorRetryPolicy,
@@ -18560,7 +18796,7 @@ impl DescribeReservedDBInstancesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18568,7 +18804,7 @@ impl DescribeReservedDBInstancesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18610,87 +18846,90 @@ pub mod describe_reserved_db_instances_offerings_input {
         /// </p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = Some(inp.into());
+            self.reserved_db_instances_offering_id = Some(input.into());
             self
         }
         pub fn set_reserved_db_instances_offering_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = inp;
+            self.reserved_db_instances_offering_id = input;
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
         /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
         /// </p>
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.duration = Some(inp.into());
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.duration = Some(input.into());
             self
         }
-        pub fn set_duration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.duration = inp;
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.duration = input;
             self
         }
         /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p>
         /// <note>
         /// <p>The results show offerings that partially match the filter value.</p>
         /// </note>
-        pub fn product_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product_description = Some(inp.into());
+        pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_description = Some(input.into());
             self
         }
         pub fn set_product_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.product_description = inp;
+            self.product_description = input;
             self
         }
         /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
         /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
         /// </p>
-        pub fn offering_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_type = Some(inp.into());
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_type = Some(input.into());
             self
         }
-        pub fn set_offering_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.offering_type = inp;
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.offering_type = input;
             self
         }
         /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>
@@ -18700,12 +18939,12 @@ pub mod describe_reserved_db_instances_offerings_input {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>
@@ -18714,18 +18953,18 @@ pub mod describe_reserved_db_instances_offerings_input {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservedDBInstancesOfferingsInput`](crate::input::DescribeReservedDBInstancesOfferingsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeReservedDBInstancesOfferingsInput,
             smithy_http::operation::BuildError,
         > {
@@ -18755,7 +18994,7 @@ impl DescribeReservedDBInstancesOfferingsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeReservedDBInstancesOfferings,
             aws_http::AwsErrorRetryPolicy,
@@ -18818,7 +19057,7 @@ impl DescribeReservedDBInstancesOfferingsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18826,7 +19065,7 @@ impl DescribeReservedDBInstancesOfferingsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18865,12 +19104,12 @@ pub mod describe_source_regions_input {
         /// <p>Must specify a valid AWS Region name.</p>
         /// </li>
         /// </ul>
-        pub fn region_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region_name = Some(inp.into());
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region_name = Some(input.into());
             self
         }
-        pub fn set_region_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region_name = inp;
+        pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region_name = input;
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -18878,43 +19117,45 @@ pub mod describe_source_regions_input {
         /// included in the response so you can retrieve the remaining results. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.max_records = Some(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_records = inp;
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
             self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter is specified, the response
         /// includes only records beyond the marker, up to the value specified by
         /// <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSourceRegionsInput`](crate::input::DescribeSourceRegionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeSourceRegionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeSourceRegionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeSourceRegionsInput {
                 region_name: self.region_name,
                 max_records: self.max_records,
@@ -18934,7 +19175,7 @@ impl DescribeSourceRegionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeSourceRegions,
             aws_http::AwsErrorRetryPolicy,
@@ -18994,7 +19235,7 @@ impl DescribeSourceRegionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19002,7 +19243,7 @@ impl DescribeSourceRegionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19033,21 +19274,21 @@ pub mod describe_valid_db_instance_modifications_input {
     impl Builder {
         /// <p>The customer identifier or the ARN of your DB instance.
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeValidDBInstanceModificationsInput`](crate::input::DescribeValidDBInstanceModificationsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeValidDBInstanceModificationsInput,
             smithy_http::operation::BuildError,
         > {
@@ -19069,7 +19310,7 @@ impl DescribeValidDBInstanceModificationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeValidDBInstanceModifications,
             aws_http::AwsErrorRetryPolicy,
@@ -19132,7 +19373,7 @@ impl DescribeValidDBInstanceModificationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19140,7 +19381,7 @@ impl DescribeValidDBInstanceModificationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19179,33 +19420,36 @@ pub mod download_db_log_file_portion_input {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The name of the log file to be downloaded.</p>
-        pub fn log_file_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_file_name = Some(inp.into());
+        pub fn log_file_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_file_name = Some(input.into());
             self
         }
-        pub fn set_log_file_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_file_name = inp;
+        pub fn set_log_file_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_file_name = input;
             self
         }
         /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
@@ -19233,19 +19477,21 @@ pub mod download_db_log_file_portion_input {
         /// request, continuing until the AdditionalDataPending response element returns false.</p>
         /// </li>
         /// </ul>
-        pub fn number_of_lines(mut self, inp: i32) -> Self {
-            self.number_of_lines = Some(inp);
+        pub fn number_of_lines(mut self, input: i32) -> Self {
+            self.number_of_lines = Some(input);
             self
         }
-        pub fn set_number_of_lines(mut self, inp: i32) -> Self {
-            self.number_of_lines = Some(inp);
+        pub fn set_number_of_lines(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_lines = input;
             self
         }
         /// Consumes the builder and constructs a [`DownloadDBLogFilePortionInput`](crate::input::DownloadDBLogFilePortionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DownloadDBLogFilePortionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DownloadDBLogFilePortionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DownloadDBLogFilePortionInput {
                 db_instance_identifier: self.db_instance_identifier,
                 log_file_name: self.log_file_name,
@@ -19266,7 +19512,7 @@ impl DownloadDBLogFilePortionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DownloadDBLogFilePortion,
             aws_http::AwsErrorRetryPolicy,
@@ -19327,7 +19573,7 @@ impl DownloadDBLogFilePortionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19335,7 +19581,7 @@ impl DownloadDBLogFilePortionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19372,15 +19618,15 @@ pub mod failover_db_cluster_input {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The name of the instance to promote to the primary instance.</p>
@@ -19388,23 +19634,25 @@ pub mod failover_db_cluster_input {
         /// For example, <code>mydbcluster-replica1</code>.</p>
         pub fn target_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_db_instance_identifier = Some(inp.into());
+            self.target_db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_target_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_instance_identifier = inp;
+            self.target_db_instance_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`FailoverDBClusterInput`](crate::input::FailoverDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::FailoverDBClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::FailoverDBClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::FailoverDBClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 target_db_instance_identifier: self.target_db_instance_identifier,
@@ -19422,7 +19670,7 @@ impl FailoverDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::FailoverDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -19482,7 +19730,7 @@ impl FailoverDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19490,7 +19738,7 @@ impl FailoverDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19531,37 +19779,42 @@ pub mod failover_global_cluster_input {
         /// <a>GlobalCluster</a> (Aurora global database).</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_identifier = Some(inp.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_identifier = inp;
+            self.global_cluster_identifier = input;
             self
         }
         /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora
         /// global database (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that
         /// Aurora can locate the cluster in its AWS Region.      
         /// </p>
-        pub fn target_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_db_cluster_identifier = Some(inp.into());
+        pub fn target_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_target_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_cluster_identifier = inp;
+            self.target_db_cluster_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::FailoverGlobalClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::FailoverGlobalClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::FailoverGlobalClusterInput {
                 global_cluster_identifier: self.global_cluster_identifier,
                 target_db_cluster_identifier: self.target_db_cluster_identifier,
@@ -19579,7 +19832,7 @@ impl FailoverGlobalClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::FailoverGlobalCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -19639,7 +19892,7 @@ impl FailoverGlobalClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19647,7 +19900,7 @@ impl FailoverGlobalClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19681,15 +19934,18 @@ pub mod import_installation_media_input {
     }
     impl Builder {
         /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_availability_zone_id = Some(inp.into());
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_availability_zone_id = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_id = inp;
+            self.custom_availability_zone_id = input;
             self
         }
         /// <p>The name of the database engine to be used for this instance.
@@ -19721,12 +19977,12 @@ pub mod import_installation_media_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -19740,12 +19996,15 @@ pub mod import_installation_media_input {
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
         /// Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The path to the installation medium for the specified DB engine.</p>
@@ -19753,37 +20012,39 @@ pub mod import_installation_media_input {
         /// </p>
         pub fn engine_installation_media_path(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.engine_installation_media_path = Some(inp.into());
+            self.engine_installation_media_path = Some(input.into());
             self
         }
         pub fn set_engine_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.engine_installation_media_path = inp;
+            self.engine_installation_media_path = input;
             self
         }
         /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
         /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
         /// </p>
-        pub fn os_installation_media_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.os_installation_media_path = Some(inp.into());
+        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.os_installation_media_path = Some(input.into());
             self
         }
         pub fn set_os_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.os_installation_media_path = inp;
+            self.os_installation_media_path = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportInstallationMediaInput`](crate::input::ImportInstallationMediaInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportInstallationMediaInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ImportInstallationMediaInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ImportInstallationMediaInput {
                 custom_availability_zone_id: self.custom_availability_zone_id,
                 engine: self.engine,
@@ -19805,7 +20066,7 @@ impl ImportInstallationMediaInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ImportInstallationMedia,
             aws_http::AwsErrorRetryPolicy,
@@ -19865,7 +20126,7 @@ impl ImportInstallationMediaInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19873,7 +20134,7 @@ impl ImportInstallationMediaInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19907,32 +20168,37 @@ pub mod list_tags_for_resource_input {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_name = Some(inp.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_name = inp;
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_name: self.resource_name,
                 filters: self.filters,
@@ -19950,7 +20216,7 @@ impl ListTagsForResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
@@ -20010,7 +20276,7 @@ impl ListTagsForResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20018,7 +20284,7 @@ impl ListTagsForResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20051,33 +20317,35 @@ pub mod modify_certificates_input {
         /// <p>The new default certificate identifier to override the current one with.</p>
         /// <p>To determine the valid values, use the <code>describe-certificates</code> AWS CLI
         /// command or the <code>DescribeCertificates</code> API operation.</p>
-        pub fn certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_identifier = Some(inp.into());
+        pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_identifier = Some(input.into());
             self
         }
         pub fn set_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_identifier = inp;
+            self.certificate_identifier = input;
             self
         }
         /// <p>A value that indicates whether to remove the override for the default certificate.
         /// If the override is removed, the default certificate is the system
         /// default.</p>
-        pub fn remove_customer_override(mut self, inp: bool) -> Self {
-            self.remove_customer_override = Some(inp);
+        pub fn remove_customer_override(mut self, input: bool) -> Self {
+            self.remove_customer_override = Some(input);
             self
         }
-        pub fn set_remove_customer_override(mut self, inp: std::option::Option<bool>) -> Self {
-            self.remove_customer_override = inp;
+        pub fn set_remove_customer_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.remove_customer_override = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyCertificatesInput`](crate::input::ModifyCertificatesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyCertificatesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyCertificatesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyCertificatesInput {
                 certificate_identifier: self.certificate_identifier,
                 remove_customer_override: self.remove_customer_override,
@@ -20095,7 +20363,7 @@ impl ModifyCertificatesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyCertificates,
             aws_http::AwsErrorRetryPolicy,
@@ -20155,7 +20423,7 @@ impl ModifyCertificatesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20163,7 +20431,7 @@ impl ModifyCertificatesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20202,15 +20470,15 @@ pub mod modify_current_db_cluster_capacity_input {
         /// <p>Must match the identifier of an existing DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The DB cluster capacity.</p>
@@ -20224,12 +20492,12 @@ pub mod modify_current_db_cluster_capacity_input {
         /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
         /// </li>
         /// </ul>
-        pub fn capacity(mut self, inp: i32) -> Self {
-            self.capacity = Some(inp);
+        pub fn capacity(mut self, input: i32) -> Self {
+            self.capacity = Some(input);
             self
         }
-        pub fn set_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.capacity = inp;
+        pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.capacity = input;
             self
         }
         /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
@@ -20240,12 +20508,12 @@ pub mod modify_current_db_cluster_capacity_input {
         /// <p>Value must be from 10 through 600.</p>
         /// </li>
         /// </ul>
-        pub fn seconds_before_timeout(mut self, inp: i32) -> Self {
-            self.seconds_before_timeout = Some(inp);
+        pub fn seconds_before_timeout(mut self, input: i32) -> Self {
+            self.seconds_before_timeout = Some(input);
             self
         }
-        pub fn set_seconds_before_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.seconds_before_timeout = inp;
+        pub fn set_seconds_before_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.seconds_before_timeout = input;
             self
         }
         /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
@@ -20253,18 +20521,21 @@ pub mod modify_current_db_cluster_capacity_input {
         /// <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
         /// <p>
         /// <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-        pub fn timeout_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timeout_action = Some(inp.into());
+        pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timeout_action = Some(input.into());
             self
         }
-        pub fn set_timeout_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timeout_action = inp;
+        pub fn set_timeout_action(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.timeout_action = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyCurrentDBClusterCapacityInput`](crate::input::ModifyCurrentDBClusterCapacityInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ModifyCurrentDBClusterCapacityInput,
             smithy_http::operation::BuildError,
         > {
@@ -20288,7 +20559,7 @@ impl ModifyCurrentDBClusterCapacityInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyCurrentDBClusterCapacity,
             aws_http::AwsErrorRetryPolicy,
@@ -20349,7 +20620,7 @@ impl ModifyCurrentDBClusterCapacityInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20357,7 +20628,7 @@ impl ModifyCurrentDBClusterCapacityInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20413,15 +20684,15 @@ pub mod modify_db_cluster_input {
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
         /// <p>Constraints: This identifier must match the identifier of an existing DB
         /// cluster.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
@@ -20439,15 +20710,15 @@ pub mod modify_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>my-cluster2</code>
         /// </p>
-        pub fn new_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_db_cluster_identifier = Some(inp.into());
+        pub fn new_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_new_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_db_cluster_identifier = inp;
+            self.new_db_cluster_identifier = input;
             self
         }
         /// <p>A value that indicates whether the modifications in this request and
@@ -20462,12 +20733,12 @@ pub mod modify_db_cluster_input {
         /// and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
         /// applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
         /// <p>By default, this parameter is disabled.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.apply_immediately = Some(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_immediately = input;
             self
         }
         /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
@@ -20478,65 +20749,65 @@ pub mod modify_db_cluster_input {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>The port number on which the DB cluster accepts connections.</p>
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_user_password = Some(inp.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_user_password = Some(input.into());
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_user_password = inp;
+            self.master_user_password = input;
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.
@@ -20547,15 +20818,15 @@ pub mod modify_db_cluster_input {
         /// are rejected but existing connections are not interrupted.
         /// </p>
         /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -20583,15 +20854,15 @@ pub mod modify_db_cluster_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -20605,15 +20876,18 @@ pub mod modify_db_cluster_input {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_maintenance_window = Some(inp.into());
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.preferred_maintenance_window = Some(input.into());
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_maintenance_window = inp;
+            self.preferred_maintenance_window = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -20622,15 +20896,15 @@ pub mod modify_db_cluster_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -20645,27 +20919,27 @@ pub mod modify_db_cluster_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.backtrack_window = Some(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.backtrack_window = Some(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.backtrack_window = inp;
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.backtrack_window = input;
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
-            inp: crate::model::CloudwatchLogsExportConfiguration,
+            input: crate::model::CloudwatchLogsExportConfiguration,
         ) -> Self {
-            self.cloudwatch_logs_export_configuration = Some(inp);
+            self.cloudwatch_logs_export_configuration = Some(input);
             self
         }
         pub fn set_cloudwatch_logs_export_configuration(
             mut self,
-            inp: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
+            input: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
         ) -> Self {
-            self.cloudwatch_logs_export_configuration = inp;
+            self.cloudwatch_logs_export_configuration = input;
             self
         }
         /// <p>The version number of the database engine to which you want to upgrade.
@@ -20683,24 +20957,27 @@ pub mod modify_db_cluster_input {
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed.</p>
         /// <p>Constraints: You must allow major version upgrades when specifying a value for the
         /// <code>EngineVersion</code> parameter that is a different major version than the DB
         /// cluster's current version.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.allow_major_version_upgrade = Some(inp);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.allow_major_version_upgrade = Some(input);
             self
         }
-        pub fn set_allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.allow_major_version_upgrade = Some(inp);
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_major_version_upgrade = input;
             self
         }
         /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
@@ -20722,16 +20999,16 @@ pub mod modify_db_cluster_input {
         /// </ul>
         pub fn db_instance_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_instance_parameter_group_name = Some(inp.into());
+            self.db_instance_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_instance_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_parameter_group_name = inp;
+            self.db_instance_parameter_group_name = input;
             self
         }
         /// <p>The Active Directory directory ID to move the DB cluster to.  
@@ -20741,48 +21018,48 @@ pub mod modify_db_cluster_input {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
-        pub fn scaling_configuration(mut self, inp: crate::model::ScalingConfiguration) -> Self {
-            self.scaling_configuration = Some(inp);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.scaling_configuration = Some(input);
             self
         }
         pub fn set_scaling_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ScalingConfiguration>,
+            input: std::option::Option<crate::model::ScalingConfiguration>,
         ) -> Self {
-            self.scaling_configuration = inp;
+            self.scaling_configuration = input;
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
@@ -20792,22 +21069,22 @@ pub mod modify_db_cluster_input {
         /// from inside the RDS console with the query editor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
-        pub fn enable_http_endpoint(mut self, inp: bool) -> Self {
-            self.enable_http_endpoint = Some(inp);
+        pub fn enable_http_endpoint(mut self, input: bool) -> Self {
+            self.enable_http_endpoint = Some(input);
             self
         }
-        pub fn set_enable_http_endpoint(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_http_endpoint = inp;
+        pub fn set_enable_http_endpoint(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_http_endpoint = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
@@ -20818,22 +21095,24 @@ pub mod modify_db_cluster_input {
         /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is
         /// demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
         /// </p>
-        pub fn enable_global_write_forwarding(mut self, inp: bool) -> Self {
-            self.enable_global_write_forwarding = Some(inp);
+        pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
+            self.enable_global_write_forwarding = Some(input);
             self
         }
         pub fn set_enable_global_write_forwarding(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_global_write_forwarding = inp;
+            self.enable_global_write_forwarding = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBClusterInput`](crate::input::ModifyDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 new_db_cluster_identifier: self.new_db_cluster_identifier,
@@ -20873,7 +21152,7 @@ impl ModifyDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -20932,7 +21211,7 @@ impl ModifyDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20940,7 +21219,7 @@ impl ModifyDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20975,58 +21254,63 @@ pub mod modify_db_cluster_endpoint_input {
         /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = Some(inp.into());
+            self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = inp;
+            self.db_cluster_endpoint_identifier = input;
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_type = Some(inp.into());
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_type = Some(input.into());
             self
         }
-        pub fn set_endpoint_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_type = inp;
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_type = input;
             self
         }
-        pub fn static_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.static_members = Some(v);
             self
         }
         pub fn set_static_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.static_members = inp;
+            self.static_members = input;
             self
         }
-        pub fn excluded_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
         pub fn set_excluded_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.excluded_members = inp;
+            self.excluded_members = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBClusterEndpointInput`](crate::input::ModifyDBClusterEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBClusterEndpointInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBClusterEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBClusterEndpointInput {
                 db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
                 endpoint_type: self.endpoint_type,
@@ -21047,7 +21331,7 @@ impl ModifyDBClusterEndpointInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBClusterEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -21107,7 +21391,7 @@ impl ModifyDBClusterEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21115,7 +21399,7 @@ impl ModifyDBClusterEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21148,35 +21432,35 @@ pub mod modify_db_cluster_parameter_group_input {
         /// <p>The name of the DB cluster parameter group to modify.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBClusterParameterGroupInput`](crate::input::ModifyDBClusterParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ModifyDBClusterParameterGroupInput,
             smithy_http::operation::BuildError,
         > {
@@ -21198,7 +21482,7 @@ impl ModifyDBClusterParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBClusterParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -21259,7 +21543,7 @@ impl ModifyDBClusterParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21267,7 +21551,7 @@ impl ModifyDBClusterParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21302,16 +21586,16 @@ pub mod modify_db_cluster_snapshot_attribute_input {
         /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = Some(inp.into());
+            self.db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = inp;
+            self.db_cluster_snapshot_identifier = input;
             self
         }
         /// <p>The name of the DB cluster snapshot attribute to modify.</p>
@@ -21321,44 +21605,47 @@ pub mod modify_db_cluster_snapshot_attribute_input {
         /// <p>To view the list of attributes available to modify, use the
         /// <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
         /// </note>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_name = Some(inp.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attribute_name = inp;
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
             self
         }
-        pub fn values_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values_to_add.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values_to_add = Some(v);
             self
         }
         pub fn set_values_to_add(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values_to_add = inp;
+            self.values_to_add = input;
             self
         }
-        pub fn values_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values_to_remove.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values_to_remove = Some(v);
             self
         }
         pub fn set_values_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values_to_remove = inp;
+            self.values_to_remove = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBClusterSnapshotAttributeInput`](crate::input::ModifyDBClusterSnapshotAttributeInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ModifyDBClusterSnapshotAttributeInput,
             smithy_http::operation::BuildError,
         > {
@@ -21382,7 +21669,7 @@ impl ModifyDBClusterSnapshotAttributeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBClusterSnapshotAttribute,
             aws_http::AwsErrorRetryPolicy,
@@ -21445,7 +21732,7 @@ impl ModifyDBClusterSnapshotAttributeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21453,7 +21740,7 @@ impl ModifyDBClusterSnapshotAttributeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21535,15 +21822,15 @@ pub mod modify_db_instance_input {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
@@ -21556,12 +21843,12 @@ pub mod modify_db_instance_input {
         /// <p>For the valid values for allocated storage for each engine,
         /// see <code>CreateDBInstance</code>.
         /// </p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.allocated_storage = inp;
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
         /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
@@ -21575,15 +21862,15 @@ pub mod modify_db_instance_input {
         /// unless <code>ApplyImmediately</code> is enabled for this request.
         /// </p>
         /// <p>Default: Uses existing setting</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The new DB subnet group for the DB instance.
@@ -21600,41 +21887,41 @@ pub mod modify_db_instance_input {
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetGroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
-        pub fn db_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn db_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_security_groups = Some(v);
             self
         }
         pub fn set_db_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.db_security_groups = inp;
+            self.db_security_groups = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>A value that indicates whether the modifications in this request and
@@ -21651,12 +21938,12 @@ pub mod modify_db_instance_input {
         /// in the <i>Amazon RDS User Guide.</i> to see the impact of enabling
         /// or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.
         /// </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.apply_immediately = Some(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_immediately = input;
             self
         }
         /// <p>The new password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
@@ -21699,15 +21986,15 @@ pub mod modify_db_instance_input {
         /// This includes restoring privileges that might have been accidentally revoked.
         /// </p>
         /// </note>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_user_password = Some(inp.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_user_password = Some(input.into());
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_user_password = inp;
+            self.master_user_password = input;
             self
         }
         /// <p>The name of the DB parameter group to apply to the DB instance. Changing this
@@ -21717,15 +22004,15 @@ pub mod modify_db_instance_input {
         /// parameter changes isn't applied during the next maintenance window.</p>
         /// <p>Default: Uses existing setting</p>
         /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -21758,12 +22045,12 @@ pub mod modify_db_instance_input {
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>
@@ -21794,15 +22081,15 @@ pub mod modify_db_instance_input {
         /// <p>Must be at least 30 minutes</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// <p>The weekly time range (in UTC) during which system maintenance can occur, which
@@ -21819,15 +22106,18 @@ pub mod modify_db_instance_input {
         /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
         /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
         /// <p>Constraints: Must be at least 30 minutes</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_maintenance_window = Some(inp.into());
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.preferred_maintenance_window = Some(input.into());
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_maintenance_window = inp;
+            self.preferred_maintenance_window = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
@@ -21836,12 +22126,12 @@ pub mod modify_db_instance_input {
         /// unless the <code>ApplyImmediately</code> parameter is
         /// enabled for this request.
         /// </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>
@@ -21858,22 +22148,25 @@ pub mod modify_db_instance_input {
         /// default minor version if the current minor version is lower.
         /// For information about valid engine versions, see <code>CreateDBInstance</code>,
         /// or call <code>DescribeDBEngineVersions</code>.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
         /// <p>Constraints: Major version upgrades must be allowed when specifying a value for the EngineVersion parameter that is a different major version than the DB instance's current version.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.allow_major_version_upgrade = Some(inp);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.allow_major_version_upgrade = Some(input);
             self
         }
-        pub fn set_allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.allow_major_version_upgrade = Some(inp);
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_major_version_upgrade = input;
             self
         }
         /// <p>
@@ -21884,24 +22177,27 @@ pub mod modify_db_instance_input {
         /// An outage results if this parameter is enabled during the maintenance window,
         /// and a newer minor version is available, and RDS has enabled auto patching for that engine version.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.auto_minor_version_upgrade = Some(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.auto_minor_version_upgrade = inp;
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
             self
         }
         /// <p>The license model for the DB instance.</p>
         /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
         /// <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The new Provisioned IOPS (I/O operations per second) value for the RDS instance.
@@ -21928,12 +22224,12 @@ pub mod modify_db_instance_input {
         /// Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.
         /// </p>
         /// <p>Default: Uses existing setting</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>
@@ -21946,15 +22242,15 @@ pub mod modify_db_instance_input {
         /// are rejected but existing connections are not interrupted.
         /// </p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>
@@ -21978,15 +22274,15 @@ pub mod modify_db_instance_input {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn new_db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_db_instance_identifier = Some(inp.into());
+        pub fn new_db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_new_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_db_instance_identifier = inp;
+            self.new_db_instance_identifier = input;
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.
@@ -22011,48 +22307,48 @@ pub mod modify_db_instance_input {
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_arn = Some(inp.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_arn = Some(input.into());
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_arn = inp;
+            self.tde_credential_arn = input;
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_password = Some(inp.into());
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_password = Some(input.into());
             self
         }
         pub fn set_tde_credential_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_password = inp;
+            self.tde_credential_password = input;
             self
         }
         /// <p>Indicates the certificate that needs to be associated with the instance.</p>
-        pub fn ca_certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ca_certificate_identifier = Some(inp.into());
+        pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ca_certificate_identifier = Some(input.into());
             self
         }
         pub fn set_ca_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ca_certificate_identifier = inp;
+            self.ca_certificate_identifier = input;
             self
         }
         /// <p>The Active Directory directory ID to move the DB instance to.  
@@ -22061,12 +22357,12 @@ pub mod modify_db_instance_input {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -22076,12 +22372,12 @@ pub mod modify_db_instance_input {
         /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
         /// value for an Aurora DB instance has no effect on the DB cluster setting. For more
         /// information, see <code>ModifyDBCluster</code>.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
@@ -22089,12 +22385,12 @@ pub mod modify_db_instance_input {
         /// to a value other than 0.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.monitoring_interval = Some(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.monitoring_interval = Some(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.monitoring_interval = inp;
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_interval = input;
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -22152,12 +22448,12 @@ pub mod modify_db_instance_input {
         /// </p>
         /// <p> Valid values: <code>1150-65535</code>
         /// </p>
-        pub fn db_port_number(mut self, inp: i32) -> Self {
-            self.db_port_number = Some(inp);
+        pub fn db_port_number(mut self, input: i32) -> Self {
+            self.db_port_number = Some(input);
             self
         }
-        pub fn set_db_port_number(mut self, inp: std::option::Option<i32>) -> Self {
-            self.db_port_number = inp;
+        pub fn set_db_port_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.db_port_number = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.
@@ -22173,12 +22469,12 @@ pub mod modify_db_instance_input {
         /// </p>
         /// <p>Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
         /// of the value of the <code>ApplyImmediately</code> parameter.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.publicly_accessible = Some(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = inp;
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -22187,27 +22483,27 @@ pub mod modify_db_instance_input {
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.monitoring_role_arn = Some(inp.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_role_arn = Some(input.into());
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.monitoring_role_arn = inp;
+            self.monitoring_role_arn = input;
             self
         }
         /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
@@ -22217,12 +22513,12 @@ pub mod modify_db_instance_input {
         /// </p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
-        pub fn promotion_tier(mut self, inp: i32) -> Self {
-            self.promotion_tier = Some(inp);
+        pub fn promotion_tier(mut self, input: i32) -> Self {
+            self.promotion_tier = Some(input);
             self
         }
-        pub fn set_promotion_tier(mut self, inp: std::option::Option<i32>) -> Self {
-            self.promotion_tier = inp;
+        pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+            self.promotion_tier = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -22233,15 +22529,15 @@ pub mod modify_db_instance_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
@@ -22249,12 +22545,12 @@ pub mod modify_db_instance_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.enable_performance_insights = Some(inp);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.enable_performance_insights = Some(input);
             self
         }
-        pub fn set_enable_performance_insights(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_performance_insights = inp;
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_performance_insights = input;
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
@@ -22264,28 +22560,28 @@ pub mod modify_db_instance_input {
         /// Your AWS account has a different default CMK for each AWS Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = Some(inp.into());
+            self.performance_insights_kms_key_id = Some(input.into());
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = inp;
+            self.performance_insights_kms_key_id = input;
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.performance_insights_retention_period = Some(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.performance_insights_retention_period = Some(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.performance_insights_retention_period = inp;
+            self.performance_insights_retention_period = input;
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
@@ -22293,45 +22589,45 @@ pub mod modify_db_instance_input {
         /// immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
-            inp: crate::model::CloudwatchLogsExportConfiguration,
+            input: crate::model::CloudwatchLogsExportConfiguration,
         ) -> Self {
-            self.cloudwatch_logs_export_configuration = Some(inp);
+            self.cloudwatch_logs_export_configuration = Some(input);
             self
         }
         pub fn set_cloudwatch_logs_export_configuration(
             mut self,
-            inp: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
+            input: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
         ) -> Self {
-            self.cloudwatch_logs_export_configuration = inp;
+            self.cloudwatch_logs_export_configuration = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.use_default_processor_features = Some(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.use_default_processor_features = Some(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.use_default_processor_features = inp;
+            self.use_default_processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -22340,12 +22636,12 @@ pub mod modify_db_instance_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -22353,12 +22649,12 @@ pub mod modify_db_instance_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.max_allocated_storage = Some(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.max_allocated_storage = Some(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_allocated_storage = inp;
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_allocated_storage = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is restarted when you rotate your
@@ -22384,12 +22680,15 @@ pub mod modify_db_instance_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn certificate_rotation_restart(mut self, inp: bool) -> Self {
-            self.certificate_rotation_restart = Some(inp);
+        pub fn certificate_rotation_restart(mut self, input: bool) -> Self {
+            self.certificate_rotation_restart = Some(input);
             self
         }
-        pub fn set_certificate_rotation_restart(mut self, inp: std::option::Option<bool>) -> Self {
-            self.certificate_rotation_restart = inp;
+        pub fn set_certificate_rotation_restart(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.certificate_rotation_restart = input;
             self
         }
         /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p>
@@ -22402,15 +22701,15 @@ pub mod modify_db_instance_input {
         /// accept user connections, a mounted replica can't serve a read-only workload.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn replica_mode(mut self, inp: crate::model::ReplicaMode) -> Self {
-            self.replica_mode = Some(inp);
+        pub fn replica_mode(mut self, input: crate::model::ReplicaMode) -> Self {
+            self.replica_mode = Some(input);
             self
         }
         pub fn set_replica_mode(
             mut self,
-            inp: std::option::Option<crate::model::ReplicaMode>,
+            input: std::option::Option<crate::model::ReplicaMode>,
         ) -> Self {
-            self.replica_mode = inp;
+            self.replica_mode = input;
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -22422,34 +22721,36 @@ pub mod modify_db_instance_input {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, inp: bool) -> Self {
-            self.enable_customer_owned_ip = Some(inp);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.enable_customer_owned_ip = Some(input);
             self
         }
-        pub fn set_enable_customer_owned_ip(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_customer_owned_ip = inp;
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_customer_owned_ip = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
         pub fn aws_backup_recovery_point_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.aws_backup_recovery_point_arn = Some(inp.into());
+            self.aws_backup_recovery_point_arn = Some(input.into());
             self
         }
         pub fn set_aws_backup_recovery_point_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.aws_backup_recovery_point_arn = inp;
+            self.aws_backup_recovery_point_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBInstanceInput`](crate::input::ModifyDBInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBInstanceInput {
                 db_instance_identifier: self.db_instance_identifier,
                 allocated_storage: self.allocated_storage,
@@ -22510,7 +22811,7 @@ impl ModifyDBInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -22570,7 +22871,7 @@ impl ModifyDBInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22578,7 +22879,7 @@ impl ModifyDBInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22615,35 +22916,37 @@ pub mod modify_db_parameter_group_input {
         /// <p>If supplied, must match the name of an existing <code>DBParameterGroup</code>.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBParameterGroupInput`](crate::input::ModifyDBParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBParameterGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBParameterGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBParameterGroupInput {
                 db_parameter_group_name: self.db_parameter_group_name,
                 parameters: self.parameters,
@@ -22661,7 +22964,7 @@ impl ModifyDBParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -22721,7 +23024,7 @@ impl ModifyDBParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22729,7 +23032,7 @@ impl ModifyDBParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22766,58 +23069,61 @@ pub mod modify_db_proxy_input {
     }
     impl Builder {
         /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_db_proxy_name = Some(inp.into());
+        pub fn new_db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_db_proxy_name = Some(input.into());
             self
         }
         pub fn set_new_db_proxy_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_db_proxy_name = inp;
+            self.new_db_proxy_name = input;
             self
         }
-        pub fn auth(mut self, inp: impl Into<crate::model::UserAuthConfig>) -> Self {
+        pub fn auth(mut self, input: impl Into<crate::model::UserAuthConfig>) -> Self {
             let mut v = self.auth.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.auth = Some(v);
             self
         }
         pub fn set_auth(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
         ) -> Self {
-            self.auth = inp;
+            self.auth = input;
             self
         }
         /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy.
         /// By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't
         /// use TLS.</p>
-        pub fn require_tls(mut self, inp: bool) -> Self {
-            self.require_tls = Some(inp);
+        pub fn require_tls(mut self, input: bool) -> Self {
+            self.require_tls = Some(input);
             self
         }
-        pub fn set_require_tls(mut self, inp: std::option::Option<bool>) -> Self {
-            self.require_tls = inp;
+        pub fn set_require_tls(mut self, input: std::option::Option<bool>) -> Self {
+            self.require_tls = input;
             self
         }
         /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this
         /// value higher or lower than the connection timeout limit for the associated database.</p>
-        pub fn idle_client_timeout(mut self, inp: i32) -> Self {
-            self.idle_client_timeout = Some(inp);
+        pub fn idle_client_timeout(mut self, input: i32) -> Self {
+            self.idle_client_timeout = Some(input);
             self
         }
-        pub fn set_idle_client_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.idle_client_timeout = inp;
+        pub fn set_idle_client_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.idle_client_timeout = input;
             self
         }
         /// <p>Whether the proxy includes detailed information about SQL statements in its logs.
@@ -22826,40 +23132,41 @@ pub mod modify_db_proxy_input {
         /// SQL statements that you submit through the proxy. Thus, only enable this setting
         /// when needed for debugging, and only when you have security measures in place to
         /// safeguard any sensitive information that appears in the logs.</p>
-        pub fn debug_logging(mut self, inp: bool) -> Self {
-            self.debug_logging = Some(inp);
+        pub fn debug_logging(mut self, input: bool) -> Self {
+            self.debug_logging = Some(input);
             self
         }
-        pub fn set_debug_logging(mut self, inp: std::option::Option<bool>) -> Self {
-            self.debug_logging = inp;
+        pub fn set_debug_logging(mut self, input: std::option::Option<bool>) -> Self {
+            self.debug_logging = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_groups = Some(v);
             self
         }
         pub fn set_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.security_groups = inp;
+            self.security_groups = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBProxyInput`](crate::input::ModifyDBProxyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBProxyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ModifyDBProxyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ModifyDBProxyInput {
                 db_proxy_name: self.db_proxy_name,
                 new_db_proxy_name: self.new_db_proxy_name,
@@ -22883,7 +23190,7 @@ impl ModifyDBProxyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBProxy,
             aws_http::AwsErrorRetryPolicy,
@@ -22942,7 +23249,7 @@ impl ModifyDBProxyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22950,7 +23257,7 @@ impl ModifyDBProxyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22982,49 +23289,51 @@ pub mod modify_db_proxy_endpoint_input {
     }
     impl Builder {
         /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_endpoint_name = Some(inp.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_endpoint_name = Some(input.into());
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_proxy_endpoint_name = inp;
+            self.db_proxy_endpoint_name = input;
             self
         }
         /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must
         /// begin with a letter and must contain only ASCII letters, digits, and hyphens; it
         /// can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_db_proxy_endpoint_name = Some(inp.into());
+        pub fn new_db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_db_proxy_endpoint_name = Some(input.into());
             self
         }
         pub fn set_new_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_db_proxy_endpoint_name = inp;
+            self.new_db_proxy_endpoint_name = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBProxyEndpointInput`](crate::input::ModifyDBProxyEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBProxyEndpointInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBProxyEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBProxyEndpointInput {
                 db_proxy_endpoint_name: self.db_proxy_endpoint_name,
                 new_db_proxy_endpoint_name: self.new_db_proxy_endpoint_name,
@@ -23043,7 +23352,7 @@ impl ModifyDBProxyEndpointInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBProxyEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -23103,7 +23412,7 @@ impl ModifyDBProxyEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23111,7 +23420,7 @@ impl ModifyDBProxyEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23145,55 +23454,60 @@ pub mod modify_db_proxy_target_group_input {
     }
     impl Builder {
         /// <p>The name of the new target group to assign to the proxy.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_group_name = Some(inp.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_name = Some(input.into());
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_group_name = inp;
+            self.target_group_name = input;
             self
         }
         /// <p>The name of the new proxy to which to assign the target group.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
         pub fn connection_pool_config(
             mut self,
-            inp: crate::model::ConnectionPoolConfiguration,
+            input: crate::model::ConnectionPoolConfiguration,
         ) -> Self {
-            self.connection_pool_config = Some(inp);
+            self.connection_pool_config = Some(input);
             self
         }
         pub fn set_connection_pool_config(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionPoolConfiguration>,
+            input: std::option::Option<crate::model::ConnectionPoolConfiguration>,
         ) -> Self {
-            self.connection_pool_config = inp;
+            self.connection_pool_config = input;
             self
         }
         /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_name = Some(inp.into());
+        pub fn new_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_name = Some(input.into());
             self
         }
-        pub fn set_new_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.new_name = inp;
+        pub fn set_new_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.new_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBProxyTargetGroupInput`](crate::input::ModifyDBProxyTargetGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBProxyTargetGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBProxyTargetGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBProxyTargetGroupInput {
                 target_group_name: self.target_group_name,
                 db_proxy_name: self.db_proxy_name,
@@ -23214,7 +23528,7 @@ impl ModifyDBProxyTargetGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBProxyTargetGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -23275,7 +23589,7 @@ impl ModifyDBProxyTargetGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23283,7 +23597,7 @@ impl ModifyDBProxyTargetGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23315,15 +23629,15 @@ pub mod modify_db_snapshot_input {
     }
     impl Builder {
         /// <p>The identifier of the DB snapshot to modify.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// <p>The engine version to upgrade the DB snapshot to.
@@ -23363,12 +23677,15 @@ pub mod modify_db_snapshot_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
         /// Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The option group to identify with the upgraded DB snapshot.
@@ -23378,22 +23695,24 @@ pub mod modify_db_snapshot_input {
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBSnapshotInput`](crate::input::ModifyDBSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBSnapshotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBSnapshotInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBSnapshotInput {
                 db_snapshot_identifier: self.db_snapshot_identifier,
                 engine_version: self.engine_version,
@@ -23412,7 +23731,7 @@ impl ModifyDBSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -23472,7 +23791,7 @@ impl ModifyDBSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23480,7 +23799,7 @@ impl ModifyDBSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23513,15 +23832,15 @@ pub mod modify_db_snapshot_attribute_input {
     }
     impl Builder {
         /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// <p>The name of the DB snapshot attribute to modify.</p>
@@ -23531,45 +23850,50 @@ pub mod modify_db_snapshot_attribute_input {
         /// <p>To view the list of attributes available to modify, use the
         /// <a>DescribeDBSnapshotAttributes</a> API action.</p>
         /// </note>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_name = Some(inp.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attribute_name = inp;
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
             self
         }
-        pub fn values_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values_to_add.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values_to_add = Some(v);
             self
         }
         pub fn set_values_to_add(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values_to_add = inp;
+            self.values_to_add = input;
             self
         }
-        pub fn values_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values_to_remove.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values_to_remove = Some(v);
             self
         }
         pub fn set_values_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values_to_remove = inp;
+            self.values_to_remove = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBSnapshotAttributeInput`](crate::input::ModifyDBSnapshotAttributeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBSnapshotAttributeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBSnapshotAttributeInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBSnapshotAttributeInput {
                 db_snapshot_identifier: self.db_snapshot_identifier,
                 attribute_name: self.attribute_name,
@@ -23590,7 +23914,7 @@ impl ModifyDBSnapshotAttributeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBSnapshotAttribute,
             aws_http::AwsErrorRetryPolicy,
@@ -23651,7 +23975,7 @@ impl ModifyDBSnapshotAttributeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23659,7 +23983,7 @@ impl ModifyDBSnapshotAttributeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23696,47 +24020,52 @@ pub mod modify_db_subnet_group_input {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>The description for the DB subnet group.</p>
-        pub fn db_subnet_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_description = Some(inp.into());
+        pub fn db_subnet_group_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.db_subnet_group_description = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_description = inp;
+            self.db_subnet_group_description = input;
             self
         }
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
         pub fn set_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.subnet_ids = inp;
+            self.subnet_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBSubnetGroupInput`](crate::input::ModifyDBSubnetGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyDBSubnetGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyDBSubnetGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyDBSubnetGroupInput {
                 db_subnet_group_name: self.db_subnet_group_name,
                 db_subnet_group_description: self.db_subnet_group_description,
@@ -23755,7 +24084,7 @@ impl ModifyDBSubnetGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyDBSubnetGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -23815,7 +24144,7 @@ impl ModifyDBSubnetGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23823,7 +24152,7 @@ impl ModifyDBSubnetGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23857,66 +24186,71 @@ pub mod modify_event_subscription_input {
     }
     impl Builder {
         /// <p>The name of the RDS event notification subscription.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_name = Some(inp.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_name = Some(input.into());
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_name = inp;
+            self.subscription_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sns_topic_arn = Some(inp.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_topic_arn = Some(input.into());
             self
         }
-        pub fn set_sns_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sns_topic_arn = inp;
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sns_topic_arn = input;
             self
         }
         /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. If this value isn't specified, all events are returned.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_type = Some(inp.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_type = Some(input.into());
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_type = inp;
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_type = input;
             self
         }
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_categories = Some(v);
             self
         }
         pub fn set_event_categories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.event_categories = inp;
+            self.event_categories = input;
             self
         }
         /// <p>
         /// A value that indicates whether to activate the subscription.
         /// </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enabled = inp;
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyEventSubscriptionInput`](crate::input::ModifyEventSubscriptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyEventSubscriptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyEventSubscriptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyEventSubscriptionInput {
                 subscription_name: self.subscription_name,
                 sns_topic_arn: self.sns_topic_arn,
@@ -23938,7 +24272,7 @@ impl ModifyEventSubscriptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyEventSubscription,
             aws_http::AwsErrorRetryPolicy,
@@ -23998,7 +24332,7 @@ impl ModifyEventSubscriptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24006,7 +24340,7 @@ impl ModifyEventSubscriptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -24048,15 +24382,15 @@ pub mod modify_global_cluster_input {
         /// <p>Must match the identifier of an existing global database cluster.</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_identifier = Some(inp.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_identifier = inp;
+            self.global_cluster_identifier = input;
             self
         }
         /// <p>
@@ -24079,28 +24413,28 @@ pub mod modify_global_cluster_input {
         /// </p>
         pub fn new_global_cluster_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.new_global_cluster_identifier = Some(inp.into());
+            self.new_global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_new_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_global_cluster_identifier = inp;
+            self.new_global_cluster_identifier = input;
             self
         }
         /// <p>
         /// Indicates if the global database cluster has deletion protection enabled. The global database cluster
         /// can't be deleted when deletion protection is enabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>The version number of the database engine to which you want to upgrade.
@@ -24118,12 +24452,15 @@ pub mod modify_global_cluster_input {
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed.</p>
@@ -24133,19 +24470,21 @@ pub mod modify_global_cluster_input {
         /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter
         /// groups are set to the default parameter groups for the new version. Apply any custom parameter
         /// groups after completing the upgrade.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.allow_major_version_upgrade = Some(inp);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.allow_major_version_upgrade = Some(input);
             self
         }
-        pub fn set_allow_major_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.allow_major_version_upgrade = inp;
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_major_version_upgrade = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyGlobalClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyGlobalClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyGlobalClusterInput {
                 global_cluster_identifier: self.global_cluster_identifier,
                 new_global_cluster_identifier: self.new_global_cluster_identifier,
@@ -24166,7 +24505,7 @@ impl ModifyGlobalClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyGlobalCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -24226,7 +24565,7 @@ impl ModifyGlobalClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24234,7 +24573,7 @@ impl ModifyGlobalClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -24269,60 +24608,62 @@ pub mod modify_option_group_input {
     impl Builder {
         /// <p>The name of the option group to be modified.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         pub fn options_to_include(
             mut self,
-            inp: impl Into<crate::model::OptionConfiguration>,
+            input: impl Into<crate::model::OptionConfiguration>,
         ) -> Self {
             let mut v = self.options_to_include.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.options_to_include = Some(v);
             self
         }
         pub fn set_options_to_include(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionConfiguration>>,
         ) -> Self {
-            self.options_to_include = inp;
+            self.options_to_include = input;
             self
         }
-        pub fn options_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn options_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.options_to_remove.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.options_to_remove = Some(v);
             self
         }
         pub fn set_options_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.options_to_remove = inp;
+            self.options_to_remove = input;
             self
         }
         /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.apply_immediately = Some(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_immediately = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyOptionGroupInput`](crate::input::ModifyOptionGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyOptionGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyOptionGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyOptionGroupInput {
                 option_group_name: self.option_group_name,
                 options_to_include: self.options_to_include,
@@ -24342,7 +24683,7 @@ impl ModifyOptionGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ModifyOptionGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -24402,7 +24743,7 @@ impl ModifyOptionGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24410,7 +24751,7 @@ impl ModifyOptionGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -24450,15 +24791,15 @@ pub mod promote_read_replica_input {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -24472,12 +24813,12 @@ pub mod promote_read_replica_input {
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>
@@ -24507,22 +24848,24 @@ pub mod promote_read_replica_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// Consumes the builder and constructs a [`PromoteReadReplicaInput`](crate::input::PromoteReadReplicaInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PromoteReadReplicaInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PromoteReadReplicaInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PromoteReadReplicaInput {
                 db_instance_identifier: self.db_instance_identifier,
                 backup_retention_period: self.backup_retention_period,
@@ -24541,7 +24884,7 @@ impl PromoteReadReplicaInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PromoteReadReplica,
             aws_http::AwsErrorRetryPolicy,
@@ -24601,7 +24944,7 @@ impl PromoteReadReplicaInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24609,7 +24952,7 @@ impl PromoteReadReplicaInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -24648,21 +24991,21 @@ pub mod promote_read_replica_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>my-cluster-replica1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`PromoteReadReplicaDBClusterInput`](crate::input::PromoteReadReplicaDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PromoteReadReplicaDBClusterInput,
             smithy_http::operation::BuildError,
         > {
@@ -24683,7 +25026,7 @@ impl PromoteReadReplicaDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PromoteReadReplicaDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -24744,7 +25087,7 @@ impl PromoteReadReplicaDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24752,7 +25095,7 @@ impl PromoteReadReplicaDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -24788,59 +25131,59 @@ pub mod purchase_reserved_db_instances_offering_input {
         /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = Some(inp.into());
+            self.reserved_db_instances_offering_id = Some(input.into());
             self
         }
         pub fn set_reserved_db_instances_offering_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = inp;
+            self.reserved_db_instances_offering_id = input;
             self
         }
         /// <p>Customer-specified identifier to track this reservation.</p>
         /// <p>Example: myreservationID</p>
-        pub fn reserved_db_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reserved_db_instance_id = Some(inp.into());
+        pub fn reserved_db_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_db_instance_id = Some(input.into());
             self
         }
         pub fn set_reserved_db_instance_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instance_id = inp;
+            self.reserved_db_instance_id = input;
             self
         }
         /// <p>The number of instances to reserve.</p>
         /// <p>Default: <code>1</code>
         /// </p>
-        pub fn db_instance_count(mut self, inp: i32) -> Self {
-            self.db_instance_count = Some(inp);
+        pub fn db_instance_count(mut self, input: i32) -> Self {
+            self.db_instance_count = Some(input);
             self
         }
-        pub fn set_db_instance_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.db_instance_count = inp;
+        pub fn set_db_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.db_instance_count = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`PurchaseReservedDBInstancesOfferingInput`](crate::input::PurchaseReservedDBInstancesOfferingInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PurchaseReservedDBInstancesOfferingInput,
             smithy_http::operation::BuildError,
         > {
@@ -24865,7 +25208,7 @@ impl PurchaseReservedDBInstancesOfferingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PurchaseReservedDBInstancesOffering,
             aws_http::AwsErrorRetryPolicy,
@@ -24928,7 +25271,7 @@ impl PurchaseReservedDBInstancesOfferingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24936,7 +25279,7 @@ impl PurchaseReservedDBInstancesOfferingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -24973,34 +25316,36 @@ pub mod reboot_db_instance_input {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>
         /// A value that indicates whether the reboot is conducted through a Multi-AZ failover.
         /// </p>
         /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
-        pub fn force_failover(mut self, inp: bool) -> Self {
-            self.force_failover = Some(inp);
+        pub fn force_failover(mut self, input: bool) -> Self {
+            self.force_failover = Some(input);
             self
         }
-        pub fn set_force_failover(mut self, inp: std::option::Option<bool>) -> Self {
-            self.force_failover = inp;
+        pub fn set_force_failover(mut self, input: std::option::Option<bool>) -> Self {
+            self.force_failover = input;
             self
         }
         /// Consumes the builder and constructs a [`RebootDBInstanceInput`](crate::input::RebootDBInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RebootDBInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RebootDBInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RebootDBInstanceInput {
                 db_instance_identifier: self.db_instance_identifier,
                 force_failover: self.force_failover,
@@ -25018,7 +25363,7 @@ impl RebootDBInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RebootDBInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -25078,7 +25423,7 @@ impl RebootDBInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -25086,7 +25431,7 @@ impl RebootDBInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -25119,57 +25464,62 @@ pub mod register_db_proxy_targets_input {
     }
     impl Builder {
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_group_name = Some(inp.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_name = Some(input.into());
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_group_name = inp;
+            self.target_group_name = input;
             self
         }
-        pub fn db_instance_identifiers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn db_instance_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.db_instance_identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_instance_identifiers = Some(v);
             self
         }
         pub fn set_db_instance_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.db_instance_identifiers = inp;
+            self.db_instance_identifiers = input;
             self
         }
-        pub fn db_cluster_identifiers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn db_cluster_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.db_cluster_identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_identifiers = Some(v);
             self
         }
         pub fn set_db_cluster_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.db_cluster_identifiers = inp;
+            self.db_cluster_identifiers = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterDBProxyTargetsInput`](crate::input::RegisterDBProxyTargetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterDBProxyTargetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RegisterDBProxyTargetsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RegisterDBProxyTargetsInput {
                 db_proxy_name: self.db_proxy_name,
                 target_group_name: self.target_group_name,
@@ -25189,7 +25539,7 @@ impl RegisterDBProxyTargetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RegisterDBProxyTargets,
             aws_http::AwsErrorRetryPolicy,
@@ -25249,7 +25599,7 @@ impl RegisterDBProxyTargetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -25257,7 +25607,7 @@ impl RegisterDBProxyTargetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -25290,36 +25640,38 @@ pub mod remove_from_global_cluster_input {
         /// <p>
         /// The cluster identifier to detach from the Aurora global database cluster.
         /// </p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_identifier = Some(inp.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_identifier = inp;
+            self.global_cluster_identifier = input;
             self
         }
         /// <p>
         /// The Amazon Resource Name (ARN) identifying the cluster that was detached from the Aurora global database cluster.
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveFromGlobalClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveFromGlobalClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveFromGlobalClusterInput {
                 global_cluster_identifier: self.global_cluster_identifier,
                 db_cluster_identifier: self.db_cluster_identifier,
@@ -25338,7 +25690,7 @@ impl RemoveFromGlobalClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveFromGlobalCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -25398,7 +25750,7 @@ impl RemoveFromGlobalClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -25406,7 +25758,7 @@ impl RemoveFromGlobalClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -25438,42 +25790,44 @@ pub mod remove_role_from_db_cluster_input {
     }
     impl Builder {
         /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB cluster, for example
         /// <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
         /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_name = Some(inp.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.feature_name = inp;
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveRoleFromDBClusterInput`](crate::input::RemoveRoleFromDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveRoleFromDBClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveRoleFromDBClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveRoleFromDBClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 role_arn: self.role_arn,
@@ -25493,7 +25847,7 @@ impl RemoveRoleFromDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveRoleFromDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -25553,7 +25907,7 @@ impl RemoveRoleFromDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -25561,7 +25915,7 @@ impl RemoveRoleFromDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -25593,43 +25947,45 @@ pub mod remove_role_from_db_instance_input {
     }
     impl Builder {
         /// <p>The name of the DB instance to disassociate the IAM role from.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance,
         /// for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from.
         /// For the list of supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_name = Some(inp.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.feature_name = inp;
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveRoleFromDBInstanceInput`](crate::input::RemoveRoleFromDBInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveRoleFromDBInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveRoleFromDBInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveRoleFromDBInstanceInput {
                 db_instance_identifier: self.db_instance_identifier,
                 role_arn: self.role_arn,
@@ -25649,7 +26005,7 @@ impl RemoveRoleFromDBInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveRoleFromDBInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -25710,7 +26066,7 @@ impl RemoveRoleFromDBInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -25718,7 +26074,7 @@ impl RemoveRoleFromDBInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -25749,36 +26105,36 @@ pub mod remove_source_identifier_from_subscription_input {
     }
     impl Builder {
         /// <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_name = Some(inp.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_name = Some(input.into());
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_name = inp;
+            self.subscription_name = input;
             self
         }
         /// <p>
         /// The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b>
         /// for a DB instance or the name of a security group.
         /// </p>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_identifier = Some(inp.into());
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_identifier = Some(input.into());
             self
         }
         pub fn set_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_identifier = inp;
+            self.source_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionInput`](crate::input::RemoveSourceIdentifierFromSubscriptionInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RemoveSourceIdentifierFromSubscriptionInput,
             smithy_http::operation::BuildError,
         > {
@@ -25801,7 +26157,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveSourceIdentifierFromSubscription,
             aws_http::AwsErrorRetryPolicy,
@@ -25860,7 +26216,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -25868,7 +26224,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -25903,32 +26259,37 @@ pub mod remove_tags_from_resource_input {
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_name = Some(inp.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_name = inp;
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveTagsFromResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveTagsFromResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveTagsFromResourceInput {
                 resource_name: self.resource_name,
                 tag_keys: self.tag_keys,
@@ -25946,7 +26307,7 @@ impl RemoveTagsFromResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromResource,
             aws_http::AwsErrorRetryPolicy,
@@ -26006,7 +26367,7 @@ impl RemoveTagsFromResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -26014,7 +26375,7 @@ impl RemoveTagsFromResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -26048,46 +26409,46 @@ pub mod reset_db_cluster_parameter_group_input {
         /// <p>The name of the DB cluster parameter group to reset.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group
         /// to their default values. You can't use this parameter if there
         /// is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
-        pub fn reset_all_parameters(mut self, inp: bool) -> Self {
-            self.reset_all_parameters = Some(inp);
+        pub fn reset_all_parameters(mut self, input: bool) -> Self {
+            self.reset_all_parameters = Some(input);
             self
         }
-        pub fn set_reset_all_parameters(mut self, inp: bool) -> Self {
-            self.reset_all_parameters = Some(inp);
+        pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.reset_all_parameters = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetDBClusterParameterGroupInput`](crate::input::ResetDBClusterParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ResetDBClusterParameterGroupInput,
             smithy_http::operation::BuildError,
         > {
@@ -26110,7 +26471,7 @@ impl ResetDBClusterParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ResetDBClusterParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -26171,7 +26532,7 @@ impl ResetDBClusterParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -26179,7 +26540,7 @@ impl ResetDBClusterParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -26217,47 +26578,49 @@ pub mod reset_db_parameter_group_input {
         /// <p>Must match the name of an existing <code>DBParameterGroup</code>.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>
         /// A value that indicates whether to reset all parameters in the DB parameter group to default values.
         /// By default, all parameters in the DB parameter group are reset to default values.
         /// </p>
-        pub fn reset_all_parameters(mut self, inp: bool) -> Self {
-            self.reset_all_parameters = Some(inp);
+        pub fn reset_all_parameters(mut self, input: bool) -> Self {
+            self.reset_all_parameters = Some(input);
             self
         }
-        pub fn set_reset_all_parameters(mut self, inp: bool) -> Self {
-            self.reset_all_parameters = Some(inp);
+        pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.reset_all_parameters = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetDBParameterGroupInput`](crate::input::ResetDBParameterGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ResetDBParameterGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ResetDBParameterGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ResetDBParameterGroupInput {
                 db_parameter_group_name: self.db_parameter_group_name,
                 reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
@@ -26276,7 +26639,7 @@ impl ResetDBParameterGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ResetDBParameterGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -26336,7 +26699,7 @@ impl ResetDBParameterGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -26344,7 +26707,7 @@ impl ResetDBParameterGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -26404,17 +26767,17 @@ pub mod restore_db_cluster_from_s3_input {
         pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// <p>The number of days for which automated backups of the restored DB cluster are retained. You must specify a minimum value of 1.</p>
@@ -26425,33 +26788,36 @@ pub mod restore_db_cluster_from_s3_input {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>A value that indicates that the restored DB cluster should be associated with the specified CharacterSet.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.character_set_name = Some(inp.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_name = Some(input.into());
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.character_set_name = inp;
+            self.character_set_name = input;
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database_name = Some(inp.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database_name = inp;
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
             self
         }
         /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
@@ -26469,15 +26835,15 @@ pub mod restore_db_cluster_from_s3_input {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The name of the DB cluster parameter group to associate
@@ -26491,29 +26857,29 @@ pub mod restore_db_cluster_from_s3_input {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>A DB subnet group to associate with the restored DB cluster.</p>
@@ -26521,26 +26887,26 @@ pub mod restore_db_cluster_from_s3_input {
         /// </p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
         /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -26566,24 +26932,27 @@ pub mod restore_db_cluster_from_s3_input {
         /// </p>
         /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
         /// <p>
         /// Default: <code>3306</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The name of the master user for the restored DB cluster.</p>
@@ -26599,42 +26968,42 @@ pub mod restore_db_cluster_from_s3_input {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_user_password = Some(inp.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_user_password = Some(input.into());
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_user_password = inp;
+            self.master_user_password = input;
             self
         }
         /// <p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>
         /// <p>Permanent options can't be removed from an option group. An option group can't be removed from a
         /// DB cluster once it is associated with a DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -26662,15 +27031,15 @@ pub mod restore_db_cluster_from_s3_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -26684,37 +27053,40 @@ pub mod restore_db_cluster_from_s3_input {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_maintenance_window = Some(inp.into());
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.preferred_maintenance_window = Some(input.into());
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_maintenance_window = inp;
+            self.preferred_maintenance_window = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.storage_encrypted = inp;
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB cluster.</p>
@@ -26725,12 +27097,12 @@ pub mod restore_db_cluster_from_s3_input {
         /// Amazon RDS will use your default CMK. There is a  
         /// default CMK for your AWS account. Your AWS account has a different
         /// default CMK for each AWS Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -26739,15 +27111,15 @@ pub mod restore_db_cluster_from_s3_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>The identifier for the database engine that was backed up to create the files stored in the
@@ -26755,12 +27127,15 @@ pub mod restore_db_cluster_from_s3_input {
         /// </p>
         /// <p>Valid values: <code>mysql</code>
         /// </p>
-        pub fn source_engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_engine = Some(inp.into());
+        pub fn source_engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_engine = Some(input.into());
             self
         }
-        pub fn set_source_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_engine = inp;
+        pub fn set_source_engine(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_engine = input;
             self
         }
         /// <p>The version of the database that the backup files were created from.</p>
@@ -26768,48 +27143,51 @@ pub mod restore_db_cluster_from_s3_input {
         /// </p>
         /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code>
         /// </p>
-        pub fn source_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_engine_version = Some(inp.into());
+        pub fn source_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_engine_version = Some(input.into());
             self
         }
         pub fn set_source_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_engine_version = inp;
+            self.source_engine_version = input;
             self
         }
         /// <p>The name of the Amazon S3 bucket that contains the data used to create the Amazon Aurora DB cluster.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket_name = Some(inp.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
             self
         }
-        pub fn set_s3_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket_name = inp;
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
             self
         }
         /// <p>The prefix for all of the file names that contain the data used to create the Amazon Aurora DB cluster.
         /// If you do not specify a <b>SourceS3Prefix</b> value, then the Amazon Aurora DB cluster is
         /// created by using all of the files in the Amazon S3 bucket.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_prefix = Some(inp.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = inp;
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_prefix = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes
         /// Amazon RDS to access the Amazon S3 bucket on your behalf.</p>
-        pub fn s3_ingestion_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_ingestion_role_arn = Some(inp.into());
+        pub fn s3_ingestion_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_ingestion_role_arn = Some(input.into());
             self
         }
         pub fn set_s3_ingestion_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.s3_ingestion_role_arn = inp;
+            self.s3_ingestion_role_arn = input;
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -26824,49 +27202,49 @@ pub mod restore_db_cluster_from_s3_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.backtrack_window = Some(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.backtrack_window = Some(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.backtrack_window = inp;
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.backtrack_window = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -26877,31 +27255,33 @@ pub mod restore_db_cluster_from_s3_input {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBClusterFromS3Input`](crate::input::RestoreDBClusterFromS3Input)
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreDBClusterFromS3Input, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RestoreDBClusterFromS3Input,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RestoreDBClusterFromS3Input {
                 availability_zones: self.availability_zones,
                 backup_retention_period: self.backup_retention_period,
@@ -26948,7 +27328,7 @@ impl RestoreDBClusterFromS3Input {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreDBClusterFromS3,
             aws_http::AwsErrorRetryPolicy,
@@ -27008,7 +27388,7 @@ impl RestoreDBClusterFromS3Input {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -27016,7 +27396,7 @@ impl RestoreDBClusterFromS3Input {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -27067,17 +27447,17 @@ pub mod restore_db_cluster_from_snapshot_input {
         pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
@@ -27096,15 +27476,15 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
@@ -27116,26 +27496,26 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <p>Must match the identifier of an existing Snapshot.</p>
         /// </li>
         /// </ul>
-        pub fn snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_identifier = Some(inp.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.snapshot_identifier = inp;
+            self.snapshot_identifier = input;
             self
         }
         /// <p>The database engine to use for the new DB cluster.</p>
         /// <p>Default: The same as source</p>
         /// <p>Constraint: Must be compatible with the engine of the source</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The version of the database engine to use for the new DB cluster.</p>
@@ -27164,86 +27544,92 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// </p>
         /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The port number on which the new DB cluster accepts connections.</p>
         /// <p>Constraints: This value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database_name = Some(inp.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database_name = inp;
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
             self
         }
         /// <p>The name of the option group to use for the restored DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB
@@ -27265,12 +27651,12 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// isn't encrypted.</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -27279,15 +27665,15 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -27302,52 +27688,52 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.backtrack_window = Some(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.backtrack_window = Some(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.backtrack_window = inp;
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.backtrack_window = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
         /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
         /// CreateDBCluster</a>.</p>
-        pub fn engine_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_mode = Some(inp.into());
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_mode = Some(input.into());
             self
         }
-        pub fn set_engine_mode(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_mode = inp;
+        pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_mode = input;
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
-        pub fn scaling_configuration(mut self, inp: crate::model::ScalingConfiguration) -> Self {
-            self.scaling_configuration = Some(inp);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.scaling_configuration = Some(input);
             self
         }
         pub fn set_scaling_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ScalingConfiguration>,
+            input: std::option::Option<crate::model::ScalingConfiguration>,
         ) -> Self {
-            self.scaling_configuration = inp;
+            self.scaling_configuration = input;
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this
@@ -27370,37 +27756,37 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -27409,30 +27795,30 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBClusterFromSnapshotInput`](crate::input::RestoreDBClusterFromSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RestoreDBClusterFromSnapshotInput,
             smithy_http::operation::BuildError,
         > {
@@ -27474,7 +27860,7 @@ impl RestoreDBClusterFromSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreDBClusterFromSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -27535,7 +27921,7 @@ impl RestoreDBClusterFromSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -27543,7 +27929,7 @@ impl RestoreDBClusterFromSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -27604,15 +27990,15 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The type of restore to be performed. You can specify one of the following values:</p>
@@ -27631,12 +28017,12 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
         /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.</p>
-        pub fn restore_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.restore_type = Some(inp.into());
+        pub fn restore_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.restore_type = Some(input.into());
             self
         }
-        pub fn set_restore_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.restore_type = inp;
+        pub fn set_restore_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.restore_type = input;
             self
         }
         /// <p>The identifier of the source DB cluster from which to restore.</p>
@@ -27646,15 +28032,18 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn source_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_db_cluster_identifier = Some(inp.into());
+        pub fn source_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.source_db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_cluster_identifier = inp;
+            self.source_db_cluster_identifier = input;
             self
         }
         /// <p>The date and time to restore the DB cluster to.</p>
@@ -27677,15 +28066,15 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// </ul>
         /// <p>Example: <code>2015-03-07T23:45:00Z</code>
         /// </p>
-        pub fn restore_to_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.restore_to_time = Some(inp);
+        pub fn restore_to_time(mut self, input: smithy_types::Instant) -> Self {
+            self.restore_to_time = Some(input);
             self
         }
         pub fn set_restore_to_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.restore_to_time = inp;
+            self.restore_to_time = input;
             self
         }
         /// <p>A value that indicates whether to restore the DB cluster to the latest
@@ -27693,77 +28082,77 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// restorable backup time.
         /// </p>
         /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
-        pub fn use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.use_latest_restorable_time = Some(inp);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.use_latest_restorable_time = Some(input);
             self
         }
-        pub fn set_use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.use_latest_restorable_time = Some(inp);
+        pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_latest_restorable_time = input;
             self
         }
         /// <p>The port number on which the new DB cluster accepts connections.</p>
         /// <p>Constraints: A value from <code>1150-65535</code>.
         /// </p>
         /// <p>Default: The default port for the engine.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The DB subnet group name to use for the new DB cluster.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>The name of the option group for the new DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
@@ -27783,12 +28172,12 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// </ul>
         /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
         /// is rejected.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -27797,15 +28186,15 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -27820,28 +28209,28 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.backtrack_window = Some(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.backtrack_window = Some(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.backtrack_window = inp;
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.backtrack_window = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster.
@@ -27863,37 +28252,37 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -27904,30 +28293,30 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBClusterToPointInTimeInput`](crate::input::RestoreDBClusterToPointInTimeInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RestoreDBClusterToPointInTimeInput,
             smithy_http::operation::BuildError,
         > {
@@ -27966,7 +28355,7 @@ impl RestoreDBClusterToPointInTimeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreDBClusterToPointInTime,
             aws_http::AwsErrorRetryPolicy,
@@ -28029,7 +28418,7 @@ impl RestoreDBClusterToPointInTimeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -28037,7 +28426,7 @@ impl RestoreDBClusterToPointInTimeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -28111,15 +28500,15 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The identifier for the DB snapshot to restore from.</p>
@@ -28133,15 +28522,15 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// must be the ARN of the shared DB snapshot.</p>
         /// </li>
         /// </ul>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
@@ -28151,27 +28540,27 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
         /// <p>Default: The same port as the original DB instance</p>
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The Availability Zone (AZ) where the DB instance will be created.</p>
@@ -28179,40 +28568,40 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>Example: <code>us-east-1a</code>
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -28221,21 +28610,21 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.publicly_accessible = Some(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = inp;
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
             self
         }
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.auto_minor_version_upgrade = Some(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.auto_minor_version_upgrade = inp;
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
             self
         }
         /// <p>License model information for the restored DB instance.</p>
@@ -28243,24 +28632,27 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The database name for the restored DB instance.</p>
         /// <note>
         /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p>
         /// </note>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_name = Some(inp.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_name = Some(input.into());
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_name = inp;
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_name = input;
             self
         }
         /// <p>The database engine to use for the new instance.</p>
@@ -28324,12 +28716,12 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second.
@@ -28343,38 +28735,38 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Constraints: Must be an integer greater than 1000.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -28389,49 +28781,49 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_arn = Some(inp.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_arn = Some(input.into());
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_arn = inp;
+            self.tde_credential_arn = input;
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_password = Some(inp.into());
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_password = Some(input.into());
             self
         }
         pub fn set_tde_credential_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_password = inp;
+            self.tde_credential_password = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
@@ -28439,33 +28831,33 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -28474,60 +28866,60 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.use_default_processor_features = Some(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.use_default_processor_features = Some(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.use_default_processor_features = inp;
+            self.use_default_processor_features = input;
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -28548,15 +28940,15 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -28565,12 +28957,12 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -28582,18 +28974,18 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, inp: bool) -> Self {
-            self.enable_customer_owned_ip = Some(inp);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.enable_customer_owned_ip = Some(input);
             self
         }
-        pub fn set_enable_customer_owned_ip(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_customer_owned_ip = inp;
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_customer_owned_ip = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBInstanceFromDBSnapshotInput`](crate::input::RestoreDBInstanceFromDBSnapshotInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RestoreDBInstanceFromDBSnapshotInput,
             smithy_http::operation::BuildError,
         > {
@@ -28642,7 +29034,7 @@ impl RestoreDBInstanceFromDBSnapshotInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreDBInstanceFromDBSnapshot,
             aws_http::AwsErrorRetryPolicy,
@@ -28705,7 +29097,7 @@ impl RestoreDBInstanceFromDBSnapshotInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -28713,7 +29105,7 @@ impl RestoreDBInstanceFromDBSnapshotInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -28790,12 +29182,12 @@ pub mod restore_db_instance_from_s3_input {
         /// <p>The name of the database to create when the DB instance is created.
         /// Follow the naming rules specified in <code>CreateDBInstance</code>.
         /// </p>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_name = Some(inp.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_name = Some(input.into());
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_name = inp;
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_name = input;
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.
@@ -28814,15 +29206,15 @@ pub mod restore_db_instance_from_s3_input {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance.
@@ -28834,12 +29226,12 @@ pub mod restore_db_instance_from_s3_input {
         /// You can also allocate additional memory for future growth.
         /// </p>
         /// </note>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.allocated_storage = inp;
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
         /// <p>The compute and memory capacity of the DB instance,
@@ -28851,27 +29243,27 @@ pub mod restore_db_instance_from_s3_input {
         /// </p>
         /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
         /// </p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The name of the database engine to be used for this instance.
         /// </p>
         /// <p>Valid Values:  <code>mysql</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The name for the master user.
@@ -28889,56 +29281,56 @@ pub mod restore_db_instance_from_s3_input {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         /// <p>The password for the master user.
         /// The password can include any printable ASCII character except "/", """, or "@".
         /// </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_user_password = Some(inp.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_user_password = Some(input.into());
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_user_password = inp;
+            self.master_user_password = input;
             self
         }
-        pub fn db_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn db_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_security_groups = Some(v);
             self
         }
         pub fn set_db_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.db_security_groups = inp;
+            self.db_security_groups = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>The Availability Zone that the DB instance is created in.
@@ -28952,27 +29344,27 @@ pub mod restore_db_instance_from_s3_input {
         /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.
         /// The specified Availability Zone must be in the same AWS Region as the current endpoint.
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>The time range each week during which system maintenance can occur,
@@ -28997,41 +29389,44 @@ pub mod restore_db_instance_from_s3_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_maintenance_window = Some(inp.into());
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.preferred_maintenance_window = Some(input.into());
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_maintenance_window = inp;
+            self.preferred_maintenance_window = input;
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
         /// for the specified DB engine is used.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>The number of days for which automated backups are retained.
         /// Setting this parameter to a positive number enables backups.
         /// For more information, see <code>CreateDBInstance</code>.
         /// </p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>The time range each day
@@ -29054,15 +29449,15 @@ pub mod restore_db_instance_from_s3_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// <p>The port number on which the database accepts connections.
@@ -29073,58 +29468,64 @@ pub mod restore_db_instance_from_s3_input {
         /// </p>
         /// <p>Default: <code>3306</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
         /// If the DB instance is a Multi-AZ deployment, you can't set the <code>AvailabilityZone</code> parameter.
         /// </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>The version number of the database engine to use.
         /// Choose the latest minor version of your database engine.
         /// For information about engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically
         /// to the DB instance during the maintenance window. By default, minor engine upgrades
         /// are not applied automatically.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.auto_minor_version_upgrade = Some(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.auto_minor_version_upgrade = inp;
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
             self
         }
         /// <p>The license model for this DB instance.
         /// Use <code>general-public-license</code>.
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second)
@@ -29132,26 +29533,26 @@ pub mod restore_db_instance_from_s3_input {
         /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a>
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>The name of the option group to associate with this DB instance.
         /// If this argument is omitted, the default option group for the specified engine is used.
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -29160,25 +29561,25 @@ pub mod restore_db_instance_from_s3_input {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.publicly_accessible = Some(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = inp;
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.
@@ -29192,22 +29593,22 @@ pub mod restore_db_instance_from_s3_input {
         /// if the <code>Iops</code> parameter is specified;
         /// otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>A value that indicates whether the new DB instance is encrypted or not.
         /// </p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.storage_encrypted = inp;
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB instance.
@@ -29220,22 +29621,22 @@ pub mod restore_db_instance_from_s3_input {
         /// There is a default CMK for your AWS account.
         /// Your AWS account has a different default CMK for each AWS Region.
         /// </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.
         /// </p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>The interval, in seconds,
@@ -29249,12 +29650,12 @@ pub mod restore_db_instance_from_s3_input {
         /// </p>
         /// <p>Default: <code>0</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.monitoring_interval = Some(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.monitoring_interval = Some(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.monitoring_interval = inp;
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_interval = input;
             self
         }
         /// <p>The ARN for the IAM role that permits RDS
@@ -29266,15 +29667,15 @@ pub mod restore_db_instance_from_s3_input {
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0,
         /// then you must supply a <code>MonitoringRoleArn</code> value.
         /// </p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.monitoring_role_arn = Some(inp.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_role_arn = Some(input.into());
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.monitoring_role_arn = inp;
+            self.monitoring_role_arn = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -29283,27 +29684,30 @@ pub mod restore_db_instance_from_s3_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         /// <p>The name of the engine of your source database.
         /// </p>
         /// <p>Valid Values:  <code>mysql</code>
         /// </p>
-        pub fn source_engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_engine = Some(inp.into());
+        pub fn source_engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_engine = Some(input.into());
             self
         }
-        pub fn set_source_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_engine = inp;
+        pub fn set_source_engine(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_engine = input;
             self
         }
         /// <p>The version of the database that the backup files were created from.</p>
@@ -29311,49 +29715,52 @@ pub mod restore_db_instance_from_s3_input {
         /// </p>
         /// <p>Example: <code>5.6.40</code>
         /// </p>
-        pub fn source_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_engine_version = Some(inp.into());
+        pub fn source_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_engine_version = Some(input.into());
             self
         }
         pub fn set_source_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_engine_version = inp;
+            self.source_engine_version = input;
             self
         }
         /// <p>The name of your Amazon S3 bucket
         /// that contains your database backup file.
         /// </p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket_name = Some(inp.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
             self
         }
-        pub fn set_s3_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket_name = inp;
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
             self
         }
         /// <p>The prefix of your Amazon S3 bucket.
         /// </p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_prefix = Some(inp.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = inp;
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_prefix = input;
             self
         }
         /// <p>An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
         /// </p>
-        pub fn s3_ingestion_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_ingestion_role_arn = Some(inp.into());
+        pub fn s3_ingestion_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_ingestion_role_arn = Some(input.into());
             self
         }
         pub fn set_s3_ingestion_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.s3_ingestion_role_arn = inp;
+            self.s3_ingestion_role_arn = input;
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.
@@ -29362,12 +29769,12 @@ pub mod restore_db_instance_from_s3_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.enable_performance_insights = Some(inp);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.enable_performance_insights = Some(input);
             self
         }
-        pub fn set_enable_performance_insights(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_performance_insights = inp;
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_performance_insights = input;
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
@@ -29377,73 +29784,73 @@ pub mod restore_db_instance_from_s3_input {
         /// Your AWS account has a different default CMK for each AWS Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = Some(inp.into());
+            self.performance_insights_kms_key_id = Some(input.into());
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = inp;
+            self.performance_insights_kms_key_id = input;
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.performance_insights_retention_period = Some(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.performance_insights_retention_period = Some(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.performance_insights_retention_period = inp;
+            self.performance_insights_retention_period = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.use_default_processor_features = Some(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.use_default_processor_features = Some(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.use_default_processor_features = inp;
+            self.use_default_processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -29452,12 +29859,12 @@ pub mod restore_db_instance_from_s3_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -29465,19 +29872,21 @@ pub mod restore_db_instance_from_s3_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.max_allocated_storage = Some(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.max_allocated_storage = Some(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_allocated_storage = inp;
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_allocated_storage = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBInstanceFromS3Input`](crate::input::RestoreDBInstanceFromS3Input)
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreDBInstanceFromS3Input, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RestoreDBInstanceFromS3Input,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RestoreDBInstanceFromS3Input {
                 db_name: self.db_name,
                 db_instance_identifier: self.db_instance_identifier,
@@ -29538,7 +29947,7 @@ impl RestoreDBInstanceFromS3Input {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreDBInstanceFromS3,
             aws_http::AwsErrorRetryPolicy,
@@ -29598,7 +30007,7 @@ impl RestoreDBInstanceFromS3Input {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -29606,7 +30015,7 @@ impl RestoreDBInstanceFromS3Input {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -29680,16 +30089,16 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// </ul>
         pub fn source_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_instance_identifier = Some(inp.into());
+            self.source_db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_instance_identifier = inp;
+            self.source_db_instance_identifier = input;
             self
         }
         /// <p>The name of the new DB instance to be created.</p>
@@ -29707,16 +30116,16 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// </ul>
         pub fn target_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_db_instance_identifier = Some(inp.into());
+            self.target_db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_target_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_db_instance_identifier = inp;
+            self.target_db_instance_identifier = input;
             self
         }
         /// <p>The date and time to restore from.</p>
@@ -29732,12 +30141,15 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// </ul>
         /// <p>Example: <code>2009-09-07T23:45:00Z</code>
         /// </p>
-        pub fn restore_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.restore_time = Some(inp);
+        pub fn restore_time(mut self, input: smithy_types::Instant) -> Self {
+            self.restore_time = Some(input);
             self
         }
-        pub fn set_restore_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.restore_time = inp;
+        pub fn set_restore_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.restore_time = input;
             self
         }
         /// <p>
@@ -29745,12 +30157,12 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// isn't restored from the latest backup time.
         /// </p>
         /// <p>Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.</p>
-        pub fn use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.use_latest_restorable_time = Some(inp);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.use_latest_restorable_time = Some(input);
             self
         }
-        pub fn set_use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.use_latest_restorable_time = Some(inp);
+        pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_latest_restorable_time = input;
             self
         }
         /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
@@ -29760,27 +30172,27 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB instance.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The Availability Zone (AZ) where the DB instance will be created.</p>
@@ -29788,40 +30200,40 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>Example: <code>us-east-1a</code>
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -29830,21 +30242,21 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.publicly_accessible = Some(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = inp;
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
             self
         }
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.auto_minor_version_upgrade = Some(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.auto_minor_version_upgrade = inp;
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
             self
         }
         /// <p>License model information for the restored DB instance.</p>
@@ -29852,24 +30264,27 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The database name for the restored DB instance.</p>
         /// <note>
         /// <p>This parameter isn't used for the MySQL or MariaDB engines.</p>
         /// </note>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_name = Some(inp.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_name = Some(input.into());
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_name = inp;
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_name = input;
             self
         }
         /// <p>The database engine to use for the new instance.</p>
@@ -29933,12 +30348,12 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
@@ -29947,47 +30362,47 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <b>SQL Server</b>
         /// </p>
         /// <p>Setting the IOPS value for the SQL Server database engine isn't supported.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -30002,49 +30417,49 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_arn = Some(inp.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_arn = Some(input.into());
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_arn = inp;
+            self.tde_credential_arn = input;
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_password = Some(inp.into());
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_password = Some(input.into());
             self
         }
         pub fn set_tde_credential_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_password = inp;
+            self.tde_credential_password = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
@@ -30052,24 +30467,24 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_iam_role_name = Some(inp.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_iam_role_name = Some(input.into());
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_iam_role_name = inp;
+            self.domain_iam_role_name = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -30078,59 +30493,59 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.enable_iam_database_authentication = Some(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.enable_iam_database_authentication = Some(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.enable_iam_database_authentication = inp;
+            self.enable_iam_database_authentication = input;
             self
         }
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_cloudwatch_logs_exports = inp;
+            self.enable_cloudwatch_logs_exports = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.use_default_processor_features = Some(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.use_default_processor_features = Some(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.use_default_processor_features = inp;
+            self.use_default_processor_features = input;
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -30151,15 +30566,15 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -30168,24 +30583,24 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>The resource ID of the source DB instance from which to restore.</p>
-        pub fn source_dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_dbi_resource_id = Some(inp.into());
+        pub fn source_dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_dbi_resource_id = Some(input.into());
             self
         }
         pub fn set_source_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_dbi_resource_id = inp;
+            self.source_dbi_resource_id = input;
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -30193,28 +30608,28 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.max_allocated_storage = Some(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.max_allocated_storage = Some(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_allocated_storage = inp;
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_allocated_storage = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
         /// <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
         pub fn source_db_instance_automated_backups_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_instance_automated_backups_arn = Some(inp.into());
+            self.source_db_instance_automated_backups_arn = Some(input.into());
             self
         }
         pub fn set_source_db_instance_automated_backups_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_instance_automated_backups_arn = inp;
+            self.source_db_instance_automated_backups_arn = input;
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -30226,18 +30641,18 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, inp: bool) -> Self {
-            self.enable_customer_owned_ip = Some(inp);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.enable_customer_owned_ip = Some(input);
             self
         }
-        pub fn set_enable_customer_owned_ip(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_customer_owned_ip = inp;
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_customer_owned_ip = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBInstanceToPointInTimeInput`](crate::input::RestoreDBInstanceToPointInTimeInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RestoreDBInstanceToPointInTimeInput,
             smithy_http::operation::BuildError,
         > {
@@ -30292,7 +30707,7 @@ impl RestoreDBInstanceToPointInTimeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreDBInstanceToPointInTime,
             aws_http::AwsErrorRetryPolicy,
@@ -30355,7 +30770,7 @@ impl RestoreDBInstanceToPointInTimeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -30363,7 +30778,7 @@ impl RestoreDBInstanceToPointInTimeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -30397,15 +30812,15 @@ pub mod revoke_db_security_group_ingress_input {
     }
     impl Builder {
         /// <p>The name of the DB security group to revoke ingress from.</p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_security_group_name = Some(inp.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_name = Some(input.into());
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_name = inp;
+            self.db_security_group_name = input;
             self
         }
         /// <p>
@@ -30414,12 +30829,12 @@ pub mod revoke_db_security_group_ingress_input {
         /// <code>EC2SecurityGroupName</code>, <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code>
         /// can't be provided.
         /// </p>
-        pub fn cidrip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cidrip = Some(inp.into());
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidrip = Some(input.into());
             self
         }
-        pub fn set_cidrip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cidrip = inp;
+        pub fn set_cidrip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidrip = input;
             self
         }
         /// <p>
@@ -30427,15 +30842,15 @@ pub mod revoke_db_security_group_ingress_input {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_name = Some(inp.into());
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_security_group_name = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_name = inp;
+            self.ec2_security_group_name = input;
             self
         }
         /// <p>
@@ -30443,15 +30858,15 @@ pub mod revoke_db_security_group_ingress_input {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_id = Some(inp.into());
+        pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_security_group_id = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_id = inp;
+            self.ec2_security_group_id = input;
             self
         }
         /// <p>
@@ -30461,21 +30876,24 @@ pub mod revoke_db_security_group_ingress_input {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_owner_id = Some(inp.into());
+        pub fn ec2_security_group_owner_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ec2_security_group_owner_id = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_owner_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_owner_id = inp;
+            self.ec2_security_group_owner_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RevokeDBSecurityGroupIngressInput`](crate::input::RevokeDBSecurityGroupIngressInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RevokeDBSecurityGroupIngressInput,
             smithy_http::operation::BuildError,
         > {
@@ -30500,7 +30918,7 @@ impl RevokeDBSecurityGroupIngressInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RevokeDBSecurityGroupIngress,
             aws_http::AwsErrorRetryPolicy,
@@ -30561,7 +30979,7 @@ impl RevokeDBSecurityGroupIngressInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -30569,7 +30987,7 @@ impl RevokeDBSecurityGroupIngressInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -30603,54 +31021,56 @@ pub mod start_activity_stream_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the DB cluster,
         /// for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>Specifies the mode of the database activity stream.
         /// Database events such as a change or access generate an activity stream event.
         /// The database session can handle these events either synchronously or asynchronously.
         /// </p>
-        pub fn mode(mut self, inp: crate::model::ActivityStreamMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
+            self.mode = Some(input);
             self
         }
         pub fn set_mode(
             mut self,
-            inp: std::option::Option<crate::model::ActivityStreamMode>,
+            input: std::option::Option<crate::model::ActivityStreamMode>,
         ) -> Self {
-            self.mode = inp;
+            self.mode = input;
             self
         }
         /// <p>The AWS KMS key identifier for encrypting messages in the database activity stream.
         /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>Specifies whether or not the database activity stream is to start as soon as possible,
         /// regardless of the maintenance window for the database.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.apply_immediately = Some(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: std::option::Option<bool>) -> Self {
-            self.apply_immediately = inp;
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_immediately = input;
             self
         }
         /// Consumes the builder and constructs a [`StartActivityStreamInput`](crate::input::StartActivityStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartActivityStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartActivityStreamInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartActivityStreamInput {
                 resource_arn: self.resource_arn,
                 mode: self.mode,
@@ -30670,7 +31090,7 @@ impl StartActivityStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartActivityStream,
             aws_http::AwsErrorRetryPolicy,
@@ -30730,7 +31150,7 @@ impl StartActivityStreamInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -30738,7 +31158,7 @@ impl StartActivityStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -30769,21 +31189,24 @@ pub mod start_db_cluster_input {
     impl Builder {
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This parameter is stored as
         /// a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`StartDBClusterInput`](crate::input::StartDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartDBClusterInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::StartDBClusterInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartDBClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
             })
@@ -30800,7 +31223,7 @@ impl StartDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -30859,7 +31282,7 @@ impl StartDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -30867,7 +31290,7 @@ impl StartDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -30899,22 +31322,24 @@ pub mod start_db_instance_input {
         /// <p>
         /// The user-supplied instance identifier.
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`StartDBInstanceInput`](crate::input::StartDBInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartDBInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartDBInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartDBInstanceInput {
                 db_instance_identifier: self.db_instance_identifier,
             })
@@ -30931,7 +31356,7 @@ impl StartDBInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartDBInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -30990,7 +31415,7 @@ impl StartDBInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -30998,7 +31423,7 @@ impl StartDBInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -31032,53 +31457,56 @@ pub mod start_db_instance_automated_backups_replication_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example,
         /// <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-        pub fn source_db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_db_instance_arn = Some(inp.into());
+        pub fn source_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_db_instance_arn = Some(input.into());
             self
         }
         pub fn set_source_db_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_instance_arn = inp;
+            self.source_db_instance_arn = input;
             self
         }
         /// <p>The retention period for the replicated automated backups.</p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
         /// Amazon Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
         /// <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be
         /// called in the AWS Region of the source DB instance. The presigned URL must be a valid request for the
         /// StartDBInstanceAutomatedBackupsReplication API action that can be executed in the AWS Region that contains
         /// the source DB instance.</p>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pre_signed_url = Some(inp.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pre_signed_url = Some(input.into());
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pre_signed_url = inp;
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_signed_url = input;
             self
         }
         /// Consumes the builder and constructs a [`StartDBInstanceAutomatedBackupsReplicationInput`](crate::input::StartDBInstanceAutomatedBackupsReplicationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::StartDBInstanceAutomatedBackupsReplicationInput,
             smithy_http::operation::BuildError,
         > {
@@ -31105,7 +31533,7 @@ impl StartDBInstanceAutomatedBackupsReplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartDBInstanceAutomatedBackupsReplication,
             aws_http::AwsErrorRetryPolicy,
@@ -31164,7 +31592,7 @@ impl StartDBInstanceAutomatedBackupsReplicationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -31172,7 +31600,7 @@ impl StartDBInstanceAutomatedBackupsReplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -31210,43 +31638,46 @@ pub mod start_export_task_input {
     impl Builder {
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
         /// the Amazon S3 bucket where the snapshot is to be exported to. </p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_task_identifier = Some(inp.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_task_identifier = Some(input.into());
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.export_task_identifier = inp;
+            self.export_task_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot to export to Amazon S3.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_arn = Some(inp.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = inp;
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
             self
         }
         /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket_name = Some(inp.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
             self
         }
-        pub fn set_s3_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket_name = inp;
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
             self
         }
         /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket
         /// when exporting a snapshot. </p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iam_role_arn = Some(inp.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
             self
         }
-        pub fn set_iam_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = inp;
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
             self
         }
         /// <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
@@ -31282,41 +31713,43 @@ pub mod start_export_task_input {
         /// <p>GrantOperation.RetireGrant</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_prefix = Some(inp.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = inp;
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_prefix = input;
             self
         }
-        pub fn export_only(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn export_only(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.export_only.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.export_only = Some(v);
             self
         }
         pub fn set_export_only(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.export_only = inp;
+            self.export_only = input;
             self
         }
         /// Consumes the builder and constructs a [`StartExportTaskInput`](crate::input::StartExportTaskInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartExportTaskInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartExportTaskInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartExportTaskInput {
                 export_task_identifier: self.export_task_identifier,
                 source_arn: self.source_arn,
@@ -31339,7 +31772,7 @@ impl StartExportTaskInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartExportTask,
             aws_http::AwsErrorRetryPolicy,
@@ -31398,7 +31831,7 @@ impl StartExportTaskInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -31406,7 +31839,7 @@ impl StartExportTaskInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -31439,29 +31872,31 @@ pub mod stop_activity_stream_input {
         /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream.
         /// For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>Specifies whether or not the database activity stream is to stop as soon as possible,
         /// regardless of the maintenance window for the database.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.apply_immediately = Some(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: std::option::Option<bool>) -> Self {
-            self.apply_immediately = inp;
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_immediately = input;
             self
         }
         /// Consumes the builder and constructs a [`StopActivityStreamInput`](crate::input::StopActivityStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopActivityStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopActivityStreamInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopActivityStreamInput {
                 resource_arn: self.resource_arn,
                 apply_immediately: self.apply_immediately,
@@ -31479,7 +31914,7 @@ impl StopActivityStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopActivityStream,
             aws_http::AwsErrorRetryPolicy,
@@ -31539,7 +31974,7 @@ impl StopActivityStreamInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -31547,7 +31982,7 @@ impl StopActivityStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -31578,21 +32013,22 @@ pub mod stop_db_cluster_input {
     impl Builder {
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be stopped. This parameter is stored as
         /// a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`StopDBClusterInput`](crate::input::StopDBClusterInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopDBClusterInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::StopDBClusterInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::StopDBClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
             })
@@ -31609,7 +32045,7 @@ impl StopDBClusterInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopDBCluster,
             aws_http::AwsErrorRetryPolicy,
@@ -31668,7 +32104,7 @@ impl StopDBClusterInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -31676,7 +32112,7 @@ impl StopDBClusterInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -31709,35 +32145,38 @@ pub mod stop_db_instance_input {
         /// <p>
         /// The user-supplied instance identifier.
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>
         /// The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.
         /// </p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`StopDBInstanceInput`](crate::input::StopDBInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopDBInstanceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::StopDBInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopDBInstanceInput {
                 db_instance_identifier: self.db_instance_identifier,
                 db_snapshot_identifier: self.db_snapshot_identifier,
@@ -31755,7 +32194,7 @@ impl StopDBInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopDBInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -31814,7 +32253,7 @@ impl StopDBInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -31822,7 +32261,7 @@ impl StopDBInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -31853,21 +32292,21 @@ pub mod stop_db_instance_automated_backups_replication_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example,
         /// <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-        pub fn source_db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_db_instance_arn = Some(inp.into());
+        pub fn source_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_db_instance_arn = Some(input.into());
             self
         }
         pub fn set_source_db_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_instance_arn = inp;
+            self.source_db_instance_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`StopDBInstanceAutomatedBackupsReplicationInput`](crate::input::StopDBInstanceAutomatedBackupsReplicationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::StopDBInstanceAutomatedBackupsReplicationInput,
             smithy_http::operation::BuildError,
         > {
@@ -31891,7 +32330,7 @@ impl StopDBInstanceAutomatedBackupsReplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopDBInstanceAutomatedBackupsReplication,
             aws_http::AwsErrorRetryPolicy,
@@ -31950,7 +32389,7 @@ impl StopDBInstanceAutomatedBackupsReplicationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -31958,7 +32397,7 @@ impl StopDBInstanceAutomatedBackupsReplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)

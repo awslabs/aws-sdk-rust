@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_layer_version_permission_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AddLayerVersionPermissionOutput,
     crate::error::AddLayerVersionPermissionError,
 > {
@@ -123,7 +123,7 @@ pub fn parse_add_layer_version_permission_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_layer_version_permission_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AddLayerVersionPermissionOutput,
     crate::error::AddLayerVersionPermissionError,
 > {
@@ -143,7 +143,7 @@ pub fn parse_add_layer_version_permission_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_permission_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
+) -> std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::AddPermissionError::unhandled)?;
     let error_code = match generic.code() {
@@ -263,7 +263,7 @@ pub fn parse_add_permission_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_permission_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
+) -> std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::add_permission_output::Builder::default();
@@ -278,7 +278,7 @@ pub fn parse_add_permission_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_alias_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
+) -> std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateAliasError::unhandled)?;
     let error_code = match generic.code() {
@@ -370,7 +370,7 @@ pub fn parse_create_alias_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_alias_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
+) -> std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_alias_output::Builder::default();
@@ -384,8 +384,10 @@ pub fn parse_create_alias_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_code_signing_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateCodeSigningConfigOutput, crate::error::CreateCodeSigningConfigError>
-{
+) -> std::result::Result<
+    crate::output::CreateCodeSigningConfigOutput,
+    crate::error::CreateCodeSigningConfigError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
     let error_code = match generic.code() {
@@ -429,8 +431,10 @@ pub fn parse_create_code_signing_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_code_signing_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateCodeSigningConfigOutput, crate::error::CreateCodeSigningConfigError>
-{
+) -> std::result::Result<
+    crate::output::CreateCodeSigningConfigOutput,
+    crate::error::CreateCodeSigningConfigError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_code_signing_config_output::Builder::default();
@@ -447,7 +451,7 @@ pub fn parse_create_code_signing_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_event_source_mapping_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateEventSourceMappingOutput,
     crate::error::CreateEventSourceMappingError,
 > {
@@ -540,7 +544,7 @@ pub fn parse_create_event_source_mapping_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_event_source_mapping_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateEventSourceMappingOutput,
     crate::error::CreateEventSourceMappingError,
 > {
@@ -560,7 +564,7 @@ pub fn parse_create_event_source_mapping_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_function_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError> {
+) -> std::result::Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateFunctionError::unhandled)?;
     let error_code = match generic.code() {
@@ -709,7 +713,7 @@ pub fn parse_create_function_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_function_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError> {
+) -> std::result::Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_function_output::Builder::default();
@@ -724,7 +728,7 @@ pub fn parse_create_function_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_alias_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
+) -> std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteAliasError::unhandled)?;
     let error_code = match generic.code() {
@@ -802,7 +806,7 @@ pub fn parse_delete_alias_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_alias_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
+) -> std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_alias_output::Builder::default();
@@ -814,8 +818,10 @@ pub fn parse_delete_alias_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_code_signing_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteCodeSigningConfigOutput, crate::error::DeleteCodeSigningConfigError>
-{
+) -> std::result::Result<
+    crate::output::DeleteCodeSigningConfigOutput,
+    crate::error::DeleteCodeSigningConfigError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
     let error_code = match generic.code() {
@@ -887,8 +893,10 @@ pub fn parse_delete_code_signing_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_code_signing_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteCodeSigningConfigOutput, crate::error::DeleteCodeSigningConfigError>
-{
+) -> std::result::Result<
+    crate::output::DeleteCodeSigningConfigOutput,
+    crate::error::DeleteCodeSigningConfigError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_code_signing_config_output::Builder::default();
@@ -900,7 +908,7 @@ pub fn parse_delete_code_signing_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_event_source_mapping_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteEventSourceMappingOutput,
     crate::error::DeleteEventSourceMappingError,
 > {
@@ -991,7 +999,7 @@ pub fn parse_delete_event_source_mapping_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_event_source_mapping_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteEventSourceMappingOutput,
     crate::error::DeleteEventSourceMappingError,
 > {
@@ -1011,7 +1019,7 @@ pub fn parse_delete_event_source_mapping_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_function_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError> {
+) -> std::result::Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteFunctionError::unhandled)?;
     let error_code = match generic.code() {
@@ -1103,7 +1111,7 @@ pub fn parse_delete_function_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_function_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError> {
+) -> std::result::Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_function_output::Builder::default();
@@ -1115,7 +1123,7 @@ pub fn parse_delete_function_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_function_code_signing_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteFunctionCodeSigningConfigOutput,
     crate::error::DeleteFunctionCodeSigningConfigError,
 > {
@@ -1173,7 +1181,7 @@ pub fn parse_delete_function_code_signing_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_function_code_signing_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteFunctionCodeSigningConfigOutput,
     crate::error::DeleteFunctionCodeSigningConfigError,
 > {
@@ -1189,7 +1197,7 @@ pub fn parse_delete_function_code_signing_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_function_concurrency_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteFunctionConcurrencyOutput,
     crate::error::DeleteFunctionConcurrencyError,
 > {
@@ -1282,7 +1290,7 @@ pub fn parse_delete_function_concurrency_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_function_concurrency_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteFunctionConcurrencyOutput,
     crate::error::DeleteFunctionConcurrencyError,
 > {
@@ -1297,7 +1305,7 @@ pub fn parse_delete_function_concurrency_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_function_event_invoke_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteFunctionEventInvokeConfigOutput,
     crate::error::DeleteFunctionEventInvokeConfigError,
 > {
@@ -1376,7 +1384,7 @@ pub fn parse_delete_function_event_invoke_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_function_event_invoke_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteFunctionEventInvokeConfigOutput,
     crate::error::DeleteFunctionEventInvokeConfigError,
 > {
@@ -1392,7 +1400,10 @@ pub fn parse_delete_function_event_invoke_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_layer_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLayerVersionOutput, crate::error::DeleteLayerVersionError> {
+) -> std::result::Result<
+    crate::output::DeleteLayerVersionOutput,
+    crate::error::DeleteLayerVersionError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLayerVersionError::unhandled)?;
     let error_code = match generic.code() {
@@ -1442,7 +1453,10 @@ pub fn parse_delete_layer_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_layer_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLayerVersionOutput, crate::error::DeleteLayerVersionError> {
+) -> std::result::Result<
+    crate::output::DeleteLayerVersionOutput,
+    crate::error::DeleteLayerVersionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_layer_version_output::Builder::default();
@@ -1454,7 +1468,7 @@ pub fn parse_delete_layer_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_provisioned_concurrency_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteProvisionedConcurrencyConfigOutput,
     crate::error::DeleteProvisionedConcurrencyConfigError,
 > {
@@ -1508,7 +1522,7 @@ pub fn parse_delete_provisioned_concurrency_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_provisioned_concurrency_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteProvisionedConcurrencyConfigOutput,
     crate::error::DeleteProvisionedConcurrencyConfigError,
 > {
@@ -1524,7 +1538,10 @@ pub fn parse_delete_provisioned_concurrency_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_settings_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccountSettingsOutput, crate::error::GetAccountSettingsError> {
+) -> std::result::Result<
+    crate::output::GetAccountSettingsOutput,
+    crate::error::GetAccountSettingsError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetAccountSettingsError::unhandled)?;
     let error_code = match generic.code() {
@@ -1574,7 +1591,10 @@ pub fn parse_get_account_settings_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_settings_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccountSettingsOutput, crate::error::GetAccountSettingsError> {
+) -> std::result::Result<
+    crate::output::GetAccountSettingsOutput,
+    crate::error::GetAccountSettingsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_account_settings_output::Builder::default();
@@ -1591,7 +1611,7 @@ pub fn parse_get_account_settings_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_alias_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAliasOutput, crate::error::GetAliasError> {
+) -> std::result::Result<crate::output::GetAliasOutput, crate::error::GetAliasError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetAliasError::unhandled)?;
     let error_code = match generic.code() {
@@ -1669,7 +1689,7 @@ pub fn parse_get_alias_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_alias_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAliasOutput, crate::error::GetAliasError> {
+) -> std::result::Result<crate::output::GetAliasOutput, crate::error::GetAliasError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_alias_output::Builder::default();
@@ -1683,7 +1703,10 @@ pub fn parse_get_alias_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_code_signing_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetCodeSigningConfigOutput, crate::error::GetCodeSigningConfigError> {
+) -> std::result::Result<
+    crate::output::GetCodeSigningConfigOutput,
+    crate::error::GetCodeSigningConfigError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
     let error_code = match generic.code() {
@@ -1737,7 +1760,10 @@ pub fn parse_get_code_signing_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_code_signing_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetCodeSigningConfigOutput, crate::error::GetCodeSigningConfigError> {
+) -> std::result::Result<
+    crate::output::GetCodeSigningConfigOutput,
+    crate::error::GetCodeSigningConfigError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_code_signing_config_output::Builder::default();
@@ -1754,7 +1780,10 @@ pub fn parse_get_code_signing_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_event_source_mapping_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetEventSourceMappingOutput, crate::error::GetEventSourceMappingError> {
+) -> std::result::Result<
+    crate::output::GetEventSourceMappingOutput,
+    crate::error::GetEventSourceMappingError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetEventSourceMappingError::unhandled)?;
     let error_code = match generic.code() {
@@ -1828,7 +1857,10 @@ pub fn parse_get_event_source_mapping_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_event_source_mapping_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetEventSourceMappingOutput, crate::error::GetEventSourceMappingError> {
+) -> std::result::Result<
+    crate::output::GetEventSourceMappingOutput,
+    crate::error::GetEventSourceMappingError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_event_source_mapping_output::Builder::default();
@@ -1845,7 +1877,7 @@ pub fn parse_get_event_source_mapping_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError> {
+) -> std::result::Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetFunctionError::unhandled)?;
     let error_code = match generic.code() {
@@ -1923,7 +1955,7 @@ pub fn parse_get_function_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError> {
+) -> std::result::Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_function_output::Builder::default();
@@ -1937,7 +1969,7 @@ pub fn parse_get_function_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_code_signing_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetFunctionCodeSigningConfigOutput,
     crate::error::GetFunctionCodeSigningConfigError,
 > {
@@ -2019,7 +2051,7 @@ pub fn parse_get_function_code_signing_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_code_signing_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetFunctionCodeSigningConfigOutput,
     crate::error::GetFunctionCodeSigningConfigError,
 > {
@@ -2039,8 +2071,10 @@ pub fn parse_get_function_code_signing_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_concurrency_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetFunctionConcurrencyOutput, crate::error::GetFunctionConcurrencyError>
-{
+) -> std::result::Result<
+    crate::output::GetFunctionConcurrencyOutput,
+    crate::error::GetFunctionConcurrencyError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
     let error_code = match generic.code() {
@@ -2118,8 +2152,10 @@ pub fn parse_get_function_concurrency_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_concurrency_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetFunctionConcurrencyOutput, crate::error::GetFunctionConcurrencyError>
-{
+) -> std::result::Result<
+    crate::output::GetFunctionConcurrencyOutput,
+    crate::error::GetFunctionConcurrencyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_function_concurrency_output::Builder::default();
@@ -2136,7 +2172,7 @@ pub fn parse_get_function_concurrency_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetFunctionConfigurationOutput,
     crate::error::GetFunctionConfigurationError,
 > {
@@ -2217,7 +2253,7 @@ pub fn parse_get_function_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetFunctionConfigurationOutput,
     crate::error::GetFunctionConfigurationError,
 > {
@@ -2237,7 +2273,7 @@ pub fn parse_get_function_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_event_invoke_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetFunctionEventInvokeConfigOutput,
     crate::error::GetFunctionEventInvokeConfigError,
 > {
@@ -2319,7 +2355,7 @@ pub fn parse_get_function_event_invoke_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_function_event_invoke_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetFunctionEventInvokeConfigOutput,
     crate::error::GetFunctionEventInvokeConfigError,
 > {
@@ -2339,7 +2375,7 @@ pub fn parse_get_function_event_invoke_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_layer_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError> {
+) -> std::result::Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLayerVersionError::unhandled)?;
     let error_code = match generic.code() {
@@ -2417,7 +2453,7 @@ pub fn parse_get_layer_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_layer_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError> {
+) -> std::result::Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_layer_version_output::Builder::default();
@@ -2432,7 +2468,10 @@ pub fn parse_get_layer_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_layer_version_by_arn_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLayerVersionByArnOutput, crate::error::GetLayerVersionByArnError> {
+) -> std::result::Result<
+    crate::output::GetLayerVersionByArnOutput,
+    crate::error::GetLayerVersionByArnError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
     let error_code = match generic.code() {
@@ -2506,7 +2545,10 @@ pub fn parse_get_layer_version_by_arn_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_layer_version_by_arn_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLayerVersionByArnOutput, crate::error::GetLayerVersionByArnError> {
+) -> std::result::Result<
+    crate::output::GetLayerVersionByArnOutput,
+    crate::error::GetLayerVersionByArnError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_layer_version_by_arn_output::Builder::default();
@@ -2523,7 +2565,10 @@ pub fn parse_get_layer_version_by_arn_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_layer_version_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLayerVersionPolicyOutput, crate::error::GetLayerVersionPolicyError> {
+) -> std::result::Result<
+    crate::output::GetLayerVersionPolicyOutput,
+    crate::error::GetLayerVersionPolicyError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -2597,7 +2642,10 @@ pub fn parse_get_layer_version_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_layer_version_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLayerVersionPolicyOutput, crate::error::GetLayerVersionPolicyError> {
+) -> std::result::Result<
+    crate::output::GetLayerVersionPolicyOutput,
+    crate::error::GetLayerVersionPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_layer_version_policy_output::Builder::default();
@@ -2614,7 +2662,7 @@ pub fn parse_get_layer_version_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
+) -> std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -2692,7 +2740,7 @@ pub fn parse_get_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
+) -> std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_policy_output::Builder::default();
@@ -2706,7 +2754,7 @@ pub fn parse_get_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_provisioned_concurrency_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetProvisionedConcurrencyConfigOutput,
     crate::error::GetProvisionedConcurrencyConfigError,
 > {
@@ -2758,7 +2806,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_provisioned_concurrency_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetProvisionedConcurrencyConfigOutput,
     crate::error::GetProvisionedConcurrencyConfigError,
 > {
@@ -2779,7 +2827,7 @@ pub fn parse_get_provisioned_concurrency_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_invoke_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::InvokeOutput, crate::error::InvokeError> {
+) -> std::result::Result<crate::output::InvokeOutput, crate::error::InvokeError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::InvokeError::unhandled)?;
     let error_code = match generic.code() {
@@ -3149,7 +3197,7 @@ pub fn parse_invoke_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_invoke_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::InvokeOutput, crate::error::InvokeError> {
+) -> std::result::Result<crate::output::InvokeOutput, crate::error::InvokeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::invoke_output::Builder::default();
@@ -3184,7 +3232,7 @@ pub fn parse_invoke_response(
         output = output.set_payload(crate::http_serde::deser_payload_invoke_payload(
             response.body().as_ref(),
         )?);
-        output = output.set_status_code(response.status().as_u16() as _);
+        output = output.set_status_code(Some(response.status().as_u16() as _));
         output.build()
     })
 }
@@ -3192,7 +3240,7 @@ pub fn parse_invoke_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_invoke_async_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError> {
+) -> std::result::Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::InvokeAsyncError::unhandled)?;
     let error_code = match generic.code() {
@@ -3272,12 +3320,12 @@ pub fn parse_invoke_async_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_invoke_async_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError> {
+) -> std::result::Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::invoke_async_output::Builder::default();
         let _ = response;
-        output = output.set_status(response.status().as_u16() as _);
+        output = output.set_status(Some(response.status().as_u16() as _));
         output.build()
     })
 }
@@ -3285,7 +3333,7 @@ pub fn parse_invoke_async_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_aliases_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
+) -> std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListAliasesError::unhandled)?;
     let error_code = match generic.code() {
@@ -3363,7 +3411,7 @@ pub fn parse_list_aliases_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_aliases_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
+) -> std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_aliases_output::Builder::default();
@@ -3377,8 +3425,10 @@ pub fn parse_list_aliases_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_code_signing_configs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListCodeSigningConfigsOutput, crate::error::ListCodeSigningConfigsError>
-{
+) -> std::result::Result<
+    crate::output::ListCodeSigningConfigsOutput,
+    crate::error::ListCodeSigningConfigsError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3422,8 +3472,10 @@ pub fn parse_list_code_signing_configs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_code_signing_configs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListCodeSigningConfigsOutput, crate::error::ListCodeSigningConfigsError>
-{
+) -> std::result::Result<
+    crate::output::ListCodeSigningConfigsOutput,
+    crate::error::ListCodeSigningConfigsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_code_signing_configs_output::Builder::default();
@@ -3440,8 +3492,10 @@ pub fn parse_list_code_signing_configs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_event_source_mappings_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListEventSourceMappingsOutput, crate::error::ListEventSourceMappingsError>
-{
+) -> std::result::Result<
+    crate::output::ListEventSourceMappingsOutput,
+    crate::error::ListEventSourceMappingsError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3519,8 +3573,10 @@ pub fn parse_list_event_source_mappings_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_event_source_mappings_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListEventSourceMappingsOutput, crate::error::ListEventSourceMappingsError>
-{
+) -> std::result::Result<
+    crate::output::ListEventSourceMappingsOutput,
+    crate::error::ListEventSourceMappingsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_event_source_mappings_output::Builder::default();
@@ -3537,7 +3593,7 @@ pub fn parse_list_event_source_mappings_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_function_event_invoke_configs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListFunctionEventInvokeConfigsOutput,
     crate::error::ListFunctionEventInvokeConfigsError,
 > {
@@ -3615,7 +3671,7 @@ pub fn parse_list_function_event_invoke_configs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_function_event_invoke_configs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListFunctionEventInvokeConfigsOutput,
     crate::error::ListFunctionEventInvokeConfigsError,
 > {
@@ -3636,7 +3692,7 @@ pub fn parse_list_function_event_invoke_configs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_functions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
+) -> std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListFunctionsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3700,7 +3756,7 @@ pub fn parse_list_functions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_functions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
+) -> std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_functions_output::Builder::default();
@@ -3715,7 +3771,7 @@ pub fn parse_list_functions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_functions_by_code_signing_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListFunctionsByCodeSigningConfigOutput,
     crate::error::ListFunctionsByCodeSigningConfigError,
 > {
@@ -3778,7 +3834,7 @@ pub fn parse_list_functions_by_code_signing_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_functions_by_code_signing_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListFunctionsByCodeSigningConfigOutput,
     crate::error::ListFunctionsByCodeSigningConfigError,
 > {
@@ -3799,7 +3855,7 @@ pub fn parse_list_functions_by_code_signing_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_layers_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListLayersOutput, crate::error::ListLayersError> {
+) -> std::result::Result<crate::output::ListLayersOutput, crate::error::ListLayersError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListLayersError::unhandled)?;
     let error_code = match generic.code() {
@@ -3863,7 +3919,7 @@ pub fn parse_list_layers_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_layers_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListLayersOutput, crate::error::ListLayersError> {
+) -> std::result::Result<crate::output::ListLayersOutput, crate::error::ListLayersError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_layers_output::Builder::default();
@@ -3877,7 +3933,8 @@ pub fn parse_list_layers_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_layer_versions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError> {
+) -> std::result::Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListLayerVersionsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3955,7 +4012,8 @@ pub fn parse_list_layer_versions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_layer_versions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError> {
+) -> std::result::Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_layer_versions_output::Builder::default();
@@ -3972,7 +4030,7 @@ pub fn parse_list_layer_versions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_provisioned_concurrency_configs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListProvisionedConcurrencyConfigsOutput,
     crate::error::ListProvisionedConcurrencyConfigsError,
 > {
@@ -4055,7 +4113,7 @@ pub fn parse_list_provisioned_concurrency_configs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_provisioned_concurrency_configs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListProvisionedConcurrencyConfigsOutput,
     crate::error::ListProvisionedConcurrencyConfigsError,
 > {
@@ -4076,7 +4134,7 @@ pub fn parse_list_provisioned_concurrency_configs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
+) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsError::unhandled)?;
     let error_code = match generic.code() {
@@ -4154,7 +4212,7 @@ pub fn parse_list_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
+) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_output::Builder::default();
@@ -4168,8 +4226,10 @@ pub fn parse_list_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_versions_by_function_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListVersionsByFunctionOutput, crate::error::ListVersionsByFunctionError>
-{
+) -> std::result::Result<
+    crate::output::ListVersionsByFunctionOutput,
+    crate::error::ListVersionsByFunctionError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
     let error_code = match generic.code() {
@@ -4247,8 +4307,10 @@ pub fn parse_list_versions_by_function_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_versions_by_function_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListVersionsByFunctionOutput, crate::error::ListVersionsByFunctionError>
-{
+) -> std::result::Result<
+    crate::output::ListVersionsByFunctionOutput,
+    crate::error::ListVersionsByFunctionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_versions_by_function_output::Builder::default();
@@ -4265,7 +4327,10 @@ pub fn parse_list_versions_by_function_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_publish_layer_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PublishLayerVersionOutput, crate::error::PublishLayerVersionError> {
+) -> std::result::Result<
+    crate::output::PublishLayerVersionOutput,
+    crate::error::PublishLayerVersionError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PublishLayerVersionError::unhandled)?;
     let error_code = match generic.code() {
@@ -4357,7 +4422,10 @@ pub fn parse_publish_layer_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_publish_layer_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PublishLayerVersionOutput, crate::error::PublishLayerVersionError> {
+) -> std::result::Result<
+    crate::output::PublishLayerVersionOutput,
+    crate::error::PublishLayerVersionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::publish_layer_version_output::Builder::default();
@@ -4374,7 +4442,7 @@ pub fn parse_publish_layer_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_publish_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError> {
+) -> std::result::Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PublishVersionError::unhandled)?;
     let error_code = match generic.code() {
@@ -4494,7 +4562,7 @@ pub fn parse_publish_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_publish_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError> {
+) -> std::result::Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::publish_version_output::Builder::default();
@@ -4509,7 +4577,7 @@ pub fn parse_publish_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_function_code_signing_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutFunctionCodeSigningConfigOutput,
     crate::error::PutFunctionCodeSigningConfigError,
 > {
@@ -4623,7 +4691,7 @@ pub fn parse_put_function_code_signing_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_function_code_signing_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutFunctionCodeSigningConfigOutput,
     crate::error::PutFunctionCodeSigningConfigError,
 > {
@@ -4643,8 +4711,10 @@ pub fn parse_put_function_code_signing_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_function_concurrency_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutFunctionConcurrencyOutput, crate::error::PutFunctionConcurrencyError>
-{
+) -> std::result::Result<
+    crate::output::PutFunctionConcurrencyOutput,
+    crate::error::PutFunctionConcurrencyError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
     let error_code = match generic.code() {
@@ -4736,8 +4806,10 @@ pub fn parse_put_function_concurrency_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_function_concurrency_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutFunctionConcurrencyOutput, crate::error::PutFunctionConcurrencyError>
-{
+) -> std::result::Result<
+    crate::output::PutFunctionConcurrencyOutput,
+    crate::error::PutFunctionConcurrencyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_function_concurrency_output::Builder::default();
@@ -4754,7 +4826,7 @@ pub fn parse_put_function_concurrency_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_function_event_invoke_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutFunctionEventInvokeConfigOutput,
     crate::error::PutFunctionEventInvokeConfigError,
 > {
@@ -4836,7 +4908,7 @@ pub fn parse_put_function_event_invoke_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_function_event_invoke_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutFunctionEventInvokeConfigOutput,
     crate::error::PutFunctionEventInvokeConfigError,
 > {
@@ -4856,7 +4928,7 @@ pub fn parse_put_function_event_invoke_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_provisioned_concurrency_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutProvisionedConcurrencyConfigOutput,
     crate::error::PutProvisionedConcurrencyConfigError,
 > {
@@ -4949,7 +5021,7 @@ pub fn parse_put_provisioned_concurrency_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_provisioned_concurrency_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutProvisionedConcurrencyConfigOutput,
     crate::error::PutProvisionedConcurrencyConfigError,
 > {
@@ -4970,7 +5042,7 @@ pub fn parse_put_provisioned_concurrency_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_layer_version_permission_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveLayerVersionPermissionOutput,
     crate::error::RemoveLayerVersionPermissionError,
 > {
@@ -5066,7 +5138,7 @@ pub fn parse_remove_layer_version_permission_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_layer_version_permission_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveLayerVersionPermissionOutput,
     crate::error::RemoveLayerVersionPermissionError,
 > {
@@ -5081,7 +5153,8 @@ pub fn parse_remove_layer_version_permission_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_permission_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError> {
+) -> std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::RemovePermissionError::unhandled)?;
     let error_code = match generic.code() {
@@ -5173,7 +5246,8 @@ pub fn parse_remove_permission_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_permission_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError> {
+) -> std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::remove_permission_output::Builder::default();
@@ -5185,7 +5259,7 @@ pub fn parse_remove_permission_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -5277,7 +5351,7 @@ pub fn parse_tag_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
@@ -5289,7 +5363,7 @@ pub fn parse_tag_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -5381,7 +5455,7 @@ pub fn parse_untag_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
@@ -5393,7 +5467,7 @@ pub fn parse_untag_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_alias_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
+) -> std::result::Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateAliasError::unhandled)?;
     let error_code = match generic.code() {
@@ -5499,7 +5573,7 @@ pub fn parse_update_alias_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_alias_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
+) -> std::result::Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_alias_output::Builder::default();
@@ -5513,8 +5587,10 @@ pub fn parse_update_alias_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_code_signing_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateCodeSigningConfigOutput, crate::error::UpdateCodeSigningConfigError>
-{
+) -> std::result::Result<
+    crate::output::UpdateCodeSigningConfigOutput,
+    crate::error::UpdateCodeSigningConfigError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
     let error_code = match generic.code() {
@@ -5572,8 +5648,10 @@ pub fn parse_update_code_signing_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_code_signing_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateCodeSigningConfigOutput, crate::error::UpdateCodeSigningConfigError>
-{
+) -> std::result::Result<
+    crate::output::UpdateCodeSigningConfigOutput,
+    crate::error::UpdateCodeSigningConfigError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_code_signing_config_output::Builder::default();
@@ -5590,7 +5668,7 @@ pub fn parse_update_code_signing_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_event_source_mapping_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateEventSourceMappingOutput,
     crate::error::UpdateEventSourceMappingError,
 > {
@@ -5695,7 +5773,7 @@ pub fn parse_update_event_source_mapping_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_event_source_mapping_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateEventSourceMappingOutput,
     crate::error::UpdateEventSourceMappingError,
 > {
@@ -5715,7 +5793,10 @@ pub fn parse_update_event_source_mapping_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_function_code_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateFunctionCodeOutput, crate::error::UpdateFunctionCodeError> {
+) -> std::result::Result<
+    crate::output::UpdateFunctionCodeOutput,
+    crate::error::UpdateFunctionCodeError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
     let error_code = match generic.code() {
@@ -5878,7 +5959,10 @@ pub fn parse_update_function_code_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_function_code_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateFunctionCodeOutput, crate::error::UpdateFunctionCodeError> {
+) -> std::result::Result<
+    crate::output::UpdateFunctionCodeOutput,
+    crate::error::UpdateFunctionCodeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_function_code_output::Builder::default();
@@ -5895,7 +5979,7 @@ pub fn parse_update_function_code_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_function_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateFunctionConfigurationOutput,
     crate::error::UpdateFunctionConfigurationError,
 > {
@@ -6051,7 +6135,7 @@ pub fn parse_update_function_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_function_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateFunctionConfigurationOutput,
     crate::error::UpdateFunctionConfigurationError,
 > {
@@ -6071,7 +6155,7 @@ pub fn parse_update_function_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_function_event_invoke_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateFunctionEventInvokeConfigOutput,
     crate::error::UpdateFunctionEventInvokeConfigError,
 > {
@@ -6150,7 +6234,7 @@ pub fn parse_update_function_event_invoke_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_function_event_invoke_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateFunctionEventInvokeConfigOutput,
     crate::error::UpdateFunctionEventInvokeConfigError,
 > {

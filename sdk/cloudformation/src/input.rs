@@ -11,12 +11,12 @@ pub mod cancel_update_stack_input {
     }
     impl Builder {
         /// <p>The name or the unique stack ID that is associated with the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
@@ -24,22 +24,24 @@ pub mod cancel_update_stack_input {
         /// attempting to cancel an update on a stack with the same name. You might retry
         /// <code>CancelUpdateStack</code> requests to ensure that AWS CloudFormation successfully
         /// received them.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelUpdateStackInput`](crate::input::CancelUpdateStackInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelUpdateStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CancelUpdateStackInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CancelUpdateStackInput {
                 stack_name: self.stack_name,
                 client_request_token: self.client_request_token,
@@ -57,7 +59,7 @@ impl CancelUpdateStackInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CancelUpdateStack,
             aws_http::AwsErrorRetryPolicy,
@@ -117,7 +119,7 @@ impl CancelUpdateStackInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -125,7 +127,7 @@ impl CancelUpdateStackInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -165,12 +167,12 @@ pub mod continue_update_rollback_input {
         /// parent stack (the stack that contains the <code>AWS::CloudFormation::Stack</code>
         /// resource).</p>
         /// </note>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -182,25 +184,25 @@ pub mod continue_update_rollback_input {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn resources_to_skip(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resources_to_skip(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources_to_skip.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resources_to_skip = Some(v);
             self
         }
         pub fn set_resources_to_skip(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resources_to_skip = inp;
+            self.resources_to_skip = input;
             self
         }
         /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
@@ -208,22 +210,24 @@ pub mod continue_update_rollback_input {
         /// attempting to continue the rollback to a stack with the same name. You might retry
         /// <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
         /// successfully received them.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ContinueUpdateRollbackInput`](crate::input::ContinueUpdateRollbackInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ContinueUpdateRollbackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ContinueUpdateRollbackInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ContinueUpdateRollbackInput {
                 stack_name: self.stack_name,
                 role_arn: self.role_arn,
@@ -243,7 +247,7 @@ impl ContinueUpdateRollbackInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ContinueUpdateRollback,
             aws_http::AwsErrorRetryPolicy,
@@ -303,7 +307,7 @@ impl ContinueUpdateRollbackInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -311,7 +315,7 @@ impl ContinueUpdateRollbackInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -361,12 +365,12 @@ pub mod create_change_set_input {
         /// CloudFormation generates the change set by comparing this stack's information with the
         /// information that you submit, such as a modified template or different parameter input
         /// values.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>A structure that contains the body of the revised template, with a minimum length of
@@ -374,12 +378,15 @@ pub mod create_change_set_input {
         /// comparing this template with the template of the stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
         /// <p>The location of the file that contains the revised template. The URL must point to a
@@ -388,61 +395,61 @@ pub mod create_change_set_input {
         /// stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_url = Some(inp.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_url = Some(input.into());
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_url = inp;
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_url = input;
             self
         }
         /// <p>Whether to reuse the template that is associated with the stack to create the change
         /// set.</p>
-        pub fn use_previous_template(mut self, inp: bool) -> Self {
-            self.use_previous_template = Some(inp);
+        pub fn use_previous_template(mut self, input: bool) -> Self {
+            self.use_previous_template = Some(input);
             self
         }
-        pub fn set_use_previous_template(mut self, inp: std::option::Option<bool>) -> Self {
-            self.use_previous_template = inp;
+        pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_previous_template = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_types = Some(v);
             self
         }
         pub fn set_resource_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_types = inp;
+            self.resource_types = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -454,51 +461,54 @@ pub mod create_change_set_input {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.rollback_configuration = Some(inp);
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.rollback_configuration = Some(input);
             self
         }
         pub fn set_rollback_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RollbackConfiguration>,
+            input: std::option::Option<crate::model::RollbackConfiguration>,
         ) -> Self {
-            self.rollback_configuration = inp;
+            self.rollback_configuration = input;
             self
         }
-        pub fn notification_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
         pub fn set_notification_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.notification_ar_ns = inp;
+            self.notification_ar_ns = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The name of the change set. The name must be unique among all change sets that are
@@ -506,15 +516,15 @@ pub mod create_change_set_input {
         /// <p>A change set name can contain only alphanumeric, case sensitive characters and
         /// hyphens. It must start with an alphabetic character and cannot exceed 128
         /// characters.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_name = Some(inp.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_name = Some(input.into());
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_set_name = inp;
+            self.change_set_name = input;
             self
         }
         /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
@@ -522,21 +532,21 @@ pub mod create_change_set_input {
         /// to create another change set with the same name. You might retry
         /// <code>CreateChangeSet</code> requests to ensure that AWS CloudFormation successfully
         /// received them.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// <p>A description to help you identify this change set.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The type of change set operation. To create a change set for a new stack, specify
@@ -551,49 +561,51 @@ pub mod create_change_set_input {
         /// <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the
         /// <code>UPDATE</code> type to create a change set for a new stack or the
         /// <code>CREATE</code> type to create a change set for an existing stack.</p>
-        pub fn change_set_type(mut self, inp: crate::model::ChangeSetType) -> Self {
-            self.change_set_type = Some(inp);
+        pub fn change_set_type(mut self, input: crate::model::ChangeSetType) -> Self {
+            self.change_set_type = Some(input);
             self
         }
         pub fn set_change_set_type(
             mut self,
-            inp: std::option::Option<crate::model::ChangeSetType>,
+            input: std::option::Option<crate::model::ChangeSetType>,
         ) -> Self {
-            self.change_set_type = inp;
+            self.change_set_type = input;
             self
         }
         pub fn resources_to_import(
             mut self,
-            inp: impl Into<crate::model::ResourceToImport>,
+            input: impl Into<crate::model::ResourceToImport>,
         ) -> Self {
             let mut v = self.resources_to_import.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resources_to_import = Some(v);
             self
         }
         pub fn set_resources_to_import(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceToImport>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceToImport>>,
         ) -> Self {
-            self.resources_to_import = inp;
+            self.resources_to_import = input;
             self
         }
         /// <p>Creates a change set for the all nested stacks specified in the template. The default
         /// behavior of this action is set to <code>False</code>. To include nested sets in a change
         /// set, specify <code>True</code>.</p>
-        pub fn include_nested_stacks(mut self, inp: bool) -> Self {
-            self.include_nested_stacks = Some(inp);
+        pub fn include_nested_stacks(mut self, input: bool) -> Self {
+            self.include_nested_stacks = Some(input);
             self
         }
-        pub fn set_include_nested_stacks(mut self, inp: std::option::Option<bool>) -> Self {
-            self.include_nested_stacks = inp;
+        pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_nested_stacks = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateChangeSetInput`](crate::input::CreateChangeSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateChangeSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateChangeSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateChangeSetInput {
                 stack_name: self.stack_name,
                 template_body: self.template_body,
@@ -626,7 +638,7 @@ impl CreateChangeSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateChangeSet,
             aws_http::AwsErrorRetryPolicy,
@@ -685,7 +697,7 @@ impl CreateChangeSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -693,7 +705,7 @@ impl CreateChangeSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -745,12 +757,12 @@ pub mod create_stack_input {
         /// hyphens. It must start with an alphabetic character and cannot be longer than 128
         /// characters.</p>
         /// </note>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
@@ -758,12 +770,15 @@ pub mod create_stack_input {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
         /// <code>TemplateURL</code> parameter, but not both.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template (max
@@ -772,25 +787,25 @@ pub mod create_stack_input {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
         /// <code>TemplateURL</code> parameter, but not both.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_url = Some(inp.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_url = Some(input.into());
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_url = inp;
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_url = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed.
@@ -798,75 +813,78 @@ pub mod create_stack_input {
         /// both.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn disable_rollback(mut self, inp: bool) -> Self {
-            self.disable_rollback = Some(inp);
+        pub fn disable_rollback(mut self, input: bool) -> Self {
+            self.disable_rollback = Some(input);
             self
         }
-        pub fn set_disable_rollback(mut self, inp: std::option::Option<bool>) -> Self {
-            self.disable_rollback = inp;
+        pub fn set_disable_rollback(mut self, input: std::option::Option<bool>) -> Self {
+            self.disable_rollback = input;
             self
         }
         /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.rollback_configuration = Some(inp);
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.rollback_configuration = Some(input);
             self
         }
         pub fn set_rollback_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RollbackConfiguration>,
+            input: std::option::Option<crate::model::RollbackConfiguration>,
         ) -> Self {
-            self.rollback_configuration = inp;
+            self.rollback_configuration = input;
             self
         }
         /// <p>The amount of time that can pass before the stack status becomes CREATE_FAILED; if
         /// <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will
         /// be rolled back.</p>
-        pub fn timeout_in_minutes(mut self, inp: i32) -> Self {
-            self.timeout_in_minutes = Some(inp);
+        pub fn timeout_in_minutes(mut self, input: i32) -> Self {
+            self.timeout_in_minutes = Some(input);
             self
         }
-        pub fn set_timeout_in_minutes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout_in_minutes = inp;
+        pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_minutes = input;
             self
         }
-        pub fn notification_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
         pub fn set_notification_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.notification_ar_ns = inp;
+            self.notification_ar_ns = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_types = Some(v);
             self
         }
         pub fn set_resource_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_types = inp;
+            self.resource_types = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -878,12 +896,12 @@ pub mod create_stack_input {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>Determines what action will be taken if stack creation fails. This must be one of:
@@ -891,55 +909,58 @@ pub mod create_stack_input {
         /// <code>DisableRollback</code>, but not both.</p>
         /// <p>Default: <code>ROLLBACK</code>
         /// </p>
-        pub fn on_failure(mut self, inp: crate::model::OnFailure) -> Self {
-            self.on_failure = Some(inp);
+        pub fn on_failure(mut self, input: crate::model::OnFailure) -> Self {
+            self.on_failure = Some(input);
             self
         }
-        pub fn set_on_failure(mut self, inp: std::option::Option<crate::model::OnFailure>) -> Self {
-            self.on_failure = inp;
+        pub fn set_on_failure(
+            mut self,
+            input: std::option::Option<crate::model::OnFailure>,
+        ) -> Self {
+            self.on_failure = input;
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
         /// to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>.
         /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
         /// parameter, but not both.</p>
-        pub fn stack_policy_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_policy_body = Some(inp.into());
+        pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_policy_body = Some(input.into());
             self
         }
         pub fn set_stack_policy_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_body = inp;
+            self.stack_policy_body = input;
             self
         }
         /// <p>Location of a file containing the stack policy. The URL must point to a policy
         /// (maximum size: 16 KB) located in an S3 bucket in the same
         /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
         /// <code>StackPolicyURL</code> parameter, but not both.</p>
-        pub fn stack_policy_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_policy_url = Some(inp.into());
+        pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_policy_url = Some(input.into());
             self
         }
         pub fn set_stack_policy_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_url = inp;
+            self.stack_policy_url = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
@@ -957,15 +978,15 @@ pub mod create_stack_input {
         /// stack operation . For example, if you create a stack using the console, each stack event
         /// would be assigned the same token in the following format:
         /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// <p>Whether to enable termination protection on the specified stack. If a user attempts
@@ -976,18 +997,22 @@ pub mod create_stack_input {
         /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
         /// termination protection is set on the root stack and cannot be changed directly on the
         /// nested stack.</p>
-        pub fn enable_termination_protection(mut self, inp: bool) -> Self {
-            self.enable_termination_protection = Some(inp);
+        pub fn enable_termination_protection(mut self, input: bool) -> Self {
+            self.enable_termination_protection = Some(input);
             self
         }
-        pub fn set_enable_termination_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_termination_protection = inp;
+        pub fn set_enable_termination_protection(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_termination_protection = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStackInput`](crate::input::CreateStackInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateStackInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateStackInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateStackInput {
                 stack_name: self.stack_name,
                 template_body: self.template_body,
@@ -1020,7 +1045,7 @@ impl CreateStackInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateStack,
             aws_http::AwsErrorRetryPolicy,
@@ -1080,7 +1105,7 @@ impl CreateStackInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1088,7 +1113,7 @@ impl CreateStackInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1127,79 +1152,82 @@ pub mod create_stack_instances_input {
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to create stack instances
         /// from.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
-        pub fn accounts(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.accounts = Some(v);
             self
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.accounts = inp;
+            self.accounts = input;
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts for which to create stack instances in the specified Regions.</p>
         /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.deployment_targets = Some(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.deployment_targets = Some(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.deployment_targets = inp;
+            self.deployment_targets = input;
             self
         }
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.regions = Some(v);
             self
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.regions = inp;
+            self.regions = input;
             self
         }
-        pub fn parameter_overrides(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameter_overrides = Some(v);
             self
         }
         pub fn set_parameter_overrides(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameter_overrides = inp;
+            self.parameter_overrides = input;
             self
         }
         /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.operation_preferences = Some(inp);
+            self.operation_preferences = Some(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.operation_preferences = inp;
+            self.operation_preferences = input;
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
@@ -1210,12 +1238,12 @@ pub mod create_stack_instances_input {
         /// <p>If you don't specify an operation ID, the SDK generates one automatically. </p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -1229,19 +1257,21 @@ pub mod create_stack_instances_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStackInstancesInput`](crate::input::CreateStackInstancesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateStackInstancesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateStackInstancesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateStackInstancesInput {
                 stack_set_name: self.stack_set_name,
                 accounts: self.accounts,
@@ -1265,7 +1295,7 @@ impl CreateStackInstancesInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateStackInstances,
             aws_http::AwsErrorRetryPolicy,
@@ -1328,7 +1358,7 @@ impl CreateStackInstancesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1336,7 +1366,7 @@ impl CreateStackInstancesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1384,22 +1414,25 @@ pub mod create_stack_set_input {
         /// hyphens. It must start with an alphabetic character and can't be longer than 128
         /// characters.</p>
         /// </note>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>A description of the stack set. You can use the description to identify the stack
         /// set's purpose or other important information.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
@@ -1407,12 +1440,15 @@ pub mod create_stack_set_input {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
         /// but not both.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
         /// <p>The location of the file that contains the template body. The URL must point to a
@@ -1421,51 +1457,51 @@ pub mod create_stack_set_input {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
         /// but not both.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_url = Some(inp.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_url = Some(input.into());
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_url = inp;
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_url = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
@@ -1474,15 +1510,15 @@ pub mod create_stack_set_input {
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
         /// Granting Permissions for Stack Set Operations</a> in the
         /// <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn administration_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.administration_role_arn = Some(inp.into());
+        pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.administration_role_arn = Some(input.into());
             self
         }
         pub fn set_administration_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.administration_role_arn = inp;
+            self.administration_role_arn = input;
             self
         }
         /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify
@@ -1491,15 +1527,15 @@ pub mod create_stack_set_input {
         /// <p>Specify an IAM role only if you are using customized execution roles to control which
         /// stack resources users and groups can include in their stack sets.
         /// </p>
-        pub fn execution_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_name = Some(inp.into());
+        pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_name = Some(input.into());
             self
         }
         pub fn set_execution_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_name = inp;
+            self.execution_role_name = input;
             self
         }
         /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
@@ -1511,27 +1547,27 @@ pub mod create_stack_set_input {
         /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// </ul>
-        pub fn permission_model(mut self, inp: crate::model::PermissionModels) -> Self {
-            self.permission_model = Some(inp);
+        pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
+            self.permission_model = Some(input);
             self
         }
         pub fn set_permission_model(
             mut self,
-            inp: std::option::Option<crate::model::PermissionModels>,
+            input: std::option::Option<crate::model::PermissionModels>,
         ) -> Self {
-            self.permission_model = inp;
+            self.permission_model = input;
             self
         }
         /// <p>Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
-        pub fn auto_deployment(mut self, inp: crate::model::AutoDeployment) -> Self {
-            self.auto_deployment = Some(inp);
+        pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
+            self.auto_deployment = Some(input);
             self
         }
         pub fn set_auto_deployment(
             mut self,
-            inp: std::option::Option<crate::model::AutoDeployment>,
+            input: std::option::Option<crate::model::AutoDeployment>,
         ) -> Self {
-            self.auto_deployment = inp;
+            self.auto_deployment = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -1546,12 +1582,12 @@ pub mod create_stack_set_input {
         /// </li>
         /// </ul>
         /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
@@ -1560,21 +1596,24 @@ pub mod create_stack_set_input {
         /// requests to ensure that AWS CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically.
         /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStackSetInput`](crate::input::CreateStackSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateStackSetInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::CreateStackSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateStackSetInput {
                 stack_set_name: self.stack_set_name,
                 description: self.description,
@@ -1603,7 +1642,7 @@ impl CreateStackSetInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateStackSet,
             aws_http::AwsErrorRetryPolicy,
@@ -1665,7 +1704,7 @@ impl CreateStackSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1673,7 +1712,7 @@ impl CreateStackSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1705,32 +1744,34 @@ pub mod delete_change_set_input {
     impl Builder {
         /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
         /// delete.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_name = Some(inp.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_name = Some(input.into());
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_set_name = inp;
+            self.change_set_name = input;
             self
         }
         /// <p>If you specified the name of a change set to delete, specify the stack name or ID
         /// (ARN) that is associated with it.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteChangeSetInput`](crate::input::DeleteChangeSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteChangeSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteChangeSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteChangeSetInput {
                 change_set_name: self.change_set_name,
                 stack_name: self.stack_name,
@@ -1748,7 +1789,7 @@ impl DeleteChangeSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteChangeSet,
             aws_http::AwsErrorRetryPolicy,
@@ -1807,7 +1848,7 @@ impl DeleteChangeSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1815,7 +1856,7 @@ impl DeleteChangeSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1848,25 +1889,25 @@ pub mod delete_stack_input {
     }
     impl Builder {
         /// <p>The name or the unique stack ID that is associated with the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
-        pub fn retain_resources(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn retain_resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.retain_resources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.retain_resources = Some(v);
             self
         }
         pub fn set_retain_resources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.retain_resources = inp;
+            self.retain_resources = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -1875,12 +1916,12 @@ pub mod delete_stack_input {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
@@ -1898,21 +1939,22 @@ pub mod delete_stack_input {
         /// stack operation . For example, if you create a stack using the console, each stack event
         /// would be assigned the same token in the following format:
         /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteStackInput`](crate::input::DeleteStackInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteStackInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteStackInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteStackInput {
                 stack_name: self.stack_name,
                 retain_resources: self.retain_resources,
@@ -1932,7 +1974,7 @@ impl DeleteStackInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteStack,
             aws_http::AwsErrorRetryPolicy,
@@ -1992,7 +2034,7 @@ impl DeleteStackInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2000,7 +2042,7 @@ impl DeleteStackInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2039,78 +2081,81 @@ pub mod delete_stack_instances_input {
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to delete stack instances
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
-        pub fn accounts(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.accounts = Some(v);
             self
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.accounts = inp;
+            self.accounts = input;
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts from which to delete stack instances.</p>
         /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.deployment_targets = Some(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.deployment_targets = Some(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.deployment_targets = inp;
+            self.deployment_targets = input;
             self
         }
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.regions = Some(v);
             self
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.regions = inp;
+            self.regions = input;
             self
         }
         /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.operation_preferences = Some(inp);
+            self.operation_preferences = Some(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.operation_preferences = inp;
+            self.operation_preferences = input;
             self
         }
         /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
         /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
         /// stack set.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-        pub fn retain_stacks(mut self, inp: bool) -> Self {
-            self.retain_stacks = Some(inp);
+        pub fn retain_stacks(mut self, input: bool) -> Self {
+            self.retain_stacks = Some(input);
             self
         }
-        pub fn set_retain_stacks(mut self, inp: bool) -> Self {
-            self.retain_stacks = Some(inp);
+        pub fn set_retain_stacks(mut self, input: std::option::Option<bool>) -> Self {
+            self.retain_stacks = input;
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
@@ -2121,12 +2166,12 @@ pub mod delete_stack_instances_input {
         /// CloudFormation successfully received them.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -2140,19 +2185,21 @@ pub mod delete_stack_instances_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteStackInstancesInput`](crate::input::DeleteStackInstancesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteStackInstancesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteStackInstancesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteStackInstancesInput {
                 stack_set_name: self.stack_set_name,
                 accounts: self.accounts,
@@ -2176,7 +2223,7 @@ impl DeleteStackInstancesInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteStackInstances,
             aws_http::AwsErrorRetryPolicy,
@@ -2239,7 +2286,7 @@ impl DeleteStackInstancesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2247,7 +2294,7 @@ impl DeleteStackInstancesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2279,12 +2326,15 @@ pub mod delete_stack_set_input {
     impl Builder {
         /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
         /// value by running <a>ListStackSets</a>.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -2298,18 +2348,21 @@ pub mod delete_stack_set_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteStackSetInput`](crate::input::DeleteStackSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteStackSetInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DeleteStackSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteStackSetInput {
                 stack_set_name: self.stack_set_name,
                 call_as: self.call_as,
@@ -2327,7 +2380,7 @@ impl DeleteStackSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteStackSet,
             aws_http::AwsErrorRetryPolicy,
@@ -2386,7 +2439,7 @@ impl DeleteStackSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2394,7 +2447,7 @@ impl DeleteStackSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2428,47 +2481,50 @@ pub mod deregister_type_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The kind of extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeregisterTypeInput`](crate::input::DeregisterTypeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeregisterTypeInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DeregisterTypeInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeregisterTypeInput {
                 arn: self.arn,
                 r#type: self.r#type,
@@ -2488,7 +2544,7 @@ impl DeregisterTypeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeregisterType,
             aws_http::AwsErrorRetryPolicy,
@@ -2547,7 +2603,7 @@ impl DeregisterTypeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2555,7 +2611,7 @@ impl DeregisterTypeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2585,19 +2641,21 @@ pub mod describe_account_limits_input {
     }
     impl Builder {
         /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAccountLimitsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeAccountLimitsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeAccountLimitsInput {
                 next_token: self.next_token,
             })
@@ -2614,7 +2672,7 @@ impl DescribeAccountLimitsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeAccountLimits,
             aws_http::AwsErrorRetryPolicy,
@@ -2674,7 +2732,7 @@ impl DescribeAccountLimitsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2682,7 +2740,7 @@ impl DescribeAccountLimitsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2715,42 +2773,44 @@ pub mod describe_change_set_input {
     impl Builder {
         /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
         /// describe.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_name = Some(inp.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_name = Some(input.into());
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_set_name = inp;
+            self.change_set_name = input;
             self
         }
         /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the
         /// change set you want to describe.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>A string (provided by the <a>DescribeChangeSet</a> response output) that
         /// identifies the next page of information that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeChangeSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeChangeSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeChangeSetInput {
                 change_set_name: self.change_set_name,
                 stack_name: self.stack_name,
@@ -2769,7 +2829,7 @@ impl DescribeChangeSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeChangeSet,
             aws_http::AwsErrorRetryPolicy,
@@ -2829,7 +2889,7 @@ impl DescribeChangeSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2837,7 +2897,7 @@ impl DescribeChangeSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2870,21 +2930,21 @@ pub mod describe_stack_drift_detection_status_input {
         /// <p>AWS CloudFormation generates new results, with a new drift detection ID, each time this operation
         /// is run. However, the number of drift results AWS CloudFormation retains for any given stack, and for how
         /// long, may vary. </p>
-        pub fn stack_drift_detection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_drift_detection_id = Some(inp.into());
+        pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_drift_detection_id = Some(input.into());
             self
         }
         pub fn set_stack_drift_detection_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_drift_detection_id = inp;
+            self.stack_drift_detection_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackDriftDetectionStatusInput`](crate::input::DescribeStackDriftDetectionStatusInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeStackDriftDetectionStatusInput,
             smithy_http::operation::BuildError,
         > {
@@ -2905,7 +2965,7 @@ impl DescribeStackDriftDetectionStatusInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStackDriftDetectionStatus,
             aws_http::AwsErrorRetryPolicy,
@@ -2968,7 +3028,7 @@ impl DescribeStackDriftDetectionStatusInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2976,7 +3036,7 @@ impl DescribeStackDriftDetectionStatusInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3018,28 +3078,30 @@ pub mod describe_stack_events_input {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>A string that identifies the next page of events that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackEventsInput`](crate::input::DescribeStackEventsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStackEventsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStackEventsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStackEventsInput {
                 stack_name: self.stack_name,
                 next_token: self.next_token,
@@ -3057,7 +3119,7 @@ impl DescribeStackEventsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStackEvents,
             aws_http::AwsErrorRetryPolicy,
@@ -3117,7 +3179,7 @@ impl DescribeStackEventsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3125,7 +3187,7 @@ impl DescribeStackEventsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3159,36 +3221,39 @@ pub mod describe_stack_instance_input {
     impl Builder {
         /// <p>The name or the unique stack ID of the stack set that you want to get stack instance
         /// information for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>The ID of an AWS account that's associated with this stack instance.</p>
-        pub fn stack_instance_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_instance_account = Some(inp.into());
+        pub fn stack_instance_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_instance_account = Some(input.into());
             self
         }
         pub fn set_stack_instance_account(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_instance_account = inp;
+            self.stack_instance_account = input;
             self
         }
         /// <p>The name of a Region that's associated with this stack instance.</p>
-        pub fn stack_instance_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_instance_region = Some(inp.into());
+        pub fn stack_instance_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_instance_region = Some(input.into());
             self
         }
         pub fn set_stack_instance_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_instance_region = inp;
+            self.stack_instance_region = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -3202,19 +3267,21 @@ pub mod describe_stack_instance_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackInstanceInput`](crate::input::DescribeStackInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStackInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStackInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStackInstanceInput {
                 stack_set_name: self.stack_set_name,
                 stack_instance_account: self.stack_instance_account,
@@ -3234,7 +3301,7 @@ impl DescribeStackInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStackInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -3294,7 +3361,7 @@ impl DescribeStackInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3302,7 +3369,7 @@ impl DescribeStackInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3344,32 +3411,34 @@ pub mod describe_stack_resource_input {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The logical name of the resource as specified in the template.</p>
         /// <p>Default: There is no default value.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourceInput`](crate::input::DescribeStackResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStackResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStackResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStackResourceInput {
                 stack_name: self.stack_name,
                 logical_resource_id: self.logical_resource_id,
@@ -3387,7 +3456,7 @@ impl DescribeStackResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStackResource,
             aws_http::AwsErrorRetryPolicy,
@@ -3447,7 +3516,7 @@ impl DescribeStackResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3455,7 +3524,7 @@ impl DescribeStackResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3489,55 +3558,55 @@ pub mod describe_stack_resource_drifts_input {
     }
     impl Builder {
         /// <p>The name of the stack for which you want drift information.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         pub fn stack_resource_drift_status_filters(
             mut self,
-            inp: impl Into<crate::model::StackResourceDriftStatus>,
+            input: impl Into<crate::model::StackResourceDriftStatus>,
         ) -> Self {
             let mut v = self.stack_resource_drift_status_filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stack_resource_drift_status_filters = Some(v);
             self
         }
         pub fn set_stack_resource_drift_status_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackResourceDriftStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackResourceDriftStatus>>,
         ) -> Self {
-            self.stack_resource_drift_status_filters = inp;
+            self.stack_resource_drift_status_filters = input;
             self
         }
         /// <p>A string that identifies the next page of stack resource drift results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourceDriftsInput`](crate::input::DescribeStackResourceDriftsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeStackResourceDriftsInput,
             smithy_http::operation::BuildError,
         > {
@@ -3561,7 +3630,7 @@ impl DescribeStackResourceDriftsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStackResourceDrifts,
             aws_http::AwsErrorRetryPolicy,
@@ -3622,7 +3691,7 @@ impl DescribeStackResourceDriftsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3630,7 +3699,7 @@ impl DescribeStackResourceDriftsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3675,25 +3744,25 @@ pub mod describe_stack_resources_input {
         /// <p>Default: There is no default value.</p>
         /// <p>Required: Conditional. If you do not specify <code>StackName</code>, you must specify
         /// <code>PhysicalResourceId</code>.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The logical name of the resource as specified in the template.</p>
         /// <p>Default: There is no default value.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// <p>The name or unique identifier that corresponds to a physical instance ID of a
@@ -3705,22 +3774,24 @@ pub mod describe_stack_resources_input {
         /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
         /// must specify <code>StackName</code>.</p>
         /// <p>Default: There is no default value.</p>
-        pub fn physical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.physical_resource_id = Some(inp.into());
+        pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.physical_resource_id = Some(input.into());
             self
         }
         pub fn set_physical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.physical_resource_id = inp;
+            self.physical_resource_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourcesInput`](crate::input::DescribeStackResourcesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStackResourcesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStackResourcesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStackResourcesInput {
                 stack_name: self.stack_name,
                 logical_resource_id: self.logical_resource_id,
@@ -3739,7 +3810,7 @@ impl DescribeStackResourcesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStackResources,
             aws_http::AwsErrorRetryPolicy,
@@ -3799,7 +3870,7 @@ impl DescribeStackResourcesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3807,7 +3878,7 @@ impl DescribeStackResourcesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3849,27 +3920,30 @@ pub mod describe_stacks_input {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStacksInput`](crate::input::DescribeStacksInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStacksInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeStacksInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStacksInput {
                 stack_name: self.stack_name,
                 next_token: self.next_token,
@@ -3887,7 +3961,7 @@ impl DescribeStacksInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStacks,
             aws_http::AwsErrorRetryPolicy,
@@ -3946,7 +4020,7 @@ impl DescribeStacksInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3954,7 +4028,7 @@ impl DescribeStacksInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3985,12 +4059,15 @@ pub mod describe_stack_set_input {
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set whose description you want.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -4004,19 +4081,21 @@ pub mod describe_stack_set_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackSetInput`](crate::input::DescribeStackSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStackSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStackSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStackSetInput {
                 stack_set_name: self.stack_set_name,
                 call_as: self.call_as,
@@ -4034,7 +4113,7 @@ impl DescribeStackSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStackSet,
             aws_http::AwsErrorRetryPolicy,
@@ -4094,7 +4173,7 @@ impl DescribeStackSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4102,7 +4181,7 @@ impl DescribeStackSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4134,21 +4213,24 @@ pub mod describe_stack_set_operation_input {
     }
     impl Builder {
         /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>The unique ID of the stack set operation. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -4162,19 +4244,21 @@ pub mod describe_stack_set_operation_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackSetOperationInput`](crate::input::DescribeStackSetOperationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStackSetOperationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStackSetOperationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStackSetOperationInput {
                 stack_set_name: self.stack_set_name,
                 operation_id: self.operation_id,
@@ -4194,7 +4278,7 @@ impl DescribeStackSetOperationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStackSetOperation,
             aws_http::AwsErrorRetryPolicy,
@@ -4255,7 +4339,7 @@ impl DescribeStackSetOperationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4263,7 +4347,7 @@ impl DescribeStackSetOperationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4297,48 +4381,49 @@ pub mod describe_type_input {
     impl Builder {
         /// <p>The kind of extension. </p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
         /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTypeInput`](crate::input::DescribeTypeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTypeInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DescribeTypeInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DescribeTypeInput {
                 r#type: self.r#type,
                 type_name: self.type_name,
@@ -4358,7 +4443,7 @@ impl DescribeTypeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeType,
             aws_http::AwsErrorRetryPolicy,
@@ -4418,7 +4503,7 @@ impl DescribeTypeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4426,7 +4511,7 @@ impl DescribeTypeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4459,22 +4544,24 @@ pub mod describe_type_registration_input {
         /// <p>This registration token is generated by CloudFormation when you initiate a registration request using <code>
         /// <a>RegisterType</a>
         /// </code>.</p>
-        pub fn registration_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.registration_token = Some(inp.into());
+        pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registration_token = Some(input.into());
             self
         }
         pub fn set_registration_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.registration_token = inp;
+            self.registration_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTypeRegistrationInput`](crate::input::DescribeTypeRegistrationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTypeRegistrationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeTypeRegistrationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeTypeRegistrationInput {
                 registration_token: self.registration_token,
             })
@@ -4492,7 +4579,7 @@ impl DescribeTypeRegistrationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeTypeRegistration,
             aws_http::AwsErrorRetryPolicy,
@@ -4552,7 +4639,7 @@ impl DescribeTypeRegistrationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4560,7 +4647,7 @@ impl DescribeTypeRegistrationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4591,32 +4678,34 @@ pub mod detect_stack_drift_input {
     }
     impl Builder {
         /// <p>The name of the stack for which you want to detect drift. </p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
-        pub fn logical_resource_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn logical_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logical_resource_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.logical_resource_ids = Some(v);
             self
         }
         pub fn set_logical_resource_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.logical_resource_ids = inp;
+            self.logical_resource_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`DetectStackDriftInput`](crate::input::DetectStackDriftInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DetectStackDriftInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetectStackDriftInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetectStackDriftInput {
                 stack_name: self.stack_name,
                 logical_resource_ids: self.logical_resource_ids,
@@ -4634,7 +4723,7 @@ impl DetectStackDriftInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DetectStackDrift,
             aws_http::AwsErrorRetryPolicy,
@@ -4694,7 +4783,7 @@ impl DetectStackDriftInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4702,7 +4791,7 @@ impl DetectStackDriftInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4733,31 +4822,33 @@ pub mod detect_stack_resource_drift_input {
     }
     impl Builder {
         /// <p>The name of the stack to which the resource belongs.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The logical name of the resource for which to return drift information.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DetectStackResourceDriftInput`](crate::input::DetectStackResourceDriftInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DetectStackResourceDriftInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetectStackResourceDriftInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetectStackResourceDriftInput {
                 stack_name: self.stack_name,
                 logical_resource_id: self.logical_resource_id,
@@ -4776,7 +4867,7 @@ impl DetectStackResourceDriftInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DetectStackResourceDrift,
             aws_http::AwsErrorRetryPolicy,
@@ -4836,7 +4927,7 @@ impl DetectStackResourceDriftInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4844,7 +4935,7 @@ impl DetectStackResourceDriftInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4878,12 +4969,15 @@ pub mod detect_stack_set_drift_input {
     }
     impl Builder {
         /// <p>The name of the stack set on which to perform the drift detection operation.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>The user-specified preferences for how AWS CloudFormation performs a stack set
@@ -4891,27 +4985,27 @@ pub mod detect_stack_set_drift_input {
         /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.operation_preferences = Some(inp);
+            self.operation_preferences = Some(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.operation_preferences = inp;
+            self.operation_preferences = input;
             self
         }
         /// <p>
         /// <i>The ID of the stack set operation.</i>
         /// </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -4925,19 +5019,21 @@ pub mod detect_stack_set_drift_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`DetectStackSetDriftInput`](crate::input::DetectStackSetDriftInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DetectStackSetDriftInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetectStackSetDriftInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetectStackSetDriftInput {
                 stack_set_name: self.stack_set_name,
                 operation_preferences: self.operation_preferences,
@@ -4957,7 +5053,7 @@ impl DetectStackSetDriftInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DetectStackSetDrift,
             aws_http::AwsErrorRetryPolicy,
@@ -5020,7 +5116,7 @@ impl DetectStackSetDriftInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5028,7 +5124,7 @@ impl DetectStackSetDriftInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5064,12 +5160,15 @@ pub mod estimate_template_cost_input {
         /// in the AWS CloudFormation User Guide.)</p>
         /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template that
@@ -5078,32 +5177,34 @@ pub mod estimate_template_cost_input {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_url = Some(inp.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_url = Some(input.into());
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_url = inp;
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_url = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`EstimateTemplateCostInput`](crate::input::EstimateTemplateCostInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::EstimateTemplateCostInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::EstimateTemplateCostInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::EstimateTemplateCostInput {
                 template_body: self.template_body,
                 template_url: self.template_url,
@@ -5122,7 +5223,7 @@ impl EstimateTemplateCostInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::EstimateTemplateCost,
             aws_http::AwsErrorRetryPolicy,
@@ -5182,7 +5283,7 @@ impl EstimateTemplateCostInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5190,7 +5291,7 @@ impl EstimateTemplateCostInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5223,25 +5324,25 @@ pub mod execute_change_set_input {
     impl Builder {
         /// <p>The name or ARN of the change set that you want use to update the specified
         /// stack.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_name = Some(inp.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_name = Some(input.into());
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_set_name = inp;
+            self.change_set_name = input;
             self
         }
         /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) that is
         /// associated with the change set you want to execute.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
@@ -5249,22 +5350,24 @@ pub mod execute_change_set_input {
         /// attempting to execute a change set to update a stack with the same name. You might retry
         /// <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation successfully
         /// received them.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteChangeSetInput`](crate::input::ExecuteChangeSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteChangeSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExecuteChangeSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExecuteChangeSetInput {
                 change_set_name: self.change_set_name,
                 stack_name: self.stack_name,
@@ -5283,7 +5386,7 @@ impl ExecuteChangeSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ExecuteChangeSet,
             aws_http::AwsErrorRetryPolicy,
@@ -5343,7 +5446,7 @@ impl ExecuteChangeSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5351,7 +5454,7 @@ impl ExecuteChangeSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5382,18 +5485,21 @@ pub mod get_stack_policy_input {
     impl Builder {
         /// <p>The name or unique stack ID that is associated with the stack whose policy you want
         /// to get.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetStackPolicyInput`](crate::input::GetStackPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetStackPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetStackPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetStackPolicyInput {
                 stack_name: self.stack_name,
             })
@@ -5410,7 +5516,7 @@ impl GetStackPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetStackPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -5469,7 +5575,7 @@ impl GetStackPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5477,7 +5583,7 @@ impl GetStackPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5520,26 +5626,26 @@ pub mod get_template_input {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation
         /// returns the associated template. If you specify a name, you must also specify the
         /// <code>StackName</code>.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_name = Some(inp.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_name = Some(input.into());
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_set_name = inp;
+            self.change_set_name = input;
             self
         }
         /// <p>For templates that include transforms, the stage of the template that AWS
@@ -5549,21 +5655,22 @@ pub mod get_template_input {
         /// <p>If the template doesn't include transforms, <code>Original</code> and
         /// <code>Processed</code> return the same template. By default, AWS CloudFormation
         /// specifies <code>Original</code>. </p>
-        pub fn template_stage(mut self, inp: crate::model::TemplateStage) -> Self {
-            self.template_stage = Some(inp);
+        pub fn template_stage(mut self, input: crate::model::TemplateStage) -> Self {
+            self.template_stage = Some(input);
             self
         }
         pub fn set_template_stage(
             mut self,
-            inp: std::option::Option<crate::model::TemplateStage>,
+            input: std::option::Option<crate::model::TemplateStage>,
         ) -> Self {
-            self.template_stage = inp;
+            self.template_stage = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTemplateInput`](crate::input::GetTemplateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTemplateInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetTemplateInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetTemplateInput {
                 stack_name: self.stack_name,
                 change_set_name: self.change_set_name,
@@ -5582,7 +5689,7 @@ impl GetTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -5642,7 +5749,7 @@ impl GetTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5650,7 +5757,7 @@ impl GetTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5688,12 +5795,15 @@ pub mod get_template_summary_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template (max
@@ -5703,12 +5813,12 @@ pub mod get_template_summary_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_url = Some(inp.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_url = Some(input.into());
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_url = inp;
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_url = input;
             self
         }
         /// <p>The name or the stack ID that is associated with the stack, which are not always
@@ -5717,24 +5827,27 @@ pub mod get_template_summary_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The name or unique ID of the stack set from which the stack was created.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -5748,19 +5861,21 @@ pub mod get_template_summary_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTemplateSummaryInput`](crate::input::GetTemplateSummaryInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTemplateSummaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTemplateSummaryInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTemplateSummaryInput {
                 template_body: self.template_body,
                 template_url: self.template_url,
@@ -5781,7 +5896,7 @@ impl GetTemplateSummaryInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetTemplateSummary,
             aws_http::AwsErrorRetryPolicy,
@@ -5841,7 +5956,7 @@ impl GetTemplateSummaryInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5849,7 +5964,7 @@ impl GetTemplateSummaryInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5881,28 +5996,31 @@ pub mod list_change_sets_input {
     impl Builder {
         /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list
         /// change sets.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>A string (provided by the <a>ListChangeSets</a> response output) that
         /// identifies the next page of change sets that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::input::ListChangeSetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListChangeSetsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::ListChangeSetsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListChangeSetsInput {
                 stack_name: self.stack_name,
                 next_token: self.next_token,
@@ -5920,7 +6038,7 @@ impl ListChangeSetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListChangeSets,
             aws_http::AwsErrorRetryPolicy,
@@ -5979,7 +6097,7 @@ impl ListChangeSetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5987,7 +6105,7 @@ impl ListChangeSetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6018,18 +6136,19 @@ pub mod list_exports_input {
     impl Builder {
         /// <p>A string (provided by the <a>ListExports</a> response output) that
         /// identifies the next page of exported output values that you asked to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListExportsInput`](crate::input::ListExportsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListExportsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListExportsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListExportsInput {
                 next_token: self.next_token,
             })
@@ -6046,7 +6165,7 @@ impl ListExportsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListExports,
             aws_http::AwsErrorRetryPolicy,
@@ -6106,7 +6225,7 @@ impl ListExportsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6114,7 +6233,7 @@ impl ListExportsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6146,29 +6265,30 @@ pub mod list_imports_input {
     impl Builder {
         /// <p>The name of the exported output value. AWS CloudFormation returns the stack names
         /// that are importing this value. </p>
-        pub fn export_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_name = Some(inp.into());
+        pub fn export_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_name = Some(input.into());
             self
         }
-        pub fn set_export_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.export_name = inp;
+        pub fn set_export_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_name = input;
             self
         }
         /// <p>A string (provided by the <a>ListImports</a> response output) that
         /// identifies the next page of stacks that are importing the specified exported output value.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListImportsInput`](crate::input::ListImportsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListImportsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListImportsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListImportsInput {
                 export_name: self.export_name,
                 next_token: self.next_token,
@@ -6186,7 +6306,7 @@ impl ListImportsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListImports,
             aws_http::AwsErrorRetryPolicy,
@@ -6246,7 +6366,7 @@ impl ListImportsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6254,7 +6374,7 @@ impl ListImportsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6291,12 +6411,15 @@ pub mod list_stack_instances_input {
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to list stack instances
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>If the previous request didn't return all of the remaining results, the response's
@@ -6304,61 +6427,61 @@ pub mod list_stack_instances_input {
         /// results, call <code>ListStackInstances</code> again and assign that token to the request
         /// object's <code>NextToken</code> parameter. If there are no remaining results, the previous
         /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::StackInstanceFilter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::StackInstanceFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>The name of the AWS account that you want to list stack instances for.</p>
-        pub fn stack_instance_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_instance_account = Some(inp.into());
+        pub fn stack_instance_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_instance_account = Some(input.into());
             self
         }
         pub fn set_stack_instance_account(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_instance_account = inp;
+            self.stack_instance_account = input;
             self
         }
         /// <p>The name of the Region where you want to list stack instances. </p>
-        pub fn stack_instance_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_instance_region = Some(inp.into());
+        pub fn stack_instance_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_instance_region = Some(input.into());
             self
         }
         pub fn set_stack_instance_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_instance_region = inp;
+            self.stack_instance_region = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -6372,19 +6495,21 @@ pub mod list_stack_instances_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackInstancesInput`](crate::input::ListStackInstancesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStackInstancesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStackInstancesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStackInstancesInput {
                 stack_set_name: self.stack_set_name,
                 next_token: self.next_token,
@@ -6407,7 +6532,7 @@ impl ListStackInstancesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListStackInstances,
             aws_http::AwsErrorRetryPolicy,
@@ -6467,7 +6592,7 @@ impl ListStackInstancesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6475,7 +6600,7 @@ impl ListStackInstancesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6517,29 +6642,31 @@ pub mod list_stack_resources_input {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>A string that identifies the next page of stack resources that you want to
         /// retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackResourcesInput`](crate::input::ListStackResourcesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStackResourcesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStackResourcesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStackResourcesInput {
                 stack_name: self.stack_name,
                 next_token: self.next_token,
@@ -6557,7 +6684,7 @@ impl ListStackResourcesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListStackResources,
             aws_http::AwsErrorRetryPolicy,
@@ -6617,7 +6744,7 @@ impl ListStackResourcesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6625,7 +6752,7 @@ impl ListStackResourcesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6657,31 +6784,32 @@ pub mod list_stacks_input {
     }
     impl Builder {
         /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn stack_status_filter(mut self, inp: impl Into<crate::model::StackStatus>) -> Self {
+        pub fn stack_status_filter(mut self, input: impl Into<crate::model::StackStatus>) -> Self {
             let mut v = self.stack_status_filter.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stack_status_filter = Some(v);
             self
         }
         pub fn set_stack_status_filter(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackStatus>>,
         ) -> Self {
-            self.stack_status_filter = inp;
+            self.stack_status_filter = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStacksInput`](crate::input::ListStacksInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStacksInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListStacksInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListStacksInput {
                 next_token: self.next_token,
                 stack_status_filter: self.stack_status_filter,
@@ -6699,7 +6827,7 @@ impl ListStacksInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListStacks,
             aws_http::AwsErrorRetryPolicy,
@@ -6759,7 +6887,7 @@ impl ListStacksInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6767,7 +6895,7 @@ impl ListStacksInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6802,21 +6930,24 @@ pub mod list_stack_set_operation_results_input {
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to get operation results
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>The ID of the stack set operation.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>If the previous request didn't return all of the remaining results, the response
@@ -6825,24 +6956,24 @@ pub mod list_stack_set_operation_results_input {
         /// the request object's <code>NextToken</code> parameter. If there are no remaining results,
         /// the previous response object's <code>NextToken</code> parameter is set to
         /// <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -6856,18 +6987,18 @@ pub mod list_stack_set_operation_results_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackSetOperationResultsInput`](crate::input::ListStackSetOperationResultsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListStackSetOperationResultsInput,
             smithy_http::operation::BuildError,
         > {
@@ -6892,7 +7023,7 @@ impl ListStackSetOperationResultsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListStackSetOperationResults,
             aws_http::AwsErrorRetryPolicy,
@@ -6953,7 +7084,7 @@ impl ListStackSetOperationResultsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6961,7 +7092,7 @@ impl ListStackSetOperationResultsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6995,12 +7126,15 @@ pub mod list_stack_set_operations_input {
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to get operation summaries
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the
@@ -7009,24 +7143,24 @@ pub mod list_stack_set_operations_input {
         /// to the request object's <code>NextToken</code> parameter. If there are no remaining
         /// results, the previous response object's <code>NextToken</code> parameter is set to
         /// <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -7040,19 +7174,21 @@ pub mod list_stack_set_operations_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackSetOperationsInput`](crate::input::ListStackSetOperationsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStackSetOperationsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStackSetOperationsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStackSetOperationsInput {
                 stack_set_name: self.stack_set_name,
                 next_token: self.next_token,
@@ -7072,7 +7208,7 @@ impl ListStackSetOperationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListStackSetOperations,
             aws_http::AwsErrorRetryPolicy,
@@ -7132,7 +7268,7 @@ impl ListStackSetOperationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7140,7 +7276,7 @@ impl ListStackSetOperationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7178,37 +7314,37 @@ pub mod list_stack_sets_input {
         /// request object's <code>NextToken</code> parameter. If there are no remaining results, the
         /// previous response object's <code>NextToken</code> parameter is set to
         /// <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>The status of the stack sets that you want to get summary information
         /// about.</p>
-        pub fn status(mut self, inp: crate::model::StackSetStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StackSetStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetStatus>,
+            input: std::option::Option<crate::model::StackSetStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
@@ -7222,18 +7358,19 @@ pub mod list_stack_sets_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackSetsInput`](crate::input::ListStackSetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStackSetsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListStackSetsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListStackSetsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -7253,7 +7390,7 @@ impl ListStackSetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListStackSets,
             aws_http::AwsErrorRetryPolicy,
@@ -7312,7 +7449,7 @@ impl ListStackSetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7320,7 +7457,7 @@ impl ListStackSetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7357,70 +7494,75 @@ pub mod list_type_registrations_input {
     impl Builder {
         /// <p>The kind of extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_arn = Some(inp.into());
+        pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_arn = Some(input.into());
             self
         }
-        pub fn set_type_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_arn = inp;
+        pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_arn = input;
             self
         }
         /// <p>The current status of the extension registration request.</p>
         /// <p>The default is <code>IN_PROGRESS</code>.</p>
-        pub fn registration_status_filter(mut self, inp: crate::model::RegistrationStatus) -> Self {
-            self.registration_status_filter = Some(inp);
+        pub fn registration_status_filter(
+            mut self,
+            input: crate::model::RegistrationStatus,
+        ) -> Self {
+            self.registration_status_filter = Some(input);
             self
         }
         pub fn set_registration_status_filter(
             mut self,
-            inp: std::option::Option<crate::model::RegistrationStatus>,
+            input: std::option::Option<crate::model::RegistrationStatus>,
         ) -> Self {
-            self.registration_status_filter = inp;
+            self.registration_status_filter = input;
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTypeRegistrationsInput`](crate::input::ListTypeRegistrationsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTypeRegistrationsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTypeRegistrationsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTypeRegistrationsInput {
                 r#type: self.r#type,
                 type_name: self.type_name,
@@ -7442,7 +7584,7 @@ impl ListTypeRegistrationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTypeRegistrations,
             aws_http::AwsErrorRetryPolicy,
@@ -7502,7 +7644,7 @@ impl ListTypeRegistrationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7510,7 +7652,7 @@ impl ListTypeRegistrationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7557,15 +7699,15 @@ pub mod list_types_input {
         /// </li>
         /// </ul>
         /// <p>The default is <code>PRIVATE</code>.</p>
-        pub fn visibility(mut self, inp: crate::model::Visibility) -> Self {
-            self.visibility = Some(inp);
+        pub fn visibility(mut self, input: crate::model::Visibility) -> Self {
+            self.visibility = Some(input);
             self
         }
         pub fn set_visibility(
             mut self,
-            inp: std::option::Option<crate::model::Visibility>,
+            input: std::option::Option<crate::model::Visibility>,
         ) -> Self {
-            self.visibility = inp;
+            self.visibility = input;
             self
         }
         /// <p>The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
@@ -7584,15 +7726,15 @@ pub mod list_types_input {
         /// <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore cannot actually be provisioned.</p>
         /// </li>
         /// </ul>
-        pub fn provisioning_type(mut self, inp: crate::model::ProvisioningType) -> Self {
-            self.provisioning_type = Some(inp);
+        pub fn provisioning_type(mut self, input: crate::model::ProvisioningType) -> Self {
+            self.provisioning_type = Some(input);
             self
         }
         pub fn set_provisioning_type(
             mut self,
-            inp: std::option::Option<crate::model::ProvisioningType>,
+            input: std::option::Option<crate::model::ProvisioningType>,
         ) -> Self {
-            self.provisioning_type = inp;
+            self.provisioning_type = input;
             self
         }
         /// <p>The deprecation status of the extension that you want to get summary information about.</p>
@@ -7607,48 +7749,49 @@ pub mod list_types_input {
         /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations. </p>
         /// </li>
         /// </ul>
-        pub fn deprecated_status(mut self, inp: crate::model::DeprecatedStatus) -> Self {
-            self.deprecated_status = Some(inp);
+        pub fn deprecated_status(mut self, input: crate::model::DeprecatedStatus) -> Self {
+            self.deprecated_status = Some(input);
             self
         }
         pub fn set_deprecated_status(
             mut self,
-            inp: std::option::Option<crate::model::DeprecatedStatus>,
+            input: std::option::Option<crate::model::DeprecatedStatus>,
         ) -> Self {
-            self.deprecated_status = inp;
+            self.deprecated_status = input;
             self
         }
         /// <p>The type of extension.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTypesInput`](crate::input::ListTypesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTypesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListTypesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListTypesInput {
                 visibility: self.visibility,
                 provisioning_type: self.provisioning_type,
@@ -7670,7 +7813,7 @@ impl ListTypesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTypes,
             aws_http::AwsErrorRetryPolicy,
@@ -7728,7 +7871,7 @@ impl ListTypesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7736,7 +7879,7 @@ impl ListTypesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7772,50 +7915,50 @@ pub mod list_type_versions_input {
     impl Builder {
         /// <p>The kind of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the extension for which you want version summary information.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
@@ -7831,22 +7974,24 @@ pub mod list_type_versions_input {
         /// </li>
         /// </ul>
         /// <p>The default is <code>LIVE</code>.</p>
-        pub fn deprecated_status(mut self, inp: crate::model::DeprecatedStatus) -> Self {
-            self.deprecated_status = Some(inp);
+        pub fn deprecated_status(mut self, input: crate::model::DeprecatedStatus) -> Self {
+            self.deprecated_status = Some(input);
             self
         }
         pub fn set_deprecated_status(
             mut self,
-            inp: std::option::Option<crate::model::DeprecatedStatus>,
+            input: std::option::Option<crate::model::DeprecatedStatus>,
         ) -> Self {
-            self.deprecated_status = inp;
+            self.deprecated_status = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTypeVersionsInput`](crate::input::ListTypeVersionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTypeVersionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTypeVersionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTypeVersionsInput {
                 r#type: self.r#type,
                 type_name: self.type_name,
@@ -7868,7 +8013,7 @@ impl ListTypeVersionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTypeVersions,
             aws_http::AwsErrorRetryPolicy,
@@ -7928,7 +8073,7 @@ impl ListTypeVersionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7936,7 +8081,7 @@ impl ListTypeVersionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7972,85 +8117,93 @@ pub mod record_handler_progress_input {
     }
     impl Builder {
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn bearer_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bearer_token = Some(inp.into());
+        pub fn bearer_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bearer_token = Some(input.into());
             self
         }
-        pub fn set_bearer_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bearer_token = inp;
+        pub fn set_bearer_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bearer_token = input;
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn operation_status(mut self, inp: crate::model::OperationStatus) -> Self {
-            self.operation_status = Some(inp);
+        pub fn operation_status(mut self, input: crate::model::OperationStatus) -> Self {
+            self.operation_status = Some(input);
             self
         }
         pub fn set_operation_status(
             mut self,
-            inp: std::option::Option<crate::model::OperationStatus>,
+            input: std::option::Option<crate::model::OperationStatus>,
         ) -> Self {
-            self.operation_status = inp;
+            self.operation_status = input;
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn current_operation_status(mut self, inp: crate::model::OperationStatus) -> Self {
-            self.current_operation_status = Some(inp);
+        pub fn current_operation_status(mut self, input: crate::model::OperationStatus) -> Self {
+            self.current_operation_status = Some(input);
             self
         }
         pub fn set_current_operation_status(
             mut self,
-            inp: std::option::Option<crate::model::OperationStatus>,
+            input: std::option::Option<crate::model::OperationStatus>,
         ) -> Self {
-            self.current_operation_status = inp;
+            self.current_operation_status = input;
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_message = Some(inp.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_message = inp;
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn error_code(mut self, inp: crate::model::HandlerErrorCode) -> Self {
-            self.error_code = Some(inp);
+        pub fn error_code(mut self, input: crate::model::HandlerErrorCode) -> Self {
+            self.error_code = Some(input);
             self
         }
         pub fn set_error_code(
             mut self,
-            inp: std::option::Option<crate::model::HandlerErrorCode>,
+            input: std::option::Option<crate::model::HandlerErrorCode>,
         ) -> Self {
-            self.error_code = inp;
+            self.error_code = input;
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn resource_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_model = Some(inp.into());
+        pub fn resource_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_model = Some(input.into());
             self
         }
-        pub fn set_resource_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_model = inp;
+        pub fn set_resource_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_model = input;
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`RecordHandlerProgressInput`](crate::input::RecordHandlerProgressInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RecordHandlerProgressInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RecordHandlerProgressInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RecordHandlerProgressInput {
                 bearer_token: self.bearer_token,
                 operation_status: self.operation_status,
@@ -8073,7 +8226,7 @@ impl RecordHandlerProgressInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RecordHandlerProgress,
             aws_http::AwsErrorRetryPolicy,
@@ -8133,7 +8286,7 @@ impl RecordHandlerProgressInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8141,7 +8294,7 @@ impl RecordHandlerProgressInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8176,12 +8329,12 @@ pub mod register_type_input {
     }
     impl Builder {
         /// <p>The kind of extension.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the extension being registered.</p>
@@ -8221,12 +8374,12 @@ pub mod register_type_input {
         /// </li>
         /// </ul>
         /// </note>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>A url to the S3 bucket containing the extension project package that contains the neccessary files for the extension you want to register.</p>
@@ -8238,27 +8391,27 @@ pub mod register_type_input {
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the
         /// <i>AWS Identity and Access Management User Guide</i>.</p>
         /// </note>
-        pub fn schema_handler_package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema_handler_package = Some(inp.into());
+        pub fn schema_handler_package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_handler_package = Some(input.into());
             self
         }
         pub fn set_schema_handler_package(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.schema_handler_package = inp;
+            self.schema_handler_package = input;
             self
         }
         /// <p>Specifies logging configuration information for an extension.</p>
-        pub fn logging_config(mut self, inp: crate::model::LoggingConfig) -> Self {
-            self.logging_config = Some(inp);
+        pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
+            self.logging_config = Some(input);
             self
         }
         pub fn set_logging_config(
             mut self,
-            inp: std::option::Option<crate::model::LoggingConfig>,
+            input: std::option::Option<crate::model::LoggingConfig>,
         ) -> Self {
-            self.logging_config = inp;
+            self.logging_config = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension. If your extension calls AWS APIs in any of its handlers, you must create an
@@ -8267,33 +8420,34 @@ pub mod register_type_input {
         /// role</a>
         /// </i> that includes the necessary permissions to call those
         /// AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the extension handler, thereby supplying your extension with the appropriate credentials.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_arn = Some(inp.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_arn = Some(input.into());
             self
         }
         pub fn set_execution_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_arn = inp;
+            self.execution_role_arn = input;
             self
         }
         /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registeration request, even if the request is submitted multiple times. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterTypeInput`](crate::input::RegisterTypeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterTypeInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::RegisterTypeInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::RegisterTypeInput {
                 r#type: self.r#type,
                 type_name: self.type_name,
@@ -8315,7 +8469,7 @@ impl RegisterTypeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RegisterType,
             aws_http::AwsErrorRetryPolicy,
@@ -8375,7 +8529,7 @@ impl RegisterTypeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8383,7 +8537,7 @@ impl RegisterTypeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8415,48 +8569,51 @@ pub mod set_stack_policy_input {
     }
     impl Builder {
         /// <p>The name or unique stack ID that you want to associate a policy with.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
         /// to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either
         /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
         /// both.</p>
-        pub fn stack_policy_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_policy_body = Some(inp.into());
+        pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_policy_body = Some(input.into());
             self
         }
         pub fn set_stack_policy_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_body = inp;
+            self.stack_policy_body = input;
             self
         }
         /// <p>Location of a file containing the stack policy. The URL must point to a policy
         /// (maximum size: 16 KB) located in an S3 bucket in the same
         /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
         /// <code>StackPolicyURL</code> parameter, but not both.</p>
-        pub fn stack_policy_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_policy_url = Some(inp.into());
+        pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_policy_url = Some(input.into());
             self
         }
         pub fn set_stack_policy_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_url = inp;
+            self.stack_policy_url = input;
             self
         }
         /// Consumes the builder and constructs a [`SetStackPolicyInput`](crate::input::SetStackPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SetStackPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::SetStackPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetStackPolicyInput {
                 stack_name: self.stack_name,
                 stack_policy_body: self.stack_policy_body,
@@ -8475,7 +8632,7 @@ impl SetStackPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetStackPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -8534,7 +8691,7 @@ impl SetStackPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8542,7 +8699,7 @@ impl SetStackPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8576,48 +8733,50 @@ pub mod set_type_default_version_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The kind of extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`SetTypeDefaultVersionInput`](crate::input::SetTypeDefaultVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SetTypeDefaultVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetTypeDefaultVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetTypeDefaultVersionInput {
                 arn: self.arn,
                 r#type: self.r#type,
@@ -8637,7 +8796,7 @@ impl SetTypeDefaultVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetTypeDefaultVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -8697,7 +8856,7 @@ impl SetTypeDefaultVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8705,7 +8864,7 @@ impl SetTypeDefaultVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8739,56 +8898,59 @@ pub mod signal_resource_input {
     impl Builder {
         /// <p>The stack name or unique stack ID that includes the resource that you want to
         /// signal.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of
         /// the resource that given in the template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling
         /// groups, specify the instance ID that you are signaling as the unique ID. If you send
         /// multiple signals to a single resource (such as signaling a wait condition), each signal
         /// requires a different unique ID.</p>
-        pub fn unique_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.unique_id = Some(inp.into());
+        pub fn unique_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.unique_id = Some(input.into());
             self
         }
-        pub fn set_unique_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.unique_id = inp;
+        pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unique_id = input;
             self
         }
         /// <p>The status of the signal, which is either success or failure. A failure signal causes
         /// AWS CloudFormation to immediately fail the stack creation or update.</p>
-        pub fn status(mut self, inp: crate::model::ResourceSignalStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ResourceSignalStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ResourceSignalStatus>,
+            input: std::option::Option<crate::model::ResourceSignalStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`SignalResourceInput`](crate::input::SignalResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SignalResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::SignalResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SignalResourceInput {
                 stack_name: self.stack_name,
                 logical_resource_id: self.logical_resource_id,
@@ -8808,7 +8970,7 @@ impl SignalResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SignalResource,
             aws_http::AwsErrorRetryPolicy,
@@ -8867,7 +9029,7 @@ impl SignalResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8875,7 +9037,7 @@ impl SignalResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8908,21 +9070,24 @@ pub mod stop_stack_set_operation_input {
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to stop the operation
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>The ID of the stack operation. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -8936,19 +9101,21 @@ pub mod stop_stack_set_operation_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`StopStackSetOperationInput`](crate::input::StopStackSetOperationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopStackSetOperationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopStackSetOperationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopStackSetOperationInput {
                 stack_set_name: self.stack_set_name,
                 operation_id: self.operation_id,
@@ -8967,7 +9134,7 @@ impl StopStackSetOperationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopStackSetOperation,
             aws_http::AwsErrorRetryPolicy,
@@ -9027,7 +9194,7 @@ impl StopStackSetOperationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9035,7 +9202,7 @@ impl StopStackSetOperationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9080,12 +9247,12 @@ pub mod update_stack_input {
     }
     impl Builder {
         /// <p>The name or unique stack ID of the stack to update.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
@@ -9094,12 +9261,15 @@ pub mod update_stack_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
         /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template that
@@ -9109,12 +9279,12 @@ pub mod update_stack_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
         /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_url = Some(inp.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_url = Some(input.into());
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_url = inp;
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_url = input;
             self
         }
         /// <p>Reuse the existing template that is associated with the stack that you are
@@ -9122,12 +9292,12 @@ pub mod update_stack_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
         /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
-        pub fn use_previous_template(mut self, inp: bool) -> Self {
-            self.use_previous_template = Some(inp);
+        pub fn use_previous_template(mut self, input: bool) -> Self {
+            self.use_previous_template = Some(input);
             self
         }
-        pub fn set_use_previous_template(mut self, inp: std::option::Option<bool>) -> Self {
-            self.use_previous_template = inp;
+        pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_previous_template = input;
             self
         }
         /// <p>Structure containing the temporary overriding stack policy body. You can specify
@@ -9138,16 +9308,16 @@ pub mod update_stack_input {
         /// associated with the stack will be used.</p>
         pub fn stack_policy_during_update_body(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.stack_policy_during_update_body = Some(inp.into());
+            self.stack_policy_during_update_body = Some(input.into());
             self
         }
         pub fn set_stack_policy_during_update_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_during_update_body = inp;
+            self.stack_policy_during_update_body = input;
             self
         }
         /// <p>Location of a file containing the temporary overriding stack policy. The URL must
@@ -9160,55 +9330,55 @@ pub mod update_stack_input {
         /// associated with the stack will be used.</p>
         pub fn stack_policy_during_update_url(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.stack_policy_during_update_url = Some(inp.into());
+            self.stack_policy_during_update_url = Some(input.into());
             self
         }
         pub fn set_stack_policy_during_update_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_during_update_url = inp;
+            self.stack_policy_during_update_url = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_types = Some(v);
             self
         }
         pub fn set_resource_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_types = inp;
+            self.resource_types = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -9220,25 +9390,28 @@ pub mod update_stack_input {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.rollback_configuration = Some(inp);
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.rollback_configuration = Some(input);
             self
         }
         pub fn set_rollback_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RollbackConfiguration>,
+            input: std::option::Option<crate::model::RollbackConfiguration>,
         ) -> Self {
-            self.rollback_configuration = inp;
+            self.rollback_configuration = input;
             self
         }
         /// <p>Structure containing a new stack policy body. You can specify either the
@@ -9247,15 +9420,15 @@ pub mod update_stack_input {
         /// <p>You might update the stack policy, for example, in order to protect a new resource
         /// that you created during a stack update. If you do not specify a stack policy, the current
         /// policy that is associated with the stack is unchanged.</p>
-        pub fn stack_policy_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_policy_body = Some(inp.into());
+        pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_policy_body = Some(input.into());
             self
         }
         pub fn set_stack_policy_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_body = inp;
+            self.stack_policy_body = input;
             self
         }
         /// <p>Location of a file containing the updated stack policy. The URL must point to a
@@ -9265,41 +9438,41 @@ pub mod update_stack_input {
         /// <p>You might update the stack policy, for example, in order to protect a new resource
         /// that you created during a stack update. If you do not specify a stack policy, the current
         /// policy that is associated with the stack is unchanged.</p>
-        pub fn stack_policy_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_policy_url = Some(inp.into());
+        pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_policy_url = Some(input.into());
             self
         }
         pub fn set_stack_policy_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_url = inp;
+            self.stack_policy_url = input;
             self
         }
-        pub fn notification_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
         pub fn set_notification_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.notification_ar_ns = inp;
+            self.notification_ar_ns = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
@@ -9317,21 +9490,22 @@ pub mod update_stack_input {
         /// stack operation . For example, if you create a stack using the console, each stack event
         /// would be assigned the same token in the following format:
         /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateStackInput`](crate::input::UpdateStackInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateStackInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateStackInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateStackInput {
                 stack_name: self.stack_name,
                 template_body: self.template_body,
@@ -9363,7 +9537,7 @@ impl UpdateStackInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateStack,
             aws_http::AwsErrorRetryPolicy,
@@ -9423,7 +9597,7 @@ impl UpdateStackInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9431,7 +9605,7 @@ impl UpdateStackInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9469,79 +9643,82 @@ pub mod update_stack_instances_input {
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
-        pub fn accounts(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.accounts = Some(v);
             self
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.accounts = inp;
+            self.accounts = input;
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts for which you want to update parameter values for stack instances. If your update targets OUs, the overridden parameter values only apply to the accounts that are currently in the target OUs and their child OUs. Accounts added to the target OUs and their child OUs in the future won't use the overridden values.</p>
         /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.deployment_targets = Some(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.deployment_targets = Some(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.deployment_targets = inp;
+            self.deployment_targets = input;
             self
         }
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.regions = Some(v);
             self
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.regions = inp;
+            self.regions = input;
             self
         }
-        pub fn parameter_overrides(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameter_overrides = Some(v);
             self
         }
         pub fn set_parameter_overrides(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameter_overrides = inp;
+            self.parameter_overrides = input;
             self
         }
         /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.operation_preferences = Some(inp);
+            self.operation_preferences = Some(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.operation_preferences = inp;
+            self.operation_preferences = input;
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
@@ -9551,12 +9728,12 @@ pub mod update_stack_instances_input {
         /// CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically.
         /// </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -9570,19 +9747,21 @@ pub mod update_stack_instances_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateStackInstancesInput`](crate::input::UpdateStackInstancesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateStackInstancesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateStackInstancesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateStackInstancesInput {
                 stack_set_name: self.stack_set_name,
                 accounts: self.accounts,
@@ -9606,7 +9785,7 @@ impl UpdateStackInstancesInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateStackInstances,
             aws_http::AwsErrorRetryPolicy,
@@ -9669,7 +9848,7 @@ impl UpdateStackInstancesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9677,7 +9856,7 @@ impl UpdateStackInstancesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9725,21 +9904,24 @@ pub mod update_stack_set_input {
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to update.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>A brief description of updates that you are making.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
@@ -9748,12 +9930,15 @@ pub mod update_stack_set_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
         /// <code>UsePreviousTemplate</code> to true.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
         /// <p>The location of the file that contains the template body. The URL must point to a
@@ -9763,12 +9948,12 @@ pub mod update_stack_set_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
         /// <code>UsePreviousTemplate</code> to true. </p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_url = Some(inp.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_url = Some(input.into());
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_url = inp;
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_url = input;
             self
         }
         /// <p>Use the existing template that's associated with the stack set that you're
@@ -9776,66 +9961,66 @@ pub mod update_stack_set_input {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
         /// <code>UsePreviousTemplate</code> to true. </p>
-        pub fn use_previous_template(mut self, inp: bool) -> Self {
-            self.use_previous_template = Some(inp);
+        pub fn use_previous_template(mut self, input: bool) -> Self {
+            self.use_previous_template = Some(input);
             self
         }
-        pub fn set_use_previous_template(mut self, inp: std::option::Option<bool>) -> Self {
-            self.use_previous_template = inp;
+        pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_previous_template = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.operation_preferences = Some(inp);
+            self.operation_preferences = Some(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.operation_preferences = inp;
+            self.operation_preferences = input;
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
@@ -9847,15 +10032,15 @@ pub mod update_stack_set_input {
         /// <p>If you specified a customized administrator role when you created the stack set, you
         /// must specify a customized administrator role, even if it is the same customized
         /// administrator role used with this stack set previously.</p>
-        pub fn administration_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.administration_role_arn = Some(inp.into());
+        pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.administration_role_arn = Some(input.into());
             self
         }
         pub fn set_administration_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.administration_role_arn = inp;
+            self.administration_role_arn = input;
             self
         }
         /// <p>The name of the IAM execution role to use to update the stack set. If you do not specify
@@ -9868,29 +10053,29 @@ pub mod update_stack_set_input {
         /// If you do not specify a customized execution role, AWS CloudFormation performs the update using the role
         /// previously associated with the stack set, so long as you have permissions to perform
         /// operations on the stack set.</p>
-        pub fn execution_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_name = Some(inp.into());
+        pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_name = Some(input.into());
             self
         }
         pub fn set_execution_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_name = inp;
+            self.execution_role_name = input;
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts in which to update associated stack instances.</p>
         /// <p>To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
         /// <p>If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.deployment_targets = Some(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.deployment_targets = Some(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.deployment_targets = inp;
+            self.deployment_targets = input;
             self
         }
         /// <p>Describes how the IAM roles required for stack set operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
@@ -9902,28 +10087,28 @@ pub mod update_stack_set_input {
         /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// </ul>
-        pub fn permission_model(mut self, inp: crate::model::PermissionModels) -> Self {
-            self.permission_model = Some(inp);
+        pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
+            self.permission_model = Some(input);
             self
         }
         pub fn set_permission_model(
             mut self,
-            inp: std::option::Option<crate::model::PermissionModels>,
+            input: std::option::Option<crate::model::PermissionModels>,
         ) -> Self {
-            self.permission_model = inp;
+            self.permission_model = input;
             self
         }
         /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).</p>
         /// <p>If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
-        pub fn auto_deployment(mut self, inp: crate::model::AutoDeployment) -> Self {
-            self.auto_deployment = Some(inp);
+        pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
+            self.auto_deployment = Some(input);
             self
         }
         pub fn set_auto_deployment(
             mut self,
-            inp: std::option::Option<crate::model::AutoDeployment>,
+            input: std::option::Option<crate::model::AutoDeployment>,
         ) -> Self {
-            self.auto_deployment = inp;
+            self.auto_deployment = input;
             self
         }
         /// <p>The unique ID for this stack set operation. </p>
@@ -9935,38 +10120,38 @@ pub mod update_stack_set_input {
         /// automatically.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
-        pub fn accounts(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.accounts = Some(v);
             self
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.accounts = inp;
+            self.accounts = input;
             self
         }
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.regions = Some(v);
             self
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.regions = inp;
+            self.regions = input;
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -9980,18 +10165,21 @@ pub mod update_stack_set_input {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.call_as = Some(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.call_as = inp;
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateStackSetInput`](crate::input::UpdateStackSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateStackSetInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::UpdateStackSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateStackSetInput {
                 stack_set_name: self.stack_set_name,
                 description: self.description,
@@ -10025,7 +10213,7 @@ impl UpdateStackSetInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateStackSet,
             aws_http::AwsErrorRetryPolicy,
@@ -10087,7 +10275,7 @@ impl UpdateStackSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10095,7 +10283,7 @@ impl UpdateStackSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10126,28 +10314,31 @@ pub mod update_termination_protection_input {
     }
     impl Builder {
         /// <p>Whether to enable termination protection on the specified stack.</p>
-        pub fn enable_termination_protection(mut self, inp: bool) -> Self {
-            self.enable_termination_protection = Some(inp);
+        pub fn enable_termination_protection(mut self, input: bool) -> Self {
+            self.enable_termination_protection = Some(input);
             self
         }
-        pub fn set_enable_termination_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_termination_protection = inp;
+        pub fn set_enable_termination_protection(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_termination_protection = input;
             self
         }
         /// <p>The name or unique ID of the stack for which you want to set termination
         /// protection.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTerminationProtectionInput`](crate::input::UpdateTerminationProtectionInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateTerminationProtectionInput,
             smithy_http::operation::BuildError,
         > {
@@ -10169,7 +10360,7 @@ impl UpdateTerminationProtectionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateTerminationProtection,
             aws_http::AwsErrorRetryPolicy,
@@ -10230,7 +10421,7 @@ impl UpdateTerminationProtectionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10238,7 +10429,7 @@ impl UpdateTerminationProtectionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10273,12 +10464,15 @@ pub mod validate_template_input {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template (max
@@ -10287,19 +10481,21 @@ pub mod validate_template_input {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_url = Some(inp.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_url = Some(input.into());
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_url = inp;
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_url = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidateTemplateInput`](crate::input::ValidateTemplateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ValidateTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ValidateTemplateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ValidateTemplateInput {
                 template_body: self.template_body,
                 template_url: self.template_url,
@@ -10317,7 +10513,7 @@ impl ValidateTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ValidateTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -10376,7 +10572,7 @@ impl ValidateTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10384,7 +10580,7 @@ impl ValidateTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)

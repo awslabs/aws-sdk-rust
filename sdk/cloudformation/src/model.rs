@@ -95,40 +95,46 @@ pub mod template_parameter {
     }
     impl Builder {
         /// <p>The name associated with the parameter.</p>
-        pub fn parameter_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_key = Some(inp.into());
+        pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_key = Some(input.into());
             self
         }
-        pub fn set_parameter_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parameter_key = inp;
+        pub fn set_parameter_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_key = input;
             self
         }
         /// <p>The default value associated with the parameter.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_value = Some(inp.into());
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_value = Some(input.into());
             self
         }
-        pub fn set_default_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.default_value = inp;
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_value = input;
             self
         }
         /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and
         /// UIs.</p>
-        pub fn no_echo(mut self, inp: bool) -> Self {
-            self.no_echo = Some(inp);
+        pub fn no_echo(mut self, input: bool) -> Self {
+            self.no_echo = Some(input);
             self
         }
-        pub fn set_no_echo(mut self, inp: std::option::Option<bool>) -> Self {
-            self.no_echo = inp;
+        pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
+            self.no_echo = input;
             self
         }
         /// <p>User defined description associated with the parameter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`TemplateParameter`](crate::model::TemplateParameter)
@@ -238,24 +244,24 @@ pub mod auto_deployment {
     }
     impl Builder {
         /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances to AWS Organizations accounts that are added to a target organization or organizational unit (OU) in the specified Regions. If an account is removed from a target organization or OU, StackSets deletes stack instances from the account in the specified Regions.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enabled = inp;
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
-        pub fn retain_stacks_on_account_removal(mut self, inp: bool) -> Self {
-            self.retain_stacks_on_account_removal = Some(inp);
+        pub fn retain_stacks_on_account_removal(mut self, input: bool) -> Self {
+            self.retain_stacks_on_account_removal = Some(input);
             self
         }
         pub fn set_retain_stacks_on_account_removal(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.retain_stacks_on_account_removal = inp;
+            self.retain_stacks_on_account_removal = input;
             self
         }
         /// Consumes the builder and constructs a [`AutoDeployment`](crate::model::AutoDeployment)
@@ -362,39 +368,39 @@ pub mod deployment_targets {
         pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn accounts(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.accounts = Some(v);
             self
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.accounts = inp;
+            self.accounts = input;
             self
         }
         /// <p>Returns the value of the AccountsUrl property.</p>
-        pub fn accounts_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.accounts_url = Some(inp.into());
+        pub fn accounts_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.accounts_url = Some(input.into());
             self
         }
-        pub fn set_accounts_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.accounts_url = inp;
+        pub fn set_accounts_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.accounts_url = input;
             self
         }
-        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.organizational_unit_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.organizational_unit_ids = Some(v);
             self
         }
         pub fn set_organizational_unit_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.organizational_unit_ids = inp;
+            self.organizational_unit_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`DeploymentTargets`](crate::model::DeploymentTargets)
@@ -493,28 +499,31 @@ pub mod stack_set_operation_preferences {
     }
     impl Builder {
         /// <p>The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.</p>
-        pub fn region_concurrency_type(mut self, inp: crate::model::RegionConcurrencyType) -> Self {
-            self.region_concurrency_type = Some(inp);
+        pub fn region_concurrency_type(
+            mut self,
+            input: crate::model::RegionConcurrencyType,
+        ) -> Self {
+            self.region_concurrency_type = Some(input);
             self
         }
         pub fn set_region_concurrency_type(
             mut self,
-            inp: std::option::Option<crate::model::RegionConcurrencyType>,
+            input: std::option::Option<crate::model::RegionConcurrencyType>,
         ) -> Self {
-            self.region_concurrency_type = inp;
+            self.region_concurrency_type = input;
             self
         }
-        pub fn region_order(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn region_order(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.region_order.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.region_order = Some(v);
             self
         }
         pub fn set_region_order(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.region_order = inp;
+            self.region_order = input;
             self
         }
         /// <p>The number of accounts, per Region, for which this operation can fail before AWS
@@ -522,12 +531,12 @@ pub mod stack_set_operation_preferences {
         /// AWS CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
         /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
         /// <code>FailureTolerancePercentage</code> (but not both).</p>
-        pub fn failure_tolerance_count(mut self, inp: i32) -> Self {
-            self.failure_tolerance_count = Some(inp);
+        pub fn failure_tolerance_count(mut self, input: i32) -> Self {
+            self.failure_tolerance_count = Some(input);
             self
         }
-        pub fn set_failure_tolerance_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.failure_tolerance_count = inp;
+        pub fn set_failure_tolerance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.failure_tolerance_count = input;
             self
         }
         /// <p>The percentage of accounts, per Region, for which this stack operation can fail
@@ -538,12 +547,12 @@ pub mod stack_set_operation_preferences {
         /// CloudFormation rounds <i>down</i> to the next whole number.</p>
         /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
         /// <code>FailureTolerancePercentage</code>, but not both.</p>
-        pub fn failure_tolerance_percentage(mut self, inp: i32) -> Self {
-            self.failure_tolerance_percentage = Some(inp);
+        pub fn failure_tolerance_percentage(mut self, input: i32) -> Self {
+            self.failure_tolerance_percentage = Some(input);
             self
         }
-        pub fn set_failure_tolerance_percentage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.failure_tolerance_percentage = inp;
+        pub fn set_failure_tolerance_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.failure_tolerance_percentage = input;
             self
         }
         /// <p>The maximum number of accounts in which to perform this operation at one time. This
@@ -555,12 +564,12 @@ pub mod stack_set_operation_preferences {
         /// accounts acted upon concurrently may be lower due to service throttling.</p>
         /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
         /// <code>MaxConcurrentPercentage</code>, but not both.</p>
-        pub fn max_concurrent_count(mut self, inp: i32) -> Self {
-            self.max_concurrent_count = Some(inp);
+        pub fn max_concurrent_count(mut self, input: i32) -> Self {
+            self.max_concurrent_count = Some(input);
             self
         }
-        pub fn set_max_concurrent_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_concurrent_count = inp;
+        pub fn set_max_concurrent_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_concurrent_count = input;
             self
         }
         /// <p>The maximum percentage of accounts in which to perform this operation at one
@@ -574,12 +583,12 @@ pub mod stack_set_operation_preferences {
         /// accounts acted upon concurrently may be lower due to service throttling.</p>
         /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
         /// <code>MaxConcurrentPercentage</code>, but not both.</p>
-        pub fn max_concurrent_percentage(mut self, inp: i32) -> Self {
-            self.max_concurrent_percentage = Some(inp);
+        pub fn max_concurrent_percentage(mut self, input: i32) -> Self {
+            self.max_concurrent_percentage = Some(input);
             self
         }
-        pub fn set_max_concurrent_percentage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_concurrent_percentage = inp;
+        pub fn set_max_concurrent_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_concurrent_percentage = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSetOperationPreferences`](crate::model::StackSetOperationPreferences)
@@ -695,23 +704,23 @@ pub mod tag {
         /// <i>Required</i>. A string used to identify this tag. You can specify a
         /// maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS) have the
         /// reserved prefix: <code>aws:</code>.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>
         /// <i>Required</i>. A string containing the value for this tag. You can specify
         /// a maximum of 256 characters for a tag value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -774,46 +783,52 @@ pub mod parameter {
         /// <p>The key associated with the parameter. If you don't specify a key and value for a
         /// particular parameter, AWS CloudFormation uses the default value that is specified in your
         /// template.</p>
-        pub fn parameter_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_key = Some(inp.into());
+        pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_key = Some(input.into());
             self
         }
-        pub fn set_parameter_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parameter_key = inp;
+        pub fn set_parameter_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_key = input;
             self
         }
         /// <p>The input value associated with the parameter.</p>
-        pub fn parameter_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_value = Some(inp.into());
+        pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_value = Some(input.into());
             self
         }
         pub fn set_parameter_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.parameter_value = inp;
+            self.parameter_value = input;
             self
         }
         /// <p>During a stack update, use the existing parameter value that the stack is using for a
         /// given parameter key. If you specify <code>true</code>, do not specify a parameter
         /// value.</p>
-        pub fn use_previous_value(mut self, inp: bool) -> Self {
-            self.use_previous_value = Some(inp);
+        pub fn use_previous_value(mut self, input: bool) -> Self {
+            self.use_previous_value = Some(input);
             self
         }
-        pub fn set_use_previous_value(mut self, inp: std::option::Option<bool>) -> Self {
-            self.use_previous_value = inp;
+        pub fn set_use_previous_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_previous_value = input;
             self
         }
         /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field
         /// is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
         /// <code>SSM</code> parameter types</a> in the template.</p>
-        pub fn resolved_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resolved_value = Some(inp.into());
+        pub fn resolved_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resolved_value = Some(input.into());
             self
         }
-        pub fn set_resolved_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resolved_value = inp;
+        pub fn set_resolved_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resolved_value = input;
             self
         }
         /// Consumes the builder and constructs a [`Parameter`](crate::model::Parameter)
@@ -904,17 +919,20 @@ pub mod rollback_configuration {
         pub(crate) monitoring_time_in_minutes: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn rollback_triggers(mut self, inp: impl Into<crate::model::RollbackTrigger>) -> Self {
+        pub fn rollback_triggers(
+            mut self,
+            input: impl Into<crate::model::RollbackTrigger>,
+        ) -> Self {
             let mut v = self.rollback_triggers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.rollback_triggers = Some(v);
             self
         }
         pub fn set_rollback_triggers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
         ) -> Self {
-            self.rollback_triggers = inp;
+            self.rollback_triggers = input;
             self
         }
         /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the
@@ -928,12 +946,12 @@ pub mod rollback_configuration {
         /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified
         /// rollback triggers during stack creation and update operations. Then, for update operations,
         /// it begins disposing of old resources immediately once the operation completes.</p>
-        pub fn monitoring_time_in_minutes(mut self, inp: i32) -> Self {
-            self.monitoring_time_in_minutes = Some(inp);
+        pub fn monitoring_time_in_minutes(mut self, input: i32) -> Self {
+            self.monitoring_time_in_minutes = Some(input);
             self
         }
-        pub fn set_monitoring_time_in_minutes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.monitoring_time_in_minutes = inp;
+        pub fn set_monitoring_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_time_in_minutes = input;
             self
         }
         /// Consumes the builder and constructs a [`RollbackConfiguration`](crate::model::RollbackConfiguration)
@@ -987,21 +1005,21 @@ pub mod rollback_trigger {
         /// <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
         /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled
         /// back. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The resource type of the rollback trigger. Currently, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html">AWS::CloudWatch::Alarm</a> is the only supported resource type.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`RollbackTrigger`](crate::model::RollbackTrigger)
@@ -1160,21 +1178,24 @@ pub mod logging_config {
     }
     impl Builder {
         /// <p>The ARN of the role that CloudFormation should assume when sending log entries to CloudWatch logs.</p>
-        pub fn log_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_role_arn = Some(inp.into());
+        pub fn log_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_role_arn = Some(input.into());
             self
         }
-        pub fn set_log_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_role_arn = inp;
+        pub fn set_log_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_role_arn = input;
             self
         }
         /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the type's handlers.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_group_name = Some(inp.into());
+        pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_name = Some(input.into());
             self
         }
-        pub fn set_log_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_group_name = inp;
+        pub fn set_log_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`LoggingConfig`](crate::model::LoggingConfig)
@@ -1395,66 +1416,69 @@ pub mod type_version_summary {
     }
     impl Builder {
         /// <p>The kind of type.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the type version when it is registered.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Whether the specified type version is set as the default version.</p>
-        pub fn is_default_version(mut self, inp: bool) -> Self {
-            self.is_default_version = Some(inp);
+        pub fn is_default_version(mut self, input: bool) -> Self {
+            self.is_default_version = Some(input);
             self
         }
-        pub fn set_is_default_version(mut self, inp: std::option::Option<bool>) -> Self {
-            self.is_default_version = inp;
+        pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default_version = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the type version.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>When the version was registered.</p>
-        pub fn time_created(mut self, inp: smithy_types::Instant) -> Self {
-            self.time_created = Some(inp);
+        pub fn time_created(mut self, input: smithy_types::Instant) -> Self {
+            self.time_created = Some(input);
             self
         }
-        pub fn set_time_created(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.time_created = inp;
+        pub fn set_time_created(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.time_created = input;
             self
         }
         /// <p>The description of the type version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`TypeVersionSummary`](crate::model::TypeVersionSummary)
@@ -1581,63 +1605,66 @@ pub mod type_summary {
     }
     impl Builder {
         /// <p>The kind of type.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The ID of the default version of the type. The default version is used when the type version is not specified.</p>
         /// <p>To set the default version of a type, use <code>
         /// <a>SetTypeDefaultVersion</a>
         /// </code>. </p>
-        pub fn default_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_version_id = Some(inp.into());
+        pub fn default_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_version_id = Some(input.into());
             self
         }
         pub fn set_default_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_version_id = inp;
+            self.default_version_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the type.</p>
-        pub fn type_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_arn = Some(inp.into());
+        pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_arn = Some(input.into());
             self
         }
-        pub fn set_type_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_arn = inp;
+        pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_arn = input;
             self
         }
         /// <p>When the current default version of the type was registered.</p>
-        pub fn last_updated(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated = Some(inp);
+        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated = Some(input);
             self
         }
-        pub fn set_last_updated(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.last_updated = inp;
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_updated = input;
             self
         }
         /// <p>The description of the type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`TypeSummary`](crate::model::TypeSummary)
@@ -1926,55 +1953,58 @@ pub mod stack_set_summary {
     }
     impl Builder {
         /// <p>The name of the stack set.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>The ID of the stack set.</p>
-        pub fn stack_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_id = Some(inp.into());
+        pub fn stack_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_id = Some(input.into());
             self
         }
-        pub fn set_stack_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_id = inp;
+        pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_set_id = input;
             self
         }
         /// <p>A description of the stack set that you specify when the stack set is created or
         /// updated.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The status of the stack set.</p>
-        pub fn status(mut self, inp: crate::model::StackSetStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StackSetStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetStatus>,
+            input: std::option::Option<crate::model::StackSetStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organizational unit (OU).</p>
-        pub fn auto_deployment(mut self, inp: crate::model::AutoDeployment) -> Self {
-            self.auto_deployment = Some(inp);
+        pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
+            self.auto_deployment = Some(input);
             self
         }
         pub fn set_auto_deployment(
             mut self,
-            inp: std::option::Option<crate::model::AutoDeployment>,
+            input: std::option::Option<crate::model::AutoDeployment>,
         ) -> Self {
-            self.auto_deployment = inp;
+            self.auto_deployment = input;
             self
         }
         /// <p>Describes how the IAM roles required for stack set operations are created.</p>
@@ -1986,15 +2016,15 @@ pub mod stack_set_summary {
         /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// </ul>
-        pub fn permission_model(mut self, inp: crate::model::PermissionModels) -> Self {
-            self.permission_model = Some(inp);
+        pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
+            self.permission_model = Some(input);
             self
         }
         pub fn set_permission_model(
             mut self,
-            inp: std::option::Option<crate::model::PermissionModels>,
+            input: std::option::Option<crate::model::PermissionModels>,
         ) -> Self {
-            self.permission_model = inp;
+            self.permission_model = input;
             self
         }
         /// <p>Status of the stack set's actual configuration compared to its expected template and
@@ -2023,29 +2053,29 @@ pub mod stack_set_summary {
         /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
         /// </li>
         /// </ul>
-        pub fn drift_status(mut self, inp: crate::model::StackDriftStatus) -> Self {
-            self.drift_status = Some(inp);
+        pub fn drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
+            self.drift_status = Some(input);
             self
         }
         pub fn set_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftStatus>,
+            input: std::option::Option<crate::model::StackDriftStatus>,
         ) -> Self {
-            self.drift_status = inp;
+            self.drift_status = input;
             self
         }
         /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack
         /// set. This value will be <code>NULL</code> for any stack set on which drift detection has
         /// not yet been performed.</p>
-        pub fn last_drift_check_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_drift_check_timestamp = Some(inp);
+        pub fn last_drift_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_drift_check_timestamp = Some(input);
             self
         }
         pub fn set_last_drift_check_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_drift_check_timestamp = inp;
+            self.last_drift_check_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSetSummary`](crate::model::StackSetSummary)
@@ -2276,12 +2306,12 @@ pub mod stack_set_operation_summary {
     }
     impl Builder {
         /// <p>The unique ID of the stack set operation.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
@@ -2289,15 +2319,15 @@ pub mod stack_set_operation_summary {
         /// instances that are associated with the specified stack set. Update operations affect both
         /// the stack set itself as well as <i>all</i> associated stack set
         /// instances.</p>
-        pub fn action(mut self, inp: crate::model::StackSetOperationAction) -> Self {
-            self.action = Some(inp);
+        pub fn action(mut self, input: crate::model::StackSetOperationAction) -> Self {
+            self.action = Some(input);
             self
         }
         pub fn set_action(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationAction>,
+            input: std::option::Option<crate::model::StackSetOperationAction>,
         ) -> Self {
-            self.action = inp;
+            self.action = input;
             self
         }
         /// <p>The overall status of the operation.</p>
@@ -2336,15 +2366,15 @@ pub mod stack_set_operation_summary {
         /// specified stacks without exceeding the failure tolerance for the operation.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::StackSetOperationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StackSetOperationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationStatus>,
+            input: std::option::Option<crate::model::StackSetOperationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The time at which the operation was initiated. Note that the creation times for the
@@ -2352,29 +2382,29 @@ pub mod stack_set_operation_summary {
         /// themselves. This is because AWS CloudFormation needs to perform preparatory work for the
         /// operation, such as dispatching the work to the requested Regions, before actually creating
         /// the first stacks.</p>
-        pub fn creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_timestamp = Some(inp);
+        pub fn creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_timestamp = Some(input);
             self
         }
         pub fn set_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_timestamp = inp;
+            self.creation_timestamp = input;
             self
         }
         /// <p>The time at which the stack set operation ended, across all accounts and Regions
         /// specified. Note that this doesn't necessarily mean that the stack set operation was
         /// successful, or even attempted, in each account or Region.</p>
-        pub fn end_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_timestamp = Some(inp);
+        pub fn end_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.end_timestamp = Some(input);
             self
         }
         pub fn set_end_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.end_timestamp = inp;
+            self.end_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSetOperationSummary`](crate::model::StackSetOperationSummary)
@@ -2603,21 +2633,21 @@ pub mod stack_set_operation_result_summary {
     }
     impl Builder {
         /// <p>[Self-managed permissions] The name of the AWS account for this operation result.</p>
-        pub fn account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account = Some(inp.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account = Some(input.into());
             self
         }
-        pub fn set_account(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account = inp;
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account = input;
             self
         }
         /// <p>The name of the AWS Region for this operation result.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// <p>The result status of the stack set operation for the given account in the given
@@ -2652,49 +2682,52 @@ pub mod stack_set_operation_result_summary {
         /// completed successfully.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::StackSetOperationResultStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StackSetOperationResultStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationResultStatus>,
+            input: std::option::Option<crate::model::StackSetOperationResultStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The reason for the assigned result status.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
         /// <p>The results of the account gate function AWS CloudFormation invokes, if present,
         /// before proceeding with stack set operations in an account</p>
-        pub fn account_gate_result(mut self, inp: crate::model::AccountGateResult) -> Self {
-            self.account_gate_result = Some(inp);
+        pub fn account_gate_result(mut self, input: crate::model::AccountGateResult) -> Self {
+            self.account_gate_result = Some(input);
             self
         }
         pub fn set_account_gate_result(
             mut self,
-            inp: std::option::Option<crate::model::AccountGateResult>,
+            input: std::option::Option<crate::model::AccountGateResult>,
         ) -> Self {
-            self.account_gate_result = inp;
+            self.account_gate_result = input;
             self
         }
         /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-        pub fn organizational_unit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.organizational_unit_id = Some(inp.into());
+        pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organizational_unit_id = Some(input.into());
             self
         }
         pub fn set_organizational_unit_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.organizational_unit_id = inp;
+            self.organizational_unit_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSetOperationResultSummary`](crate::model::StackSetOperationResultSummary)
@@ -2837,25 +2870,28 @@ pub mod account_gate_result {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::AccountGateStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::AccountGateStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::AccountGateStatus>,
+            input: std::option::Option<crate::model::AccountGateStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The reason for the account gate status assigned to this account and Region for the
         /// stack set operation.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
         /// Consumes the builder and constructs a [`AccountGateResult`](crate::model::AccountGateResult)
@@ -3074,94 +3110,94 @@ pub mod stack_summary {
     }
     impl Builder {
         /// <p>Unique stack identifier.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The name associated with the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The template description of the template used to create the stack.</p>
-        pub fn template_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_description = Some(inp.into());
+        pub fn template_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_description = Some(input.into());
             self
         }
         pub fn set_template_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.template_description = inp;
+            self.template_description = input;
             self
         }
         /// <p>The time the stack was created.</p>
-        pub fn creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time = Some(inp);
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
             self
         }
         pub fn set_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time = inp;
+            self.creation_time = input;
             self
         }
         /// <p>The time the stack was last updated. This field will only be returned if the stack
         /// has been updated at least once.</p>
-        pub fn last_updated_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_time = Some(inp);
+        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_time = Some(input);
             self
         }
         pub fn set_last_updated_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_time = inp;
+            self.last_updated_time = input;
             self
         }
         /// <p>The time the stack was deleted.</p>
-        pub fn deletion_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.deletion_time = Some(inp);
+        pub fn deletion_time(mut self, input: smithy_types::Instant) -> Self {
+            self.deletion_time = Some(input);
             self
         }
         pub fn set_deletion_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.deletion_time = inp;
+            self.deletion_time = input;
             self
         }
         /// <p>The current status of the stack.</p>
-        pub fn stack_status(mut self, inp: crate::model::StackStatus) -> Self {
-            self.stack_status = Some(inp);
+        pub fn stack_status(mut self, input: crate::model::StackStatus) -> Self {
+            self.stack_status = Some(input);
             self
         }
         pub fn set_stack_status(
             mut self,
-            inp: std::option::Option<crate::model::StackStatus>,
+            input: std::option::Option<crate::model::StackStatus>,
         ) -> Self {
-            self.stack_status = inp;
+            self.stack_status = input;
             self
         }
         /// <p>Success/Failure message associated with the stack status.</p>
-        pub fn stack_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_status_reason = Some(inp.into());
+        pub fn stack_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_status_reason = Some(input.into());
             self
         }
         pub fn set_stack_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_status_reason = inp;
+            self.stack_status_reason = input;
             self
         }
         /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
@@ -3169,24 +3205,24 @@ pub mod stack_summary {
         /// the parent stack.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the
         /// <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_id = Some(inp.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_id = Some(input.into());
             self
         }
-        pub fn set_parent_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parent_id = inp;
+        pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_id = input;
             self
         }
         /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
         /// top-level stack to which the nested stack ultimately belongs.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the
         /// <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn root_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.root_id = Some(inp.into());
+        pub fn root_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.root_id = Some(input.into());
             self
         }
-        pub fn set_root_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.root_id = inp;
+        pub fn set_root_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.root_id = input;
             self
         }
         /// <p>Summarizes information on whether a stack's actual configuration differs, or has
@@ -3195,16 +3231,16 @@ pub mod stack_summary {
         /// Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(
             mut self,
-            inp: crate::model::StackDriftInformationSummary,
+            input: crate::model::StackDriftInformationSummary,
         ) -> Self {
-            self.drift_information = Some(inp);
+            self.drift_information = Some(input);
             self
         }
         pub fn set_drift_information(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftInformationSummary>,
+            input: std::option::Option<crate::model::StackDriftInformationSummary>,
         ) -> Self {
-            self.drift_information = inp;
+            self.drift_information = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSummary`](crate::model::StackSummary)
@@ -3310,28 +3346,28 @@ pub mod stack_drift_information_summary {
         /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
         /// </li>
         /// </ul>
-        pub fn stack_drift_status(mut self, inp: crate::model::StackDriftStatus) -> Self {
-            self.stack_drift_status = Some(inp);
+        pub fn stack_drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
+            self.stack_drift_status = Some(input);
             self
         }
         pub fn set_stack_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftStatus>,
+            input: std::option::Option<crate::model::StackDriftStatus>,
         ) -> Self {
-            self.stack_drift_status = inp;
+            self.stack_drift_status = input;
             self
         }
         /// <p>Most recent time when a drift detection operation was initiated on the stack, or any
         /// of its individual resources that support drift detection.</p>
-        pub fn last_check_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_check_timestamp = Some(inp);
+        pub fn last_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_check_timestamp = Some(input);
             self
         }
         pub fn set_last_check_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_check_timestamp = inp;
+            self.last_check_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`StackDriftInformationSummary`](crate::model::StackDriftInformationSummary)
@@ -3528,74 +3564,77 @@ pub mod stack_resource_summary {
     }
     impl Builder {
         /// <p>The logical name of the resource specified in the template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// <p>The name or unique identifier that corresponds to a physical instance ID of the
         /// resource.</p>
-        pub fn physical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.physical_resource_id = Some(inp.into());
+        pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.physical_resource_id = Some(input.into());
             self
         }
         pub fn set_physical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.physical_resource_id = inp;
+            self.physical_resource_id = input;
             self
         }
         /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
         /// Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>Time the status was updated.</p>
-        pub fn last_updated_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_timestamp = Some(inp);
+        pub fn last_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_timestamp = Some(input);
             self
         }
         pub fn set_last_updated_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_timestamp = inp;
+            self.last_updated_timestamp = input;
             self
         }
         /// <p>Current status of the resource.</p>
-        pub fn resource_status(mut self, inp: crate::model::ResourceStatus) -> Self {
-            self.resource_status = Some(inp);
+        pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
+            self.resource_status = Some(input);
             self
         }
         pub fn set_resource_status(
             mut self,
-            inp: std::option::Option<crate::model::ResourceStatus>,
+            input: std::option::Option<crate::model::ResourceStatus>,
         ) -> Self {
-            self.resource_status = inp;
+            self.resource_status = input;
             self
         }
         /// <p>Success/failure message associated with the resource.</p>
-        pub fn resource_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_status_reason = Some(inp.into());
+        pub fn resource_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_status_reason = Some(input.into());
             self
         }
         pub fn set_resource_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_status_reason = inp;
+            self.resource_status_reason = input;
             self
         }
         /// <p>Information about whether the resource's actual configuration differs, or has
@@ -3604,28 +3643,28 @@ pub mod stack_resource_summary {
         /// Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(
             mut self,
-            inp: crate::model::StackResourceDriftInformationSummary,
+            input: crate::model::StackResourceDriftInformationSummary,
         ) -> Self {
-            self.drift_information = Some(inp);
+            self.drift_information = Some(input);
             self
         }
         pub fn set_drift_information(
             mut self,
-            inp: std::option::Option<crate::model::StackResourceDriftInformationSummary>,
+            input: std::option::Option<crate::model::StackResourceDriftInformationSummary>,
         ) -> Self {
-            self.drift_information = inp;
+            self.drift_information = input;
             self
         }
         /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-        pub fn module_info(mut self, inp: crate::model::ModuleInfo) -> Self {
-            self.module_info = Some(inp);
+        pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
+            self.module_info = Some(input);
             self
         }
         pub fn set_module_info(
             mut self,
-            inp: std::option::Option<crate::model::ModuleInfo>,
+            input: std::option::Option<crate::model::ModuleInfo>,
         ) -> Self {
-            self.module_info = inp;
+            self.module_info = input;
             self
         }
         /// Consumes the builder and constructs a [`StackResourceSummary`](crate::model::StackResourceSummary)
@@ -3692,12 +3731,15 @@ pub mod module_info {
         /// <p>
         /// <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code>
         /// </p>
-        pub fn type_hierarchy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_hierarchy = Some(inp.into());
+        pub fn type_hierarchy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_hierarchy = Some(input.into());
             self
         }
-        pub fn set_type_hierarchy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_hierarchy = inp;
+        pub fn set_type_hierarchy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.type_hierarchy = input;
             self
         }
         /// <p>A concantenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by  <code>/</code>.</p>
@@ -3706,15 +3748,15 @@ pub mod module_info {
         /// <code>moduleA/moduleB</code>
         /// </p>
         /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
-        pub fn logical_id_hierarchy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_id_hierarchy = Some(inp.into());
+        pub fn logical_id_hierarchy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_id_hierarchy = Some(input.into());
             self
         }
         pub fn set_logical_id_hierarchy(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_id_hierarchy = inp;
+            self.logical_id_hierarchy = input;
             self
         }
         /// Consumes the builder and constructs a [`ModuleInfo`](crate::model::ModuleInfo)
@@ -3823,29 +3865,29 @@ pub mod stack_resource_drift_information_summary {
         /// </ul>
         pub fn stack_resource_drift_status(
             mut self,
-            inp: crate::model::StackResourceDriftStatus,
+            input: crate::model::StackResourceDriftStatus,
         ) -> Self {
-            self.stack_resource_drift_status = Some(inp);
+            self.stack_resource_drift_status = Some(input);
             self
         }
         pub fn set_stack_resource_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackResourceDriftStatus>,
+            input: std::option::Option<crate::model::StackResourceDriftStatus>,
         ) -> Self {
-            self.stack_resource_drift_status = inp;
+            self.stack_resource_drift_status = input;
             self
         }
         /// <p>When AWS CloudFormation last checked if the resource had drifted from its expected
         /// configuration.</p>
-        pub fn last_check_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_check_timestamp = Some(inp);
+        pub fn last_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_check_timestamp = Some(input);
             self
         }
         pub fn set_last_check_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_check_timestamp = inp;
+            self.last_check_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`StackResourceDriftInformationSummary`](crate::model::StackResourceDriftInformationSummary)
@@ -4150,39 +4192,39 @@ pub mod stack_instance_summary {
     impl Builder {
         /// <p>The name or unique ID of the stack set that the stack instance is associated
         /// with.</p>
-        pub fn stack_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_id = Some(inp.into());
+        pub fn stack_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_id = Some(input.into());
             self
         }
-        pub fn set_stack_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_id = inp;
+        pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_set_id = input;
             self
         }
         /// <p>The name of the AWS Region that the stack instance is associated with.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// <p>[Self-managed permissions] The name of the AWS account that the stack instance is associated with.</p>
-        pub fn account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account = Some(inp.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account = Some(input.into());
             self
         }
-        pub fn set_account(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account = inp;
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account = input;
             self
         }
         /// <p>The ID of the stack instance.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The status of the stack instance, in terms of its synchronization with its associated
@@ -4219,52 +4261,55 @@ pub mod stack_instance_summary {
         /// set.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::StackInstanceStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StackInstanceStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackInstanceStatus>,
+            input: std::option::Option<crate::model::StackInstanceStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The explanation for the specific status code assigned to this stack
         /// instance.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
         /// <p>The detailed status of the stack instance.</p>
         pub fn stack_instance_status(
             mut self,
-            inp: crate::model::StackInstanceComprehensiveStatus,
+            input: crate::model::StackInstanceComprehensiveStatus,
         ) -> Self {
-            self.stack_instance_status = Some(inp);
+            self.stack_instance_status = Some(input);
             self
         }
         pub fn set_stack_instance_status(
             mut self,
-            inp: std::option::Option<crate::model::StackInstanceComprehensiveStatus>,
+            input: std::option::Option<crate::model::StackInstanceComprehensiveStatus>,
         ) -> Self {
-            self.stack_instance_status = inp;
+            self.stack_instance_status = input;
             self
         }
         /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-        pub fn organizational_unit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.organizational_unit_id = Some(inp.into());
+        pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organizational_unit_id = Some(input.into());
             self
         }
         pub fn set_organizational_unit_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.organizational_unit_id = inp;
+            self.organizational_unit_id = input;
             self
         }
         /// <p>Status of the stack instance's actual configuration compared to the expected template
@@ -4292,29 +4337,29 @@ pub mod stack_instance_summary {
         /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
         /// </li>
         /// </ul>
-        pub fn drift_status(mut self, inp: crate::model::StackDriftStatus) -> Self {
-            self.drift_status = Some(inp);
+        pub fn drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
+            self.drift_status = Some(input);
             self
         }
         pub fn set_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftStatus>,
+            input: std::option::Option<crate::model::StackDriftStatus>,
         ) -> Self {
-            self.drift_status = inp;
+            self.drift_status = input;
             self
         }
         /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack
         /// instance. This value will be <code>NULL</code> for any stack instance on which drift
         /// detection has not yet been performed.</p>
-        pub fn last_drift_check_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_drift_check_timestamp = Some(inp);
+        pub fn last_drift_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_drift_check_timestamp = Some(input);
             self
         }
         pub fn set_last_drift_check_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_drift_check_timestamp = inp;
+            self.last_drift_check_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`StackInstanceSummary`](crate::model::StackInstanceSummary)
@@ -4419,15 +4464,15 @@ pub mod stack_instance_comprehensive_status {
         /// <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p>
         /// </li>
         /// </ul>
-        pub fn detailed_status(mut self, inp: crate::model::StackInstanceDetailedStatus) -> Self {
-            self.detailed_status = Some(inp);
+        pub fn detailed_status(mut self, input: crate::model::StackInstanceDetailedStatus) -> Self {
+            self.detailed_status = Some(input);
             self
         }
         pub fn set_detailed_status(
             mut self,
-            inp: std::option::Option<crate::model::StackInstanceDetailedStatus>,
+            input: std::option::Option<crate::model::StackInstanceDetailedStatus>,
         ) -> Self {
-            self.detailed_status = inp;
+            self.detailed_status = input;
             self
         }
         /// Consumes the builder and constructs a [`StackInstanceComprehensiveStatus`](crate::model::StackInstanceComprehensiveStatus)
@@ -4600,24 +4645,24 @@ pub mod stack_instance_filter {
     }
     impl Builder {
         /// <p>The type of filter to apply.</p>
-        pub fn name(mut self, inp: crate::model::StackInstanceFilterName) -> Self {
-            self.name = Some(inp);
+        pub fn name(mut self, input: crate::model::StackInstanceFilterName) -> Self {
+            self.name = Some(input);
             self
         }
         pub fn set_name(
             mut self,
-            inp: std::option::Option<crate::model::StackInstanceFilterName>,
+            input: std::option::Option<crate::model::StackInstanceFilterName>,
         ) -> Self {
-            self.name = inp;
+            self.name = input;
             self
         }
         /// <p>The status to filter by.</p>
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.values = Some(inp.into());
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.values = Some(input.into());
             self
         }
-        pub fn set_values(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.values = inp;
+        pub fn set_values(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`StackInstanceFilter`](crate::model::StackInstanceFilter)
@@ -4727,38 +4772,38 @@ pub mod export {
     }
     impl Builder {
         /// <p>The stack that contains the exported output name and value.</p>
-        pub fn exporting_stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exporting_stack_id = Some(inp.into());
+        pub fn exporting_stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exporting_stack_id = Some(input.into());
             self
         }
         pub fn set_exporting_stack_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exporting_stack_id = inp;
+            self.exporting_stack_id = input;
             self
         }
         /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code>
         /// function to import the associated value into other stacks. The name is defined in the
         /// <code>Export</code> field in the associated stack's <code>Outputs</code>
         /// section.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value of the exported output, such as a resource physical ID. This value is
         /// defined in the <code>Export</code> field in the associated stack's <code>Outputs</code>
         /// section.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Export`](crate::model::Export)
@@ -4854,42 +4899,45 @@ pub mod change_set_summary {
     }
     impl Builder {
         /// <p>The ID of the stack with which the change set is associated.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The name of the stack with which the change set is associated.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The ID of the change set.</p>
-        pub fn change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_id = Some(inp.into());
+        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_id = Some(input.into());
             self
         }
-        pub fn set_change_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.change_set_id = inp;
+        pub fn set_change_set_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.change_set_id = input;
             self
         }
         /// <p>The name of the change set.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_name = Some(inp.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_name = Some(input.into());
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_set_name = inp;
+            self.change_set_name = input;
             self
         }
         /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
@@ -4897,93 +4945,96 @@ pub mod change_set_summary {
         /// change set might be in an <code>UNAVAILABLE</code> state because AWS CloudFormation is
         /// still creating it or in an <code>OBSOLETE</code> state because the stack was already
         /// updated.</p>
-        pub fn execution_status(mut self, inp: crate::model::ExecutionStatus) -> Self {
-            self.execution_status = Some(inp);
+        pub fn execution_status(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.execution_status = Some(input);
             self
         }
         pub fn set_execution_status(
             mut self,
-            inp: std::option::Option<crate::model::ExecutionStatus>,
+            input: std::option::Option<crate::model::ExecutionStatus>,
         ) -> Self {
-            self.execution_status = inp;
+            self.execution_status = input;
             self
         }
         /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
         /// <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
-        pub fn status(mut self, inp: crate::model::ChangeSetStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ChangeSetStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ChangeSetStatus>,
+            input: std::option::Option<crate::model::ChangeSetStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>A description of the change set's status. For example, if your change set is in the
         /// <code>FAILED</code> state, AWS CloudFormation shows the error message.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
-        pub fn creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time = Some(inp);
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
             self
         }
         pub fn set_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time = inp;
+            self.creation_time = input;
             self
         }
         /// <p>Descriptive information about the change set.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change
         /// set.</p>
-        pub fn include_nested_stacks(mut self, inp: bool) -> Self {
-            self.include_nested_stacks = Some(inp);
+        pub fn include_nested_stacks(mut self, input: bool) -> Self {
+            self.include_nested_stacks = Some(input);
             self
         }
-        pub fn set_include_nested_stacks(mut self, inp: std::option::Option<bool>) -> Self {
-            self.include_nested_stacks = inp;
+        pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_nested_stacks = input;
             self
         }
         /// <p>The parent change set ID.</p>
-        pub fn parent_change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_change_set_id = Some(inp.into());
+        pub fn parent_change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_change_set_id = Some(input.into());
             self
         }
         pub fn set_parent_change_set_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.parent_change_set_id = inp;
+            self.parent_change_set_id = input;
             self
         }
         /// <p>The root change set ID.</p>
-        pub fn root_change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.root_change_set_id = Some(inp.into());
+        pub fn root_change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.root_change_set_id = Some(input.into());
             self
         }
         pub fn set_root_change_set_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.root_change_set_id = inp;
+            self.root_change_set_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeSetSummary`](crate::model::ChangeSetSummary)
@@ -5193,38 +5244,41 @@ pub mod resource_identifier_summary {
     impl Builder {
         /// <p>The template resource type of the target resources, such as
         /// <code>AWS::S3::Bucket</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
-        pub fn logical_resource_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn logical_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logical_resource_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.logical_resource_ids = Some(v);
             self
         }
         pub fn set_logical_resource_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.logical_resource_ids = inp;
+            self.logical_resource_ids = input;
             self
         }
-        pub fn resource_identifiers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_identifiers = Some(v);
             self
         }
         pub fn set_resource_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_identifiers = inp;
+            self.resource_identifiers = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceIdentifierSummary`](crate::model::ResourceIdentifierSummary)
@@ -5289,61 +5343,70 @@ pub mod parameter_declaration {
     }
     impl Builder {
         /// <p>The name that is associated with the parameter.</p>
-        pub fn parameter_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_key = Some(inp.into());
+        pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_key = Some(input.into());
             self
         }
-        pub fn set_parameter_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parameter_key = inp;
+        pub fn set_parameter_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_key = input;
             self
         }
         /// <p>The default value of the parameter.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_value = Some(inp.into());
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_value = Some(input.into());
             self
         }
-        pub fn set_default_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.default_value = inp;
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_value = input;
             self
         }
         /// <p>The type of parameter.</p>
-        pub fn parameter_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_type = Some(inp.into());
+        pub fn parameter_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_type = Some(input.into());
             self
         }
-        pub fn set_parameter_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parameter_type = inp;
+        pub fn set_parameter_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_type = input;
             self
         }
         /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in
         /// the AWS Management Console.</p>
-        pub fn no_echo(mut self, inp: bool) -> Self {
-            self.no_echo = Some(inp);
+        pub fn no_echo(mut self, input: bool) -> Self {
+            self.no_echo = Some(input);
             self
         }
-        pub fn set_no_echo(mut self, inp: std::option::Option<bool>) -> Self {
-            self.no_echo = inp;
+        pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
+            self.no_echo = input;
             self
         }
         /// <p>The description that is associate with the parameter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
-        pub fn parameter_constraints(mut self, inp: crate::model::ParameterConstraints) -> Self {
-            self.parameter_constraints = Some(inp);
+        pub fn parameter_constraints(mut self, input: crate::model::ParameterConstraints) -> Self {
+            self.parameter_constraints = Some(input);
             self
         }
         pub fn set_parameter_constraints(
             mut self,
-            inp: std::option::Option<crate::model::ParameterConstraints>,
+            input: std::option::Option<crate::model::ParameterConstraints>,
         ) -> Self {
-            self.parameter_constraints = inp;
+            self.parameter_constraints = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterDeclaration`](crate::model::ParameterDeclaration)
@@ -5391,17 +5454,17 @@ pub mod parameter_constraints {
         pub(crate) allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn allowed_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.allowed_values = Some(v);
             self
         }
         pub fn set_allowed_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.allowed_values = inp;
+            self.allowed_values = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterConstraints`](crate::model::ParameterConstraints)
@@ -5595,110 +5658,113 @@ pub mod stack_resource_drift {
     }
     impl Builder {
         /// <p>The ID of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The logical name of the resource specified in the template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// <p>The name or unique identifier that corresponds to a physical instance ID of a
         /// resource supported by AWS CloudFormation. </p>
-        pub fn physical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.physical_resource_id = Some(inp.into());
+        pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.physical_resource_id = Some(input.into());
             self
         }
         pub fn set_physical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.physical_resource_id = inp;
+            self.physical_resource_id = input;
             self
         }
         pub fn physical_resource_id_context(
             mut self,
-            inp: impl Into<crate::model::PhysicalResourceIdContextKeyValuePair>,
+            input: impl Into<crate::model::PhysicalResourceIdContextKeyValuePair>,
         ) -> Self {
             let mut v = self.physical_resource_id_context.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.physical_resource_id_context = Some(v);
             self
         }
         pub fn set_physical_resource_id_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::PhysicalResourceIdContextKeyValuePair>,
             >,
         ) -> Self {
-            self.physical_resource_id_context = inp;
+            self.physical_resource_id_context = input;
             self
         }
         /// <p>The type of the resource.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>A JSON structure containing the expected property values of the stack resource, as
         /// defined in the stack template and any values specified as template parameters. </p>
         /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>,
         /// this structure will not be present. </p>
-        pub fn expected_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_properties = Some(inp.into());
+        pub fn expected_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_properties = Some(input.into());
             self
         }
         pub fn set_expected_properties(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_properties = inp;
+            self.expected_properties = input;
             self
         }
         /// <p>A JSON structure containing the actual property values of the stack
         /// resource.</p>
         /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>,
         /// this structure will not be present. </p>
-        pub fn actual_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.actual_properties = Some(inp.into());
+        pub fn actual_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.actual_properties = Some(input.into());
             self
         }
         pub fn set_actual_properties(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.actual_properties = inp;
+            self.actual_properties = input;
             self
         }
         pub fn property_differences(
             mut self,
-            inp: impl Into<crate::model::PropertyDifference>,
+            input: impl Into<crate::model::PropertyDifference>,
         ) -> Self {
             let mut v = self.property_differences.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.property_differences = Some(v);
             self
         }
         pub fn set_property_differences(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PropertyDifference>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PropertyDifference>>,
         ) -> Self {
-            self.property_differences = inp;
+            self.property_differences = input;
             self
         }
         /// <p>Status of the resource's actual configuration compared to its expected
@@ -5727,37 +5793,37 @@ pub mod stack_resource_drift {
         /// </ul>
         pub fn stack_resource_drift_status(
             mut self,
-            inp: crate::model::StackResourceDriftStatus,
+            input: crate::model::StackResourceDriftStatus,
         ) -> Self {
-            self.stack_resource_drift_status = Some(inp);
+            self.stack_resource_drift_status = Some(input);
             self
         }
         pub fn set_stack_resource_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackResourceDriftStatus>,
+            input: std::option::Option<crate::model::StackResourceDriftStatus>,
         ) -> Self {
-            self.stack_resource_drift_status = inp;
+            self.stack_resource_drift_status = input;
             self
         }
         /// <p>Time at which AWS CloudFormation performed drift detection on the stack resource.</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-        pub fn module_info(mut self, inp: crate::model::ModuleInfo) -> Self {
-            self.module_info = Some(inp);
+        pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
+            self.module_info = Some(input);
             self
         }
         pub fn set_module_info(
             mut self,
-            inp: std::option::Option<crate::model::ModuleInfo>,
+            input: std::option::Option<crate::model::ModuleInfo>,
         ) -> Self {
-            self.module_info = inp;
+            self.module_info = input;
             self
         }
         /// Consumes the builder and constructs a [`StackResourceDrift`](crate::model::StackResourceDrift)
@@ -5844,31 +5910,37 @@ pub mod property_difference {
     }
     impl Builder {
         /// <p>The fully-qualified path to the resource property.</p>
-        pub fn property_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.property_path = Some(inp.into());
+        pub fn property_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_path = Some(input.into());
             self
         }
-        pub fn set_property_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.property_path = inp;
+        pub fn set_property_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.property_path = input;
             self
         }
         /// <p>The expected property value of the resource property, as defined in the stack
         /// template and any values specified as template parameters.</p>
-        pub fn expected_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_value = Some(inp.into());
+        pub fn expected_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_value = Some(input.into());
             self
         }
-        pub fn set_expected_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expected_value = inp;
+        pub fn set_expected_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_value = input;
             self
         }
         /// <p>The actual property value of the resource property.</p>
-        pub fn actual_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.actual_value = Some(inp.into());
+        pub fn actual_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.actual_value = Some(input.into());
             self
         }
-        pub fn set_actual_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.actual_value = inp;
+        pub fn set_actual_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.actual_value = input;
             self
         }
         /// <p>The type of property difference.</p>
@@ -5890,15 +5962,15 @@ pub mod property_difference {
         /// parameters).</p>
         /// </li>
         /// </ul>
-        pub fn difference_type(mut self, inp: crate::model::DifferenceType) -> Self {
-            self.difference_type = Some(inp);
+        pub fn difference_type(mut self, input: crate::model::DifferenceType) -> Self {
+            self.difference_type = Some(input);
             self
         }
         pub fn set_difference_type(
             mut self,
-            inp: std::option::Option<crate::model::DifferenceType>,
+            input: std::option::Option<crate::model::DifferenceType>,
         ) -> Self {
-            self.difference_type = inp;
+            self.difference_type = input;
             self
         }
         /// Consumes the builder and constructs a [`PropertyDifference`](crate::model::PropertyDifference)
@@ -6009,21 +6081,21 @@ pub mod physical_resource_id_context_key_value_pair {
     }
     impl Builder {
         /// <p>The resource context key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The resource context value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`PhysicalResourceIdContextKeyValuePair`](crate::model::PhysicalResourceIdContextKeyValuePair)
@@ -6177,21 +6249,21 @@ pub mod stack_set_operation {
     }
     impl Builder {
         /// <p>The unique ID of a stack set operation.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// <p>The ID of the stack set.</p>
-        pub fn stack_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_id = Some(inp.into());
+        pub fn stack_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_id = Some(input.into());
             self
         }
-        pub fn set_stack_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_id = inp;
+        pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_set_id = input;
             self
         }
         /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
@@ -6199,15 +6271,15 @@ pub mod stack_set_operation {
         /// instances that are associated with the specified stack set. Update operations affect both
         /// the stack set itself, as well as <i>all</i> associated stack set
         /// instances.</p>
-        pub fn action(mut self, inp: crate::model::StackSetOperationAction) -> Self {
-            self.action = Some(inp);
+        pub fn action(mut self, input: crate::model::StackSetOperationAction) -> Self {
+            self.action = Some(input);
             self
         }
         pub fn set_action(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationAction>,
+            input: std::option::Option<crate::model::StackSetOperationAction>,
         ) -> Self {
-            self.action = inp;
+            self.action = input;
             self
         }
         /// <p>The status of the operation. </p>
@@ -6246,43 +6318,43 @@ pub mod stack_set_operation {
         /// specified stacks without exceeding the failure tolerance for the operation.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::StackSetOperationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StackSetOperationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationStatus>,
+            input: std::option::Option<crate::model::StackSetOperationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The preferences for how AWS CloudFormation performs this stack set
         /// operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.operation_preferences = Some(inp);
+            self.operation_preferences = Some(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.operation_preferences = inp;
+            self.operation_preferences = input;
             self
         }
         /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to
         /// remove the stack instances from the specified stack set, but doesn't delete the stacks. You
         /// can't reassociate a retained stack, or add an existing, saved stack to a new stack
         /// set.</p>
-        pub fn retain_stacks(mut self, inp: bool) -> Self {
-            self.retain_stacks = Some(inp);
+        pub fn retain_stacks(mut self, input: bool) -> Self {
+            self.retain_stacks = Some(input);
             self
         }
-        pub fn set_retain_stacks(mut self, inp: std::option::Option<bool>) -> Self {
-            self.retain_stacks = inp;
+        pub fn set_retain_stacks(mut self, input: std::option::Option<bool>) -> Self {
+            self.retain_stacks = input;
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set
@@ -6290,30 +6362,30 @@ pub mod stack_set_operation {
         /// <p>Use customized administrator roles to control which users or groups can manage specific
         /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple
         /// Administrators</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn administration_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.administration_role_arn = Some(inp.into());
+        pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.administration_role_arn = Some(input.into());
             self
         }
         pub fn set_administration_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.administration_role_arn = inp;
+            self.administration_role_arn = input;
             self
         }
         /// <p>The name of the IAM execution role used to create or update the stack set.</p>
         /// <p>Use customized execution roles to control which stack resources users and groups can
         /// include in their stack sets.
         /// </p>
-        pub fn execution_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_name = Some(inp.into());
+        pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_name = Some(input.into());
             self
         }
         pub fn set_execution_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_name = inp;
+            self.execution_role_name = input;
             self
         }
         /// <p>The time at which the operation was initiated. Note that the creation times for the
@@ -6321,41 +6393,41 @@ pub mod stack_set_operation {
         /// themselves. This is because AWS CloudFormation needs to perform preparatory work for the
         /// operation, such as dispatching the work to the requested Regions, before actually creating
         /// the first stacks.</p>
-        pub fn creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_timestamp = Some(inp);
+        pub fn creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_timestamp = Some(input);
             self
         }
         pub fn set_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_timestamp = inp;
+            self.creation_timestamp = input;
             self
         }
         /// <p>The time at which the stack set operation ended, across all accounts and Regions
         /// specified. Note that this doesn't necessarily mean that the stack set operation was
         /// successful, or even attempted, in each account or Region.</p>
-        pub fn end_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_timestamp = Some(inp);
+        pub fn end_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.end_timestamp = Some(input);
             self
         }
         pub fn set_end_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.end_timestamp = inp;
+            self.end_timestamp = input;
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts affected by the stack operation.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.deployment_targets = Some(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.deployment_targets = Some(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.deployment_targets = inp;
+            self.deployment_targets = input;
             self
         }
         /// <p>Detailed information about the drift status of the stack set. This includes information
@@ -6366,16 +6438,16 @@ pub mod stack_set_operation {
         /// Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
         pub fn stack_set_drift_detection_details(
             mut self,
-            inp: crate::model::StackSetDriftDetectionDetails,
+            input: crate::model::StackSetDriftDetectionDetails,
         ) -> Self {
-            self.stack_set_drift_detection_details = Some(inp);
+            self.stack_set_drift_detection_details = Some(input);
             self
         }
         pub fn set_stack_set_drift_detection_details(
             mut self,
-            inp: std::option::Option<crate::model::StackSetDriftDetectionDetails>,
+            input: std::option::Option<crate::model::StackSetDriftDetectionDetails>,
         ) -> Self {
-            self.stack_set_drift_detection_details = inp;
+            self.stack_set_drift_detection_details = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSetOperation`](crate::model::StackSetOperation)
@@ -6571,15 +6643,15 @@ pub mod stack_set_drift_detection_details {
         /// match from the expected template and parameter configuration.</p>
         /// </li>
         /// </ul>
-        pub fn drift_status(mut self, inp: crate::model::StackSetDriftStatus) -> Self {
-            self.drift_status = Some(inp);
+        pub fn drift_status(mut self, input: crate::model::StackSetDriftStatus) -> Self {
+            self.drift_status = Some(input);
             self
         }
         pub fn set_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetDriftStatus>,
+            input: std::option::Option<crate::model::StackSetDriftStatus>,
         ) -> Self {
-            self.drift_status = inp;
+            self.drift_status = input;
             self
         }
         /// <p>The status of the stack set drift detection operation.</p>
@@ -6611,30 +6683,30 @@ pub mod stack_set_drift_detection_details {
         /// </ul>
         pub fn drift_detection_status(
             mut self,
-            inp: crate::model::StackSetDriftDetectionStatus,
+            input: crate::model::StackSetDriftDetectionStatus,
         ) -> Self {
-            self.drift_detection_status = Some(inp);
+            self.drift_detection_status = Some(input);
             self
         }
         pub fn set_drift_detection_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetDriftDetectionStatus>,
+            input: std::option::Option<crate::model::StackSetDriftDetectionStatus>,
         ) -> Self {
-            self.drift_detection_status = inp;
+            self.drift_detection_status = input;
             self
         }
         /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack
         /// set. This value will be <code>NULL</code> for any stack set on which drift detection has
         /// not yet been performed.</p>
-        pub fn last_drift_check_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_drift_check_timestamp = Some(inp);
+        pub fn last_drift_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_drift_check_timestamp = Some(input);
             self
         }
         pub fn set_last_drift_check_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_drift_check_timestamp = inp;
+            self.last_drift_check_timestamp = input;
             self
         }
         /// <p>The total number of stack instances belonging to this stack set. </p>
@@ -6653,52 +6725,61 @@ pub mod stack_set_drift_detection_details {
         /// <p>Stack instances currently being checked for drift.</p>
         /// </li>
         /// </ul>
-        pub fn total_stack_instances_count(mut self, inp: i32) -> Self {
-            self.total_stack_instances_count = Some(inp);
+        pub fn total_stack_instances_count(mut self, input: i32) -> Self {
+            self.total_stack_instances_count = Some(input);
             self
         }
-        pub fn set_total_stack_instances_count(mut self, inp: i32) -> Self {
-            self.total_stack_instances_count = Some(inp);
+        pub fn set_total_stack_instances_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_stack_instances_count = input;
             self
         }
         /// <p>The number of stack instances that have drifted from the expected template and parameter
         /// configuration of the stack set. A stack instance is considered to have drifted if one or
         /// more of the resources in the associated stack do not match their expected
         /// configuration.</p>
-        pub fn drifted_stack_instances_count(mut self, inp: i32) -> Self {
-            self.drifted_stack_instances_count = Some(inp);
+        pub fn drifted_stack_instances_count(mut self, input: i32) -> Self {
+            self.drifted_stack_instances_count = Some(input);
             self
         }
-        pub fn set_drifted_stack_instances_count(mut self, inp: i32) -> Self {
-            self.drifted_stack_instances_count = Some(inp);
+        pub fn set_drifted_stack_instances_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.drifted_stack_instances_count = input;
             self
         }
         /// <p>The number of stack instances which match the expected template and parameter
         /// configuration of the stack set.</p>
-        pub fn in_sync_stack_instances_count(mut self, inp: i32) -> Self {
-            self.in_sync_stack_instances_count = Some(inp);
+        pub fn in_sync_stack_instances_count(mut self, input: i32) -> Self {
+            self.in_sync_stack_instances_count = Some(input);
             self
         }
-        pub fn set_in_sync_stack_instances_count(mut self, inp: i32) -> Self {
-            self.in_sync_stack_instances_count = Some(inp);
+        pub fn set_in_sync_stack_instances_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.in_sync_stack_instances_count = input;
             self
         }
         /// <p>The number of stack instances that are currently being checked for drift.</p>
-        pub fn in_progress_stack_instances_count(mut self, inp: i32) -> Self {
-            self.in_progress_stack_instances_count = Some(inp);
+        pub fn in_progress_stack_instances_count(mut self, input: i32) -> Self {
+            self.in_progress_stack_instances_count = Some(input);
             self
         }
-        pub fn set_in_progress_stack_instances_count(mut self, inp: i32) -> Self {
-            self.in_progress_stack_instances_count = Some(inp);
+        pub fn set_in_progress_stack_instances_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.in_progress_stack_instances_count = input;
             self
         }
         /// <p>The number of stack instances for which the drift detection operation failed.</p>
-        pub fn failed_stack_instances_count(mut self, inp: i32) -> Self {
-            self.failed_stack_instances_count = Some(inp);
+        pub fn failed_stack_instances_count(mut self, input: i32) -> Self {
+            self.failed_stack_instances_count = Some(input);
             self
         }
-        pub fn set_failed_stack_instances_count(mut self, inp: i32) -> Self {
-            self.failed_stack_instances_count = Some(inp);
+        pub fn set_failed_stack_instances_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.failed_stack_instances_count = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSetDriftDetectionDetails`](crate::model::StackSetDriftDetectionDetails)
@@ -6965,101 +7046,110 @@ pub mod stack_set {
     }
     impl Builder {
         /// <p>The name that's associated with the stack set.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_name = Some(inp.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_name = inp;
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
             self
         }
         /// <p>The ID of the stack set.</p>
-        pub fn stack_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_id = Some(inp.into());
+        pub fn stack_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_id = Some(input.into());
             self
         }
-        pub fn set_stack_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_id = inp;
+        pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_set_id = input;
             self
         }
         /// <p>A description of the stack set that you specify when the stack set is created or
         /// updated.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The status of the stack set.</p>
-        pub fn status(mut self, inp: crate::model::StackSetStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StackSetStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetStatus>,
+            input: std::option::Option<crate::model::StackSetStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The structure that contains the body of the template that was used to create or
         /// update the stack set.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the stack set.</p>
-        pub fn stack_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_arn = Some(inp.into());
+        pub fn stack_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_arn = Some(input.into());
             self
         }
-        pub fn set_stack_set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_arn = inp;
+        pub fn set_stack_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_arn = input;
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack
@@ -7067,30 +7157,30 @@ pub mod stack_set {
         /// <p>Use customized administrator roles to control which users or groups can manage specific
         /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack
         /// Set Operations</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn administration_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.administration_role_arn = Some(inp.into());
+        pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.administration_role_arn = Some(input.into());
             self
         }
         pub fn set_administration_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.administration_role_arn = inp;
+            self.administration_role_arn = input;
             self
         }
         /// <p>The name of the IAM execution role used to create or update the stack set. </p>
         /// <p>Use customized execution roles to control which stack resources users and groups can
         /// include in their stack sets.
         /// </p>
-        pub fn execution_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_name = Some(inp.into());
+        pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_name = Some(input.into());
             self
         }
         pub fn set_execution_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_name = inp;
+            self.execution_role_name = input;
             self
         }
         /// <p>Detailed information about the drift status of the stack set.</p>
@@ -7099,28 +7189,28 @@ pub mod stack_set {
         /// progress is not included.</p>
         pub fn stack_set_drift_detection_details(
             mut self,
-            inp: crate::model::StackSetDriftDetectionDetails,
+            input: crate::model::StackSetDriftDetectionDetails,
         ) -> Self {
-            self.stack_set_drift_detection_details = Some(inp);
+            self.stack_set_drift_detection_details = Some(input);
             self
         }
         pub fn set_stack_set_drift_detection_details(
             mut self,
-            inp: std::option::Option<crate::model::StackSetDriftDetectionDetails>,
+            input: std::option::Option<crate::model::StackSetDriftDetectionDetails>,
         ) -> Self {
-            self.stack_set_drift_detection_details = inp;
+            self.stack_set_drift_detection_details = input;
             self
         }
         /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).</p>
-        pub fn auto_deployment(mut self, inp: crate::model::AutoDeployment) -> Self {
-            self.auto_deployment = Some(inp);
+        pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
+            self.auto_deployment = Some(input);
             self
         }
         pub fn set_auto_deployment(
             mut self,
-            inp: std::option::Option<crate::model::AutoDeployment>,
+            input: std::option::Option<crate::model::AutoDeployment>,
         ) -> Self {
-            self.auto_deployment = inp;
+            self.auto_deployment = input;
             self
         }
         /// <p>Describes how the IAM roles required for stack set operations are created.</p>
@@ -7132,28 +7222,28 @@ pub mod stack_set {
         /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// </ul>
-        pub fn permission_model(mut self, inp: crate::model::PermissionModels) -> Self {
-            self.permission_model = Some(inp);
+        pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
+            self.permission_model = Some(input);
             self
         }
         pub fn set_permission_model(
             mut self,
-            inp: std::option::Option<crate::model::PermissionModels>,
+            input: std::option::Option<crate::model::PermissionModels>,
         ) -> Self {
-            self.permission_model = inp;
+            self.permission_model = input;
             self
         }
-        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.organizational_unit_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.organizational_unit_ids = Some(v);
             self
         }
         pub fn set_organizational_unit_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.organizational_unit_ids = inp;
+            self.organizational_unit_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSet`](crate::model::StackSet)
@@ -7324,126 +7414,132 @@ pub mod stack {
     }
     impl Builder {
         /// <p>Unique identifier of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The name associated with the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The unique ID of the change set.</p>
-        pub fn change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_id = Some(inp.into());
+        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_id = Some(input.into());
             self
         }
-        pub fn set_change_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.change_set_id = inp;
+        pub fn set_change_set_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.change_set_id = input;
             self
         }
         /// <p>A user-defined description associated with the stack.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The time at which the stack was created.</p>
-        pub fn creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time = Some(inp);
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
             self
         }
         pub fn set_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time = inp;
+            self.creation_time = input;
             self
         }
         /// <p>The time the stack was deleted.</p>
-        pub fn deletion_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.deletion_time = Some(inp);
+        pub fn deletion_time(mut self, input: smithy_types::Instant) -> Self {
+            self.deletion_time = Some(input);
             self
         }
         pub fn set_deletion_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.deletion_time = inp;
+            self.deletion_time = input;
             self
         }
         /// <p>The time the stack was last updated. This field will only be returned if the stack
         /// has been updated at least once.</p>
-        pub fn last_updated_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_time = Some(inp);
+        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_time = Some(input);
             self
         }
         pub fn set_last_updated_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_time = inp;
+            self.last_updated_time = input;
             self
         }
         /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.rollback_configuration = Some(inp);
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.rollback_configuration = Some(input);
             self
         }
         pub fn set_rollback_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RollbackConfiguration>,
+            input: std::option::Option<crate::model::RollbackConfiguration>,
         ) -> Self {
-            self.rollback_configuration = inp;
+            self.rollback_configuration = input;
             self
         }
         /// <p>Current status of the stack.</p>
-        pub fn stack_status(mut self, inp: crate::model::StackStatus) -> Self {
-            self.stack_status = Some(inp);
+        pub fn stack_status(mut self, input: crate::model::StackStatus) -> Self {
+            self.stack_status = Some(input);
             self
         }
         pub fn set_stack_status(
             mut self,
-            inp: std::option::Option<crate::model::StackStatus>,
+            input: std::option::Option<crate::model::StackStatus>,
         ) -> Self {
-            self.stack_status = inp;
+            self.stack_status = input;
             self
         }
         /// <p>Success/failure message associated with the stack status.</p>
-        pub fn stack_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_status_reason = Some(inp.into());
+        pub fn stack_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_status_reason = Some(input.into());
             self
         }
         pub fn set_stack_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_status_reason = inp;
+            self.stack_status_reason = input;
             self
         }
         /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
@@ -7457,84 +7553,84 @@ pub mod stack {
         /// <code>false</code>: enable rollback</p>
         /// </li>
         /// </ul>
-        pub fn disable_rollback(mut self, inp: bool) -> Self {
-            self.disable_rollback = Some(inp);
+        pub fn disable_rollback(mut self, input: bool) -> Self {
+            self.disable_rollback = Some(input);
             self
         }
-        pub fn set_disable_rollback(mut self, inp: std::option::Option<bool>) -> Self {
-            self.disable_rollback = inp;
+        pub fn set_disable_rollback(mut self, input: std::option::Option<bool>) -> Self {
+            self.disable_rollback = input;
             self
         }
-        pub fn notification_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
         pub fn set_notification_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.notification_ar_ns = inp;
+            self.notification_ar_ns = input;
             self
         }
         /// <p>The amount of time within which stack creation should complete.</p>
-        pub fn timeout_in_minutes(mut self, inp: i32) -> Self {
-            self.timeout_in_minutes = Some(inp);
+        pub fn timeout_in_minutes(mut self, input: i32) -> Self {
+            self.timeout_in_minutes = Some(input);
             self
         }
-        pub fn set_timeout_in_minutes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout_in_minutes = inp;
+        pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_minutes = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn outputs(mut self, inp: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.outputs = Some(v);
             self
         }
         pub fn set_outputs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Output>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Output>>,
         ) -> Self {
-            self.outputs = inp;
+            self.outputs = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
         /// that is associated with the stack. During a stack operation, AWS CloudFormation uses this
         /// role's credentials to make calls on your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Whether termination protection is enabled for the stack.</p>
@@ -7542,12 +7638,15 @@ pub mod stack {
         /// termination protection is set on the root stack and cannot be changed directly on the
         /// nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
         /// Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn enable_termination_protection(mut self, inp: bool) -> Self {
-            self.enable_termination_protection = Some(inp);
+        pub fn enable_termination_protection(mut self, input: bool) -> Self {
+            self.enable_termination_protection = Some(input);
             self
         }
-        pub fn set_enable_termination_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_termination_protection = inp;
+        pub fn set_enable_termination_protection(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_termination_protection = input;
             self
         }
         /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
@@ -7555,39 +7654,39 @@ pub mod stack {
         /// the parent stack.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the
         /// <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_id = Some(inp.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_id = Some(input.into());
             self
         }
-        pub fn set_parent_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parent_id = inp;
+        pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_id = input;
             self
         }
         /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
         /// top-level stack to which the nested stack ultimately belongs.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the
         /// <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn root_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.root_id = Some(inp.into());
+        pub fn root_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.root_id = Some(input.into());
             self
         }
-        pub fn set_root_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.root_id = inp;
+        pub fn set_root_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.root_id = input;
             self
         }
         /// <p>Information on whether a stack's actual configuration differs, or has
         /// <i>drifted</i>, from it's expected configuration, as defined in the stack
         /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
         /// Changes to Stacks and Resources</a>.</p>
-        pub fn drift_information(mut self, inp: crate::model::StackDriftInformation) -> Self {
-            self.drift_information = Some(inp);
+        pub fn drift_information(mut self, input: crate::model::StackDriftInformation) -> Self {
+            self.drift_information = Some(input);
             self
         }
         pub fn set_drift_information(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftInformation>,
+            input: std::option::Option<crate::model::StackDriftInformation>,
         ) -> Self {
-            self.drift_information = inp;
+            self.drift_information = input;
             self
         }
         /// Consumes the builder and constructs a [`Stack`](crate::model::Stack)
@@ -7704,28 +7803,28 @@ pub mod stack_drift_information {
         /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
         /// </li>
         /// </ul>
-        pub fn stack_drift_status(mut self, inp: crate::model::StackDriftStatus) -> Self {
-            self.stack_drift_status = Some(inp);
+        pub fn stack_drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
+            self.stack_drift_status = Some(input);
             self
         }
         pub fn set_stack_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftStatus>,
+            input: std::option::Option<crate::model::StackDriftStatus>,
         ) -> Self {
-            self.stack_drift_status = inp;
+            self.stack_drift_status = input;
             self
         }
         /// <p>Most recent time when a drift detection operation was initiated on the stack, or any
         /// of its individual resources that support drift detection.</p>
-        pub fn last_check_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_check_timestamp = Some(inp);
+        pub fn last_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_check_timestamp = Some(input);
             self
         }
         pub fn set_last_check_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_check_timestamp = inp;
+            self.last_check_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`StackDriftInformation`](crate::model::StackDriftInformation)
@@ -7780,39 +7879,39 @@ pub mod output {
     }
     impl Builder {
         /// <p>The key associated with the output.</p>
-        pub fn output_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_key = Some(inp.into());
+        pub fn output_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_key = Some(input.into());
             self
         }
-        pub fn set_output_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.output_key = inp;
+        pub fn set_output_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_key = input;
             self
         }
         /// <p>The value associated with the output.</p>
-        pub fn output_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_value = Some(inp.into());
+        pub fn output_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_value = Some(input.into());
             self
         }
-        pub fn set_output_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.output_value = inp;
+        pub fn set_output_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_value = input;
             self
         }
         /// <p>User defined description associated with the output.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The name of the export associated with the output.</p>
-        pub fn export_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_name = Some(inp.into());
+        pub fn export_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_name = Some(input.into());
             self
         }
-        pub fn set_export_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.export_name = inp;
+        pub fn set_export_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_name = input;
             self
         }
         /// Consumes the builder and constructs a [`Output`](crate::model::Output)
@@ -7903,98 +8002,101 @@ pub mod stack_resource {
     }
     impl Builder {
         /// <p>The name associated with the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>Unique identifier of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The logical name of the resource specified in the template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// <p>The name or unique identifier that corresponds to a physical instance ID of a
         /// resource supported by AWS CloudFormation.</p>
-        pub fn physical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.physical_resource_id = Some(inp.into());
+        pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.physical_resource_id = Some(input.into());
             self
         }
         pub fn set_physical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.physical_resource_id = inp;
+            self.physical_resource_id = input;
             self
         }
         /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
         /// Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>Time the status was updated.</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// <p>Current status of the resource.</p>
-        pub fn resource_status(mut self, inp: crate::model::ResourceStatus) -> Self {
-            self.resource_status = Some(inp);
+        pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
+            self.resource_status = Some(input);
             self
         }
         pub fn set_resource_status(
             mut self,
-            inp: std::option::Option<crate::model::ResourceStatus>,
+            input: std::option::Option<crate::model::ResourceStatus>,
         ) -> Self {
-            self.resource_status = inp;
+            self.resource_status = input;
             self
         }
         /// <p>Success/failure message associated with the resource.</p>
-        pub fn resource_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_status_reason = Some(inp.into());
+        pub fn resource_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_status_reason = Some(input.into());
             self
         }
         pub fn set_resource_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_status_reason = inp;
+            self.resource_status_reason = input;
             self
         }
         /// <p>User defined description associated with the resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Information about whether the resource's actual configuration differs, or has
@@ -8003,28 +8105,28 @@ pub mod stack_resource {
         /// Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(
             mut self,
-            inp: crate::model::StackResourceDriftInformation,
+            input: crate::model::StackResourceDriftInformation,
         ) -> Self {
-            self.drift_information = Some(inp);
+            self.drift_information = Some(input);
             self
         }
         pub fn set_drift_information(
             mut self,
-            inp: std::option::Option<crate::model::StackResourceDriftInformation>,
+            input: std::option::Option<crate::model::StackResourceDriftInformation>,
         ) -> Self {
-            self.drift_information = inp;
+            self.drift_information = input;
             self
         }
         /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-        pub fn module_info(mut self, inp: crate::model::ModuleInfo) -> Self {
-            self.module_info = Some(inp);
+        pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
+            self.module_info = Some(input);
             self
         }
         pub fn set_module_info(
             mut self,
-            inp: std::option::Option<crate::model::ModuleInfo>,
+            input: std::option::Option<crate::model::ModuleInfo>,
         ) -> Self {
-            self.module_info = inp;
+            self.module_info = input;
             self
         }
         /// Consumes the builder and constructs a [`StackResource`](crate::model::StackResource)
@@ -8138,29 +8240,29 @@ pub mod stack_resource_drift_information {
         /// </ul>
         pub fn stack_resource_drift_status(
             mut self,
-            inp: crate::model::StackResourceDriftStatus,
+            input: crate::model::StackResourceDriftStatus,
         ) -> Self {
-            self.stack_resource_drift_status = Some(inp);
+            self.stack_resource_drift_status = Some(input);
             self
         }
         pub fn set_stack_resource_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackResourceDriftStatus>,
+            input: std::option::Option<crate::model::StackResourceDriftStatus>,
         ) -> Self {
-            self.stack_resource_drift_status = inp;
+            self.stack_resource_drift_status = input;
             self
         }
         /// <p>When AWS CloudFormation last checked if the resource had drifted from its expected
         /// configuration.</p>
-        pub fn last_check_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_check_timestamp = Some(inp);
+        pub fn last_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_check_timestamp = Some(input);
             self
         }
         pub fn set_last_check_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_check_timestamp = inp;
+            self.last_check_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`StackResourceDriftInformation`](crate::model::StackResourceDriftInformation)
@@ -8255,112 +8357,115 @@ pub mod stack_resource_detail {
     }
     impl Builder {
         /// <p>The name associated with the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>Unique identifier of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The logical name of the resource specified in the template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// <p>The name or unique identifier that corresponds to a physical instance ID of a
         /// resource supported by AWS CloudFormation.</p>
-        pub fn physical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.physical_resource_id = Some(inp.into());
+        pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.physical_resource_id = Some(input.into());
             self
         }
         pub fn set_physical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.physical_resource_id = inp;
+            self.physical_resource_id = input;
             self
         }
         /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
         /// Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>Time the status was updated.</p>
-        pub fn last_updated_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_timestamp = Some(inp);
+        pub fn last_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_timestamp = Some(input);
             self
         }
         pub fn set_last_updated_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_timestamp = inp;
+            self.last_updated_timestamp = input;
             self
         }
         /// <p>Current status of the resource.</p>
-        pub fn resource_status(mut self, inp: crate::model::ResourceStatus) -> Self {
-            self.resource_status = Some(inp);
+        pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
+            self.resource_status = Some(input);
             self
         }
         pub fn set_resource_status(
             mut self,
-            inp: std::option::Option<crate::model::ResourceStatus>,
+            input: std::option::Option<crate::model::ResourceStatus>,
         ) -> Self {
-            self.resource_status = inp;
+            self.resource_status = input;
             self
         }
         /// <p>Success/failure message associated with the resource.</p>
-        pub fn resource_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_status_reason = Some(inp.into());
+        pub fn resource_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_status_reason = Some(input.into());
             self
         }
         pub fn set_resource_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_status_reason = inp;
+            self.resource_status_reason = input;
             self
         }
         /// <p>User defined description associated with the resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
         /// Attribute</a> in the AWS CloudFormation User Guide.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.metadata = Some(inp.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metadata = Some(input.into());
             self
         }
-        pub fn set_metadata(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.metadata = inp;
+        pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metadata = input;
             self
         }
         /// <p>Information about whether the resource's actual configuration differs, or has
@@ -8369,28 +8474,28 @@ pub mod stack_resource_detail {
         /// Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(
             mut self,
-            inp: crate::model::StackResourceDriftInformation,
+            input: crate::model::StackResourceDriftInformation,
         ) -> Self {
-            self.drift_information = Some(inp);
+            self.drift_information = Some(input);
             self
         }
         pub fn set_drift_information(
             mut self,
-            inp: std::option::Option<crate::model::StackResourceDriftInformation>,
+            input: std::option::Option<crate::model::StackResourceDriftInformation>,
         ) -> Self {
-            self.drift_information = inp;
+            self.drift_information = input;
             self
         }
         /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-        pub fn module_info(mut self, inp: crate::model::ModuleInfo) -> Self {
-            self.module_info = Some(inp);
+        pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
+            self.module_info = Some(input);
             self
         }
         pub fn set_module_info(
             mut self,
-            inp: std::option::Option<crate::model::ModuleInfo>,
+            input: std::option::Option<crate::model::ModuleInfo>,
         ) -> Self {
-            self.module_info = inp;
+            self.module_info = input;
             self
         }
         /// Consumes the builder and constructs a [`StackResourceDetail`](crate::model::StackResourceDetail)
@@ -8555,52 +8660,52 @@ pub mod stack_instance {
     impl Builder {
         /// <p>The name or unique ID of the stack set that the stack instance is associated
         /// with.</p>
-        pub fn stack_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_id = Some(inp.into());
+        pub fn stack_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_id = Some(input.into());
             self
         }
-        pub fn set_stack_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_id = inp;
+        pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_set_id = input;
             self
         }
         /// <p>The name of the AWS Region that the stack instance is associated with.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// <p>[Self-managed permissions] The name of the AWS account that the stack instance is associated with.</p>
-        pub fn account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account = Some(inp.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account = Some(input.into());
             self
         }
-        pub fn set_account(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account = inp;
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account = input;
             self
         }
         /// <p>The ID of the stack instance.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
-        pub fn parameter_overrides(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameter_overrides = Some(v);
             self
         }
         pub fn set_parameter_overrides(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameter_overrides = inp;
+            self.parameter_overrides = input;
             self
         }
         /// <p>The status of the stack instance, in terms of its synchronization with its associated
@@ -8637,52 +8742,55 @@ pub mod stack_instance {
         /// set.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::StackInstanceStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StackInstanceStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackInstanceStatus>,
+            input: std::option::Option<crate::model::StackInstanceStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The detailed status of the stack instance.</p>
         pub fn stack_instance_status(
             mut self,
-            inp: crate::model::StackInstanceComprehensiveStatus,
+            input: crate::model::StackInstanceComprehensiveStatus,
         ) -> Self {
-            self.stack_instance_status = Some(inp);
+            self.stack_instance_status = Some(input);
             self
         }
         pub fn set_stack_instance_status(
             mut self,
-            inp: std::option::Option<crate::model::StackInstanceComprehensiveStatus>,
+            input: std::option::Option<crate::model::StackInstanceComprehensiveStatus>,
         ) -> Self {
-            self.stack_instance_status = inp;
+            self.stack_instance_status = input;
             self
         }
         /// <p>The explanation for the specific status code that is assigned to this stack
         /// instance.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
         /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-        pub fn organizational_unit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.organizational_unit_id = Some(inp.into());
+        pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organizational_unit_id = Some(input.into());
             self
         }
         pub fn set_organizational_unit_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.organizational_unit_id = inp;
+            self.organizational_unit_id = input;
             self
         }
         /// <p>Status of the stack instance's actual configuration compared to the expected template
@@ -8710,29 +8818,29 @@ pub mod stack_instance {
         /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
         /// </li>
         /// </ul>
-        pub fn drift_status(mut self, inp: crate::model::StackDriftStatus) -> Self {
-            self.drift_status = Some(inp);
+        pub fn drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
+            self.drift_status = Some(input);
             self
         }
         pub fn set_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftStatus>,
+            input: std::option::Option<crate::model::StackDriftStatus>,
         ) -> Self {
-            self.drift_status = inp;
+            self.drift_status = input;
             self
         }
         /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack
         /// instance. This value will be <code>NULL</code> for any stack instance on which drift
         /// detection has not yet been performed.</p>
-        pub fn last_drift_check_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_drift_check_timestamp = Some(inp);
+        pub fn last_drift_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_drift_check_timestamp = Some(input);
             self
         }
         pub fn set_last_drift_check_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_drift_check_timestamp = inp;
+            self.last_drift_check_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`StackInstance`](crate::model::StackInstance)
@@ -8837,110 +8945,113 @@ pub mod stack_event {
     }
     impl Builder {
         /// <p>The unique ID name of the instance of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The unique ID of this event.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_id = Some(inp.into());
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
             self
         }
-        pub fn set_event_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.event_id = inp;
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
             self
         }
         /// <p>The name associated with a stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>The logical name of the resource specified in the template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// <p>The name or unique identifier associated with the physical instance of the
         /// resource.</p>
-        pub fn physical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.physical_resource_id = Some(inp.into());
+        pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.physical_resource_id = Some(input.into());
             self
         }
         pub fn set_physical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.physical_resource_id = inp;
+            self.physical_resource_id = input;
             self
         }
         /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
         /// Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>Time the status was updated.</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// <p>Current status of the resource.</p>
-        pub fn resource_status(mut self, inp: crate::model::ResourceStatus) -> Self {
-            self.resource_status = Some(inp);
+        pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
+            self.resource_status = Some(input);
             self
         }
         pub fn set_resource_status(
             mut self,
-            inp: std::option::Option<crate::model::ResourceStatus>,
+            input: std::option::Option<crate::model::ResourceStatus>,
         ) -> Self {
-            self.resource_status = inp;
+            self.resource_status = input;
             self
         }
         /// <p>Success/failure message associated with the resource.</p>
-        pub fn resource_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_status_reason = Some(inp.into());
+        pub fn resource_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_status_reason = Some(input.into());
             self
         }
         pub fn set_resource_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_status_reason = inp;
+            self.resource_status_reason = input;
             self
         }
         /// <p>BLOB of the properties used to create the resource.</p>
-        pub fn resource_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_properties = Some(inp.into());
+        pub fn resource_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_properties = Some(input.into());
             self
         }
         pub fn set_resource_properties(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_properties = inp;
+            self.resource_properties = input;
             self
         }
         /// <p>The token passed to the operation that generated this event.</p>
@@ -8955,15 +9066,15 @@ pub mod stack_event {
         /// stack operation . For example, if you create a stack using the console, each stack event
         /// would be assigned the same token in the following format:
         /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`StackEvent`](crate::model::StackEvent)
@@ -9082,25 +9193,25 @@ pub mod change {
     impl Builder {
         /// <p>The type of entity that AWS CloudFormation changes. Currently, the only entity type
         /// is <code>Resource</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ChangeType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ChangeType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::ChangeType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ChangeType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>A <code>ResourceChange</code> structure that describes the resource and action that
         /// AWS CloudFormation will perform.</p>
-        pub fn resource_change(mut self, inp: crate::model::ResourceChange) -> Self {
-            self.resource_change = Some(inp);
+        pub fn resource_change(mut self, input: crate::model::ResourceChange) -> Self {
+            self.resource_change = Some(input);
             self
         }
         pub fn set_resource_change(
             mut self,
-            inp: std::option::Option<crate::model::ResourceChange>,
+            input: std::option::Option<crate::model::ResourceChange>,
         ) -> Self {
-            self.resource_change = inp;
+            self.resource_change = input;
             self
         }
         /// Consumes the builder and constructs a [`Change`](crate::model::Change)
@@ -9200,47 +9311,53 @@ pub mod resource_change {
         /// (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code>
         /// (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code>
         /// (exact action for the resource cannot be determined).</p>
-        pub fn action(mut self, inp: crate::model::ChangeAction) -> Self {
-            self.action = Some(inp);
+        pub fn action(mut self, input: crate::model::ChangeAction) -> Self {
+            self.action = Some(input);
             self
         }
-        pub fn set_action(mut self, inp: std::option::Option<crate::model::ChangeAction>) -> Self {
-            self.action = inp;
+        pub fn set_action(
+            mut self,
+            input: std::option::Option<crate::model::ChangeAction>,
+        ) -> Self {
+            self.action = input;
             self
         }
         /// <p>The resource's logical ID, which is defined in the stack's template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         /// <p>The resource's physical ID (resource name). Resources that you are adding don't have
         /// physical IDs because they haven't been created.</p>
-        pub fn physical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.physical_resource_id = Some(inp.into());
+        pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.physical_resource_id = Some(input.into());
             self
         }
         pub fn set_physical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.physical_resource_id = inp;
+            self.physical_resource_id = input;
             self
         }
         /// <p>The type of AWS CloudFormation resource, such as
         /// <code>AWS::S3::Bucket</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace
@@ -9256,62 +9373,65 @@ pub mod resource_change {
         /// the <code>Replacement</code> value depends on the change with the most impact. A
         /// <code>RequiresRecreation</code> value of <code>Always</code> has the most impact,
         /// followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
-        pub fn replacement(mut self, inp: crate::model::Replacement) -> Self {
-            self.replacement = Some(inp);
+        pub fn replacement(mut self, input: crate::model::Replacement) -> Self {
+            self.replacement = Some(input);
             self
         }
         pub fn set_replacement(
             mut self,
-            inp: std::option::Option<crate::model::Replacement>,
+            input: std::option::Option<crate::model::Replacement>,
         ) -> Self {
-            self.replacement = inp;
+            self.replacement = input;
             self
         }
-        pub fn scope(mut self, inp: impl Into<crate::model::ResourceAttribute>) -> Self {
+        pub fn scope(mut self, input: impl Into<crate::model::ResourceAttribute>) -> Self {
             let mut v = self.scope.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.scope = Some(v);
             self
         }
         pub fn set_scope(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
         ) -> Self {
-            self.scope = inp;
+            self.scope = input;
             self
         }
-        pub fn details(mut self, inp: impl Into<crate::model::ResourceChangeDetail>) -> Self {
+        pub fn details(mut self, input: impl Into<crate::model::ResourceChangeDetail>) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.details = Some(v);
             self
         }
         pub fn set_details(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceChangeDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceChangeDetail>>,
         ) -> Self {
-            self.details = inp;
+            self.details = input;
             self
         }
         /// <p>The change set ID of the nested change set.</p>
-        pub fn change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_id = Some(inp.into());
+        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_id = Some(input.into());
             self
         }
-        pub fn set_change_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.change_set_id = inp;
+        pub fn set_change_set_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.change_set_id = input;
             self
         }
         /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-        pub fn module_info(mut self, inp: crate::model::ModuleInfo) -> Self {
-            self.module_info = Some(inp);
+        pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
+            self.module_info = Some(input);
             self
         }
         pub fn set_module_info(
             mut self,
-            inp: std::option::Option<crate::model::ModuleInfo>,
+            input: std::option::Option<crate::model::ModuleInfo>,
         ) -> Self {
-            self.module_info = inp;
+            self.module_info = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceChange`](crate::model::ResourceChange)
@@ -9431,15 +9551,15 @@ pub mod resource_change_detail {
     impl Builder {
         /// <p>A <code>ResourceTargetDefinition</code> structure that describes the field that AWS
         /// CloudFormation will change and whether the resource will be recreated.</p>
-        pub fn target(mut self, inp: crate::model::ResourceTargetDefinition) -> Self {
-            self.target = Some(inp);
+        pub fn target(mut self, input: crate::model::ResourceTargetDefinition) -> Self {
+            self.target = Some(input);
             self
         }
         pub fn set_target(
             mut self,
-            inp: std::option::Option<crate::model::ResourceTargetDefinition>,
+            input: std::option::Option<crate::model::ResourceTargetDefinition>,
         ) -> Self {
-            self.target = inp;
+            self.target = input;
             self
         }
         /// <p>Indicates whether AWS CloudFormation can determine the target value, and whether the
@@ -9456,15 +9576,15 @@ pub mod resource_change_detail {
         /// of the reference (the physical ID of the resource) might change, depending on if the
         /// resource is recreated. If the resource is recreated, it will have a new physical ID, so all
         /// references to that resource will also be updated.</p>
-        pub fn evaluation(mut self, inp: crate::model::EvaluationType) -> Self {
-            self.evaluation = Some(inp);
+        pub fn evaluation(mut self, input: crate::model::EvaluationType) -> Self {
+            self.evaluation = Some(input);
             self
         }
         pub fn set_evaluation(
             mut self,
-            inp: std::option::Option<crate::model::EvaluationType>,
+            input: std::option::Option<crate::model::EvaluationType>,
         ) -> Self {
-            self.evaluation = inp;
+            self.evaluation = input;
             self
         }
         /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five
@@ -9503,15 +9623,15 @@ pub mod resource_change_detail {
         /// AWS CloudFormation until you run an update on the parent stack.</p>
         /// </li>
         /// </ul>
-        pub fn change_source(mut self, inp: crate::model::ChangeSource) -> Self {
-            self.change_source = Some(inp);
+        pub fn change_source(mut self, input: crate::model::ChangeSource) -> Self {
+            self.change_source = Some(input);
             self
         }
         pub fn set_change_source(
             mut self,
-            inp: std::option::Option<crate::model::ChangeSource>,
+            input: std::option::Option<crate::model::ChangeSource>,
         ) -> Self {
-            self.change_source = inp;
+            self.change_source = input;
             self
         }
         /// <p>The identity of the entity that triggered this change. This entity is a member of the
@@ -9521,12 +9641,15 @@ pub mod resource_change_detail {
         /// (<code>KeyPairName</code>).</p>
         /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value
         /// is given for <code>CausingEntity</code>.</p>
-        pub fn causing_entity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.causing_entity = Some(inp.into());
+        pub fn causing_entity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.causing_entity = Some(input.into());
             self
         }
-        pub fn set_causing_entity(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.causing_entity = inp;
+        pub fn set_causing_entity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.causing_entity = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceChangeDetail`](crate::model::ResourceChangeDetail)
@@ -9710,25 +9833,25 @@ pub mod resource_target_definition {
         /// <p>Indicates which resource attribute is triggering this update, such as a change in the
         /// resource attribute's <code>Metadata</code>, <code>Properties</code>, or
         /// <code>Tags</code>.</p>
-        pub fn attribute(mut self, inp: crate::model::ResourceAttribute) -> Self {
-            self.attribute = Some(inp);
+        pub fn attribute(mut self, input: crate::model::ResourceAttribute) -> Self {
+            self.attribute = Some(input);
             self
         }
         pub fn set_attribute(
             mut self,
-            inp: std::option::Option<crate::model::ResourceAttribute>,
+            input: std::option::Option<crate::model::ResourceAttribute>,
         ) -> Self {
-            self.attribute = inp;
+            self.attribute = input;
             self
         }
         /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the
         /// property. For all other attributes, the value is null.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a
@@ -9736,15 +9859,15 @@ pub mod resource_target_definition {
         /// <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the
         /// conditions for a <code>Conditionally</code> recreation, see the update behavior for that
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the AWS CloudFormation User Guide.</p>
-        pub fn requires_recreation(mut self, inp: crate::model::RequiresRecreation) -> Self {
-            self.requires_recreation = Some(inp);
+        pub fn requires_recreation(mut self, input: crate::model::RequiresRecreation) -> Self {
+            self.requires_recreation = Some(input);
             self
         }
         pub fn set_requires_recreation(
             mut self,
-            inp: std::option::Option<crate::model::RequiresRecreation>,
+            input: std::option::Option<crate::model::RequiresRecreation>,
         ) -> Self {
-            self.requires_recreation = inp;
+            self.requires_recreation = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition)
@@ -10117,21 +10240,21 @@ pub mod account_limit {
         /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> |
         /// <code>StackOutputsLimit</code>
         /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value that is associated with the account limit name.</p>
-        pub fn value(mut self, inp: i32) -> Self {
-            self.value = Some(inp);
+        pub fn value(mut self, input: i32) -> Self {
+            self.value = Some(input);
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<i32>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`AccountLimit`](crate::model::AccountLimit)
@@ -10246,24 +10369,27 @@ pub mod resource_to_import {
     }
     impl Builder {
         /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the AWS CloudFormation User Guide.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The logical ID of the target resource as specified in the template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.logical_resource_id = Some(inp.into());
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logical_resource_id = Some(input.into());
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.logical_resource_id = inp;
+            self.logical_resource_id = input;
             self
         }
         pub fn resource_identifier(
@@ -10278,11 +10404,11 @@ pub mod resource_to_import {
         }
         pub fn set_resource_identifier(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.resource_identifier = inp;
+            self.resource_identifier = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceToImport`](crate::model::ResourceToImport)

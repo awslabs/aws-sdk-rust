@@ -14,53 +14,54 @@ pub mod add_permission_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.label = Some(inp.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
             self
         }
-        pub fn set_label(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.label = inp;
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
             self
         }
-        pub fn aws_account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn aws_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_account_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.aws_account_ids = Some(v);
             self
         }
         pub fn set_aws_account_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.aws_account_ids = inp;
+            self.aws_account_ids = input;
             self
         }
-        pub fn actions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.actions = Some(v);
             self
         }
         pub fn set_actions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.actions = inp;
+            self.actions = input;
             self
         }
         /// Consumes the builder and constructs a [`AddPermissionInput`](crate::input::AddPermissionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AddPermissionInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::AddPermissionInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::AddPermissionInput {
                 queue_url: self.queue_url,
                 label: self.label,
@@ -80,7 +81,7 @@ impl AddPermissionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddPermission,
             aws_http::AwsErrorRetryPolicy,
@@ -140,7 +141,7 @@ impl AddPermissionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -148,7 +149,7 @@ impl AddPermissionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -181,39 +182,44 @@ pub mod change_message_visibility_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code>
         /// <a>ReceiveMessage</a>
         /// </code> action.</p>
-        pub fn receipt_handle(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.receipt_handle = Some(inp.into());
+        pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
+            self.receipt_handle = Some(input.into());
             self
         }
-        pub fn set_receipt_handle(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.receipt_handle = inp;
+        pub fn set_receipt_handle(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.receipt_handle = input;
             self
         }
         /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
-        pub fn visibility_timeout(mut self, inp: i32) -> Self {
-            self.visibility_timeout = Some(inp);
+        pub fn visibility_timeout(mut self, input: i32) -> Self {
+            self.visibility_timeout = Some(input);
             self
         }
-        pub fn set_visibility_timeout(mut self, inp: i32) -> Self {
-            self.visibility_timeout = Some(inp);
+        pub fn set_visibility_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.visibility_timeout = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeMessageVisibilityInput`](crate::input::ChangeMessageVisibilityInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ChangeMessageVisibilityInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ChangeMessageVisibilityInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ChangeMessageVisibilityInput {
                 queue_url: self.queue_url,
                 receipt_handle: self.receipt_handle,
@@ -233,7 +239,7 @@ impl ChangeMessageVisibilityInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ChangeMessageVisibility,
             aws_http::AwsErrorRetryPolicy,
@@ -293,7 +299,7 @@ impl ChangeMessageVisibilityInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -301,7 +307,7 @@ impl ChangeMessageVisibilityInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -335,36 +341,36 @@ pub mod change_message_visibility_batch_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         pub fn entries(
             mut self,
-            inp: impl Into<crate::model::ChangeMessageVisibilityBatchRequestEntry>,
+            input: impl Into<crate::model::ChangeMessageVisibilityBatchRequestEntry>,
         ) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.entries = Some(v);
             self
         }
         pub fn set_entries(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::ChangeMessageVisibilityBatchRequestEntry>,
             >,
         ) -> Self {
-            self.entries = inp;
+            self.entries = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchInput`](crate::input::ChangeMessageVisibilityBatchInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ChangeMessageVisibilityBatchInput,
             smithy_http::operation::BuildError,
         > {
@@ -386,7 +392,7 @@ impl ChangeMessageVisibilityBatchInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ChangeMessageVisibilityBatch,
             aws_http::AwsErrorRetryPolicy,
@@ -447,7 +453,7 @@ impl ChangeMessageVisibilityBatchInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -455,7 +461,7 @@ impl ChangeMessageVisibilityBatchInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -503,12 +509,12 @@ pub mod create_queue_input {
         /// </li>
         /// </ul>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_name = Some(inp.into());
+        pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_name = Some(input.into());
             self
         }
-        pub fn set_queue_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_name = inp;
+        pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_name = input;
             self
         }
         pub fn tags(
@@ -523,11 +529,11 @@ pub mod create_queue_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         pub fn attributes(
@@ -542,17 +548,18 @@ pub mod create_queue_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateQueueInput`](crate::input::CreateQueueInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateQueueInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateQueueInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateQueueInput {
                 queue_name: self.queue_name,
                 tags: self.tags,
@@ -571,7 +578,7 @@ impl CreateQueueInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateQueue,
             aws_http::AwsErrorRetryPolicy,
@@ -628,7 +635,7 @@ impl CreateQueueInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -636,7 +643,7 @@ impl CreateQueueInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -668,27 +675,31 @@ pub mod delete_message_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// <p>The receipt handle associated with the message to delete.</p>
-        pub fn receipt_handle(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.receipt_handle = Some(inp.into());
+        pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
+            self.receipt_handle = Some(input.into());
             self
         }
-        pub fn set_receipt_handle(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.receipt_handle = inp;
+        pub fn set_receipt_handle(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.receipt_handle = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::input::DeleteMessageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMessageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteMessageInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteMessageInput {
                 queue_url: self.queue_url,
                 receipt_handle: self.receipt_handle,
@@ -706,7 +717,7 @@ impl DeleteMessageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteMessage,
             aws_http::AwsErrorRetryPolicy,
@@ -766,7 +777,7 @@ impl DeleteMessageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -774,7 +785,7 @@ impl DeleteMessageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -807,35 +818,37 @@ pub mod delete_message_batch_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         pub fn entries(
             mut self,
-            inp: impl Into<crate::model::DeleteMessageBatchRequestEntry>,
+            input: impl Into<crate::model::DeleteMessageBatchRequestEntry>,
         ) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.entries = Some(v);
             self
         }
         pub fn set_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchRequestEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchRequestEntry>>,
         ) -> Self {
-            self.entries = inp;
+            self.entries = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMessageBatchInput`](crate::input::DeleteMessageBatchInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMessageBatchInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteMessageBatchInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteMessageBatchInput {
                 queue_url: self.queue_url,
                 entries: self.entries,
@@ -853,7 +866,7 @@ impl DeleteMessageBatchInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteMessageBatch,
             aws_http::AwsErrorRetryPolicy,
@@ -913,7 +926,7 @@ impl DeleteMessageBatchInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -921,7 +934,7 @@ impl DeleteMessageBatchInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -952,18 +965,19 @@ pub mod delete_queue_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue to delete.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::input::DeleteQueueInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteQueueInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteQueueInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteQueueInput {
                 queue_url: self.queue_url,
             })
@@ -980,7 +994,7 @@ impl DeleteQueueInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteQueue,
             aws_http::AwsErrorRetryPolicy,
@@ -1037,7 +1051,7 @@ impl DeleteQueueInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1045,7 +1059,7 @@ impl DeleteQueueInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1078,32 +1092,37 @@ pub mod get_queue_attributes_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
-        pub fn attribute_names(mut self, inp: impl Into<crate::model::QueueAttributeName>) -> Self {
+        pub fn attribute_names(
+            mut self,
+            input: impl Into<crate::model::QueueAttributeName>,
+        ) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attribute_names = Some(v);
             self
         }
         pub fn set_attribute_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
         ) -> Self {
-            self.attribute_names = inp;
+            self.attribute_names = input;
             self
         }
         /// Consumes the builder and constructs a [`GetQueueAttributesInput`](crate::input::GetQueueAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetQueueAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetQueueAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetQueueAttributesInput {
                 queue_url: self.queue_url,
                 attribute_names: self.attribute_names,
@@ -1121,7 +1140,7 @@ impl GetQueueAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetQueueAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -1181,7 +1200,7 @@ impl GetQueueAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1189,7 +1208,7 @@ impl GetQueueAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1221,30 +1240,31 @@ pub mod get_queue_url_input {
     impl Builder {
         /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_name = Some(inp.into());
+        pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_name = Some(input.into());
             self
         }
-        pub fn set_queue_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_name = inp;
+        pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_name = input;
             self
         }
         /// <p>The AWS account ID of the account that created the queue.</p>
-        pub fn queue_owner_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_owner_aws_account_id = Some(inp.into());
+        pub fn queue_owner_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_owner_aws_account_id = Some(input.into());
             self
         }
         pub fn set_queue_owner_aws_account_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.queue_owner_aws_account_id = inp;
+            self.queue_owner_aws_account_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetQueueUrlInput`](crate::input::GetQueueUrlInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetQueueUrlInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetQueueUrlInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetQueueUrlInput {
                 queue_name: self.queue_name,
                 queue_owner_aws_account_id: self.queue_owner_aws_account_id,
@@ -1262,7 +1282,7 @@ impl GetQueueUrlInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetQueueUrl,
             aws_http::AwsErrorRetryPolicy,
@@ -1319,7 +1339,7 @@ impl GetQueueUrlInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1327,7 +1347,7 @@ impl GetQueueUrlInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1360,38 +1380,40 @@ pub mod list_dead_letter_source_queues_input {
     impl Builder {
         /// <p>The URL of a dead-letter queue.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// <p>Pagination token to request the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
         /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ListDeadLetterSourceQueuesInput`](crate::input::ListDeadLetterSourceQueuesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDeadLetterSourceQueuesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDeadLetterSourceQueuesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDeadLetterSourceQueuesInput {
                 queue_url: self.queue_url,
                 next_token: self.next_token,
@@ -1411,7 +1433,7 @@ impl ListDeadLetterSourceQueuesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListDeadLetterSourceQueues,
             aws_http::AwsErrorRetryPolicy,
@@ -1472,7 +1494,7 @@ impl ListDeadLetterSourceQueuesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1480,7 +1502,7 @@ impl ListDeadLetterSourceQueuesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1513,40 +1535,41 @@ pub mod list_queues_input {
     impl Builder {
         /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_name_prefix = Some(inp.into());
+        pub fn queue_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_name_prefix = Some(input.into());
             self
         }
         pub fn set_queue_name_prefix(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.queue_name_prefix = inp;
+            self.queue_name_prefix = input;
             self
         }
         /// <p>Pagination token to request the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
         /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ListQueuesInput`](crate::input::ListQueuesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListQueuesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListQueuesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListQueuesInput {
                 queue_name_prefix: self.queue_name_prefix,
                 next_token: self.next_token,
@@ -1565,7 +1588,7 @@ impl ListQueuesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListQueues,
             aws_http::AwsErrorRetryPolicy,
@@ -1622,7 +1645,7 @@ impl ListQueuesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1630,7 +1653,7 @@ impl ListQueuesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1660,18 +1683,19 @@ pub mod list_queue_tags_input {
     }
     impl Builder {
         /// <p>The URL of the queue.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// Consumes the builder and constructs a [`ListQueueTagsInput`](crate::input::ListQueueTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListQueueTagsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListQueueTagsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListQueueTagsInput {
                 queue_url: self.queue_url,
             })
@@ -1688,7 +1712,7 @@ impl ListQueueTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListQueueTags,
             aws_http::AwsErrorRetryPolicy,
@@ -1747,7 +1771,7 @@ impl ListQueueTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1755,7 +1779,7 @@ impl ListQueueTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1786,18 +1810,19 @@ pub mod purge_queue_input {
     impl Builder {
         /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// Consumes the builder and constructs a [`PurgeQueueInput`](crate::input::PurgeQueueInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PurgeQueueInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PurgeQueueInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PurgeQueueInput {
                 queue_url: self.queue_url,
             })
@@ -1814,7 +1839,7 @@ impl PurgeQueueInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PurgeQueue,
             aws_http::AwsErrorRetryPolicy,
@@ -1871,7 +1896,7 @@ impl PurgeQueueInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1879,7 +1904,7 @@ impl PurgeQueueInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1917,56 +1942,59 @@ pub mod receive_message_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
-        pub fn attribute_names(mut self, inp: impl Into<crate::model::QueueAttributeName>) -> Self {
+        pub fn attribute_names(
+            mut self,
+            input: impl Into<crate::model::QueueAttributeName>,
+        ) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attribute_names = Some(v);
             self
         }
         pub fn set_attribute_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
         ) -> Self {
-            self.attribute_names = inp;
+            self.attribute_names = input;
             self
         }
-        pub fn message_attribute_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn message_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.message_attribute_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.message_attribute_names = Some(v);
             self
         }
         pub fn set_message_attribute_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.message_attribute_names = inp;
+            self.message_attribute_names = input;
             self
         }
         /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
-        pub fn max_number_of_messages(mut self, inp: i32) -> Self {
-            self.max_number_of_messages = Some(inp);
+        pub fn max_number_of_messages(mut self, input: i32) -> Self {
+            self.max_number_of_messages = Some(input);
             self
         }
-        pub fn set_max_number_of_messages(mut self, inp: i32) -> Self {
-            self.max_number_of_messages = Some(inp);
+        pub fn set_max_number_of_messages(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_number_of_messages = input;
             self
         }
         /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
-        pub fn visibility_timeout(mut self, inp: i32) -> Self {
-            self.visibility_timeout = Some(inp);
+        pub fn visibility_timeout(mut self, input: i32) -> Self {
+            self.visibility_timeout = Some(input);
             self
         }
-        pub fn set_visibility_timeout(mut self, inp: i32) -> Self {
-            self.visibility_timeout = Some(inp);
+        pub fn set_visibility_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.visibility_timeout = input;
             self
         }
         /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
@@ -1976,12 +2004,12 @@ pub mod receive_message_input {
         /// requests is longer than the <code>WaitTimeSeconds</code> parameter. For example,
         /// with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
         /// </important>
-        pub fn wait_time_seconds(mut self, inp: i32) -> Self {
-            self.wait_time_seconds = Some(inp);
+        pub fn wait_time_seconds(mut self, input: i32) -> Self {
+            self.wait_time_seconds = Some(input);
             self
         }
-        pub fn set_wait_time_seconds(mut self, inp: i32) -> Self {
-            self.wait_time_seconds = Some(inp);
+        pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.wait_time_seconds = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -2029,21 +2057,24 @@ pub mod receive_message_input {
         /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see
         /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a>
         /// in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-        pub fn receive_request_attempt_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.receive_request_attempt_id = Some(inp.into());
+        pub fn receive_request_attempt_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.receive_request_attempt_id = Some(input.into());
             self
         }
         pub fn set_receive_request_attempt_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.receive_request_attempt_id = inp;
+            self.receive_request_attempt_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ReceiveMessageInput`](crate::input::ReceiveMessageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ReceiveMessageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::ReceiveMessageInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ReceiveMessageInput {
                 queue_url: self.queue_url,
                 attribute_names: self.attribute_names,
@@ -2066,7 +2097,7 @@ impl ReceiveMessageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ReceiveMessage,
             aws_http::AwsErrorRetryPolicy,
@@ -2125,7 +2156,7 @@ impl ReceiveMessageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2133,7 +2164,7 @@ impl ReceiveMessageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2165,30 +2196,32 @@ pub mod remove_permission_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// <p>The identification of the permission to remove. This is the label added using the <code>
         /// <a>AddPermission</a>
         /// </code> action.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.label = Some(inp.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
             self
         }
-        pub fn set_label(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.label = inp;
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
             self
         }
         /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::input::RemovePermissionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RemovePermissionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemovePermissionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemovePermissionInput {
                 queue_url: self.queue_url,
                 label: self.label,
@@ -2206,7 +2239,7 @@ impl RemovePermissionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemovePermission,
             aws_http::AwsErrorRetryPolicy,
@@ -2265,7 +2298,7 @@ impl RemovePermissionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2273,7 +2306,7 @@ impl RemovePermissionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2317,12 +2350,12 @@ pub mod send_message_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p>
@@ -2333,12 +2366,12 @@ pub mod send_message_input {
         /// </p>
         /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
         /// </important>
-        pub fn message_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_body = Some(inp.into());
+        pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_body = Some(input.into());
             self
         }
-        pub fn set_message_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message_body = inp;
+        pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_body = input;
             self
         }
         /// <p>
@@ -2348,12 +2381,12 @@ pub mod send_message_input {
         /// <note>
         /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
         /// </note>
-        pub fn delay_seconds(mut self, inp: i32) -> Self {
-            self.delay_seconds = Some(inp);
+        pub fn delay_seconds(mut self, input: i32) -> Self {
+            self.delay_seconds = Some(input);
             self
         }
-        pub fn set_delay_seconds(mut self, inp: i32) -> Self {
-            self.delay_seconds = Some(inp);
+        pub fn set_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.delay_seconds = input;
             self
         }
         pub fn message_attributes(
@@ -2368,11 +2401,11 @@ pub mod send_message_input {
         }
         pub fn set_message_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
             >,
         ) -> Self {
-            self.message_attributes = inp;
+            self.message_attributes = input;
             self
         }
         pub fn message_system_attributes(
@@ -2387,14 +2420,14 @@ pub mod send_message_input {
         }
         pub fn set_message_system_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     crate::model::MessageSystemAttributeNameForSends,
                     crate::model::MessageSystemAttributeValue,
                 >,
             >,
         ) -> Self {
-            self.message_system_attributes = inp;
+            self.message_system_attributes = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -2444,15 +2477,15 @@ pub mod send_message_input {
         /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
         /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
         /// in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-        pub fn message_deduplication_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_deduplication_id = Some(inp.into());
+        pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_deduplication_id = Some(input.into());
             self
         }
         pub fn set_message_deduplication_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.message_deduplication_id = inp;
+            self.message_deduplication_id = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -2481,21 +2514,22 @@ pub mod send_message_input {
         /// <p>
         /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
         /// </important>
-        pub fn message_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_group_id = Some(inp.into());
+        pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_group_id = Some(input.into());
             self
         }
         pub fn set_message_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.message_group_id = inp;
+            self.message_group_id = input;
             self
         }
         /// Consumes the builder and constructs a [`SendMessageInput`](crate::input::SendMessageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SendMessageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::SendMessageInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::SendMessageInput {
                 queue_url: self.queue_url,
                 message_body: self.message_body,
@@ -2518,7 +2552,7 @@ impl SendMessageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SendMessage,
             aws_http::AwsErrorRetryPolicy,
@@ -2575,7 +2609,7 @@ impl SendMessageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2583,7 +2617,7 @@ impl SendMessageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2616,35 +2650,37 @@ pub mod send_message_batch_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         pub fn entries(
             mut self,
-            inp: impl Into<crate::model::SendMessageBatchRequestEntry>,
+            input: impl Into<crate::model::SendMessageBatchRequestEntry>,
         ) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.entries = Some(v);
             self
         }
         pub fn set_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchRequestEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchRequestEntry>>,
         ) -> Self {
-            self.entries = inp;
+            self.entries = input;
             self
         }
         /// Consumes the builder and constructs a [`SendMessageBatchInput`](crate::input::SendMessageBatchInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SendMessageBatchInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SendMessageBatchInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SendMessageBatchInput {
                 queue_url: self.queue_url,
                 entries: self.entries,
@@ -2662,7 +2698,7 @@ impl SendMessageBatchInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SendMessageBatch,
             aws_http::AwsErrorRetryPolicy,
@@ -2722,7 +2758,7 @@ impl SendMessageBatchInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2730,7 +2766,7 @@ impl SendMessageBatchInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2764,12 +2800,12 @@ pub mod set_queue_attributes_input {
     impl Builder {
         /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         pub fn attributes(
@@ -2784,18 +2820,20 @@ pub mod set_queue_attributes_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`SetQueueAttributesInput`](crate::input::SetQueueAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SetQueueAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetQueueAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetQueueAttributesInput {
                 queue_url: self.queue_url,
                 attributes: self.attributes,
@@ -2813,7 +2851,7 @@ impl SetQueueAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetQueueAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -2873,7 +2911,7 @@ impl SetQueueAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2881,7 +2919,7 @@ impl SetQueueAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2914,12 +2952,12 @@ pub mod tag_queue_input {
     }
     impl Builder {
         /// <p>The URL of the queue.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         pub fn tags(
@@ -2934,17 +2972,18 @@ pub mod tag_queue_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagQueueInput`](crate::input::TagQueueInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagQueueInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagQueueInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagQueueInput {
                 queue_url: self.queue_url,
                 tags: self.tags,
@@ -2962,7 +3001,7 @@ impl TagQueueInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagQueue,
             aws_http::AwsErrorRetryPolicy,
@@ -3017,7 +3056,7 @@ impl TagQueueInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3025,7 +3064,7 @@ impl TagQueueInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3056,31 +3095,32 @@ pub mod untag_queue_input {
     }
     impl Builder {
         /// <p>The URL of the queue.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagQueueInput`](crate::input::UntagQueueInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagQueueInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagQueueInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagQueueInput {
                 queue_url: self.queue_url,
                 tag_keys: self.tag_keys,
@@ -3098,7 +3138,7 @@ impl UntagQueueInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagQueue,
             aws_http::AwsErrorRetryPolicy,
@@ -3155,7 +3195,7 @@ impl UntagQueueInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3163,7 +3203,7 @@ impl UntagQueueInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)

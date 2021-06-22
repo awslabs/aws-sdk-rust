@@ -14,7 +14,7 @@ impl AcceptReservedInstancesExchangeQuote {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AcceptReservedInstancesExchangeQuote {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AcceptReservedInstancesExchangeQuoteOutput,
         crate::error::AcceptReservedInstancesExchangeQuoteError,
     >;
@@ -47,7 +47,7 @@ impl AcceptTransitGatewayMulticastDomainAssociations {
 impl smithy_http::response::ParseStrictResponse
     for AcceptTransitGatewayMulticastDomainAssociations
 {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AcceptTransitGatewayMulticastDomainAssociationsOutput,
         crate::error::AcceptTransitGatewayMulticastDomainAssociationsError,
     >;
@@ -78,7 +78,7 @@ impl AcceptTransitGatewayPeeringAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AcceptTransitGatewayPeeringAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AcceptTransitGatewayPeeringAttachmentOutput,
         crate::error::AcceptTransitGatewayPeeringAttachmentError,
     >;
@@ -111,7 +111,7 @@ impl AcceptTransitGatewayVpcAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AcceptTransitGatewayVpcAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AcceptTransitGatewayVpcAttachmentOutput,
         crate::error::AcceptTransitGatewayVpcAttachmentError,
     >;
@@ -140,7 +140,7 @@ impl AcceptVpcEndpointConnections {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AcceptVpcEndpointConnections {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AcceptVpcEndpointConnectionsOutput,
         crate::error::AcceptVpcEndpointConnectionsError,
     >;
@@ -173,7 +173,7 @@ impl AcceptVpcPeeringConnection {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AcceptVpcPeeringConnection {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AcceptVpcPeeringConnectionOutput,
         crate::error::AcceptVpcPeeringConnectionError,
     >;
@@ -211,8 +211,10 @@ impl AdvertiseByoipCidr {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AdvertiseByoipCidr {
-    type Output =
-        Result<crate::output::AdvertiseByoipCidrOutput, crate::error::AdvertiseByoipCidrError>;
+    type Output = std::result::Result<
+        crate::output::AdvertiseByoipCidrOutput,
+        crate::error::AdvertiseByoipCidrError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_advertise_byoip_cidr_error(response)
@@ -249,7 +251,10 @@ impl AllocateAddress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AllocateAddress {
-    type Output = Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError>;
+    type Output = std::result::Result<
+        crate::output::AllocateAddressOutput,
+        crate::error::AllocateAddressError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_allocate_address_error(response)
@@ -276,7 +281,8 @@ impl AllocateHosts {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AllocateHosts {
-    type Output = Result<crate::output::AllocateHostsOutput, crate::error::AllocateHostsError>;
+    type Output =
+        std::result::Result<crate::output::AllocateHostsOutput, crate::error::AllocateHostsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_allocate_hosts_error(response)
@@ -303,7 +309,7 @@ impl ApplySecurityGroupsToClientVpnTargetNetwork {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ApplySecurityGroupsToClientVpnTargetNetwork {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ApplySecurityGroupsToClientVpnTargetNetworkOutput,
         crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError,
     >;
@@ -339,8 +345,10 @@ impl AssignIpv6Addresses {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssignIpv6Addresses {
-    type Output =
-        Result<crate::output::AssignIpv6AddressesOutput, crate::error::AssignIpv6AddressesError>;
+    type Output = std::result::Result<
+        crate::output::AssignIpv6AddressesOutput,
+        crate::error::AssignIpv6AddressesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_assign_ipv6_addresses_error(response)
@@ -376,7 +384,7 @@ impl AssignPrivateIpAddresses {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssignPrivateIpAddresses {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssignPrivateIpAddressesOutput,
         crate::error::AssignPrivateIpAddressesError,
     >;
@@ -428,8 +436,10 @@ impl AssociateAddress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateAddress {
-    type Output =
-        Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError>;
+    type Output = std::result::Result<
+        crate::output::AssociateAddressOutput,
+        crate::error::AssociateAddressError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_address_error(response)
@@ -455,7 +465,7 @@ impl AssociateClientVpnTargetNetwork {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateClientVpnTargetNetwork {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssociateClientVpnTargetNetworkOutput,
         crate::error::AssociateClientVpnTargetNetworkError,
     >;
@@ -486,8 +496,10 @@ impl AssociateDhcpOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateDhcpOptions {
-    type Output =
-        Result<crate::output::AssociateDhcpOptionsOutput, crate::error::AssociateDhcpOptionsError>;
+    type Output = std::result::Result<
+        crate::output::AssociateDhcpOptionsOutput,
+        crate::error::AssociateDhcpOptionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_dhcp_options_error(response)
@@ -524,7 +536,7 @@ impl AssociateEnclaveCertificateIamRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateEnclaveCertificateIamRole {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssociateEnclaveCertificateIamRoleOutput,
         crate::error::AssociateEnclaveCertificateIamRoleError,
     >;
@@ -553,7 +565,7 @@ impl AssociateIamInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateIamInstanceProfile {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssociateIamInstanceProfileOutput,
         crate::error::AssociateIamInstanceProfileError,
     >;
@@ -587,8 +599,10 @@ impl AssociateRouteTable {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateRouteTable {
-    type Output =
-        Result<crate::output::AssociateRouteTableOutput, crate::error::AssociateRouteTableError>;
+    type Output = std::result::Result<
+        crate::output::AssociateRouteTableOutput,
+        crate::error::AssociateRouteTableError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_route_table_error(response)
@@ -614,7 +628,7 @@ impl AssociateSubnetCidrBlock {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateSubnetCidrBlock {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssociateSubnetCidrBlockOutput,
         crate::error::AssociateSubnetCidrBlockError,
     >;
@@ -643,7 +657,7 @@ impl AssociateTransitGatewayMulticastDomain {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateTransitGatewayMulticastDomain {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssociateTransitGatewayMulticastDomainOutput,
         crate::error::AssociateTransitGatewayMulticastDomainError,
     >;
@@ -674,7 +688,7 @@ impl AssociateTransitGatewayRouteTable {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateTransitGatewayRouteTable {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssociateTransitGatewayRouteTableOutput,
         crate::error::AssociateTransitGatewayRouteTableError,
     >;
@@ -710,7 +724,7 @@ impl AssociateVpcCidrBlock {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateVpcCidrBlock {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssociateVpcCidrBlockOutput,
         crate::error::AssociateVpcCidrBlockError,
     >;
@@ -744,8 +758,10 @@ impl AttachClassicLinkVpc {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AttachClassicLinkVpc {
-    type Output =
-        Result<crate::output::AttachClassicLinkVpcOutput, crate::error::AttachClassicLinkVpcError>;
+    type Output = std::result::Result<
+        crate::output::AttachClassicLinkVpcOutput,
+        crate::error::AttachClassicLinkVpcError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_attach_classic_link_vpc_error(response)
@@ -771,7 +787,7 @@ impl AttachInternetGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AttachInternetGateway {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AttachInternetGatewayOutput,
         crate::error::AttachInternetGatewayError,
     >;
@@ -799,7 +815,7 @@ impl AttachNetworkInterface {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AttachNetworkInterface {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AttachNetworkInterfaceOutput,
         crate::error::AttachNetworkInterfaceError,
     >;
@@ -851,7 +867,8 @@ impl AttachVolume {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AttachVolume {
-    type Output = Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError>;
+    type Output =
+        std::result::Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_attach_volume_error(response)
@@ -878,8 +895,10 @@ impl AttachVpnGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AttachVpnGateway {
-    type Output =
-        Result<crate::output::AttachVpnGatewayOutput, crate::error::AttachVpnGatewayError>;
+    type Output = std::result::Result<
+        crate::output::AttachVpnGatewayOutput,
+        crate::error::AttachVpnGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_attach_vpn_gateway_error(response)
@@ -906,7 +925,7 @@ impl AuthorizeClientVpnIngress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AuthorizeClientVpnIngress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AuthorizeClientVpnIngressOutput,
         crate::error::AuthorizeClientVpnIngressError,
     >;
@@ -942,7 +961,7 @@ impl AuthorizeSecurityGroupEgress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AuthorizeSecurityGroupEgress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AuthorizeSecurityGroupEgressOutput,
         crate::error::AuthorizeSecurityGroupEgressError,
     >;
@@ -979,7 +998,7 @@ impl AuthorizeSecurityGroupIngress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AuthorizeSecurityGroupIngress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AuthorizeSecurityGroupIngressOutput,
         crate::error::AuthorizeSecurityGroupIngressError,
     >;
@@ -1011,7 +1030,8 @@ impl BundleInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for BundleInstance {
-    type Output = Result<crate::output::BundleInstanceOutput, crate::error::BundleInstanceError>;
+    type Output =
+        std::result::Result<crate::output::BundleInstanceOutput, crate::error::BundleInstanceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_bundle_instance_error(response)
@@ -1036,8 +1056,10 @@ impl CancelBundleTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelBundleTask {
-    type Output =
-        Result<crate::output::CancelBundleTaskOutput, crate::error::CancelBundleTaskError>;
+    type Output = std::result::Result<
+        crate::output::CancelBundleTaskOutput,
+        crate::error::CancelBundleTaskError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_cancel_bundle_task_error(response)
@@ -1067,7 +1089,7 @@ impl CancelCapacityReservation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelCapacityReservation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CancelCapacityReservationOutput,
         crate::error::CancelCapacityReservationError,
     >;
@@ -1099,8 +1121,10 @@ impl CancelConversionTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelConversionTask {
-    type Output =
-        Result<crate::output::CancelConversionTaskOutput, crate::error::CancelConversionTaskError>;
+    type Output = std::result::Result<
+        crate::output::CancelConversionTaskOutput,
+        crate::error::CancelConversionTaskError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_cancel_conversion_task_error(response)
@@ -1127,8 +1151,10 @@ impl CancelExportTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelExportTask {
-    type Output =
-        Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>;
+    type Output = std::result::Result<
+        crate::output::CancelExportTaskOutput,
+        crate::error::CancelExportTaskError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_cancel_export_task_error(response)
@@ -1153,8 +1179,10 @@ impl CancelImportTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelImportTask {
-    type Output =
-        Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError>;
+    type Output = std::result::Result<
+        crate::output::CancelImportTaskOutput,
+        crate::error::CancelImportTaskError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_cancel_import_task_error(response)
@@ -1182,7 +1210,7 @@ impl CancelReservedInstancesListing {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelReservedInstancesListing {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CancelReservedInstancesListingOutput,
         crate::error::CancelReservedInstancesListingError,
     >;
@@ -1215,7 +1243,7 @@ impl CancelSpotFleetRequests {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelSpotFleetRequests {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CancelSpotFleetRequestsOutput,
         crate::error::CancelSpotFleetRequestsError,
     >;
@@ -1246,7 +1274,7 @@ impl CancelSpotInstanceRequests {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelSpotInstanceRequests {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CancelSpotInstanceRequestsOutput,
         crate::error::CancelSpotInstanceRequestsError,
     >;
@@ -1276,7 +1304,7 @@ impl ConfirmProductInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ConfirmProductInstance {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ConfirmProductInstanceOutput,
         crate::error::ConfirmProductInstanceError,
     >;
@@ -1304,7 +1332,8 @@ impl CopyFpgaImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopyFpgaImage {
-    type Output = Result<crate::output::CopyFpgaImageOutput, crate::error::CopyFpgaImageError>;
+    type Output =
+        std::result::Result<crate::output::CopyFpgaImageOutput, crate::error::CopyFpgaImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_fpga_image_error(response)
@@ -1347,7 +1376,7 @@ impl CopyImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopyImage {
-    type Output = Result<crate::output::CopyImageOutput, crate::error::CopyImageError>;
+    type Output = std::result::Result<crate::output::CopyImageOutput, crate::error::CopyImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_image_error(response)
@@ -1391,7 +1420,8 @@ impl CopySnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopySnapshot {
-    type Output = Result<crate::output::CopySnapshotOutput, crate::error::CopySnapshotError>;
+    type Output =
+        std::result::Result<crate::output::CopySnapshotOutput, crate::error::CopySnapshotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_snapshot_error(response)
@@ -1430,7 +1460,7 @@ impl CreateCapacityReservation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateCapacityReservation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateCapacityReservationOutput,
         crate::error::CreateCapacityReservationError,
     >;
@@ -1459,8 +1489,10 @@ impl CreateCarrierGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateCarrierGateway {
-    type Output =
-        Result<crate::output::CreateCarrierGatewayOutput, crate::error::CreateCarrierGatewayError>;
+    type Output = std::result::Result<
+        crate::output::CreateCarrierGatewayOutput,
+        crate::error::CreateCarrierGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_carrier_gateway_error(response)
@@ -1487,7 +1519,7 @@ impl CreateClientVpnEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateClientVpnEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateClientVpnEndpointOutput,
         crate::error::CreateClientVpnEndpointError,
     >;
@@ -1516,8 +1548,10 @@ impl CreateClientVpnRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateClientVpnRoute {
-    type Output =
-        Result<crate::output::CreateClientVpnRouteOutput, crate::error::CreateClientVpnRouteError>;
+    type Output = std::result::Result<
+        crate::output::CreateClientVpnRouteOutput,
+        crate::error::CreateClientVpnRouteError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_client_vpn_route_error(response)
@@ -1577,7 +1611,7 @@ impl CreateCustomerGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateCustomerGateway {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateCustomerGatewayOutput,
         crate::error::CreateCustomerGatewayError,
     >;
@@ -1608,8 +1642,10 @@ impl CreateDefaultSubnet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDefaultSubnet {
-    type Output =
-        Result<crate::output::CreateDefaultSubnetOutput, crate::error::CreateDefaultSubnetError>;
+    type Output = std::result::Result<
+        crate::output::CreateDefaultSubnetOutput,
+        crate::error::CreateDefaultSubnetError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_default_subnet_error(response)
@@ -1645,8 +1681,10 @@ impl CreateDefaultVpc {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDefaultVpc {
-    type Output =
-        Result<crate::output::CreateDefaultVpcOutput, crate::error::CreateDefaultVpcError>;
+    type Output = std::result::Result<
+        crate::output::CreateDefaultVpcOutput,
+        crate::error::CreateDefaultVpcError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_default_vpc_error(response)
@@ -1722,8 +1760,10 @@ impl CreateDhcpOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDhcpOptions {
-    type Output =
-        Result<crate::output::CreateDhcpOptionsOutput, crate::error::CreateDhcpOptionsError>;
+    type Output = std::result::Result<
+        crate::output::CreateDhcpOptionsOutput,
+        crate::error::CreateDhcpOptionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_dhcp_options_error(response)
@@ -1751,7 +1791,7 @@ impl CreateEgressOnlyInternetGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateEgressOnlyInternetGateway {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateEgressOnlyInternetGatewayOutput,
         crate::error::CreateEgressOnlyInternetGatewayError,
     >;
@@ -1782,7 +1822,8 @@ impl CreateFleet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateFleet {
-    type Output = Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError>;
+    type Output =
+        std::result::Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_fleet_error(response)
@@ -1817,7 +1858,8 @@ impl CreateFlowLogs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateFlowLogs {
-    type Output = Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError>;
+    type Output =
+        std::result::Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_flow_logs_error(response)
@@ -1847,7 +1889,10 @@ impl CreateFpgaImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateFpgaImage {
-    type Output = Result<crate::output::CreateFpgaImageOutput, crate::error::CreateFpgaImageError>;
+    type Output = std::result::Result<
+        crate::output::CreateFpgaImageOutput,
+        crate::error::CreateFpgaImageError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_fpga_image_error(response)
@@ -1878,7 +1923,8 @@ impl CreateImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateImage {
-    type Output = Result<crate::output::CreateImageOutput, crate::error::CreateImageError>;
+    type Output =
+        std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_image_error(response)
@@ -1906,7 +1952,7 @@ impl CreateInstanceExportTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateInstanceExportTask {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateInstanceExportTaskOutput,
         crate::error::CreateInstanceExportTaskError,
     >;
@@ -1936,7 +1982,7 @@ impl CreateInternetGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateInternetGateway {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateInternetGatewayOutput,
         crate::error::CreateInternetGatewayError,
     >;
@@ -1973,7 +2019,8 @@ impl CreateKeyPair {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateKeyPair {
-    type Output = Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError>;
+    type Output =
+        std::result::Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_key_pair_error(response)
@@ -2002,8 +2049,10 @@ impl CreateLaunchTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateLaunchTemplate {
-    type Output =
-        Result<crate::output::CreateLaunchTemplateOutput, crate::error::CreateLaunchTemplateError>;
+    type Output = std::result::Result<
+        crate::output::CreateLaunchTemplateOutput,
+        crate::error::CreateLaunchTemplateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_launch_template_error(response)
@@ -2033,7 +2082,7 @@ impl CreateLaunchTemplateVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateLaunchTemplateVersion {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateLaunchTemplateVersionOutput,
         crate::error::CreateLaunchTemplateVersionError,
     >;
@@ -2061,7 +2110,7 @@ impl CreateLocalGatewayRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateLocalGatewayRoute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateLocalGatewayRouteOutput,
         crate::error::CreateLocalGatewayRouteError,
     >;
@@ -2090,7 +2139,7 @@ impl CreateLocalGatewayRouteTableVpcAssociation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateLocalGatewayRouteTableVpcAssociation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateLocalGatewayRouteTableVpcAssociationOutput,
         crate::error::CreateLocalGatewayRouteTableVpcAssociationError,
     >;
@@ -2123,7 +2172,7 @@ impl CreateManagedPrefixList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateManagedPrefixList {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateManagedPrefixListOutput,
         crate::error::CreateManagedPrefixListError,
     >;
@@ -2160,8 +2209,10 @@ impl CreateNatGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateNatGateway {
-    type Output =
-        Result<crate::output::CreateNatGatewayOutput, crate::error::CreateNatGatewayError>;
+    type Output = std::result::Result<
+        crate::output::CreateNatGatewayOutput,
+        crate::error::CreateNatGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_nat_gateway_error(response)
@@ -2188,8 +2239,10 @@ impl CreateNetworkAcl {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateNetworkAcl {
-    type Output =
-        Result<crate::output::CreateNetworkAclOutput, crate::error::CreateNetworkAclError>;
+    type Output = std::result::Result<
+        crate::output::CreateNetworkAclOutput,
+        crate::error::CreateNetworkAclError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_network_acl_error(response)
@@ -2221,7 +2274,7 @@ impl CreateNetworkAclEntry {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateNetworkAclEntry {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateNetworkAclEntryOutput,
         crate::error::CreateNetworkAclEntryError,
     >;
@@ -2252,7 +2305,7 @@ impl CreateNetworkInsightsPath {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateNetworkInsightsPath {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateNetworkInsightsPathOutput,
         crate::error::CreateNetworkInsightsPathError,
     >;
@@ -2282,7 +2335,7 @@ impl CreateNetworkInterface {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateNetworkInterface {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateNetworkInterfaceOutput,
         crate::error::CreateNetworkInterfaceError,
     >;
@@ -2312,7 +2365,7 @@ impl CreateNetworkInterfacePermission {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateNetworkInterfacePermission {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateNetworkInterfacePermissionOutput,
         crate::error::CreateNetworkInterfacePermissionError,
     >;
@@ -2349,8 +2402,10 @@ impl CreatePlacementGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreatePlacementGroup {
-    type Output =
-        Result<crate::output::CreatePlacementGroupOutput, crate::error::CreatePlacementGroupError>;
+    type Output = std::result::Result<
+        crate::output::CreatePlacementGroupOutput,
+        crate::error::CreatePlacementGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_placement_group_error(response)
@@ -2379,7 +2434,7 @@ impl CreateReplaceRootVolumeTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateReplaceRootVolumeTask {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateReplaceRootVolumeTaskOutput,
         crate::error::CreateReplaceRootVolumeTaskError,
     >;
@@ -2422,7 +2477,7 @@ impl CreateReservedInstancesListing {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateReservedInstancesListing {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateReservedInstancesListingOutput,
         crate::error::CreateReservedInstancesListingError,
     >;
@@ -2455,7 +2510,7 @@ impl CreateRestoreImageTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateRestoreImageTask {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateRestoreImageTaskOutput,
         crate::error::CreateRestoreImageTaskError,
     >;
@@ -2503,7 +2558,8 @@ impl CreateRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateRoute {
-    type Output = Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError>;
+    type Output =
+        std::result::Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_route_error(response)
@@ -2530,8 +2586,10 @@ impl CreateRouteTable {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateRouteTable {
-    type Output =
-        Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError>;
+    type Output = std::result::Result<
+        crate::output::CreateRouteTableOutput,
+        crate::error::CreateRouteTableError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_route_table_error(response)
@@ -2570,8 +2628,10 @@ impl CreateSecurityGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateSecurityGroup {
-    type Output =
-        Result<crate::output::CreateSecurityGroupOutput, crate::error::CreateSecurityGroupError>;
+    type Output = std::result::Result<
+        crate::output::CreateSecurityGroupOutput,
+        crate::error::CreateSecurityGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_security_group_error(response)
@@ -2620,7 +2680,8 @@ impl CreateSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateSnapshot {
-    type Output = Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError>;
+    type Output =
+        std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_snapshot_error(response)
@@ -2653,7 +2714,10 @@ impl CreateSnapshots {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateSnapshots {
-    type Output = Result<crate::output::CreateSnapshotsOutput, crate::error::CreateSnapshotsError>;
+    type Output = std::result::Result<
+        crate::output::CreateSnapshotsOutput,
+        crate::error::CreateSnapshotsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_snapshots_error(response)
@@ -2681,7 +2745,7 @@ impl CreateSpotDatafeedSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateSpotDatafeedSubscription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateSpotDatafeedSubscriptionOutput,
         crate::error::CreateSpotDatafeedSubscriptionError,
     >;
@@ -2713,8 +2777,10 @@ impl CreateStoreImageTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateStoreImageTask {
-    type Output =
-        Result<crate::output::CreateStoreImageTaskOutput, crate::error::CreateStoreImageTaskError>;
+    type Output = std::result::Result<
+        crate::output::CreateStoreImageTaskOutput,
+        crate::error::CreateStoreImageTaskError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_store_image_task_error(response)
@@ -2756,7 +2822,8 @@ impl CreateSubnet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateSubnet {
-    type Output = Result<crate::output::CreateSubnetOutput, crate::error::CreateSubnetError>;
+    type Output =
+        std::result::Result<crate::output::CreateSubnetOutput, crate::error::CreateSubnetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_subnet_error(response)
@@ -2789,7 +2856,8 @@ impl CreateTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTags {
-    type Output = Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError>;
+    type Output =
+        std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_tags_error(response)
@@ -2817,7 +2885,7 @@ impl CreateTrafficMirrorFilter {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTrafficMirrorFilter {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTrafficMirrorFilterOutput,
         crate::error::CreateTrafficMirrorFilterError,
     >;
@@ -2847,7 +2915,7 @@ impl CreateTrafficMirrorFilterRule {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTrafficMirrorFilterRule {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTrafficMirrorFilterRuleOutput,
         crate::error::CreateTrafficMirrorFilterRuleError,
     >;
@@ -2881,7 +2949,7 @@ impl CreateTrafficMirrorSession {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTrafficMirrorSession {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTrafficMirrorSessionOutput,
         crate::error::CreateTrafficMirrorSessionError,
     >;
@@ -2914,7 +2982,7 @@ impl CreateTrafficMirrorTarget {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTrafficMirrorTarget {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTrafficMirrorTargetOutput,
         crate::error::CreateTrafficMirrorTargetError,
     >;
@@ -2954,8 +3022,10 @@ impl CreateTransitGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGateway {
-    type Output =
-        Result<crate::output::CreateTransitGatewayOutput, crate::error::CreateTransitGatewayError>;
+    type Output = std::result::Result<
+        crate::output::CreateTransitGatewayOutput,
+        crate::error::CreateTransitGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_transit_gateway_error(response)
@@ -2981,7 +3051,7 @@ impl CreateTransitGatewayConnect {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayConnect {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTransitGatewayConnectOutput,
         crate::error::CreateTransitGatewayConnectError,
     >;
@@ -3012,7 +3082,7 @@ impl CreateTransitGatewayConnectPeer {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayConnectPeer {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTransitGatewayConnectPeerOutput,
         crate::error::CreateTransitGatewayConnectPeerError,
     >;
@@ -3041,7 +3111,7 @@ impl CreateTransitGatewayMulticastDomain {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayMulticastDomain {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTransitGatewayMulticastDomainOutput,
         crate::error::CreateTransitGatewayMulticastDomainError,
     >;
@@ -3074,7 +3144,7 @@ impl CreateTransitGatewayPeeringAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayPeeringAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTransitGatewayPeeringAttachmentOutput,
         crate::error::CreateTransitGatewayPeeringAttachmentError,
     >;
@@ -3104,7 +3174,7 @@ impl CreateTransitGatewayPrefixListReference {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayPrefixListReference {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTransitGatewayPrefixListReferenceOutput,
         crate::error::CreateTransitGatewayPrefixListReferenceError,
     >;
@@ -3136,7 +3206,7 @@ impl CreateTransitGatewayRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayRoute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTransitGatewayRouteOutput,
         crate::error::CreateTransitGatewayRouteError,
     >;
@@ -3164,7 +3234,7 @@ impl CreateTransitGatewayRouteTable {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayRouteTable {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTransitGatewayRouteTableOutput,
         crate::error::CreateTransitGatewayRouteTableError,
     >;
@@ -3195,7 +3265,7 @@ impl CreateTransitGatewayVpcAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayVpcAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTransitGatewayVpcAttachmentOutput,
         crate::error::CreateTransitGatewayVpcAttachmentError,
     >;
@@ -3233,7 +3303,8 @@ impl CreateVolume {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVolume {
-    type Output = Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError>;
+    type Output =
+        std::result::Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_volume_error(response)
@@ -3268,7 +3339,7 @@ impl CreateVpc {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVpc {
-    type Output = Result<crate::output::CreateVpcOutput, crate::error::CreateVpcError>;
+    type Output = std::result::Result<crate::output::CreateVpcOutput, crate::error::CreateVpcError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_vpc_error(response)
@@ -3307,8 +3378,10 @@ impl CreateVpcEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVpcEndpoint {
-    type Output =
-        Result<crate::output::CreateVpcEndpointOutput, crate::error::CreateVpcEndpointError>;
+    type Output = std::result::Result<
+        crate::output::CreateVpcEndpointOutput,
+        crate::error::CreateVpcEndpointError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_vpc_endpoint_error(response)
@@ -3337,7 +3410,7 @@ impl CreateVpcEndpointConnectionNotification {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVpcEndpointConnectionNotification {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateVpcEndpointConnectionNotificationOutput,
         crate::error::CreateVpcEndpointConnectionNotificationError,
     >;
@@ -3388,7 +3461,7 @@ impl CreateVpcEndpointServiceConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVpcEndpointServiceConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateVpcEndpointServiceConfigurationOutput,
         crate::error::CreateVpcEndpointServiceConfigurationError,
     >;
@@ -3429,7 +3502,7 @@ impl CreateVpcPeeringConnection {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVpcPeeringConnection {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateVpcPeeringConnectionOutput,
         crate::error::CreateVpcPeeringConnectionError,
     >;
@@ -3472,8 +3545,10 @@ impl CreateVpnConnection {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVpnConnection {
-    type Output =
-        Result<crate::output::CreateVpnConnectionOutput, crate::error::CreateVpnConnectionError>;
+    type Output = std::result::Result<
+        crate::output::CreateVpnConnectionOutput,
+        crate::error::CreateVpnConnectionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_vpn_connection_error(response)
@@ -3499,7 +3574,7 @@ impl CreateVpnConnectionRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVpnConnectionRoute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateVpnConnectionRouteOutput,
         crate::error::CreateVpnConnectionRouteError,
     >;
@@ -3528,8 +3603,10 @@ impl CreateVpnGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVpnGateway {
-    type Output =
-        Result<crate::output::CreateVpnGatewayOutput, crate::error::CreateVpnGatewayError>;
+    type Output = std::result::Result<
+        crate::output::CreateVpnGatewayOutput,
+        crate::error::CreateVpnGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_vpn_gateway_error(response)
@@ -3559,8 +3636,10 @@ impl DeleteCarrierGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteCarrierGateway {
-    type Output =
-        Result<crate::output::DeleteCarrierGatewayOutput, crate::error::DeleteCarrierGatewayError>;
+    type Output = std::result::Result<
+        crate::output::DeleteCarrierGatewayOutput,
+        crate::error::DeleteCarrierGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_carrier_gateway_error(response)
@@ -3586,7 +3665,7 @@ impl DeleteClientVpnEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteClientVpnEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteClientVpnEndpointOutput,
         crate::error::DeleteClientVpnEndpointError,
     >;
@@ -3617,8 +3696,10 @@ impl DeleteClientVpnRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteClientVpnRoute {
-    type Output =
-        Result<crate::output::DeleteClientVpnRouteOutput, crate::error::DeleteClientVpnRouteError>;
+    type Output = std::result::Result<
+        crate::output::DeleteClientVpnRouteOutput,
+        crate::error::DeleteClientVpnRouteError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_client_vpn_route_error(response)
@@ -3643,7 +3724,7 @@ impl DeleteCustomerGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteCustomerGateway {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteCustomerGatewayOutput,
         crate::error::DeleteCustomerGatewayError,
     >;
@@ -3671,8 +3752,10 @@ impl DeleteDhcpOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDhcpOptions {
-    type Output =
-        Result<crate::output::DeleteDhcpOptionsOutput, crate::error::DeleteDhcpOptionsError>;
+    type Output = std::result::Result<
+        crate::output::DeleteDhcpOptionsOutput,
+        crate::error::DeleteDhcpOptionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_dhcp_options_error(response)
@@ -3697,7 +3780,7 @@ impl DeleteEgressOnlyInternetGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteEgressOnlyInternetGateway {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteEgressOnlyInternetGatewayOutput,
         crate::error::DeleteEgressOnlyInternetGatewayError,
     >;
@@ -3750,7 +3833,8 @@ impl DeleteFleets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteFleets {
-    type Output = Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError>;
+    type Output =
+        std::result::Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_fleets_error(response)
@@ -3775,7 +3859,8 @@ impl DeleteFlowLogs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteFlowLogs {
-    type Output = Result<crate::output::DeleteFlowLogsOutput, crate::error::DeleteFlowLogsError>;
+    type Output =
+        std::result::Result<crate::output::DeleteFlowLogsOutput, crate::error::DeleteFlowLogsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_flow_logs_error(response)
@@ -3800,7 +3885,10 @@ impl DeleteFpgaImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteFpgaImage {
-    type Output = Result<crate::output::DeleteFpgaImageOutput, crate::error::DeleteFpgaImageError>;
+    type Output = std::result::Result<
+        crate::output::DeleteFpgaImageOutput,
+        crate::error::DeleteFpgaImageError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_fpga_image_error(response)
@@ -3826,7 +3914,7 @@ impl DeleteInternetGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteInternetGateway {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteInternetGatewayOutput,
         crate::error::DeleteInternetGatewayError,
     >;
@@ -3854,7 +3942,8 @@ impl DeleteKeyPair {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteKeyPair {
-    type Output = Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError>;
+    type Output =
+        std::result::Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_key_pair_error(response)
@@ -3879,8 +3968,10 @@ impl DeleteLaunchTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteLaunchTemplate {
-    type Output =
-        Result<crate::output::DeleteLaunchTemplateOutput, crate::error::DeleteLaunchTemplateError>;
+    type Output = std::result::Result<
+        crate::output::DeleteLaunchTemplateOutput,
+        crate::error::DeleteLaunchTemplateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_launch_template_error(response)
@@ -3908,7 +3999,7 @@ impl DeleteLaunchTemplateVersions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteLaunchTemplateVersions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteLaunchTemplateVersionsOutput,
         crate::error::DeleteLaunchTemplateVersionsError,
     >;
@@ -3936,7 +4027,7 @@ impl DeleteLocalGatewayRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRoute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteLocalGatewayRouteOutput,
         crate::error::DeleteLocalGatewayRouteError,
     >;
@@ -3965,7 +4056,7 @@ impl DeleteLocalGatewayRouteTableVpcAssociation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRouteTableVpcAssociation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteLocalGatewayRouteTableVpcAssociationOutput,
         crate::error::DeleteLocalGatewayRouteTableVpcAssociationError,
     >;
@@ -3997,7 +4088,7 @@ impl DeleteManagedPrefixList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteManagedPrefixList {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteManagedPrefixListOutput,
         crate::error::DeleteManagedPrefixListError,
     >;
@@ -4027,8 +4118,10 @@ impl DeleteNatGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteNatGateway {
-    type Output =
-        Result<crate::output::DeleteNatGatewayOutput, crate::error::DeleteNatGatewayError>;
+    type Output = std::result::Result<
+        crate::output::DeleteNatGatewayOutput,
+        crate::error::DeleteNatGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_nat_gateway_error(response)
@@ -4053,8 +4146,10 @@ impl DeleteNetworkAcl {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteNetworkAcl {
-    type Output =
-        Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError>;
+    type Output = std::result::Result<
+        crate::output::DeleteNetworkAclOutput,
+        crate::error::DeleteNetworkAclError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_network_acl_error(response)
@@ -4079,7 +4174,7 @@ impl DeleteNetworkAclEntry {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteNetworkAclEntry {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteNetworkAclEntryOutput,
         crate::error::DeleteNetworkAclEntryError,
     >;
@@ -4107,7 +4202,7 @@ impl DeleteNetworkInsightsAnalysis {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsAnalysis {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteNetworkInsightsAnalysisOutput,
         crate::error::DeleteNetworkInsightsAnalysisError,
     >;
@@ -4135,7 +4230,7 @@ impl DeleteNetworkInsightsPath {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsPath {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteNetworkInsightsPathOutput,
         crate::error::DeleteNetworkInsightsPathError,
     >;
@@ -4163,7 +4258,7 @@ impl DeleteNetworkInterface {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteNetworkInterface {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteNetworkInterfaceOutput,
         crate::error::DeleteNetworkInterfaceError,
     >;
@@ -4194,7 +4289,7 @@ impl DeleteNetworkInterfacePermission {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteNetworkInterfacePermission {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteNetworkInterfacePermissionOutput,
         crate::error::DeleteNetworkInterfacePermissionError,
     >;
@@ -4224,8 +4319,10 @@ impl DeletePlacementGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeletePlacementGroup {
-    type Output =
-        Result<crate::output::DeletePlacementGroupOutput, crate::error::DeletePlacementGroupError>;
+    type Output = std::result::Result<
+        crate::output::DeletePlacementGroupOutput,
+        crate::error::DeletePlacementGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_placement_group_error(response)
@@ -4250,7 +4347,7 @@ impl DeleteQueuedReservedInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteQueuedReservedInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteQueuedReservedInstancesOutput,
         crate::error::DeleteQueuedReservedInstancesError,
     >;
@@ -4278,7 +4375,8 @@ impl DeleteRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteRoute {
-    type Output = Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError>;
+    type Output =
+        std::result::Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_route_error(response)
@@ -4303,8 +4401,10 @@ impl DeleteRouteTable {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteRouteTable {
-    type Output =
-        Result<crate::output::DeleteRouteTableOutput, crate::error::DeleteRouteTableError>;
+    type Output = std::result::Result<
+        crate::output::DeleteRouteTableOutput,
+        crate::error::DeleteRouteTableError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_route_table_error(response)
@@ -4333,8 +4433,10 @@ impl DeleteSecurityGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSecurityGroup {
-    type Output =
-        Result<crate::output::DeleteSecurityGroupOutput, crate::error::DeleteSecurityGroupError>;
+    type Output = std::result::Result<
+        crate::output::DeleteSecurityGroupOutput,
+        crate::error::DeleteSecurityGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_security_group_error(response)
@@ -4368,7 +4470,8 @@ impl DeleteSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSnapshot {
-    type Output = Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError>;
+    type Output =
+        std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_snapshot_error(response)
@@ -4393,7 +4496,7 @@ impl DeleteSpotDatafeedSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSpotDatafeedSubscription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteSpotDatafeedSubscriptionOutput,
         crate::error::DeleteSpotDatafeedSubscriptionError,
     >;
@@ -4421,7 +4524,8 @@ impl DeleteSubnet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSubnet {
-    type Output = Result<crate::output::DeleteSubnetOutput, crate::error::DeleteSubnetError>;
+    type Output =
+        std::result::Result<crate::output::DeleteSubnetOutput, crate::error::DeleteSubnetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_subnet_error(response)
@@ -4449,7 +4553,8 @@ impl DeleteTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTags {
-    type Output = Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError>;
+    type Output =
+        std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_tags_error(response)
@@ -4475,7 +4580,7 @@ impl DeleteTrafficMirrorFilter {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorFilter {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTrafficMirrorFilterOutput,
         crate::error::DeleteTrafficMirrorFilterError,
     >;
@@ -4503,7 +4608,7 @@ impl DeleteTrafficMirrorFilterRule {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorFilterRule {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTrafficMirrorFilterRuleOutput,
         crate::error::DeleteTrafficMirrorFilterRuleError,
     >;
@@ -4531,7 +4636,7 @@ impl DeleteTrafficMirrorSession {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorSession {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTrafficMirrorSessionOutput,
         crate::error::DeleteTrafficMirrorSessionError,
     >;
@@ -4560,7 +4665,7 @@ impl DeleteTrafficMirrorTarget {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorTarget {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTrafficMirrorTargetOutput,
         crate::error::DeleteTrafficMirrorTargetError,
     >;
@@ -4588,8 +4693,10 @@ impl DeleteTransitGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGateway {
-    type Output =
-        Result<crate::output::DeleteTransitGatewayOutput, crate::error::DeleteTransitGatewayError>;
+    type Output = std::result::Result<
+        crate::output::DeleteTransitGatewayOutput,
+        crate::error::DeleteTransitGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_transit_gateway_error(response)
@@ -4615,7 +4722,7 @@ impl DeleteTransitGatewayConnect {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayConnect {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTransitGatewayConnectOutput,
         crate::error::DeleteTransitGatewayConnectError,
     >;
@@ -4643,7 +4750,7 @@ impl DeleteTransitGatewayConnectPeer {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayConnectPeer {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTransitGatewayConnectPeerOutput,
         crate::error::DeleteTransitGatewayConnectPeerError,
     >;
@@ -4671,7 +4778,7 @@ impl DeleteTransitGatewayMulticastDomain {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayMulticastDomain {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTransitGatewayMulticastDomainOutput,
         crate::error::DeleteTransitGatewayMulticastDomainError,
     >;
@@ -4699,7 +4806,7 @@ impl DeleteTransitGatewayPeeringAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayPeeringAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTransitGatewayPeeringAttachmentOutput,
         crate::error::DeleteTransitGatewayPeeringAttachmentError,
     >;
@@ -4729,7 +4836,7 @@ impl DeleteTransitGatewayPrefixListReference {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayPrefixListReference {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTransitGatewayPrefixListReferenceOutput,
         crate::error::DeleteTransitGatewayPrefixListReferenceError,
     >;
@@ -4761,7 +4868,7 @@ impl DeleteTransitGatewayRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayRoute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTransitGatewayRouteOutput,
         crate::error::DeleteTransitGatewayRouteError,
     >;
@@ -4790,7 +4897,7 @@ impl DeleteTransitGatewayRouteTable {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayRouteTable {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTransitGatewayRouteTableOutput,
         crate::error::DeleteTransitGatewayRouteTableError,
     >;
@@ -4818,7 +4925,7 @@ impl DeleteTransitGatewayVpcAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayVpcAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTransitGatewayVpcAttachmentOutput,
         crate::error::DeleteTransitGatewayVpcAttachmentError,
     >;
@@ -4850,7 +4957,8 @@ impl DeleteVolume {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVolume {
-    type Output = Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError>;
+    type Output =
+        std::result::Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_volume_error(response)
@@ -4875,7 +4983,7 @@ impl DeleteVpc {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVpc {
-    type Output = Result<crate::output::DeleteVpcOutput, crate::error::DeleteVpcError>;
+    type Output = std::result::Result<crate::output::DeleteVpcOutput, crate::error::DeleteVpcError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_vpc_error(response)
@@ -4900,7 +5008,7 @@ impl DeleteVpcEndpointConnectionNotifications {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVpcEndpointConnectionNotifications {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteVpcEndpointConnectionNotificationsOutput,
         crate::error::DeleteVpcEndpointConnectionNotificationsError,
     >;
@@ -4956,8 +5064,10 @@ impl DeleteVpcEndpoints {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVpcEndpoints {
-    type Output =
-        Result<crate::output::DeleteVpcEndpointsOutput, crate::error::DeleteVpcEndpointsError>;
+    type Output = std::result::Result<
+        crate::output::DeleteVpcEndpointsOutput,
+        crate::error::DeleteVpcEndpointsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_vpc_endpoints_error(response)
@@ -4985,7 +5095,7 @@ impl DeleteVpcEndpointServiceConfigurations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVpcEndpointServiceConfigurations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteVpcEndpointServiceConfigurationsOutput,
         crate::error::DeleteVpcEndpointServiceConfigurationsError,
     >;
@@ -5019,7 +5129,7 @@ impl DeleteVpcPeeringConnection {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVpcPeeringConnection {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteVpcPeeringConnectionOutput,
         crate::error::DeleteVpcPeeringConnectionError,
     >;
@@ -5049,8 +5159,10 @@ impl DeleteVpnConnection {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVpnConnection {
-    type Output =
-        Result<crate::output::DeleteVpnConnectionOutput, crate::error::DeleteVpnConnectionError>;
+    type Output = std::result::Result<
+        crate::output::DeleteVpnConnectionOutput,
+        crate::error::DeleteVpnConnectionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_vpn_connection_error(response)
@@ -5075,7 +5187,7 @@ impl DeleteVpnConnectionRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVpnConnectionRoute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteVpnConnectionRouteOutput,
         crate::error::DeleteVpnConnectionRouteError,
     >;
@@ -5103,8 +5215,10 @@ impl DeleteVpnGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVpnGateway {
-    type Output =
-        Result<crate::output::DeleteVpnGatewayOutput, crate::error::DeleteVpnGatewayError>;
+    type Output = std::result::Result<
+        crate::output::DeleteVpnGatewayOutput,
+        crate::error::DeleteVpnGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_vpn_gateway_error(response)
@@ -5132,8 +5246,10 @@ impl DeprovisionByoipCidr {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeprovisionByoipCidr {
-    type Output =
-        Result<crate::output::DeprovisionByoipCidrOutput, crate::error::DeprovisionByoipCidrError>;
+    type Output = std::result::Result<
+        crate::output::DeprovisionByoipCidrOutput,
+        crate::error::DeprovisionByoipCidrError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_deprovision_byoip_cidr_error(response)
@@ -5165,7 +5281,10 @@ impl DeregisterImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterImage {
-    type Output = Result<crate::output::DeregisterImageOutput, crate::error::DeregisterImageError>;
+    type Output = std::result::Result<
+        crate::output::DeregisterImageOutput,
+        crate::error::DeregisterImageError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_deregister_image_error(response)
@@ -5192,7 +5311,7 @@ impl DeregisterInstanceEventNotificationAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterInstanceEventNotificationAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeregisterInstanceEventNotificationAttributesOutput,
         crate::error::DeregisterInstanceEventNotificationAttributesError,
     >;
@@ -5225,7 +5344,7 @@ impl DeregisterTransitGatewayMulticastGroupMembers {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterTransitGatewayMulticastGroupMembers {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeregisterTransitGatewayMulticastGroupMembersOutput,
         crate::error::DeregisterTransitGatewayMulticastGroupMembersError,
     >;
@@ -5256,7 +5375,7 @@ impl DeregisterTransitGatewayMulticastGroupSources {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterTransitGatewayMulticastGroupSources {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeregisterTransitGatewayMulticastGroupSourcesOutput,
         crate::error::DeregisterTransitGatewayMulticastGroupSourcesError,
     >;
@@ -5320,7 +5439,7 @@ impl DescribeAccountAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeAccountAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeAccountAttributesOutput,
         crate::error::DescribeAccountAttributesError,
     >;
@@ -5350,8 +5469,10 @@ impl DescribeAddresses {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeAddresses {
-    type Output =
-        Result<crate::output::DescribeAddressesOutput, crate::error::DescribeAddressesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeAddressesOutput,
+        crate::error::DescribeAddressesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_addresses_error(response)
@@ -5376,7 +5497,7 @@ impl DescribeAddressesAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeAddressesAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeAddressesAttributeOutput,
         crate::error::DescribeAddressesAttributeError,
     >;
@@ -5420,7 +5541,7 @@ impl DescribeAggregateIdFormat {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeAggregateIdFormat {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeAggregateIdFormatOutput,
         crate::error::DescribeAggregateIdFormatError,
     >;
@@ -5453,7 +5574,7 @@ impl DescribeAvailabilityZones {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeAvailabilityZones {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeAvailabilityZonesOutput,
         crate::error::DescribeAvailabilityZonesError,
     >;
@@ -5484,8 +5605,10 @@ impl DescribeBundleTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeBundleTasks {
-    type Output =
-        Result<crate::output::DescribeBundleTasksOutput, crate::error::DescribeBundleTasksError>;
+    type Output = std::result::Result<
+        crate::output::DescribeBundleTasksOutput,
+        crate::error::DescribeBundleTasksError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_bundle_tasks_error(response)
@@ -5512,8 +5635,10 @@ impl DescribeByoipCidrs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeByoipCidrs {
-    type Output =
-        Result<crate::output::DescribeByoipCidrsOutput, crate::error::DescribeByoipCidrsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeByoipCidrsOutput,
+        crate::error::DescribeByoipCidrsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_byoip_cidrs_error(response)
@@ -5539,7 +5664,7 @@ impl DescribeCapacityReservations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeCapacityReservations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeCapacityReservationsOutput,
         crate::error::DescribeCapacityReservationsError,
     >;
@@ -5567,7 +5692,7 @@ impl DescribeCarrierGateways {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeCarrierGateways {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeCarrierGatewaysOutput,
         crate::error::DescribeCarrierGatewaysError,
     >;
@@ -5597,7 +5722,7 @@ impl DescribeClassicLinkInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeClassicLinkInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeClassicLinkInstancesOutput,
         crate::error::DescribeClassicLinkInstancesError,
     >;
@@ -5625,7 +5750,7 @@ impl DescribeClientVpnAuthorizationRules {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeClientVpnAuthorizationRules {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeClientVpnAuthorizationRulesOutput,
         crate::error::DescribeClientVpnAuthorizationRulesError,
     >;
@@ -5654,7 +5779,7 @@ impl DescribeClientVpnConnections {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeClientVpnConnections {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeClientVpnConnectionsOutput,
         crate::error::DescribeClientVpnConnectionsError,
     >;
@@ -5682,7 +5807,7 @@ impl DescribeClientVpnEndpoints {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeClientVpnEndpoints {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeClientVpnEndpointsOutput,
         crate::error::DescribeClientVpnEndpointsError,
     >;
@@ -5710,7 +5835,7 @@ impl DescribeClientVpnRoutes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeClientVpnRoutes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeClientVpnRoutesOutput,
         crate::error::DescribeClientVpnRoutesError,
     >;
@@ -5738,7 +5863,7 @@ impl DescribeClientVpnTargetNetworks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeClientVpnTargetNetworks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeClientVpnTargetNetworksOutput,
         crate::error::DescribeClientVpnTargetNetworksError,
     >;
@@ -5766,8 +5891,10 @@ impl DescribeCoipPools {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeCoipPools {
-    type Output =
-        Result<crate::output::DescribeCoipPoolsOutput, crate::error::DescribeCoipPoolsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeCoipPoolsOutput,
+        crate::error::DescribeCoipPoolsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_coip_pools_error(response)
@@ -5794,7 +5921,7 @@ impl DescribeConversionTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeConversionTasks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeConversionTasksOutput,
         crate::error::DescribeConversionTasksError,
     >;
@@ -5823,7 +5950,7 @@ impl DescribeCustomerGateways {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeCustomerGateways {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeCustomerGatewaysOutput,
         crate::error::DescribeCustomerGatewaysError,
     >;
@@ -5853,8 +5980,10 @@ impl DescribeDhcpOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDhcpOptions {
-    type Output =
-        Result<crate::output::DescribeDhcpOptionsOutput, crate::error::DescribeDhcpOptionsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeDhcpOptionsOutput,
+        crate::error::DescribeDhcpOptionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_dhcp_options_error(response)
@@ -5879,7 +6008,7 @@ impl DescribeEgressOnlyInternetGateways {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeEgressOnlyInternetGateways {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeEgressOnlyInternetGatewaysOutput,
         crate::error::DescribeEgressOnlyInternetGatewaysError,
     >;
@@ -5908,8 +6037,10 @@ impl DescribeElasticGpus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeElasticGpus {
-    type Output =
-        Result<crate::output::DescribeElasticGpusOutput, crate::error::DescribeElasticGpusError>;
+    type Output = std::result::Result<
+        crate::output::DescribeElasticGpusOutput,
+        crate::error::DescribeElasticGpusError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_elastic_gpus_error(response)
@@ -5934,7 +6065,7 @@ impl DescribeExportImageTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeExportImageTasks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeExportImageTasksOutput,
         crate::error::DescribeExportImageTasksError,
     >;
@@ -5962,8 +6093,10 @@ impl DescribeExportTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeExportTasks {
-    type Output =
-        Result<crate::output::DescribeExportTasksOutput, crate::error::DescribeExportTasksError>;
+    type Output = std::result::Result<
+        crate::output::DescribeExportTasksOutput,
+        crate::error::DescribeExportTasksError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_export_tasks_error(response)
@@ -5988,7 +6121,7 @@ impl DescribeFastSnapshotRestores {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeFastSnapshotRestores {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeFastSnapshotRestoresOutput,
         crate::error::DescribeFastSnapshotRestoresError,
     >;
@@ -6020,8 +6153,10 @@ impl DescribeFleetHistory {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeFleetHistory {
-    type Output =
-        Result<crate::output::DescribeFleetHistoryOutput, crate::error::DescribeFleetHistoryError>;
+    type Output = std::result::Result<
+        crate::output::DescribeFleetHistoryOutput,
+        crate::error::DescribeFleetHistoryError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_fleet_history_error(response)
@@ -6047,7 +6182,7 @@ impl DescribeFleetInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeFleetInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeFleetInstancesOutput,
         crate::error::DescribeFleetInstancesError,
     >;
@@ -6076,7 +6211,8 @@ impl DescribeFleets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeFleets {
-    type Output = Result<crate::output::DescribeFleetsOutput, crate::error::DescribeFleetsError>;
+    type Output =
+        std::result::Result<crate::output::DescribeFleetsOutput, crate::error::DescribeFleetsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_fleets_error(response)
@@ -6103,8 +6239,10 @@ impl DescribeFlowLogs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeFlowLogs {
-    type Output =
-        Result<crate::output::DescribeFlowLogsOutput, crate::error::DescribeFlowLogsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeFlowLogsOutput,
+        crate::error::DescribeFlowLogsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_flow_logs_error(response)
@@ -6129,7 +6267,7 @@ impl DescribeFpgaImageAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeFpgaImageAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeFpgaImageAttributeOutput,
         crate::error::DescribeFpgaImageAttributeError,
     >;
@@ -6159,8 +6297,10 @@ impl DescribeFpgaImages {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeFpgaImages {
-    type Output =
-        Result<crate::output::DescribeFpgaImagesOutput, crate::error::DescribeFpgaImagesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeFpgaImagesOutput,
+        crate::error::DescribeFpgaImagesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_fpga_images_error(response)
@@ -6191,7 +6331,7 @@ impl DescribeHostReservationOfferings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeHostReservationOfferings {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeHostReservationOfferingsOutput,
         crate::error::DescribeHostReservationOfferingsError,
     >;
@@ -6220,7 +6360,7 @@ impl DescribeHostReservations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeHostReservations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeHostReservationsOutput,
         crate::error::DescribeHostReservationsError,
     >;
@@ -6251,7 +6391,8 @@ impl DescribeHosts {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeHosts {
-    type Output = Result<crate::output::DescribeHostsOutput, crate::error::DescribeHostsError>;
+    type Output =
+        std::result::Result<crate::output::DescribeHostsOutput, crate::error::DescribeHostsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_hosts_error(response)
@@ -6276,7 +6417,7 @@ impl DescribeIamInstanceProfileAssociations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeIamInstanceProfileAssociations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeIamInstanceProfileAssociationsOutput,
         crate::error::DescribeIamInstanceProfileAssociationsError,
     >;
@@ -6324,7 +6465,7 @@ impl DescribeIdentityIdFormat {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeIdentityIdFormat {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeIdentityIdFormatOutput,
         crate::error::DescribeIdentityIdFormatError,
     >;
@@ -6371,8 +6512,10 @@ impl DescribeIdFormat {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeIdFormat {
-    type Output =
-        Result<crate::output::DescribeIdFormatOutput, crate::error::DescribeIdFormatError>;
+    type Output = std::result::Result<
+        crate::output::DescribeIdFormatOutput,
+        crate::error::DescribeIdFormatError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_id_format_error(response)
@@ -6397,7 +6540,7 @@ impl DescribeImageAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeImageAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeImageAttributeOutput,
         crate::error::DescribeImageAttributeError,
     >;
@@ -6429,7 +6572,8 @@ impl DescribeImages {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeImages {
-    type Output = Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError>;
+    type Output =
+        std::result::Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_images_error(response)
@@ -6454,7 +6598,7 @@ impl DescribeImportImageTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeImportImageTasks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeImportImageTasksOutput,
         crate::error::DescribeImportImageTasksError,
     >;
@@ -6482,7 +6626,7 @@ impl DescribeImportSnapshotTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeImportSnapshotTasks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeImportSnapshotTasksOutput,
         crate::error::DescribeImportSnapshotTasksError,
     >;
@@ -6517,7 +6661,7 @@ impl DescribeInstanceAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInstanceAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeInstanceAttributeOutput,
         crate::error::DescribeInstanceAttributeError,
     >;
@@ -6564,7 +6708,7 @@ impl DescribeInstanceCreditSpecifications {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInstanceCreditSpecifications {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeInstanceCreditSpecificationsOutput,
         crate::error::DescribeInstanceCreditSpecificationsError,
     >;
@@ -6594,7 +6738,7 @@ impl DescribeInstanceEventNotificationAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInstanceEventNotificationAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeInstanceEventNotificationAttributesOutput,
         crate::error::DescribeInstanceEventNotificationAttributesError,
     >;
@@ -6640,8 +6784,10 @@ impl DescribeInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInstances {
-    type Output =
-        Result<crate::output::DescribeInstancesOutput, crate::error::DescribeInstancesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeInstancesOutput,
+        crate::error::DescribeInstancesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_instances_error(response)
@@ -6692,7 +6838,7 @@ impl DescribeInstanceStatus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInstanceStatus {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeInstanceStatusOutput,
         crate::error::DescribeInstanceStatusError,
     >;
@@ -6721,7 +6867,7 @@ impl DescribeInstanceTypeOfferings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInstanceTypeOfferings {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeInstanceTypeOfferingsOutput,
         crate::error::DescribeInstanceTypeOfferingsError,
     >;
@@ -6750,7 +6896,7 @@ impl DescribeInstanceTypes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInstanceTypes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeInstanceTypesOutput,
         crate::error::DescribeInstanceTypesError,
     >;
@@ -6778,7 +6924,7 @@ impl DescribeInternetGateways {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInternetGateways {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeInternetGatewaysOutput,
         crate::error::DescribeInternetGatewaysError,
     >;
@@ -6806,8 +6952,10 @@ impl DescribeIpv6Pools {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeIpv6Pools {
-    type Output =
-        Result<crate::output::DescribeIpv6PoolsOutput, crate::error::DescribeIpv6PoolsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeIpv6PoolsOutput,
+        crate::error::DescribeIpv6PoolsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_ipv6_pools_error(response)
@@ -6834,8 +6982,10 @@ impl DescribeKeyPairs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeKeyPairs {
-    type Output =
-        Result<crate::output::DescribeKeyPairsOutput, crate::error::DescribeKeyPairsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeKeyPairsOutput,
+        crate::error::DescribeKeyPairsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_key_pairs_error(response)
@@ -6860,7 +7010,7 @@ impl DescribeLaunchTemplates {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeLaunchTemplates {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeLaunchTemplatesOutput,
         crate::error::DescribeLaunchTemplatesError,
     >;
@@ -6891,7 +7041,7 @@ impl DescribeLaunchTemplateVersions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeLaunchTemplateVersions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeLaunchTemplateVersionsOutput,
         crate::error::DescribeLaunchTemplateVersionsError,
     >;
@@ -6920,7 +7070,7 @@ impl DescribeLocalGatewayRouteTables {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeLocalGatewayRouteTables {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeLocalGatewayRouteTablesOutput,
         crate::error::DescribeLocalGatewayRouteTablesError,
     >;
@@ -6950,7 +7100,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations {
 impl smithy_http::response::ParseStrictResponse
     for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations
 {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
         crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
     >;
@@ -6979,7 +7129,7 @@ impl DescribeLocalGatewayRouteTableVpcAssociations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeLocalGatewayRouteTableVpcAssociations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeLocalGatewayRouteTableVpcAssociationsOutput,
         crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError,
     >;
@@ -7010,7 +7160,7 @@ impl DescribeLocalGateways {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeLocalGateways {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeLocalGatewaysOutput,
         crate::error::DescribeLocalGatewaysError,
     >;
@@ -7039,7 +7189,7 @@ impl DescribeLocalGatewayVirtualInterfaceGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeLocalGatewayVirtualInterfaceGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeLocalGatewayVirtualInterfaceGroupsOutput,
         crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError,
     >;
@@ -7071,7 +7221,7 @@ impl DescribeLocalGatewayVirtualInterfaces {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeLocalGatewayVirtualInterfaces {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeLocalGatewayVirtualInterfacesOutput,
         crate::error::DescribeLocalGatewayVirtualInterfacesError,
     >;
@@ -7102,7 +7252,7 @@ impl DescribeManagedPrefixLists {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeManagedPrefixLists {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeManagedPrefixListsOutput,
         crate::error::DescribeManagedPrefixListsError,
     >;
@@ -7130,7 +7280,7 @@ impl DescribeMovingAddresses {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeMovingAddresses {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeMovingAddressesOutput,
         crate::error::DescribeMovingAddressesError,
     >;
@@ -7158,8 +7308,10 @@ impl DescribeNatGateways {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeNatGateways {
-    type Output =
-        Result<crate::output::DescribeNatGatewaysOutput, crate::error::DescribeNatGatewaysError>;
+    type Output = std::result::Result<
+        crate::output::DescribeNatGatewaysOutput,
+        crate::error::DescribeNatGatewaysError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_nat_gateways_error(response)
@@ -7186,8 +7338,10 @@ impl DescribeNetworkAcls {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeNetworkAcls {
-    type Output =
-        Result<crate::output::DescribeNetworkAclsOutput, crate::error::DescribeNetworkAclsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeNetworkAclsOutput,
+        crate::error::DescribeNetworkAclsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_network_acls_error(response)
@@ -7212,7 +7366,7 @@ impl DescribeNetworkInsightsAnalyses {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsAnalyses {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeNetworkInsightsAnalysesOutput,
         crate::error::DescribeNetworkInsightsAnalysesError,
     >;
@@ -7240,7 +7394,7 @@ impl DescribeNetworkInsightsPaths {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsPaths {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeNetworkInsightsPathsOutput,
         crate::error::DescribeNetworkInsightsPathsError,
     >;
@@ -7268,7 +7422,7 @@ impl DescribeNetworkInterfaceAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeNetworkInterfaceAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeNetworkInterfaceAttributeOutput,
         crate::error::DescribeNetworkInterfaceAttributeError,
     >;
@@ -7296,7 +7450,7 @@ impl DescribeNetworkInterfacePermissions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeNetworkInterfacePermissions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeNetworkInterfacePermissionsOutput,
         crate::error::DescribeNetworkInterfacePermissionsError,
     >;
@@ -7324,7 +7478,7 @@ impl DescribeNetworkInterfaces {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeNetworkInterfaces {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeNetworkInterfacesOutput,
         crate::error::DescribeNetworkInterfacesError,
     >;
@@ -7354,7 +7508,7 @@ impl DescribePlacementGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribePlacementGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribePlacementGroupsOutput,
         crate::error::DescribePlacementGroupsError,
     >;
@@ -7384,8 +7538,10 @@ impl DescribePrefixLists {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribePrefixLists {
-    type Output =
-        Result<crate::output::DescribePrefixListsOutput, crate::error::DescribePrefixListsError>;
+    type Output = std::result::Result<
+        crate::output::DescribePrefixListsOutput,
+        crate::error::DescribePrefixListsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_prefix_lists_error(response)
@@ -7427,7 +7583,7 @@ impl DescribePrincipalIdFormat {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribePrincipalIdFormat {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribePrincipalIdFormatOutput,
         crate::error::DescribePrincipalIdFormatError,
     >;
@@ -7455,7 +7611,7 @@ impl DescribePublicIpv4Pools {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribePublicIpv4Pools {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribePublicIpv4PoolsOutput,
         crate::error::DescribePublicIpv4PoolsError,
     >;
@@ -7486,7 +7642,10 @@ impl DescribeRegions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeRegions {
-    type Output = Result<crate::output::DescribeRegionsOutput, crate::error::DescribeRegionsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeRegionsOutput,
+        crate::error::DescribeRegionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_regions_error(response)
@@ -7513,7 +7672,7 @@ impl DescribeReplaceRootVolumeTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReplaceRootVolumeTasks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeReplaceRootVolumeTasksOutput,
         crate::error::DescribeReplaceRootVolumeTasksError,
     >;
@@ -7543,7 +7702,7 @@ impl DescribeReservedInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReservedInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeReservedInstancesOutput,
         crate::error::DescribeReservedInstancesError,
     >;
@@ -7576,7 +7735,7 @@ impl DescribeReservedInstancesListings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReservedInstancesListings {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeReservedInstancesListingsOutput,
         crate::error::DescribeReservedInstancesListingsError,
     >;
@@ -7605,7 +7764,7 @@ impl DescribeReservedInstancesModifications {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReservedInstancesModifications {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeReservedInstancesModificationsOutput,
         crate::error::DescribeReservedInstancesModificationsError,
     >;
@@ -7638,7 +7797,7 @@ impl DescribeReservedInstancesOfferings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReservedInstancesOfferings {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeReservedInstancesOfferingsOutput,
         crate::error::DescribeReservedInstancesOfferingsError,
     >;
@@ -7669,8 +7828,10 @@ impl DescribeRouteTables {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeRouteTables {
-    type Output =
-        Result<crate::output::DescribeRouteTablesOutput, crate::error::DescribeRouteTablesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeRouteTablesOutput,
+        crate::error::DescribeRouteTablesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_route_tables_error(response)
@@ -7698,7 +7859,7 @@ impl DescribeScheduledInstanceAvailability {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeScheduledInstanceAvailability {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeScheduledInstanceAvailabilityOutput,
         crate::error::DescribeScheduledInstanceAvailabilityError,
     >;
@@ -7728,7 +7889,7 @@ impl DescribeScheduledInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeScheduledInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeScheduledInstancesOutput,
         crate::error::DescribeScheduledInstancesError,
     >;
@@ -7756,7 +7917,7 @@ impl DescribeSecurityGroupReferences {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSecurityGroupReferences {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSecurityGroupReferencesOutput,
         crate::error::DescribeSecurityGroupReferencesError,
     >;
@@ -7790,7 +7951,7 @@ impl DescribeSecurityGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSecurityGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSecurityGroupsOutput,
         crate::error::DescribeSecurityGroupsError,
     >;
@@ -7820,7 +7981,7 @@ impl DescribeSnapshotAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSnapshotAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSnapshotAttributeOutput,
         crate::error::DescribeSnapshotAttributeError,
     >;
@@ -7894,8 +8055,10 @@ impl DescribeSnapshots {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSnapshots {
-    type Output =
-        Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeSnapshotsOutput,
+        crate::error::DescribeSnapshotsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_snapshots_error(response)
@@ -7921,7 +8084,7 @@ impl DescribeSpotDatafeedSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSpotDatafeedSubscription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSpotDatafeedSubscriptionOutput,
         crate::error::DescribeSpotDatafeedSubscriptionError,
     >;
@@ -7949,7 +8112,7 @@ impl DescribeSpotFleetInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSpotFleetInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSpotFleetInstancesOutput,
         crate::error::DescribeSpotFleetInstancesError,
     >;
@@ -7979,7 +8142,7 @@ impl DescribeSpotFleetRequestHistory {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSpotFleetRequestHistory {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSpotFleetRequestHistoryOutput,
         crate::error::DescribeSpotFleetRequestHistoryError,
     >;
@@ -8008,7 +8171,7 @@ impl DescribeSpotFleetRequests {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSpotFleetRequests {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSpotFleetRequestsOutput,
         crate::error::DescribeSpotFleetRequestsError,
     >;
@@ -8051,7 +8214,7 @@ impl DescribeSpotInstanceRequests {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSpotInstanceRequests {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSpotInstanceRequestsOutput,
         crate::error::DescribeSpotInstanceRequestsError,
     >;
@@ -8084,7 +8247,7 @@ impl DescribeSpotPriceHistory {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSpotPriceHistory {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSpotPriceHistoryOutput,
         crate::error::DescribeSpotPriceHistoryError,
     >;
@@ -8112,7 +8275,7 @@ impl DescribeStaleSecurityGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeStaleSecurityGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeStaleSecurityGroupsOutput,
         crate::error::DescribeStaleSecurityGroupsError,
     >;
@@ -8151,7 +8314,7 @@ impl DescribeStoreImageTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeStoreImageTasks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeStoreImageTasksOutput,
         crate::error::DescribeStoreImageTasksError,
     >;
@@ -8181,7 +8344,10 @@ impl DescribeSubnets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSubnets {
-    type Output = Result<crate::output::DescribeSubnetsOutput, crate::error::DescribeSubnetsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeSubnetsOutput,
+        crate::error::DescribeSubnetsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_subnets_error(response)
@@ -8208,7 +8374,8 @@ impl DescribeTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTags {
-    type Output = Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError>;
+    type Output =
+        std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_tags_error(response)
@@ -8233,7 +8400,7 @@ impl DescribeTrafficMirrorFilters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTrafficMirrorFilters {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTrafficMirrorFiltersOutput,
         crate::error::DescribeTrafficMirrorFiltersError,
     >;
@@ -8261,7 +8428,7 @@ impl DescribeTrafficMirrorSessions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTrafficMirrorSessions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTrafficMirrorSessionsOutput,
         crate::error::DescribeTrafficMirrorSessionsError,
     >;
@@ -8289,7 +8456,7 @@ impl DescribeTrafficMirrorTargets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTrafficMirrorTargets {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTrafficMirrorTargetsOutput,
         crate::error::DescribeTrafficMirrorTargetsError,
     >;
@@ -8318,7 +8485,7 @@ impl DescribeTransitGatewayAttachments {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayAttachments {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTransitGatewayAttachmentsOutput,
         crate::error::DescribeTransitGatewayAttachmentsError,
     >;
@@ -8346,7 +8513,7 @@ impl DescribeTransitGatewayConnectPeers {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayConnectPeers {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTransitGatewayConnectPeersOutput,
         crate::error::DescribeTransitGatewayConnectPeersError,
     >;
@@ -8374,7 +8541,7 @@ impl DescribeTransitGatewayConnects {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayConnects {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTransitGatewayConnectsOutput,
         crate::error::DescribeTransitGatewayConnectsError,
     >;
@@ -8402,7 +8569,7 @@ impl DescribeTransitGatewayMulticastDomains {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayMulticastDomains {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTransitGatewayMulticastDomainsOutput,
         crate::error::DescribeTransitGatewayMulticastDomainsError,
     >;
@@ -8432,7 +8599,7 @@ impl DescribeTransitGatewayPeeringAttachments {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayPeeringAttachments {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTransitGatewayPeeringAttachmentsOutput,
         crate::error::DescribeTransitGatewayPeeringAttachmentsError,
     >;
@@ -8465,7 +8632,7 @@ impl DescribeTransitGatewayRouteTables {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayRouteTables {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTransitGatewayRouteTablesOutput,
         crate::error::DescribeTransitGatewayRouteTablesError,
     >;
@@ -8494,7 +8661,7 @@ impl DescribeTransitGateways {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTransitGateways {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTransitGatewaysOutput,
         crate::error::DescribeTransitGatewaysError,
     >;
@@ -8523,7 +8690,7 @@ impl DescribeTransitGatewayVpcAttachments {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayVpcAttachments {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTransitGatewayVpcAttachmentsOutput,
         crate::error::DescribeTransitGatewayVpcAttachmentsError,
     >;
@@ -8555,7 +8722,7 @@ impl DescribeVolumeAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVolumeAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVolumeAttributeOutput,
         crate::error::DescribeVolumeAttributeError,
     >;
@@ -8590,7 +8757,10 @@ impl DescribeVolumes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVolumes {
-    type Output = Result<crate::output::DescribeVolumesOutput, crate::error::DescribeVolumesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeVolumesOutput,
+        crate::error::DescribeVolumesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_volumes_error(response)
@@ -8622,7 +8792,7 @@ impl DescribeVolumesModifications {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVolumesModifications {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVolumesModificationsOutput,
         crate::error::DescribeVolumesModificationsError,
     >;
@@ -8683,8 +8853,10 @@ impl DescribeVolumeStatus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVolumeStatus {
-    type Output =
-        Result<crate::output::DescribeVolumeStatusOutput, crate::error::DescribeVolumeStatusError>;
+    type Output = std::result::Result<
+        crate::output::DescribeVolumeStatusOutput,
+        crate::error::DescribeVolumeStatusError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_volume_status_error(response)
@@ -8709,8 +8881,10 @@ impl DescribeVpcAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcAttribute {
-    type Output =
-        Result<crate::output::DescribeVpcAttributeOutput, crate::error::DescribeVpcAttributeError>;
+    type Output = std::result::Result<
+        crate::output::DescribeVpcAttributeOutput,
+        crate::error::DescribeVpcAttributeError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_vpc_attribute_error(response)
@@ -8735,7 +8909,7 @@ impl DescribeVpcClassicLink {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcClassicLink {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpcClassicLinkOutput,
         crate::error::DescribeVpcClassicLinkError,
     >;
@@ -8767,7 +8941,7 @@ impl DescribeVpcClassicLinkDnsSupport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcClassicLinkDnsSupport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpcClassicLinkDnsSupportOutput,
         crate::error::DescribeVpcClassicLinkDnsSupportError,
     >;
@@ -8797,7 +8971,7 @@ impl DescribeVpcEndpointConnectionNotifications {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcEndpointConnectionNotifications {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpcEndpointConnectionNotificationsOutput,
         crate::error::DescribeVpcEndpointConnectionNotificationsError,
     >;
@@ -8830,7 +9004,7 @@ impl DescribeVpcEndpointConnections {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcEndpointConnections {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpcEndpointConnectionsOutput,
         crate::error::DescribeVpcEndpointConnectionsError,
     >;
@@ -8858,8 +9032,10 @@ impl DescribeVpcEndpoints {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcEndpoints {
-    type Output =
-        Result<crate::output::DescribeVpcEndpointsOutput, crate::error::DescribeVpcEndpointsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeVpcEndpointsOutput,
+        crate::error::DescribeVpcEndpointsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_vpc_endpoints_error(response)
@@ -8884,7 +9060,7 @@ impl DescribeVpcEndpointServiceConfigurations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcEndpointServiceConfigurations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpcEndpointServiceConfigurationsOutput,
         crate::error::DescribeVpcEndpointServiceConfigurationsError,
     >;
@@ -8917,7 +9093,7 @@ impl DescribeVpcEndpointServicePermissions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcEndpointServicePermissions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpcEndpointServicePermissionsOutput,
         crate::error::DescribeVpcEndpointServicePermissionsError,
     >;
@@ -8954,7 +9130,7 @@ impl DescribeVpcEndpointServices {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcEndpointServices {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpcEndpointServicesOutput,
         crate::error::DescribeVpcEndpointServicesError,
     >;
@@ -8982,7 +9158,7 @@ impl DescribeVpcPeeringConnections {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcPeeringConnections {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpcPeeringConnectionsOutput,
         crate::error::DescribeVpcPeeringConnectionsError,
     >;
@@ -9010,7 +9186,8 @@ impl DescribeVpcs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpcs {
-    type Output = Result<crate::output::DescribeVpcsOutput, crate::error::DescribeVpcsError>;
+    type Output =
+        std::result::Result<crate::output::DescribeVpcsOutput, crate::error::DescribeVpcsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_vpcs_error(response)
@@ -9036,7 +9213,7 @@ impl DescribeVpnConnections {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpnConnections {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeVpnConnectionsOutput,
         crate::error::DescribeVpnConnectionsError,
     >;
@@ -9065,8 +9242,10 @@ impl DescribeVpnGateways {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVpnGateways {
-    type Output =
-        Result<crate::output::DescribeVpnGatewaysOutput, crate::error::DescribeVpnGatewaysError>;
+    type Output = std::result::Result<
+        crate::output::DescribeVpnGatewaysOutput,
+        crate::error::DescribeVpnGatewaysError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_vpn_gateways_error(response)
@@ -9091,8 +9270,10 @@ impl DetachClassicLinkVpc {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DetachClassicLinkVpc {
-    type Output =
-        Result<crate::output::DetachClassicLinkVpcOutput, crate::error::DetachClassicLinkVpcError>;
+    type Output = std::result::Result<
+        crate::output::DetachClassicLinkVpcOutput,
+        crate::error::DetachClassicLinkVpcError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_detach_classic_link_vpc_error(response)
@@ -9119,7 +9300,7 @@ impl DetachInternetGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DetachInternetGateway {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DetachInternetGatewayOutput,
         crate::error::DetachInternetGatewayError,
     >;
@@ -9147,7 +9328,7 @@ impl DetachNetworkInterface {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DetachNetworkInterface {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DetachNetworkInterfaceOutput,
         crate::error::DetachNetworkInterfaceError,
     >;
@@ -9185,7 +9366,8 @@ impl DetachVolume {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DetachVolume {
-    type Output = Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError>;
+    type Output =
+        std::result::Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_detach_volume_error(response)
@@ -9212,8 +9394,10 @@ impl DetachVpnGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DetachVpnGateway {
-    type Output =
-        Result<crate::output::DetachVpnGatewayOutput, crate::error::DetachVpnGatewayError>;
+    type Output = std::result::Result<
+        crate::output::DetachVpnGatewayOutput,
+        crate::error::DetachVpnGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_detach_vpn_gateway_error(response)
@@ -9244,7 +9428,7 @@ impl DisableEbsEncryptionByDefault {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisableEbsEncryptionByDefault {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisableEbsEncryptionByDefaultOutput,
         crate::error::DisableEbsEncryptionByDefaultError,
     >;
@@ -9272,7 +9456,7 @@ impl DisableFastSnapshotRestores {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisableFastSnapshotRestores {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisableFastSnapshotRestoresOutput,
         crate::error::DisableFastSnapshotRestoresError,
     >;
@@ -9303,7 +9487,7 @@ impl DisableSerialConsoleAccess {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisableSerialConsoleAccess {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisableSerialConsoleAccessOutput,
         crate::error::DisableSerialConsoleAccessError,
     >;
@@ -9333,7 +9517,7 @@ impl DisableTransitGatewayRouteTablePropagation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisableTransitGatewayRouteTablePropagation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisableTransitGatewayRouteTablePropagationOutput,
         crate::error::DisableTransitGatewayRouteTablePropagationError,
     >;
@@ -9365,7 +9549,7 @@ impl DisableVgwRoutePropagation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisableVgwRoutePropagation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisableVgwRoutePropagationOutput,
         crate::error::DisableVgwRoutePropagationError,
     >;
@@ -9393,7 +9577,7 @@ impl DisableVpcClassicLink {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisableVpcClassicLink {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisableVpcClassicLinkOutput,
         crate::error::DisableVpcClassicLinkError,
     >;
@@ -9425,7 +9609,7 @@ impl DisableVpcClassicLinkDnsSupport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisableVpcClassicLinkDnsSupport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisableVpcClassicLinkDnsSupportOutput,
         crate::error::DisableVpcClassicLinkDnsSupportError,
     >;
@@ -9457,8 +9641,10 @@ impl DisassociateAddress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateAddress {
-    type Output =
-        Result<crate::output::DisassociateAddressOutput, crate::error::DisassociateAddressError>;
+    type Output = std::result::Result<
+        crate::output::DisassociateAddressOutput,
+        crate::error::DisassociateAddressError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_address_error(response)
@@ -9499,7 +9685,7 @@ impl DisassociateClientVpnTargetNetwork {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateClientVpnTargetNetwork {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateClientVpnTargetNetworkOutput,
         crate::error::DisassociateClientVpnTargetNetworkError,
     >;
@@ -9531,7 +9717,7 @@ impl DisassociateEnclaveCertificateIamRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateEnclaveCertificateIamRole {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateEnclaveCertificateIamRoleOutput,
         crate::error::DisassociateEnclaveCertificateIamRoleError,
     >;
@@ -9563,7 +9749,7 @@ impl DisassociateIamInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateIamInstanceProfile {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateIamInstanceProfileOutput,
         crate::error::DisassociateIamInstanceProfileError,
     >;
@@ -9595,7 +9781,7 @@ impl DisassociateRouteTable {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateRouteTable {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateRouteTableOutput,
         crate::error::DisassociateRouteTableError,
     >;
@@ -9623,7 +9809,7 @@ impl DisassociateSubnetCidrBlock {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateSubnetCidrBlock {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateSubnetCidrBlockOutput,
         crate::error::DisassociateSubnetCidrBlockError,
     >;
@@ -9651,7 +9837,7 @@ impl DisassociateTransitGatewayMulticastDomain {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateTransitGatewayMulticastDomain {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateTransitGatewayMulticastDomainOutput,
         crate::error::DisassociateTransitGatewayMulticastDomainError,
     >;
@@ -9683,7 +9869,7 @@ impl DisassociateTransitGatewayRouteTable {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateTransitGatewayRouteTable {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateTransitGatewayRouteTableOutput,
         crate::error::DisassociateTransitGatewayRouteTableError,
     >;
@@ -9718,7 +9904,7 @@ impl DisassociateVpcCidrBlock {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateVpcCidrBlock {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateVpcCidrBlockOutput,
         crate::error::DisassociateVpcCidrBlockError,
     >;
@@ -9757,7 +9943,7 @@ impl EnableEbsEncryptionByDefault {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableEbsEncryptionByDefault {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::EnableEbsEncryptionByDefaultOutput,
         crate::error::EnableEbsEncryptionByDefaultError,
     >;
@@ -9790,7 +9976,7 @@ impl EnableFastSnapshotRestores {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableFastSnapshotRestores {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::EnableFastSnapshotRestoresOutput,
         crate::error::EnableFastSnapshotRestoresError,
     >;
@@ -9820,7 +10006,7 @@ impl EnableSerialConsoleAccess {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableSerialConsoleAccess {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::EnableSerialConsoleAccessOutput,
         crate::error::EnableSerialConsoleAccessError,
     >;
@@ -9850,7 +10036,7 @@ impl EnableTransitGatewayRouteTablePropagation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableTransitGatewayRouteTablePropagation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::EnableTransitGatewayRouteTablePropagationOutput,
         crate::error::EnableTransitGatewayRouteTablePropagationError,
     >;
@@ -9882,7 +10068,7 @@ impl EnableVgwRoutePropagation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableVgwRoutePropagation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::EnableVgwRoutePropagationOutput,
         crate::error::EnableVgwRoutePropagationError,
     >;
@@ -9911,7 +10097,8 @@ impl EnableVolumeIO {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableVolumeIO {
-    type Output = Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError>;
+    type Output =
+        std::result::Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_volume_io_error(response)
@@ -9942,8 +10129,10 @@ impl EnableVpcClassicLink {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableVpcClassicLink {
-    type Output =
-        Result<crate::output::EnableVpcClassicLinkOutput, crate::error::EnableVpcClassicLinkError>;
+    type Output = std::result::Result<
+        crate::output::EnableVpcClassicLinkOutput,
+        crate::error::EnableVpcClassicLinkError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_vpc_classic_link_error(response)
@@ -9974,7 +10163,7 @@ impl EnableVpcClassicLinkDnsSupport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableVpcClassicLinkDnsSupport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::EnableVpcClassicLinkDnsSupportOutput,
         crate::error::EnableVpcClassicLinkDnsSupportError,
     >;
@@ -10003,7 +10192,7 @@ impl ExportClientVpnClientCertificateRevocationList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ExportClientVpnClientCertificateRevocationList {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ExportClientVpnClientCertificateRevocationListOutput,
         crate::error::ExportClientVpnClientCertificateRevocationListError,
     >;
@@ -10035,7 +10224,7 @@ impl ExportClientVpnClientConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ExportClientVpnClientConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ExportClientVpnClientConfigurationOutput,
         crate::error::ExportClientVpnClientConfigurationError,
     >;
@@ -10065,7 +10254,8 @@ impl ExportImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ExportImage {
-    type Output = Result<crate::output::ExportImageOutput, crate::error::ExportImageError>;
+    type Output =
+        std::result::Result<crate::output::ExportImageOutput, crate::error::ExportImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_image_error(response)
@@ -10094,7 +10284,7 @@ impl ExportTransitGatewayRoutes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ExportTransitGatewayRoutes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ExportTransitGatewayRoutesOutput,
         crate::error::ExportTransitGatewayRoutesError,
     >;
@@ -10125,7 +10315,7 @@ impl GetAssociatedEnclaveCertificateIamRoles {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAssociatedEnclaveCertificateIamRoles {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetAssociatedEnclaveCertificateIamRolesOutput,
         crate::error::GetAssociatedEnclaveCertificateIamRolesError,
     >;
@@ -10157,7 +10347,7 @@ impl GetAssociatedIpv6PoolCidrs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAssociatedIpv6PoolCidrs {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetAssociatedIpv6PoolCidrsOutput,
         crate::error::GetAssociatedIpv6PoolCidrsError,
     >;
@@ -10187,7 +10377,7 @@ impl GetCapacityReservationUsage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetCapacityReservationUsage {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetCapacityReservationUsageOutput,
         crate::error::GetCapacityReservationUsageError,
     >;
@@ -10215,8 +10405,10 @@ impl GetCoipPoolUsage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetCoipPoolUsage {
-    type Output =
-        Result<crate::output::GetCoipPoolUsageOutput, crate::error::GetCoipPoolUsageError>;
+    type Output = std::result::Result<
+        crate::output::GetCoipPoolUsageOutput,
+        crate::error::GetCoipPoolUsageError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_coip_pool_usage_error(response)
@@ -10253,8 +10445,10 @@ impl GetConsoleOutput {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetConsoleOutput {
-    type Output =
-        Result<crate::output::GetConsoleOutputOutput, crate::error::GetConsoleOutputError>;
+    type Output = std::result::Result<
+        crate::output::GetConsoleOutputOutput,
+        crate::error::GetConsoleOutputError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_console_output_error(response)
@@ -10281,8 +10475,10 @@ impl GetConsoleScreenshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetConsoleScreenshot {
-    type Output =
-        Result<crate::output::GetConsoleScreenshotOutput, crate::error::GetConsoleScreenshotError>;
+    type Output = std::result::Result<
+        crate::output::GetConsoleScreenshotOutput,
+        crate::error::GetConsoleScreenshotError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_console_screenshot_error(response)
@@ -10309,7 +10505,7 @@ impl GetDefaultCreditSpecification {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDefaultCreditSpecification {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetDefaultCreditSpecificationOutput,
         crate::error::GetDefaultCreditSpecificationError,
     >;
@@ -10341,7 +10537,7 @@ impl GetEbsDefaultKmsKeyId {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetEbsDefaultKmsKeyId {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetEbsDefaultKmsKeyIdOutput,
         crate::error::GetEbsDefaultKmsKeyIdError,
     >;
@@ -10372,7 +10568,7 @@ impl GetEbsEncryptionByDefault {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetEbsEncryptionByDefault {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetEbsEncryptionByDefaultOutput,
         crate::error::GetEbsEncryptionByDefaultError,
     >;
@@ -10417,7 +10613,7 @@ impl GetFlowLogsIntegrationTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetFlowLogsIntegrationTemplate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetFlowLogsIntegrationTemplateOutput,
         crate::error::GetFlowLogsIntegrationTemplateError,
     >;
@@ -10445,7 +10641,7 @@ impl GetGroupsForCapacityReservation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetGroupsForCapacityReservation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetGroupsForCapacityReservationOutput,
         crate::error::GetGroupsForCapacityReservationError,
     >;
@@ -10477,7 +10673,7 @@ impl GetHostReservationPurchasePreview {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetHostReservationPurchasePreview {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetHostReservationPurchasePreviewOutput,
         crate::error::GetHostReservationPurchasePreviewError,
     >;
@@ -10509,7 +10705,7 @@ impl GetLaunchTemplateData {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetLaunchTemplateData {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetLaunchTemplateDataOutput,
         crate::error::GetLaunchTemplateDataError,
     >;
@@ -10537,7 +10733,7 @@ impl GetManagedPrefixListAssociations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetManagedPrefixListAssociations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetManagedPrefixListAssociationsOutput,
         crate::error::GetManagedPrefixListAssociationsError,
     >;
@@ -10565,7 +10761,7 @@ impl GetManagedPrefixListEntries {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetManagedPrefixListEntries {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetManagedPrefixListEntriesOutput,
         crate::error::GetManagedPrefixListEntriesError,
     >;
@@ -10605,7 +10801,10 @@ impl GetPasswordData {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetPasswordData {
-    type Output = Result<crate::output::GetPasswordDataOutput, crate::error::GetPasswordDataError>;
+    type Output = std::result::Result<
+        crate::output::GetPasswordDataOutput,
+        crate::error::GetPasswordDataError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_password_data_error(response)
@@ -10632,7 +10831,7 @@ impl GetReservedInstancesExchangeQuote {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetReservedInstancesExchangeQuote {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetReservedInstancesExchangeQuoteOutput,
         crate::error::GetReservedInstancesExchangeQuoteError,
     >;
@@ -10663,7 +10862,7 @@ impl GetSerialConsoleAccessStatus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSerialConsoleAccessStatus {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetSerialConsoleAccessStatusOutput,
         crate::error::GetSerialConsoleAccessStatusError,
     >;
@@ -10691,7 +10890,7 @@ impl GetTransitGatewayAttachmentPropagations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTransitGatewayAttachmentPropagations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetTransitGatewayAttachmentPropagationsOutput,
         crate::error::GetTransitGatewayAttachmentPropagationsError,
     >;
@@ -10724,7 +10923,7 @@ impl GetTransitGatewayMulticastDomainAssociations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTransitGatewayMulticastDomainAssociations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetTransitGatewayMulticastDomainAssociationsOutput,
         crate::error::GetTransitGatewayMulticastDomainAssociationsError,
     >;
@@ -10756,7 +10955,7 @@ impl GetTransitGatewayPrefixListReferences {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTransitGatewayPrefixListReferences {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetTransitGatewayPrefixListReferencesOutput,
         crate::error::GetTransitGatewayPrefixListReferencesError,
     >;
@@ -10786,7 +10985,7 @@ impl GetTransitGatewayRouteTableAssociations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTransitGatewayRouteTableAssociations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetTransitGatewayRouteTableAssociationsOutput,
         crate::error::GetTransitGatewayRouteTableAssociationsError,
     >;
@@ -10818,7 +11017,7 @@ impl GetTransitGatewayRouteTablePropagations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTransitGatewayRouteTablePropagations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetTransitGatewayRouteTablePropagationsOutput,
         crate::error::GetTransitGatewayRouteTablePropagationsError,
     >;
@@ -10852,7 +11051,7 @@ impl ImportClientVpnClientCertificateRevocationList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ImportClientVpnClientCertificateRevocationList {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ImportClientVpnClientCertificateRevocationListOutput,
         crate::error::ImportClientVpnClientCertificateRevocationListError,
     >;
@@ -10884,7 +11083,8 @@ impl ImportImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ImportImage {
-    type Output = Result<crate::output::ImportImageOutput, crate::error::ImportImageError>;
+    type Output =
+        std::result::Result<crate::output::ImportImageOutput, crate::error::ImportImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_import_image_error(response)
@@ -10915,7 +11115,8 @@ impl ImportInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ImportInstance {
-    type Output = Result<crate::output::ImportInstanceOutput, crate::error::ImportInstanceError>;
+    type Output =
+        std::result::Result<crate::output::ImportInstanceOutput, crate::error::ImportInstanceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_import_instance_error(response)
@@ -10945,7 +11146,8 @@ impl ImportKeyPair {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ImportKeyPair {
-    type Output = Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError>;
+    type Output =
+        std::result::Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_import_key_pair_error(response)
@@ -10972,7 +11174,8 @@ impl ImportSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ImportSnapshot {
-    type Output = Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError>;
+    type Output =
+        std::result::Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_import_snapshot_error(response)
@@ -11003,7 +11206,8 @@ impl ImportVolume {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ImportVolume {
-    type Output = Result<crate::output::ImportVolumeOutput, crate::error::ImportVolumeError>;
+    type Output =
+        std::result::Result<crate::output::ImportVolumeOutput, crate::error::ImportVolumeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_import_volume_error(response)
@@ -11028,7 +11232,7 @@ impl ModifyAddressAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyAddressAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyAddressAttributeOutput,
         crate::error::ModifyAddressAttributeError,
     >;
@@ -11059,7 +11263,7 @@ impl ModifyAvailabilityZoneGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyAvailabilityZoneGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyAvailabilityZoneGroupOutput,
         crate::error::ModifyAvailabilityZoneGroupError,
     >;
@@ -11091,7 +11295,7 @@ impl ModifyCapacityReservation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyCapacityReservation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyCapacityReservationOutput,
         crate::error::ModifyCapacityReservationError,
     >;
@@ -11119,7 +11323,7 @@ impl ModifyClientVpnEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyClientVpnEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyClientVpnEndpointOutput,
         crate::error::ModifyClientVpnEndpointError,
     >;
@@ -11159,7 +11363,7 @@ impl ModifyDefaultCreditSpecification {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDefaultCreditSpecification {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyDefaultCreditSpecificationOutput,
         crate::error::ModifyDefaultCreditSpecificationError,
     >;
@@ -11194,7 +11398,7 @@ impl ModifyEbsDefaultKmsKeyId {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyEbsDefaultKmsKeyId {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyEbsDefaultKmsKeyIdOutput,
         crate::error::ModifyEbsDefaultKmsKeyIdError,
     >;
@@ -11243,7 +11447,8 @@ impl ModifyFleet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyFleet {
-    type Output = Result<crate::output::ModifyFleetOutput, crate::error::ModifyFleetError>;
+    type Output =
+        std::result::Result<crate::output::ModifyFleetOutput, crate::error::ModifyFleetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_fleet_error(response)
@@ -11268,7 +11473,7 @@ impl ModifyFpgaImageAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyFpgaImageAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyFpgaImageAttributeOutput,
         crate::error::ModifyFpgaImageAttributeError,
     >;
@@ -11303,7 +11508,8 @@ impl ModifyHosts {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyHosts {
-    type Output = Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError>;
+    type Output =
+        std::result::Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_hosts_error(response)
@@ -11349,7 +11555,7 @@ impl ModifyIdentityIdFormat {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyIdentityIdFormat {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyIdentityIdFormatOutput,
         crate::error::ModifyIdentityIdFormatError,
     >;
@@ -11400,7 +11606,8 @@ impl ModifyIdFormat {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyIdFormat {
-    type Output = Result<crate::output::ModifyIdFormatOutput, crate::error::ModifyIdFormatError>;
+    type Output =
+        std::result::Result<crate::output::ModifyIdFormatOutput, crate::error::ModifyIdFormatError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_id_format_error(response)
@@ -11430,8 +11637,10 @@ impl ModifyImageAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyImageAttribute {
-    type Output =
-        Result<crate::output::ModifyImageAttributeOutput, crate::error::ModifyImageAttributeError>;
+    type Output = std::result::Result<
+        crate::output::ModifyImageAttributeOutput,
+        crate::error::ModifyImageAttributeError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_image_attribute_error(response)
@@ -11465,7 +11674,7 @@ impl ModifyInstanceAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyInstanceAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyInstanceAttributeOutput,
         crate::error::ModifyInstanceAttributeError,
     >;
@@ -11496,7 +11705,7 @@ impl ModifyInstanceCapacityReservationAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyInstanceCapacityReservationAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyInstanceCapacityReservationAttributesOutput,
         crate::error::ModifyInstanceCapacityReservationAttributesError,
     >;
@@ -11532,7 +11741,7 @@ impl ModifyInstanceCreditSpecification {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyInstanceCreditSpecification {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyInstanceCreditSpecificationOutput,
         crate::error::ModifyInstanceCreditSpecificationError,
     >;
@@ -11560,7 +11769,7 @@ impl ModifyInstanceEventStartTime {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyInstanceEventStartTime {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyInstanceEventStartTimeOutput,
         crate::error::ModifyInstanceEventStartTimeError,
     >;
@@ -11594,7 +11803,7 @@ impl ModifyInstanceMetadataOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyInstanceMetadataOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyInstanceMetadataOptionsOutput,
         crate::error::ModifyInstanceMetadataOptionsError,
     >;
@@ -11649,7 +11858,7 @@ impl ModifyInstancePlacement {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyInstancePlacement {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyInstancePlacementOutput,
         crate::error::ModifyInstancePlacementError,
     >;
@@ -11679,8 +11888,10 @@ impl ModifyLaunchTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyLaunchTemplate {
-    type Output =
-        Result<crate::output::ModifyLaunchTemplateOutput, crate::error::ModifyLaunchTemplateError>;
+    type Output = std::result::Result<
+        crate::output::ModifyLaunchTemplateOutput,
+        crate::error::ModifyLaunchTemplateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_launch_template_error(response)
@@ -11709,7 +11920,7 @@ impl ModifyManagedPrefixList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyManagedPrefixList {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyManagedPrefixListOutput,
         crate::error::ModifyManagedPrefixListError,
     >;
@@ -11739,7 +11950,7 @@ impl ModifyNetworkInterfaceAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyNetworkInterfaceAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyNetworkInterfaceAttributeOutput,
         crate::error::ModifyNetworkInterfaceAttributeError,
     >;
@@ -11772,7 +11983,7 @@ impl ModifyReservedInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyReservedInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyReservedInstancesOutput,
         crate::error::ModifyReservedInstancesError,
     >;
@@ -11807,7 +12018,7 @@ impl ModifySnapshotAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifySnapshotAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifySnapshotAttributeOutput,
         crate::error::ModifySnapshotAttributeError,
     >;
@@ -11858,7 +12069,7 @@ impl ModifySpotFleetRequest {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifySpotFleetRequest {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifySpotFleetRequestOutput,
         crate::error::ModifySpotFleetRequestError,
     >;
@@ -11886,7 +12097,7 @@ impl ModifySubnetAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifySubnetAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifySubnetAttributeOutput,
         crate::error::ModifySubnetAttributeError,
     >;
@@ -11919,7 +12130,7 @@ impl ModifyTrafficMirrorFilterNetworkServices {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyTrafficMirrorFilterNetworkServices {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyTrafficMirrorFilterNetworkServicesOutput,
         crate::error::ModifyTrafficMirrorFilterNetworkServicesError,
     >;
@@ -11954,7 +12165,7 @@ impl ModifyTrafficMirrorFilterRule {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyTrafficMirrorFilterRule {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyTrafficMirrorFilterRuleOutput,
         crate::error::ModifyTrafficMirrorFilterRuleError,
     >;
@@ -11982,7 +12193,7 @@ impl ModifyTrafficMirrorSession {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyTrafficMirrorSession {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyTrafficMirrorSessionOutput,
         crate::error::ModifyTrafficMirrorSessionError,
     >;
@@ -12010,8 +12221,10 @@ impl ModifyTransitGateway {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyTransitGateway {
-    type Output =
-        Result<crate::output::ModifyTransitGatewayOutput, crate::error::ModifyTransitGatewayError>;
+    type Output = std::result::Result<
+        crate::output::ModifyTransitGatewayOutput,
+        crate::error::ModifyTransitGatewayError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_transit_gateway_error(response)
@@ -12036,7 +12249,7 @@ impl ModifyTransitGatewayPrefixListReference {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyTransitGatewayPrefixListReference {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyTransitGatewayPrefixListReferenceOutput,
         crate::error::ModifyTransitGatewayPrefixListReferenceError,
     >;
@@ -12068,7 +12281,7 @@ impl ModifyTransitGatewayVpcAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyTransitGatewayVpcAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyTransitGatewayVpcAttachmentOutput,
         crate::error::ModifyTransitGatewayVpcAttachmentError,
     >;
@@ -12117,7 +12330,8 @@ impl ModifyVolume {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVolume {
-    type Output = Result<crate::output::ModifyVolumeOutput, crate::error::ModifyVolumeError>;
+    type Output =
+        std::result::Result<crate::output::ModifyVolumeOutput, crate::error::ModifyVolumeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_volume_error(response)
@@ -12148,7 +12362,7 @@ impl ModifyVolumeAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVolumeAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyVolumeAttributeOutput,
         crate::error::ModifyVolumeAttributeError,
     >;
@@ -12176,8 +12390,10 @@ impl ModifyVpcAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpcAttribute {
-    type Output =
-        Result<crate::output::ModifyVpcAttributeOutput, crate::error::ModifyVpcAttributeError>;
+    type Output = std::result::Result<
+        crate::output::ModifyVpcAttributeOutput,
+        crate::error::ModifyVpcAttributeError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_vpc_attribute_error(response)
@@ -12205,8 +12421,10 @@ impl ModifyVpcEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpcEndpoint {
-    type Output =
-        Result<crate::output::ModifyVpcEndpointOutput, crate::error::ModifyVpcEndpointError>;
+    type Output = std::result::Result<
+        crate::output::ModifyVpcEndpointOutput,
+        crate::error::ModifyVpcEndpointError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_vpc_endpoint_error(response)
@@ -12232,7 +12450,7 @@ impl ModifyVpcEndpointConnectionNotification {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpcEndpointConnectionNotification {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyVpcEndpointConnectionNotificationOutput,
         crate::error::ModifyVpcEndpointConnectionNotificationError,
     >;
@@ -12271,7 +12489,7 @@ impl ModifyVpcEndpointServiceConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpcEndpointServiceConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyVpcEndpointServiceConfigurationOutput,
         crate::error::ModifyVpcEndpointServiceConfigurationError,
     >;
@@ -12305,7 +12523,7 @@ impl ModifyVpcEndpointServicePermissions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpcEndpointServicePermissions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyVpcEndpointServicePermissionsOutput,
         crate::error::ModifyVpcEndpointServicePermissionsError,
     >;
@@ -12354,7 +12572,7 @@ impl ModifyVpcPeeringConnectionOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpcPeeringConnectionOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyVpcPeeringConnectionOptionsOutput,
         crate::error::ModifyVpcPeeringConnectionOptionsError,
     >;
@@ -12389,8 +12607,10 @@ impl ModifyVpcTenancy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpcTenancy {
-    type Output =
-        Result<crate::output::ModifyVpcTenancyOutput, crate::error::ModifyVpcTenancyError>;
+    type Output = std::result::Result<
+        crate::output::ModifyVpcTenancyOutput,
+        crate::error::ModifyVpcTenancyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_vpc_tenancy_error(response)
@@ -12444,8 +12664,10 @@ impl ModifyVpnConnection {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpnConnection {
-    type Output =
-        Result<crate::output::ModifyVpnConnectionOutput, crate::error::ModifyVpnConnectionError>;
+    type Output = std::result::Result<
+        crate::output::ModifyVpnConnectionOutput,
+        crate::error::ModifyVpnConnectionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_vpn_connection_error(response)
@@ -12471,7 +12693,7 @@ impl ModifyVpnConnectionOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpnConnectionOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyVpnConnectionOptionsOutput,
         crate::error::ModifyVpnConnectionOptionsError,
     >;
@@ -12499,7 +12721,7 @@ impl ModifyVpnTunnelCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpnTunnelCertificate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyVpnTunnelCertificateOutput,
         crate::error::ModifyVpnTunnelCertificateError,
     >;
@@ -12530,7 +12752,7 @@ impl ModifyVpnTunnelOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyVpnTunnelOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyVpnTunnelOptionsOutput,
         crate::error::ModifyVpnTunnelOptionsError,
     >;
@@ -12561,8 +12783,10 @@ impl MonitorInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for MonitorInstances {
-    type Output =
-        Result<crate::output::MonitorInstancesOutput, crate::error::MonitorInstancesError>;
+    type Output = std::result::Result<
+        crate::output::MonitorInstancesOutput,
+        crate::error::MonitorInstancesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_monitor_instances_error(response)
@@ -12592,8 +12816,10 @@ impl MoveAddressToVpc {
     }
 }
 impl smithy_http::response::ParseStrictResponse for MoveAddressToVpc {
-    type Output =
-        Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError>;
+    type Output = std::result::Result<
+        crate::output::MoveAddressToVpcOutput,
+        crate::error::MoveAddressToVpcError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_move_address_to_vpc_error(response)
@@ -12629,8 +12855,10 @@ impl ProvisionByoipCidr {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ProvisionByoipCidr {
-    type Output =
-        Result<crate::output::ProvisionByoipCidrOutput, crate::error::ProvisionByoipCidrError>;
+    type Output = std::result::Result<
+        crate::output::ProvisionByoipCidrOutput,
+        crate::error::ProvisionByoipCidrError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_provision_byoip_cidr_error(response)
@@ -12658,7 +12886,7 @@ impl PurchaseHostReservation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PurchaseHostReservation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PurchaseHostReservationOutput,
         crate::error::PurchaseHostReservationError,
     >;
@@ -12695,7 +12923,7 @@ impl PurchaseReservedInstancesOffering {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PurchaseReservedInstancesOffering {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PurchaseReservedInstancesOfferingOutput,
         crate::error::PurchaseReservedInstancesOfferingError,
     >;
@@ -12728,7 +12956,7 @@ impl PurchaseScheduledInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PurchaseScheduledInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PurchaseScheduledInstancesOutput,
         crate::error::PurchaseScheduledInstancesError,
     >;
@@ -12763,7 +12991,10 @@ impl RebootInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RebootInstances {
-    type Output = Result<crate::output::RebootInstancesOutput, crate::error::RebootInstancesError>;
+    type Output = std::result::Result<
+        crate::output::RebootInstancesOutput,
+        crate::error::RebootInstancesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_reboot_instances_error(response)
@@ -12834,7 +13065,8 @@ impl RegisterImage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RegisterImage {
-    type Output = Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError>;
+    type Output =
+        std::result::Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_register_image_error(response)
@@ -12862,7 +13094,7 @@ impl RegisterInstanceEventNotificationAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RegisterInstanceEventNotificationAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RegisterInstanceEventNotificationAttributesOutput,
         crate::error::RegisterInstanceEventNotificationAttributesError,
     >;
@@ -12900,7 +13132,7 @@ impl RegisterTransitGatewayMulticastGroupMembers {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RegisterTransitGatewayMulticastGroupMembers {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RegisterTransitGatewayMulticastGroupMembersOutput,
         crate::error::RegisterTransitGatewayMulticastGroupMembersError,
     >;
@@ -12938,7 +13170,7 @@ impl RegisterTransitGatewayMulticastGroupSources {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RegisterTransitGatewayMulticastGroupSources {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RegisterTransitGatewayMulticastGroupSourcesOutput,
         crate::error::RegisterTransitGatewayMulticastGroupSourcesError,
     >;
@@ -12973,7 +13205,7 @@ impl RejectTransitGatewayMulticastDomainAssociations {
 impl smithy_http::response::ParseStrictResponse
     for RejectTransitGatewayMulticastDomainAssociations
 {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RejectTransitGatewayMulticastDomainAssociationsOutput,
         crate::error::RejectTransitGatewayMulticastDomainAssociationsError,
     >;
@@ -13003,7 +13235,7 @@ impl RejectTransitGatewayPeeringAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RejectTransitGatewayPeeringAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RejectTransitGatewayPeeringAttachmentOutput,
         crate::error::RejectTransitGatewayPeeringAttachmentError,
     >;
@@ -13036,7 +13268,7 @@ impl RejectTransitGatewayVpcAttachment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RejectTransitGatewayVpcAttachment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RejectTransitGatewayVpcAttachmentOutput,
         crate::error::RejectTransitGatewayVpcAttachmentError,
     >;
@@ -13065,7 +13297,7 @@ impl RejectVpcEndpointConnections {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RejectVpcEndpointConnections {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RejectVpcEndpointConnectionsOutput,
         crate::error::RejectVpcEndpointConnectionsError,
     >;
@@ -13096,7 +13328,7 @@ impl RejectVpcPeeringConnection {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RejectVpcPeeringConnection {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RejectVpcPeeringConnectionOutput,
         crate::error::RejectVpcPeeringConnectionError,
     >;
@@ -13135,7 +13367,8 @@ impl ReleaseAddress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReleaseAddress {
-    type Output = Result<crate::output::ReleaseAddressOutput, crate::error::ReleaseAddressError>;
+    type Output =
+        std::result::Result<crate::output::ReleaseAddressOutput, crate::error::ReleaseAddressError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_release_address_error(response)
@@ -13168,7 +13401,8 @@ impl ReleaseHosts {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReleaseHosts {
-    type Output = Result<crate::output::ReleaseHostsOutput, crate::error::ReleaseHostsError>;
+    type Output =
+        std::result::Result<crate::output::ReleaseHostsOutput, crate::error::ReleaseHostsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_release_hosts_error(response)
@@ -13197,7 +13431,7 @@ impl ReplaceIamInstanceProfileAssociation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReplaceIamInstanceProfileAssociation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ReplaceIamInstanceProfileAssociationOutput,
         crate::error::ReplaceIamInstanceProfileAssociationError,
     >;
@@ -13231,7 +13465,7 @@ impl ReplaceNetworkAclAssociation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReplaceNetworkAclAssociation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ReplaceNetworkAclAssociationOutput,
         crate::error::ReplaceNetworkAclAssociationError,
     >;
@@ -13260,7 +13494,7 @@ impl ReplaceNetworkAclEntry {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReplaceNetworkAclEntry {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ReplaceNetworkAclEntryOutput,
         crate::error::ReplaceNetworkAclEntryError,
     >;
@@ -13293,7 +13527,8 @@ impl ReplaceRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReplaceRoute {
-    type Output = Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError>;
+    type Output =
+        std::result::Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_replace_route_error(response)
@@ -13322,7 +13557,7 @@ impl ReplaceRouteTableAssociation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReplaceRouteTableAssociation {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ReplaceRouteTableAssociationOutput,
         crate::error::ReplaceRouteTableAssociationError,
     >;
@@ -13350,7 +13585,7 @@ impl ReplaceTransitGatewayRoute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReplaceTransitGatewayRoute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ReplaceTransitGatewayRouteOutput,
         crate::error::ReplaceTransitGatewayRouteError,
     >;
@@ -13382,8 +13617,10 @@ impl ReportInstanceStatus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ReportInstanceStatus {
-    type Output =
-        Result<crate::output::ReportInstanceStatusOutput, crate::error::ReportInstanceStatusError>;
+    type Output = std::result::Result<
+        crate::output::ReportInstanceStatusOutput,
+        crate::error::ReportInstanceStatusError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_report_instance_status_error(response)
@@ -13423,8 +13660,10 @@ impl RequestSpotFleet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RequestSpotFleet {
-    type Output =
-        Result<crate::output::RequestSpotFleetOutput, crate::error::RequestSpotFleetError>;
+    type Output = std::result::Result<
+        crate::output::RequestSpotFleetOutput,
+        crate::error::RequestSpotFleetError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_request_spot_fleet_error(response)
@@ -13450,8 +13689,10 @@ impl RequestSpotInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RequestSpotInstances {
-    type Output =
-        Result<crate::output::RequestSpotInstancesOutput, crate::error::RequestSpotInstancesError>;
+    type Output = std::result::Result<
+        crate::output::RequestSpotInstancesOutput,
+        crate::error::RequestSpotInstancesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_request_spot_instances_error(response)
@@ -13476,7 +13717,7 @@ impl ResetAddressAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetAddressAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetAddressAttributeOutput,
         crate::error::ResetAddressAttributeError,
     >;
@@ -13509,7 +13750,7 @@ impl ResetEbsDefaultKmsKeyId {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetEbsDefaultKmsKeyId {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetEbsDefaultKmsKeyIdOutput,
         crate::error::ResetEbsDefaultKmsKeyIdError,
     >;
@@ -13538,7 +13779,7 @@ impl ResetFpgaImageAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetFpgaImageAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetFpgaImageAttributeOutput,
         crate::error::ResetFpgaImageAttributeError,
     >;
@@ -13569,8 +13810,10 @@ impl ResetImageAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetImageAttribute {
-    type Output =
-        Result<crate::output::ResetImageAttributeOutput, crate::error::ResetImageAttributeError>;
+    type Output = std::result::Result<
+        crate::output::ResetImageAttributeOutput,
+        crate::error::ResetImageAttributeError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_reset_image_attribute_error(response)
@@ -13603,7 +13846,7 @@ impl ResetInstanceAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetInstanceAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetInstanceAttributeOutput,
         crate::error::ResetInstanceAttributeError,
     >;
@@ -13631,7 +13874,7 @@ impl ResetNetworkInterfaceAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetNetworkInterfaceAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetNetworkInterfaceAttributeOutput,
         crate::error::ResetNetworkInterfaceAttributeError,
     >;
@@ -13661,7 +13904,7 @@ impl ResetSnapshotAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetSnapshotAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetSnapshotAttributeOutput,
         crate::error::ResetSnapshotAttributeError,
     >;
@@ -13689,7 +13932,7 @@ impl RestoreAddressToClassic {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreAddressToClassic {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RestoreAddressToClassicOutput,
         crate::error::RestoreAddressToClassicError,
     >;
@@ -13717,7 +13960,7 @@ impl RestoreManagedPrefixListVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreManagedPrefixListVersion {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RestoreManagedPrefixListVersionOutput,
         crate::error::RestoreManagedPrefixListVersionError,
     >;
@@ -13745,7 +13988,7 @@ impl RevokeClientVpnIngress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RevokeClientVpnIngress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RevokeClientVpnIngressOutput,
         crate::error::RevokeClientVpnIngressError,
     >;
@@ -13787,7 +14030,7 @@ impl RevokeSecurityGroupEgress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RevokeSecurityGroupEgress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RevokeSecurityGroupEgressOutput,
         crate::error::RevokeSecurityGroupEgressError,
     >;
@@ -13825,7 +14068,7 @@ impl RevokeSecurityGroupIngress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RevokeSecurityGroupIngress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RevokeSecurityGroupIngressOutput,
         crate::error::RevokeSecurityGroupIngressError,
     >;
@@ -13909,7 +14152,8 @@ impl RunInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RunInstances {
-    type Output = Result<crate::output::RunInstancesOutput, crate::error::RunInstancesError>;
+    type Output =
+        std::result::Result<crate::output::RunInstancesOutput, crate::error::RunInstancesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_run_instances_error(response)
@@ -13939,7 +14183,7 @@ impl RunScheduledInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RunScheduledInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RunScheduledInstancesOutput,
         crate::error::RunScheduledInstancesError,
     >;
@@ -13967,7 +14211,7 @@ impl SearchLocalGatewayRoutes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SearchLocalGatewayRoutes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SearchLocalGatewayRoutesOutput,
         crate::error::SearchLocalGatewayRoutesError,
     >;
@@ -13995,7 +14239,7 @@ impl SearchTransitGatewayMulticastGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SearchTransitGatewayMulticastGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SearchTransitGatewayMulticastGroupsOutput,
         crate::error::SearchTransitGatewayMulticastGroupsError,
     >;
@@ -14023,7 +14267,7 @@ impl SearchTransitGatewayRoutes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SearchTransitGatewayRoutes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SearchTransitGatewayRoutesOutput,
         crate::error::SearchTransitGatewayRoutesError,
     >;
@@ -14063,7 +14307,7 @@ impl SendDiagnosticInterrupt {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SendDiagnosticInterrupt {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SendDiagnosticInterruptOutput,
         crate::error::SendDiagnosticInterruptError,
     >;
@@ -14107,7 +14351,8 @@ impl StartInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartInstances {
-    type Output = Result<crate::output::StartInstancesOutput, crate::error::StartInstancesError>;
+    type Output =
+        std::result::Result<crate::output::StartInstancesOutput, crate::error::StartInstancesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_instances_error(response)
@@ -14133,7 +14378,7 @@ impl StartNetworkInsightsAnalysis {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartNetworkInsightsAnalysis {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::StartNetworkInsightsAnalysisOutput,
         crate::error::StartNetworkInsightsAnalysisError,
     >;
@@ -14165,7 +14410,7 @@ impl StartVpcEndpointServicePrivateDnsVerification {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartVpcEndpointServicePrivateDnsVerification {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::StartVpcEndpointServicePrivateDnsVerificationOutput,
         crate::error::StartVpcEndpointServicePrivateDnsVerificationError,
     >;
@@ -14226,7 +14471,8 @@ impl StopInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StopInstances {
-    type Output = Result<crate::output::StopInstancesOutput, crate::error::StopInstancesError>;
+    type Output =
+        std::result::Result<crate::output::StopInstancesOutput, crate::error::StopInstancesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_instances_error(response)
@@ -14251,7 +14497,7 @@ impl TerminateClientVpnConnections {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TerminateClientVpnConnections {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::TerminateClientVpnConnectionsOutput,
         crate::error::TerminateClientVpnConnectionsError,
     >;
@@ -14295,8 +14541,10 @@ impl TerminateInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TerminateInstances {
-    type Output =
-        Result<crate::output::TerminateInstancesOutput, crate::error::TerminateInstancesError>;
+    type Output = std::result::Result<
+        crate::output::TerminateInstancesOutput,
+        crate::error::TerminateInstancesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_terminate_instances_error(response)
@@ -14321,7 +14569,7 @@ impl UnassignIpv6Addresses {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UnassignIpv6Addresses {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UnassignIpv6AddressesOutput,
         crate::error::UnassignIpv6AddressesError,
     >;
@@ -14349,7 +14597,7 @@ impl UnassignPrivateIpAddresses {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UnassignPrivateIpAddresses {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UnassignPrivateIpAddressesOutput,
         crate::error::UnassignPrivateIpAddressesError,
     >;
@@ -14378,8 +14626,10 @@ impl UnmonitorInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UnmonitorInstances {
-    type Output =
-        Result<crate::output::UnmonitorInstancesOutput, crate::error::UnmonitorInstancesError>;
+    type Output = std::result::Result<
+        crate::output::UnmonitorInstancesOutput,
+        crate::error::UnmonitorInstancesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_unmonitor_instances_error(response)
@@ -14410,7 +14660,7 @@ impl UpdateSecurityGroupRuleDescriptionsEgress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateSecurityGroupRuleDescriptionsEgress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateSecurityGroupRuleDescriptionsEgressOutput,
         crate::error::UpdateSecurityGroupRuleDescriptionsEgressError,
     >;
@@ -14448,7 +14698,7 @@ impl UpdateSecurityGroupRuleDescriptionsIngress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateSecurityGroupRuleDescriptionsIngress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateSecurityGroupRuleDescriptionsIngressOutput,
         crate::error::UpdateSecurityGroupRuleDescriptionsIngressError,
     >;
@@ -14484,8 +14734,10 @@ impl WithdrawByoipCidr {
     }
 }
 impl smithy_http::response::ParseStrictResponse for WithdrawByoipCidr {
-    type Output =
-        Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError>;
+    type Output = std::result::Result<
+        crate::output::WithdrawByoipCidrOutput,
+        crate::error::WithdrawByoipCidrError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_withdraw_byoip_cidr_error(response)

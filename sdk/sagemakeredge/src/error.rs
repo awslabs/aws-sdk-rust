@@ -64,6 +64,12 @@ impl GetDeviceRegistrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeviceRegistrationErrorKind::InternalServiceError(_)
+        )
+    }
 }
 impl std::error::Error for GetDeviceRegistrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -139,6 +145,9 @@ impl SendHeartbeatError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, SendHeartbeatErrorKind::InternalServiceError(_))
+    }
 }
 impl std::error::Error for SendHeartbeatError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -189,12 +198,12 @@ pub mod internal_service_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalServiceError`](crate::error::InternalServiceError)

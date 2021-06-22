@@ -22,12 +22,12 @@ pub mod update_task_set_output {
     }
     impl Builder {
         /// <p>Details about the task set.</p>
-        pub fn task_set(mut self, inp: crate::model::TaskSet) -> Self {
-            self.task_set = Some(inp);
+        pub fn task_set(mut self, input: crate::model::TaskSet) -> Self {
+            self.task_set = Some(input);
             self
         }
-        pub fn set_task_set(mut self, inp: std::option::Option<crate::model::TaskSet>) -> Self {
-            self.task_set = inp;
+        pub fn set_task_set(mut self, input: std::option::Option<crate::model::TaskSet>) -> Self {
+            self.task_set = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTaskSetOutput`](crate::output::UpdateTaskSetOutput)
@@ -68,12 +68,12 @@ pub mod update_service_primary_task_set_output {
     }
     impl Builder {
         /// <p>Details about the task set.</p>
-        pub fn task_set(mut self, inp: crate::model::TaskSet) -> Self {
-            self.task_set = Some(inp);
+        pub fn task_set(mut self, input: crate::model::TaskSet) -> Self {
+            self.task_set = Some(input);
             self
         }
-        pub fn set_task_set(mut self, inp: std::option::Option<crate::model::TaskSet>) -> Self {
-            self.task_set = inp;
+        pub fn set_task_set(mut self, input: std::option::Option<crate::model::TaskSet>) -> Self {
+            self.task_set = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateServicePrimaryTaskSetOutput`](crate::output::UpdateServicePrimaryTaskSetOutput)
@@ -114,12 +114,12 @@ pub mod update_service_output {
     }
     impl Builder {
         /// <p>The full description of your service following the update call.</p>
-        pub fn service(mut self, inp: crate::model::Service) -> Self {
-            self.service = Some(inp);
+        pub fn service(mut self, input: crate::model::Service) -> Self {
+            self.service = Some(input);
             self
         }
-        pub fn set_service(mut self, inp: std::option::Option<crate::model::Service>) -> Self {
-            self.service = inp;
+        pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
+            self.service = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateServiceOutput`](crate::output::UpdateServiceOutput)
@@ -166,31 +166,31 @@ pub mod update_container_instances_state_output {
     impl Builder {
         pub fn container_instances(
             mut self,
-            inp: impl Into<crate::model::ContainerInstance>,
+            input: impl Into<crate::model::ContainerInstance>,
         ) -> Self {
             let mut v = self.container_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.container_instances = Some(v);
             self
         }
         pub fn set_container_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContainerInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContainerInstance>>,
         ) -> Self {
-            self.container_instances = inp;
+            self.container_instances = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateContainerInstancesStateOutput`](crate::output::UpdateContainerInstancesStateOutput)
@@ -232,15 +232,15 @@ pub mod update_container_agent_output {
     }
     impl Builder {
         /// <p>The container instance for which the container agent was updated.</p>
-        pub fn container_instance(mut self, inp: crate::model::ContainerInstance) -> Self {
-            self.container_instance = Some(inp);
+        pub fn container_instance(mut self, input: crate::model::ContainerInstance) -> Self {
+            self.container_instance = Some(input);
             self
         }
         pub fn set_container_instance(
             mut self,
-            inp: std::option::Option<crate::model::ContainerInstance>,
+            input: std::option::Option<crate::model::ContainerInstance>,
         ) -> Self {
-            self.container_instance = inp;
+            self.container_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateContainerAgentOutput`](crate::output::UpdateContainerAgentOutput)
@@ -281,12 +281,12 @@ pub mod update_cluster_settings_output {
     }
     impl Builder {
         /// <p>Details about the cluster</p>
-        pub fn cluster(mut self, inp: crate::model::Cluster) -> Self {
-            self.cluster = Some(inp);
+        pub fn cluster(mut self, input: crate::model::Cluster) -> Self {
+            self.cluster = Some(input);
             self
         }
-        pub fn set_cluster(mut self, inp: std::option::Option<crate::model::Cluster>) -> Self {
-            self.cluster = inp;
+        pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
+            self.cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateClusterSettingsOutput`](crate::output::UpdateClusterSettingsOutput)
@@ -327,12 +327,12 @@ pub mod update_cluster_output {
     }
     impl Builder {
         /// <p>Details about the cluster.</p>
-        pub fn cluster(mut self, inp: crate::model::Cluster) -> Self {
-            self.cluster = Some(inp);
+        pub fn cluster(mut self, input: crate::model::Cluster) -> Self {
+            self.cluster = Some(input);
             self
         }
-        pub fn set_cluster(mut self, inp: std::option::Option<crate::model::Cluster>) -> Self {
-            self.cluster = inp;
+        pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
+            self.cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
@@ -373,15 +373,15 @@ pub mod update_capacity_provider_output {
     }
     impl Builder {
         /// <p>Details about the capacity provider.</p>
-        pub fn capacity_provider(mut self, inp: crate::model::CapacityProvider) -> Self {
-            self.capacity_provider = Some(inp);
+        pub fn capacity_provider(mut self, input: crate::model::CapacityProvider) -> Self {
+            self.capacity_provider = Some(input);
             self
         }
         pub fn set_capacity_provider(
             mut self,
-            inp: std::option::Option<crate::model::CapacityProvider>,
+            input: std::option::Option<crate::model::CapacityProvider>,
         ) -> Self {
-            self.capacity_provider = inp;
+            self.capacity_provider = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateCapacityProviderOutput`](crate::output::UpdateCapacityProviderOutput)
@@ -480,12 +480,15 @@ pub mod submit_task_state_change_output {
     }
     impl Builder {
         /// <p>Acknowledgement of the state change.</p>
-        pub fn acknowledgment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.acknowledgment = Some(inp.into());
+        pub fn acknowledgment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.acknowledgment = Some(input.into());
             self
         }
-        pub fn set_acknowledgment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.acknowledgment = inp;
+        pub fn set_acknowledgment(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.acknowledgment = input;
             self
         }
         /// Consumes the builder and constructs a [`SubmitTaskStateChangeOutput`](crate::output::SubmitTaskStateChangeOutput)
@@ -526,12 +529,15 @@ pub mod submit_container_state_change_output {
     }
     impl Builder {
         /// <p>Acknowledgement of the state change.</p>
-        pub fn acknowledgment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.acknowledgment = Some(inp.into());
+        pub fn acknowledgment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.acknowledgment = Some(input.into());
             self
         }
-        pub fn set_acknowledgment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.acknowledgment = inp;
+        pub fn set_acknowledgment(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.acknowledgment = input;
             self
         }
         /// Consumes the builder and constructs a [`SubmitContainerStateChangeOutput`](crate::output::SubmitContainerStateChangeOutput)
@@ -572,12 +578,15 @@ pub mod submit_attachment_state_changes_output {
     }
     impl Builder {
         /// <p>Acknowledgement of the state change.</p>
-        pub fn acknowledgment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.acknowledgment = Some(inp.into());
+        pub fn acknowledgment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.acknowledgment = Some(input.into());
             self
         }
-        pub fn set_acknowledgment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.acknowledgment = inp;
+        pub fn set_acknowledgment(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.acknowledgment = input;
             self
         }
         /// Consumes the builder and constructs a [`SubmitAttachmentStateChangesOutput`](crate::output::SubmitAttachmentStateChangesOutput)
@@ -618,12 +627,12 @@ pub mod stop_task_output {
     }
     impl Builder {
         /// <p>The task that was stopped.</p>
-        pub fn task(mut self, inp: crate::model::Task) -> Self {
-            self.task = Some(inp);
+        pub fn task(mut self, input: crate::model::Task) -> Self {
+            self.task = Some(input);
             self
         }
-        pub fn set_task(mut self, inp: std::option::Option<crate::model::Task>) -> Self {
-            self.task = inp;
+        pub fn set_task(mut self, input: std::option::Option<crate::model::Task>) -> Self {
+            self.task = input;
             self
         }
         /// Consumes the builder and constructs a [`StopTaskOutput`](crate::output::StopTaskOutput)
@@ -666,30 +675,30 @@ pub mod start_task_output {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
     }
     impl Builder {
-        pub fn tasks(mut self, inp: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tasks = Some(v);
             self
         }
         pub fn set_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Task>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Task>>,
         ) -> Self {
-            self.tasks = inp;
+            self.tasks = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// Consumes the builder and constructs a [`StartTaskOutput`](crate::output::StartTaskOutput)
@@ -735,30 +744,30 @@ pub mod run_task_output {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
     }
     impl Builder {
-        pub fn tasks(mut self, inp: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tasks = Some(v);
             self
         }
         pub fn set_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Task>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Task>>,
         ) -> Self {
-            self.tasks = inp;
+            self.tasks = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// Consumes the builder and constructs a [`RunTaskOutput`](crate::output::RunTaskOutput)
@@ -804,28 +813,28 @@ pub mod register_task_definition_output {
     }
     impl Builder {
         /// <p>The full description of the registered task definition.</p>
-        pub fn task_definition(mut self, inp: crate::model::TaskDefinition) -> Self {
-            self.task_definition = Some(inp);
+        pub fn task_definition(mut self, input: crate::model::TaskDefinition) -> Self {
+            self.task_definition = Some(input);
             self
         }
         pub fn set_task_definition(
             mut self,
-            inp: std::option::Option<crate::model::TaskDefinition>,
+            input: std::option::Option<crate::model::TaskDefinition>,
         ) -> Self {
-            self.task_definition = inp;
+            self.task_definition = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterTaskDefinitionOutput`](crate::output::RegisterTaskDefinitionOutput)
@@ -867,15 +876,15 @@ pub mod register_container_instance_output {
     }
     impl Builder {
         /// <p>The container instance that was registered.</p>
-        pub fn container_instance(mut self, inp: crate::model::ContainerInstance) -> Self {
-            self.container_instance = Some(inp);
+        pub fn container_instance(mut self, input: crate::model::ContainerInstance) -> Self {
+            self.container_instance = Some(input);
             self
         }
         pub fn set_container_instance(
             mut self,
-            inp: std::option::Option<crate::model::ContainerInstance>,
+            input: std::option::Option<crate::model::ContainerInstance>,
         ) -> Self {
-            self.container_instance = inp;
+            self.container_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterContainerInstanceOutput`](crate::output::RegisterContainerInstanceOutput)
@@ -916,12 +925,12 @@ pub mod put_cluster_capacity_providers_output {
     }
     impl Builder {
         /// <p>Details about the cluster.</p>
-        pub fn cluster(mut self, inp: crate::model::Cluster) -> Self {
-            self.cluster = Some(inp);
+        pub fn cluster(mut self, input: crate::model::Cluster) -> Self {
+            self.cluster = Some(input);
             self
         }
-        pub fn set_cluster(mut self, inp: std::option::Option<crate::model::Cluster>) -> Self {
-            self.cluster = inp;
+        pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
+            self.cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`PutClusterCapacityProvidersOutput`](crate::output::PutClusterCapacityProvidersOutput)
@@ -961,17 +970,17 @@ pub mod put_attributes_output {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     }
     impl Builder {
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes = Some(v);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`PutAttributesOutput`](crate::output::PutAttributesOutput)
@@ -1012,12 +1021,12 @@ pub mod put_account_setting_default_output {
     }
     impl Builder {
         /// <p>The current setting for a resource.</p>
-        pub fn setting(mut self, inp: crate::model::Setting) -> Self {
-            self.setting = Some(inp);
+        pub fn setting(mut self, input: crate::model::Setting) -> Self {
+            self.setting = Some(input);
             self
         }
-        pub fn set_setting(mut self, inp: std::option::Option<crate::model::Setting>) -> Self {
-            self.setting = inp;
+        pub fn set_setting(mut self, input: std::option::Option<crate::model::Setting>) -> Self {
+            self.setting = input;
             self
         }
         /// Consumes the builder and constructs a [`PutAccountSettingDefaultOutput`](crate::output::PutAccountSettingDefaultOutput)
@@ -1058,12 +1067,12 @@ pub mod put_account_setting_output {
     }
     impl Builder {
         /// <p>The current account setting for a resource.</p>
-        pub fn setting(mut self, inp: crate::model::Setting) -> Self {
-            self.setting = Some(inp);
+        pub fn setting(mut self, input: crate::model::Setting) -> Self {
+            self.setting = Some(input);
             self
         }
-        pub fn set_setting(mut self, inp: std::option::Option<crate::model::Setting>) -> Self {
-            self.setting = inp;
+        pub fn set_setting(mut self, input: std::option::Option<crate::model::Setting>) -> Self {
+            self.setting = input;
             self
         }
         /// Consumes the builder and constructs a [`PutAccountSettingOutput`](crate::output::PutAccountSettingOutput)
@@ -1111,17 +1120,17 @@ pub mod list_tasks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn task_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn task_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.task_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.task_arns = Some(v);
             self
         }
         pub fn set_task_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.task_arns = inp;
+            self.task_arns = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code>
@@ -1129,12 +1138,12 @@ pub mod list_tasks_output {
         /// <code>maxResults</code>, this value can be used to retrieve the next page of
         /// results. This value is <code>null</code> when there are no more results to
         /// return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTasksOutput`](crate::output::ListTasksOutput)
@@ -1184,17 +1193,17 @@ pub mod list_task_definitions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn task_definition_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn task_definition_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.task_definition_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.task_definition_arns = Some(v);
             self
         }
         pub fn set_task_definition_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.task_definition_arns = inp;
+            self.task_definition_arns = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future
@@ -1202,12 +1211,12 @@ pub mod list_task_definitions_output {
         /// <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value
         /// can be used to retrieve the next page of results. This value is <code>null</code> when
         /// there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTaskDefinitionsOutput`](crate::output::ListTaskDefinitionsOutput)
@@ -1257,17 +1266,17 @@ pub mod list_task_definition_families_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn families(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn families(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.families.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.families = Some(v);
             self
         }
         pub fn set_families(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.families = inp;
+            self.families = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future
@@ -1275,12 +1284,12 @@ pub mod list_task_definition_families_output {
         /// <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this
         /// value can be used to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTaskDefinitionFamiliesOutput`](crate::output::ListTaskDefinitionFamiliesOutput)
@@ -1321,17 +1330,17 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
@@ -1378,17 +1387,17 @@ pub mod list_services_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn service_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn service_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.service_arns = Some(v);
             self
         }
         pub fn set_service_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.service_arns = inp;
+            self.service_arns = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code>
@@ -1396,12 +1405,12 @@ pub mod list_services_output {
         /// <code>maxResults</code>, this value can be used to retrieve the next page of
         /// results. This value is <code>null</code> when there are no more results to
         /// return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput)
@@ -1451,17 +1460,17 @@ pub mod list_container_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn container_instance_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn container_instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.container_instance_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.container_instance_arns = Some(v);
             self
         }
         pub fn set_container_instance_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.container_instance_arns = inp;
+            self.container_instance_arns = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future
@@ -1469,12 +1478,12 @@ pub mod list_container_instances_output {
         /// <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
         /// value can be used to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListContainerInstancesOutput`](crate::output::ListContainerInstancesOutput)
@@ -1524,17 +1533,17 @@ pub mod list_clusters_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn cluster_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn cluster_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cluster_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cluster_arns = Some(v);
             self
         }
         pub fn set_cluster_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.cluster_arns = inp;
+            self.cluster_arns = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
@@ -1542,12 +1551,12 @@ pub mod list_clusters_output {
         /// <code>maxResults</code>, this value can be used to retrieve the next page of
         /// results. This value is <code>null</code> when there are no more results to
         /// return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListClustersOutput`](crate::output::ListClustersOutput)
@@ -1596,17 +1605,17 @@ pub mod list_attributes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes = Some(v);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code>
@@ -1614,12 +1623,12 @@ pub mod list_attributes_output {
         /// <code>maxResults</code>, this value can be used to retrieve the next page of
         /// results. This value is <code>null</code> when there are no more results to
         /// return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAttributesOutput`](crate::output::ListAttributesOutput)
@@ -1668,17 +1677,17 @@ pub mod list_account_settings_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn settings(mut self, inp: impl Into<crate::model::Setting>) -> Self {
+        pub fn settings(mut self, input: impl Into<crate::model::Setting>) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.settings = Some(v);
             self
         }
         pub fn set_settings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Setting>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Setting>>,
         ) -> Self {
-            self.settings = inp;
+            self.settings = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future
@@ -1686,12 +1695,12 @@ pub mod list_account_settings_output {
         /// <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value
         /// can be used to retrieve the next page of results. This value is <code>null</code> when
         /// there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAccountSettingsOutput`](crate::output::ListAccountSettingsOutput)
@@ -1756,60 +1765,66 @@ pub mod execute_command_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cluster_arn = Some(inp.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
             self
         }
-        pub fn set_cluster_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = inp;
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container.</p>
-        pub fn container_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_arn = Some(inp.into());
+        pub fn container_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_arn = Some(input.into());
             self
         }
-        pub fn set_container_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_arn = inp;
+        pub fn set_container_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_arn = input;
             self
         }
         /// <p>The name of the container.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_name = Some(inp.into());
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
             self
         }
-        pub fn set_container_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_name = inp;
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
             self
         }
         /// <p>Whether or not the execute command session is running in interactive mode. Amazon ECS only
         /// supports initiating interactive sessions, so you must specify <code>true</code> for this
         /// value.</p>
-        pub fn interactive(mut self, inp: bool) -> Self {
-            self.interactive = Some(inp);
+        pub fn interactive(mut self, input: bool) -> Self {
+            self.interactive = Some(input);
             self
         }
-        pub fn set_interactive(mut self, inp: bool) -> Self {
-            self.interactive = Some(inp);
+        pub fn set_interactive(mut self, input: std::option::Option<bool>) -> Self {
+            self.interactive = input;
             self
         }
         /// <p>The details of the SSM session that was created for this instance of
         /// execute-command.</p>
-        pub fn session(mut self, inp: crate::model::Session) -> Self {
-            self.session = Some(inp);
+        pub fn session(mut self, input: crate::model::Session) -> Self {
+            self.session = Some(input);
             self
         }
-        pub fn set_session(mut self, inp: std::option::Option<crate::model::Session>) -> Self {
-            self.session = inp;
+        pub fn set_session(mut self, input: std::option::Option<crate::model::Session>) -> Self {
+            self.session = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task.</p>
-        pub fn task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_arn = Some(inp.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_arn = Some(input.into());
             self
         }
-        pub fn set_task_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = inp;
+        pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteCommandOutput`](crate::output::ExecuteCommandOutput)
@@ -1859,24 +1874,24 @@ pub mod discover_poll_endpoint_output {
     }
     impl Builder {
         /// <p>The endpoint for the Amazon ECS agent to poll.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
-        pub fn telemetry_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.telemetry_endpoint = Some(inp.into());
+        pub fn telemetry_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.telemetry_endpoint = Some(input.into());
             self
         }
         pub fn set_telemetry_endpoint(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.telemetry_endpoint = inp;
+            self.telemetry_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`DiscoverPollEndpointOutput`](crate::output::DiscoverPollEndpointOutput)
@@ -1921,30 +1936,30 @@ pub mod describe_task_sets_output {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
     }
     impl Builder {
-        pub fn task_sets(mut self, inp: impl Into<crate::model::TaskSet>) -> Self {
+        pub fn task_sets(mut self, input: impl Into<crate::model::TaskSet>) -> Self {
             let mut v = self.task_sets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.task_sets = Some(v);
             self
         }
         pub fn set_task_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TaskSet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TaskSet>>,
         ) -> Self {
-            self.task_sets = inp;
+            self.task_sets = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTaskSetsOutput`](crate::output::DescribeTaskSetsOutput)
@@ -1989,30 +2004,30 @@ pub mod describe_tasks_output {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
     }
     impl Builder {
-        pub fn tasks(mut self, inp: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tasks = Some(v);
             self
         }
         pub fn set_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Task>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Task>>,
         ) -> Self {
-            self.tasks = inp;
+            self.tasks = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTasksOutput`](crate::output::DescribeTasksOutput)
@@ -2091,28 +2106,28 @@ pub mod describe_task_definition_output {
     }
     impl Builder {
         /// <p>The full task definition description.</p>
-        pub fn task_definition(mut self, inp: crate::model::TaskDefinition) -> Self {
-            self.task_definition = Some(inp);
+        pub fn task_definition(mut self, input: crate::model::TaskDefinition) -> Self {
+            self.task_definition = Some(input);
             self
         }
         pub fn set_task_definition(
             mut self,
-            inp: std::option::Option<crate::model::TaskDefinition>,
+            input: std::option::Option<crate::model::TaskDefinition>,
         ) -> Self {
-            self.task_definition = inp;
+            self.task_definition = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTaskDefinitionOutput`](crate::output::DescribeTaskDefinitionOutput)
@@ -2157,30 +2172,30 @@ pub mod describe_services_output {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
     }
     impl Builder {
-        pub fn services(mut self, inp: impl Into<crate::model::Service>) -> Self {
+        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.services = Some(v);
             self
         }
         pub fn set_services(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Service>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Service>>,
         ) -> Self {
-            self.services = inp;
+            self.services = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeServicesOutput`](crate::output::DescribeServicesOutput)
@@ -2228,31 +2243,31 @@ pub mod describe_container_instances_output {
     impl Builder {
         pub fn container_instances(
             mut self,
-            inp: impl Into<crate::model::ContainerInstance>,
+            input: impl Into<crate::model::ContainerInstance>,
         ) -> Self {
             let mut v = self.container_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.container_instances = Some(v);
             self
         }
         pub fn set_container_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContainerInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContainerInstance>>,
         ) -> Self {
-            self.container_instances = inp;
+            self.container_instances = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeContainerInstancesOutput`](crate::output::DescribeContainerInstancesOutput)
@@ -2297,30 +2312,30 @@ pub mod describe_clusters_output {
         pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
     }
     impl Builder {
-        pub fn clusters(mut self, inp: impl Into<crate::model::Cluster>) -> Self {
+        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.clusters = Some(v);
             self
         }
         pub fn set_clusters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
         ) -> Self {
-            self.clusters = inp;
+            self.clusters = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeClustersOutput`](crate::output::DescribeClustersOutput)
@@ -2376,31 +2391,31 @@ pub mod describe_capacity_providers_output {
     impl Builder {
         pub fn capacity_providers(
             mut self,
-            inp: impl Into<crate::model::CapacityProvider>,
+            input: impl Into<crate::model::CapacityProvider>,
         ) -> Self {
             let mut v = self.capacity_providers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capacity_providers = Some(v);
             self
         }
         pub fn set_capacity_providers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CapacityProvider>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CapacityProvider>>,
         ) -> Self {
-            self.capacity_providers = inp;
+            self.capacity_providers = input;
             self
         }
-        pub fn failures(mut self, inp: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failures = Some(v);
             self
         }
         pub fn set_failures(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
         ) -> Self {
-            self.failures = inp;
+            self.failures = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future
@@ -2408,12 +2423,12 @@ pub mod describe_capacity_providers_output {
         /// <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this
         /// value can be used to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCapacityProvidersOutput`](crate::output::DescribeCapacityProvidersOutput)
@@ -2456,15 +2471,15 @@ pub mod deregister_task_definition_output {
     }
     impl Builder {
         /// <p>The full description of the deregistered task.</p>
-        pub fn task_definition(mut self, inp: crate::model::TaskDefinition) -> Self {
-            self.task_definition = Some(inp);
+        pub fn task_definition(mut self, input: crate::model::TaskDefinition) -> Self {
+            self.task_definition = Some(input);
             self
         }
         pub fn set_task_definition(
             mut self,
-            inp: std::option::Option<crate::model::TaskDefinition>,
+            input: std::option::Option<crate::model::TaskDefinition>,
         ) -> Self {
-            self.task_definition = inp;
+            self.task_definition = input;
             self
         }
         /// Consumes the builder and constructs a [`DeregisterTaskDefinitionOutput`](crate::output::DeregisterTaskDefinitionOutput)
@@ -2505,15 +2520,15 @@ pub mod deregister_container_instance_output {
     }
     impl Builder {
         /// <p>The container instance that was deregistered.</p>
-        pub fn container_instance(mut self, inp: crate::model::ContainerInstance) -> Self {
-            self.container_instance = Some(inp);
+        pub fn container_instance(mut self, input: crate::model::ContainerInstance) -> Self {
+            self.container_instance = Some(input);
             self
         }
         pub fn set_container_instance(
             mut self,
-            inp: std::option::Option<crate::model::ContainerInstance>,
+            input: std::option::Option<crate::model::ContainerInstance>,
         ) -> Self {
-            self.container_instance = inp;
+            self.container_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`DeregisterContainerInstanceOutput`](crate::output::DeregisterContainerInstanceOutput)
@@ -2554,12 +2569,12 @@ pub mod delete_task_set_output {
     }
     impl Builder {
         /// <p>Details about the task set.</p>
-        pub fn task_set(mut self, inp: crate::model::TaskSet) -> Self {
-            self.task_set = Some(inp);
+        pub fn task_set(mut self, input: crate::model::TaskSet) -> Self {
+            self.task_set = Some(input);
             self
         }
-        pub fn set_task_set(mut self, inp: std::option::Option<crate::model::TaskSet>) -> Self {
-            self.task_set = inp;
+        pub fn set_task_set(mut self, input: std::option::Option<crate::model::TaskSet>) -> Self {
+            self.task_set = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTaskSetOutput`](crate::output::DeleteTaskSetOutput)
@@ -2600,12 +2615,12 @@ pub mod delete_service_output {
     }
     impl Builder {
         /// <p>The full description of the deleted service.</p>
-        pub fn service(mut self, inp: crate::model::Service) -> Self {
-            self.service = Some(inp);
+        pub fn service(mut self, input: crate::model::Service) -> Self {
+            self.service = Some(input);
             self
         }
-        pub fn set_service(mut self, inp: std::option::Option<crate::model::Service>) -> Self {
-            self.service = inp;
+        pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
+            self.service = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::output::DeleteServiceOutput)
@@ -2646,12 +2661,12 @@ pub mod delete_cluster_output {
     }
     impl Builder {
         /// <p>The full description of the deleted cluster.</p>
-        pub fn cluster(mut self, inp: crate::model::Cluster) -> Self {
-            self.cluster = Some(inp);
+        pub fn cluster(mut self, input: crate::model::Cluster) -> Self {
+            self.cluster = Some(input);
             self
         }
-        pub fn set_cluster(mut self, inp: std::option::Option<crate::model::Cluster>) -> Self {
-            self.cluster = inp;
+        pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
+            self.cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
@@ -2692,15 +2707,15 @@ pub mod delete_capacity_provider_output {
     }
     impl Builder {
         /// <p>The details of the capacity provider.</p>
-        pub fn capacity_provider(mut self, inp: crate::model::CapacityProvider) -> Self {
-            self.capacity_provider = Some(inp);
+        pub fn capacity_provider(mut self, input: crate::model::CapacityProvider) -> Self {
+            self.capacity_provider = Some(input);
             self
         }
         pub fn set_capacity_provider(
             mut self,
-            inp: std::option::Option<crate::model::CapacityProvider>,
+            input: std::option::Option<crate::model::CapacityProvider>,
         ) -> Self {
-            self.capacity_provider = inp;
+            self.capacity_provider = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteCapacityProviderOutput`](crate::output::DeleteCapacityProviderOutput)
@@ -2740,17 +2755,17 @@ pub mod delete_attributes_output {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     }
     impl Builder {
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes = Some(v);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteAttributesOutput`](crate::output::DeleteAttributesOutput)
@@ -2791,12 +2806,12 @@ pub mod delete_account_setting_output {
     }
     impl Builder {
         /// <p>The account setting for the specified principal ARN.</p>
-        pub fn setting(mut self, inp: crate::model::Setting) -> Self {
-            self.setting = Some(inp);
+        pub fn setting(mut self, input: crate::model::Setting) -> Self {
+            self.setting = Some(input);
             self
         }
-        pub fn set_setting(mut self, inp: std::option::Option<crate::model::Setting>) -> Self {
-            self.setting = inp;
+        pub fn set_setting(mut self, input: std::option::Option<crate::model::Setting>) -> Self {
+            self.setting = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteAccountSettingOutput`](crate::output::DeleteAccountSettingOutput)
@@ -2843,12 +2858,12 @@ pub mod create_task_set_output {
         /// <code>EXTERNAL</code> deployment. A task set includes details such as the desired
         /// number of tasks, how many tasks are running, and whether the task set serves production
         /// traffic.</p>
-        pub fn task_set(mut self, inp: crate::model::TaskSet) -> Self {
-            self.task_set = Some(inp);
+        pub fn task_set(mut self, input: crate::model::TaskSet) -> Self {
+            self.task_set = Some(input);
             self
         }
-        pub fn set_task_set(mut self, inp: std::option::Option<crate::model::TaskSet>) -> Self {
-            self.task_set = inp;
+        pub fn set_task_set(mut self, input: std::option::Option<crate::model::TaskSet>) -> Self {
+            self.task_set = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTaskSetOutput`](crate::output::CreateTaskSetOutput)
@@ -2903,12 +2918,12 @@ pub mod create_service_output {
         /// <code>deploymentController</code>, <code>taskSets</code> and
         /// <code>deployments</code> parameters will be returned, however the
         /// <code>deployments</code> parameter will be an empty list.</p>
-        pub fn service(mut self, inp: crate::model::Service) -> Self {
-            self.service = Some(inp);
+        pub fn service(mut self, input: crate::model::Service) -> Self {
+            self.service = Some(input);
             self
         }
-        pub fn set_service(mut self, inp: std::option::Option<crate::model::Service>) -> Self {
-            self.service = inp;
+        pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
+            self.service = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateServiceOutput`](crate::output::CreateServiceOutput)
@@ -2949,12 +2964,12 @@ pub mod create_cluster_output {
     }
     impl Builder {
         /// <p>The full description of your new cluster.</p>
-        pub fn cluster(mut self, inp: crate::model::Cluster) -> Self {
-            self.cluster = Some(inp);
+        pub fn cluster(mut self, input: crate::model::Cluster) -> Self {
+            self.cluster = Some(input);
             self
         }
-        pub fn set_cluster(mut self, inp: std::option::Option<crate::model::Cluster>) -> Self {
-            self.cluster = inp;
+        pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
+            self.cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::output::CreateClusterOutput)
@@ -2995,15 +3010,15 @@ pub mod create_capacity_provider_output {
     }
     impl Builder {
         /// <p>The full description of the new capacity provider.</p>
-        pub fn capacity_provider(mut self, inp: crate::model::CapacityProvider) -> Self {
-            self.capacity_provider = Some(inp);
+        pub fn capacity_provider(mut self, input: crate::model::CapacityProvider) -> Self {
+            self.capacity_provider = Some(input);
             self
         }
         pub fn set_capacity_provider(
             mut self,
-            inp: std::option::Option<crate::model::CapacityProvider>,
+            input: std::option::Option<crate::model::CapacityProvider>,
         ) -> Self {
-            self.capacity_provider = inp;
+            self.capacity_provider = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCapacityProviderOutput`](crate::output::CreateCapacityProviderOutput)

@@ -52,8 +52,10 @@ impl AbortMultipartUpload {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AbortMultipartUpload {
-    type Output =
-        Result<crate::output::AbortMultipartUploadOutput, crate::error::AbortMultipartUploadError>;
+    type Output = std::result::Result<
+        crate::output::AbortMultipartUploadOutput,
+        crate::error::AbortMultipartUploadError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_abort_multipart_upload_error(response)
@@ -184,7 +186,7 @@ impl CompleteMultipartUpload {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CompleteMultipartUpload {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CompleteMultipartUploadOutput,
         crate::error::CompleteMultipartUploadError,
     >;
@@ -378,7 +380,8 @@ impl CopyObject {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopyObject {
-    type Output = Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError>;
+    type Output =
+        std::result::Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_object_error(response)
@@ -511,7 +514,8 @@ impl CreateBucket {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateBucket {
-    type Output = Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError>;
+    type Output =
+        std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_bucket_error(response)
@@ -785,7 +789,7 @@ impl CreateMultipartUpload {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateMultipartUploadOutput,
         crate::error::CreateMultipartUploadError,
     >;
@@ -829,7 +833,8 @@ impl DeleteBucket {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucket {
-    type Output = Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError>;
+    type Output =
+        std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_error(response)
@@ -881,7 +886,7 @@ impl DeleteBucketAnalyticsConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketAnalyticsConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteBucketAnalyticsConfigurationOutput,
         crate::error::DeleteBucketAnalyticsConfigurationError,
     >;
@@ -929,8 +934,10 @@ impl DeleteBucketCors {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketCors {
-    type Output =
-        Result<crate::output::DeleteBucketCorsOutput, crate::error::DeleteBucketCorsError>;
+    type Output = std::result::Result<
+        crate::output::DeleteBucketCorsOutput,
+        crate::error::DeleteBucketCorsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_cors_error(response)
@@ -977,7 +984,7 @@ impl DeleteBucketEncryption {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketEncryption {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteBucketEncryptionOutput,
         crate::error::DeleteBucketEncryptionError,
     >;
@@ -1028,7 +1035,7 @@ impl DeleteBucketIntelligentTieringConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketIntelligentTieringConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteBucketIntelligentTieringConfigurationOutput,
         crate::error::DeleteBucketIntelligentTieringConfigurationError,
     >;
@@ -1085,7 +1092,7 @@ impl DeleteBucketInventoryConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketInventoryConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteBucketInventoryConfigurationOutput,
         crate::error::DeleteBucketInventoryConfigurationError,
     >;
@@ -1136,7 +1143,7 @@ impl DeleteBucketLifecycle {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketLifecycle {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteBucketLifecycleOutput,
         crate::error::DeleteBucketLifecycleError,
     >;
@@ -1197,7 +1204,7 @@ impl DeleteBucketMetricsConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketMetricsConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteBucketMetricsConfigurationOutput,
         crate::error::DeleteBucketMetricsConfigurationError,
     >;
@@ -1243,7 +1250,7 @@ impl DeleteBucketOwnershipControls {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketOwnershipControls {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteBucketOwnershipControlsOutput,
         crate::error::DeleteBucketOwnershipControlsError,
     >;
@@ -1300,8 +1307,10 @@ impl DeleteBucketPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
-    type Output =
-        Result<crate::output::DeleteBucketPolicyOutput, crate::error::DeleteBucketPolicyError>;
+    type Output = std::result::Result<
+        crate::output::DeleteBucketPolicyOutput,
+        crate::error::DeleteBucketPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_policy_error(response)
@@ -1349,7 +1358,7 @@ impl DeleteBucketReplication {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketReplication {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteBucketReplicationOutput,
         crate::error::DeleteBucketReplicationError,
     >;
@@ -1393,8 +1402,10 @@ impl DeleteBucketTagging {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
-    type Output =
-        Result<crate::output::DeleteBucketTaggingOutput, crate::error::DeleteBucketTaggingError>;
+    type Output = std::result::Result<
+        crate::output::DeleteBucketTaggingOutput,
+        crate::error::DeleteBucketTaggingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_tagging_error(response)
@@ -1442,8 +1453,10 @@ impl DeleteBucketWebsite {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteBucketWebsite {
-    type Output =
-        Result<crate::output::DeleteBucketWebsiteOutput, crate::error::DeleteBucketWebsiteError>;
+    type Output = std::result::Result<
+        crate::output::DeleteBucketWebsiteOutput,
+        crate::error::DeleteBucketWebsiteError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_website_error(response)
@@ -1493,7 +1506,8 @@ impl DeleteObject {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteObject {
-    type Output = Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError>;
+    type Output =
+        std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_object_error(response)
@@ -1569,7 +1583,8 @@ impl DeleteObjects {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteObjects {
-    type Output = Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError>;
+    type Output =
+        std::result::Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_objects_error(response)
@@ -1615,8 +1630,10 @@ impl DeleteObjectTagging {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteObjectTagging {
-    type Output =
-        Result<crate::output::DeleteObjectTaggingOutput, crate::error::DeleteObjectTaggingError>;
+    type Output = std::result::Result<
+        crate::output::DeleteObjectTaggingOutput,
+        crate::error::DeleteObjectTaggingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_object_tagging_error(response)
@@ -1668,7 +1685,7 @@ impl DeletePublicAccessBlock {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeletePublicAccessBlockOutput,
         crate::error::DeletePublicAccessBlockError,
     >;
@@ -1721,7 +1738,7 @@ impl GetBucketAccelerateConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketAccelerateConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketAccelerateConfigurationOutput,
         crate::error::GetBucketAccelerateConfigurationError,
     >;
@@ -1763,7 +1780,8 @@ impl GetBucketAcl {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketAcl {
-    type Output = Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError>;
+    type Output =
+        std::result::Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_acl_error(response)
@@ -1816,7 +1834,7 @@ impl GetBucketAnalyticsConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketAnalyticsConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketAnalyticsConfigurationOutput,
         crate::error::GetBucketAnalyticsConfigurationError,
     >;
@@ -1861,7 +1879,8 @@ impl GetBucketCors {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketCors {
-    type Output = Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError>;
+    type Output =
+        std::result::Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_cors_error(response)
@@ -1907,8 +1926,10 @@ impl GetBucketEncryption {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketEncryption {
-    type Output =
-        Result<crate::output::GetBucketEncryptionOutput, crate::error::GetBucketEncryptionError>;
+    type Output = std::result::Result<
+        crate::output::GetBucketEncryptionOutput,
+        crate::error::GetBucketEncryptionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_encryption_error(response)
@@ -1955,7 +1976,7 @@ impl GetBucketIntelligentTieringConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketIntelligentTieringConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketIntelligentTieringConfigurationOutput,
         crate::error::GetBucketIntelligentTieringConfigurationError,
     >;
@@ -2013,7 +2034,7 @@ impl GetBucketInventoryConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketInventoryConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketInventoryConfigurationOutput,
         crate::error::GetBucketInventoryConfigurationError,
     >;
@@ -2094,7 +2115,7 @@ impl GetBucketLifecycleConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketLifecycleConfigurationOutput,
         crate::error::GetBucketLifecycleConfigurationError,
     >;
@@ -2138,14 +2159,49 @@ impl GetBucketLocation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketLocation {
-    type Output =
-        Result<crate::output::GetBucketLocationOutput, crate::error::GetBucketLocationError>;
+    type Output = std::result::Result<
+        crate::output::GetBucketLocationOutput,
+        crate::error::GetBucketLocationError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_location_error(response)
         } else {
             crate::operation_deser::parse_get_bucket_location_response(response)
         }
+    }
+}
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod get_bucket_location_request_test {
+    /// This test case validates https://github.com/awslabs/aws-sdk-rust/issues/116
+    /// Test ID: GetBucketLocation
+    #[tokio::test]
+    async fn get_bucket_location_response() {
+        let expected_output = crate::output::GetBucketLocationOutput::builder()
+            .set_location_constraint(Some(crate::model::BucketLocationConstraint::from(
+                "us-west-2",
+            )))
+            .build();
+        let mut http_response = http::response::Builder::new()
+        .status(200)
+                        .body(smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<LocationConstraint xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">us-west-2</LocationConstraint>"))
+                        .unwrap();
+        use smithy_http::response::ParseHttpResponse;
+        let parser = crate::operation::GetBucketLocation::new();
+        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+            <crate::operation::GetBucketLocation as smithy_http::response::ParseHttpResponse<
+                smithy_http::body::SdkBody,
+            >>::parse_loaded(&parser, &http_response)
+        });
+        let parsed = parsed.unwrap();
+        assert_eq!(
+            parsed.location_constraint, expected_output.location_constraint,
+            "Unexpected value for `location_constraint`"
+        );
     }
 }
 
@@ -2178,8 +2234,10 @@ impl GetBucketLogging {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketLogging {
-    type Output =
-        Result<crate::output::GetBucketLoggingOutput, crate::error::GetBucketLoggingError>;
+    type Output = std::result::Result<
+        crate::output::GetBucketLoggingOutput,
+        crate::error::GetBucketLoggingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_logging_error(response)
@@ -2237,7 +2295,7 @@ impl GetBucketMetricsConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketMetricsConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketMetricsConfigurationOutput,
         crate::error::GetBucketMetricsConfigurationError,
     >;
@@ -2282,7 +2340,7 @@ impl GetBucketNotificationConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketNotificationConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketNotificationConfigurationOutput,
         crate::error::GetBucketNotificationConfigurationError,
     >;
@@ -2327,7 +2385,7 @@ impl GetBucketOwnershipControls {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketOwnershipControls {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketOwnershipControlsOutput,
         crate::error::GetBucketOwnershipControlsError,
     >;
@@ -2377,7 +2435,10 @@ impl GetBucketPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketPolicy {
-    type Output = Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError>;
+    type Output = std::result::Result<
+        crate::output::GetBucketPolicyOutput,
+        crate::error::GetBucketPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_policy_error(response)
@@ -2430,7 +2491,7 @@ impl GetBucketPolicyStatus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketPolicyStatus {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketPolicyStatusOutput,
         crate::error::GetBucketPolicyStatusError,
     >;
@@ -2487,8 +2548,10 @@ impl GetBucketReplication {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketReplication {
-    type Output =
-        Result<crate::output::GetBucketReplicationOutput, crate::error::GetBucketReplicationError>;
+    type Output = std::result::Result<
+        crate::output::GetBucketReplicationOutput,
+        crate::error::GetBucketReplicationError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_replication_error(response)
@@ -2522,7 +2585,7 @@ impl GetBucketRequestPayment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketRequestPayment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetBucketRequestPaymentOutput,
         crate::error::GetBucketRequestPaymentError,
     >;
@@ -2579,8 +2642,10 @@ impl GetBucketTagging {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketTagging {
-    type Output =
-        Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError>;
+    type Output = std::result::Result<
+        crate::output::GetBucketTaggingOutput,
+        crate::error::GetBucketTaggingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_tagging_error(response)
@@ -2627,8 +2692,10 @@ impl GetBucketVersioning {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketVersioning {
-    type Output =
-        Result<crate::output::GetBucketVersioningOutput, crate::error::GetBucketVersioningError>;
+    type Output = std::result::Result<
+        crate::output::GetBucketVersioningOutput,
+        crate::error::GetBucketVersioningError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_versioning_error(response)
@@ -2673,8 +2740,10 @@ impl GetBucketWebsite {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBucketWebsite {
-    type Output =
-        Result<crate::output::GetBucketWebsiteOutput, crate::error::GetBucketWebsiteError>;
+    type Output = std::result::Result<
+        crate::output::GetBucketWebsiteOutput,
+        crate::error::GetBucketWebsiteError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_website_error(response)
@@ -2852,7 +2921,7 @@ impl GetObject {
     }
 }
 impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetObject {
-    type Output = Result<crate::output::GetObjectOutput, crate::error::GetObjectError>;
+    type Output = std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError>;
     fn parse_unloaded(
         &self,
         response: &mut http::Response<smithy_http::body::SdkBody>,
@@ -2909,7 +2978,8 @@ impl GetObjectAcl {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetObjectAcl {
-    type Output = Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError>;
+    type Output =
+        std::result::Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_acl_error(response)
@@ -2935,8 +3005,10 @@ impl GetObjectLegalHold {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetObjectLegalHold {
-    type Output =
-        Result<crate::output::GetObjectLegalHoldOutput, crate::error::GetObjectLegalHoldError>;
+    type Output = std::result::Result<
+        crate::output::GetObjectLegalHoldOutput,
+        crate::error::GetObjectLegalHoldError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_legal_hold_error(response)
@@ -2964,7 +3036,7 @@ impl GetObjectLockConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetObjectLockConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetObjectLockConfigurationOutput,
         crate::error::GetObjectLockConfigurationError,
     >;
@@ -2993,8 +3065,10 @@ impl GetObjectRetention {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetObjectRetention {
-    type Output =
-        Result<crate::output::GetObjectRetentionOutput, crate::error::GetObjectRetentionError>;
+    type Output = std::result::Result<
+        crate::output::GetObjectRetentionOutput,
+        crate::error::GetObjectRetentionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_retention_error(response)
@@ -3042,8 +3116,10 @@ impl GetObjectTagging {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetObjectTagging {
-    type Output =
-        Result<crate::output::GetObjectTaggingOutput, crate::error::GetObjectTaggingError>;
+    type Output = std::result::Result<
+        crate::output::GetObjectTaggingOutput,
+        crate::error::GetObjectTaggingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_tagging_error(response)
@@ -3084,8 +3160,10 @@ impl GetObjectTorrent {
     }
 }
 impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetObjectTorrent {
-    type Output =
-        Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>;
+    type Output = std::result::Result<
+        crate::output::GetObjectTorrentOutput,
+        crate::error::GetObjectTorrentError,
+    >;
     fn parse_unloaded(
         &self,
         response: &mut http::Response<smithy_http::body::SdkBody>,
@@ -3153,8 +3231,10 @@ impl GetPublicAccessBlock {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
-    type Output =
-        Result<crate::output::GetPublicAccessBlockOutput, crate::error::GetPublicAccessBlockError>;
+    type Output = std::result::Result<
+        crate::output::GetPublicAccessBlockOutput,
+        crate::error::GetPublicAccessBlockError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_public_access_block_error(response)
@@ -3188,7 +3268,8 @@ impl HeadBucket {
     }
 }
 impl smithy_http::response::ParseStrictResponse for HeadBucket {
-    type Output = Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError>;
+    type Output =
+        std::result::Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_head_bucket_error(response)
@@ -3358,7 +3439,8 @@ impl HeadObject {
     }
 }
 impl smithy_http::response::ParseStrictResponse for HeadObject {
-    type Output = Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError>;
+    type Output =
+        std::result::Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_head_object_error(response)
@@ -3459,7 +3541,7 @@ impl ListBucketAnalyticsConfigurations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListBucketAnalyticsConfigurations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListBucketAnalyticsConfigurationsOutput,
         crate::error::ListBucketAnalyticsConfigurationsError,
     >;
@@ -3510,7 +3592,7 @@ impl ListBucketIntelligentTieringConfigurations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListBucketIntelligentTieringConfigurations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListBucketIntelligentTieringConfigurationsOutput,
         crate::error::ListBucketIntelligentTieringConfigurationsError,
     >;
@@ -3576,7 +3658,7 @@ impl ListBucketInventoryConfigurations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListBucketInventoryConfigurations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListBucketInventoryConfigurationsOutput,
         crate::error::ListBucketInventoryConfigurationsError,
     >;
@@ -3640,7 +3722,7 @@ impl ListBucketMetricsConfigurations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListBucketMetricsConfigurations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListBucketMetricsConfigurationsOutput,
         crate::error::ListBucketMetricsConfigurationsError,
     >;
@@ -3668,7 +3750,8 @@ impl ListBuckets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListBuckets {
-    type Output = Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError>;
+    type Output =
+        std::result::Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_buckets_error(response)
@@ -3738,8 +3821,10 @@ impl ListMultipartUploads {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListMultipartUploads {
-    type Output =
-        Result<crate::output::ListMultipartUploadsOutput, crate::error::ListMultipartUploadsError>;
+    type Output = std::result::Result<
+        crate::output::ListMultipartUploadsOutput,
+        crate::error::ListMultipartUploadsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_multipart_uploads_error(response)
@@ -3799,7 +3884,8 @@ impl ListObjects {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListObjects {
-    type Output = Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError>;
+    type Output =
+        std::result::Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_objects_error(response)
@@ -3861,7 +3947,8 @@ impl ListObjectsV2 {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListObjectsV2 {
-    type Output = Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error>;
+    type Output =
+        std::result::Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_objects_v2_error(response)
@@ -3924,8 +4011,10 @@ impl ListObjectVersions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListObjectVersions {
-    type Output =
-        Result<crate::output::ListObjectVersionsOutput, crate::error::ListObjectVersionsError>;
+    type Output = std::result::Result<
+        crate::output::ListObjectVersionsOutput,
+        crate::error::ListObjectVersionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_object_versions_error(response)
@@ -3991,7 +4080,7 @@ impl ListParts {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListParts {
-    type Output = Result<crate::output::ListPartsOutput, crate::error::ListPartsError>;
+    type Output = std::result::Result<crate::output::ListPartsOutput, crate::error::ListPartsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_parts_error(response)
@@ -4053,7 +4142,7 @@ impl PutBucketAccelerateConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketAccelerateConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketAccelerateConfigurationOutput,
         crate::error::PutBucketAccelerateConfigurationError,
     >;
@@ -4263,7 +4352,8 @@ impl PutBucketAcl {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketAcl {
-    type Output = Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError>;
+    type Output =
+        std::result::Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_acl_error(response)
@@ -4392,7 +4482,7 @@ impl PutBucketAnalyticsConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketAnalyticsConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketAnalyticsConfigurationOutput,
         crate::error::PutBucketAnalyticsConfigurationError,
     >;
@@ -4475,7 +4565,8 @@ impl PutBucketCors {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketCors {
-    type Output = Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError>;
+    type Output =
+        std::result::Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_cors_error(response)
@@ -4531,8 +4622,10 @@ impl PutBucketEncryption {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketEncryption {
-    type Output =
-        Result<crate::output::PutBucketEncryptionOutput, crate::error::PutBucketEncryptionError>;
+    type Output = std::result::Result<
+        crate::output::PutBucketEncryptionOutput,
+        crate::error::PutBucketEncryptionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_encryption_error(response)
@@ -4638,7 +4731,7 @@ impl PutBucketIntelligentTieringConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketIntelligentTieringConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketIntelligentTieringConfigurationOutput,
         crate::error::PutBucketIntelligentTieringConfigurationError,
     >;
@@ -4768,7 +4861,7 @@ impl PutBucketInventoryConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketInventoryConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketInventoryConfigurationOutput,
         crate::error::PutBucketInventoryConfigurationError,
     >;
@@ -4874,7 +4967,7 @@ impl PutBucketLifecycleConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketLifecycleConfigurationOutput,
         crate::error::PutBucketLifecycleConfigurationError,
     >;
@@ -4884,6 +4977,47 @@ impl smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfigurat
         } else {
             crate::operation_deser::parse_put_bucket_lifecycle_configuration_response(response)
         }
+    }
+}
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod put_bucket_lifecycle_configuration_request_test {
+    /// This test validates that the content md5 header is set correctly
+    /// Test ID: PutBucketLifecycleConfiguration
+    #[tokio::test]
+    async fn put_bucket_lifecycle_configuration_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::PutBucketLifecycleConfigurationInput::builder()
+            .set_bucket(Some("test-bucket".to_string()))
+            .set_lifecycle_configuration(Some(
+                crate::model::BucketLifecycleConfiguration::builder()
+                    .set_rules(Some(vec![crate::model::LifecycleRule::builder()
+                        .set_expiration(Some(
+                            crate::model::LifecycleExpiration::builder()
+                                .set_days(Some(1))
+                                .build(),
+                        ))
+                        .set_status(Some(crate::model::ExpirationStatus::from("Enabled")))
+                        .set_id(Some("Expire".to_string()))
+                        .build()]))
+                    .build(),
+            ))
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        assert_eq!(http_request.method(), "PUT");
+        assert_eq!(http_request.uri().path(), "/test-bucket");
+        let expected_headers = &[("content-md5", "b14bbeb8064f913b40c4975a03ef6e4a")];
+        protocol_test_helpers::assert_ok(protocol_test_helpers::validate_headers(
+            &http_request,
+            expected_headers,
+        ));
+        let body = http_request.body().bytes().expect("body should be strict");
+        protocol_test_helpers::assert_ok(
+        protocol_test_helpers::validate_body(&body, "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n    <Rule xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n        <Expiration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n            <Days xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">1</Days>\n        </Expiration>\n        <ID xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">Expire</ID>\n        <Status xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">Enabled</Status>\n    </Rule>\n</LifecycleConfiguration>\n", protocol_test_helpers::MediaType::from("application/xml"))
+        );
     }
 }
 
@@ -4972,8 +5106,10 @@ impl PutBucketLogging {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketLogging {
-    type Output =
-        Result<crate::output::PutBucketLoggingOutput, crate::error::PutBucketLoggingError>;
+    type Output = std::result::Result<
+        crate::output::PutBucketLoggingOutput,
+        crate::error::PutBucketLoggingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_logging_error(response)
@@ -5044,7 +5180,7 @@ impl PutBucketMetricsConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketMetricsConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketMetricsConfigurationOutput,
         crate::error::PutBucketMetricsConfigurationError,
     >;
@@ -5124,7 +5260,7 @@ impl PutBucketNotificationConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketNotificationConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketNotificationConfigurationOutput,
         crate::error::PutBucketNotificationConfigurationError,
     >;
@@ -5168,7 +5304,7 @@ impl PutBucketOwnershipControls {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketOwnershipControls {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketOwnershipControlsOutput,
         crate::error::PutBucketOwnershipControlsError,
     >;
@@ -5223,7 +5359,10 @@ impl PutBucketPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketPolicy {
-    type Output = Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError>;
+    type Output = std::result::Result<
+        crate::output::PutBucketPolicyOutput,
+        crate::error::PutBucketPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_policy_error(response)
@@ -5303,8 +5442,10 @@ impl PutBucketReplication {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketReplication {
-    type Output =
-        Result<crate::output::PutBucketReplicationOutput, crate::error::PutBucketReplicationError>;
+    type Output = std::result::Result<
+        crate::output::PutBucketReplicationOutput,
+        crate::error::PutBucketReplicationError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_replication_error(response)
@@ -5346,7 +5487,7 @@ impl PutBucketRequestPayment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketRequestPayment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutBucketRequestPaymentOutput,
         crate::error::PutBucketRequestPaymentError,
     >;
@@ -5448,8 +5589,10 @@ impl PutBucketTagging {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketTagging {
-    type Output =
-        Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError>;
+    type Output = std::result::Result<
+        crate::output::PutBucketTaggingOutput,
+        crate::error::PutBucketTaggingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_tagging_error(response)
@@ -5516,8 +5659,10 @@ impl PutBucketVersioning {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketVersioning {
-    type Output =
-        Result<crate::output::PutBucketVersioningOutput, crate::error::PutBucketVersioningError>;
+    type Output = std::result::Result<
+        crate::output::PutBucketVersioningOutput,
+        crate::error::PutBucketVersioningError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_versioning_error(response)
@@ -5663,8 +5808,10 @@ impl PutBucketWebsite {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutBucketWebsite {
-    type Output =
-        Result<crate::output::PutBucketWebsiteOutput, crate::error::PutBucketWebsiteError>;
+    type Output = std::result::Result<
+        crate::output::PutBucketWebsiteOutput,
+        crate::error::PutBucketWebsiteError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_website_error(response)
@@ -5761,7 +5908,7 @@ impl PutObject {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutObject {
-    type Output = Result<crate::output::PutObjectOutput, crate::error::PutObjectError>;
+    type Output = std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_error(response)
@@ -5958,7 +6105,8 @@ impl PutObjectAcl {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutObjectAcl {
-    type Output = Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError>;
+    type Output =
+        std::result::Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_acl_error(response)
@@ -5986,8 +6134,10 @@ impl PutObjectLegalHold {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutObjectLegalHold {
-    type Output =
-        Result<crate::output::PutObjectLegalHoldOutput, crate::error::PutObjectLegalHoldError>;
+    type Output = std::result::Result<
+        crate::output::PutObjectLegalHoldOutput,
+        crate::error::PutObjectLegalHoldError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_legal_hold_error(response)
@@ -6032,7 +6182,7 @@ impl PutObjectLockConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutObjectLockConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutObjectLockConfigurationOutput,
         crate::error::PutObjectLockConfigurationError,
     >;
@@ -6062,8 +6212,10 @@ impl PutObjectRetention {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutObjectRetention {
-    type Output =
-        Result<crate::output::PutObjectRetentionOutput, crate::error::PutObjectRetentionError>;
+    type Output = std::result::Result<
+        crate::output::PutObjectRetentionOutput,
+        crate::error::PutObjectRetentionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_retention_error(response)
@@ -6179,8 +6331,10 @@ impl PutObjectTagging {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutObjectTagging {
-    type Output =
-        Result<crate::output::PutObjectTaggingOutput, crate::error::PutObjectTaggingError>;
+    type Output = std::result::Result<
+        crate::output::PutObjectTaggingOutput,
+        crate::error::PutObjectTaggingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_tagging_error(response)
@@ -6243,8 +6397,10 @@ impl PutPublicAccessBlock {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
-    type Output =
-        Result<crate::output::PutPublicAccessBlockOutput, crate::error::PutPublicAccessBlockError>;
+    type Output = std::result::Result<
+        crate::output::PutPublicAccessBlockOutput,
+        crate::error::PutPublicAccessBlockError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_public_access_block_error(response)
@@ -6559,7 +6715,8 @@ impl RestoreObject {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreObject {
-    type Output = Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError>;
+    type Output =
+        std::result::Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_restore_object_error(response)
@@ -6703,7 +6860,8 @@ impl UploadPart {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UploadPart {
-    type Output = Result<crate::output::UploadPartOutput, crate::error::UploadPartError>;
+    type Output =
+        std::result::Result<crate::output::UploadPartOutput, crate::error::UploadPartError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_upload_part_error(response)
@@ -6896,7 +7054,8 @@ impl UploadPartCopy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UploadPartCopy {
-    type Output = Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError>;
+    type Output =
+        std::result::Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_upload_part_copy_error(response)
@@ -6940,7 +7099,7 @@ impl WriteGetObjectResponse {
     }
 }
 impl smithy_http::response::ParseStrictResponse for WriteGetObjectResponse {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::WriteGetObjectResponseOutput,
         crate::error::WriteGetObjectResponseError,
     >;

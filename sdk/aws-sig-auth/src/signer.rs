@@ -4,7 +4,7 @@
  */
 
 use aws_auth::Credentials;
-use aws_sigv4_poc::{SignableBody, SignedBodyHeaderType, SigningSettings, UriEncoding};
+use aws_sigv4_poc::{PayloadChecksumKind, SignableBody, SigningSettings, UriEncoding};
 use aws_types::region::SigningRegion;
 use aws_types::SigningService;
 use http::header::HeaderName;
@@ -118,10 +118,10 @@ impl SigV4Signer {
         } else {
             UriEncoding::Single
         };
-        settings.signed_body_header = if operation_config.signing_options.content_sha256_header {
-            SignedBodyHeaderType::XAmzSha256
+        settings.payload_checksum_kind = if operation_config.signing_options.content_sha256_header {
+            PayloadChecksumKind::XAmzSha256
         } else {
-            SignedBodyHeaderType::NoHeader
+            PayloadChecksumKind::NoHeader
         };
         let sigv4_config = aws_sigv4_poc::Config {
             access_key: credentials.access_key_id(),

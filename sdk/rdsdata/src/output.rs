@@ -24,15 +24,15 @@ pub mod rollback_transaction_output {
     }
     impl Builder {
         /// <p>The status of the rollback operation.</p>
-        pub fn transaction_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transaction_status = Some(inp.into());
+        pub fn transaction_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_status = Some(input.into());
             self
         }
         pub fn set_transaction_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.transaction_status = inp;
+            self.transaction_status = input;
             self
         }
         /// Consumes the builder and constructs a [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput)
@@ -93,52 +93,52 @@ pub mod execute_statement_output {
         pub(crate) generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     }
     impl Builder {
-        pub fn records(mut self, inp: impl Into<std::vec::Vec<crate::model::Field>>) -> Self {
+        pub fn records(mut self, input: impl Into<std::vec::Vec<crate::model::Field>>) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.records = Some(v);
             self
         }
         pub fn set_records(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
         ) -> Self {
-            self.records = inp;
+            self.records = input;
             self
         }
-        pub fn column_metadata(mut self, inp: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_metadata(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.column_metadata = Some(v);
             self
         }
         pub fn set_column_metadata(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
         ) -> Self {
-            self.column_metadata = inp;
+            self.column_metadata = input;
             self
         }
         /// <p>The number of records updated by the request.</p>
-        pub fn number_of_records_updated(mut self, inp: i64) -> Self {
-            self.number_of_records_updated = Some(inp);
+        pub fn number_of_records_updated(mut self, input: i64) -> Self {
+            self.number_of_records_updated = Some(input);
             self
         }
-        pub fn set_number_of_records_updated(mut self, inp: i64) -> Self {
-            self.number_of_records_updated = Some(inp);
+        pub fn set_number_of_records_updated(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_records_updated = input;
             self
         }
-        pub fn generated_fields(mut self, inp: impl Into<crate::model::Field>) -> Self {
+        pub fn generated_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
             let mut v = self.generated_fields.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.generated_fields = Some(v);
             self
         }
         pub fn set_generated_fields(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Field>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Field>>,
         ) -> Self {
-            self.generated_fields = inp;
+            self.generated_fields = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput)
@@ -186,18 +186,18 @@ pub mod execute_sql_output {
     impl Builder {
         pub fn sql_statement_results(
             mut self,
-            inp: impl Into<crate::model::SqlStatementResult>,
+            input: impl Into<crate::model::SqlStatementResult>,
         ) -> Self {
             let mut v = self.sql_statement_results.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.sql_statement_results = Some(v);
             self
         }
         pub fn set_sql_statement_results(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
         ) -> Self {
-            self.sql_statement_results = inp;
+            self.sql_statement_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput)
@@ -239,15 +239,15 @@ pub mod commit_transaction_output {
     }
     impl Builder {
         /// <p>The status of the commit operation.</p>
-        pub fn transaction_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transaction_status = Some(inp.into());
+        pub fn transaction_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_status = Some(input.into());
             self
         }
         pub fn set_transaction_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.transaction_status = inp;
+            self.transaction_status = input;
             self
         }
         /// Consumes the builder and constructs a [`CommitTransactionOutput`](crate::output::CommitTransactionOutput)
@@ -290,12 +290,15 @@ pub mod begin_transaction_output {
     }
     impl Builder {
         /// <p>The transaction ID of the transaction started by the call.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transaction_id = Some(inp.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.transaction_id = inp;
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
             self
         }
         /// Consumes the builder and constructs a [`BeginTransactionOutput`](crate::output::BeginTransactionOutput)
@@ -337,17 +340,17 @@ pub mod batch_execute_statement_output {
         pub(crate) update_results: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,
     }
     impl Builder {
-        pub fn update_results(mut self, inp: impl Into<crate::model::UpdateResult>) -> Self {
+        pub fn update_results(mut self, input: impl Into<crate::model::UpdateResult>) -> Self {
             let mut v = self.update_results.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.update_results = Some(v);
             self
         }
         pub fn set_update_results(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,
         ) -> Self {
-            self.update_results = inp;
+            self.update_results = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput)

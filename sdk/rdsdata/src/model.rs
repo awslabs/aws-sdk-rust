@@ -26,75 +26,75 @@ pub enum Field {
     StringValue(std::string::String),
 }
 impl Field {
-    pub fn as_array_value(&self) -> Option<&crate::model::ArrayValue> {
+    pub fn as_array_value(&self) -> Result<&crate::model::ArrayValue, &Self> {
         if let Field::ArrayValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_array_value(&self) -> bool {
-        self.as_array_value().is_some()
+        self.as_array_value().is_ok()
     }
-    pub fn as_blob_value(&self) -> Option<&smithy_types::Blob> {
+    pub fn as_blob_value(&self) -> Result<&smithy_types::Blob, &Self> {
         if let Field::BlobValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_blob_value(&self) -> bool {
-        self.as_blob_value().is_some()
+        self.as_blob_value().is_ok()
     }
-    pub fn as_boolean_value(&self) -> Option<&bool> {
+    pub fn as_boolean_value(&self) -> Result<&bool, &Self> {
         if let Field::BooleanValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_boolean_value(&self) -> bool {
-        self.as_boolean_value().is_some()
+        self.as_boolean_value().is_ok()
     }
-    pub fn as_double_value(&self) -> Option<&f64> {
+    pub fn as_double_value(&self) -> Result<&f64, &Self> {
         if let Field::DoubleValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_double_value(&self) -> bool {
-        self.as_double_value().is_some()
+        self.as_double_value().is_ok()
     }
-    pub fn as_is_null(&self) -> Option<&bool> {
+    pub fn as_is_null(&self) -> Result<&bool, &Self> {
         if let Field::IsNull(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_is_null(&self) -> bool {
-        self.as_is_null().is_some()
+        self.as_is_null().is_ok()
     }
-    pub fn as_long_value(&self) -> Option<&i64> {
+    pub fn as_long_value(&self) -> Result<&i64, &Self> {
         if let Field::LongValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_long_value(&self) -> bool {
-        self.as_long_value().is_some()
+        self.as_long_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Option<&std::string::String> {
+    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
         if let Field::StringValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_string_value(&self) -> bool {
-        self.as_string_value().is_some()
+        self.as_string_value().is_ok()
     }
 }
 
@@ -118,55 +118,55 @@ pub enum ArrayValue {
     StringValues(std::vec::Vec<std::string::String>),
 }
 impl ArrayValue {
-    pub fn as_array_values(&self) -> Option<&std::vec::Vec<crate::model::ArrayValue>> {
+    pub fn as_array_values(&self) -> Result<&std::vec::Vec<crate::model::ArrayValue>, &Self> {
         if let ArrayValue::ArrayValues(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_array_values(&self) -> bool {
-        self.as_array_values().is_some()
+        self.as_array_values().is_ok()
     }
-    pub fn as_boolean_values(&self) -> Option<&std::vec::Vec<bool>> {
+    pub fn as_boolean_values(&self) -> Result<&std::vec::Vec<bool>, &Self> {
         if let ArrayValue::BooleanValues(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_boolean_values(&self) -> bool {
-        self.as_boolean_values().is_some()
+        self.as_boolean_values().is_ok()
     }
-    pub fn as_double_values(&self) -> Option<&std::vec::Vec<f64>> {
+    pub fn as_double_values(&self) -> Result<&std::vec::Vec<f64>, &Self> {
         if let ArrayValue::DoubleValues(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_double_values(&self) -> bool {
-        self.as_double_values().is_some()
+        self.as_double_values().is_ok()
     }
-    pub fn as_long_values(&self) -> Option<&std::vec::Vec<i64>> {
+    pub fn as_long_values(&self) -> Result<&std::vec::Vec<i64>, &Self> {
         if let ArrayValue::LongValues(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_long_values(&self) -> bool {
-        self.as_long_values().is_some()
+        self.as_long_values().is_ok()
     }
-    pub fn as_string_values(&self) -> Option<&std::vec::Vec<std::string::String>> {
+    pub fn as_string_values(&self) -> Result<&std::vec::Vec<std::string::String>, &Self> {
         if let ArrayValue::StringValues(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_string_values(&self) -> bool {
-        self.as_string_values().is_some()
+        self.as_string_values().is_ok()
     }
 }
 
@@ -274,129 +274,129 @@ pub mod column_metadata {
     }
     impl Builder {
         /// <p>The name of the column.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The type of the column.</p>
-        pub fn r#type(mut self, inp: i32) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: i32) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: i32) -> Self {
-            self.r#type = Some(inp);
+        pub fn set_type(mut self, input: std::option::Option<i32>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The database-specific data type of the column.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The label for the column.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.label = Some(inp.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
             self
         }
-        pub fn set_label(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.label = inp;
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
             self
         }
         /// <p>The name of the schema that owns the table that includes the column.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema_name = Some(inp.into());
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_name = Some(input.into());
             self
         }
-        pub fn set_schema_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema_name = inp;
+        pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_name = input;
             self
         }
         /// <p>The name of the table that includes the column.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>A value that indicates whether the column increments automatically.</p>
-        pub fn is_auto_increment(mut self, inp: bool) -> Self {
-            self.is_auto_increment = Some(inp);
+        pub fn is_auto_increment(mut self, input: bool) -> Self {
+            self.is_auto_increment = Some(input);
             self
         }
-        pub fn set_is_auto_increment(mut self, inp: bool) -> Self {
-            self.is_auto_increment = Some(inp);
+        pub fn set_is_auto_increment(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_auto_increment = input;
             self
         }
         /// <p>A value that indicates whether an integer column is signed.</p>
-        pub fn is_signed(mut self, inp: bool) -> Self {
-            self.is_signed = Some(inp);
+        pub fn is_signed(mut self, input: bool) -> Self {
+            self.is_signed = Some(input);
             self
         }
-        pub fn set_is_signed(mut self, inp: bool) -> Self {
-            self.is_signed = Some(inp);
+        pub fn set_is_signed(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_signed = input;
             self
         }
         /// <p>A value that indicates whether the column contains currency values.</p>
-        pub fn is_currency(mut self, inp: bool) -> Self {
-            self.is_currency = Some(inp);
+        pub fn is_currency(mut self, input: bool) -> Self {
+            self.is_currency = Some(input);
             self
         }
-        pub fn set_is_currency(mut self, inp: bool) -> Self {
-            self.is_currency = Some(inp);
+        pub fn set_is_currency(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_currency = input;
             self
         }
         /// <p>A value that indicates whether the column is case-sensitive.</p>
-        pub fn is_case_sensitive(mut self, inp: bool) -> Self {
-            self.is_case_sensitive = Some(inp);
+        pub fn is_case_sensitive(mut self, input: bool) -> Self {
+            self.is_case_sensitive = Some(input);
             self
         }
-        pub fn set_is_case_sensitive(mut self, inp: bool) -> Self {
-            self.is_case_sensitive = Some(inp);
+        pub fn set_is_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_case_sensitive = input;
             self
         }
         /// <p>A value that indicates whether the column is nullable.</p>
-        pub fn nullable(mut self, inp: i32) -> Self {
-            self.nullable = Some(inp);
+        pub fn nullable(mut self, input: i32) -> Self {
+            self.nullable = Some(input);
             self
         }
-        pub fn set_nullable(mut self, inp: i32) -> Self {
-            self.nullable = Some(inp);
+        pub fn set_nullable(mut self, input: std::option::Option<i32>) -> Self {
+            self.nullable = input;
             self
         }
         /// <p>The precision value of a decimal number column.</p>
-        pub fn precision(mut self, inp: i32) -> Self {
-            self.precision = Some(inp);
+        pub fn precision(mut self, input: i32) -> Self {
+            self.precision = Some(input);
             self
         }
-        pub fn set_precision(mut self, inp: i32) -> Self {
-            self.precision = Some(inp);
+        pub fn set_precision(mut self, input: std::option::Option<i32>) -> Self {
+            self.precision = input;
             self
         }
         /// <p>The scale value of a decimal number column.</p>
-        pub fn scale(mut self, inp: i32) -> Self {
-            self.scale = Some(inp);
+        pub fn scale(mut self, input: i32) -> Self {
+            self.scale = Some(input);
             self
         }
-        pub fn set_scale(mut self, inp: i32) -> Self {
-            self.scale = Some(inp);
+        pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
+            self.scale = input;
             self
         }
         /// <p>The type of the column.</p>
-        pub fn array_base_column_type(mut self, inp: i32) -> Self {
-            self.array_base_column_type = Some(inp);
+        pub fn array_base_column_type(mut self, input: i32) -> Self {
+            self.array_base_column_type = Some(input);
             self
         }
-        pub fn set_array_base_column_type(mut self, inp: i32) -> Self {
-            self.array_base_column_type = Some(inp);
+        pub fn set_array_base_column_type(mut self, input: std::option::Option<i32>) -> Self {
+            self.array_base_column_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ColumnMetadata`](crate::model::ColumnMetadata)
@@ -469,15 +469,15 @@ pub mod result_set_options {
         /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss.
         /// We recommend converting to String, especially when working with currency values.</p>
         /// </important>
-        pub fn decimal_return_type(mut self, inp: crate::model::DecimalReturnType) -> Self {
-            self.decimal_return_type = Some(inp);
+        pub fn decimal_return_type(mut self, input: crate::model::DecimalReturnType) -> Self {
+            self.decimal_return_type = Some(input);
             self
         }
         pub fn set_decimal_return_type(
             mut self,
-            inp: std::option::Option<crate::model::DecimalReturnType>,
+            input: std::option::Option<crate::model::DecimalReturnType>,
         ) -> Self {
-            self.decimal_return_type = inp;
+            self.decimal_return_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ResultSetOptions`](crate::model::ResultSetOptions)
@@ -623,21 +623,21 @@ pub mod sql_parameter {
     }
     impl Builder {
         /// <p>The name of the parameter.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value of the parameter.</p>
-        pub fn value(mut self, inp: crate::model::Field) -> Self {
-            self.value = Some(inp);
+        pub fn value(mut self, input: crate::model::Field) -> Self {
+            self.value = Some(input);
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<crate::model::Field>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<crate::model::Field>) -> Self {
+            self.value = input;
             self
         }
         /// <p>A hint that specifies the correct object type for data type mapping. Possible values
@@ -675,12 +675,12 @@ pub mod sql_parameter {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn type_hint(mut self, inp: crate::model::TypeHint) -> Self {
-            self.type_hint = Some(inp);
+        pub fn type_hint(mut self, input: crate::model::TypeHint) -> Self {
+            self.type_hint = Some(input);
             self
         }
-        pub fn set_type_hint(mut self, inp: std::option::Option<crate::model::TypeHint>) -> Self {
-            self.type_hint = inp;
+        pub fn set_type_hint(mut self, input: std::option::Option<crate::model::TypeHint>) -> Self {
+            self.type_hint = input;
             self
         }
         /// Consumes the builder and constructs a [`SqlParameter`](crate::model::SqlParameter)
@@ -803,24 +803,24 @@ pub mod sql_statement_result {
     }
     impl Builder {
         /// <p>The result set of the SQL statement.</p>
-        pub fn result_frame(mut self, inp: crate::model::ResultFrame) -> Self {
-            self.result_frame = Some(inp);
+        pub fn result_frame(mut self, input: crate::model::ResultFrame) -> Self {
+            self.result_frame = Some(input);
             self
         }
         pub fn set_result_frame(
             mut self,
-            inp: std::option::Option<crate::model::ResultFrame>,
+            input: std::option::Option<crate::model::ResultFrame>,
         ) -> Self {
-            self.result_frame = inp;
+            self.result_frame = input;
             self
         }
         /// <p>The number of records updated by a SQL statement.</p>
-        pub fn number_of_records_updated(mut self, inp: i64) -> Self {
-            self.number_of_records_updated = Some(inp);
+        pub fn number_of_records_updated(mut self, input: i64) -> Self {
+            self.number_of_records_updated = Some(input);
             self
         }
-        pub fn set_number_of_records_updated(mut self, inp: i64) -> Self {
-            self.number_of_records_updated = Some(inp);
+        pub fn set_number_of_records_updated(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_records_updated = input;
             self
         }
         /// Consumes the builder and constructs a [`SqlStatementResult`](crate::model::SqlStatementResult)
@@ -871,28 +871,28 @@ pub mod result_frame {
     }
     impl Builder {
         /// <p>The result-set metadata in the result set.</p>
-        pub fn result_set_metadata(mut self, inp: crate::model::ResultSetMetadata) -> Self {
-            self.result_set_metadata = Some(inp);
+        pub fn result_set_metadata(mut self, input: crate::model::ResultSetMetadata) -> Self {
+            self.result_set_metadata = Some(input);
             self
         }
         pub fn set_result_set_metadata(
             mut self,
-            inp: std::option::Option<crate::model::ResultSetMetadata>,
+            input: std::option::Option<crate::model::ResultSetMetadata>,
         ) -> Self {
-            self.result_set_metadata = inp;
+            self.result_set_metadata = input;
             self
         }
-        pub fn records(mut self, inp: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.records = Some(v);
             self
         }
         pub fn set_records(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Record>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Record>>,
         ) -> Self {
-            self.records = inp;
+            self.records = input;
             self
         }
         /// Consumes the builder and constructs a [`ResultFrame`](crate::model::ResultFrame)
@@ -936,17 +936,17 @@ pub mod record {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::Value>>,
     }
     impl Builder {
-        pub fn values(mut self, inp: impl Into<crate::model::Value>) -> Self {
+        pub fn values(mut self, input: impl Into<crate::model::Value>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Value>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Value>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`Record`](crate::model::Record)
@@ -1000,105 +1000,105 @@ pub enum Value {
     StructValue(crate::model::StructValue),
 }
 impl Value {
-    pub fn as_array_values(&self) -> Option<&std::vec::Vec<crate::model::Value>> {
+    pub fn as_array_values(&self) -> Result<&std::vec::Vec<crate::model::Value>, &Self> {
         if let Value::ArrayValues(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_array_values(&self) -> bool {
-        self.as_array_values().is_some()
+        self.as_array_values().is_ok()
     }
-    pub fn as_big_int_value(&self) -> Option<&i64> {
+    pub fn as_big_int_value(&self) -> Result<&i64, &Self> {
         if let Value::BigIntValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_big_int_value(&self) -> bool {
-        self.as_big_int_value().is_some()
+        self.as_big_int_value().is_ok()
     }
-    pub fn as_bit_value(&self) -> Option<&bool> {
+    pub fn as_bit_value(&self) -> Result<&bool, &Self> {
         if let Value::BitValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_bit_value(&self) -> bool {
-        self.as_bit_value().is_some()
+        self.as_bit_value().is_ok()
     }
-    pub fn as_blob_value(&self) -> Option<&smithy_types::Blob> {
+    pub fn as_blob_value(&self) -> Result<&smithy_types::Blob, &Self> {
         if let Value::BlobValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_blob_value(&self) -> bool {
-        self.as_blob_value().is_some()
+        self.as_blob_value().is_ok()
     }
-    pub fn as_double_value(&self) -> Option<&f64> {
+    pub fn as_double_value(&self) -> Result<&f64, &Self> {
         if let Value::DoubleValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_double_value(&self) -> bool {
-        self.as_double_value().is_some()
+        self.as_double_value().is_ok()
     }
-    pub fn as_int_value(&self) -> Option<&i32> {
+    pub fn as_int_value(&self) -> Result<&i32, &Self> {
         if let Value::IntValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_int_value(&self) -> bool {
-        self.as_int_value().is_some()
+        self.as_int_value().is_ok()
     }
-    pub fn as_is_null(&self) -> Option<&bool> {
+    pub fn as_is_null(&self) -> Result<&bool, &Self> {
         if let Value::IsNull(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_is_null(&self) -> bool {
-        self.as_is_null().is_some()
+        self.as_is_null().is_ok()
     }
-    pub fn as_real_value(&self) -> Option<&f32> {
+    pub fn as_real_value(&self) -> Result<&f32, &Self> {
         if let Value::RealValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_real_value(&self) -> bool {
-        self.as_real_value().is_some()
+        self.as_real_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Option<&std::string::String> {
+    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
         if let Value::StringValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_string_value(&self) -> bool {
-        self.as_string_value().is_some()
+        self.as_string_value().is_ok()
     }
-    pub fn as_struct_value(&self) -> Option<&crate::model::StructValue> {
+    pub fn as_struct_value(&self) -> Result<&crate::model::StructValue, &Self> {
         if let Value::StructValue(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_struct_value(&self) -> bool {
-        self.as_struct_value().is_some()
+        self.as_struct_value().is_ok()
     }
 }
 
@@ -1127,17 +1127,17 @@ pub mod struct_value {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Value>>,
     }
     impl Builder {
-        pub fn attributes(mut self, inp: impl Into<crate::model::Value>) -> Self {
+        pub fn attributes(mut self, input: impl Into<crate::model::Value>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes = Some(v);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Value>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Value>>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`StructValue`](crate::model::StructValue)
@@ -1188,25 +1188,25 @@ pub mod result_set_metadata {
     }
     impl Builder {
         /// <p>The number of columns in the result set.</p>
-        pub fn column_count(mut self, inp: i64) -> Self {
-            self.column_count = Some(inp);
+        pub fn column_count(mut self, input: i64) -> Self {
+            self.column_count = Some(input);
             self
         }
-        pub fn set_column_count(mut self, inp: i64) -> Self {
-            self.column_count = Some(inp);
+        pub fn set_column_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.column_count = input;
             self
         }
-        pub fn column_metadata(mut self, inp: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_metadata(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.column_metadata = Some(v);
             self
         }
         pub fn set_column_metadata(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
         ) -> Self {
-            self.column_metadata = inp;
+            self.column_metadata = input;
             self
         }
         /// Consumes the builder and constructs a [`ResultSetMetadata`](crate::model::ResultSetMetadata)
@@ -1250,17 +1250,17 @@ pub mod update_result {
         pub(crate) generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     }
     impl Builder {
-        pub fn generated_fields(mut self, inp: impl Into<crate::model::Field>) -> Self {
+        pub fn generated_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
             let mut v = self.generated_fields.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.generated_fields = Some(v);
             self
         }
         pub fn set_generated_fields(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Field>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Field>>,
         ) -> Self {
-            self.generated_fields = inp;
+            self.generated_fields = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateResult`](crate::model::UpdateResult)

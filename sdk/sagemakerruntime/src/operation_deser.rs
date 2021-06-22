@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_invoke_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError> {
+) -> std::result::Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::InvokeEndpointError::unhandled)?;
     let error_code = match generic.code() {
@@ -61,7 +61,7 @@ pub fn parse_invoke_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_invoke_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError> {
+) -> std::result::Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::invoke_endpoint_output::Builder::default();

@@ -13,53 +13,54 @@ pub mod add_permission_input {
     }
     impl Builder {
         /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// <p>A unique identifier for the new policy statement.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.label = Some(inp.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
             self
         }
-        pub fn set_label(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.label = inp;
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
             self
         }
-        pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_account_id.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.aws_account_id = Some(v);
             self
         }
         pub fn set_aws_account_id(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.aws_account_id = inp;
+            self.aws_account_id = input;
             self
         }
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action_name.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.action_name = Some(v);
             self
         }
         pub fn set_action_name(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.action_name = inp;
+            self.action_name = input;
             self
         }
         /// Consumes the builder and constructs a [`AddPermissionInput`](crate::input::AddPermissionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AddPermissionInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::AddPermissionInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::AddPermissionInput {
                 topic_arn: self.topic_arn,
                 label: self.label,
@@ -79,7 +80,7 @@ impl AddPermissionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddPermission,
             aws_http::AwsErrorRetryPolicy,
@@ -139,7 +140,7 @@ impl AddPermissionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -147,7 +148,7 @@ impl AddPermissionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -177,18 +178,18 @@ pub mod check_if_phone_number_is_opted_out_input {
     }
     impl Builder {
         /// <p>The phone number for which you want to check the opt out status.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.phone_number = Some(inp.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = inp;
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
             self
         }
         /// Consumes the builder and constructs a [`CheckIfPhoneNumberIsOptedOutInput`](crate::input::CheckIfPhoneNumberIsOptedOutInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CheckIfPhoneNumberIsOptedOutInput,
             smithy_http::operation::BuildError,
         > {
@@ -209,7 +210,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CheckIfPhoneNumberIsOptedOut,
             aws_http::AwsErrorRetryPolicy,
@@ -270,7 +271,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -278,7 +279,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -310,43 +311,48 @@ pub mod confirm_subscription_input {
     }
     impl Builder {
         /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.token = Some(inp.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token = Some(input.into());
             self
         }
-        pub fn set_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.token = inp;
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token = input;
             self
         }
         /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this
         /// parameter is <code>true</code> and the request has an AWS signature, then only the topic
         /// owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action
         /// requires AWS authentication. </p>
-        pub fn authenticate_on_unsubscribe(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authenticate_on_unsubscribe = Some(inp.into());
+        pub fn authenticate_on_unsubscribe(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authenticate_on_unsubscribe = Some(input.into());
             self
         }
         pub fn set_authenticate_on_unsubscribe(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authenticate_on_unsubscribe = inp;
+            self.authenticate_on_unsubscribe = input;
             self
         }
         /// Consumes the builder and constructs a [`ConfirmSubscriptionInput`](crate::input::ConfirmSubscriptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ConfirmSubscriptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ConfirmSubscriptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ConfirmSubscriptionInput {
                 topic_arn: self.topic_arn,
                 token: self.token,
@@ -365,7 +371,7 @@ impl ConfirmSubscriptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ConfirmSubscription,
             aws_http::AwsErrorRetryPolicy,
@@ -425,7 +431,7 @@ impl ConfirmSubscriptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -433,7 +439,7 @@ impl ConfirmSubscriptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -469,22 +475,22 @@ pub mod create_platform_application_input {
         /// <p>Application names must be made up of only uppercase and lowercase ASCII letters,
         /// numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters
         /// long.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push
         /// Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
-        pub fn platform(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform = Some(inp.into());
+        pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform = Some(input.into());
             self
         }
-        pub fn set_platform(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.platform = inp;
+        pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform = input;
             self
         }
         pub fn attributes(
@@ -499,18 +505,20 @@ pub mod create_platform_application_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePlatformApplicationInput`](crate::input::CreatePlatformApplicationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePlatformApplicationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreatePlatformApplicationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreatePlatformApplicationInput {
                 name: self.name,
                 platform: self.platform,
@@ -530,7 +538,7 @@ impl CreatePlatformApplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreatePlatformApplication,
             aws_http::AwsErrorRetryPolicy,
@@ -590,7 +598,7 @@ impl CreatePlatformApplicationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -598,7 +606,7 @@ impl CreatePlatformApplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -634,15 +642,15 @@ pub mod create_platform_endpoint_input {
     impl Builder {
         /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an
         /// endpoint.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_application_arn = Some(inp.into());
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_application_arn = Some(input.into());
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_application_arn = inp;
+            self.platform_application_arn = input;
             self
         }
         /// <p>Unique identifier created by the notification service for an app on a device. The
@@ -650,25 +658,25 @@ pub mod create_platform_endpoint_input {
         /// used. For example, when using APNS as the notification service, you need the device
         /// token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token
         /// equivalent is called the registration ID.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.token = Some(inp.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token = Some(input.into());
             self
         }
-        pub fn set_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.token = inp;
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token = input;
             self
         }
         /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The
         /// data must be in UTF-8 format and less than 2KB.</p>
-        pub fn custom_user_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_user_data = Some(inp.into());
+        pub fn custom_user_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_user_data = Some(input.into());
             self
         }
         pub fn set_custom_user_data(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_user_data = inp;
+            self.custom_user_data = input;
             self
         }
         pub fn attributes(
@@ -683,18 +691,20 @@ pub mod create_platform_endpoint_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePlatformEndpointInput`](crate::input::CreatePlatformEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePlatformEndpointInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreatePlatformEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreatePlatformEndpointInput {
                 platform_application_arn: self.platform_application_arn,
                 token: self.token,
@@ -714,7 +724,7 @@ impl CreatePlatformEndpointInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreatePlatformEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -774,7 +784,7 @@ impl CreatePlatformEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -782,7 +792,7 @@ impl CreatePlatformEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -814,31 +824,31 @@ pub mod create_sms_sandbox_phone_number_input {
     impl Builder {
         /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
         /// to the list of verified phone numbers that you can send SMS messages to.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.phone_number = Some(inp.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = inp;
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
             self
         }
         /// <p>The language to use for sending the OTP. The default value is
         /// <code>en-US</code>.</p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCodeString) -> Self {
-            self.language_code = Some(inp);
+        pub fn language_code(mut self, input: crate::model::LanguageCodeString) -> Self {
+            self.language_code = Some(input);
             self
         }
         pub fn set_language_code(
             mut self,
-            inp: std::option::Option<crate::model::LanguageCodeString>,
+            input: std::option::Option<crate::model::LanguageCodeString>,
         ) -> Self {
-            self.language_code = inp;
+            self.language_code = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateSMSSandboxPhoneNumberInput,
             smithy_http::operation::BuildError,
         > {
@@ -860,7 +870,7 @@ impl CreateSMSSandboxPhoneNumberInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateSMSSandboxPhoneNumber,
             aws_http::AwsErrorRetryPolicy,
@@ -921,7 +931,7 @@ impl CreateSMSSandboxPhoneNumberInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -929,7 +939,7 @@ impl CreateSMSSandboxPhoneNumberInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -968,12 +978,12 @@ pub mod create_topic_input {
         /// long.</p>
         /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
         /// suffix. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         pub fn attributes(
@@ -988,30 +998,31 @@ pub mod create_topic_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTopicInput`](crate::input::CreateTopicInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTopicInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateTopicInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateTopicInput {
                 name: self.name,
                 attributes: self.attributes,
@@ -1030,7 +1041,7 @@ impl CreateTopicInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateTopic,
             aws_http::AwsErrorRetryPolicy,
@@ -1087,7 +1098,7 @@ impl CreateTopicInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1095,7 +1106,7 @@ impl CreateTopicInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1125,18 +1136,21 @@ pub mod delete_endpoint_input {
     }
     impl Builder {
         /// <p>EndpointArn of endpoint to delete.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_arn = Some(inp.into());
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_arn = Some(input.into());
             self
         }
-        pub fn set_endpoint_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_arn = inp;
+        pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::input::DeleteEndpointInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteEndpointInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DeleteEndpointInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteEndpointInput {
                 endpoint_arn: self.endpoint_arn,
             })
@@ -1153,7 +1167,7 @@ impl DeleteEndpointInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
             aws_http::AwsErrorRetryPolicy,
@@ -1212,7 +1226,7 @@ impl DeleteEndpointInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1220,7 +1234,7 @@ impl DeleteEndpointInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1250,22 +1264,24 @@ pub mod delete_platform_application_input {
     }
     impl Builder {
         /// <p>PlatformApplicationArn of platform application object to delete.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_application_arn = Some(inp.into());
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_application_arn = Some(input.into());
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_application_arn = inp;
+            self.platform_application_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeletePlatformApplicationInput`](crate::input::DeletePlatformApplicationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePlatformApplicationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeletePlatformApplicationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeletePlatformApplicationInput {
                 platform_application_arn: self.platform_application_arn,
             })
@@ -1283,7 +1299,7 @@ impl DeletePlatformApplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeletePlatformApplication,
             aws_http::AwsErrorRetryPolicy,
@@ -1343,7 +1359,7 @@ impl DeletePlatformApplicationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1351,7 +1367,7 @@ impl DeletePlatformApplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1381,18 +1397,18 @@ pub mod delete_sms_sandbox_phone_number_input {
     }
     impl Builder {
         /// <p>The destination phone number to delete.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.phone_number = Some(inp.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = inp;
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteSMSSandboxPhoneNumberInput,
             smithy_http::operation::BuildError,
         > {
@@ -1413,7 +1429,7 @@ impl DeleteSMSSandboxPhoneNumberInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteSMSSandboxPhoneNumber,
             aws_http::AwsErrorRetryPolicy,
@@ -1474,7 +1490,7 @@ impl DeleteSMSSandboxPhoneNumberInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1482,7 +1498,7 @@ impl DeleteSMSSandboxPhoneNumberInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1512,18 +1528,19 @@ pub mod delete_topic_input {
     }
     impl Builder {
         /// <p>The ARN of the topic you want to delete.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTopicInput`](crate::input::DeleteTopicInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTopicInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteTopicInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteTopicInput {
                 topic_arn: self.topic_arn,
             })
@@ -1540,7 +1557,7 @@ impl DeleteTopicInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteTopic,
             aws_http::AwsErrorRetryPolicy,
@@ -1597,7 +1614,7 @@ impl DeleteTopicInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1605,7 +1622,7 @@ impl DeleteTopicInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1635,19 +1652,21 @@ pub mod get_endpoint_attributes_input {
     }
     impl Builder {
         /// <p>EndpointArn for GetEndpointAttributes input.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_arn = Some(inp.into());
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_arn = Some(input.into());
             self
         }
-        pub fn set_endpoint_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_arn = inp;
+        pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEndpointAttributesInput`](crate::input::GetEndpointAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEndpointAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetEndpointAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetEndpointAttributesInput {
                 endpoint_arn: self.endpoint_arn,
             })
@@ -1664,7 +1683,7 @@ impl GetEndpointAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetEndpointAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -1724,7 +1743,7 @@ impl GetEndpointAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1732,7 +1751,7 @@ impl GetEndpointAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1762,21 +1781,21 @@ pub mod get_platform_application_attributes_input {
     }
     impl Builder {
         /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_application_arn = Some(inp.into());
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_application_arn = Some(input.into());
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_application_arn = inp;
+            self.platform_application_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPlatformApplicationAttributesInput`](crate::input::GetPlatformApplicationAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetPlatformApplicationAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -1797,7 +1816,7 @@ impl GetPlatformApplicationAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetPlatformApplicationAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -1860,7 +1879,7 @@ impl GetPlatformApplicationAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1868,7 +1887,7 @@ impl GetPlatformApplicationAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1897,24 +1916,26 @@ pub mod get_sms_attributes_input {
         pub(crate) attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn attributes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes = Some(v);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSMSAttributesInput`](crate::input::GetSMSAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSMSAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSMSAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSMSAttributesInput {
                 attributes: self.attributes,
             })
@@ -1931,7 +1952,7 @@ impl GetSMSAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSMSAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -1991,7 +2012,7 @@ impl GetSMSAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1999,7 +2020,7 @@ impl GetSMSAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2029,8 +2050,10 @@ pub mod get_sms_sandbox_account_status_input {
         /// Consumes the builder and constructs a [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSMSSandboxAccountStatusInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSMSSandboxAccountStatusInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSMSSandboxAccountStatusInput {})
         }
     }
@@ -2046,7 +2069,7 @@ impl GetSMSSandboxAccountStatusInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSMSSandboxAccountStatus,
             aws_http::AwsErrorRetryPolicy,
@@ -2107,7 +2130,7 @@ impl GetSMSSandboxAccountStatusInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2115,7 +2138,7 @@ impl GetSMSSandboxAccountStatusInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2145,22 +2168,24 @@ pub mod get_subscription_attributes_input {
     }
     impl Builder {
         /// <p>The ARN of the subscription whose properties you want to get.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_arn = Some(inp.into());
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_arn = Some(input.into());
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_arn = inp;
+            self.subscription_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSubscriptionAttributesInput`](crate::input::GetSubscriptionAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSubscriptionAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSubscriptionAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSubscriptionAttributesInput {
                 subscription_arn: self.subscription_arn,
             })
@@ -2178,7 +2203,7 @@ impl GetSubscriptionAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSubscriptionAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -2238,7 +2263,7 @@ impl GetSubscriptionAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2246,7 +2271,7 @@ impl GetSubscriptionAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2276,19 +2301,21 @@ pub mod get_topic_attributes_input {
     }
     impl Builder {
         /// <p>The ARN of the topic whose properties you want to get.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTopicAttributesInput`](crate::input::GetTopicAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTopicAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTopicAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTopicAttributesInput {
                 topic_arn: self.topic_arn,
             })
@@ -2305,7 +2332,7 @@ impl GetTopicAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetTopicAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -2365,7 +2392,7 @@ impl GetTopicAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2373,7 +2400,7 @@ impl GetTopicAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2404,31 +2431,31 @@ pub mod list_endpoints_by_platform_application_input {
     }
     impl Builder {
         /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_application_arn = Some(inp.into());
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_application_arn = Some(input.into());
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_application_arn = inp;
+            self.platform_application_arn = input;
             self
         }
         /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to
         /// retrieve additional records that are available after the first page results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListEndpointsByPlatformApplicationInput`](crate::input::ListEndpointsByPlatformApplicationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListEndpointsByPlatformApplicationInput,
             smithy_http::operation::BuildError,
         > {
@@ -2450,7 +2477,7 @@ impl ListEndpointsByPlatformApplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListEndpointsByPlatformApplication,
             aws_http::AwsErrorRetryPolicy,
@@ -2513,7 +2540,7 @@ impl ListEndpointsByPlatformApplicationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2521,7 +2548,7 @@ impl ListEndpointsByPlatformApplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2552,28 +2579,30 @@ pub mod list_origination_numbers_input {
     }
     impl Builder {
         /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of origination numbers to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ListOriginationNumbersInput`](crate::input::ListOriginationNumbersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListOriginationNumbersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListOriginationNumbersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListOriginationNumbersInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -2591,7 +2620,7 @@ impl ListOriginationNumbersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListOriginationNumbers,
             aws_http::AwsErrorRetryPolicy,
@@ -2651,7 +2680,7 @@ impl ListOriginationNumbersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2659,7 +2688,7 @@ impl ListOriginationNumbersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2691,19 +2720,21 @@ pub mod list_phone_numbers_opted_out_input {
         /// <p>A <code>NextToken</code> string is used when you call the
         /// <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are
         /// available after the first page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPhoneNumbersOptedOutInput`](crate::input::ListPhoneNumbersOptedOutInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPhoneNumbersOptedOutInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListPhoneNumbersOptedOutInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListPhoneNumbersOptedOutInput {
                 next_token: self.next_token,
             })
@@ -2721,7 +2752,7 @@ impl ListPhoneNumbersOptedOutInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListPhoneNumbersOptedOut,
             aws_http::AwsErrorRetryPolicy,
@@ -2782,7 +2813,7 @@ impl ListPhoneNumbersOptedOutInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2790,7 +2821,7 @@ impl ListPhoneNumbersOptedOutInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2821,19 +2852,21 @@ pub mod list_platform_applications_input {
     impl Builder {
         /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve
         /// additional records that are available after the first page results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPlatformApplicationsInput`](crate::input::ListPlatformApplicationsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPlatformApplicationsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListPlatformApplicationsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListPlatformApplicationsInput {
                 next_token: self.next_token,
             })
@@ -2851,7 +2884,7 @@ impl ListPlatformApplicationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListPlatformApplications,
             aws_http::AwsErrorRetryPolicy,
@@ -2911,7 +2944,7 @@ impl ListPlatformApplicationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2919,7 +2952,7 @@ impl ListPlatformApplicationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2951,28 +2984,30 @@ pub mod list_sms_sandbox_phone_numbers_input {
     impl Builder {
         /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
         /// returns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of phone numbers to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSMSSandboxPhoneNumbersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSMSSandboxPhoneNumbersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSMSSandboxPhoneNumbersInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -2991,7 +3026,7 @@ impl ListSMSSandboxPhoneNumbersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSMSSandboxPhoneNumbers,
             aws_http::AwsErrorRetryPolicy,
@@ -3052,7 +3087,7 @@ impl ListSMSSandboxPhoneNumbersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3060,7 +3095,7 @@ impl ListSMSSandboxPhoneNumbersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3090,19 +3125,21 @@ pub mod list_subscriptions_input {
     }
     impl Builder {
         /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSubscriptionsInput`](crate::input::ListSubscriptionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSubscriptionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSubscriptionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSubscriptionsInput {
                 next_token: self.next_token,
             })
@@ -3119,7 +3156,7 @@ impl ListSubscriptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSubscriptions,
             aws_http::AwsErrorRetryPolicy,
@@ -3179,7 +3216,7 @@ impl ListSubscriptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3187,7 +3224,7 @@ impl ListSubscriptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3218,28 +3255,30 @@ pub mod list_subscriptions_by_topic_input {
     }
     impl Builder {
         /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSubscriptionsByTopicInput`](crate::input::ListSubscriptionsByTopicInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSubscriptionsByTopicInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSubscriptionsByTopicInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSubscriptionsByTopicInput {
                 topic_arn: self.topic_arn,
                 next_token: self.next_token,
@@ -3258,7 +3297,7 @@ impl ListSubscriptionsByTopicInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSubscriptionsByTopic,
             aws_http::AwsErrorRetryPolicy,
@@ -3318,7 +3357,7 @@ impl ListSubscriptionsByTopicInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3326,7 +3365,7 @@ impl ListSubscriptionsByTopicInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3356,19 +3395,21 @@ pub mod list_tags_for_resource_input {
     }
     impl Builder {
         /// <p>The ARN of the topic for which to list tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -3385,7 +3426,7 @@ impl ListTagsForResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
@@ -3445,7 +3486,7 @@ impl ListTagsForResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3453,7 +3494,7 @@ impl ListTagsForResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3483,18 +3524,19 @@ pub mod list_topics_input {
     }
     impl Builder {
         /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTopicsInput`](crate::input::ListTopicsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTopicsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListTopicsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListTopicsInput {
                 next_token: self.next_token,
             })
@@ -3511,7 +3553,7 @@ impl ListTopicsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTopics,
             aws_http::AwsErrorRetryPolicy,
@@ -3568,7 +3610,7 @@ impl ListTopicsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3576,7 +3618,7 @@ impl ListTopicsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3606,19 +3648,21 @@ pub mod opt_in_phone_number_input {
     }
     impl Builder {
         /// <p>The phone number to opt in. Use E.164 format.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.phone_number = Some(inp.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = inp;
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
             self
         }
         /// Consumes the builder and constructs a [`OptInPhoneNumberInput`](crate::input::OptInPhoneNumberInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::OptInPhoneNumberInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::OptInPhoneNumberInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::OptInPhoneNumberInput {
                 phone_number: self.phone_number,
             })
@@ -3635,7 +3679,7 @@ impl OptInPhoneNumberInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::OptInPhoneNumber,
             aws_http::AwsErrorRetryPolicy,
@@ -3695,7 +3739,7 @@ impl OptInPhoneNumberInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3703,7 +3747,7 @@ impl OptInPhoneNumberInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3745,35 +3789,35 @@ pub mod publish_input {
         /// <p>The topic you want to publish to.</p>
         /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify
         /// a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must
         /// specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
         /// parameters.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_arn = Some(inp.into());
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
             self
         }
-        pub fn set_target_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = inp;
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
             self
         }
         /// <p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>
         /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must
         /// specify a value for the <code>TargetArn</code> or <code>TopicArn</code>
         /// parameters.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.phone_number = Some(inp.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = inp;
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
             self
         }
         /// <p>The message you want to send.</p>
@@ -3837,12 +3881,12 @@ pub mod publish_input {
         /// <code>Publish</code> call to return an error (no partial delivery).</p>
         /// </li>
         /// </ul>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to
@@ -3851,12 +3895,12 @@ pub mod publish_input {
         /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or
         /// punctuation mark; must not include line breaks or control characters; and must be less
         /// than 100 characters long.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subject = Some(inp.into());
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subject = Some(input.into());
             self
         }
-        pub fn set_subject(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subject = inp;
+        pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subject = input;
             self
         }
         /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different
@@ -3877,15 +3921,15 @@ pub mod publish_input {
         /// specific transport protocol (e.g., "http").</p>
         /// <p>Valid value: <code>json</code>
         /// </p>
-        pub fn message_structure(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_structure = Some(inp.into());
+        pub fn message_structure(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_structure = Some(input.into());
             self
         }
         pub fn set_message_structure(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.message_structure = inp;
+            self.message_structure = input;
             self
         }
         pub fn message_attributes(
@@ -3900,11 +3944,11 @@ pub mod publish_input {
         }
         pub fn set_message_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
             >,
         ) -> Self {
-            self.message_attributes = inp;
+            self.message_attributes = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
@@ -3919,15 +3963,15 @@ pub mod publish_input {
         /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a
         /// <code>MessageDeduplicationId</code> based on the contents of the message. Your
         /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        pub fn message_deduplication_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_deduplication_id = Some(inp.into());
+        pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_deduplication_id = Some(input.into());
             self
         }
         pub fn set_message_deduplication_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.message_deduplication_id = inp;
+            self.message_deduplication_id = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
@@ -3937,21 +3981,22 @@ pub mod publish_input {
         /// specific message group. Messages that belong to the same message group are processed in
         /// a FIFO manner (however, messages in different message groups might be processed out of
         /// order). Every message must include a <code>MessageGroupId</code>.</p>
-        pub fn message_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_group_id = Some(inp.into());
+        pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_group_id = Some(input.into());
             self
         }
         pub fn set_message_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.message_group_id = inp;
+            self.message_group_id = input;
             self
         }
         /// Consumes the builder and constructs a [`PublishInput`](crate::input::PublishInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PublishInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PublishInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PublishInput {
                 topic_arn: self.topic_arn,
                 target_arn: self.target_arn,
@@ -3976,7 +4021,7 @@ impl PublishInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::Publish, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -4027,7 +4072,7 @@ impl PublishInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4035,7 +4080,7 @@ impl PublishInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4066,28 +4111,30 @@ pub mod remove_permission_input {
     }
     impl Builder {
         /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// <p>The unique label of the statement you want to remove.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.label = Some(inp.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
             self
         }
-        pub fn set_label(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.label = inp;
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
             self
         }
         /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::input::RemovePermissionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RemovePermissionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemovePermissionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemovePermissionInput {
                 topic_arn: self.topic_arn,
                 label: self.label,
@@ -4105,7 +4152,7 @@ impl RemovePermissionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemovePermission,
             aws_http::AwsErrorRetryPolicy,
@@ -4164,7 +4211,7 @@ impl RemovePermissionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4172,7 +4219,7 @@ impl RemovePermissionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4205,12 +4252,12 @@ pub mod set_endpoint_attributes_input {
     }
     impl Builder {
         /// <p>EndpointArn used for SetEndpointAttributes action.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_arn = Some(inp.into());
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_arn = Some(input.into());
             self
         }
-        pub fn set_endpoint_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_arn = inp;
+        pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_arn = input;
             self
         }
         pub fn attributes(
@@ -4225,18 +4272,20 @@ pub mod set_endpoint_attributes_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`SetEndpointAttributesInput`](crate::input::SetEndpointAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SetEndpointAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetEndpointAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetEndpointAttributesInput {
                 endpoint_arn: self.endpoint_arn,
                 attributes: self.attributes,
@@ -4254,7 +4303,7 @@ impl SetEndpointAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetEndpointAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -4314,7 +4363,7 @@ impl SetEndpointAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4322,7 +4371,7 @@ impl SetEndpointAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4355,15 +4404,15 @@ pub mod set_platform_application_attributes_input {
     }
     impl Builder {
         /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_application_arn = Some(inp.into());
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_application_arn = Some(input.into());
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_application_arn = inp;
+            self.platform_application_arn = input;
             self
         }
         pub fn attributes(
@@ -4378,17 +4427,17 @@ pub mod set_platform_application_attributes_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`SetPlatformApplicationAttributesInput`](crate::input::SetPlatformApplicationAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::SetPlatformApplicationAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -4410,7 +4459,7 @@ impl SetPlatformApplicationAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetPlatformApplicationAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -4473,7 +4522,7 @@ impl SetPlatformApplicationAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4481,7 +4530,7 @@ impl SetPlatformApplicationAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4524,18 +4573,20 @@ pub mod set_sms_attributes_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`SetSMSAttributesInput`](crate::input::SetSMSAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SetSMSAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetSMSAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetSMSAttributesInput {
                 attributes: self.attributes,
             })
@@ -4552,7 +4603,7 @@ impl SetSMSAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetSMSAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -4612,7 +4663,7 @@ impl SetSMSAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4620,7 +4671,7 @@ impl SetSMSAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4652,15 +4703,15 @@ pub mod set_subscription_attributes_input {
     }
     impl Builder {
         /// <p>The ARN of the subscription to modify.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_arn = Some(inp.into());
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_arn = Some(input.into());
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_arn = inp;
+            self.subscription_arn = input;
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
@@ -4711,31 +4762,36 @@ pub mod set_subscription_attributes_input {
         /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_name = Some(inp.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attribute_name = inp;
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
             self
         }
         /// <p>The new value for the attribute in JSON format.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_value = Some(inp.into());
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_value = Some(input.into());
             self
         }
         pub fn set_attribute_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.attribute_value = inp;
+            self.attribute_value = input;
             self
         }
         /// Consumes the builder and constructs a [`SetSubscriptionAttributesInput`](crate::input::SetSubscriptionAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SetSubscriptionAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetSubscriptionAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetSubscriptionAttributesInput {
                 subscription_arn: self.subscription_arn,
                 attribute_name: self.attribute_name,
@@ -4755,7 +4811,7 @@ impl SetSubscriptionAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetSubscriptionAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -4815,7 +4871,7 @@ impl SetSubscriptionAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4823,7 +4879,7 @@ impl SetSubscriptionAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4855,12 +4911,12 @@ pub mod set_topic_attributes_input {
     }
     impl Builder {
         /// <p>The ARN of the topic to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
@@ -4918,31 +4974,36 @@ pub mod set_topic_attributes_input {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_name = Some(inp.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attribute_name = inp;
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
             self
         }
         /// <p>The new value for the attribute.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_value = Some(inp.into());
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_value = Some(input.into());
             self
         }
         pub fn set_attribute_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.attribute_value = inp;
+            self.attribute_value = input;
             self
         }
         /// Consumes the builder and constructs a [`SetTopicAttributesInput`](crate::input::SetTopicAttributesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SetTopicAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetTopicAttributesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetTopicAttributesInput {
                 topic_arn: self.topic_arn,
                 attribute_name: self.attribute_name,
@@ -4961,7 +5022,7 @@ impl SetTopicAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetTopicAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -5021,7 +5082,7 @@ impl SetTopicAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5029,7 +5090,7 @@ impl SetTopicAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5065,12 +5126,12 @@ pub mod subscribe_input {
     }
     impl Builder {
         /// <p>The ARN of the topic you want to subscribe to.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// <p>The protocol that you want to use. Supported protocols include:</p>
@@ -5119,12 +5180,12 @@ pub mod subscribe_input {
         /// Kinesis Data Firehose delivery stream.</p>
         /// </li>
         /// </ul>
-        pub fn protocol(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.protocol = Some(inp.into());
+        pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.protocol = Some(input.into());
             self
         }
-        pub fn set_protocol(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.protocol = inp;
+        pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol = input;
             self
         }
         /// <p>The endpoint that you want to receive notifications. Endpoints vary by
@@ -5166,12 +5227,12 @@ pub mod subscribe_input {
         /// Kinesis Data Firehose delivery stream.</p>
         /// </li>
         /// </ul>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         pub fn attributes(
@@ -5186,11 +5247,11 @@ pub mod subscribe_input {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// <p>Sets whether the response from the <code>Subscribe</code> request includes the
@@ -5203,18 +5264,19 @@ pub mod subscribe_input {
         /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
         /// <p></p>
         /// <p>The default value is <code>false</code>.</p>
-        pub fn return_subscription_arn(mut self, inp: bool) -> Self {
-            self.return_subscription_arn = Some(inp);
+        pub fn return_subscription_arn(mut self, input: bool) -> Self {
+            self.return_subscription_arn = Some(input);
             self
         }
-        pub fn set_return_subscription_arn(mut self, inp: bool) -> Self {
-            self.return_subscription_arn = Some(inp);
+        pub fn set_return_subscription_arn(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_subscription_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`SubscribeInput`](crate::input::SubscribeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SubscribeInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::SubscribeInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::SubscribeInput {
                 topic_arn: self.topic_arn,
                 protocol: self.protocol,
@@ -5235,7 +5297,7 @@ impl SubscribeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::Subscribe,
             aws_http::AwsErrorRetryPolicy,
@@ -5290,7 +5352,7 @@ impl SubscribeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5298,7 +5360,7 @@ impl SubscribeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5329,31 +5391,32 @@ pub mod tag_resource_input {
     }
     impl Builder {
         /// <p>The ARN of the topic to which to add tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -5371,7 +5434,7 @@ impl TagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -5428,7 +5491,7 @@ impl TagResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5436,7 +5499,7 @@ impl TagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5466,21 +5529,22 @@ pub mod unsubscribe_input {
     }
     impl Builder {
         /// <p>The ARN of the subscription to be deleted.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_arn = Some(inp.into());
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_arn = Some(input.into());
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_arn = inp;
+            self.subscription_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::input::UnsubscribeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UnsubscribeInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UnsubscribeInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UnsubscribeInput {
                 subscription_arn: self.subscription_arn,
             })
@@ -5497,7 +5561,7 @@ impl UnsubscribeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::Unsubscribe,
             aws_http::AwsErrorRetryPolicy,
@@ -5554,7 +5618,7 @@ impl UnsubscribeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5562,7 +5626,7 @@ impl UnsubscribeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5593,31 +5657,32 @@ pub mod untag_resource_input {
     }
     impl Builder {
         /// <p>The ARN of the topic from which to remove tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -5635,7 +5700,7 @@ impl UntagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -5695,7 +5760,7 @@ impl UntagResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5703,7 +5768,7 @@ impl UntagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5734,31 +5799,31 @@ pub mod verify_sms_sandbox_phone_number_input {
     }
     impl Builder {
         /// <p>The destination phone number to verify.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.phone_number = Some(inp.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = inp;
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
             self
         }
         /// <p>The OTP sent to the destination number from the
         /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
-        pub fn one_time_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.one_time_password = Some(inp.into());
+        pub fn one_time_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.one_time_password = Some(input.into());
             self
         }
         pub fn set_one_time_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.one_time_password = inp;
+            self.one_time_password = input;
             self
         }
         /// Consumes the builder and constructs a [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::VerifySMSSandboxPhoneNumberInput,
             smithy_http::operation::BuildError,
         > {
@@ -5780,7 +5845,7 @@ impl VerifySMSSandboxPhoneNumberInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::VerifySMSSandboxPhoneNumber,
             aws_http::AwsErrorRetryPolicy,
@@ -5841,7 +5906,7 @@ impl VerifySMSSandboxPhoneNumberInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5849,7 +5914,7 @@ impl VerifySMSSandboxPhoneNumberInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)

@@ -124,31 +124,31 @@ pub mod send_message_batch_output {
     impl Builder {
         pub fn successful(
             mut self,
-            inp: impl Into<crate::model::SendMessageBatchResultEntry>,
+            input: impl Into<crate::model::SendMessageBatchResultEntry>,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful = Some(v);
             self
         }
         pub fn set_successful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
         ) -> Self {
-            self.successful = inp;
+            self.successful = input;
             self
         }
-        pub fn failed(mut self, inp: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failed = Some(v);
             self
         }
         pub fn set_failed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
         ) -> Self {
-            self.failed = inp;
+            self.failed = input;
             self
         }
         /// Consumes the builder and constructs a [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput)
@@ -214,67 +214,67 @@ pub mod send_message_output {
     }
     impl Builder {
         /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-        pub fn md5_of_message_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.md5_of_message_body = Some(inp.into());
+        pub fn md5_of_message_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.md5_of_message_body = Some(input.into());
             self
         }
         pub fn set_md5_of_message_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.md5_of_message_body = inp;
+            self.md5_of_message_body = input;
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-        pub fn md5_of_message_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.md5_of_message_attributes = Some(inp.into());
+        pub fn md5_of_message_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.md5_of_message_attributes = Some(input.into());
             self
         }
         pub fn set_md5_of_message_attributes(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.md5_of_message_attributes = inp;
+            self.md5_of_message_attributes = input;
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
         pub fn md5_of_message_system_attributes(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.md5_of_message_system_attributes = Some(inp.into());
+            self.md5_of_message_system_attributes = Some(input.into());
             self
         }
         pub fn set_md5_of_message_system_attributes(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.md5_of_message_system_attributes = inp;
+            self.md5_of_message_system_attributes = input;
             self
         }
         /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a>
         /// in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_id = Some(inp.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
             self
         }
-        pub fn set_message_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message_id = inp;
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
         /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
         /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number = Some(inp.into());
+        pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sequence_number = Some(input.into());
             self
         }
         pub fn set_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sequence_number = inp;
+            self.sequence_number = input;
             self
         }
         /// Consumes the builder and constructs a [`SendMessageOutput`](crate::output::SendMessageOutput)
@@ -348,17 +348,17 @@ pub mod receive_message_output {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     }
     impl Builder {
-        pub fn messages(mut self, inp: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.messages = Some(v);
             self
         }
         pub fn set_messages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Message>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Message>>,
         ) -> Self {
-            self.messages = inp;
+            self.messages = input;
             self
         }
         /// Consumes the builder and constructs a [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput)
@@ -442,11 +442,11 @@ pub mod list_queue_tags_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput)
@@ -492,25 +492,25 @@ pub mod list_queues_output {
     impl Builder {
         /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
         /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn queue_urls(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn queue_urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queue_urls.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.queue_urls = Some(v);
             self
         }
         pub fn set_queue_urls(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.queue_urls = inp;
+            self.queue_urls = input;
             self
         }
         /// Consumes the builder and constructs a [`ListQueuesOutput`](crate::output::ListQueuesOutput)
@@ -557,27 +557,27 @@ pub mod list_dead_letter_source_queues_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn queue_urls(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn queue_urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queue_urls.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.queue_urls = Some(v);
             self
         }
         pub fn set_queue_urls(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.queue_urls = inp;
+            self.queue_urls = input;
             self
         }
         /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
         /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput)
@@ -620,12 +620,12 @@ pub mod get_queue_url_output {
     }
     impl Builder {
         /// <p>The URL of the queue.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// Consumes the builder and constructs a [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput)
@@ -682,11 +682,11 @@ pub mod get_queue_attributes_output {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput)
@@ -771,31 +771,31 @@ pub mod delete_message_batch_output {
     impl Builder {
         pub fn successful(
             mut self,
-            inp: impl Into<crate::model::DeleteMessageBatchResultEntry>,
+            input: impl Into<crate::model::DeleteMessageBatchResultEntry>,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful = Some(v);
             self
         }
         pub fn set_successful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
         ) -> Self {
-            self.successful = inp;
+            self.successful = input;
             self
         }
-        pub fn failed(mut self, inp: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failed = Some(v);
             self
         }
         pub fn set_failed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
         ) -> Self {
-            self.failed = inp;
+            self.failed = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput)
@@ -867,12 +867,12 @@ pub mod create_queue_output {
     }
     impl Builder {
         /// <p>The URL of the created Amazon SQS queue.</p>
-        pub fn queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_url = Some(inp.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_url = Some(input.into());
             self
         }
-        pub fn set_queue_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = inp;
+        pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_url = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateQueueOutput`](crate::output::CreateQueueOutput)
@@ -930,33 +930,33 @@ pub mod change_message_visibility_batch_output {
     impl Builder {
         pub fn successful(
             mut self,
-            inp: impl Into<crate::model::ChangeMessageVisibilityBatchResultEntry>,
+            input: impl Into<crate::model::ChangeMessageVisibilityBatchResultEntry>,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful = Some(v);
             self
         }
         pub fn set_successful(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>,
             >,
         ) -> Self {
-            self.successful = inp;
+            self.successful = input;
             self
         }
-        pub fn failed(mut self, inp: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failed = Some(v);
             self
         }
         pub fn set_failed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
         ) -> Self {
-            self.failed = inp;
+            self.failed = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput)

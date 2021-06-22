@@ -25,6 +25,12 @@ pub mod test_connection;
 #[cfg(feature = "hyper")]
 mod hyper_impls;
 
+/// Re-export HyperAdapter
+#[cfg(feature = "hyper")]
+pub mod hyper_ext {
+    pub use crate::hyper_impls::HyperAdapter as Adapter;
+}
+
 // The types in this module are only used to write the bounds in [`Client::check`]. Customers will
 // not need them. But the module and its types must be public so that we can call `check` from
 // doc-tests.

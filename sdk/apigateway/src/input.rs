@@ -19,70 +19,70 @@ pub mod create_api_key_input {
     }
     impl Builder {
         /// <p>The name of the <a>ApiKey</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the <a>ApiKey</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
-        pub fn generate_distinct_id(mut self, inp: bool) -> Self {
-            self.generate_distinct_id = Some(inp);
+        pub fn generate_distinct_id(mut self, input: bool) -> Self {
+            self.generate_distinct_id = Some(input);
             self
         }
-        pub fn set_generate_distinct_id(mut self, inp: bool) -> Self {
-            self.generate_distinct_id = Some(inp);
+        pub fn set_generate_distinct_id(mut self, input: std::option::Option<bool>) -> Self {
+            self.generate_distinct_id = input;
             self
         }
         /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
-        pub fn stage_keys(mut self, inp: impl Into<crate::model::StageKey>) -> Self {
+        pub fn stage_keys(mut self, input: impl Into<crate::model::StageKey>) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stage_keys = Some(v);
             self
         }
         pub fn set_stage_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StageKey>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StageKey>>,
         ) -> Self {
-            self.stage_keys = inp;
+            self.stage_keys = input;
             self
         }
         /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-        pub fn customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.customer_id = Some(inp.into());
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_id = Some(input.into());
             self
         }
-        pub fn set_customer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.customer_id = inp;
+        pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_id = input;
             self
         }
         pub fn tags(
@@ -97,17 +97,18 @@ pub mod create_api_key_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::input::CreateApiKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateApiKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateApiKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateApiKeyInput {
                 name: self.name,
                 description: self.description,
@@ -131,7 +132,7 @@ impl CreateApiKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateApiKey,
             aws_http::AwsErrorRetryPolicy,
@@ -195,7 +196,7 @@ impl CreateApiKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -203,7 +204,7 @@ impl CreateApiKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -242,119 +243,127 @@ pub mod create_authorizer_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the authorizer.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
-        pub fn r#type(mut self, inp: crate::model::AuthorizerType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::AuthorizerType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::AuthorizerType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthorizerType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn provider_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.provider_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.provider_ar_ns = Some(v);
             self
         }
         pub fn set_provider_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.provider_ar_ns = inp;
+            self.provider_ar_ns = input;
             self
         }
         /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
-        pub fn auth_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.auth_type = Some(inp.into());
+        pub fn auth_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_type = Some(input.into());
             self
         }
-        pub fn set_auth_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.auth_type = inp;
+        pub fn set_auth_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_type = input;
             self
         }
         /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
-        pub fn authorizer_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_uri = Some(inp.into());
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_uri = Some(input.into());
             self
         }
-        pub fn set_authorizer_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.authorizer_uri = inp;
+        pub fn set_authorizer_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_uri = input;
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
-        pub fn authorizer_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_credentials = Some(inp.into());
+        pub fn authorizer_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_credentials = Some(input.into());
             self
         }
         pub fn set_authorizer_credentials(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authorizer_credentials = inp;
+            self.authorizer_credentials = input;
             self
         }
         /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
-        pub fn identity_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.identity_source = Some(inp.into());
+        pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identity_source = Some(input.into());
             self
         }
         pub fn set_identity_source(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.identity_source = inp;
+            self.identity_source = input;
             self
         }
         /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn identity_validation_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.identity_validation_expression = Some(inp.into());
+            self.identity_validation_expression = Some(input.into());
             self
         }
         pub fn set_identity_validation_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.identity_validation_expression = inp;
+            self.identity_validation_expression = input;
             self
         }
         /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
-        pub fn authorizer_result_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.authorizer_result_ttl_in_seconds = Some(inp);
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.authorizer_result_ttl_in_seconds = inp;
+            self.authorizer_result_ttl_in_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateAuthorizerInput`](crate::input::CreateAuthorizerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAuthorizerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateAuthorizerInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateAuthorizerInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 name: self.name,
@@ -380,7 +389,7 @@ impl CreateAuthorizerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateAuthorizer,
             aws_http::AwsErrorRetryPolicy,
@@ -448,7 +457,7 @@ impl CreateAuthorizerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -456,7 +465,7 @@ impl CreateAuthorizerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -489,46 +498,48 @@ pub mod create_base_path_mapping_input {
     }
     impl Builder {
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to create.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.domain_name = Some(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_path = Some(inp.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_path = Some(input.into());
             self
         }
-        pub fn set_base_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.base_path = inp;
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_path = input;
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.rest_api_id = inp;
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
-        pub fn stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage = Some(inp.into());
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage = Some(input.into());
             self
         }
-        pub fn set_stage(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage = inp;
+        pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateBasePathMappingInput`](crate::input::CreateBasePathMappingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBasePathMappingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateBasePathMappingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateBasePathMappingInput {
                 domain_name: self.domain_name.unwrap_or_default(),
                 base_path: self.base_path,
@@ -548,7 +559,7 @@ impl CreateBasePathMappingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateBasePathMapping,
             aws_http::AwsErrorRetryPolicy,
@@ -617,7 +628,7 @@ impl CreateBasePathMappingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -625,7 +636,7 @@ impl CreateBasePathMappingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -665,63 +676,63 @@ pub mod create_deployment_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = inp;
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// <p>The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
-        pub fn stage_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_description = Some(inp.into());
+        pub fn stage_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_description = Some(input.into());
             self
         }
         pub fn set_stage_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stage_description = inp;
+            self.stage_description = input;
             self
         }
         /// <p>The description for the <a>Deployment</a> resource to create.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Enables a cache cluster for the <a>Stage</a> resource specified in the input.</p>
-        pub fn cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.cache_cluster_enabled = Some(input);
             self
         }
-        pub fn set_cache_cluster_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.cache_cluster_enabled = inp;
+        pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.cache_cluster_enabled = input;
             self
         }
         /// <p>Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is enabled.</p>
-        pub fn cache_cluster_size(mut self, inp: crate::model::CacheClusterSize) -> Self {
-            self.cache_cluster_size = Some(inp);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.cache_cluster_size = Some(input);
             self
         }
         pub fn set_cache_cluster_size(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterSize>,
+            input: std::option::Option<crate::model::CacheClusterSize>,
         ) -> Self {
-            self.cache_cluster_size = inp;
+            self.cache_cluster_size = input;
             self
         }
         pub fn variables(
@@ -736,39 +747,41 @@ pub mod create_deployment_input {
         }
         pub fn set_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.variables = inp;
+            self.variables = input;
             self
         }
         /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-        pub fn canary_settings(mut self, inp: crate::model::DeploymentCanarySettings) -> Self {
-            self.canary_settings = Some(inp);
+        pub fn canary_settings(mut self, input: crate::model::DeploymentCanarySettings) -> Self {
+            self.canary_settings = Some(input);
             self
         }
         pub fn set_canary_settings(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentCanarySettings>,
+            input: std::option::Option<crate::model::DeploymentCanarySettings>,
         ) -> Self {
-            self.canary_settings = inp;
+            self.canary_settings = input;
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.tracing_enabled = Some(input);
             self
         }
-        pub fn set_tracing_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.tracing_enabled = inp;
+        pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.tracing_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::input::CreateDeploymentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDeploymentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDeploymentInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDeploymentInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name,
@@ -793,7 +806,7 @@ impl CreateDeploymentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDeployment,
             aws_http::AwsErrorRetryPolicy,
@@ -861,7 +874,7 @@ impl CreateDeploymentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -869,7 +882,7 @@ impl CreateDeploymentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -901,40 +914,42 @@ pub mod create_documentation_part_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
-        pub fn location(mut self, inp: crate::model::DocumentationPartLocation) -> Self {
-            self.location = Some(inp);
+        pub fn location(mut self, input: crate::model::DocumentationPartLocation) -> Self {
+            self.location = Some(input);
             self
         }
         pub fn set_location(
             mut self,
-            inp: std::option::Option<crate::model::DocumentationPartLocation>,
+            input: std::option::Option<crate::model::DocumentationPartLocation>,
         ) -> Self {
-            self.location = inp;
+            self.location = input;
             self
         }
         /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
-        pub fn properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.properties = Some(inp.into());
+        pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.properties = Some(input.into());
             self
         }
-        pub fn set_properties(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.properties = inp;
+        pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.properties = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDocumentationPartInput`](crate::input::CreateDocumentationPartInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDocumentationPartInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDocumentationPartInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDocumentationPartInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 location: self.location,
@@ -954,7 +969,7 @@ impl CreateDocumentationPartInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDocumentationPart,
             aws_http::AwsErrorRetryPolicy,
@@ -1023,7 +1038,7 @@ impl CreateDocumentationPartInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1031,7 +1046,7 @@ impl CreateDocumentationPartInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1064,49 +1079,51 @@ pub mod create_documentation_version_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The version identifier of the new snapshot.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_version = Some(inp.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_version = Some(input.into());
             self
         }
         pub fn set_documentation_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.documentation_version = inp;
+            self.documentation_version = input;
             self
         }
         /// <p>The stage name to be associated with the new documentation snapshot.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = inp;
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// <p>A description about the new documentation snapshot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDocumentationVersionInput`](crate::input::CreateDocumentationVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDocumentationVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDocumentationVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDocumentationVersionInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 documentation_version: self.documentation_version,
@@ -1127,7 +1144,7 @@ impl CreateDocumentationVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDocumentationVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -1197,7 +1214,7 @@ impl CreateDocumentationVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1205,7 +1222,7 @@ impl CreateDocumentationVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1249,108 +1266,111 @@ pub mod create_domain_name_input {
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = inp;
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_name = Some(inp.into());
+        pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_name = Some(input.into());
             self
         }
         pub fn set_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_name = inp;
+            self.certificate_name = input;
             self
         }
         /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
-        pub fn certificate_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_body = Some(inp.into());
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_body = Some(input.into());
             self
         }
         pub fn set_certificate_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_body = inp;
+            self.certificate_body = input;
             self
         }
         /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
-        pub fn certificate_private_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_private_key = Some(inp.into());
+        pub fn certificate_private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_private_key = Some(input.into());
             self
         }
         pub fn set_certificate_private_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_private_key = inp;
+            self.certificate_private_key = input;
             self
         }
         /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
-        pub fn certificate_chain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_chain = Some(inp.into());
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_chain = Some(input.into());
             self
         }
         pub fn set_certificate_chain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_chain = inp;
+            self.certificate_chain = input;
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_arn = Some(inp.into());
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_arn = Some(input.into());
             self
         }
         pub fn set_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_arn = inp;
+            self.certificate_arn = input;
             self
         }
         /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
-        pub fn regional_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_certificate_name = Some(inp.into());
+        pub fn regional_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_certificate_name = Some(input.into());
             self
         }
         pub fn set_regional_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_certificate_name = inp;
+            self.regional_certificate_name = input;
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn regional_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_certificate_arn = Some(inp.into());
+        pub fn regional_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_certificate_arn = Some(input.into());
             self
         }
         pub fn set_regional_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_certificate_arn = inp;
+            self.regional_certificate_arn = input;
             self
         }
         /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         pub fn tags(
@@ -1365,45 +1385,47 @@ pub mod create_domain_name_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
-        pub fn security_policy(mut self, inp: crate::model::SecurityPolicy) -> Self {
-            self.security_policy = Some(inp);
+        pub fn security_policy(mut self, input: crate::model::SecurityPolicy) -> Self {
+            self.security_policy = Some(input);
             self
         }
         pub fn set_security_policy(
             mut self,
-            inp: std::option::Option<crate::model::SecurityPolicy>,
+            input: std::option::Option<crate::model::SecurityPolicy>,
         ) -> Self {
-            self.security_policy = inp;
+            self.security_policy = input;
             self
         }
         /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
         pub fn mutual_tls_authentication(
             mut self,
-            inp: crate::model::MutualTlsAuthenticationInput,
+            input: crate::model::MutualTlsAuthenticationInput,
         ) -> Self {
-            self.mutual_tls_authentication = Some(inp);
+            self.mutual_tls_authentication = Some(input);
             self
         }
         pub fn set_mutual_tls_authentication(
             mut self,
-            inp: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
+            input: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
         ) -> Self {
-            self.mutual_tls_authentication = inp;
+            self.mutual_tls_authentication = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::input::CreateDomainNameInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDomainNameInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDomainNameInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDomainNameInput {
                 domain_name: self.domain_name,
                 certificate_name: self.certificate_name,
@@ -1431,7 +1453,7 @@ impl CreateDomainNameInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDomainName,
             aws_http::AwsErrorRetryPolicy,
@@ -1495,7 +1517,7 @@ impl CreateDomainNameInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1503,7 +1525,7 @@ impl CreateDomainNameInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1537,54 +1559,55 @@ pub mod create_model_input {
     }
     impl Builder {
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the model. Must be alphanumeric.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
         /// <p>[Required] The content-type for the model.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateModelInput`](crate::input::CreateModelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateModelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateModelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateModelInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 name: self.name,
@@ -1605,7 +1628,7 @@ impl CreateModelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateModel,
             aws_http::AwsErrorRetryPolicy,
@@ -1674,7 +1697,7 @@ impl CreateModelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1682,7 +1705,7 @@ impl CreateModelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1715,46 +1738,48 @@ pub mod create_request_validator_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The name of the to-be-created <a>RequestValidator</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
-        pub fn validate_request_body(mut self, inp: bool) -> Self {
-            self.validate_request_body = Some(inp);
+        pub fn validate_request_body(mut self, input: bool) -> Self {
+            self.validate_request_body = Some(input);
             self
         }
-        pub fn set_validate_request_body(mut self, inp: bool) -> Self {
-            self.validate_request_body = Some(inp);
+        pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
+            self.validate_request_body = input;
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
-        pub fn validate_request_parameters(mut self, inp: bool) -> Self {
-            self.validate_request_parameters = Some(inp);
+        pub fn validate_request_parameters(mut self, input: bool) -> Self {
+            self.validate_request_parameters = Some(input);
             self
         }
-        pub fn set_validate_request_parameters(mut self, inp: bool) -> Self {
-            self.validate_request_parameters = Some(inp);
+        pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.validate_request_parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRequestValidatorInput`](crate::input::CreateRequestValidatorInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRequestValidatorInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateRequestValidatorInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateRequestValidatorInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 name: self.name,
@@ -1774,7 +1799,7 @@ impl CreateRequestValidatorInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateRequestValidator,
             aws_http::AwsErrorRetryPolicy,
@@ -1843,7 +1868,7 @@ impl CreateRequestValidatorInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1851,7 +1876,7 @@ impl CreateRequestValidatorInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1883,36 +1908,39 @@ pub mod create_resource_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The parent resource's identifier.</p>
-        pub fn parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_id = Some(inp.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_id = Some(input.into());
             self
         }
-        pub fn set_parent_id(mut self, inp: std::string::String) -> Self {
-            self.parent_id = Some(inp);
+        pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_id = input;
             self
         }
         /// <p>The last path segment for this resource.</p>
-        pub fn path_part(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_part = Some(inp.into());
+        pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_part = Some(input.into());
             self
         }
-        pub fn set_path_part(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_part = inp;
+        pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_part = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateResourceInput`](crate::input::CreateResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::CreateResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateResourceInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 parent_id: self.parent_id.unwrap_or_default(),
@@ -1931,7 +1959,7 @@ impl CreateResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateResource,
             aws_http::AwsErrorRetryPolicy,
@@ -2000,7 +2028,7 @@ impl CreateResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2008,7 +2036,7 @@ impl CreateResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2050,94 +2078,97 @@ pub mod create_rest_api_input {
     }
     impl Builder {
         /// <p>[Required] The name of the <a>RestApi</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the <a>RestApi</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
-        pub fn clone_from(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.clone_from = Some(inp.into());
+        pub fn clone_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.clone_from = Some(input.into());
             self
         }
-        pub fn set_clone_from(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.clone_from = inp;
+        pub fn set_clone_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.clone_from = input;
             self
         }
-        pub fn binary_media_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
         pub fn set_binary_media_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.binary_media_types = inp;
+            self.binary_media_types = input;
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-        pub fn minimum_compression_size(mut self, inp: i32) -> Self {
-            self.minimum_compression_size = Some(inp);
+        pub fn minimum_compression_size(mut self, input: i32) -> Self {
+            self.minimum_compression_size = Some(input);
             self
         }
-        pub fn set_minimum_compression_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_compression_size = inp;
+        pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_compression_size = input;
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
-        pub fn api_key_source(mut self, inp: crate::model::ApiKeySourceType) -> Self {
-            self.api_key_source = Some(inp);
+        pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
+            self.api_key_source = Some(input);
             self
         }
         pub fn set_api_key_source(
             mut self,
-            inp: std::option::Option<crate::model::ApiKeySourceType>,
+            input: std::option::Option<crate::model::ApiKeySourceType>,
         ) -> Self {
-            self.api_key_source = inp;
+            self.api_key_source = input;
             self
         }
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         pub fn tags(
@@ -2152,26 +2183,30 @@ pub mod create_rest_api_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.disable_execute_api_endpoint = Some(input);
             self
         }
-        pub fn set_disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn set_disable_execute_api_endpoint(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.disable_execute_api_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRestApiInput`](crate::input::CreateRestApiInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRestApiInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateRestApiInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateRestApiInput {
                 name: self.name,
                 description: self.description,
@@ -2198,7 +2233,7 @@ impl CreateRestApiInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateRestApi,
             aws_http::AwsErrorRetryPolicy,
@@ -2261,7 +2296,7 @@ impl CreateRestApiInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2269,7 +2304,7 @@ impl CreateRestApiInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2313,60 +2348,63 @@ pub mod create_stage_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = inp;
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deployment_id = Some(inp.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.deployment_id = inp;
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
             self
         }
         /// <p>The description of the <a>Stage</a> resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Whether cache clustering is enabled for the stage.</p>
-        pub fn cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.cache_cluster_enabled = Some(input);
             self
         }
-        pub fn set_cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.cache_cluster_enabled = input;
             self
         }
         /// <p>The stage's cache cluster size.</p>
-        pub fn cache_cluster_size(mut self, inp: crate::model::CacheClusterSize) -> Self {
-            self.cache_cluster_size = Some(inp);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.cache_cluster_size = Some(input);
             self
         }
         pub fn set_cache_cluster_size(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterSize>,
+            input: std::option::Option<crate::model::CacheClusterSize>,
         ) -> Self {
-            self.cache_cluster_size = inp;
+            self.cache_cluster_size = input;
             self
         }
         pub fn variables(
@@ -2381,44 +2419,44 @@ pub mod create_stage_input {
         }
         pub fn set_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.variables = inp;
+            self.variables = input;
             self
         }
         /// <p>The version of the associated API documentation.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_version = Some(inp.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_version = Some(input.into());
             self
         }
         pub fn set_documentation_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.documentation_version = inp;
+            self.documentation_version = input;
             self
         }
         /// <p>The canary deployment settings of this stage.</p>
-        pub fn canary_settings(mut self, inp: crate::model::CanarySettings) -> Self {
-            self.canary_settings = Some(inp);
+        pub fn canary_settings(mut self, input: crate::model::CanarySettings) -> Self {
+            self.canary_settings = Some(input);
             self
         }
         pub fn set_canary_settings(
             mut self,
-            inp: std::option::Option<crate::model::CanarySettings>,
+            input: std::option::Option<crate::model::CanarySettings>,
         ) -> Self {
-            self.canary_settings = inp;
+            self.canary_settings = input;
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.tracing_enabled = Some(input);
             self
         }
-        pub fn set_tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.tracing_enabled = input;
             self
         }
         pub fn tags(
@@ -2433,17 +2471,18 @@ pub mod create_stage_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStageInput`](crate::input::CreateStageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateStageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateStageInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateStageInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name,
@@ -2470,7 +2509,7 @@ impl CreateStageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateStage,
             aws_http::AwsErrorRetryPolicy,
@@ -2539,7 +2578,7 @@ impl CreateStageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2547,7 +2586,7 @@ impl CreateStageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2584,55 +2623,58 @@ pub mod create_usage_plan_input {
     }
     impl Builder {
         /// <p>[Required] The name of the usage plan.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the usage plan.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn api_stages(mut self, inp: impl Into<crate::model::ApiStage>) -> Self {
+        pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.api_stages = Some(v);
             self
         }
         pub fn set_api_stages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
         ) -> Self {
-            self.api_stages = inp;
+            self.api_stages = input;
             self
         }
         /// <p>The throttling limits of the usage plan.</p>
-        pub fn throttle(mut self, inp: crate::model::ThrottleSettings) -> Self {
-            self.throttle = Some(inp);
+        pub fn throttle(mut self, input: crate::model::ThrottleSettings) -> Self {
+            self.throttle = Some(input);
             self
         }
         pub fn set_throttle(
             mut self,
-            inp: std::option::Option<crate::model::ThrottleSettings>,
+            input: std::option::Option<crate::model::ThrottleSettings>,
         ) -> Self {
-            self.throttle = inp;
+            self.throttle = input;
             self
         }
         /// <p>The quota of the usage plan.</p>
-        pub fn quota(mut self, inp: crate::model::QuotaSettings) -> Self {
-            self.quota = Some(inp);
+        pub fn quota(mut self, input: crate::model::QuotaSettings) -> Self {
+            self.quota = Some(input);
             self
         }
-        pub fn set_quota(mut self, inp: std::option::Option<crate::model::QuotaSettings>) -> Self {
-            self.quota = inp;
+        pub fn set_quota(
+            mut self,
+            input: std::option::Option<crate::model::QuotaSettings>,
+        ) -> Self {
+            self.quota = input;
             self
         }
         pub fn tags(
@@ -2647,18 +2689,20 @@ pub mod create_usage_plan_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateUsagePlanInput`](crate::input::CreateUsagePlanInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateUsagePlanInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateUsagePlanInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateUsagePlanInput {
                 name: self.name,
                 description: self.description,
@@ -2680,7 +2724,7 @@ impl CreateUsagePlanInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateUsagePlan,
             aws_http::AwsErrorRetryPolicy,
@@ -2743,7 +2787,7 @@ impl CreateUsagePlanInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2751,7 +2795,7 @@ impl CreateUsagePlanInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2783,37 +2827,42 @@ pub mod create_usage_plan_key_input {
     }
     impl Builder {
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// <p>[Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.</p>
-        pub fn key_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_type = Some(inp.into());
+        pub fn key_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_type = Some(input.into());
             self
         }
-        pub fn set_key_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_type = inp;
+        pub fn set_key_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_type = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateUsagePlanKeyInput`](crate::input::CreateUsagePlanKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateUsagePlanKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateUsagePlanKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateUsagePlanKeyInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
                 key_id: self.key_id,
@@ -2832,7 +2881,7 @@ impl CreateUsagePlanKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateUsagePlanKey,
             aws_http::AwsErrorRetryPolicy,
@@ -2901,7 +2950,7 @@ impl CreateUsagePlanKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2909,7 +2958,7 @@ impl CreateUsagePlanKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2944,34 +2993,34 @@ pub mod create_vpc_link_input {
     }
     impl Builder {
         /// <p>[Required] The name used to label and identify the VPC link.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the VPC link.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn target_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_arns = Some(v);
             self
         }
         pub fn set_target_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.target_arns = inp;
+            self.target_arns = input;
             self
         }
         pub fn tags(
@@ -2986,17 +3035,18 @@ pub mod create_vpc_link_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpcLinkInput`](crate::input::CreateVpcLinkInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateVpcLinkInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateVpcLinkInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateVpcLinkInput {
                 name: self.name,
                 description: self.description,
@@ -3016,7 +3066,7 @@ impl CreateVpcLinkInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateVpcLink,
             aws_http::AwsErrorRetryPolicy,
@@ -3079,7 +3129,7 @@ impl CreateVpcLinkInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3087,7 +3137,7 @@ impl CreateVpcLinkInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3117,18 +3167,19 @@ pub mod delete_api_key_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
-        pub fn api_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.api_key = Some(inp.into());
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_key = Some(input.into());
             self
         }
-        pub fn set_api_key(mut self, inp: std::string::String) -> Self {
-            self.api_key = Some(inp);
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_key = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteApiKeyInput`](crate::input::DeleteApiKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteApiKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteApiKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteApiKeyInput {
                 api_key: self.api_key.unwrap_or_default(),
             })
@@ -3145,7 +3196,7 @@ impl DeleteApiKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteApiKey,
             aws_http::AwsErrorRetryPolicy,
@@ -3211,7 +3262,7 @@ impl DeleteApiKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3219,7 +3270,7 @@ impl DeleteApiKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3250,28 +3301,33 @@ pub mod delete_authorizer_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_id = Some(inp.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_id = Some(input.into());
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::string::String) -> Self {
-            self.authorizer_id = Some(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteAuthorizerInput`](crate::input::DeleteAuthorizerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAuthorizerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteAuthorizerInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteAuthorizerInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 authorizer_id: self.authorizer_id.unwrap_or_default(),
@@ -3289,7 +3345,7 @@ impl DeleteAuthorizerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteAuthorizer,
             aws_http::AwsErrorRetryPolicy,
@@ -3356,7 +3412,7 @@ impl DeleteAuthorizerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3364,7 +3420,7 @@ impl DeleteAuthorizerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3395,29 +3451,31 @@ pub mod delete_base_path_mapping_input {
     }
     impl Builder {
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to delete.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.domain_name = Some(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>[Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_path = Some(inp.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_path = Some(input.into());
             self
         }
-        pub fn set_base_path(mut self, inp: std::string::String) -> Self {
-            self.base_path = Some(inp);
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_path = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBasePathMappingInput`](crate::input::DeleteBasePathMappingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBasePathMappingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBasePathMappingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBasePathMappingInput {
                 domain_name: self.domain_name.unwrap_or_default(),
                 base_path: self.base_path.unwrap_or_default(),
@@ -3435,7 +3493,7 @@ impl DeleteBasePathMappingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBasePathMapping,
             aws_http::AwsErrorRetryPolicy,
@@ -3502,7 +3560,7 @@ impl DeleteBasePathMappingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3510,7 +3568,7 @@ impl DeleteBasePathMappingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3540,19 +3598,24 @@ pub mod delete_client_certificate_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
-        pub fn set_client_certificate_id(mut self, inp: std::string::String) -> Self {
-            self.client_certificate_id = Some(inp);
+        pub fn set_client_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_certificate_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteClientCertificateInput`](crate::input::DeleteClientCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteClientCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteClientCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteClientCertificateInput {
                 client_certificate_id: self.client_certificate_id.unwrap_or_default(),
             })
@@ -3570,7 +3633,7 @@ impl DeleteClientCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteClientCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -3637,7 +3700,7 @@ impl DeleteClientCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3645,7 +3708,7 @@ impl DeleteClientCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3676,28 +3739,33 @@ pub mod delete_deployment_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deployment_id = Some(inp.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::string::String) -> Self {
-            self.deployment_id = Some(inp);
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDeploymentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDeploymentInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDeploymentInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 deployment_id: self.deployment_id.unwrap_or_default(),
@@ -3715,7 +3783,7 @@ impl DeleteDeploymentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDeployment,
             aws_http::AwsErrorRetryPolicy,
@@ -3782,7 +3850,7 @@ impl DeleteDeploymentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3790,7 +3858,7 @@ impl DeleteDeploymentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3821,28 +3889,33 @@ pub mod delete_documentation_part_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
-        pub fn documentation_part_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_part_id = Some(inp.into());
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_part_id = Some(input.into());
             self
         }
-        pub fn set_documentation_part_id(mut self, inp: std::string::String) -> Self {
-            self.documentation_part_id = Some(inp);
+        pub fn set_documentation_part_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.documentation_part_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDocumentationPartInput`](crate::input::DeleteDocumentationPartInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDocumentationPartInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDocumentationPartInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDocumentationPartInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 documentation_part_id: self.documentation_part_id.unwrap_or_default(),
@@ -3861,7 +3934,7 @@ impl DeleteDocumentationPartInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDocumentationPart,
             aws_http::AwsErrorRetryPolicy,
@@ -3929,7 +4002,7 @@ impl DeleteDocumentationPartInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3937,7 +4010,7 @@ impl DeleteDocumentationPartInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3968,28 +4041,33 @@ pub mod delete_documentation_version_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_version = Some(inp.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_version = Some(input.into());
             self
         }
-        pub fn set_documentation_version(mut self, inp: std::string::String) -> Self {
-            self.documentation_version = Some(inp);
+        pub fn set_documentation_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.documentation_version = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDocumentationVersionInput`](crate::input::DeleteDocumentationVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDocumentationVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDocumentationVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDocumentationVersionInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 documentation_version: self.documentation_version.unwrap_or_default(),
@@ -4008,7 +4086,7 @@ impl DeleteDocumentationVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDocumentationVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -4076,7 +4154,7 @@ impl DeleteDocumentationVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -4084,7 +4162,7 @@ impl DeleteDocumentationVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4114,19 +4192,21 @@ pub mod delete_domain_name_input {
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.domain_name = Some(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDomainNameInput`](crate::input::DeleteDomainNameInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDomainNameInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDomainNameInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDomainNameInput {
                 domain_name: self.domain_name.unwrap_or_default(),
             })
@@ -4143,7 +4223,7 @@ impl DeleteDomainNameInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDomainName,
             aws_http::AwsErrorRetryPolicy,
@@ -4209,7 +4289,7 @@ impl DeleteDomainNameInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -4217,7 +4297,7 @@ impl DeleteDomainNameInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4248,28 +4328,33 @@ pub mod delete_gateway_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.response_type = Some(input);
             self
         }
-        pub fn set_response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn set_response_type(
+            mut self,
+            input: std::option::Option<crate::model::GatewayResponseType>,
+        ) -> Self {
+            self.response_type = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteGatewayResponseInput`](crate::input::DeleteGatewayResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGatewayResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteGatewayResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::DeleteGatewayResponseInput {
                     rest_api_id: self.rest_api_id
@@ -4295,7 +4380,7 @@ impl DeleteGatewayResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteGatewayResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -4362,7 +4447,7 @@ impl DeleteGatewayResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -4370,7 +4455,7 @@ impl DeleteGatewayResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4402,37 +4487,39 @@ pub mod delete_integration_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::input::DeleteIntegrationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteIntegrationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteIntegrationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteIntegrationInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -4451,7 +4538,7 @@ impl DeleteIntegrationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteIntegration,
             aws_http::AwsErrorRetryPolicy,
@@ -4519,7 +4606,7 @@ impl DeleteIntegrationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -4527,7 +4614,7 @@ impl DeleteIntegrationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4560,46 +4647,48 @@ pub mod delete_integration_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] Specifies a delete integration response request's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteIntegrationResponseInput`](crate::input::DeleteIntegrationResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteIntegrationResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteIntegrationResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteIntegrationResponseInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -4620,7 +4709,7 @@ impl DeleteIntegrationResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteIntegrationResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -4681,7 +4770,7 @@ impl DeleteIntegrationResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -4689,7 +4778,7 @@ impl DeleteIntegrationResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4721,36 +4810,37 @@ pub mod delete_method_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMethodInput`](crate::input::DeleteMethodInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMethodInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteMethodInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteMethodInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -4769,7 +4859,7 @@ impl DeleteMethodInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteMethod,
             aws_http::AwsErrorRetryPolicy,
@@ -4837,7 +4927,7 @@ impl DeleteMethodInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -4845,7 +4935,7 @@ impl DeleteMethodInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4878,46 +4968,48 @@ pub mod delete_method_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] The status code identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMethodResponseInput`](crate::input::DeleteMethodResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMethodResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteMethodResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteMethodResponseInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -4937,7 +5029,7 @@ impl DeleteMethodResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteMethodResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -4998,7 +5090,7 @@ impl DeleteMethodResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -5006,7 +5098,7 @@ impl DeleteMethodResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5037,27 +5129,28 @@ pub mod delete_model_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the model to delete.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.model_name = Some(inp.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_name = Some(input.into());
             self
         }
-        pub fn set_model_name(mut self, inp: std::string::String) -> Self {
-            self.model_name = Some(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteModelInput`](crate::input::DeleteModelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteModelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteModelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteModelInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 model_name: self.model_name.unwrap_or_default(),
@@ -5075,7 +5168,7 @@ impl DeleteModelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteModel,
             aws_http::AwsErrorRetryPolicy,
@@ -5142,7 +5235,7 @@ impl DeleteModelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -5150,7 +5243,7 @@ impl DeleteModelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5181,28 +5274,33 @@ pub mod delete_request_validator_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_validator_id = Some(inp.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_validator_id = Some(input.into());
             self
         }
-        pub fn set_request_validator_id(mut self, inp: std::string::String) -> Self {
-            self.request_validator_id = Some(inp);
+        pub fn set_request_validator_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_validator_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteRequestValidatorInput`](crate::input::DeleteRequestValidatorInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRequestValidatorInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteRequestValidatorInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteRequestValidatorInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 request_validator_id: self.request_validator_id.unwrap_or_default(),
@@ -5220,7 +5318,7 @@ impl DeleteRequestValidatorInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteRequestValidator,
             aws_http::AwsErrorRetryPolicy,
@@ -5287,7 +5385,7 @@ impl DeleteRequestValidatorInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -5295,7 +5393,7 @@ impl DeleteRequestValidatorInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5326,27 +5424,30 @@ pub mod delete_resource_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteResourceInput`](crate::input::DeleteResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DeleteResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteResourceInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -5364,7 +5465,7 @@ impl DeleteResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteResource,
             aws_http::AwsErrorRetryPolicy,
@@ -5431,7 +5532,7 @@ impl DeleteResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -5439,7 +5540,7 @@ impl DeleteResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5469,18 +5570,19 @@ pub mod delete_rest_api_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteRestApiInput`](crate::input::DeleteRestApiInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRestApiInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteRestApiInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteRestApiInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
             })
@@ -5497,7 +5599,7 @@ impl DeleteRestApiInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteRestApi,
             aws_http::AwsErrorRetryPolicy,
@@ -5563,7 +5665,7 @@ impl DeleteRestApiInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -5571,7 +5673,7 @@ impl DeleteRestApiInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5602,27 +5704,28 @@ pub mod delete_stage_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to delete.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.stage_name = Some(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteStageInput`](crate::input::DeleteStageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteStageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteStageInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteStageInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name.unwrap_or_default(),
@@ -5640,7 +5743,7 @@ impl DeleteStageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteStage,
             aws_http::AwsErrorRetryPolicy,
@@ -5707,7 +5810,7 @@ impl DeleteStageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -5715,7 +5818,7 @@ impl DeleteStageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5745,19 +5848,24 @@ pub mod delete_usage_plan_input {
     }
     impl Builder {
         /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteUsagePlanInput`](crate::input::DeleteUsagePlanInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteUsagePlanInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteUsagePlanInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteUsagePlanInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
             })
@@ -5774,7 +5882,7 @@ impl DeleteUsagePlanInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteUsagePlan,
             aws_http::AwsErrorRetryPolicy,
@@ -5840,7 +5948,7 @@ impl DeleteUsagePlanInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -5848,7 +5956,7 @@ impl DeleteUsagePlanInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5879,28 +5987,33 @@ pub mod delete_usage_plan_key_input {
     }
     impl Builder {
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::string::String) -> Self {
-            self.key_id = Some(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteUsagePlanKeyInput`](crate::input::DeleteUsagePlanKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteUsagePlanKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteUsagePlanKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteUsagePlanKeyInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
                 key_id: self.key_id.unwrap_or_default(),
@@ -5918,7 +6031,7 @@ impl DeleteUsagePlanKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteUsagePlanKey,
             aws_http::AwsErrorRetryPolicy,
@@ -5985,7 +6098,7 @@ impl DeleteUsagePlanKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -5993,7 +6106,7 @@ impl DeleteUsagePlanKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6023,18 +6136,19 @@ pub mod delete_vpc_link_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_link_id = Some(inp.into());
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_link_id = Some(input.into());
             self
         }
-        pub fn set_vpc_link_id(mut self, inp: std::string::String) -> Self {
-            self.vpc_link_id = Some(inp);
+        pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_link_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteVpcLinkInput`](crate::input::DeleteVpcLinkInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVpcLinkInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteVpcLinkInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteVpcLinkInput {
                 vpc_link_id: self.vpc_link_id.unwrap_or_default(),
             })
@@ -6051,7 +6165,7 @@ impl DeleteVpcLinkInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteVpcLink,
             aws_http::AwsErrorRetryPolicy,
@@ -6117,7 +6231,7 @@ impl DeleteVpcLinkInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -6125,7 +6239,7 @@ impl DeleteVpcLinkInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6156,28 +6270,30 @@ pub mod flush_stage_authorizers_cache_input {
     }
     impl Builder {
         /// <p>The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The name of the stage to flush.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.stage_name = Some(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// Consumes the builder and constructs a [`FlushStageAuthorizersCacheInput`](crate::input::FlushStageAuthorizersCacheInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::FlushStageAuthorizersCacheInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::FlushStageAuthorizersCacheInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::FlushStageAuthorizersCacheInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name.unwrap_or_default(),
@@ -6196,7 +6312,7 @@ impl FlushStageAuthorizersCacheInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::FlushStageAuthorizersCache,
             aws_http::AwsErrorRetryPolicy,
@@ -6263,7 +6379,7 @@ impl FlushStageAuthorizersCacheInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -6271,7 +6387,7 @@ impl FlushStageAuthorizersCacheInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6302,28 +6418,30 @@ pub mod flush_stage_cache_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the stage to flush its cache.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.stage_name = Some(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// Consumes the builder and constructs a [`FlushStageCacheInput`](crate::input::FlushStageCacheInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::FlushStageCacheInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::FlushStageCacheInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::FlushStageCacheInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name.unwrap_or_default(),
@@ -6341,7 +6459,7 @@ impl FlushStageCacheInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::FlushStageCache,
             aws_http::AwsErrorRetryPolicy,
@@ -6408,7 +6526,7 @@ impl FlushStageCacheInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -6416,7 +6534,7 @@ impl FlushStageCacheInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6449,12 +6567,12 @@ pub mod generate_client_certificate_input {
     }
     impl Builder {
         /// <p>The description of the <a>ClientCertificate</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         pub fn tags(
@@ -6469,18 +6587,20 @@ pub mod generate_client_certificate_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateClientCertificateInput`](crate::input::GenerateClientCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateClientCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GenerateClientCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GenerateClientCertificateInput {
                 description: self.description,
                 tags: self.tags,
@@ -6499,7 +6619,7 @@ impl GenerateClientCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateClientCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -6563,7 +6683,7 @@ impl GenerateClientCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6571,7 +6691,7 @@ impl GenerateClientCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6601,7 +6721,8 @@ pub mod get_account_input {
         /// Consumes the builder and constructs a [`GetAccountInput`](crate::input::GetAccountInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccountInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetAccountInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetAccountInput {})
         }
     }
@@ -6616,7 +6737,7 @@ impl GetAccountInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAccount,
             aws_http::AwsErrorRetryPolicy,
@@ -6677,7 +6798,7 @@ impl GetAccountInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -6685,7 +6806,7 @@ impl GetAccountInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6716,27 +6837,28 @@ pub mod get_api_key_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
-        pub fn api_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.api_key = Some(inp.into());
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_key = Some(input.into());
             self
         }
-        pub fn set_api_key(mut self, inp: std::string::String) -> Self {
-            self.api_key = Some(inp);
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_key = input;
             self
         }
         /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
-        pub fn include_value(mut self, inp: bool) -> Self {
-            self.include_value = Some(inp);
+        pub fn include_value(mut self, input: bool) -> Self {
+            self.include_value = Some(input);
             self
         }
-        pub fn set_include_value(mut self, inp: std::option::Option<bool>) -> Self {
-            self.include_value = inp;
+        pub fn set_include_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_value = input;
             self
         }
         /// Consumes the builder and constructs a [`GetApiKeyInput`](crate::input::GetApiKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetApiKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetApiKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetApiKeyInput {
                 api_key: self.api_key.unwrap_or_default(),
                 include_value: self.include_value,
@@ -6754,7 +6876,7 @@ impl GetApiKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetApiKey,
             aws_http::AwsErrorRetryPolicy,
@@ -6824,7 +6946,7 @@ impl GetApiKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6833,7 +6955,7 @@ impl GetApiKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6867,54 +6989,55 @@ pub mod get_api_keys_input {
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>The name of queried API keys.</p>
-        pub fn name_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name_query = Some(inp.into());
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_query = Some(input.into());
             self
         }
-        pub fn set_name_query(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name_query = inp;
+        pub fn set_name_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name_query = input;
             self
         }
         /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
-        pub fn customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.customer_id = Some(inp.into());
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_id = Some(input.into());
             self
         }
-        pub fn set_customer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.customer_id = inp;
+        pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_id = input;
             self
         }
         /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
-        pub fn include_values(mut self, inp: bool) -> Self {
-            self.include_values = Some(inp);
+        pub fn include_values(mut self, input: bool) -> Self {
+            self.include_values = Some(input);
             self
         }
-        pub fn set_include_values(mut self, inp: std::option::Option<bool>) -> Self {
-            self.include_values = inp;
+        pub fn set_include_values(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_values = input;
             self
         }
         /// Consumes the builder and constructs a [`GetApiKeysInput`](crate::input::GetApiKeysInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetApiKeysInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetApiKeysInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetApiKeysInput {
                 position: self.position,
                 limit: self.limit,
@@ -6935,7 +7058,7 @@ impl GetApiKeysInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetApiKeys,
             aws_http::AwsErrorRetryPolicy,
@@ -7014,7 +7137,7 @@ impl GetApiKeysInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7023,7 +7146,7 @@ impl GetApiKeysInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7054,27 +7177,31 @@ pub mod get_authorizer_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_id = Some(inp.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_id = Some(input.into());
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::string::String) -> Self {
-            self.authorizer_id = Some(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAuthorizerInput`](crate::input::GetAuthorizerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAuthorizerInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetAuthorizerInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetAuthorizerInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 authorizer_id: self.authorizer_id.unwrap_or_default(),
@@ -7092,7 +7219,7 @@ impl GetAuthorizerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAuthorizer,
             aws_http::AwsErrorRetryPolicy,
@@ -7159,7 +7286,7 @@ impl GetAuthorizerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -7167,7 +7294,7 @@ impl GetAuthorizerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7199,36 +7326,39 @@ pub mod get_authorizers_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAuthorizersInput`](crate::input::GetAuthorizersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAuthorizersInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetAuthorizersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAuthorizersInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 position: self.position,
@@ -7247,7 +7377,7 @@ impl GetAuthorizersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAuthorizers,
             aws_http::AwsErrorRetryPolicy,
@@ -7322,7 +7452,7 @@ impl GetAuthorizersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7331,7 +7461,7 @@ impl GetAuthorizersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7362,28 +7492,30 @@ pub mod get_base_path_mapping_input {
     }
     impl Builder {
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be described.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.domain_name = Some(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_path = Some(inp.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_path = Some(input.into());
             self
         }
-        pub fn set_base_path(mut self, inp: std::string::String) -> Self {
-            self.base_path = Some(inp);
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_path = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBasePathMappingInput`](crate::input::GetBasePathMappingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBasePathMappingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBasePathMappingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBasePathMappingInput {
                 domain_name: self.domain_name.unwrap_or_default(),
                 base_path: self.base_path.unwrap_or_default(),
@@ -7401,7 +7533,7 @@ impl GetBasePathMappingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBasePathMapping,
             aws_http::AwsErrorRetryPolicy,
@@ -7468,7 +7600,7 @@ impl GetBasePathMappingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -7476,7 +7608,7 @@ impl GetBasePathMappingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7508,37 +7640,39 @@ pub mod get_base_path_mappings_input {
     }
     impl Builder {
         /// <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.domain_name = Some(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBasePathMappingsInput`](crate::input::GetBasePathMappingsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBasePathMappingsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBasePathMappingsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBasePathMappingsInput {
                 domain_name: self.domain_name.unwrap_or_default(),
                 position: self.position,
@@ -7557,7 +7691,7 @@ impl GetBasePathMappingsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBasePathMappings,
             aws_http::AwsErrorRetryPolicy,
@@ -7632,7 +7766,7 @@ impl GetBasePathMappingsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7641,7 +7775,7 @@ impl GetBasePathMappingsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7671,19 +7805,24 @@ pub mod get_client_certificate_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be described.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
-        pub fn set_client_certificate_id(mut self, inp: std::string::String) -> Self {
-            self.client_certificate_id = Some(inp);
+        pub fn set_client_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_certificate_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetClientCertificateInput`](crate::input::GetClientCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetClientCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetClientCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetClientCertificateInput {
                 client_certificate_id: self.client_certificate_id.unwrap_or_default(),
             })
@@ -7700,7 +7839,7 @@ impl GetClientCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetClientCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -7767,7 +7906,7 @@ impl GetClientCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -7775,7 +7914,7 @@ impl GetClientCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7806,28 +7945,30 @@ pub mod get_client_certificates_input {
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetClientCertificatesInput`](crate::input::GetClientCertificatesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetClientCertificatesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetClientCertificatesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetClientCertificatesInput {
                 position: self.position,
                 limit: self.limit,
@@ -7845,7 +7986,7 @@ impl GetClientCertificatesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetClientCertificates,
             aws_http::AwsErrorRetryPolicy,
@@ -7915,7 +8056,7 @@ impl GetClientCertificatesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7924,7 +8065,7 @@ impl GetClientCertificatesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7956,40 +8097,44 @@ pub mod get_deployment_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource to get information about.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deployment_id = Some(inp.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::string::String) -> Self {
-            self.deployment_id = Some(inp);
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
             self
         }
-        pub fn embed(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn embed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.embed.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.embed = Some(v);
             self
         }
         pub fn set_embed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.embed = inp;
+            self.embed = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::input::GetDeploymentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDeploymentInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetDeploymentInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetDeploymentInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 deployment_id: self.deployment_id.unwrap_or_default(),
@@ -8008,7 +8153,7 @@ impl GetDeploymentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDeployment,
             aws_http::AwsErrorRetryPolicy,
@@ -8083,7 +8228,7 @@ impl GetDeploymentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8092,7 +8237,7 @@ impl GetDeploymentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8124,36 +8269,39 @@ pub mod get_deployments_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::input::GetDeploymentsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDeploymentsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetDeploymentsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDeploymentsInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 position: self.position,
@@ -8172,7 +8320,7 @@ impl GetDeploymentsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDeployments,
             aws_http::AwsErrorRetryPolicy,
@@ -8247,7 +8395,7 @@ impl GetDeploymentsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8256,7 +8404,7 @@ impl GetDeploymentsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8287,28 +8435,33 @@ pub mod get_documentation_part_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn documentation_part_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_part_id = Some(inp.into());
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_part_id = Some(input.into());
             self
         }
-        pub fn set_documentation_part_id(mut self, inp: std::string::String) -> Self {
-            self.documentation_part_id = Some(inp);
+        pub fn set_documentation_part_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.documentation_part_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDocumentationPartInput`](crate::input::GetDocumentationPartInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDocumentationPartInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDocumentationPartInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDocumentationPartInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 documentation_part_id: self.documentation_part_id.unwrap_or_default(),
@@ -8326,7 +8479,7 @@ impl GetDocumentationPartInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDocumentationPart,
             aws_http::AwsErrorRetryPolicy,
@@ -8394,7 +8547,7 @@ impl GetDocumentationPartInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -8402,7 +8555,7 @@ impl GetDocumentationPartInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8438,79 +8591,81 @@ pub mod get_documentation_parts_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
-        pub fn r#type(mut self, inp: crate::model::DocumentationPartType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::DocumentationPartType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::DocumentationPartType>,
+            input: std::option::Option<crate::model::DocumentationPartType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
-        pub fn name_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name_query = Some(inp.into());
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_query = Some(input.into());
             self
         }
-        pub fn set_name_query(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name_query = inp;
+        pub fn set_name_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name_query = input;
             self
         }
         /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources without content.</p>
-        pub fn location_status(mut self, inp: crate::model::LocationStatusType) -> Self {
-            self.location_status = Some(inp);
+        pub fn location_status(mut self, input: crate::model::LocationStatusType) -> Self {
+            self.location_status = Some(input);
             self
         }
         pub fn set_location_status(
             mut self,
-            inp: std::option::Option<crate::model::LocationStatusType>,
+            input: std::option::Option<crate::model::LocationStatusType>,
         ) -> Self {
-            self.location_status = inp;
+            self.location_status = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDocumentationPartsInput`](crate::input::GetDocumentationPartsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDocumentationPartsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDocumentationPartsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDocumentationPartsInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 r#type: self.r#type,
@@ -8533,7 +8688,7 @@ impl GetDocumentationPartsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDocumentationParts,
             aws_http::AwsErrorRetryPolicy,
@@ -8620,7 +8775,7 @@ impl GetDocumentationPartsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8629,7 +8784,7 @@ impl GetDocumentationPartsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8660,28 +8815,33 @@ pub mod get_documentation_version_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_version = Some(inp.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_version = Some(input.into());
             self
         }
-        pub fn set_documentation_version(mut self, inp: std::string::String) -> Self {
-            self.documentation_version = Some(inp);
+        pub fn set_documentation_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.documentation_version = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDocumentationVersionInput`](crate::input::GetDocumentationVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDocumentationVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDocumentationVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDocumentationVersionInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 documentation_version: self.documentation_version.unwrap_or_default(),
@@ -8700,7 +8860,7 @@ impl GetDocumentationVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDocumentationVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -8768,7 +8928,7 @@ impl GetDocumentationVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -8776,7 +8936,7 @@ impl GetDocumentationVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8808,37 +8968,39 @@ pub mod get_documentation_versions_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDocumentationVersionsInput`](crate::input::GetDocumentationVersionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDocumentationVersionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDocumentationVersionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDocumentationVersionsInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 position: self.position,
@@ -8858,7 +9020,7 @@ impl GetDocumentationVersionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDocumentationVersions,
             aws_http::AwsErrorRetryPolicy,
@@ -8933,7 +9095,7 @@ impl GetDocumentationVersionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8942,7 +9104,7 @@ impl GetDocumentationVersionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8972,18 +9134,19 @@ pub mod get_domain_name_input {
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.domain_name = Some(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDomainNameInput`](crate::input::GetDomainNameInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDomainNameInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetDomainNameInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetDomainNameInput {
                 domain_name: self.domain_name.unwrap_or_default(),
             })
@@ -9000,7 +9163,7 @@ impl GetDomainNameInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDomainName,
             aws_http::AwsErrorRetryPolicy,
@@ -9066,7 +9229,7 @@ impl GetDomainNameInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -9074,7 +9237,7 @@ impl GetDomainNameInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9105,27 +9268,30 @@ pub mod get_domain_names_input {
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDomainNamesInput`](crate::input::GetDomainNamesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDomainNamesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetDomainNamesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDomainNamesInput {
                 position: self.position,
                 limit: self.limit,
@@ -9143,7 +9309,7 @@ impl GetDomainNamesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDomainNames,
             aws_http::AwsErrorRetryPolicy,
@@ -9213,7 +9379,7 @@ impl GetDomainNamesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9222,7 +9388,7 @@ impl GetDomainNamesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9258,30 +9424,30 @@ pub mod get_export_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.stage_name = Some(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
-        pub fn export_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_type = Some(inp.into());
+        pub fn export_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_type = Some(input.into());
             self
         }
-        pub fn set_export_type(mut self, inp: std::string::String) -> Self {
-            self.export_type = Some(inp);
+        pub fn set_export_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_type = input;
             self
         }
         pub fn parameters(
@@ -9296,26 +9462,27 @@ pub mod get_export_input {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
-        pub fn accepts(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.accepts = Some(inp.into());
+        pub fn accepts(mut self, input: impl Into<std::string::String>) -> Self {
+            self.accepts = Some(input.into());
             self
         }
-        pub fn set_accepts(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.accepts = inp;
+        pub fn set_accepts(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.accepts = input;
             self
         }
         /// Consumes the builder and constructs a [`GetExportInput`](crate::input::GetExportInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetExportInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetExportInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetExportInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name.unwrap_or_default(),
@@ -9336,7 +9503,7 @@ impl GetExportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetExport,
             aws_http::AwsErrorRetryPolicy,
@@ -9401,7 +9568,7 @@ impl GetExportInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_27) = &self.accepts {
             let formatted_28 = AsRef::<str>::as_ref(inner_27);
             if !formatted_28.is_empty() {
@@ -9426,7 +9593,7 @@ impl GetExportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         let builder = self.add_headers(builder)?;
@@ -9435,7 +9602,7 @@ impl GetExportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9466,28 +9633,33 @@ pub mod get_gateway_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.response_type = Some(input);
             self
         }
-        pub fn set_response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn set_response_type(
+            mut self,
+            input: std::option::Option<crate::model::GatewayResponseType>,
+        ) -> Self {
+            self.response_type = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGatewayResponseInput`](crate::input::GetGatewayResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGatewayResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetGatewayResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::GetGatewayResponseInput {
                     rest_api_id: self.rest_api_id
@@ -9513,7 +9685,7 @@ impl GetGatewayResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetGatewayResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -9580,7 +9752,7 @@ impl GetGatewayResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -9588,7 +9760,7 @@ impl GetGatewayResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9620,37 +9792,39 @@ pub mod get_gateway_responses_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGatewayResponsesInput`](crate::input::GetGatewayResponsesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGatewayResponsesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetGatewayResponsesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetGatewayResponsesInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 position: self.position,
@@ -9669,7 +9843,7 @@ impl GetGatewayResponsesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetGatewayResponses,
             aws_http::AwsErrorRetryPolicy,
@@ -9744,7 +9918,7 @@ impl GetGatewayResponsesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9753,7 +9927,7 @@ impl GetGatewayResponsesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9785,36 +9959,39 @@ pub mod get_integration_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies a get integration request's resource identifier</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies a get integration request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// Consumes the builder and constructs a [`GetIntegrationInput`](crate::input::GetIntegrationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetIntegrationInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetIntegrationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetIntegrationInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -9833,7 +10010,7 @@ impl GetIntegrationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetIntegration,
             aws_http::AwsErrorRetryPolicy,
@@ -9901,7 +10078,7 @@ impl GetIntegrationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -9909,7 +10086,7 @@ impl GetIntegrationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9942,46 +10119,48 @@ pub mod get_integration_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] Specifies a get integration response request's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         /// Consumes the builder and constructs a [`GetIntegrationResponseInput`](crate::input::GetIntegrationResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetIntegrationResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetIntegrationResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetIntegrationResponseInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -10001,7 +10180,7 @@ impl GetIntegrationResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetIntegrationResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -10062,7 +10241,7 @@ impl GetIntegrationResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -10070,7 +10249,7 @@ impl GetIntegrationResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10102,36 +10281,37 @@ pub mod get_method_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies the method request's HTTP method type.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// Consumes the builder and constructs a [`GetMethodInput`](crate::input::GetMethodInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetMethodInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetMethodInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetMethodInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -10150,7 +10330,7 @@ impl GetMethodInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetMethod,
             aws_http::AwsErrorRetryPolicy,
@@ -10216,7 +10396,7 @@ impl GetMethodInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -10224,7 +10404,7 @@ impl GetMethodInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10257,46 +10437,48 @@ pub mod get_method_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         /// Consumes the builder and constructs a [`GetMethodResponseInput`](crate::input::GetMethodResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetMethodResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetMethodResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetMethodResponseInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -10316,7 +10498,7 @@ impl GetMethodResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetMethodResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -10377,7 +10559,7 @@ impl GetMethodResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -10385,7 +10567,7 @@ impl GetMethodResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10417,36 +10599,37 @@ pub mod get_model_input {
     }
     impl Builder {
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the model as an identifier.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.model_name = Some(inp.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_name = Some(input.into());
             self
         }
-        pub fn set_model_name(mut self, inp: std::string::String) -> Self {
-            self.model_name = Some(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_name = input;
             self
         }
         /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
-        pub fn flatten(mut self, inp: bool) -> Self {
-            self.flatten = Some(inp);
+        pub fn flatten(mut self, input: bool) -> Self {
+            self.flatten = Some(input);
             self
         }
-        pub fn set_flatten(mut self, inp: bool) -> Self {
-            self.flatten = Some(inp);
+        pub fn set_flatten(mut self, input: std::option::Option<bool>) -> Self {
+            self.flatten = input;
             self
         }
         /// Consumes the builder and constructs a [`GetModelInput`](crate::input::GetModelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetModelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetModelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetModelInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 model_name: self.model_name.unwrap_or_default(),
@@ -10465,7 +10648,7 @@ impl GetModelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetModel,
             aws_http::AwsErrorRetryPolicy,
@@ -10536,7 +10719,7 @@ impl GetModelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -10545,7 +10728,7 @@ impl GetModelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10577,36 +10760,37 @@ pub mod get_models_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetModelsInput`](crate::input::GetModelsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetModelsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetModelsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetModelsInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 position: self.position,
@@ -10625,7 +10809,7 @@ impl GetModelsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetModels,
             aws_http::AwsErrorRetryPolicy,
@@ -10698,7 +10882,7 @@ impl GetModelsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -10707,7 +10891,7 @@ impl GetModelsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10738,28 +10922,30 @@ pub mod get_model_template_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the model for which to generate a template.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.model_name = Some(inp.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_name = Some(input.into());
             self
         }
-        pub fn set_model_name(mut self, inp: std::string::String) -> Self {
-            self.model_name = Some(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetModelTemplateInput`](crate::input::GetModelTemplateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetModelTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetModelTemplateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetModelTemplateInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 model_name: self.model_name.unwrap_or_default(),
@@ -10777,7 +10963,7 @@ impl GetModelTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetModelTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -10844,7 +11030,7 @@ impl GetModelTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -10852,7 +11038,7 @@ impl GetModelTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10883,28 +11069,33 @@ pub mod get_request_validator_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_validator_id = Some(inp.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_validator_id = Some(input.into());
             self
         }
-        pub fn set_request_validator_id(mut self, inp: std::string::String) -> Self {
-            self.request_validator_id = Some(inp);
+        pub fn set_request_validator_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_validator_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRequestValidatorInput`](crate::input::GetRequestValidatorInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRequestValidatorInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetRequestValidatorInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetRequestValidatorInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 request_validator_id: self.request_validator_id.unwrap_or_default(),
@@ -10922,7 +11113,7 @@ impl GetRequestValidatorInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRequestValidator,
             aws_http::AwsErrorRetryPolicy,
@@ -10989,7 +11180,7 @@ impl GetRequestValidatorInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -10997,7 +11188,7 @@ impl GetRequestValidatorInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11029,37 +11220,39 @@ pub mod get_request_validators_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRequestValidatorsInput`](crate::input::GetRequestValidatorsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRequestValidatorsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetRequestValidatorsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetRequestValidatorsInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 position: self.position,
@@ -11078,7 +11271,7 @@ impl GetRequestValidatorsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRequestValidators,
             aws_http::AwsErrorRetryPolicy,
@@ -11153,7 +11346,7 @@ impl GetRequestValidatorsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11162,7 +11355,7 @@ impl GetRequestValidatorsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11194,40 +11387,41 @@ pub mod get_resource_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier for the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
-        pub fn embed(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn embed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.embed.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.embed = Some(v);
             self
         }
         pub fn set_embed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.embed = inp;
+            self.embed = input;
             self
         }
         /// Consumes the builder and constructs a [`GetResourceInput`](crate::input::GetResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetResourceInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -11246,7 +11440,7 @@ impl GetResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetResource,
             aws_http::AwsErrorRetryPolicy,
@@ -11321,7 +11515,7 @@ impl GetResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11330,7 +11524,7 @@ impl GetResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11363,49 +11557,50 @@ pub mod get_resources_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
-        pub fn embed(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn embed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.embed.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.embed = Some(v);
             self
         }
         pub fn set_embed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.embed = inp;
+            self.embed = input;
             self
         }
         /// Consumes the builder and constructs a [`GetResourcesInput`](crate::input::GetResourcesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourcesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetResourcesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetResourcesInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 position: self.position,
@@ -11425,7 +11620,7 @@ impl GetResourcesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetResources,
             aws_http::AwsErrorRetryPolicy,
@@ -11505,7 +11700,7 @@ impl GetResourcesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11514,7 +11709,7 @@ impl GetResourcesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11544,18 +11739,19 @@ pub mod get_rest_api_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRestApiInput`](crate::input::GetRestApiInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRestApiInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetRestApiInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetRestApiInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
             })
@@ -11572,7 +11768,7 @@ impl GetRestApiInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRestApi,
             aws_http::AwsErrorRetryPolicy,
@@ -11638,7 +11834,7 @@ impl GetRestApiInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -11646,7 +11842,7 @@ impl GetRestApiInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11677,27 +11873,28 @@ pub mod get_rest_apis_input {
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRestApisInput`](crate::input::GetRestApisInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRestApisInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetRestApisInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetRestApisInput {
                 position: self.position,
                 limit: self.limit,
@@ -11715,7 +11912,7 @@ impl GetRestApisInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRestApis,
             aws_http::AwsErrorRetryPolicy,
@@ -11785,7 +11982,7 @@ impl GetRestApisInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11794,7 +11991,7 @@ impl GetRestApisInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11829,30 +12026,30 @@ pub mod get_sdk_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.stage_name = Some(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code>  are supported.</p>
-        pub fn sdk_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sdk_type = Some(inp.into());
+        pub fn sdk_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sdk_type = Some(input.into());
             self
         }
-        pub fn set_sdk_type(mut self, inp: std::string::String) -> Self {
-            self.sdk_type = Some(inp);
+        pub fn set_sdk_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sdk_type = input;
             self
         }
         pub fn parameters(
@@ -11867,17 +12064,18 @@ pub mod get_sdk_input {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSdkInput`](crate::input::GetSdkInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSdkInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetSdkInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetSdkInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name.unwrap_or_default(),
@@ -11897,7 +12095,7 @@ impl GetSdkInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::GetSdk, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -11960,7 +12158,7 @@ impl GetSdkInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -11968,7 +12166,7 @@ impl GetSdkInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11998,18 +12196,19 @@ pub mod get_sdk_type_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSdkTypeInput`](crate::input::GetSdkTypeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSdkTypeInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetSdkTypeInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetSdkTypeInput {
                 id: self.id.unwrap_or_default(),
             })
@@ -12026,7 +12225,7 @@ impl GetSdkTypeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSdkType,
             aws_http::AwsErrorRetryPolicy,
@@ -12092,7 +12291,7 @@ impl GetSdkTypeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -12100,7 +12299,7 @@ impl GetSdkTypeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12131,27 +12330,28 @@ pub mod get_sdk_types_input {
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSdkTypesInput`](crate::input::GetSdkTypesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSdkTypesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetSdkTypesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetSdkTypesInput {
                 position: self.position,
                 limit: self.limit,
@@ -12169,7 +12369,7 @@ impl GetSdkTypesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSdkTypes,
             aws_http::AwsErrorRetryPolicy,
@@ -12239,7 +12439,7 @@ impl GetSdkTypesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -12248,7 +12448,7 @@ impl GetSdkTypesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12279,27 +12479,28 @@ pub mod get_stage_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to get information about.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.stage_name = Some(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetStageInput`](crate::input::GetStageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetStageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetStageInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetStageInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name.unwrap_or_default(),
@@ -12317,7 +12518,7 @@ impl GetStageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetStage,
             aws_http::AwsErrorRetryPolicy,
@@ -12382,7 +12583,7 @@ impl GetStageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -12390,7 +12591,7 @@ impl GetStageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12421,27 +12622,31 @@ pub mod get_stages_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The stages' deployment identifiers.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deployment_id = Some(inp.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.deployment_id = inp;
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetStagesInput`](crate::input::GetStagesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetStagesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetStagesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetStagesInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 deployment_id: self.deployment_id,
@@ -12459,7 +12664,7 @@ impl GetStagesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetStages,
             aws_http::AwsErrorRetryPolicy,
@@ -12529,7 +12734,7 @@ impl GetStagesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -12538,7 +12743,7 @@ impl GetStagesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12570,36 +12775,37 @@ pub mod get_tags_input {
     }
     impl Builder {
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTagsInput`](crate::input::GetTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTagsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetTagsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetTagsInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
                 position: self.position,
@@ -12618,7 +12824,7 @@ impl GetTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::GetTags, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -12688,7 +12894,7 @@ impl GetTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -12697,7 +12903,7 @@ impl GetTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12732,63 +12938,67 @@ pub mod get_usage_input {
     }
     impl Builder {
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// <p>The Id of the API key associated with the resultant usage data.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
-        pub fn start_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_date = Some(inp.into());
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_date = Some(input.into());
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
-        pub fn end_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.end_date = Some(inp.into());
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_date = Some(input.into());
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.end_date = inp;
+        pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_date = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsageInput`](crate::input::GetUsageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUsageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetUsageInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetUsageInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
                 key_id: self.key_id,
@@ -12810,7 +13020,7 @@ impl GetUsageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetUsage,
             aws_http::AwsErrorRetryPolicy,
@@ -12892,7 +13102,7 @@ impl GetUsageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -12901,7 +13111,7 @@ impl GetUsageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12931,18 +13141,22 @@ pub mod get_usage_plan_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsagePlanInput`](crate::input::GetUsagePlanInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUsagePlanInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetUsagePlanInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetUsagePlanInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
             })
@@ -12959,7 +13173,7 @@ impl GetUsagePlanInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetUsagePlan,
             aws_http::AwsErrorRetryPolicy,
@@ -13025,7 +13239,7 @@ impl GetUsagePlanInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -13033,7 +13247,7 @@ impl GetUsagePlanInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -13064,28 +13278,33 @@ pub mod get_usage_plan_key_input {
     }
     impl Builder {
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::string::String) -> Self {
-            self.key_id = Some(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsagePlanKeyInput`](crate::input::GetUsagePlanKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUsagePlanKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetUsagePlanKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetUsagePlanKeyInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
                 key_id: self.key_id.unwrap_or_default(),
@@ -13103,7 +13322,7 @@ impl GetUsagePlanKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetUsagePlanKey,
             aws_http::AwsErrorRetryPolicy,
@@ -13170,7 +13389,7 @@ impl GetUsagePlanKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -13178,7 +13397,7 @@ impl GetUsagePlanKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -13211,46 +13430,51 @@ pub mod get_usage_plan_keys_input {
     }
     impl Builder {
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
-        pub fn name_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name_query = Some(inp.into());
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_query = Some(input.into());
             self
         }
-        pub fn set_name_query(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name_query = inp;
+        pub fn set_name_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name_query = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsagePlanKeysInput`](crate::input::GetUsagePlanKeysInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUsagePlanKeysInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetUsagePlanKeysInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetUsagePlanKeysInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
                 position: self.position,
@@ -13270,7 +13494,7 @@ impl GetUsagePlanKeysInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetUsagePlanKeys,
             aws_http::AwsErrorRetryPolicy,
@@ -13348,7 +13572,7 @@ impl GetUsagePlanKeysInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -13357,7 +13581,7 @@ impl GetUsagePlanKeysInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -13389,36 +13613,37 @@ pub mod get_usage_plans_input {
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The identifier of the API key associated with the usage plans.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsagePlansInput`](crate::input::GetUsagePlansInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUsagePlansInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetUsagePlansInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetUsagePlansInput {
                 position: self.position,
                 key_id: self.key_id,
@@ -13437,7 +13662,7 @@ impl GetUsagePlansInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetUsagePlans,
             aws_http::AwsErrorRetryPolicy,
@@ -13510,7 +13735,7 @@ impl GetUsagePlansInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -13519,7 +13744,7 @@ impl GetUsagePlansInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -13549,18 +13774,19 @@ pub mod get_vpc_link_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_link_id = Some(inp.into());
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_link_id = Some(input.into());
             self
         }
-        pub fn set_vpc_link_id(mut self, inp: std::string::String) -> Self {
-            self.vpc_link_id = Some(inp);
+        pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_link_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetVpcLinkInput`](crate::input::GetVpcLinkInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetVpcLinkInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetVpcLinkInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetVpcLinkInput {
                 vpc_link_id: self.vpc_link_id.unwrap_or_default(),
             })
@@ -13577,7 +13803,7 @@ impl GetVpcLinkInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetVpcLink,
             aws_http::AwsErrorRetryPolicy,
@@ -13643,7 +13869,7 @@ impl GetVpcLinkInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -13651,7 +13877,7 @@ impl GetVpcLinkInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -13682,27 +13908,28 @@ pub mod get_vpc_links_input {
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetVpcLinksInput`](crate::input::GetVpcLinksInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetVpcLinksInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetVpcLinksInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetVpcLinksInput {
                 position: self.position,
                 limit: self.limit,
@@ -13720,7 +13947,7 @@ impl GetVpcLinksInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetVpcLinks,
             aws_http::AwsErrorRetryPolicy,
@@ -13790,7 +14017,7 @@ impl GetVpcLinksInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -13799,7 +14026,7 @@ impl GetVpcLinksInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -13831,36 +14058,40 @@ pub mod import_api_keys_input {
     }
     impl Builder {
         /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.body = input;
             self
         }
         /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
-        pub fn format(mut self, inp: crate::model::ApiKeysFormat) -> Self {
-            self.format = Some(inp);
+        pub fn format(mut self, input: crate::model::ApiKeysFormat) -> Self {
+            self.format = Some(input);
             self
         }
-        pub fn set_format(mut self, inp: std::option::Option<crate::model::ApiKeysFormat>) -> Self {
-            self.format = inp;
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::ApiKeysFormat>,
+        ) -> Self {
+            self.format = input;
             self
         }
         /// <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.fail_on_warnings = Some(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.fail_on_warnings = Some(input);
             self
         }
-        pub fn set_fail_on_warnings(mut self, inp: bool) -> Self {
-            self.fail_on_warnings = Some(inp);
+        pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+            self.fail_on_warnings = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportApiKeysInput`](crate::input::ImportApiKeysInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportApiKeysInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ImportApiKeysInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ImportApiKeysInput {
                 body: self.body,
                 format: self.format,
@@ -13879,7 +14110,7 @@ impl ImportApiKeysInput {
     pub fn make_operation(
         self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ImportApiKeys,
             aws_http::AwsErrorRetryPolicy,
@@ -13953,7 +14184,7 @@ impl ImportApiKeysInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -13962,7 +14193,7 @@ impl ImportApiKeysInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
@@ -13995,46 +14226,48 @@ pub mod import_documentation_parts_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
-        pub fn mode(mut self, inp: crate::model::PutMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::PutMode) -> Self {
+            self.mode = Some(input);
             self
         }
-        pub fn set_mode(mut self, inp: std::option::Option<crate::model::PutMode>) -> Self {
-            self.mode = inp;
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::PutMode>) -> Self {
+            self.mode = input;
             self
         }
         /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.fail_on_warnings = Some(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.fail_on_warnings = Some(input);
             self
         }
-        pub fn set_fail_on_warnings(mut self, inp: bool) -> Self {
-            self.fail_on_warnings = Some(inp);
+        pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+            self.fail_on_warnings = input;
             self
         }
         /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.body = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportDocumentationPartsInput`](crate::input::ImportDocumentationPartsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportDocumentationPartsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ImportDocumentationPartsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ImportDocumentationPartsInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 mode: self.mode,
@@ -14055,7 +14288,7 @@ impl ImportDocumentationPartsInput {
     pub fn make_operation(
         self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ImportDocumentationParts,
             aws_http::AwsErrorRetryPolicy,
@@ -14134,7 +14367,7 @@ impl ImportDocumentationPartsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -14143,7 +14376,7 @@ impl ImportDocumentationPartsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
@@ -14178,12 +14411,12 @@ pub mod import_rest_api_input {
     impl Builder {
         /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>)
         /// when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.fail_on_warnings = Some(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.fail_on_warnings = Some(input);
             self
         }
-        pub fn set_fail_on_warnings(mut self, inp: bool) -> Self {
-            self.fail_on_warnings = Some(inp);
+        pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+            self.fail_on_warnings = input;
             self
         }
         pub fn parameters(
@@ -14198,26 +14431,27 @@ pub mod import_rest_api_input {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.body = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportRestApiInput`](crate::input::ImportRestApiInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportRestApiInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ImportRestApiInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ImportRestApiInput {
                 fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
                 parameters: self.parameters,
@@ -14236,7 +14470,7 @@ impl ImportRestApiInput {
     pub fn make_operation(
         self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ImportRestApi,
             aws_http::AwsErrorRetryPolicy,
@@ -14318,7 +14552,7 @@ impl ImportRestApiInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -14327,7 +14561,7 @@ impl ImportRestApiInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
@@ -14365,30 +14599,33 @@ pub mod put_gateway_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.response_type = Some(input);
             self
         }
-        pub fn set_response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn set_response_type(
+            mut self,
+            input: std::option::Option<crate::model::GatewayResponseType>,
+        ) -> Self {
+            self.response_type = input;
             self
         }
         /// The HTTP status code of the <a>GatewayResponse</a>.
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         pub fn response_parameters(
@@ -14403,11 +14640,11 @@ pub mod put_gateway_response_input {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_templates(
@@ -14422,18 +14659,20 @@ pub mod put_gateway_response_input {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_templates = inp;
+            self.response_templates = input;
             self
         }
         /// Consumes the builder and constructs a [`PutGatewayResponseInput`](crate::input::PutGatewayResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutGatewayResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutGatewayResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::PutGatewayResponseInput {
                     rest_api_id: self.rest_api_id
@@ -14465,7 +14704,7 @@ impl PutGatewayResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutGatewayResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -14535,7 +14774,7 @@ impl PutGatewayResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -14543,7 +14782,7 @@ impl PutGatewayResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -14593,51 +14832,54 @@ pub mod put_integration_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies a put integration request's resource ID.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies a put integration request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] Specifies a put integration input's type.</p>
-        pub fn r#type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::IntegrationType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::IntegrationType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
-        pub fn integration_http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.integration_http_method = Some(inp.into());
+        pub fn integration_http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.integration_http_method = Some(input.into());
             self
         }
         pub fn set_integration_http_method(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.integration_http_method = inp;
+            self.integration_http_method = input;
             self
         }
         /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
@@ -14646,42 +14888,45 @@ pub mod put_integration_input {
         /// </li>
         /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
         /// </li></ul>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uri = Some(inp.into());
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
             self
         }
-        pub fn set_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uri = inp;
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
             self
         }
         /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
-        pub fn connection_type(mut self, inp: crate::model::ConnectionType) -> Self {
-            self.connection_type = Some(inp);
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.connection_type = Some(input);
             self
         }
         pub fn set_connection_type(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionType>,
+            input: std::option::Option<crate::model::ConnectionType>,
         ) -> Self {
-            self.connection_type = inp;
+            self.connection_type = input;
             self
         }
         /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.connection_id = Some(inp.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_id = Some(input.into());
             self
         }
-        pub fn set_connection_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.connection_id = inp;
+        pub fn set_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_id = input;
             self
         }
         /// <p>Specifies whether credentials are required for a put integration.</p>
-        pub fn credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.credentials = Some(inp.into());
+        pub fn credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.credentials = Some(input.into());
             self
         }
-        pub fn set_credentials(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.credentials = inp;
+        pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.credentials = input;
             self
         }
         pub fn request_parameters(
@@ -14696,11 +14941,11 @@ pub mod put_integration_input {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_parameters = inp;
+            self.request_parameters = input;
             self
         }
         pub fn request_templates(
@@ -14715,11 +14960,11 @@ pub mod put_integration_input {
         }
         pub fn set_request_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_templates = inp;
+            self.request_templates = input;
             self
         }
         /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values:  <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.
@@ -14729,40 +14974,40 @@ pub mod put_integration_input {
         /// <li><p><code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media Type' response.</p></li>
         /// <li><p><code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content types mapped to templates. However if there is at least one content type defined, unmapped content types will be rejected with the same 415 response.</p></li>
         /// </ul>
-        pub fn passthrough_behavior(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.passthrough_behavior = Some(inp.into());
+        pub fn passthrough_behavior(mut self, input: impl Into<std::string::String>) -> Self {
+            self.passthrough_behavior = Some(input.into());
             self
         }
         pub fn set_passthrough_behavior(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.passthrough_behavior = inp;
+            self.passthrough_behavior = input;
             self
         }
         /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
-        pub fn cache_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_namespace = Some(inp.into());
+        pub fn cache_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_namespace = Some(input.into());
             self
         }
         pub fn set_cache_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cache_namespace = inp;
+            self.cache_namespace = input;
             self
         }
-        pub fn cache_key_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
         pub fn set_cache_key_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.cache_key_parameters = inp;
+            self.cache_key_parameters = input;
             self
         }
         /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -14771,38 +15016,44 @@ pub mod put_integration_input {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.content_handling = Some(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.content_handling = Some(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.content_handling = inp;
+            self.content_handling = input;
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
-        pub fn timeout_in_millis(mut self, inp: i32) -> Self {
-            self.timeout_in_millis = Some(inp);
+        pub fn timeout_in_millis(mut self, input: i32) -> Self {
+            self.timeout_in_millis = Some(input);
             self
         }
-        pub fn set_timeout_in_millis(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout_in_millis = inp;
+        pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_millis = input;
             self
         }
-        pub fn tls_config(mut self, inp: crate::model::TlsConfig) -> Self {
-            self.tls_config = Some(inp);
+        pub fn tls_config(mut self, input: crate::model::TlsConfig) -> Self {
+            self.tls_config = Some(input);
             self
         }
-        pub fn set_tls_config(mut self, inp: std::option::Option<crate::model::TlsConfig>) -> Self {
-            self.tls_config = inp;
+        pub fn set_tls_config(
+            mut self,
+            input: std::option::Option<crate::model::TlsConfig>,
+        ) -> Self {
+            self.tls_config = input;
             self
         }
         /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::input::PutIntegrationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutIntegrationInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::PutIntegrationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutIntegrationInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -14835,7 +15086,7 @@ impl PutIntegrationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutIntegration,
             aws_http::AwsErrorRetryPolicy,
@@ -14905,7 +15156,7 @@ impl PutIntegrationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -14913,7 +15164,7 @@ impl PutIntegrationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -14954,51 +15205,51 @@ pub mod put_integration_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         /// <p>Specifies the selection pattern of a put integration response.</p>
-        pub fn selection_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.selection_pattern = Some(inp.into());
+        pub fn selection_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.selection_pattern = Some(input.into());
             self
         }
         pub fn set_selection_pattern(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.selection_pattern = inp;
+            self.selection_pattern = input;
             self
         }
         pub fn response_parameters(
@@ -15013,11 +15264,11 @@ pub mod put_integration_response_input {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_templates(
@@ -15032,11 +15283,11 @@ pub mod put_integration_response_input {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_templates = inp;
+            self.response_templates = input;
             self
         }
         /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -15045,22 +15296,24 @@ pub mod put_integration_response_input {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.content_handling = Some(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.content_handling = Some(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.content_handling = inp;
+            self.content_handling = input;
             self
         }
         /// Consumes the builder and constructs a [`PutIntegrationResponseInput`](crate::input::PutIntegrationResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutIntegrationResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutIntegrationResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutIntegrationResponseInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -15084,7 +15337,7 @@ impl PutIntegrationResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutIntegrationResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -15148,7 +15401,7 @@ impl PutIntegrationResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -15156,7 +15409,7 @@ impl PutIntegrationResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -15199,69 +15452,75 @@ pub mod put_method_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies the method request's HTTP method type.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-        pub fn authorization_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorization_type = Some(inp.into());
+        pub fn authorization_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorization_type = Some(input.into());
             self
         }
         pub fn set_authorization_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authorization_type = inp;
+            self.authorization_type = input;
             self
         }
         /// <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_id = Some(inp.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_id = Some(input.into());
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.authorizer_id = inp;
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_id = input;
             self
         }
         /// <p>Specifies whether the method required a valid <a>ApiKey</a>.</p>
-        pub fn api_key_required(mut self, inp: bool) -> Self {
-            self.api_key_required = Some(inp);
+        pub fn api_key_required(mut self, input: bool) -> Self {
+            self.api_key_required = Some(input);
             self
         }
-        pub fn set_api_key_required(mut self, inp: bool) -> Self {
-            self.api_key_required = Some(inp);
+        pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.api_key_required = input;
             self
         }
         /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-        pub fn operation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_name = Some(inp.into());
+        pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_name = Some(input.into());
             self
         }
-        pub fn set_operation_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_name = inp;
+        pub fn set_operation_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.operation_name = input;
             self
         }
         pub fn request_parameters(
@@ -15276,9 +15535,9 @@ pub mod put_method_input {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.request_parameters = inp;
+            self.request_parameters = input;
             self
         }
         pub fn request_models(
@@ -15293,42 +15552,43 @@ pub mod put_method_input {
         }
         pub fn set_request_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_models = inp;
+            self.request_models = input;
             self
         }
         /// <p>The identifier of a <a>RequestValidator</a> for validating the method request.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_validator_id = Some(inp.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_validator_id = Some(input.into());
             self
         }
         pub fn set_request_validator_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.request_validator_id = inp;
+            self.request_validator_id = input;
             self
         }
-        pub fn authorization_scopes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
         pub fn set_authorization_scopes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.authorization_scopes = inp;
+            self.authorization_scopes = input;
             self
         }
         /// Consumes the builder and constructs a [`PutMethodInput`](crate::input::PutMethodInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutMethodInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutMethodInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutMethodInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -15355,7 +15615,7 @@ impl PutMethodInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutMethod,
             aws_http::AwsErrorRetryPolicy,
@@ -15424,7 +15684,7 @@ impl PutMethodInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -15432,7 +15692,7 @@ impl PutMethodInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -15470,39 +15730,39 @@ pub mod put_method_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] The method response's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         pub fn response_parameters(
@@ -15517,9 +15777,9 @@ pub mod put_method_response_input {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_models(
@@ -15534,18 +15794,20 @@ pub mod put_method_response_input {
         }
         pub fn set_response_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_models = inp;
+            self.response_models = input;
             self
         }
         /// Consumes the builder and constructs a [`PutMethodResponseInput`](crate::input::PutMethodResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutMethodResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutMethodResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutMethodResponseInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -15567,7 +15829,7 @@ impl PutMethodResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutMethodResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -15631,7 +15893,7 @@ impl PutMethodResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -15639,7 +15901,7 @@ impl PutMethodResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -15675,32 +15937,32 @@ pub mod put_rest_api_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default,
         /// the update mode is "merge".</p>
-        pub fn mode(mut self, inp: crate::model::PutMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::PutMode) -> Self {
+            self.mode = Some(input);
             self
         }
-        pub fn set_mode(mut self, inp: std::option::Option<crate::model::PutMode>) -> Self {
-            self.mode = inp;
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::PutMode>) -> Self {
+            self.mode = input;
             self
         }
         /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>)
         /// when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.fail_on_warnings = Some(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.fail_on_warnings = Some(input);
             self
         }
-        pub fn set_fail_on_warnings(mut self, inp: bool) -> Self {
-            self.fail_on_warnings = Some(inp);
+        pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+            self.fail_on_warnings = input;
             self
         }
         pub fn parameters(
@@ -15715,26 +15977,27 @@ pub mod put_rest_api_input {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.body = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRestApiInput`](crate::input::PutRestApiInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRestApiInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutRestApiInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutRestApiInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 mode: self.mode,
@@ -15755,7 +16018,7 @@ impl PutRestApiInput {
     pub fn make_operation(
         self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutRestApi,
             aws_http::AwsErrorRetryPolicy,
@@ -15844,7 +16107,7 @@ impl PutRestApiInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -15853,7 +16116,7 @@ impl PutRestApiInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
@@ -15886,12 +16149,12 @@ pub mod tag_resource_input {
     }
     impl Builder {
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         pub fn tags(
@@ -15906,17 +16169,18 @@ pub mod tag_resource_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
                 tags: self.tags,
@@ -15934,7 +16198,7 @@ impl TagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -16003,7 +16267,7 @@ impl TagResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -16011,7 +16275,7 @@ impl TagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -16056,21 +16320,24 @@ pub mod test_invoke_authorizer_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_id = Some(inp.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_id = Some(input.into());
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::string::String) -> Self {
-            self.authorizer_id = Some(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_id = input;
             self
         }
         pub fn headers(
@@ -16085,11 +16352,11 @@ pub mod test_invoke_authorizer_input {
         }
         pub fn set_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.headers = inp;
+            self.headers = input;
             self
         }
         pub fn multi_value_headers(
@@ -16104,32 +16371,32 @@ pub mod test_invoke_authorizer_input {
         }
         pub fn set_multi_value_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.multi_value_headers = inp;
+            self.multi_value_headers = input;
             self
         }
         /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-        pub fn path_with_query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_with_query_string = Some(inp.into());
+        pub fn path_with_query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_with_query_string = Some(input.into());
             self
         }
         pub fn set_path_with_query_string(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.path_with_query_string = inp;
+            self.path_with_query_string = input;
             self
         }
         /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.body = Some(inp.into());
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
             self
         }
         pub fn stage_variables(
@@ -16144,11 +16411,11 @@ pub mod test_invoke_authorizer_input {
         }
         pub fn set_stage_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.stage_variables = inp;
+            self.stage_variables = input;
             self
         }
         pub fn additional_context(
@@ -16163,18 +16430,20 @@ pub mod test_invoke_authorizer_input {
         }
         pub fn set_additional_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.additional_context = inp;
+            self.additional_context = input;
             self
         }
         /// Consumes the builder and constructs a [`TestInvokeAuthorizerInput`](crate::input::TestInvokeAuthorizerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TestInvokeAuthorizerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TestInvokeAuthorizerInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TestInvokeAuthorizerInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 authorizer_id: self.authorizer_id.unwrap_or_default(),
@@ -16198,7 +16467,7 @@ impl TestInvokeAuthorizerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TestInvokeAuthorizer,
             aws_http::AwsErrorRetryPolicy,
@@ -16268,7 +16537,7 @@ impl TestInvokeAuthorizerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16276,7 +16545,7 @@ impl TestInvokeAuthorizerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -16320,51 +16589,51 @@ pub mod test_invoke_method_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-        pub fn path_with_query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_with_query_string = Some(inp.into());
+        pub fn path_with_query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_with_query_string = Some(input.into());
             self
         }
         pub fn set_path_with_query_string(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.path_with_query_string = inp;
+            self.path_with_query_string = input;
             self
         }
         /// <p>The simulated request body of an incoming invocation request.</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.body = Some(inp.into());
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
             self
         }
         pub fn headers(
@@ -16379,11 +16648,11 @@ pub mod test_invoke_method_input {
         }
         pub fn set_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.headers = inp;
+            self.headers = input;
             self
         }
         pub fn multi_value_headers(
@@ -16398,23 +16667,23 @@ pub mod test_invoke_method_input {
         }
         pub fn set_multi_value_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.multi_value_headers = inp;
+            self.multi_value_headers = input;
             self
         }
         /// <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
         pub fn set_client_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_certificate_id = inp;
+            self.client_certificate_id = input;
             self
         }
         pub fn stage_variables(
@@ -16429,18 +16698,20 @@ pub mod test_invoke_method_input {
         }
         pub fn set_stage_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.stage_variables = inp;
+            self.stage_variables = input;
             self
         }
         /// Consumes the builder and constructs a [`TestInvokeMethodInput`](crate::input::TestInvokeMethodInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TestInvokeMethodInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TestInvokeMethodInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TestInvokeMethodInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -16465,7 +16736,7 @@ impl TestInvokeMethodInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TestInvokeMethod,
             aws_http::AwsErrorRetryPolicy,
@@ -16536,7 +16807,7 @@ impl TestInvokeMethodInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16544,7 +16815,7 @@ impl TestInvokeMethodInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -16575,31 +16846,32 @@ pub mod untag_resource_input {
     }
     impl Builder {
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
                 tag_keys: self.tag_keys,
@@ -16617,7 +16889,7 @@ impl UntagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -16691,7 +16963,7 @@ impl UntagResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -16700,7 +16972,7 @@ impl UntagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -16730,23 +17002,24 @@ pub mod update_account_input {
             std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAccountInput`](crate::input::UpdateAccountInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAccountInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateAccountInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateAccountInput {
                 patch_operations: self.patch_operations,
             })
@@ -16763,7 +17036,7 @@ impl UpdateAccountInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateAccount,
             aws_http::AwsErrorRetryPolicy,
@@ -16827,7 +17100,7 @@ impl UpdateAccountInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -16835,7 +17108,7 @@ impl UpdateAccountInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -16867,31 +17140,32 @@ pub mod update_api_key_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
-        pub fn api_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.api_key = Some(inp.into());
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_key = Some(input.into());
             self
         }
-        pub fn set_api_key(mut self, inp: std::string::String) -> Self {
-            self.api_key = Some(inp);
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_key = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateApiKeyInput`](crate::input::UpdateApiKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateApiKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateApiKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateApiKeyInput {
                 api_key: self.api_key.unwrap_or_default(),
                 patch_operations: self.patch_operations,
@@ -16909,7 +17183,7 @@ impl UpdateApiKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateApiKey,
             aws_http::AwsErrorRetryPolicy,
@@ -16978,7 +17252,7 @@ impl UpdateApiKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -16986,7 +17260,7 @@ impl UpdateApiKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -17019,41 +17293,46 @@ pub mod update_authorizer_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_id = Some(inp.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_id = Some(input.into());
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::string::String) -> Self {
-            self.authorizer_id = Some(inp);
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::input::UpdateAuthorizerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAuthorizerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateAuthorizerInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateAuthorizerInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 authorizer_id: self.authorizer_id.unwrap_or_default(),
@@ -17072,7 +17351,7 @@ impl UpdateAuthorizerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateAuthorizer,
             aws_http::AwsErrorRetryPolicy,
@@ -17141,7 +17420,7 @@ impl UpdateAuthorizerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -17149,7 +17428,7 @@ impl UpdateAuthorizerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -17182,42 +17461,44 @@ pub mod update_base_path_mapping_input {
     }
     impl Builder {
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to change.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.domain_name = Some(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>[Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_path = Some(inp.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_path = Some(input.into());
             self
         }
-        pub fn set_base_path(mut self, inp: std::string::String) -> Self {
-            self.base_path = Some(inp);
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_path = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateBasePathMappingInput`](crate::input::UpdateBasePathMappingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBasePathMappingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateBasePathMappingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateBasePathMappingInput {
                 domain_name: self.domain_name.unwrap_or_default(),
                 base_path: self.base_path.unwrap_or_default(),
@@ -17236,7 +17517,7 @@ impl UpdateBasePathMappingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateBasePathMapping,
             aws_http::AwsErrorRetryPolicy,
@@ -17306,7 +17587,7 @@ impl UpdateBasePathMappingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -17314,7 +17595,7 @@ impl UpdateBasePathMappingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -17346,32 +17627,37 @@ pub mod update_client_certificate_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
-        pub fn set_client_certificate_id(mut self, inp: std::string::String) -> Self {
-            self.client_certificate_id = Some(inp);
+        pub fn set_client_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_certificate_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateClientCertificateInput`](crate::input::UpdateClientCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateClientCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateClientCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateClientCertificateInput {
                 client_certificate_id: self.client_certificate_id.unwrap_or_default(),
                 patch_operations: self.patch_operations,
@@ -17390,7 +17676,7 @@ impl UpdateClientCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateClientCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -17460,7 +17746,7 @@ impl UpdateClientCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -17468,7 +17754,7 @@ impl UpdateClientCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -17501,41 +17787,46 @@ pub mod update_deployment_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The replacement identifier for the <a>Deployment</a> resource to change information about.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deployment_id = Some(inp.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::string::String) -> Self {
-            self.deployment_id = Some(inp);
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateDeploymentInput`](crate::input::UpdateDeploymentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDeploymentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateDeploymentInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateDeploymentInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 deployment_id: self.deployment_id.unwrap_or_default(),
@@ -17554,7 +17845,7 @@ impl UpdateDeploymentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateDeployment,
             aws_http::AwsErrorRetryPolicy,
@@ -17623,7 +17914,7 @@ impl UpdateDeploymentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -17631,7 +17922,7 @@ impl UpdateDeploymentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -17664,41 +17955,46 @@ pub mod update_documentation_part_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
-        pub fn documentation_part_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_part_id = Some(inp.into());
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_part_id = Some(input.into());
             self
         }
-        pub fn set_documentation_part_id(mut self, inp: std::string::String) -> Self {
-            self.documentation_part_id = Some(inp);
+        pub fn set_documentation_part_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.documentation_part_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateDocumentationPartInput`](crate::input::UpdateDocumentationPartInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDocumentationPartInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateDocumentationPartInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateDocumentationPartInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 documentation_part_id: self.documentation_part_id.unwrap_or_default(),
@@ -17718,7 +18014,7 @@ impl UpdateDocumentationPartInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateDocumentationPart,
             aws_http::AwsErrorRetryPolicy,
@@ -17789,7 +18085,7 @@ impl UpdateDocumentationPartInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -17797,7 +18093,7 @@ impl UpdateDocumentationPartInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -17830,41 +18126,46 @@ pub mod update_documentation_version_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>..</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_version = Some(inp.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_version = Some(input.into());
             self
         }
-        pub fn set_documentation_version(mut self, inp: std::string::String) -> Self {
-            self.documentation_version = Some(inp);
+        pub fn set_documentation_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.documentation_version = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateDocumentationVersionInput`](crate::input::UpdateDocumentationVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDocumentationVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateDocumentationVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateDocumentationVersionInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 documentation_version: self.documentation_version.unwrap_or_default(),
@@ -17884,7 +18185,7 @@ impl UpdateDocumentationVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateDocumentationVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -17956,7 +18257,7 @@ impl UpdateDocumentationVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -17964,7 +18265,7 @@ impl UpdateDocumentationVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -17996,32 +18297,34 @@ pub mod update_domain_name_input {
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource to be changed.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::string::String) -> Self {
-            self.domain_name = Some(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateDomainNameInput`](crate::input::UpdateDomainNameInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDomainNameInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateDomainNameInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateDomainNameInput {
                 domain_name: self.domain_name.unwrap_or_default(),
                 patch_operations: self.patch_operations,
@@ -18039,7 +18342,7 @@ impl UpdateDomainNameInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateDomainName,
             aws_http::AwsErrorRetryPolicy,
@@ -18108,7 +18411,7 @@ impl UpdateDomainNameInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -18116,7 +18419,7 @@ impl UpdateDomainNameInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -18149,41 +18452,46 @@ pub mod update_gateway_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.response_type = Some(input);
             self
         }
-        pub fn set_response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn set_response_type(
+            mut self,
+            input: std::option::Option<crate::model::GatewayResponseType>,
+        ) -> Self {
+            self.response_type = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateGatewayResponseInput`](crate::input::UpdateGatewayResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGatewayResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateGatewayResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::UpdateGatewayResponseInput {
                     rest_api_id: self.rest_api_id
@@ -18211,7 +18519,7 @@ impl UpdateGatewayResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateGatewayResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -18281,7 +18589,7 @@ impl UpdateGatewayResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -18289,7 +18597,7 @@ impl UpdateGatewayResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -18323,50 +18631,52 @@ pub mod update_integration_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Represents an update integration request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Represents an update integration request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateIntegrationInput`](crate::input::UpdateIntegrationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateIntegrationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateIntegrationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateIntegrationInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -18386,7 +18696,7 @@ impl UpdateIntegrationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateIntegration,
             aws_http::AwsErrorRetryPolicy,
@@ -18457,7 +18767,7 @@ impl UpdateIntegrationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -18465,7 +18775,7 @@ impl UpdateIntegrationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -18500,59 +18810,61 @@ pub mod update_integration_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] Specifies an update integration response request's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateIntegrationResponseInput`](crate::input::UpdateIntegrationResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateIntegrationResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateIntegrationResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateIntegrationResponseInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -18574,7 +18886,7 @@ impl UpdateIntegrationResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateIntegrationResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -18638,7 +18950,7 @@ impl UpdateIntegrationResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -18646,7 +18958,7 @@ impl UpdateIntegrationResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -18680,49 +18992,50 @@ pub mod update_method_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateMethodInput`](crate::input::UpdateMethodInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateMethodInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateMethodInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateMethodInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -18742,7 +19055,7 @@ impl UpdateMethodInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateMethod,
             aws_http::AwsErrorRetryPolicy,
@@ -18813,7 +19126,7 @@ impl UpdateMethodInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -18821,7 +19134,7 @@ impl UpdateMethodInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -18856,59 +19169,61 @@ pub mod update_method_response_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::string::String) -> Self {
-            self.http_method = Some(inp);
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::string::String) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateMethodResponseInput`](crate::input::UpdateMethodResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateMethodResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateMethodResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateMethodResponseInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -18929,7 +19244,7 @@ impl UpdateMethodResponseInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateMethodResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -18993,7 +19308,7 @@ impl UpdateMethodResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -19001,7 +19316,7 @@ impl UpdateMethodResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -19034,40 +19349,41 @@ pub mod update_model_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the model to update.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.model_name = Some(inp.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_name = Some(input.into());
             self
         }
-        pub fn set_model_name(mut self, inp: std::string::String) -> Self {
-            self.model_name = Some(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_name = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateModelInput`](crate::input::UpdateModelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateModelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateModelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateModelInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 model_name: self.model_name.unwrap_or_default(),
@@ -19086,7 +19402,7 @@ impl UpdateModelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateModel,
             aws_http::AwsErrorRetryPolicy,
@@ -19156,7 +19472,7 @@ impl UpdateModelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -19164,7 +19480,7 @@ impl UpdateModelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -19197,41 +19513,46 @@ pub mod update_request_validator_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of <a>RequestValidator</a> to be updated.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_validator_id = Some(inp.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_validator_id = Some(input.into());
             self
         }
-        pub fn set_request_validator_id(mut self, inp: std::string::String) -> Self {
-            self.request_validator_id = Some(inp);
+        pub fn set_request_validator_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_validator_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateRequestValidatorInput`](crate::input::UpdateRequestValidatorInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRequestValidatorInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateRequestValidatorInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateRequestValidatorInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 request_validator_id: self.request_validator_id.unwrap_or_default(),
@@ -19250,7 +19571,7 @@ impl UpdateRequestValidatorInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateRequestValidator,
             aws_http::AwsErrorRetryPolicy,
@@ -19320,7 +19641,7 @@ impl UpdateRequestValidatorInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -19328,7 +19649,7 @@ impl UpdateRequestValidatorInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -19361,40 +19682,43 @@ pub mod update_resource_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::input::UpdateResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::UpdateResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateResourceInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 resource_id: self.resource_id.unwrap_or_default(),
@@ -19413,7 +19737,7 @@ impl UpdateResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateResource,
             aws_http::AwsErrorRetryPolicy,
@@ -19482,7 +19806,7 @@ impl UpdateResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -19490,7 +19814,7 @@ impl UpdateResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -19522,31 +19846,32 @@ pub mod update_rest_api_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateRestApiInput`](crate::input::UpdateRestApiInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRestApiInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateRestApiInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateRestApiInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 patch_operations: self.patch_operations,
@@ -19564,7 +19889,7 @@ impl UpdateRestApiInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateRestApi,
             aws_http::AwsErrorRetryPolicy,
@@ -19632,7 +19957,7 @@ impl UpdateRestApiInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -19640,7 +19965,7 @@ impl UpdateRestApiInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -19673,40 +19998,41 @@ pub mod update_stage_input {
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::string::String) -> Self {
-            self.rest_api_id = Some(inp);
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to change information about.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::string::String) -> Self {
-            self.stage_name = Some(inp);
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateStageInput`](crate::input::UpdateStageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateStageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateStageInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateStageInput {
                 rest_api_id: self.rest_api_id.unwrap_or_default(),
                 stage_name: self.stage_name.unwrap_or_default(),
@@ -19725,7 +20051,7 @@ impl UpdateStageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateStage,
             aws_http::AwsErrorRetryPolicy,
@@ -19795,7 +20121,7 @@ impl UpdateStageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -19803,7 +20129,7 @@ impl UpdateStageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -19836,40 +20162,44 @@ pub mod update_usage_input {
     }
     impl Builder {
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::string::String) -> Self {
-            self.key_id = Some(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateUsageInput`](crate::input::UpdateUsageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateUsageInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateUsageInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateUsageInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
                 key_id: self.key_id.unwrap_or_default(),
@@ -19888,7 +20218,7 @@ impl UpdateUsageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateUsage,
             aws_http::AwsErrorRetryPolicy,
@@ -19958,7 +20288,7 @@ impl UpdateUsageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -19966,7 +20296,7 @@ impl UpdateUsageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -19998,32 +20328,37 @@ pub mod update_usage_plan_input {
     }
     impl Builder {
         /// <p>[Required] The Id of the to-be-updated usage plan.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::string::String) -> Self {
-            self.usage_plan_id = Some(inp);
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateUsagePlanInput`](crate::input::UpdateUsagePlanInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateUsagePlanInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateUsagePlanInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateUsagePlanInput {
                 usage_plan_id: self.usage_plan_id.unwrap_or_default(),
                 patch_operations: self.patch_operations,
@@ -20041,7 +20376,7 @@ impl UpdateUsagePlanInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateUsagePlan,
             aws_http::AwsErrorRetryPolicy,
@@ -20109,7 +20444,7 @@ impl UpdateUsagePlanInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -20117,7 +20452,7 @@ impl UpdateUsagePlanInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -20149,31 +20484,32 @@ pub mod update_vpc_link_input {
     }
     impl Builder {
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_link_id = Some(inp.into());
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_link_id = Some(input.into());
             self
         }
-        pub fn set_vpc_link_id(mut self, inp: std::string::String) -> Self {
-            self.vpc_link_id = Some(inp);
+        pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_link_id = input;
             self
         }
-        pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_operations = Some(v);
             self
         }
         pub fn set_patch_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
         ) -> Self {
-            self.patch_operations = inp;
+            self.patch_operations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::input::UpdateVpcLinkInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateVpcLinkInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateVpcLinkInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateVpcLinkInput {
                 vpc_link_id: self.vpc_link_id.unwrap_or_default(),
                 patch_operations: self.patch_operations,
@@ -20191,7 +20527,7 @@ impl UpdateVpcLinkInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateVpcLink,
             aws_http::AwsErrorRetryPolicy,
@@ -20259,7 +20595,7 @@ impl UpdateVpcLinkInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -20267,7 +20603,7 @@ impl UpdateVpcLinkInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)

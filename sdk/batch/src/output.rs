@@ -26,21 +26,27 @@ pub mod update_job_queue_output {
     }
     impl Builder {
         /// <p>The name of the job queue.</p>
-        pub fn job_queue_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_queue_name = Some(inp.into());
+        pub fn job_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_queue_name = Some(input.into());
             self
         }
-        pub fn set_job_queue_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_queue_name = inp;
+        pub fn set_job_queue_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.job_queue_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
-        pub fn job_queue_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_queue_arn = Some(inp.into());
+        pub fn job_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_queue_arn = Some(input.into());
             self
         }
-        pub fn set_job_queue_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_queue_arn = inp;
+        pub fn set_job_queue_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.job_queue_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateJobQueueOutput`](crate::output::UpdateJobQueueOutput)
@@ -88,27 +94,27 @@ pub mod update_compute_environment_output {
     impl Builder {
         /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
         /// underscores are allowed.</p>
-        pub fn compute_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.compute_environment_name = Some(inp.into());
+        pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compute_environment_name = Some(input.into());
             self
         }
         pub fn set_compute_environment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.compute_environment_name = inp;
+            self.compute_environment_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-        pub fn compute_environment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.compute_environment_arn = Some(inp.into());
+        pub fn compute_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compute_environment_arn = Some(input.into());
             self
         }
         pub fn set_compute_environment_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.compute_environment_arn = inp;
+            self.compute_environment_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateComputeEnvironmentOutput`](crate::output::UpdateComputeEnvironmentOutput)
@@ -245,30 +251,30 @@ pub mod submit_job_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the job.</p>
-        pub fn job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_arn = Some(inp.into());
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
             self
         }
-        pub fn set_job_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = inp;
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
             self
         }
         /// <p>The name of the job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_name = Some(inp.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
             self
         }
-        pub fn set_job_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_name = inp;
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
             self
         }
         /// <p>The unique identifier for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_id = Some(inp.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_id = inp;
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
             self
         }
         /// Consumes the builder and constructs a [`SubmitJobOutput`](crate::output::SubmitJobOutput)
@@ -319,36 +325,36 @@ pub mod register_job_definition_output {
     }
     impl Builder {
         /// <p>The name of the job definition.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_definition_name = Some(inp.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_definition_name = Some(input.into());
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.job_definition_name = inp;
+            self.job_definition_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-        pub fn job_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_definition_arn = Some(inp.into());
+        pub fn job_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_definition_arn = Some(input.into());
             self
         }
         pub fn set_job_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.job_definition_arn = inp;
+            self.job_definition_arn = input;
             self
         }
         /// <p>The revision of the job definition.</p>
-        pub fn revision(mut self, inp: i32) -> Self {
-            self.revision = Some(inp);
+        pub fn revision(mut self, input: i32) -> Self {
+            self.revision = Some(input);
             self
         }
-        pub fn set_revision(mut self, inp: i32) -> Self {
-            self.revision = Some(inp);
+        pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
+            self.revision = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterJobDefinitionOutput`](crate::output::RegisterJobDefinitionOutput)
@@ -405,11 +411,11 @@ pub mod list_tags_for_resource_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
@@ -453,28 +459,28 @@ pub mod list_jobs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn job_summary_list(mut self, inp: impl Into<crate::model::JobSummary>) -> Self {
+        pub fn job_summary_list(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
             let mut v = self.job_summary_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.job_summary_list = Some(v);
             self
         }
         pub fn set_job_summary_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
         ) -> Self {
-            self.job_summary_list = inp;
+            self.job_summary_list = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a
         /// <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of
         /// results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput)
@@ -515,17 +521,17 @@ pub mod describe_jobs_output {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::JobDetail>>,
     }
     impl Builder {
-        pub fn jobs(mut self, inp: impl Into<crate::model::JobDetail>) -> Self {
+        pub fn jobs(mut self, input: impl Into<crate::model::JobDetail>) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.jobs = Some(v);
             self
         }
         pub fn set_jobs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::JobDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::JobDetail>>,
         ) -> Self {
-            self.jobs = inp;
+            self.jobs = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeJobsOutput`](crate::output::DescribeJobsOutput)
@@ -569,28 +575,28 @@ pub mod describe_job_queues_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn job_queues(mut self, inp: impl Into<crate::model::JobQueueDetail>) -> Self {
+        pub fn job_queues(mut self, input: impl Into<crate::model::JobQueueDetail>) -> Self {
             let mut v = self.job_queues.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.job_queues = Some(v);
             self
         }
         pub fn set_job_queues(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::JobQueueDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::JobQueueDetail>>,
         ) -> Self {
-            self.job_queues = inp;
+            self.job_queues = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results
         /// of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
         /// next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeJobQueuesOutput`](crate::output::DescribeJobQueuesOutput)
@@ -637,28 +643,28 @@ pub mod describe_job_definitions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn job_definitions(mut self, inp: impl Into<crate::model::JobDefinition>) -> Self {
+        pub fn job_definitions(mut self, input: impl Into<crate::model::JobDefinition>) -> Self {
             let mut v = self.job_definitions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.job_definitions = Some(v);
             self
         }
         pub fn set_job_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::JobDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::JobDefinition>>,
         ) -> Self {
-            self.job_definitions = inp;
+            self.job_definitions = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the
         /// results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to
         /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeJobDefinitionsOutput`](crate::output::DescribeJobDefinitionsOutput)
@@ -710,30 +716,30 @@ pub mod describe_compute_environments_output {
     impl Builder {
         pub fn compute_environments(
             mut self,
-            inp: impl Into<crate::model::ComputeEnvironmentDetail>,
+            input: impl Into<crate::model::ComputeEnvironmentDetail>,
         ) -> Self {
             let mut v = self.compute_environments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.compute_environments = Some(v);
             self
         }
         pub fn set_compute_environments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentDetail>>,
         ) -> Self {
-            self.compute_environments = inp;
+            self.compute_environments = input;
             self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
         /// the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used
         /// to retrieve the next page of results. This value is <code>null</code> when there are no more results to
         /// return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeComputeEnvironmentsOutput`](crate::output::DescribeComputeEnvironmentsOutput)
@@ -866,21 +872,27 @@ pub mod create_job_queue_output {
     }
     impl Builder {
         /// <p>The name of the job queue.</p>
-        pub fn job_queue_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_queue_name = Some(inp.into());
+        pub fn job_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_queue_name = Some(input.into());
             self
         }
-        pub fn set_job_queue_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_queue_name = inp;
+        pub fn set_job_queue_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.job_queue_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
-        pub fn job_queue_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_queue_arn = Some(inp.into());
+        pub fn job_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_queue_arn = Some(input.into());
             self
         }
-        pub fn set_job_queue_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_queue_arn = inp;
+        pub fn set_job_queue_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.job_queue_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateJobQueueOutput`](crate::output::CreateJobQueueOutput)
@@ -928,27 +940,27 @@ pub mod create_compute_environment_output {
     impl Builder {
         /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
         /// underscores are allowed.</p>
-        pub fn compute_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.compute_environment_name = Some(inp.into());
+        pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compute_environment_name = Some(input.into());
             self
         }
         pub fn set_compute_environment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.compute_environment_name = inp;
+            self.compute_environment_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-        pub fn compute_environment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.compute_environment_arn = Some(inp.into());
+        pub fn compute_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compute_environment_arn = Some(input.into());
             self
         }
         pub fn set_compute_environment_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.compute_environment_arn = inp;
+            self.compute_environment_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateComputeEnvironmentOutput`](crate::output::CreateComputeEnvironmentOutput)

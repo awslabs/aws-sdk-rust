@@ -64,6 +64,9 @@ impl AddPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_over_limit(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::OverLimit(_))
+    }
 }
 impl std::error::Error for AddPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -140,6 +143,18 @@ impl ChangeMessageVisibilityError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_message_not_inflight(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeMessageVisibilityErrorKind::MessageNotInflight(_)
+        )
+    }
+    pub fn is_receipt_handle_is_invalid(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeMessageVisibilityErrorKind::ReceiptHandleIsInvalid(_)
+        )
     }
 }
 impl std::error::Error for ChangeMessageVisibilityError {
@@ -227,6 +242,30 @@ impl ChangeMessageVisibilityBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_batch_entry_ids_not_distinct(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeMessageVisibilityBatchErrorKind::BatchEntryIdsNotDistinct(_)
+        )
+    }
+    pub fn is_empty_batch_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeMessageVisibilityBatchErrorKind::EmptyBatchRequest(_)
+        )
+    }
+    pub fn is_invalid_batch_entry_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeMessageVisibilityBatchErrorKind::InvalidBatchEntryId(_)
+        )
+    }
+    pub fn is_too_many_entries_in_batch_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeMessageVisibilityBatchErrorKind::TooManyEntriesInBatchRequest(_)
+        )
+    }
 }
 impl std::error::Error for ChangeMessageVisibilityBatchError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -309,6 +348,12 @@ impl CreateQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_queue_deleted_recently(&self) -> bool {
+        matches!(&self.kind, CreateQueueErrorKind::QueueDeletedRecently(_))
+    }
+    pub fn is_queue_name_exists(&self) -> bool {
+        matches!(&self.kind, CreateQueueErrorKind::QueueNameExists(_))
+    }
 }
 impl std::error::Error for CreateQueueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -386,6 +431,15 @@ impl DeleteMessageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_id_format(&self) -> bool {
+        matches!(&self.kind, DeleteMessageErrorKind::InvalidIdFormat(_))
+    }
+    pub fn is_receipt_handle_is_invalid(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMessageErrorKind::ReceiptHandleIsInvalid(_)
+        )
     }
 }
 impl std::error::Error for DeleteMessageError {
@@ -468,6 +522,30 @@ impl DeleteMessageBatchError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_batch_entry_ids_not_distinct(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMessageBatchErrorKind::BatchEntryIdsNotDistinct(_)
+        )
+    }
+    pub fn is_empty_batch_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMessageBatchErrorKind::EmptyBatchRequest(_)
+        )
+    }
+    pub fn is_invalid_batch_entry_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMessageBatchErrorKind::InvalidBatchEntryId(_)
+        )
+    }
+    pub fn is_too_many_entries_in_batch_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMessageBatchErrorKind::TooManyEntriesInBatchRequest(_)
+        )
     }
 }
 impl std::error::Error for DeleteMessageBatchError {
@@ -619,6 +697,12 @@ impl GetQueueAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_attribute_name(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueueAttributesErrorKind::InvalidAttributeName(_)
+        )
+    }
 }
 impl std::error::Error for GetQueueAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -694,6 +778,9 @@ impl GetQueueUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_queue_does_not_exist(&self) -> bool {
+        matches!(&self.kind, GetQueueUrlErrorKind::QueueDoesNotExist(_))
+    }
 }
 impl std::error::Error for GetQueueUrlError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -768,6 +855,12 @@ impl ListDeadLetterSourceQueuesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_queue_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDeadLetterSourceQueuesErrorKind::QueueDoesNotExist(_)
+        )
     }
 }
 impl std::error::Error for ListDeadLetterSourceQueuesError {
@@ -990,6 +1083,12 @@ impl PurgeQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_purge_queue_in_progress(&self) -> bool {
+        matches!(&self.kind, PurgeQueueErrorKind::PurgeQueueInProgress(_))
+    }
+    pub fn is_queue_does_not_exist(&self) -> bool {
+        matches!(&self.kind, PurgeQueueErrorKind::QueueDoesNotExist(_))
+    }
 }
 impl std::error::Error for PurgeQueueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1065,6 +1164,9 @@ impl ReceiveMessageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_over_limit(&self) -> bool {
+        matches!(&self.kind, ReceiveMessageErrorKind::OverLimit(_))
     }
 }
 impl std::error::Error for ReceiveMessageError {
@@ -1215,6 +1317,12 @@ impl SendMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_message_contents(&self) -> bool {
+        matches!(&self.kind, SendMessageErrorKind::InvalidMessageContents(_))
+    }
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(&self.kind, SendMessageErrorKind::UnsupportedOperation(_))
+    }
 }
 impl std::error::Error for SendMessageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1301,6 +1409,39 @@ impl SendMessageBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_batch_entry_ids_not_distinct(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendMessageBatchErrorKind::BatchEntryIdsNotDistinct(_)
+        )
+    }
+    pub fn is_batch_request_too_long(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendMessageBatchErrorKind::BatchRequestTooLong(_)
+        )
+    }
+    pub fn is_empty_batch_request(&self) -> bool {
+        matches!(&self.kind, SendMessageBatchErrorKind::EmptyBatchRequest(_))
+    }
+    pub fn is_invalid_batch_entry_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendMessageBatchErrorKind::InvalidBatchEntryId(_)
+        )
+    }
+    pub fn is_too_many_entries_in_batch_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendMessageBatchErrorKind::TooManyEntriesInBatchRequest(_)
+        )
+    }
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendMessageBatchErrorKind::UnsupportedOperation(_)
+        )
+    }
 }
 impl std::error::Error for SendMessageBatchError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1380,6 +1521,12 @@ impl SetQueueAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_attribute_name(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetQueueAttributesErrorKind::InvalidAttributeName(_)
+        )
     }
 }
 impl std::error::Error for SetQueueAttributesError {

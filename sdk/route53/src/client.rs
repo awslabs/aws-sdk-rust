@@ -276,7 +276,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ActivateKeySigningKeyOutput,
             smithy_http::result::SdkError<crate::error::ActivateKeySigningKeyError>,
         >
@@ -293,22 +293,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
         /// hosted zone.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -327,7 +330,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AssociateVPCWithHostedZoneOutput,
             smithy_http::result::SdkError<crate::error::AssociateVPCWithHostedZoneError>,
         >
@@ -345,31 +348,34 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
         /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.inner = self.inner.set_vpc(inp);
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.inner = self.inner.set_vpc(input);
             self
         }
         /// <p>
         /// <i>Optional:</i> A comment about the association request.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input);
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_comment(inp);
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_comment(input);
             self
         }
     }
@@ -388,7 +394,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ChangeResourceRecordSetsOutput,
             smithy_http::result::SdkError<crate::error::ChangeResourceRecordSetsError>,
         >
@@ -405,24 +411,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
-        pub fn change_batch(mut self, inp: crate::model::ChangeBatch) -> Self {
-            self.inner = self.inner.change_batch(inp);
+        pub fn change_batch(mut self, input: crate::model::ChangeBatch) -> Self {
+            self.inner = self.inner.change_batch(input);
             self
         }
         pub fn set_change_batch(
             mut self,
-            inp: std::option::Option<crate::model::ChangeBatch>,
+            input: std::option::Option<crate::model::ChangeBatch>,
         ) -> Self {
-            self.inner = self.inner.set_change_batch(inp);
+            self.inner = self.inner.set_change_batch(input);
             self
         }
     }
@@ -441,7 +450,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ChangeTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ChangeTagsForResourceError>,
         >
@@ -466,21 +475,24 @@ pub mod fluent_builders {
         /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::TagResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        pub fn set_resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.inner = self.inner.set_resource_type(inp);
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::TagResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
             self
         }
         /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
         /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags
@@ -492,9 +504,9 @@ pub mod fluent_builders {
         }
         pub fn set_add_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_add_tags(inp);
+            self.inner = self.inner.set_add_tags(input);
             self
         }
         /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone.
@@ -505,9 +517,9 @@ pub mod fluent_builders {
         }
         pub fn set_remove_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_remove_tag_keys(inp);
+            self.inner = self.inner.set_remove_tag_keys(input);
             self
         }
     }
@@ -526,7 +538,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateHealthCheckOutput,
             smithy_http::result::SdkError<crate::error::CreateHealthCheckError>,
         >
@@ -563,27 +575,27 @@ pub mod fluent_builders {
         /// an existing health check, Route 53 creates the health check.</p>
         /// </li>
         /// </ul>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_reference(inp);
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_reference(input);
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_caller_reference(inp);
+            self.inner = self.inner.set_caller_reference(input);
             self
         }
         /// <p>A complex type that contains settings for a new health check.</p>
-        pub fn health_check_config(mut self, inp: crate::model::HealthCheckConfig) -> Self {
-            self.inner = self.inner.health_check_config(inp);
+        pub fn health_check_config(mut self, input: crate::model::HealthCheckConfig) -> Self {
+            self.inner = self.inner.health_check_config(input);
             self
         }
         pub fn set_health_check_config(
             mut self,
-            inp: std::option::Option<crate::model::HealthCheckConfig>,
+            input: std::option::Option<crate::model::HealthCheckConfig>,
         ) -> Self {
-            self.inner = self.inner.set_health_check_config(inp);
+            self.inner = self.inner.set_health_check_config(input);
             self
         }
     }
@@ -602,7 +614,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateHostedZoneOutput,
             smithy_http::result::SdkError<crate::error::CreateHostedZoneError>,
         >
@@ -624,38 +636,38 @@ pub mod fluent_builders {
         /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name
         /// is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that
         /// <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>
         /// <p>You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs with the hosted zone,
         /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
         /// after you create a hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.inner = self.inner.set_vpc(inp);
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.inner = self.inner.set_vpc(input);
             self
         }
         /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without
         /// the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a
         /// <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_reference(inp);
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_reference(input);
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_caller_reference(inp);
+            self.inner = self.inner.set_caller_reference(input);
             self
         }
         /// <p>(Optional) A complex type that contains the following optional values:</p>
@@ -669,29 +681,29 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and
         /// the other elements.</p>
-        pub fn hosted_zone_config(mut self, inp: crate::model::HostedZoneConfig) -> Self {
-            self.inner = self.inner.hosted_zone_config(inp);
+        pub fn hosted_zone_config(mut self, input: crate::model::HostedZoneConfig) -> Self {
+            self.inner = self.inner.hosted_zone_config(input);
             self
         }
         pub fn set_hosted_zone_config(
             mut self,
-            inp: std::option::Option<crate::model::HostedZoneConfig>,
+            input: std::option::Option<crate::model::HostedZoneConfig>,
         ) -> Self {
-            self.inner = self.inner.set_hosted_zone_config(inp);
+            self.inner = self.inner.set_hosted_zone_config(input);
             self
         }
         /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set
         /// when you created it. For more information about reusable delegation sets, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
-        pub fn delegation_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delegation_set_id(inp);
+        pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegation_set_id(input);
             self
         }
         pub fn set_delegation_set_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_delegation_set_id(inp);
+            self.inner = self.inner.set_delegation_set_id(input);
             self
         }
     }
@@ -710,7 +722,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateKeySigningKeyOutput,
             smithy_http::result::SdkError<crate::error::CreateKeySigningKeyError>,
         >
@@ -727,24 +739,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string that identifies the request.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_reference(inp);
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_reference(input);
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_caller_reference(inp);
+            self.inner = self.inner.set_caller_reference(input);
             self
         }
         /// <p>The unique string (ID) used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service (AWS KMS).
@@ -792,34 +807,34 @@ pub mod fluent_builders {
         /// </dl>
         /// <p>For more information about working with a customer managed CMK in AWS KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service concepts</a>.</p>
-        pub fn key_management_service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_management_service_arn(inp);
+        pub fn key_management_service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_management_service_arn(input);
             self
         }
         pub fn set_key_management_service_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_key_management_service_arn(inp);
+            self.inner = self.inner.set_key_management_service_arn(input);
             self
         }
         /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
         /// hosted zone.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -838,7 +853,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateQueryLoggingConfigOutput,
             smithy_http::result::SdkError<crate::error::CreateQueryLoggingConfigError>,
         >
@@ -855,12 +870,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone that you want to log queries for. You can log queries only for public hosted zones.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon Route 53 to send query logs to. This is the format
@@ -873,16 +891,16 @@ pub mod fluent_builders {
         /// or the applicable command in one of the AWS SDKs.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_log_group_arn(inp);
+            self.inner = self.inner.cloud_watch_logs_log_group_arn(input);
             self
         }
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_cloud_watch_logs_log_group_arn(inp);
+            self.inner = self.inner.set_cloud_watch_logs_log_group_arn(input);
             self
         }
     }
@@ -901,7 +919,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateReusableDelegationSetOutput,
             smithy_http::result::SdkError<crate::error::CreateReusableDelegationSetError>,
         >
@@ -922,25 +940,28 @@ pub mod fluent_builders {
         /// operation twice. You must use a unique <code>CallerReference</code> string every time you
         /// submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be
         /// any unique string, for example a date/time stamp.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_reference(inp);
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_reference(input);
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_caller_reference(inp);
+            self.inner = self.inner.set_caller_reference(input);
             self
         }
         /// <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID
         /// for that hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
     }
@@ -959,7 +980,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTrafficPolicyOutput,
             smithy_http::result::SdkError<crate::error::CreateTrafficPolicyError>,
         >
@@ -976,31 +997,31 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the traffic policy.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The definition of this traffic policy in JSON format. For more information, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-        pub fn document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document(inp);
+        pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document(input);
             self
         }
-        pub fn set_document(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_document(inp);
+        pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_document(input);
             self
         }
         /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input);
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_comment(inp);
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_comment(input);
             self
         }
     }
@@ -1019,7 +1040,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTrafficPolicyInstanceOutput,
             smithy_http::result::SdkError<crate::error::CreateTrafficPolicyInstanceError>,
         >
@@ -1036,52 +1057,55 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the configuration in a traffic policy.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53 responds to DNS queries by using
         /// the resource record sets that Route 53 creates for this traffic policy instance.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the resource record sets that it creates in the specified hosted zone.</p>
-        pub fn ttl(mut self, inp: i64) -> Self {
-            self.inner = self.inner.ttl(inp);
+        pub fn ttl(mut self, input: i64) -> Self {
+            self.inner = self.inner.ttl(input);
             self
         }
-        pub fn set_ttl(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_ttl(inp);
+        pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_ttl(input);
             self
         }
         /// <p>The ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
-        pub fn traffic_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.traffic_policy_id(inp);
+        pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.traffic_policy_id(input);
             self
         }
         pub fn set_traffic_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_id(inp);
+            self.inner = self.inner.set_traffic_policy_id(input);
             self
         }
         /// <p>The version of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
-        pub fn traffic_policy_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.traffic_policy_version(inp);
+        pub fn traffic_policy_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.traffic_policy_version(input);
             self
         }
-        pub fn set_traffic_policy_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_traffic_policy_version(inp);
+        pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_traffic_policy_version(input);
             self
         }
     }
@@ -1100,7 +1124,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTrafficPolicyVersionOutput,
             smithy_http::result::SdkError<crate::error::CreateTrafficPolicyVersionError>,
         >
@@ -1117,32 +1141,32 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the traffic policy for which you want to create a new version.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code>
         /// request. For more information about the JSON format, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
-        pub fn document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document(inp);
+        pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document(input);
             self
         }
-        pub fn set_document(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_document(inp);
+        pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_document(input);
             self
         }
         /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input);
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_comment(inp);
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_comment(input);
             self
         }
     }
@@ -1161,7 +1185,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateVPCAssociationAuthorizationOutput,
             smithy_http::result::SdkError<crate::error::CreateVPCAssociationAuthorizationError>,
         >
@@ -1178,22 +1202,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating
         /// with your hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.inner = self.inner.set_vpc(inp);
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.inner = self.inner.set_vpc(input);
             self
         }
     }
@@ -1212,7 +1239,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeactivateKeySigningKeyOutput,
             smithy_http::result::SdkError<crate::error::DeactivateKeySigningKeyError>,
         >
@@ -1229,21 +1256,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>A string used to identify a key-signing key (KSK).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -1262,7 +1292,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteHealthCheckOutput,
             smithy_http::result::SdkError<crate::error::DeleteHealthCheckError>,
         >
@@ -1279,12 +1309,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the health check that you want to delete.</p>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_id(inp);
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_id(input);
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_health_check_id(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_health_check_id(input);
             self
         }
     }
@@ -1303,7 +1336,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteHostedZoneOutput,
             smithy_http::result::SdkError<crate::error::DeleteHostedZoneError>,
         >
@@ -1320,12 +1353,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1344,7 +1377,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteKeySigningKeyOutput,
             smithy_http::result::SdkError<crate::error::DeleteKeySigningKeyError>,
         >
@@ -1361,21 +1394,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>A string used to identify a key-signing key (KSK).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -1394,7 +1430,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteQueryLoggingConfigOutput,
             smithy_http::result::SdkError<crate::error::DeleteQueryLoggingConfigError>,
         >
@@ -1411,12 +1447,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the configuration that you want to delete. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1435,7 +1471,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteReusableDelegationSetOutput,
             smithy_http::result::SdkError<crate::error::DeleteReusableDelegationSetError>,
         >
@@ -1452,12 +1488,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the reusable delegation set that you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1476,7 +1512,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteTrafficPolicyOutput,
             smithy_http::result::SdkError<crate::error::DeleteTrafficPolicyError>,
         >
@@ -1493,21 +1529,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the traffic policy that you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The version number of the traffic policy that you want to delete.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
-        pub fn set_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_version(inp);
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
     }
@@ -1526,7 +1562,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteTrafficPolicyInstanceOutput,
             smithy_http::result::SdkError<crate::error::DeleteTrafficPolicyInstanceError>,
         >
@@ -1547,12 +1583,12 @@ pub mod fluent_builders {
         /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created
         /// the traffic policy instance.</p>
         /// </important>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1571,7 +1607,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteVPCAssociationAuthorizationOutput,
             smithy_http::result::SdkError<crate::error::DeleteVPCAssociationAuthorizationError>,
         >
@@ -1589,22 +1625,25 @@ pub mod fluent_builders {
         }
         /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
         /// that was created with a different AWS account, the ID of the hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
         /// that was created with a different AWS account, a complex type that includes the ID and region of the VPC.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.inner = self.inner.set_vpc(inp);
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.inner = self.inner.set_vpc(input);
             self
         }
     }
@@ -1623,7 +1662,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisableHostedZoneDNSSECOutput,
             smithy_http::result::SdkError<crate::error::DisableHostedZoneDNSSECError>,
         >
@@ -1640,12 +1679,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
     }
@@ -1664,7 +1706,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisassociateVPCFromHostedZoneOutput,
             smithy_http::result::SdkError<crate::error::DisassociateVPCFromHostedZoneError>,
         >
@@ -1681,32 +1723,35 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>A complex type that contains information about the VPC that you're disassociating
         /// from the specified hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.inner = self.inner.set_vpc(inp);
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.inner = self.inner.set_vpc(input);
             self
         }
         /// <p>
         /// <i>Optional:</i> A comment about the disassociation request.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input);
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_comment(inp);
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_comment(input);
             self
         }
     }
@@ -1725,7 +1770,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EnableHostedZoneDNSSECOutput,
             smithy_http::result::SdkError<crate::error::EnableHostedZoneDNSSECError>,
         >
@@ -1742,12 +1787,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
     }
@@ -1766,7 +1814,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAccountLimitOutput,
             smithy_http::result::SdkError<crate::error::GetAccountLimitError>,
         >
@@ -1811,12 +1859,15 @@ pub mod fluent_builders {
         /// Amazon Route 53 console.)</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::AccountLimitType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::AccountLimitType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: crate::model::AccountLimitType) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AccountLimitType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
     }
@@ -1835,7 +1886,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetChangeOutput,
             smithy_http::result::SdkError<crate::error::GetChangeError>,
         >
@@ -1853,12 +1904,12 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code>
         /// returned in the <code>Id</code> element when you submitted the request.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1877,7 +1928,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetCheckerIpRangesOutput,
             smithy_http::result::SdkError<crate::error::GetCheckerIpRangesError>,
         >
@@ -1909,7 +1960,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDNSSECOutput,
             smithy_http::result::SdkError<crate::error::GetDNSSECError>,
         >
@@ -1926,12 +1977,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
     }
@@ -1950,7 +2004,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetGeoLocationOutput,
             smithy_http::result::SdkError<crate::error::GetGeoLocationError>,
         >
@@ -1997,34 +2051,37 @@ pub mod fluent_builders {
         /// <b>SA</b>: South America</p>
         /// </li>
         /// </ul>
-        pub fn continent_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continent_code(inp);
+        pub fn continent_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continent_code(input);
             self
         }
-        pub fn set_continent_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_continent_code(inp);
+        pub fn set_continent_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_continent_code(input);
             self
         }
         /// <p>Amazon Route 53 uses the two-letter country codes that are specified in
         /// <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-        pub fn country_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.country_code(inp);
+        pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.country_code(input);
             self
         }
-        pub fn set_country_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_country_code(inp);
+        pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_country_code(input);
             self
         }
         /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a>  on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-        pub fn subdivision_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdivision_code(inp);
+        pub fn subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdivision_code(input);
             self
         }
         pub fn set_subdivision_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subdivision_code(inp);
+            self.inner = self.inner.set_subdivision_code(input);
             self
         }
     }
@@ -2043,7 +2100,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetHealthCheckOutput,
             smithy_http::result::SdkError<crate::error::GetHealthCheckError>,
         >
@@ -2061,12 +2118,15 @@ pub mod fluent_builders {
         }
         /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set,
         /// you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_id(inp);
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_id(input);
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_health_check_id(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_health_check_id(input);
             self
         }
     }
@@ -2085,7 +2145,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetHealthCheckCountOutput,
             smithy_http::result::SdkError<crate::error::GetHealthCheckCountError>,
         >
@@ -2117,7 +2177,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetHealthCheckLastFailureReasonOutput,
             smithy_http::result::SdkError<crate::error::GetHealthCheckLastFailureReasonError>,
         >
@@ -2139,12 +2199,15 @@ pub mod fluent_builders {
         /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the
         /// CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
         /// </note>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_id(inp);
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_id(input);
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_health_check_id(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_health_check_id(input);
             self
         }
     }
@@ -2163,7 +2226,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetHealthCheckStatusOutput,
             smithy_http::result::SdkError<crate::error::GetHealthCheckStatusError>,
         >
@@ -2185,12 +2248,15 @@ pub mod fluent_builders {
         /// <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console.
         /// You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>
         /// </note>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_id(inp);
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_id(input);
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_health_check_id(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_health_check_id(input);
             self
         }
     }
@@ -2209,7 +2275,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetHostedZoneOutput,
             smithy_http::result::SdkError<crate::error::GetHostedZoneError>,
         >
@@ -2226,12 +2292,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -2250,7 +2316,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetHostedZoneCountOutput,
             smithy_http::result::SdkError<crate::error::GetHostedZoneCountError>,
         >
@@ -2282,7 +2348,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetHostedZoneLimitOutput,
             smithy_http::result::SdkError<crate::error::GetHostedZoneLimitError>,
         >
@@ -2311,21 +2377,27 @@ pub mod fluent_builders {
         /// associate with the specified private hosted zone.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::HostedZoneLimitType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::HostedZoneLimitType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: crate::model::HostedZoneLimitType) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::HostedZoneLimitType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The ID of the hosted zone that you want to get a limit for.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
     }
@@ -2344,7 +2416,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetQueryLoggingConfigOutput,
             smithy_http::result::SdkError<crate::error::GetQueryLoggingConfigError>,
         >
@@ -2361,12 +2433,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -2385,7 +2457,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetReusableDelegationSetOutput,
             smithy_http::result::SdkError<crate::error::GetReusableDelegationSetError>,
         >
@@ -2402,12 +2474,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -2426,7 +2498,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetReusableDelegationSetLimitOutput,
             smithy_http::result::SdkError<crate::error::GetReusableDelegationSetLimitError>,
         >
@@ -2444,21 +2516,27 @@ pub mod fluent_builders {
         }
         /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate
         /// with the specified reusable delegation set.</p>
-        pub fn r#type(mut self, inp: crate::model::ReusableDelegationSetLimitType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ReusableDelegationSetLimitType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: crate::model::ReusableDelegationSetLimitType) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The ID of the delegation set that you want to get the limit for.</p>
-        pub fn delegation_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delegation_set_id(inp);
+        pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegation_set_id(input);
             self
         }
-        pub fn set_delegation_set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_delegation_set_id(inp);
+        pub fn set_delegation_set_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_delegation_set_id(input);
             self
         }
     }
@@ -2477,7 +2555,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetTrafficPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetTrafficPolicyError>,
         >
@@ -2494,21 +2572,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the traffic policy that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The version number of the traffic policy that you want to get information about.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
-        pub fn set_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_version(inp);
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
     }
@@ -2527,7 +2605,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetTrafficPolicyInstanceOutput,
             smithy_http::result::SdkError<crate::error::GetTrafficPolicyInstanceError>,
         >
@@ -2544,12 +2622,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the traffic policy instance that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -2568,7 +2646,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetTrafficPolicyInstanceCountOutput,
             smithy_http::result::SdkError<crate::error::GetTrafficPolicyInstanceCountError>,
         >
@@ -2600,7 +2678,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListGeoLocationsOutput,
             smithy_http::result::SdkError<crate::error::ListGeoLocationsError>,
         >
@@ -2621,29 +2699,29 @@ pub mod fluent_builders {
         /// response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>
         /// <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code>
         /// when you're listing countries or countries with their subdivisions.</p>
-        pub fn start_continent_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_continent_code(inp);
+        pub fn start_continent_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_continent_code(input);
             self
         }
         pub fn set_start_continent_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_start_continent_code(inp);
+            self.inner = self.inner.set_start_continent_code(input);
             self
         }
         /// <p>The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already
         /// returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the
         /// previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.</p>
-        pub fn start_country_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_country_code(inp);
+        pub fn start_country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_country_code(input);
             self
         }
         pub fn set_start_country_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_start_country_code(inp);
+            self.inner = self.inner.set_start_country_code(input);
             self
         }
         /// <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports
@@ -2651,25 +2729,25 @@ pub mod fluent_builders {
         /// <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code>
         /// to return the next page of results.</p>
         /// <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
-        pub fn start_subdivision_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_subdivision_code(inp);
+        pub fn start_subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_subdivision_code(input);
             self
         }
         pub fn set_start_subdivision_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_start_subdivision_code(inp);
+            self.inner = self.inner.set_start_subdivision_code(input);
             self
         }
         /// <p>(Optional) The maximum number of geolocations to be included in the response body for this request. If more than <code>maxitems</code>
         /// geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in the response is <code>true</code>.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -2688,7 +2766,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListHealthChecksOutput,
             smithy_http::result::SdkError<crate::error::ListHealthChecksError>,
         >
@@ -2709,22 +2787,22 @@ pub mod fluent_builders {
         /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
         /// which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request.
         /// Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -2743,7 +2821,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListHostedZonesOutput,
             smithy_http::result::SdkError<crate::error::ListHostedZonesError>,
         >
@@ -2764,36 +2842,36 @@ pub mod fluent_builders {
         /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
         /// which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code>
         /// hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code>
         /// is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
         /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated
         /// with a reusable delegation set, specify the ID of that reusable delegation set. </p>
-        pub fn delegation_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delegation_set_id(inp);
+        pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegation_set_id(input);
             self
         }
         pub fn set_delegation_set_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_delegation_set_id(inp);
+            self.inner = self.inner.set_delegation_set_id(input);
             self
         }
     }
@@ -2812,7 +2890,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListHostedZonesByNameOutput,
             smithy_http::result::SdkError<crate::error::ListHostedZonesByNameError>,
         >
@@ -2832,12 +2910,12 @@ pub mod fluent_builders {
         /// specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of
         /// the hosted zones that were created by the current AWS account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
         /// <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.</p>
-        pub fn dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dns_name(inp);
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dns_name(input);
             self
         }
-        pub fn set_dns_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_dns_name(inp);
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dns_name(input);
             self
         }
         /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>
@@ -2845,23 +2923,26 @@ pub mod fluent_builders {
         /// <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to
         /// <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of
         /// <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>The maximum number of hosted zones to be included in the response body for this request. If you have more than <code>maxitems</code>
         /// hosted zones, then the value of the <code>IsTruncated</code> element in the response is true, and the values of <code>NextDNSName</code> and
         /// <code>NextHostedZoneId</code> specify the first hosted zone in the next group of <code>maxitems</code> hosted zones. </p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -2880,7 +2961,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListHostedZonesByVPCOutput,
             smithy_http::result::SdkError<crate::error::ListHostedZonesByVPCError>,
         >
@@ -2897,44 +2978,47 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input);
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_vpc_id(inp);
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_vpc_id(input);
             self
         }
         /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in. </p>
-        pub fn vpc_region(mut self, inp: crate::model::VpcRegion) -> Self {
-            self.inner = self.inner.vpc_region(inp);
+        pub fn vpc_region(mut self, input: crate::model::VpcRegion) -> Self {
+            self.inner = self.inner.vpc_region(input);
             self
         }
-        pub fn set_vpc_region(mut self, inp: std::option::Option<crate::model::VpcRegion>) -> Self {
-            self.inner = self.inner.set_vpc_region(inp);
+        pub fn set_vpc_region(
+            mut self,
+            input: std::option::Option<crate::model::VpcRegion>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_region(input);
             self
         }
         /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with
         /// more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains
         /// an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
         /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones.
         /// To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
         /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
         /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2953,7 +3037,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListQueryLoggingConfigsOutput,
             smithy_http::result::SdkError<crate::error::ListQueryLoggingConfigsError>,
         >
@@ -2973,12 +3057,15 @@ pub mod fluent_builders {
         /// <code>HostedZoneId</code>. </p>
         /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations
         /// that are associated with the current AWS account.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>(Optional) If the current AWS account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code>
@@ -2986,12 +3073,12 @@ pub mod fluent_builders {
         /// <p>For the first <code>ListQueryLoggingConfigs</code> request, omit this value.</p>
         /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
         /// for <code>NextToken</code> in the request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>(Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request.
@@ -2999,12 +3086,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
         /// in the response to get the next page of results.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -3023,7 +3110,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListResourceRecordSetsOutput,
             smithy_http::result::SdkError<crate::error::ListResourceRecordSetsError>,
         >
@@ -3040,26 +3127,29 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>The first name in the lexicographic ordering of resource record sets that you want to list.
         /// If the specified record name doesn't exist, the results begin with the first resource record set that has a name
         /// greater than the value of <code>name</code>.</p>
-        pub fn start_record_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_record_name(inp);
+        pub fn start_record_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_record_name(input);
             self
         }
         pub fn set_start_record_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_start_record_name(inp);
+            self.inner = self.inner.set_start_record_name(input);
             self
         }
         /// <p>The type of resource record set to begin the record listing from.</p>
@@ -3102,42 +3192,42 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
-        pub fn start_record_type(mut self, inp: crate::model::RrType) -> Self {
-            self.inner = self.inner.start_record_type(inp);
+        pub fn start_record_type(mut self, input: crate::model::RrType) -> Self {
+            self.inner = self.inner.start_record_type(input);
             self
         }
         pub fn set_start_record_type(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.inner = self.inner.set_start_record_type(inp);
+            self.inner = self.inner.set_start_record_type(input);
             self
         }
         /// <p>
         /// <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type,
         /// specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current
         /// DNS name and type.</p>
-        pub fn start_record_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_record_identifier(inp);
+        pub fn start_record_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_record_identifier(input);
             self
         }
         pub fn set_start_record_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_start_record_identifier(inp);
+            self.inner = self.inner.set_start_record_identifier(input);
             self
         }
         /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes
         /// more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>,
         /// and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first
         /// resource record set in the next group of <code>maxitems</code> resource record sets.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3156,7 +3246,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListReusableDelegationSetsOutput,
             smithy_http::result::SdkError<crate::error::ListReusableDelegationSetsError>,
         >
@@ -3177,22 +3267,22 @@ pub mod fluent_builders {
         /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
         /// which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more reusable delegation sets to get.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request. If you specify a value
         /// greater than 100, Route 53 returns only the first 100 reusable delegation sets.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3211,7 +3301,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         >
@@ -3236,21 +3326,24 @@ pub mod fluent_builders {
         /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::TagResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        pub fn set_resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.inner = self.inner.set_resource_type(inp);
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::TagResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
             self
         }
         /// <p>The ID of the resource for which you want to retrieve tags.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input);
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_id(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
     }
@@ -3269,7 +3362,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourcesOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourcesError>,
         >
@@ -3294,12 +3387,15 @@ pub mod fluent_builders {
         /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::TagResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        pub fn set_resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.inner = self.inner.set_resource_type(inp);
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::TagResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
             self
         }
         /// <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
@@ -3309,9 +3405,9 @@ pub mod fluent_builders {
         }
         pub fn set_resource_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_resource_ids(inp);
+            self.inner = self.inner.set_resource_ids(input);
             self
         }
     }
@@ -3330,7 +3426,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrafficPoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListTrafficPoliciesError>,
         >
@@ -3351,27 +3447,27 @@ pub mod fluent_builders {
         /// <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>.
         /// For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the
         /// previous response.</p>
-        pub fn traffic_policy_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.traffic_policy_id_marker(inp);
+        pub fn traffic_policy_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.traffic_policy_id_marker(input);
             self
         }
         pub fn set_traffic_policy_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_id_marker(inp);
+            self.inner = self.inner.set_traffic_policy_id_marker(input);
             self
         }
         /// <p>(Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this request. If you have more than
         /// <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the
         /// value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you submit
         /// another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3390,7 +3486,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrafficPolicyInstancesOutput,
             smithy_http::result::SdkError<crate::error::ListTrafficPolicyInstancesError>,
         >
@@ -3411,15 +3507,15 @@ pub mod fluent_builders {
         /// specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance
         /// in the next group of traffic policy instances.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn hosted_zone_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id_marker(inp);
+        pub fn hosted_zone_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id_marker(input);
             self
         }
         pub fn set_hosted_zone_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_hosted_zone_id_marker(inp);
+            self.inner = self.inner.set_hosted_zone_id_marker(input);
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -3429,16 +3525,16 @@ pub mod fluent_builders {
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.traffic_policy_instance_name_marker(inp);
+            self.inner = self.inner.traffic_policy_instance_name_marker(input);
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_instance_name_marker(inp);
+            self.inner = self.inner.set_traffic_policy_instance_name_marker(input);
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -3446,15 +3542,15 @@ pub mod fluent_builders {
         /// specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance
         /// in the next group of traffic policy instances.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.inner = self.inner.traffic_policy_instance_type_marker(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.inner = self.inner.traffic_policy_instance_type_marker(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_instance_type_marker(inp);
+            self.inner = self.inner.set_traffic_policy_instance_type_marker(input);
             self
         }
         /// <p>The maximum number of traffic policy instances that you want Amazon Route 53 to return in response to a <code>ListTrafficPolicyInstances</code> request.
@@ -3462,12 +3558,12 @@ pub mod fluent_builders {
         /// <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
         /// <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group of <code>MaxItems</code>
         /// traffic policy instances.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3486,7 +3582,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrafficPolicyInstancesByHostedZoneOutput,
             smithy_http::result::SdkError<
                 crate::error::ListTrafficPolicyInstancesByHostedZoneError,
@@ -3505,12 +3601,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone that you want to list traffic policy instances for.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances.
@@ -3520,16 +3619,16 @@ pub mod fluent_builders {
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.traffic_policy_instance_name_marker(inp);
+            self.inner = self.inner.traffic_policy_instance_name_marker(input);
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_instance_name_marker(inp);
+            self.inner = self.inner.set_traffic_policy_instance_name_marker(input);
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances.
@@ -3537,27 +3636,27 @@ pub mod fluent_builders {
         /// specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance
         /// in the next group of traffic policy instances.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.inner = self.inner.traffic_policy_instance_type_marker(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.inner = self.inner.traffic_policy_instance_type_marker(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_instance_type_marker(inp);
+            self.inner = self.inner.set_traffic_policy_instance_type_marker(input);
             self
         }
         /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than
         /// <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>,
         /// and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
         /// represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3576,7 +3675,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrafficPolicyInstancesByPolicyOutput,
             smithy_http::result::SdkError<crate::error::ListTrafficPolicyInstancesByPolicyError>,
         >
@@ -3593,25 +3692,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
-        pub fn traffic_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.traffic_policy_id(inp);
+        pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.traffic_policy_id(input);
             self
         }
         pub fn set_traffic_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_id(inp);
+            self.inner = self.inner.set_traffic_policy_id(input);
             self
         }
         /// <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the
         /// traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
-        pub fn traffic_policy_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.traffic_policy_version(inp);
+        pub fn traffic_policy_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.traffic_policy_version(input);
             self
         }
-        pub fn set_traffic_policy_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_traffic_policy_version(inp);
+        pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_traffic_policy_version(input);
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -3619,15 +3718,15 @@ pub mod fluent_builders {
         /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response,
         /// which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn hosted_zone_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id_marker(inp);
+        pub fn hosted_zone_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id_marker(input);
             self
         }
         pub fn set_hosted_zone_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_hosted_zone_id_marker(inp);
+            self.inner = self.inner.set_hosted_zone_id_marker(input);
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -3637,16 +3736,16 @@ pub mod fluent_builders {
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.traffic_policy_instance_name_marker(inp);
+            self.inner = self.inner.traffic_policy_instance_name_marker(input);
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_instance_name_marker(inp);
+            self.inner = self.inner.set_traffic_policy_instance_name_marker(input);
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -3654,27 +3753,27 @@ pub mod fluent_builders {
         /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code>
         /// from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.inner = self.inner.traffic_policy_instance_type_marker(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.inner = self.inner.traffic_policy_instance_type_marker(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_instance_type_marker(inp);
+            self.inner = self.inner.set_traffic_policy_instance_type_marker(input);
             self
         }
         /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than
         /// <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>,
         /// and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
         /// represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3693,7 +3792,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrafficPolicyVersionsOutput,
             smithy_http::result::SdkError<crate::error::ListTrafficPolicyVersionsError>,
         >
@@ -3710,12 +3809,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
@@ -3725,28 +3824,28 @@ pub mod fluent_builders {
         /// response.</p>
         pub fn traffic_policy_version_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.traffic_policy_version_marker(inp);
+            self.inner = self.inner.traffic_policy_version_marker(input);
             self
         }
         pub fn set_traffic_policy_version_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_version_marker(inp);
+            self.inner = self.inner.set_traffic_policy_version_marker(input);
             self
         }
         /// <p>The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified
         /// traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>,
         /// and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit
         /// another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3765,7 +3864,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListVPCAssociationAuthorizationsOutput,
             smithy_http::result::SdkError<crate::error::ListVPCAssociationAuthorizationsError>,
         >
@@ -3782,12 +3881,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>
@@ -3795,23 +3897,23 @@ pub mod fluent_builders {
         /// that can be associated with the specified hosted zone. To get the next page of results, submit another request,
         /// and include the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
         /// in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>
         /// <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return.
         /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -3830,7 +3932,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TestDNSAnswerOutput,
             smithy_http::result::SdkError<crate::error::TestDNSAnswerError>,
         >
@@ -3847,54 +3949,57 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hosted_zone_id(inp);
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hosted_zone_id(input);
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_hosted_zone_id(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
         /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
-        pub fn record_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.record_name(inp);
+        pub fn record_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.record_name(input);
             self
         }
-        pub fn set_record_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_record_name(inp);
+        pub fn set_record_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_record_name(input);
             self
         }
         /// <p>The type of the resource record set.</p>
-        pub fn record_type(mut self, inp: crate::model::RrType) -> Self {
-            self.inner = self.inner.record_type(inp);
+        pub fn record_type(mut self, input: crate::model::RrType) -> Self {
+            self.inner = self.inner.record_type(input);
             self
         }
-        pub fn set_record_type(mut self, inp: std::option::Option<crate::model::RrType>) -> Self {
-            self.inner = self.inner.set_record_type(inp);
+        pub fn set_record_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
+            self.inner = self.inner.set_record_type(input);
             self
         }
         /// <p>If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
         /// If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
         /// (<code>us-east-1</code>).</p>
-        pub fn resolver_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_ip(inp);
+        pub fn resolver_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_ip(input);
             self
         }
-        pub fn set_resolver_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resolver_ip(inp);
+        pub fn set_resolver_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resolver_ip(input);
             self
         }
         /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client
         /// in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
-        pub fn edns0_client_subnet_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.edns0_client_subnet_ip(inp);
+        pub fn edns0_client_subnet_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edns0_client_subnet_ip(input);
             self
         }
         pub fn set_edns0_client_subnet_ip(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_edns0_client_subnet_ip(inp);
+            self.inner = self.inner.set_edns0_client_subnet_ip(input);
             self
         }
         /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address
@@ -3912,15 +4017,15 @@ pub mod fluent_builders {
         /// <b>IPv6</b>: Specify a value between 0 and 128</p>
         /// </li>
         /// </ul>
-        pub fn edns0_client_subnet_mask(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.edns0_client_subnet_mask(inp);
+        pub fn edns0_client_subnet_mask(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edns0_client_subnet_mask(input);
             self
         }
         pub fn set_edns0_client_subnet_mask(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_edns0_client_subnet_mask(inp);
+            self.inner = self.inner.set_edns0_client_subnet_mask(input);
             self
         }
     }
@@ -3939,7 +4044,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateHealthCheckOutput,
             smithy_http::result::SdkError<crate::error::UpdateHealthCheckError>,
         >
@@ -3957,12 +4062,15 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the health check for which you want detailed information. When you created the health check,
         /// <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_id(inp);
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_id(input);
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_health_check_id(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_health_check_id(input);
             self
         }
         /// <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by 1 each time you
@@ -3980,12 +4088,12 @@ pub mod fluent_builders {
         /// got the version number. Route 53 does not update the health check, and it returns a <code>HealthCheckVersionMismatch</code> error.</p>
         /// </li>
         /// </ul>
-        pub fn health_check_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.health_check_version(inp);
+        pub fn health_check_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.health_check_version(input);
             self
         }
-        pub fn set_health_check_version(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_health_check_version(inp);
+        pub fn set_health_check_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_health_check_version(input);
             self
         }
         /// <p>The IPv4 or IPv6 IP address for the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for
@@ -4048,12 +4156,12 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_address(inp);
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_address(input);
             self
         }
-        pub fn set_ip_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_ip_address(inp);
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ip_address(input);
             self
         }
         /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p>
@@ -4061,24 +4169,27 @@ pub mod fluent_builders {
         /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or
         /// <code>CALCULATED</code>.</p>
         /// </note>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>The path that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint
         /// will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example the file /docs/route53-health-check.html.
         /// You can also include query string parameters, for example, <code>/welcome.html?language=jp&login=y</code>. </p>
         /// <p>Specify this value only if you want to change it.</p>
-        pub fn resource_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_path(inp);
+        pub fn resource_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_path(input);
             self
         }
-        pub fn set_resource_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_path(inp);
+        pub fn set_resource_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_path(input);
             self
         }
         /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
@@ -4134,26 +4245,32 @@ pub mod fluent_builders {
         /// <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does
         /// when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a
         /// <code>Host</code> header.</p>
-        pub fn fully_qualified_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fully_qualified_domain_name(inp);
+        pub fn fully_qualified_domain_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.fully_qualified_domain_name(input);
             self
         }
         pub fn set_fully_qualified_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_fully_qualified_domain_name(inp);
+            self.inner = self.inner.set_fully_qualified_domain_name(input);
             self
         }
         /// <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want
         /// Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers
         /// the resource healthy. (You can't change the value of <code>Type</code> when you update a health check.)</p>
-        pub fn search_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_string(inp);
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_string(input);
             self
         }
-        pub fn set_search_string(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_search_string(inp);
+        pub fn set_search_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_search_string(input);
             self
         }
         /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint
@@ -4161,22 +4278,22 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
-        pub fn failure_threshold(mut self, inp: i32) -> Self {
-            self.inner = self.inner.failure_threshold(inp);
+        pub fn failure_threshold(mut self, input: i32) -> Self {
+            self.inner = self.inner.failure_threshold(input);
             self
         }
-        pub fn set_failure_threshold(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_failure_threshold(inp);
+        pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_failure_threshold(input);
             self
         }
         /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it
         /// otherwise would be considered healthy.</p>
-        pub fn inverted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.inverted(inp);
+        pub fn inverted(mut self, input: bool) -> Self {
+            self.inner = self.inner.inverted(input);
             self
         }
-        pub fn set_inverted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_inverted(inp);
+        pub fn set_inverted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_inverted(input);
             self
         }
         /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
@@ -4203,12 +4320,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Charges for a health check still apply when the health check is disabled. For more information, see
         /// <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
-        pub fn disabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disabled(inp);
+        pub fn disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.disabled(input);
             self
         }
-        pub fn set_disabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_disabled(inp);
+        pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_disabled(input);
             self
         }
         /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon Route 53 must consider healthy for the
@@ -4223,12 +4340,12 @@ pub mod fluent_builders {
         /// <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p>
         /// </li>
         /// </ul>
-        pub fn health_threshold(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_threshold(inp);
+        pub fn health_threshold(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_threshold(input);
             self
         }
-        pub fn set_health_threshold(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_health_threshold(inp);
+        pub fn set_health_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_health_threshold(input);
             self
         }
         /// <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a
@@ -4239,9 +4356,9 @@ pub mod fluent_builders {
         }
         pub fn set_child_health_checks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_child_health_checks(inp);
+            self.inner = self.inner.set_child_health_checks(input);
             self
         }
         /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code>
@@ -4255,12 +4372,12 @@ pub mod fluent_builders {
         /// <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not
         /// include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the
         /// second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
-        pub fn enable_sni(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_sni(inp);
+        pub fn enable_sni(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_sni(input);
             self
         }
-        pub fn set_enable_sni(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_sni(inp);
+        pub fn set_enable_sni(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_sni(input);
             self
         }
         /// <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check
@@ -4271,22 +4388,22 @@ pub mod fluent_builders {
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
         ) -> Self {
-            self.inner = self.inner.set_regions(inp);
+            self.inner = self.inner.set_regions(input);
             self
         }
         /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether
         /// the specified health check is healthy.</p>
-        pub fn alarm_identifier(mut self, inp: crate::model::AlarmIdentifier) -> Self {
-            self.inner = self.inner.alarm_identifier(inp);
+        pub fn alarm_identifier(mut self, input: crate::model::AlarmIdentifier) -> Self {
+            self.inner = self.inner.alarm_identifier(input);
             self
         }
         pub fn set_alarm_identifier(
             mut self,
-            inp: std::option::Option<crate::model::AlarmIdentifier>,
+            input: std::option::Option<crate::model::AlarmIdentifier>,
         ) -> Self {
-            self.inner = self.inner.set_alarm_identifier(inp);
+            self.inner = self.inner.set_alarm_identifier(input);
             self
         }
         /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign
@@ -4308,16 +4425,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn insufficient_data_health_status(
             mut self,
-            inp: crate::model::InsufficientDataHealthStatus,
+            input: crate::model::InsufficientDataHealthStatus,
         ) -> Self {
-            self.inner = self.inner.insufficient_data_health_status(inp);
+            self.inner = self.inner.insufficient_data_health_status(input);
             self
         }
         pub fn set_insufficient_data_health_status(
             mut self,
-            inp: std::option::Option<crate::model::InsufficientDataHealthStatus>,
+            input: std::option::Option<crate::model::InsufficientDataHealthStatus>,
         ) -> Self {
-            self.inner = self.inner.set_insufficient_data_health_status(inp);
+            self.inner = self.inner.set_insufficient_data_health_status(input);
             self
         }
         /// <p>A complex type that contains one <code>ResettableElementName</code> element for each element that you want to reset to the default value.
@@ -4357,9 +4474,9 @@ pub mod fluent_builders {
         }
         pub fn set_reset_elements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResettableElementName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResettableElementName>>,
         ) -> Self {
-            self.inner = self.inner.set_reset_elements(inp);
+            self.inner = self.inner.set_reset_elements(input);
             self
         }
     }
@@ -4378,7 +4495,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateHostedZoneCommentOutput,
             smithy_http::result::SdkError<crate::error::UpdateHostedZoneCommentError>,
         >
@@ -4395,22 +4512,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the hosted zone that you want to update the comment for.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the
         /// <code>Comment</code> element, if any.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input);
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_comment(inp);
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_comment(input);
             self
         }
     }
@@ -4429,7 +4546,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTrafficPolicyCommentOutput,
             smithy_http::result::SdkError<crate::error::UpdateTrafficPolicyCommentError>,
         >
@@ -4446,30 +4563,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
-        pub fn set_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_version(inp);
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
         /// <p>The new comment for the specified traffic policy and version.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input);
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_comment(inp);
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_comment(input);
             self
         }
     }
@@ -4488,7 +4605,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTrafficPolicyInstanceOutput,
             smithy_http::result::SdkError<crate::error::UpdateTrafficPolicyInstanceError>,
         >
@@ -4505,42 +4622,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the traffic policy instance that you want to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
-        pub fn ttl(mut self, inp: i64) -> Self {
-            self.inner = self.inner.ttl(inp);
+        pub fn ttl(mut self, input: i64) -> Self {
+            self.inner = self.inner.ttl(input);
             self
         }
-        pub fn set_ttl(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_ttl(inp);
+        pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_ttl(input);
             self
         }
         /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-        pub fn traffic_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.traffic_policy_id(inp);
+        pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.traffic_policy_id(input);
             self
         }
         pub fn set_traffic_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_traffic_policy_id(inp);
+            self.inner = self.inner.set_traffic_policy_id(input);
             self
         }
         /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-        pub fn traffic_policy_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.traffic_policy_version(inp);
+        pub fn traffic_policy_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.traffic_policy_version(input);
             self
         }
-        pub fn set_traffic_policy_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_traffic_policy_version(inp);
+        pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_traffic_policy_version(input);
             self
         }
     }

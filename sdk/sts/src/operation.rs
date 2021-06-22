@@ -97,7 +97,8 @@ impl AssumeRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssumeRole {
-    type Output = Result<crate::output::AssumeRoleOutput, crate::error::AssumeRoleError>;
+    type Output =
+        std::result::Result<crate::output::AssumeRoleOutput, crate::error::AssumeRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_assume_role_error(response)
@@ -252,8 +253,10 @@ impl AssumeRoleWithSAML {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssumeRoleWithSAML {
-    type Output =
-        Result<crate::output::AssumeRoleWithSAMLOutput, crate::error::AssumeRoleWithSAMLError>;
+    type Output = std::result::Result<
+        crate::output::AssumeRoleWithSAMLOutput,
+        crate::error::AssumeRoleWithSAMLError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_assume_role_with_saml_error(response)
@@ -412,7 +415,7 @@ impl AssumeRoleWithWebIdentity {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssumeRoleWithWebIdentity {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssumeRoleWithWebIdentityOutput,
         crate::error::AssumeRoleWithWebIdentityError,
     >;
@@ -475,7 +478,7 @@ impl DecodeAuthorizationMessage {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DecodeAuthorizationMessage {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DecodeAuthorizationMessageOutput,
         crate::error::DecodeAuthorizationMessageError,
     >;
@@ -520,8 +523,10 @@ impl GetAccessKeyInfo {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAccessKeyInfo {
-    type Output =
-        Result<crate::output::GetAccessKeyInfoOutput, crate::error::GetAccessKeyInfoError>;
+    type Output = std::result::Result<
+        crate::output::GetAccessKeyInfoOutput,
+        crate::error::GetAccessKeyInfoError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_key_info_error(response)
@@ -555,8 +560,10 @@ impl GetCallerIdentity {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetCallerIdentity {
-    type Output =
-        Result<crate::output::GetCallerIdentityOutput, crate::error::GetCallerIdentityError>;
+    type Output = std::result::Result<
+        crate::output::GetCallerIdentityOutput,
+        crate::error::GetCallerIdentityError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_caller_identity_error(response)
@@ -719,8 +726,10 @@ impl GetFederationToken {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetFederationToken {
-    type Output =
-        Result<crate::output::GetFederationTokenOutput, crate::error::GetFederationTokenError>;
+    type Output = std::result::Result<
+        crate::output::GetFederationTokenOutput,
+        crate::error::GetFederationTokenError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_federation_token_error(response)
@@ -796,7 +805,10 @@ impl GetSessionToken {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSessionToken {
-    type Output = Result<crate::output::GetSessionTokenOutput, crate::error::GetSessionTokenError>;
+    type Output = std::result::Result<
+        crate::output::GetSessionTokenOutput,
+        crate::error::GetSessionTokenError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_session_token_error(response)

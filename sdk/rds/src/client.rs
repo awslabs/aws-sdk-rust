@@ -545,7 +545,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddRoleToDBClusterOutput,
             smithy_http::result::SdkError<crate::error::AddRoleToDBClusterError>,
         >
@@ -562,35 +562,35 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster to associate the IAM role with.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB
         /// cluster, for example, <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with.
         /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(inp);
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input);
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_feature_name(inp);
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_feature_name(input);
             self
         }
     }
@@ -609,7 +609,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddRoleToDBInstanceOutput,
             smithy_http::result::SdkError<crate::error::AddRoleToDBInstanceError>,
         >
@@ -626,36 +626,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB instance to associate the IAM role with.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for
         /// example <code>arn:aws:iam::123456789012:role/AccessRole</code>. </p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be associated with.
         /// For the list of supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(inp);
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input);
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_feature_name(inp);
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_feature_name(input);
             self
         }
     }
@@ -674,7 +674,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddSourceIdentifierToSubscriptionOutput,
             smithy_http::result::SdkError<crate::error::AddSourceIdentifierToSubscriptionError>,
         >
@@ -691,15 +691,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input);
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_name(inp);
+            self.inner = self.inner.set_subscription_name(input);
             self
         }
         /// <p>The identifier of the event source to be added.</p>
@@ -724,15 +724,15 @@ pub mod fluent_builders {
         /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(input);
             self
         }
         pub fn set_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_identifier(inp);
+            self.inner = self.inner.set_source_identifier(input);
             self
         }
     }
@@ -751,7 +751,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddTagsToResourceOutput,
             smithy_http::result::SdkError<crate::error::AddTagsToResourceError>,
         >
@@ -771,12 +771,15 @@ pub mod fluent_builders {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input);
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(inp);
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_name(input);
             self
         }
         /// <p>The tags to be assigned to the Amazon RDS resource.</p>
@@ -786,9 +789,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -807,7 +810,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ApplyPendingMaintenanceActionOutput,
             smithy_http::result::SdkError<crate::error::ApplyPendingMaintenanceActionError>,
         >
@@ -828,27 +831,27 @@ pub mod fluent_builders {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input);
             self
         }
         pub fn set_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_resource_identifier(inp);
+            self.inner = self.inner.set_resource_identifier(input);
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
         /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>,
         /// <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code>
         /// </p>
-        pub fn apply_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.apply_action(inp);
+        pub fn apply_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.apply_action(input);
             self
         }
-        pub fn set_apply_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_apply_action(inp);
+        pub fn set_apply_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_apply_action(input);
             self
         }
         /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in
@@ -870,12 +873,12 @@ pub mod fluent_builders {
         /// opt-in requests.</p>
         /// </li>
         /// </ul>
-        pub fn opt_in_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.opt_in_type(inp);
+        pub fn opt_in_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.opt_in_type(input);
             self
         }
-        pub fn set_opt_in_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_opt_in_type(inp);
+        pub fn set_opt_in_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_opt_in_type(input);
             self
         }
     }
@@ -894,7 +897,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AuthorizeDBSecurityGroupIngressOutput,
             smithy_http::result::SdkError<crate::error::AuthorizeDBSecurityGroupIngressError>,
         >
@@ -911,24 +914,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to add authorization to.</p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(inp);
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input);
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_group_name(inp);
+            self.inner = self.inner.set_db_security_group_name(input);
             self
         }
         /// <p>The IP range to authorize.</p>
-        pub fn cidrip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidrip(inp);
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidrip(input);
             self
         }
-        pub fn set_cidrip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cidrip(inp);
+        pub fn set_cidrip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidrip(input);
             self
         }
         /// <p>
@@ -937,15 +940,15 @@ pub mod fluent_builders {
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code>
         /// or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_name(inp);
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_name(input);
             self
         }
         pub fn set_ec2_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ec2_security_group_name(inp);
+            self.inner = self.inner.set_ec2_security_group_name(input);
             self
         }
         /// <p>
@@ -953,15 +956,15 @@ pub mod fluent_builders {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_id(inp);
+        pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_id(input);
             self
         }
         pub fn set_ec2_security_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ec2_security_group_id(inp);
+            self.inner = self.inner.set_ec2_security_group_id(input);
             self
         }
         /// <p>
@@ -971,15 +974,18 @@ pub mod fluent_builders {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_owner_id(inp);
+        pub fn ec2_security_group_owner_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ec2_security_group_owner_id(input);
             self
         }
         pub fn set_ec2_security_group_owner_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ec2_security_group_owner_id(inp);
+            self.inner = self.inner.set_ec2_security_group_owner_id(input);
             self
         }
     }
@@ -998,7 +1004,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BacktrackDBClusterOutput,
             smithy_http::result::SdkError<crate::error::BacktrackDBClusterError>,
         >
@@ -1030,15 +1036,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
@@ -1060,41 +1066,44 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>2017-07-08T18:00Z</code>
         /// </p>
-        pub fn backtrack_to(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.backtrack_to(inp);
+        pub fn backtrack_to(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.backtrack_to(input);
             self
         }
-        pub fn set_backtrack_to(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_backtrack_to(inp);
+        pub fn set_backtrack_to(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_backtrack_to(input);
             self
         }
         /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is
         /// enabled. Otherwise, an error occurs when binary logging is enabled.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
-        pub fn set_force(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_force(inp);
+        pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_force(input);
             self
         }
         /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible
         /// backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
         /// backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
         /// backtrack time, an error occurs.</p>
-        pub fn use_earliest_time_on_point_in_time_unavailable(mut self, inp: bool) -> Self {
+        pub fn use_earliest_time_on_point_in_time_unavailable(mut self, input: bool) -> Self {
             self.inner = self
                 .inner
-                .use_earliest_time_on_point_in_time_unavailable(inp);
+                .use_earliest_time_on_point_in_time_unavailable(input);
             self
         }
         pub fn set_use_earliest_time_on_point_in_time_unavailable(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_use_earliest_time_on_point_in_time_unavailable(inp);
+                .set_use_earliest_time_on_point_in_time_unavailable(input);
             self
         }
     }
@@ -1113,7 +1122,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CancelExportTaskOutput,
             smithy_http::result::SdkError<crate::error::CancelExportTaskError>,
         >
@@ -1130,15 +1139,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot export task to cancel.</p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_task_identifier(inp);
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_task_identifier(input);
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_export_task_identifier(inp);
+            self.inner = self.inner.set_export_task_identifier(input);
             self
         }
     }
@@ -1157,7 +1166,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CopyDBClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::CopyDBClusterParameterGroupError>,
         >
@@ -1187,18 +1196,20 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_cluster_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_cluster_parameter_group_identifier(inp);
+            self.inner = self
+                .inner
+                .source_db_cluster_parameter_group_identifier(input);
             self
         }
         pub fn set_source_db_cluster_parameter_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_source_db_cluster_parameter_group_identifier(inp);
+                .set_source_db_cluster_parameter_group_identifier(input);
             self
         }
         /// <p>The identifier for the copied DB cluster parameter group.</p>
@@ -1221,37 +1232,39 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_cluster_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_cluster_parameter_group_identifier(inp);
+            self.inner = self
+                .inner
+                .target_db_cluster_parameter_group_identifier(input);
             self
         }
         pub fn set_target_db_cluster_parameter_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_target_db_cluster_parameter_group_identifier(inp);
+                .set_target_db_cluster_parameter_group_identifier(input);
             self
         }
         /// <p>A description for the copied DB cluster parameter group.</p>
         pub fn target_db_cluster_parameter_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .target_db_cluster_parameter_group_description(inp);
+                .target_db_cluster_parameter_group_description(input);
             self
         }
         pub fn set_target_db_cluster_parameter_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_target_db_cluster_parameter_group_description(inp);
+                .set_target_db_cluster_parameter_group_description(input);
             self
         }
         /// <p>A list of tags.
@@ -1263,9 +1276,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1284,7 +1297,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CopyDBClusterSnapshotOutput,
             smithy_http::result::SdkError<crate::error::CopyDBClusterSnapshotError>,
         >
@@ -1322,16 +1335,16 @@ pub mod fluent_builders {
         /// </p>
         pub fn source_db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.source_db_cluster_snapshot_identifier(input);
             self
         }
         pub fn set_source_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.set_source_db_cluster_snapshot_identifier(input);
             self
         }
         /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter isn't case-sensitive.</p>
@@ -1351,16 +1364,16 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.target_db_cluster_snapshot_identifier(input);
             self
         }
         pub fn set_target_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.set_target_db_cluster_snapshot_identifier(input);
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB cluster snapshot.
@@ -1374,12 +1387,12 @@ pub mod fluent_builders {
         /// in another AWS Region.</p>
         /// <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
         /// an error is returned.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the AWS Region that contains the
@@ -1417,22 +1430,25 @@ pub mod fluent_builders {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source AWS Region.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(inp);
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input);
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pre_signed_url(inp);
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pre_signed_url(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
         /// By default, tags are not copied.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags(inp);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
-        pub fn set_copy_tags(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags(inp);
+        pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags(input);
             self
         }
         /// <p>A list of tags.
@@ -1444,9 +1460,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1465,7 +1481,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CopyDBParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::CopyDBParameterGroupError>,
         >
@@ -1496,16 +1512,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_parameter_group_identifier(inp);
+            self.inner = self.inner.source_db_parameter_group_identifier(input);
             self
         }
         pub fn set_source_db_parameter_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_parameter_group_identifier(inp);
+            self.inner = self.inner.set_source_db_parameter_group_identifier(input);
             self
         }
         /// <p>The identifier for the copied DB parameter group.</p>
@@ -1528,31 +1544,31 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_parameter_group_identifier(inp);
+            self.inner = self.inner.target_db_parameter_group_identifier(input);
             self
         }
         pub fn set_target_db_parameter_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_db_parameter_group_identifier(inp);
+            self.inner = self.inner.set_target_db_parameter_group_identifier(input);
             self
         }
         /// <p>A description for the copied DB parameter group.</p>
         pub fn target_db_parameter_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_parameter_group_description(inp);
+            self.inner = self.inner.target_db_parameter_group_description(input);
             self
         }
         pub fn set_target_db_parameter_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_db_parameter_group_description(inp);
+            self.inner = self.inner.set_target_db_parameter_group_description(input);
             self
         }
         /// <p>A list of tags.
@@ -1564,9 +1580,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1585,7 +1601,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CopyDBSnapshotOutput,
             smithy_http::result::SdkError<crate::error::CopyDBSnapshotError>,
         >
@@ -1627,16 +1643,16 @@ pub mod fluent_builders {
         /// </p>
         pub fn source_db_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_snapshot_identifier(inp);
+            self.inner = self.inner.source_db_snapshot_identifier(input);
             self
         }
         pub fn set_source_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_source_db_snapshot_identifier(input);
             self
         }
         /// <p>The identifier for the copy of the snapshot.
@@ -1660,16 +1676,16 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_snapshot_identifier(inp);
+            self.inner = self.inner.target_db_snapshot_identifier(input);
             self
         }
         pub fn set_target_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_target_db_snapshot_identifier(input);
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB snapshot.
@@ -1691,12 +1707,12 @@ pub mod fluent_builders {
         /// that they are created in, and you can't use CMKs from one AWS Region in another
         /// AWS Region.
         /// </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>A list of tags.
@@ -1708,18 +1724,18 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags(inp);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
-        pub fn set_copy_tags(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags(inp);
+        pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags(input);
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the
@@ -1770,12 +1786,15 @@ pub mod fluent_builders {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source AWS Region.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(inp);
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input);
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pre_signed_url(inp);
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pre_signed_url(input);
             self
         }
         /// <p>The name of an option group to associate with the copy of the snapshot.</p>
@@ -1786,31 +1805,31 @@ pub mod fluent_builders {
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
         /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
         pub fn target_custom_availability_zone(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_custom_availability_zone(inp);
+            self.inner = self.inner.target_custom_availability_zone(input);
             self
         }
         pub fn set_target_custom_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_custom_availability_zone(inp);
+            self.inner = self.inner.set_target_custom_availability_zone(input);
             self
         }
     }
@@ -1829,7 +1848,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CopyOptionGroupOutput,
             smithy_http::result::SdkError<crate::error::CopyOptionGroupError>,
         >
@@ -1855,16 +1874,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_option_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_option_group_identifier(inp);
+            self.inner = self.inner.source_option_group_identifier(input);
             self
         }
         pub fn set_source_option_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_option_group_identifier(inp);
+            self.inner = self.inner.set_source_option_group_identifier(input);
             self
         }
         /// <p>The identifier for the copied option group.</p>
@@ -1887,31 +1906,31 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_option_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_option_group_identifier(inp);
+            self.inner = self.inner.target_option_group_identifier(input);
             self
         }
         pub fn set_target_option_group_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_option_group_identifier(inp);
+            self.inner = self.inner.set_target_option_group_identifier(input);
             self
         }
         /// <p>The description for the copied option group.</p>
         pub fn target_option_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_option_group_description(inp);
+            self.inner = self.inner.target_option_group_description(input);
             self
         }
         pub fn set_target_option_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_option_group_description(inp);
+            self.inner = self.inner.set_target_option_group_description(input);
             self
         }
         /// <p>A list of tags.
@@ -1923,9 +1942,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1944,7 +1963,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateCustomAvailabilityZoneOutput,
             smithy_http::result::SdkError<crate::error::CreateCustomAvailabilityZoneError>,
         >
@@ -1963,55 +1982,55 @@ pub mod fluent_builders {
         /// <p>The name of the custom Availability Zone (AZ).</p>
         pub fn custom_availability_zone_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_availability_zone_name(inp);
+            self.inner = self.inner.custom_availability_zone_name(input);
             self
         }
         pub fn set_custom_availability_zone_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_availability_zone_name(inp);
+            self.inner = self.inner.set_custom_availability_zone_name(input);
             self
         }
         /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and
         /// the VMware vSphere cluster.</p>
-        pub fn existing_vpn_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.existing_vpn_id(inp);
+        pub fn existing_vpn_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.existing_vpn_id(input);
             self
         }
         pub fn set_existing_vpn_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_existing_vpn_id(inp);
+            self.inner = self.inner.set_existing_vpn_id(input);
             self
         }
         /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
         /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn new_vpn_tunnel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_vpn_tunnel_name(inp);
+        pub fn new_vpn_tunnel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_vpn_tunnel_name(input);
             self
         }
         pub fn set_new_vpn_tunnel_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_vpn_tunnel_name(inp);
+            self.inner = self.inner.set_new_vpn_tunnel_name(input);
             self
         }
         /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
         /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn vpn_tunnel_originator_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpn_tunnel_originator_ip(inp);
+        pub fn vpn_tunnel_originator_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpn_tunnel_originator_ip(input);
             self
         }
         pub fn set_vpn_tunnel_originator_ip(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_vpn_tunnel_originator_ip(inp);
+            self.inner = self.inner.set_vpn_tunnel_originator_ip(input);
             self
         }
     }
@@ -2030,7 +2049,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBClusterOutput,
             smithy_http::result::SdkError<crate::error::CreateDBClusterError>,
         >
@@ -2057,9 +2076,9 @@ pub mod fluent_builders {
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zones(inp);
+            self.inner = self.inner.set_availability_zones(input);
             self
         }
         /// <p>The number of days for which automated backups are retained.</p>
@@ -2070,35 +2089,38 @@ pub mod fluent_builders {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_backup_retention_period(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_backup_retention_period(input);
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.character_set_name(inp);
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.character_set_name(input);
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_character_set_name(inp);
+            self.inner = self.inner.set_character_set_name(input);
             self
         }
         /// <p>The name for your database of up to 64 alphanumeric characters. If you do not
         /// provide a name, Amazon RDS doesn't create a database in the DB cluster you are
         /// creating.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input);
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_database_name(inp);
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
             self
         }
         /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -2116,15 +2138,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>
@@ -2140,16 +2162,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
@@ -2159,35 +2181,35 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>A DB subnet group to associate with this DB cluster.</p>
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
         /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -2213,24 +2235,27 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>The port number on which the instances in the DB cluster accept connections.</p>
         /// <p>
         /// Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>The name of the master user for the DB cluster.</p>
@@ -2246,41 +2271,41 @@ pub mod fluent_builders {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(inp);
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input);
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_username(inp);
+            self.inner = self.inner.set_master_username(input);
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input);
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_user_password(inp);
+            self.inner = self.inner.set_master_user_password(input);
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
         /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -2308,15 +2333,15 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input);
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_backup_window(inp);
+            self.inner = self.inner.set_preferred_backup_window(input);
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -2330,31 +2355,34 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(input);
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_maintenance_window(inp);
+            self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
         /// cluster is created as a read replica.</p>
         pub fn replication_source_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_source_identifier(inp);
+            self.inner = self.inner.replication_source_identifier(input);
             self
         }
         pub fn set_replication_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_replication_source_identifier(inp);
+            self.inner = self.inner.set_replication_source_identifier(input);
             self
         }
         /// <p>Tags to assign to the DB cluster.</p>
@@ -2364,18 +2392,18 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster is encrypted.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_storage_encrypted(inp);
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_storage_encrypted(input);
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB cluster.</p>
@@ -2399,12 +2427,12 @@ pub mod fluent_builders {
         /// <p>If you create a read replica of an encrypted DB cluster in another AWS Region, you
         /// must set <code>KmsKeyId</code> to a AWS KMS key identifier that is valid in the destination AWS
         /// Region. This CMK is used to encrypt the read replica in that AWS Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for
@@ -2443,12 +2471,15 @@ pub mod fluent_builders {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source AWS Region.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(inp);
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input);
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pre_signed_url(inp);
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pre_signed_url(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -2457,15 +2488,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -2480,12 +2511,12 @@ pub mod fluent_builders {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.inner = self.inner.backtrack_window(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_backtrack_window(inp);
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_backtrack_window(input);
             self
         }
         /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values
@@ -2510,9 +2541,9 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
@@ -2552,50 +2583,50 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_mode(inp);
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_mode(input);
             self
         }
-        pub fn set_engine_mode(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_mode(inp);
+        pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine_mode(input);
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
-        pub fn scaling_configuration(mut self, inp: crate::model::ScalingConfiguration) -> Self {
-            self.inner = self.inner.scaling_configuration(inp);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.inner = self.inner.scaling_configuration(input);
             self
         }
         pub fn set_scaling_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ScalingConfiguration>,
+            input: std::option::Option<crate::model::ScalingConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_scaling_configuration(inp);
+            self.inner = self.inner.set_scaling_configuration(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>
         /// The global cluster ID of an Aurora cluster that becomes the primary cluster
         /// in the new global database cluster.
         /// </p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_cluster_identifier(inp);
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input);
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_cluster_identifier(inp);
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
         /// <p>A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
@@ -2605,22 +2636,22 @@ pub mod fluent_builders {
         /// from inside the RDS console with the query editor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
-        pub fn enable_http_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_http_endpoint(inp);
+        pub fn enable_http_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_http_endpoint(input);
             self
         }
-        pub fn set_enable_http_endpoint(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_http_endpoint(inp);
+        pub fn set_enable_http_endpoint(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_http_endpoint(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>The Active Directory directory ID to create the DB cluster in.</p>
@@ -2629,24 +2660,24 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
         /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
@@ -2657,15 +2688,15 @@ pub mod fluent_builders {
         /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the
         /// primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
         /// </p>
-        pub fn enable_global_write_forwarding(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_global_write_forwarding(inp);
+        pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_global_write_forwarding(input);
             self
         }
         pub fn set_enable_global_write_forwarding(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_global_write_forwarding(inp);
+            self.inner = self.inner.set_enable_global_write_forwarding(input);
             self
         }
     }
@@ -2684,7 +2715,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBClusterEndpointOutput,
             smithy_http::result::SdkError<crate::error::CreateDBClusterEndpointError>,
         >
@@ -2702,39 +2733,42 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.db_cluster_endpoint_identifier(input);
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_type(input);
             self
         }
-        pub fn set_endpoint_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_type(inp);
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_type(input);
             self
         }
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
@@ -2744,9 +2778,9 @@ pub mod fluent_builders {
         }
         pub fn set_static_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_static_members(inp);
+            self.inner = self.inner.set_static_members(input);
             self
         }
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
@@ -2758,9 +2792,9 @@ pub mod fluent_builders {
         }
         pub fn set_excluded_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_excluded_members(inp);
+            self.inner = self.inner.set_excluded_members(input);
             self
         }
         /// <p>The tags to be assigned to the Amazon RDS resource.</p>
@@ -2770,9 +2804,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2791,7 +2825,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateDBClusterParameterGroupError>,
         >
@@ -2819,16 +2853,16 @@ pub mod fluent_builders {
         /// </note>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster
@@ -2870,24 +2904,24 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input);
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_family(inp);
+            self.inner = self.inner.set_db_parameter_group_family(input);
             self
         }
         /// <p>The description for the DB cluster parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Tags to assign to the DB cluster parameter group.</p>
@@ -2897,9 +2931,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2918,7 +2952,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBClusterSnapshotOutput,
             smithy_http::result::SdkError<crate::error::CreateDBClusterSnapshotError>,
         >
@@ -2951,16 +2985,16 @@ pub mod fluent_builders {
         /// </p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(input);
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
             self
         }
         /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
@@ -2972,15 +3006,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The tags to be assigned to the DB cluster snapshot.</p>
@@ -2990,9 +3024,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3011,7 +3045,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBInstanceOutput,
             smithy_http::result::SdkError<crate::error::CreateDBInstanceError>,
         >
@@ -3132,12 +3166,12 @@ pub mod fluent_builders {
         /// database engine.</p>
         /// </li>
         /// </ul>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(inp);
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input);
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_name(inp);
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_db_name(input);
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -3155,15 +3189,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
@@ -3277,12 +3311,12 @@ pub mod fluent_builders {
         /// </ul>            
         /// </li>
         /// </ul>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_allocated_storage(inp);
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_allocated_storage(input);
             self
         }
         /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
@@ -3291,15 +3325,15 @@ pub mod fluent_builders {
         /// and availability for your engine, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>The name of the database engine to be used for this instance.
@@ -3378,12 +3412,12 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The name for the master user.</p>
@@ -3479,15 +3513,15 @@ pub mod fluent_builders {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(inp);
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input);
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_username(inp);
+            self.inner = self.inner.set_master_username(input);
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
@@ -3516,15 +3550,15 @@ pub mod fluent_builders {
         /// <b>PostgreSQL</b>
         /// </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input);
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_user_password(inp);
+            self.inner = self.inner.set_master_user_password(input);
             self
         }
         /// <p>A list of DB security groups to associate with this DB instance.</p>
@@ -3535,9 +3569,9 @@ pub mod fluent_builders {
         }
         pub fn set_db_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_groups(inp);
+            self.inner = self.inner.set_db_security_groups(input);
             self
         }
         /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
@@ -3553,9 +3587,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>
@@ -3581,28 +3615,28 @@ pub mod fluent_builders {
         /// RDS on VMware User Guide.</a>
         /// </p>
         /// </note>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input);
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zone(inp);
+            self.inner = self.inner.set_availability_zone(input);
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
         /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>The time range each week during which system maintenance can occur,
@@ -3618,15 +3652,18 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(input);
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_maintenance_window(inp);
+            self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then
@@ -3643,15 +3680,15 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -3670,12 +3707,12 @@ pub mod fluent_builders {
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_backup_retention_period(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_backup_retention_period(input);
             self
         }
         /// <p>
@@ -3705,15 +3742,15 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input);
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_backup_window(inp);
+            self.inner = self.inner.set_preferred_backup_window(input);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -3770,22 +3807,22 @@ pub mod fluent_builders {
         /// <p> Valid values: <code>1150-65535</code>
         /// </p>
         /// <p>Type: Integer</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set
         /// the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -3827,34 +3864,40 @@ pub mod fluent_builders {
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window.
         /// By default, minor engine upgrades are applied automatically.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_auto_minor_version_upgrade(inp);
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>License model information for this DB instance.</p>
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input);
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_license_model(inp);
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_license_model(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
@@ -3863,25 +3906,25 @@ pub mod fluent_builders {
         /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance.
         /// For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.
         /// </p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.inner = self.inner.iops(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_iops(inp);
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_iops(input);
             self
         }
         /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.</p>
@@ -3890,27 +3933,27 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Not applicable. The character set is managed by
         /// the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.character_set_name(inp);
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.character_set_name(input);
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_character_set_name(inp);
+            self.inner = self.inner.set_character_set_name(input);
             self
         }
         /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
-        pub fn nchar_character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nchar_character_set_name(inp);
+        pub fn nchar_character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nchar_character_set_name(input);
             self
         }
         pub fn set_nchar_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_nchar_character_set_name(inp);
+            self.inner = self.inner.set_nchar_character_set_name(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -3937,12 +3980,12 @@ pub mod fluent_builders {
         /// <p>If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.</p>
         /// </li>
         /// </ul>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_publicly_accessible(inp);
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publicly_accessible(input);
             self
         }
         /// <p>Tags to assign to the DB instance.</p>
@@ -3952,21 +3995,21 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The identifier of the DB cluster that the instance will belong to.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -3981,36 +4024,36 @@ pub mod fluent_builders {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_storage_type(inp);
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_storage_type(input);
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(inp);
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(input);
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tde_credential_arn(inp);
+            self.inner = self.inner.set_tde_credential_arn(input);
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_password(inp);
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_password(input);
             self
         }
         pub fn set_tde_credential_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tde_credential_password(inp);
+            self.inner = self.inner.set_tde_credential_password(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
@@ -4019,12 +4062,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Not applicable. The encryption for DB instances is managed by
         /// the DB cluster.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_storage_encrypted(inp);
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_storage_encrypted(input);
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB instance.</p>
@@ -4040,24 +4083,24 @@ pub mod fluent_builders {
         /// Amazon RDS uses your default CMK. There is a  
         /// default CMK for your AWS account. Your AWS account has a different
         /// default CMK for each AWS Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -4066,12 +4109,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
         /// value for an Aurora DB instance has no effect on the DB cluster setting.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
@@ -4079,12 +4122,12 @@ pub mod fluent_builders {
         /// to a value other than 0.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_monitoring_interval(inp);
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_monitoring_interval(input);
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -4092,27 +4135,27 @@ pub mod fluent_builders {
         /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(inp);
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input);
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_role_arn(inp);
+            self.inner = self.inner.set_monitoring_role_arn(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
@@ -4122,24 +4165,24 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
-        pub fn promotion_tier(mut self, inp: i32) -> Self {
-            self.inner = self.inner.promotion_tier(inp);
+        pub fn promotion_tier(mut self, input: i32) -> Self {
+            self.inner = self.inner.promotion_tier(input);
             self
         }
-        pub fn set_promotion_tier(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_promotion_tier(inp);
+        pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_promotion_tier(input);
             self
         }
         /// <p>The time zone of the DB instance.
         /// The time zone parameter is currently supported only by
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.
         /// </p>
-        pub fn timezone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(inp);
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(input);
             self
         }
-        pub fn set_timezone(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_timezone(inp);
+        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_timezone(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -4150,15 +4193,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.
@@ -4167,12 +4210,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(inp);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
-        pub fn set_enable_performance_insights(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_performance_insights(inp);
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_performance_insights(input);
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
@@ -4182,28 +4225,28 @@ pub mod fluent_builders {
         /// Your AWS account has a different default CMK for each AWS Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(inp);
+            self.inner = self.inner.performance_insights_kms_key_id(input);
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_performance_insights_kms_key_id(inp);
+            self.inner = self.inner.set_performance_insights_kms_key_id(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_performance_insights_retention_period(inp);
+            self.inner = self.inner.set_performance_insights_retention_period(input);
             self
         }
         /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values
@@ -4250,9 +4293,9 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -4265,9 +4308,9 @@ pub mod fluent_builders {
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.inner = self.inner.set_processor_features(inp);
+            self.inner = self.inner.set_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -4283,12 +4326,12 @@ pub mod fluent_builders {
         /// For more information, see <code>CreateDBCluster</code>. DB instances in a DB
         /// cluster can be deleted even when deletion protection is enabled for the DB cluster.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -4296,12 +4339,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_allocated_storage(inp);
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_allocated_storage(input);
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS
@@ -4314,12 +4357,12 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_customer_owned_ip(inp);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
             self
         }
-        pub fn set_enable_customer_owned_ip(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_customer_owned_ip(inp);
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_customer_owned_ip(input);
             self
         }
     }
@@ -4338,7 +4381,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBInstanceReadReplicaOutput,
             smithy_http::result::SdkError<crate::error::CreateDBInstanceReadReplicaError>,
         >
@@ -4356,15 +4399,15 @@ pub mod fluent_builders {
         }
         /// <p>The DB instance identifier of the read replica. This identifier is the unique key
         /// that identifies a DB instance. This parameter is stored as a lowercase string.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The identifier of the DB instance that will act as the source for the read replica.
@@ -4407,16 +4450,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_instance_identifier(inp);
+            self.inner = self.inner.source_db_instance_identifier(input);
             self
         }
         pub fn set_source_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_instance_identifier(inp);
+            self.inner = self.inner.set_source_db_instance_identifier(input);
             self
         }
         /// <p>The compute and memory capacity of the read replica, for example,
@@ -4426,15 +4469,15 @@ pub mod fluent_builders {
         /// Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: Inherits from the source DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>The Availability Zone (AZ) where the read replica will be created.</p>
@@ -4442,27 +4485,27 @@ pub mod fluent_builders {
         /// <p>
         /// Example: <code>us-east-1d</code>
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input);
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zone(inp);
+            self.inner = self.inner.set_availability_zone(input);
             self
         }
         /// <p>The port number that the DB instance uses for connections.</p>
         /// <p>Default: Inherits from the source DB instance</p>
         /// <p>Valid Values: <code>1150-65535</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>A value that indicates whether the read replica is in a Multi-AZ deployment. </p>
@@ -4470,32 +4513,32 @@ pub mod fluent_builders {
         /// your replica in another Availability Zone for failover support for the replica. Creating
         /// your read replica as a Multi-AZ DB instance is independent of whether the source
         /// database is a Multi-AZ DB instance. </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
         /// read replica during the maintenance window.</p>
         /// <p>Default: Inherits from the source DB instance</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_auto_minor_version_upgrade(inp);
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.inner = self.inner.iops(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_iops(inp);
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_iops(input);
             self
         }
         /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance is used.</p>
@@ -4503,15 +4546,15 @@ pub mod fluent_builders {
         /// <p>For SQL Server, you must use the option group associated with the source
         /// instance.</p>
         /// </note>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -4534,15 +4577,15 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -4551,12 +4594,12 @@ pub mod fluent_builders {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_publicly_accessible(inp);
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publicly_accessible(input);
             self
         }
         /// <p>A list of tags.
@@ -4568,9 +4611,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
@@ -4602,15 +4645,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p> A list of EC2 VPC security groups to associate with the read replica. </p>
@@ -4623,9 +4666,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>Specifies the storage type to be associated with the read replica.</p>
@@ -4640,22 +4683,22 @@ pub mod fluent_builders {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_storage_type(inp);
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_storage_type(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the read replica to snapshots of
         /// the read replica. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -4665,12 +4708,12 @@ pub mod fluent_builders {
         /// to a value other than 0.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_monitoring_interval(inp);
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_monitoring_interval(input);
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -4678,15 +4721,15 @@ pub mod fluent_builders {
         /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(inp);
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input);
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_role_arn(inp);
+            self.inner = self.inner.set_monitoring_role_arn(input);
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted read replica.</p>
@@ -4699,12 +4742,12 @@ pub mod fluent_builders {
         /// the AWS Region that they are created in, and you can't use CMKs from one
         /// AWS Region in another AWS Region.</p>       
         /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action
@@ -4766,12 +4809,15 @@ pub mod fluent_builders {
         /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
         /// doesn't support cross-region read replicas.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(inp);
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input);
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pre_signed_url(inp);
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pre_signed_url(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -4780,27 +4826,27 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the read replica. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
         /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(inp);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
-        pub fn set_enable_performance_insights(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_performance_insights(inp);
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_performance_insights(input);
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
@@ -4810,28 +4856,28 @@ pub mod fluent_builders {
         /// Your AWS account has a different default CMK for each AWS Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(inp);
+            self.inner = self.inner.performance_insights_kms_key_id(input);
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_performance_insights_kms_key_id(inp);
+            self.inner = self.inner.set_performance_insights_kms_key_id(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_performance_insights_retention_period(inp);
+            self.inner = self.inner.set_performance_insights_retention_period(input);
             self
         }
         /// <p>The list of logs that the new DB instance is to export to CloudWatch Logs. The values
@@ -4847,9 +4893,9 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -4862,22 +4908,22 @@ pub mod fluent_builders {
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.inner = self.inner.set_processor_features(inp);
+            self.inner = self.inner.set_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_use_default_processor_features(inp);
+            self.inner = self.inner.set_use_default_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -4886,36 +4932,36 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
         /// <p>The open mode of the replica database: mounted or read-only.</p>
@@ -4929,15 +4975,15 @@ pub mod fluent_builders {
         /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn replica_mode(mut self, inp: crate::model::ReplicaMode) -> Self {
-            self.inner = self.inner.replica_mode(inp);
+        pub fn replica_mode(mut self, input: crate::model::ReplicaMode) -> Self {
+            self.inner = self.inner.replica_mode(input);
             self
         }
         pub fn set_replica_mode(
             mut self,
-            inp: std::option::Option<crate::model::ReplicaMode>,
+            input: std::option::Option<crate::model::ReplicaMode>,
         ) -> Self {
-            self.inner = self.inner.set_replica_mode(inp);
+            self.inner = self.inner.set_replica_mode(input);
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -4945,12 +4991,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_allocated_storage(inp);
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_allocated_storage(input);
             self
         }
     }
@@ -4969,7 +5015,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateDBParameterGroupError>,
         >
@@ -5001,15 +5047,15 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
@@ -5095,24 +5141,24 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input);
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_family(inp);
+            self.inner = self.inner.set_db_parameter_group_family(input);
             self
         }
         /// <p>The description for the DB parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Tags to assign to the DB parameter group.</p>
@@ -5122,9 +5168,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5143,7 +5189,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBProxyOutput,
             smithy_http::result::SdkError<crate::error::CreateDBProxyError>,
         >
@@ -5160,27 +5206,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The kinds of databases that the proxy can connect to.
         /// This value determines which database network protocol the proxy recognizes when it interprets
         /// network traffic to and from the database.
         /// The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
-        pub fn engine_family(mut self, inp: crate::model::EngineFamily) -> Self {
-            self.inner = self.inner.engine_family(inp);
+        pub fn engine_family(mut self, input: crate::model::EngineFamily) -> Self {
+            self.inner = self.inner.engine_family(input);
             self
         }
         pub fn set_engine_family(
             mut self,
-            inp: std::option::Option<crate::model::EngineFamily>,
+            input: std::option::Option<crate::model::EngineFamily>,
         ) -> Self {
-            self.inner = self.inner.set_engine_family(inp);
+            self.inner = self.inner.set_engine_family(input);
             self
         }
         /// <p>The authorization mechanism that the proxy uses.</p>
@@ -5190,18 +5239,18 @@ pub mod fluent_builders {
         }
         pub fn set_auth(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
         ) -> Self {
-            self.inner = self.inner.set_auth(inp);
+            self.inner = self.inner.set_auth(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
@@ -5211,9 +5260,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_subnet_ids(inp);
+            self.inner = self.inner.set_vpc_subnet_ids(input);
             self
         }
         /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
@@ -5223,29 +5272,29 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy.
         /// By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
-        pub fn require_tls(mut self, inp: bool) -> Self {
-            self.inner = self.inner.require_tls(inp);
+        pub fn require_tls(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_tls(input);
             self
         }
-        pub fn set_require_tls(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_require_tls(inp);
+        pub fn set_require_tls(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_require_tls(input);
             self
         }
         /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this
         /// value higher or lower than the connection timeout limit for the associated database.</p>
-        pub fn idle_client_timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.idle_client_timeout(inp);
+        pub fn idle_client_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_client_timeout(input);
             self
         }
-        pub fn set_idle_client_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_idle_client_timeout(inp);
+        pub fn set_idle_client_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_idle_client_timeout(input);
             self
         }
         /// <p>Whether the proxy includes detailed information about SQL statements in its logs.
@@ -5254,12 +5303,12 @@ pub mod fluent_builders {
         /// SQL statements that you submit through the proxy. Thus, only enable this setting
         /// when needed for debugging, and only when you have security measures in place to
         /// safeguard any sensitive information that appears in the logs.</p>
-        pub fn debug_logging(mut self, inp: bool) -> Self {
-            self.inner = self.inner.debug_logging(inp);
+        pub fn debug_logging(mut self, input: bool) -> Self {
+            self.inner = self.inner.debug_logging(input);
             self
         }
-        pub fn set_debug_logging(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_debug_logging(inp);
+        pub fn set_debug_logging(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_debug_logging(input);
             self
         }
         /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
@@ -5269,9 +5318,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5290,7 +5339,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBProxyEndpointOutput,
             smithy_http::result::SdkError<crate::error::CreateDBProxyEndpointError>,
         >
@@ -5307,24 +5356,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The name of the DB proxy endpoint to create.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_endpoint_name(inp);
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_endpoint_name(input);
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_proxy_endpoint_name(inp);
+            self.inner = self.inner.set_db_proxy_endpoint_name(input);
             self
         }
         /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a
@@ -5335,9 +5387,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_subnet_ids(inp);
+            self.inner = self.inner.set_vpc_subnet_ids(input);
             self
         }
         /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can
@@ -5349,22 +5401,22 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write
         /// or read-only operations. The default is <code>READ_WRITE</code>.</p>
-        pub fn target_role(mut self, inp: crate::model::DbProxyEndpointTargetRole) -> Self {
-            self.inner = self.inner.target_role(inp);
+        pub fn target_role(mut self, input: crate::model::DbProxyEndpointTargetRole) -> Self {
+            self.inner = self.inner.target_role(input);
             self
         }
         pub fn set_target_role(
             mut self,
-            inp: std::option::Option<crate::model::DbProxyEndpointTargetRole>,
+            input: std::option::Option<crate::model::DbProxyEndpointTargetRole>,
         ) -> Self {
-            self.inner = self.inner.set_target_role(inp);
+            self.inner = self.inner.set_target_role(input);
             self
         }
         /// <p>A list of tags.
@@ -5376,9 +5428,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5397,7 +5449,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBSecurityGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateDBSecurityGroupError>,
         >
@@ -5431,30 +5483,30 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mysecuritygroup</code>
         /// </p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(inp);
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input);
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_group_name(inp);
+            self.inner = self.inner.set_db_security_group_name(input);
             self
         }
         /// <p>The description for the DB security group.</p>
         pub fn db_security_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_security_group_description(inp);
+            self.inner = self.inner.db_security_group_description(input);
             self
         }
         pub fn set_db_security_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_group_description(inp);
+            self.inner = self.inner.set_db_security_group_description(input);
             self
         }
         /// <p>Tags to assign to the DB security group.</p>
@@ -5464,9 +5516,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5485,7 +5537,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBSnapshotOutput,
             smithy_http::result::SdkError<crate::error::CreateDBSnapshotError>,
         >
@@ -5519,15 +5571,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(inp);
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input);
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_snapshot_identifier(input);
             self
         }
         /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
@@ -5537,15 +5589,15 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>A list of tags.
@@ -5557,9 +5609,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5578,7 +5630,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDBSubnetGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateDBSubnetGroupError>,
         >
@@ -5598,27 +5650,30 @@ pub mod fluent_builders {
         /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>The description for the DB subnet group.</p>
-        pub fn db_subnet_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_description(inp);
+        pub fn db_subnet_group_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_subnet_group_description(input);
             self
         }
         pub fn set_db_subnet_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_description(inp);
+            self.inner = self.inner.set_db_subnet_group_description(input);
             self
         }
         /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
@@ -5628,9 +5683,9 @@ pub mod fluent_builders {
         }
         pub fn set_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_subnet_ids(inp);
+            self.inner = self.inner.set_subnet_ids(input);
             self
         }
         /// <p>Tags to assign to the DB subnet group.</p>
@@ -5640,9 +5695,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5661,7 +5716,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateEventSubscriptionOutput,
             smithy_http::result::SdkError<crate::error::CreateEventSubscriptionError>,
         >
@@ -5679,24 +5734,27 @@ pub mod fluent_builders {
         }
         /// <p>The name of the subscription.</p>
         /// <p>Constraints: The name must be less than 255 characters.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input);
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_name(inp);
+            self.inner = self.inner.set_subscription_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input);
             self
         }
-        pub fn set_sns_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sns_topic_arn(inp);
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
         /// <p>The type of source that is generating the events. For example, if you want to be
@@ -5705,12 +5763,12 @@ pub mod fluent_builders {
         /// returned.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_type(inp);
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_type(input);
             self
         }
         /// <p> A list of event categories for a particular source type (<code>SourceType</code>)
@@ -5723,9 +5781,9 @@ pub mod fluent_builders {
         }
         pub fn set_event_categories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_event_categories(inp);
+            self.inner = self.inner.set_event_categories(input);
             self
         }
         /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response.
@@ -5760,20 +5818,20 @@ pub mod fluent_builders {
         }
         pub fn set_source_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_source_ids(inp);
+            self.inner = self.inner.set_source_ids(input);
             self
         }
         /// <p>
         /// A value that indicates whether to activate the subscription. If the event notification subscription isn't activated, the subscription is created but not active.
         /// </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
-        pub fn set_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enabled(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enabled(input);
             self
         }
         /// <p>A list of tags.
@@ -5785,9 +5843,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5806,7 +5864,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateGlobalClusterOutput,
             smithy_http::result::SdkError<crate::error::CreateGlobalClusterError>,
         >
@@ -5823,83 +5881,92 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier of the new global database cluster.</p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_cluster_identifier(inp);
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input);
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_cluster_identifier(inp);
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
         /// <p>
         /// The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
         /// This parameter is optional.
         /// </p>
-        pub fn source_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_db_cluster_identifier(inp);
+        pub fn source_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.source_db_cluster_identifier(input);
             self
         }
         pub fn set_source_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_cluster_identifier(inp);
+            self.inner = self.inner.set_source_db_cluster_identifier(input);
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The engine version of the Aurora global database.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>
         /// The deletion protection setting for the new global database.
         /// The global database can't be deleted when deletion protection is enabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>
         /// The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon
         /// Aurora will not create a database in the global database cluster you are creating.
         /// </p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input);
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_database_name(inp);
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
             self
         }
         /// <p>
         /// The storage encryption setting for the new global database cluster.
         /// </p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_storage_encrypted(inp);
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_storage_encrypted(input);
             self
         }
     }
@@ -5918,7 +5985,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateOptionGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateOptionGroupError>,
         >
@@ -5949,15 +6016,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>myoptiongroup</code>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>Specifies the name of the engine that this option group should be associated with.</p>
@@ -6020,36 +6087,36 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input);
             self
         }
-        pub fn set_engine_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_name(inp);
+        pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine_name(input);
             self
         }
         /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-        pub fn major_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_engine_version(inp);
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_engine_version(input);
             self
         }
         pub fn set_major_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_major_engine_version(inp);
+            self.inner = self.inner.set_major_engine_version(input);
             self
         }
         /// <p>The description of the option group.</p>
-        pub fn option_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_description(inp);
+        pub fn option_group_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_description(input);
             self
         }
         pub fn set_option_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_description(inp);
+            self.inner = self.inner.set_option_group_description(input);
             self
         }
         /// <p>Tags to assign to the option group.</p>
@@ -6059,9 +6126,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -6080,7 +6147,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteCustomAvailabilityZoneOutput,
             smithy_http::result::SdkError<crate::error::DeleteCustomAvailabilityZoneError>,
         >
@@ -6097,15 +6164,18 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The custom AZ identifier.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(inp);
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.custom_availability_zone_id(input);
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_availability_zone_id(inp);
+            self.inner = self.inner.set_custom_availability_zone_id(input);
             self
         }
     }
@@ -6124,7 +6194,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBClusterOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBClusterError>,
         >
@@ -6147,15 +6217,15 @@ pub mod fluent_builders {
         /// <p>Must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted.
@@ -6165,12 +6235,12 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
         /// </note>
-        pub fn skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_final_snapshot(inp);
+        pub fn skip_final_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_final_snapshot(input);
             self
         }
-        pub fn set_skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_skip_final_snapshot(inp);
+        pub fn set_skip_final_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_skip_final_snapshot(input);
             self
         }
         /// <p>
@@ -6194,15 +6264,18 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn final_db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.final_db_snapshot_identifier(inp);
+        pub fn final_db_snapshot_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.final_db_snapshot_identifier(input);
             self
         }
         pub fn set_final_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_final_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_final_db_snapshot_identifier(input);
             self
         }
     }
@@ -6221,7 +6294,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBClusterEndpointOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBClusterEndpointError>,
         >
@@ -6240,16 +6313,16 @@ pub mod fluent_builders {
         /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.db_cluster_endpoint_identifier(input);
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
             self
         }
     }
@@ -6268,7 +6341,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBClusterParameterGroupError>,
         >
@@ -6299,16 +6372,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
     }
@@ -6327,7 +6400,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBClusterSnapshotOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBClusterSnapshotError>,
         >
@@ -6347,16 +6420,16 @@ pub mod fluent_builders {
         /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(input);
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
             self
         }
     }
@@ -6375,7 +6448,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBInstanceOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBInstanceError>,
         >
@@ -6398,15 +6471,15 @@ pub mod fluent_builders {
         /// <p>Must match the name of an existing DB instance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted.
@@ -6417,12 +6490,12 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The FinalDBSnapshotIdentifier parameter must be specified if skip isn't specified.</p>
         /// </note>
-        pub fn skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_final_snapshot(inp);
+        pub fn skip_final_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_final_snapshot(input);
             self
         }
-        pub fn set_skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_skip_final_snapshot(inp);
+        pub fn set_skip_final_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_skip_final_snapshot(input);
             self
         }
         /// <p>
@@ -6447,26 +6520,29 @@ pub mod fluent_builders {
         /// <p>Can't be specified when deleting a read replica.</p>
         /// </li>
         /// </ul>
-        pub fn final_db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.final_db_snapshot_identifier(inp);
+        pub fn final_db_snapshot_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.final_db_snapshot_identifier(input);
             self
         }
         pub fn set_final_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_final_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_final_db_snapshot_identifier(input);
             self
         }
         /// <p>A value that indicates whether to remove automated backups immediately after the DB
         /// instance is deleted. This parameter isn't case-sensitive. The default is to remove
         /// automated backups immediately after the DB instance is deleted.</p>
-        pub fn delete_automated_backups(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_automated_backups(inp);
+        pub fn delete_automated_backups(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_automated_backups(input);
             self
         }
-        pub fn set_delete_automated_backups(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_delete_automated_backups(inp);
+        pub fn set_delete_automated_backups(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_delete_automated_backups(input);
             self
         }
     }
@@ -6485,7 +6561,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBInstanceAutomatedBackupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBInstanceAutomatedBackupError>,
         >
@@ -6502,31 +6578,31 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dbi_resource_id(inp);
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dbi_resource_id(input);
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_dbi_resource_id(inp);
+            self.inner = self.inner.set_dbi_resource_id(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example,
         /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_instance_automated_backups_arn(inp);
+            self.inner = self.inner.db_instance_automated_backups_arn(input);
             self
         }
         pub fn set_db_instance_automated_backups_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_automated_backups_arn(inp);
+            self.inner = self.inner.set_db_instance_automated_backups_arn(input);
             self
         }
     }
@@ -6545,7 +6621,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBParameterGroupError>,
         >
@@ -6574,15 +6650,15 @@ pub mod fluent_builders {
         /// <p>Can't be associated with any DB instances</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
     }
@@ -6601,7 +6677,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBProxyOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBProxyError>,
         >
@@ -6618,12 +6694,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy to delete.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
     }
@@ -6642,7 +6721,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBProxyEndpointOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBProxyEndpointError>,
         >
@@ -6659,15 +6738,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy endpoint to delete.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_endpoint_name(inp);
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_endpoint_name(input);
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_proxy_endpoint_name(inp);
+            self.inner = self.inner.set_db_proxy_endpoint_name(input);
             self
         }
     }
@@ -6686,7 +6765,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBSecurityGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBSecurityGroupError>,
         >
@@ -6721,15 +6800,15 @@ pub mod fluent_builders {
         /// <p>Must not be "Default"</p>
         /// </li>
         /// </ul>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(inp);
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input);
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_group_name(inp);
+            self.inner = self.inner.set_db_security_group_name(input);
             self
         }
     }
@@ -6748,7 +6827,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBSnapshotOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBSnapshotError>,
         >
@@ -6766,15 +6845,15 @@ pub mod fluent_builders {
         }
         /// <p>The DB snapshot identifier.</p>
         /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(inp);
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input);
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_snapshot_identifier(input);
             self
         }
     }
@@ -6793,7 +6872,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDBSubnetGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBSubnetGroupError>,
         >
@@ -6817,15 +6896,15 @@ pub mod fluent_builders {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
     }
@@ -6844,7 +6923,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteEventSubscriptionOutput,
             smithy_http::result::SdkError<crate::error::DeleteEventSubscriptionError>,
         >
@@ -6861,15 +6940,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to delete.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input);
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_name(inp);
+            self.inner = self.inner.set_subscription_name(input);
             self
         }
     }
@@ -6888,7 +6967,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteGlobalClusterOutput,
             smithy_http::result::SdkError<crate::error::DeleteGlobalClusterError>,
         >
@@ -6907,15 +6986,15 @@ pub mod fluent_builders {
         /// <p>
         /// The cluster identifier of the global database cluster being deleted.
         /// </p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_cluster_identifier(inp);
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input);
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_cluster_identifier(inp);
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
     }
@@ -6934,7 +7013,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteInstallationMediaOutput,
             smithy_http::result::SdkError<crate::error::DeleteInstallationMediaError>,
         >
@@ -6951,15 +7030,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.installation_media_id(inp);
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.installation_media_id(input);
             self
         }
         pub fn set_installation_media_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_installation_media_id(inp);
+            self.inner = self.inner.set_installation_media_id(input);
             self
         }
     }
@@ -6978,7 +7057,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteOptionGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteOptionGroupError>,
         >
@@ -6998,15 +7077,15 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You can't delete default option groups.</p>
         /// </note>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
     }
@@ -7025,7 +7104,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeregisterDBProxyTargetsOutput,
             smithy_http::result::SdkError<crate::error::DeregisterDBProxyTargetsError>,
         >
@@ -7042,24 +7121,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(inp);
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input);
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_group_name(inp);
+            self.inner = self.inner.set_target_group_name(input);
             self
         }
         /// <p>One or more DB instance identifiers.</p>
@@ -7069,9 +7151,9 @@ pub mod fluent_builders {
         }
         pub fn set_db_instance_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifiers(inp);
+            self.inner = self.inner.set_db_instance_identifiers(input);
             self
         }
         /// <p>One or more DB cluster identifiers.</p>
@@ -7081,9 +7163,9 @@ pub mod fluent_builders {
         }
         pub fn set_db_cluster_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifiers(inp);
+            self.inner = self.inner.set_db_cluster_identifiers(input);
             self
         }
     }
@@ -7102,7 +7184,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeAccountAttributesOutput,
             smithy_http::result::SdkError<crate::error::DescribeAccountAttributesError>,
         >
@@ -7134,7 +7216,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeCertificatesOutput,
             smithy_http::result::SdkError<crate::error::DescribeCertificatesError>,
         >
@@ -7157,15 +7239,15 @@ pub mod fluent_builders {
         /// <p>Must match an existing CertificateIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_identifier(inp);
+        pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_identifier(input);
             self
         }
         pub fn set_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_identifier(inp);
+            self.inner = self.inner.set_certificate_identifier(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -7175,9 +7257,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -7187,12 +7269,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -7202,12 +7284,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -7226,7 +7308,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeCustomAvailabilityZonesOutput,
             smithy_http::result::SdkError<crate::error::DescribeCustomAvailabilityZonesError>,
         >
@@ -7243,15 +7325,18 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(inp);
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.custom_availability_zone_id(input);
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_availability_zone_id(inp);
+            self.inner = self.inner.set_custom_availability_zone_id(input);
             self
         }
         /// <p>A filter that specifies one or more custom AZs to describe.</p>
@@ -7261,9 +7346,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -7271,12 +7356,12 @@ pub mod fluent_builders {
         /// a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -7284,12 +7369,12 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -7308,7 +7393,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBClusterBacktracksOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterBacktracksError>,
         >
@@ -7340,15 +7425,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>If specified, this value is the backtrack identifier of the backtrack to be
@@ -7363,15 +7448,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code>
         /// </p>
-        pub fn backtrack_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backtrack_identifier(inp);
+        pub fn backtrack_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backtrack_identifier(input);
             self
         }
         pub fn set_backtrack_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_backtrack_identifier(inp);
+            self.inner = self.inner.set_backtrack_identifier(input);
             self
         }
         /// <p>A filter that specifies one or more DB clusters to describe. Supported filters
@@ -7418,9 +7503,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -7429,12 +7514,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -7443,12 +7528,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -7467,7 +7552,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBClusterEndpointsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterEndpointsError>,
         >
@@ -7485,30 +7570,30 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.db_cluster_endpoint_identifier(input);
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
             self
         }
         /// <p>A set of name-value pairs that define which endpoints to include in the output.
@@ -7525,9 +7610,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -7536,12 +7621,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -7550,12 +7635,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -7574,7 +7659,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBClusterParameterGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterParameterGroupsError>,
         >
@@ -7599,16 +7684,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -7618,9 +7703,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -7630,12 +7715,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -7645,12 +7730,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -7669,7 +7754,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBClusterParametersOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterParametersError>,
         >
@@ -7694,16 +7779,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>
@@ -7711,12 +7796,12 @@ pub mod fluent_builders {
         /// Parameter sources can be <code>engine</code>, <code>service</code>,
         /// or <code>customer</code>.
         /// </p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source(inp);
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -7726,9 +7811,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -7738,12 +7823,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -7753,12 +7838,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -7777,7 +7862,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBClustersOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClustersError>,
         >
@@ -7800,15 +7885,15 @@ pub mod fluent_builders {
         /// <p>If supplied, must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>A filter that specifies one or more DB clusters to describe.</p>
@@ -7827,9 +7912,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -7838,12 +7923,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -7852,22 +7937,22 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters
         /// shared from other AWS accounts.</p>
-        pub fn include_shared(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_shared(inp);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_shared(input);
             self
         }
-        pub fn set_include_shared(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_include_shared(inp);
+        pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_shared(input);
             self
         }
     }
@@ -7886,7 +7971,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBClusterSnapshotAttributesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterSnapshotAttributesError>,
         >
@@ -7905,16 +7990,16 @@ pub mod fluent_builders {
         /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(input);
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
             self
         }
     }
@@ -7933,7 +8018,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBClusterSnapshotsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterSnapshotsError>,
         >
@@ -7960,15 +8045,15 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>A specific DB cluster snapshot identifier to describe.
@@ -7987,16 +8072,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(input);
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
             self
         }
         /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
@@ -8027,12 +8112,15 @@ pub mod fluent_builders {
         /// of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is
         /// set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to
         /// <code>public</code>.</p>
-        pub fn snapshot_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_type(inp);
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_type(input);
             self
         }
-        pub fn set_snapshot_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_snapshot_type(inp);
+        pub fn set_snapshot_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_snapshot_type(input);
             self
         }
         /// <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
@@ -8062,9 +8150,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -8073,12 +8161,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -8087,12 +8175,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>A value that indicates whether to include shared manual DB cluster snapshots
@@ -8100,23 +8188,23 @@ pub mod fluent_builders {
         /// permission to copy or restore. By default, these snapshots are not included.</p>
         /// <p>You can give an AWS account permission to restore a manual DB cluster snapshot from
         /// another AWS account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-        pub fn include_shared(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_shared(inp);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_shared(input);
             self
         }
-        pub fn set_include_shared(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_include_shared(inp);
+        pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_shared(input);
             self
         }
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
         /// or restored by any AWS account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB cluster snapshot  as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
-        pub fn include_public(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_public(inp);
+        pub fn include_public(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_public(input);
             self
         }
-        pub fn set_include_public(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_include_public(inp);
+        pub fn set_include_public(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_public(input);
             self
         }
     }
@@ -8135,7 +8223,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBEngineVersionsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBEngineVersionsError>,
         >
@@ -8224,23 +8312,26 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The database engine version to return.</p>
         /// <p>Example: <code>5.1.49</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>The name of a specific DB parameter group family to return details for.</p>
@@ -8250,15 +8341,15 @@ pub mod fluent_builders {
         /// <p>If supplied, must match an existing DBParameterGroupFamily.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input);
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_family(inp);
+            self.inner = self.inner.set_db_parameter_group_family(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -8268,9 +8359,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -8280,12 +8371,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -8294,54 +8385,57 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
-        pub fn default_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.default_only(inp);
+        pub fn default_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_only(input);
             self
         }
-        pub fn set_default_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_default_only(inp);
+        pub fn set_default_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_default_only(input);
             self
         }
         /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
         /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>,
         /// the response includes a list of supported character sets for each engine version.
         /// </p>
-        pub fn list_supported_character_sets(mut self, inp: bool) -> Self {
-            self.inner = self.inner.list_supported_character_sets(inp);
+        pub fn list_supported_character_sets(mut self, input: bool) -> Self {
+            self.inner = self.inner.list_supported_character_sets(input);
             self
         }
-        pub fn set_list_supported_character_sets(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_list_supported_character_sets(inp);
+        pub fn set_list_supported_character_sets(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_list_supported_character_sets(input);
             self
         }
         /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
         /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
         /// the response includes a list of supported time zones for each engine version.
         /// </p>
-        pub fn list_supported_timezones(mut self, inp: bool) -> Self {
-            self.inner = self.inner.list_supported_timezones(inp);
+        pub fn list_supported_timezones(mut self, input: bool) -> Self {
+            self.inner = self.inner.list_supported_timezones(input);
             self
         }
-        pub fn set_list_supported_timezones(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_list_supported_timezones(inp);
+        pub fn set_list_supported_timezones(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_list_supported_timezones(input);
             self
         }
         /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
-        pub fn include_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_all(inp);
+        pub fn include_all(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_all(input);
             self
         }
-        pub fn set_include_all(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_include_all(inp);
+        pub fn set_include_all(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_all(input);
             self
         }
     }
@@ -8360,7 +8454,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBInstanceAutomatedBackupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBInstanceAutomatedBackupsError>,
         >
@@ -8378,29 +8472,29 @@ pub mod fluent_builders {
         }
         /// <p>The resource ID of the DB instance that is the source of
         /// the automated backup. This parameter isn't case-sensitive. </p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dbi_resource_id(inp);
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dbi_resource_id(input);
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_dbi_resource_id(inp);
+            self.inner = self.inner.set_dbi_resource_id(input);
             self
         }
         /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must
         /// match the identifier of an existing DB instance. It returns information from the
         /// specific DB instance' automated backup. This parameter isn't case-sensitive. </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>A filter that specifies which resources to return based on status.</p>
@@ -8443,46 +8537,46 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified
         /// <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that
         /// you can retrieve the remaining results.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>The pagination token provided in the previous request. If this parameter is specified the response
         /// includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example,
         /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_instance_automated_backups_arn(inp);
+            self.inner = self.inner.db_instance_automated_backups_arn(input);
             self
         }
         pub fn set_db_instance_automated_backups_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_automated_backups_arn(inp);
+            self.inner = self.inner.set_db_instance_automated_backups_arn(input);
             self
         }
     }
@@ -8501,7 +8595,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBInstancesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBInstancesError>,
         >
@@ -8524,15 +8618,15 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>A filter that specifies one or more DB instances to describe.</p>
@@ -8572,9 +8666,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -8585,12 +8679,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -8600,12 +8694,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -8624,7 +8718,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBLogFilesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBLogFilesError>,
         >
@@ -8647,45 +8741,45 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>Filters the available log files for log file names that contain the specified string.</p>
-        pub fn filename_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filename_contains(inp);
+        pub fn filename_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filename_contains(input);
             self
         }
         pub fn set_filename_contains(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_filename_contains(inp);
+            self.inner = self.inner.set_filename_contains(input);
             self
         }
         /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
-        pub fn file_last_written(mut self, inp: i64) -> Self {
-            self.inner = self.inner.file_last_written(inp);
+        pub fn file_last_written(mut self, input: i64) -> Self {
+            self.inner = self.inner.file_last_written(input);
             self
         }
-        pub fn set_file_last_written(mut self, inp: i64) -> Self {
-            self.inner = self.inner.set_file_last_written(inp);
+        pub fn set_file_last_written(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_file_last_written(input);
             self
         }
         /// <p>Filters the available log files for files larger than the specified size.</p>
-        pub fn file_size(mut self, inp: i64) -> Self {
-            self.inner = self.inner.file_size(inp);
+        pub fn file_size(mut self, input: i64) -> Self {
+            self.inner = self.inner.file_size(input);
             self
         }
-        pub fn set_file_size(mut self, inp: i64) -> Self {
-            self.inner = self.inner.set_file_size(inp);
+        pub fn set_file_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_file_size(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -8695,27 +8789,27 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -8734,7 +8828,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBParameterGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBParameterGroupsError>,
         >
@@ -8757,15 +8851,15 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -8775,9 +8869,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -8788,12 +8882,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -8803,12 +8897,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -8827,7 +8921,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBParametersOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBParametersError>,
         >
@@ -8850,27 +8944,27 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing DBParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>The parameter types to return.</p>
         /// <p>Default: All parameter types returned</p>
         /// <p>Valid Values: <code>user | system | engine-default</code>
         /// </p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source(inp);
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -8880,9 +8974,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -8893,12 +8987,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -8908,12 +9002,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -8932,7 +9026,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBProxiesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBProxiesError>,
         >
@@ -8951,12 +9045,15 @@ pub mod fluent_builders {
         /// <p>The name of the DB proxy. If you omit this parameter,
         /// the output includes information about all DB proxies owned by
         /// your AWS account ID.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -8966,9 +9063,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -8976,12 +9073,12 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -8989,12 +9086,12 @@ pub mod fluent_builders {
         /// included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
     }
@@ -9013,7 +9110,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBProxyEndpointsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBProxyEndpointsError>,
         >
@@ -9032,26 +9129,29 @@ pub mod fluent_builders {
         /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit
         /// this parameter, the output includes information about all DB proxy endpoints
         /// associated with all your DB proxies.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter,
         /// the output includes information about all DB proxy endpoints associated with
         /// the specified proxy.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_endpoint_name(inp);
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_endpoint_name(input);
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_proxy_endpoint_name(inp);
+            self.inner = self.inner.set_db_proxy_endpoint_name(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -9061,9 +9161,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -9071,12 +9171,12 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -9084,12 +9184,12 @@ pub mod fluent_builders {
         /// included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
     }
@@ -9108,7 +9208,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBProxyTargetGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBProxyTargetGroupsError>,
         >
@@ -9125,24 +9225,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(inp);
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input);
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_group_name(inp);
+            self.inner = self.inner.set_target_group_name(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -9152,9 +9255,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -9162,12 +9265,12 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>
@@ -9178,12 +9281,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
     }
@@ -9202,7 +9305,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBProxyTargetsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBProxyTargetsError>,
         >
@@ -9219,24 +9322,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxyTarget</code> to describe.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(inp);
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input);
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_group_name(inp);
+            self.inner = self.inner.set_target_group_name(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -9246,9 +9352,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -9256,12 +9362,12 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>
@@ -9272,12 +9378,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
     }
@@ -9296,7 +9402,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBSecurityGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBSecurityGroupsError>,
         >
@@ -9313,15 +9419,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to return details for.</p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(inp);
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input);
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_group_name(inp);
+            self.inner = self.inner.set_db_security_group_name(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -9331,9 +9437,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -9344,12 +9450,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -9359,12 +9465,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -9383,7 +9489,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBSnapshotAttributesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBSnapshotAttributesError>,
         >
@@ -9400,15 +9506,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(inp);
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input);
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_snapshot_identifier(input);
             self
         }
     }
@@ -9427,7 +9533,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBSnapshotsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBSnapshotsError>,
         >
@@ -9453,15 +9559,15 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>
@@ -9477,15 +9583,15 @@ pub mod fluent_builders {
         /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
         /// </li>
         /// </ul>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(inp);
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input);
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_snapshot_identifier(input);
             self
         }
         /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
@@ -9527,12 +9633,15 @@ pub mod fluent_builders {
         /// of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is
         /// set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to
         /// <code>public</code>.</p>
-        pub fn snapshot_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_type(inp);
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_type(input);
             self
         }
-        pub fn set_snapshot_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_snapshot_type(inp);
+        pub fn set_snapshot_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_snapshot_type(input);
             self
         }
         /// <p>A filter that specifies one or more DB snapshots to describe.</p>
@@ -9566,9 +9675,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -9579,12 +9688,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -9594,12 +9703,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>A value that indicates whether to include shared manual DB cluster snapshots
@@ -9607,35 +9716,35 @@ pub mod fluent_builders {
         /// permission to copy or restore. By default, these snapshots are not included.</p>
         /// <p>You can give an AWS account permission to restore a manual DB snapshot from
         /// another AWS account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-        pub fn include_shared(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_shared(inp);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_shared(input);
             self
         }
-        pub fn set_include_shared(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_include_shared(inp);
+        pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_shared(input);
             self
         }
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
         /// or restored by any AWS account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
-        pub fn include_public(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_public(inp);
+        pub fn include_public(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_public(input);
             self
         }
-        pub fn set_include_public(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_include_public(inp);
+        pub fn set_include_public(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_public(input);
             self
         }
         /// <p>A specific DB resource ID to describe.</p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dbi_resource_id(inp);
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dbi_resource_id(input);
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_dbi_resource_id(inp);
+            self.inner = self.inner.set_dbi_resource_id(input);
             self
         }
     }
@@ -9654,7 +9763,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDBSubnetGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBSubnetGroupsError>,
         >
@@ -9671,15 +9780,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB subnet group to return details for.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -9689,9 +9798,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -9702,12 +9811,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -9716,12 +9825,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -9740,7 +9849,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEngineDefaultClusterParametersOutput,
             smithy_http::result::SdkError<
                 crate::error::DescribeEngineDefaultClusterParametersError,
@@ -9759,15 +9868,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input);
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_family(inp);
+            self.inner = self.inner.set_db_parameter_group_family(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -9777,9 +9886,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -9789,12 +9898,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -9804,12 +9913,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -9828,7 +9937,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEngineDefaultParametersOutput,
             smithy_http::result::SdkError<crate::error::DescribeEngineDefaultParametersError>,
         >
@@ -9845,15 +9954,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB parameter group family.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input);
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_family(inp);
+            self.inner = self.inner.set_db_parameter_group_family(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -9863,9 +9972,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -9875,12 +9984,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -9890,12 +9999,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -9914,7 +10023,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEventCategoriesOutput,
             smithy_http::result::SdkError<crate::error::DescribeEventCategoriesError>,
         >
@@ -9933,12 +10042,12 @@ pub mod fluent_builders {
         /// <p>The type of source that is generating the events.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_type(inp);
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_type(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -9948,9 +10057,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -9969,7 +10078,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEventsOutput,
             smithy_http::result::SdkError<crate::error::DescribeEventsError>,
         >
@@ -10013,27 +10122,27 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(input);
             self
         }
         pub fn set_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_identifier(inp);
+            self.inner = self.inner.set_source_identifier(input);
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         pub fn set_source_type(
             mut self,
-            inp: std::option::Option<crate::model::SourceType>,
+            input: std::option::Option<crate::model::SourceType>,
         ) -> Self {
-            self.inner = self.inner.set_source_type(inp);
+            self.inner = self.inner.set_source_type(input);
             self
         }
         /// <p>
@@ -10042,12 +10151,12 @@ pub mod fluent_builders {
         /// go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
         /// </p>
         /// <p>Example: 2009-07-08T18:00Z</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_start_time(inp);
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>
@@ -10056,22 +10165,22 @@ pub mod fluent_builders {
         /// go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
         /// </p>
         /// <p>Example: 2009-07-08T18:00Z</p>
-        pub fn end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_end_time(inp);
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_time(input);
             self
         }
         /// <p>The number of minutes to retrieve events for.</p>
         /// <p>Default: 60</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
-        pub fn set_duration(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_duration(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_duration(input);
             self
         }
         /// <p>A list of event categories that trigger notifications for a event notification subscription.</p>
@@ -10081,9 +10190,9 @@ pub mod fluent_builders {
         }
         pub fn set_event_categories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_event_categories(inp);
+            self.inner = self.inner.set_event_categories(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -10093,9 +10202,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -10106,12 +10215,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -10121,12 +10230,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -10145,7 +10254,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEventSubscriptionsOutput,
             smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError>,
         >
@@ -10162,15 +10271,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to describe.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input);
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_name(inp);
+            self.inner = self.inner.set_subscription_name(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -10180,9 +10289,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -10193,12 +10302,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -10208,12 +10317,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -10232,7 +10341,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeExportTasksOutput,
             smithy_http::result::SdkError<crate::error::DescribeExportTasksError>,
         >
@@ -10249,24 +10358,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot export task to be described.</p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_task_identifier(inp);
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_task_identifier(input);
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_export_task_identifier(inp);
+            self.inner = self.inner.set_export_task_identifier(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input);
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_arn(inp);
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_arn(input);
             self
         }
         /// <p>Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that define what to
@@ -10296,9 +10405,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -10306,12 +10415,12 @@ pub mod fluent_builders {
         /// If you specify this parameter, the response includes only records beyond the marker,
         /// up to the value specified by the <code>MaxRecords</code> parameter.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>
@@ -10322,12 +10431,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
     }
@@ -10346,7 +10455,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeGlobalClustersOutput,
             smithy_http::result::SdkError<crate::error::DescribeGlobalClustersError>,
         >
@@ -10371,15 +10480,15 @@ pub mod fluent_builders {
         /// <p>If supplied, must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_cluster_identifier(inp);
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input);
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_cluster_identifier(inp);
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
         /// <p>A filter that specifies one or more global DB clusters to describe.</p>
@@ -10398,9 +10507,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -10410,12 +10519,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -10423,12 +10532,12 @@ pub mod fluent_builders {
         /// this parameter is specified, the response includes only records beyond the marker, up to the value
         /// specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -10447,7 +10556,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeInstallationMediaOutput,
             smithy_http::result::SdkError<crate::error::DescribeInstallationMediaError>,
         >
@@ -10464,15 +10573,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.installation_media_id(inp);
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.installation_media_id(input);
             self
         }
         pub fn set_installation_media_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_installation_media_id(inp);
+            self.inner = self.inner.set_installation_media_id(input);
             self
         }
         /// <p>A filter that specifies one or more installation media to describe. Supported filters
@@ -10497,32 +10606,32 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request.
         /// If this parameter is specified, the response includes
         /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>An optional pagination token provided by a previous request.
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -10541,7 +10650,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeOptionGroupOptionsOutput,
             smithy_http::result::SdkError<crate::error::DescribeOptionGroupOptionsError>,
         >
@@ -10617,24 +10726,24 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input);
             self
         }
-        pub fn set_engine_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_name(inp);
+        pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine_name(input);
             self
         }
         /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-        pub fn major_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_engine_version(inp);
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_engine_version(input);
             self
         }
         pub fn set_major_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_major_engine_version(inp);
+            self.inner = self.inner.set_major_engine_version(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -10644,9 +10753,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -10657,24 +10766,24 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>An optional pagination token provided by a previous request.
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -10693,7 +10802,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeOptionGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeOptionGroupsError>,
         >
@@ -10710,15 +10819,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -10728,9 +10837,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -10739,12 +10848,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>
@@ -10755,12 +10864,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
@@ -10823,24 +10932,24 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input);
             self
         }
-        pub fn set_engine_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_name(inp);
+        pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine_name(input);
             self
         }
         /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-        pub fn major_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_engine_version(inp);
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_engine_version(input);
             self
         }
         pub fn set_major_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_major_engine_version(inp);
+            self.inner = self.inner.set_major_engine_version(input);
             self
         }
     }
@@ -10859,7 +10968,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeOrderableDBInstanceOptionsOutput,
             smithy_http::result::SdkError<crate::error::DescribeOrderableDBInstanceOptionsError>,
         >
@@ -10948,64 +11057,70 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input);
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_license_model(inp);
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_license_model(input);
             self
         }
         /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
         /// <p>Omit this parameter to show the available offerings in the specified AWS Region.</p>
-        pub fn availability_zone_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone_group(inp);
+        pub fn availability_zone_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone_group(input);
             self
         }
         pub fn set_availability_zone_group(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zone_group(inp);
+            self.inner = self.inner.set_availability_zone_group(input);
             self
         }
         /// <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
-        pub fn vpc(mut self, inp: bool) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: bool) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_vpc(inp);
+        pub fn set_vpc(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_vpc(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -11015,9 +11130,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -11028,12 +11143,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -11043,12 +11158,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -11067,7 +11182,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribePendingMaintenanceActionsOutput,
             smithy_http::result::SdkError<crate::error::DescribePendingMaintenanceActionsError>,
         >
@@ -11084,15 +11199,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of a resource to return pending maintenance actions for.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input);
             self
         }
         pub fn set_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_resource_identifier(inp);
+            self.inner = self.inner.set_resource_identifier(input);
             self
         }
         /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
@@ -11117,9 +11232,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -11129,12 +11244,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to a number of records specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>
@@ -11145,12 +11260,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
     }
@@ -11169,7 +11284,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeReservedDBInstancesOutput,
             smithy_http::result::SdkError<crate::error::DescribeReservedDBInstancesError>,
         >
@@ -11186,97 +11301,100 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p>
-        pub fn reserved_db_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_db_instance_id(inp);
+        pub fn reserved_db_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_db_instance_id(input);
             self
         }
         pub fn set_reserved_db_instance_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_reserved_db_instance_id(inp);
+            self.inner = self.inner.set_reserved_db_instance_id(input);
             self
         }
         /// <p>The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_db_instances_offering_id(inp);
+            self.inner = self.inner.reserved_db_instances_offering_id(input);
             self
         }
         pub fn set_reserved_db_instances_offering_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_reserved_db_instances_offering_id(inp);
+            self.inner = self.inner.set_reserved_db_instances_offering_id(input);
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
         /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
         /// </p>
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
-        pub fn set_duration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_duration(inp);
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_duration(input);
             self
         }
         /// <p>The product description filter value. Specify this parameter to show only those reservations matching the specified product description.</p>
-        pub fn product_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_description(inp);
+        pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_description(input);
             self
         }
         pub fn set_product_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_product_description(inp);
+            self.inner = self.inner.set_product_description(input);
             self
         }
         /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
         /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
         /// </p>
-        pub fn offering_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_type(inp);
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_type(input);
             self
         }
-        pub fn set_offering_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_offering_type(inp);
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_offering_type(input);
             self
         }
         /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>The lease identifier filter value. Specify this parameter to show only the reservation that matches the specified lease ID.</p>
         /// <note>
         /// <p>AWS Support might request the lease ID for an issue related to a reserved DB instance.</p>
         /// </note>
-        pub fn lease_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lease_id(inp);
+        pub fn lease_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lease_id(input);
             self
         }
-        pub fn set_lease_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_lease_id(inp);
+        pub fn set_lease_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lease_id(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -11286,9 +11404,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -11298,12 +11416,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -11312,12 +11430,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -11336,7 +11454,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeReservedDBInstancesOfferingsOutput,
             smithy_http::result::SdkError<crate::error::DescribeReservedDBInstancesOfferingsError>,
         >
@@ -11357,74 +11475,77 @@ pub mod fluent_builders {
         /// </p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_db_instances_offering_id(inp);
+            self.inner = self.inner.reserved_db_instances_offering_id(input);
             self
         }
         pub fn set_reserved_db_instances_offering_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_reserved_db_instances_offering_id(inp);
+            self.inner = self.inner.set_reserved_db_instances_offering_id(input);
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
         /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
         /// </p>
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
-        pub fn set_duration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_duration(inp);
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_duration(input);
             self
         }
         /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p>
         /// <note>
         /// <p>The results show offerings that partially match the filter value.</p>
         /// </note>
-        pub fn product_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_description(inp);
+        pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_description(input);
             self
         }
         pub fn set_product_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_product_description(inp);
+            self.inner = self.inner.set_product_description(input);
             self
         }
         /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
         /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
         /// </p>
-        pub fn offering_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_type(inp);
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_type(input);
             self
         }
-        pub fn set_offering_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_offering_type(inp);
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_offering_type(input);
             self
         }
         /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -11434,9 +11555,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>
@@ -11446,12 +11567,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>
@@ -11460,12 +11581,12 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -11484,7 +11605,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeSourceRegionsOutput,
             smithy_http::result::SdkError<crate::error::DescribeSourceRegionsError>,
         >
@@ -11507,12 +11628,12 @@ pub mod fluent_builders {
         /// <p>Must specify a valid AWS Region name.</p>
         /// </li>
         /// </ul>
-        pub fn region_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_name(inp);
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_name(input);
             self
         }
-        pub fn set_region_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_region_name(inp);
+        pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_region_name(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -11520,23 +11641,23 @@ pub mod fluent_builders {
         /// included in the response so you can retrieve the remaining results. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        pub fn set_max_records(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_records(inp);
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
             self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter is specified, the response
         /// includes only records beyond the marker, up to the value specified by
         /// <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -11546,9 +11667,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -11567,7 +11688,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeValidDBInstanceModificationsOutput,
             smithy_http::result::SdkError<crate::error::DescribeValidDBInstanceModificationsError>,
         >
@@ -11585,15 +11706,15 @@ pub mod fluent_builders {
         }
         /// <p>The customer identifier or the ARN of your DB instance.
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
     }
@@ -11612,7 +11733,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DownloadDBLogFilePortionOutput,
             smithy_http::result::SdkError<crate::error::DownloadDBLogFilePortionError>,
         >
@@ -11635,33 +11756,36 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The name of the log file to be downloaded.</p>
-        pub fn log_file_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_file_name(inp);
+        pub fn log_file_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_file_name(input);
             self
         }
-        pub fn set_log_file_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_log_file_name(inp);
+        pub fn set_log_file_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_file_name(input);
             self
         }
         /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
@@ -11689,12 +11813,12 @@ pub mod fluent_builders {
         /// request, continuing until the AdditionalDataPending response element returns false.</p>
         /// </li>
         /// </ul>
-        pub fn number_of_lines(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_lines(inp);
+        pub fn number_of_lines(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_lines(input);
             self
         }
-        pub fn set_number_of_lines(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_number_of_lines(inp);
+        pub fn set_number_of_lines(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_number_of_lines(input);
             self
         }
     }
@@ -11713,7 +11837,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::FailoverDBClusterOutput,
             smithy_http::result::SdkError<crate::error::FailoverDBClusterError>,
         >
@@ -11736,15 +11860,15 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The name of the instance to promote to the primary instance.</p>
@@ -11752,16 +11876,16 @@ pub mod fluent_builders {
         /// For example, <code>mydbcluster-replica1</code>.</p>
         pub fn target_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_instance_identifier(inp);
+            self.inner = self.inner.target_db_instance_identifier(input);
             self
         }
         pub fn set_target_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_db_instance_identifier(inp);
+            self.inner = self.inner.set_target_db_instance_identifier(input);
             self
         }
     }
@@ -11780,7 +11904,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::FailoverGlobalClusterOutput,
             smithy_http::result::SdkError<crate::error::FailoverGlobalClusterError>,
         >
@@ -11807,30 +11931,33 @@ pub mod fluent_builders {
         /// <a>GlobalCluster</a> (Aurora global database).</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_cluster_identifier(inp);
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input);
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_cluster_identifier(inp);
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
         /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora
         /// global database (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that
         /// Aurora can locate the cluster in its AWS Region.      
         /// </p>
-        pub fn target_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_db_cluster_identifier(inp);
+        pub fn target_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.target_db_cluster_identifier(input);
             self
         }
         pub fn set_target_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_db_cluster_identifier(inp);
+            self.inner = self.inner.set_target_db_cluster_identifier(input);
             self
         }
     }
@@ -11849,7 +11976,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ImportInstallationMediaOutput,
             smithy_http::result::SdkError<crate::error::ImportInstallationMediaError>,
         >
@@ -11866,15 +11993,18 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(inp);
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.custom_availability_zone_id(input);
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_availability_zone_id(inp);
+            self.inner = self.inner.set_custom_availability_zone_id(input);
             self
         }
         /// <p>The name of the database engine to be used for this instance.
@@ -11906,12 +12036,12 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -11925,12 +12055,15 @@ pub mod fluent_builders {
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
         /// Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>The path to the installation medium for the specified DB engine.</p>
@@ -11938,30 +12071,30 @@ pub mod fluent_builders {
         /// </p>
         pub fn engine_installation_media_path(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.engine_installation_media_path(inp);
+            self.inner = self.inner.engine_installation_media_path(input);
             self
         }
         pub fn set_engine_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_engine_installation_media_path(inp);
+            self.inner = self.inner.set_engine_installation_media_path(input);
             self
         }
         /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
         /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
         /// </p>
-        pub fn os_installation_media_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.os_installation_media_path(inp);
+        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.os_installation_media_path(input);
             self
         }
         pub fn set_os_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_os_installation_media_path(inp);
+            self.inner = self.inner.set_os_installation_media_path(input);
             self
         }
     }
@@ -11980,7 +12113,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         >
@@ -12000,12 +12133,15 @@ pub mod fluent_builders {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input);
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(inp);
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_name(input);
             self
         }
         /// <p>This parameter isn't currently supported.</p>
@@ -12015,9 +12151,9 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -12036,7 +12172,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyCertificatesOutput,
             smithy_http::result::SdkError<crate::error::ModifyCertificatesError>,
         >
@@ -12055,26 +12191,26 @@ pub mod fluent_builders {
         /// <p>The new default certificate identifier to override the current one with.</p>
         /// <p>To determine the valid values, use the <code>describe-certificates</code> AWS CLI
         /// command or the <code>DescribeCertificates</code> API operation.</p>
-        pub fn certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_identifier(inp);
+        pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_identifier(input);
             self
         }
         pub fn set_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_identifier(inp);
+            self.inner = self.inner.set_certificate_identifier(input);
             self
         }
         /// <p>A value that indicates whether to remove the override for the default certificate.
         /// If the override is removed, the default certificate is the system
         /// default.</p>
-        pub fn remove_customer_override(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remove_customer_override(inp);
+        pub fn remove_customer_override(mut self, input: bool) -> Self {
+            self.inner = self.inner.remove_customer_override(input);
             self
         }
-        pub fn set_remove_customer_override(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_remove_customer_override(inp);
+        pub fn set_remove_customer_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_remove_customer_override(input);
             self
         }
     }
@@ -12093,7 +12229,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyCurrentDBClusterCapacityOutput,
             smithy_http::result::SdkError<crate::error::ModifyCurrentDBClusterCapacityError>,
         >
@@ -12116,15 +12252,15 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The DB cluster capacity.</p>
@@ -12138,12 +12274,12 @@ pub mod fluent_builders {
         /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
         /// </li>
         /// </ul>
-        pub fn capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.capacity(inp);
+        pub fn capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.capacity(input);
             self
         }
-        pub fn set_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_capacity(inp);
+        pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_capacity(input);
             self
         }
         /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
@@ -12154,12 +12290,12 @@ pub mod fluent_builders {
         /// <p>Value must be from 10 through 600.</p>
         /// </li>
         /// </ul>
-        pub fn seconds_before_timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.seconds_before_timeout(inp);
+        pub fn seconds_before_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.seconds_before_timeout(input);
             self
         }
-        pub fn set_seconds_before_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_seconds_before_timeout(inp);
+        pub fn set_seconds_before_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_seconds_before_timeout(input);
             self
         }
         /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
@@ -12167,12 +12303,15 @@ pub mod fluent_builders {
         /// <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
         /// <p>
         /// <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-        pub fn timeout_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timeout_action(inp);
+        pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timeout_action(input);
             self
         }
-        pub fn set_timeout_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_timeout_action(inp);
+        pub fn set_timeout_action(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_timeout_action(input);
             self
         }
     }
@@ -12191,7 +12330,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBClusterOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBClusterError>,
         >
@@ -12210,15 +12349,15 @@ pub mod fluent_builders {
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
         /// <p>Constraints: This identifier must match the identifier of an existing DB
         /// cluster.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
@@ -12236,15 +12375,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster2</code>
         /// </p>
-        pub fn new_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_db_cluster_identifier(inp);
+        pub fn new_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_db_cluster_identifier(input);
             self
         }
         pub fn set_new_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_db_cluster_identifier(inp);
+            self.inner = self.inner.set_new_db_cluster_identifier(input);
             self
         }
         /// <p>A value that indicates whether the modifications in this request and
@@ -12259,12 +12398,12 @@ pub mod fluent_builders {
         /// and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
         /// applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
         /// <p>By default, this parameter is disabled.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_apply_immediately(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_apply_immediately(input);
             self
         }
         /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
@@ -12275,27 +12414,27 @@ pub mod fluent_builders {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_backup_retention_period(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_backup_retention_period(input);
             self
         }
         /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
@@ -12305,34 +12444,34 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>The port number on which the DB cluster accepts connections.</p>
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input);
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_user_password(inp);
+            self.inner = self.inner.set_master_user_password(input);
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.
@@ -12343,15 +12482,15 @@ pub mod fluent_builders {
         /// are rejected but existing connections are not interrupted.
         /// </p>
         /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -12379,15 +12518,15 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input);
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_backup_window(inp);
+            self.inner = self.inner.set_preferred_backup_window(input);
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -12401,15 +12540,18 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(input);
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_maintenance_window(inp);
+            self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -12418,15 +12560,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -12441,27 +12583,27 @@ pub mod fluent_builders {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.inner = self.inner.backtrack_window(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_backtrack_window(inp);
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_backtrack_window(input);
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
-            inp: crate::model::CloudwatchLogsExportConfiguration,
+            input: crate::model::CloudwatchLogsExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloudwatch_logs_export_configuration(inp);
+            self.inner = self.inner.cloudwatch_logs_export_configuration(input);
             self
         }
         pub fn set_cloudwatch_logs_export_configuration(
             mut self,
-            inp: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
+            input: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_cloudwatch_logs_export_configuration(inp);
+            self.inner = self.inner.set_cloudwatch_logs_export_configuration(input);
             self
         }
         /// <p>The version number of the database engine to which you want to upgrade.
@@ -12479,24 +12621,27 @@ pub mod fluent_builders {
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed.</p>
         /// <p>Constraints: You must allow major version upgrades when specifying a value for the
         /// <code>EngineVersion</code> parameter that is a different major version than the DB
         /// cluster's current version.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(inp);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(input);
             self
         }
-        pub fn set_allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_allow_major_version_upgrade(inp);
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_allow_major_version_upgrade(input);
             self
         }
         /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
@@ -12518,16 +12663,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_instance_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_instance_parameter_group_name(inp);
+            self.inner = self.inner.db_instance_parameter_group_name(input);
             self
         }
         pub fn set_db_instance_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_parameter_group_name(inp);
+            self.inner = self.inner.set_db_instance_parameter_group_name(input);
             self
         }
         /// <p>The Active Directory directory ID to move the DB cluster to.  
@@ -12537,48 +12682,48 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
         /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
-        pub fn scaling_configuration(mut self, inp: crate::model::ScalingConfiguration) -> Self {
-            self.inner = self.inner.scaling_configuration(inp);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.inner = self.inner.scaling_configuration(input);
             self
         }
         pub fn set_scaling_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ScalingConfiguration>,
+            input: std::option::Option<crate::model::ScalingConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_scaling_configuration(inp);
+            self.inner = self.inner.set_scaling_configuration(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
@@ -12588,22 +12733,22 @@ pub mod fluent_builders {
         /// from inside the RDS console with the query editor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
-        pub fn enable_http_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_http_endpoint(inp);
+        pub fn enable_http_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_http_endpoint(input);
             self
         }
-        pub fn set_enable_http_endpoint(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_http_endpoint(inp);
+        pub fn set_enable_http_endpoint(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_http_endpoint(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
@@ -12614,15 +12759,15 @@ pub mod fluent_builders {
         /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is
         /// demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
         /// </p>
-        pub fn enable_global_write_forwarding(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_global_write_forwarding(inp);
+        pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_global_write_forwarding(input);
             self
         }
         pub fn set_enable_global_write_forwarding(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_global_write_forwarding(inp);
+            self.inner = self.inner.set_enable_global_write_forwarding(input);
             self
         }
     }
@@ -12641,7 +12786,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBClusterEndpointOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBClusterEndpointError>,
         >
@@ -12660,25 +12805,28 @@ pub mod fluent_builders {
         /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.db_cluster_endpoint_identifier(input);
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_type(input);
             self
         }
-        pub fn set_endpoint_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_type(inp);
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_type(input);
             self
         }
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
@@ -12688,9 +12836,9 @@ pub mod fluent_builders {
         }
         pub fn set_static_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_static_members(inp);
+            self.inner = self.inner.set_static_members(input);
             self
         }
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
@@ -12702,9 +12850,9 @@ pub mod fluent_builders {
         }
         pub fn set_excluded_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_excluded_members(inp);
+            self.inner = self.inner.set_excluded_members(input);
             self
         }
     }
@@ -12723,7 +12871,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBClusterParameterGroupError>,
         >
@@ -12742,16 +12890,16 @@ pub mod fluent_builders {
         /// <p>The name of the DB cluster parameter group to modify.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
@@ -12771,9 +12919,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
     }
@@ -12792,7 +12940,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBClusterSnapshotAttributeOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBClusterSnapshotAttributeError>,
         >
@@ -12811,16 +12959,16 @@ pub mod fluent_builders {
         /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(input);
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
             self
         }
         /// <p>The name of the DB cluster snapshot attribute to modify.</p>
@@ -12830,12 +12978,15 @@ pub mod fluent_builders {
         /// <p>To view the list of attributes available to modify, use the
         /// <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
         /// </note>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input);
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_attribute_name(inp);
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attribute_name(input);
             self
         }
         /// <p>A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
@@ -12850,9 +13001,9 @@ pub mod fluent_builders {
         }
         pub fn set_values_to_add(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_values_to_add(inp);
+            self.inner = self.inner.set_values_to_add(input);
             self
         }
         /// <p>A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
@@ -12868,9 +13019,9 @@ pub mod fluent_builders {
         }
         pub fn set_values_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_values_to_remove(inp);
+            self.inner = self.inner.set_values_to_remove(input);
             self
         }
     }
@@ -12889,7 +13040,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBInstanceOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBInstanceError>,
         >
@@ -12912,15 +13063,15 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
@@ -12933,12 +13084,12 @@ pub mod fluent_builders {
         /// <p>For the valid values for allocated storage for each engine,
         /// see <code>CreateDBInstance</code>.
         /// </p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_allocated_storage(inp);
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_allocated_storage(input);
             self
         }
         /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
@@ -12952,15 +13103,15 @@ pub mod fluent_builders {
         /// unless <code>ApplyImmediately</code> is enabled for this request.
         /// </p>
         /// <p>Default: Uses existing setting</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>The new DB subnet group for the DB instance.
@@ -12977,15 +13128,15 @@ pub mod fluent_builders {
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetGroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
@@ -13001,9 +13152,9 @@ pub mod fluent_builders {
         }
         pub fn set_db_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_groups(inp);
+            self.inner = self.inner.set_db_security_groups(input);
             self
         }
         /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>     
@@ -13024,9 +13175,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>A value that indicates whether the modifications in this request and
@@ -13043,12 +13194,12 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide.</i> to see the impact of enabling
         /// or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.
         /// </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_apply_immediately(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_apply_immediately(input);
             self
         }
         /// <p>The new password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
@@ -13091,15 +13242,15 @@ pub mod fluent_builders {
         /// This includes restoring privileges that might have been accidentally revoked.
         /// </p>
         /// </note>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input);
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_user_password(inp);
+            self.inner = self.inner.set_master_user_password(input);
             self
         }
         /// <p>The name of the DB parameter group to apply to the DB instance. Changing this
@@ -13109,15 +13260,15 @@ pub mod fluent_builders {
         /// parameter changes isn't applied during the next maintenance window.</p>
         /// <p>Default: Uses existing setting</p>
         /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -13150,12 +13301,12 @@ pub mod fluent_builders {
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_backup_retention_period(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_backup_retention_period(input);
             self
         }
         /// <p>
@@ -13186,15 +13337,15 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input);
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_backup_window(inp);
+            self.inner = self.inner.set_preferred_backup_window(input);
             self
         }
         /// <p>The weekly time range (in UTC) during which system maintenance can occur, which
@@ -13211,15 +13362,18 @@ pub mod fluent_builders {
         /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
         /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
         /// <p>Constraints: Must be at least 30 minutes</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(input);
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_maintenance_window(inp);
+            self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
@@ -13228,12 +13382,12 @@ pub mod fluent_builders {
         /// unless the <code>ApplyImmediately</code> parameter is
         /// enabled for this request.
         /// </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>
@@ -13250,22 +13404,25 @@ pub mod fluent_builders {
         /// default minor version if the current minor version is lower.
         /// For information about valid engine versions, see <code>CreateDBInstance</code>,
         /// or call <code>DescribeDBEngineVersions</code>.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
         /// <p>Constraints: Major version upgrades must be allowed when specifying a value for the EngineVersion parameter that is a different major version than the DB instance's current version.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(inp);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(input);
             self
         }
-        pub fn set_allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_allow_major_version_upgrade(inp);
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_allow_major_version_upgrade(input);
             self
         }
         /// <p>
@@ -13276,24 +13433,27 @@ pub mod fluent_builders {
         /// An outage results if this parameter is enabled during the maintenance window,
         /// and a newer minor version is available, and RDS has enabled auto patching for that engine version.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_auto_minor_version_upgrade(inp);
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>The license model for the DB instance.</p>
         /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
         /// <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input);
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_license_model(inp);
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_license_model(input);
             self
         }
         /// <p>The new Provisioned IOPS (I/O operations per second) value for the RDS instance.
@@ -13320,12 +13480,12 @@ pub mod fluent_builders {
         /// Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.
         /// </p>
         /// <p>Default: Uses existing setting</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.inner = self.inner.iops(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_iops(inp);
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_iops(input);
             self
         }
         /// <p>
@@ -13338,15 +13498,15 @@ pub mod fluent_builders {
         /// are rejected but existing connections are not interrupted.
         /// </p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>
@@ -13370,15 +13530,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn new_db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_db_instance_identifier(inp);
+        pub fn new_db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_db_instance_identifier(input);
             self
         }
         pub fn set_new_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_db_instance_identifier(inp);
+            self.inner = self.inner.set_new_db_instance_identifier(input);
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.
@@ -13403,48 +13563,48 @@ pub mod fluent_builders {
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_storage_type(inp);
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_storage_type(input);
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(inp);
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(input);
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tde_credential_arn(inp);
+            self.inner = self.inner.set_tde_credential_arn(input);
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_password(inp);
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_password(input);
             self
         }
         pub fn set_tde_credential_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tde_credential_password(inp);
+            self.inner = self.inner.set_tde_credential_password(input);
             self
         }
         /// <p>Indicates the certificate that needs to be associated with the instance.</p>
-        pub fn ca_certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ca_certificate_identifier(inp);
+        pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ca_certificate_identifier(input);
             self
         }
         pub fn set_ca_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ca_certificate_identifier(inp);
+            self.inner = self.inner.set_ca_certificate_identifier(input);
             self
         }
         /// <p>The Active Directory directory ID to move the DB instance to.  
@@ -13453,12 +13613,12 @@ pub mod fluent_builders {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -13468,12 +13628,12 @@ pub mod fluent_builders {
         /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
         /// value for an Aurora DB instance has no effect on the DB cluster setting. For more
         /// information, see <code>ModifyDBCluster</code>.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
@@ -13481,12 +13641,12 @@ pub mod fluent_builders {
         /// to a value other than 0.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_monitoring_interval(inp);
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_monitoring_interval(input);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -13544,12 +13704,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p> Valid values: <code>1150-65535</code>
         /// </p>
-        pub fn db_port_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.db_port_number(inp);
+        pub fn db_port_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.db_port_number(input);
             self
         }
-        pub fn set_db_port_number(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_db_port_number(inp);
+        pub fn set_db_port_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_db_port_number(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.
@@ -13565,12 +13725,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
         /// of the value of the <code>ApplyImmediately</code> parameter.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_publicly_accessible(inp);
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publicly_accessible(input);
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -13579,27 +13739,27 @@ pub mod fluent_builders {
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(inp);
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input);
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_role_arn(inp);
+            self.inner = self.inner.set_monitoring_role_arn(input);
             self
         }
         /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
@@ -13609,12 +13769,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
-        pub fn promotion_tier(mut self, inp: i32) -> Self {
-            self.inner = self.inner.promotion_tier(inp);
+        pub fn promotion_tier(mut self, input: i32) -> Self {
+            self.inner = self.inner.promotion_tier(input);
             self
         }
-        pub fn set_promotion_tier(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_promotion_tier(inp);
+        pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_promotion_tier(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -13625,15 +13785,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
@@ -13641,12 +13801,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(inp);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
-        pub fn set_enable_performance_insights(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_performance_insights(inp);
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_performance_insights(input);
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
@@ -13656,28 +13816,28 @@ pub mod fluent_builders {
         /// Your AWS account has a different default CMK for each AWS Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(inp);
+            self.inner = self.inner.performance_insights_kms_key_id(input);
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_performance_insights_kms_key_id(inp);
+            self.inner = self.inner.set_performance_insights_kms_key_id(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_performance_insights_retention_period(inp);
+            self.inner = self.inner.set_performance_insights_retention_period(input);
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
@@ -13685,16 +13845,16 @@ pub mod fluent_builders {
         /// immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
-            inp: crate::model::CloudwatchLogsExportConfiguration,
+            input: crate::model::CloudwatchLogsExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloudwatch_logs_export_configuration(inp);
+            self.inner = self.inner.cloudwatch_logs_export_configuration(input);
             self
         }
         pub fn set_cloudwatch_logs_export_configuration(
             mut self,
-            inp: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
+            input: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_cloudwatch_logs_export_configuration(inp);
+            self.inner = self.inner.set_cloudwatch_logs_export_configuration(input);
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -13707,22 +13867,22 @@ pub mod fluent_builders {
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.inner = self.inner.set_processor_features(inp);
+            self.inner = self.inner.set_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_use_default_processor_features(inp);
+            self.inner = self.inner.set_use_default_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -13731,12 +13891,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -13744,12 +13904,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_allocated_storage(inp);
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_allocated_storage(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is restarted when you rotate your
@@ -13775,12 +13935,15 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn certificate_rotation_restart(mut self, inp: bool) -> Self {
-            self.inner = self.inner.certificate_rotation_restart(inp);
+        pub fn certificate_rotation_restart(mut self, input: bool) -> Self {
+            self.inner = self.inner.certificate_rotation_restart(input);
             self
         }
-        pub fn set_certificate_rotation_restart(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_certificate_rotation_restart(inp);
+        pub fn set_certificate_rotation_restart(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_certificate_rotation_restart(input);
             self
         }
         /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p>
@@ -13793,15 +13956,15 @@ pub mod fluent_builders {
         /// accept user connections, a mounted replica can't serve a read-only workload.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn replica_mode(mut self, inp: crate::model::ReplicaMode) -> Self {
-            self.inner = self.inner.replica_mode(inp);
+        pub fn replica_mode(mut self, input: crate::model::ReplicaMode) -> Self {
+            self.inner = self.inner.replica_mode(input);
             self
         }
         pub fn set_replica_mode(
             mut self,
-            inp: std::option::Option<crate::model::ReplicaMode>,
+            input: std::option::Option<crate::model::ReplicaMode>,
         ) -> Self {
-            self.inner = self.inner.set_replica_mode(inp);
+            self.inner = self.inner.set_replica_mode(input);
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -13813,27 +13976,27 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_customer_owned_ip(inp);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
             self
         }
-        pub fn set_enable_customer_owned_ip(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_customer_owned_ip(inp);
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_customer_owned_ip(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
         pub fn aws_backup_recovery_point_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.aws_backup_recovery_point_arn(inp);
+            self.inner = self.inner.aws_backup_recovery_point_arn(input);
             self
         }
         pub fn set_aws_backup_recovery_point_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_aws_backup_recovery_point_arn(inp);
+            self.inner = self.inner.set_aws_backup_recovery_point_arn(input);
             self
         }
     }
@@ -13852,7 +14015,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBParameterGroupError>,
         >
@@ -13875,15 +14038,15 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing <code>DBParameterGroup</code>.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>An array of parameter names, values, and the application methods for the parameter update. At least one parameter name, value, and
@@ -13904,9 +14067,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
     }
@@ -13925,7 +14088,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBProxyOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBProxyError>,
         >
@@ -13942,24 +14105,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_db_proxy_name(inp);
+        pub fn new_db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_db_proxy_name(input);
             self
         }
         pub fn set_new_db_proxy_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_db_proxy_name(inp);
+            self.inner = self.inner.set_new_db_proxy_name(input);
             self
         }
         /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
@@ -13969,30 +14135,30 @@ pub mod fluent_builders {
         }
         pub fn set_auth(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
         ) -> Self {
-            self.inner = self.inner.set_auth(inp);
+            self.inner = self.inner.set_auth(input);
             self
         }
         /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy.
         /// By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't
         /// use TLS.</p>
-        pub fn require_tls(mut self, inp: bool) -> Self {
-            self.inner = self.inner.require_tls(inp);
+        pub fn require_tls(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_tls(input);
             self
         }
-        pub fn set_require_tls(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_require_tls(inp);
+        pub fn set_require_tls(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_require_tls(input);
             self
         }
         /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this
         /// value higher or lower than the connection timeout limit for the associated database.</p>
-        pub fn idle_client_timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.idle_client_timeout(inp);
+        pub fn idle_client_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_client_timeout(input);
             self
         }
-        pub fn set_idle_client_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_idle_client_timeout(inp);
+        pub fn set_idle_client_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_idle_client_timeout(input);
             self
         }
         /// <p>Whether the proxy includes detailed information about SQL statements in its logs.
@@ -14001,21 +14167,21 @@ pub mod fluent_builders {
         /// SQL statements that you submit through the proxy. Thus, only enable this setting
         /// when needed for debugging, and only when you have security measures in place to
         /// safeguard any sensitive information that appears in the logs.</p>
-        pub fn debug_logging(mut self, inp: bool) -> Self {
-            self.inner = self.inner.debug_logging(inp);
+        pub fn debug_logging(mut self, input: bool) -> Self {
+            self.inner = self.inner.debug_logging(input);
             self
         }
-        pub fn set_debug_logging(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_debug_logging(inp);
+        pub fn set_debug_logging(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_debug_logging(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
@@ -14025,9 +14191,9 @@ pub mod fluent_builders {
         }
         pub fn set_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_security_groups(inp);
+            self.inner = self.inner.set_security_groups(input);
             self
         }
     }
@@ -14046,7 +14212,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBProxyEndpointOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBProxyEndpointError>,
         >
@@ -14063,29 +14229,29 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_endpoint_name(inp);
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_endpoint_name(input);
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_proxy_endpoint_name(inp);
+            self.inner = self.inner.set_db_proxy_endpoint_name(input);
             self
         }
         /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must
         /// begin with a letter and must contain only ASCII letters, digits, and hyphens; it
         /// can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_db_proxy_endpoint_name(inp);
+        pub fn new_db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_db_proxy_endpoint_name(input);
             self
         }
         pub fn set_new_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_db_proxy_endpoint_name(inp);
+            self.inner = self.inner.set_new_db_proxy_endpoint_name(input);
             self
         }
         /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint
@@ -14097,9 +14263,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
     }
@@ -14118,7 +14284,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBProxyTargetGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBProxyTargetGroupError>,
         >
@@ -14135,48 +14301,51 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new target group to assign to the proxy.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(inp);
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input);
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_group_name(inp);
+            self.inner = self.inner.set_target_group_name(input);
             self
         }
         /// <p>The name of the new proxy to which to assign the target group.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
         pub fn connection_pool_config(
             mut self,
-            inp: crate::model::ConnectionPoolConfiguration,
+            input: crate::model::ConnectionPoolConfiguration,
         ) -> Self {
-            self.inner = self.inner.connection_pool_config(inp);
+            self.inner = self.inner.connection_pool_config(input);
             self
         }
         pub fn set_connection_pool_config(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionPoolConfiguration>,
+            input: std::option::Option<crate::model::ConnectionPoolConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_connection_pool_config(inp);
+            self.inner = self.inner.set_connection_pool_config(input);
             self
         }
         /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_name(inp);
+        pub fn new_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_name(input);
             self
         }
-        pub fn set_new_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_new_name(inp);
+        pub fn set_new_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_new_name(input);
             self
         }
     }
@@ -14195,7 +14364,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBSnapshotOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBSnapshotError>,
         >
@@ -14212,15 +14381,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the DB snapshot to modify.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(inp);
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input);
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_snapshot_identifier(input);
             self
         }
         /// <p>The engine version to upgrade the DB snapshot to.
@@ -14260,12 +14429,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
         /// Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>The option group to identify with the upgraded DB snapshot.
@@ -14275,15 +14447,15 @@ pub mod fluent_builders {
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
     }
@@ -14302,7 +14474,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBSnapshotAttributeOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBSnapshotAttributeError>,
         >
@@ -14319,15 +14491,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(inp);
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input);
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_snapshot_identifier(input);
             self
         }
         /// <p>The name of the DB snapshot attribute to modify.</p>
@@ -14337,12 +14509,15 @@ pub mod fluent_builders {
         /// <p>To view the list of attributes available to modify, use the
         /// <a>DescribeDBSnapshotAttributes</a> API action.</p>
         /// </note>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input);
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_attribute_name(inp);
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attribute_name(input);
             self
         }
         /// <p>A list of DB snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
@@ -14357,9 +14532,9 @@ pub mod fluent_builders {
         }
         pub fn set_values_to_add(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_values_to_add(inp);
+            self.inner = self.inner.set_values_to_add(input);
             self
         }
         /// <p>A list of DB snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
@@ -14375,9 +14550,9 @@ pub mod fluent_builders {
         }
         pub fn set_values_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_values_to_remove(inp);
+            self.inner = self.inner.set_values_to_remove(input);
             self
         }
     }
@@ -14396,7 +14571,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyDBSubnetGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBSubnetGroupError>,
         >
@@ -14418,27 +14593,30 @@ pub mod fluent_builders {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>The description for the DB subnet group.</p>
-        pub fn db_subnet_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_description(inp);
+        pub fn db_subnet_group_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_subnet_group_description(input);
             self
         }
         pub fn set_db_subnet_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_description(inp);
+            self.inner = self.inner.set_db_subnet_group_description(input);
             self
         }
         /// <p>The EC2 subnet IDs for the DB subnet group.</p>
@@ -14448,9 +14626,9 @@ pub mod fluent_builders {
         }
         pub fn set_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_subnet_ids(inp);
+            self.inner = self.inner.set_subnet_ids(input);
             self
         }
     }
@@ -14469,7 +14647,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyEventSubscriptionOutput,
             smithy_http::result::SdkError<crate::error::ModifyEventSubscriptionError>,
         >
@@ -14486,35 +14664,38 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input);
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_name(inp);
+            self.inner = self.inner.set_subscription_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input);
             self
         }
-        pub fn set_sns_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sns_topic_arn(inp);
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
         /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. If this value isn't specified, all events are returned.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_type(inp);
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_type(input);
             self
         }
         /// <p>
@@ -14529,20 +14710,20 @@ pub mod fluent_builders {
         }
         pub fn set_event_categories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_event_categories(inp);
+            self.inner = self.inner.set_event_categories(input);
             self
         }
         /// <p>
         /// A value that indicates whether to activate the subscription.
         /// </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
-        pub fn set_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enabled(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enabled(input);
             self
         }
     }
@@ -14561,7 +14742,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyGlobalClusterOutput,
             smithy_http::result::SdkError<crate::error::ModifyGlobalClusterError>,
         >
@@ -14586,15 +14767,15 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing global database cluster.</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_cluster_identifier(inp);
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input);
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_cluster_identifier(inp);
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
         /// <p>
@@ -14617,28 +14798,28 @@ pub mod fluent_builders {
         /// </p>
         pub fn new_global_cluster_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.new_global_cluster_identifier(inp);
+            self.inner = self.inner.new_global_cluster_identifier(input);
             self
         }
         pub fn set_new_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_global_cluster_identifier(inp);
+            self.inner = self.inner.set_new_global_cluster_identifier(input);
             self
         }
         /// <p>
         /// Indicates if the global database cluster has deletion protection enabled. The global database cluster
         /// can't be deleted when deletion protection is enabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>The version number of the database engine to which you want to upgrade.
@@ -14656,12 +14837,15 @@ pub mod fluent_builders {
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed.</p>
@@ -14671,12 +14855,12 @@ pub mod fluent_builders {
         /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter
         /// groups are set to the default parameter groups for the new version. Apply any custom parameter
         /// groups after completing the upgrade.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(inp);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(input);
             self
         }
-        pub fn set_allow_major_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_allow_major_version_upgrade(inp);
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_allow_major_version_upgrade(input);
             self
         }
     }
@@ -14695,7 +14879,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ModifyOptionGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyOptionGroupError>,
         >
@@ -14713,15 +14897,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the option group to be modified.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
@@ -14734,9 +14918,9 @@ pub mod fluent_builders {
         }
         pub fn set_options_to_include(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionConfiguration>>,
         ) -> Self {
-            self.inner = self.inner.set_options_to_include(inp);
+            self.inner = self.inner.set_options_to_include(input);
             self
         }
         /// <p>Options in this list are removed from the option group.</p>
@@ -14746,18 +14930,18 @@ pub mod fluent_builders {
         }
         pub fn set_options_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_options_to_remove(inp);
+            self.inner = self.inner.set_options_to_remove(input);
             self
         }
         /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_apply_immediately(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_apply_immediately(input);
             self
         }
     }
@@ -14776,7 +14960,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PromoteReadReplicaOutput,
             smithy_http::result::SdkError<crate::error::PromoteReadReplicaError>,
         >
@@ -14801,15 +14985,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -14823,12 +15007,12 @@ pub mod fluent_builders {
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_backup_retention_period(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_backup_retention_period(input);
             self
         }
         /// <p>
@@ -14858,15 +15042,15 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input);
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_backup_window(inp);
+            self.inner = self.inner.set_preferred_backup_window(input);
             self
         }
     }
@@ -14885,7 +15069,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PromoteReadReplicaDBClusterOutput,
             smithy_http::result::SdkError<crate::error::PromoteReadReplicaDBClusterError>,
         >
@@ -14911,15 +15095,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster-replica1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
     }
@@ -14938,7 +15122,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PurchaseReservedDBInstancesOfferingOutput,
             smithy_http::result::SdkError<crate::error::PurchaseReservedDBInstancesOfferingError>,
         >
@@ -14958,40 +15142,40 @@ pub mod fluent_builders {
         /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_db_instances_offering_id(inp);
+            self.inner = self.inner.reserved_db_instances_offering_id(input);
             self
         }
         pub fn set_reserved_db_instances_offering_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_reserved_db_instances_offering_id(inp);
+            self.inner = self.inner.set_reserved_db_instances_offering_id(input);
             self
         }
         /// <p>Customer-specified identifier to track this reservation.</p>
         /// <p>Example: myreservationID</p>
-        pub fn reserved_db_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_db_instance_id(inp);
+        pub fn reserved_db_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_db_instance_id(input);
             self
         }
         pub fn set_reserved_db_instance_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_reserved_db_instance_id(inp);
+            self.inner = self.inner.set_reserved_db_instance_id(input);
             self
         }
         /// <p>The number of instances to reserve.</p>
         /// <p>Default: <code>1</code>
         /// </p>
-        pub fn db_instance_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.db_instance_count(inp);
+        pub fn db_instance_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.db_instance_count(input);
             self
         }
-        pub fn set_db_instance_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_db_instance_count(inp);
+        pub fn set_db_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_db_instance_count(input);
             self
         }
         /// <p>A list of tags.
@@ -15003,9 +15187,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -15024,7 +15208,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RebootDBInstanceOutput,
             smithy_http::result::SdkError<crate::error::RebootDBInstanceError>,
         >
@@ -15047,27 +15231,27 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>
         /// A value that indicates whether the reboot is conducted through a Multi-AZ failover.
         /// </p>
         /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
-        pub fn force_failover(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_failover(inp);
+        pub fn force_failover(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_failover(input);
             self
         }
-        pub fn set_force_failover(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_force_failover(inp);
+        pub fn set_force_failover(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_force_failover(input);
             self
         }
     }
@@ -15086,7 +15270,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RegisterDBProxyTargetsOutput,
             smithy_http::result::SdkError<crate::error::RegisterDBProxyTargetsError>,
         >
@@ -15103,24 +15287,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(inp);
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input);
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_proxy_name(inp);
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_proxy_name(input);
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(inp);
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input);
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_group_name(inp);
+            self.inner = self.inner.set_target_group_name(input);
             self
         }
         /// <p>One or more DB instance identifiers.</p>
@@ -15130,9 +15317,9 @@ pub mod fluent_builders {
         }
         pub fn set_db_instance_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifiers(inp);
+            self.inner = self.inner.set_db_instance_identifiers(input);
             self
         }
         /// <p>One or more DB cluster identifiers.</p>
@@ -15142,9 +15329,9 @@ pub mod fluent_builders {
         }
         pub fn set_db_cluster_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifiers(inp);
+            self.inner = self.inner.set_db_cluster_identifiers(input);
             self
         }
     }
@@ -15163,7 +15350,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveFromGlobalClusterOutput,
             smithy_http::result::SdkError<crate::error::RemoveFromGlobalClusterError>,
         >
@@ -15182,29 +15369,29 @@ pub mod fluent_builders {
         /// <p>
         /// The cluster identifier to detach from the Aurora global database cluster.
         /// </p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_cluster_identifier(inp);
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input);
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_cluster_identifier(inp);
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
         /// <p>
         /// The Amazon Resource Name (ARN) identifying the cluster that was detached from the Aurora global database cluster.
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
     }
@@ -15223,7 +15410,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveRoleFromDBClusterOutput,
             smithy_http::result::SdkError<crate::error::RemoveRoleFromDBClusterError>,
         >
@@ -15240,35 +15427,35 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB cluster, for example
         /// <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
         /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(inp);
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input);
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_feature_name(inp);
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_feature_name(input);
             self
         }
     }
@@ -15287,7 +15474,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveRoleFromDBInstanceOutput,
             smithy_http::result::SdkError<crate::error::RemoveRoleFromDBInstanceError>,
         >
@@ -15304,36 +15491,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB instance to disassociate the IAM role from.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance,
         /// for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from.
         /// For the list of supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(inp);
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input);
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_feature_name(inp);
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_feature_name(input);
             self
         }
     }
@@ -15352,7 +15539,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveSourceIdentifierFromSubscriptionOutput,
             smithy_http::result::SdkError<
                 crate::error::RemoveSourceIdentifierFromSubscriptionError,
@@ -15371,30 +15558,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input);
             self
         }
         pub fn set_subscription_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_name(inp);
+            self.inner = self.inner.set_subscription_name(input);
             self
         }
         /// <p>
         /// The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b>
         /// for a DB instance or the name of a security group.
         /// </p>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(input);
             self
         }
         pub fn set_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_identifier(inp);
+            self.inner = self.inner.set_source_identifier(input);
             self
         }
     }
@@ -15413,7 +15600,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveTagsFromResourceOutput,
             smithy_http::result::SdkError<crate::error::RemoveTagsFromResourceError>,
         >
@@ -15434,12 +15621,15 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input);
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(inp);
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_name(input);
             self
         }
         /// <p>The tag key (name) of the tag to be removed.</p>
@@ -15449,9 +15639,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -15470,7 +15660,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ResetDBClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::ResetDBClusterParameterGroupError>,
         >
@@ -15489,27 +15679,27 @@ pub mod fluent_builders {
         /// <p>The name of the DB cluster parameter group to reset.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group
         /// to their default values. You can't use this parameter if there
         /// is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
-        pub fn reset_all_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reset_all_parameters(inp);
+        pub fn reset_all_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_all_parameters(input);
             self
         }
-        pub fn set_reset_all_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_reset_all_parameters(inp);
+        pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_reset_all_parameters(input);
             self
         }
         /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this
@@ -15520,9 +15710,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
     }
@@ -15541,7 +15731,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ResetDBParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::ResetDBParameterGroupError>,
         >
@@ -15564,27 +15754,27 @@ pub mod fluent_builders {
         /// <p>Must match the name of an existing <code>DBParameterGroup</code>.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>
         /// A value that indicates whether to reset all parameters in the DB parameter group to default values.
         /// By default, all parameters in the DB parameter group are reset to default values.
         /// </p>
-        pub fn reset_all_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reset_all_parameters(inp);
+        pub fn reset_all_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_all_parameters(input);
             self
         }
-        pub fn set_reset_all_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_reset_all_parameters(inp);
+        pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_reset_all_parameters(input);
             self
         }
         /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code>
@@ -15619,9 +15809,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
     }
@@ -15640,7 +15830,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RestoreDBClusterFromS3Output,
             smithy_http::result::SdkError<crate::error::RestoreDBClusterFromS3Error>,
         >
@@ -15663,9 +15853,9 @@ pub mod fluent_builders {
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zones(inp);
+            self.inner = self.inner.set_availability_zones(input);
             self
         }
         /// <p>The number of days for which automated backups of the restored DB cluster are retained. You must specify a minimum value of 1.</p>
@@ -15676,33 +15866,36 @@ pub mod fluent_builders {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_backup_retention_period(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_backup_retention_period(input);
             self
         }
         /// <p>A value that indicates that the restored DB cluster should be associated with the specified CharacterSet.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.character_set_name(inp);
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.character_set_name(input);
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_character_set_name(inp);
+            self.inner = self.inner.set_character_set_name(input);
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input);
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_database_name(inp);
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
             self
         }
         /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
@@ -15720,15 +15913,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The name of the DB cluster parameter group to associate
@@ -15742,16 +15935,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>A list of EC2 VPC security groups to associate with the restored DB cluster.</p>
@@ -15761,9 +15954,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>A DB subnet group to associate with the restored DB cluster.</p>
@@ -15771,26 +15964,26 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
         /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -15816,24 +16009,27 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
         /// <p>
         /// Default: <code>3306</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>The name of the master user for the restored DB cluster.</p>
@@ -15849,42 +16045,42 @@ pub mod fluent_builders {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(inp);
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input);
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_username(inp);
+            self.inner = self.inner.set_master_username(input);
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input);
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_user_password(inp);
+            self.inner = self.inner.set_master_user_password(input);
             self
         }
         /// <p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>
         /// <p>Permanent options can't be removed from an option group. An option group can't be removed from a
         /// DB cluster once it is associated with a DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -15912,15 +16108,15 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input);
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_backup_window(inp);
+            self.inner = self.inner.set_preferred_backup_window(input);
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -15934,15 +16130,18 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(input);
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_maintenance_window(inp);
+            self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
         /// <p>A list of tags.
@@ -15954,18 +16153,18 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_storage_encrypted(inp);
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_storage_encrypted(input);
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB cluster.</p>
@@ -15976,12 +16175,12 @@ pub mod fluent_builders {
         /// Amazon RDS will use your default CMK. There is a  
         /// default CMK for your AWS account. Your AWS account has a different
         /// default CMK for each AWS Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -15990,15 +16189,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>The identifier for the database engine that was backed up to create the files stored in the
@@ -16006,12 +16205,15 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid values: <code>mysql</code>
         /// </p>
-        pub fn source_engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine(inp);
+        pub fn source_engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine(input);
             self
         }
-        pub fn set_source_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_engine(inp);
+        pub fn set_source_engine(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_engine(input);
             self
         }
         /// <p>The version of the database that the backup files were created from.</p>
@@ -16019,48 +16221,51 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code>
         /// </p>
-        pub fn source_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine_version(inp);
+        pub fn source_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine_version(input);
             self
         }
         pub fn set_source_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_engine_version(inp);
+            self.inner = self.inner.set_source_engine_version(input);
             self
         }
         /// <p>The name of the Amazon S3 bucket that contains the data used to create the Amazon Aurora DB cluster.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input);
             self
         }
-        pub fn set_s3_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_bucket_name(inp);
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_s3_bucket_name(input);
             self
         }
         /// <p>The prefix for all of the file names that contain the data used to create the Amazon Aurora DB cluster.
         /// If you do not specify a <b>SourceS3Prefix</b> value, then the Amazon Aurora DB cluster is
         /// created by using all of the files in the Amazon S3 bucket.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(inp);
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input);
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_prefix(inp);
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_s3_prefix(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes
         /// Amazon RDS to access the Amazon S3 bucket on your behalf.</p>
-        pub fn s3_ingestion_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_ingestion_role_arn(inp);
+        pub fn s3_ingestion_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_ingestion_role_arn(input);
             self
         }
         pub fn set_s3_ingestion_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_s3_ingestion_role_arn(inp);
+            self.inner = self.inner.set_s3_ingestion_role_arn(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -16075,12 +16280,12 @@ pub mod fluent_builders {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.inner = self.inner.backtrack_window(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_backtrack_window(inp);
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_backtrack_window(input);
             self
         }
         /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values
@@ -16095,30 +16300,30 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -16129,24 +16334,24 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
     }
@@ -16165,7 +16370,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RestoreDBClusterFromSnapshotOutput,
             smithy_http::result::SdkError<crate::error::RestoreDBClusterFromSnapshotError>,
         >
@@ -16189,9 +16394,9 @@ pub mod fluent_builders {
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zones(inp);
+            self.inner = self.inner.set_availability_zones(input);
             self
         }
         /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
@@ -16210,15 +16415,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
@@ -16230,26 +16435,26 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing Snapshot.</p>
         /// </li>
         /// </ul>
-        pub fn snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(inp);
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input);
             self
         }
         pub fn set_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_snapshot_identifier(inp);
+            self.inner = self.inner.set_snapshot_identifier(input);
             self
         }
         /// <p>The database engine to use for the new DB cluster.</p>
         /// <p>Default: The same as source</p>
         /// <p>Constraint: Must be compatible with the engine of the source</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The version of the database engine to use for the new DB cluster.</p>
@@ -16278,60 +16483,66 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>The port number on which the new DB cluster accepts connections.</p>
         /// <p>Constraints: This value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input);
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_database_name(inp);
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
             self
         }
         /// <p>The name of the option group to use for the restored DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
@@ -16341,9 +16552,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>The tags to be assigned to the restored DB cluster.</p>
@@ -16353,9 +16564,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB
@@ -16377,12 +16588,12 @@ pub mod fluent_builders {
         /// isn't encrypted.</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -16391,15 +16602,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -16414,12 +16625,12 @@ pub mod fluent_builders {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.inner = self.inner.backtrack_window(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_backtrack_window(inp);
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_backtrack_window(input);
             self
         }
         /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.
@@ -16435,33 +16646,33 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
         /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
         /// CreateDBCluster</a>.</p>
-        pub fn engine_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_mode(inp);
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_mode(input);
             self
         }
-        pub fn set_engine_mode(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_mode(inp);
+        pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine_mode(input);
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
-        pub fn scaling_configuration(mut self, inp: crate::model::ScalingConfiguration) -> Self {
-            self.inner = self.inner.scaling_configuration(inp);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.inner = self.inner.scaling_configuration(input);
             self
         }
         pub fn set_scaling_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ScalingConfiguration>,
+            input: std::option::Option<crate::model::ScalingConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_scaling_configuration(inp);
+            self.inner = self.inner.set_scaling_configuration(input);
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this
@@ -16484,37 +16695,37 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -16523,24 +16734,24 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
     }
@@ -16559,7 +16770,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RestoreDBClusterToPointInTimeOutput,
             smithy_http::result::SdkError<crate::error::RestoreDBClusterToPointInTimeError>,
         >
@@ -16588,15 +16799,15 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
         /// <p>The type of restore to be performed. You can specify one of the following values:</p>
@@ -16615,12 +16826,12 @@ pub mod fluent_builders {
         /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
         /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.</p>
-        pub fn restore_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.restore_type(inp);
+        pub fn restore_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore_type(input);
             self
         }
-        pub fn set_restore_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_restore_type(inp);
+        pub fn set_restore_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_restore_type(input);
             self
         }
         /// <p>The identifier of the source DB cluster from which to restore.</p>
@@ -16630,15 +16841,18 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn source_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_db_cluster_identifier(inp);
+        pub fn source_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.source_db_cluster_identifier(input);
             self
         }
         pub fn set_source_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_cluster_identifier(inp);
+            self.inner = self.inner.set_source_db_cluster_identifier(input);
             self
         }
         /// <p>The date and time to restore the DB cluster to.</p>
@@ -16661,15 +16875,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>2015-03-07T23:45:00Z</code>
         /// </p>
-        pub fn restore_to_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.restore_to_time(inp);
+        pub fn restore_to_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.restore_to_time(input);
             self
         }
         pub fn set_restore_to_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_restore_to_time(inp);
+            self.inner = self.inner.set_restore_to_time(input);
             self
         }
         /// <p>A value that indicates whether to restore the DB cluster to the latest
@@ -16677,51 +16891,51 @@ pub mod fluent_builders {
         /// restorable backup time.
         /// </p>
         /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
-        pub fn use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_time(inp);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_time(input);
             self
         }
-        pub fn set_use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_use_latest_restorable_time(inp);
+        pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_use_latest_restorable_time(input);
             self
         }
         /// <p>The port number on which the new DB cluster accepts connections.</p>
         /// <p>Constraints: A value from <code>1150-65535</code>.
         /// </p>
         /// <p>Default: The default port for the engine.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>The DB subnet group name to use for the new DB cluster.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>The name of the option group for the new DB cluster.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
@@ -16731,9 +16945,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>A list of tags.
@@ -16745,9 +16959,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
@@ -16767,12 +16981,12 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
         /// is rejected.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -16781,15 +16995,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -16804,12 +17018,12 @@ pub mod fluent_builders {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.inner = self.inner.backtrack_window(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_backtrack_window(inp);
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_backtrack_window(input);
             self
         }
         /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values
@@ -16824,9 +17038,9 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster.
@@ -16848,37 +17062,37 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(input);
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.set_db_cluster_parameter_group_name(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -16889,24 +17103,24 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
     }
@@ -16925,7 +17139,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RestoreDBInstanceFromDBSnapshotOutput,
             smithy_http::result::SdkError<crate::error::RestoreDBInstanceFromDBSnapshotError>,
         >
@@ -16956,15 +17170,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The identifier for the DB snapshot to restore from.</p>
@@ -16978,15 +17192,15 @@ pub mod fluent_builders {
         /// must be the ARN of the shared DB snapshot.</p>
         /// </li>
         /// </ul>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(inp);
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input);
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_snapshot_identifier(input);
             self
         }
         /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
@@ -16996,27 +17210,27 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
         /// <p>Default: The same port as the original DB instance</p>
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>The Availability Zone (AZ) where the DB instance will be created.</p>
@@ -17024,40 +17238,40 @@ pub mod fluent_builders {
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>Example: <code>us-east-1a</code>
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input);
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zone(inp);
+            self.inner = self.inner.set_availability_zone(input);
             self
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -17066,21 +17280,21 @@ pub mod fluent_builders {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_publicly_accessible(inp);
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_auto_minor_version_upgrade(inp);
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>License model information for the restored DB instance.</p>
@@ -17088,24 +17302,27 @@ pub mod fluent_builders {
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input);
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_license_model(inp);
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_license_model(input);
             self
         }
         /// <p>The database name for the restored DB instance.</p>
         /// <note>
         /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p>
         /// </note>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(inp);
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input);
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_name(inp);
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_db_name(input);
             self
         }
         /// <p>The database engine to use for the new instance.</p>
@@ -17169,12 +17386,12 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second.
@@ -17188,25 +17405,25 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Constraints: Must be an integer greater than 1000.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.inner = self.inner.iops(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_iops(inp);
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_iops(input);
             self
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>A list of tags.
@@ -17218,9 +17435,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -17235,36 +17452,36 @@ pub mod fluent_builders {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_storage_type(inp);
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_storage_type(input);
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(inp);
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(input);
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tde_credential_arn(inp);
+            self.inner = self.inner.set_tde_credential_arn(input);
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_password(inp);
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_password(input);
             self
         }
         pub fn set_tde_credential_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tde_credential_password(inp);
+            self.inner = self.inner.set_tde_credential_password(input);
             self
         }
         /// <p>
@@ -17279,9 +17496,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
@@ -17289,33 +17506,33 @@ pub mod fluent_builders {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -17324,15 +17541,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values
@@ -17347,9 +17564,9 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -17362,22 +17579,22 @@ pub mod fluent_builders {
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.inner = self.inner.set_processor_features(inp);
+            self.inner = self.inner.set_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_use_default_processor_features(inp);
+            self.inner = self.inner.set_use_default_processor_features(input);
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -17398,15 +17615,15 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -17415,12 +17632,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -17432,12 +17649,12 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_customer_owned_ip(inp);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
             self
         }
-        pub fn set_enable_customer_owned_ip(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_customer_owned_ip(inp);
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_customer_owned_ip(input);
             self
         }
     }
@@ -17456,7 +17673,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RestoreDBInstanceFromS3Output,
             smithy_http::result::SdkError<crate::error::RestoreDBInstanceFromS3Error>,
         >
@@ -17475,12 +17692,12 @@ pub mod fluent_builders {
         /// <p>The name of the database to create when the DB instance is created.
         /// Follow the naming rules specified in <code>CreateDBInstance</code>.
         /// </p>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(inp);
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input);
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_name(inp);
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_db_name(input);
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.
@@ -17499,15 +17716,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance.
@@ -17519,12 +17736,12 @@ pub mod fluent_builders {
         /// You can also allocate additional memory for future growth.
         /// </p>
         /// </note>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_allocated_storage(inp);
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_allocated_storage(input);
             self
         }
         /// <p>The compute and memory capacity of the DB instance,
@@ -17536,27 +17753,27 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
         /// </p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>The name of the database engine to be used for this instance.
         /// </p>
         /// <p>Valid Values:  <code>mysql</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The name for the master user.
@@ -17574,30 +17791,30 @@ pub mod fluent_builders {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(inp);
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input);
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_username(inp);
+            self.inner = self.inner.set_master_username(input);
             self
         }
         /// <p>The password for the master user.
         /// The password can include any printable ASCII character except "/", """, or "@".
         /// </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input);
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_master_user_password(inp);
+            self.inner = self.inner.set_master_user_password(input);
             self
         }
         /// <p>A list of DB security groups to associate with this DB instance.</p>
@@ -17608,9 +17825,9 @@ pub mod fluent_builders {
         }
         pub fn set_db_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_groups(inp);
+            self.inner = self.inner.set_db_security_groups(input);
             self
         }
         /// <p>A list of VPC security groups to associate with this DB instance.
@@ -17621,9 +17838,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>The Availability Zone that the DB instance is created in.
@@ -17637,27 +17854,27 @@ pub mod fluent_builders {
         /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.
         /// The specified Availability Zone must be in the same AWS Region as the current endpoint.
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input);
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zone(inp);
+            self.inner = self.inner.set_availability_zone(input);
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>The time range each week during which system maintenance can occur,
@@ -17682,41 +17899,44 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(input);
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_maintenance_window(inp);
+            self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
         /// for the specified DB engine is used.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>The number of days for which automated backups are retained.
         /// Setting this parameter to a positive number enables backups.
         /// For more information, see <code>CreateDBInstance</code>.
         /// </p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_backup_retention_period(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_backup_retention_period(input);
             self
         }
         /// <p>The time range each day
@@ -17739,15 +17959,15 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input);
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_preferred_backup_window(inp);
+            self.inner = self.inner.set_preferred_backup_window(input);
             self
         }
         /// <p>The port number on which the database accepts connections.
@@ -17758,58 +17978,64 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: <code>3306</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
         /// If the DB instance is a Multi-AZ deployment, you can't set the <code>AvailabilityZone</code> parameter.
         /// </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>The version number of the database engine to use.
         /// Choose the latest minor version of your database engine.
         /// For information about engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input);
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine_version(inp);
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically
         /// to the DB instance during the maintenance window. By default, minor engine upgrades
         /// are not applied automatically.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_auto_minor_version_upgrade(inp);
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>The license model for this DB instance.
         /// Use <code>general-public-license</code>.
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input);
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_license_model(inp);
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_license_model(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second)
@@ -17817,26 +18043,26 @@ pub mod fluent_builders {
         /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a>
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.inner = self.inner.iops(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_iops(inp);
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_iops(input);
             self
         }
         /// <p>The name of the option group to associate with this DB instance.
         /// If this argument is omitted, the default option group for the specified engine is used.
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -17845,12 +18071,12 @@ pub mod fluent_builders {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_publicly_accessible(inp);
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publicly_accessible(input);
             self
         }
         /// <p>A list of tags to associate with this DB instance.
@@ -17862,9 +18088,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.
@@ -17878,22 +18104,22 @@ pub mod fluent_builders {
         /// if the <code>Iops</code> parameter is specified;
         /// otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_storage_type(inp);
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_storage_type(input);
             self
         }
         /// <p>A value that indicates whether the new DB instance is encrypted or not.
         /// </p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_storage_encrypted(inp);
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_storage_encrypted(input);
             self
         }
         /// <p>The AWS KMS key identifier for an encrypted DB instance.
@@ -17906,22 +18132,22 @@ pub mod fluent_builders {
         /// There is a default CMK for your AWS account.
         /// Your AWS account has a different default CMK for each AWS Region.
         /// </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.
         /// </p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>The interval, in seconds,
@@ -17935,12 +18161,12 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: <code>0</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_monitoring_interval(inp);
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_monitoring_interval(input);
             self
         }
         /// <p>The ARN for the IAM role that permits RDS
@@ -17952,15 +18178,15 @@ pub mod fluent_builders {
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0,
         /// then you must supply a <code>MonitoringRoleArn</code> value.
         /// </p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(inp);
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input);
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_role_arn(inp);
+            self.inner = self.inner.set_monitoring_role_arn(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -17969,27 +18195,30 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>The name of the engine of your source database.
         /// </p>
         /// <p>Valid Values:  <code>mysql</code>
         /// </p>
-        pub fn source_engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine(inp);
+        pub fn source_engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine(input);
             self
         }
-        pub fn set_source_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_engine(inp);
+        pub fn set_source_engine(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_engine(input);
             self
         }
         /// <p>The version of the database that the backup files were created from.</p>
@@ -17997,49 +18226,52 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>5.6.40</code>
         /// </p>
-        pub fn source_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine_version(inp);
+        pub fn source_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine_version(input);
             self
         }
         pub fn set_source_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_engine_version(inp);
+            self.inner = self.inner.set_source_engine_version(input);
             self
         }
         /// <p>The name of your Amazon S3 bucket
         /// that contains your database backup file.
         /// </p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input);
             self
         }
-        pub fn set_s3_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_bucket_name(inp);
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_s3_bucket_name(input);
             self
         }
         /// <p>The prefix of your Amazon S3 bucket.
         /// </p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(inp);
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input);
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_prefix(inp);
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_s3_prefix(input);
             self
         }
         /// <p>An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
         /// </p>
-        pub fn s3_ingestion_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_ingestion_role_arn(inp);
+        pub fn s3_ingestion_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_ingestion_role_arn(input);
             self
         }
         pub fn set_s3_ingestion_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_s3_ingestion_role_arn(inp);
+            self.inner = self.inner.set_s3_ingestion_role_arn(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.
@@ -18048,12 +18280,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(inp);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
-        pub fn set_enable_performance_insights(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_performance_insights(inp);
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_performance_insights(input);
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
@@ -18063,28 +18295,28 @@ pub mod fluent_builders {
         /// Your AWS account has a different default CMK for each AWS Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(inp);
+            self.inner = self.inner.performance_insights_kms_key_id(input);
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_performance_insights_kms_key_id(inp);
+            self.inner = self.inner.set_performance_insights_kms_key_id(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_performance_insights_retention_period(inp);
+            self.inner = self.inner.set_performance_insights_retention_period(input);
             self
         }
         /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values
@@ -18099,9 +18331,9 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -18114,22 +18346,22 @@ pub mod fluent_builders {
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.inner = self.inner.set_processor_features(inp);
+            self.inner = self.inner.set_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_use_default_processor_features(inp);
+            self.inner = self.inner.set_use_default_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -18138,12 +18370,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -18151,12 +18383,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_allocated_storage(inp);
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_allocated_storage(input);
             self
         }
     }
@@ -18175,7 +18407,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RestoreDBInstanceToPointInTimeOutput,
             smithy_http::result::SdkError<crate::error::RestoreDBInstanceToPointInTimeError>,
         >
@@ -18200,16 +18432,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_instance_identifier(inp);
+            self.inner = self.inner.source_db_instance_identifier(input);
             self
         }
         pub fn set_source_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_instance_identifier(inp);
+            self.inner = self.inner.set_source_db_instance_identifier(input);
             self
         }
         /// <p>The name of the new DB instance to be created.</p>
@@ -18227,16 +18459,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn target_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_instance_identifier(inp);
+            self.inner = self.inner.target_db_instance_identifier(input);
             self
         }
         pub fn set_target_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_db_instance_identifier(inp);
+            self.inner = self.inner.set_target_db_instance_identifier(input);
             self
         }
         /// <p>The date and time to restore from.</p>
@@ -18252,12 +18484,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>2009-09-07T23:45:00Z</code>
         /// </p>
-        pub fn restore_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.restore_time(inp);
+        pub fn restore_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.restore_time(input);
             self
         }
-        pub fn set_restore_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_restore_time(inp);
+        pub fn set_restore_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_restore_time(input);
             self
         }
         /// <p>
@@ -18265,12 +18500,12 @@ pub mod fluent_builders {
         /// isn't restored from the latest backup time.
         /// </p>
         /// <p>Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.</p>
-        pub fn use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_time(inp);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_time(input);
             self
         }
-        pub fn set_use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_use_latest_restorable_time(inp);
+        pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_use_latest_restorable_time(input);
             self
         }
         /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
@@ -18280,27 +18515,27 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input);
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_class(inp);
+            self.inner = self.inner.set_db_instance_class(input);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB instance.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_port(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
             self
         }
         /// <p>The Availability Zone (AZ) where the DB instance will be created.</p>
@@ -18308,40 +18543,40 @@ pub mod fluent_builders {
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>Example: <code>us-east-1a</code>
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input);
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zone(inp);
+            self.inner = self.inner.set_availability_zone(input);
             self
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input);
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_subnet_group_name(inp);
+            self.inner = self.inner.set_db_subnet_group_name(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -18350,21 +18585,21 @@ pub mod fluent_builders {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_publicly_accessible(inp);
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_auto_minor_version_upgrade(inp);
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>License model information for the restored DB instance.</p>
@@ -18372,24 +18607,27 @@ pub mod fluent_builders {
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input);
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_license_model(inp);
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_license_model(input);
             self
         }
         /// <p>The database name for the restored DB instance.</p>
         /// <note>
         /// <p>This parameter isn't used for the MySQL or MariaDB engines.</p>
         /// </note>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(inp);
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input);
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_db_name(inp);
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_db_name(input);
             self
         }
         /// <p>The database engine to use for the new instance.</p>
@@ -18453,12 +18691,12 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
@@ -18467,34 +18705,34 @@ pub mod fluent_builders {
         /// <b>SQL Server</b>
         /// </p>
         /// <p>Setting the IOPS value for the SQL Server database engine isn't supported.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.inner = self.inner.iops(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_iops(inp);
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_iops(input);
             self
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input);
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_option_group_name(inp);
+            self.inner = self.inner.set_option_group_name(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags_to_snapshot(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>A list of tags.
@@ -18506,9 +18744,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -18523,36 +18761,36 @@ pub mod fluent_builders {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_storage_type(inp);
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_storage_type(input);
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(inp);
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(input);
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tde_credential_arn(inp);
+            self.inner = self.inner.set_tde_credential_arn(input);
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_password(inp);
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_password(input);
             self
         }
         pub fn set_tde_credential_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tde_credential_password(inp);
+            self.inner = self.inner.set_tde_credential_password(input);
             self
         }
         /// <p>
@@ -18567,9 +18805,9 @@ pub mod fluent_builders {
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_vpc_security_group_ids(inp);
+            self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
@@ -18577,24 +18815,24 @@ pub mod fluent_builders {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input);
             self
         }
         pub fn set_domain_iam_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_iam_role_name(inp);
+            self.inner = self.inner.set_domain_iam_role_name(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
@@ -18603,15 +18841,15 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         pub fn set_enable_iam_database_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_enable_iam_database_authentication(inp);
+            self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
         /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values
@@ -18626,9 +18864,9 @@ pub mod fluent_builders {
         }
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -18641,21 +18879,21 @@ pub mod fluent_builders {
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.inner = self.inner.set_processor_features(inp);
+            self.inner = self.inner.set_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
-        pub fn use_default_processor_features(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(inp);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         pub fn set_use_default_processor_features(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_use_default_processor_features(inp);
+            self.inner = self.inner.set_use_default_processor_features(input);
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -18676,15 +18914,15 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input);
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_parameter_group_name(inp);
+            self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -18693,24 +18931,24 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
         /// <p>The resource ID of the source DB instance from which to restore.</p>
-        pub fn source_dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_dbi_resource_id(inp);
+        pub fn source_dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_dbi_resource_id(input);
             self
         }
         pub fn set_source_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_dbi_resource_id(inp);
+            self.inner = self.inner.set_source_dbi_resource_id(input);
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -18718,28 +18956,30 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_allocated_storage(inp);
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_allocated_storage(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
         /// <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
         pub fn source_db_instance_automated_backups_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_instance_automated_backups_arn(inp);
+            self.inner = self.inner.source_db_instance_automated_backups_arn(input);
             self
         }
         pub fn set_source_db_instance_automated_backups_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_instance_automated_backups_arn(inp);
+            self.inner = self
+                .inner
+                .set_source_db_instance_automated_backups_arn(input);
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -18751,12 +18991,12 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_customer_owned_ip(inp);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
             self
         }
-        pub fn set_enable_customer_owned_ip(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_customer_owned_ip(inp);
+        pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_customer_owned_ip(input);
             self
         }
     }
@@ -18775,7 +19015,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RevokeDBSecurityGroupIngressOutput,
             smithy_http::result::SdkError<crate::error::RevokeDBSecurityGroupIngressError>,
         >
@@ -18792,15 +19032,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to revoke ingress from.</p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(inp);
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input);
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_security_group_name(inp);
+            self.inner = self.inner.set_db_security_group_name(input);
             self
         }
         /// <p>
@@ -18809,12 +19049,12 @@ pub mod fluent_builders {
         /// <code>EC2SecurityGroupName</code>, <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code>
         /// can't be provided.
         /// </p>
-        pub fn cidrip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidrip(inp);
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidrip(input);
             self
         }
-        pub fn set_cidrip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cidrip(inp);
+        pub fn set_cidrip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidrip(input);
             self
         }
         /// <p>
@@ -18822,15 +19062,15 @@ pub mod fluent_builders {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_name(inp);
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_name(input);
             self
         }
         pub fn set_ec2_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ec2_security_group_name(inp);
+            self.inner = self.inner.set_ec2_security_group_name(input);
             self
         }
         /// <p>
@@ -18838,15 +19078,15 @@ pub mod fluent_builders {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_id(inp);
+        pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_id(input);
             self
         }
         pub fn set_ec2_security_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ec2_security_group_id(inp);
+            self.inner = self.inner.set_ec2_security_group_id(input);
             self
         }
         /// <p>
@@ -18856,15 +19096,18 @@ pub mod fluent_builders {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_owner_id(inp);
+        pub fn ec2_security_group_owner_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ec2_security_group_owner_id(input);
             self
         }
         pub fn set_ec2_security_group_owner_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ec2_security_group_owner_id(inp);
+            self.inner = self.inner.set_ec2_security_group_owner_id(input);
             self
         }
     }
@@ -18883,7 +19126,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartActivityStreamOutput,
             smithy_http::result::SdkError<crate::error::StartActivityStreamError>,
         >
@@ -18901,47 +19144,47 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the DB cluster,
         /// for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>Specifies the mode of the database activity stream.
         /// Database events such as a change or access generate an activity stream event.
         /// The database session can handle these events either synchronously or asynchronously.
         /// </p>
-        pub fn mode(mut self, inp: crate::model::ActivityStreamMode) -> Self {
-            self.inner = self.inner.mode(inp);
+        pub fn mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         pub fn set_mode(
             mut self,
-            inp: std::option::Option<crate::model::ActivityStreamMode>,
+            input: std::option::Option<crate::model::ActivityStreamMode>,
         ) -> Self {
-            self.inner = self.inner.set_mode(inp);
+            self.inner = self.inner.set_mode(input);
             self
         }
         /// <p>The AWS KMS key identifier for encrypting messages in the database activity stream.
         /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>Specifies whether or not the database activity stream is to start as soon as possible,
         /// regardless of the maintenance window for the database.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_apply_immediately(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_apply_immediately(input);
             self
         }
     }
@@ -18960,7 +19203,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartDBClusterOutput,
             smithy_http::result::SdkError<crate::error::StartDBClusterError>,
         >
@@ -18978,15 +19221,15 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This parameter is stored as
         /// a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
     }
@@ -19005,7 +19248,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartDBInstanceOutput,
             smithy_http::result::SdkError<crate::error::StartDBInstanceError>,
         >
@@ -19024,15 +19267,15 @@ pub mod fluent_builders {
         /// <p>
         /// The user-supplied instance identifier.
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
     }
@@ -19051,7 +19294,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartDBInstanceAutomatedBackupsReplicationOutput,
             smithy_http::result::SdkError<
                 crate::error::StartDBInstanceAutomatedBackupsReplicationError,
@@ -19071,47 +19314,50 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example,
         /// <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-        pub fn source_db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_db_instance_arn(inp);
+        pub fn source_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_db_instance_arn(input);
             self
         }
         pub fn set_source_db_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_instance_arn(inp);
+            self.inner = self.inner.set_source_db_instance_arn(input);
             self
         }
         /// <p>The retention period for the replicated automated backups.</p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_backup_retention_period(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_backup_retention_period(input);
             self
         }
         /// <p>The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
         /// Amazon Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
         /// <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be
         /// called in the AWS Region of the source DB instance. The presigned URL must be a valid request for the
         /// StartDBInstanceAutomatedBackupsReplication API action that can be executed in the AWS Region that contains
         /// the source DB instance.</p>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(inp);
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input);
             self
         }
-        pub fn set_pre_signed_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pre_signed_url(inp);
+        pub fn set_pre_signed_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pre_signed_url(input);
             self
         }
     }
@@ -19130,7 +19376,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartExportTaskOutput,
             smithy_http::result::SdkError<crate::error::StartExportTaskError>,
         >
@@ -19148,43 +19394,46 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
         /// the Amazon S3 bucket where the snapshot is to be exported to. </p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_task_identifier(inp);
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_task_identifier(input);
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_export_task_identifier(inp);
+            self.inner = self.inner.set_export_task_identifier(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot to export to Amazon S3.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input);
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_arn(inp);
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_arn(input);
             self
         }
         /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input);
             self
         }
-        pub fn set_s3_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_bucket_name(inp);
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_s3_bucket_name(input);
             self
         }
         /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket
         /// when exporting a snapshot. </p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input);
             self
         }
-        pub fn set_iam_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_iam_role_arn(inp);
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_iam_role_arn(input);
             self
         }
         /// <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
@@ -19220,21 +19469,21 @@ pub mod fluent_builders {
         /// <p>GrantOperation.RetireGrant</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(inp);
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input);
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_prefix(inp);
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_s3_prefix(input);
             self
         }
         /// <p>The data to be exported from the snapshot.
@@ -19270,9 +19519,9 @@ pub mod fluent_builders {
         }
         pub fn set_export_only(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_export_only(inp);
+            self.inner = self.inner.set_export_only(input);
             self
         }
     }
@@ -19291,7 +19540,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopActivityStreamOutput,
             smithy_http::result::SdkError<crate::error::StopActivityStreamError>,
         >
@@ -19310,22 +19559,22 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream.
         /// For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>Specifies whether or not the database activity stream is to stop as soon as possible,
         /// regardless of the maintenance window for the database.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_apply_immediately(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_apply_immediately(input);
             self
         }
     }
@@ -19344,7 +19593,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopDBClusterOutput,
             smithy_http::result::SdkError<crate::error::StopDBClusterError>,
         >
@@ -19362,15 +19611,15 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be stopped. This parameter is stored as
         /// a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input);
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_identifier(inp);
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
     }
@@ -19389,7 +19638,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopDBInstanceOutput,
             smithy_http::result::SdkError<crate::error::StopDBInstanceError>,
         >
@@ -19408,29 +19657,29 @@ pub mod fluent_builders {
         /// <p>
         /// The user-supplied instance identifier.
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input);
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_instance_identifier(inp);
+            self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
         /// <p>
         /// The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.
         /// </p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(inp);
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input);
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_snapshot_identifier(inp);
+            self.inner = self.inner.set_db_snapshot_identifier(input);
             self
         }
     }
@@ -19449,7 +19698,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopDBInstanceAutomatedBackupsReplicationOutput,
             smithy_http::result::SdkError<
                 crate::error::StopDBInstanceAutomatedBackupsReplicationError,
@@ -19469,15 +19718,15 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example,
         /// <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-        pub fn source_db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_db_instance_arn(inp);
+        pub fn source_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_db_instance_arn(input);
             self
         }
         pub fn set_source_db_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_db_instance_arn(inp);
+            self.inner = self.inner.set_source_db_instance_arn(input);
             self
         }
     }

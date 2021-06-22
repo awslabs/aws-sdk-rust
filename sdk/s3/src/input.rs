@@ -16,64 +16,66 @@ pub mod abort_multipart_upload_input {
         /// <p>The bucket name to which the upload was taking place. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Key of the object for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Upload ID that identifies the multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id = Some(inp.into());
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id = Some(input.into());
             self
         }
-        pub fn set_upload_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = inp;
+        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_id = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AbortMultipartUploadInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AbortMultipartUploadInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AbortMultipartUploadInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -94,7 +96,7 @@ impl AbortMultipartUploadInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AbortMultipartUpload,
             aws_http::AwsErrorRetryPolicy,
@@ -158,7 +160,7 @@ impl AbortMultipartUploadInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_1) = &self.request_payer {
             let formatted_2 = AsRef::<str>::as_ref(inner_1);
             if !formatted_2.is_empty() {
@@ -208,7 +210,7 @@ impl AbortMultipartUploadInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -218,7 +220,7 @@ impl AbortMultipartUploadInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -253,76 +255,78 @@ pub mod complete_multipart_upload_input {
     }
     impl Builder {
         /// <p>Name of the bucket to which the multipart upload was initiated.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The container for the multipart upload request information.</p>
-        pub fn multipart_upload(mut self, inp: crate::model::CompletedMultipartUpload) -> Self {
-            self.multipart_upload = Some(inp);
+        pub fn multipart_upload(mut self, input: crate::model::CompletedMultipartUpload) -> Self {
+            self.multipart_upload = Some(input);
             self
         }
         pub fn set_multipart_upload(
             mut self,
-            inp: std::option::Option<crate::model::CompletedMultipartUpload>,
+            input: std::option::Option<crate::model::CompletedMultipartUpload>,
         ) -> Self {
-            self.multipart_upload = inp;
+            self.multipart_upload = input;
             self
         }
         /// <p>ID for the initiated multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id = Some(inp.into());
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id = Some(input.into());
             self
         }
-        pub fn set_upload_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = inp;
+        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_id = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CompleteMultipartUploadInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CompleteMultipartUploadInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CompleteMultipartUploadInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -345,7 +349,7 @@ impl CompleteMultipartUploadInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CompleteMultipartUpload,
             aws_http::AwsErrorRetryPolicy,
@@ -411,7 +415,7 @@ impl CompleteMultipartUploadInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_6) = &self.request_payer {
             let formatted_7 = AsRef::<str>::as_ref(inner_6);
             if !formatted_7.is_empty() {
@@ -461,7 +465,7 @@ impl CompleteMultipartUploadInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -471,7 +475,7 @@ impl CompleteMultipartUploadInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -544,79 +548,85 @@ pub mod copy_object_input {
     impl Builder {
         /// <p>The canned ACL to apply to the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.acl = Some(inp);
+        pub fn acl(mut self, input: crate::model::ObjectCannedAcl) -> Self {
+            self.acl = Some(input);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
-            self.acl = inp;
+        pub fn set_acl(
+            mut self,
+            input: std::option::Option<crate::model::ObjectCannedAcl>,
+        ) -> Self {
+            self.acl = input;
             self
         }
         /// <p>The name of the destination bucket.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_control = Some(inp.into());
+        pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_control = Some(input.into());
             self
         }
-        pub fn set_cache_control(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cache_control = inp;
+        pub fn set_cache_control(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cache_control = input;
             self
         }
         /// <p>Specifies presentational information for the object.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_disposition = Some(inp.into());
+        pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_disposition = Some(input.into());
             self
         }
         pub fn set_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_disposition = inp;
+            self.content_disposition = input;
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_encoding = Some(inp.into());
+        pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_encoding = Some(input.into());
             self
         }
         pub fn set_content_encoding(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_encoding = inp;
+            self.content_encoding = input;
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_language = Some(inp.into());
+        pub fn content_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_language = Some(input.into());
             self
         }
         pub fn set_content_language(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_language = inp;
+            self.content_language = input;
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>Specifies the source object for the copy operation. You specify the value in one of two
@@ -643,127 +653,130 @@ pub mod copy_object_input {
         /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
         /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
         /// object.</p>
-        pub fn copy_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source = Some(inp.into());
+        pub fn copy_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source = Some(input.into());
             self
         }
-        pub fn set_copy_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.copy_source = inp;
+        pub fn set_copy_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.copy_source = input;
             self
         }
         /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
-        pub fn copy_source_if_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_if_match = Some(inp.into());
+        pub fn copy_source_if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source_if_match = Some(input.into());
             self
         }
         pub fn set_copy_source_if_match(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_if_match = inp;
+            self.copy_source_if_match = input;
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
-        pub fn copy_source_if_modified_since(mut self, inp: smithy_types::Instant) -> Self {
-            self.copy_source_if_modified_since = Some(inp);
+        pub fn copy_source_if_modified_since(mut self, input: smithy_types::Instant) -> Self {
+            self.copy_source_if_modified_since = Some(input);
             self
         }
         pub fn set_copy_source_if_modified_since(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.copy_source_if_modified_since = inp;
+            self.copy_source_if_modified_since = input;
             self
         }
         /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
-        pub fn copy_source_if_none_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_if_none_match = Some(inp.into());
+        pub fn copy_source_if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source_if_none_match = Some(input.into());
             self
         }
         pub fn set_copy_source_if_none_match(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_if_none_match = inp;
+            self.copy_source_if_none_match = input;
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
-        pub fn copy_source_if_unmodified_since(mut self, inp: smithy_types::Instant) -> Self {
-            self.copy_source_if_unmodified_since = Some(inp);
+        pub fn copy_source_if_unmodified_since(mut self, input: smithy_types::Instant) -> Self {
+            self.copy_source_if_unmodified_since = Some(input);
             self
         }
         pub fn set_copy_source_if_unmodified_since(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.copy_source_if_unmodified_since = inp;
+            self.copy_source_if_unmodified_since = input;
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: smithy_types::Instant) -> Self {
-            self.expires = Some(inp);
+        pub fn expires(mut self, input: smithy_types::Instant) -> Self {
+            self.expires = Some(input);
             self
         }
-        pub fn set_expires(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.expires = inp;
+        pub fn set_expires(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.expires = input;
             self
         }
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_full_control = Some(inp.into());
+        pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_full_control = Some(input.into());
             self
         }
         pub fn set_grant_full_control(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_full_control = inp;
+            self.grant_full_control = input;
             self
         }
         /// <p>Allows grantee to read the object data and its
         /// metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read = Some(inp.into());
+        pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read = Some(input.into());
             self
         }
-        pub fn set_grant_read(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read = inp;
+        pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_read = input;
             self
         }
         /// <p>Allows grantee to read the object ACL.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read_acp = Some(inp.into());
+        pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read_acp = Some(input.into());
             self
         }
-        pub fn set_grant_read_acp(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read_acp = inp;
+        pub fn set_grant_read_acp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.grant_read_acp = input;
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write_acp = Some(inp.into());
+        pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write_acp = Some(input.into());
             self
         }
         pub fn set_grant_write_acp(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_write_acp = inp;
+            self.grant_write_acp = input;
             self
         }
         /// <p>The key of the destination object.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         pub fn metadata(
@@ -778,50 +791,50 @@ pub mod copy_object_input {
         }
         pub fn set_metadata(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.metadata = inp;
+            self.metadata = input;
             self
         }
         /// <p>Specifies whether the metadata is copied from the source object or replaced with
         /// metadata provided in the request.</p>
-        pub fn metadata_directive(mut self, inp: crate::model::MetadataDirective) -> Self {
-            self.metadata_directive = Some(inp);
+        pub fn metadata_directive(mut self, input: crate::model::MetadataDirective) -> Self {
+            self.metadata_directive = Some(input);
             self
         }
         pub fn set_metadata_directive(
             mut self,
-            inp: std::option::Option<crate::model::MetadataDirective>,
+            input: std::option::Option<crate::model::MetadataDirective>,
         ) -> Self {
-            self.metadata_directive = inp;
+            self.metadata_directive = input;
             self
         }
         /// <p>Specifies whether the object tag-set are copied from the source object or replaced with
         /// tag-set provided in the request.</p>
-        pub fn tagging_directive(mut self, inp: crate::model::TaggingDirective) -> Self {
-            self.tagging_directive = Some(inp);
+        pub fn tagging_directive(mut self, input: crate::model::TaggingDirective) -> Self {
+            self.tagging_directive = Some(input);
             self
         }
         pub fn set_tagging_directive(
             mut self,
-            inp: std::option::Option<crate::model::TaggingDirective>,
+            input: std::option::Option<crate::model::TaggingDirective>,
         ) -> Self {
-            self.tagging_directive = inp;
+            self.tagging_directive = input;
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
@@ -829,71 +842,71 @@ pub mod copy_object_input {
         /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
         /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
         /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
         /// the object metadata.</p>
-        pub fn website_redirect_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.website_redirect_location = Some(inp.into());
+        pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.website_redirect_location = Some(input.into());
             self
         }
         pub fn set_website_redirect_location(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.website_redirect_location = inp;
+            self.website_redirect_location = input;
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
         /// value is used to store the object and then it is discarded; Amazon S3 does not store the
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key = Some(inp.into());
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
             self
         }
         pub fn set_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key = inp;
+            self.sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT requests for
@@ -901,66 +914,72 @@ pub mod copy_object_input {
         /// information about configuring using any of the officially supported AWS SDKs and AWS CLI,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the
         /// Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>Specifies the AWS KMS Encryption Context to use for object encryption. The value of this
         /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
         /// pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_encryption_context = Some(inp.into());
+        pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_encryption_context = Some(input.into());
             self
         }
         pub fn set_ssekms_encryption_context(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssekms_encryption_context = inp;
+            self.ssekms_encryption_context = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p>
         /// <p>Specifying this header with a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>Specifies the algorithm to use when decrypting the source object (for example,
         /// AES256).</p>
         pub fn copy_source_sse_customer_algorithm(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_algorithm = Some(inp.into());
+            self.copy_source_sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_copy_source_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_algorithm = inp;
+            self.copy_source_sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
         /// object. The encryption key provided in this header must be one that was used when the
         /// source object was created.</p>
-        pub fn copy_source_sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_sse_customer_key = Some(inp.into());
+        pub fn copy_source_sse_customer_key(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.copy_source_sse_customer_key = Some(input.into());
             self
         }
         pub fn set_copy_source_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_key = inp;
+            self.copy_source_sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -968,111 +987,115 @@ pub mod copy_object_input {
         /// without error.</p>
         pub fn copy_source_sse_customer_key_md5(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_key_md5 = Some(inp.into());
+            self.copy_source_sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_copy_source_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_key_md5 = inp;
+            self.copy_source_sse_customer_key_md5 = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The tag-set for the object destination object this value must be used in conjunction
         /// with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query
         /// parameters.</p>
-        pub fn tagging(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tagging = Some(inp.into());
+        pub fn tagging(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tagging = Some(input.into());
             self
         }
-        pub fn set_tagging(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.tagging = inp;
+        pub fn set_tagging(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tagging = input;
             self
         }
         /// <p>The Object Lock mode that you want to apply to the copied object.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.object_lock_mode = Some(inp);
+        pub fn object_lock_mode(mut self, input: crate::model::ObjectLockMode) -> Self {
+            self.object_lock_mode = Some(input);
             self
         }
         pub fn set_object_lock_mode(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockMode>,
+            input: std::option::Option<crate::model::ObjectLockMode>,
         ) -> Self {
-            self.object_lock_mode = inp;
+            self.object_lock_mode = input;
             self
         }
         /// <p>The date and time when you want the copied object's Object Lock to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.object_lock_retain_until_date = Some(inp);
+        pub fn object_lock_retain_until_date(mut self, input: smithy_types::Instant) -> Self {
+            self.object_lock_retain_until_date = Some(input);
             self
         }
         pub fn set_object_lock_retain_until_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.object_lock_retain_until_date = inp;
+            self.object_lock_retain_until_date = input;
             self
         }
         /// <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            input: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.object_lock_legal_hold_status = Some(inp);
+            self.object_lock_legal_hold_status = Some(input);
             self
         }
         pub fn set_object_lock_legal_hold_status(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+            input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
         ) -> Self {
-            self.object_lock_legal_hold_status = inp;
+            self.object_lock_legal_hold_status = input;
             self
         }
         /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_source_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_source_bucket_owner = Some(inp.into());
+        pub fn expected_source_bucket_owner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.expected_source_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_source_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_source_bucket_owner = inp;
+            self.expected_source_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyObjectInput`](crate::input::CopyObjectInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CopyObjectInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CopyObjectInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CopyObjectInput {
                 acl: self.acl,
                 bucket: self.bucket.unwrap_or_default(),
@@ -1128,7 +1151,7 @@ impl CopyObjectInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CopyObject,
             aws_http::AwsErrorRetryPolicy,
@@ -1189,7 +1212,7 @@ impl CopyObjectInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_11) = &self.acl {
             let formatted_12 = AsRef::<str>::as_ref(inner_11);
             if !formatted_12.is_empty() {
@@ -1906,7 +1929,7 @@ impl CopyObjectInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -1916,7 +1939,7 @@ impl CopyObjectInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -1955,104 +1978,114 @@ pub mod create_bucket_input {
     }
     impl Builder {
         /// <p>The canned ACL to apply to the bucket.</p>
-        pub fn acl(mut self, inp: crate::model::BucketCannedAcl) -> Self {
-            self.acl = Some(inp);
+        pub fn acl(mut self, input: crate::model::BucketCannedAcl) -> Self {
+            self.acl = Some(input);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedAcl>) -> Self {
-            self.acl = inp;
+        pub fn set_acl(
+            mut self,
+            input: std::option::Option<crate::model::BucketCannedAcl>,
+        ) -> Self {
+            self.acl = input;
             self
         }
         /// <p>The name of the bucket to create.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
         /// bucket.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_full_control = Some(inp.into());
+        pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_full_control = Some(input.into());
             self
         }
         pub fn set_grant_full_control(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_full_control = inp;
+            self.grant_full_control = input;
             self
         }
         /// <p>Allows grantee to list the objects in the bucket.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read = Some(inp.into());
+        pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read = Some(input.into());
             self
         }
-        pub fn set_grant_read(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read = inp;
+        pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_read = input;
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read_acp = Some(inp.into());
+        pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read_acp = Some(input.into());
             self
         }
-        pub fn set_grant_read_acp(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read_acp = inp;
+        pub fn set_grant_read_acp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.grant_read_acp = input;
             self
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
         /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-        pub fn grant_write(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write = Some(inp.into());
+        pub fn grant_write(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write = Some(input.into());
             self
         }
-        pub fn set_grant_write(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_write = inp;
+        pub fn set_grant_write(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_write = input;
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write_acp = Some(inp.into());
+        pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write_acp = Some(input.into());
             self
         }
         pub fn set_grant_write_acp(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_write_acp = inp;
+            self.grant_write_acp = input;
             self
         }
         /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-        pub fn object_lock_enabled_for_bucket(mut self, inp: bool) -> Self {
-            self.object_lock_enabled_for_bucket = Some(inp);
+        pub fn object_lock_enabled_for_bucket(mut self, input: bool) -> Self {
+            self.object_lock_enabled_for_bucket = Some(input);
             self
         }
-        pub fn set_object_lock_enabled_for_bucket(mut self, inp: bool) -> Self {
-            self.object_lock_enabled_for_bucket = Some(inp);
+        pub fn set_object_lock_enabled_for_bucket(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.object_lock_enabled_for_bucket = input;
             self
         }
         /// <p>The configuration information for the bucket.</p>
         pub fn create_bucket_configuration(
             mut self,
-            inp: crate::model::CreateBucketConfiguration,
+            input: crate::model::CreateBucketConfiguration,
         ) -> Self {
-            self.create_bucket_configuration = Some(inp);
+            self.create_bucket_configuration = Some(input);
             self
         }
         pub fn set_create_bucket_configuration(
             mut self,
-            inp: std::option::Option<crate::model::CreateBucketConfiguration>,
+            input: std::option::Option<crate::model::CreateBucketConfiguration>,
         ) -> Self {
-            self.create_bucket_configuration = inp;
+            self.create_bucket_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateBucketInput`](crate::input::CreateBucketInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBucketInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateBucketInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateBucketInput {
                 acl: self.acl,
                 bucket: self.bucket.unwrap_or_default(),
@@ -2079,7 +2112,7 @@ impl CreateBucketInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateBucket,
             aws_http::AwsErrorRetryPolicy,
@@ -2141,7 +2174,7 @@ impl CreateBucketInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_85) = &self.acl {
             let formatted_86 = AsRef::<str>::as_ref(inner_85);
             if !formatted_86.is_empty() {
@@ -2275,7 +2308,7 @@ impl CreateBucketInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         let builder = self.add_headers(builder)?;
@@ -2284,7 +2317,7 @@ impl CreateBucketInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2346,146 +2379,155 @@ pub mod create_multipart_upload_input {
     impl Builder {
         /// <p>The canned ACL to apply to the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.acl = Some(inp);
+        pub fn acl(mut self, input: crate::model::ObjectCannedAcl) -> Self {
+            self.acl = Some(input);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
-            self.acl = inp;
+        pub fn set_acl(
+            mut self,
+            input: std::option::Option<crate::model::ObjectCannedAcl>,
+        ) -> Self {
+            self.acl = input;
             self
         }
         /// <p>The name of the bucket to which to initiate the upload</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_control = Some(inp.into());
+        pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_control = Some(input.into());
             self
         }
-        pub fn set_cache_control(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cache_control = inp;
+        pub fn set_cache_control(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cache_control = input;
             self
         }
         /// <p>Specifies presentational information for the object.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_disposition = Some(inp.into());
+        pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_disposition = Some(input.into());
             self
         }
         pub fn set_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_disposition = inp;
+            self.content_disposition = input;
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_encoding = Some(inp.into());
+        pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_encoding = Some(input.into());
             self
         }
         pub fn set_content_encoding(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_encoding = inp;
+            self.content_encoding = input;
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_language = Some(inp.into());
+        pub fn content_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_language = Some(input.into());
             self
         }
         pub fn set_content_language(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_language = inp;
+            self.content_language = input;
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: smithy_types::Instant) -> Self {
-            self.expires = Some(inp);
+        pub fn expires(mut self, input: smithy_types::Instant) -> Self {
+            self.expires = Some(input);
             self
         }
-        pub fn set_expires(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.expires = inp;
+        pub fn set_expires(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.expires = input;
             self
         }
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_full_control = Some(inp.into());
+        pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_full_control = Some(input.into());
             self
         }
         pub fn set_grant_full_control(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_full_control = inp;
+            self.grant_full_control = input;
             self
         }
         /// <p>Allows grantee to read the object data and its
         /// metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read = Some(inp.into());
+        pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read = Some(input.into());
             self
         }
-        pub fn set_grant_read(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read = inp;
+        pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_read = input;
             self
         }
         /// <p>Allows grantee to read the object ACL.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read_acp = Some(inp.into());
+        pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read_acp = Some(input.into());
             self
         }
-        pub fn set_grant_read_acp(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read_acp = inp;
+        pub fn set_grant_read_acp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.grant_read_acp = input;
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write_acp = Some(inp.into());
+        pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write_acp = Some(input.into());
             self
         }
         pub fn set_grant_write_acp(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_write_acp = inp;
+            self.grant_write_acp = input;
             self
         }
         /// <p>Object key for which the multipart upload is to be initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         pub fn metadata(
@@ -2500,24 +2542,24 @@ pub mod create_multipart_upload_input {
         }
         pub fn set_metadata(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.metadata = inp;
+            self.metadata = input;
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
@@ -2525,71 +2567,71 @@ pub mod create_multipart_upload_input {
         /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
         /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
         /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
         /// the object metadata.</p>
-        pub fn website_redirect_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.website_redirect_location = Some(inp.into());
+        pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.website_redirect_location = Some(input.into());
             self
         }
         pub fn set_website_redirect_location(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.website_redirect_location = inp;
+            self.website_redirect_location = input;
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
         /// value is used to store the object and then it is discarded; Amazon S3 does not store the
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key = Some(inp.into());
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
             self
         }
         pub fn set_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key = inp;
+            self.sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for object
@@ -2597,118 +2639,123 @@ pub mod create_multipart_upload_input {
         /// made via SSL or using SigV4. For information about configuring using any of the officially
         /// supported AWS SDKs and AWS CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a>
         /// in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>Specifies the AWS KMS Encryption Context to use for object encryption. The value of this
         /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
         /// pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_encryption_context = Some(inp.into());
+        pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_encryption_context = Some(input.into());
             self
         }
         pub fn set_ssekms_encryption_context(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssekms_encryption_context = inp;
+            self.ssekms_encryption_context = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
         /// <p>Specifying this header with an object action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters.</p>
-        pub fn tagging(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tagging = Some(inp.into());
+        pub fn tagging(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tagging = Some(input.into());
             self
         }
-        pub fn set_tagging(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.tagging = inp;
+        pub fn set_tagging(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tagging = input;
             self
         }
         /// <p>Specifies the Object Lock mode that you want to apply to the uploaded object.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.object_lock_mode = Some(inp);
+        pub fn object_lock_mode(mut self, input: crate::model::ObjectLockMode) -> Self {
+            self.object_lock_mode = Some(input);
             self
         }
         pub fn set_object_lock_mode(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockMode>,
+            input: std::option::Option<crate::model::ObjectLockMode>,
         ) -> Self {
-            self.object_lock_mode = inp;
+            self.object_lock_mode = input;
             self
         }
         /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.object_lock_retain_until_date = Some(inp);
+        pub fn object_lock_retain_until_date(mut self, input: smithy_types::Instant) -> Self {
+            self.object_lock_retain_until_date = Some(input);
             self
         }
         pub fn set_object_lock_retain_until_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.object_lock_retain_until_date = inp;
+            self.object_lock_retain_until_date = input;
             self
         }
         /// <p>Specifies whether you want to apply a Legal Hold to the uploaded object.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            input: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.object_lock_legal_hold_status = Some(inp);
+            self.object_lock_legal_hold_status = Some(input);
             self
         }
         pub fn set_object_lock_legal_hold_status(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+            input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
         ) -> Self {
-            self.object_lock_legal_hold_status = inp;
+            self.object_lock_legal_hold_status = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateMultipartUploadInput`](crate::input::CreateMultipartUploadInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateMultipartUploadInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateMultipartUploadInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateMultipartUploadInput {
                 acl: self.acl,
                 bucket: self.bucket.unwrap_or_default(),
@@ -2753,7 +2800,7 @@ impl CreateMultipartUploadInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateMultipartUpload,
             aws_http::AwsErrorRetryPolicy,
@@ -2817,7 +2864,7 @@ impl CreateMultipartUploadInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_98) = &self.acl {
             let formatted_99 = AsRef::<str>::as_ref(inner_98);
             if !formatted_99.is_empty() {
@@ -3328,7 +3375,7 @@ impl CreateMultipartUploadInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -3338,7 +3385,7 @@ impl CreateMultipartUploadInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3369,30 +3416,31 @@ pub mod delete_bucket_input {
     }
     impl Builder {
         /// <p>Specifies the bucket being deleted.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketInput`](crate::input::DeleteBucketInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteBucketInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteBucketInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -3410,7 +3458,7 @@ impl DeleteBucketInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucket,
             aws_http::AwsErrorRetryPolicy,
@@ -3470,7 +3518,7 @@ impl DeleteBucketInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_150) = &self.expected_bucket_owner {
             let formatted_151 = AsRef::<str>::as_ref(inner_150);
             if !formatted_151.is_empty() {
@@ -3495,7 +3543,7 @@ impl DeleteBucketInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         let builder = self.add_headers(builder)?;
@@ -3504,7 +3552,7 @@ impl DeleteBucketInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3536,39 +3584,39 @@ pub mod delete_bucket_analytics_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket from which an analytics configuration is deleted.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketAnalyticsConfigurationInput`](crate::input::DeleteBucketAnalyticsConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteBucketAnalyticsConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -3591,7 +3639,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketAnalyticsConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -3654,7 +3702,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_152) = &self.expected_bucket_owner {
             let formatted_153 = AsRef::<str>::as_ref(inner_152);
             if !formatted_153.is_empty() {
@@ -3686,7 +3734,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -3696,7 +3744,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3727,31 +3775,33 @@ pub mod delete_bucket_cors_input {
     }
     impl Builder {
         /// <p>Specifies the bucket whose <code>cors</code> configuration is being deleted.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketCorsInput`](crate::input::DeleteBucketCorsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketCorsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBucketCorsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBucketCorsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -3769,7 +3819,7 @@ impl DeleteBucketCorsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketCors,
             aws_http::AwsErrorRetryPolicy,
@@ -3832,7 +3882,7 @@ impl DeleteBucketCorsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_155) = &self.expected_bucket_owner {
             let formatted_156 = AsRef::<str>::as_ref(inner_155);
             if !formatted_156.is_empty() {
@@ -3861,7 +3911,7 @@ impl DeleteBucketCorsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -3871,7 +3921,7 @@ impl DeleteBucketCorsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3903,31 +3953,33 @@ pub mod delete_bucket_encryption_input {
     impl Builder {
         /// <p>The name of the bucket containing the server-side encryption configuration to
         /// delete.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketEncryptionInput`](crate::input::DeleteBucketEncryptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketEncryptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBucketEncryptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBucketEncryptionInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -3945,7 +3997,7 @@ impl DeleteBucketEncryptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketEncryption,
             aws_http::AwsErrorRetryPolicy,
@@ -4008,7 +4060,7 @@ impl DeleteBucketEncryptionInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_157) = &self.expected_bucket_owner {
             let formatted_158 = AsRef::<str>::as_ref(inner_157);
             if !formatted_158.is_empty() {
@@ -4037,7 +4089,7 @@ impl DeleteBucketEncryptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4047,7 +4099,7 @@ impl DeleteBucketEncryptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4078,27 +4130,27 @@ pub mod delete_bucket_intelligent_tiering_configuration_input {
     }
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketIntelligentTieringConfigurationInput`](crate::input::DeleteBucketIntelligentTieringConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteBucketIntelligentTieringConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -4123,7 +4175,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketIntelligentTieringConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -4194,7 +4246,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4203,7 +4255,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4236,39 +4288,39 @@ pub mod delete_bucket_inventory_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket containing the inventory configuration to delete.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketInventoryConfigurationInput`](crate::input::DeleteBucketInventoryConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteBucketInventoryConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -4291,7 +4343,7 @@ impl DeleteBucketInventoryConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketInventoryConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -4354,7 +4406,7 @@ impl DeleteBucketInventoryConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_160) = &self.expected_bucket_owner {
             let formatted_161 = AsRef::<str>::as_ref(inner_160);
             if !formatted_161.is_empty() {
@@ -4386,7 +4438,7 @@ impl DeleteBucketInventoryConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4396,7 +4448,7 @@ impl DeleteBucketInventoryConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4427,31 +4479,33 @@ pub mod delete_bucket_lifecycle_input {
     }
     impl Builder {
         /// <p>The bucket name of the lifecycle to delete.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketLifecycleInput`](crate::input::DeleteBucketLifecycleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketLifecycleInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBucketLifecycleInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBucketLifecycleInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -4469,7 +4523,7 @@ impl DeleteBucketLifecycleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketLifecycle,
             aws_http::AwsErrorRetryPolicy,
@@ -4532,7 +4586,7 @@ impl DeleteBucketLifecycleInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_163) = &self.expected_bucket_owner {
             let formatted_164 = AsRef::<str>::as_ref(inner_163);
             if !formatted_164.is_empty() {
@@ -4561,7 +4615,7 @@ impl DeleteBucketLifecycleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4571,7 +4625,7 @@ impl DeleteBucketLifecycleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4603,39 +4657,39 @@ pub mod delete_bucket_metrics_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket containing the metrics configuration to delete.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketMetricsConfigurationInput`](crate::input::DeleteBucketMetricsConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteBucketMetricsConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -4658,7 +4712,7 @@ impl DeleteBucketMetricsConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketMetricsConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -4721,7 +4775,7 @@ impl DeleteBucketMetricsConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_165) = &self.expected_bucket_owner {
             let formatted_166 = AsRef::<str>::as_ref(inner_165);
             if !formatted_166.is_empty() {
@@ -4753,7 +4807,7 @@ impl DeleteBucketMetricsConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4763,7 +4817,7 @@ impl DeleteBucketMetricsConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4794,30 +4848,30 @@ pub mod delete_bucket_ownership_controls_input {
     }
     impl Builder {
         /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketOwnershipControlsInput`](crate::input::DeleteBucketOwnershipControlsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteBucketOwnershipControlsInput,
             smithy_http::operation::BuildError,
         > {
@@ -4839,7 +4893,7 @@ impl DeleteBucketOwnershipControlsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketOwnershipControls,
             aws_http::AwsErrorRetryPolicy,
@@ -4902,7 +4956,7 @@ impl DeleteBucketOwnershipControlsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_168) = &self.expected_bucket_owner {
             let formatted_169 = AsRef::<str>::as_ref(inner_168);
             if !formatted_169.is_empty() {
@@ -4931,7 +4985,7 @@ impl DeleteBucketOwnershipControlsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4941,7 +4995,7 @@ impl DeleteBucketOwnershipControlsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4972,31 +5026,33 @@ pub mod delete_bucket_policy_input {
     }
     impl Builder {
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBucketPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBucketPolicyInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -5014,7 +5070,7 @@ impl DeleteBucketPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -5077,7 +5133,7 @@ impl DeleteBucketPolicyInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_170) = &self.expected_bucket_owner {
             let formatted_171 = AsRef::<str>::as_ref(inner_170);
             if !formatted_171.is_empty() {
@@ -5106,7 +5162,7 @@ impl DeleteBucketPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5116,7 +5172,7 @@ impl DeleteBucketPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5147,31 +5203,33 @@ pub mod delete_bucket_replication_input {
     }
     impl Builder {
         /// <p> The bucket name. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketReplicationInput`](crate::input::DeleteBucketReplicationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketReplicationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBucketReplicationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBucketReplicationInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -5190,7 +5248,7 @@ impl DeleteBucketReplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketReplication,
             aws_http::AwsErrorRetryPolicy,
@@ -5253,7 +5311,7 @@ impl DeleteBucketReplicationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_172) = &self.expected_bucket_owner {
             let formatted_173 = AsRef::<str>::as_ref(inner_172);
             if !formatted_173.is_empty() {
@@ -5282,7 +5340,7 @@ impl DeleteBucketReplicationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5292,7 +5350,7 @@ impl DeleteBucketReplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5323,31 +5381,33 @@ pub mod delete_bucket_tagging_input {
     }
     impl Builder {
         /// <p>The bucket that has the tag set to be removed.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketTaggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBucketTaggingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBucketTaggingInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -5365,7 +5425,7 @@ impl DeleteBucketTaggingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketTagging,
             aws_http::AwsErrorRetryPolicy,
@@ -5428,7 +5488,7 @@ impl DeleteBucketTaggingInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_174) = &self.expected_bucket_owner {
             let formatted_175 = AsRef::<str>::as_ref(inner_174);
             if !formatted_175.is_empty() {
@@ -5457,7 +5517,7 @@ impl DeleteBucketTaggingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5467,7 +5527,7 @@ impl DeleteBucketTaggingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5498,31 +5558,33 @@ pub mod delete_bucket_website_input {
     }
     impl Builder {
         /// <p>The bucket name for which you want to remove the website configuration. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBucketWebsiteInput`](crate::input::DeleteBucketWebsiteInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketWebsiteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBucketWebsiteInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBucketWebsiteInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -5540,7 +5602,7 @@ impl DeleteBucketWebsiteInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBucketWebsite,
             aws_http::AwsErrorRetryPolicy,
@@ -5603,7 +5665,7 @@ impl DeleteBucketWebsiteInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_176) = &self.expected_bucket_owner {
             let formatted_177 = AsRef::<str>::as_ref(inner_176);
             if !formatted_177.is_empty() {
@@ -5632,7 +5694,7 @@ impl DeleteBucketWebsiteInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5642,7 +5704,7 @@ impl DeleteBucketWebsiteInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5680,84 +5742,85 @@ pub mod delete_object_input {
         /// <p>The bucket name of the bucket containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Key name of the object to delete.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
         /// that is displayed on your authentication device. Required to permanently delete a versioned
         /// object if versioning is configured with MFA delete enabled.</p>
-        pub fn mfa(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.mfa = Some(inp.into());
+        pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mfa = Some(input.into());
             self
         }
-        pub fn set_mfa(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.mfa = inp;
+        pub fn set_mfa(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mfa = input;
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
         /// this operation.</p>
-        pub fn bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.bypass_governance_retention = Some(inp);
+        pub fn bypass_governance_retention(mut self, input: bool) -> Self {
+            self.bypass_governance_retention = Some(input);
             self
         }
-        pub fn set_bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.bypass_governance_retention = Some(inp);
+        pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
+            self.bypass_governance_retention = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::input::DeleteObjectInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteObjectInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteObjectInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteObjectInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -5780,7 +5843,7 @@ impl DeleteObjectInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteObject,
             aws_http::AwsErrorRetryPolicy,
@@ -5841,7 +5904,7 @@ impl DeleteObjectInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_178) = &self.mfa {
             let formatted_179 = AsRef::<str>::as_ref(inner_178);
             if !formatted_179.is_empty() {
@@ -5927,7 +5990,7 @@ impl DeleteObjectInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5937,7 +6000,7 @@ impl DeleteObjectInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5974,75 +6037,76 @@ pub mod delete_objects_input {
         /// <p>The bucket name containing the objects to delete. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
         /// that is displayed on your authentication device. Required to permanently delete a versioned
         /// object if versioning is configured with MFA delete enabled.</p>
-        pub fn mfa(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.mfa = Some(inp.into());
+        pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mfa = Some(input.into());
             self
         }
-        pub fn set_mfa(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.mfa = inp;
+        pub fn set_mfa(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mfa = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
         /// Lock in place. You must have sufficient permissions to perform this operation.</p>
-        pub fn bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.bypass_governance_retention = Some(inp);
+        pub fn bypass_governance_retention(mut self, input: bool) -> Self {
+            self.bypass_governance_retention = Some(input);
             self
         }
-        pub fn set_bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.bypass_governance_retention = Some(inp);
+        pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
+            self.bypass_governance_retention = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for the request.</p>
-        pub fn delete(mut self, inp: crate::model::Delete) -> Self {
-            self.delete = Some(inp);
+        pub fn delete(mut self, input: crate::model::Delete) -> Self {
+            self.delete = Some(input);
             self
         }
-        pub fn set_delete(mut self, inp: std::option::Option<crate::model::Delete>) -> Self {
-            self.delete = inp;
+        pub fn set_delete(mut self, input: std::option::Option<crate::model::Delete>) -> Self {
+            self.delete = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteObjectsInput`](crate::input::DeleteObjectsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteObjectsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteObjectsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteObjectsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 mfa: self.mfa,
@@ -6064,7 +6128,7 @@ impl DeleteObjectsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteObjects,
             aws_http::AwsErrorRetryPolicy,
@@ -6078,6 +6142,21 @@ impl DeleteObjectsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6124,7 +6203,7 @@ impl DeleteObjectsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_186) = &self.mfa {
             let formatted_187 = AsRef::<str>::as_ref(inner_186);
             if !formatted_187.is_empty() {
@@ -6208,7 +6287,7 @@ impl DeleteObjectsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6218,7 +6297,7 @@ impl DeleteObjectsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6253,49 +6332,51 @@ pub mod delete_object_tagging_input {
         /// <p>The bucket name containing the objects from which to remove the tags. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The key that identifies the object in the bucket from which to remove all tags.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The versionId of the object that the tag-set will be removed from.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteObjectTaggingInput`](crate::input::DeleteObjectTaggingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteObjectTaggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteObjectTaggingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteObjectTaggingInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -6315,7 +6396,7 @@ impl DeleteObjectTaggingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteObjectTagging,
             aws_http::AwsErrorRetryPolicy,
@@ -6379,7 +6460,7 @@ impl DeleteObjectTaggingInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_193) = &self.expected_bucket_owner {
             let formatted_194 = AsRef::<str>::as_ref(inner_193);
             if !formatted_194.is_empty() {
@@ -6411,7 +6492,7 @@ impl DeleteObjectTaggingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6421,7 +6502,7 @@ impl DeleteObjectTaggingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6453,31 +6534,33 @@ pub mod delete_public_access_block_input {
     impl Builder {
         /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete.
         /// </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`DeletePublicAccessBlockInput`](crate::input::DeletePublicAccessBlockInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePublicAccessBlockInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeletePublicAccessBlockInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeletePublicAccessBlockInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -6496,7 +6579,7 @@ impl DeletePublicAccessBlockInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeletePublicAccessBlock,
             aws_http::AwsErrorRetryPolicy,
@@ -6559,7 +6642,7 @@ impl DeletePublicAccessBlockInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_196) = &self.expected_bucket_owner {
             let formatted_197 = AsRef::<str>::as_ref(inner_196);
             if !formatted_197.is_empty() {
@@ -6588,7 +6671,7 @@ impl DeletePublicAccessBlockInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6598,7 +6681,7 @@ impl DeletePublicAccessBlockInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6629,30 +6712,30 @@ pub mod get_bucket_accelerate_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketAccelerateConfigurationInput`](crate::input::GetBucketAccelerateConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetBucketAccelerateConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -6674,7 +6757,7 @@ impl GetBucketAccelerateConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketAccelerateConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -6737,7 +6820,7 @@ impl GetBucketAccelerateConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_198) = &self.expected_bucket_owner {
             let formatted_199 = AsRef::<str>::as_ref(inner_198);
             if !formatted_199.is_empty() {
@@ -6766,7 +6849,7 @@ impl GetBucketAccelerateConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6776,7 +6859,7 @@ impl GetBucketAccelerateConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6807,30 +6890,31 @@ pub mod get_bucket_acl_input {
     }
     impl Builder {
         /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketAclInput`](crate::input::GetBucketAclInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketAclInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetBucketAclInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetBucketAclInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -6848,7 +6932,7 @@ impl GetBucketAclInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketAcl,
             aws_http::AwsErrorRetryPolicy,
@@ -6908,7 +6992,7 @@ impl GetBucketAclInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_200) = &self.expected_bucket_owner {
             let formatted_201 = AsRef::<str>::as_ref(inner_200);
             if !formatted_201.is_empty() {
@@ -6937,7 +7021,7 @@ impl GetBucketAclInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6947,7 +7031,7 @@ impl GetBucketAclInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6979,39 +7063,39 @@ pub mod get_bucket_analytics_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketAnalyticsConfigurationInput`](crate::input::GetBucketAnalyticsConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetBucketAnalyticsConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -7034,7 +7118,7 @@ impl GetBucketAnalyticsConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketAnalyticsConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -7097,7 +7181,7 @@ impl GetBucketAnalyticsConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_202) = &self.expected_bucket_owner {
             let formatted_203 = AsRef::<str>::as_ref(inner_202);
             if !formatted_203.is_empty() {
@@ -7130,7 +7214,7 @@ impl GetBucketAnalyticsConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7140,7 +7224,7 @@ impl GetBucketAnalyticsConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7171,30 +7255,31 @@ pub mod get_bucket_cors_input {
     }
     impl Builder {
         /// <p>The bucket name for which to get the cors configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketCorsInput`](crate::input::GetBucketCorsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketCorsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetBucketCorsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetBucketCorsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -7212,7 +7297,7 @@ impl GetBucketCorsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketCors,
             aws_http::AwsErrorRetryPolicy,
@@ -7272,7 +7357,7 @@ impl GetBucketCorsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_205) = &self.expected_bucket_owner {
             let formatted_206 = AsRef::<str>::as_ref(inner_205);
             if !formatted_206.is_empty() {
@@ -7301,7 +7386,7 @@ impl GetBucketCorsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7311,7 +7396,7 @@ impl GetBucketCorsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7343,31 +7428,33 @@ pub mod get_bucket_encryption_input {
     impl Builder {
         /// <p>The name of the bucket from which the server-side encryption configuration is
         /// retrieved.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketEncryptionInput`](crate::input::GetBucketEncryptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketEncryptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketEncryptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketEncryptionInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -7385,7 +7472,7 @@ impl GetBucketEncryptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketEncryption,
             aws_http::AwsErrorRetryPolicy,
@@ -7448,7 +7535,7 @@ impl GetBucketEncryptionInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_207) = &self.expected_bucket_owner {
             let formatted_208 = AsRef::<str>::as_ref(inner_207);
             if !formatted_208.is_empty() {
@@ -7477,7 +7564,7 @@ impl GetBucketEncryptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7487,7 +7574,7 @@ impl GetBucketEncryptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7518,27 +7605,27 @@ pub mod get_bucket_intelligent_tiering_configuration_input {
     }
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketIntelligentTieringConfigurationInput`](crate::input::GetBucketIntelligentTieringConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetBucketIntelligentTieringConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -7563,7 +7650,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketIntelligentTieringConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -7635,7 +7722,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7644,7 +7731,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7676,39 +7763,39 @@ pub mod get_bucket_inventory_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketInventoryConfigurationInput`](crate::input::GetBucketInventoryConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetBucketInventoryConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -7731,7 +7818,7 @@ impl GetBucketInventoryConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketInventoryConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -7794,7 +7881,7 @@ impl GetBucketInventoryConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_210) = &self.expected_bucket_owner {
             let formatted_211 = AsRef::<str>::as_ref(inner_210);
             if !formatted_211.is_empty() {
@@ -7827,7 +7914,7 @@ impl GetBucketInventoryConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7837,7 +7924,7 @@ impl GetBucketInventoryConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7868,30 +7955,30 @@ pub mod get_bucket_lifecycle_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to get the lifecycle information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationInput`](crate::input::GetBucketLifecycleConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetBucketLifecycleConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -7913,7 +8000,7 @@ impl GetBucketLifecycleConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketLifecycleConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -7976,7 +8063,7 @@ impl GetBucketLifecycleConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_213) = &self.expected_bucket_owner {
             let formatted_214 = AsRef::<str>::as_ref(inner_213);
             if !formatted_214.is_empty() {
@@ -8005,7 +8092,7 @@ impl GetBucketLifecycleConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8015,7 +8102,7 @@ impl GetBucketLifecycleConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8046,31 +8133,33 @@ pub mod get_bucket_location_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to get the location.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketLocationInput`](crate::input::GetBucketLocationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketLocationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketLocationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketLocationInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8088,7 +8177,7 @@ impl GetBucketLocationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketLocation,
             aws_http::AwsErrorRetryPolicy,
@@ -8151,7 +8240,7 @@ impl GetBucketLocationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_215) = &self.expected_bucket_owner {
             let formatted_216 = AsRef::<str>::as_ref(inner_215);
             if !formatted_216.is_empty() {
@@ -8180,7 +8269,7 @@ impl GetBucketLocationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8190,7 +8279,7 @@ impl GetBucketLocationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8221,31 +8310,33 @@ pub mod get_bucket_logging_input {
     }
     impl Builder {
         /// <p>The bucket name for which to get the logging information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketLoggingInput`](crate::input::GetBucketLoggingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketLoggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketLoggingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketLoggingInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8263,7 +8354,7 @@ impl GetBucketLoggingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketLogging,
             aws_http::AwsErrorRetryPolicy,
@@ -8326,7 +8417,7 @@ impl GetBucketLoggingInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_217) = &self.expected_bucket_owner {
             let formatted_218 = AsRef::<str>::as_ref(inner_217);
             if !formatted_218.is_empty() {
@@ -8355,7 +8446,7 @@ impl GetBucketLoggingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8365,7 +8456,7 @@ impl GetBucketLoggingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8397,39 +8488,39 @@ pub mod get_bucket_metrics_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketMetricsConfigurationInput`](crate::input::GetBucketMetricsConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetBucketMetricsConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -8452,7 +8543,7 @@ impl GetBucketMetricsConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketMetricsConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -8515,7 +8606,7 @@ impl GetBucketMetricsConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_219) = &self.expected_bucket_owner {
             let formatted_220 = AsRef::<str>::as_ref(inner_219);
             if !formatted_220.is_empty() {
@@ -8548,7 +8639,7 @@ impl GetBucketMetricsConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8558,7 +8649,7 @@ impl GetBucketMetricsConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8589,30 +8680,30 @@ pub mod get_bucket_notification_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to get the notification configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketNotificationConfigurationInput`](crate::input::GetBucketNotificationConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetBucketNotificationConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -8634,7 +8725,7 @@ impl GetBucketNotificationConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketNotificationConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -8697,7 +8788,7 @@ impl GetBucketNotificationConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_222) = &self.expected_bucket_owner {
             let formatted_223 = AsRef::<str>::as_ref(inner_222);
             if !formatted_223.is_empty() {
@@ -8726,7 +8817,7 @@ impl GetBucketNotificationConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8736,7 +8827,7 @@ impl GetBucketNotificationConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8768,31 +8859,33 @@ pub mod get_bucket_ownership_controls_input {
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve.
         /// </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketOwnershipControlsInput`](crate::input::GetBucketOwnershipControlsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketOwnershipControlsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketOwnershipControlsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketOwnershipControlsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8811,7 +8904,7 @@ impl GetBucketOwnershipControlsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketOwnershipControls,
             aws_http::AwsErrorRetryPolicy,
@@ -8874,7 +8967,7 @@ impl GetBucketOwnershipControlsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_224) = &self.expected_bucket_owner {
             let formatted_225 = AsRef::<str>::as_ref(inner_224);
             if !formatted_225.is_empty() {
@@ -8903,7 +8996,7 @@ impl GetBucketOwnershipControlsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8913,7 +9006,7 @@ impl GetBucketOwnershipControlsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8944,31 +9037,33 @@ pub mod get_bucket_policy_input {
     }
     impl Builder {
         /// <p>The bucket name for which to get the bucket policy.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketPolicyInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8986,7 +9081,7 @@ impl GetBucketPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -9049,7 +9144,7 @@ impl GetBucketPolicyInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_226) = &self.expected_bucket_owner {
             let formatted_227 = AsRef::<str>::as_ref(inner_226);
             if !formatted_227.is_empty() {
@@ -9078,7 +9173,7 @@ impl GetBucketPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9088,7 +9183,7 @@ impl GetBucketPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9119,31 +9214,33 @@ pub mod get_bucket_policy_status_input {
     }
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketPolicyStatusInput`](crate::input::GetBucketPolicyStatusInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketPolicyStatusInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketPolicyStatusInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketPolicyStatusInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -9161,7 +9258,7 @@ impl GetBucketPolicyStatusInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketPolicyStatus,
             aws_http::AwsErrorRetryPolicy,
@@ -9224,7 +9321,7 @@ impl GetBucketPolicyStatusInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_228) = &self.expected_bucket_owner {
             let formatted_229 = AsRef::<str>::as_ref(inner_228);
             if !formatted_229.is_empty() {
@@ -9253,7 +9350,7 @@ impl GetBucketPolicyStatusInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9263,7 +9360,7 @@ impl GetBucketPolicyStatusInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9294,31 +9391,33 @@ pub mod get_bucket_replication_input {
     }
     impl Builder {
         /// <p>The bucket name for which to get the replication information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketReplicationInput`](crate::input::GetBucketReplicationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketReplicationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketReplicationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketReplicationInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -9336,7 +9435,7 @@ impl GetBucketReplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketReplication,
             aws_http::AwsErrorRetryPolicy,
@@ -9399,7 +9498,7 @@ impl GetBucketReplicationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_230) = &self.expected_bucket_owner {
             let formatted_231 = AsRef::<str>::as_ref(inner_230);
             if !formatted_231.is_empty() {
@@ -9428,7 +9527,7 @@ impl GetBucketReplicationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9438,7 +9537,7 @@ impl GetBucketReplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9469,31 +9568,33 @@ pub mod get_bucket_request_payment_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to get the payment request configuration</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketRequestPaymentInput`](crate::input::GetBucketRequestPaymentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketRequestPaymentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketRequestPaymentInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketRequestPaymentInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -9512,7 +9613,7 @@ impl GetBucketRequestPaymentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketRequestPayment,
             aws_http::AwsErrorRetryPolicy,
@@ -9575,7 +9676,7 @@ impl GetBucketRequestPaymentInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_232) = &self.expected_bucket_owner {
             let formatted_233 = AsRef::<str>::as_ref(inner_232);
             if !formatted_233.is_empty() {
@@ -9604,7 +9705,7 @@ impl GetBucketRequestPaymentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9614,7 +9715,7 @@ impl GetBucketRequestPaymentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9645,31 +9746,33 @@ pub mod get_bucket_tagging_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to get the tagging information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketTaggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketTaggingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketTaggingInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -9687,7 +9790,7 @@ impl GetBucketTaggingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketTagging,
             aws_http::AwsErrorRetryPolicy,
@@ -9750,7 +9853,7 @@ impl GetBucketTaggingInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_234) = &self.expected_bucket_owner {
             let formatted_235 = AsRef::<str>::as_ref(inner_234);
             if !formatted_235.is_empty() {
@@ -9779,7 +9882,7 @@ impl GetBucketTaggingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9789,7 +9892,7 @@ impl GetBucketTaggingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9820,31 +9923,33 @@ pub mod get_bucket_versioning_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to get the versioning information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketVersioningInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketVersioningInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketVersioningInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -9862,7 +9967,7 @@ impl GetBucketVersioningInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketVersioning,
             aws_http::AwsErrorRetryPolicy,
@@ -9925,7 +10030,7 @@ impl GetBucketVersioningInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_236) = &self.expected_bucket_owner {
             let formatted_237 = AsRef::<str>::as_ref(inner_236);
             if !formatted_237.is_empty() {
@@ -9954,7 +10059,7 @@ impl GetBucketVersioningInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9964,7 +10069,7 @@ impl GetBucketVersioningInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9995,31 +10100,33 @@ pub mod get_bucket_website_input {
     }
     impl Builder {
         /// <p>The bucket name for which to get the website configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketWebsiteInput`](crate::input::GetBucketWebsiteInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketWebsiteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBucketWebsiteInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBucketWebsiteInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -10037,7 +10144,7 @@ impl GetBucketWebsiteInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBucketWebsite,
             aws_http::AwsErrorRetryPolicy,
@@ -10100,7 +10207,7 @@ impl GetBucketWebsiteInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_238) = &self.expected_bucket_owner {
             let formatted_239 = AsRef::<str>::as_ref(inner_238);
             if !formatted_239.is_empty() {
@@ -10129,7 +10236,7 @@ impl GetBucketWebsiteInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -10139,7 +10246,7 @@ impl GetBucketWebsiteInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -10190,67 +10297,70 @@ pub mod get_object_input {
         /// <p>The bucket name containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
         /// otherwise return a 412 (precondition failed).</p>
-        pub fn if_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.if_match = Some(inp.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_match = Some(input.into());
             self
         }
-        pub fn set_if_match(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.if_match = inp;
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.if_match = input;
             self
         }
         /// <p>Return the object only if it has been modified since the specified time, otherwise
         /// return a 304 (not modified).</p>
-        pub fn if_modified_since(mut self, inp: smithy_types::Instant) -> Self {
-            self.if_modified_since = Some(inp);
+        pub fn if_modified_since(mut self, input: smithy_types::Instant) -> Self {
+            self.if_modified_since = Some(input);
             self
         }
         pub fn set_if_modified_since(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.if_modified_since = inp;
+            self.if_modified_since = input;
             self
         }
         /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
         /// otherwise return a 304 (not modified).</p>
-        pub fn if_none_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.if_none_match = Some(inp.into());
+        pub fn if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_none_match = Some(input.into());
             self
         }
-        pub fn set_if_none_match(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.if_none_match = inp;
+        pub fn set_if_none_match(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.if_none_match = input;
             self
         }
         /// <p>Return the object only if it has not been modified since the specified time, otherwise
         /// return a 412 (precondition failed).</p>
-        pub fn if_unmodified_since(mut self, inp: smithy_types::Instant) -> Self {
-            self.if_unmodified_since = Some(inp);
+        pub fn if_unmodified_since(mut self, input: smithy_types::Instant) -> Self {
+            self.if_unmodified_since = Some(input);
             self
         }
         pub fn set_if_unmodified_since(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.if_unmodified_since = inp;
+            self.if_unmodified_since = input;
             self
         }
         /// <p>Key of the object to get.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
@@ -10259,179 +10369,183 @@ pub mod get_object_input {
         /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
         /// request.</p>
         /// </note>
-        pub fn range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.range = Some(inp.into());
+        pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.range = Some(input.into());
             self
         }
-        pub fn set_range(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.range = inp;
+        pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.range = input;
             self
         }
         /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
-        pub fn response_cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.response_cache_control = Some(inp.into());
+        pub fn response_cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_cache_control = Some(input.into());
             self
         }
         pub fn set_response_cache_control(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.response_cache_control = inp;
+            self.response_cache_control = input;
             self
         }
         /// <p>Sets the <code>Content-Disposition</code> header of the response</p>
-        pub fn response_content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.response_content_disposition = Some(inp.into());
+        pub fn response_content_disposition(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.response_content_disposition = Some(input.into());
             self
         }
         pub fn set_response_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.response_content_disposition = inp;
+            self.response_content_disposition = input;
             self
         }
         /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
-        pub fn response_content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.response_content_encoding = Some(inp.into());
+        pub fn response_content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_content_encoding = Some(input.into());
             self
         }
         pub fn set_response_content_encoding(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.response_content_encoding = inp;
+            self.response_content_encoding = input;
             self
         }
         /// <p>Sets the <code>Content-Language</code> header of the response.</p>
-        pub fn response_content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.response_content_language = Some(inp.into());
+        pub fn response_content_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_content_language = Some(input.into());
             self
         }
         pub fn set_response_content_language(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.response_content_language = inp;
+            self.response_content_language = input;
             self
         }
         /// <p>Sets the <code>Content-Type</code> header of the response.</p>
-        pub fn response_content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.response_content_type = Some(inp.into());
+        pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_content_type = Some(input.into());
             self
         }
         pub fn set_response_content_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.response_content_type = inp;
+            self.response_content_type = input;
             self
         }
         /// <p>Sets the <code>Expires</code> header of the response.</p>
-        pub fn response_expires(mut self, inp: smithy_types::Instant) -> Self {
-            self.response_expires = Some(inp);
+        pub fn response_expires(mut self, input: smithy_types::Instant) -> Self {
+            self.response_expires = Some(input);
             self
         }
         pub fn set_response_expires(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.response_expires = inp;
+            self.response_expires = input;
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies the algorithm to use to when decrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This
         /// value is used to decrypt the object when recovering it and must match the one used when
         /// storing the data. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key = Some(inp.into());
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
             self
         }
         pub fn set_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key = inp;
+            self.sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
         /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading
         /// just a part of an object.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn part_number(mut self, input: i32) -> Self {
+            self.part_number = Some(input);
             self
         }
-        pub fn set_part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.part_number = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectInput`](crate::input::GetObjectInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetObjectInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetObjectInput {
                 bucket: self.bucket.unwrap_or_default(),
                 if_match: self.if_match,
@@ -10467,7 +10581,7 @@ impl GetObjectInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetObject,
             aws_http::AwsErrorRetryPolicy,
@@ -10526,7 +10640,7 @@ impl GetObjectInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_240) = &self.if_match {
             let formatted_241 = AsRef::<str>::as_ref(inner_240);
             if !formatted_241.is_empty() {
@@ -10771,7 +10885,7 @@ impl GetObjectInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -10781,7 +10895,7 @@ impl GetObjectInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -10816,63 +10930,64 @@ pub mod get_object_acl_input {
     impl Builder {
         /// <p>The bucket name that contains the object for which to get the ACL information. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The key of the object for which to get the ACL information.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectAclInput`](crate::input::GetObjectAclInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectAclInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetObjectAclInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetObjectAclInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -10893,7 +11008,7 @@ impl GetObjectAclInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetObjectAcl,
             aws_http::AwsErrorRetryPolicy,
@@ -10954,7 +11069,7 @@ impl GetObjectAclInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_267) = &self.request_payer {
             let formatted_268 = AsRef::<str>::as_ref(inner_267);
             if !formatted_268.is_empty() {
@@ -11004,7 +11119,7 @@ impl GetObjectAclInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11014,7 +11129,7 @@ impl GetObjectAclInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -11049,64 +11164,66 @@ pub mod get_object_legal_hold_input {
     impl Builder {
         /// <p>The bucket name containing the object whose Legal Hold status you want to retrieve. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectLegalHoldInput`](crate::input::GetObjectLegalHoldInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectLegalHoldInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetObjectLegalHoldInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetObjectLegalHoldInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -11127,7 +11244,7 @@ impl GetObjectLegalHoldInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetObjectLegalHold,
             aws_http::AwsErrorRetryPolicy,
@@ -11191,7 +11308,7 @@ impl GetObjectLegalHoldInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_272) = &self.request_payer {
             let formatted_273 = AsRef::<str>::as_ref(inner_272);
             if !formatted_273.is_empty() {
@@ -11241,7 +11358,7 @@ impl GetObjectLegalHoldInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11251,7 +11368,7 @@ impl GetObjectLegalHoldInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -11283,31 +11400,33 @@ pub mod get_object_lock_configuration_input {
     impl Builder {
         /// <p>The bucket whose Object Lock configuration you want to retrieve.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectLockConfigurationInput`](crate::input::GetObjectLockConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectLockConfigurationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetObjectLockConfigurationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetObjectLockConfigurationInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -11326,7 +11445,7 @@ impl GetObjectLockConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetObjectLockConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -11389,7 +11508,7 @@ impl GetObjectLockConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_277) = &self.expected_bucket_owner {
             let formatted_278 = AsRef::<str>::as_ref(inner_277);
             if !formatted_278.is_empty() {
@@ -11418,7 +11537,7 @@ impl GetObjectLockConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11428,7 +11547,7 @@ impl GetObjectLockConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -11463,64 +11582,66 @@ pub mod get_object_retention_input {
     impl Builder {
         /// <p>The bucket name containing the object whose retention settings you want to retrieve. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The key name for the object whose retention settings you want to retrieve.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The version ID for the object whose retention settings you want to retrieve.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectRetentionInput`](crate::input::GetObjectRetentionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectRetentionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetObjectRetentionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetObjectRetentionInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -11541,7 +11662,7 @@ impl GetObjectRetentionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetObjectRetention,
             aws_http::AwsErrorRetryPolicy,
@@ -11605,7 +11726,7 @@ impl GetObjectRetentionInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_279) = &self.request_payer {
             let formatted_280 = AsRef::<str>::as_ref(inner_279);
             if !formatted_280.is_empty() {
@@ -11655,7 +11776,7 @@ impl GetObjectRetentionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11665,7 +11786,7 @@ impl GetObjectRetentionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -11701,64 +11822,66 @@ pub mod get_object_tagging_input {
         /// <p>The bucket name containing the object for which to get the tagging information. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Object key for which to get the tagging information.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The versionId of the object for which to get the tagging information.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectTaggingInput`](crate::input::GetObjectTaggingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectTaggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetObjectTaggingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetObjectTaggingInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -11779,7 +11902,7 @@ impl GetObjectTaggingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetObjectTagging,
             aws_http::AwsErrorRetryPolicy,
@@ -11843,7 +11966,7 @@ impl GetObjectTaggingInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_284) = &self.expected_bucket_owner {
             let formatted_285 = AsRef::<str>::as_ref(inner_284);
             if !formatted_285.is_empty() {
@@ -11893,7 +12016,7 @@ impl GetObjectTaggingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11903,7 +12026,7 @@ impl GetObjectTaggingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -11936,55 +12059,57 @@ pub mod get_object_torrent_input {
     }
     impl Builder {
         /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The object key for which to get the information.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectTorrentInput`](crate::input::GetObjectTorrentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectTorrentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetObjectTorrentInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetObjectTorrentInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -12004,7 +12129,7 @@ impl GetObjectTorrentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetObjectTorrent,
             aws_http::AwsErrorRetryPolicy,
@@ -12068,7 +12193,7 @@ impl GetObjectTorrentInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_289) = &self.request_payer {
             let formatted_290 = AsRef::<str>::as_ref(inner_289);
             if !formatted_290.is_empty() {
@@ -12115,7 +12240,7 @@ impl GetObjectTorrentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -12125,7 +12250,7 @@ impl GetObjectTorrentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -12157,31 +12282,33 @@ pub mod get_public_access_block_input {
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
         /// to retrieve. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPublicAccessBlockInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetPublicAccessBlockInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetPublicAccessBlockInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -12199,7 +12326,7 @@ impl GetPublicAccessBlockInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetPublicAccessBlock,
             aws_http::AwsErrorRetryPolicy,
@@ -12262,7 +12389,7 @@ impl GetPublicAccessBlockInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_293) = &self.expected_bucket_owner {
             let formatted_294 = AsRef::<str>::as_ref(inner_293);
             if !formatted_294.is_empty() {
@@ -12291,7 +12418,7 @@ impl GetPublicAccessBlockInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -12301,7 +12428,7 @@ impl GetPublicAccessBlockInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -12334,30 +12461,31 @@ pub mod head_bucket_input {
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`HeadBucketInput`](crate::input::HeadBucketInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::HeadBucketInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::HeadBucketInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::HeadBucketInput {
                 bucket: self.bucket.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -12375,7 +12503,7 @@ impl HeadBucketInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::HeadBucket,
             aws_http::AwsErrorRetryPolicy,
@@ -12435,7 +12563,7 @@ impl HeadBucketInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_295) = &self.expected_bucket_owner {
             let formatted_296 = AsRef::<str>::as_ref(inner_295);
             if !formatted_296.is_empty() {
@@ -12460,7 +12588,7 @@ impl HeadBucketInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         let builder = self.add_headers(builder)?;
@@ -12469,7 +12597,7 @@ impl HeadBucketInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -12514,67 +12642,70 @@ pub mod head_object_input {
         /// <p>The name of the bucket containing the object.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
         /// otherwise return a 412 (precondition failed).</p>
-        pub fn if_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.if_match = Some(inp.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_match = Some(input.into());
             self
         }
-        pub fn set_if_match(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.if_match = inp;
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.if_match = input;
             self
         }
         /// <p>Return the object only if it has been modified since the specified time, otherwise
         /// return a 304 (not modified).</p>
-        pub fn if_modified_since(mut self, inp: smithy_types::Instant) -> Self {
-            self.if_modified_since = Some(inp);
+        pub fn if_modified_since(mut self, input: smithy_types::Instant) -> Self {
+            self.if_modified_since = Some(input);
             self
         }
         pub fn set_if_modified_since(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.if_modified_since = inp;
+            self.if_modified_since = input;
             self
         }
         /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
         /// otherwise return a 304 (not modified).</p>
-        pub fn if_none_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.if_none_match = Some(inp.into());
+        pub fn if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_none_match = Some(input.into());
             self
         }
-        pub fn set_if_none_match(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.if_none_match = inp;
+        pub fn set_if_none_match(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.if_none_match = input;
             self
         }
         /// <p>Return the object only if it has not been modified since the specified time, otherwise
         /// return a 412 (precondition failed).</p>
-        pub fn if_unmodified_since(mut self, inp: smithy_types::Instant) -> Self {
-            self.if_unmodified_since = Some(inp);
+        pub fn if_unmodified_since(mut self, input: smithy_types::Instant) -> Self {
+            self.if_unmodified_since = Some(input);
             self
         }
         pub fn set_if_unmodified_since(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.if_unmodified_since = inp;
+            self.if_unmodified_since = input;
             self
         }
         /// <p>The object key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
@@ -12583,107 +12714,108 @@ pub mod head_object_input {
         /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
         /// request.</p>
         /// </note>
-        pub fn range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.range = Some(inp.into());
+        pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.range = Some(input.into());
             self
         }
-        pub fn set_range(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.range = inp;
+        pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.range = input;
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
         /// value is used to store the object and then it is discarded; Amazon S3 does not store the
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key = Some(inp.into());
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
             self
         }
         pub fn set_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key = inp;
+            self.sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
         /// Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about
         /// the size of the part and the number of parts in this object.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn part_number(mut self, input: i32) -> Self {
+            self.part_number = Some(input);
             self
         }
-        pub fn set_part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.part_number = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`HeadObjectInput`](crate::input::HeadObjectInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::HeadObjectInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::HeadObjectInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::HeadObjectInput {
                 bucket: self.bucket.unwrap_or_default(),
                 if_match: self.if_match,
@@ -12713,7 +12845,7 @@ impl HeadObjectInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::HeadObject,
             aws_http::AwsErrorRetryPolicy,
@@ -12774,7 +12906,7 @@ impl HeadObjectInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_297) = &self.if_match {
             let formatted_298 = AsRef::<str>::as_ref(inner_297);
             if !formatted_298.is_empty() {
@@ -12979,7 +13111,7 @@ impl HeadObjectInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -12989,7 +13121,7 @@ impl HeadObjectInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -13021,43 +13153,43 @@ pub mod list_bucket_analytics_configurations_input {
     }
     impl Builder {
         /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ContinuationToken that represents a placeholder from where this request should
         /// begin.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketAnalyticsConfigurationsInput`](crate::input::ListBucketAnalyticsConfigurationsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListBucketAnalyticsConfigurationsInput,
             smithy_http::operation::BuildError,
         > {
@@ -13080,7 +13212,7 @@ impl ListBucketAnalyticsConfigurationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListBucketAnalyticsConfigurations,
             aws_http::AwsErrorRetryPolicy,
@@ -13143,7 +13275,7 @@ impl ListBucketAnalyticsConfigurationsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_318) = &self.expected_bucket_owner {
             let formatted_319 = AsRef::<str>::as_ref(inner_318);
             if !formatted_319.is_empty() {
@@ -13179,7 +13311,7 @@ impl ListBucketAnalyticsConfigurationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -13189,7 +13321,7 @@ impl ListBucketAnalyticsConfigurationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -13220,31 +13352,31 @@ pub mod list_bucket_intelligent_tiering_configurations_input {
     }
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ContinuationToken that represents a placeholder from where this request should
         /// begin.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketIntelligentTieringConfigurationsInput`](crate::input::ListBucketIntelligentTieringConfigurationsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListBucketIntelligentTieringConfigurationsInput,
             smithy_http::operation::BuildError,
         > {
@@ -13269,7 +13401,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListBucketIntelligentTieringConfigurations,
             aws_http::AwsErrorRetryPolicy,
@@ -13344,7 +13476,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -13353,7 +13485,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -13386,44 +13518,44 @@ pub mod list_bucket_inventory_configurations_input {
     }
     impl Builder {
         /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The marker used to continue an inventory configuration listing that has been truncated.
         /// Use the NextContinuationToken from a previously truncated list response to continue the
         /// listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketInventoryConfigurationsInput`](crate::input::ListBucketInventoryConfigurationsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListBucketInventoryConfigurationsInput,
             smithy_http::operation::BuildError,
         > {
@@ -13446,7 +13578,7 @@ impl ListBucketInventoryConfigurationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListBucketInventoryConfigurations,
             aws_http::AwsErrorRetryPolicy,
@@ -13509,7 +13641,7 @@ impl ListBucketInventoryConfigurationsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_322) = &self.expected_bucket_owner {
             let formatted_323 = AsRef::<str>::as_ref(inner_322);
             if !formatted_323.is_empty() {
@@ -13545,7 +13677,7 @@ impl ListBucketInventoryConfigurationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -13555,7 +13687,7 @@ impl ListBucketInventoryConfigurationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -13587,45 +13719,45 @@ pub mod list_bucket_metrics_configurations_input {
     }
     impl Builder {
         /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The marker that is used to continue a metrics configuration listing that has been
         /// truncated. Use the NextContinuationToken from a previously truncated list response to
         /// continue the listing. The continuation token is an opaque value that Amazon S3
         /// understands.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketMetricsConfigurationsInput`](crate::input::ListBucketMetricsConfigurationsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListBucketMetricsConfigurationsInput,
             smithy_http::operation::BuildError,
         > {
@@ -13648,7 +13780,7 @@ impl ListBucketMetricsConfigurationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListBucketMetricsConfigurations,
             aws_http::AwsErrorRetryPolicy,
@@ -13711,7 +13843,7 @@ impl ListBucketMetricsConfigurationsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_325) = &self.expected_bucket_owner {
             let formatted_326 = AsRef::<str>::as_ref(inner_325);
             if !formatted_326.is_empty() {
@@ -13747,7 +13879,7 @@ impl ListBucketMetricsConfigurationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -13757,7 +13889,7 @@ impl ListBucketMetricsConfigurationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -13787,7 +13919,8 @@ pub mod list_buckets_input {
         /// Consumes the builder and constructs a [`ListBucketsInput`](crate::input::ListBucketsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListBucketsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListBucketsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListBucketsInput {})
         }
     }
@@ -13802,7 +13935,7 @@ impl ListBucketsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListBuckets,
             aws_http::AwsErrorRetryPolicy,
@@ -13858,7 +13991,7 @@ impl ListBucketsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -13866,7 +13999,7 @@ impl ListBucketsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -13905,12 +14038,12 @@ pub mod list_multipart_uploads_input {
         /// <p>The name of the bucket to which the multipart upload was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Character you use to group keys.</p>
@@ -13920,12 +14053,12 @@ pub mod list_multipart_uploads_input {
         /// substring starts at the beginning of the key. The keys that are grouped under
         /// <code>CommonPrefixes</code> result element are not returned elsewhere in the
         /// response.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delimiter = Some(inp.into());
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
             self
         }
-        pub fn set_delimiter(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = inp;
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
             self
         }
         /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
@@ -13933,15 +14066,15 @@ pub mod list_multipart_uploads_input {
         /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
         /// characters that are not supported in XML 1.0, you can add this parameter to request that
         /// Amazon S3 encode the keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding_type = Some(inp);
+        pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding_type = Some(input);
             self
         }
         pub fn set_encoding_type(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding_type = inp;
+            self.encoding_type = input;
             self
         }
         /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after
@@ -13952,33 +14085,33 @@ pub mod list_multipart_uploads_input {
         /// the <code>key-marker</code> might also be included, provided those multipart uploads have
         /// upload IDs lexicographically greater than the specified
         /// <code>upload-id-marker</code>.</p>
-        pub fn key_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_marker = Some(inp.into());
+        pub fn key_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_marker = Some(input.into());
             self
         }
-        pub fn set_key_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_marker = inp;
+        pub fn set_key_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_marker = input;
             self
         }
         /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response
         /// body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
-        pub fn max_uploads(mut self, inp: i32) -> Self {
-            self.max_uploads = Some(inp);
+        pub fn max_uploads(mut self, input: i32) -> Self {
+            self.max_uploads = Some(input);
             self
         }
-        pub fn set_max_uploads(mut self, inp: i32) -> Self {
-            self.max_uploads = Some(inp);
+        pub fn set_max_uploads(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_uploads = input;
             self
         }
         /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You
         /// can use prefixes to separate a bucket into different grouping of keys. (You can think of
         /// using prefix to make groups in the same way you'd use a folder in a file system.)</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>Together with key-marker, specifies the multipart upload after which listing should
@@ -13986,34 +14119,36 @@ pub mod list_multipart_uploads_input {
         /// Otherwise, any multipart uploads for a key equal to the key-marker might be included in the
         /// list only if they have an upload ID lexicographically greater than the specified
         /// <code>upload-id-marker</code>.</p>
-        pub fn upload_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id_marker = Some(inp.into());
+        pub fn upload_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id_marker = Some(input.into());
             self
         }
         pub fn set_upload_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.upload_id_marker = inp;
+            self.upload_id_marker = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMultipartUploadsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListMultipartUploadsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListMultipartUploadsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 delimiter: self.delimiter,
@@ -14037,7 +14172,7 @@ impl ListMultipartUploadsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListMultipartUploads,
             aws_http::AwsErrorRetryPolicy,
@@ -14100,7 +14235,7 @@ impl ListMultipartUploadsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_328) = &self.expected_bucket_owner {
             let formatted_329 = AsRef::<str>::as_ref(inner_328);
             if !formatted_329.is_empty() {
@@ -14153,7 +14288,7 @@ impl ListMultipartUploadsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -14163,7 +14298,7 @@ impl ListMultipartUploadsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -14202,21 +14337,21 @@ pub mod list_objects_input {
         /// <p>The name of the bucket containing the objects.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>A delimiter is a character you use to group keys.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delimiter = Some(inp.into());
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
             self
         }
-        pub fn set_delimiter(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = inp;
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
             self
         }
         /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
@@ -14224,75 +14359,76 @@ pub mod list_objects_input {
         /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
         /// characters that are not supported in XML 1.0, you can add this parameter to request that
         /// Amazon S3 encode the keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding_type = Some(inp);
+        pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding_type = Some(input);
             self
         }
         pub fn set_encoding_type(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding_type = inp;
+            self.encoding_type = input;
             self
         }
         /// <p>Specifies the key to start with when listing objects in a bucket.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
         /// to 1,000 key names. The response might contain fewer keys but will never contain more.
         /// </p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn max_keys(mut self, input: i32) -> Self {
+            self.max_keys = Some(input);
             self
         }
-        pub fn set_max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_keys = input;
             self
         }
         /// <p>Limits the response to keys that begin with the specified prefix.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>Confirms that the requester knows that she or he will be charged for the list objects
         /// request. Bucket owners need not specify this parameter in their requests.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListObjectsInput`](crate::input::ListObjectsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListObjectsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListObjectsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 delimiter: self.delimiter,
@@ -14316,7 +14452,7 @@ impl ListObjectsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListObjects,
             aws_http::AwsErrorRetryPolicy,
@@ -14376,7 +14512,7 @@ impl ListObjectsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_335) = &self.request_payer {
             let formatted_336 = AsRef::<str>::as_ref(inner_335);
             if !formatted_336.is_empty() {
@@ -14440,7 +14576,7 @@ impl ListObjectsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -14450,7 +14586,7 @@ impl ListObjectsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -14491,118 +14627,119 @@ pub mod list_objects_v2_input {
         /// <p>Bucket name to list. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>A delimiter is a character you use to group keys.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delimiter = Some(inp.into());
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
             self
         }
-        pub fn set_delimiter(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = inp;
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding_type = Some(inp);
+        pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding_type = Some(input);
             self
         }
         pub fn set_encoding_type(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding_type = inp;
+            self.encoding_type = input;
             self
         }
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
         /// to 1,000 key names. The response might contain fewer keys but will never contain
         /// more.</p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn max_keys(mut self, input: i32) -> Self {
+            self.max_keys = Some(input);
             self
         }
-        pub fn set_max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_keys = input;
             self
         }
         /// <p>Limits the response to keys that begin with the specified prefix.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a
         /// token. ContinuationToken is obfuscated and is not a real key.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// <p>The owner field is not present in listV2 by default, if you want to return owner field
         /// with each key in the result then set the fetch owner field to true.</p>
-        pub fn fetch_owner(mut self, inp: bool) -> Self {
-            self.fetch_owner = Some(inp);
+        pub fn fetch_owner(mut self, input: bool) -> Self {
+            self.fetch_owner = Some(input);
             self
         }
-        pub fn set_fetch_owner(mut self, inp: bool) -> Self {
-            self.fetch_owner = Some(inp);
+        pub fn set_fetch_owner(mut self, input: std::option::Option<bool>) -> Self {
+            self.fetch_owner = input;
             self
         }
         /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this
         /// specified key. StartAfter can be any key in the bucket.</p>
-        pub fn start_after(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_after = Some(inp.into());
+        pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_after = Some(input.into());
             self
         }
-        pub fn set_start_after(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start_after = inp;
+        pub fn set_start_after(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_after = input;
             self
         }
         /// <p>Confirms that the requester knows that she or he will be charged for the list objects
         /// request in V2 style. Bucket owners need not specify this parameter in their
         /// requests.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListObjectsV2Input`](crate::input::ListObjectsV2Input)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectsV2Input, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListObjectsV2Input, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListObjectsV2Input {
                 bucket: self.bucket.unwrap_or_default(),
                 delimiter: self.delimiter,
@@ -14628,7 +14765,7 @@ impl ListObjectsV2Input {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListObjectsV2,
             aws_http::AwsErrorRetryPolicy,
@@ -14688,7 +14825,7 @@ impl ListObjectsV2Input {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_343) = &self.request_payer {
             let formatted_344 = AsRef::<str>::as_ref(inner_343);
             if !formatted_344.is_empty() {
@@ -14765,7 +14902,7 @@ impl ListObjectsV2Input {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -14775,7 +14912,7 @@ impl ListObjectsV2Input {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -14812,12 +14949,12 @@ pub mod list_object_versions_input {
     }
     impl Builder {
         /// <p>The bucket name that contains the objects. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>A delimiter is a character that you specify to group keys. All keys that contain the
@@ -14825,12 +14962,12 @@ pub mod list_object_versions_input {
         /// grouped under a single result element in CommonPrefixes. These groups are counted as one
         /// result against the max-keys limitation. These keys are not returned elsewhere in the
         /// response.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delimiter = Some(inp.into());
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
             self
         }
-        pub fn set_delimiter(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = inp;
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
             self
         }
         /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
@@ -14838,24 +14975,24 @@ pub mod list_object_versions_input {
         /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
         /// characters that are not supported in XML 1.0, you can add this parameter to request that
         /// Amazon S3 encode the keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding_type = Some(inp);
+        pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding_type = Some(input);
             self
         }
         pub fn set_encoding_type(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding_type = inp;
+            self.encoding_type = input;
             self
         }
         /// <p>Specifies the key to start with when listing objects in a bucket.</p>
-        pub fn key_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_marker = Some(inp.into());
+        pub fn key_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_marker = Some(input.into());
             self
         }
-        pub fn set_key_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_marker = inp;
+        pub fn set_key_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_marker = input;
             self
         }
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
@@ -14863,12 +15000,12 @@ pub mod list_object_versions_input {
         /// additional keys satisfy the search criteria, but were not returned because max-keys was
         /// exceeded, the response contains <isTruncated>true</isTruncated>. To return the
         /// additional keys, see key-marker and version-id-marker.</p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn max_keys(mut self, input: i32) -> Self {
+            self.max_keys = Some(input);
             self
         }
-        pub fn set_max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_keys = input;
             self
         }
         /// <p>Use this parameter to select only those keys that begin with the specified prefix. You
@@ -14876,43 +15013,45 @@ pub mod list_object_versions_input {
         /// using prefix to make groups in the same way you'd use a folder in a file system.) You can
         /// use prefix with delimiter to roll up numerous objects into a single result under
         /// CommonPrefixes. </p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>Specifies the object version you want to start listing from.</p>
-        pub fn version_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id_marker = Some(inp.into());
+        pub fn version_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id_marker = Some(input.into());
             self
         }
         pub fn set_version_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.version_id_marker = inp;
+            self.version_id_marker = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListObjectVersionsInput`](crate::input::ListObjectVersionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectVersionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListObjectVersionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListObjectVersionsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 delimiter: self.delimiter,
@@ -14936,7 +15075,7 @@ impl ListObjectVersionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListObjectVersions,
             aws_http::AwsErrorRetryPolicy,
@@ -14999,7 +15138,7 @@ impl ListObjectVersionsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_352) = &self.expected_bucket_owner {
             let formatted_353 = AsRef::<str>::as_ref(inner_352);
             if !formatted_353.is_empty() {
@@ -15052,7 +15191,7 @@ impl ListObjectVersionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -15062,7 +15201,7 @@ impl ListObjectVersionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -15100,85 +15239,86 @@ pub mod list_parts_input {
         /// <p>The name of the bucket to which the parts are being uploaded. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Sets the maximum number of parts to return.</p>
-        pub fn max_parts(mut self, inp: i32) -> Self {
-            self.max_parts = Some(inp);
+        pub fn max_parts(mut self, input: i32) -> Self {
+            self.max_parts = Some(input);
             self
         }
-        pub fn set_max_parts(mut self, inp: i32) -> Self {
-            self.max_parts = Some(inp);
+        pub fn set_max_parts(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parts = input;
             self
         }
         /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers
         /// will be listed.</p>
-        pub fn part_number_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.part_number_marker = Some(inp.into());
+        pub fn part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.part_number_marker = Some(input.into());
             self
         }
         pub fn set_part_number_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.part_number_marker = inp;
+            self.part_number_marker = input;
             self
         }
         /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id = Some(inp.into());
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id = Some(input.into());
             self
         }
-        pub fn set_upload_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = inp;
+        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_id = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPartsInput`](crate::input::ListPartsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPartsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListPartsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListPartsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -15201,7 +15341,7 @@ impl ListPartsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListParts,
             aws_http::AwsErrorRetryPolicy,
@@ -15260,7 +15400,7 @@ impl ListPartsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_359) = &self.request_payer {
             let formatted_360 = AsRef::<str>::as_ref(inner_359);
             if !formatted_360.is_empty() {
@@ -15322,7 +15462,7 @@ impl ListPartsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -15332,7 +15472,7 @@ impl ListPartsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -15365,45 +15505,45 @@ pub mod put_bucket_accelerate_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which the accelerate configuration is set.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for setting the transfer acceleration state.</p>
         pub fn accelerate_configuration(
             mut self,
-            inp: crate::model::AccelerateConfiguration,
+            input: crate::model::AccelerateConfiguration,
         ) -> Self {
-            self.accelerate_configuration = Some(inp);
+            self.accelerate_configuration = Some(input);
             self
         }
         pub fn set_accelerate_configuration(
             mut self,
-            inp: std::option::Option<crate::model::AccelerateConfiguration>,
+            input: std::option::Option<crate::model::AccelerateConfiguration>,
         ) -> Self {
-            self.accelerate_configuration = inp;
+            self.accelerate_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketAccelerateConfigurationInput`](crate::input::PutBucketAccelerateConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutBucketAccelerateConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -15426,7 +15566,7 @@ impl PutBucketAccelerateConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketAccelerateConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -15491,7 +15631,7 @@ impl PutBucketAccelerateConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_365) = &self.expected_bucket_owner {
             let formatted_366 = AsRef::<str>::as_ref(inner_365);
             if !formatted_366.is_empty() {
@@ -15520,7 +15660,7 @@ impl PutBucketAccelerateConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -15530,7 +15670,7 @@ impl PutBucketAccelerateConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -15569,21 +15709,24 @@ pub mod put_bucket_acl_input {
     }
     impl Builder {
         /// <p>The canned ACL to apply to the bucket.</p>
-        pub fn acl(mut self, inp: crate::model::BucketCannedAcl) -> Self {
-            self.acl = Some(inp);
+        pub fn acl(mut self, input: crate::model::BucketCannedAcl) -> Self {
+            self.acl = Some(input);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedAcl>) -> Self {
-            self.acl = inp;
+        pub fn set_acl(
+            mut self,
+            input: std::option::Option<crate::model::BucketCannedAcl>,
+        ) -> Self {
+            self.acl = input;
             self
         }
         /// <p>The bucket to which to apply the ACL.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
@@ -15592,95 +15735,99 @@ pub mod put_bucket_acl_input {
         /// 1864.</a>
         /// </p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
         /// bucket.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_full_control = Some(inp.into());
+        pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_full_control = Some(input.into());
             self
         }
         pub fn set_grant_full_control(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_full_control = inp;
+            self.grant_full_control = input;
             self
         }
         /// <p>Allows grantee to list the objects in the bucket.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read = Some(inp.into());
+        pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read = Some(input.into());
             self
         }
-        pub fn set_grant_read(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read = inp;
+        pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_read = input;
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read_acp = Some(inp.into());
+        pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read_acp = Some(input.into());
             self
         }
-        pub fn set_grant_read_acp(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read_acp = inp;
+        pub fn set_grant_read_acp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.grant_read_acp = input;
             self
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
         /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-        pub fn grant_write(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write = Some(inp.into());
+        pub fn grant_write(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write = Some(input.into());
             self
         }
-        pub fn set_grant_write(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_write = inp;
+        pub fn set_grant_write(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_write = input;
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write_acp = Some(inp.into());
+        pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write_acp = Some(input.into());
             self
         }
         pub fn set_grant_write_acp(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_write_acp = inp;
+            self.grant_write_acp = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-        pub fn access_control_policy(mut self, inp: crate::model::AccessControlPolicy) -> Self {
-            self.access_control_policy = Some(inp);
+        pub fn access_control_policy(mut self, input: crate::model::AccessControlPolicy) -> Self {
+            self.access_control_policy = Some(input);
             self
         }
         pub fn set_access_control_policy(
             mut self,
-            inp: std::option::Option<crate::model::AccessControlPolicy>,
+            input: std::option::Option<crate::model::AccessControlPolicy>,
         ) -> Self {
-            self.access_control_policy = inp;
+            self.access_control_policy = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketAclInput`](crate::input::PutBucketAclInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketAclInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutBucketAclInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutBucketAclInput {
                 acl: self.acl,
                 bucket: self.bucket.unwrap_or_default(),
@@ -15706,7 +15853,7 @@ impl PutBucketAclInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketAcl,
             aws_http::AwsErrorRetryPolicy,
@@ -15722,6 +15869,21 @@ impl PutBucketAclInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -15768,7 +15930,7 @@ impl PutBucketAclInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_367) = &self.acl {
             let formatted_368 = AsRef::<str>::as_ref(inner_367);
             if !formatted_368.is_empty() {
@@ -15923,7 +16085,7 @@ impl PutBucketAclInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -15933,7 +16095,7 @@ impl PutBucketAclInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -15967,54 +16129,54 @@ pub mod put_bucket_analytics_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket to which an analytics configuration is stored.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>The configuration and any analyses for the analytics filter.</p>
         pub fn analytics_configuration(
             mut self,
-            inp: crate::model::AnalyticsConfiguration,
+            input: crate::model::AnalyticsConfiguration,
         ) -> Self {
-            self.analytics_configuration = Some(inp);
+            self.analytics_configuration = Some(input);
             self
         }
         pub fn set_analytics_configuration(
             mut self,
-            inp: std::option::Option<crate::model::AnalyticsConfiguration>,
+            input: std::option::Option<crate::model::AnalyticsConfiguration>,
         ) -> Self {
-            self.analytics_configuration = inp;
+            self.analytics_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketAnalyticsConfigurationInput`](crate::input::PutBucketAnalyticsConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutBucketAnalyticsConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -16038,7 +16200,7 @@ impl PutBucketAnalyticsConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketAnalyticsConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -16103,7 +16265,7 @@ impl PutBucketAnalyticsConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_383) = &self.expected_bucket_owner {
             let formatted_384 = AsRef::<str>::as_ref(inner_383);
             if !formatted_384.is_empty() {
@@ -16135,7 +16297,7 @@ impl PutBucketAnalyticsConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -16145,7 +16307,7 @@ impl PutBucketAnalyticsConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -16178,12 +16340,12 @@ pub mod put_bucket_cors_input {
     }
     impl Builder {
         /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
@@ -16192,44 +16354,45 @@ pub mod put_bucket_cors_input {
         /// 1864.</a>
         /// </p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
         /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn cors_configuration(mut self, inp: crate::model::CORSConfiguration) -> Self {
-            self.cors_configuration = Some(inp);
+        pub fn cors_configuration(mut self, input: crate::model::CORSConfiguration) -> Self {
+            self.cors_configuration = Some(input);
             self
         }
         pub fn set_cors_configuration(
             mut self,
-            inp: std::option::Option<crate::model::CORSConfiguration>,
+            input: std::option::Option<crate::model::CORSConfiguration>,
         ) -> Self {
-            self.cors_configuration = inp;
+            self.cors_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketCorsInput`](crate::input::PutBucketCorsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketCorsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutBucketCorsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutBucketCorsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -16249,7 +16412,7 @@ impl PutBucketCorsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketCors,
             aws_http::AwsErrorRetryPolicy,
@@ -16264,6 +16427,21 @@ impl PutBucketCorsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -16310,7 +16488,7 @@ impl PutBucketCorsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_386) = &self.content_md5 {
             let formatted_387 = AsRef::<str>::as_ref(inner_386);
             if !formatted_387.is_empty() {
@@ -16357,7 +16535,7 @@ impl PutBucketCorsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -16367,7 +16545,7 @@ impl PutBucketCorsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -16404,56 +16582,58 @@ pub mod put_bucket_encryption_input {
         /// keys (SSE-S3) or customer master keys stored in AWS KMS (SSE-KMS). For information about
         /// the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a>
         /// in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Specifies the default server-side-encryption configuration.</p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            input: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.server_side_encryption_configuration = Some(inp);
+            self.server_side_encryption_configuration = Some(input);
             self
         }
         pub fn set_server_side_encryption_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+            input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         ) -> Self {
-            self.server_side_encryption_configuration = inp;
+            self.server_side_encryption_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketEncryptionInput`](crate::input::PutBucketEncryptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketEncryptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketEncryptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketEncryptionInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -16473,7 +16653,7 @@ impl PutBucketEncryptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketEncryption,
             aws_http::AwsErrorRetryPolicy,
@@ -16489,6 +16669,21 @@ impl PutBucketEncryptionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -16538,7 +16733,7 @@ impl PutBucketEncryptionInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_390) = &self.content_md5 {
             let formatted_391 = AsRef::<str>::as_ref(inner_390);
             if !formatted_391.is_empty() {
@@ -16585,7 +16780,7 @@ impl PutBucketEncryptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -16595,7 +16790,7 @@ impl PutBucketEncryptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -16628,42 +16823,42 @@ pub mod put_bucket_intelligent_tiering_configuration_input {
     }
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>Container for S3 Intelligent-Tiering configuration.</p>
         pub fn intelligent_tiering_configuration(
             mut self,
-            inp: crate::model::IntelligentTieringConfiguration,
+            input: crate::model::IntelligentTieringConfiguration,
         ) -> Self {
-            self.intelligent_tiering_configuration = Some(inp);
+            self.intelligent_tiering_configuration = Some(input);
             self
         }
         pub fn set_intelligent_tiering_configuration(
             mut self,
-            inp: std::option::Option<crate::model::IntelligentTieringConfiguration>,
+            input: std::option::Option<crate::model::IntelligentTieringConfiguration>,
         ) -> Self {
-            self.intelligent_tiering_configuration = inp;
+            self.intelligent_tiering_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketIntelligentTieringConfigurationInput`](crate::input::PutBucketIntelligentTieringConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutBucketIntelligentTieringConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -16689,7 +16884,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketIntelligentTieringConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -16762,7 +16957,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -16771,7 +16966,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -16805,54 +17000,54 @@ pub mod put_bucket_inventory_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket where the inventory configuration will be stored.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Specifies the inventory configuration.</p>
         pub fn inventory_configuration(
             mut self,
-            inp: crate::model::InventoryConfiguration,
+            input: crate::model::InventoryConfiguration,
         ) -> Self {
-            self.inventory_configuration = Some(inp);
+            self.inventory_configuration = Some(input);
             self
         }
         pub fn set_inventory_configuration(
             mut self,
-            inp: std::option::Option<crate::model::InventoryConfiguration>,
+            input: std::option::Option<crate::model::InventoryConfiguration>,
         ) -> Self {
-            self.inventory_configuration = inp;
+            self.inventory_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketInventoryConfigurationInput`](crate::input::PutBucketInventoryConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutBucketInventoryConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -16876,7 +17071,7 @@ impl PutBucketInventoryConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketInventoryConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -16941,7 +17136,7 @@ impl PutBucketInventoryConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_395) = &self.expected_bucket_owner {
             let formatted_396 = AsRef::<str>::as_ref(inner_395);
             if !formatted_396.is_empty() {
@@ -16973,7 +17168,7 @@ impl PutBucketInventoryConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -16983,7 +17178,7 @@ impl PutBucketInventoryConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -17016,45 +17211,45 @@ pub mod put_bucket_lifecycle_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to set the configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
         pub fn lifecycle_configuration(
             mut self,
-            inp: crate::model::BucketLifecycleConfiguration,
+            input: crate::model::BucketLifecycleConfiguration,
         ) -> Self {
-            self.lifecycle_configuration = Some(inp);
+            self.lifecycle_configuration = Some(input);
             self
         }
         pub fn set_lifecycle_configuration(
             mut self,
-            inp: std::option::Option<crate::model::BucketLifecycleConfiguration>,
+            input: std::option::Option<crate::model::BucketLifecycleConfiguration>,
         ) -> Self {
-            self.lifecycle_configuration = inp;
+            self.lifecycle_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationInput`](crate::input::PutBucketLifecycleConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutBucketLifecycleConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -17077,7 +17272,7 @@ impl PutBucketLifecycleConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketLifecycleConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -17093,6 +17288,21 @@ impl PutBucketLifecycleConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -17142,7 +17352,7 @@ impl PutBucketLifecycleConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_398) = &self.expected_bucket_owner {
             let formatted_399 = AsRef::<str>::as_ref(inner_398);
             if !formatted_399.is_empty() {
@@ -17171,7 +17381,7 @@ impl PutBucketLifecycleConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -17181,7 +17391,7 @@ impl PutBucketLifecycleConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -17214,53 +17424,55 @@ pub mod put_bucket_logging_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which to set the logging parameters.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The MD5 hash of the <code>PutBucketLogging</code> request body.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for logging status information.</p>
-        pub fn bucket_logging_status(mut self, inp: crate::model::BucketLoggingStatus) -> Self {
-            self.bucket_logging_status = Some(inp);
+        pub fn bucket_logging_status(mut self, input: crate::model::BucketLoggingStatus) -> Self {
+            self.bucket_logging_status = Some(input);
             self
         }
         pub fn set_bucket_logging_status(
             mut self,
-            inp: std::option::Option<crate::model::BucketLoggingStatus>,
+            input: std::option::Option<crate::model::BucketLoggingStatus>,
         ) -> Self {
-            self.bucket_logging_status = inp;
+            self.bucket_logging_status = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketLoggingInput`](crate::input::PutBucketLoggingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketLoggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketLoggingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketLoggingInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -17280,7 +17492,7 @@ impl PutBucketLoggingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketLogging,
             aws_http::AwsErrorRetryPolicy,
@@ -17296,6 +17508,21 @@ impl PutBucketLoggingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -17345,7 +17572,7 @@ impl PutBucketLoggingInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_400) = &self.content_md5 {
             let formatted_401 = AsRef::<str>::as_ref(inner_400);
             if !formatted_401.is_empty() {
@@ -17392,7 +17619,7 @@ impl PutBucketLoggingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -17402,7 +17629,7 @@ impl PutBucketLoggingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -17435,51 +17662,51 @@ pub mod put_bucket_metrics_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket for which the metrics configuration is set.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Specifies the metrics configuration.</p>
-        pub fn metrics_configuration(mut self, inp: crate::model::MetricsConfiguration) -> Self {
-            self.metrics_configuration = Some(inp);
+        pub fn metrics_configuration(mut self, input: crate::model::MetricsConfiguration) -> Self {
+            self.metrics_configuration = Some(input);
             self
         }
         pub fn set_metrics_configuration(
             mut self,
-            inp: std::option::Option<crate::model::MetricsConfiguration>,
+            input: std::option::Option<crate::model::MetricsConfiguration>,
         ) -> Self {
-            self.metrics_configuration = inp;
+            self.metrics_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketMetricsConfigurationInput`](crate::input::PutBucketMetricsConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutBucketMetricsConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -17503,7 +17730,7 @@ impl PutBucketMetricsConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketMetricsConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -17568,7 +17795,7 @@ impl PutBucketMetricsConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_404) = &self.expected_bucket_owner {
             let formatted_405 = AsRef::<str>::as_ref(inner_404);
             if !formatted_405.is_empty() {
@@ -17600,7 +17827,7 @@ impl PutBucketMetricsConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -17610,7 +17837,7 @@ impl PutBucketMetricsConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -17643,46 +17870,46 @@ pub mod put_bucket_notification_configuration_input {
     }
     impl Builder {
         /// <p>The name of the bucket.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>A container for specifying the notification configuration of the bucket. If this element
         /// is empty, notifications are turned off for the bucket.</p>
         pub fn notification_configuration(
             mut self,
-            inp: crate::model::NotificationConfiguration,
+            input: crate::model::NotificationConfiguration,
         ) -> Self {
-            self.notification_configuration = Some(inp);
+            self.notification_configuration = Some(input);
             self
         }
         pub fn set_notification_configuration(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfiguration>,
+            input: std::option::Option<crate::model::NotificationConfiguration>,
         ) -> Self {
-            self.notification_configuration = inp;
+            self.notification_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketNotificationConfigurationInput`](crate::input::PutBucketNotificationConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutBucketNotificationConfigurationInput,
             smithy_http::operation::BuildError,
         > {
@@ -17705,7 +17932,7 @@ impl PutBucketNotificationConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketNotificationConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -17771,7 +17998,7 @@ impl PutBucketNotificationConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_407) = &self.expected_bucket_owner {
             let formatted_408 = AsRef::<str>::as_ref(inner_407);
             if !formatted_408.is_empty() {
@@ -17800,7 +18027,7 @@ impl PutBucketNotificationConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -17810,7 +18037,7 @@ impl PutBucketNotificationConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -17843,54 +18070,56 @@ pub mod put_bucket_ownership_controls_input {
     }
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter) that you want
         /// to apply to this Amazon S3 bucket.</p>
-        pub fn ownership_controls(mut self, inp: crate::model::OwnershipControls) -> Self {
-            self.ownership_controls = Some(inp);
+        pub fn ownership_controls(mut self, input: crate::model::OwnershipControls) -> Self {
+            self.ownership_controls = Some(input);
             self
         }
         pub fn set_ownership_controls(
             mut self,
-            inp: std::option::Option<crate::model::OwnershipControls>,
+            input: std::option::Option<crate::model::OwnershipControls>,
         ) -> Self {
-            self.ownership_controls = inp;
+            self.ownership_controls = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketOwnershipControlsInput`](crate::input::PutBucketOwnershipControlsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketOwnershipControlsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketOwnershipControlsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketOwnershipControlsInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -17911,7 +18140,7 @@ impl PutBucketOwnershipControlsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketOwnershipControls,
             aws_http::AwsErrorRetryPolicy,
@@ -17927,6 +18156,21 @@ impl PutBucketOwnershipControlsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -17976,7 +18220,7 @@ impl PutBucketOwnershipControlsInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_409) = &self.content_md5 {
             let formatted_410 = AsRef::<str>::as_ref(inner_409);
             if !formatted_410.is_empty() {
@@ -18023,7 +18267,7 @@ impl PutBucketOwnershipControlsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -18033,7 +18277,7 @@ impl PutBucketOwnershipControlsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -18067,60 +18311,65 @@ pub mod put_bucket_policy_input {
     }
     impl Builder {
         /// <p>The name of the bucket.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The MD5 hash of the request body.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>Set this parameter to true to confirm that you want to remove your permissions to change
         /// this bucket policy in the future.</p>
-        pub fn confirm_remove_self_bucket_access(mut self, inp: bool) -> Self {
-            self.confirm_remove_self_bucket_access = Some(inp);
+        pub fn confirm_remove_self_bucket_access(mut self, input: bool) -> Self {
+            self.confirm_remove_self_bucket_access = Some(input);
             self
         }
-        pub fn set_confirm_remove_self_bucket_access(mut self, inp: bool) -> Self {
-            self.confirm_remove_self_bucket_access = Some(inp);
+        pub fn set_confirm_remove_self_bucket_access(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.confirm_remove_self_bucket_access = input;
             self
         }
         /// <p>The bucket policy as a JSON document.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketPolicyInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -18143,7 +18392,7 @@ impl PutBucketPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -18157,6 +18406,21 @@ impl PutBucketPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -18206,7 +18470,7 @@ impl PutBucketPolicyInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_413) = &self.content_md5 {
             let formatted_414 = AsRef::<str>::as_ref(inner_413);
             if !formatted_414.is_empty() {
@@ -18272,7 +18536,7 @@ impl PutBucketPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -18282,7 +18546,7 @@ impl PutBucketPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "text/plain");
         self.update_http_builder(builder)
@@ -18317,68 +18581,70 @@ pub mod put_bucket_replication_input {
     }
     impl Builder {
         /// <p>The name of the bucket</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
         /// integrity check to verify that the request body was not corrupted in transit. For more
         /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.token = Some(inp.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token = Some(input.into());
             self
         }
-        pub fn set_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.token = inp;
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
         /// replication configuration is 2 MB.</p>
         pub fn replication_configuration(
             mut self,
-            inp: crate::model::ReplicationConfiguration,
+            input: crate::model::ReplicationConfiguration,
         ) -> Self {
-            self.replication_configuration = Some(inp);
+            self.replication_configuration = Some(input);
             self
         }
         pub fn set_replication_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationConfiguration>,
+            input: std::option::Option<crate::model::ReplicationConfiguration>,
         ) -> Self {
-            self.replication_configuration = inp;
+            self.replication_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketReplicationInput`](crate::input::PutBucketReplicationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketReplicationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketReplicationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketReplicationInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -18399,7 +18665,7 @@ impl PutBucketReplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketReplication,
             aws_http::AwsErrorRetryPolicy,
@@ -18415,6 +18681,21 @@ impl PutBucketReplicationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -18464,7 +18745,7 @@ impl PutBucketReplicationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_418) = &self.content_md5 {
             let formatted_419 = AsRef::<str>::as_ref(inner_418);
             if !formatted_419.is_empty() {
@@ -18529,7 +18810,7 @@ impl PutBucketReplicationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -18539,7 +18820,7 @@ impl PutBucketReplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -18573,12 +18854,12 @@ pub mod put_bucket_request_payment_input {
     }
     impl Builder {
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
@@ -18586,46 +18867,48 @@ pub mod put_bucket_request_payment_input {
         /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
         /// 1864</a>.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for Payer.</p>
         pub fn request_payment_configuration(
             mut self,
-            inp: crate::model::RequestPaymentConfiguration,
+            input: crate::model::RequestPaymentConfiguration,
         ) -> Self {
-            self.request_payment_configuration = Some(inp);
+            self.request_payment_configuration = Some(input);
             self
         }
         pub fn set_request_payment_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RequestPaymentConfiguration>,
+            input: std::option::Option<crate::model::RequestPaymentConfiguration>,
         ) -> Self {
-            self.request_payment_configuration = inp;
+            self.request_payment_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketRequestPaymentInput`](crate::input::PutBucketRequestPaymentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketRequestPaymentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketRequestPaymentInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketRequestPaymentInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -18646,7 +18929,7 @@ impl PutBucketRequestPaymentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketRequestPayment,
             aws_http::AwsErrorRetryPolicy,
@@ -18662,6 +18945,21 @@ impl PutBucketRequestPaymentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -18711,7 +19009,7 @@ impl PutBucketRequestPaymentInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_424) = &self.content_md5 {
             let formatted_425 = AsRef::<str>::as_ref(inner_424);
             if !formatted_425.is_empty() {
@@ -18758,7 +19056,7 @@ impl PutBucketRequestPaymentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -18768,7 +19066,7 @@ impl PutBucketRequestPaymentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -18801,52 +19099,54 @@ pub mod put_bucket_tagging_input {
     }
     impl Builder {
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
         /// integrity check to verify that the request body was not corrupted in transit. For more
         /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
-        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
-            self.tagging = Some(inp);
+        pub fn tagging(mut self, input: crate::model::Tagging) -> Self {
+            self.tagging = Some(input);
             self
         }
-        pub fn set_tagging(mut self, inp: std::option::Option<crate::model::Tagging>) -> Self {
-            self.tagging = inp;
+        pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
+            self.tagging = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketTaggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketTaggingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketTaggingInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -18866,7 +19166,7 @@ impl PutBucketTaggingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketTagging,
             aws_http::AwsErrorRetryPolicy,
@@ -18880,6 +19180,21 @@ impl PutBucketTaggingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -18929,7 +19244,7 @@ impl PutBucketTaggingInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_428) = &self.content_md5 {
             let formatted_429 = AsRef::<str>::as_ref(inner_428);
             if !formatted_429.is_empty() {
@@ -18976,7 +19291,7 @@ impl PutBucketTaggingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -18986,7 +19301,7 @@ impl PutBucketTaggingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -19021,12 +19336,12 @@ pub mod put_bucket_versioning_input {
     }
     impl Builder {
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
@@ -19034,56 +19349,58 @@ pub mod put_bucket_versioning_input {
         /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
         /// 1864</a>.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
         /// that is displayed on your authentication device.</p>
-        pub fn mfa(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.mfa = Some(inp.into());
+        pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mfa = Some(input.into());
             self
         }
-        pub fn set_mfa(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.mfa = inp;
+        pub fn set_mfa(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mfa = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for setting the versioning state.</p>
         pub fn versioning_configuration(
             mut self,
-            inp: crate::model::VersioningConfiguration,
+            input: crate::model::VersioningConfiguration,
         ) -> Self {
-            self.versioning_configuration = Some(inp);
+            self.versioning_configuration = Some(input);
             self
         }
         pub fn set_versioning_configuration(
             mut self,
-            inp: std::option::Option<crate::model::VersioningConfiguration>,
+            input: std::option::Option<crate::model::VersioningConfiguration>,
         ) -> Self {
-            self.versioning_configuration = inp;
+            self.versioning_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketVersioningInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketVersioningInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketVersioningInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -19104,7 +19421,7 @@ impl PutBucketVersioningInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketVersioning,
             aws_http::AwsErrorRetryPolicy,
@@ -19120,6 +19437,21 @@ impl PutBucketVersioningInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -19169,7 +19501,7 @@ impl PutBucketVersioningInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_432) = &self.content_md5 {
             let formatted_433 = AsRef::<str>::as_ref(inner_432);
             if !formatted_433.is_empty() {
@@ -19234,7 +19566,7 @@ impl PutBucketVersioningInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -19244,7 +19576,7 @@ impl PutBucketVersioningInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -19277,55 +19609,57 @@ pub mod put_bucket_website_input {
     }
     impl Builder {
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
         /// integrity check to verify that the request body was not corrupted in transit. For more
         /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for the request.</p>
-        pub fn website_configuration(mut self, inp: crate::model::WebsiteConfiguration) -> Self {
-            self.website_configuration = Some(inp);
+        pub fn website_configuration(mut self, input: crate::model::WebsiteConfiguration) -> Self {
+            self.website_configuration = Some(input);
             self
         }
         pub fn set_website_configuration(
             mut self,
-            inp: std::option::Option<crate::model::WebsiteConfiguration>,
+            input: std::option::Option<crate::model::WebsiteConfiguration>,
         ) -> Self {
-            self.website_configuration = inp;
+            self.website_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketWebsiteInput`](crate::input::PutBucketWebsiteInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketWebsiteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutBucketWebsiteInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutBucketWebsiteInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -19345,7 +19679,7 @@ impl PutBucketWebsiteInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutBucketWebsite,
             aws_http::AwsErrorRetryPolicy,
@@ -19361,6 +19695,21 @@ impl PutBucketWebsiteInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -19410,7 +19759,7 @@ impl PutBucketWebsiteInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_438) = &self.content_md5 {
             let formatted_439 = AsRef::<str>::as_ref(inner_438);
             if !formatted_439.is_empty() {
@@ -19457,7 +19806,7 @@ impl PutBucketWebsiteInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -19467,7 +19816,7 @@ impl PutBucketWebsiteInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -19533,90 +19882,99 @@ pub mod put_object_input {
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.acl = Some(inp);
+        pub fn acl(mut self, input: crate::model::ObjectCannedAcl) -> Self {
+            self.acl = Some(input);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
-            self.acl = inp;
+        pub fn set_acl(
+            mut self,
+            input: std::option::Option<crate::model::ObjectCannedAcl>,
+        ) -> Self {
+            self.acl = input;
             self
         }
         /// <p>Object data.</p>
-        pub fn body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn set_body(
+            mut self,
+            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.body = input;
             self
         }
         /// <p>The bucket name to which the PUT action was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p> Can be used to specify caching behavior along the request/reply chain. For more
         /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_control = Some(inp.into());
+        pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_control = Some(input.into());
             self
         }
-        pub fn set_cache_control(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cache_control = inp;
+        pub fn set_cache_control(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cache_control = input;
             self
         }
         /// <p>Specifies presentational information for the object. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_disposition = Some(inp.into());
+        pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_disposition = Some(input.into());
             self
         }
         pub fn set_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_disposition = inp;
+            self.content_disposition = input;
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_encoding = Some(inp.into());
+        pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_encoding = Some(input.into());
             self
         }
         pub fn set_content_encoding(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_encoding = inp;
+            self.content_encoding = input;
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_language = Some(inp.into());
+        pub fn content_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_language = Some(input.into());
             self
         }
         pub fn set_content_language(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_language = inp;
+            self.content_language = input;
             self
         }
         /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
         /// determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
-        pub fn content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn content_length(mut self, input: i64) -> Self {
+            self.content_length = Some(input);
             self
         }
-        pub fn set_content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
+            self.content_length = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to
@@ -19625,90 +19983,93 @@ pub mod put_object_input {
         /// Content-MD5 mechanism as an end-to-end integrity check. For more information about REST
         /// request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
         /// Authentication</a>.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>A standard MIME type describing the format of the contents. For more information, see
         /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>The date and time at which the object is no longer cacheable. For more information, see
         /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
-        pub fn expires(mut self, inp: smithy_types::Instant) -> Self {
-            self.expires = Some(inp);
+        pub fn expires(mut self, input: smithy_types::Instant) -> Self {
+            self.expires = Some(input);
             self
         }
-        pub fn set_expires(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.expires = inp;
+        pub fn set_expires(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.expires = input;
             self
         }
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_full_control = Some(inp.into());
+        pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_full_control = Some(input.into());
             self
         }
         pub fn set_grant_full_control(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_full_control = inp;
+            self.grant_full_control = input;
             self
         }
         /// <p>Allows grantee to read the object data and its
         /// metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read = Some(inp.into());
+        pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read = Some(input.into());
             self
         }
-        pub fn set_grant_read(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read = inp;
+        pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_read = input;
             self
         }
         /// <p>Allows grantee to read the object ACL.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read_acp = Some(inp.into());
+        pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read_acp = Some(input.into());
             self
         }
-        pub fn set_grant_read_acp(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read_acp = inp;
+        pub fn set_grant_read_acp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.grant_read_acp = input;
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write_acp = Some(inp.into());
+        pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write_acp = Some(input.into());
             self
         }
         pub fn set_grant_write_acp(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_write_acp = inp;
+            self.grant_write_acp = input;
             self
         }
         /// <p>Object key for which the PUT action was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         pub fn metadata(
@@ -19723,24 +20084,24 @@ pub mod put_object_input {
         }
         pub fn set_metadata(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.metadata = inp;
+            self.metadata = input;
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
@@ -19748,15 +20109,15 @@ pub mod put_object_input {
         /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
         /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
@@ -19774,57 +20135,57 @@ pub mod put_object_input {
         /// </p>
         /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page
         /// Redirects</a>. </p>
-        pub fn website_redirect_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.website_redirect_location = Some(inp.into());
+        pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.website_redirect_location = Some(input.into());
             self
         }
         pub fn set_website_redirect_location(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.website_redirect_location = inp;
+            self.website_redirect_location = input;
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
         /// value is used to store the object and then it is discarded; Amazon S3 does not store the
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key = Some(inp.into());
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
             self
         }
         pub fn set_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key = inp;
+            self.sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
@@ -19835,86 +20196,89 @@ pub mod put_object_input {
         /// managed CMK in AWS to protect the data. If the KMS key does not exist in the same account
         /// issuing the command, you must use the full ARN and not just the ID.
         /// </p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>Specifies the AWS KMS Encryption Context to use for object encryption. The value of this
         /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
         /// pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_encryption_context = Some(inp.into());
+        pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_encryption_context = Some(input.into());
             self
         }
         pub fn set_ssekms_encryption_context(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssekms_encryption_context = inp;
+            self.ssekms_encryption_context = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
         /// <p>Specifying this header with a PUT action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For
         /// example, "Key1=Value1")</p>
-        pub fn tagging(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tagging = Some(inp.into());
+        pub fn tagging(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tagging = Some(input.into());
             self
         }
-        pub fn set_tagging(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.tagging = inp;
+        pub fn set_tagging(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tagging = input;
             self
         }
         /// <p>The Object Lock mode that you want to apply to this object.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.object_lock_mode = Some(inp);
+        pub fn object_lock_mode(mut self, input: crate::model::ObjectLockMode) -> Self {
+            self.object_lock_mode = Some(input);
             self
         }
         pub fn set_object_lock_mode(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockMode>,
+            input: std::option::Option<crate::model::ObjectLockMode>,
         ) -> Self {
-            self.object_lock_mode = inp;
+            self.object_lock_mode = input;
             self
         }
         /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted
         /// as a timestamp parameter.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.object_lock_retain_until_date = Some(inp);
+        pub fn object_lock_retain_until_date(mut self, input: smithy_types::Instant) -> Self {
+            self.object_lock_retain_until_date = Some(input);
             self
         }
         pub fn set_object_lock_retain_until_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.object_lock_retain_until_date = inp;
+            self.object_lock_retain_until_date = input;
             self
         }
         /// <p>Specifies whether a legal hold will be applied to this object. For more information
@@ -19922,34 +20286,35 @@ pub mod put_object_input {
         /// Lock</a>.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            input: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.object_lock_legal_hold_status = Some(inp);
+            self.object_lock_legal_hold_status = Some(input);
             self
         }
         pub fn set_object_lock_legal_hold_status(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+            input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
         ) -> Self {
-            self.object_lock_legal_hold_status = inp;
+            self.object_lock_legal_hold_status = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectInput`](crate::input::PutObjectInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutObjectInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutObjectInput {
                 acl: self.acl,
                 body: self.body.unwrap_or_default(),
@@ -19997,7 +20362,7 @@ impl PutObjectInput {
     pub fn make_operation(
         self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutObject,
             aws_http::AwsErrorRetryPolicy,
@@ -20056,7 +20421,7 @@ impl PutObjectInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_442) = &self.acl {
             let formatted_443 = AsRef::<str>::as_ref(inner_442);
             if !formatted_443.is_empty() {
@@ -20602,7 +20967,7 @@ impl PutObjectInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -20612,7 +20977,7 @@ impl PutObjectInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
@@ -20654,22 +21019,25 @@ pub mod put_object_acl_input {
     }
     impl Builder {
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.acl = Some(inp);
+        pub fn acl(mut self, input: crate::model::ObjectCannedAcl) -> Self {
+            self.acl = Some(input);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
-            self.acl = inp;
+        pub fn set_acl(
+            mut self,
+            input: std::option::Option<crate::model::ObjectCannedAcl>,
+        ) -> Self {
+            self.acl = input;
             self
         }
         /// <p>The bucket name that contains the object to which you want to attach the ACL. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
@@ -20678,136 +21046,140 @@ pub mod put_object_acl_input {
         /// 1864.></a>
         /// </p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
         /// bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_full_control = Some(inp.into());
+        pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_full_control = Some(input.into());
             self
         }
         pub fn set_grant_full_control(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_full_control = inp;
+            self.grant_full_control = input;
             self
         }
         /// <p>Allows grantee to list the objects in the
         /// bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read = Some(inp.into());
+        pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read = Some(input.into());
             self
         }
-        pub fn set_grant_read(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read = inp;
+        pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_read = input;
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_read_acp = Some(inp.into());
+        pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_read_acp = Some(input.into());
             self
         }
-        pub fn set_grant_read_acp(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_read_acp = inp;
+        pub fn set_grant_read_acp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.grant_read_acp = input;
             self
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
         /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-        pub fn grant_write(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write = Some(inp.into());
+        pub fn grant_write(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write = Some(input.into());
             self
         }
-        pub fn set_grant_write(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_write = inp;
+        pub fn set_grant_write(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_write = input;
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable
         /// bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_write_acp = Some(inp.into());
+        pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_write_acp = Some(input.into());
             self
         }
         pub fn set_grant_write_acp(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grant_write_acp = inp;
+            self.grant_write_acp = input;
             self
         }
         /// <p>Key for which the PUT action was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-        pub fn access_control_policy(mut self, inp: crate::model::AccessControlPolicy) -> Self {
-            self.access_control_policy = Some(inp);
+        pub fn access_control_policy(mut self, input: crate::model::AccessControlPolicy) -> Self {
+            self.access_control_policy = Some(input);
             self
         }
         pub fn set_access_control_policy(
             mut self,
-            inp: std::option::Option<crate::model::AccessControlPolicy>,
+            input: std::option::Option<crate::model::AccessControlPolicy>,
         ) -> Self {
-            self.access_control_policy = inp;
+            self.access_control_policy = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectAclInput`](crate::input::PutObjectAclInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectAclInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutObjectAclInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutObjectAclInput {
                 acl: self.acl,
                 bucket: self.bucket.unwrap_or_default(),
@@ -20836,7 +21208,7 @@ impl PutObjectAclInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutObjectAcl,
             aws_http::AwsErrorRetryPolicy,
@@ -20852,6 +21224,21 @@ impl PutObjectAclInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -20899,7 +21286,7 @@ impl PutObjectAclInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_497) = &self.acl {
             let formatted_498 = AsRef::<str>::as_ref(inner_497);
             if !formatted_498.is_empty() {
@@ -21075,7 +21462,7 @@ impl PutObjectAclInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -21085,7 +21472,7 @@ impl PutObjectAclInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -21122,87 +21509,89 @@ pub mod put_object_legal_hold_input {
     impl Builder {
         /// <p>The bucket name containing the object that you want to place a Legal Hold on. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The key name for the object that you want to place a Legal Hold on.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The version ID of the object that you want to place a Legal Hold on.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>The MD5 hash for the request body.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container element for the Legal Hold configuration you want to apply to the specified
         /// object.</p>
-        pub fn legal_hold(mut self, inp: crate::model::ObjectLockLegalHold) -> Self {
-            self.legal_hold = Some(inp);
+        pub fn legal_hold(mut self, input: crate::model::ObjectLockLegalHold) -> Self {
+            self.legal_hold = Some(input);
             self
         }
         pub fn set_legal_hold(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHold>,
+            input: std::option::Option<crate::model::ObjectLockLegalHold>,
         ) -> Self {
-            self.legal_hold = inp;
+            self.legal_hold = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectLegalHoldInput`](crate::input::PutObjectLegalHoldInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectLegalHoldInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutObjectLegalHoldInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutObjectLegalHoldInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -21225,7 +21614,7 @@ impl PutObjectLegalHoldInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutObjectLegalHold,
             aws_http::AwsErrorRetryPolicy,
@@ -21240,6 +21629,21 @@ impl PutObjectLegalHoldInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -21290,7 +21694,7 @@ impl PutObjectLegalHoldInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_516) = &self.request_payer {
             let formatted_517 = AsRef::<str>::as_ref(inner_516);
             if !formatted_517.is_empty() {
@@ -21358,7 +21762,7 @@ impl PutObjectLegalHoldInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -21368,7 +21772,7 @@ impl PutObjectLegalHoldInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -21404,80 +21808,82 @@ pub mod put_object_lock_configuration_input {
     }
     impl Builder {
         /// <p>The bucket whose Object Lock configuration you want to create or replace.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.token = Some(inp.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token = Some(input.into());
             self
         }
-        pub fn set_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.token = inp;
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token = input;
             self
         }
         /// <p>The MD5 hash for the request body.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
         pub fn object_lock_configuration(
             mut self,
-            inp: crate::model::ObjectLockConfiguration,
+            input: crate::model::ObjectLockConfiguration,
         ) -> Self {
-            self.object_lock_configuration = Some(inp);
+            self.object_lock_configuration = Some(input);
             self
         }
         pub fn set_object_lock_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockConfiguration>,
+            input: std::option::Option<crate::model::ObjectLockConfiguration>,
         ) -> Self {
-            self.object_lock_configuration = inp;
+            self.object_lock_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectLockConfigurationInput`](crate::input::PutObjectLockConfigurationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectLockConfigurationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutObjectLockConfigurationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutObjectLockConfigurationInput {
                 bucket: self.bucket.unwrap_or_default(),
                 request_payer: self.request_payer,
@@ -21500,7 +21906,7 @@ impl PutObjectLockConfigurationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutObjectLockConfiguration,
             aws_http::AwsErrorRetryPolicy,
@@ -21516,6 +21922,21 @@ impl PutObjectLockConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -21565,7 +21986,7 @@ impl PutObjectLockConfigurationInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_523) = &self.request_payer {
             let formatted_524 = AsRef::<str>::as_ref(inner_523);
             if !formatted_524.is_empty() {
@@ -21648,7 +22069,7 @@ impl PutObjectLockConfigurationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -21658,7 +22079,7 @@ impl PutObjectLockConfigurationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -21697,97 +22118,99 @@ pub mod put_object_retention_input {
         /// <p>The bucket name that contains the object you want to apply this Object Retention
         /// configuration to. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The key name for the object that you want to apply this Object Retention configuration
         /// to.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The version ID for the object that you want to apply this Object Retention configuration
         /// to.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
-        pub fn bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.bypass_governance_retention = Some(inp);
+        pub fn bypass_governance_retention(mut self, input: bool) -> Self {
+            self.bypass_governance_retention = Some(input);
             self
         }
-        pub fn set_bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.bypass_governance_retention = Some(inp);
+        pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
+            self.bypass_governance_retention = input;
             self
         }
         /// <p>The MD5 hash for the request body.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>The container element for the Object Retention configuration.</p>
-        pub fn retention(mut self, inp: crate::model::ObjectLockRetention) -> Self {
-            self.retention = Some(inp);
+        pub fn retention(mut self, input: crate::model::ObjectLockRetention) -> Self {
+            self.retention = Some(input);
             self
         }
         pub fn set_retention(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockRetention>,
+            input: std::option::Option<crate::model::ObjectLockRetention>,
         ) -> Self {
-            self.retention = inp;
+            self.retention = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectRetentionInput`](crate::input::PutObjectRetentionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectRetentionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutObjectRetentionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutObjectRetentionInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -21811,7 +22234,7 @@ impl PutObjectRetentionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutObjectRetention,
             aws_http::AwsErrorRetryPolicy,
@@ -21826,6 +22249,21 @@ impl PutObjectRetentionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -21876,7 +22314,7 @@ impl PutObjectRetentionInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_531) = &self.request_payer {
             let formatted_532 = AsRef::<str>::as_ref(inner_531);
             if !formatted_532.is_empty() {
@@ -21962,7 +22400,7 @@ impl PutObjectRetentionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -21972,7 +22410,7 @@ impl PutObjectRetentionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -22010,83 +22448,85 @@ pub mod put_object_tagging_input {
         /// <p>The bucket name containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Name of the object key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The versionId of the object that the tag-set will be added to.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>The MD5 hash for the request body.</p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
-        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
-            self.tagging = Some(inp);
+        pub fn tagging(mut self, input: crate::model::Tagging) -> Self {
+            self.tagging = Some(input);
             self
         }
-        pub fn set_tagging(mut self, inp: std::option::Option<crate::model::Tagging>) -> Self {
-            self.tagging = inp;
+        pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
+            self.tagging = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectTaggingInput`](crate::input::PutObjectTaggingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectTaggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutObjectTaggingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutObjectTaggingInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -22109,7 +22549,7 @@ impl PutObjectTaggingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutObjectTagging,
             aws_http::AwsErrorRetryPolicy,
@@ -22123,6 +22563,21 @@ impl PutObjectTaggingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -22173,7 +22628,7 @@ impl PutObjectTaggingInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_539) = &self.content_md5 {
             let formatted_540 = AsRef::<str>::as_ref(inner_539);
             if !formatted_540.is_empty() {
@@ -22241,7 +22696,7 @@ impl PutObjectTaggingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -22251,7 +22706,7 @@ impl PutObjectTaggingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -22286,34 +22741,34 @@ pub mod put_public_access_block_input {
     impl Builder {
         /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
         /// to set.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
         /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3
@@ -22321,23 +22776,25 @@ pub mod put_public_access_block_input {
         /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn public_access_block_configuration(
             mut self,
-            inp: crate::model::PublicAccessBlockConfiguration,
+            input: crate::model::PublicAccessBlockConfiguration,
         ) -> Self {
-            self.public_access_block_configuration = Some(inp);
+            self.public_access_block_configuration = Some(input);
             self
         }
         pub fn set_public_access_block_configuration(
             mut self,
-            inp: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         ) -> Self {
-            self.public_access_block_configuration = inp;
+            self.public_access_block_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutPublicAccessBlockInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutPublicAccessBlockInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutPublicAccessBlockInput {
                 bucket: self.bucket.unwrap_or_default(),
                 content_md5: self.content_md5,
@@ -22357,7 +22814,7 @@ impl PutPublicAccessBlockInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutPublicAccessBlock,
             aws_http::AwsErrorRetryPolicy,
@@ -22373,6 +22830,21 @@ impl PutPublicAccessBlockInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request = request.augment(|mut req, _| {
+                let data = req.body().bytes().ok_or_else(|| {
+                    smithy_http::operation::BuildError::SerializationError(
+                        "checksum can only be computed for non-streaming operations".into(),
+                    )
+                })?;
+                let checksum = md5::compute(data);
+                req.headers_mut().insert(
+                    http::header::HeaderName::from_static("content-md5"),
+                    format!("{:x}", checksum)
+                        .parse()
+                        .expect("checksum is valid header value"),
+                );
+                Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            })?;
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -22422,7 +22894,7 @@ impl PutPublicAccessBlockInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_546) = &self.content_md5 {
             let formatted_547 = AsRef::<str>::as_ref(inner_546);
             if !formatted_547.is_empty() {
@@ -22469,7 +22941,7 @@ impl PutPublicAccessBlockInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -22479,7 +22951,7 @@ impl PutPublicAccessBlockInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -22516,75 +22988,76 @@ pub mod restore_object_input {
         /// <p>The bucket name containing the object to restore. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Object key for which the action was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>Container for restore job parameters.</p>
-        pub fn restore_request(mut self, inp: crate::model::RestoreRequest) -> Self {
-            self.restore_request = Some(inp);
+        pub fn restore_request(mut self, input: crate::model::RestoreRequest) -> Self {
+            self.restore_request = Some(input);
             self
         }
         pub fn set_restore_request(
             mut self,
-            inp: std::option::Option<crate::model::RestoreRequest>,
+            input: std::option::Option<crate::model::RestoreRequest>,
         ) -> Self {
-            self.restore_request = inp;
+            self.restore_request = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreObjectInput`](crate::input::RestoreObjectInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreObjectInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::RestoreObjectInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::RestoreObjectInput {
                 bucket: self.bucket.unwrap_or_default(),
                 key: self.key.unwrap_or_default(),
@@ -22606,7 +23079,7 @@ impl RestoreObjectInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreObject,
             aws_http::AwsErrorRetryPolicy,
@@ -22668,7 +23141,7 @@ impl RestoreObjectInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_550) = &self.request_payer {
             let formatted_551 = AsRef::<str>::as_ref(inner_550);
             if !formatted_551.is_empty() {
@@ -22719,7 +23192,7 @@ impl RestoreObjectInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -22729,7 +23202,7 @@ impl RestoreObjectInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -22770,85 +23243,88 @@ pub mod upload_part_input {
     }
     impl Builder {
         /// <p>Object data.</p>
-        pub fn body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn set_body(
+            mut self,
+            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.body = input;
             self
         }
         /// <p>The name of the bucket to which the multipart upload was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
         /// determined automatically.</p>
-        pub fn content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn content_length(mut self, input: i64) -> Self {
+            self.content_length = Some(input);
             self
         }
-        pub fn set_content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
+            self.content_length = input;
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated
         /// when using the command from the CLI. This parameter is required if object lock parameters
         /// are specified.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_md5 = Some(inp.into());
+        pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_md5 = Some(input.into());
             self
         }
-        pub fn set_content_md5(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = inp;
+        pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_md5 = input;
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Part number of part being uploaded. This is a positive integer between 1 and
         /// 10,000.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn part_number(mut self, input: i32) -> Self {
+            self.part_number = Some(input);
             self
         }
-        pub fn set_part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.part_number = input;
             self
         }
         /// <p>Upload ID identifying the multipart upload whose part is being uploaded.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id = Some(inp.into());
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id = Some(input.into());
             self
         }
-        pub fn set_upload_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = inp;
+        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_id = input;
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
@@ -22856,62 +23332,63 @@ pub mod upload_part_input {
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the
         /// same encryption key specified in the initiate multipart upload request.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key = Some(inp.into());
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
             self
         }
         pub fn set_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key = inp;
+            self.sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadPartInput`](crate::input::UploadPartInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadPartInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UploadPartInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UploadPartInput {
                 body: self.body.unwrap_or_default(),
                 bucket: self.bucket.unwrap_or_default(),
@@ -22939,7 +23416,7 @@ impl UploadPartInput {
     pub fn make_operation(
         self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UploadPart,
             aws_http::AwsErrorRetryPolicy,
@@ -23000,7 +23477,7 @@ impl UploadPartInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if self.content_length != 0 {
             let formatted_555 = smithy_http::query::fmt_default(&&self.content_length);
             if !formatted_555.is_empty() {
@@ -23152,7 +23629,7 @@ impl UploadPartInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -23162,7 +23639,7 @@ impl UploadPartInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
@@ -23212,12 +23689,12 @@ pub mod upload_part_copy_input {
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::string::String) -> Self {
-            self.bucket = Some(inp);
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Specifies the source object for the copy operation. You specify the value in one of two
@@ -23244,116 +23721,116 @@ pub mod upload_part_copy_input {
         /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
         /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
         /// object.</p>
-        pub fn copy_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source = Some(inp.into());
+        pub fn copy_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source = Some(input.into());
             self
         }
-        pub fn set_copy_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.copy_source = inp;
+        pub fn set_copy_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.copy_source = input;
             self
         }
         /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
-        pub fn copy_source_if_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_if_match = Some(inp.into());
+        pub fn copy_source_if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source_if_match = Some(input.into());
             self
         }
         pub fn set_copy_source_if_match(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_if_match = inp;
+            self.copy_source_if_match = input;
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
-        pub fn copy_source_if_modified_since(mut self, inp: smithy_types::Instant) -> Self {
-            self.copy_source_if_modified_since = Some(inp);
+        pub fn copy_source_if_modified_since(mut self, input: smithy_types::Instant) -> Self {
+            self.copy_source_if_modified_since = Some(input);
             self
         }
         pub fn set_copy_source_if_modified_since(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.copy_source_if_modified_since = inp;
+            self.copy_source_if_modified_since = input;
             self
         }
         /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
-        pub fn copy_source_if_none_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_if_none_match = Some(inp.into());
+        pub fn copy_source_if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source_if_none_match = Some(input.into());
             self
         }
         pub fn set_copy_source_if_none_match(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_if_none_match = inp;
+            self.copy_source_if_none_match = input;
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
-        pub fn copy_source_if_unmodified_since(mut self, inp: smithy_types::Instant) -> Self {
-            self.copy_source_if_unmodified_since = Some(inp);
+        pub fn copy_source_if_unmodified_since(mut self, input: smithy_types::Instant) -> Self {
+            self.copy_source_if_unmodified_since = Some(input);
             self
         }
         pub fn set_copy_source_if_unmodified_since(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.copy_source_if_unmodified_since = inp;
+            self.copy_source_if_unmodified_since = input;
             self
         }
         /// <p>The range of bytes to copy from the source object. The range value must use the form
         /// bytes=first-last, where the first and last are the zero-based byte offsets to copy. For
         /// example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You
         /// can copy a range only if the source object is greater than 5 MB.</p>
-        pub fn copy_source_range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_range = Some(inp.into());
+        pub fn copy_source_range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source_range = Some(input.into());
             self
         }
         pub fn set_copy_source_range(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_range = inp;
+            self.copy_source_range = input;
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::string::String) -> Self {
-            self.key = Some(inp);
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Part number of part being copied. This is a positive integer between 1 and
         /// 10,000.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn part_number(mut self, input: i32) -> Self {
+            self.part_number = Some(input);
             self
         }
-        pub fn set_part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.part_number = input;
             self
         }
         /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id = Some(inp.into());
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id = Some(input.into());
             self
         }
-        pub fn set_upload_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = inp;
+        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_id = input;
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
@@ -23361,59 +23838,62 @@ pub mod upload_part_copy_input {
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the
         /// same encryption key specified in the initiate multipart upload request.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key = Some(inp.into());
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
             self
         }
         pub fn set_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key = inp;
+            self.sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>Specifies the algorithm to use when decrypting the source object (for example,
         /// AES256).</p>
         pub fn copy_source_sse_customer_algorithm(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_algorithm = Some(inp.into());
+            self.copy_source_sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_copy_source_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_algorithm = inp;
+            self.copy_source_sse_customer_algorithm = input;
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
         /// object. The encryption key provided in this header must be one that was used when the
         /// source object was created.</p>
-        pub fn copy_source_sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_sse_customer_key = Some(inp.into());
+        pub fn copy_source_sse_customer_key(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.copy_source_sse_customer_key = Some(input.into());
             self
         }
         pub fn set_copy_source_sse_customer_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_key = inp;
+            self.copy_source_sse_customer_key = input;
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -23421,61 +23901,67 @@ pub mod upload_part_copy_input {
         /// without error.</p>
         pub fn copy_source_sse_customer_key_md5(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_key_md5 = Some(inp.into());
+            self.copy_source_sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_copy_source_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_sse_customer_key_md5 = inp;
+            self.copy_source_sse_customer_key_md5 = input;
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.request_payer = Some(inp);
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
             self
         }
         pub fn set_request_payer(
             mut self,
-            inp: std::option::Option<crate::model::RequestPayer>,
+            input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
-            self.request_payer = inp;
+            self.request_payer = input;
             self
         }
         /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_bucket_owner = Some(inp.into());
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_bucket_owner = inp;
+            self.expected_bucket_owner = input;
             self
         }
         /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_source_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expected_source_bucket_owner = Some(inp.into());
+        pub fn expected_source_bucket_owner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.expected_source_bucket_owner = Some(input.into());
             self
         }
         pub fn set_expected_source_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.expected_source_bucket_owner = inp;
+            self.expected_source_bucket_owner = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadPartCopyInput`](crate::input::UploadPartCopyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadPartCopyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::UploadPartCopyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UploadPartCopyInput {
                 bucket: self.bucket.unwrap_or_default(),
                 copy_source: self.copy_source,
@@ -23510,7 +23996,7 @@ impl UploadPartCopyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UploadPartCopy,
             aws_http::AwsErrorRetryPolicy,
@@ -23574,7 +24060,7 @@ impl UploadPartCopyInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_569) = &self.copy_source {
             let formatted_570 = AsRef::<str>::as_ref(inner_569);
             if !formatted_570.is_empty() {
@@ -23879,7 +24365,7 @@ impl UploadPartCopyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -23889,7 +24375,7 @@ impl UploadPartCopyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -23957,31 +24443,40 @@ pub mod write_get_object_response_input {
     }
     impl Builder {
         /// <p>Route prefix to the HTTP URL generated.</p>
-        pub fn request_route(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_route = Some(inp.into());
+        pub fn request_route(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_route = Some(input.into());
             self
         }
-        pub fn set_request_route(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.request_route = inp;
+        pub fn set_request_route(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_route = input;
             self
         }
         /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end
         /// user <code>GetObject</code> request.</p>
-        pub fn request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_token = Some(inp.into());
+        pub fn request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_token = Some(input.into());
             self
         }
-        pub fn set_request_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.request_token = inp;
+        pub fn set_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_token = input;
             self
         }
         /// <p>The object data.</p>
-        pub fn body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn set_body(
+            mut self,
+            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.body = input;
             self
         }
         /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code>
@@ -24061,181 +24556,193 @@ pub mod write_get_object_response_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn status_code(mut self, inp: i32) -> Self {
-            self.status_code = Some(inp);
+        pub fn status_code(mut self, input: i32) -> Self {
+            self.status_code = Some(input);
             self
         }
-        pub fn set_status_code(mut self, inp: i32) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.status_code = input;
             self
         }
         /// <p>A string that uniquely identifies an error condition. Returned in the <Code> tag
         /// of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used
         /// with a successful <code>StatusCode</code> header or when the transformed object is provided
         /// in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</p>
-        pub fn error_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_code = Some(inp.into());
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
             self
         }
-        pub fn set_error_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_code = inp;
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
             self
         }
         /// <p>Contains a generic description of the error condition. Returned in the <Message>
         /// tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be
         /// used with a successful <code>StatusCode</code> header or when the transformed object is
         /// provided in body.</p>
-        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_message = Some(inp.into());
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
             self
         }
-        pub fn set_error_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_message = inp;
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
             self
         }
         /// <p>Indicates that a range of bytes was specified.</p>
-        pub fn accept_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.accept_ranges = Some(inp.into());
+        pub fn accept_ranges(mut self, input: impl Into<std::string::String>) -> Self {
+            self.accept_ranges = Some(input.into());
             self
         }
-        pub fn set_accept_ranges(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.accept_ranges = inp;
+        pub fn set_accept_ranges(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.accept_ranges = input;
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_control = Some(inp.into());
+        pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_control = Some(input.into());
             self
         }
-        pub fn set_cache_control(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cache_control = inp;
+        pub fn set_cache_control(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cache_control = input;
             self
         }
         /// <p>Specifies presentational information for the object.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_disposition = Some(inp.into());
+        pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_disposition = Some(input.into());
             self
         }
         pub fn set_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_disposition = inp;
+            self.content_disposition = input;
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_encoding = Some(inp.into());
+        pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_encoding = Some(input.into());
             self
         }
         pub fn set_content_encoding(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_encoding = inp;
+            self.content_encoding = input;
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_language = Some(inp.into());
+        pub fn content_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_language = Some(input.into());
             self
         }
         pub fn set_content_language(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_language = inp;
+            self.content_language = input;
             self
         }
         /// <p>The size of the content body in bytes.</p>
-        pub fn content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn content_length(mut self, input: i64) -> Self {
+            self.content_length = Some(input);
             self
         }
-        pub fn set_content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
+            self.content_length = input;
             self
         }
         /// <p>The portion of the object returned in the response.</p>
-        pub fn content_range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_range = Some(inp.into());
+        pub fn content_range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_range = Some(input.into());
             self
         }
-        pub fn set_content_range(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_range = inp;
+        pub fn set_content_range(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.content_range = input;
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not
         /// (<code>false</code>) a delete marker. </p>
-        pub fn delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn delete_marker(mut self, input: bool) -> Self {
+            self.delete_marker = Some(input);
             self
         }
-        pub fn set_delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_marker = input;
             self
         }
         /// <p>An opaque identifier assigned by a web server to a specific version of a resource found
         /// at a URL. </p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: smithy_types::Instant) -> Self {
-            self.expires = Some(inp);
+        pub fn expires(mut self, input: smithy_types::Instant) -> Self {
+            self.expires = Some(input);
             self
         }
-        pub fn set_expires(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.expires = inp;
+        pub fn set_expires(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.expires = input;
             self
         }
         /// <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket lifecycle) it includes expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded. </p>
-        pub fn expiration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expiration = Some(inp.into());
+        pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expiration = Some(input.into());
             self
         }
-        pub fn set_expiration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expiration = inp;
+        pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration = input;
             self
         }
         /// <p>The date and time that the object was last modified.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers.
         /// This can happen if you create metadata using an API like SOAP that supports more flexible
         /// metadata than the REST API. For example, using SOAP, you can create metadata whose values
         /// are not legal HTTP headers.</p>
-        pub fn missing_meta(mut self, inp: i32) -> Self {
-            self.missing_meta = Some(inp);
+        pub fn missing_meta(mut self, input: i32) -> Self {
+            self.missing_meta = Some(input);
             self
         }
-        pub fn set_missing_meta(mut self, inp: i32) -> Self {
-            self.missing_meta = Some(inp);
+        pub fn set_missing_meta(mut self, input: std::option::Option<i32>) -> Self {
+            self.missing_meta = input;
             self
         }
         pub fn metadata(
@@ -24250,191 +24757,196 @@ pub mod write_get_object_response_input {
         }
         pub fn set_metadata(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.metadata = inp;
+            self.metadata = input;
             self
         }
         /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more
         /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.object_lock_mode = Some(inp);
+        pub fn object_lock_mode(mut self, input: crate::model::ObjectLockMode) -> Self {
+            self.object_lock_mode = Some(input);
             self
         }
         pub fn set_object_lock_mode(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockMode>,
+            input: std::option::Option<crate::model::ObjectLockMode>,
         ) -> Self {
-            self.object_lock_mode = inp;
+            self.object_lock_mode = input;
             self
         }
         /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            input: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.object_lock_legal_hold_status = Some(inp);
+            self.object_lock_legal_hold_status = Some(input);
             self
         }
         pub fn set_object_lock_legal_hold_status(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+            input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
         ) -> Self {
-            self.object_lock_legal_hold_status = inp;
+            self.object_lock_legal_hold_status = input;
             self
         }
         /// <p>The date and time when Object Lock is configured to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.object_lock_retain_until_date = Some(inp);
+        pub fn object_lock_retain_until_date(mut self, input: smithy_types::Instant) -> Self {
+            self.object_lock_retain_until_date = Some(input);
             self
         }
         pub fn set_object_lock_retain_until_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.object_lock_retain_until_date = inp;
+            self.object_lock_retain_until_date = input;
             self
         }
         /// <p>The count of parts this object has.</p>
-        pub fn parts_count(mut self, inp: i32) -> Self {
-            self.parts_count = Some(inp);
+        pub fn parts_count(mut self, input: i32) -> Self {
+            self.parts_count = Some(input);
             self
         }
-        pub fn set_parts_count(mut self, inp: i32) -> Self {
-            self.parts_count = Some(inp);
+        pub fn set_parts_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.parts_count = input;
             self
         }
         /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more
         /// information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
-        pub fn replication_status(mut self, inp: crate::model::ReplicationStatus) -> Self {
-            self.replication_status = Some(inp);
+        pub fn replication_status(mut self, input: crate::model::ReplicationStatus) -> Self {
+            self.replication_status = Some(input);
             self
         }
         pub fn set_replication_status(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationStatus>,
+            input: std::option::Option<crate::model::ReplicationStatus>,
         ) -> Self {
-            self.replication_status = inp;
+            self.replication_status = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// <p>Provides information about object restoration operation and expiration time of the
         /// restored object copy.</p>
-        pub fn restore(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.restore = Some(inp.into());
+        pub fn restore(mut self, input: impl Into<std::string::String>) -> Self {
+            self.restore = Some(input.into());
             self
         }
-        pub fn set_restore(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.restore = inp;
+        pub fn set_restore(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.restore = input;
             self
         }
         /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric customer managed customer master key (CMK) that was used for stored in Amazon S3 object. </p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data
         /// stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data
         /// using server-side encryption with customer-provided encryption keys
         /// (SSE-C)</a>.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p> The class of storage used to store object in Amazon S3.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>The number of tags, if any, on the object.</p>
-        pub fn tag_count(mut self, inp: i32) -> Self {
-            self.tag_count = Some(inp);
+        pub fn tag_count(mut self, input: i32) -> Self {
+            self.tag_count = Some(input);
             self
         }
-        pub fn set_tag_count(mut self, inp: i32) -> Self {
-            self.tag_count = Some(inp);
+        pub fn set_tag_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.tag_count = input;
             self
         }
         /// <p>An ID used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side
         /// encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`WriteGetObjectResponseInput`](crate::input::WriteGetObjectResponseInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::WriteGetObjectResponseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::WriteGetObjectResponseInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::WriteGetObjectResponseInput {
                 request_route: self.request_route,
                 request_token: self.request_token,
@@ -24486,7 +24998,7 @@ impl WriteGetObjectResponseInput {
     pub fn make_operation(
         self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::WriteGetObjectResponse,
             aws_http::AwsErrorRetryPolicy,
@@ -24565,7 +25077,7 @@ impl WriteGetObjectResponseInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_600) = &self.request_route {
             let formatted_601 = AsRef::<str>::as_ref(inner_600);
             if !formatted_601.is_empty() {
@@ -25230,7 +25742,7 @@ impl WriteGetObjectResponseInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -25240,7 +25752,7 @@ impl WriteGetObjectResponseInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)

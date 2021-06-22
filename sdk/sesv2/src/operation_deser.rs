@@ -2,8 +2,10 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_configuration_set_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateConfigurationSetOutput, crate::error::CreateConfigurationSetError>
-{
+) -> std::result::Result<
+    crate::output::CreateConfigurationSetOutput,
+    crate::error::CreateConfigurationSetError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
     let error_code = match generic.code() {
@@ -96,8 +98,10 @@ pub fn parse_create_configuration_set_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_configuration_set_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateConfigurationSetOutput, crate::error::CreateConfigurationSetError>
-{
+) -> std::result::Result<
+    crate::output::CreateConfigurationSetOutput,
+    crate::error::CreateConfigurationSetError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_configuration_set_output::Builder::default();
@@ -109,7 +113,7 @@ pub fn parse_create_configuration_set_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_configuration_set_event_destination_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateConfigurationSetEventDestinationOutput,
     crate::error::CreateConfigurationSetEventDestinationError,
 > {
@@ -212,7 +216,7 @@ pub fn parse_create_configuration_set_event_destination_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_configuration_set_event_destination_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateConfigurationSetEventDestinationOutput,
     crate::error::CreateConfigurationSetEventDestinationError,
 > {
@@ -228,7 +232,7 @@ pub fn parse_create_configuration_set_event_destination_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_contact_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateContactOutput, crate::error::CreateContactError> {
+) -> std::result::Result<crate::output::CreateContactOutput, crate::error::CreateContactError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateContactError::unhandled)?;
     let error_code = match generic.code() {
@@ -291,7 +295,7 @@ pub fn parse_create_contact_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_contact_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateContactOutput, crate::error::CreateContactError> {
+) -> std::result::Result<crate::output::CreateContactOutput, crate::error::CreateContactError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_contact_output::Builder::default();
@@ -303,7 +307,8 @@ pub fn parse_create_contact_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_contact_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateContactListOutput, crate::error::CreateContactListError> {
+) -> std::result::Result<crate::output::CreateContactListOutput, crate::error::CreateContactListError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateContactListError::unhandled)?;
     let error_code = match generic.code() {
@@ -367,7 +372,8 @@ pub fn parse_create_contact_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_contact_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateContactListOutput, crate::error::CreateContactListError> {
+) -> std::result::Result<crate::output::CreateContactListOutput, crate::error::CreateContactListError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_contact_list_output::Builder::default();
@@ -379,7 +385,7 @@ pub fn parse_create_contact_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_custom_verification_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateCustomVerificationEmailTemplateOutput,
     crate::error::CreateCustomVerificationEmailTemplateError,
 > {
@@ -476,7 +482,7 @@ pub fn parse_create_custom_verification_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_custom_verification_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateCustomVerificationEmailTemplateOutput,
     crate::error::CreateCustomVerificationEmailTemplateError,
 > {
@@ -492,7 +498,10 @@ pub fn parse_create_custom_verification_email_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_dedicated_ip_pool_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDedicatedIpPoolOutput, crate::error::CreateDedicatedIpPoolError> {
+) -> std::result::Result<
+    crate::output::CreateDedicatedIpPoolOutput,
+    crate::error::CreateDedicatedIpPoolError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDedicatedIpPoolError::unhandled)?;
     let error_code = match generic.code() {
@@ -570,7 +579,10 @@ pub fn parse_create_dedicated_ip_pool_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_dedicated_ip_pool_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDedicatedIpPoolOutput, crate::error::CreateDedicatedIpPoolError> {
+) -> std::result::Result<
+    crate::output::CreateDedicatedIpPoolOutput,
+    crate::error::CreateDedicatedIpPoolError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_dedicated_ip_pool_output::Builder::default();
@@ -582,7 +594,7 @@ pub fn parse_create_dedicated_ip_pool_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_deliverability_test_report_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateDeliverabilityTestReportOutput,
     crate::error::CreateDeliverabilityTestReportError,
 > {
@@ -654,7 +666,7 @@ pub fn parse_create_deliverability_test_report_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_deliverability_test_report_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateDeliverabilityTestReportOutput,
     crate::error::CreateDeliverabilityTestReportError,
 > {
@@ -675,7 +687,10 @@ pub fn parse_create_deliverability_test_report_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_email_identity_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateEmailIdentityOutput, crate::error::CreateEmailIdentityError> {
+) -> std::result::Result<
+    crate::output::CreateEmailIdentityOutput,
+    crate::error::CreateEmailIdentityError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateEmailIdentityError::unhandled)?;
     let error_code = match generic.code() {
@@ -764,7 +779,10 @@ pub fn parse_create_email_identity_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_email_identity_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateEmailIdentityOutput, crate::error::CreateEmailIdentityError> {
+) -> std::result::Result<
+    crate::output::CreateEmailIdentityOutput,
+    crate::error::CreateEmailIdentityError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_email_identity_output::Builder::default();
@@ -781,7 +799,7 @@ pub fn parse_create_email_identity_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_email_identity_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateEmailIdentityPolicyOutput,
     crate::error::CreateEmailIdentityPolicyError,
 > {
@@ -863,7 +881,7 @@ pub fn parse_create_email_identity_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_email_identity_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateEmailIdentityPolicyOutput,
     crate::error::CreateEmailIdentityPolicyError,
 > {
@@ -878,7 +896,10 @@ pub fn parse_create_email_identity_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateEmailTemplateOutput, crate::error::CreateEmailTemplateError> {
+) -> std::result::Result<
+    crate::output::CreateEmailTemplateOutput,
+    crate::error::CreateEmailTemplateError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateEmailTemplateError::unhandled)?;
     let error_code = match generic.code() {
@@ -942,7 +963,10 @@ pub fn parse_create_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateEmailTemplateOutput, crate::error::CreateEmailTemplateError> {
+) -> std::result::Result<
+    crate::output::CreateEmailTemplateOutput,
+    crate::error::CreateEmailTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_email_template_output::Builder::default();
@@ -954,7 +978,7 @@ pub fn parse_create_email_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_import_job_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateImportJobOutput, crate::error::CreateImportJobError> {
+) -> std::result::Result<crate::output::CreateImportJobOutput, crate::error::CreateImportJobError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateImportJobError::unhandled)?;
     let error_code = match generic.code() {
@@ -1006,7 +1030,7 @@ pub fn parse_create_import_job_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_import_job_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateImportJobOutput, crate::error::CreateImportJobError> {
+) -> std::result::Result<crate::output::CreateImportJobOutput, crate::error::CreateImportJobError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_import_job_output::Builder::default();
@@ -1021,8 +1045,10 @@ pub fn parse_create_import_job_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_configuration_set_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteConfigurationSetOutput, crate::error::DeleteConfigurationSetError>
-{
+) -> std::result::Result<
+    crate::output::DeleteConfigurationSetOutput,
+    crate::error::DeleteConfigurationSetError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
     let error_code = match generic.code() {
@@ -1091,8 +1117,10 @@ pub fn parse_delete_configuration_set_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_configuration_set_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteConfigurationSetOutput, crate::error::DeleteConfigurationSetError>
-{
+) -> std::result::Result<
+    crate::output::DeleteConfigurationSetOutput,
+    crate::error::DeleteConfigurationSetError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_configuration_set_output::Builder::default();
@@ -1104,7 +1132,7 @@ pub fn parse_delete_configuration_set_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_configuration_set_event_destination_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteConfigurationSetEventDestinationOutput,
     crate::error::DeleteConfigurationSetEventDestinationError,
 > {
@@ -1171,7 +1199,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_configuration_set_event_destination_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteConfigurationSetEventDestinationOutput,
     crate::error::DeleteConfigurationSetEventDestinationError,
 > {
@@ -1187,7 +1215,7 @@ pub fn parse_delete_configuration_set_event_destination_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_contact_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteContactOutput, crate::error::DeleteContactError> {
+) -> std::result::Result<crate::output::DeleteContactOutput, crate::error::DeleteContactError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteContactError::unhandled)?;
     let error_code = match generic.code() {
@@ -1238,7 +1266,7 @@ pub fn parse_delete_contact_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_contact_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteContactOutput, crate::error::DeleteContactError> {
+) -> std::result::Result<crate::output::DeleteContactOutput, crate::error::DeleteContactError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_contact_output::Builder::default();
@@ -1250,7 +1278,8 @@ pub fn parse_delete_contact_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_contact_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteContactListOutput, crate::error::DeleteContactListError> {
+) -> std::result::Result<crate::output::DeleteContactListOutput, crate::error::DeleteContactListError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteContactListError::unhandled)?;
     let error_code = match generic.code() {
@@ -1315,7 +1344,8 @@ pub fn parse_delete_contact_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_contact_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteContactListOutput, crate::error::DeleteContactListError> {
+) -> std::result::Result<crate::output::DeleteContactListOutput, crate::error::DeleteContactListError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_contact_list_output::Builder::default();
@@ -1327,7 +1357,7 @@ pub fn parse_delete_contact_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_custom_verification_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteCustomVerificationEmailTemplateOutput,
     crate::error::DeleteCustomVerificationEmailTemplateError,
 > {
@@ -1392,7 +1422,7 @@ pub fn parse_delete_custom_verification_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_custom_verification_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteCustomVerificationEmailTemplateOutput,
     crate::error::DeleteCustomVerificationEmailTemplateError,
 > {
@@ -1408,7 +1438,10 @@ pub fn parse_delete_custom_verification_email_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_dedicated_ip_pool_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDedicatedIpPoolOutput, crate::error::DeleteDedicatedIpPoolError> {
+) -> std::result::Result<
+    crate::output::DeleteDedicatedIpPoolOutput,
+    crate::error::DeleteDedicatedIpPoolError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDedicatedIpPoolError::unhandled)?;
     let error_code = match generic.code() {
@@ -1473,7 +1506,10 @@ pub fn parse_delete_dedicated_ip_pool_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_dedicated_ip_pool_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDedicatedIpPoolOutput, crate::error::DeleteDedicatedIpPoolError> {
+) -> std::result::Result<
+    crate::output::DeleteDedicatedIpPoolOutput,
+    crate::error::DeleteDedicatedIpPoolError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_dedicated_ip_pool_output::Builder::default();
@@ -1485,7 +1521,10 @@ pub fn parse_delete_dedicated_ip_pool_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_email_identity_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteEmailIdentityOutput, crate::error::DeleteEmailIdentityError> {
+) -> std::result::Result<
+    crate::output::DeleteEmailIdentityOutput,
+    crate::error::DeleteEmailIdentityError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteEmailIdentityError::unhandled)?;
     let error_code = match generic.code() {
@@ -1550,7 +1589,10 @@ pub fn parse_delete_email_identity_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_email_identity_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteEmailIdentityOutput, crate::error::DeleteEmailIdentityError> {
+) -> std::result::Result<
+    crate::output::DeleteEmailIdentityOutput,
+    crate::error::DeleteEmailIdentityError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_email_identity_output::Builder::default();
@@ -1562,7 +1604,7 @@ pub fn parse_delete_email_identity_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_email_identity_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteEmailIdentityPolicyOutput,
     crate::error::DeleteEmailIdentityPolicyError,
 > {
@@ -1620,7 +1662,7 @@ pub fn parse_delete_email_identity_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_email_identity_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteEmailIdentityPolicyOutput,
     crate::error::DeleteEmailIdentityPolicyError,
 > {
@@ -1635,7 +1677,10 @@ pub fn parse_delete_email_identity_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteEmailTemplateOutput, crate::error::DeleteEmailTemplateError> {
+) -> std::result::Result<
+    crate::output::DeleteEmailTemplateOutput,
+    crate::error::DeleteEmailTemplateError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteEmailTemplateError::unhandled)?;
     let error_code = match generic.code() {
@@ -1686,7 +1731,10 @@ pub fn parse_delete_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteEmailTemplateOutput, crate::error::DeleteEmailTemplateError> {
+) -> std::result::Result<
+    crate::output::DeleteEmailTemplateOutput,
+    crate::error::DeleteEmailTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_email_template_output::Builder::default();
@@ -1698,7 +1746,7 @@ pub fn parse_delete_email_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_suppressed_destination_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteSuppressedDestinationOutput,
     crate::error::DeleteSuppressedDestinationError,
 > {
@@ -1756,7 +1804,7 @@ pub fn parse_delete_suppressed_destination_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_suppressed_destination_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteSuppressedDestinationOutput,
     crate::error::DeleteSuppressedDestinationError,
 > {
@@ -1771,7 +1819,7 @@ pub fn parse_delete_suppressed_destination_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccountOutput, crate::error::GetAccountError> {
+) -> std::result::Result<crate::output::GetAccountOutput, crate::error::GetAccountError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetAccountError::unhandled)?;
     let error_code = match generic.code() {
@@ -1811,7 +1859,7 @@ pub fn parse_get_account_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccountOutput, crate::error::GetAccountError> {
+) -> std::result::Result<crate::output::GetAccountOutput, crate::error::GetAccountError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_account_output::Builder::default();
@@ -1825,7 +1873,10 @@ pub fn parse_get_account_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_blacklist_reports_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBlacklistReportsOutput, crate::error::GetBlacklistReportsError> {
+) -> std::result::Result<
+    crate::output::GetBlacklistReportsOutput,
+    crate::error::GetBlacklistReportsError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBlacklistReportsError::unhandled)?;
     let error_code = match generic.code() {
@@ -1876,7 +1927,10 @@ pub fn parse_get_blacklist_reports_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_blacklist_reports_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBlacklistReportsOutput, crate::error::GetBlacklistReportsError> {
+) -> std::result::Result<
+    crate::output::GetBlacklistReportsOutput,
+    crate::error::GetBlacklistReportsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_blacklist_reports_output::Builder::default();
@@ -1893,7 +1947,10 @@ pub fn parse_get_blacklist_reports_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_configuration_set_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetConfigurationSetOutput, crate::error::GetConfigurationSetError> {
+) -> std::result::Result<
+    crate::output::GetConfigurationSetOutput,
+    crate::error::GetConfigurationSetError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetConfigurationSetError::unhandled)?;
     let error_code = match generic.code() {
@@ -1944,7 +2001,10 @@ pub fn parse_get_configuration_set_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_configuration_set_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetConfigurationSetOutput, crate::error::GetConfigurationSetError> {
+) -> std::result::Result<
+    crate::output::GetConfigurationSetOutput,
+    crate::error::GetConfigurationSetError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_configuration_set_output::Builder::default();
@@ -1961,7 +2021,7 @@ pub fn parse_get_configuration_set_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_configuration_set_event_destinations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetConfigurationSetEventDestinationsOutput,
     crate::error::GetConfigurationSetEventDestinationsError,
 > {
@@ -2021,7 +2081,7 @@ pub fn parse_get_configuration_set_event_destinations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_configuration_set_event_destinations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetConfigurationSetEventDestinationsOutput,
     crate::error::GetConfigurationSetEventDestinationsError,
 > {
@@ -2042,7 +2102,7 @@ pub fn parse_get_configuration_set_event_destinations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_contact_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetContactOutput, crate::error::GetContactError> {
+) -> std::result::Result<crate::output::GetContactOutput, crate::error::GetContactError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetContactError::unhandled)?;
     let error_code = match generic.code() {
@@ -2093,7 +2153,7 @@ pub fn parse_get_contact_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_contact_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetContactOutput, crate::error::GetContactError> {
+) -> std::result::Result<crate::output::GetContactOutput, crate::error::GetContactError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_contact_output::Builder::default();
@@ -2107,7 +2167,7 @@ pub fn parse_get_contact_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_contact_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetContactListOutput, crate::error::GetContactListError> {
+) -> std::result::Result<crate::output::GetContactListOutput, crate::error::GetContactListError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetContactListError::unhandled)?;
     let error_code = match generic.code() {
@@ -2158,7 +2218,7 @@ pub fn parse_get_contact_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_contact_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetContactListOutput, crate::error::GetContactListError> {
+) -> std::result::Result<crate::output::GetContactListOutput, crate::error::GetContactListError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_contact_list_output::Builder::default();
@@ -2173,7 +2233,7 @@ pub fn parse_get_contact_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_custom_verification_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetCustomVerificationEmailTemplateOutput,
     crate::error::GetCustomVerificationEmailTemplateError,
 > {
@@ -2233,7 +2293,7 @@ pub fn parse_get_custom_verification_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_custom_verification_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetCustomVerificationEmailTemplateOutput,
     crate::error::GetCustomVerificationEmailTemplateError,
 > {
@@ -2254,7 +2314,7 @@ pub fn parse_get_custom_verification_email_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dedicated_ip_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDedicatedIpOutput, crate::error::GetDedicatedIpError> {
+) -> std::result::Result<crate::output::GetDedicatedIpOutput, crate::error::GetDedicatedIpError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetDedicatedIpError::unhandled)?;
     let error_code = match generic.code() {
@@ -2305,7 +2365,7 @@ pub fn parse_get_dedicated_ip_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dedicated_ip_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDedicatedIpOutput, crate::error::GetDedicatedIpError> {
+) -> std::result::Result<crate::output::GetDedicatedIpOutput, crate::error::GetDedicatedIpError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_dedicated_ip_output::Builder::default();
@@ -2320,7 +2380,7 @@ pub fn parse_get_dedicated_ip_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dedicated_ips_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDedicatedIpsOutput, crate::error::GetDedicatedIpsError> {
+) -> std::result::Result<crate::output::GetDedicatedIpsOutput, crate::error::GetDedicatedIpsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetDedicatedIpsError::unhandled)?;
     let error_code = match generic.code() {
@@ -2371,7 +2431,7 @@ pub fn parse_get_dedicated_ips_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dedicated_ips_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDedicatedIpsOutput, crate::error::GetDedicatedIpsError> {
+) -> std::result::Result<crate::output::GetDedicatedIpsOutput, crate::error::GetDedicatedIpsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_dedicated_ips_output::Builder::default();
@@ -2386,7 +2446,7 @@ pub fn parse_get_dedicated_ips_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_deliverability_dashboard_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDeliverabilityDashboardOptionsOutput,
     crate::error::GetDeliverabilityDashboardOptionsError,
 > {
@@ -2443,7 +2503,7 @@ pub fn parse_get_deliverability_dashboard_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_deliverability_dashboard_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDeliverabilityDashboardOptionsOutput,
     crate::error::GetDeliverabilityDashboardOptionsError,
 > {
@@ -2464,7 +2524,7 @@ pub fn parse_get_deliverability_dashboard_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_deliverability_test_report_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDeliverabilityTestReportOutput,
     crate::error::GetDeliverabilityTestReportError,
 > {
@@ -2522,7 +2582,7 @@ pub fn parse_get_deliverability_test_report_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_deliverability_test_report_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDeliverabilityTestReportOutput,
     crate::error::GetDeliverabilityTestReportError,
 > {
@@ -2542,7 +2602,7 @@ pub fn parse_get_deliverability_test_report_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_domain_deliverability_campaign_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDomainDeliverabilityCampaignOutput,
     crate::error::GetDomainDeliverabilityCampaignError,
 > {
@@ -2596,7 +2656,7 @@ pub fn parse_get_domain_deliverability_campaign_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_domain_deliverability_campaign_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDomainDeliverabilityCampaignOutput,
     crate::error::GetDomainDeliverabilityCampaignError,
 > {
@@ -2617,7 +2677,7 @@ pub fn parse_get_domain_deliverability_campaign_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_domain_statistics_report_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDomainStatisticsReportOutput,
     crate::error::GetDomainStatisticsReportError,
 > {
@@ -2675,7 +2735,7 @@ pub fn parse_get_domain_statistics_report_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_domain_statistics_report_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDomainStatisticsReportOutput,
     crate::error::GetDomainStatisticsReportError,
 > {
@@ -2695,7 +2755,8 @@ pub fn parse_get_domain_statistics_report_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_email_identity_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetEmailIdentityOutput, crate::error::GetEmailIdentityError> {
+) -> std::result::Result<crate::output::GetEmailIdentityOutput, crate::error::GetEmailIdentityError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetEmailIdentityError::unhandled)?;
     let error_code = match generic.code() {
@@ -2746,7 +2807,8 @@ pub fn parse_get_email_identity_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_email_identity_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetEmailIdentityOutput, crate::error::GetEmailIdentityError> {
+) -> std::result::Result<crate::output::GetEmailIdentityOutput, crate::error::GetEmailIdentityError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_email_identity_output::Builder::default();
@@ -2761,7 +2823,7 @@ pub fn parse_get_email_identity_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_email_identity_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetEmailIdentityPoliciesOutput,
     crate::error::GetEmailIdentityPoliciesError,
 > {
@@ -2819,7 +2881,7 @@ pub fn parse_get_email_identity_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_email_identity_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetEmailIdentityPoliciesOutput,
     crate::error::GetEmailIdentityPoliciesError,
 > {
@@ -2839,7 +2901,8 @@ pub fn parse_get_email_identity_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetEmailTemplateOutput, crate::error::GetEmailTemplateError> {
+) -> std::result::Result<crate::output::GetEmailTemplateOutput, crate::error::GetEmailTemplateError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetEmailTemplateError::unhandled)?;
     let error_code = match generic.code() {
@@ -2890,7 +2953,8 @@ pub fn parse_get_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetEmailTemplateOutput, crate::error::GetEmailTemplateError> {
+) -> std::result::Result<crate::output::GetEmailTemplateOutput, crate::error::GetEmailTemplateError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_email_template_output::Builder::default();
@@ -2905,7 +2969,7 @@ pub fn parse_get_email_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_import_job_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError> {
+) -> std::result::Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetImportJobError::unhandled)?;
     let error_code = match generic.code() {
@@ -2956,7 +3020,7 @@ pub fn parse_get_import_job_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_import_job_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError> {
+) -> std::result::Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_import_job_output::Builder::default();
@@ -2971,7 +3035,7 @@ pub fn parse_get_import_job_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_suppressed_destination_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetSuppressedDestinationOutput,
     crate::error::GetSuppressedDestinationError,
 > {
@@ -3029,7 +3093,7 @@ pub fn parse_get_suppressed_destination_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_suppressed_destination_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetSuppressedDestinationOutput,
     crate::error::GetSuppressedDestinationError,
 > {
@@ -3049,7 +3113,10 @@ pub fn parse_get_suppressed_destination_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_configuration_sets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListConfigurationSetsOutput, crate::error::ListConfigurationSetsError> {
+) -> std::result::Result<
+    crate::output::ListConfigurationSetsOutput,
+    crate::error::ListConfigurationSetsError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListConfigurationSetsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3089,7 +3156,10 @@ pub fn parse_list_configuration_sets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_configuration_sets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListConfigurationSetsOutput, crate::error::ListConfigurationSetsError> {
+) -> std::result::Result<
+    crate::output::ListConfigurationSetsOutput,
+    crate::error::ListConfigurationSetsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_configuration_sets_output::Builder::default();
@@ -3106,7 +3176,8 @@ pub fn parse_list_configuration_sets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_contact_lists_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListContactListsOutput, crate::error::ListContactListsError> {
+) -> std::result::Result<crate::output::ListContactListsOutput, crate::error::ListContactListsError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListContactListsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3146,7 +3217,8 @@ pub fn parse_list_contact_lists_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_contact_lists_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListContactListsOutput, crate::error::ListContactListsError> {
+) -> std::result::Result<crate::output::ListContactListsOutput, crate::error::ListContactListsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_contact_lists_output::Builder::default();
@@ -3161,7 +3233,7 @@ pub fn parse_list_contact_lists_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_contacts_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListContactsOutput, crate::error::ListContactsError> {
+) -> std::result::Result<crate::output::ListContactsOutput, crate::error::ListContactsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListContactsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3212,7 +3284,7 @@ pub fn parse_list_contacts_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_contacts_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListContactsOutput, crate::error::ListContactsError> {
+) -> std::result::Result<crate::output::ListContactsOutput, crate::error::ListContactsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_contacts_output::Builder::default();
@@ -3226,7 +3298,7 @@ pub fn parse_list_contacts_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_custom_verification_email_templates_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListCustomVerificationEmailTemplatesOutput,
     crate::error::ListCustomVerificationEmailTemplatesError,
 > {
@@ -3273,7 +3345,7 @@ pub fn parse_list_custom_verification_email_templates_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_custom_verification_email_templates_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListCustomVerificationEmailTemplatesOutput,
     crate::error::ListCustomVerificationEmailTemplatesError,
 > {
@@ -3294,7 +3366,10 @@ pub fn parse_list_custom_verification_email_templates_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_dedicated_ip_pools_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListDedicatedIpPoolsOutput, crate::error::ListDedicatedIpPoolsError> {
+) -> std::result::Result<
+    crate::output::ListDedicatedIpPoolsOutput,
+    crate::error::ListDedicatedIpPoolsError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListDedicatedIpPoolsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3334,7 +3409,10 @@ pub fn parse_list_dedicated_ip_pools_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_dedicated_ip_pools_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListDedicatedIpPoolsOutput, crate::error::ListDedicatedIpPoolsError> {
+) -> std::result::Result<
+    crate::output::ListDedicatedIpPoolsOutput,
+    crate::error::ListDedicatedIpPoolsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_dedicated_ip_pools_output::Builder::default();
@@ -3351,7 +3429,7 @@ pub fn parse_list_dedicated_ip_pools_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_deliverability_test_reports_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListDeliverabilityTestReportsOutput,
     crate::error::ListDeliverabilityTestReportsError,
 > {
@@ -3409,7 +3487,7 @@ pub fn parse_list_deliverability_test_reports_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_deliverability_test_reports_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListDeliverabilityTestReportsOutput,
     crate::error::ListDeliverabilityTestReportsError,
 > {
@@ -3429,7 +3507,7 @@ pub fn parse_list_deliverability_test_reports_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_domain_deliverability_campaigns_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListDomainDeliverabilityCampaignsOutput,
     crate::error::ListDomainDeliverabilityCampaignsError,
 > {
@@ -3486,7 +3564,7 @@ pub fn parse_list_domain_deliverability_campaigns_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_domain_deliverability_campaigns_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListDomainDeliverabilityCampaignsOutput,
     crate::error::ListDomainDeliverabilityCampaignsError,
 > {
@@ -3507,7 +3585,10 @@ pub fn parse_list_domain_deliverability_campaigns_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_email_identities_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListEmailIdentitiesOutput, crate::error::ListEmailIdentitiesError> {
+) -> std::result::Result<
+    crate::output::ListEmailIdentitiesOutput,
+    crate::error::ListEmailIdentitiesError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListEmailIdentitiesError::unhandled)?;
     let error_code = match generic.code() {
@@ -3547,7 +3628,10 @@ pub fn parse_list_email_identities_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_email_identities_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListEmailIdentitiesOutput, crate::error::ListEmailIdentitiesError> {
+) -> std::result::Result<
+    crate::output::ListEmailIdentitiesOutput,
+    crate::error::ListEmailIdentitiesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_email_identities_output::Builder::default();
@@ -3564,7 +3648,10 @@ pub fn parse_list_email_identities_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_email_templates_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListEmailTemplatesOutput, crate::error::ListEmailTemplatesError> {
+) -> std::result::Result<
+    crate::output::ListEmailTemplatesOutput,
+    crate::error::ListEmailTemplatesError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListEmailTemplatesError::unhandled)?;
     let error_code = match generic.code() {
@@ -3604,7 +3691,10 @@ pub fn parse_list_email_templates_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_email_templates_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListEmailTemplatesOutput, crate::error::ListEmailTemplatesError> {
+) -> std::result::Result<
+    crate::output::ListEmailTemplatesOutput,
+    crate::error::ListEmailTemplatesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_email_templates_output::Builder::default();
@@ -3621,7 +3711,7 @@ pub fn parse_list_email_templates_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_import_jobs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListImportJobsOutput, crate::error::ListImportJobsError> {
+) -> std::result::Result<crate::output::ListImportJobsOutput, crate::error::ListImportJobsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListImportJobsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3661,7 +3751,7 @@ pub fn parse_list_import_jobs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_import_jobs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListImportJobsOutput, crate::error::ListImportJobsError> {
+) -> std::result::Result<crate::output::ListImportJobsOutput, crate::error::ListImportJobsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_import_jobs_output::Builder::default();
@@ -3676,7 +3766,7 @@ pub fn parse_list_import_jobs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_suppressed_destinations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListSuppressedDestinationsOutput,
     crate::error::ListSuppressedDestinationsError,
 > {
@@ -3737,7 +3827,7 @@ pub fn parse_list_suppressed_destinations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_suppressed_destinations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListSuppressedDestinationsOutput,
     crate::error::ListSuppressedDestinationsError,
 > {
@@ -3757,7 +3847,10 @@ pub fn parse_list_suppressed_destinations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -3808,7 +3901,10 @@ pub fn parse_list_tags_for_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
@@ -3825,7 +3921,7 @@ pub fn parse_list_tags_for_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_account_dedicated_ip_warmup_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutAccountDedicatedIpWarmupAttributesOutput,
     crate::error::PutAccountDedicatedIpWarmupAttributesError,
 > {
@@ -3877,7 +3973,7 @@ pub fn parse_put_account_dedicated_ip_warmup_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_account_dedicated_ip_warmup_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutAccountDedicatedIpWarmupAttributesOutput,
     crate::error::PutAccountDedicatedIpWarmupAttributesError,
 > {
@@ -3893,7 +3989,8 @@ pub fn parse_put_account_dedicated_ip_warmup_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_account_details_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutAccountDetailsOutput, crate::error::PutAccountDetailsError> {
+) -> std::result::Result<crate::output::PutAccountDetailsOutput, crate::error::PutAccountDetailsError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutAccountDetailsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3944,7 +4041,8 @@ pub fn parse_put_account_details_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_account_details_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutAccountDetailsOutput, crate::error::PutAccountDetailsError> {
+) -> std::result::Result<crate::output::PutAccountDetailsOutput, crate::error::PutAccountDetailsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_account_details_output::Builder::default();
@@ -3956,7 +4054,7 @@ pub fn parse_put_account_details_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_account_sending_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutAccountSendingAttributesOutput,
     crate::error::PutAccountSendingAttributesError,
 > {
@@ -4003,7 +4101,7 @@ pub fn parse_put_account_sending_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_account_sending_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutAccountSendingAttributesOutput,
     crate::error::PutAccountSendingAttributesError,
 > {
@@ -4018,7 +4116,7 @@ pub fn parse_put_account_sending_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_account_suppression_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutAccountSuppressionAttributesOutput,
     crate::error::PutAccountSuppressionAttributesError,
 > {
@@ -4061,7 +4159,7 @@ pub fn parse_put_account_suppression_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_account_suppression_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutAccountSuppressionAttributesOutput,
     crate::error::PutAccountSuppressionAttributesError,
 > {
@@ -4077,7 +4175,7 @@ pub fn parse_put_account_suppression_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_delivery_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetDeliveryOptionsOutput,
     crate::error::PutConfigurationSetDeliveryOptionsError,
 > {
@@ -4137,7 +4235,7 @@ pub fn parse_put_configuration_set_delivery_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_delivery_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetDeliveryOptionsOutput,
     crate::error::PutConfigurationSetDeliveryOptionsError,
 > {
@@ -4153,7 +4251,7 @@ pub fn parse_put_configuration_set_delivery_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_reputation_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetReputationOptionsOutput,
     crate::error::PutConfigurationSetReputationOptionsError,
 > {
@@ -4213,7 +4311,7 @@ pub fn parse_put_configuration_set_reputation_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_reputation_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetReputationOptionsOutput,
     crate::error::PutConfigurationSetReputationOptionsError,
 > {
@@ -4229,7 +4327,7 @@ pub fn parse_put_configuration_set_reputation_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_sending_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetSendingOptionsOutput,
     crate::error::PutConfigurationSetSendingOptionsError,
 > {
@@ -4286,7 +4384,7 @@ pub fn parse_put_configuration_set_sending_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_sending_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetSendingOptionsOutput,
     crate::error::PutConfigurationSetSendingOptionsError,
 > {
@@ -4302,7 +4400,7 @@ pub fn parse_put_configuration_set_sending_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_suppression_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetSuppressionOptionsOutput,
     crate::error::PutConfigurationSetSuppressionOptionsError,
 > {
@@ -4367,7 +4465,7 @@ pub fn parse_put_configuration_set_suppression_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_suppression_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetSuppressionOptionsOutput,
     crate::error::PutConfigurationSetSuppressionOptionsError,
 > {
@@ -4383,7 +4481,7 @@ pub fn parse_put_configuration_set_suppression_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_tracking_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetTrackingOptionsOutput,
     crate::error::PutConfigurationSetTrackingOptionsError,
 > {
@@ -4443,7 +4541,7 @@ pub fn parse_put_configuration_set_tracking_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_configuration_set_tracking_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutConfigurationSetTrackingOptionsOutput,
     crate::error::PutConfigurationSetTrackingOptionsError,
 > {
@@ -4459,7 +4557,10 @@ pub fn parse_put_configuration_set_tracking_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_dedicated_ip_in_pool_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutDedicatedIpInPoolOutput, crate::error::PutDedicatedIpInPoolError> {
+) -> std::result::Result<
+    crate::output::PutDedicatedIpInPoolOutput,
+    crate::error::PutDedicatedIpInPoolError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutDedicatedIpInPoolError::unhandled)?;
     let error_code = match generic.code() {
@@ -4510,7 +4611,10 @@ pub fn parse_put_dedicated_ip_in_pool_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_dedicated_ip_in_pool_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutDedicatedIpInPoolOutput, crate::error::PutDedicatedIpInPoolError> {
+) -> std::result::Result<
+    crate::output::PutDedicatedIpInPoolOutput,
+    crate::error::PutDedicatedIpInPoolError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_dedicated_ip_in_pool_output::Builder::default();
@@ -4522,7 +4626,7 @@ pub fn parse_put_dedicated_ip_in_pool_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_dedicated_ip_warmup_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutDedicatedIpWarmupAttributesOutput,
     crate::error::PutDedicatedIpWarmupAttributesError,
 > {
@@ -4576,7 +4680,7 @@ pub fn parse_put_dedicated_ip_warmup_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_dedicated_ip_warmup_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutDedicatedIpWarmupAttributesOutput,
     crate::error::PutDedicatedIpWarmupAttributesError,
 > {
@@ -4592,7 +4696,7 @@ pub fn parse_put_dedicated_ip_warmup_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_deliverability_dashboard_option_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutDeliverabilityDashboardOptionOutput,
     crate::error::PutDeliverabilityDashboardOptionError,
 > {
@@ -4672,7 +4776,7 @@ pub fn parse_put_deliverability_dashboard_option_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_deliverability_dashboard_option_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutDeliverabilityDashboardOptionOutput,
     crate::error::PutDeliverabilityDashboardOptionError,
 > {
@@ -4688,7 +4792,7 @@ pub fn parse_put_deliverability_dashboard_option_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_configuration_set_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityConfigurationSetAttributesOutput,
     crate::error::PutEmailIdentityConfigurationSetAttributesError,
 > {
@@ -4728,7 +4832,7 @@ pub fn parse_put_email_identity_configuration_set_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_configuration_set_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityConfigurationSetAttributesOutput,
     crate::error::PutEmailIdentityConfigurationSetAttributesError,
 > {
@@ -4745,7 +4849,7 @@ pub fn parse_put_email_identity_configuration_set_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_dkim_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityDkimAttributesOutput,
     crate::error::PutEmailIdentityDkimAttributesError,
 > {
@@ -4799,7 +4903,7 @@ pub fn parse_put_email_identity_dkim_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_dkim_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityDkimAttributesOutput,
     crate::error::PutEmailIdentityDkimAttributesError,
 > {
@@ -4815,7 +4919,7 @@ pub fn parse_put_email_identity_dkim_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_dkim_signing_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityDkimSigningAttributesOutput,
     crate::error::PutEmailIdentityDkimSigningAttributesError,
 > {
@@ -4880,7 +4984,7 @@ pub fn parse_put_email_identity_dkim_signing_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_dkim_signing_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityDkimSigningAttributesOutput,
     crate::error::PutEmailIdentityDkimSigningAttributesError,
 > {
@@ -4901,7 +5005,7 @@ pub fn parse_put_email_identity_dkim_signing_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_feedback_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityFeedbackAttributesOutput,
     crate::error::PutEmailIdentityFeedbackAttributesError,
 > {
@@ -4961,7 +5065,7 @@ pub fn parse_put_email_identity_feedback_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_feedback_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityFeedbackAttributesOutput,
     crate::error::PutEmailIdentityFeedbackAttributesError,
 > {
@@ -4977,7 +5081,7 @@ pub fn parse_put_email_identity_feedback_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_mail_from_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityMailFromAttributesOutput,
     crate::error::PutEmailIdentityMailFromAttributesError,
 > {
@@ -5037,7 +5141,7 @@ pub fn parse_put_email_identity_mail_from_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_email_identity_mail_from_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutEmailIdentityMailFromAttributesOutput,
     crate::error::PutEmailIdentityMailFromAttributesError,
 > {
@@ -5053,7 +5157,7 @@ pub fn parse_put_email_identity_mail_from_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_suppressed_destination_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutSuppressedDestinationOutput,
     crate::error::PutSuppressedDestinationError,
 > {
@@ -5100,7 +5204,7 @@ pub fn parse_put_suppressed_destination_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_suppressed_destination_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutSuppressedDestinationOutput,
     crate::error::PutSuppressedDestinationError,
 > {
@@ -5115,7 +5219,7 @@ pub fn parse_put_suppressed_destination_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_bulk_email_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendBulkEmailOutput, crate::error::SendBulkEmailError> {
+) -> std::result::Result<crate::output::SendBulkEmailOutput, crate::error::SendBulkEmailError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::SendBulkEmailError::unhandled)?;
     let error_code = match generic.code() {
@@ -5230,7 +5334,7 @@ pub fn parse_send_bulk_email_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_bulk_email_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendBulkEmailOutput, crate::error::SendBulkEmailError> {
+) -> std::result::Result<crate::output::SendBulkEmailOutput, crate::error::SendBulkEmailError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::send_bulk_email_output::Builder::default();
@@ -5245,7 +5349,7 @@ pub fn parse_send_bulk_email_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_custom_verification_email_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SendCustomVerificationEmailOutput,
     crate::error::SendCustomVerificationEmailError,
 > {
@@ -5356,7 +5460,7 @@ pub fn parse_send_custom_verification_email_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_custom_verification_email_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SendCustomVerificationEmailOutput,
     crate::error::SendCustomVerificationEmailError,
 > {
@@ -5376,7 +5480,7 @@ pub fn parse_send_custom_verification_email_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_email_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendEmailOutput, crate::error::SendEmailError> {
+) -> std::result::Result<crate::output::SendEmailOutput, crate::error::SendEmailError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::SendEmailError::unhandled)?;
     let error_code = match generic.code() {
@@ -5491,7 +5595,7 @@ pub fn parse_send_email_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_email_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendEmailOutput, crate::error::SendEmailError> {
+) -> std::result::Result<crate::output::SendEmailOutput, crate::error::SendEmailError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::send_email_output::Builder::default();
@@ -5505,7 +5609,7 @@ pub fn parse_send_email_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -5570,7 +5674,7 @@ pub fn parse_tag_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
@@ -5582,8 +5686,10 @@ pub fn parse_tag_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_test_render_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TestRenderEmailTemplateOutput, crate::error::TestRenderEmailTemplateError>
-{
+) -> std::result::Result<
+    crate::output::TestRenderEmailTemplateOutput,
+    crate::error::TestRenderEmailTemplateError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::TestRenderEmailTemplateError::unhandled)?;
     let error_code = match generic.code() {
@@ -5638,8 +5744,10 @@ pub fn parse_test_render_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_test_render_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TestRenderEmailTemplateOutput, crate::error::TestRenderEmailTemplateError>
-{
+) -> std::result::Result<
+    crate::output::TestRenderEmailTemplateOutput,
+    crate::error::TestRenderEmailTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::test_render_email_template_output::Builder::default();
@@ -5656,7 +5764,7 @@ pub fn parse_test_render_email_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -5721,7 +5829,7 @@ pub fn parse_untag_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
@@ -5733,7 +5841,7 @@ pub fn parse_untag_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_configuration_set_event_destination_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateConfigurationSetEventDestinationOutput,
     crate::error::UpdateConfigurationSetEventDestinationError,
 > {
@@ -5800,7 +5908,7 @@ pub fn parse_update_configuration_set_event_destination_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_configuration_set_event_destination_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateConfigurationSetEventDestinationOutput,
     crate::error::UpdateConfigurationSetEventDestinationError,
 > {
@@ -5816,7 +5924,7 @@ pub fn parse_update_configuration_set_event_destination_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_contact_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError> {
+) -> std::result::Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateContactError::unhandled)?;
     let error_code = match generic.code() {
@@ -5881,7 +5989,7 @@ pub fn parse_update_contact_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_contact_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError> {
+) -> std::result::Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_contact_output::Builder::default();
@@ -5893,7 +6001,8 @@ pub fn parse_update_contact_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_contact_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateContactListOutput, crate::error::UpdateContactListError> {
+) -> std::result::Result<crate::output::UpdateContactListOutput, crate::error::UpdateContactListError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateContactListError::unhandled)?;
     let error_code = match generic.code() {
@@ -5958,7 +6067,8 @@ pub fn parse_update_contact_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_contact_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateContactListOutput, crate::error::UpdateContactListError> {
+) -> std::result::Result<crate::output::UpdateContactListOutput, crate::error::UpdateContactListError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_contact_list_output::Builder::default();
@@ -5970,7 +6080,7 @@ pub fn parse_update_contact_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_custom_verification_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateCustomVerificationEmailTemplateOutput,
     crate::error::UpdateCustomVerificationEmailTemplateError,
 > {
@@ -6035,7 +6145,7 @@ pub fn parse_update_custom_verification_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_custom_verification_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateCustomVerificationEmailTemplateOutput,
     crate::error::UpdateCustomVerificationEmailTemplateError,
 > {
@@ -6051,7 +6161,7 @@ pub fn parse_update_custom_verification_email_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_email_identity_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateEmailIdentityPolicyOutput,
     crate::error::UpdateEmailIdentityPolicyError,
 > {
@@ -6109,7 +6219,7 @@ pub fn parse_update_email_identity_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_email_identity_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateEmailIdentityPolicyOutput,
     crate::error::UpdateEmailIdentityPolicyError,
 > {
@@ -6124,7 +6234,10 @@ pub fn parse_update_email_identity_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_email_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateEmailTemplateOutput, crate::error::UpdateEmailTemplateError> {
+) -> std::result::Result<
+    crate::output::UpdateEmailTemplateOutput,
+    crate::error::UpdateEmailTemplateError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateEmailTemplateError::unhandled)?;
     let error_code = match generic.code() {
@@ -6175,7 +6288,10 @@ pub fn parse_update_email_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_email_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateEmailTemplateOutput, crate::error::UpdateEmailTemplateError> {
+) -> std::result::Result<
+    crate::output::UpdateEmailTemplateOutput,
+    crate::error::UpdateEmailTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_email_template_output::Builder::default();

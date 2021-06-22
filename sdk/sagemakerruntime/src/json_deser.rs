@@ -10,32 +10,32 @@ pub fn parse_generic_error(
 }
 
 pub fn internal_failure(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::internal_failure::Builder,
-) -> Result<crate::error::internal_failure::Builder, serde_json::Error> {
-    let parsed_body: crate::error::InternalFailure = if inp.is_empty() {
+) -> std::result::Result<crate::error::internal_failure::Builder, serde_json::Error> {
+    let parsed_body: crate::error::InternalFailure = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn model_error(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::model_error::Builder,
-) -> Result<crate::error::model_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ModelError = if inp.is_empty() {
+) -> std::result::Result<crate::error::model_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ModelError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     builder = builder.set_original_status_code(parsed_body.original_status_code);
@@ -45,32 +45,32 @@ pub fn model_error(
 }
 
 pub fn service_unavailable(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::service_unavailable::Builder,
-) -> Result<crate::error::service_unavailable::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ServiceUnavailable = if inp.is_empty() {
+) -> std::result::Result<crate::error::service_unavailable::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ServiceUnavailable = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn validation_error(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::validation_error::Builder,
-) -> Result<crate::error::validation_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ValidationError = if inp.is_empty() {
+) -> std::result::Result<crate::error::validation_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ValidationError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)

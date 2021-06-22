@@ -146,15 +146,15 @@ pub mod subscribe_output {
         /// if the subscription requires confirmation. However, if the API request parameter
         /// <code>ReturnSubscriptionArn</code> is true, then the value is always the
         /// subscription ARN, even if the subscription requires confirmation.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_arn = Some(inp.into());
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_arn = Some(input.into());
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_arn = inp;
+            self.subscription_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`SubscribeOutput`](crate::output::SubscribeOutput)
@@ -381,12 +381,12 @@ pub mod publish_output {
     impl Builder {
         /// <p>Unique identifier assigned to the published message.</p>
         /// <p>Length Constraint: Maximum 100 characters</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_id = Some(inp.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
             self
         }
-        pub fn set_message_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message_id = inp;
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
             self
         }
         /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
@@ -394,15 +394,15 @@ pub mod publish_output {
         /// message. The length of <code>SequenceNumber</code> is 128 bits.
         /// <code>SequenceNumber</code> continues to increase for each
         /// <code>MessageGroupId</code>.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number = Some(inp.into());
+        pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sequence_number = Some(input.into());
             self
         }
         pub fn set_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sequence_number = inp;
+            self.sequence_number = input;
             self
         }
         /// Consumes the builder and constructs a [`PublishOutput`](crate::output::PublishOutput)
@@ -479,27 +479,27 @@ pub mod list_topics_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn topics(mut self, inp: impl Into<crate::model::Topic>) -> Self {
+        pub fn topics(mut self, input: impl Into<crate::model::Topic>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topics = Some(v);
             self
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Topic>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
         ) -> Self {
-            self.topics = inp;
+            self.topics = input;
             self
         }
         /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is
         /// returned if there are additional topics to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTopicsOutput`](crate::output::ListTopicsOutput)
@@ -540,17 +540,17 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
@@ -594,27 +594,27 @@ pub mod list_subscriptions_by_topic_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn subscriptions(mut self, inp: impl Into<crate::model::Subscription>) -> Self {
+        pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subscriptions = Some(v);
             self
         }
         pub fn set_subscriptions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
         ) -> Self {
-            self.subscriptions = inp;
+            self.subscriptions = input;
             self
         }
         /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This
         /// element is returned if there are more subscriptions to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSubscriptionsByTopicOutput`](crate::output::ListSubscriptionsByTopicOutput)
@@ -661,27 +661,27 @@ pub mod list_subscriptions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn subscriptions(mut self, inp: impl Into<crate::model::Subscription>) -> Self {
+        pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subscriptions = Some(v);
             self
         }
         pub fn set_subscriptions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
         ) -> Self {
-            self.subscriptions = inp;
+            self.subscriptions = input;
             self
         }
         /// <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element
         /// is returned if there are more subscriptions to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSubscriptionsOutput`](crate::output::ListSubscriptionsOutput)
@@ -731,29 +731,29 @@ pub mod list_sms_sandbox_phone_numbers_output {
     impl Builder {
         pub fn phone_numbers(
             mut self,
-            inp: impl Into<crate::model::SMSSandboxPhoneNumber>,
+            input: impl Into<crate::model::SMSSandboxPhoneNumber>,
         ) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.phone_numbers = Some(v);
             self
         }
         pub fn set_phone_numbers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SMSSandboxPhoneNumber>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SMSSandboxPhoneNumber>>,
         ) -> Self {
-            self.phone_numbers = inp;
+            self.phone_numbers = input;
             self
         }
         /// <p>A <code>NextToken</code> string is returned when you call the
         /// <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of
         /// records are available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSMSSandboxPhoneNumbersOutput`](crate::output::ListSMSSandboxPhoneNumbersOutput)
@@ -804,28 +804,28 @@ pub mod list_platform_applications_output {
     impl Builder {
         pub fn platform_applications(
             mut self,
-            inp: impl Into<crate::model::PlatformApplication>,
+            input: impl Into<crate::model::PlatformApplication>,
         ) -> Self {
             let mut v = self.platform_applications.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.platform_applications = Some(v);
             self
         }
         pub fn set_platform_applications(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PlatformApplication>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PlatformApplication>>,
         ) -> Self {
-            self.platform_applications = inp;
+            self.platform_applications = input;
             self
         }
         /// <p>NextToken string is returned when calling ListPlatformApplications action if
         /// additional records are available after the first page results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPlatformApplicationsOutput`](crate::output::ListPlatformApplicationsOutput)
@@ -874,28 +874,28 @@ pub mod list_phone_numbers_opted_out_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn phone_numbers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.phone_numbers = Some(v);
             self
         }
         pub fn set_phone_numbers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.phone_numbers = inp;
+            self.phone_numbers = input;
             self
         }
         /// <p>A <code>NextToken</code> string is returned when you call the
         /// <code>ListPhoneNumbersOptedOut</code> action if additional records are available
         /// after the first page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPhoneNumbersOptedOutOutput`](crate::output::ListPhoneNumbersOptedOutOutput)
@@ -946,28 +946,28 @@ pub mod list_origination_numbers_output {
         /// <p>A <code>NextToken</code> string is returned when you call the
         /// <code>ListOriginationNumbers</code> operation if additional pages of records are
         /// available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         pub fn phone_numbers(
             mut self,
-            inp: impl Into<crate::model::PhoneNumberInformation>,
+            input: impl Into<crate::model::PhoneNumberInformation>,
         ) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.phone_numbers = Some(v);
             self
         }
         pub fn set_phone_numbers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
         ) -> Self {
-            self.phone_numbers = inp;
+            self.phone_numbers = input;
             self
         }
         /// Consumes the builder and constructs a [`ListOriginationNumbersOutput`](crate::output::ListOriginationNumbersOutput)
@@ -1014,27 +1014,27 @@ pub mod list_endpoints_by_platform_application_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn endpoints(mut self, inp: impl Into<crate::model::Endpoint>) -> Self {
+        pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.endpoints = Some(v);
             self
         }
         pub fn set_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
         ) -> Self {
-            self.endpoints = inp;
+            self.endpoints = input;
             self
         }
         /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if
         /// additional records are available after the first page results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListEndpointsByPlatformApplicationOutput`](crate::output::ListEndpointsByPlatformApplicationOutput)
@@ -1176,11 +1176,11 @@ pub mod get_topic_attributes_output {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTopicAttributesOutput`](crate::output::GetTopicAttributesOutput)
@@ -1312,11 +1312,11 @@ pub mod get_subscription_attributes_output {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSubscriptionAttributesOutput`](crate::output::GetSubscriptionAttributesOutput)
@@ -1357,12 +1357,12 @@ pub mod get_sms_sandbox_account_status_output {
     }
     impl Builder {
         /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
-        pub fn is_in_sandbox(mut self, inp: bool) -> Self {
-            self.is_in_sandbox = Some(inp);
+        pub fn is_in_sandbox(mut self, input: bool) -> Self {
+            self.is_in_sandbox = Some(input);
             self
         }
-        pub fn set_is_in_sandbox(mut self, inp: bool) -> Self {
-            self.is_in_sandbox = Some(inp);
+        pub fn set_is_in_sandbox(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_in_sandbox = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSMSSandboxAccountStatusOutput`](crate::output::GetSMSSandboxAccountStatusOutput)
@@ -1418,11 +1418,11 @@ pub mod get_sms_attributes_output {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSMSAttributesOutput`](crate::output::GetSMSAttributesOutput)
@@ -1501,11 +1501,11 @@ pub mod get_platform_application_attributes_output {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPlatformApplicationAttributesOutput`](crate::output::GetPlatformApplicationAttributesOutput)
@@ -1586,11 +1586,11 @@ pub mod get_endpoint_attributes_output {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEndpointAttributesOutput`](crate::output::GetEndpointAttributesOutput)
@@ -1748,12 +1748,12 @@ pub mod create_topic_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTopicOutput`](crate::output::CreateTopicOutput)
@@ -1824,12 +1824,12 @@ pub mod create_platform_endpoint_output {
     }
     impl Builder {
         /// <p>EndpointArn returned from CreateEndpoint action.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_arn = Some(inp.into());
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_arn = Some(input.into());
             self
         }
-        pub fn set_endpoint_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_arn = inp;
+        pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePlatformEndpointOutput`](crate::output::CreatePlatformEndpointOutput)
@@ -1871,15 +1871,15 @@ pub mod create_platform_application_output {
     }
     impl Builder {
         /// <p>PlatformApplicationArn is returned.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_application_arn = Some(inp.into());
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_application_arn = Some(input.into());
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_application_arn = inp;
+            self.platform_application_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePlatformApplicationOutput`](crate::output::CreatePlatformApplicationOutput)
@@ -1921,15 +1921,15 @@ pub mod confirm_subscription_output {
     }
     impl Builder {
         /// <p>The ARN of the created subscription.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_arn = Some(inp.into());
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_arn = Some(input.into());
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_arn = inp;
+            self.subscription_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ConfirmSubscriptionOutput`](crate::output::ConfirmSubscriptionOutput)
@@ -1995,12 +1995,12 @@ pub mod check_if_phone_number_is_opted_out_output {
         /// messages to it.</p>
         /// </li>
         /// </ul>
-        pub fn is_opted_out(mut self, inp: bool) -> Self {
-            self.is_opted_out = Some(inp);
+        pub fn is_opted_out(mut self, input: bool) -> Self {
+            self.is_opted_out = Some(input);
             self
         }
-        pub fn set_is_opted_out(mut self, inp: bool) -> Self {
-            self.is_opted_out = Some(inp);
+        pub fn set_is_opted_out(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_opted_out = input;
             self
         }
         /// Consumes the builder and constructs a [`CheckIfPhoneNumberIsOptedOutOutput`](crate::output::CheckIfPhoneNumberIsOptedOutOutput)

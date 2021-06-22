@@ -62,42 +62,42 @@ pub mod update_function_event_invoke_config_output {
     }
     impl Builder {
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.maximum_retry_attempts = Some(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.maximum_retry_attempts = Some(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = inp;
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_retry_attempts = input;
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-        pub fn maximum_event_age_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_event_age_in_seconds = Some(inp);
+        pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_event_age_in_seconds = Some(input);
             self
         }
-        pub fn set_maximum_event_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_event_age_in_seconds = inp;
+        pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_event_age_in_seconds = input;
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
@@ -122,15 +122,15 @@ pub mod update_function_event_invoke_config_output {
         /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
         /// </li>
         /// </ul>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.destination_config = Some(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.destination_config = Some(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.destination_config = inp;
+            self.destination_config = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionEventInvokeConfigOutput`](crate::output::UpdateFunctionEventInvokeConfigOutput)
@@ -310,336 +310,345 @@ pub mod update_function_configuration_output {
     }
     impl Builder {
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_name = Some(inp.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_name = inp;
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
             self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The runtime environment for the Lambda function.</p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.runtime = Some(inp);
+        pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.runtime = Some(input);
             self
         }
-        pub fn set_runtime(mut self, inp: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = inp;
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
+            self.runtime = input;
             self
         }
         /// <p>The function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role = Some(inp.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
             self
         }
         /// <p>The function that Lambda calls to begin executing your function.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.handler = Some(inp.into());
+        pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
+            self.handler = Some(input.into());
             self
         }
-        pub fn set_handler(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.handler = inp;
+        pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.handler = input;
             self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
-        pub fn code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn code_size(mut self, input: i64) -> Self {
+            self.code_size = Some(input);
             self
         }
-        pub fn set_code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_size = input;
             self
         }
         /// <p>The function's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.timeout = Some(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout = inp;
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
             self
         }
         /// <p>The amount of memory available to the function at runtime. </p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.memory_size = Some(inp);
+        pub fn memory_size(mut self, input: i32) -> Self {
+            self.memory_size = Some(input);
             self
         }
-        pub fn set_memory_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory_size = inp;
+        pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_size = input;
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn last_modified(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified = Some(inp.into());
+        pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified = Some(input.into());
             self
         }
-        pub fn set_last_modified(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_modified = inp;
+        pub fn set_last_modified(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified = input;
             self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
-        pub fn code_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code_sha256 = Some(inp.into());
+        pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_sha256 = Some(input.into());
             self
         }
-        pub fn set_code_sha256(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = inp;
+        pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_sha256 = input;
             self
         }
         /// <p>The version of the Lambda function.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfigResponse) -> Self {
-            self.vpc_config = Some(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
+            self.vpc_config = Some(input);
             self
         }
         pub fn set_vpc_config(
             mut self,
-            inp: std::option::Option<crate::model::VpcConfigResponse>,
+            input: std::option::Option<crate::model::VpcConfigResponse>,
         ) -> Self {
-            self.vpc_config = inp;
+            self.vpc_config = input;
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.dead_letter_config = Some(inp);
+        pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
+            self.dead_letter_config = Some(input);
             self
         }
         pub fn set_dead_letter_config(
             mut self,
-            inp: std::option::Option<crate::model::DeadLetterConfig>,
+            input: std::option::Option<crate::model::DeadLetterConfig>,
         ) -> Self {
-            self.dead_letter_config = inp;
+            self.dead_letter_config = input;
             self
         }
         /// <p>The function's environment variables.</p>
-        pub fn environment(mut self, inp: crate::model::EnvironmentResponse) -> Self {
-            self.environment = Some(inp);
+        pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
+            self.environment = Some(input);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<crate::model::EnvironmentResponse>,
+            input: std::option::Option<crate::model::EnvironmentResponse>,
         ) -> Self {
-            self.environment = inp;
+            self.environment = input;
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
         /// configured a customer managed CMK.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(inp.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
             self
         }
-        pub fn set_kms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = inp;
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
             self
         }
         /// <p>The function's AWS X-Ray tracing configuration.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfigResponse) -> Self {
-            self.tracing_config = Some(inp);
+        pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
+            self.tracing_config = Some(input);
             self
         }
         pub fn set_tracing_config(
             mut self,
-            inp: std::option::Option<crate::model::TracingConfigResponse>,
+            input: std::option::Option<crate::model::TracingConfigResponse>,
         ) -> Self {
-            self.tracing_config = inp;
+            self.tracing_config = input;
             self
         }
         /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
-        pub fn master_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_arn = Some(inp.into());
+        pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_arn = Some(input.into());
             self
         }
-        pub fn set_master_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = inp;
+        pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_arn = input;
             self
         }
         /// <p>The latest updated revision of the function or alias.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
-        pub fn layers(mut self, inp: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.layers = Some(v);
             self
         }
         pub fn set_layers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Layer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
         ) -> Self {
-            self.layers = inp;
+            self.layers = input;
             self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
         /// invoking it.</p>
-        pub fn state(mut self, inp: crate::model::State) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::State) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::State>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The reason for the function's current state.</p>
-        pub fn state_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_reason = Some(inp.into());
+        pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_reason = Some(input.into());
             self
         }
-        pub fn set_state_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = inp;
+        pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_reason = input;
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
         /// modify the function.</p>
-        pub fn state_reason_code(mut self, inp: crate::model::StateReasonCode) -> Self {
-            self.state_reason_code = Some(inp);
+        pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
+            self.state_reason_code = Some(input);
             self
         }
         pub fn set_state_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::StateReasonCode>,
+            input: std::option::Option<crate::model::StateReasonCode>,
         ) -> Self {
-            self.state_reason_code = inp;
+            self.state_reason_code = input;
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
         /// after function creation completes.</p>
-        pub fn last_update_status(mut self, inp: crate::model::LastUpdateStatus) -> Self {
-            self.last_update_status = Some(inp);
+        pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
+            self.last_update_status = Some(input);
             self
         }
         pub fn set_last_update_status(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatus>,
+            input: std::option::Option<crate::model::LastUpdateStatus>,
         ) -> Self {
-            self.last_update_status = inp;
+            self.last_update_status = input;
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_update_status_reason = Some(inp.into());
+        pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_update_status_reason = Some(input.into());
             self
         }
         pub fn set_last_update_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_update_status_reason = inp;
+            self.last_update_status_reason = input;
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
         pub fn last_update_status_reason_code(
             mut self,
-            inp: crate::model::LastUpdateStatusReasonCode,
+            input: crate::model::LastUpdateStatusReasonCode,
         ) -> Self {
-            self.last_update_status_reason_code = Some(inp);
+            self.last_update_status_reason_code = Some(input);
             self
         }
         pub fn set_last_update_status_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
         ) -> Self {
-            self.last_update_status_reason_code = inp;
+            self.last_update_status_reason_code = input;
             self
         }
         pub fn file_system_configs(
             mut self,
-            inp: impl Into<crate::model::FileSystemConfig>,
+            input: impl Into<crate::model::FileSystemConfig>,
         ) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.file_system_configs = Some(v);
             self
         }
         pub fn set_file_system_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         ) -> Self {
-            self.file_system_configs = inp;
+            self.file_system_configs = input;
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.package_type = Some(inp);
+        pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
+            self.package_type = Some(input);
             self
         }
         pub fn set_package_type(
             mut self,
-            inp: std::option::Option<crate::model::PackageType>,
+            input: std::option::Option<crate::model::PackageType>,
         ) -> Self {
-            self.package_type = inp;
+            self.package_type = input;
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn image_config_response(mut self, inp: crate::model::ImageConfigResponse) -> Self {
-            self.image_config_response = Some(inp);
+        pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
+            self.image_config_response = Some(input);
             self
         }
         pub fn set_image_config_response(
             mut self,
-            inp: std::option::Option<crate::model::ImageConfigResponse>,
+            input: std::option::Option<crate::model::ImageConfigResponse>,
         ) -> Self {
-            self.image_config_response = inp;
+            self.image_config_response = input;
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_profile_version_arn = Some(inp.into());
+        pub fn signing_profile_version_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.signing_profile_version_arn = Some(input.into());
             self
         }
         pub fn set_signing_profile_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_profile_version_arn = inp;
+            self.signing_profile_version_arn = input;
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn signing_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_job_arn = Some(inp.into());
+        pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.signing_job_arn = Some(input.into());
             self
         }
         pub fn set_signing_job_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_job_arn = inp;
+            self.signing_job_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput)
@@ -845,336 +854,345 @@ pub mod update_function_code_output {
     }
     impl Builder {
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_name = Some(inp.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_name = inp;
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
             self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The runtime environment for the Lambda function.</p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.runtime = Some(inp);
+        pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.runtime = Some(input);
             self
         }
-        pub fn set_runtime(mut self, inp: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = inp;
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
+            self.runtime = input;
             self
         }
         /// <p>The function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role = Some(inp.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
             self
         }
         /// <p>The function that Lambda calls to begin executing your function.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.handler = Some(inp.into());
+        pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
+            self.handler = Some(input.into());
             self
         }
-        pub fn set_handler(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.handler = inp;
+        pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.handler = input;
             self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
-        pub fn code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn code_size(mut self, input: i64) -> Self {
+            self.code_size = Some(input);
             self
         }
-        pub fn set_code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_size = input;
             self
         }
         /// <p>The function's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.timeout = Some(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout = inp;
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
             self
         }
         /// <p>The amount of memory available to the function at runtime. </p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.memory_size = Some(inp);
+        pub fn memory_size(mut self, input: i32) -> Self {
+            self.memory_size = Some(input);
             self
         }
-        pub fn set_memory_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory_size = inp;
+        pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_size = input;
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn last_modified(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified = Some(inp.into());
+        pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified = Some(input.into());
             self
         }
-        pub fn set_last_modified(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_modified = inp;
+        pub fn set_last_modified(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified = input;
             self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
-        pub fn code_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code_sha256 = Some(inp.into());
+        pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_sha256 = Some(input.into());
             self
         }
-        pub fn set_code_sha256(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = inp;
+        pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_sha256 = input;
             self
         }
         /// <p>The version of the Lambda function.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfigResponse) -> Self {
-            self.vpc_config = Some(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
+            self.vpc_config = Some(input);
             self
         }
         pub fn set_vpc_config(
             mut self,
-            inp: std::option::Option<crate::model::VpcConfigResponse>,
+            input: std::option::Option<crate::model::VpcConfigResponse>,
         ) -> Self {
-            self.vpc_config = inp;
+            self.vpc_config = input;
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.dead_letter_config = Some(inp);
+        pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
+            self.dead_letter_config = Some(input);
             self
         }
         pub fn set_dead_letter_config(
             mut self,
-            inp: std::option::Option<crate::model::DeadLetterConfig>,
+            input: std::option::Option<crate::model::DeadLetterConfig>,
         ) -> Self {
-            self.dead_letter_config = inp;
+            self.dead_letter_config = input;
             self
         }
         /// <p>The function's environment variables.</p>
-        pub fn environment(mut self, inp: crate::model::EnvironmentResponse) -> Self {
-            self.environment = Some(inp);
+        pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
+            self.environment = Some(input);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<crate::model::EnvironmentResponse>,
+            input: std::option::Option<crate::model::EnvironmentResponse>,
         ) -> Self {
-            self.environment = inp;
+            self.environment = input;
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
         /// configured a customer managed CMK.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(inp.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
             self
         }
-        pub fn set_kms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = inp;
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
             self
         }
         /// <p>The function's AWS X-Ray tracing configuration.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfigResponse) -> Self {
-            self.tracing_config = Some(inp);
+        pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
+            self.tracing_config = Some(input);
             self
         }
         pub fn set_tracing_config(
             mut self,
-            inp: std::option::Option<crate::model::TracingConfigResponse>,
+            input: std::option::Option<crate::model::TracingConfigResponse>,
         ) -> Self {
-            self.tracing_config = inp;
+            self.tracing_config = input;
             self
         }
         /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
-        pub fn master_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_arn = Some(inp.into());
+        pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_arn = Some(input.into());
             self
         }
-        pub fn set_master_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = inp;
+        pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_arn = input;
             self
         }
         /// <p>The latest updated revision of the function or alias.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
-        pub fn layers(mut self, inp: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.layers = Some(v);
             self
         }
         pub fn set_layers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Layer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
         ) -> Self {
-            self.layers = inp;
+            self.layers = input;
             self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
         /// invoking it.</p>
-        pub fn state(mut self, inp: crate::model::State) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::State) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::State>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The reason for the function's current state.</p>
-        pub fn state_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_reason = Some(inp.into());
+        pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_reason = Some(input.into());
             self
         }
-        pub fn set_state_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = inp;
+        pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_reason = input;
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
         /// modify the function.</p>
-        pub fn state_reason_code(mut self, inp: crate::model::StateReasonCode) -> Self {
-            self.state_reason_code = Some(inp);
+        pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
+            self.state_reason_code = Some(input);
             self
         }
         pub fn set_state_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::StateReasonCode>,
+            input: std::option::Option<crate::model::StateReasonCode>,
         ) -> Self {
-            self.state_reason_code = inp;
+            self.state_reason_code = input;
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
         /// after function creation completes.</p>
-        pub fn last_update_status(mut self, inp: crate::model::LastUpdateStatus) -> Self {
-            self.last_update_status = Some(inp);
+        pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
+            self.last_update_status = Some(input);
             self
         }
         pub fn set_last_update_status(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatus>,
+            input: std::option::Option<crate::model::LastUpdateStatus>,
         ) -> Self {
-            self.last_update_status = inp;
+            self.last_update_status = input;
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_update_status_reason = Some(inp.into());
+        pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_update_status_reason = Some(input.into());
             self
         }
         pub fn set_last_update_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_update_status_reason = inp;
+            self.last_update_status_reason = input;
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
         pub fn last_update_status_reason_code(
             mut self,
-            inp: crate::model::LastUpdateStatusReasonCode,
+            input: crate::model::LastUpdateStatusReasonCode,
         ) -> Self {
-            self.last_update_status_reason_code = Some(inp);
+            self.last_update_status_reason_code = Some(input);
             self
         }
         pub fn set_last_update_status_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
         ) -> Self {
-            self.last_update_status_reason_code = inp;
+            self.last_update_status_reason_code = input;
             self
         }
         pub fn file_system_configs(
             mut self,
-            inp: impl Into<crate::model::FileSystemConfig>,
+            input: impl Into<crate::model::FileSystemConfig>,
         ) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.file_system_configs = Some(v);
             self
         }
         pub fn set_file_system_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         ) -> Self {
-            self.file_system_configs = inp;
+            self.file_system_configs = input;
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.package_type = Some(inp);
+        pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
+            self.package_type = Some(input);
             self
         }
         pub fn set_package_type(
             mut self,
-            inp: std::option::Option<crate::model::PackageType>,
+            input: std::option::Option<crate::model::PackageType>,
         ) -> Self {
-            self.package_type = inp;
+            self.package_type = input;
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn image_config_response(mut self, inp: crate::model::ImageConfigResponse) -> Self {
-            self.image_config_response = Some(inp);
+        pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
+            self.image_config_response = Some(input);
             self
         }
         pub fn set_image_config_response(
             mut self,
-            inp: std::option::Option<crate::model::ImageConfigResponse>,
+            input: std::option::Option<crate::model::ImageConfigResponse>,
         ) -> Self {
-            self.image_config_response = inp;
+            self.image_config_response = input;
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_profile_version_arn = Some(inp.into());
+        pub fn signing_profile_version_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.signing_profile_version_arn = Some(input.into());
             self
         }
         pub fn set_signing_profile_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_profile_version_arn = inp;
+            self.signing_profile_version_arn = input;
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn signing_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_job_arn = Some(inp.into());
+        pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.signing_job_arn = Some(input.into());
             self
         }
         pub fn set_signing_job_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_job_arn = inp;
+            self.signing_job_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput)
@@ -1360,261 +1378,264 @@ pub mod update_event_source_mapping_output {
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uuid = Some(inp.into());
+        pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uuid = Some(input.into());
             self
         }
-        pub fn set_uuid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uuid = inp;
+        pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uuid = input;
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
         /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
-        pub fn starting_position(mut self, inp: crate::model::EventSourcePosition) -> Self {
-            self.starting_position = Some(inp);
+        pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
+            self.starting_position = Some(input);
             self
         }
         pub fn set_starting_position(
             mut self,
-            inp: std::option::Option<crate::model::EventSourcePosition>,
+            input: std::option::Option<crate::model::EventSourcePosition>,
         ) -> Self {
-            self.starting_position = inp;
+            self.starting_position = input;
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.starting_position_timestamp = Some(inp);
+        pub fn starting_position_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.starting_position_timestamp = Some(input);
             self
         }
         pub fn set_starting_position_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.starting_position_timestamp = inp;
+            self.starting_position_timestamp = input;
             self
         }
         /// <p>The maximum number of items to retrieve in a single batch.</p>
-        pub fn batch_size(mut self, inp: i32) -> Self {
-            self.batch_size = Some(inp);
+        pub fn batch_size(mut self, input: i32) -> Self {
+            self.batch_size = Some(input);
             self
         }
-        pub fn set_batch_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.batch_size = inp;
+        pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.batch_size = input;
             self
         }
         /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
-        pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_batching_window_in_seconds = Some(inp);
+        pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_batching_window_in_seconds = Some(input);
             self
         }
         pub fn set_maximum_batching_window_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.maximum_batching_window_in_seconds = inp;
+            self.maximum_batching_window_in_seconds = input;
             self
         }
         /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
-        pub fn parallelization_factor(mut self, inp: i32) -> Self {
-            self.parallelization_factor = Some(inp);
+        pub fn parallelization_factor(mut self, input: i32) -> Self {
+            self.parallelization_factor = Some(input);
             self
         }
-        pub fn set_parallelization_factor(mut self, inp: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = inp;
+        pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.parallelization_factor = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn event_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_source_arn = Some(inp.into());
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_source_arn = Some(input.into());
             self
         }
         pub fn set_event_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.event_source_arn = inp;
+            self.event_source_arn = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The date that the event source mapping was last updated, or its state changed.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
-        pub fn last_processing_result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_processing_result = Some(inp.into());
+        pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_processing_result = Some(input.into());
             self
         }
         pub fn set_last_processing_result(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_processing_result = inp;
+            self.last_processing_result = input;
             self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
         /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
         /// <code>Updating</code>, or <code>Deleting</code>.</p>
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
         /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
         /// service.</p>
-        pub fn state_transition_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_transition_reason = Some(inp.into());
+        pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_transition_reason = Some(input.into());
             self
         }
         pub fn set_state_transition_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.state_transition_reason = inp;
+            self.state_transition_reason = input;
             self
         }
         /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.destination_config = Some(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.destination_config = Some(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.destination_config = inp;
+            self.destination_config = input;
             self
         }
-        pub fn topics(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topics = Some(v);
             self
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.topics = inp;
+            self.topics = input;
             self
         }
-        pub fn queues(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.queues = Some(v);
             self
         }
         pub fn set_queues(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.queues = inp;
+            self.queues = input;
             self
         }
         pub fn source_access_configurations(
             mut self,
-            inp: impl Into<crate::model::SourceAccessConfiguration>,
+            input: impl Into<crate::model::SourceAccessConfiguration>,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_access_configurations = Some(v);
             self
         }
         pub fn set_source_access_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
         ) -> Self {
-            self.source_access_configurations = inp;
+            self.source_access_configurations = input;
             self
         }
         /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
         pub fn self_managed_event_source(
             mut self,
-            inp: crate::model::SelfManagedEventSource,
+            input: crate::model::SelfManagedEventSource,
         ) -> Self {
-            self.self_managed_event_source = Some(inp);
+            self.self_managed_event_source = Some(input);
             self
         }
         pub fn set_self_managed_event_source(
             mut self,
-            inp: std::option::Option<crate::model::SelfManagedEventSource>,
+            input: std::option::Option<crate::model::SelfManagedEventSource>,
         ) -> Self {
-            self.self_managed_event_source = inp;
+            self.self_managed_event_source = input;
             self
         }
         /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-        pub fn maximum_record_age_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_record_age_in_seconds = Some(inp);
+        pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        pub fn set_maximum_record_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_record_age_in_seconds = inp;
+        pub fn set_maximum_record_age_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.maximum_record_age_in_seconds = input;
             self
         }
         /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn bisect_batch_on_function_error(mut self, inp: bool) -> Self {
-            self.bisect_batch_on_function_error = Some(inp);
+        pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
+            self.bisect_batch_on_function_error = Some(input);
             self
         }
         pub fn set_bisect_batch_on_function_error(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.bisect_batch_on_function_error = inp;
+            self.bisect_batch_on_function_error = input;
             self
         }
         /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.maximum_retry_attempts = Some(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.maximum_retry_attempts = Some(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = inp;
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_retry_attempts = input;
             self
         }
         /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-        pub fn tumbling_window_in_seconds(mut self, inp: i32) -> Self {
-            self.tumbling_window_in_seconds = Some(inp);
+        pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
+            self.tumbling_window_in_seconds = Some(input);
             self
         }
-        pub fn set_tumbling_window_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = inp;
+        pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.tumbling_window_in_seconds = input;
             self
         }
         pub fn function_response_types(
             mut self,
-            inp: impl Into<crate::model::FunctionResponseType>,
+            input: impl Into<crate::model::FunctionResponseType>,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.function_response_types = Some(v);
             self
         }
         pub fn set_function_response_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
         ) -> Self {
-            self.function_response_types = inp;
+            self.function_response_types = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput)
@@ -1676,15 +1697,15 @@ pub mod update_code_signing_config_output {
     }
     impl Builder {
         /// <p>The code signing configuration</p>
-        pub fn code_signing_config(mut self, inp: crate::model::CodeSigningConfig) -> Self {
-            self.code_signing_config = Some(inp);
+        pub fn code_signing_config(mut self, input: crate::model::CodeSigningConfig) -> Self {
+            self.code_signing_config = Some(input);
             self
         }
         pub fn set_code_signing_config(
             mut self,
-            inp: std::option::Option<crate::model::CodeSigningConfig>,
+            input: std::option::Option<crate::model::CodeSigningConfig>,
         ) -> Self {
-            self.code_signing_config = inp;
+            self.code_signing_config = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateCodeSigningConfigOutput`](crate::output::UpdateCodeSigningConfigOutput)
@@ -1747,64 +1768,64 @@ pub mod update_alias_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-        pub fn alias_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.alias_arn = Some(inp.into());
+        pub fn alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_arn = Some(input.into());
             self
         }
-        pub fn set_alias_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = inp;
+        pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_arn = input;
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_version = Some(inp.into());
+        pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_version = Some(input.into());
             self
         }
         pub fn set_function_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.function_version = inp;
+            self.function_version = input;
             self
         }
         /// <p>A description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
         /// configuration</a> of the alias.</p>
-        pub fn routing_config(mut self, inp: crate::model::AliasRoutingConfiguration) -> Self {
-            self.routing_config = Some(inp);
+        pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
+            self.routing_config = Some(input);
             self
         }
         pub fn set_routing_config(
             mut self,
-            inp: std::option::Option<crate::model::AliasRoutingConfiguration>,
+            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
         ) -> Self {
-            self.routing_config = inp;
+            self.routing_config = input;
             self
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
@@ -1995,69 +2016,75 @@ pub mod put_provisioned_concurrency_config_output {
     }
     impl Builder {
         /// <p>The amount of provisioned concurrency requested.</p>
-        pub fn requested_provisioned_concurrent_executions(mut self, inp: i32) -> Self {
-            self.requested_provisioned_concurrent_executions = Some(inp);
+        pub fn requested_provisioned_concurrent_executions(mut self, input: i32) -> Self {
+            self.requested_provisioned_concurrent_executions = Some(input);
             self
         }
         pub fn set_requested_provisioned_concurrent_executions(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.requested_provisioned_concurrent_executions = inp;
+            self.requested_provisioned_concurrent_executions = input;
             self
         }
         /// <p>The amount of provisioned concurrency available.</p>
-        pub fn available_provisioned_concurrent_executions(mut self, inp: i32) -> Self {
-            self.available_provisioned_concurrent_executions = Some(inp);
+        pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
+            self.available_provisioned_concurrent_executions = Some(input);
             self
         }
         pub fn set_available_provisioned_concurrent_executions(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.available_provisioned_concurrent_executions = inp;
+            self.available_provisioned_concurrent_executions = input;
             self
         }
         /// <p>The amount of provisioned concurrency allocated.</p>
-        pub fn allocated_provisioned_concurrent_executions(mut self, inp: i32) -> Self {
-            self.allocated_provisioned_concurrent_executions = Some(inp);
+        pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
+            self.allocated_provisioned_concurrent_executions = Some(input);
             self
         }
         pub fn set_allocated_provisioned_concurrent_executions(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.allocated_provisioned_concurrent_executions = inp;
+            self.allocated_provisioned_concurrent_executions = input;
             self
         }
         /// <p>The status of the allocation process.</p>
-        pub fn status(mut self, inp: crate::model::ProvisionedConcurrencyStatusEnum) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ProvisionedConcurrencyStatusEnum) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>,
+            input: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
         /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-        pub fn last_modified(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified = Some(inp.into());
+        pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified = Some(input.into());
             self
         }
-        pub fn set_last_modified(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_modified = inp;
+        pub fn set_last_modified(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified = input;
             self
         }
         /// Consumes the builder and constructs a [`PutProvisionedConcurrencyConfigOutput`](crate::output::PutProvisionedConcurrencyConfigOutput)
@@ -2146,42 +2173,42 @@ pub mod put_function_event_invoke_config_output {
     }
     impl Builder {
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.maximum_retry_attempts = Some(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.maximum_retry_attempts = Some(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = inp;
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_retry_attempts = input;
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-        pub fn maximum_event_age_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_event_age_in_seconds = Some(inp);
+        pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_event_age_in_seconds = Some(input);
             self
         }
-        pub fn set_maximum_event_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_event_age_in_seconds = inp;
+        pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_event_age_in_seconds = input;
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
@@ -2206,15 +2233,15 @@ pub mod put_function_event_invoke_config_output {
         /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
         /// </li>
         /// </ul>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.destination_config = Some(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.destination_config = Some(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.destination_config = inp;
+            self.destination_config = input;
             self
         }
         /// Consumes the builder and constructs a [`PutFunctionEventInvokeConfigOutput`](crate::output::PutFunctionEventInvokeConfigOutput)
@@ -2262,12 +2289,15 @@ pub mod put_function_concurrency_output {
     }
     impl Builder {
         /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.</p>
-        pub fn reserved_concurrent_executions(mut self, inp: i32) -> Self {
-            self.reserved_concurrent_executions = Some(inp);
+        pub fn reserved_concurrent_executions(mut self, input: i32) -> Self {
+            self.reserved_concurrent_executions = Some(input);
             self
         }
-        pub fn set_reserved_concurrent_executions(mut self, inp: std::option::Option<i32>) -> Self {
-            self.reserved_concurrent_executions = inp;
+        pub fn set_reserved_concurrent_executions(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.reserved_concurrent_executions = input;
             self
         }
         /// Consumes the builder and constructs a [`PutFunctionConcurrencyOutput`](crate::output::PutFunctionConcurrencyOutput)
@@ -2331,15 +2361,15 @@ pub mod put_function_code_signing_config_output {
     }
     impl Builder {
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code_signing_config_arn = Some(inp.into());
+        pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_signing_config_arn = Some(input.into());
             self
         }
         pub fn set_code_signing_config_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.code_signing_config_arn = inp;
+            self.code_signing_config_arn = input;
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -2362,12 +2392,15 @@ pub mod put_function_code_signing_config_output {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_name = Some(inp.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_name = inp;
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
             self
         }
         /// Consumes the builder and constructs a [`PutFunctionCodeSigningConfigOutput`](crate::output::PutFunctionCodeSigningConfigOutput)
@@ -2544,336 +2577,345 @@ pub mod publish_version_output {
     }
     impl Builder {
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_name = Some(inp.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_name = inp;
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
             self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The runtime environment for the Lambda function.</p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.runtime = Some(inp);
+        pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.runtime = Some(input);
             self
         }
-        pub fn set_runtime(mut self, inp: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = inp;
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
+            self.runtime = input;
             self
         }
         /// <p>The function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role = Some(inp.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
             self
         }
         /// <p>The function that Lambda calls to begin executing your function.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.handler = Some(inp.into());
+        pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
+            self.handler = Some(input.into());
             self
         }
-        pub fn set_handler(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.handler = inp;
+        pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.handler = input;
             self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
-        pub fn code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn code_size(mut self, input: i64) -> Self {
+            self.code_size = Some(input);
             self
         }
-        pub fn set_code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_size = input;
             self
         }
         /// <p>The function's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.timeout = Some(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout = inp;
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
             self
         }
         /// <p>The amount of memory available to the function at runtime. </p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.memory_size = Some(inp);
+        pub fn memory_size(mut self, input: i32) -> Self {
+            self.memory_size = Some(input);
             self
         }
-        pub fn set_memory_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory_size = inp;
+        pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_size = input;
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn last_modified(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified = Some(inp.into());
+        pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified = Some(input.into());
             self
         }
-        pub fn set_last_modified(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_modified = inp;
+        pub fn set_last_modified(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified = input;
             self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
-        pub fn code_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code_sha256 = Some(inp.into());
+        pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_sha256 = Some(input.into());
             self
         }
-        pub fn set_code_sha256(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = inp;
+        pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_sha256 = input;
             self
         }
         /// <p>The version of the Lambda function.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfigResponse) -> Self {
-            self.vpc_config = Some(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
+            self.vpc_config = Some(input);
             self
         }
         pub fn set_vpc_config(
             mut self,
-            inp: std::option::Option<crate::model::VpcConfigResponse>,
+            input: std::option::Option<crate::model::VpcConfigResponse>,
         ) -> Self {
-            self.vpc_config = inp;
+            self.vpc_config = input;
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.dead_letter_config = Some(inp);
+        pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
+            self.dead_letter_config = Some(input);
             self
         }
         pub fn set_dead_letter_config(
             mut self,
-            inp: std::option::Option<crate::model::DeadLetterConfig>,
+            input: std::option::Option<crate::model::DeadLetterConfig>,
         ) -> Self {
-            self.dead_letter_config = inp;
+            self.dead_letter_config = input;
             self
         }
         /// <p>The function's environment variables.</p>
-        pub fn environment(mut self, inp: crate::model::EnvironmentResponse) -> Self {
-            self.environment = Some(inp);
+        pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
+            self.environment = Some(input);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<crate::model::EnvironmentResponse>,
+            input: std::option::Option<crate::model::EnvironmentResponse>,
         ) -> Self {
-            self.environment = inp;
+            self.environment = input;
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
         /// configured a customer managed CMK.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(inp.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
             self
         }
-        pub fn set_kms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = inp;
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
             self
         }
         /// <p>The function's AWS X-Ray tracing configuration.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfigResponse) -> Self {
-            self.tracing_config = Some(inp);
+        pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
+            self.tracing_config = Some(input);
             self
         }
         pub fn set_tracing_config(
             mut self,
-            inp: std::option::Option<crate::model::TracingConfigResponse>,
+            input: std::option::Option<crate::model::TracingConfigResponse>,
         ) -> Self {
-            self.tracing_config = inp;
+            self.tracing_config = input;
             self
         }
         /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
-        pub fn master_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_arn = Some(inp.into());
+        pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_arn = Some(input.into());
             self
         }
-        pub fn set_master_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = inp;
+        pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_arn = input;
             self
         }
         /// <p>The latest updated revision of the function or alias.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
-        pub fn layers(mut self, inp: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.layers = Some(v);
             self
         }
         pub fn set_layers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Layer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
         ) -> Self {
-            self.layers = inp;
+            self.layers = input;
             self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
         /// invoking it.</p>
-        pub fn state(mut self, inp: crate::model::State) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::State) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::State>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The reason for the function's current state.</p>
-        pub fn state_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_reason = Some(inp.into());
+        pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_reason = Some(input.into());
             self
         }
-        pub fn set_state_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = inp;
+        pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_reason = input;
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
         /// modify the function.</p>
-        pub fn state_reason_code(mut self, inp: crate::model::StateReasonCode) -> Self {
-            self.state_reason_code = Some(inp);
+        pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
+            self.state_reason_code = Some(input);
             self
         }
         pub fn set_state_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::StateReasonCode>,
+            input: std::option::Option<crate::model::StateReasonCode>,
         ) -> Self {
-            self.state_reason_code = inp;
+            self.state_reason_code = input;
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
         /// after function creation completes.</p>
-        pub fn last_update_status(mut self, inp: crate::model::LastUpdateStatus) -> Self {
-            self.last_update_status = Some(inp);
+        pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
+            self.last_update_status = Some(input);
             self
         }
         pub fn set_last_update_status(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatus>,
+            input: std::option::Option<crate::model::LastUpdateStatus>,
         ) -> Self {
-            self.last_update_status = inp;
+            self.last_update_status = input;
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_update_status_reason = Some(inp.into());
+        pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_update_status_reason = Some(input.into());
             self
         }
         pub fn set_last_update_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_update_status_reason = inp;
+            self.last_update_status_reason = input;
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
         pub fn last_update_status_reason_code(
             mut self,
-            inp: crate::model::LastUpdateStatusReasonCode,
+            input: crate::model::LastUpdateStatusReasonCode,
         ) -> Self {
-            self.last_update_status_reason_code = Some(inp);
+            self.last_update_status_reason_code = Some(input);
             self
         }
         pub fn set_last_update_status_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
         ) -> Self {
-            self.last_update_status_reason_code = inp;
+            self.last_update_status_reason_code = input;
             self
         }
         pub fn file_system_configs(
             mut self,
-            inp: impl Into<crate::model::FileSystemConfig>,
+            input: impl Into<crate::model::FileSystemConfig>,
         ) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.file_system_configs = Some(v);
             self
         }
         pub fn set_file_system_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         ) -> Self {
-            self.file_system_configs = inp;
+            self.file_system_configs = input;
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.package_type = Some(inp);
+        pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
+            self.package_type = Some(input);
             self
         }
         pub fn set_package_type(
             mut self,
-            inp: std::option::Option<crate::model::PackageType>,
+            input: std::option::Option<crate::model::PackageType>,
         ) -> Self {
-            self.package_type = inp;
+            self.package_type = input;
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn image_config_response(mut self, inp: crate::model::ImageConfigResponse) -> Self {
-            self.image_config_response = Some(inp);
+        pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
+            self.image_config_response = Some(input);
             self
         }
         pub fn set_image_config_response(
             mut self,
-            inp: std::option::Option<crate::model::ImageConfigResponse>,
+            input: std::option::Option<crate::model::ImageConfigResponse>,
         ) -> Self {
-            self.image_config_response = inp;
+            self.image_config_response = input;
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_profile_version_arn = Some(inp.into());
+        pub fn signing_profile_version_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.signing_profile_version_arn = Some(input.into());
             self
         }
         pub fn set_signing_profile_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_profile_version_arn = inp;
+            self.signing_profile_version_arn = input;
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn signing_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_job_arn = Some(inp.into());
+        pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.signing_job_arn = Some(input.into());
             self
         }
         pub fn set_signing_job_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_job_arn = inp;
+            self.signing_job_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`PublishVersionOutput`](crate::output::PublishVersionOutput)
@@ -2972,85 +3014,85 @@ pub mod publish_layer_version_output {
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
-        pub fn content(mut self, inp: crate::model::LayerVersionContentOutput) -> Self {
-            self.content = Some(inp);
+        pub fn content(mut self, input: crate::model::LayerVersionContentOutput) -> Self {
+            self.content = Some(input);
             self
         }
         pub fn set_content(
             mut self,
-            inp: std::option::Option<crate::model::LayerVersionContentOutput>,
+            input: std::option::Option<crate::model::LayerVersionContentOutput>,
         ) -> Self {
-            self.content = inp;
+            self.content = input;
             self
         }
         /// <p>The ARN of the layer.</p>
-        pub fn layer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.layer_arn = Some(inp.into());
+        pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.layer_arn = Some(input.into());
             self
         }
-        pub fn set_layer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.layer_arn = inp;
+        pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.layer_arn = input;
             self
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn layer_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.layer_version_arn = Some(inp.into());
+        pub fn layer_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.layer_version_arn = Some(input.into());
             self
         }
         pub fn set_layer_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.layer_version_arn = inp;
+            self.layer_version_arn = input;
             self
         }
         /// <p>The description of the version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn created_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.created_date = Some(inp.into());
+        pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_date = Some(input.into());
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The version number.</p>
-        pub fn version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
             self
         }
-        pub fn compatible_runtimes(mut self, inp: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.compatible_runtimes = Some(v);
             self
         }
         pub fn set_compatible_runtimes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         ) -> Self {
-            self.compatible_runtimes = inp;
+            self.compatible_runtimes = input;
             self
         }
         /// <p>The layer's software license.</p>
-        pub fn license_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_info = Some(inp.into());
+        pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_info = Some(input.into());
             self
         }
-        pub fn set_license_info(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_info = inp;
+        pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_info = input;
             self
         }
         /// Consumes the builder and constructs a [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput)
@@ -3103,25 +3145,25 @@ pub mod list_versions_by_function_output {
     }
     impl Builder {
         /// <p>The pagination token that's included if more results are available.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
-        pub fn versions(mut self, inp: impl Into<crate::model::FunctionConfiguration>) -> Self {
+        pub fn versions(mut self, input: impl Into<crate::model::FunctionConfiguration>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.versions = Some(v);
             self
         }
         pub fn set_versions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
         ) -> Self {
-            self.versions = inp;
+            self.versions = input;
             self
         }
         /// Consumes the builder and constructs a [`ListVersionsByFunctionOutput`](crate::output::ListVersionsByFunctionOutput)
@@ -3177,11 +3219,11 @@ pub mod list_tags_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput)
@@ -3230,29 +3272,29 @@ pub mod list_provisioned_concurrency_configs_output {
     impl Builder {
         pub fn provisioned_concurrency_configs(
             mut self,
-            inp: impl Into<crate::model::ProvisionedConcurrencyConfigListItem>,
+            input: impl Into<crate::model::ProvisionedConcurrencyConfigListItem>,
         ) -> Self {
             let mut v = self.provisioned_concurrency_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.provisioned_concurrency_configs = Some(v);
             self
         }
         pub fn set_provisioned_concurrency_configs(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::ProvisionedConcurrencyConfigListItem>,
             >,
         ) -> Self {
-            self.provisioned_concurrency_configs = inp;
+            self.provisioned_concurrency_configs = input;
             self
         }
         /// <p>The pagination token that's included if more results are available.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListProvisionedConcurrencyConfigsOutput`](crate::output::ListProvisionedConcurrencyConfigsOutput)
@@ -3299,28 +3341,28 @@ pub mod list_layer_versions_output {
     }
     impl Builder {
         /// <p>A pagination token returned when the response doesn't contain all versions.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
         pub fn layer_versions(
             mut self,
-            inp: impl Into<crate::model::LayerVersionsListItem>,
+            input: impl Into<crate::model::LayerVersionsListItem>,
         ) -> Self {
             let mut v = self.layer_versions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.layer_versions = Some(v);
             self
         }
         pub fn set_layer_versions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LayerVersionsListItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LayerVersionsListItem>>,
         ) -> Self {
-            self.layer_versions = inp;
+            self.layer_versions = input;
             self
         }
         /// Consumes the builder and constructs a [`ListLayerVersionsOutput`](crate::output::ListLayerVersionsOutput)
@@ -3366,25 +3408,25 @@ pub mod list_layers_output {
     }
     impl Builder {
         /// <p>A pagination token returned when the response doesn't contain all layers.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
-        pub fn layers(mut self, inp: impl Into<crate::model::LayersListItem>) -> Self {
+        pub fn layers(mut self, input: impl Into<crate::model::LayersListItem>) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.layers = Some(v);
             self
         }
         pub fn set_layers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LayersListItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LayersListItem>>,
         ) -> Self {
-            self.layers = inp;
+            self.layers = input;
             self
         }
         /// Consumes the builder and constructs a [`ListLayersOutput`](crate::output::ListLayersOutput)
@@ -3430,25 +3472,25 @@ pub mod list_functions_by_code_signing_config_output {
     }
     impl Builder {
         /// <p>The pagination token that's included if more results are available.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
-        pub fn function_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn function_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.function_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.function_arns = Some(v);
             self
         }
         pub fn set_function_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.function_arns = inp;
+            self.function_arns = input;
             self
         }
         /// Consumes the builder and constructs a [`ListFunctionsByCodeSigningConfigOutput`](crate::output::ListFunctionsByCodeSigningConfigOutput)
@@ -3496,25 +3538,25 @@ pub mod list_functions_output {
     }
     impl Builder {
         /// <p>The pagination token that's included if more results are available.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
-        pub fn functions(mut self, inp: impl Into<crate::model::FunctionConfiguration>) -> Self {
+        pub fn functions(mut self, input: impl Into<crate::model::FunctionConfiguration>) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.functions = Some(v);
             self
         }
         pub fn set_functions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
         ) -> Self {
-            self.functions = inp;
+            self.functions = input;
             self
         }
         /// Consumes the builder and constructs a [`ListFunctionsOutput`](crate::output::ListFunctionsOutput)
@@ -3566,27 +3608,27 @@ pub mod list_function_event_invoke_configs_output {
     impl Builder {
         pub fn function_event_invoke_configs(
             mut self,
-            inp: impl Into<crate::model::FunctionEventInvokeConfig>,
+            input: impl Into<crate::model::FunctionEventInvokeConfig>,
         ) -> Self {
             let mut v = self.function_event_invoke_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.function_event_invoke_configs = Some(v);
             self
         }
         pub fn set_function_event_invoke_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>,
         ) -> Self {
-            self.function_event_invoke_configs = inp;
+            self.function_event_invoke_configs = input;
             self
         }
         /// <p>The pagination token that's included if more results are available.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListFunctionEventInvokeConfigsOutput`](crate::output::ListFunctionEventInvokeConfigsOutput)
@@ -3634,28 +3676,30 @@ pub mod list_event_source_mappings_output {
     }
     impl Builder {
         /// <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
         pub fn event_source_mappings(
             mut self,
-            inp: impl Into<crate::model::EventSourceMappingConfiguration>,
+            input: impl Into<crate::model::EventSourceMappingConfiguration>,
         ) -> Self {
             let mut v = self.event_source_mappings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_source_mappings = Some(v);
             self
         }
         pub fn set_event_source_mappings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EventSourceMappingConfiguration>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::EventSourceMappingConfiguration>,
+            >,
         ) -> Self {
-            self.event_source_mappings = inp;
+            self.event_source_mappings = input;
             self
         }
         /// Consumes the builder and constructs a [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput)
@@ -3702,28 +3746,28 @@ pub mod list_code_signing_configs_output {
     }
     impl Builder {
         /// <p>The pagination token that's included if more results are available.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
         pub fn code_signing_configs(
             mut self,
-            inp: impl Into<crate::model::CodeSigningConfig>,
+            input: impl Into<crate::model::CodeSigningConfig>,
         ) -> Self {
             let mut v = self.code_signing_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.code_signing_configs = Some(v);
             self
         }
         pub fn set_code_signing_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CodeSigningConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CodeSigningConfig>>,
         ) -> Self {
-            self.code_signing_configs = inp;
+            self.code_signing_configs = input;
             self
         }
         /// Consumes the builder and constructs a [`ListCodeSigningConfigsOutput`](crate::output::ListCodeSigningConfigsOutput)
@@ -3769,25 +3813,25 @@ pub mod list_aliases_output {
     }
     impl Builder {
         /// <p>The pagination token that's included if more results are available.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
-        pub fn aliases(mut self, inp: impl Into<crate::model::AliasConfiguration>) -> Self {
+        pub fn aliases(mut self, input: impl Into<crate::model::AliasConfiguration>) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.aliases = Some(v);
             self
         }
         pub fn set_aliases(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AliasConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AliasConfiguration>>,
         ) -> Self {
-            self.aliases = inp;
+            self.aliases = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::output::ListAliasesOutput)
@@ -3830,12 +3874,12 @@ pub mod invoke_async_output {
     }
     impl Builder {
         /// <p>The status code.</p>
-        pub fn status(mut self, inp: i32) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: i32) -> Self {
-            self.status = Some(inp);
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput)
@@ -3898,53 +3942,56 @@ pub mod invoke_output {
         /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
         /// invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For
         /// the <code>DryRun</code> invocation type, the status code is 204.</p>
-        pub fn status_code(mut self, inp: i32) -> Self {
-            self.status_code = Some(inp);
+        pub fn status_code(mut self, input: i32) -> Self {
+            self.status_code = Some(input);
             self
         }
-        pub fn set_status_code(mut self, inp: i32) -> Self {
-            self.status_code = Some(inp);
+        pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.status_code = input;
             self
         }
         /// <p>If present, indicates that an error occurred during function execution. Details about the error are included
         /// in the response payload.</p>
-        pub fn function_error(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_error = Some(inp.into());
+        pub fn function_error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_error = Some(input.into());
             self
         }
-        pub fn set_function_error(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_error = inp;
+        pub fn set_function_error(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_error = input;
             self
         }
         /// <p>The last 4 KB of the execution log, which is base64 encoded.</p>
-        pub fn log_result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_result = Some(inp.into());
+        pub fn log_result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_result = Some(input.into());
             self
         }
-        pub fn set_log_result(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_result = inp;
+        pub fn set_log_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_result = input;
             self
         }
         /// <p>The response from the function, or an error object.</p>
-        pub fn payload(mut self, inp: smithy_types::Blob) -> Self {
-            self.payload = Some(inp);
+        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+            self.payload = Some(input);
             self
         }
-        pub fn set_payload(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.payload = inp;
+        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.payload = input;
             self
         }
         /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which
         /// version the alias resolved to.</p>
-        pub fn executed_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.executed_version = Some(inp.into());
+        pub fn executed_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.executed_version = Some(input.into());
             self
         }
         pub fn set_executed_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.executed_version = inp;
+            self.executed_version = input;
             self
         }
         /// Consumes the builder and constructs a [`InvokeOutput`](crate::output::InvokeOutput)
@@ -4018,69 +4065,75 @@ pub mod get_provisioned_concurrency_config_output {
     }
     impl Builder {
         /// <p>The amount of provisioned concurrency requested.</p>
-        pub fn requested_provisioned_concurrent_executions(mut self, inp: i32) -> Self {
-            self.requested_provisioned_concurrent_executions = Some(inp);
+        pub fn requested_provisioned_concurrent_executions(mut self, input: i32) -> Self {
+            self.requested_provisioned_concurrent_executions = Some(input);
             self
         }
         pub fn set_requested_provisioned_concurrent_executions(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.requested_provisioned_concurrent_executions = inp;
+            self.requested_provisioned_concurrent_executions = input;
             self
         }
         /// <p>The amount of provisioned concurrency available.</p>
-        pub fn available_provisioned_concurrent_executions(mut self, inp: i32) -> Self {
-            self.available_provisioned_concurrent_executions = Some(inp);
+        pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
+            self.available_provisioned_concurrent_executions = Some(input);
             self
         }
         pub fn set_available_provisioned_concurrent_executions(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.available_provisioned_concurrent_executions = inp;
+            self.available_provisioned_concurrent_executions = input;
             self
         }
         /// <p>The amount of provisioned concurrency allocated.</p>
-        pub fn allocated_provisioned_concurrent_executions(mut self, inp: i32) -> Self {
-            self.allocated_provisioned_concurrent_executions = Some(inp);
+        pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
+            self.allocated_provisioned_concurrent_executions = Some(input);
             self
         }
         pub fn set_allocated_provisioned_concurrent_executions(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.allocated_provisioned_concurrent_executions = inp;
+            self.allocated_provisioned_concurrent_executions = input;
             self
         }
         /// <p>The status of the allocation process.</p>
-        pub fn status(mut self, inp: crate::model::ProvisionedConcurrencyStatusEnum) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ProvisionedConcurrencyStatusEnum) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>,
+            input: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
         /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-        pub fn last_modified(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified = Some(inp.into());
+        pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified = Some(input.into());
             self
         }
-        pub fn set_last_modified(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_modified = inp;
+        pub fn set_last_modified(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified = input;
             self
         }
         /// Consumes the builder and constructs a [`GetProvisionedConcurrencyConfigOutput`](crate::output::GetProvisionedConcurrencyConfigOutput)
@@ -4133,21 +4186,21 @@ pub mod get_policy_output {
     }
     impl Builder {
         /// <p>The resource-based policy.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput)
@@ -4193,21 +4246,21 @@ pub mod get_layer_version_policy_output {
     }
     impl Builder {
         /// <p>The policy document.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLayerVersionPolicyOutput`](crate::output::GetLayerVersionPolicyOutput)
@@ -4277,85 +4330,85 @@ pub mod get_layer_version_by_arn_output {
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
-        pub fn content(mut self, inp: crate::model::LayerVersionContentOutput) -> Self {
-            self.content = Some(inp);
+        pub fn content(mut self, input: crate::model::LayerVersionContentOutput) -> Self {
+            self.content = Some(input);
             self
         }
         pub fn set_content(
             mut self,
-            inp: std::option::Option<crate::model::LayerVersionContentOutput>,
+            input: std::option::Option<crate::model::LayerVersionContentOutput>,
         ) -> Self {
-            self.content = inp;
+            self.content = input;
             self
         }
         /// <p>The ARN of the layer.</p>
-        pub fn layer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.layer_arn = Some(inp.into());
+        pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.layer_arn = Some(input.into());
             self
         }
-        pub fn set_layer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.layer_arn = inp;
+        pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.layer_arn = input;
             self
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn layer_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.layer_version_arn = Some(inp.into());
+        pub fn layer_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.layer_version_arn = Some(input.into());
             self
         }
         pub fn set_layer_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.layer_version_arn = inp;
+            self.layer_version_arn = input;
             self
         }
         /// <p>The description of the version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn created_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.created_date = Some(inp.into());
+        pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_date = Some(input.into());
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The version number.</p>
-        pub fn version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
             self
         }
-        pub fn compatible_runtimes(mut self, inp: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.compatible_runtimes = Some(v);
             self
         }
         pub fn set_compatible_runtimes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         ) -> Self {
-            self.compatible_runtimes = inp;
+            self.compatible_runtimes = input;
             self
         }
         /// <p>The layer's software license.</p>
-        pub fn license_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_info = Some(inp.into());
+        pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_info = Some(input.into());
             self
         }
-        pub fn set_license_info(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_info = inp;
+        pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_info = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput)
@@ -4431,85 +4484,85 @@ pub mod get_layer_version_output {
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
-        pub fn content(mut self, inp: crate::model::LayerVersionContentOutput) -> Self {
-            self.content = Some(inp);
+        pub fn content(mut self, input: crate::model::LayerVersionContentOutput) -> Self {
+            self.content = Some(input);
             self
         }
         pub fn set_content(
             mut self,
-            inp: std::option::Option<crate::model::LayerVersionContentOutput>,
+            input: std::option::Option<crate::model::LayerVersionContentOutput>,
         ) -> Self {
-            self.content = inp;
+            self.content = input;
             self
         }
         /// <p>The ARN of the layer.</p>
-        pub fn layer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.layer_arn = Some(inp.into());
+        pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.layer_arn = Some(input.into());
             self
         }
-        pub fn set_layer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.layer_arn = inp;
+        pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.layer_arn = input;
             self
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn layer_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.layer_version_arn = Some(inp.into());
+        pub fn layer_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.layer_version_arn = Some(input.into());
             self
         }
         pub fn set_layer_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.layer_version_arn = inp;
+            self.layer_version_arn = input;
             self
         }
         /// <p>The description of the version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn created_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.created_date = Some(inp.into());
+        pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_date = Some(input.into());
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The version number.</p>
-        pub fn version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
             self
         }
-        pub fn compatible_runtimes(mut self, inp: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.compatible_runtimes = Some(v);
             self
         }
         pub fn set_compatible_runtimes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         ) -> Self {
-            self.compatible_runtimes = inp;
+            self.compatible_runtimes = input;
             self
         }
         /// <p>The layer's software license.</p>
-        pub fn license_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_info = Some(inp.into());
+        pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_info = Some(input.into());
             self
         }
-        pub fn set_license_info(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_info = inp;
+        pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_info = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput)
@@ -4597,42 +4650,42 @@ pub mod get_function_event_invoke_config_output {
     }
     impl Builder {
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.maximum_retry_attempts = Some(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.maximum_retry_attempts = Some(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = inp;
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_retry_attempts = input;
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-        pub fn maximum_event_age_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_event_age_in_seconds = Some(inp);
+        pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_event_age_in_seconds = Some(input);
             self
         }
-        pub fn set_maximum_event_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_event_age_in_seconds = inp;
+        pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_event_age_in_seconds = input;
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
@@ -4657,15 +4710,15 @@ pub mod get_function_event_invoke_config_output {
         /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
         /// </li>
         /// </ul>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.destination_config = Some(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.destination_config = Some(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.destination_config = inp;
+            self.destination_config = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFunctionEventInvokeConfigOutput`](crate::output::GetFunctionEventInvokeConfigOutput)
@@ -4845,336 +4898,345 @@ pub mod get_function_configuration_output {
     }
     impl Builder {
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_name = Some(inp.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_name = inp;
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
             self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The runtime environment for the Lambda function.</p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.runtime = Some(inp);
+        pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.runtime = Some(input);
             self
         }
-        pub fn set_runtime(mut self, inp: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = inp;
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
+            self.runtime = input;
             self
         }
         /// <p>The function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role = Some(inp.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
             self
         }
         /// <p>The function that Lambda calls to begin executing your function.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.handler = Some(inp.into());
+        pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
+            self.handler = Some(input.into());
             self
         }
-        pub fn set_handler(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.handler = inp;
+        pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.handler = input;
             self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
-        pub fn code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn code_size(mut self, input: i64) -> Self {
+            self.code_size = Some(input);
             self
         }
-        pub fn set_code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_size = input;
             self
         }
         /// <p>The function's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.timeout = Some(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout = inp;
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
             self
         }
         /// <p>The amount of memory available to the function at runtime. </p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.memory_size = Some(inp);
+        pub fn memory_size(mut self, input: i32) -> Self {
+            self.memory_size = Some(input);
             self
         }
-        pub fn set_memory_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory_size = inp;
+        pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_size = input;
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn last_modified(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified = Some(inp.into());
+        pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified = Some(input.into());
             self
         }
-        pub fn set_last_modified(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_modified = inp;
+        pub fn set_last_modified(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified = input;
             self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
-        pub fn code_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code_sha256 = Some(inp.into());
+        pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_sha256 = Some(input.into());
             self
         }
-        pub fn set_code_sha256(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = inp;
+        pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_sha256 = input;
             self
         }
         /// <p>The version of the Lambda function.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfigResponse) -> Self {
-            self.vpc_config = Some(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
+            self.vpc_config = Some(input);
             self
         }
         pub fn set_vpc_config(
             mut self,
-            inp: std::option::Option<crate::model::VpcConfigResponse>,
+            input: std::option::Option<crate::model::VpcConfigResponse>,
         ) -> Self {
-            self.vpc_config = inp;
+            self.vpc_config = input;
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.dead_letter_config = Some(inp);
+        pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
+            self.dead_letter_config = Some(input);
             self
         }
         pub fn set_dead_letter_config(
             mut self,
-            inp: std::option::Option<crate::model::DeadLetterConfig>,
+            input: std::option::Option<crate::model::DeadLetterConfig>,
         ) -> Self {
-            self.dead_letter_config = inp;
+            self.dead_letter_config = input;
             self
         }
         /// <p>The function's environment variables.</p>
-        pub fn environment(mut self, inp: crate::model::EnvironmentResponse) -> Self {
-            self.environment = Some(inp);
+        pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
+            self.environment = Some(input);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<crate::model::EnvironmentResponse>,
+            input: std::option::Option<crate::model::EnvironmentResponse>,
         ) -> Self {
-            self.environment = inp;
+            self.environment = input;
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
         /// configured a customer managed CMK.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(inp.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
             self
         }
-        pub fn set_kms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = inp;
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
             self
         }
         /// <p>The function's AWS X-Ray tracing configuration.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfigResponse) -> Self {
-            self.tracing_config = Some(inp);
+        pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
+            self.tracing_config = Some(input);
             self
         }
         pub fn set_tracing_config(
             mut self,
-            inp: std::option::Option<crate::model::TracingConfigResponse>,
+            input: std::option::Option<crate::model::TracingConfigResponse>,
         ) -> Self {
-            self.tracing_config = inp;
+            self.tracing_config = input;
             self
         }
         /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
-        pub fn master_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_arn = Some(inp.into());
+        pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_arn = Some(input.into());
             self
         }
-        pub fn set_master_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = inp;
+        pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_arn = input;
             self
         }
         /// <p>The latest updated revision of the function or alias.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
-        pub fn layers(mut self, inp: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.layers = Some(v);
             self
         }
         pub fn set_layers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Layer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
         ) -> Self {
-            self.layers = inp;
+            self.layers = input;
             self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
         /// invoking it.</p>
-        pub fn state(mut self, inp: crate::model::State) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::State) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::State>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The reason for the function's current state.</p>
-        pub fn state_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_reason = Some(inp.into());
+        pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_reason = Some(input.into());
             self
         }
-        pub fn set_state_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = inp;
+        pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_reason = input;
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
         /// modify the function.</p>
-        pub fn state_reason_code(mut self, inp: crate::model::StateReasonCode) -> Self {
-            self.state_reason_code = Some(inp);
+        pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
+            self.state_reason_code = Some(input);
             self
         }
         pub fn set_state_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::StateReasonCode>,
+            input: std::option::Option<crate::model::StateReasonCode>,
         ) -> Self {
-            self.state_reason_code = inp;
+            self.state_reason_code = input;
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
         /// after function creation completes.</p>
-        pub fn last_update_status(mut self, inp: crate::model::LastUpdateStatus) -> Self {
-            self.last_update_status = Some(inp);
+        pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
+            self.last_update_status = Some(input);
             self
         }
         pub fn set_last_update_status(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatus>,
+            input: std::option::Option<crate::model::LastUpdateStatus>,
         ) -> Self {
-            self.last_update_status = inp;
+            self.last_update_status = input;
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_update_status_reason = Some(inp.into());
+        pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_update_status_reason = Some(input.into());
             self
         }
         pub fn set_last_update_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_update_status_reason = inp;
+            self.last_update_status_reason = input;
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
         pub fn last_update_status_reason_code(
             mut self,
-            inp: crate::model::LastUpdateStatusReasonCode,
+            input: crate::model::LastUpdateStatusReasonCode,
         ) -> Self {
-            self.last_update_status_reason_code = Some(inp);
+            self.last_update_status_reason_code = Some(input);
             self
         }
         pub fn set_last_update_status_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
         ) -> Self {
-            self.last_update_status_reason_code = inp;
+            self.last_update_status_reason_code = input;
             self
         }
         pub fn file_system_configs(
             mut self,
-            inp: impl Into<crate::model::FileSystemConfig>,
+            input: impl Into<crate::model::FileSystemConfig>,
         ) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.file_system_configs = Some(v);
             self
         }
         pub fn set_file_system_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         ) -> Self {
-            self.file_system_configs = inp;
+            self.file_system_configs = input;
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.package_type = Some(inp);
+        pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
+            self.package_type = Some(input);
             self
         }
         pub fn set_package_type(
             mut self,
-            inp: std::option::Option<crate::model::PackageType>,
+            input: std::option::Option<crate::model::PackageType>,
         ) -> Self {
-            self.package_type = inp;
+            self.package_type = input;
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn image_config_response(mut self, inp: crate::model::ImageConfigResponse) -> Self {
-            self.image_config_response = Some(inp);
+        pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
+            self.image_config_response = Some(input);
             self
         }
         pub fn set_image_config_response(
             mut self,
-            inp: std::option::Option<crate::model::ImageConfigResponse>,
+            input: std::option::Option<crate::model::ImageConfigResponse>,
         ) -> Self {
-            self.image_config_response = inp;
+            self.image_config_response = input;
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_profile_version_arn = Some(inp.into());
+        pub fn signing_profile_version_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.signing_profile_version_arn = Some(input.into());
             self
         }
         pub fn set_signing_profile_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_profile_version_arn = inp;
+            self.signing_profile_version_arn = input;
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn signing_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_job_arn = Some(inp.into());
+        pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.signing_job_arn = Some(input.into());
             self
         }
         pub fn set_signing_job_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_job_arn = inp;
+            self.signing_job_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput)
@@ -5248,12 +5310,15 @@ pub mod get_function_concurrency_output {
     }
     impl Builder {
         /// <p>The number of simultaneous executions that are reserved for the function.</p>
-        pub fn reserved_concurrent_executions(mut self, inp: i32) -> Self {
-            self.reserved_concurrent_executions = Some(inp);
+        pub fn reserved_concurrent_executions(mut self, input: i32) -> Self {
+            self.reserved_concurrent_executions = Some(input);
             self
         }
-        pub fn set_reserved_concurrent_executions(mut self, inp: std::option::Option<i32>) -> Self {
-            self.reserved_concurrent_executions = inp;
+        pub fn set_reserved_concurrent_executions(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.reserved_concurrent_executions = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFunctionConcurrencyOutput`](crate::output::GetFunctionConcurrencyOutput)
@@ -5317,15 +5382,15 @@ pub mod get_function_code_signing_config_output {
     }
     impl Builder {
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code_signing_config_arn = Some(inp.into());
+        pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_signing_config_arn = Some(input.into());
             self
         }
         pub fn set_code_signing_config_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.code_signing_config_arn = inp;
+            self.code_signing_config_arn = input;
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -5348,12 +5413,15 @@ pub mod get_function_code_signing_config_output {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_name = Some(inp.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_name = inp;
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFunctionCodeSigningConfigOutput`](crate::output::GetFunctionCodeSigningConfigOutput)
@@ -5411,27 +5479,27 @@ pub mod get_function_output {
     }
     impl Builder {
         /// <p>The configuration of the function or version.</p>
-        pub fn configuration(mut self, inp: crate::model::FunctionConfiguration) -> Self {
-            self.configuration = Some(inp);
+        pub fn configuration(mut self, input: crate::model::FunctionConfiguration) -> Self {
+            self.configuration = Some(input);
             self
         }
         pub fn set_configuration(
             mut self,
-            inp: std::option::Option<crate::model::FunctionConfiguration>,
+            input: std::option::Option<crate::model::FunctionConfiguration>,
         ) -> Self {
-            self.configuration = inp;
+            self.configuration = input;
             self
         }
         /// <p>The deployment package of the function or version.</p>
-        pub fn code(mut self, inp: crate::model::FunctionCodeLocation) -> Self {
-            self.code = Some(inp);
+        pub fn code(mut self, input: crate::model::FunctionCodeLocation) -> Self {
+            self.code = Some(input);
             self
         }
         pub fn set_code(
             mut self,
-            inp: std::option::Option<crate::model::FunctionCodeLocation>,
+            input: std::option::Option<crate::model::FunctionCodeLocation>,
         ) -> Self {
-            self.code = inp;
+            self.code = input;
             self
         }
         pub fn tags(
@@ -5446,24 +5514,24 @@ pub mod get_function_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
         /// concurrency</a>.</p>
-        pub fn concurrency(mut self, inp: crate::model::Concurrency) -> Self {
-            self.concurrency = Some(inp);
+        pub fn concurrency(mut self, input: crate::model::Concurrency) -> Self {
+            self.concurrency = Some(input);
             self
         }
         pub fn set_concurrency(
             mut self,
-            inp: std::option::Option<crate::model::Concurrency>,
+            input: std::option::Option<crate::model::Concurrency>,
         ) -> Self {
-            self.concurrency = inp;
+            self.concurrency = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFunctionOutput`](crate::output::GetFunctionOutput)
@@ -5622,261 +5690,264 @@ pub mod get_event_source_mapping_output {
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uuid = Some(inp.into());
+        pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uuid = Some(input.into());
             self
         }
-        pub fn set_uuid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uuid = inp;
+        pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uuid = input;
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
         /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
-        pub fn starting_position(mut self, inp: crate::model::EventSourcePosition) -> Self {
-            self.starting_position = Some(inp);
+        pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
+            self.starting_position = Some(input);
             self
         }
         pub fn set_starting_position(
             mut self,
-            inp: std::option::Option<crate::model::EventSourcePosition>,
+            input: std::option::Option<crate::model::EventSourcePosition>,
         ) -> Self {
-            self.starting_position = inp;
+            self.starting_position = input;
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.starting_position_timestamp = Some(inp);
+        pub fn starting_position_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.starting_position_timestamp = Some(input);
             self
         }
         pub fn set_starting_position_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.starting_position_timestamp = inp;
+            self.starting_position_timestamp = input;
             self
         }
         /// <p>The maximum number of items to retrieve in a single batch.</p>
-        pub fn batch_size(mut self, inp: i32) -> Self {
-            self.batch_size = Some(inp);
+        pub fn batch_size(mut self, input: i32) -> Self {
+            self.batch_size = Some(input);
             self
         }
-        pub fn set_batch_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.batch_size = inp;
+        pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.batch_size = input;
             self
         }
         /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
-        pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_batching_window_in_seconds = Some(inp);
+        pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_batching_window_in_seconds = Some(input);
             self
         }
         pub fn set_maximum_batching_window_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.maximum_batching_window_in_seconds = inp;
+            self.maximum_batching_window_in_seconds = input;
             self
         }
         /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
-        pub fn parallelization_factor(mut self, inp: i32) -> Self {
-            self.parallelization_factor = Some(inp);
+        pub fn parallelization_factor(mut self, input: i32) -> Self {
+            self.parallelization_factor = Some(input);
             self
         }
-        pub fn set_parallelization_factor(mut self, inp: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = inp;
+        pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.parallelization_factor = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn event_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_source_arn = Some(inp.into());
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_source_arn = Some(input.into());
             self
         }
         pub fn set_event_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.event_source_arn = inp;
+            self.event_source_arn = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The date that the event source mapping was last updated, or its state changed.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
-        pub fn last_processing_result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_processing_result = Some(inp.into());
+        pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_processing_result = Some(input.into());
             self
         }
         pub fn set_last_processing_result(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_processing_result = inp;
+            self.last_processing_result = input;
             self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
         /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
         /// <code>Updating</code>, or <code>Deleting</code>.</p>
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
         /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
         /// service.</p>
-        pub fn state_transition_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_transition_reason = Some(inp.into());
+        pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_transition_reason = Some(input.into());
             self
         }
         pub fn set_state_transition_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.state_transition_reason = inp;
+            self.state_transition_reason = input;
             self
         }
         /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.destination_config = Some(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.destination_config = Some(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.destination_config = inp;
+            self.destination_config = input;
             self
         }
-        pub fn topics(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topics = Some(v);
             self
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.topics = inp;
+            self.topics = input;
             self
         }
-        pub fn queues(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.queues = Some(v);
             self
         }
         pub fn set_queues(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.queues = inp;
+            self.queues = input;
             self
         }
         pub fn source_access_configurations(
             mut self,
-            inp: impl Into<crate::model::SourceAccessConfiguration>,
+            input: impl Into<crate::model::SourceAccessConfiguration>,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_access_configurations = Some(v);
             self
         }
         pub fn set_source_access_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
         ) -> Self {
-            self.source_access_configurations = inp;
+            self.source_access_configurations = input;
             self
         }
         /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
         pub fn self_managed_event_source(
             mut self,
-            inp: crate::model::SelfManagedEventSource,
+            input: crate::model::SelfManagedEventSource,
         ) -> Self {
-            self.self_managed_event_source = Some(inp);
+            self.self_managed_event_source = Some(input);
             self
         }
         pub fn set_self_managed_event_source(
             mut self,
-            inp: std::option::Option<crate::model::SelfManagedEventSource>,
+            input: std::option::Option<crate::model::SelfManagedEventSource>,
         ) -> Self {
-            self.self_managed_event_source = inp;
+            self.self_managed_event_source = input;
             self
         }
         /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-        pub fn maximum_record_age_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_record_age_in_seconds = Some(inp);
+        pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        pub fn set_maximum_record_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_record_age_in_seconds = inp;
+        pub fn set_maximum_record_age_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.maximum_record_age_in_seconds = input;
             self
         }
         /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn bisect_batch_on_function_error(mut self, inp: bool) -> Self {
-            self.bisect_batch_on_function_error = Some(inp);
+        pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
+            self.bisect_batch_on_function_error = Some(input);
             self
         }
         pub fn set_bisect_batch_on_function_error(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.bisect_batch_on_function_error = inp;
+            self.bisect_batch_on_function_error = input;
             self
         }
         /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.maximum_retry_attempts = Some(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.maximum_retry_attempts = Some(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = inp;
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_retry_attempts = input;
             self
         }
         /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-        pub fn tumbling_window_in_seconds(mut self, inp: i32) -> Self {
-            self.tumbling_window_in_seconds = Some(inp);
+        pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
+            self.tumbling_window_in_seconds = Some(input);
             self
         }
-        pub fn set_tumbling_window_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = inp;
+        pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.tumbling_window_in_seconds = input;
             self
         }
         pub fn function_response_types(
             mut self,
-            inp: impl Into<crate::model::FunctionResponseType>,
+            input: impl Into<crate::model::FunctionResponseType>,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.function_response_types = Some(v);
             self
         }
         pub fn set_function_response_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
         ) -> Self {
-            self.function_response_types = inp;
+            self.function_response_types = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput)
@@ -5938,15 +6009,15 @@ pub mod get_code_signing_config_output {
     }
     impl Builder {
         /// <p>The code signing configuration</p>
-        pub fn code_signing_config(mut self, inp: crate::model::CodeSigningConfig) -> Self {
-            self.code_signing_config = Some(inp);
+        pub fn code_signing_config(mut self, input: crate::model::CodeSigningConfig) -> Self {
+            self.code_signing_config = Some(input);
             self
         }
         pub fn set_code_signing_config(
             mut self,
-            inp: std::option::Option<crate::model::CodeSigningConfig>,
+            input: std::option::Option<crate::model::CodeSigningConfig>,
         ) -> Self {
-            self.code_signing_config = inp;
+            self.code_signing_config = input;
             self
         }
         /// Consumes the builder and constructs a [`GetCodeSigningConfigOutput`](crate::output::GetCodeSigningConfigOutput)
@@ -6009,64 +6080,64 @@ pub mod get_alias_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-        pub fn alias_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.alias_arn = Some(inp.into());
+        pub fn alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_arn = Some(input.into());
             self
         }
-        pub fn set_alias_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = inp;
+        pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_arn = input;
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_version = Some(inp.into());
+        pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_version = Some(input.into());
             self
         }
         pub fn set_function_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.function_version = inp;
+            self.function_version = input;
             self
         }
         /// <p>A description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
         /// configuration</a> of the alias.</p>
-        pub fn routing_config(mut self, inp: crate::model::AliasRoutingConfiguration) -> Self {
-            self.routing_config = Some(inp);
+        pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
+            self.routing_config = Some(input);
             self
         }
         pub fn set_routing_config(
             mut self,
-            inp: std::option::Option<crate::model::AliasRoutingConfiguration>,
+            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
         ) -> Self {
-            self.routing_config = inp;
+            self.routing_config = input;
             self
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAliasOutput`](crate::output::GetAliasOutput)
@@ -6116,27 +6187,27 @@ pub mod get_account_settings_output {
     }
     impl Builder {
         /// <p>Limits that are related to concurrency and code storage.</p>
-        pub fn account_limit(mut self, inp: crate::model::AccountLimit) -> Self {
-            self.account_limit = Some(inp);
+        pub fn account_limit(mut self, input: crate::model::AccountLimit) -> Self {
+            self.account_limit = Some(input);
             self
         }
         pub fn set_account_limit(
             mut self,
-            inp: std::option::Option<crate::model::AccountLimit>,
+            input: std::option::Option<crate::model::AccountLimit>,
         ) -> Self {
-            self.account_limit = inp;
+            self.account_limit = input;
             self
         }
         /// <p>The number of functions and amount of storage in use.</p>
-        pub fn account_usage(mut self, inp: crate::model::AccountUsage) -> Self {
-            self.account_usage = Some(inp);
+        pub fn account_usage(mut self, input: crate::model::AccountUsage) -> Self {
+            self.account_usage = Some(input);
             self
         }
         pub fn set_account_usage(
             mut self,
-            inp: std::option::Option<crate::model::AccountUsage>,
+            input: std::option::Option<crate::model::AccountUsage>,
         ) -> Self {
-            self.account_usage = inp;
+            self.account_usage = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput)
@@ -6467,261 +6538,264 @@ pub mod delete_event_source_mapping_output {
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uuid = Some(inp.into());
+        pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uuid = Some(input.into());
             self
         }
-        pub fn set_uuid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uuid = inp;
+        pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uuid = input;
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
         /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
-        pub fn starting_position(mut self, inp: crate::model::EventSourcePosition) -> Self {
-            self.starting_position = Some(inp);
+        pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
+            self.starting_position = Some(input);
             self
         }
         pub fn set_starting_position(
             mut self,
-            inp: std::option::Option<crate::model::EventSourcePosition>,
+            input: std::option::Option<crate::model::EventSourcePosition>,
         ) -> Self {
-            self.starting_position = inp;
+            self.starting_position = input;
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.starting_position_timestamp = Some(inp);
+        pub fn starting_position_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.starting_position_timestamp = Some(input);
             self
         }
         pub fn set_starting_position_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.starting_position_timestamp = inp;
+            self.starting_position_timestamp = input;
             self
         }
         /// <p>The maximum number of items to retrieve in a single batch.</p>
-        pub fn batch_size(mut self, inp: i32) -> Self {
-            self.batch_size = Some(inp);
+        pub fn batch_size(mut self, input: i32) -> Self {
+            self.batch_size = Some(input);
             self
         }
-        pub fn set_batch_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.batch_size = inp;
+        pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.batch_size = input;
             self
         }
         /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
-        pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_batching_window_in_seconds = Some(inp);
+        pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_batching_window_in_seconds = Some(input);
             self
         }
         pub fn set_maximum_batching_window_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.maximum_batching_window_in_seconds = inp;
+            self.maximum_batching_window_in_seconds = input;
             self
         }
         /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
-        pub fn parallelization_factor(mut self, inp: i32) -> Self {
-            self.parallelization_factor = Some(inp);
+        pub fn parallelization_factor(mut self, input: i32) -> Self {
+            self.parallelization_factor = Some(input);
             self
         }
-        pub fn set_parallelization_factor(mut self, inp: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = inp;
+        pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.parallelization_factor = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn event_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_source_arn = Some(inp.into());
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_source_arn = Some(input.into());
             self
         }
         pub fn set_event_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.event_source_arn = inp;
+            self.event_source_arn = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The date that the event source mapping was last updated, or its state changed.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
-        pub fn last_processing_result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_processing_result = Some(inp.into());
+        pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_processing_result = Some(input.into());
             self
         }
         pub fn set_last_processing_result(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_processing_result = inp;
+            self.last_processing_result = input;
             self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
         /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
         /// <code>Updating</code>, or <code>Deleting</code>.</p>
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
         /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
         /// service.</p>
-        pub fn state_transition_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_transition_reason = Some(inp.into());
+        pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_transition_reason = Some(input.into());
             self
         }
         pub fn set_state_transition_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.state_transition_reason = inp;
+            self.state_transition_reason = input;
             self
         }
         /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.destination_config = Some(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.destination_config = Some(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.destination_config = inp;
+            self.destination_config = input;
             self
         }
-        pub fn topics(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topics = Some(v);
             self
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.topics = inp;
+            self.topics = input;
             self
         }
-        pub fn queues(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.queues = Some(v);
             self
         }
         pub fn set_queues(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.queues = inp;
+            self.queues = input;
             self
         }
         pub fn source_access_configurations(
             mut self,
-            inp: impl Into<crate::model::SourceAccessConfiguration>,
+            input: impl Into<crate::model::SourceAccessConfiguration>,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_access_configurations = Some(v);
             self
         }
         pub fn set_source_access_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
         ) -> Self {
-            self.source_access_configurations = inp;
+            self.source_access_configurations = input;
             self
         }
         /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
         pub fn self_managed_event_source(
             mut self,
-            inp: crate::model::SelfManagedEventSource,
+            input: crate::model::SelfManagedEventSource,
         ) -> Self {
-            self.self_managed_event_source = Some(inp);
+            self.self_managed_event_source = Some(input);
             self
         }
         pub fn set_self_managed_event_source(
             mut self,
-            inp: std::option::Option<crate::model::SelfManagedEventSource>,
+            input: std::option::Option<crate::model::SelfManagedEventSource>,
         ) -> Self {
-            self.self_managed_event_source = inp;
+            self.self_managed_event_source = input;
             self
         }
         /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-        pub fn maximum_record_age_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_record_age_in_seconds = Some(inp);
+        pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        pub fn set_maximum_record_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_record_age_in_seconds = inp;
+        pub fn set_maximum_record_age_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.maximum_record_age_in_seconds = input;
             self
         }
         /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn bisect_batch_on_function_error(mut self, inp: bool) -> Self {
-            self.bisect_batch_on_function_error = Some(inp);
+        pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
+            self.bisect_batch_on_function_error = Some(input);
             self
         }
         pub fn set_bisect_batch_on_function_error(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.bisect_batch_on_function_error = inp;
+            self.bisect_batch_on_function_error = input;
             self
         }
         /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.maximum_retry_attempts = Some(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.maximum_retry_attempts = Some(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = inp;
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_retry_attempts = input;
             self
         }
         /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-        pub fn tumbling_window_in_seconds(mut self, inp: i32) -> Self {
-            self.tumbling_window_in_seconds = Some(inp);
+        pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
+            self.tumbling_window_in_seconds = Some(input);
             self
         }
-        pub fn set_tumbling_window_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = inp;
+        pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.tumbling_window_in_seconds = input;
             self
         }
         pub fn function_response_types(
             mut self,
-            inp: impl Into<crate::model::FunctionResponseType>,
+            input: impl Into<crate::model::FunctionResponseType>,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.function_response_types = Some(v);
             self
         }
         pub fn set_function_response_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
         ) -> Self {
-            self.function_response_types = inp;
+            self.function_response_types = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput)
@@ -6976,336 +7050,345 @@ pub mod create_function_output {
     }
     impl Builder {
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_name = Some(inp.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_name = inp;
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
             self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The runtime environment for the Lambda function.</p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.runtime = Some(inp);
+        pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.runtime = Some(input);
             self
         }
-        pub fn set_runtime(mut self, inp: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = inp;
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
+            self.runtime = input;
             self
         }
         /// <p>The function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role = Some(inp.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
             self
         }
         /// <p>The function that Lambda calls to begin executing your function.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.handler = Some(inp.into());
+        pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
+            self.handler = Some(input.into());
             self
         }
-        pub fn set_handler(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.handler = inp;
+        pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.handler = input;
             self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
-        pub fn code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn code_size(mut self, input: i64) -> Self {
+            self.code_size = Some(input);
             self
         }
-        pub fn set_code_size(mut self, inp: i64) -> Self {
-            self.code_size = Some(inp);
+        pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_size = input;
             self
         }
         /// <p>The function's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.timeout = Some(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout = inp;
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
             self
         }
         /// <p>The amount of memory available to the function at runtime. </p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.memory_size = Some(inp);
+        pub fn memory_size(mut self, input: i32) -> Self {
+            self.memory_size = Some(input);
             self
         }
-        pub fn set_memory_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory_size = inp;
+        pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_size = input;
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn last_modified(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified = Some(inp.into());
+        pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified = Some(input.into());
             self
         }
-        pub fn set_last_modified(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_modified = inp;
+        pub fn set_last_modified(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified = input;
             self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
-        pub fn code_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code_sha256 = Some(inp.into());
+        pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_sha256 = Some(input.into());
             self
         }
-        pub fn set_code_sha256(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = inp;
+        pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_sha256 = input;
             self
         }
         /// <p>The version of the Lambda function.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfigResponse) -> Self {
-            self.vpc_config = Some(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
+            self.vpc_config = Some(input);
             self
         }
         pub fn set_vpc_config(
             mut self,
-            inp: std::option::Option<crate::model::VpcConfigResponse>,
+            input: std::option::Option<crate::model::VpcConfigResponse>,
         ) -> Self {
-            self.vpc_config = inp;
+            self.vpc_config = input;
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.dead_letter_config = Some(inp);
+        pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
+            self.dead_letter_config = Some(input);
             self
         }
         pub fn set_dead_letter_config(
             mut self,
-            inp: std::option::Option<crate::model::DeadLetterConfig>,
+            input: std::option::Option<crate::model::DeadLetterConfig>,
         ) -> Self {
-            self.dead_letter_config = inp;
+            self.dead_letter_config = input;
             self
         }
         /// <p>The function's environment variables.</p>
-        pub fn environment(mut self, inp: crate::model::EnvironmentResponse) -> Self {
-            self.environment = Some(inp);
+        pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
+            self.environment = Some(input);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<crate::model::EnvironmentResponse>,
+            input: std::option::Option<crate::model::EnvironmentResponse>,
         ) -> Self {
-            self.environment = inp;
+            self.environment = input;
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
         /// configured a customer managed CMK.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(inp.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
             self
         }
-        pub fn set_kms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = inp;
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
             self
         }
         /// <p>The function's AWS X-Ray tracing configuration.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfigResponse) -> Self {
-            self.tracing_config = Some(inp);
+        pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
+            self.tracing_config = Some(input);
             self
         }
         pub fn set_tracing_config(
             mut self,
-            inp: std::option::Option<crate::model::TracingConfigResponse>,
+            input: std::option::Option<crate::model::TracingConfigResponse>,
         ) -> Self {
-            self.tracing_config = inp;
+            self.tracing_config = input;
             self
         }
         /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
-        pub fn master_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_arn = Some(inp.into());
+        pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_arn = Some(input.into());
             self
         }
-        pub fn set_master_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = inp;
+        pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_arn = input;
             self
         }
         /// <p>The latest updated revision of the function or alias.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
-        pub fn layers(mut self, inp: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.layers = Some(v);
             self
         }
         pub fn set_layers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Layer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
         ) -> Self {
-            self.layers = inp;
+            self.layers = input;
             self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
         /// invoking it.</p>
-        pub fn state(mut self, inp: crate::model::State) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::State) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::State>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The reason for the function's current state.</p>
-        pub fn state_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_reason = Some(inp.into());
+        pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_reason = Some(input.into());
             self
         }
-        pub fn set_state_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = inp;
+        pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_reason = input;
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
         /// modify the function.</p>
-        pub fn state_reason_code(mut self, inp: crate::model::StateReasonCode) -> Self {
-            self.state_reason_code = Some(inp);
+        pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
+            self.state_reason_code = Some(input);
             self
         }
         pub fn set_state_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::StateReasonCode>,
+            input: std::option::Option<crate::model::StateReasonCode>,
         ) -> Self {
-            self.state_reason_code = inp;
+            self.state_reason_code = input;
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
         /// after function creation completes.</p>
-        pub fn last_update_status(mut self, inp: crate::model::LastUpdateStatus) -> Self {
-            self.last_update_status = Some(inp);
+        pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
+            self.last_update_status = Some(input);
             self
         }
         pub fn set_last_update_status(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatus>,
+            input: std::option::Option<crate::model::LastUpdateStatus>,
         ) -> Self {
-            self.last_update_status = inp;
+            self.last_update_status = input;
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_update_status_reason = Some(inp.into());
+        pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_update_status_reason = Some(input.into());
             self
         }
         pub fn set_last_update_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_update_status_reason = inp;
+            self.last_update_status_reason = input;
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
         pub fn last_update_status_reason_code(
             mut self,
-            inp: crate::model::LastUpdateStatusReasonCode,
+            input: crate::model::LastUpdateStatusReasonCode,
         ) -> Self {
-            self.last_update_status_reason_code = Some(inp);
+            self.last_update_status_reason_code = Some(input);
             self
         }
         pub fn set_last_update_status_reason_code(
             mut self,
-            inp: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
         ) -> Self {
-            self.last_update_status_reason_code = inp;
+            self.last_update_status_reason_code = input;
             self
         }
         pub fn file_system_configs(
             mut self,
-            inp: impl Into<crate::model::FileSystemConfig>,
+            input: impl Into<crate::model::FileSystemConfig>,
         ) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.file_system_configs = Some(v);
             self
         }
         pub fn set_file_system_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         ) -> Self {
-            self.file_system_configs = inp;
+            self.file_system_configs = input;
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.package_type = Some(inp);
+        pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
+            self.package_type = Some(input);
             self
         }
         pub fn set_package_type(
             mut self,
-            inp: std::option::Option<crate::model::PackageType>,
+            input: std::option::Option<crate::model::PackageType>,
         ) -> Self {
-            self.package_type = inp;
+            self.package_type = input;
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn image_config_response(mut self, inp: crate::model::ImageConfigResponse) -> Self {
-            self.image_config_response = Some(inp);
+        pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
+            self.image_config_response = Some(input);
             self
         }
         pub fn set_image_config_response(
             mut self,
-            inp: std::option::Option<crate::model::ImageConfigResponse>,
+            input: std::option::Option<crate::model::ImageConfigResponse>,
         ) -> Self {
-            self.image_config_response = inp;
+            self.image_config_response = input;
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_profile_version_arn = Some(inp.into());
+        pub fn signing_profile_version_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.signing_profile_version_arn = Some(input.into());
             self
         }
         pub fn set_signing_profile_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_profile_version_arn = inp;
+            self.signing_profile_version_arn = input;
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn signing_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_job_arn = Some(inp.into());
+        pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.signing_job_arn = Some(input.into());
             self
         }
         pub fn set_signing_job_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_job_arn = inp;
+            self.signing_job_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateFunctionOutput`](crate::output::CreateFunctionOutput)
@@ -7491,261 +7574,264 @@ pub mod create_event_source_mapping_output {
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uuid = Some(inp.into());
+        pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uuid = Some(input.into());
             self
         }
-        pub fn set_uuid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uuid = inp;
+        pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uuid = input;
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
         /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
-        pub fn starting_position(mut self, inp: crate::model::EventSourcePosition) -> Self {
-            self.starting_position = Some(inp);
+        pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
+            self.starting_position = Some(input);
             self
         }
         pub fn set_starting_position(
             mut self,
-            inp: std::option::Option<crate::model::EventSourcePosition>,
+            input: std::option::Option<crate::model::EventSourcePosition>,
         ) -> Self {
-            self.starting_position = inp;
+            self.starting_position = input;
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.starting_position_timestamp = Some(inp);
+        pub fn starting_position_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.starting_position_timestamp = Some(input);
             self
         }
         pub fn set_starting_position_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.starting_position_timestamp = inp;
+            self.starting_position_timestamp = input;
             self
         }
         /// <p>The maximum number of items to retrieve in a single batch.</p>
-        pub fn batch_size(mut self, inp: i32) -> Self {
-            self.batch_size = Some(inp);
+        pub fn batch_size(mut self, input: i32) -> Self {
+            self.batch_size = Some(input);
             self
         }
-        pub fn set_batch_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.batch_size = inp;
+        pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.batch_size = input;
             self
         }
         /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
-        pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_batching_window_in_seconds = Some(inp);
+        pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_batching_window_in_seconds = Some(input);
             self
         }
         pub fn set_maximum_batching_window_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.maximum_batching_window_in_seconds = inp;
+            self.maximum_batching_window_in_seconds = input;
             self
         }
         /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
-        pub fn parallelization_factor(mut self, inp: i32) -> Self {
-            self.parallelization_factor = Some(inp);
+        pub fn parallelization_factor(mut self, input: i32) -> Self {
+            self.parallelization_factor = Some(input);
             self
         }
-        pub fn set_parallelization_factor(mut self, inp: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = inp;
+        pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.parallelization_factor = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn event_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_source_arn = Some(inp.into());
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_source_arn = Some(input.into());
             self
         }
         pub fn set_event_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.event_source_arn = inp;
+            self.event_source_arn = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_arn = Some(inp.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
             self
         }
-        pub fn set_function_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = inp;
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
             self
         }
         /// <p>The date that the event source mapping was last updated, or its state changed.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
-        pub fn last_processing_result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_processing_result = Some(inp.into());
+        pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_processing_result = Some(input.into());
             self
         }
         pub fn set_last_processing_result(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_processing_result = inp;
+            self.last_processing_result = input;
             self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
         /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
         /// <code>Updating</code>, or <code>Deleting</code>.</p>
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
         /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
         /// service.</p>
-        pub fn state_transition_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_transition_reason = Some(inp.into());
+        pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_transition_reason = Some(input.into());
             self
         }
         pub fn set_state_transition_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.state_transition_reason = inp;
+            self.state_transition_reason = input;
             self
         }
         /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.destination_config = Some(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.destination_config = Some(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.destination_config = inp;
+            self.destination_config = input;
             self
         }
-        pub fn topics(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topics = Some(v);
             self
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.topics = inp;
+            self.topics = input;
             self
         }
-        pub fn queues(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.queues = Some(v);
             self
         }
         pub fn set_queues(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.queues = inp;
+            self.queues = input;
             self
         }
         pub fn source_access_configurations(
             mut self,
-            inp: impl Into<crate::model::SourceAccessConfiguration>,
+            input: impl Into<crate::model::SourceAccessConfiguration>,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_access_configurations = Some(v);
             self
         }
         pub fn set_source_access_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
         ) -> Self {
-            self.source_access_configurations = inp;
+            self.source_access_configurations = input;
             self
         }
         /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
         pub fn self_managed_event_source(
             mut self,
-            inp: crate::model::SelfManagedEventSource,
+            input: crate::model::SelfManagedEventSource,
         ) -> Self {
-            self.self_managed_event_source = Some(inp);
+            self.self_managed_event_source = Some(input);
             self
         }
         pub fn set_self_managed_event_source(
             mut self,
-            inp: std::option::Option<crate::model::SelfManagedEventSource>,
+            input: std::option::Option<crate::model::SelfManagedEventSource>,
         ) -> Self {
-            self.self_managed_event_source = inp;
+            self.self_managed_event_source = input;
             self
         }
         /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-        pub fn maximum_record_age_in_seconds(mut self, inp: i32) -> Self {
-            self.maximum_record_age_in_seconds = Some(inp);
+        pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
+            self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        pub fn set_maximum_record_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_record_age_in_seconds = inp;
+        pub fn set_maximum_record_age_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.maximum_record_age_in_seconds = input;
             self
         }
         /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn bisect_batch_on_function_error(mut self, inp: bool) -> Self {
-            self.bisect_batch_on_function_error = Some(inp);
+        pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
+            self.bisect_batch_on_function_error = Some(input);
             self
         }
         pub fn set_bisect_batch_on_function_error(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.bisect_batch_on_function_error = inp;
+            self.bisect_batch_on_function_error = input;
             self
         }
         /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.maximum_retry_attempts = Some(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.maximum_retry_attempts = Some(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = inp;
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_retry_attempts = input;
             self
         }
         /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-        pub fn tumbling_window_in_seconds(mut self, inp: i32) -> Self {
-            self.tumbling_window_in_seconds = Some(inp);
+        pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
+            self.tumbling_window_in_seconds = Some(input);
             self
         }
-        pub fn set_tumbling_window_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = inp;
+        pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.tumbling_window_in_seconds = input;
             self
         }
         pub fn function_response_types(
             mut self,
-            inp: impl Into<crate::model::FunctionResponseType>,
+            input: impl Into<crate::model::FunctionResponseType>,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.function_response_types = Some(v);
             self
         }
         pub fn set_function_response_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
         ) -> Self {
-            self.function_response_types = inp;
+            self.function_response_types = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput)
@@ -7807,15 +7893,15 @@ pub mod create_code_signing_config_output {
     }
     impl Builder {
         /// <p>The code signing configuration.</p>
-        pub fn code_signing_config(mut self, inp: crate::model::CodeSigningConfig) -> Self {
-            self.code_signing_config = Some(inp);
+        pub fn code_signing_config(mut self, input: crate::model::CodeSigningConfig) -> Self {
+            self.code_signing_config = Some(input);
             self
         }
         pub fn set_code_signing_config(
             mut self,
-            inp: std::option::Option<crate::model::CodeSigningConfig>,
+            input: std::option::Option<crate::model::CodeSigningConfig>,
         ) -> Self {
-            self.code_signing_config = inp;
+            self.code_signing_config = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCodeSigningConfigOutput`](crate::output::CreateCodeSigningConfigOutput)
@@ -7878,64 +7964,64 @@ pub mod create_alias_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-        pub fn alias_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.alias_arn = Some(inp.into());
+        pub fn alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_arn = Some(input.into());
             self
         }
-        pub fn set_alias_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = inp;
+        pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_arn = input;
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.function_version = Some(inp.into());
+        pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_version = Some(input.into());
             self
         }
         pub fn set_function_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.function_version = inp;
+            self.function_version = input;
             self
         }
         /// <p>A description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
         /// configuration</a> of the alias.</p>
-        pub fn routing_config(mut self, inp: crate::model::AliasRoutingConfiguration) -> Self {
-            self.routing_config = Some(inp);
+        pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
+            self.routing_config = Some(input);
             self
         }
         pub fn set_routing_config(
             mut self,
-            inp: std::option::Option<crate::model::AliasRoutingConfiguration>,
+            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
         ) -> Self {
-            self.routing_config = inp;
+            self.routing_config = input;
             self
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateAliasOutput`](crate::output::CreateAliasOutput)
@@ -7981,12 +8067,12 @@ pub mod add_permission_output {
     }
     impl Builder {
         /// <p>The permission statement that's added to the function policy.</p>
-        pub fn statement(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.statement = Some(inp.into());
+        pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.statement = Some(input.into());
             self
         }
-        pub fn set_statement(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.statement = inp;
+        pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.statement = input;
             self
         }
         /// Consumes the builder and constructs a [`AddPermissionOutput`](crate::output::AddPermissionOutput)
@@ -8031,21 +8117,21 @@ pub mod add_layer_version_permission_output {
     }
     impl Builder {
         /// <p>The permission statement.</p>
-        pub fn statement(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.statement = Some(inp.into());
+        pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.statement = Some(input.into());
             self
         }
-        pub fn set_statement(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.statement = inp;
+        pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.statement = input;
             self
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.revision_id = Some(inp.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = inp;
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AddLayerVersionPermissionOutput`](crate::output::AddLayerVersionPermissionOutput)

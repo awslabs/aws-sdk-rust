@@ -17,7 +17,7 @@ impl CancelJob {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelJob {
-    type Output = Result<crate::output::CancelJobOutput, crate::error::CancelJobError>;
+    type Output = std::result::Result<crate::output::CancelJobOutput, crate::error::CancelJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_cancel_job_error(response)
@@ -81,7 +81,7 @@ impl CreateComputeEnvironment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateComputeEnvironment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateComputeEnvironmentOutput,
         crate::error::CreateComputeEnvironmentError,
     >;
@@ -114,7 +114,8 @@ impl CreateJobQueue {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateJobQueue {
-    type Output = Result<crate::output::CreateJobQueueOutput, crate::error::CreateJobQueueError>;
+    type Output =
+        std::result::Result<crate::output::CreateJobQueueOutput, crate::error::CreateJobQueueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_job_queue_error(response)
@@ -142,7 +143,7 @@ impl DeleteComputeEnvironment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteComputeEnvironment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteComputeEnvironmentOutput,
         crate::error::DeleteComputeEnvironmentError,
     >;
@@ -173,7 +174,8 @@ impl DeleteJobQueue {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteJobQueue {
-    type Output = Result<crate::output::DeleteJobQueueOutput, crate::error::DeleteJobQueueError>;
+    type Output =
+        std::result::Result<crate::output::DeleteJobQueueOutput, crate::error::DeleteJobQueueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_job_queue_error(response)
@@ -198,7 +200,7 @@ impl DeregisterJobDefinition {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterJobDefinition {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeregisterJobDefinitionOutput,
         crate::error::DeregisterJobDefinitionError,
     >;
@@ -229,7 +231,7 @@ impl DescribeComputeEnvironments {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeComputeEnvironments {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeComputeEnvironmentsOutput,
         crate::error::DescribeComputeEnvironmentsError,
     >;
@@ -266,9 +268,9 @@ mod describe_compute_environments_request_test {
             .set_compute_resources(Some(
                 crate::model::ComputeResource::builder()
                     .set_type(Some(crate::model::CrType::from("EC2")))
-                    .set_minv_cpus(0)
-                    .set_maxv_cpus(256)
-                    .set_desiredv_cpus(0)
+                    .set_minv_cpus(Some(0))
+                    .set_maxv_cpus(Some(256))
+                    .set_desiredv_cpus(Some(0))
                     .set_instance_types(Some(vec!["optimal".to_string()]))
                     .set_subnets(Some(vec![
                         "subnet-c745b79c".to_string(),
@@ -330,7 +332,7 @@ impl DescribeJobDefinitions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeJobDefinitions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeJobDefinitionsOutput,
         crate::error::DescribeJobDefinitionsError,
     >;
@@ -358,8 +360,10 @@ impl DescribeJobQueues {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeJobQueues {
-    type Output =
-        Result<crate::output::DescribeJobQueuesOutput, crate::error::DescribeJobQueuesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeJobQueuesOutput,
+        crate::error::DescribeJobQueuesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_job_queues_error(response)
@@ -384,7 +388,8 @@ impl DescribeJobs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeJobs {
-    type Output = Result<crate::output::DescribeJobsOutput, crate::error::DescribeJobsError>;
+    type Output =
+        std::result::Result<crate::output::DescribeJobsOutput, crate::error::DescribeJobsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_jobs_error(response)
@@ -423,7 +428,7 @@ impl ListJobs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListJobs {
-    type Output = Result<crate::output::ListJobsOutput, crate::error::ListJobsError>;
+    type Output = std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_jobs_error(response)
@@ -449,8 +454,10 @@ impl ListTagsForResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
-    type Output =
-        Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
@@ -475,7 +482,7 @@ impl RegisterJobDefinition {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RegisterJobDefinition {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RegisterJobDefinitionOutput,
         crate::error::RegisterJobDefinitionError,
     >;
@@ -512,7 +519,7 @@ impl SubmitJob {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SubmitJob {
-    type Output = Result<crate::output::SubmitJobOutput, crate::error::SubmitJobError>;
+    type Output = std::result::Result<crate::output::SubmitJobOutput, crate::error::SubmitJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_submit_job_error(response)
@@ -540,7 +547,8 @@ impl TagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagResource {
-    type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
@@ -567,7 +575,8 @@ impl TerminateJob {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TerminateJob {
-    type Output = Result<crate::output::TerminateJobOutput, crate::error::TerminateJobError>;
+    type Output =
+        std::result::Result<crate::output::TerminateJobOutput, crate::error::TerminateJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_terminate_job_error(response)
@@ -592,7 +601,8 @@ impl UntagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagResource {
-    type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
@@ -617,7 +627,7 @@ impl UpdateComputeEnvironment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateComputeEnvironment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateComputeEnvironmentOutput,
         crate::error::UpdateComputeEnvironmentError,
     >;
@@ -645,7 +655,8 @@ impl UpdateJobQueue {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateJobQueue {
-    type Output = Result<crate::output::UpdateJobQueueOutput, crate::error::UpdateJobQueueError>;
+    type Output =
+        std::result::Result<crate::output::UpdateJobQueueOutput, crate::error::UpdateJobQueueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_job_queue_error(response)

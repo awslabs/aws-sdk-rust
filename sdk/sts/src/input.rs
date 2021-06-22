@@ -21,12 +21,12 @@ pub mod assume_role_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>An identifier for the assumed role session.</p>
@@ -39,28 +39,28 @@ pub mod assume_role_input {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn role_session_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_session_name = Some(inp.into());
+        pub fn role_session_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_session_name = Some(input.into());
             self
         }
         pub fn set_role_session_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.role_session_name = inp;
+            self.role_session_name = input;
             self
         }
-        pub fn policy_arns(mut self, inp: impl Into<crate::model::PolicyDescriptorType>) -> Self {
+        pub fn policy_arns(mut self, input: impl Into<crate::model::PolicyDescriptorType>) -> Self {
             let mut v = self.policy_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_arns = Some(v);
             self
         }
         pub fn set_policy_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyDescriptorType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyDescriptorType>>,
         ) -> Self {
-            self.policy_arns = inp;
+            self.policy_arns = input;
             self
         }
         /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -85,12 +85,12 @@ pub mod assume_role_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// <p>The duration, in seconds, of the role session. The value specified can can range from
@@ -112,38 +112,38 @@ pub mod assume_role_input {
         /// that Enables Federated Users to Access the AWS Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.duration_seconds = Some(inp);
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.duration_seconds = Some(input);
             self
         }
-        pub fn set_duration_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.duration_seconds = inp;
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_seconds = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
-        pub fn transitive_tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn transitive_tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.transitive_tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transitive_tag_keys = Some(v);
             self
         }
         pub fn set_transitive_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.transitive_tag_keys = inp;
+            self.transitive_tag_keys = input;
             self
         }
         /// <p>A unique identifier that might be required when you assume a role in another account. If
@@ -159,12 +159,12 @@ pub mod assume_role_input {
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
-        pub fn external_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.external_id = Some(inp.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.external_id = Some(input.into());
             self
         }
-        pub fn set_external_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.external_id = inp;
+        pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_id = input;
             self
         }
         /// <p>The identification number of the MFA device that is associated with the user who is
@@ -176,12 +176,15 @@ pub mod assume_role_input {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// <p>The value provided by the MFA device, if the trust policy of the role being assumed
@@ -190,12 +193,12 @@ pub mod assume_role_input {
         /// expired, the <code>AssumeRole</code> call returns an "access denied" error.</p>
         /// <p>The format for this parameter, as described by its regex pattern, is a sequence of six
         /// numeric digits.</p>
-        pub fn token_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.token_code = Some(inp.into());
+        pub fn token_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token_code = Some(input.into());
             self
         }
-        pub fn set_token_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.token_code = inp;
+        pub fn set_token_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token_code = input;
             self
         }
         /// <p>The source identity specified by the principal that is calling the
@@ -213,21 +216,22 @@ pub mod assume_role_input {
         /// any of the following characters: =,.@-. You cannot use a value that begins with the text
         /// <code>aws:</code>. This prefix is reserved for AWS internal
         /// use.</p>
-        pub fn source_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_identity = Some(inp.into());
+        pub fn source_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_identity = Some(input.into());
             self
         }
         pub fn set_source_identity(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_identity = inp;
+            self.source_identity = input;
             self
         }
         /// Consumes the builder and constructs a [`AssumeRoleInput`](crate::input::AssumeRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AssumeRoleInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::AssumeRoleInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::AssumeRoleInput {
                 role_arn: self.role_arn,
                 role_session_name: self.role_session_name,
@@ -254,7 +258,7 @@ impl AssumeRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AssumeRole,
             aws_http::AwsErrorRetryPolicy,
@@ -311,7 +315,7 @@ impl AssumeRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -319,7 +323,7 @@ impl AssumeRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -355,46 +359,52 @@ pub mod assume_role_with_saml_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
         /// IdP.</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.principal_arn = Some(inp.into());
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.principal_arn = Some(input.into());
             self
         }
-        pub fn set_principal_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.principal_arn = inp;
+        pub fn set_principal_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.principal_arn = input;
             self
         }
         /// <p>The base64 encoded SAML authentication response provided by the IdP.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying Party and
         /// Adding Claims</a> in the <i>IAM User Guide</i>. </p>
-        pub fn saml_assertion(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_assertion = Some(inp.into());
+        pub fn saml_assertion(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_assertion = Some(input.into());
             self
         }
-        pub fn set_saml_assertion(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.saml_assertion = inp;
+        pub fn set_saml_assertion(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.saml_assertion = input;
             self
         }
-        pub fn policy_arns(mut self, inp: impl Into<crate::model::PolicyDescriptorType>) -> Self {
+        pub fn policy_arns(mut self, input: impl Into<crate::model::PolicyDescriptorType>) -> Self {
             let mut v = self.policy_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_arns = Some(v);
             self
         }
         pub fn set_policy_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyDescriptorType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyDescriptorType>>,
         ) -> Self {
-            self.policy_arns = inp;
+            self.policy_arns = input;
             self
         }
         /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -419,12 +429,12 @@ pub mod assume_role_with_saml_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// <p>The duration, in seconds, of the role session. Your role session lasts for the duration
@@ -448,19 +458,21 @@ pub mod assume_role_with_saml_input {
         /// that Enables Federated Users to Access the AWS Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.duration_seconds = Some(inp);
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.duration_seconds = Some(input);
             self
         }
-        pub fn set_duration_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.duration_seconds = inp;
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`AssumeRoleWithSAMLInput`](crate::input::AssumeRoleWithSAMLInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AssumeRoleWithSAMLInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AssumeRoleWithSAMLInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AssumeRoleWithSAMLInput {
                 role_arn: self.role_arn,
                 principal_arn: self.principal_arn,
@@ -482,7 +494,7 @@ impl AssumeRoleWithSAMLInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AssumeRoleWithSAML,
             aws_http::AwsErrorRetryPolicy,
@@ -542,7 +554,7 @@ impl AssumeRoleWithSAMLInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -550,7 +562,7 @@ impl AssumeRoleWithSAMLInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -587,12 +599,12 @@ pub mod assume_role_with_web_identity_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>An identifier for the assumed role session. Typically, you pass the name or identifier
@@ -603,30 +615,30 @@ pub mod assume_role_with_web_identity_input {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn role_session_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_session_name = Some(inp.into());
+        pub fn role_session_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_session_name = Some(input.into());
             self
         }
         pub fn set_role_session_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.role_session_name = inp;
+            self.role_session_name = input;
             self
         }
         /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity
         /// provider. Your application must get this token by authenticating the user who is using your
         /// application with a web identity provider before the application makes an
         /// <code>AssumeRoleWithWebIdentity</code> call. </p>
-        pub fn web_identity_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.web_identity_token = Some(inp.into());
+        pub fn web_identity_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.web_identity_token = Some(input.into());
             self
         }
         pub fn set_web_identity_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.web_identity_token = inp;
+            self.web_identity_token = input;
             self
         }
         /// <p>The fully qualified host component of the domain name of the identity provider.</p>
@@ -635,25 +647,25 @@ pub mod assume_role_with_web_identity_input {
         /// identity providers for OAuth 2.0 access tokens. Do not include URL schemes and port
         /// numbers.</p>
         /// <p>Do not specify this value for OpenID Connect ID tokens.</p>
-        pub fn provider_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.provider_id = Some(inp.into());
+        pub fn provider_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.provider_id = Some(input.into());
             self
         }
-        pub fn set_provider_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.provider_id = inp;
+        pub fn set_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_id = input;
             self
         }
-        pub fn policy_arns(mut self, inp: impl Into<crate::model::PolicyDescriptorType>) -> Self {
+        pub fn policy_arns(mut self, input: impl Into<crate::model::PolicyDescriptorType>) -> Self {
             let mut v = self.policy_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_arns = Some(v);
             self
         }
         pub fn set_policy_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyDescriptorType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyDescriptorType>>,
         ) -> Self {
-            self.policy_arns = inp;
+            self.policy_arns = input;
             self
         }
         /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -678,12 +690,12 @@ pub mod assume_role_with_web_identity_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// <p>The duration, in seconds, of the role session. The value can range from 900 seconds (15
@@ -704,19 +716,21 @@ pub mod assume_role_with_web_identity_input {
         /// that Enables Federated Users to Access the AWS Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.duration_seconds = Some(inp);
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.duration_seconds = Some(input);
             self
         }
-        pub fn set_duration_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.duration_seconds = inp;
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`AssumeRoleWithWebIdentityInput`](crate::input::AssumeRoleWithWebIdentityInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AssumeRoleWithWebIdentityInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AssumeRoleWithWebIdentityInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AssumeRoleWithWebIdentityInput {
                 role_arn: self.role_arn,
                 role_session_name: self.role_session_name,
@@ -740,7 +754,7 @@ impl AssumeRoleWithWebIdentityInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AssumeRoleWithWebIdentity,
             aws_http::AwsErrorRetryPolicy,
@@ -801,7 +815,7 @@ impl AssumeRoleWithWebIdentityInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -809,7 +823,7 @@ impl AssumeRoleWithWebIdentityInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -839,22 +853,24 @@ pub mod decode_authorization_message_input {
     }
     impl Builder {
         /// <p>The encoded message that was returned with the response.</p>
-        pub fn encoded_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.encoded_message = Some(inp.into());
+        pub fn encoded_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.encoded_message = Some(input.into());
             self
         }
         pub fn set_encoded_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.encoded_message = inp;
+            self.encoded_message = input;
             self
         }
         /// Consumes the builder and constructs a [`DecodeAuthorizationMessageInput`](crate::input::DecodeAuthorizationMessageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DecodeAuthorizationMessageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DecodeAuthorizationMessageInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DecodeAuthorizationMessageInput {
                 encoded_message: self.encoded_message,
             })
@@ -872,7 +888,7 @@ impl DecodeAuthorizationMessageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DecodeAuthorizationMessage,
             aws_http::AwsErrorRetryPolicy,
@@ -933,7 +949,7 @@ impl DecodeAuthorizationMessageInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -941,7 +957,7 @@ impl DecodeAuthorizationMessageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -973,19 +989,24 @@ pub mod get_access_key_info_input {
         /// <p>The identifier of an access key.</p>
         /// <p>This parameter allows (through its regex pattern) a string of characters that can
         /// consist of any upper- or lowercase letter or digit.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.access_key_id = Some(inp.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.access_key_id = inp;
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccessKeyInfoInput`](crate::input::GetAccessKeyInfoInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccessKeyInfoInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAccessKeyInfoInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAccessKeyInfoInput {
                 access_key_id: self.access_key_id,
             })
@@ -1002,7 +1023,7 @@ impl GetAccessKeyInfoInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAccessKeyInfo,
             aws_http::AwsErrorRetryPolicy,
@@ -1062,7 +1083,7 @@ impl GetAccessKeyInfoInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1070,7 +1091,7 @@ impl GetAccessKeyInfoInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1100,8 +1121,10 @@ pub mod get_caller_identity_input {
         /// Consumes the builder and constructs a [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetCallerIdentityInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetCallerIdentityInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetCallerIdentityInput {})
         }
     }
@@ -1116,7 +1139,7 @@ impl GetCallerIdentityInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetCallerIdentity,
             aws_http::AwsErrorRetryPolicy,
@@ -1176,7 +1199,7 @@ impl GetCallerIdentityInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1184,7 +1207,7 @@ impl GetCallerIdentityInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1224,12 +1247,12 @@ pub mod get_federation_token_input {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -1263,25 +1286,25 @@ pub mod get_federation_token_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
-        pub fn policy_arns(mut self, inp: impl Into<crate::model::PolicyDescriptorType>) -> Self {
+        pub fn policy_arns(mut self, input: impl Into<crate::model::PolicyDescriptorType>) -> Self {
             let mut v = self.policy_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_arns = Some(v);
             self
         }
         pub fn set_policy_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyDescriptorType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyDescriptorType>>,
         ) -> Self {
-            self.policy_arns = inp;
+            self.policy_arns = input;
             self
         }
         /// <p>The duration, in seconds, that the session should last. Acceptable durations for
@@ -1290,32 +1313,34 @@ pub mod get_federation_token_input {
         /// credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified
         /// duration is longer than one hour, the session obtained by using root user credentials
         /// defaults to one hour.</p>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.duration_seconds = Some(inp);
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.duration_seconds = Some(input);
             self
         }
-        pub fn set_duration_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.duration_seconds = inp;
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_seconds = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFederationTokenInput`](crate::input::GetFederationTokenInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetFederationTokenInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetFederationTokenInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetFederationTokenInput {
                 name: self.name,
                 policy: self.policy,
@@ -1336,7 +1361,7 @@ impl GetFederationTokenInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetFederationToken,
             aws_http::AwsErrorRetryPolicy,
@@ -1396,7 +1421,7 @@ impl GetFederationTokenInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1404,7 +1429,7 @@ impl GetFederationTokenInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1440,12 +1465,12 @@ pub mod get_session_token_input {
         /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for AWS account
         /// owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
         /// longer than one hour, the session for AWS account owners defaults to one hour.</p>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.duration_seconds = Some(inp);
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.duration_seconds = Some(input);
             self
         }
-        pub fn set_duration_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.duration_seconds = inp;
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_seconds = input;
             self
         }
         /// <p>The identification number of the MFA device that is associated with the IAM user who
@@ -1458,12 +1483,15 @@ pub mod get_session_token_input {
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// <p>The value provided by the MFA device, if MFA is required. If any policy requires the
@@ -1473,19 +1501,21 @@ pub mod get_session_token_input {
         /// resources that require MFA authentication.</p>
         /// <p>The format for this parameter, as described by its regex pattern, is a sequence of six
         /// numeric digits.</p>
-        pub fn token_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.token_code = Some(inp.into());
+        pub fn token_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token_code = Some(input.into());
             self
         }
-        pub fn set_token_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.token_code = inp;
+        pub fn set_token_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token_code = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSessionTokenInput`](crate::input::GetSessionTokenInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSessionTokenInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSessionTokenInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSessionTokenInput {
                 duration_seconds: self.duration_seconds,
                 serial_number: self.serial_number,
@@ -1504,7 +1534,7 @@ impl GetSessionTokenInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSessionToken,
             aws_http::AwsErrorRetryPolicy,
@@ -1563,7 +1593,7 @@ impl GetSessionTokenInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1571,7 +1601,7 @@ impl GetSessionTokenInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)

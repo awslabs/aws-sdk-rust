@@ -258,7 +258,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddLayerVersionPermissionOutput,
             smithy_http::result::SdkError<crate::error::AddLayerVersionPermissionError>,
         >
@@ -275,71 +275,71 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(input);
             self
         }
-        pub fn set_layer_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_layer_name(inp);
+        pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_layer_name(input);
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
-        pub fn set_version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.set_version_number(inp);
+        pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_version_number(input);
             self
         }
         /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input);
             self
         }
-        pub fn set_statement_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_statement_id(inp);
+        pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_statement_id(input);
             self
         }
         /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
-        pub fn set_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_action(inp);
+        pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action(input);
             self
         }
         /// <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(input);
             self
         }
-        pub fn set_principal(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_principal(inp);
+        pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_principal(input);
             self
         }
         /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified
         /// organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input);
             self
         }
         pub fn set_organization_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_organization_id(inp);
+            self.inner = self.inner.set_organization_id(input);
             self
         }
         /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
         /// policy that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input);
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_revision_id(inp);
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
             self
         }
     }
@@ -358,7 +358,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddPermissionOutput,
             smithy_http::result::SdkError<crate::error::AddPermissionError>,
         >
@@ -394,93 +394,99 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input);
             self
         }
-        pub fn set_statement_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_statement_id(inp);
+        pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_statement_id(input);
             self
         }
         /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
         /// <code>lambda:GetFunction</code>.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
-        pub fn set_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_action(inp);
+        pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action(input);
             self
         }
         /// <p>The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
         /// <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(input);
             self
         }
-        pub fn set_principal(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_principal(inp);
+        pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_principal(input);
             self
         }
         /// <p>For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or
         /// Amazon SNS topic.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input);
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_arn(inp);
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_arn(input);
             self
         }
         /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
         /// ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
         /// by its owner and recreated by another account.</p>
-        pub fn source_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_account(inp);
+        pub fn source_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_account(input);
             self
         }
-        pub fn set_source_account(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_account(inp);
+        pub fn set_source_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_account(input);
             self
         }
         /// <p>For Alexa Smart Home functions, a token that must be supplied by the invoker.</p>
-        pub fn event_source_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_token(inp);
+        pub fn event_source_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_token(input);
             self
         }
         pub fn set_event_source_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_event_source_token(inp);
+            self.inner = self.inner.set_event_source_token(input);
             self
         }
         /// <p>Specify a version or alias to add permissions to a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
         /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
         /// policy that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input);
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_revision_id(inp);
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
             self
         }
     }
@@ -499,7 +505,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAliasOutput,
             smithy_http::result::SdkError<crate::error::CreateAliasError>,
         >
@@ -535,55 +541,58 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_version(inp);
+        pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_version(input);
             self
         }
         pub fn set_function_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_function_version(inp);
+            self.inner = self.inner.set_function_version(input);
             self
         }
         /// <p>A description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
         /// configuration</a> of the alias.</p>
-        pub fn routing_config(mut self, inp: crate::model::AliasRoutingConfiguration) -> Self {
-            self.inner = self.inner.routing_config(inp);
+        pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
+            self.inner = self.inner.routing_config(input);
             self
         }
         pub fn set_routing_config(
             mut self,
-            inp: std::option::Option<crate::model::AliasRoutingConfiguration>,
+            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_routing_config(inp);
+            self.inner = self.inner.set_routing_config(input);
             self
         }
     }
@@ -602,7 +611,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateCodeSigningConfigOutput,
             smithy_http::result::SdkError<crate::error::CreateCodeSigningConfigError>,
         >
@@ -619,36 +628,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Descriptive name for this code signing configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Signing profiles for this code signing configuration.</p>
-        pub fn allowed_publishers(mut self, inp: crate::model::AllowedPublishers) -> Self {
-            self.inner = self.inner.allowed_publishers(inp);
+        pub fn allowed_publishers(mut self, input: crate::model::AllowedPublishers) -> Self {
+            self.inner = self.inner.allowed_publishers(input);
             self
         }
         pub fn set_allowed_publishers(
             mut self,
-            inp: std::option::Option<crate::model::AllowedPublishers>,
+            input: std::option::Option<crate::model::AllowedPublishers>,
         ) -> Self {
-            self.inner = self.inner.set_allowed_publishers(inp);
+            self.inner = self.inner.set_allowed_publishers(input);
             self
         }
         /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-        pub fn code_signing_policies(mut self, inp: crate::model::CodeSigningPolicies) -> Self {
-            self.inner = self.inner.code_signing_policies(inp);
+        pub fn code_signing_policies(mut self, input: crate::model::CodeSigningPolicies) -> Self {
+            self.inner = self.inner.code_signing_policies(input);
             self
         }
         pub fn set_code_signing_policies(
             mut self,
-            inp: std::option::Option<crate::model::CodeSigningPolicies>,
+            input: std::option::Option<crate::model::CodeSigningPolicies>,
         ) -> Self {
-            self.inner = self.inner.set_code_signing_policies(inp);
+            self.inner = self.inner.set_code_signing_policies(input);
             self
         }
     }
@@ -667,7 +676,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateEventSourceMappingOutput,
             smithy_http::result::SdkError<crate::error::CreateEventSourceMappingError>,
         >
@@ -702,15 +711,15 @@ pub mod fluent_builders {
         /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
         /// </li>
         /// </ul>
-        pub fn event_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_arn(inp);
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_arn(input);
             self
         }
         pub fn set_event_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_event_source_arn(inp);
+            self.inner = self.inner.set_event_source_arn(input);
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -737,21 +746,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>If true, the event source mapping is active. Set to false to pause polling and invocation.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
-        pub fn set_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enabled(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enabled(input);
             self
         }
         /// <p>The maximum number of items to retrieve in a single batch.</p>
@@ -777,110 +789,113 @@ pub mod fluent_builders {
         /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
         /// </li>
         /// </ul>
-        pub fn batch_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.batch_size(inp);
+        pub fn batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.batch_size(input);
             self
         }
-        pub fn set_batch_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_batch_size(inp);
+        pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_batch_size(input);
             self
         }
         /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds.</p>
-        pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_batching_window_in_seconds(inp);
+        pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_batching_window_in_seconds(input);
             self
         }
         pub fn set_maximum_batching_window_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_maximum_batching_window_in_seconds(inp);
+            self.inner = self.inner.set_maximum_batching_window_in_seconds(input);
             self
         }
         /// <p>(Streams) The number of batches to process from each shard concurrently.</p>
-        pub fn parallelization_factor(mut self, inp: i32) -> Self {
-            self.inner = self.inner.parallelization_factor(inp);
+        pub fn parallelization_factor(mut self, input: i32) -> Self {
+            self.inner = self.inner.parallelization_factor(input);
             self
         }
-        pub fn set_parallelization_factor(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_parallelization_factor(inp);
+        pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_parallelization_factor(input);
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
         /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
-        pub fn starting_position(mut self, inp: crate::model::EventSourcePosition) -> Self {
-            self.inner = self.inner.starting_position(inp);
+        pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
+            self.inner = self.inner.starting_position(input);
             self
         }
         pub fn set_starting_position(
             mut self,
-            inp: std::option::Option<crate::model::EventSourcePosition>,
+            input: std::option::Option<crate::model::EventSourcePosition>,
         ) -> Self {
-            self.inner = self.inner.set_starting_position(inp);
+            self.inner = self.inner.set_starting_position(input);
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.starting_position_timestamp(inp);
+        pub fn starting_position_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.starting_position_timestamp(input);
             self
         }
         pub fn set_starting_position_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_starting_position_timestamp(inp);
+            self.inner = self.inner.set_starting_position_timestamp(input);
             self
         }
         /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.inner = self.inner.set_destination_config(inp);
+            self.inner = self.inner.set_destination_config(input);
             self
         }
         /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1).</p>
-        pub fn maximum_record_age_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_record_age_in_seconds(inp);
+        pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_record_age_in_seconds(input);
             self
         }
-        pub fn set_maximum_record_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_maximum_record_age_in_seconds(inp);
+        pub fn set_maximum_record_age_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_maximum_record_age_in_seconds(input);
             self
         }
         /// <p>(Streams) If the function returns an error, split the batch in two and retry.</p>
-        pub fn bisect_batch_on_function_error(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bisect_batch_on_function_error(inp);
+        pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
+            self.inner = self.inner.bisect_batch_on_function_error(input);
             self
         }
         pub fn set_bisect_batch_on_function_error(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_bisect_batch_on_function_error(inp);
+            self.inner = self.inner.set_bisect_batch_on_function_error(input);
             self
         }
         /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_retry_attempts(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_retry_attempts(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_maximum_retry_attempts(inp);
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_maximum_retry_attempts(input);
             self
         }
         /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-        pub fn tumbling_window_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.tumbling_window_in_seconds(inp);
+        pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.tumbling_window_in_seconds(input);
             self
         }
-        pub fn set_tumbling_window_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_tumbling_window_in_seconds(inp);
+        pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_tumbling_window_in_seconds(input);
             self
         }
         /// <p>The name of the Kafka topic.</p>
@@ -890,9 +905,9 @@ pub mod fluent_builders {
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_topics(inp);
+            self.inner = self.inner.set_topics(input);
             self
         }
         /// <p>
@@ -904,9 +919,9 @@ pub mod fluent_builders {
         }
         pub fn set_queues(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_queues(inp);
+            self.inner = self.inner.set_queues(input);
             self
         }
         /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
@@ -919,24 +934,24 @@ pub mod fluent_builders {
         }
         pub fn set_source_access_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
         ) -> Self {
-            self.inner = self.inner.set_source_access_configurations(inp);
+            self.inner = self.inner.set_source_access_configurations(input);
             self
         }
         /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
         pub fn self_managed_event_source(
             mut self,
-            inp: crate::model::SelfManagedEventSource,
+            input: crate::model::SelfManagedEventSource,
         ) -> Self {
-            self.inner = self.inner.self_managed_event_source(inp);
+            self.inner = self.inner.self_managed_event_source(input);
             self
         }
         pub fn set_self_managed_event_source(
             mut self,
-            inp: std::option::Option<crate::model::SelfManagedEventSource>,
+            input: std::option::Option<crate::model::SelfManagedEventSource>,
         ) -> Self {
-            self.inner = self.inner.set_self_managed_event_source(inp);
+            self.inner = self.inner.set_self_managed_event_source(input);
             self
         }
         /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
@@ -949,9 +964,9 @@ pub mod fluent_builders {
         }
         pub fn set_function_response_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
         ) -> Self {
-            self.inner = self.inner.set_function_response_types(inp);
+            self.inner = self.inner.set_function_response_types(input);
             self
         }
     }
@@ -970,7 +985,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateFunctionOutput,
             smithy_http::result::SdkError<crate::error::CreateFunctionError>,
         >
@@ -1006,159 +1021,165 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.inner = self.inner.runtime(inp);
+        pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.inner = self.inner.runtime(input);
             self
         }
-        pub fn set_runtime(mut self, inp: std::option::Option<crate::model::Runtime>) -> Self {
-            self.inner = self.inner.set_runtime(inp);
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
+            self.inner = self.inner.set_runtime(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input);
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role(inp);
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role(input);
             self
         }
         /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
         /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
         /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.handler(inp);
+        pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.handler(input);
             self
         }
-        pub fn set_handler(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_handler(inp);
+        pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_handler(input);
             self
         }
         /// <p>The code for the function.</p>
-        pub fn code(mut self, inp: crate::model::FunctionCode) -> Self {
-            self.inner = self.inner.code(inp);
+        pub fn code(mut self, input: crate::model::FunctionCode) -> Self {
+            self.inner = self.inner.code(input);
             self
         }
-        pub fn set_code(mut self, inp: std::option::Option<crate::model::FunctionCode>) -> Self {
-            self.inner = self.inner.set_code(inp);
+        pub fn set_code(mut self, input: std::option::Option<crate::model::FunctionCode>) -> Self {
+            self.inner = self.inner.set_code(input);
             self
         }
         /// <p>A description of the function.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
         /// maximum allowed value is 900 seconds.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_timeout(inp);
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout(input);
             self
         }
         /// <p>The amount of memory available to the function at runtime. Increasing the function's memory also increases its CPU
         /// allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.memory_size(inp);
+        pub fn memory_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.memory_size(input);
             self
         }
-        pub fn set_memory_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_memory_size(inp);
+        pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_memory_size(input);
             self
         }
         /// <p>Set to true to publish the first version of the function during creation.</p>
-        pub fn publish(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publish(inp);
+        pub fn publish(mut self, input: bool) -> Self {
+            self.inner = self.inner.publish(input);
             self
         }
-        pub fn set_publish(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_publish(inp);
+        pub fn set_publish(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publish(input);
             self
         }
         /// <p>For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
         /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
-        pub fn set_vpc_config(mut self, inp: std::option::Option<crate::model::VpcConfig>) -> Self {
-            self.inner = self.inner.set_vpc_config(inp);
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_config(input);
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP archive.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.inner = self.inner.package_type(inp);
+        pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
+            self.inner = self.inner.package_type(input);
             self
         }
         pub fn set_package_type(
             mut self,
-            inp: std::option::Option<crate::model::PackageType>,
+            input: std::option::Option<crate::model::PackageType>,
         ) -> Self {
-            self.inner = self.inner.set_package_type(inp);
+            self.inner = self.inner.set_package_type(input);
             self
         }
         /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
         /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.inner = self.inner.dead_letter_config(inp);
+        pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
+            self.inner = self.inner.dead_letter_config(input);
             self
         }
         pub fn set_dead_letter_config(
             mut self,
-            inp: std::option::Option<crate::model::DeadLetterConfig>,
+            input: std::option::Option<crate::model::DeadLetterConfig>,
         ) -> Self {
-            self.inner = self.inner.set_dead_letter_config(inp);
+            self.inner = self.inner.set_dead_letter_config(input);
             self
         }
         /// <p>Environment variables that are accessible from function code during execution.</p>
-        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<crate::model::Environment>,
+            input: std::option::Option<crate::model::Environment>,
         ) -> Self {
-            self.inner = self.inner.set_environment(inp);
+            self.inner = self.inner.set_environment(input);
             self
         }
         /// <p>The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
         /// variables. If it's not provided, AWS Lambda uses a default service key.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input);
             self
         }
-        pub fn set_kms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_arn(inp);
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_arn(input);
             self
         }
         /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
         /// X-Ray.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfig) -> Self {
-            self.inner = self.inner.tracing_config(inp);
+        pub fn tracing_config(mut self, input: crate::model::TracingConfig) -> Self {
+            self.inner = self.inner.tracing_config(input);
             self
         }
         pub fn set_tracing_config(
             mut self,
-            inp: std::option::Option<crate::model::TracingConfig>,
+            input: std::option::Option<crate::model::TracingConfig>,
         ) -> Self {
-            self.inner = self.inner.set_tracing_config(inp);
+            self.inner = self.inner.set_tracing_config(input);
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the
@@ -1173,11 +1194,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
@@ -1188,9 +1209,9 @@ pub mod fluent_builders {
         }
         pub fn set_layers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_layers(inp);
+            self.inner = self.inner.set_layers(input);
             self
         }
         /// <p>Connection settings for an Amazon EFS file system.</p>
@@ -1203,36 +1224,36 @@ pub mod fluent_builders {
         }
         pub fn set_file_system_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         ) -> Self {
-            self.inner = self.inner.set_file_system_configs(inp);
+            self.inner = self.inner.set_file_system_configs(input);
             self
         }
         /// <p>
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
         /// values</a> that override the values in the container image Dockerfile.</p>
-        pub fn image_config(mut self, inp: crate::model::ImageConfig) -> Self {
-            self.inner = self.inner.image_config(inp);
+        pub fn image_config(mut self, input: crate::model::ImageConfig) -> Self {
+            self.inner = self.inner.image_config(input);
             self
         }
         pub fn set_image_config(
             mut self,
-            inp: std::option::Option<crate::model::ImageConfig>,
+            input: std::option::Option<crate::model::ImageConfig>,
         ) -> Self {
-            self.inner = self.inner.set_image_config(inp);
+            self.inner = self.inner.set_image_config(input);
             self
         }
         /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration
         /// includes a set of signing profiles, which define the trusted publishers for this function.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_signing_config_arn(input);
             self
         }
         pub fn set_code_signing_config_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_code_signing_config_arn(inp);
+            self.inner = self.inner.set_code_signing_config_arn(input);
             self
         }
     }
@@ -1251,7 +1272,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAliasOutput,
             smithy_http::result::SdkError<crate::error::DeleteAliasError>,
         >
@@ -1287,21 +1308,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -1320,7 +1344,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteCodeSigningConfigOutput,
             smithy_http::result::SdkError<crate::error::DeleteCodeSigningConfigError>,
         >
@@ -1337,12 +1361,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_signing_config_arn(input);
             self
         }
-        pub fn set_code_signing_config_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_code_signing_config_arn(inp);
+        pub fn set_code_signing_config_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_code_signing_config_arn(input);
             self
         }
     }
@@ -1361,7 +1388,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteEventSourceMappingOutput,
             smithy_http::result::SdkError<crate::error::DeleteEventSourceMappingError>,
         >
@@ -1378,12 +1405,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uuid(inp);
+        pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uuid(input);
             self
         }
-        pub fn set_uuid(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_uuid(inp);
+        pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_uuid(input);
             self
         }
     }
@@ -1402,7 +1429,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteFunctionOutput,
             smithy_http::result::SdkError<crate::error::DeleteFunctionError>,
         >
@@ -1438,21 +1465,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Specify a version to delete. You can't delete a version that's referenced by an alias.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -1471,7 +1501,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteFunctionCodeSigningConfigOutput,
             smithy_http::result::SdkError<crate::error::DeleteFunctionCodeSigningConfigError>,
         >
@@ -1507,12 +1537,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
     }
@@ -1531,7 +1564,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteFunctionConcurrencyOutput,
             smithy_http::result::SdkError<crate::error::DeleteFunctionConcurrencyError>,
         >
@@ -1567,12 +1600,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
     }
@@ -1591,7 +1627,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteFunctionEventInvokeConfigOutput,
             smithy_http::result::SdkError<crate::error::DeleteFunctionEventInvokeConfigError>,
         >
@@ -1627,21 +1663,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>A version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -1660,7 +1699,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteLayerVersionOutput,
             smithy_http::result::SdkError<crate::error::DeleteLayerVersionError>,
         >
@@ -1677,21 +1716,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(input);
             self
         }
-        pub fn set_layer_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_layer_name(inp);
+        pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_layer_name(input);
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
-        pub fn set_version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.set_version_number(inp);
+        pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_version_number(input);
             self
         }
     }
@@ -1710,7 +1749,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteProvisionedConcurrencyConfigOutput,
             smithy_http::result::SdkError<crate::error::DeleteProvisionedConcurrencyConfigError>,
         >
@@ -1746,21 +1785,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -1779,7 +1821,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAccountSettingsOutput,
             smithy_http::result::SdkError<crate::error::GetAccountSettingsError>,
         >
@@ -1811,7 +1853,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAliasOutput,
             smithy_http::result::SdkError<crate::error::GetAliasError>,
         >
@@ -1847,21 +1889,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -1880,7 +1925,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetCodeSigningConfigOutput,
             smithy_http::result::SdkError<crate::error::GetCodeSigningConfigError>,
         >
@@ -1897,12 +1942,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_signing_config_arn(input);
             self
         }
-        pub fn set_code_signing_config_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_code_signing_config_arn(inp);
+        pub fn set_code_signing_config_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_code_signing_config_arn(input);
             self
         }
     }
@@ -1921,7 +1969,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetEventSourceMappingOutput,
             smithy_http::result::SdkError<crate::error::GetEventSourceMappingError>,
         >
@@ -1938,12 +1986,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uuid(inp);
+        pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uuid(input);
             self
         }
-        pub fn set_uuid(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_uuid(inp);
+        pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_uuid(input);
             self
         }
     }
@@ -1962,7 +2010,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetFunctionOutput,
             smithy_http::result::SdkError<crate::error::GetFunctionError>,
         >
@@ -1998,21 +2046,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Specify a version or alias to get details about a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -2031,7 +2082,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetFunctionCodeSigningConfigOutput,
             smithy_http::result::SdkError<crate::error::GetFunctionCodeSigningConfigError>,
         >
@@ -2067,12 +2118,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
     }
@@ -2091,7 +2145,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetFunctionConcurrencyOutput,
             smithy_http::result::SdkError<crate::error::GetFunctionConcurrencyError>,
         >
@@ -2127,12 +2181,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
     }
@@ -2151,7 +2208,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetFunctionConfigurationOutput,
             smithy_http::result::SdkError<crate::error::GetFunctionConfigurationError>,
         >
@@ -2187,21 +2244,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Specify a version or alias to get details about a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -2220,7 +2280,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetFunctionEventInvokeConfigOutput,
             smithy_http::result::SdkError<crate::error::GetFunctionEventInvokeConfigError>,
         >
@@ -2256,21 +2316,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>A version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -2289,7 +2352,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetLayerVersionOutput,
             smithy_http::result::SdkError<crate::error::GetLayerVersionError>,
         >
@@ -2306,21 +2369,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(input);
             self
         }
-        pub fn set_layer_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_layer_name(inp);
+        pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_layer_name(input);
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
-        pub fn set_version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.set_version_number(inp);
+        pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_version_number(input);
             self
         }
     }
@@ -2339,7 +2402,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetLayerVersionByArnOutput,
             smithy_http::result::SdkError<crate::error::GetLayerVersionByArnError>,
         >
@@ -2356,12 +2419,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(inp);
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
             self
         }
     }
@@ -2380,7 +2443,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetLayerVersionPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetLayerVersionPolicyError>,
         >
@@ -2397,21 +2460,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(input);
             self
         }
-        pub fn set_layer_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_layer_name(inp);
+        pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_layer_name(input);
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
-        pub fn set_version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.set_version_number(inp);
+        pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_version_number(input);
             self
         }
     }
@@ -2430,7 +2493,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetPolicyError>,
         >
@@ -2466,21 +2529,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Specify a version or alias to get the policy for that resource.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -2499,7 +2565,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetProvisionedConcurrencyConfigOutput,
             smithy_http::result::SdkError<crate::error::GetProvisionedConcurrencyConfigError>,
         >
@@ -2535,21 +2601,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -2568,7 +2637,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::InvokeOutput,
             smithy_http::result::SdkError<crate::error::InvokeError>,
         >
@@ -2604,12 +2673,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Choose from the following options.</p>
@@ -2631,52 +2703,55 @@ pub mod fluent_builders {
         /// the function.</p>
         /// </li>
         /// </ul>
-        pub fn invocation_type(mut self, inp: crate::model::InvocationType) -> Self {
-            self.inner = self.inner.invocation_type(inp);
+        pub fn invocation_type(mut self, input: crate::model::InvocationType) -> Self {
+            self.inner = self.inner.invocation_type(input);
             self
         }
         pub fn set_invocation_type(
             mut self,
-            inp: std::option::Option<crate::model::InvocationType>,
+            input: std::option::Option<crate::model::InvocationType>,
         ) -> Self {
-            self.inner = self.inner.set_invocation_type(inp);
+            self.inner = self.inner.set_invocation_type(input);
             self
         }
         /// <p>Set to <code>Tail</code> to include the execution log in the response.</p>
-        pub fn log_type(mut self, inp: crate::model::LogType) -> Self {
-            self.inner = self.inner.log_type(inp);
+        pub fn log_type(mut self, input: crate::model::LogType) -> Self {
+            self.inner = self.inner.log_type(input);
             self
         }
-        pub fn set_log_type(mut self, inp: std::option::Option<crate::model::LogType>) -> Self {
-            self.inner = self.inner.set_log_type(inp);
+        pub fn set_log_type(mut self, input: std::option::Option<crate::model::LogType>) -> Self {
+            self.inner = self.inner.set_log_type(input);
             self
         }
         /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context
         /// object.</p>
-        pub fn client_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_context(inp);
+        pub fn client_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_context(input);
             self
         }
-        pub fn set_client_context(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_context(inp);
+        pub fn set_client_context(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_context(input);
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-        pub fn payload(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.payload(inp);
+        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.payload(input);
             self
         }
-        pub fn set_payload(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_payload(inp);
+        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_payload(input);
             self
         }
         /// <p>Specify a version or alias to invoke a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
     }
@@ -2695,7 +2770,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::InvokeAsyncOutput,
             smithy_http::result::SdkError<crate::error::InvokeAsyncError>,
         >
@@ -2731,21 +2806,27 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-        pub fn invoke_args(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.invoke_args(inp);
+        pub fn invoke_args(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.invoke_args(input);
             self
         }
-        pub fn set_invoke_args(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.set_invoke_args(inp);
+        pub fn set_invoke_args(
+            mut self,
+            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.inner = self.inner.set_invoke_args(input);
             self
         }
     }
@@ -2764,7 +2845,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAliasesOutput,
             smithy_http::result::SdkError<crate::error::ListAliasesError>,
         >
@@ -2800,42 +2881,45 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Specify a function version to only list aliases that invoke that version.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_version(inp);
+        pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_version(input);
             self
         }
         pub fn set_function_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_function_version(inp);
+            self.inner = self.inner.set_function_version(input);
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Limit the number of aliases returned.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -2854,7 +2938,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListCodeSigningConfigsOutput,
             smithy_http::result::SdkError<crate::error::ListCodeSigningConfigsError>,
         >
@@ -2871,21 +2955,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Maximum number of items to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -2904,7 +2988,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListEventSourceMappingsOutput,
             smithy_http::result::SdkError<crate::error::ListEventSourceMappingsError>,
         >
@@ -2939,15 +3023,15 @@ pub mod fluent_builders {
         /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
         /// </li>
         /// </ul>
-        pub fn event_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_arn(inp);
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_arn(input);
             self
         }
         pub fn set_event_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_event_source_arn(inp);
+            self.inner = self.inner.set_event_source_arn(input);
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -2974,30 +3058,33 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of event source mappings to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3016,7 +3103,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListFunctionEventInvokeConfigsOutput,
             smithy_http::result::SdkError<crate::error::ListFunctionEventInvokeConfigsError>,
         >
@@ -3052,30 +3139,33 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of configurations to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3094,7 +3184,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListFunctionsOutput,
             smithy_http::result::SdkError<crate::error::ListFunctionsError>,
         >
@@ -3113,43 +3203,46 @@ pub mod fluent_builders {
         /// <p>For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code> filters
         /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
         /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
-        pub fn master_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_region(inp);
+        pub fn master_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_region(input);
             self
         }
-        pub fn set_master_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_master_region(inp);
+        pub fn set_master_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_master_region(input);
             self
         }
         /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
-        pub fn function_version(mut self, inp: crate::model::FunctionVersion) -> Self {
-            self.inner = self.inner.function_version(inp);
+        pub fn function_version(mut self, input: crate::model::FunctionVersion) -> Self {
+            self.inner = self.inner.function_version(input);
             self
         }
         pub fn set_function_version(
             mut self,
-            inp: std::option::Option<crate::model::FunctionVersion>,
+            input: std::option::Option<crate::model::FunctionVersion>,
         ) -> Self {
-            self.inner = self.inner.set_function_version(inp);
+            self.inner = self.inner.set_function_version(input);
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
         /// even if you set the number higher.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3168,7 +3261,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListFunctionsByCodeSigningConfigOutput,
             smithy_http::result::SdkError<crate::error::ListFunctionsByCodeSigningConfigError>,
         >
@@ -3185,30 +3278,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_signing_config_arn(input);
             self
         }
-        pub fn set_code_signing_config_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_code_signing_config_arn(inp);
+        pub fn set_code_signing_config_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_code_signing_config_arn(input);
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Maximum number of items to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3227,7 +3323,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListLayersOutput,
             smithy_http::result::SdkError<crate::error::ListLayersError>,
         >
@@ -3244,33 +3340,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
-        pub fn compatible_runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.inner = self.inner.compatible_runtime(inp);
+        pub fn compatible_runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.inner = self.inner.compatible_runtime(input);
             self
         }
         pub fn set_compatible_runtime(
             mut self,
-            inp: std::option::Option<crate::model::Runtime>,
+            input: std::option::Option<crate::model::Runtime>,
         ) -> Self {
-            self.inner = self.inner.set_compatible_runtime(inp);
+            self.inner = self.inner.set_compatible_runtime(input);
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of layers to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3289,7 +3385,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListLayerVersionsOutput,
             smithy_http::result::SdkError<crate::error::ListLayerVersionsError>,
         >
@@ -3306,42 +3402,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
-        pub fn compatible_runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.inner = self.inner.compatible_runtime(inp);
+        pub fn compatible_runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.inner = self.inner.compatible_runtime(input);
             self
         }
         pub fn set_compatible_runtime(
             mut self,
-            inp: std::option::Option<crate::model::Runtime>,
+            input: std::option::Option<crate::model::Runtime>,
         ) -> Self {
-            self.inner = self.inner.set_compatible_runtime(inp);
+            self.inner = self.inner.set_compatible_runtime(input);
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(input);
             self
         }
-        pub fn set_layer_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_layer_name(inp);
+        pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_layer_name(input);
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of versions to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3360,7 +3456,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListProvisionedConcurrencyConfigsOutput,
             smithy_http::result::SdkError<crate::error::ListProvisionedConcurrencyConfigsError>,
         >
@@ -3396,30 +3492,33 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Specify a number to limit the number of configurations returned.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3438,7 +3537,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsOutput,
             smithy_http::result::SdkError<crate::error::ListTagsError>,
         >
@@ -3455,12 +3554,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input);
             self
         }
-        pub fn set_resource(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource(inp);
+        pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource(input);
             self
         }
     }
@@ -3479,7 +3578,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListVersionsByFunctionOutput,
             smithy_http::result::SdkError<crate::error::ListVersionsByFunctionError>,
         >
@@ -3515,30 +3614,33 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of versions to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -3557,7 +3659,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PublishLayerVersionOutput,
             smithy_http::result::SdkError<crate::error::PublishLayerVersionError>,
         >
@@ -3574,33 +3676,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(input);
             self
         }
-        pub fn set_layer_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_layer_name(inp);
+        pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_layer_name(input);
             self
         }
         /// <p>The description of the version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The function layer archive.</p>
-        pub fn content(mut self, inp: crate::model::LayerVersionContentInput) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: crate::model::LayerVersionContentInput) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
         pub fn set_content(
             mut self,
-            inp: std::option::Option<crate::model::LayerVersionContentInput>,
+            input: std::option::Option<crate::model::LayerVersionContentInput>,
         ) -> Self {
-            self.inner = self.inner.set_content(inp);
+            self.inner = self.inner.set_content(input);
             self
         }
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
@@ -3611,9 +3713,9 @@ pub mod fluent_builders {
         }
         pub fn set_compatible_runtimes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         ) -> Self {
-            self.inner = self.inner.set_compatible_runtimes(inp);
+            self.inner = self.inner.set_compatible_runtimes(input);
             self
         }
         /// <p>The layer's software license. It can be any of the following:</p>
@@ -3630,12 +3732,12 @@ pub mod fluent_builders {
         /// <p>The full text of the license.</p>
         /// </li>
         /// </ul>
-        pub fn license_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_info(inp);
+        pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_info(input);
             self
         }
-        pub fn set_license_info(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_license_info(inp);
+        pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_license_info(input);
             self
         }
     }
@@ -3654,7 +3756,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PublishVersionOutput,
             smithy_http::result::SdkError<crate::error::PublishVersionError>,
         >
@@ -3690,42 +3792,45 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
         /// publishing a version if the function code has changed since you last updated it. You can get the hash for the
         /// version that you uploaded from the output of <a>UpdateFunctionCode</a>.</p>
-        pub fn code_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_sha256(inp);
+        pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_sha256(input);
             self
         }
-        pub fn set_code_sha256(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_code_sha256(inp);
+        pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_code_sha256(input);
             self
         }
         /// <p>A description for the version to override the description in the function configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
         /// publishing a version if the function configuration has changed since you last updated it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input);
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_revision_id(inp);
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
             self
         }
     }
@@ -3744,7 +3849,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutFunctionCodeSigningConfigOutput,
             smithy_http::result::SdkError<crate::error::PutFunctionCodeSigningConfigError>,
         >
@@ -3761,15 +3866,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_signing_config_arn(input);
             self
         }
         pub fn set_code_signing_config_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_code_signing_config_arn(inp);
+            self.inner = self.inner.set_code_signing_config_arn(input);
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -3792,12 +3897,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
     }
@@ -3816,7 +3924,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutFunctionConcurrencyOutput,
             smithy_http::result::SdkError<crate::error::PutFunctionConcurrencyError>,
         >
@@ -3852,21 +3960,27 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The number of simultaneous executions to reserve for the function.</p>
-        pub fn reserved_concurrent_executions(mut self, inp: i32) -> Self {
-            self.inner = self.inner.reserved_concurrent_executions(inp);
+        pub fn reserved_concurrent_executions(mut self, input: i32) -> Self {
+            self.inner = self.inner.reserved_concurrent_executions(input);
             self
         }
-        pub fn set_reserved_concurrent_executions(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_reserved_concurrent_executions(inp);
+        pub fn set_reserved_concurrent_executions(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_reserved_concurrent_executions(input);
             self
         }
     }
@@ -3885,7 +3999,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutFunctionEventInvokeConfigOutput,
             smithy_http::result::SdkError<crate::error::PutFunctionEventInvokeConfigError>,
         >
@@ -3921,39 +4035,42 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>A version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_retry_attempts(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_retry_attempts(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_maximum_retry_attempts(inp);
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_maximum_retry_attempts(input);
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-        pub fn maximum_event_age_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_event_age_in_seconds(inp);
+        pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_event_age_in_seconds(input);
             self
         }
-        pub fn set_maximum_event_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_maximum_event_age_in_seconds(inp);
+        pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_maximum_event_age_in_seconds(input);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
@@ -3978,15 +4095,15 @@ pub mod fluent_builders {
         /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
         /// </li>
         /// </ul>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.inner = self.inner.set_destination_config(inp);
+            self.inner = self.inner.set_destination_config(input);
             self
         }
     }
@@ -4005,7 +4122,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutProvisionedConcurrencyConfigOutput,
             smithy_http::result::SdkError<crate::error::PutProvisionedConcurrencyConfigError>,
         >
@@ -4041,33 +4158,36 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
         /// <p>The amount of provisioned concurrency to allocate for the version or alias.</p>
-        pub fn provisioned_concurrent_executions(mut self, inp: i32) -> Self {
-            self.inner = self.inner.provisioned_concurrent_executions(inp);
+        pub fn provisioned_concurrent_executions(mut self, input: i32) -> Self {
+            self.inner = self.inner.provisioned_concurrent_executions(input);
             self
         }
         pub fn set_provisioned_concurrent_executions(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_provisioned_concurrent_executions(inp);
+            self.inner = self.inner.set_provisioned_concurrent_executions(input);
             self
         }
     }
@@ -4086,7 +4206,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveLayerVersionPermissionOutput,
             smithy_http::result::SdkError<crate::error::RemoveLayerVersionPermissionError>,
         >
@@ -4103,40 +4223,40 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(input);
             self
         }
-        pub fn set_layer_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_layer_name(inp);
+        pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_layer_name(input);
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
-        pub fn set_version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.set_version_number(inp);
+        pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_version_number(input);
             self
         }
         /// <p>The identifier that was specified when the statement was added.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input);
             self
         }
-        pub fn set_statement_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_statement_id(inp);
+        pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_statement_id(input);
             self
         }
         /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
         /// policy that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input);
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_revision_id(inp);
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
             self
         }
     }
@@ -4155,7 +4275,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemovePermissionOutput,
             smithy_http::result::SdkError<crate::error::RemovePermissionError>,
         >
@@ -4191,40 +4311,43 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>Statement ID of the permission to remove.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input);
             self
         }
-        pub fn set_statement_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_statement_id(inp);
+        pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_statement_id(input);
             self
         }
         /// <p>Specify a version or alias to remove permissions from a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
         /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
         /// policy that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input);
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_revision_id(inp);
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
             self
         }
     }
@@ -4243,7 +4366,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -4260,12 +4383,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input);
             self
         }
-        pub fn set_resource(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource(inp);
+        pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource(input);
             self
         }
         /// <p>A list of tags to apply to the function.</p>
@@ -4279,11 +4402,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4302,7 +4425,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -4319,12 +4442,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input);
             self
         }
-        pub fn set_resource(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource(inp);
+        pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource(input);
             self
         }
         /// <p>A list of tag keys to remove from the function.</p>
@@ -4334,9 +4457,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -4355,7 +4478,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateAliasOutput,
             smithy_http::result::SdkError<crate::error::UpdateAliasError>,
         >
@@ -4391,65 +4514,68 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_version(inp);
+        pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_version(input);
             self
         }
         pub fn set_function_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_function_version(inp);
+            self.inner = self.inner.set_function_version(input);
             self
         }
         /// <p>A description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
         /// configuration</a> of the alias.</p>
-        pub fn routing_config(mut self, inp: crate::model::AliasRoutingConfiguration) -> Self {
-            self.inner = self.inner.routing_config(inp);
+        pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
+            self.inner = self.inner.routing_config(input);
             self
         }
         pub fn set_routing_config(
             mut self,
-            inp: std::option::Option<crate::model::AliasRoutingConfiguration>,
+            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_routing_config(inp);
+            self.inner = self.inner.set_routing_config(input);
             self
         }
         /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying
         /// an alias that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input);
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_revision_id(inp);
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
             self
         }
     }
@@ -4468,7 +4594,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateCodeSigningConfigOutput,
             smithy_http::result::SdkError<crate::error::UpdateCodeSigningConfigError>,
         >
@@ -4485,45 +4611,48 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_signing_config_arn(input);
             self
         }
-        pub fn set_code_signing_config_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_code_signing_config_arn(inp);
+        pub fn set_code_signing_config_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_code_signing_config_arn(input);
             self
         }
         /// <p>Descriptive name for this code signing configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Signing profiles for this code signing configuration.</p>
-        pub fn allowed_publishers(mut self, inp: crate::model::AllowedPublishers) -> Self {
-            self.inner = self.inner.allowed_publishers(inp);
+        pub fn allowed_publishers(mut self, input: crate::model::AllowedPublishers) -> Self {
+            self.inner = self.inner.allowed_publishers(input);
             self
         }
         pub fn set_allowed_publishers(
             mut self,
-            inp: std::option::Option<crate::model::AllowedPublishers>,
+            input: std::option::Option<crate::model::AllowedPublishers>,
         ) -> Self {
-            self.inner = self.inner.set_allowed_publishers(inp);
+            self.inner = self.inner.set_allowed_publishers(input);
             self
         }
         /// <p>The code signing policy.</p>
-        pub fn code_signing_policies(mut self, inp: crate::model::CodeSigningPolicies) -> Self {
-            self.inner = self.inner.code_signing_policies(inp);
+        pub fn code_signing_policies(mut self, input: crate::model::CodeSigningPolicies) -> Self {
+            self.inner = self.inner.code_signing_policies(input);
             self
         }
         pub fn set_code_signing_policies(
             mut self,
-            inp: std::option::Option<crate::model::CodeSigningPolicies>,
+            input: std::option::Option<crate::model::CodeSigningPolicies>,
         ) -> Self {
-            self.inner = self.inner.set_code_signing_policies(inp);
+            self.inner = self.inner.set_code_signing_policies(input);
             self
         }
     }
@@ -4542,7 +4671,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateEventSourceMappingOutput,
             smithy_http::result::SdkError<crate::error::UpdateEventSourceMappingError>,
         >
@@ -4559,12 +4688,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uuid(inp);
+        pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uuid(input);
             self
         }
-        pub fn set_uuid(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_uuid(inp);
+        pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_uuid(input);
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -4591,21 +4720,24 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>If true, the event source mapping is active. Set to false to pause polling and invocation.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
-        pub fn set_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enabled(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enabled(input);
             self
         }
         /// <p>The maximum number of items to retrieve in a single batch.</p>
@@ -4631,75 +4763,78 @@ pub mod fluent_builders {
         /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
         /// </li>
         /// </ul>
-        pub fn batch_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.batch_size(inp);
+        pub fn batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.batch_size(input);
             self
         }
-        pub fn set_batch_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_batch_size(inp);
+        pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_batch_size(input);
             self
         }
         /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds.</p>
-        pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_batching_window_in_seconds(inp);
+        pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_batching_window_in_seconds(input);
             self
         }
         pub fn set_maximum_batching_window_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_maximum_batching_window_in_seconds(inp);
+            self.inner = self.inner.set_maximum_batching_window_in_seconds(input);
             self
         }
         /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.inner = self.inner.set_destination_config(inp);
+            self.inner = self.inner.set_destination_config(input);
             self
         }
         /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1).</p>
-        pub fn maximum_record_age_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_record_age_in_seconds(inp);
+        pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_record_age_in_seconds(input);
             self
         }
-        pub fn set_maximum_record_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_maximum_record_age_in_seconds(inp);
+        pub fn set_maximum_record_age_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_maximum_record_age_in_seconds(input);
             self
         }
         /// <p>(Streams) If the function returns an error, split the batch in two and retry.</p>
-        pub fn bisect_batch_on_function_error(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bisect_batch_on_function_error(inp);
+        pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
+            self.inner = self.inner.bisect_batch_on_function_error(input);
             self
         }
         pub fn set_bisect_batch_on_function_error(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.inner = self.inner.set_bisect_batch_on_function_error(inp);
+            self.inner = self.inner.set_bisect_batch_on_function_error(input);
             self
         }
         /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_retry_attempts(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_retry_attempts(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_maximum_retry_attempts(inp);
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_maximum_retry_attempts(input);
             self
         }
         /// <p>(Streams) The number of batches to process from each shard concurrently.</p>
-        pub fn parallelization_factor(mut self, inp: i32) -> Self {
-            self.inner = self.inner.parallelization_factor(inp);
+        pub fn parallelization_factor(mut self, input: i32) -> Self {
+            self.inner = self.inner.parallelization_factor(input);
             self
         }
-        pub fn set_parallelization_factor(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_parallelization_factor(inp);
+        pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_parallelization_factor(input);
             self
         }
         /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
@@ -4712,18 +4847,18 @@ pub mod fluent_builders {
         }
         pub fn set_source_access_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
         ) -> Self {
-            self.inner = self.inner.set_source_access_configurations(inp);
+            self.inner = self.inner.set_source_access_configurations(input);
             self
         }
         /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-        pub fn tumbling_window_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.tumbling_window_in_seconds(inp);
+        pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.tumbling_window_in_seconds(input);
             self
         }
-        pub fn set_tumbling_window_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_tumbling_window_in_seconds(inp);
+        pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_tumbling_window_in_seconds(input);
             self
         }
         /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
@@ -4736,9 +4871,9 @@ pub mod fluent_builders {
         }
         pub fn set_function_response_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
         ) -> Self {
-            self.inner = self.inner.set_function_response_types(inp);
+            self.inner = self.inner.set_function_response_types(input);
             self
         }
     }
@@ -4757,7 +4892,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateFunctionCodeOutput,
             smithy_http::result::SdkError<crate::error::UpdateFunctionCodeError>,
         >
@@ -4793,91 +4928,94 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
         /// you.</p>
-        pub fn zip_file(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.zip_file(inp);
+        pub fn zip_file(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.zip_file(input);
             self
         }
-        pub fn set_zip_file(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_zip_file(inp);
+        pub fn set_zip_file(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_zip_file(input);
             self
         }
         /// <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(inp);
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(input);
             self
         }
-        pub fn set_s3_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_bucket(inp);
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_s3_bucket(input);
             self
         }
         /// <p>The Amazon S3 key of the deployment package.</p>
-        pub fn s3_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key(inp);
+        pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key(input);
             self
         }
-        pub fn set_s3_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_key(inp);
+        pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_s3_key(input);
             self
         }
         /// <p>For versioned objects, the version of the deployment package object to use.</p>
-        pub fn s3_object_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_object_version(inp);
+        pub fn s3_object_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_object_version(input);
             self
         }
         pub fn set_s3_object_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_s3_object_version(inp);
+            self.inner = self.inner.set_s3_object_version(input);
             self
         }
         /// <p>URI of a container image in the Amazon ECR registry.</p>
-        pub fn image_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_uri(inp);
+        pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_uri(input);
             self
         }
-        pub fn set_image_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_uri(inp);
+        pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_uri(input);
             self
         }
         /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as
         /// calling <a>PublishVersion</a> separately.</p>
-        pub fn publish(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publish(inp);
+        pub fn publish(mut self, input: bool) -> Self {
+            self.inner = self.inner.publish(input);
             self
         }
-        pub fn set_publish(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_publish(inp);
+        pub fn set_publish(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publish(input);
             self
         }
         /// <p>Set to true to validate the request parameters and access permissions without modifying the function
         /// code.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        pub fn set_dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_dry_run(inp);
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
             self
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
         /// function that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input);
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_revision_id(inp);
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
             self
         }
     }
@@ -4896,7 +5034,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateFunctionConfigurationOutput,
             smithy_http::result::SdkError<crate::error::UpdateFunctionConfigurationError>,
         >
@@ -4932,139 +5070,145 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input);
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role(inp);
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role(input);
             self
         }
         /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
         /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
         /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.handler(inp);
+        pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.handler(input);
             self
         }
-        pub fn set_handler(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_handler(inp);
+        pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_handler(input);
             self
         }
         /// <p>A description of the function.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
         /// maximum allowed value is 900 seconds.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_timeout(inp);
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout(input);
             self
         }
         /// <p>The amount of memory available to the function at runtime. Increasing the function's memory also increases its CPU
         /// allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.memory_size(inp);
+        pub fn memory_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.memory_size(input);
             self
         }
-        pub fn set_memory_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_memory_size(inp);
+        pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_memory_size(input);
             self
         }
         /// <p>For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
         /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
-        pub fn set_vpc_config(mut self, inp: std::option::Option<crate::model::VpcConfig>) -> Self {
-            self.inner = self.inner.set_vpc_config(inp);
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_config(input);
             self
         }
         /// <p>Environment variables that are accessible from function code during execution.</p>
-        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<crate::model::Environment>,
+            input: std::option::Option<crate::model::Environment>,
         ) -> Self {
-            self.inner = self.inner.set_environment(inp);
+            self.inner = self.inner.set_environment(input);
             self
         }
         /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.inner = self.inner.runtime(inp);
+        pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
+            self.inner = self.inner.runtime(input);
             self
         }
-        pub fn set_runtime(mut self, inp: std::option::Option<crate::model::Runtime>) -> Self {
-            self.inner = self.inner.set_runtime(inp);
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
+            self.inner = self.inner.set_runtime(input);
             self
         }
         /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
         /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.inner = self.inner.dead_letter_config(inp);
+        pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
+            self.inner = self.inner.dead_letter_config(input);
             self
         }
         pub fn set_dead_letter_config(
             mut self,
-            inp: std::option::Option<crate::model::DeadLetterConfig>,
+            input: std::option::Option<crate::model::DeadLetterConfig>,
         ) -> Self {
-            self.inner = self.inner.set_dead_letter_config(inp);
+            self.inner = self.inner.set_dead_letter_config(input);
             self
         }
         /// <p>The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
         /// variables. If it's not provided, AWS Lambda uses a default service key.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input);
             self
         }
-        pub fn set_kms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_arn(inp);
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_arn(input);
             self
         }
         /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
         /// X-Ray.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfig) -> Self {
-            self.inner = self.inner.tracing_config(inp);
+        pub fn tracing_config(mut self, input: crate::model::TracingConfig) -> Self {
+            self.inner = self.inner.tracing_config(input);
             self
         }
         pub fn set_tracing_config(
             mut self,
-            inp: std::option::Option<crate::model::TracingConfig>,
+            input: std::option::Option<crate::model::TracingConfig>,
         ) -> Self {
-            self.inner = self.inner.set_tracing_config(inp);
+            self.inner = self.inner.set_tracing_config(input);
             self
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
         /// function that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input);
             self
         }
-        pub fn set_revision_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_revision_id(inp);
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
@@ -5075,9 +5219,9 @@ pub mod fluent_builders {
         }
         pub fn set_layers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_layers(inp);
+            self.inner = self.inner.set_layers(input);
             self
         }
         /// <p>Connection settings for an Amazon EFS file system.</p>
@@ -5090,23 +5234,23 @@ pub mod fluent_builders {
         }
         pub fn set_file_system_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         ) -> Self {
-            self.inner = self.inner.set_file_system_configs(inp);
+            self.inner = self.inner.set_file_system_configs(input);
             self
         }
         /// <p>
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
         /// values</a> that override the values in the container image Dockerfile.</p>
-        pub fn image_config(mut self, inp: crate::model::ImageConfig) -> Self {
-            self.inner = self.inner.image_config(inp);
+        pub fn image_config(mut self, input: crate::model::ImageConfig) -> Self {
+            self.inner = self.inner.image_config(input);
             self
         }
         pub fn set_image_config(
             mut self,
-            inp: std::option::Option<crate::model::ImageConfig>,
+            input: std::option::Option<crate::model::ImageConfig>,
         ) -> Self {
-            self.inner = self.inner.set_image_config(inp);
+            self.inner = self.inner.set_image_config(input);
             self
         }
     }
@@ -5125,7 +5269,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateFunctionEventInvokeConfigOutput,
             smithy_http::result::SdkError<crate::error::UpdateFunctionEventInvokeConfigError>,
         >
@@ -5161,39 +5305,42 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input);
             self
         }
-        pub fn set_function_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_function_name(inp);
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
             self
         }
         /// <p>A version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input);
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_qualifier(inp);
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_retry_attempts(inp);
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_retry_attempts(input);
             self
         }
-        pub fn set_maximum_retry_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_maximum_retry_attempts(inp);
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_maximum_retry_attempts(input);
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-        pub fn maximum_event_age_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_event_age_in_seconds(inp);
+        pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_event_age_in_seconds(input);
             self
         }
-        pub fn set_maximum_event_age_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_maximum_event_age_in_seconds(inp);
+        pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_maximum_event_age_in_seconds(input);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
@@ -5218,15 +5365,15 @@ pub mod fluent_builders {
         /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
         /// </li>
         /// </ul>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(input);
             self
         }
         pub fn set_destination_config(
             mut self,
-            inp: std::option::Option<crate::model::DestinationConfig>,
+            input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
-            self.inner = self.inner.set_destination_config(inp);
+            self.inner = self.inner.set_destination_config(input);
             self
         }
     }

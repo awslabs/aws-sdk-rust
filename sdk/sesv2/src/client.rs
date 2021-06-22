@@ -361,7 +361,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateConfigurationSetOutput,
             smithy_http::result::SdkError<crate::error::CreateConfigurationSetError>,
         >
@@ -378,67 +378,67 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>An object that defines the open and click tracking options for emails that you send
         /// using the configuration set.</p>
-        pub fn tracking_options(mut self, inp: crate::model::TrackingOptions) -> Self {
-            self.inner = self.inner.tracking_options(inp);
+        pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
+            self.inner = self.inner.tracking_options(input);
             self
         }
         pub fn set_tracking_options(
             mut self,
-            inp: std::option::Option<crate::model::TrackingOptions>,
+            input: std::option::Option<crate::model::TrackingOptions>,
         ) -> Self {
-            self.inner = self.inner.set_tracking_options(inp);
+            self.inner = self.inner.set_tracking_options(input);
             self
         }
         /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
         /// using the configuration set.</p>
-        pub fn delivery_options(mut self, inp: crate::model::DeliveryOptions) -> Self {
-            self.inner = self.inner.delivery_options(inp);
+        pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
+            self.inner = self.inner.delivery_options(input);
             self
         }
         pub fn set_delivery_options(
             mut self,
-            inp: std::option::Option<crate::model::DeliveryOptions>,
+            input: std::option::Option<crate::model::DeliveryOptions>,
         ) -> Self {
-            self.inner = self.inner.set_delivery_options(inp);
+            self.inner = self.inner.set_delivery_options(input);
             self
         }
         /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
         /// that you send that use the configuration set.</p>
-        pub fn reputation_options(mut self, inp: crate::model::ReputationOptions) -> Self {
-            self.inner = self.inner.reputation_options(inp);
+        pub fn reputation_options(mut self, input: crate::model::ReputationOptions) -> Self {
+            self.inner = self.inner.reputation_options(input);
             self
         }
         pub fn set_reputation_options(
             mut self,
-            inp: std::option::Option<crate::model::ReputationOptions>,
+            input: std::option::Option<crate::model::ReputationOptions>,
         ) -> Self {
-            self.inner = self.inner.set_reputation_options(inp);
+            self.inner = self.inner.set_reputation_options(input);
             self
         }
         /// <p>An object that defines whether or not Amazon SES can send email that you send using the
         /// configuration set.</p>
-        pub fn sending_options(mut self, inp: crate::model::SendingOptions) -> Self {
-            self.inner = self.inner.sending_options(inp);
+        pub fn sending_options(mut self, input: crate::model::SendingOptions) -> Self {
+            self.inner = self.inner.sending_options(input);
             self
         }
         pub fn set_sending_options(
             mut self,
-            inp: std::option::Option<crate::model::SendingOptions>,
+            input: std::option::Option<crate::model::SendingOptions>,
         ) -> Self {
-            self.inner = self.inner.set_sending_options(inp);
+            self.inner = self.inner.set_sending_options(input);
             self
         }
         /// <p>An array of objects that define the tags (keys and values) that you want to associate
@@ -449,22 +449,22 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>An object that contains information about the suppression list preferences for your
         /// account.</p>
-        pub fn suppression_options(mut self, inp: crate::model::SuppressionOptions) -> Self {
-            self.inner = self.inner.suppression_options(inp);
+        pub fn suppression_options(mut self, input: crate::model::SuppressionOptions) -> Self {
+            self.inner = self.inner.suppression_options(input);
             self
         }
         pub fn set_suppression_options(
             mut self,
-            inp: std::option::Option<crate::model::SuppressionOptions>,
+            input: std::option::Option<crate::model::SuppressionOptions>,
         ) -> Self {
-            self.inner = self.inner.set_suppression_options(inp);
+            self.inner = self.inner.set_suppression_options(input);
             self
         }
     }
@@ -483,7 +483,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateConfigurationSetEventDestinationOutput,
             smithy_http::result::SdkError<
                 crate::error::CreateConfigurationSetEventDestinationError,
@@ -502,36 +502,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set that you want to add an event destination to.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>A name that identifies the event destination within the configuration set.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input);
             self
         }
         pub fn set_event_destination_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_event_destination_name(inp);
+            self.inner = self.inner.set_event_destination_name(input);
             self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.inner = self.inner.event_destination(input);
             self
         }
         pub fn set_event_destination(
             mut self,
-            inp: std::option::Option<crate::model::EventDestinationDefinition>,
+            input: std::option::Option<crate::model::EventDestinationDefinition>,
         ) -> Self {
-            self.inner = self.inner.set_event_destination(inp);
+            self.inner = self.inner.set_event_destination(input);
             self
         }
     }
@@ -550,7 +556,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateContactOutput,
             smithy_http::result::SdkError<crate::error::CreateContactError>,
         >
@@ -567,21 +573,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list to which the contact should be added.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
         /// <p>The contact's email address.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input);
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_email_address(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
             self
         }
         /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
@@ -591,31 +603,31 @@ pub mod fluent_builders {
         }
         pub fn set_topic_preferences(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         ) -> Self {
-            self.inner = self.inner.set_topic_preferences(inp);
+            self.inner = self.inner.set_topic_preferences(input);
             self
         }
         /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
         /// topics.</p>
-        pub fn unsubscribe_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.unsubscribe_all(inp);
+        pub fn unsubscribe_all(mut self, input: bool) -> Self {
+            self.inner = self.inner.unsubscribe_all(input);
             self
         }
-        pub fn set_unsubscribe_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_unsubscribe_all(inp);
+        pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_unsubscribe_all(input);
             self
         }
         /// <p>The attribute data attached to a contact.</p>
-        pub fn attributes_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attributes_data(inp);
+        pub fn attributes_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attributes_data(input);
             self
         }
         pub fn set_attributes_data(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_attributes_data(inp);
+            self.inner = self.inner.set_attributes_data(input);
             self
         }
     }
@@ -634,7 +646,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateContactListOutput,
             smithy_http::result::SdkError<crate::error::CreateContactListError>,
         >
@@ -651,15 +663,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
         pub fn set_contact_list_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
         /// <p>An interest group, theme, or label within a list. A contact list can have multiple
@@ -670,18 +682,18 @@ pub mod fluent_builders {
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Topic>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
         ) -> Self {
-            self.inner = self.inner.set_topics(inp);
+            self.inner = self.inner.set_topics(input);
             self
         }
         /// <p>A description of what the contact list is about.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The tags associated with a contact list.</p>
@@ -691,9 +703,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -712,7 +724,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateCustomVerificationEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::CreateCustomVerificationEmailTemplateError>,
         >
@@ -729,77 +741,80 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input);
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_from_email_address(inp);
+            self.inner = self.inner.set_from_email_address(input);
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_subject(inp);
+        pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_subject(input);
             self
         }
         pub fn set_template_subject(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_template_subject(inp);
+            self.inner = self.inner.set_template_subject(input);
             self
         }
         /// <p>The content of the custom verification email. The total size of the email must be less
         /// than 10 MB. The message body may contain HTML, with some limitations. For more
         /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
         /// Developer Guide</i>.</p>
-        pub fn template_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_content(inp);
+        pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_content(input);
             self
         }
         pub fn set_template_content(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_template_content(inp);
+            self.inner = self.inner.set_template_content(input);
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.success_redirection_url(inp);
+        pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.success_redirection_url(input);
             self
         }
         pub fn set_success_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_success_redirection_url(inp);
+            self.inner = self.inner.set_success_redirection_url(input);
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.failure_redirection_url(inp);
+        pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.failure_redirection_url(input);
             self
         }
         pub fn set_failure_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_failure_redirection_url(inp);
+            self.inner = self.inner.set_failure_redirection_url(input);
             self
         }
     }
@@ -818,7 +833,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDedicatedIpPoolOutput,
             smithy_http::result::SdkError<crate::error::CreateDedicatedIpPoolError>,
         >
@@ -835,12 +850,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dedicated IP pool.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pool_name(inp);
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_name(input);
             self
         }
-        pub fn set_pool_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pool_name(inp);
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pool_name(input);
             self
         }
         /// <p>An object that defines the tags (keys and values) that you want to associate with the
@@ -851,9 +866,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -872,7 +887,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDeliverabilityTestReportOutput,
             smithy_http::result::SdkError<crate::error::CreateDeliverabilityTestReportError>,
         >
@@ -890,33 +905,36 @@ pub mod fluent_builders {
         }
         /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
         /// results.</p>
-        pub fn report_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_name(inp);
+        pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_name(input);
             self
         }
-        pub fn set_report_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_report_name(inp);
+        pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_report_name(input);
             self
         }
         /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input);
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_from_email_address(inp);
+            self.inner = self.inner.set_from_email_address(input);
             self
         }
         /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-        pub fn content(mut self, inp: crate::model::EmailContent) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: crate::model::EmailContent) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<crate::model::EmailContent>) -> Self {
-            self.inner = self.inner.set_content(inp);
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<crate::model::EmailContent>,
+        ) -> Self {
+            self.inner = self.inner.set_content(input);
             self
         }
         /// <p>An array of objects that define the tags (keys and values) that you want to associate
@@ -927,9 +945,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -948,7 +966,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateEmailIdentityOutput,
             smithy_http::result::SdkError<crate::error::CreateEmailIdentityError>,
         >
@@ -965,12 +983,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address or domain that you want to verify.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p>An array of objects that define the tags (keys and values) that you want to associate
@@ -981,9 +1002,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
@@ -992,29 +1013,32 @@ pub mod fluent_builders {
         /// DKIM</a>.</p>
         /// <p>You can only specify this object if the email identity is a domain, as opposed to an
         /// address.</p>
-        pub fn dkim_signing_attributes(mut self, inp: crate::model::DkimSigningAttributes) -> Self {
-            self.inner = self.inner.dkim_signing_attributes(inp);
+        pub fn dkim_signing_attributes(
+            mut self,
+            input: crate::model::DkimSigningAttributes,
+        ) -> Self {
+            self.inner = self.inner.dkim_signing_attributes(input);
             self
         }
         pub fn set_dkim_signing_attributes(
             mut self,
-            inp: std::option::Option<crate::model::DkimSigningAttributes>,
+            input: std::option::Option<crate::model::DkimSigningAttributes>,
         ) -> Self {
-            self.inner = self.inner.set_dkim_signing_attributes(inp);
+            self.inner = self.inner.set_dkim_signing_attributes(input);
             self
         }
         /// <p>The configuration set to use by default when sending from this identity.
         /// Note that any configuration set defined in the email sending request takes precedence.
         /// </p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
     }
@@ -1033,7 +1057,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateEmailIdentityPolicyOutput,
             smithy_http::result::SdkError<crate::error::CreateEmailIdentityPolicyError>,
         >
@@ -1050,34 +1074,37 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity for which you want to create a policy.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p>The name of the policy.</p>
         /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
         /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
         /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input);
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy(inp);
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy(input);
             self
         }
     }
@@ -1096,7 +1123,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::CreateEmailTemplateError>,
         >
@@ -1113,25 +1140,28 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template you want to create.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
         /// <p>The content of the email template, composed of a subject line, an HTML part, and a
         /// text-only part.</p>
-        pub fn template_content(mut self, inp: crate::model::EmailTemplateContent) -> Self {
-            self.inner = self.inner.template_content(inp);
+        pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
+            self.inner = self.inner.template_content(input);
             self
         }
         pub fn set_template_content(
             mut self,
-            inp: std::option::Option<crate::model::EmailTemplateContent>,
+            input: std::option::Option<crate::model::EmailTemplateContent>,
         ) -> Self {
-            self.inner = self.inner.set_template_content(inp);
+            self.inner = self.inner.set_template_content(input);
             self
         }
     }
@@ -1150,7 +1180,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateImportJobOutput,
             smithy_http::result::SdkError<crate::error::CreateImportJobError>,
         >
@@ -1167,27 +1197,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The destination for the import job.</p>
-        pub fn import_destination(mut self, inp: crate::model::ImportDestination) -> Self {
-            self.inner = self.inner.import_destination(inp);
+        pub fn import_destination(mut self, input: crate::model::ImportDestination) -> Self {
+            self.inner = self.inner.import_destination(input);
             self
         }
         pub fn set_import_destination(
             mut self,
-            inp: std::option::Option<crate::model::ImportDestination>,
+            input: std::option::Option<crate::model::ImportDestination>,
         ) -> Self {
-            self.inner = self.inner.set_import_destination(inp);
+            self.inner = self.inner.set_import_destination(input);
             self
         }
         /// <p>The data source for the import job.</p>
-        pub fn import_data_source(mut self, inp: crate::model::ImportDataSource) -> Self {
-            self.inner = self.inner.import_data_source(inp);
+        pub fn import_data_source(mut self, input: crate::model::ImportDataSource) -> Self {
+            self.inner = self.inner.import_data_source(input);
             self
         }
         pub fn set_import_data_source(
             mut self,
-            inp: std::option::Option<crate::model::ImportDataSource>,
+            input: std::option::Option<crate::model::ImportDataSource>,
         ) -> Self {
-            self.inner = self.inner.set_import_data_source(inp);
+            self.inner = self.inner.set_import_data_source(input);
             self
         }
     }
@@ -1206,7 +1236,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteConfigurationSetOutput,
             smithy_http::result::SdkError<crate::error::DeleteConfigurationSetError>,
         >
@@ -1223,12 +1253,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set that you want to delete.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
     }
@@ -1247,7 +1280,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteConfigurationSetEventDestinationOutput,
             smithy_http::result::SdkError<
                 crate::error::DeleteConfigurationSetEventDestinationError,
@@ -1267,21 +1300,27 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that contains the event destination that you want to
         /// delete.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>The name of the event destination that you want to delete.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input);
             self
         }
-        pub fn set_event_destination_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_event_destination_name(inp);
+        pub fn set_event_destination_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_destination_name(input);
             self
         }
     }
@@ -1300,7 +1339,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteContactOutput,
             smithy_http::result::SdkError<crate::error::DeleteContactError>,
         >
@@ -1317,21 +1356,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list from which the contact should be removed.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
         /// <p>The contact's email address.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input);
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_address(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
             self
         }
     }
@@ -1350,7 +1395,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteContactListOutput,
             smithy_http::result::SdkError<crate::error::DeleteContactListError>,
         >
@@ -1367,12 +1412,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
     }
@@ -1391,7 +1439,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteCustomVerificationEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::DeleteCustomVerificationEmailTemplateError>,
         >
@@ -1408,12 +1456,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to delete.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
     }
@@ -1432,7 +1483,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDedicatedIpPoolOutput,
             smithy_http::result::SdkError<crate::error::DeleteDedicatedIpPoolError>,
         >
@@ -1449,12 +1500,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dedicated IP pool that you want to delete.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pool_name(inp);
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_name(input);
             self
         }
-        pub fn set_pool_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_pool_name(inp);
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pool_name(input);
             self
         }
     }
@@ -1473,7 +1524,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteEmailIdentityOutput,
             smithy_http::result::SdkError<crate::error::DeleteEmailIdentityError>,
         >
@@ -1490,12 +1541,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity (that is, the email address or domain) that you want to delete.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
     }
@@ -1514,7 +1568,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteEmailIdentityPolicyOutput,
             smithy_http::result::SdkError<crate::error::DeleteEmailIdentityPolicyError>,
         >
@@ -1531,23 +1585,26 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity for which you want to delete a policy.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p>The name of the policy.</p>
         /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
         /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
     }
@@ -1566,7 +1623,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::DeleteEmailTemplateError>,
         >
@@ -1583,12 +1640,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template to be deleted.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
     }
@@ -1607,7 +1667,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteSuppressedDestinationOutput,
             smithy_http::result::SdkError<crate::error::DeleteSuppressedDestinationError>,
         >
@@ -1624,12 +1684,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The suppressed email destination to remove from the account suppression list.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input);
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_address(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
             self
         }
     }
@@ -1648,7 +1711,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAccountOutput,
             smithy_http::result::SdkError<crate::error::GetAccountError>,
         >
@@ -1680,7 +1743,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetBlacklistReportsOutput,
             smithy_http::result::SdkError<crate::error::GetBlacklistReportsError>,
         >
@@ -1705,9 +1768,9 @@ pub mod fluent_builders {
         }
         pub fn set_blacklist_item_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_blacklist_item_names(inp);
+            self.inner = self.inner.set_blacklist_item_names(input);
             self
         }
     }
@@ -1726,7 +1789,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetConfigurationSetOutput,
             smithy_http::result::SdkError<crate::error::GetConfigurationSetError>,
         >
@@ -1744,12 +1807,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that you want to obtain more information
         /// about.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
     }
@@ -1768,7 +1834,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetConfigurationSetEventDestinationsOutput,
             smithy_http::result::SdkError<crate::error::GetConfigurationSetEventDestinationsError>,
         >
@@ -1785,12 +1851,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set that contains the event destination.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
     }
@@ -1809,7 +1878,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetContactOutput,
             smithy_http::result::SdkError<crate::error::GetContactError>,
         >
@@ -1826,21 +1895,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list to which the contact belongs.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
         /// <p>The contact's email addres.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input);
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_address(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
             self
         }
     }
@@ -1859,7 +1934,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetContactListOutput,
             smithy_http::result::SdkError<crate::error::GetContactListError>,
         >
@@ -1876,12 +1951,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
     }
@@ -1900,7 +1978,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetCustomVerificationEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::GetCustomVerificationEmailTemplateError>,
         >
@@ -1917,12 +1995,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to retrieve.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
     }
@@ -1941,7 +2022,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDedicatedIpOutput,
             smithy_http::result::SdkError<crate::error::GetDedicatedIpError>,
         >
@@ -1959,12 +2040,12 @@ pub mod fluent_builders {
         }
         /// <p>The IP address that you want to obtain more information about. The value you specify
         /// has to be a dedicated IP address that's assocaited with your AWS account.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip(inp);
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip(input);
             self
         }
-        pub fn set_ip(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_ip(inp);
+        pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ip(input);
             self
         }
     }
@@ -1983,7 +2064,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDedicatedIpsOutput,
             smithy_http::result::SdkError<crate::error::GetDedicatedIpsError>,
         >
@@ -2000,34 +2081,34 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pool_name(inp);
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_name(input);
             self
         }
-        pub fn set_pool_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pool_name(inp);
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pool_name(input);
             self
         }
         /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
         /// position of the dedicated IP pool in the list of IP pools.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
         /// If the number of results is larger than the number you specified in this parameter, then
         /// the response includes a <code>NextToken</code> element, which you can use to obtain
         /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -2046,7 +2127,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDeliverabilityDashboardOptionsOutput,
             smithy_http::result::SdkError<crate::error::GetDeliverabilityDashboardOptionsError>,
         >
@@ -2078,7 +2159,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDeliverabilityTestReportOutput,
             smithy_http::result::SdkError<crate::error::GetDeliverabilityTestReportError>,
         >
@@ -2095,12 +2176,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input);
             self
         }
-        pub fn set_report_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_report_id(inp);
+        pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_report_id(input);
             self
         }
     }
@@ -2119,7 +2200,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDomainDeliverabilityCampaignOutput,
             smithy_http::result::SdkError<crate::error::GetDomainDeliverabilityCampaignError>,
         >
@@ -2137,12 +2218,12 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
         /// and assigns this identifier to a campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input);
             self
         }
-        pub fn set_campaign_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_campaign_id(inp);
+        pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_campaign_id(input);
             self
         }
     }
@@ -2161,7 +2242,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDomainStatisticsReportOutput,
             smithy_http::result::SdkError<crate::error::GetDomainStatisticsReportError>,
         >
@@ -2178,33 +2259,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain that you want to obtain deliverability metrics for.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_domain(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
         /// for.</p>
-        pub fn start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_start_date(inp);
+        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_start_date(input);
             self
         }
         /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
         /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
         /// the <code>StartDate</code>.</p>
-        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_end_date(inp);
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_date(input);
             self
         }
     }
@@ -2223,7 +2304,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetEmailIdentityOutput,
             smithy_http::result::SdkError<crate::error::GetEmailIdentityError>,
         >
@@ -2240,12 +2321,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity that you want to retrieve details for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
     }
@@ -2264,7 +2348,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetEmailIdentityPoliciesOutput,
             smithy_http::result::SdkError<crate::error::GetEmailIdentityPoliciesError>,
         >
@@ -2281,12 +2365,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity that you want to retrieve policies for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
     }
@@ -2305,7 +2392,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::GetEmailTemplateError>,
         >
@@ -2322,12 +2409,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template you want to retrieve.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
     }
@@ -2346,7 +2436,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetImportJobOutput,
             smithy_http::result::SdkError<crate::error::GetImportJobError>,
         >
@@ -2363,12 +2453,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the import job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input);
             self
         }
-        pub fn set_job_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_job_id(inp);
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
     }
@@ -2387,7 +2477,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSuppressedDestinationOutput,
             smithy_http::result::SdkError<crate::error::GetSuppressedDestinationError>,
         >
@@ -2404,12 +2494,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address that's on the account suppression list.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input);
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_address(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
             self
         }
     }
@@ -2428,7 +2521,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListConfigurationSetsOutput,
             smithy_http::result::SdkError<crate::error::ListConfigurationSetsError>,
         >
@@ -2446,24 +2539,24 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
         /// indicate the position in the list of configuration sets.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
         /// If the number of results is larger than the number you specified in this parameter, then
         /// the response includes a <code>NextToken</code> element, which you can use to obtain
         /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -2482,7 +2575,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListContactListsOutput,
             smithy_http::result::SdkError<crate::error::ListContactListsError>,
         >
@@ -2503,24 +2596,24 @@ pub mod fluent_builders {
         /// <code>NextToken</code> element is sent in the response. Use the
         /// <code>NextToken</code> value in subsequent requests to retrieve additional
         /// lists.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
         /// <p>A string token indicating that there might be additional contact lists available to be
         /// listed. Use the token provided in the Response to use in the subsequent call to
         /// ListContactLists with the same parameters to retrieve the next page of contact
         /// lists.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2539,7 +2632,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListContactsOutput,
             smithy_http::result::SdkError<crate::error::ListContactsError>,
         >
@@ -2556,24 +2649,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
         /// <p>A filter that can be applied to a list of contacts.</p>
-        pub fn filter(mut self, inp: crate::model::ListContactsFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::ListContactsFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::ListContactsFilter>,
+            input: std::option::Option<crate::model::ListContactsFilter>,
         ) -> Self {
-            self.inner = self.inner.set_filter(inp);
+            self.inner = self.inner.set_filter(input);
             self
         }
         /// <p>The number of contacts that may be returned at once, which is dependent on if there
@@ -2582,23 +2678,23 @@ pub mod fluent_builders {
         /// <code>NextToken</code> element is sent in the response. Use the
         /// <code>NextToken</code> value in subsequent requests to retrieve additional
         /// contacts.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
         /// <p>A string token indicating that there might be additional contacts available to be
         /// listed. Use the token provided in the Response to use in the subsequent call to
         /// ListContacts with the same parameters to retrieve the next page of contacts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2617,7 +2713,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListCustomVerificationEmailTemplatesOutput,
             smithy_http::result::SdkError<crate::error::ListCustomVerificationEmailTemplatesError>,
         >
@@ -2636,12 +2732,12 @@ pub mod fluent_builders {
         /// <p>A token returned from a previous call to
         /// <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the
         /// list of custom verification email templates.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of results to show in a single call to
@@ -2650,12 +2746,12 @@ pub mod fluent_builders {
         /// <code>NextToken</code> element, which you can use to obtain additional
         /// results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -2674,7 +2770,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListDedicatedIpPoolsOutput,
             smithy_http::result::SdkError<crate::error::ListDedicatedIpPoolsError>,
         >
@@ -2692,24 +2788,24 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
         /// the position in the list of dedicated IP pools.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
         /// If the number of results is larger than the number you specified in this parameter, then
         /// the response includes a <code>NextToken</code> element, which you can use to obtain
         /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -2728,7 +2824,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListDeliverabilityTestReportsOutput,
             smithy_http::result::SdkError<crate::error::ListDeliverabilityTestReportsError>,
         >
@@ -2746,12 +2842,12 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
         /// indicate the position in the list of predictive inbox placement tests.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of results to show in a single call to
@@ -2760,12 +2856,12 @@ pub mod fluent_builders {
         /// <code>NextToken</code> element, which you can use to obtain additional
         /// results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -2784,7 +2880,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListDomainDeliverabilityCampaignsOutput,
             smithy_http::result::SdkError<crate::error::ListDomainDeliverabilityCampaignsError>,
         >
@@ -2802,43 +2898,46 @@ pub mod fluent_builders {
         }
         /// <p>The first day, in Unix time format, that you want to obtain deliverability data
         /// for.</p>
-        pub fn start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_start_date(inp);
+        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_start_date(input);
             self
         }
         /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
         /// This value has to be less than or equal to 30 days after the value of the
         /// <code>StartDate</code> parameter.</p>
-        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_end_date(inp);
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_date(input);
             self
         }
         /// <p>The domain to obtain deliverability data for.</p>
-        pub fn subscribed_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscribed_domain(inp);
+        pub fn subscribed_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscribed_domain(input);
             self
         }
-        pub fn set_subscribed_domain(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_subscribed_domain(inp);
+        pub fn set_subscribed_domain(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_subscribed_domain(input);
             self
         }
         /// <p>A token that’s returned from a previous call to the
         /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
         /// position of a campaign in the list of campaigns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to include in response to a single call to the
@@ -2846,12 +2945,12 @@ pub mod fluent_builders {
         /// is larger than the number that you specify in this parameter, the response includes a
         /// <code>NextToken</code> element, which you can use to obtain additional
         /// results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -2870,7 +2969,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListEmailIdentitiesOutput,
             smithy_http::result::SdkError<crate::error::ListEmailIdentitiesError>,
         >
@@ -2888,12 +2987,12 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
         /// the position in the list of identities.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
@@ -2901,12 +3000,12 @@ pub mod fluent_builders {
         /// the response includes a <code>NextToken</code> element, which you can use to obtain
         /// additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -2925,7 +3024,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListEmailTemplatesOutput,
             smithy_http::result::SdkError<crate::error::ListEmailTemplatesError>,
         >
@@ -2943,24 +3042,24 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate
         /// the position in the list of email templates.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
         /// results is larger than the number you specified in this parameter, then the response
         /// includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -2979,7 +3078,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListImportJobsOutput,
             smithy_http::result::SdkError<crate::error::ListImportJobsError>,
         >
@@ -2997,26 +3096,29 @@ pub mod fluent_builders {
         }
         /// <p>The destination of the import job, which can be used to list import jobs that have a
         /// certain <code>ImportDestinationType</code>.</p>
-        pub fn import_destination_type(mut self, inp: crate::model::ImportDestinationType) -> Self {
-            self.inner = self.inner.import_destination_type(inp);
+        pub fn import_destination_type(
+            mut self,
+            input: crate::model::ImportDestinationType,
+        ) -> Self {
+            self.inner = self.inner.import_destination_type(input);
             self
         }
         pub fn set_import_destination_type(
             mut self,
-            inp: std::option::Option<crate::model::ImportDestinationType>,
+            input: std::option::Option<crate::model::ImportDestinationType>,
         ) -> Self {
-            self.inner = self.inner.set_import_destination_type(inp);
+            self.inner = self.inner.set_import_destination_type(input);
             self
         }
         /// <p>A string token indicating that there might be additional import jobs available to be
         /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
         /// same parameters to retrieve the next page of import jobs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate
@@ -3024,12 +3126,12 @@ pub mod fluent_builders {
         /// <code>NextToken</code> element is sent in the response. Use the
         /// <code>NextToken</code> value in subsequent requests to retrieve additional
         /// addresses.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -3048,7 +3150,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSuppressedDestinationsOutput,
             smithy_http::result::SdkError<crate::error::ListSuppressedDestinationsError>,
         >
@@ -3071,41 +3173,41 @@ pub mod fluent_builders {
         }
         pub fn set_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
         ) -> Self {
-            self.inner = self.inner.set_reasons(inp);
+            self.inner = self.inner.set_reasons(input);
             self
         }
         /// <p>Used to filter the list of suppressed email destinations so that it only includes
         /// addresses that were added to the list after a specific date. The date that you specify
         /// should be in Unix time format.</p>
-        pub fn start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_start_date(inp);
+        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_start_date(input);
             self
         }
         /// <p>Used to filter the list of suppressed email destinations so that it only includes
         /// addresses that were added to the list before a specific date. The date that you specify
         /// should be in Unix time format.</p>
-        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_end_date(inp);
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_date(input);
             self
         }
         /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to
         /// indicate the position in the list of suppressed email addresses.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of results to show in a single call to
@@ -3113,12 +3215,12 @@ pub mod fluent_builders {
         /// number you specified in this parameter, then the response includes a
         /// <code>NextToken</code> element, which you can use to obtain additional
         /// results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_page_size(inp);
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
             self
         }
     }
@@ -3137,7 +3239,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         >
@@ -3155,12 +3257,12 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
         /// information for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -3179,7 +3281,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutAccountDedicatedIpWarmupAttributesOutput,
             smithy_http::result::SdkError<crate::error::PutAccountDedicatedIpWarmupAttributesError>,
         >
@@ -3199,12 +3301,12 @@ pub mod fluent_builders {
         /// associated with your Amazon SES account in the current AWS Region. Set to <code>true</code>
         /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
         /// it.</p>
-        pub fn auto_warmup_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_warmup_enabled(inp);
+        pub fn auto_warmup_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_warmup_enabled(input);
             self
         }
-        pub fn set_auto_warmup_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_auto_warmup_enabled(inp);
+        pub fn set_auto_warmup_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_warmup_enabled(input);
             self
         }
     }
@@ -3223,7 +3325,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutAccountDetailsOutput,
             smithy_http::result::SdkError<crate::error::PutAccountDetailsError>,
         >
@@ -3240,46 +3342,46 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of email your account will send.</p>
-        pub fn mail_type(mut self, inp: crate::model::MailType) -> Self {
-            self.inner = self.inner.mail_type(inp);
+        pub fn mail_type(mut self, input: crate::model::MailType) -> Self {
+            self.inner = self.inner.mail_type(input);
             self
         }
-        pub fn set_mail_type(mut self, inp: std::option::Option<crate::model::MailType>) -> Self {
-            self.inner = self.inner.set_mail_type(inp);
+        pub fn set_mail_type(mut self, input: std::option::Option<crate::model::MailType>) -> Self {
+            self.inner = self.inner.set_mail_type(input);
             self
         }
         /// <p>The URL of your website. This information helps us better understand the type of
         /// content that you plan to send.</p>
-        pub fn website_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_url(inp);
+        pub fn website_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.website_url(input);
             self
         }
-        pub fn set_website_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_website_url(inp);
+        pub fn set_website_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_website_url(input);
             self
         }
         /// <p>The language you would prefer to be contacted with.</p>
-        pub fn contact_language(mut self, inp: crate::model::ContactLanguage) -> Self {
-            self.inner = self.inner.contact_language(inp);
+        pub fn contact_language(mut self, input: crate::model::ContactLanguage) -> Self {
+            self.inner = self.inner.contact_language(input);
             self
         }
         pub fn set_contact_language(
             mut self,
-            inp: std::option::Option<crate::model::ContactLanguage>,
+            input: std::option::Option<crate::model::ContactLanguage>,
         ) -> Self {
-            self.inner = self.inner.set_contact_language(inp);
+            self.inner = self.inner.set_contact_language(input);
             self
         }
         /// <p>A description of the types of email that you plan to send.</p>
-        pub fn use_case_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.use_case_description(inp);
+        pub fn use_case_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.use_case_description(input);
             self
         }
         pub fn set_use_case_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_use_case_description(inp);
+            self.inner = self.inner.set_use_case_description(input);
             self
         }
         /// <p>Additional email addresses that you would like to be notified regarding Amazon SES
@@ -3293,9 +3395,9 @@ pub mod fluent_builders {
         }
         pub fn set_additional_contact_email_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_additional_contact_email_addresses(inp);
+            self.inner = self.inner.set_additional_contact_email_addresses(input);
             self
         }
         /// <p>Indicates whether or not your account should have production access in the current
@@ -3308,12 +3410,12 @@ pub mod fluent_builders {
         /// <p>If the value is <code>true</code>, then your account has production access. When your
         /// account has production access, you can send email to any address. The sending quota and
         /// maximum sending rate for your account vary based on your specific use case.</p>
-        pub fn production_access_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.production_access_enabled(inp);
+        pub fn production_access_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.production_access_enabled(input);
             self
         }
-        pub fn set_production_access_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_production_access_enabled(inp);
+        pub fn set_production_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_production_access_enabled(input);
             self
         }
     }
@@ -3332,7 +3434,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutAccountSendingAttributesOutput,
             smithy_http::result::SdkError<crate::error::PutAccountSendingAttributesError>,
         >
@@ -3354,12 +3456,12 @@ pub mod fluent_builders {
         /// <p>If AWS paused your account's ability to send email, you can't use this operation
         /// to resume your account's ability to send email.</p>
         /// </note>
-        pub fn sending_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sending_enabled(inp);
+        pub fn sending_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.sending_enabled(input);
             self
         }
-        pub fn set_sending_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_sending_enabled(inp);
+        pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_sending_enabled(input);
             self
         }
     }
@@ -3378,7 +3480,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutAccountSuppressionAttributesOutput,
             smithy_http::result::SdkError<crate::error::PutAccountSuppressionAttributesError>,
         >
@@ -3420,9 +3522,9 @@ pub mod fluent_builders {
         }
         pub fn set_suppressed_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
         ) -> Self {
-            self.inner = self.inner.set_suppressed_reasons(inp);
+            self.inner = self.inner.set_suppressed_reasons(input);
             self
         }
     }
@@ -3441,7 +3543,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutConfigurationSetDeliveryOptionsOutput,
             smithy_http::result::SdkError<crate::error::PutConfigurationSetDeliveryOptionsError>,
         >
@@ -3459,37 +3561,43 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that you want to associate with a dedicated IP
         /// pool.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>Specifies whether messages that use the configuration set are required to use
         /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
         /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
         /// messages can be delivered in plain text if a TLS connection can't be established.</p>
-        pub fn tls_policy(mut self, inp: crate::model::TlsPolicy) -> Self {
-            self.inner = self.inner.tls_policy(inp);
+        pub fn tls_policy(mut self, input: crate::model::TlsPolicy) -> Self {
+            self.inner = self.inner.tls_policy(input);
             self
         }
-        pub fn set_tls_policy(mut self, inp: std::option::Option<crate::model::TlsPolicy>) -> Self {
-            self.inner = self.inner.set_tls_policy(inp);
+        pub fn set_tls_policy(
+            mut self,
+            input: std::option::Option<crate::model::TlsPolicy>,
+        ) -> Self {
+            self.inner = self.inner.set_tls_policy(input);
             self
         }
         /// <p>The name of the dedicated IP pool that you want to associate with the configuration
         /// set.</p>
-        pub fn sending_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sending_pool_name(inp);
+        pub fn sending_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sending_pool_name(input);
             self
         }
         pub fn set_sending_pool_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_sending_pool_name(inp);
+            self.inner = self.inner.set_sending_pool_name(input);
             self
         }
     }
@@ -3508,7 +3616,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutConfigurationSetReputationOptionsOutput,
             smithy_http::result::SdkError<crate::error::PutConfigurationSetReputationOptionsError>,
         >
@@ -3526,23 +3634,26 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that you want to enable or disable reputation metric
         /// tracking for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
         /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
         /// configuration set.</p>
-        pub fn reputation_metrics_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reputation_metrics_enabled(inp);
+        pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.reputation_metrics_enabled(input);
             self
         }
-        pub fn set_reputation_metrics_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_reputation_metrics_enabled(inp);
+        pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_reputation_metrics_enabled(input);
             self
         }
     }
@@ -3561,7 +3672,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutConfigurationSetSendingOptionsOutput,
             smithy_http::result::SdkError<crate::error::PutConfigurationSetSendingOptionsError>,
         >
@@ -3579,22 +3690,25 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that you want to enable or disable email sending
         /// for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
         /// <code>false</code>, email sending is disabled for the configuration set.</p>
-        pub fn sending_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sending_enabled(inp);
+        pub fn sending_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.sending_enabled(input);
             self
         }
-        pub fn set_sending_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_sending_enabled(inp);
+        pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_sending_enabled(input);
             self
         }
     }
@@ -3613,7 +3727,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutConfigurationSetSuppressionOptionsOutput,
             smithy_http::result::SdkError<crate::error::PutConfigurationSetSuppressionOptionsError>,
         >
@@ -3631,12 +3745,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that you want to change the suppression list
         /// preferences for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>A list that contains the reasons that email addresses are automatically added to the
@@ -3665,9 +3782,9 @@ pub mod fluent_builders {
         }
         pub fn set_suppressed_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
         ) -> Self {
-            self.inner = self.inner.set_suppressed_reasons(inp);
+            self.inner = self.inner.set_suppressed_reasons(input);
             self
         }
     }
@@ -3686,7 +3803,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutConfigurationSetTrackingOptionsOutput,
             smithy_http::result::SdkError<crate::error::PutConfigurationSetTrackingOptionsError>,
         >
@@ -3704,24 +3821,27 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that you want to add a custom tracking domain
         /// to.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>The domain that you want to use to track open and click events.</p>
-        pub fn custom_redirect_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_redirect_domain(inp);
+        pub fn custom_redirect_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_redirect_domain(input);
             self
         }
         pub fn set_custom_redirect_domain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_redirect_domain(inp);
+            self.inner = self.inner.set_custom_redirect_domain(input);
             self
         }
     }
@@ -3740,7 +3860,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutDedicatedIpInPoolOutput,
             smithy_http::result::SdkError<crate::error::PutDedicatedIpInPoolError>,
         >
@@ -3758,25 +3878,25 @@ pub mod fluent_builders {
         }
         /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
         /// has to be a dedicated IP address that's associated with your AWS account.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip(inp);
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip(input);
             self
         }
-        pub fn set_ip(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_ip(inp);
+        pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ip(input);
             self
         }
         /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
         /// specify an IP pool that already exists.</p>
-        pub fn destination_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_pool_name(inp);
+        pub fn destination_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_pool_name(input);
             self
         }
         pub fn set_destination_pool_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_destination_pool_name(inp);
+            self.inner = self.inner.set_destination_pool_name(input);
             self
         }
     }
@@ -3795,7 +3915,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutDedicatedIpWarmupAttributesOutput,
             smithy_http::result::SdkError<crate::error::PutDedicatedIpWarmupAttributesError>,
         >
@@ -3812,22 +3932,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip(inp);
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip(input);
             self
         }
-        pub fn set_ip(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_ip(inp);
+        pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ip(input);
             self
         }
         /// <p>The warm-up percentage that you want to associate with the dedicated IP
         /// address.</p>
-        pub fn warmup_percentage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.warmup_percentage(inp);
+        pub fn warmup_percentage(mut self, input: i32) -> Self {
+            self.inner = self.inner.warmup_percentage(input);
             self
         }
-        pub fn set_warmup_percentage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_warmup_percentage(inp);
+        pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_warmup_percentage(input);
             self
         }
     }
@@ -3846,7 +3966,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutDeliverabilityDashboardOptionOutput,
             smithy_http::result::SdkError<crate::error::PutDeliverabilityDashboardOptionError>,
         >
@@ -3864,12 +3984,12 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this
         /// value to <code>true</code>.</p>
-        pub fn dashboard_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dashboard_enabled(inp);
+        pub fn dashboard_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.dashboard_enabled(input);
             self
         }
-        pub fn set_dashboard_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_dashboard_enabled(inp);
+        pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dashboard_enabled(input);
             self
         }
         /// <p>An array of objects, one for each verified domain that you use to send email and
@@ -3883,11 +4003,11 @@ pub mod fluent_builders {
         }
         pub fn set_subscribed_domains(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_subscribed_domains(inp);
+            self.inner = self.inner.set_subscribed_domains(input);
             self
         }
     }
@@ -3906,7 +4026,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutEmailIdentityConfigurationSetAttributesOutput,
             smithy_http::result::SdkError<
                 crate::error::PutEmailIdentityConfigurationSetAttributesError,
@@ -3925,24 +4045,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address or domain that you want to associate with a configuration set.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p>The configuration set that you want to associate with an email identity.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
     }
@@ -3961,7 +4084,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutEmailIdentityDkimAttributesOutput,
             smithy_http::result::SdkError<crate::error::PutEmailIdentityDkimAttributesError>,
         >
@@ -3978,24 +4101,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity that you want to change the DKIM settings for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p>Sets the DKIM signing configuration for the identity.</p>
         /// <p>When you set this value <code>true</code>, then the messages that are sent from the
         /// identity are signed using DKIM. If you set this value to <code>false</code>, your
         /// messages are sent without DKIM signing.</p>
-        pub fn signing_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.signing_enabled(inp);
+        pub fn signing_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.signing_enabled(input);
             self
         }
-        pub fn set_signing_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_signing_enabled(inp);
+        pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_signing_enabled(input);
             self
         }
     }
@@ -4014,7 +4140,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutEmailIdentityDkimSigningAttributesOutput,
             smithy_http::result::SdkError<crate::error::PutEmailIdentityDkimSigningAttributesError>,
         >
@@ -4031,12 +4157,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity that you want to configure DKIM for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p>The method that you want to use to configure DKIM for the identity. There are two
@@ -4055,30 +4184,30 @@ pub mod fluent_builders {
         /// </ul>
         pub fn signing_attributes_origin(
             mut self,
-            inp: crate::model::DkimSigningAttributesOrigin,
+            input: crate::model::DkimSigningAttributesOrigin,
         ) -> Self {
-            self.inner = self.inner.signing_attributes_origin(inp);
+            self.inner = self.inner.signing_attributes_origin(input);
             self
         }
         pub fn set_signing_attributes_origin(
             mut self,
-            inp: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
+            input: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
         ) -> Self {
-            self.inner = self.inner.set_signing_attributes_origin(inp);
+            self.inner = self.inner.set_signing_attributes_origin(input);
             self
         }
         /// <p>An object that contains information about the private key and selector that you want
         /// to use to configure DKIM for the identity. This object is only required if you want to
         /// configure Bring Your Own DKIM (BYODKIM) for the identity.</p>
-        pub fn signing_attributes(mut self, inp: crate::model::DkimSigningAttributes) -> Self {
-            self.inner = self.inner.signing_attributes(inp);
+        pub fn signing_attributes(mut self, input: crate::model::DkimSigningAttributes) -> Self {
+            self.inner = self.inner.signing_attributes(input);
             self
         }
         pub fn set_signing_attributes(
             mut self,
-            inp: std::option::Option<crate::model::DkimSigningAttributes>,
+            input: std::option::Option<crate::model::DkimSigningAttributes>,
         ) -> Self {
-            self.inner = self.inner.set_signing_attributes(inp);
+            self.inner = self.inner.set_signing_attributes(input);
             self
         }
     }
@@ -4097,7 +4226,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutEmailIdentityFeedbackAttributesOutput,
             smithy_http::result::SdkError<crate::error::PutEmailIdentityFeedbackAttributesError>,
         >
@@ -4115,12 +4244,15 @@ pub mod fluent_builders {
         }
         /// <p>The email identity that you want to configure bounce and complaint feedback forwarding
         /// for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p>Sets the feedback forwarding configuration for the identity.</p>
@@ -4131,12 +4263,12 @@ pub mod fluent_builders {
         /// set up another mechanism for receiving bounce or complaint notifications (for example,
         /// by setting up an event destination), you receive an email notification when these events
         /// occur (even if this setting is disabled).</p>
-        pub fn email_forwarding_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.email_forwarding_enabled(inp);
+        pub fn email_forwarding_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.email_forwarding_enabled(input);
             self
         }
-        pub fn set_email_forwarding_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_email_forwarding_enabled(inp);
+        pub fn set_email_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_email_forwarding_enabled(input);
             self
         }
     }
@@ -4155,7 +4287,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutEmailIdentityMailFromAttributesOutput,
             smithy_http::result::SdkError<crate::error::PutEmailIdentityMailFromAttributesError>,
         >
@@ -4173,12 +4305,15 @@ pub mod fluent_builders {
         }
         /// <p>The verified email identity that you want to set up the custom MAIL FROM domain
         /// for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
@@ -4195,15 +4330,15 @@ pub mod fluent_builders {
         /// for feedback forwarding emails.</p>
         /// </li>
         /// </ul>
-        pub fn mail_from_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mail_from_domain(inp);
+        pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mail_from_domain(input);
             self
         }
         pub fn set_mail_from_domain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_mail_from_domain(inp);
+            self.inner = self.inner.set_mail_from_domain(input);
             self
         }
         /// <p>The action that you want to take if the required MX record isn't found when you send
@@ -4215,15 +4350,15 @@ pub mod fluent_builders {
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
         /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
         /// states.</p>
-        pub fn behavior_on_mx_failure(mut self, inp: crate::model::BehaviorOnMxFailure) -> Self {
-            self.inner = self.inner.behavior_on_mx_failure(inp);
+        pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
+            self.inner = self.inner.behavior_on_mx_failure(input);
             self
         }
         pub fn set_behavior_on_mx_failure(
             mut self,
-            inp: std::option::Option<crate::model::BehaviorOnMxFailure>,
+            input: std::option::Option<crate::model::BehaviorOnMxFailure>,
         ) -> Self {
-            self.inner = self.inner.set_behavior_on_mx_failure(inp);
+            self.inner = self.inner.set_behavior_on_mx_failure(input);
             self
         }
     }
@@ -4242,7 +4377,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutSuppressedDestinationOutput,
             smithy_http::result::SdkError<crate::error::PutSuppressedDestinationError>,
         >
@@ -4260,25 +4395,28 @@ pub mod fluent_builders {
         }
         /// <p>The email address that should be added to the suppression list for your
         /// account.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input);
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_email_address(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
             self
         }
         /// <p>The factors that should cause the email address to be added to the suppression list
         /// for your account.</p>
-        pub fn reason(mut self, inp: crate::model::SuppressionListReason) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: crate::model::SuppressionListReason) -> Self {
+            self.inner = self.inner.reason(input);
             self
         }
         pub fn set_reason(
             mut self,
-            inp: std::option::Option<crate::model::SuppressionListReason>,
+            input: std::option::Option<crate::model::SuppressionListReason>,
         ) -> Self {
-            self.inner = self.inner.set_reason(inp);
+            self.inner = self.inner.set_reason(input);
             self
         }
     }
@@ -4297,7 +4435,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SendBulkEmailOutput,
             smithy_http::result::SdkError<crate::error::SendBulkEmailError>,
         >
@@ -4315,15 +4453,15 @@ pub mod fluent_builders {
         }
         /// <p>The email address that you want to use as the "From" address for the email. The
         /// address that you specify has to be verified.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input);
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_from_email_address(inp);
+            self.inner = self.inner.set_from_email_address(input);
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -4339,16 +4477,16 @@ pub mod fluent_builders {
         /// Guide</a>.</p>
         pub fn from_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.from_email_address_identity_arn(inp);
+            self.inner = self.inner.from_email_address_identity_arn(input);
             self
         }
         pub fn set_from_email_address_identity_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_from_email_address_identity_arn(inp);
+            self.inner = self.inner.set_from_email_address_identity_arn(input);
             self
         }
         /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
@@ -4359,24 +4497,24 @@ pub mod fluent_builders {
         }
         pub fn set_reply_to_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_reply_to_addresses(inp);
+            self.inner = self.inner.set_reply_to_addresses(input);
             self
         }
         /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
         pub fn feedback_forwarding_email_address(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.feedback_forwarding_email_address(inp);
+            self.inner = self.inner.feedback_forwarding_email_address(input);
             self
         }
         pub fn set_feedback_forwarding_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_feedback_forwarding_email_address(inp);
+            self.inner = self.inner.set_feedback_forwarding_email_address(input);
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -4393,20 +4531,20 @@ pub mod fluent_builders {
         /// Guide</a>.</p>
         pub fn feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .feedback_forwarding_email_address_identity_arn(inp);
+                .feedback_forwarding_email_address_identity_arn(input);
             self
         }
         pub fn set_feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_feedback_forwarding_email_address_identity_arn(inp);
+                .set_feedback_forwarding_email_address_identity_arn(input);
             self
         }
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
@@ -4418,22 +4556,22 @@ pub mod fluent_builders {
         }
         pub fn set_default_email_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
         ) -> Self {
-            self.inner = self.inner.set_default_email_tags(inp);
+            self.inner = self.inner.set_default_email_tags(input);
             self
         }
         /// <p>An object that contains the body of the message. You can specify a template
         /// message.</p>
-        pub fn default_content(mut self, inp: crate::model::BulkEmailContent) -> Self {
-            self.inner = self.inner.default_content(inp);
+        pub fn default_content(mut self, input: crate::model::BulkEmailContent) -> Self {
+            self.inner = self.inner.default_content(input);
             self
         }
         pub fn set_default_content(
             mut self,
-            inp: std::option::Option<crate::model::BulkEmailContent>,
+            input: std::option::Option<crate::model::BulkEmailContent>,
         ) -> Self {
-            self.inner = self.inner.set_default_content(inp);
+            self.inner = self.inner.set_default_content(input);
             self
         }
         /// <p>The list of bulk email entry objects.</p>
@@ -4443,21 +4581,21 @@ pub mod fluent_builders {
         }
         pub fn set_bulk_email_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntry>>,
         ) -> Self {
-            self.inner = self.inner.set_bulk_email_entries(inp);
+            self.inner = self.inner.set_bulk_email_entries(input);
             self
         }
         /// <p>The name of the configuration set that you want to use when sending the email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
     }
@@ -4476,7 +4614,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SendCustomVerificationEmailOutput,
             smithy_http::result::SdkError<crate::error::SendCustomVerificationEmailError>,
         >
@@ -4493,34 +4631,40 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address to verify.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input);
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_email_address(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
             self
         }
         /// <p>The name of the custom verification email template to use when sending the
         /// verification email.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
         /// <p>Name of a configuration set to use when sending the verification email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
     }
@@ -4539,7 +4683,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SendEmailOutput,
             smithy_http::result::SdkError<crate::error::SendEmailError>,
         >
@@ -4558,15 +4702,15 @@ pub mod fluent_builders {
         /// <p>The email address that you want to use as the "From" address for the email. The
         /// address that you specify has to be verified.
         /// </p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input);
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_from_email_address(inp);
+            self.inner = self.inner.set_from_email_address(input);
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -4585,28 +4729,28 @@ pub mod fluent_builders {
         /// content.</p>
         pub fn from_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.from_email_address_identity_arn(inp);
+            self.inner = self.inner.from_email_address_identity_arn(input);
             self
         }
         pub fn set_from_email_address_identity_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_from_email_address_identity_arn(inp);
+            self.inner = self.inner.set_from_email_address_identity_arn(input);
             self
         }
         /// <p>An object that contains the recipients of the email message.</p>
-        pub fn destination(mut self, inp: crate::model::Destination) -> Self {
-            self.inner = self.inner.destination(inp);
+        pub fn destination(mut self, input: crate::model::Destination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::Destination>,
+            input: std::option::Option<crate::model::Destination>,
         ) -> Self {
-            self.inner = self.inner.set_destination(inp);
+            self.inner = self.inner.set_destination(input);
             self
         }
         /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
@@ -4617,24 +4761,24 @@ pub mod fluent_builders {
         }
         pub fn set_reply_to_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_reply_to_addresses(inp);
+            self.inner = self.inner.set_reply_to_addresses(input);
             self
         }
         /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
         pub fn feedback_forwarding_email_address(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.feedback_forwarding_email_address(inp);
+            self.inner = self.inner.feedback_forwarding_email_address(input);
             self
         }
         pub fn set_feedback_forwarding_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_feedback_forwarding_email_address(inp);
+            self.inner = self.inner.set_feedback_forwarding_email_address(input);
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -4651,30 +4795,33 @@ pub mod fluent_builders {
         /// Guide</a>.</p>
         pub fn feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .feedback_forwarding_email_address_identity_arn(inp);
+                .feedback_forwarding_email_address_identity_arn(input);
             self
         }
         pub fn set_feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_feedback_forwarding_email_address_identity_arn(inp);
+                .set_feedback_forwarding_email_address_identity_arn(input);
             self
         }
         /// <p>An object that contains the body of the message. You can send either a Simple message
         /// Raw message or a template Message.</p>
-        pub fn content(mut self, inp: crate::model::EmailContent) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: crate::model::EmailContent) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<crate::model::EmailContent>) -> Self {
-            self.inner = self.inner.set_content(inp);
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<crate::model::EmailContent>,
+        ) -> Self {
+            self.inner = self.inner.set_content(input);
             self
         }
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
@@ -4686,34 +4833,37 @@ pub mod fluent_builders {
         }
         pub fn set_email_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
         ) -> Self {
-            self.inner = self.inner.set_email_tags(inp);
+            self.inner = self.inner.set_email_tags(input);
             self
         }
         /// <p>The name of the configuration set that you want to use when sending the email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>An object used to specify a list or topic to which an email belongs, which will be
         /// used when a contact chooses to unsubscribe.</p>
-        pub fn list_management_options(mut self, inp: crate::model::ListManagementOptions) -> Self {
-            self.inner = self.inner.list_management_options(inp);
+        pub fn list_management_options(
+            mut self,
+            input: crate::model::ListManagementOptions,
+        ) -> Self {
+            self.inner = self.inner.list_management_options(input);
             self
         }
         pub fn set_list_management_options(
             mut self,
-            inp: std::option::Option<crate::model::ListManagementOptions>,
+            input: std::option::Option<crate::model::ListManagementOptions>,
         ) -> Self {
-            self.inner = self.inner.set_list_management_options(inp);
+            self.inner = self.inner.set_list_management_options(input);
             self
         }
     }
@@ -4732,7 +4882,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -4750,12 +4900,12 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
         /// to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
@@ -4768,9 +4918,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4789,7 +4939,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TestRenderEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::TestRenderEmailTemplateError>,
         >
@@ -4806,23 +4956,29 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template that you want to render.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
         /// <p>A list of replacement values to apply to the template. This parameter is a JSON
         /// object, typically consisting of key-value pairs in which the keys correspond to
         /// replacement tags in the email template.</p>
-        pub fn template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_data(inp);
+        pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_data(input);
             self
         }
-        pub fn set_template_data(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_data(inp);
+        pub fn set_template_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_data(input);
             self
         }
     }
@@ -4841,7 +4997,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -4859,12 +5015,12 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
         /// tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
@@ -4880,9 +5036,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -4901,7 +5057,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateConfigurationSetEventDestinationOutput,
             smithy_http::result::SdkError<
                 crate::error::UpdateConfigurationSetEventDestinationError,
@@ -4921,33 +5077,42 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that contains the event destination that you want to
         /// modify.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input);
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_configuration_set_name(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_set_name(input);
             self
         }
         /// <p>The name of the event destination that you want to modify.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input);
             self
         }
-        pub fn set_event_destination_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_event_destination_name(inp);
+        pub fn set_event_destination_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_destination_name(input);
             self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.inner = self.inner.event_destination(input);
             self
         }
         pub fn set_event_destination(
             mut self,
-            inp: std::option::Option<crate::model::EventDestinationDefinition>,
+            input: std::option::Option<crate::model::EventDestinationDefinition>,
         ) -> Self {
-            self.inner = self.inner.set_event_destination(inp);
+            self.inner = self.inner.set_event_destination(input);
             self
         }
     }
@@ -4966,7 +5131,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateContactOutput,
             smithy_http::result::SdkError<crate::error::UpdateContactError>,
         >
@@ -4983,21 +5148,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
         /// <p>The contact's email addres.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input);
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_address(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
             self
         }
         /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
@@ -5007,31 +5178,31 @@ pub mod fluent_builders {
         }
         pub fn set_topic_preferences(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         ) -> Self {
-            self.inner = self.inner.set_topic_preferences(inp);
+            self.inner = self.inner.set_topic_preferences(input);
             self
         }
         /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
         /// topics.</p>
-        pub fn unsubscribe_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.unsubscribe_all(inp);
+        pub fn unsubscribe_all(mut self, input: bool) -> Self {
+            self.inner = self.inner.unsubscribe_all(input);
             self
         }
-        pub fn set_unsubscribe_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_unsubscribe_all(inp);
+        pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_unsubscribe_all(input);
             self
         }
         /// <p>The attribute data attached to a contact.</p>
-        pub fn attributes_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attributes_data(inp);
+        pub fn attributes_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attributes_data(input);
             self
         }
         pub fn set_attributes_data(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_attributes_data(inp);
+            self.inner = self.inner.set_attributes_data(input);
             self
         }
     }
@@ -5050,7 +5221,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateContactListOutput,
             smithy_http::result::SdkError<crate::error::UpdateContactListError>,
         >
@@ -5067,12 +5238,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input);
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_contact_list_name(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_list_name(input);
             self
         }
         /// <p>An interest group, theme, or label within a list. A contact list can have multiple
@@ -5083,18 +5257,18 @@ pub mod fluent_builders {
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Topic>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
         ) -> Self {
-            self.inner = self.inner.set_topics(inp);
+            self.inner = self.inner.set_topics(input);
             self
         }
         /// <p>A description of what the contact list is about.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }
@@ -5113,7 +5287,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateCustomVerificationEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::UpdateCustomVerificationEmailTemplateError>,
         >
@@ -5130,77 +5304,80 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to update.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input);
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_from_email_address(inp);
+            self.inner = self.inner.set_from_email_address(input);
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_subject(inp);
+        pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_subject(input);
             self
         }
         pub fn set_template_subject(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_template_subject(inp);
+            self.inner = self.inner.set_template_subject(input);
             self
         }
         /// <p>The content of the custom verification email. The total size of the email must be less
         /// than 10 MB. The message body may contain HTML, with some limitations. For more
         /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
         /// Developer Guide</i>.</p>
-        pub fn template_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_content(inp);
+        pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_content(input);
             self
         }
         pub fn set_template_content(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_template_content(inp);
+            self.inner = self.inner.set_template_content(input);
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.success_redirection_url(inp);
+        pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.success_redirection_url(input);
             self
         }
         pub fn set_success_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_success_redirection_url(inp);
+            self.inner = self.inner.set_success_redirection_url(input);
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.failure_redirection_url(inp);
+        pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.failure_redirection_url(input);
             self
         }
         pub fn set_failure_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_failure_redirection_url(inp);
+            self.inner = self.inner.set_failure_redirection_url(input);
             self
         }
     }
@@ -5219,7 +5396,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateEmailIdentityPolicyOutput,
             smithy_http::result::SdkError<crate::error::UpdateEmailIdentityPolicyError>,
         >
@@ -5236,34 +5413,37 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity for which you want to update policy.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input);
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_email_identity(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_identity(input);
             self
         }
         /// <p>The name of the policy.</p>
         /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
         /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
         /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input);
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy(inp);
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy(input);
             self
         }
     }
@@ -5282,7 +5462,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateEmailTemplateOutput,
             smithy_http::result::SdkError<crate::error::UpdateEmailTemplateError>,
         >
@@ -5299,25 +5479,28 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template you want to update.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input);
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_template_name(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
         /// <p>The content of the email template, composed of a subject line, an HTML part, and a
         /// text-only part.</p>
-        pub fn template_content(mut self, inp: crate::model::EmailTemplateContent) -> Self {
-            self.inner = self.inner.template_content(inp);
+        pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
+            self.inner = self.inner.template_content(input);
             self
         }
         pub fn set_template_content(
             mut self,
-            inp: std::option::Option<crate::model::EmailTemplateContent>,
+            input: std::option::Option<crate::model::EmailTemplateContent>,
         ) -> Self {
-            self.inner = self.inner.set_template_content(inp);
+            self.inner = self.inner.set_template_content(input);
             self
         }
     }

@@ -20,7 +20,7 @@ impl CreateCapacityProvider {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::CreateCapacityProviderOutput,
         crate::error::CreateCapacityProviderError,
     > {
@@ -95,7 +95,7 @@ impl CreateCapacityProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateCapacityProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateCapacityProviderOutput,
         crate::error::CreateCapacityProviderError,
     >;
@@ -130,7 +130,8 @@ impl CreateCluster {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError> {
+    ) -> std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -176,7 +177,8 @@ impl CreateCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateCluster {
-    type Output = Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError>;
+    type Output =
+        std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -302,7 +304,8 @@ impl CreateService {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::CreateServiceOutput, crate::error::CreateServiceError> {
+    ) -> std::result::Result<crate::output::CreateServiceOutput, crate::error::CreateServiceError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -359,7 +362,8 @@ impl CreateService {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateService {
-    type Output = Result<crate::output::CreateServiceOutput, crate::error::CreateServiceError>;
+    type Output =
+        std::result::Result<crate::output::CreateServiceOutput, crate::error::CreateServiceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -383,7 +387,8 @@ impl CreateTaskSet {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::CreateTaskSetOutput, crate::error::CreateTaskSetError> {
+    ) -> std::result::Result<crate::output::CreateTaskSetOutput, crate::error::CreateTaskSetError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -448,7 +453,8 @@ impl CreateTaskSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTaskSet {
-    type Output = Result<crate::output::CreateTaskSetOutput, crate::error::CreateTaskSetError>;
+    type Output =
+        std::result::Result<crate::output::CreateTaskSetOutput, crate::error::CreateTaskSetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -470,8 +476,10 @@ impl DeleteAccountSetting {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DeleteAccountSettingOutput, crate::error::DeleteAccountSettingError>
-    {
+    ) -> std::result::Result<
+        crate::output::DeleteAccountSettingOutput,
+        crate::error::DeleteAccountSettingError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -521,8 +529,10 @@ impl DeleteAccountSetting {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteAccountSetting {
-    type Output =
-        Result<crate::output::DeleteAccountSettingOutput, crate::error::DeleteAccountSettingError>;
+    type Output = std::result::Result<
+        crate::output::DeleteAccountSettingOutput,
+        crate::error::DeleteAccountSettingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -543,7 +553,10 @@ impl DeleteAttributes {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DeleteAttributesOutput, crate::error::DeleteAttributesError> {
+    ) -> std::result::Result<
+        crate::output::DeleteAttributesOutput,
+        crate::error::DeleteAttributesError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -589,8 +602,10 @@ impl DeleteAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteAttributes {
-    type Output =
-        Result<crate::output::DeleteAttributesOutput, crate::error::DeleteAttributesError>;
+    type Output = std::result::Result<
+        crate::output::DeleteAttributesOutput,
+        crate::error::DeleteAttributesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -625,7 +640,7 @@ impl DeleteCapacityProvider {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::DeleteCapacityProviderOutput,
         crate::error::DeleteCapacityProviderError,
     > {
@@ -682,7 +697,7 @@ impl DeleteCapacityProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteCapacityProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteCapacityProviderOutput,
         crate::error::DeleteCapacityProviderError,
     >;
@@ -712,7 +727,8 @@ impl DeleteCluster {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError> {
+    ) -> std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -769,7 +785,8 @@ impl DeleteCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteCluster {
-    type Output = Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError>;
+    type Output =
+        std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -810,7 +827,8 @@ impl DeleteService {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DeleteServiceOutput, crate::error::DeleteServiceError> {
+    ) -> std::result::Result<crate::output::DeleteServiceOutput, crate::error::DeleteServiceError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -870,7 +888,8 @@ impl DeleteService {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteService {
-    type Output = Result<crate::output::DeleteServiceOutput, crate::error::DeleteServiceError>;
+    type Output =
+        std::result::Result<crate::output::DeleteServiceOutput, crate::error::DeleteServiceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -892,7 +911,8 @@ impl DeleteTaskSet {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DeleteTaskSetOutput, crate::error::DeleteTaskSetError> {
+    ) -> std::result::Result<crate::output::DeleteTaskSetOutput, crate::error::DeleteTaskSetError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -980,7 +1000,8 @@ impl DeleteTaskSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTaskSet {
-    type Output = Result<crate::output::DeleteTaskSetOutput, crate::error::DeleteTaskSetError>;
+    type Output =
+        std::result::Result<crate::output::DeleteTaskSetOutput, crate::error::DeleteTaskSetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -1013,7 +1034,7 @@ impl DeregisterContainerInstance {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::DeregisterContainerInstanceOutput,
         crate::error::DeregisterContainerInstanceError,
     > {
@@ -1063,7 +1084,7 @@ impl DeregisterContainerInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterContainerInstance {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeregisterContainerInstanceOutput,
         crate::error::DeregisterContainerInstanceError,
     >;
@@ -1102,7 +1123,7 @@ impl DeregisterTaskDefinition {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::DeregisterTaskDefinitionOutput,
         crate::error::DeregisterTaskDefinitionError,
     > {
@@ -1160,7 +1181,7 @@ impl DeregisterTaskDefinition {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterTaskDefinition {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeregisterTaskDefinitionOutput,
         crate::error::DeregisterTaskDefinitionError,
     >;
@@ -1184,7 +1205,7 @@ impl DescribeCapacityProviders {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::DescribeCapacityProvidersOutput,
         crate::error::DescribeCapacityProvidersError,
     > {
@@ -1242,7 +1263,7 @@ impl DescribeCapacityProviders {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeCapacityProviders {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeCapacityProvidersOutput,
         crate::error::DescribeCapacityProvidersError,
     >;
@@ -1266,7 +1287,10 @@ impl DescribeClusters {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DescribeClustersOutput, crate::error::DescribeClustersError> {
+    ) -> std::result::Result<
+        crate::output::DescribeClustersOutput,
+        crate::error::DescribeClustersError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -1312,8 +1336,10 @@ impl DescribeClusters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeClusters {
-    type Output =
-        Result<crate::output::DescribeClustersOutput, crate::error::DescribeClustersError>;
+    type Output = std::result::Result<
+        crate::output::DescribeClustersOutput,
+        crate::error::DescribeClustersError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -1335,7 +1361,7 @@ impl DescribeContainerInstances {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::DescribeContainerInstancesOutput,
         crate::error::DescribeContainerInstancesError,
     > {
@@ -1403,7 +1429,7 @@ impl DescribeContainerInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeContainerInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeContainerInstancesOutput,
         crate::error::DescribeContainerInstancesError,
     >;
@@ -1427,7 +1453,10 @@ impl DescribeServices {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DescribeServicesOutput, crate::error::DescribeServicesError> {
+    ) -> std::result::Result<
+        crate::output::DescribeServicesOutput,
+        crate::error::DescribeServicesError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -1480,8 +1509,10 @@ impl DescribeServices {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeServices {
-    type Output =
-        Result<crate::output::DescribeServicesOutput, crate::error::DescribeServicesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeServicesOutput,
+        crate::error::DescribeServicesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -1509,7 +1540,7 @@ impl DescribeTaskDefinition {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::DescribeTaskDefinitionOutput,
         crate::error::DescribeTaskDefinitionError,
     > {
@@ -1566,7 +1597,7 @@ impl DescribeTaskDefinition {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTaskDefinition {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeTaskDefinitionOutput,
         crate::error::DescribeTaskDefinitionError,
     >;
@@ -1590,7 +1621,8 @@ impl DescribeTasks {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DescribeTasksOutput, crate::error::DescribeTasksError> {
+    ) -> std::result::Result<crate::output::DescribeTasksOutput, crate::error::DescribeTasksError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -1643,7 +1675,8 @@ impl DescribeTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTasks {
-    type Output = Result<crate::output::DescribeTasksOutput, crate::error::DescribeTasksError>;
+    type Output =
+        std::result::Result<crate::output::DescribeTasksOutput, crate::error::DescribeTasksError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -1667,7 +1700,10 @@ impl DescribeTaskSets {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DescribeTaskSetsOutput, crate::error::DescribeTaskSetsError> {
+    ) -> std::result::Result<
+        crate::output::DescribeTaskSetsOutput,
+        crate::error::DescribeTaskSetsError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -1752,8 +1788,10 @@ impl DescribeTaskSets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeTaskSets {
-    type Output =
-        Result<crate::output::DescribeTaskSetsOutput, crate::error::DescribeTaskSetsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeTaskSetsOutput,
+        crate::error::DescribeTaskSetsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -1778,8 +1816,10 @@ impl DiscoverPollEndpoint {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::DiscoverPollEndpointOutput, crate::error::DiscoverPollEndpointError>
-    {
+    ) -> std::result::Result<
+        crate::output::DiscoverPollEndpointOutput,
+        crate::error::DiscoverPollEndpointError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -1820,8 +1860,10 @@ impl DiscoverPollEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DiscoverPollEndpoint {
-    type Output =
-        Result<crate::output::DiscoverPollEndpointOutput, crate::error::DiscoverPollEndpointError>;
+    type Output = std::result::Result<
+        crate::output::DiscoverPollEndpointOutput,
+        crate::error::DiscoverPollEndpointError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -1842,7 +1884,8 @@ impl ExecuteCommand {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::ExecuteCommandOutput, crate::error::ExecuteCommandError> {
+    ) -> std::result::Result<crate::output::ExecuteCommandOutput, crate::error::ExecuteCommandError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -1909,7 +1952,8 @@ impl ExecuteCommand {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ExecuteCommand {
-    type Output = Result<crate::output::ExecuteCommandOutput, crate::error::ExecuteCommandError>;
+    type Output =
+        std::result::Result<crate::output::ExecuteCommandOutput, crate::error::ExecuteCommandError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -1930,8 +1974,10 @@ impl ListAccountSettings {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::ListAccountSettingsOutput, crate::error::ListAccountSettingsError>
-    {
+    ) -> std::result::Result<
+        crate::output::ListAccountSettingsOutput,
+        crate::error::ListAccountSettingsError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -1981,8 +2027,10 @@ impl ListAccountSettings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListAccountSettings {
-    type Output =
-        Result<crate::output::ListAccountSettingsOutput, crate::error::ListAccountSettingsError>;
+    type Output = std::result::Result<
+        crate::output::ListAccountSettingsOutput,
+        crate::error::ListAccountSettingsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2009,7 +2057,8 @@ impl ListAttributes {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::ListAttributesOutput, crate::error::ListAttributesError> {
+    ) -> std::result::Result<crate::output::ListAttributesOutput, crate::error::ListAttributesError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -2048,7 +2097,8 @@ impl ListAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListAttributes {
-    type Output = Result<crate::output::ListAttributesOutput, crate::error::ListAttributesError>;
+    type Output =
+        std::result::Result<crate::output::ListAttributesOutput, crate::error::ListAttributesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2069,7 +2119,8 @@ impl ListClusters {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::ListClustersOutput, crate::error::ListClustersError> {
+    ) -> std::result::Result<crate::output::ListClustersOutput, crate::error::ListClustersError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -2115,7 +2166,8 @@ impl ListClusters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListClusters {
-    type Output = Result<crate::output::ListClustersOutput, crate::error::ListClustersError>;
+    type Output =
+        std::result::Result<crate::output::ListClustersOutput, crate::error::ListClustersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2139,7 +2191,7 @@ impl ListContainerInstances {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::ListContainerInstancesOutput,
         crate::error::ListContainerInstancesError,
     > {
@@ -2205,7 +2257,7 @@ impl ListContainerInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListContainerInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListContainerInstancesOutput,
         crate::error::ListContainerInstancesError,
     >;
@@ -2230,7 +2282,8 @@ impl ListServices {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::ListServicesOutput, crate::error::ListServicesError> {
+    ) -> std::result::Result<crate::output::ListServicesOutput, crate::error::ListServicesError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -2283,7 +2336,8 @@ impl ListServices {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListServices {
-    type Output = Result<crate::output::ListServicesOutput, crate::error::ListServicesError>;
+    type Output =
+        std::result::Result<crate::output::ListServicesOutput, crate::error::ListServicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2304,8 +2358,10 @@ impl ListTagsForResource {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>
-    {
+    ) -> std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -2364,8 +2420,10 @@ impl ListTagsForResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
-    type Output =
-        Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2392,7 +2450,7 @@ impl ListTaskDefinitionFamilies {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::ListTaskDefinitionFamiliesOutput,
         crate::error::ListTaskDefinitionFamiliesError,
     > {
@@ -2450,7 +2508,7 @@ impl ListTaskDefinitionFamilies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTaskDefinitionFamilies {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListTaskDefinitionFamiliesOutput,
         crate::error::ListTaskDefinitionFamiliesError,
     >;
@@ -2476,8 +2534,10 @@ impl ListTaskDefinitions {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::ListTaskDefinitionsOutput, crate::error::ListTaskDefinitionsError>
-    {
+    ) -> std::result::Result<
+        crate::output::ListTaskDefinitionsOutput,
+        crate::error::ListTaskDefinitionsError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -2527,8 +2587,10 @@ impl ListTaskDefinitions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTaskDefinitions {
-    type Output =
-        Result<crate::output::ListTaskDefinitionsOutput, crate::error::ListTaskDefinitionsError>;
+    type Output = std::result::Result<
+        crate::output::ListTaskDefinitionsOutput,
+        crate::error::ListTaskDefinitionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2553,7 +2615,7 @@ impl ListTasks {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::ListTasksOutput, crate::error::ListTasksError> {
+    ) -> std::result::Result<crate::output::ListTasksOutput, crate::error::ListTasksError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -2612,7 +2674,7 @@ impl ListTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTasks {
-    type Output = Result<crate::output::ListTasksOutput, crate::error::ListTasksError>;
+    type Output = std::result::Result<crate::output::ListTasksOutput, crate::error::ListTasksError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2656,7 +2718,10 @@ impl PutAccountSetting {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::PutAccountSettingOutput, crate::error::PutAccountSettingError> {
+    ) -> std::result::Result<
+        crate::output::PutAccountSettingOutput,
+        crate::error::PutAccountSettingError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -2704,8 +2769,10 @@ impl PutAccountSetting {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutAccountSetting {
-    type Output =
-        Result<crate::output::PutAccountSettingOutput, crate::error::PutAccountSettingError>;
+    type Output = std::result::Result<
+        crate::output::PutAccountSettingOutput,
+        crate::error::PutAccountSettingError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2728,7 +2795,7 @@ impl PutAccountSettingDefault {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::PutAccountSettingDefaultOutput,
         crate::error::PutAccountSettingDefaultError,
     > {
@@ -2786,7 +2853,7 @@ impl PutAccountSettingDefault {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutAccountSettingDefault {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutAccountSettingDefaultOutput,
         crate::error::PutAccountSettingDefaultError,
     >;
@@ -2814,7 +2881,8 @@ impl PutAttributes {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::PutAttributesOutput, crate::error::PutAttributesError> {
+    ) -> std::result::Result<crate::output::PutAttributesOutput, crate::error::PutAttributesError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -2869,7 +2937,8 @@ impl PutAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutAttributes {
-    type Output = Result<crate::output::PutAttributesOutput, crate::error::PutAttributesError>;
+    type Output =
+        std::result::Result<crate::output::PutAttributesOutput, crate::error::PutAttributesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2903,7 +2972,7 @@ impl PutClusterCapacityProviders {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::PutClusterCapacityProvidersOutput,
         crate::error::PutClusterCapacityProvidersError,
     > {
@@ -2961,7 +3030,7 @@ impl PutClusterCapacityProviders {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutClusterCapacityProviders {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutClusterCapacityProvidersOutput,
         crate::error::PutClusterCapacityProvidersError,
     >;
@@ -2990,7 +3059,7 @@ impl RegisterContainerInstance {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::RegisterContainerInstanceOutput,
         crate::error::RegisterContainerInstanceError,
     > {
@@ -3048,7 +3117,7 @@ impl RegisterContainerInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RegisterContainerInstance {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RegisterContainerInstanceOutput,
         crate::error::RegisterContainerInstanceError,
     >;
@@ -3089,7 +3158,7 @@ impl RegisterTaskDefinition {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::RegisterTaskDefinitionOutput,
         crate::error::RegisterTaskDefinitionError,
     > {
@@ -3146,7 +3215,7 @@ impl RegisterTaskDefinition {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RegisterTaskDefinition {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RegisterTaskDefinitionOutput,
         crate::error::RegisterTaskDefinitionError,
     >;
@@ -3198,7 +3267,7 @@ impl RunTask {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::RunTaskOutput, crate::error::RunTaskError> {
+    ) -> std::result::Result<crate::output::RunTaskOutput, crate::error::RunTaskError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -3258,7 +3327,7 @@ impl RunTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RunTask {
-    type Output = Result<crate::output::RunTaskOutput, crate::error::RunTaskError>;
+    type Output = std::result::Result<crate::output::RunTaskOutput, crate::error::RunTaskError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -3283,7 +3352,7 @@ impl StartTask {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::StartTaskOutput, crate::error::StartTaskError> {
+    ) -> std::result::Result<crate::output::StartTaskOutput, crate::error::StartTaskError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -3335,7 +3404,7 @@ impl StartTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartTask {
-    type Output = Result<crate::output::StartTaskOutput, crate::error::StartTaskError>;
+    type Output = std::result::Result<crate::output::StartTaskOutput, crate::error::StartTaskError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -3368,7 +3437,7 @@ impl StopTask {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::StopTaskOutput, crate::error::StopTaskError> {
+    ) -> std::result::Result<crate::output::StopTaskOutput, crate::error::StopTaskError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -3420,7 +3489,7 @@ impl StopTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StopTask {
-    type Output = Result<crate::output::StopTaskOutput, crate::error::StopTaskError>;
+    type Output = std::result::Result<crate::output::StopTaskOutput, crate::error::StopTaskError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -3445,7 +3514,7 @@ impl SubmitAttachmentStateChanges {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::SubmitAttachmentStateChangesOutput,
         crate::error::SubmitAttachmentStateChangesError,
     > {
@@ -3495,7 +3564,7 @@ impl SubmitAttachmentStateChanges {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SubmitAttachmentStateChanges {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SubmitAttachmentStateChangesOutput,
         crate::error::SubmitAttachmentStateChangesError,
     >;
@@ -3523,7 +3592,7 @@ impl SubmitContainerStateChange {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::SubmitContainerStateChangeOutput,
         crate::error::SubmitContainerStateChangeError,
     > {
@@ -3580,7 +3649,7 @@ impl SubmitContainerStateChange {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SubmitContainerStateChange {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SubmitContainerStateChangeOutput,
         crate::error::SubmitContainerStateChangeError,
     >;
@@ -3608,8 +3677,10 @@ impl SubmitTaskStateChange {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::SubmitTaskStateChangeOutput, crate::error::SubmitTaskStateChangeError>
-    {
+    ) -> std::result::Result<
+        crate::output::SubmitTaskStateChangeOutput,
+        crate::error::SubmitTaskStateChangeError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -3666,7 +3737,7 @@ impl SubmitTaskStateChange {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SubmitTaskStateChange {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SubmitTaskStateChangeOutput,
         crate::error::SubmitTaskStateChangeError,
     >;
@@ -3693,7 +3764,7 @@ impl TagResource {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+    ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -3750,7 +3821,8 @@ impl TagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagResource {
-    type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -3771,7 +3843,8 @@ impl UntagResource {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+    ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -3828,7 +3901,8 @@ impl UntagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagResource {
-    type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -3849,7 +3923,7 @@ impl UpdateCapacityProvider {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::UpdateCapacityProviderOutput,
         crate::error::UpdateCapacityProviderError,
     > {
@@ -3906,7 +3980,7 @@ impl UpdateCapacityProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateCapacityProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateCapacityProviderOutput,
         crate::error::UpdateCapacityProviderError,
     >;
@@ -3930,7 +4004,8 @@ impl UpdateCluster {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::UpdateClusterOutput, crate::error::UpdateClusterError> {
+    ) -> std::result::Result<crate::output::UpdateClusterOutput, crate::error::UpdateClusterError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -3983,7 +4058,8 @@ impl UpdateCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateCluster {
-    type Output = Result<crate::output::UpdateClusterOutput, crate::error::UpdateClusterError>;
+    type Output =
+        std::result::Result<crate::output::UpdateClusterOutput, crate::error::UpdateClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -4004,8 +4080,10 @@ impl UpdateClusterSettings {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::UpdateClusterSettingsOutput, crate::error::UpdateClusterSettingsError>
-    {
+    ) -> std::result::Result<
+        crate::output::UpdateClusterSettingsOutput,
+        crate::error::UpdateClusterSettingsError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -4064,7 +4142,7 @@ impl UpdateClusterSettings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateClusterSettings {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateClusterSettingsOutput,
         crate::error::UpdateClusterSettingsError,
     >;
@@ -4103,8 +4181,10 @@ impl UpdateContainerAgent {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::UpdateContainerAgentOutput, crate::error::UpdateContainerAgentError>
-    {
+    ) -> std::result::Result<
+        crate::output::UpdateContainerAgentOutput,
+        crate::error::UpdateContainerAgentError,
+    > {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -4190,8 +4270,10 @@ impl UpdateContainerAgent {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateContainerAgent {
-    type Output =
-        Result<crate::output::UpdateContainerAgentOutput, crate::error::UpdateContainerAgentError>;
+    type Output = std::result::Result<
+        crate::output::UpdateContainerAgentOutput,
+        crate::error::UpdateContainerAgentError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -4260,7 +4342,7 @@ impl UpdateContainerInstancesState {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::UpdateContainerInstancesStateOutput,
         crate::error::UpdateContainerInstancesStateError,
     > {
@@ -4311,7 +4393,7 @@ impl UpdateContainerInstancesState {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateContainerInstancesState {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateContainerInstancesStateOutput,
         crate::error::UpdateContainerInstancesStateError,
     >;
@@ -4443,7 +4525,8 @@ impl UpdateService {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::UpdateServiceOutput, crate::error::UpdateServiceError> {
+    ) -> std::result::Result<crate::output::UpdateServiceOutput, crate::error::UpdateServiceError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -4504,7 +4587,8 @@ impl UpdateService {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateService {
-    type Output = Result<crate::output::UpdateServiceOutput, crate::error::UpdateServiceError>;
+    type Output =
+        std::result::Result<crate::output::UpdateServiceOutput, crate::error::UpdateServiceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -4529,7 +4613,7 @@ impl UpdateServicePrimaryTaskSet {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<
+    ) -> std::result::Result<
         crate::output::UpdateServicePrimaryTaskSetOutput,
         crate::error::UpdateServicePrimaryTaskSetError,
     > {
@@ -4599,7 +4683,7 @@ impl UpdateServicePrimaryTaskSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateServicePrimaryTaskSet {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateServicePrimaryTaskSetOutput,
         crate::error::UpdateServicePrimaryTaskSetError,
     >;
@@ -4625,7 +4709,8 @@ impl UpdateTaskSet {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::UpdateTaskSetOutput, crate::error::UpdateTaskSetError> {
+    ) -> std::result::Result<crate::output::UpdateTaskSetOutput, crate::error::UpdateTaskSetError>
+    {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -4713,7 +4798,8 @@ impl UpdateTaskSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateTaskSet {
-    type Output = Result<crate::output::UpdateTaskSetOutput, crate::error::UpdateTaskSetError>;
+    type Output =
+        std::result::Result<crate::output::UpdateTaskSetOutput, crate::error::UpdateTaskSetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }

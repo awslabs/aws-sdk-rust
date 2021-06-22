@@ -33,7 +33,8 @@ impl InvokeEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for InvokeEndpoint {
-    type Output = Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError>;
+    type Output =
+        std::result::Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_invoke_endpoint_error(response)

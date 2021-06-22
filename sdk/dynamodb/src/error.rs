@@ -66,6 +66,18 @@ impl BatchExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchExecuteStatementErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchExecuteStatementErrorKind::RequestLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for BatchExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -149,6 +161,24 @@ impl BatchGetItemError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, BatchGetItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, BatchGetItemErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetItemErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, BatchGetItemErrorKind::RequestLimitExceeded(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, BatchGetItemErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for BatchGetItemError {
@@ -238,6 +268,33 @@ impl BatchWriteItemError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, BatchWriteItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, BatchWriteItemErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededError(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchWriteItemErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, BatchWriteItemErrorKind::RequestLimitExceeded(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchWriteItemErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for BatchWriteItemError {
@@ -331,6 +388,30 @@ impl CreateBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_backup_in_use_error(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::BackupInUseError(_))
+    }
+    pub fn is_continuous_backups_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBackupErrorKind::ContinuousBackupsUnavailableError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::LimitExceededError(_))
+    }
+    pub fn is_table_in_use_error(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::TableInUseError(_))
+    }
+    pub fn is_table_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::TableNotFoundError(_))
+    }
 }
 impl std::error::Error for CreateBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -420,6 +501,36 @@ impl CreateGlobalTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_global_table_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalTableErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalTableErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalTableErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalTableErrorKind::TableNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for CreateGlobalTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -504,6 +615,18 @@ impl CreateTableError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, CreateTableErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, CreateTableErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateTableErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, CreateTableErrorKind::ResourceInUseError(_))
     }
 }
 impl std::error::Error for CreateTableError {
@@ -590,6 +713,21 @@ impl DeleteBackupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_backup_in_use_error(&self) -> bool {
+        matches!(&self.kind, DeleteBackupErrorKind::BackupInUseError(_))
+    }
+    pub fn is_backup_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteBackupErrorKind::BackupNotFoundError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteBackupErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, DeleteBackupErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteBackupErrorKind::LimitExceededError(_))
     }
 }
 impl std::error::Error for DeleteBackupError {
@@ -684,6 +822,39 @@ impl DeleteItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conditional_check_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteItemErrorKind::ConditionalCheckFailedError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, DeleteItemErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteItemErrorKind::ItemCollectionSizeLimitExceededError(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteItemErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, DeleteItemErrorKind::RequestLimitExceeded(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteItemErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_transaction_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteItemErrorKind::TransactionConflictError(_))
+    }
 }
 impl std::error::Error for DeleteItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -774,6 +945,21 @@ impl DeleteTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteTableErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, DeleteTableErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteTableErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, DeleteTableErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteTableErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for DeleteTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -857,6 +1043,15 @@ impl DescribeBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_backup_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeBackupErrorKind::BackupNotFoundError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeBackupErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, DescribeBackupErrorKind::InvalidEndpointError(_))
+    }
 }
 impl std::error::Error for DescribeBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -938,6 +1133,24 @@ impl DescribeContinuousBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContinuousBackupsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContinuousBackupsErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContinuousBackupsErrorKind::TableNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeContinuousBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1016,6 +1229,18 @@ impl DescribeContributorInsightsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContributorInsightsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContributorInsightsErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeContributorInsightsError {
@@ -1169,6 +1394,15 @@ impl DescribeExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_export_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeExportErrorKind::ExportNotFoundError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeExportErrorKind::InternalServerError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DescribeExportErrorKind::LimitExceededError(_))
+    }
 }
 impl std::error::Error for DescribeExportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1250,6 +1484,24 @@ impl DescribeGlobalTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_global_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGlobalTableErrorKind::GlobalTableNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGlobalTableErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGlobalTableErrorKind::InvalidEndpointError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeGlobalTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1330,6 +1582,24 @@ impl DescribeGlobalTableSettingsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_global_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGlobalTableSettingsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGlobalTableSettingsErrorKind::InvalidEndpointError(_)
+        )
     }
 }
 impl std::error::Error for DescribeGlobalTableSettingsError {
@@ -1421,6 +1691,24 @@ impl DescribeKinesisStreamingDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeKinesisStreamingDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1508,6 +1796,12 @@ impl DescribeLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeLimitsErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, DescribeLimitsErrorKind::InvalidEndpointError(_))
+    }
 }
 impl std::error::Error for DescribeLimitsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1587,6 +1881,15 @@ impl DescribeTableError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeTableErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, DescribeTableErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeTableErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for DescribeTableError {
@@ -1669,6 +1972,18 @@ impl DescribeTableReplicaAutoScalingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeTableReplicaAutoScalingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1748,6 +2063,24 @@ impl DescribeTimeToLiveError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTimeToLiveErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTimeToLiveErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTimeToLiveErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeTimeToLiveError {
@@ -1846,6 +2179,36 @@ impl DisableKinesisStreamingDestinationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKinesisStreamingDestinationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKinesisStreamingDestinationErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKinesisStreamingDestinationErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DisableKinesisStreamingDestinationError {
@@ -1949,6 +2312,36 @@ impl EnableKinesisStreamingDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKinesisStreamingDestinationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKinesisStreamingDestinationErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKinesisStreamingDestinationErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for EnableKinesisStreamingDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2048,6 +2441,51 @@ impl ExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conditional_check_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::ConditionalCheckFailedError(_)
+        )
+    }
+    pub fn is_duplicate_item_error(&self) -> bool {
+        matches!(&self.kind, ExecuteStatementErrorKind::DuplicateItemError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededError(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::RequestLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_transaction_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::TransactionConflictError(_)
+        )
+    }
 }
 impl std::error::Error for ExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2144,6 +2582,48 @@ impl ExecuteTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_idempotent_parameter_mismatch_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteTransactionErrorKind::IdempotentParameterMismatchError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteTransactionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteTransactionErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteTransactionErrorKind::RequestLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteTransactionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_transaction_canceled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteTransactionErrorKind::TransactionCanceledError(_)
+        )
+    }
+    pub fn is_transaction_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteTransactionErrorKind::TransactionInProgressError(_)
+        )
+    }
 }
 impl std::error::Error for ExecuteTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2237,6 +2717,42 @@ impl ExportTableToPointInTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_export_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportTableToPointInTimeErrorKind::ExportConflictError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportTableToPointInTimeErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_export_time_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportTableToPointInTimeErrorKind::InvalidExportTimeError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportTableToPointInTimeErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_point_in_time_recovery_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(_)
+        )
+    }
+    pub fn is_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportTableToPointInTimeErrorKind::TableNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for ExportTableToPointInTimeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2327,6 +2843,24 @@ impl GetItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, GetItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, GetItemErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetItemErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, GetItemErrorKind::RequestLimitExceeded(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetItemErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for GetItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2408,6 +2942,12 @@ impl ListBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ListBackupsErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, ListBackupsErrorKind::InvalidEndpointError(_))
+    }
 }
 impl std::error::Error for ListBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2485,6 +3025,18 @@ impl ListContributorInsightsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContributorInsightsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContributorInsightsErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for ListContributorInsightsError {
@@ -2564,6 +3116,12 @@ impl ListExportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ListExportsErrorKind::InternalServerError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, ListExportsErrorKind::LimitExceededError(_))
+    }
 }
 impl std::error::Error for ListExportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2642,6 +3200,18 @@ impl ListGlobalTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGlobalTablesErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGlobalTablesErrorKind::InvalidEndpointError(_)
+        )
+    }
 }
 impl std::error::Error for ListGlobalTablesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2719,6 +3289,12 @@ impl ListTablesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ListTablesErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, ListTablesErrorKind::InvalidEndpointError(_))
     }
 }
 impl std::error::Error for ListTablesError {
@@ -2799,6 +3375,24 @@ impl ListTagsOfResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsOfResourceErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsOfResourceErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsOfResourceErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for ListTagsOfResourceError {
@@ -2891,6 +3485,36 @@ impl PutItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conditional_check_failed_error(&self) -> bool {
+        matches!(&self.kind, PutItemErrorKind::ConditionalCheckFailedError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, PutItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, PutItemErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutItemErrorKind::ItemCollectionSizeLimitExceededError(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutItemErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, PutItemErrorKind::RequestLimitExceeded(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutItemErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_transaction_conflict_error(&self) -> bool {
+        matches!(&self.kind, PutItemErrorKind::TransactionConflictError(_))
+    }
 }
 impl std::error::Error for PutItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2980,6 +3604,24 @@ impl QueryError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, QueryErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, QueryErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            QueryErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, QueryErrorKind::RequestLimitExceeded(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, QueryErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for QueryError {
@@ -3071,6 +3713,48 @@ impl RestoreTableFromBackupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_backup_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromBackupErrorKind::BackupInUseError(_)
+        )
+    }
+    pub fn is_backup_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromBackupErrorKind::BackupNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromBackupErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromBackupErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromBackupErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_table_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromBackupErrorKind::TableAlreadyExistsError(_)
+        )
+    }
+    pub fn is_table_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableFromBackupErrorKind::TableInUseError(_)
+        )
     }
 }
 impl std::error::Error for RestoreTableFromBackupError {
@@ -3169,6 +3853,54 @@ impl RestoreTableToPointInTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableToPointInTimeErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableToPointInTimeErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_invalid_restore_time_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableToPointInTimeErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_point_in_time_recovery_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(_)
+        )
+    }
+    pub fn is_table_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsError(_)
+        )
+    }
+    pub fn is_table_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableToPointInTimeErrorKind::TableInUseError(_)
+        )
+    }
+    pub fn is_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreTableToPointInTimeErrorKind::TableNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for RestoreTableToPointInTimeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3261,6 +3993,24 @@ impl ScanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ScanErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, ScanErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ScanErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, ScanErrorKind::RequestLimitExceeded(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, ScanErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for ScanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3347,6 +4097,21 @@ impl TagResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for TagResourceError {
@@ -3436,6 +4201,42 @@ impl TransactGetItemsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactGetItemsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactGetItemsErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactGetItemsErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactGetItemsErrorKind::RequestLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactGetItemsErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_transaction_canceled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactGetItemsErrorKind::TransactionCanceledError(_)
+        )
     }
 }
 impl std::error::Error for TransactGetItemsError {
@@ -3533,6 +4334,54 @@ impl TransactWriteItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_idempotent_parameter_mismatch_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactWriteItemsErrorKind::IdempotentParameterMismatchError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactWriteItemsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactWriteItemsErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactWriteItemsErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactWriteItemsErrorKind::RequestLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactWriteItemsErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_transaction_canceled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactWriteItemsErrorKind::TransactionCanceledError(_)
+        )
+    }
+    pub fn is_transaction_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransactWriteItemsErrorKind::TransactionInProgressError(_)
+        )
+    }
 }
 impl std::error::Error for TransactWriteItemsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3623,6 +4472,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3710,6 +4574,30 @@ impl UpdateContinuousBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_continuous_backups_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousBackupsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousBackupsErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousBackupsErrorKind::TableNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateContinuousBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3791,6 +4679,18 @@ impl UpdateContributorInsightsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContributorInsightsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContributorInsightsErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for UpdateContributorInsightsError {
@@ -3877,6 +4777,42 @@ impl UpdateGlobalTableError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_global_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableErrorKind::GlobalTableNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_replica_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsError(_)
+        )
+    }
+    pub fn is_replica_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableErrorKind::ReplicaNotFoundError(_)
+        )
+    }
+    pub fn is_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableErrorKind::TableNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for UpdateGlobalTableError {
@@ -3969,6 +4905,48 @@ impl UpdateGlobalTableSettingsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_global_table_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundError(_)
+        )
+    }
+    pub fn is_index_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableSettingsErrorKind::IndexNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableSettingsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableSettingsErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableSettingsErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_replica_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGlobalTableSettingsErrorKind::ResourceInUseError(_)
+        )
     }
 }
 impl std::error::Error for UpdateGlobalTableSettingsError {
@@ -4065,6 +5043,39 @@ impl UpdateItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conditional_check_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateItemErrorKind::ConditionalCheckFailedError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, UpdateItemErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateItemErrorKind::ItemCollectionSizeLimitExceededError(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateItemErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_request_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, UpdateItemErrorKind::RequestLimitExceeded(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateItemErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_transaction_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateItemErrorKind::TransactionConflictError(_))
+    }
 }
 impl std::error::Error for UpdateItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4155,6 +5166,21 @@ impl UpdateTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateTableErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(&self.kind, UpdateTableErrorKind::InvalidEndpointError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UpdateTableErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, UpdateTableErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateTableErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for UpdateTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4239,6 +5265,30 @@ impl UpdateTableReplicaAutoScalingError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableReplicaAutoScalingErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for UpdateTableReplicaAutoScalingError {
@@ -4326,6 +5376,30 @@ impl UpdateTimeToLiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTimeToLiveErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_endpoint_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTimeToLiveErrorKind::InvalidEndpointError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UpdateTimeToLiveErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, UpdateTimeToLiveErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTimeToLiveErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateTimeToLiveError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4382,12 +5456,12 @@ pub mod resource_not_found_error {
     }
     impl Builder {
         /// <p>The resource which is being requested does not exist.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
@@ -4448,12 +5522,12 @@ pub mod resource_in_use_error {
     }
     impl Builder {
         /// <p>The resource which is being attempted to be changed is in use.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
@@ -4520,12 +5594,12 @@ pub mod limit_exceeded_error {
     }
     impl Builder {
         /// <p>Too many operations for a given subscriber.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
@@ -4581,12 +5655,12 @@ pub mod invalid_endpoint_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidEndpointError`](crate::error::InvalidEndpointError)
@@ -4645,12 +5719,12 @@ pub mod internal_server_error {
     }
     impl Builder {
         /// <p>The server encountered an internal error trying to fulfill the request.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError)
@@ -4707,12 +5781,12 @@ pub mod transaction_conflict_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TransactionConflictError`](crate::error::TransactionConflictError)
@@ -4769,12 +5843,12 @@ pub mod request_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`RequestLimitExceeded`](crate::error::RequestLimitExceeded)
@@ -4840,12 +5914,12 @@ pub mod provisioned_throughput_exceeded_error {
     }
     impl Builder {
         /// <p>You exceeded your maximum allowed provisioned throughput.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ProvisionedThroughputExceededError`](crate::error::ProvisionedThroughputExceededError)
@@ -4907,12 +5981,12 @@ pub mod item_collection_size_limit_exceeded_error {
     }
     impl Builder {
         /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ItemCollectionSizeLimitExceededError`](crate::error::ItemCollectionSizeLimitExceededError)
@@ -4974,12 +6048,12 @@ pub mod conditional_check_failed_error {
     }
     impl Builder {
         /// <p>The conditional request failed.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConditionalCheckFailedError`](crate::error::ConditionalCheckFailedError)
@@ -5036,12 +6110,12 @@ pub mod replica_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicaNotFoundError`](crate::error::ReplicaNotFoundError)
@@ -5098,12 +6172,12 @@ pub mod index_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IndexNotFoundError`](crate::error::IndexNotFoundError)
@@ -5160,12 +6234,12 @@ pub mod global_table_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`GlobalTableNotFoundError`](crate::error::GlobalTableNotFoundError)
@@ -5222,12 +6296,12 @@ pub mod table_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TableNotFoundError`](crate::error::TableNotFoundError)
@@ -5287,12 +6361,12 @@ pub mod replica_already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicaAlreadyExistsError`](crate::error::ReplicaAlreadyExistsError)
@@ -5352,12 +6426,12 @@ pub mod continuous_backups_unavailable_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ContinuousBackupsUnavailableError`](crate::error::ContinuousBackupsUnavailableError)
@@ -5417,12 +6491,12 @@ pub mod transaction_in_progress_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TransactionInProgressError`](crate::error::TransactionInProgressError)
@@ -5683,28 +6757,28 @@ pub mod transaction_canceled_error {
             std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         pub fn cancellation_reasons(
             mut self,
-            inp: impl Into<crate::model::CancellationReason>,
+            input: impl Into<crate::model::CancellationReason>,
         ) -> Self {
             let mut v = self.cancellation_reasons.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cancellation_reasons = Some(v);
             self
         }
         pub fn set_cancellation_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
         ) -> Self {
-            self.cancellation_reasons = inp;
+            self.cancellation_reasons = input;
             self
         }
         /// Consumes the builder and constructs a [`TransactionCanceledError`](crate::error::TransactionCanceledError)
@@ -5766,12 +6840,12 @@ pub mod idempotent_parameter_mismatch_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IdempotentParameterMismatchError`](crate::error::IdempotentParameterMismatchError)
@@ -5828,12 +6902,12 @@ pub mod table_in_use_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TableInUseError`](crate::error::TableInUseError)
@@ -5890,12 +6964,12 @@ pub mod table_already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TableAlreadyExistsError`](crate::error::TableAlreadyExistsError)
@@ -5955,12 +7029,12 @@ pub mod point_in_time_recovery_unavailable_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PointInTimeRecoveryUnavailableError`](crate::error::PointInTimeRecoveryUnavailableError)
@@ -6017,12 +7091,12 @@ pub mod invalid_restore_time_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidRestoreTimeError`](crate::error::InvalidRestoreTimeError)
@@ -6079,12 +7153,12 @@ pub mod backup_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BackupNotFoundError`](crate::error::BackupNotFoundError)
@@ -6141,12 +7215,12 @@ pub mod backup_in_use_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BackupInUseError`](crate::error::BackupInUseError)
@@ -6204,12 +7278,12 @@ pub mod invalid_export_time_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidExportTimeError`](crate::error::InvalidExportTimeError)
@@ -6266,12 +7340,12 @@ pub mod export_conflict_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportConflictError`](crate::error::ExportConflictError)
@@ -6330,12 +7404,12 @@ pub mod duplicate_item_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DuplicateItemError`](crate::error::DuplicateItemError)
@@ -6392,12 +7466,12 @@ pub mod export_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportNotFoundError`](crate::error::ExportNotFoundError)
@@ -6457,12 +7531,12 @@ pub mod global_table_already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`GlobalTableAlreadyExistsError`](crate::error::GlobalTableAlreadyExistsError)

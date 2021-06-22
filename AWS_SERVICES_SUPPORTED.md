@@ -30,6 +30,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] Amazon Runtime.Sagemaker
 - [x] [Amazon Ec2](https://github.com/awslabs/aws-sdk-rust/issues/18)
 - [x] [Amazon SES v2](https://github.com/awslabs/aws-sdk-rust/issues/27)
+- [x] [Amazon Cloudwatch Logs](https://github.com/awslabs/aws-sdk-rust/issues/30)
 
 ------
 - [ ] Amazon Access Analyzer
@@ -63,7 +64,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Cloudsearch
 - [ ] Amazon Cloudsearchdomain
 - [ ] Amazon Cloudwatch
-- [ ] [Amazon Cloudwatch Logs](https://github.com/awslabs/aws-sdk-rust/issues/30)
 - [ ] Amazon Cloud Trail
 - [ ] Amazon Code Artifact
 - [ ] Amazon Code Build

@@ -34,15 +34,15 @@ pub mod get_session_token_output {
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
         /// </note>
-        pub fn credentials(mut self, inp: crate::model::Credentials) -> Self {
-            self.credentials = Some(inp);
+        pub fn credentials(mut self, input: crate::model::Credentials) -> Self {
+            self.credentials = Some(input);
             self
         }
         pub fn set_credentials(
             mut self,
-            inp: std::option::Option<crate::model::Credentials>,
+            input: std::option::Option<crate::model::Credentials>,
         ) -> Self {
-            self.credentials = inp;
+            self.credentials = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput)
@@ -108,41 +108,41 @@ pub mod get_federation_token_output {
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
         /// </note>
-        pub fn credentials(mut self, inp: crate::model::Credentials) -> Self {
-            self.credentials = Some(inp);
+        pub fn credentials(mut self, input: crate::model::Credentials) -> Self {
+            self.credentials = Some(input);
             self
         }
         pub fn set_credentials(
             mut self,
-            inp: std::option::Option<crate::model::Credentials>,
+            input: std::option::Option<crate::model::Credentials>,
         ) -> Self {
-            self.credentials = inp;
+            self.credentials = input;
             self
         }
         /// <p>Identifiers for the federated user associated with the credentials (such as
         /// <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
         /// <code>123456789012:Bob</code>). You can use the federated user's ARN in your
         /// resource-based policies, such as an Amazon S3 bucket policy. </p>
-        pub fn federated_user(mut self, inp: crate::model::FederatedUser) -> Self {
-            self.federated_user = Some(inp);
+        pub fn federated_user(mut self, input: crate::model::FederatedUser) -> Self {
+            self.federated_user = Some(input);
             self
         }
         pub fn set_federated_user(
             mut self,
-            inp: std::option::Option<crate::model::FederatedUser>,
+            input: std::option::Option<crate::model::FederatedUser>,
         ) -> Self {
-            self.federated_user = inp;
+            self.federated_user = input;
             self
         }
         /// <p>A percentage value that indicates the packed size of the session policies and session
         /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
         /// which means the policies and tags exceeded the allowed space.</p>
-        pub fn packed_policy_size(mut self, inp: i32) -> Self {
-            self.packed_policy_size = Some(inp);
+        pub fn packed_policy_size(mut self, input: i32) -> Self {
+            self.packed_policy_size = Some(input);
             self
         }
-        pub fn set_packed_policy_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.packed_policy_size = inp;
+        pub fn set_packed_policy_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.packed_policy_size = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput)
@@ -202,31 +202,31 @@ pub mod get_caller_identity_output {
         /// entity that is making the call. The values returned are those listed in the <b>aws:userid</b> column in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
         /// table</a> found on the <b>Policy Variables</b> reference
         /// page in the <i>IAM User Guide</i>.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_id = Some(inp.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
             self
         }
-        pub fn set_user_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_id = inp;
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
             self
         }
         /// <p>The AWS account ID number of the account that owns or contains the calling
         /// entity.</p>
-        pub fn account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account = Some(inp.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account = Some(input.into());
             self
         }
-        pub fn set_account(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account = inp;
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account = input;
             self
         }
         /// <p>The AWS ARN associated with the calling entity.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput)
@@ -269,12 +269,12 @@ pub mod get_access_key_info_output {
     }
     impl Builder {
         /// <p>The number used to identify the AWS account.</p>
-        pub fn account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account = Some(inp.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account = Some(input.into());
             self
         }
-        pub fn set_account(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account = inp;
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput)
@@ -317,15 +317,15 @@ pub mod decode_authorization_message_output {
     }
     impl Builder {
         /// <p>An XML document that contains the decoded message.</p>
-        pub fn decoded_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.decoded_message = Some(inp.into());
+        pub fn decoded_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.decoded_message = Some(input.into());
             self
         }
         pub fn set_decoded_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.decoded_message = inp;
+            self.decoded_message = input;
             self
         }
         /// Consumes the builder and constructs a [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput)
@@ -437,15 +437,15 @@ pub mod assume_role_with_web_identity_output {
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
         /// </note>
-        pub fn credentials(mut self, inp: crate::model::Credentials) -> Self {
-            self.credentials = Some(inp);
+        pub fn credentials(mut self, input: crate::model::Credentials) -> Self {
+            self.credentials = Some(input);
             self
         }
         pub fn set_credentials(
             mut self,
-            inp: std::option::Option<crate::model::Credentials>,
+            input: std::option::Option<crate::model::Credentials>,
         ) -> Self {
-            self.credentials = inp;
+            self.credentials = input;
             self
         }
         /// <p>The unique user identifier that is returned by the identity provider. This identifier is
@@ -456,16 +456,16 @@ pub mod assume_role_with_web_identity_output {
         /// identity provider as the token's <code>sub</code> (Subject) claim. </p>
         pub fn subject_from_web_identity_token(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.subject_from_web_identity_token = Some(inp.into());
+            self.subject_from_web_identity_token = Some(input.into());
             self
         }
         pub fn set_subject_from_web_identity_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subject_from_web_identity_token = inp;
+            self.subject_from_web_identity_token = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you
@@ -473,49 +473,49 @@ pub mod assume_role_with_web_identity_output {
         /// reference these credentials as a principal in a resource-based policy by using the ARN or
         /// assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified
         /// when you called <code>AssumeRole</code>. </p>
-        pub fn assumed_role_user(mut self, inp: crate::model::AssumedRoleUser) -> Self {
-            self.assumed_role_user = Some(inp);
+        pub fn assumed_role_user(mut self, input: crate::model::AssumedRoleUser) -> Self {
+            self.assumed_role_user = Some(input);
             self
         }
         pub fn set_assumed_role_user(
             mut self,
-            inp: std::option::Option<crate::model::AssumedRoleUser>,
+            input: std::option::Option<crate::model::AssumedRoleUser>,
         ) -> Self {
-            self.assumed_role_user = inp;
+            self.assumed_role_user = input;
             self
         }
         /// <p>A percentage value that indicates the packed size of the session policies and session
         /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
         /// which means the policies and tags exceeded the allowed space.</p>
-        pub fn packed_policy_size(mut self, inp: i32) -> Self {
-            self.packed_policy_size = Some(inp);
+        pub fn packed_policy_size(mut self, input: i32) -> Self {
+            self.packed_policy_size = Some(input);
             self
         }
-        pub fn set_packed_policy_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.packed_policy_size = inp;
+        pub fn set_packed_policy_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.packed_policy_size = input;
             self
         }
         /// <p> The issuing authority of the web identity token presented. For OpenID Connect ID
         /// tokens, this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens,
         /// this contains the value of the <code>ProviderId</code> parameter that was passed in the
         /// <code>AssumeRoleWithWebIdentity</code> request.</p>
-        pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.provider = Some(inp.into());
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.provider = Some(input.into());
             self
         }
-        pub fn set_provider(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.provider = inp;
+        pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider = input;
             self
         }
         /// <p>The intended audience (also known as client ID) of the web identity token. This is
         /// traditionally the client identifier issued to the application that requested the web
         /// identity token.</p>
-        pub fn audience(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audience = Some(inp.into());
+        pub fn audience(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audience = Some(input.into());
             self
         }
-        pub fn set_audience(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.audience = inp;
+        pub fn set_audience(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audience = input;
             self
         }
         /// <p>The value of the source identity that is returned in the JSON web token (JWT) from the
@@ -535,15 +535,15 @@ pub mod assume_role_with_web_identity_output {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn source_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_identity = Some(inp.into());
+        pub fn source_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_identity = Some(input.into());
             self
         }
         pub fn set_source_identity(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_identity = inp;
+            self.source_identity = input;
             self
         }
         /// Consumes the builder and constructs a [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput)
@@ -677,49 +677,49 @@ pub mod assume_role_with_saml_output {
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
         /// </note>
-        pub fn credentials(mut self, inp: crate::model::Credentials) -> Self {
-            self.credentials = Some(inp);
+        pub fn credentials(mut self, input: crate::model::Credentials) -> Self {
+            self.credentials = Some(input);
             self
         }
         pub fn set_credentials(
             mut self,
-            inp: std::option::Option<crate::model::Credentials>,
+            input: std::option::Option<crate::model::Credentials>,
         ) -> Self {
-            self.credentials = inp;
+            self.credentials = input;
             self
         }
         /// <p>The identifiers for the temporary security credentials that the operation
         /// returns.</p>
-        pub fn assumed_role_user(mut self, inp: crate::model::AssumedRoleUser) -> Self {
-            self.assumed_role_user = Some(inp);
+        pub fn assumed_role_user(mut self, input: crate::model::AssumedRoleUser) -> Self {
+            self.assumed_role_user = Some(input);
             self
         }
         pub fn set_assumed_role_user(
             mut self,
-            inp: std::option::Option<crate::model::AssumedRoleUser>,
+            input: std::option::Option<crate::model::AssumedRoleUser>,
         ) -> Self {
-            self.assumed_role_user = inp;
+            self.assumed_role_user = input;
             self
         }
         /// <p>A percentage value that indicates the packed size of the session policies and session
         /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
         /// which means the policies and tags exceeded the allowed space.</p>
-        pub fn packed_policy_size(mut self, inp: i32) -> Self {
-            self.packed_policy_size = Some(inp);
+        pub fn packed_policy_size(mut self, input: i32) -> Self {
+            self.packed_policy_size = Some(input);
             self
         }
-        pub fn set_packed_policy_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.packed_policy_size = inp;
+        pub fn set_packed_policy_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.packed_policy_size = input;
             self
         }
         /// <p>The value of the <code>NameID</code> element in the <code>Subject</code> element of the
         /// SAML assertion.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subject = Some(inp.into());
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subject = Some(input.into());
             self
         }
-        pub fn set_subject(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subject = inp;
+        pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subject = input;
             self
         }
         /// <p> The format of the name ID, as defined by the <code>Format</code> attribute in the
@@ -730,31 +730,31 @@ pub mod assume_role_with_saml_output {
         /// example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is returned as
         /// <code>transient</code>. If the format includes any other prefix, the format is returned
         /// with no modifications.</p>
-        pub fn subject_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subject_type = Some(inp.into());
+        pub fn subject_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subject_type = Some(input.into());
             self
         }
-        pub fn set_subject_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subject_type = inp;
+        pub fn set_subject_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subject_type = input;
             self
         }
         /// <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
-        pub fn issuer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.issuer = Some(inp.into());
+        pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.issuer = Some(input.into());
             self
         }
-        pub fn set_issuer(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.issuer = inp;
+        pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.issuer = input;
             self
         }
         /// <p> The value of the <code>Recipient</code> attribute of the
         /// <code>SubjectConfirmationData</code> element of the SAML assertion. </p>
-        pub fn audience(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audience = Some(inp.into());
+        pub fn audience(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audience = Some(input.into());
             self
         }
-        pub fn set_audience(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.audience = inp;
+        pub fn set_audience(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audience = input;
             self
         }
         /// <p>A hash value based on the concatenation of the following:</p>
@@ -775,12 +775,15 @@ pub mod assume_role_with_saml_output {
         /// <p>
         /// <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
         /// </p>
-        pub fn name_qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name_qualifier = Some(inp.into());
+        pub fn name_qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_qualifier = Some(input.into());
             self
         }
-        pub fn set_name_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name_qualifier = inp;
+        pub fn set_name_qualifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_qualifier = input;
             self
         }
         /// <p>The value in the <code>SourceIdentity</code> attribute in the SAML assertion. </p>
@@ -798,15 +801,15 @@ pub mod assume_role_with_saml_output {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn source_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_identity = Some(inp.into());
+        pub fn source_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_identity = Some(input.into());
             self
         }
         pub fn set_source_identity(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_identity = inp;
+            self.source_identity = input;
             self
         }
         /// Consumes the builder and constructs a [`AssumeRoleWithSAMLOutput`](crate::output::AssumeRoleWithSAMLOutput)
@@ -897,15 +900,15 @@ pub mod assume_role_output {
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
         /// </note>
-        pub fn credentials(mut self, inp: crate::model::Credentials) -> Self {
-            self.credentials = Some(inp);
+        pub fn credentials(mut self, input: crate::model::Credentials) -> Self {
+            self.credentials = Some(input);
             self
         }
         pub fn set_credentials(
             mut self,
-            inp: std::option::Option<crate::model::Credentials>,
+            input: std::option::Option<crate::model::Credentials>,
         ) -> Self {
-            self.credentials = inp;
+            self.credentials = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you
@@ -913,26 +916,26 @@ pub mod assume_role_output {
         /// reference these credentials as a principal in a resource-based policy by using the ARN or
         /// assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified
         /// when you called <code>AssumeRole</code>. </p>
-        pub fn assumed_role_user(mut self, inp: crate::model::AssumedRoleUser) -> Self {
-            self.assumed_role_user = Some(inp);
+        pub fn assumed_role_user(mut self, input: crate::model::AssumedRoleUser) -> Self {
+            self.assumed_role_user = Some(input);
             self
         }
         pub fn set_assumed_role_user(
             mut self,
-            inp: std::option::Option<crate::model::AssumedRoleUser>,
+            input: std::option::Option<crate::model::AssumedRoleUser>,
         ) -> Self {
-            self.assumed_role_user = inp;
+            self.assumed_role_user = input;
             self
         }
         /// <p>A percentage value that indicates the packed size of the session policies and session
         /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
         /// which means the policies and tags exceeded the allowed space.</p>
-        pub fn packed_policy_size(mut self, inp: i32) -> Self {
-            self.packed_policy_size = Some(inp);
+        pub fn packed_policy_size(mut self, input: i32) -> Self {
+            self.packed_policy_size = Some(input);
             self
         }
-        pub fn set_packed_policy_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.packed_policy_size = inp;
+        pub fn set_packed_policy_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.packed_policy_size = input;
             self
         }
         /// <p>The source identity specified by the principal that is calling the
@@ -948,15 +951,15 @@ pub mod assume_role_output {
         /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
         /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
         /// any of the following characters: =,.@-</p>
-        pub fn source_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_identity = Some(inp.into());
+        pub fn source_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_identity = Some(input.into());
             self
         }
         pub fn set_source_identity(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_identity = inp;
+            self.source_identity = input;
             self
         }
         /// Consumes the builder and constructs a [`AssumeRoleOutput`](crate::output::AssumeRoleOutput)

@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_client_id_to_open_id_connect_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AddClientIDToOpenIDConnectProviderOutput,
     crate::error::AddClientIDToOpenIDConnectProviderError,
 > {
@@ -78,7 +78,7 @@ pub fn parse_add_client_id_to_open_id_connect_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_client_id_to_open_id_connect_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AddClientIDToOpenIDConnectProviderOutput,
     crate::error::AddClientIDToOpenIDConnectProviderError,
 > {
@@ -94,7 +94,7 @@ pub fn parse_add_client_id_to_open_id_connect_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_role_to_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AddRoleToInstanceProfileOutput,
     crate::error::AddRoleToInstanceProfileError,
 > {
@@ -186,7 +186,7 @@ pub fn parse_add_role_to_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_role_to_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AddRoleToInstanceProfileOutput,
     crate::error::AddRoleToInstanceProfileError,
 > {
@@ -201,7 +201,7 @@ pub fn parse_add_role_to_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_user_to_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError> {
+) -> std::result::Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AddUserToGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -258,7 +258,7 @@ pub fn parse_add_user_to_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_user_to_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError> {
+) -> std::result::Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::add_user_to_group_output::Builder::default();
@@ -270,7 +270,8 @@ pub fn parse_add_user_to_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_group_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachGroupPolicyOutput, crate::error::AttachGroupPolicyError> {
+) -> std::result::Result<crate::output::AttachGroupPolicyOutput, crate::error::AttachGroupPolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AttachGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -355,7 +356,8 @@ pub fn parse_attach_group_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_group_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachGroupPolicyOutput, crate::error::AttachGroupPolicyError> {
+) -> std::result::Result<crate::output::AttachGroupPolicyOutput, crate::error::AttachGroupPolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::attach_group_policy_output::Builder::default();
@@ -367,7 +369,8 @@ pub fn parse_attach_group_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_role_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachRolePolicyOutput, crate::error::AttachRolePolicyError> {
+) -> std::result::Result<crate::output::AttachRolePolicyOutput, crate::error::AttachRolePolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AttachRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -466,7 +469,8 @@ pub fn parse_attach_role_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_role_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachRolePolicyOutput, crate::error::AttachRolePolicyError> {
+) -> std::result::Result<crate::output::AttachRolePolicyOutput, crate::error::AttachRolePolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::attach_role_policy_output::Builder::default();
@@ -478,7 +482,8 @@ pub fn parse_attach_role_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_user_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachUserPolicyOutput, crate::error::AttachUserPolicyError> {
+) -> std::result::Result<crate::output::AttachUserPolicyOutput, crate::error::AttachUserPolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AttachUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -563,7 +568,8 @@ pub fn parse_attach_user_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_user_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachUserPolicyOutput, crate::error::AttachUserPolicyError> {
+) -> std::result::Result<crate::output::AttachUserPolicyOutput, crate::error::AttachUserPolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::attach_user_policy_output::Builder::default();
@@ -575,7 +581,7 @@ pub fn parse_attach_user_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_password_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError> {
+) -> std::result::Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ChangePasswordError::unhandled)?;
     let error_code = match generic.code() {
@@ -671,7 +677,7 @@ pub fn parse_change_password_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_password_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError> {
+) -> std::result::Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::change_password_output::Builder::default();
@@ -683,7 +689,7 @@ pub fn parse_change_password_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_access_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateAccessKeyOutput, crate::error::CreateAccessKeyError> {
+) -> std::result::Result<crate::output::CreateAccessKeyOutput, crate::error::CreateAccessKeyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateAccessKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -740,7 +746,7 @@ pub fn parse_create_access_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_access_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateAccessKeyOutput, crate::error::CreateAccessKeyError> {
+) -> std::result::Result<crate::output::CreateAccessKeyOutput, crate::error::CreateAccessKeyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_access_key_output::Builder::default();
@@ -755,7 +761,10 @@ pub fn parse_create_access_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_account_alias_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateAccountAliasOutput, crate::error::CreateAccountAliasError> {
+) -> std::result::Result<
+    crate::output::CreateAccountAliasOutput,
+    crate::error::CreateAccountAliasError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateAccountAliasError::unhandled)?;
     let error_code = match generic.code() {
@@ -812,7 +821,10 @@ pub fn parse_create_account_alias_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_account_alias_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateAccountAliasOutput, crate::error::CreateAccountAliasError> {
+) -> std::result::Result<
+    crate::output::CreateAccountAliasOutput,
+    crate::error::CreateAccountAliasError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_account_alias_output::Builder::default();
@@ -824,7 +836,7 @@ pub fn parse_create_account_alias_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError> {
+) -> std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -895,7 +907,7 @@ pub fn parse_create_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError> {
+) -> std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_group_output::Builder::default();
@@ -909,7 +921,10 @@ pub fn parse_create_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateInstanceProfileOutput, crate::error::CreateInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::CreateInstanceProfileOutput,
+    crate::error::CreateInstanceProfileError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -994,7 +1009,10 @@ pub fn parse_create_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateInstanceProfileOutput, crate::error::CreateInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::CreateInstanceProfileOutput,
+    crate::error::CreateInstanceProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_instance_profile_output::Builder::default();
@@ -1011,7 +1029,10 @@ pub fn parse_create_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_login_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateLoginProfileOutput, crate::error::CreateLoginProfileError> {
+) -> std::result::Result<
+    crate::output::CreateLoginProfileOutput,
+    crate::error::CreateLoginProfileError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateLoginProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -1096,7 +1117,10 @@ pub fn parse_create_login_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_login_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateLoginProfileOutput, crate::error::CreateLoginProfileError> {
+) -> std::result::Result<
+    crate::output::CreateLoginProfileOutput,
+    crate::error::CreateLoginProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_login_profile_output::Builder::default();
@@ -1113,7 +1137,7 @@ pub fn parse_create_login_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_open_id_connect_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateOpenIDConnectProviderOutput,
     crate::error::CreateOpenIDConnectProviderError,
 > {
@@ -1207,7 +1231,7 @@ pub fn parse_create_open_id_connect_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_open_id_connect_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateOpenIDConnectProviderOutput,
     crate::error::CreateOpenIDConnectProviderError,
 > {
@@ -1227,7 +1251,7 @@ pub fn parse_create_open_id_connect_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError> {
+) -> std::result::Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreatePolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -1326,7 +1350,7 @@ pub fn parse_create_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError> {
+) -> std::result::Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_policy_output::Builder::default();
@@ -1340,7 +1364,10 @@ pub fn parse_create_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_policy_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreatePolicyVersionOutput, crate::error::CreatePolicyVersionError> {
+) -> std::result::Result<
+    crate::output::CreatePolicyVersionOutput,
+    crate::error::CreatePolicyVersionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreatePolicyVersionError::unhandled)?;
     let error_code = match generic.code() {
@@ -1425,7 +1452,10 @@ pub fn parse_create_policy_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_policy_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreatePolicyVersionOutput, crate::error::CreatePolicyVersionError> {
+) -> std::result::Result<
+    crate::output::CreatePolicyVersionOutput,
+    crate::error::CreatePolicyVersionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_policy_version_output::Builder::default();
@@ -1442,7 +1472,7 @@ pub fn parse_create_policy_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError> {
+) -> std::result::Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateRoleError::unhandled)?;
     let error_code = match generic.code() {
@@ -1541,7 +1571,7 @@ pub fn parse_create_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError> {
+) -> std::result::Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_role_output::Builder::default();
@@ -1555,7 +1585,10 @@ pub fn parse_create_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSAMLProviderOutput, crate::error::CreateSAMLProviderError> {
+) -> std::result::Result<
+    crate::output::CreateSAMLProviderOutput,
+    crate::error::CreateSAMLProviderError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
@@ -1640,7 +1673,10 @@ pub fn parse_create_saml_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_saml_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSAMLProviderOutput, crate::error::CreateSAMLProviderError> {
+) -> std::result::Result<
+    crate::output::CreateSAMLProviderOutput,
+    crate::error::CreateSAMLProviderError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_saml_provider_output::Builder::default();
@@ -1657,8 +1693,10 @@ pub fn parse_create_saml_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_service_linked_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateServiceLinkedRoleOutput, crate::error::CreateServiceLinkedRoleError>
-{
+) -> std::result::Result<
+    crate::output::CreateServiceLinkedRoleOutput,
+    crate::error::CreateServiceLinkedRoleError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
     let error_code = match generic.code() {
@@ -1733,8 +1771,10 @@ pub fn parse_create_service_linked_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_service_linked_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateServiceLinkedRoleOutput, crate::error::CreateServiceLinkedRoleError>
-{
+) -> std::result::Result<
+    crate::output::CreateServiceLinkedRoleOutput,
+    crate::error::CreateServiceLinkedRoleError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_service_linked_role_output::Builder::default();
@@ -1751,7 +1791,7 @@ pub fn parse_create_service_linked_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_service_specific_credential_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateServiceSpecificCredentialOutput,
     crate::error::CreateServiceSpecificCredentialError,
 > {
@@ -1813,7 +1853,7 @@ pub fn parse_create_service_specific_credential_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_service_specific_credential_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateServiceSpecificCredentialOutput,
     crate::error::CreateServiceSpecificCredentialError,
 > {
@@ -1834,7 +1874,7 @@ pub fn parse_create_service_specific_credential_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_user_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateUserOutput, crate::error::CreateUserError> {
+) -> std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateUserError::unhandled)?;
     let error_code = match generic.code() {
@@ -1933,7 +1973,7 @@ pub fn parse_create_user_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_user_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateUserOutput, crate::error::CreateUserError> {
+) -> std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_user_output::Builder::default();
@@ -1947,8 +1987,10 @@ pub fn parse_create_user_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_virtual_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVirtualMFADeviceOutput, crate::error::CreateVirtualMFADeviceError>
-{
+) -> std::result::Result<
+    crate::output::CreateVirtualMFADeviceOutput,
+    crate::error::CreateVirtualMFADeviceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
@@ -2037,8 +2079,10 @@ pub fn parse_create_virtual_mfa_device_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_virtual_mfa_device_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVirtualMFADeviceOutput, crate::error::CreateVirtualMFADeviceError>
-{
+) -> std::result::Result<
+    crate::output::CreateVirtualMFADeviceOutput,
+    crate::error::CreateVirtualMFADeviceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_virtual_mfa_device_output::Builder::default();
@@ -2055,7 +2099,10 @@ pub fn parse_create_virtual_mfa_device_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deactivate_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeactivateMFADeviceOutput, crate::error::DeactivateMFADeviceError> {
+) -> std::result::Result<
+    crate::output::DeactivateMFADeviceOutput,
+    crate::error::DeactivateMFADeviceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
@@ -2123,7 +2170,10 @@ pub fn parse_deactivate_mfa_device_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deactivate_mfa_device_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeactivateMFADeviceOutput, crate::error::DeactivateMFADeviceError> {
+) -> std::result::Result<
+    crate::output::DeactivateMFADeviceOutput,
+    crate::error::DeactivateMFADeviceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::deactivate_mfa_device_output::Builder::default();
@@ -2135,7 +2185,7 @@ pub fn parse_deactivate_mfa_device_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_access_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteAccessKeyOutput, crate::error::DeleteAccessKeyError> {
+) -> std::result::Result<crate::output::DeleteAccessKeyOutput, crate::error::DeleteAccessKeyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteAccessKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -2192,7 +2242,7 @@ pub fn parse_delete_access_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_access_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteAccessKeyOutput, crate::error::DeleteAccessKeyError> {
+) -> std::result::Result<crate::output::DeleteAccessKeyOutput, crate::error::DeleteAccessKeyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_access_key_output::Builder::default();
@@ -2204,7 +2254,10 @@ pub fn parse_delete_access_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_account_alias_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteAccountAliasOutput, crate::error::DeleteAccountAliasError> {
+) -> std::result::Result<
+    crate::output::DeleteAccountAliasOutput,
+    crate::error::DeleteAccountAliasError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteAccountAliasError::unhandled)?;
     let error_code = match generic.code() {
@@ -2261,7 +2314,10 @@ pub fn parse_delete_account_alias_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_account_alias_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteAccountAliasOutput, crate::error::DeleteAccountAliasError> {
+) -> std::result::Result<
+    crate::output::DeleteAccountAliasOutput,
+    crate::error::DeleteAccountAliasError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_account_alias_output::Builder::default();
@@ -2273,7 +2329,7 @@ pub fn parse_delete_account_alias_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_account_password_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteAccountPasswordPolicyOutput,
     crate::error::DeleteAccountPasswordPolicyError,
 > {
@@ -2337,7 +2393,7 @@ pub fn parse_delete_account_password_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_account_password_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteAccountPasswordPolicyOutput,
     crate::error::DeleteAccountPasswordPolicyError,
 > {
@@ -2352,7 +2408,7 @@ pub fn parse_delete_account_password_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError> {
+) -> std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -2423,7 +2479,7 @@ pub fn parse_delete_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError> {
+) -> std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_group_output::Builder::default();
@@ -2435,7 +2491,8 @@ pub fn parse_delete_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_group_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteGroupPolicyOutput, crate::error::DeleteGroupPolicyError> {
+) -> std::result::Result<crate::output::DeleteGroupPolicyOutput, crate::error::DeleteGroupPolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -2492,7 +2549,8 @@ pub fn parse_delete_group_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_group_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteGroupPolicyOutput, crate::error::DeleteGroupPolicyError> {
+) -> std::result::Result<crate::output::DeleteGroupPolicyOutput, crate::error::DeleteGroupPolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_group_policy_output::Builder::default();
@@ -2504,7 +2562,10 @@ pub fn parse_delete_group_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteInstanceProfileOutput, crate::error::DeleteInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::DeleteInstanceProfileOutput,
+    crate::error::DeleteInstanceProfileError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -2575,7 +2636,10 @@ pub fn parse_delete_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteInstanceProfileOutput, crate::error::DeleteInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::DeleteInstanceProfileOutput,
+    crate::error::DeleteInstanceProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_instance_profile_output::Builder::default();
@@ -2587,7 +2651,10 @@ pub fn parse_delete_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_login_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLoginProfileOutput, crate::error::DeleteLoginProfileError> {
+) -> std::result::Result<
+    crate::output::DeleteLoginProfileOutput,
+    crate::error::DeleteLoginProfileError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLoginProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -2655,7 +2722,10 @@ pub fn parse_delete_login_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_login_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLoginProfileOutput, crate::error::DeleteLoginProfileError> {
+) -> std::result::Result<
+    crate::output::DeleteLoginProfileOutput,
+    crate::error::DeleteLoginProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_login_profile_output::Builder::default();
@@ -2667,7 +2737,7 @@ pub fn parse_delete_login_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_open_id_connect_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteOpenIDConnectProviderOutput,
     crate::error::DeleteOpenIDConnectProviderError,
 > {
@@ -2731,7 +2801,7 @@ pub fn parse_delete_open_id_connect_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_open_id_connect_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteOpenIDConnectProviderOutput,
     crate::error::DeleteOpenIDConnectProviderError,
 > {
@@ -2746,7 +2816,7 @@ pub fn parse_delete_open_id_connect_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError> {
+) -> std::result::Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeletePolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -2831,7 +2901,7 @@ pub fn parse_delete_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError> {
+) -> std::result::Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_policy_output::Builder::default();
@@ -2843,7 +2913,10 @@ pub fn parse_delete_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_policy_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeletePolicyVersionOutput, crate::error::DeletePolicyVersionError> {
+) -> std::result::Result<
+    crate::output::DeletePolicyVersionOutput,
+    crate::error::DeletePolicyVersionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeletePolicyVersionError::unhandled)?;
     let error_code = match generic.code() {
@@ -2928,7 +3001,10 @@ pub fn parse_delete_policy_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_policy_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeletePolicyVersionOutput, crate::error::DeletePolicyVersionError> {
+) -> std::result::Result<
+    crate::output::DeletePolicyVersionOutput,
+    crate::error::DeletePolicyVersionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_policy_version_output::Builder::default();
@@ -2940,7 +3016,7 @@ pub fn parse_delete_policy_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError> {
+) -> std::result::Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteRoleError::unhandled)?;
     let error_code = match generic.code() {
@@ -3039,7 +3115,7 @@ pub fn parse_delete_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError> {
+) -> std::result::Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_role_output::Builder::default();
@@ -3051,7 +3127,7 @@ pub fn parse_delete_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_role_permissions_boundary_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteRolePermissionsBoundaryOutput,
     crate::error::DeleteRolePermissionsBoundaryError,
 > {
@@ -3115,7 +3191,7 @@ pub fn parse_delete_role_permissions_boundary_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_role_permissions_boundary_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteRolePermissionsBoundaryOutput,
     crate::error::DeleteRolePermissionsBoundaryError,
 > {
@@ -3130,7 +3206,8 @@ pub fn parse_delete_role_permissions_boundary_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_role_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRolePolicyOutput, crate::error::DeleteRolePolicyError> {
+) -> std::result::Result<crate::output::DeleteRolePolicyOutput, crate::error::DeleteRolePolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -3201,7 +3278,8 @@ pub fn parse_delete_role_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_role_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRolePolicyOutput, crate::error::DeleteRolePolicyError> {
+) -> std::result::Result<crate::output::DeleteRolePolicyOutput, crate::error::DeleteRolePolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_role_policy_output::Builder::default();
@@ -3213,7 +3291,10 @@ pub fn parse_delete_role_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSAMLProviderOutput, crate::error::DeleteSAMLProviderError> {
+) -> std::result::Result<
+    crate::output::DeleteSAMLProviderOutput,
+    crate::error::DeleteSAMLProviderError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
@@ -3284,7 +3365,10 @@ pub fn parse_delete_saml_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_saml_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSAMLProviderOutput, crate::error::DeleteSAMLProviderError> {
+) -> std::result::Result<
+    crate::output::DeleteSAMLProviderOutput,
+    crate::error::DeleteSAMLProviderError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_saml_provider_output::Builder::default();
@@ -3296,8 +3380,10 @@ pub fn parse_delete_saml_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_server_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteServerCertificateOutput, crate::error::DeleteServerCertificateError>
-{
+) -> std::result::Result<
+    crate::output::DeleteServerCertificateOutput,
+    crate::error::DeleteServerCertificateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
@@ -3372,8 +3458,10 @@ pub fn parse_delete_server_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_server_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteServerCertificateOutput, crate::error::DeleteServerCertificateError>
-{
+) -> std::result::Result<
+    crate::output::DeleteServerCertificateOutput,
+    crate::error::DeleteServerCertificateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_server_certificate_output::Builder::default();
@@ -3385,8 +3473,10 @@ pub fn parse_delete_server_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_service_linked_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteServiceLinkedRoleOutput, crate::error::DeleteServiceLinkedRoleError>
-{
+) -> std::result::Result<
+    crate::output::DeleteServiceLinkedRoleOutput,
+    crate::error::DeleteServiceLinkedRoleError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteServiceLinkedRoleError::unhandled)?;
     let error_code = match generic.code() {
@@ -3447,8 +3537,10 @@ pub fn parse_delete_service_linked_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_service_linked_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteServiceLinkedRoleOutput, crate::error::DeleteServiceLinkedRoleError>
-{
+) -> std::result::Result<
+    crate::output::DeleteServiceLinkedRoleOutput,
+    crate::error::DeleteServiceLinkedRoleError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_service_linked_role_output::Builder::default();
@@ -3465,7 +3557,7 @@ pub fn parse_delete_service_linked_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_service_specific_credential_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteServiceSpecificCredentialOutput,
     crate::error::DeleteServiceSpecificCredentialError,
 > {
@@ -3497,7 +3589,7 @@ pub fn parse_delete_service_specific_credential_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_service_specific_credential_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteServiceSpecificCredentialOutput,
     crate::error::DeleteServiceSpecificCredentialError,
 > {
@@ -3513,7 +3605,7 @@ pub fn parse_delete_service_specific_credential_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_signing_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteSigningCertificateOutput,
     crate::error::DeleteSigningCertificateError,
 > {
@@ -3577,7 +3669,7 @@ pub fn parse_delete_signing_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_signing_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteSigningCertificateOutput,
     crate::error::DeleteSigningCertificateError,
 > {
@@ -3592,7 +3684,10 @@ pub fn parse_delete_signing_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_ssh_public_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSSHPublicKeyOutput, crate::error::DeleteSSHPublicKeyError> {
+) -> std::result::Result<
+    crate::output::DeleteSSHPublicKeyOutput,
+    crate::error::DeleteSSHPublicKeyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteSSHPublicKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -3621,7 +3716,10 @@ pub fn parse_delete_ssh_public_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_ssh_public_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSSHPublicKeyOutput, crate::error::DeleteSSHPublicKeyError> {
+) -> std::result::Result<
+    crate::output::DeleteSSHPublicKeyOutput,
+    crate::error::DeleteSSHPublicKeyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_ssh_public_key_output::Builder::default();
@@ -3633,7 +3731,7 @@ pub fn parse_delete_ssh_public_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_user_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError> {
+) -> std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteUserError::unhandled)?;
     let error_code = match generic.code() {
@@ -3718,7 +3816,7 @@ pub fn parse_delete_user_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_user_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError> {
+) -> std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_user_output::Builder::default();
@@ -3730,7 +3828,7 @@ pub fn parse_delete_user_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_user_permissions_boundary_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteUserPermissionsBoundaryOutput,
     crate::error::DeleteUserPermissionsBoundaryError,
 > {
@@ -3780,7 +3878,7 @@ pub fn parse_delete_user_permissions_boundary_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_user_permissions_boundary_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteUserPermissionsBoundaryOutput,
     crate::error::DeleteUserPermissionsBoundaryError,
 > {
@@ -3795,7 +3893,8 @@ pub fn parse_delete_user_permissions_boundary_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_user_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteUserPolicyOutput, crate::error::DeleteUserPolicyError> {
+) -> std::result::Result<crate::output::DeleteUserPolicyOutput, crate::error::DeleteUserPolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -3852,7 +3951,8 @@ pub fn parse_delete_user_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_user_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteUserPolicyOutput, crate::error::DeleteUserPolicyError> {
+) -> std::result::Result<crate::output::DeleteUserPolicyOutput, crate::error::DeleteUserPolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_user_policy_output::Builder::default();
@@ -3864,8 +3964,10 @@ pub fn parse_delete_user_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_virtual_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVirtualMFADeviceOutput, crate::error::DeleteVirtualMFADeviceError>
-{
+) -> std::result::Result<
+    crate::output::DeleteVirtualMFADeviceOutput,
+    crate::error::DeleteVirtualMFADeviceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
@@ -3940,8 +4042,10 @@ pub fn parse_delete_virtual_mfa_device_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_virtual_mfa_device_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVirtualMFADeviceOutput, crate::error::DeleteVirtualMFADeviceError>
-{
+) -> std::result::Result<
+    crate::output::DeleteVirtualMFADeviceOutput,
+    crate::error::DeleteVirtualMFADeviceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_virtual_mfa_device_output::Builder::default();
@@ -3953,7 +4057,8 @@ pub fn parse_delete_virtual_mfa_device_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_group_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError> {
+) -> std::result::Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DetachGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -4024,7 +4129,8 @@ pub fn parse_detach_group_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_group_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError> {
+) -> std::result::Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::detach_group_policy_output::Builder::default();
@@ -4036,7 +4142,8 @@ pub fn parse_detach_group_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_role_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachRolePolicyOutput, crate::error::DetachRolePolicyError> {
+) -> std::result::Result<crate::output::DetachRolePolicyOutput, crate::error::DetachRolePolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DetachRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -4121,7 +4228,8 @@ pub fn parse_detach_role_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_role_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachRolePolicyOutput, crate::error::DetachRolePolicyError> {
+) -> std::result::Result<crate::output::DetachRolePolicyOutput, crate::error::DetachRolePolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::detach_role_policy_output::Builder::default();
@@ -4133,7 +4241,8 @@ pub fn parse_detach_role_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_user_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachUserPolicyOutput, crate::error::DetachUserPolicyError> {
+) -> std::result::Result<crate::output::DetachUserPolicyOutput, crate::error::DetachUserPolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DetachUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -4204,7 +4313,8 @@ pub fn parse_detach_user_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_user_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachUserPolicyOutput, crate::error::DetachUserPolicyError> {
+) -> std::result::Result<crate::output::DetachUserPolicyOutput, crate::error::DetachUserPolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::detach_user_policy_output::Builder::default();
@@ -4216,7 +4326,7 @@ pub fn parse_detach_user_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::EnableMFADeviceOutput, crate::error::EnableMFADeviceError> {
+) -> std::result::Result<crate::output::EnableMFADeviceOutput, crate::error::EnableMFADeviceError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::EnableMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
@@ -4311,7 +4421,7 @@ pub fn parse_enable_mfa_device_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_mfa_device_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::EnableMFADeviceOutput, crate::error::EnableMFADeviceError> {
+) -> std::result::Result<crate::output::EnableMFADeviceOutput, crate::error::EnableMFADeviceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::enable_mfa_device_output::Builder::default();
@@ -4323,7 +4433,7 @@ pub fn parse_enable_mfa_device_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_generate_credential_report_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GenerateCredentialReportOutput,
     crate::error::GenerateCredentialReportError,
 > {
@@ -4373,7 +4483,7 @@ pub fn parse_generate_credential_report_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_generate_credential_report_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GenerateCredentialReportOutput,
     crate::error::GenerateCredentialReportError,
 > {
@@ -4393,7 +4503,7 @@ pub fn parse_generate_credential_report_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_generate_organizations_access_report_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GenerateOrganizationsAccessReportOutput,
     crate::error::GenerateOrganizationsAccessReportError,
 > {
@@ -4419,7 +4529,7 @@ pub fn parse_generate_organizations_access_report_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_generate_organizations_access_report_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GenerateOrganizationsAccessReportOutput,
     crate::error::GenerateOrganizationsAccessReportError,
 > {
@@ -4440,7 +4550,7 @@ pub fn parse_generate_organizations_access_report_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_generate_service_last_accessed_details_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GenerateServiceLastAccessedDetailsOutput,
     crate::error::GenerateServiceLastAccessedDetailsError,
 > {
@@ -4488,7 +4598,7 @@ pub fn parse_generate_service_last_accessed_details_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_generate_service_last_accessed_details_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GenerateServiceLastAccessedDetailsOutput,
     crate::error::GenerateServiceLastAccessedDetailsError,
 > {
@@ -4509,7 +4619,10 @@ pub fn parse_generate_service_last_accessed_details_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_access_key_last_used_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccessKeyLastUsedOutput, crate::error::GetAccessKeyLastUsedError> {
+) -> std::result::Result<
+    crate::output::GetAccessKeyLastUsedOutput,
+    crate::error::GetAccessKeyLastUsedError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetAccessKeyLastUsedError::unhandled)?;
     let error_code = match generic.code() {
@@ -4538,7 +4651,10 @@ pub fn parse_get_access_key_last_used_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_access_key_last_used_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccessKeyLastUsedOutput, crate::error::GetAccessKeyLastUsedError> {
+) -> std::result::Result<
+    crate::output::GetAccessKeyLastUsedOutput,
+    crate::error::GetAccessKeyLastUsedError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_access_key_last_used_output::Builder::default();
@@ -4555,7 +4671,7 @@ pub fn parse_get_access_key_last_used_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_authorization_details_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetAccountAuthorizationDetailsOutput,
     crate::error::GetAccountAuthorizationDetailsError,
 > {
@@ -4587,7 +4703,7 @@ pub fn parse_get_account_authorization_details_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_authorization_details_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetAccountAuthorizationDetailsOutput,
     crate::error::GetAccountAuthorizationDetailsError,
 > {
@@ -4608,7 +4724,7 @@ pub fn parse_get_account_authorization_details_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_password_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetAccountPasswordPolicyOutput,
     crate::error::GetAccountPasswordPolicyError,
 > {
@@ -4658,7 +4774,7 @@ pub fn parse_get_account_password_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_password_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetAccountPasswordPolicyOutput,
     crate::error::GetAccountPasswordPolicyError,
 > {
@@ -4678,7 +4794,8 @@ pub fn parse_get_account_password_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_summary_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccountSummaryOutput, crate::error::GetAccountSummaryError> {
+) -> std::result::Result<crate::output::GetAccountSummaryOutput, crate::error::GetAccountSummaryError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetAccountSummaryError::unhandled)?;
     let error_code = match generic.code() {
@@ -4707,7 +4824,8 @@ pub fn parse_get_account_summary_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_summary_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccountSummaryOutput, crate::error::GetAccountSummaryError> {
+) -> std::result::Result<crate::output::GetAccountSummaryOutput, crate::error::GetAccountSummaryError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_account_summary_output::Builder::default();
@@ -4722,7 +4840,7 @@ pub fn parse_get_account_summary_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_context_keys_for_custom_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetContextKeysForCustomPolicyOutput,
     crate::error::GetContextKeysForCustomPolicyError,
 > {
@@ -4758,7 +4876,7 @@ pub fn parse_get_context_keys_for_custom_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_context_keys_for_custom_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetContextKeysForCustomPolicyOutput,
     crate::error::GetContextKeysForCustomPolicyError,
 > {
@@ -4779,7 +4897,7 @@ pub fn parse_get_context_keys_for_custom_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_context_keys_for_principal_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetContextKeysForPrincipalPolicyOutput,
     crate::error::GetContextKeysForPrincipalPolicyError,
 > {
@@ -4827,7 +4945,7 @@ pub fn parse_get_context_keys_for_principal_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_context_keys_for_principal_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetContextKeysForPrincipalPolicyOutput,
     crate::error::GetContextKeysForPrincipalPolicyError,
 > {
@@ -4848,7 +4966,10 @@ pub fn parse_get_context_keys_for_principal_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_credential_report_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetCredentialReportOutput, crate::error::GetCredentialReportError> {
+) -> std::result::Result<
+    crate::output::GetCredentialReportOutput,
+    crate::error::GetCredentialReportError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetCredentialReportError::unhandled)?;
     let error_code = match generic.code() {
@@ -4919,7 +5040,10 @@ pub fn parse_get_credential_report_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_credential_report_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetCredentialReportOutput, crate::error::GetCredentialReportError> {
+) -> std::result::Result<
+    crate::output::GetCredentialReportOutput,
+    crate::error::GetCredentialReportError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_credential_report_output::Builder::default();
@@ -4936,7 +5060,7 @@ pub fn parse_get_credential_report_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetGroupOutput, crate::error::GetGroupError> {
+) -> std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -4979,7 +5103,7 @@ pub fn parse_get_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetGroupOutput, crate::error::GetGroupError> {
+) -> std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_group_output::Builder::default();
@@ -4993,7 +5117,7 @@ pub fn parse_get_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_group_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError> {
+) -> std::result::Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -5036,7 +5160,7 @@ pub fn parse_get_group_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_group_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError> {
+) -> std::result::Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_group_policy_output::Builder::default();
@@ -5051,7 +5175,10 @@ pub fn parse_get_group_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetInstanceProfileOutput, crate::error::GetInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::GetInstanceProfileOutput,
+    crate::error::GetInstanceProfileError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -5094,7 +5221,10 @@ pub fn parse_get_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetInstanceProfileOutput, crate::error::GetInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::GetInstanceProfileOutput,
+    crate::error::GetInstanceProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_instance_profile_output::Builder::default();
@@ -5111,7 +5241,7 @@ pub fn parse_get_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_login_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLoginProfileOutput, crate::error::GetLoginProfileError> {
+) -> std::result::Result<crate::output::GetLoginProfileOutput, crate::error::GetLoginProfileError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLoginProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -5154,7 +5284,7 @@ pub fn parse_get_login_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_login_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLoginProfileOutput, crate::error::GetLoginProfileError> {
+) -> std::result::Result<crate::output::GetLoginProfileOutput, crate::error::GetLoginProfileError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_login_profile_output::Builder::default();
@@ -5169,7 +5299,7 @@ pub fn parse_get_login_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_open_id_connect_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetOpenIDConnectProviderOutput,
     crate::error::GetOpenIDConnectProviderError,
 > {
@@ -5233,7 +5363,7 @@ pub fn parse_get_open_id_connect_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_open_id_connect_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetOpenIDConnectProviderOutput,
     crate::error::GetOpenIDConnectProviderError,
 > {
@@ -5253,7 +5383,7 @@ pub fn parse_get_open_id_connect_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_organizations_access_report_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetOrganizationsAccessReportOutput,
     crate::error::GetOrganizationsAccessReportError,
 > {
@@ -5289,7 +5419,7 @@ pub fn parse_get_organizations_access_report_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_organizations_access_report_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetOrganizationsAccessReportOutput,
     crate::error::GetOrganizationsAccessReportError,
 > {
@@ -5309,7 +5439,7 @@ pub fn parse_get_organizations_access_report_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
+) -> std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -5366,7 +5496,7 @@ pub fn parse_get_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
+) -> std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_policy_output::Builder::default();
@@ -5380,7 +5510,8 @@ pub fn parse_get_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_policy_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError> {
+) -> std::result::Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetPolicyVersionError::unhandled)?;
     let error_code = match generic.code() {
@@ -5437,7 +5568,8 @@ pub fn parse_get_policy_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_policy_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError> {
+) -> std::result::Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_policy_version_output::Builder::default();
@@ -5452,7 +5584,7 @@ pub fn parse_get_policy_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetRoleOutput, crate::error::GetRoleError> {
+) -> std::result::Result<crate::output::GetRoleOutput, crate::error::GetRoleError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetRoleError::unhandled)?;
     let error_code = match generic.code() {
@@ -5495,7 +5627,7 @@ pub fn parse_get_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetRoleOutput, crate::error::GetRoleError> {
+) -> std::result::Result<crate::output::GetRoleOutput, crate::error::GetRoleError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_role_output::Builder::default();
@@ -5509,7 +5641,7 @@ pub fn parse_get_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_role_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError> {
+) -> std::result::Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -5552,7 +5684,7 @@ pub fn parse_get_role_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_role_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError> {
+) -> std::result::Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_role_policy_output::Builder::default();
@@ -5567,7 +5699,7 @@ pub fn parse_get_role_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetSAMLProviderOutput, crate::error::GetSAMLProviderError> {
+) -> std::result::Result<crate::output::GetSAMLProviderOutput, crate::error::GetSAMLProviderError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
@@ -5624,7 +5756,7 @@ pub fn parse_get_saml_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_saml_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetSAMLProviderOutput, crate::error::GetSAMLProviderError> {
+) -> std::result::Result<crate::output::GetSAMLProviderOutput, crate::error::GetSAMLProviderError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_saml_provider_output::Builder::default();
@@ -5639,7 +5771,10 @@ pub fn parse_get_saml_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_server_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetServerCertificateOutput, crate::error::GetServerCertificateError> {
+) -> std::result::Result<
+    crate::output::GetServerCertificateOutput,
+    crate::error::GetServerCertificateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
@@ -5682,7 +5817,10 @@ pub fn parse_get_server_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_server_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetServerCertificateOutput, crate::error::GetServerCertificateError> {
+) -> std::result::Result<
+    crate::output::GetServerCertificateOutput,
+    crate::error::GetServerCertificateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_server_certificate_output::Builder::default();
@@ -5699,7 +5837,7 @@ pub fn parse_get_server_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_service_last_accessed_details_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetServiceLastAccessedDetailsOutput,
     crate::error::GetServiceLastAccessedDetailsError,
 > {
@@ -5749,7 +5887,7 @@ pub fn parse_get_service_last_accessed_details_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_service_last_accessed_details_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetServiceLastAccessedDetailsOutput,
     crate::error::GetServiceLastAccessedDetailsError,
 > {
@@ -5770,7 +5908,7 @@ pub fn parse_get_service_last_accessed_details_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_service_last_accessed_details_with_entities_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput,
     crate::error::GetServiceLastAccessedDetailsWithEntitiesError,
 > {
@@ -5830,7 +5968,7 @@ pub fn parse_get_service_last_accessed_details_with_entities_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_service_last_accessed_details_with_entities_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput,
     crate::error::GetServiceLastAccessedDetailsWithEntitiesError,
 > {
@@ -5852,7 +5990,7 @@ pub fn parse_get_service_last_accessed_details_with_entities_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_service_linked_role_deletion_status_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetServiceLinkedRoleDeletionStatusOutput,
     crate::error::GetServiceLinkedRoleDeletionStatusError,
 > {
@@ -5914,7 +6052,7 @@ pub fn parse_get_service_linked_role_deletion_status_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_service_linked_role_deletion_status_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetServiceLinkedRoleDeletionStatusOutput,
     crate::error::GetServiceLinkedRoleDeletionStatusError,
 > {
@@ -5935,7 +6073,7 @@ pub fn parse_get_service_linked_role_deletion_status_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_ssh_public_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetSSHPublicKeyOutput, crate::error::GetSSHPublicKeyError> {
+) -> std::result::Result<crate::output::GetSSHPublicKeyOutput, crate::error::GetSSHPublicKeyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetSSHPublicKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -5975,7 +6113,7 @@ pub fn parse_get_ssh_public_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_ssh_public_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetSSHPublicKeyOutput, crate::error::GetSSHPublicKeyError> {
+) -> std::result::Result<crate::output::GetSSHPublicKeyOutput, crate::error::GetSSHPublicKeyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_ssh_public_key_output::Builder::default();
@@ -5990,7 +6128,7 @@ pub fn parse_get_ssh_public_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_user_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetUserOutput, crate::error::GetUserError> {
+) -> std::result::Result<crate::output::GetUserOutput, crate::error::GetUserError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetUserError::unhandled)?;
     let error_code = match generic.code() {
@@ -6033,7 +6171,7 @@ pub fn parse_get_user_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_user_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetUserOutput, crate::error::GetUserError> {
+) -> std::result::Result<crate::output::GetUserOutput, crate::error::GetUserError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_user_output::Builder::default();
@@ -6047,7 +6185,7 @@ pub fn parse_get_user_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_user_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError> {
+) -> std::result::Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -6090,7 +6228,7 @@ pub fn parse_get_user_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_user_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError> {
+) -> std::result::Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_user_policy_output::Builder::default();
@@ -6105,7 +6243,7 @@ pub fn parse_get_user_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_access_keys_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError> {
+) -> std::result::Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListAccessKeysError::unhandled)?;
     let error_code = match generic.code() {
@@ -6148,7 +6286,7 @@ pub fn parse_list_access_keys_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_access_keys_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError> {
+) -> std::result::Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_access_keys_output::Builder::default();
@@ -6163,7 +6301,10 @@ pub fn parse_list_access_keys_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_account_aliases_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListAccountAliasesOutput, crate::error::ListAccountAliasesError> {
+) -> std::result::Result<
+    crate::output::ListAccountAliasesOutput,
+    crate::error::ListAccountAliasesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListAccountAliasesError::unhandled)?;
     let error_code = match generic.code() {
@@ -6192,7 +6333,10 @@ pub fn parse_list_account_aliases_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_account_aliases_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListAccountAliasesOutput, crate::error::ListAccountAliasesError> {
+) -> std::result::Result<
+    crate::output::ListAccountAliasesOutput,
+    crate::error::ListAccountAliasesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_account_aliases_output::Builder::default();
@@ -6209,7 +6353,7 @@ pub fn parse_list_account_aliases_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_attached_group_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListAttachedGroupPoliciesOutput,
     crate::error::ListAttachedGroupPoliciesError,
 > {
@@ -6273,7 +6417,7 @@ pub fn parse_list_attached_group_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_attached_group_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListAttachedGroupPoliciesOutput,
     crate::error::ListAttachedGroupPoliciesError,
 > {
@@ -6293,7 +6437,7 @@ pub fn parse_list_attached_group_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_attached_role_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListAttachedRolePoliciesOutput,
     crate::error::ListAttachedRolePoliciesError,
 > {
@@ -6357,7 +6501,7 @@ pub fn parse_list_attached_role_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_attached_role_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListAttachedRolePoliciesOutput,
     crate::error::ListAttachedRolePoliciesError,
 > {
@@ -6377,7 +6521,7 @@ pub fn parse_list_attached_role_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_attached_user_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListAttachedUserPoliciesOutput,
     crate::error::ListAttachedUserPoliciesError,
 > {
@@ -6441,7 +6585,7 @@ pub fn parse_list_attached_user_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_attached_user_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListAttachedUserPoliciesOutput,
     crate::error::ListAttachedUserPoliciesError,
 > {
@@ -6461,7 +6605,10 @@ pub fn parse_list_attached_user_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_entities_for_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListEntitiesForPolicyOutput, crate::error::ListEntitiesForPolicyError> {
+) -> std::result::Result<
+    crate::output::ListEntitiesForPolicyOutput,
+    crate::error::ListEntitiesForPolicyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListEntitiesForPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -6518,7 +6665,10 @@ pub fn parse_list_entities_for_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_entities_for_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListEntitiesForPolicyOutput, crate::error::ListEntitiesForPolicyError> {
+) -> std::result::Result<
+    crate::output::ListEntitiesForPolicyOutput,
+    crate::error::ListEntitiesForPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_entities_for_policy_output::Builder::default();
@@ -6535,7 +6685,8 @@ pub fn parse_list_entities_for_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_group_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListGroupPoliciesOutput, crate::error::ListGroupPoliciesError> {
+) -> std::result::Result<crate::output::ListGroupPoliciesOutput, crate::error::ListGroupPoliciesError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListGroupPoliciesError::unhandled)?;
     let error_code = match generic.code() {
@@ -6578,7 +6729,8 @@ pub fn parse_list_group_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_group_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListGroupPoliciesOutput, crate::error::ListGroupPoliciesError> {
+) -> std::result::Result<crate::output::ListGroupPoliciesOutput, crate::error::ListGroupPoliciesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_group_policies_output::Builder::default();
@@ -6593,7 +6745,7 @@ pub fn parse_list_group_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError> {
+) -> std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListGroupsError::unhandled)?;
     let error_code = match generic.code() {
@@ -6622,7 +6774,7 @@ pub fn parse_list_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError> {
+) -> std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_groups_output::Builder::default();
@@ -6636,7 +6788,8 @@ pub fn parse_list_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_groups_for_user_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListGroupsForUserOutput, crate::error::ListGroupsForUserError> {
+) -> std::result::Result<crate::output::ListGroupsForUserOutput, crate::error::ListGroupsForUserError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListGroupsForUserError::unhandled)?;
     let error_code = match generic.code() {
@@ -6679,7 +6832,8 @@ pub fn parse_list_groups_for_user_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_groups_for_user_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListGroupsForUserOutput, crate::error::ListGroupsForUserError> {
+) -> std::result::Result<crate::output::ListGroupsForUserOutput, crate::error::ListGroupsForUserError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_groups_for_user_output::Builder::default();
@@ -6696,7 +6850,10 @@ pub fn parse_list_groups_for_user_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_instance_profiles_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListInstanceProfilesOutput, crate::error::ListInstanceProfilesError> {
+) -> std::result::Result<
+    crate::output::ListInstanceProfilesOutput,
+    crate::error::ListInstanceProfilesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListInstanceProfilesError::unhandled)?;
     let error_code = match generic.code() {
@@ -6725,7 +6882,10 @@ pub fn parse_list_instance_profiles_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_instance_profiles_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListInstanceProfilesOutput, crate::error::ListInstanceProfilesError> {
+) -> std::result::Result<
+    crate::output::ListInstanceProfilesOutput,
+    crate::error::ListInstanceProfilesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_instance_profiles_output::Builder::default();
@@ -6742,7 +6902,7 @@ pub fn parse_list_instance_profiles_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_instance_profiles_for_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListInstanceProfilesForRoleOutput,
     crate::error::ListInstanceProfilesForRoleError,
 > {
@@ -6792,7 +6952,7 @@ pub fn parse_list_instance_profiles_for_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_instance_profiles_for_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListInstanceProfilesForRoleOutput,
     crate::error::ListInstanceProfilesForRoleError,
 > {
@@ -6812,8 +6972,10 @@ pub fn parse_list_instance_profiles_for_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_instance_profile_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListInstanceProfileTagsOutput, crate::error::ListInstanceProfileTagsError>
-{
+) -> std::result::Result<
+    crate::output::ListInstanceProfileTagsOutput,
+    crate::error::ListInstanceProfileTagsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListInstanceProfileTagsError::unhandled)?;
     let error_code = match generic.code() {
@@ -6860,8 +7022,10 @@ pub fn parse_list_instance_profile_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_instance_profile_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListInstanceProfileTagsOutput, crate::error::ListInstanceProfileTagsError>
-{
+) -> std::result::Result<
+    crate::output::ListInstanceProfileTagsOutput,
+    crate::error::ListInstanceProfileTagsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_instance_profile_tags_output::Builder::default();
@@ -6878,7 +7042,7 @@ pub fn parse_list_instance_profile_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_mfa_devices_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListMFADevicesOutput, crate::error::ListMFADevicesError> {
+) -> std::result::Result<crate::output::ListMFADevicesOutput, crate::error::ListMFADevicesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListMFADevicesError::unhandled)?;
     let error_code = match generic.code() {
@@ -6921,7 +7085,7 @@ pub fn parse_list_mfa_devices_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_mfa_devices_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListMFADevicesOutput, crate::error::ListMFADevicesError> {
+) -> std::result::Result<crate::output::ListMFADevicesOutput, crate::error::ListMFADevicesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_mfa_devices_output::Builder::default();
@@ -6936,7 +7100,8 @@ pub fn parse_list_mfa_devices_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_mfa_device_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListMFADeviceTagsOutput, crate::error::ListMFADeviceTagsError> {
+) -> std::result::Result<crate::output::ListMFADeviceTagsOutput, crate::error::ListMFADeviceTagsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListMFADeviceTagsError::unhandled)?;
     let error_code = match generic.code() {
@@ -6993,7 +7158,8 @@ pub fn parse_list_mfa_device_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_mfa_device_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListMFADeviceTagsOutput, crate::error::ListMFADeviceTagsError> {
+) -> std::result::Result<crate::output::ListMFADeviceTagsOutput, crate::error::ListMFADeviceTagsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_mfa_device_tags_output::Builder::default();
@@ -7010,7 +7176,7 @@ pub fn parse_list_mfa_device_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_open_id_connect_providers_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListOpenIDConnectProvidersOutput,
     crate::error::ListOpenIDConnectProvidersError,
 > {
@@ -7046,7 +7212,7 @@ pub fn parse_list_open_id_connect_providers_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_open_id_connect_providers_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListOpenIDConnectProvidersOutput,
     crate::error::ListOpenIDConnectProvidersError,
 > {
@@ -7066,7 +7232,7 @@ pub fn parse_list_open_id_connect_providers_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_open_id_connect_provider_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListOpenIDConnectProviderTagsOutput,
     crate::error::ListOpenIDConnectProviderTagsError,
 > {
@@ -7130,7 +7296,7 @@ pub fn parse_list_open_id_connect_provider_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_open_id_connect_provider_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListOpenIDConnectProviderTagsOutput,
     crate::error::ListOpenIDConnectProviderTagsError,
 > {
@@ -7151,7 +7317,7 @@ pub fn parse_list_open_id_connect_provider_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError> {
+) -> std::result::Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListPoliciesError::unhandled)?;
     let error_code = match generic.code() {
@@ -7180,7 +7346,7 @@ pub fn parse_list_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError> {
+) -> std::result::Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_policies_output::Builder::default();
@@ -7194,7 +7360,7 @@ pub fn parse_list_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_policies_granting_service_access_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListPoliciesGrantingServiceAccessOutput,
     crate::error::ListPoliciesGrantingServiceAccessError,
 > {
@@ -7242,7 +7408,7 @@ pub fn parse_list_policies_granting_service_access_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_policies_granting_service_access_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListPoliciesGrantingServiceAccessOutput,
     crate::error::ListPoliciesGrantingServiceAccessError,
 > {
@@ -7263,7 +7429,7 @@ pub fn parse_list_policies_granting_service_access_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_policy_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError> {
+) -> std::result::Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListPolicyTagsError::unhandled)?;
     let error_code = match generic.code() {
@@ -7320,7 +7486,7 @@ pub fn parse_list_policy_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_policy_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError> {
+) -> std::result::Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_policy_tags_output::Builder::default();
@@ -7335,7 +7501,10 @@ pub fn parse_list_policy_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_policy_versions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListPolicyVersionsOutput, crate::error::ListPolicyVersionsError> {
+) -> std::result::Result<
+    crate::output::ListPolicyVersionsOutput,
+    crate::error::ListPolicyVersionsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListPolicyVersionsError::unhandled)?;
     let error_code = match generic.code() {
@@ -7392,7 +7561,10 @@ pub fn parse_list_policy_versions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_policy_versions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListPolicyVersionsOutput, crate::error::ListPolicyVersionsError> {
+) -> std::result::Result<
+    crate::output::ListPolicyVersionsOutput,
+    crate::error::ListPolicyVersionsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_policy_versions_output::Builder::default();
@@ -7409,7 +7581,8 @@ pub fn parse_list_policy_versions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_role_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListRolePoliciesOutput, crate::error::ListRolePoliciesError> {
+) -> std::result::Result<crate::output::ListRolePoliciesOutput, crate::error::ListRolePoliciesError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListRolePoliciesError::unhandled)?;
     let error_code = match generic.code() {
@@ -7452,7 +7625,8 @@ pub fn parse_list_role_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_role_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListRolePoliciesOutput, crate::error::ListRolePoliciesError> {
+) -> std::result::Result<crate::output::ListRolePoliciesOutput, crate::error::ListRolePoliciesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_role_policies_output::Builder::default();
@@ -7467,7 +7641,7 @@ pub fn parse_list_role_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_roles_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListRolesOutput, crate::error::ListRolesError> {
+) -> std::result::Result<crate::output::ListRolesOutput, crate::error::ListRolesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListRolesError::unhandled)?;
     let error_code = match generic.code() {
@@ -7496,7 +7670,7 @@ pub fn parse_list_roles_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_roles_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListRolesOutput, crate::error::ListRolesError> {
+) -> std::result::Result<crate::output::ListRolesOutput, crate::error::ListRolesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_roles_output::Builder::default();
@@ -7510,7 +7684,7 @@ pub fn parse_list_roles_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_role_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError> {
+) -> std::result::Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListRoleTagsError::unhandled)?;
     let error_code = match generic.code() {
@@ -7553,7 +7727,7 @@ pub fn parse_list_role_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_role_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError> {
+) -> std::result::Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_role_tags_output::Builder::default();
@@ -7567,7 +7741,8 @@ pub fn parse_list_role_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_saml_providers_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListSAMLProvidersOutput, crate::error::ListSAMLProvidersError> {
+) -> std::result::Result<crate::output::ListSAMLProvidersOutput, crate::error::ListSAMLProvidersError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListSAMLProvidersError::unhandled)?;
     let error_code = match generic.code() {
@@ -7596,7 +7771,8 @@ pub fn parse_list_saml_providers_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_saml_providers_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListSAMLProvidersOutput, crate::error::ListSAMLProvidersError> {
+) -> std::result::Result<crate::output::ListSAMLProvidersOutput, crate::error::ListSAMLProvidersError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_saml_providers_output::Builder::default();
@@ -7611,7 +7787,10 @@ pub fn parse_list_saml_providers_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_saml_provider_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListSAMLProviderTagsOutput, crate::error::ListSAMLProviderTagsError> {
+) -> std::result::Result<
+    crate::output::ListSAMLProviderTagsOutput,
+    crate::error::ListSAMLProviderTagsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
     let error_code = match generic.code() {
@@ -7668,7 +7847,10 @@ pub fn parse_list_saml_provider_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_saml_provider_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListSAMLProviderTagsOutput, crate::error::ListSAMLProviderTagsError> {
+) -> std::result::Result<
+    crate::output::ListSAMLProviderTagsOutput,
+    crate::error::ListSAMLProviderTagsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_saml_provider_tags_output::Builder::default();
@@ -7685,8 +7867,10 @@ pub fn parse_list_saml_provider_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_server_certificates_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListServerCertificatesOutput, crate::error::ListServerCertificatesError>
-{
+) -> std::result::Result<
+    crate::output::ListServerCertificatesOutput,
+    crate::error::ListServerCertificatesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListServerCertificatesError::unhandled)?;
     let error_code = match generic.code() {
@@ -7719,8 +7903,10 @@ pub fn parse_list_server_certificates_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_server_certificates_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListServerCertificatesOutput, crate::error::ListServerCertificatesError>
-{
+) -> std::result::Result<
+    crate::output::ListServerCertificatesOutput,
+    crate::error::ListServerCertificatesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_server_certificates_output::Builder::default();
@@ -7737,7 +7923,7 @@ pub fn parse_list_server_certificates_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_server_certificate_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListServerCertificateTagsOutput,
     crate::error::ListServerCertificateTagsError,
 > {
@@ -7787,7 +7973,7 @@ pub fn parse_list_server_certificate_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_server_certificate_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListServerCertificateTagsOutput,
     crate::error::ListServerCertificateTagsError,
 > {
@@ -7807,7 +7993,7 @@ pub fn parse_list_server_certificate_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_service_specific_credentials_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListServiceSpecificCredentialsOutput,
     crate::error::ListServiceSpecificCredentialsError,
 > {
@@ -7855,7 +8041,7 @@ pub fn parse_list_service_specific_credentials_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_service_specific_credentials_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListServiceSpecificCredentialsOutput,
     crate::error::ListServiceSpecificCredentialsError,
 > {
@@ -7876,8 +8062,10 @@ pub fn parse_list_service_specific_credentials_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_signing_certificates_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListSigningCertificatesOutput, crate::error::ListSigningCertificatesError>
-{
+) -> std::result::Result<
+    crate::output::ListSigningCertificatesOutput,
+    crate::error::ListSigningCertificatesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListSigningCertificatesError::unhandled)?;
     let error_code = match generic.code() {
@@ -7924,8 +8112,10 @@ pub fn parse_list_signing_certificates_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_signing_certificates_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListSigningCertificatesOutput, crate::error::ListSigningCertificatesError>
-{
+) -> std::result::Result<
+    crate::output::ListSigningCertificatesOutput,
+    crate::error::ListSigningCertificatesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_signing_certificates_output::Builder::default();
@@ -7942,7 +8132,8 @@ pub fn parse_list_signing_certificates_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_ssh_public_keys_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListSSHPublicKeysOutput, crate::error::ListSSHPublicKeysError> {
+) -> std::result::Result<crate::output::ListSSHPublicKeysOutput, crate::error::ListSSHPublicKeysError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListSSHPublicKeysError::unhandled)?;
     let error_code = match generic.code() {
@@ -7971,7 +8162,8 @@ pub fn parse_list_ssh_public_keys_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_ssh_public_keys_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListSSHPublicKeysOutput, crate::error::ListSSHPublicKeysError> {
+) -> std::result::Result<crate::output::ListSSHPublicKeysOutput, crate::error::ListSSHPublicKeysError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_ssh_public_keys_output::Builder::default();
@@ -7988,7 +8180,8 @@ pub fn parse_list_ssh_public_keys_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_user_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListUserPoliciesOutput, crate::error::ListUserPoliciesError> {
+) -> std::result::Result<crate::output::ListUserPoliciesOutput, crate::error::ListUserPoliciesError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListUserPoliciesError::unhandled)?;
     let error_code = match generic.code() {
@@ -8031,7 +8224,8 @@ pub fn parse_list_user_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_user_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListUserPoliciesOutput, crate::error::ListUserPoliciesError> {
+) -> std::result::Result<crate::output::ListUserPoliciesOutput, crate::error::ListUserPoliciesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_user_policies_output::Builder::default();
@@ -8046,7 +8240,7 @@ pub fn parse_list_user_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_users_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListUsersOutput, crate::error::ListUsersError> {
+) -> std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListUsersError::unhandled)?;
     let error_code = match generic.code() {
@@ -8075,7 +8269,7 @@ pub fn parse_list_users_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_users_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListUsersOutput, crate::error::ListUsersError> {
+) -> std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_users_output::Builder::default();
@@ -8089,7 +8283,7 @@ pub fn parse_list_users_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_user_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError> {
+) -> std::result::Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListUserTagsError::unhandled)?;
     let error_code = match generic.code() {
@@ -8132,7 +8326,7 @@ pub fn parse_list_user_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_user_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError> {
+) -> std::result::Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_user_tags_output::Builder::default();
@@ -8146,7 +8340,10 @@ pub fn parse_list_user_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_virtual_mfa_devices_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListVirtualMFADevicesOutput, crate::error::ListVirtualMFADevicesError> {
+) -> std::result::Result<
+    crate::output::ListVirtualMFADevicesOutput,
+    crate::error::ListVirtualMFADevicesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListVirtualMFADevicesError::unhandled)?;
     Err(crate::error::ListVirtualMFADevicesError::generic(generic))
@@ -8155,7 +8352,10 @@ pub fn parse_list_virtual_mfa_devices_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_virtual_mfa_devices_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListVirtualMFADevicesOutput, crate::error::ListVirtualMFADevicesError> {
+) -> std::result::Result<
+    crate::output::ListVirtualMFADevicesOutput,
+    crate::error::ListVirtualMFADevicesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_virtual_mfa_devices_output::Builder::default();
@@ -8172,7 +8372,7 @@ pub fn parse_list_virtual_mfa_devices_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_group_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError> {
+) -> std::result::Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -8243,7 +8443,7 @@ pub fn parse_put_group_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_group_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError> {
+) -> std::result::Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_group_policy_output::Builder::default();
@@ -8255,7 +8455,7 @@ pub fn parse_put_group_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_role_permissions_boundary_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutRolePermissionsBoundaryOutput,
     crate::error::PutRolePermissionsBoundaryError,
 > {
@@ -8347,7 +8547,7 @@ pub fn parse_put_role_permissions_boundary_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_role_permissions_boundary_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutRolePermissionsBoundaryOutput,
     crate::error::PutRolePermissionsBoundaryError,
 > {
@@ -8362,7 +8562,7 @@ pub fn parse_put_role_permissions_boundary_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_role_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError> {
+) -> std::result::Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -8447,7 +8647,7 @@ pub fn parse_put_role_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_role_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError> {
+) -> std::result::Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_role_policy_output::Builder::default();
@@ -8459,7 +8659,7 @@ pub fn parse_put_role_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_user_permissions_boundary_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutUserPermissionsBoundaryOutput,
     crate::error::PutUserPermissionsBoundaryError,
 > {
@@ -8537,7 +8737,7 @@ pub fn parse_put_user_permissions_boundary_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_user_permissions_boundary_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutUserPermissionsBoundaryOutput,
     crate::error::PutUserPermissionsBoundaryError,
 > {
@@ -8552,7 +8752,7 @@ pub fn parse_put_user_permissions_boundary_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_user_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError> {
+) -> std::result::Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutUserPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -8623,7 +8823,7 @@ pub fn parse_put_user_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_user_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError> {
+) -> std::result::Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_user_policy_output::Builder::default();
@@ -8635,7 +8835,7 @@ pub fn parse_put_user_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_client_id_from_open_id_connect_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveClientIDFromOpenIDConnectProviderOutput,
     crate::error::RemoveClientIDFromOpenIDConnectProviderError,
 > {
@@ -8712,7 +8912,7 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_client_id_from_open_id_connect_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveClientIDFromOpenIDConnectProviderOutput,
     crate::error::RemoveClientIDFromOpenIDConnectProviderError,
 > {
@@ -8729,7 +8929,7 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_role_from_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveRoleFromInstanceProfileOutput,
     crate::error::RemoveRoleFromInstanceProfileError,
 > {
@@ -8807,7 +9007,7 @@ pub fn parse_remove_role_from_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_role_from_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveRoleFromInstanceProfileOutput,
     crate::error::RemoveRoleFromInstanceProfileError,
 > {
@@ -8823,7 +9023,10 @@ pub fn parse_remove_role_from_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_user_from_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemoveUserFromGroupOutput, crate::error::RemoveUserFromGroupError> {
+) -> std::result::Result<
+    crate::output::RemoveUserFromGroupOutput,
+    crate::error::RemoveUserFromGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -8880,7 +9083,10 @@ pub fn parse_remove_user_from_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_user_from_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemoveUserFromGroupOutput, crate::error::RemoveUserFromGroupError> {
+) -> std::result::Result<
+    crate::output::RemoveUserFromGroupOutput,
+    crate::error::RemoveUserFromGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::remove_user_from_group_output::Builder::default();
@@ -8892,7 +9098,7 @@ pub fn parse_remove_user_from_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_service_specific_credential_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ResetServiceSpecificCredentialOutput,
     crate::error::ResetServiceSpecificCredentialError,
 > {
@@ -8924,7 +9130,7 @@ pub fn parse_reset_service_specific_credential_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_service_specific_credential_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ResetServiceSpecificCredentialOutput,
     crate::error::ResetServiceSpecificCredentialError,
 > {
@@ -8945,7 +9151,7 @@ pub fn parse_reset_service_specific_credential_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_resync_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResyncMFADeviceOutput, crate::error::ResyncMFADeviceError> {
+) -> std::result::Result<crate::output::ResyncMFADeviceOutput, crate::error::ResyncMFADeviceError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ResyncMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
@@ -9015,7 +9221,7 @@ pub fn parse_resync_mfa_device_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_resync_mfa_device_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResyncMFADeviceOutput, crate::error::ResyncMFADeviceError> {
+) -> std::result::Result<crate::output::ResyncMFADeviceOutput, crate::error::ResyncMFADeviceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::resync_mfa_device_output::Builder::default();
@@ -9027,8 +9233,10 @@ pub fn parse_resync_mfa_device_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_set_default_policy_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SetDefaultPolicyVersionOutput, crate::error::SetDefaultPolicyVersionError>
-{
+) -> std::result::Result<
+    crate::output::SetDefaultPolicyVersionOutput,
+    crate::error::SetDefaultPolicyVersionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::SetDefaultPolicyVersionError::unhandled)?;
     let error_code = match generic.code() {
@@ -9103,8 +9311,10 @@ pub fn parse_set_default_policy_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_set_default_policy_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SetDefaultPolicyVersionOutput, crate::error::SetDefaultPolicyVersionError>
-{
+) -> std::result::Result<
+    crate::output::SetDefaultPolicyVersionOutput,
+    crate::error::SetDefaultPolicyVersionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::set_default_policy_version_output::Builder::default();
@@ -9116,7 +9326,7 @@ pub fn parse_set_default_policy_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_set_security_token_service_preferences_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SetSecurityTokenServicePreferencesOutput,
     crate::error::SetSecurityTokenServicePreferencesError,
 > {
@@ -9150,7 +9360,7 @@ pub fn parse_set_security_token_service_preferences_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_set_security_token_service_preferences_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SetSecurityTokenServicePreferencesOutput,
     crate::error::SetSecurityTokenServicePreferencesError,
 > {
@@ -9166,7 +9376,10 @@ pub fn parse_set_security_token_service_preferences_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_simulate_custom_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SimulateCustomPolicyOutput, crate::error::SimulateCustomPolicyError> {
+) -> std::result::Result<
+    crate::output::SimulateCustomPolicyOutput,
+    crate::error::SimulateCustomPolicyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::SimulateCustomPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -9209,7 +9422,10 @@ pub fn parse_simulate_custom_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_simulate_custom_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SimulateCustomPolicyOutput, crate::error::SimulateCustomPolicyError> {
+) -> std::result::Result<
+    crate::output::SimulateCustomPolicyOutput,
+    crate::error::SimulateCustomPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::simulate_custom_policy_output::Builder::default();
@@ -9226,8 +9442,10 @@ pub fn parse_simulate_custom_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_simulate_principal_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SimulatePrincipalPolicyOutput, crate::error::SimulatePrincipalPolicyError>
-{
+) -> std::result::Result<
+    crate::output::SimulatePrincipalPolicyOutput,
+    crate::error::SimulatePrincipalPolicyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::SimulatePrincipalPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -9288,8 +9506,10 @@ pub fn parse_simulate_principal_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_simulate_principal_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SimulatePrincipalPolicyOutput, crate::error::SimulatePrincipalPolicyError>
-{
+) -> std::result::Result<
+    crate::output::SimulatePrincipalPolicyOutput,
+    crate::error::SimulatePrincipalPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::simulate_principal_policy_output::Builder::default();
@@ -9306,7 +9526,10 @@ pub fn parse_simulate_principal_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagInstanceProfileOutput, crate::error::TagInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::TagInstanceProfileOutput,
+    crate::error::TagInstanceProfileError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TagInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -9391,7 +9614,10 @@ pub fn parse_tag_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagInstanceProfileOutput, crate::error::TagInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::TagInstanceProfileOutput,
+    crate::error::TagInstanceProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_instance_profile_output::Builder::default();
@@ -9403,7 +9629,7 @@ pub fn parse_tag_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagMFADeviceOutput, crate::error::TagMFADeviceError> {
+) -> std::result::Result<crate::output::TagMFADeviceOutput, crate::error::TagMFADeviceError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TagMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
@@ -9488,7 +9714,7 @@ pub fn parse_tag_mfa_device_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_mfa_device_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagMFADeviceOutput, crate::error::TagMFADeviceError> {
+) -> std::result::Result<crate::output::TagMFADeviceOutput, crate::error::TagMFADeviceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_mfa_device_output::Builder::default();
@@ -9500,7 +9726,7 @@ pub fn parse_tag_mfa_device_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_open_id_connect_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::TagOpenIDConnectProviderOutput,
     crate::error::TagOpenIDConnectProviderError,
 > {
@@ -9592,7 +9818,7 @@ pub fn parse_tag_open_id_connect_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_open_id_connect_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::TagOpenIDConnectProviderOutput,
     crate::error::TagOpenIDConnectProviderError,
 > {
@@ -9607,7 +9833,7 @@ pub fn parse_tag_open_id_connect_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError> {
+) -> std::result::Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TagPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -9692,7 +9918,7 @@ pub fn parse_tag_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError> {
+) -> std::result::Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_policy_output::Builder::default();
@@ -9704,7 +9930,7 @@ pub fn parse_tag_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagRoleOutput, crate::error::TagRoleError> {
+) -> std::result::Result<crate::output::TagRoleOutput, crate::error::TagRoleError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TagRoleError::unhandled)?;
     let error_code = match generic.code() {
@@ -9789,7 +10015,7 @@ pub fn parse_tag_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagRoleOutput, crate::error::TagRoleError> {
+) -> std::result::Result<crate::output::TagRoleOutput, crate::error::TagRoleError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_role_output::Builder::default();
@@ -9801,7 +10027,7 @@ pub fn parse_tag_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagSAMLProviderOutput, crate::error::TagSAMLProviderError> {
+) -> std::result::Result<crate::output::TagSAMLProviderOutput, crate::error::TagSAMLProviderError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TagSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
@@ -9886,7 +10112,7 @@ pub fn parse_tag_saml_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_saml_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagSAMLProviderOutput, crate::error::TagSAMLProviderError> {
+) -> std::result::Result<crate::output::TagSAMLProviderOutput, crate::error::TagSAMLProviderError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_saml_provider_output::Builder::default();
@@ -9898,7 +10124,10 @@ pub fn parse_tag_saml_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_server_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagServerCertificateOutput, crate::error::TagServerCertificateError> {
+) -> std::result::Result<
+    crate::output::TagServerCertificateOutput,
+    crate::error::TagServerCertificateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TagServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
@@ -9983,7 +10212,10 @@ pub fn parse_tag_server_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_server_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagServerCertificateOutput, crate::error::TagServerCertificateError> {
+) -> std::result::Result<
+    crate::output::TagServerCertificateOutput,
+    crate::error::TagServerCertificateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_server_certificate_output::Builder::default();
@@ -9995,7 +10227,7 @@ pub fn parse_tag_server_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_user_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagUserOutput, crate::error::TagUserError> {
+) -> std::result::Result<crate::output::TagUserOutput, crate::error::TagUserError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TagUserError::unhandled)?;
     let error_code = match generic.code() {
@@ -10080,7 +10312,7 @@ pub fn parse_tag_user_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_user_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagUserOutput, crate::error::TagUserError> {
+) -> std::result::Result<crate::output::TagUserOutput, crate::error::TagUserError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_user_output::Builder::default();
@@ -10092,7 +10324,10 @@ pub fn parse_tag_user_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagInstanceProfileOutput, crate::error::UntagInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::UntagInstanceProfileOutput,
+    crate::error::UntagInstanceProfileError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagInstanceProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -10163,7 +10398,10 @@ pub fn parse_untag_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagInstanceProfileOutput, crate::error::UntagInstanceProfileError> {
+) -> std::result::Result<
+    crate::output::UntagInstanceProfileOutput,
+    crate::error::UntagInstanceProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_instance_profile_output::Builder::default();
@@ -10175,7 +10413,7 @@ pub fn parse_untag_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagMFADeviceOutput, crate::error::UntagMFADeviceError> {
+) -> std::result::Result<crate::output::UntagMFADeviceOutput, crate::error::UntagMFADeviceError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagMFADeviceError::unhandled)?;
     let error_code = match generic.code() {
@@ -10246,7 +10484,7 @@ pub fn parse_untag_mfa_device_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_mfa_device_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagMFADeviceOutput, crate::error::UntagMFADeviceError> {
+) -> std::result::Result<crate::output::UntagMFADeviceOutput, crate::error::UntagMFADeviceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_mfa_device_output::Builder::default();
@@ -10258,7 +10496,7 @@ pub fn parse_untag_mfa_device_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_open_id_connect_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UntagOpenIDConnectProviderOutput,
     crate::error::UntagOpenIDConnectProviderError,
 > {
@@ -10336,7 +10574,7 @@ pub fn parse_untag_open_id_connect_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_open_id_connect_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UntagOpenIDConnectProviderOutput,
     crate::error::UntagOpenIDConnectProviderError,
 > {
@@ -10351,7 +10589,7 @@ pub fn parse_untag_open_id_connect_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError> {
+) -> std::result::Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -10422,7 +10660,7 @@ pub fn parse_untag_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError> {
+) -> std::result::Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_policy_output::Builder::default();
@@ -10434,7 +10672,7 @@ pub fn parse_untag_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError> {
+) -> std::result::Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagRoleError::unhandled)?;
     let error_code = match generic.code() {
@@ -10491,7 +10729,7 @@ pub fn parse_untag_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError> {
+) -> std::result::Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_role_output::Builder::default();
@@ -10503,7 +10741,8 @@ pub fn parse_untag_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagSAMLProviderOutput, crate::error::UntagSAMLProviderError> {
+) -> std::result::Result<crate::output::UntagSAMLProviderOutput, crate::error::UntagSAMLProviderError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
@@ -10574,7 +10813,8 @@ pub fn parse_untag_saml_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_saml_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagSAMLProviderOutput, crate::error::UntagSAMLProviderError> {
+) -> std::result::Result<crate::output::UntagSAMLProviderOutput, crate::error::UntagSAMLProviderError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_saml_provider_output::Builder::default();
@@ -10586,8 +10826,10 @@ pub fn parse_untag_saml_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_server_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagServerCertificateOutput, crate::error::UntagServerCertificateError>
-{
+) -> std::result::Result<
+    crate::output::UntagServerCertificateOutput,
+    crate::error::UntagServerCertificateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
@@ -10662,8 +10904,10 @@ pub fn parse_untag_server_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_server_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagServerCertificateOutput, crate::error::UntagServerCertificateError>
-{
+) -> std::result::Result<
+    crate::output::UntagServerCertificateOutput,
+    crate::error::UntagServerCertificateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_server_certificate_output::Builder::default();
@@ -10675,7 +10919,7 @@ pub fn parse_untag_server_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_user_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagUserOutput, crate::error::UntagUserError> {
+) -> std::result::Result<crate::output::UntagUserOutput, crate::error::UntagUserError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagUserError::unhandled)?;
     let error_code = match generic.code() {
@@ -10732,7 +10976,7 @@ pub fn parse_untag_user_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_user_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagUserOutput, crate::error::UntagUserError> {
+) -> std::result::Result<crate::output::UntagUserOutput, crate::error::UntagUserError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_user_output::Builder::default();
@@ -10744,7 +10988,7 @@ pub fn parse_untag_user_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_access_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateAccessKeyOutput, crate::error::UpdateAccessKeyError> {
+) -> std::result::Result<crate::output::UpdateAccessKeyOutput, crate::error::UpdateAccessKeyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateAccessKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -10801,7 +11045,7 @@ pub fn parse_update_access_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_access_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateAccessKeyOutput, crate::error::UpdateAccessKeyError> {
+) -> std::result::Result<crate::output::UpdateAccessKeyOutput, crate::error::UpdateAccessKeyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_access_key_output::Builder::default();
@@ -10813,7 +11057,7 @@ pub fn parse_update_access_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_account_password_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateAccountPasswordPolicyOutput,
     crate::error::UpdateAccountPasswordPolicyError,
 > {
@@ -10893,7 +11137,7 @@ pub fn parse_update_account_password_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_account_password_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateAccountPasswordPolicyOutput,
     crate::error::UpdateAccountPasswordPolicyError,
 > {
@@ -10908,8 +11152,10 @@ pub fn parse_update_account_password_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_assume_role_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateAssumeRolePolicyOutput, crate::error::UpdateAssumeRolePolicyError>
-{
+) -> std::result::Result<
+    crate::output::UpdateAssumeRolePolicyOutput,
+    crate::error::UpdateAssumeRolePolicyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -10998,8 +11244,10 @@ pub fn parse_update_assume_role_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_assume_role_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateAssumeRolePolicyOutput, crate::error::UpdateAssumeRolePolicyError>
-{
+) -> std::result::Result<
+    crate::output::UpdateAssumeRolePolicyOutput,
+    crate::error::UpdateAssumeRolePolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_assume_role_policy_output::Builder::default();
@@ -11011,7 +11259,7 @@ pub fn parse_update_assume_role_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError> {
+) -> std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -11082,7 +11330,7 @@ pub fn parse_update_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError> {
+) -> std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_group_output::Builder::default();
@@ -11094,7 +11342,10 @@ pub fn parse_update_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_login_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateLoginProfileOutput, crate::error::UpdateLoginProfileError> {
+) -> std::result::Result<
+    crate::output::UpdateLoginProfileOutput,
+    crate::error::UpdateLoginProfileError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateLoginProfileError::unhandled)?;
     let error_code = match generic.code() {
@@ -11176,7 +11427,10 @@ pub fn parse_update_login_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_login_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateLoginProfileOutput, crate::error::UpdateLoginProfileError> {
+) -> std::result::Result<
+    crate::output::UpdateLoginProfileOutput,
+    crate::error::UpdateLoginProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_login_profile_output::Builder::default();
@@ -11188,7 +11442,7 @@ pub fn parse_update_login_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_open_id_connect_provider_thumbprint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateOpenIDConnectProviderThumbprintOutput,
     crate::error::UpdateOpenIDConnectProviderThumbprintError,
 > {
@@ -11257,7 +11511,7 @@ pub fn parse_update_open_id_connect_provider_thumbprint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_open_id_connect_provider_thumbprint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateOpenIDConnectProviderThumbprintOutput,
     crate::error::UpdateOpenIDConnectProviderThumbprintError,
 > {
@@ -11273,7 +11527,7 @@ pub fn parse_update_open_id_connect_provider_thumbprint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError> {
+) -> std::result::Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateRoleError::unhandled)?;
     let error_code = match generic.code() {
@@ -11330,7 +11584,7 @@ pub fn parse_update_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError> {
+) -> std::result::Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_role_output::Builder::default();
@@ -11342,7 +11596,10 @@ pub fn parse_update_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_role_description_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateRoleDescriptionOutput, crate::error::UpdateRoleDescriptionError> {
+) -> std::result::Result<
+    crate::output::UpdateRoleDescriptionOutput,
+    crate::error::UpdateRoleDescriptionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
     let error_code = match generic.code() {
@@ -11399,7 +11656,10 @@ pub fn parse_update_role_description_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_role_description_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateRoleDescriptionOutput, crate::error::UpdateRoleDescriptionError> {
+) -> std::result::Result<
+    crate::output::UpdateRoleDescriptionOutput,
+    crate::error::UpdateRoleDescriptionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_role_description_output::Builder::default();
@@ -11416,7 +11676,10 @@ pub fn parse_update_role_description_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateSAMLProviderOutput, crate::error::UpdateSAMLProviderError> {
+) -> std::result::Result<
+    crate::output::UpdateSAMLProviderOutput,
+    crate::error::UpdateSAMLProviderError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
     let error_code = match generic.code() {
@@ -11487,7 +11750,10 @@ pub fn parse_update_saml_provider_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_saml_provider_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateSAMLProviderOutput, crate::error::UpdateSAMLProviderError> {
+) -> std::result::Result<
+    crate::output::UpdateSAMLProviderOutput,
+    crate::error::UpdateSAMLProviderError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_saml_provider_output::Builder::default();
@@ -11504,8 +11770,10 @@ pub fn parse_update_saml_provider_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_server_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateServerCertificateOutput, crate::error::UpdateServerCertificateError>
-{
+) -> std::result::Result<
+    crate::output::UpdateServerCertificateOutput,
+    crate::error::UpdateServerCertificateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
@@ -11580,8 +11848,10 @@ pub fn parse_update_server_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_server_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateServerCertificateOutput, crate::error::UpdateServerCertificateError>
-{
+) -> std::result::Result<
+    crate::output::UpdateServerCertificateOutput,
+    crate::error::UpdateServerCertificateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_server_certificate_output::Builder::default();
@@ -11593,7 +11863,7 @@ pub fn parse_update_server_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_service_specific_credential_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateServiceSpecificCredentialOutput,
     crate::error::UpdateServiceSpecificCredentialError,
 > {
@@ -11625,7 +11895,7 @@ pub fn parse_update_service_specific_credential_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_service_specific_credential_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateServiceSpecificCredentialOutput,
     crate::error::UpdateServiceSpecificCredentialError,
 > {
@@ -11641,7 +11911,7 @@ pub fn parse_update_service_specific_credential_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_signing_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateSigningCertificateOutput,
     crate::error::UpdateSigningCertificateError,
 > {
@@ -11705,7 +11975,7 @@ pub fn parse_update_signing_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_signing_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateSigningCertificateOutput,
     crate::error::UpdateSigningCertificateError,
 > {
@@ -11720,7 +11990,10 @@ pub fn parse_update_signing_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_ssh_public_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateSSHPublicKeyOutput, crate::error::UpdateSSHPublicKeyError> {
+) -> std::result::Result<
+    crate::output::UpdateSSHPublicKeyOutput,
+    crate::error::UpdateSSHPublicKeyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateSSHPublicKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -11749,7 +12022,10 @@ pub fn parse_update_ssh_public_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_ssh_public_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateSSHPublicKeyOutput, crate::error::UpdateSSHPublicKeyError> {
+) -> std::result::Result<
+    crate::output::UpdateSSHPublicKeyOutput,
+    crate::error::UpdateSSHPublicKeyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_ssh_public_key_output::Builder::default();
@@ -11761,7 +12037,7 @@ pub fn parse_update_ssh_public_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_user_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError> {
+) -> std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateUserError::unhandled)?;
     let error_code = match generic.code() {
@@ -11857,7 +12133,7 @@ pub fn parse_update_user_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_user_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError> {
+) -> std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_user_output::Builder::default();
@@ -11869,8 +12145,10 @@ pub fn parse_update_user_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_server_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UploadServerCertificateOutput, crate::error::UploadServerCertificateError>
-{
+) -> std::result::Result<
+    crate::output::UploadServerCertificateOutput,
+    crate::error::UploadServerCertificateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UploadServerCertificateError::unhandled)?;
     let error_code = match generic.code() {
@@ -11987,8 +12265,10 @@ pub fn parse_upload_server_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_server_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UploadServerCertificateOutput, crate::error::UploadServerCertificateError>
-{
+) -> std::result::Result<
+    crate::output::UploadServerCertificateOutput,
+    crate::error::UploadServerCertificateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::upload_server_certificate_output::Builder::default();
@@ -12005,7 +12285,7 @@ pub fn parse_upload_server_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_signing_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UploadSigningCertificateOutput,
     crate::error::UploadSigningCertificateError,
 > {
@@ -12125,7 +12405,7 @@ pub fn parse_upload_signing_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_signing_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UploadSigningCertificateOutput,
     crate::error::UploadSigningCertificateError,
 > {
@@ -12145,7 +12425,10 @@ pub fn parse_upload_signing_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_ssh_public_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UploadSSHPublicKeyOutput, crate::error::UploadSSHPublicKeyError> {
+) -> std::result::Result<
+    crate::output::UploadSSHPublicKeyOutput,
+    crate::error::UploadSSHPublicKeyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -12227,7 +12510,10 @@ pub fn parse_upload_ssh_public_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_ssh_public_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UploadSSHPublicKeyOutput, crate::error::UploadSSHPublicKeyError> {
+) -> std::result::Result<
+    crate::output::UploadSSHPublicKeyOutput,
+    crate::error::UploadSSHPublicKeyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::upload_ssh_public_key_output::Builder::default();

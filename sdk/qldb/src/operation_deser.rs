@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_journal_kinesis_stream_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CancelJournalKinesisStreamOutput,
     crate::error::CancelJournalKinesisStreamError,
 > {
@@ -70,7 +70,7 @@ pub fn parse_cancel_journal_kinesis_stream_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_journal_kinesis_stream_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CancelJournalKinesisStreamOutput,
     crate::error::CancelJournalKinesisStreamError,
 > {
@@ -90,7 +90,7 @@ pub fn parse_cancel_journal_kinesis_stream_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_ledger_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError> {
+) -> std::result::Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateLedgerError::unhandled)?;
     let error_code = match generic.code() {
@@ -157,7 +157,7 @@ pub fn parse_create_ledger_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_ledger_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError> {
+) -> std::result::Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_ledger_output::Builder::default();
@@ -171,7 +171,7 @@ pub fn parse_create_ledger_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_ledger_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
+) -> std::result::Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLedgerError::unhandled)?;
     let error_code = match generic.code() {
@@ -241,7 +241,7 @@ pub fn parse_delete_ledger_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_ledger_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
+) -> std::result::Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_ledger_output::Builder::default();
@@ -253,7 +253,7 @@ pub fn parse_delete_ledger_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_journal_kinesis_stream_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeJournalKinesisStreamOutput,
     crate::error::DescribeJournalKinesisStreamError,
 > {
@@ -321,7 +321,7 @@ pub fn parse_describe_journal_kinesis_stream_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_journal_kinesis_stream_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeJournalKinesisStreamOutput,
     crate::error::DescribeJournalKinesisStreamError,
 > {
@@ -341,8 +341,10 @@ pub fn parse_describe_journal_kinesis_stream_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_journal_s3_export_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeJournalS3ExportOutput, crate::error::DescribeJournalS3ExportError>
-{
+) -> std::result::Result<
+    crate::output::DescribeJournalS3ExportOutput,
+    crate::error::DescribeJournalS3ExportError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeJournalS3ExportError::unhandled)?;
     let error_code = match generic.code() {
@@ -375,8 +377,10 @@ pub fn parse_describe_journal_s3_export_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_journal_s3_export_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeJournalS3ExportOutput, crate::error::DescribeJournalS3ExportError>
-{
+) -> std::result::Result<
+    crate::output::DescribeJournalS3ExportOutput,
+    crate::error::DescribeJournalS3ExportError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_journal_s3_export_output::Builder::default();
@@ -393,7 +397,7 @@ pub fn parse_describe_journal_s3_export_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_ledger_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
+) -> std::result::Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeLedgerError::unhandled)?;
     let error_code = match generic.code() {
@@ -436,7 +440,7 @@ pub fn parse_describe_ledger_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_ledger_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
+) -> std::result::Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_ledger_output::Builder::default();
@@ -451,7 +455,8 @@ pub fn parse_describe_ledger_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_journal_to_s3_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error> {
+) -> std::result::Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ExportJournalToS3Error::unhandled)?;
     let error_code = match generic.code() {
@@ -495,7 +500,8 @@ pub fn parse_export_journal_to_s3_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_journal_to_s3_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error> {
+) -> std::result::Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::export_journal_to_s3_output::Builder::default();
@@ -512,7 +518,7 @@ pub fn parse_export_journal_to_s3_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_block_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBlockOutput, crate::error::GetBlockError> {
+) -> std::result::Result<crate::output::GetBlockOutput, crate::error::GetBlockError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBlockError::unhandled)?;
     let error_code = match generic.code() {
@@ -570,7 +576,7 @@ pub fn parse_get_block_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_block_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBlockOutput, crate::error::GetBlockError> {
+) -> std::result::Result<crate::output::GetBlockOutput, crate::error::GetBlockError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_block_output::Builder::default();
@@ -584,7 +590,7 @@ pub fn parse_get_block_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_digest_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDigestOutput, crate::error::GetDigestError> {
+) -> std::result::Result<crate::output::GetDigestOutput, crate::error::GetDigestError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetDigestError::unhandled)?;
     let error_code = match generic.code() {
@@ -642,7 +648,7 @@ pub fn parse_get_digest_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_digest_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDigestOutput, crate::error::GetDigestError> {
+) -> std::result::Result<crate::output::GetDigestOutput, crate::error::GetDigestError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_digest_output::Builder::default();
@@ -656,7 +662,7 @@ pub fn parse_get_digest_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_revision_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError> {
+) -> std::result::Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetRevisionError::unhandled)?;
     let error_code = match generic.code() {
@@ -714,7 +720,7 @@ pub fn parse_get_revision_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_revision_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError> {
+) -> std::result::Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_revision_output::Builder::default();
@@ -728,7 +734,7 @@ pub fn parse_get_revision_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_journal_kinesis_streams_for_ledger_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListJournalKinesisStreamsForLedgerOutput,
     crate::error::ListJournalKinesisStreamsForLedgerError,
 > {
@@ -766,7 +772,7 @@ pub fn parse_list_journal_kinesis_streams_for_ledger_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_journal_kinesis_streams_for_ledger_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListJournalKinesisStreamsForLedgerOutput,
     crate::error::ListJournalKinesisStreamsForLedgerError,
 > {
@@ -787,7 +793,10 @@ pub fn parse_list_journal_kinesis_streams_for_ledger_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_journal_s3_exports_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListJournalS3ExportsOutput, crate::error::ListJournalS3ExportsError> {
+) -> std::result::Result<
+    crate::output::ListJournalS3ExportsOutput,
+    crate::error::ListJournalS3ExportsError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListJournalS3ExportsError::unhandled)?;
     Err(crate::error::ListJournalS3ExportsError::generic(generic))
@@ -796,7 +805,10 @@ pub fn parse_list_journal_s3_exports_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_journal_s3_exports_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListJournalS3ExportsOutput, crate::error::ListJournalS3ExportsError> {
+) -> std::result::Result<
+    crate::output::ListJournalS3ExportsOutput,
+    crate::error::ListJournalS3ExportsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_journal_s3_exports_output::Builder::default();
@@ -813,7 +825,7 @@ pub fn parse_list_journal_s3_exports_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_journal_s3_exports_for_ledger_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListJournalS3ExportsForLedgerOutput,
     crate::error::ListJournalS3ExportsForLedgerError,
 > {
@@ -827,7 +839,7 @@ pub fn parse_list_journal_s3_exports_for_ledger_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_journal_s3_exports_for_ledger_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListJournalS3ExportsForLedgerOutput,
     crate::error::ListJournalS3ExportsForLedgerError,
 > {
@@ -848,7 +860,7 @@ pub fn parse_list_journal_s3_exports_for_ledger_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_ledgers_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError> {
+) -> std::result::Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListLedgersError::unhandled)?;
     Err(crate::error::ListLedgersError::generic(generic))
@@ -857,7 +869,7 @@ pub fn parse_list_ledgers_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_ledgers_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError> {
+) -> std::result::Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_ledgers_output::Builder::default();
@@ -871,7 +883,10 @@ pub fn parse_list_ledgers_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -914,7 +929,10 @@ pub fn parse_list_tags_for_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
@@ -931,8 +949,10 @@ pub fn parse_list_tags_for_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stream_journal_to_kinesis_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StreamJournalToKinesisOutput, crate::error::StreamJournalToKinesisError>
-{
+) -> std::result::Result<
+    crate::output::StreamJournalToKinesisOutput,
+    crate::error::StreamJournalToKinesisError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::StreamJournalToKinesisError::unhandled)?;
     let error_code = match generic.code() {
@@ -994,8 +1014,10 @@ pub fn parse_stream_journal_to_kinesis_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stream_journal_to_kinesis_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StreamJournalToKinesisOutput, crate::error::StreamJournalToKinesisError>
-{
+) -> std::result::Result<
+    crate::output::StreamJournalToKinesisOutput,
+    crate::error::StreamJournalToKinesisError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stream_journal_to_kinesis_output::Builder::default();
@@ -1012,7 +1034,7 @@ pub fn parse_stream_journal_to_kinesis_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -1055,7 +1077,7 @@ pub fn parse_tag_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
@@ -1067,7 +1089,7 @@ pub fn parse_tag_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -1110,7 +1132,7 @@ pub fn parse_untag_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
@@ -1122,7 +1144,7 @@ pub fn parse_untag_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_ledger_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError> {
+) -> std::result::Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateLedgerError::unhandled)?;
     let error_code = match generic.code() {
@@ -1165,7 +1187,7 @@ pub fn parse_update_ledger_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_ledger_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError> {
+) -> std::result::Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_ledger_output::Builder::default();
@@ -1179,7 +1201,7 @@ pub fn parse_update_ledger_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_ledger_permissions_mode_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateLedgerPermissionsModeOutput,
     crate::error::UpdateLedgerPermissionsModeError,
 > {
@@ -1229,7 +1251,7 @@ pub fn parse_update_ledger_permissions_mode_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_ledger_permissions_mode_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateLedgerPermissionsModeOutput,
     crate::error::UpdateLedgerPermissionsModeError,
 > {

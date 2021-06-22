@@ -12,12 +12,12 @@ pub mod add_tags_to_stream_input {
     }
     impl Builder {
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         pub fn tags(
@@ -32,18 +32,20 @@ pub mod add_tags_to_stream_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AddTagsToStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AddTagsToStreamInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AddTagsToStreamInput {
                 stream_name: self.stream_name,
                 tags: self.tags,
@@ -61,7 +63,7 @@ impl AddTagsToStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddTagsToStream,
             aws_http::AwsErrorRetryPolicy,
@@ -117,7 +119,7 @@ impl AddTagsToStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -153,29 +155,30 @@ pub mod create_stream_input {
         /// the application that creates the stream. It is also scoped by AWS Region. That is, two
         /// streams in two different AWS accounts can have the same name. Two streams in the same
         /// AWS account but in two different Regions can also have the same name.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The number of shards that the stream will use. The throughput of the stream is a
         /// function of the number of shards; more shards are required for greater provisioned
         /// throughput.</p>
-        pub fn shard_count(mut self, inp: i32) -> Self {
-            self.shard_count = Some(inp);
+        pub fn shard_count(mut self, input: i32) -> Self {
+            self.shard_count = Some(input);
             self
         }
-        pub fn set_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.shard_count = inp;
+        pub fn set_shard_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.shard_count = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStreamInput`](crate::input::CreateStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateStreamInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateStreamInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateStreamInput {
                 stream_name: self.stream_name,
                 shard_count: self.shard_count,
@@ -193,7 +196,7 @@ impl CreateStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateStream,
             aws_http::AwsErrorRetryPolicy,
@@ -249,7 +252,7 @@ impl CreateStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -282,28 +285,28 @@ pub mod decrease_stream_retention_period_input {
     }
     impl Builder {
         /// <p>The name of the stream to modify.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The new retention period of the stream, in hours. Must be less than the current
         /// retention period.</p>
-        pub fn retention_period_hours(mut self, inp: i32) -> Self {
-            self.retention_period_hours = Some(inp);
+        pub fn retention_period_hours(mut self, input: i32) -> Self {
+            self.retention_period_hours = Some(input);
             self
         }
-        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
-            self.retention_period_hours = inp;
+        pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period_hours = input;
             self
         }
         /// Consumes the builder and constructs a [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DecreaseStreamRetentionPeriodInput,
             smithy_http::operation::BuildError,
         > {
@@ -325,7 +328,7 @@ impl DecreaseStreamRetentionPeriodInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DecreaseStreamRetentionPeriod,
             aws_http::AwsErrorRetryPolicy,
@@ -382,7 +385,7 @@ impl DecreaseStreamRetentionPeriodInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -418,29 +421,30 @@ pub mod delete_stream_input {
     }
     impl Builder {
         /// <p>The name of the stream to delete.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>,
         /// and the stream has registered consumers, the call to <code>DeleteStream</code> fails
         /// with a <code>ResourceInUseException</code>. </p>
-        pub fn enforce_consumer_deletion(mut self, inp: bool) -> Self {
-            self.enforce_consumer_deletion = Some(inp);
+        pub fn enforce_consumer_deletion(mut self, input: bool) -> Self {
+            self.enforce_consumer_deletion = Some(input);
             self
         }
-        pub fn set_enforce_consumer_deletion(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enforce_consumer_deletion = inp;
+        pub fn set_enforce_consumer_deletion(mut self, input: std::option::Option<bool>) -> Self {
+            self.enforce_consumer_deletion = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::input::DeleteStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteStreamInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteStreamInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteStreamInput {
                 stream_name: self.stream_name,
                 enforce_consumer_deletion: self.enforce_consumer_deletion,
@@ -458,7 +462,7 @@ impl DeleteStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteStream,
             aws_http::AwsErrorRetryPolicy,
@@ -514,7 +518,7 @@ impl DeleteStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -549,21 +553,24 @@ pub mod deregister_stream_consumer_input {
     impl Builder {
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// <p>The name that you gave to the consumer.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_name = Some(inp.into());
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_name = Some(input.into());
             self
         }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_name = inp;
+        pub fn set_consumer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_name = input;
             self
         }
         /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you
@@ -571,19 +578,21 @@ pub mod deregister_stream_consumer_input {
         /// ListStreamConsumers operation to get a list of the descriptions of all the consumers
         /// that are currently registered with a given data stream. The description of a consumer
         /// contains its ARN.</p>
-        pub fn consumer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_arn = Some(inp.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_arn = Some(input.into());
             self
         }
-        pub fn set_consumer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_arn = inp;
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeregisterStreamConsumerInput`](crate::input::DeregisterStreamConsumerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeregisterStreamConsumerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeregisterStreamConsumerInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeregisterStreamConsumerInput {
                 stream_arn: self.stream_arn,
                 consumer_name: self.consumer_name,
@@ -603,7 +612,7 @@ impl DeregisterStreamConsumerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeregisterStreamConsumer,
             aws_http::AwsErrorRetryPolicy,
@@ -659,7 +668,7 @@ impl DeregisterStreamConsumerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -691,7 +700,10 @@ pub mod describe_limits_input {
         /// Consumes the builder and constructs a [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLimitsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeLimitsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeLimitsInput {})
         }
     }
@@ -706,7 +718,7 @@ impl DescribeLimitsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeLimits,
             aws_http::AwsErrorRetryPolicy,
@@ -759,7 +771,7 @@ impl DescribeLimitsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -793,40 +805,43 @@ pub mod describe_stream_input {
     }
     impl Builder {
         /// <p>The name of the stream to describe.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The maximum number of shards to return in a single call. The default value is 100.
         /// If you specify a value greater than 100, at most 100 shards are returned.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>The shard ID of the shard to start with.</p>
-        pub fn exclusive_start_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exclusive_start_shard_id = Some(inp.into());
+        pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exclusive_start_shard_id = Some(input.into());
             self
         }
         pub fn set_exclusive_start_shard_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exclusive_start_shard_id = inp;
+            self.exclusive_start_shard_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::input::DescribeStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStreamInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeStreamInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStreamInput {
                 stream_name: self.stream_name,
                 limit: self.limit,
@@ -845,7 +860,7 @@ impl DescribeStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStream,
             aws_http::AwsErrorRetryPolicy,
@@ -900,7 +915,7 @@ impl DescribeStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -935,37 +950,42 @@ pub mod describe_stream_consumer_input {
     impl Builder {
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// <p>The name that you gave to the consumer.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_name = Some(inp.into());
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_name = Some(input.into());
             self
         }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_name = inp;
+        pub fn set_consumer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_name = input;
             self
         }
         /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
-        pub fn consumer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_arn = Some(inp.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_arn = Some(input.into());
             self
         }
-        pub fn set_consumer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_arn = inp;
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStreamConsumerInput`](crate::input::DescribeStreamConsumerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStreamConsumerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStreamConsumerInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStreamConsumerInput {
                 stream_arn: self.stream_arn,
                 consumer_name: self.consumer_name,
@@ -984,7 +1004,7 @@ impl DescribeStreamConsumerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStreamConsumer,
             aws_http::AwsErrorRetryPolicy,
@@ -1040,7 +1060,7 @@ impl DescribeStreamConsumerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1072,19 +1092,21 @@ pub mod describe_stream_summary_input {
     }
     impl Builder {
         /// <p>The name of the stream to describe.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStreamSummaryInput`](crate::input::DescribeStreamSummaryInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStreamSummaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStreamSummaryInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStreamSummaryInput {
                 stream_name: self.stream_name,
             })
@@ -1101,7 +1123,7 @@ impl DescribeStreamSummaryInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeStreamSummary,
             aws_http::AwsErrorRetryPolicy,
@@ -1157,7 +1179,7 @@ impl DescribeStreamSummaryInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1192,32 +1214,34 @@ pub mod disable_enhanced_monitoring_input {
     impl Builder {
         /// <p>The name of the Kinesis data stream for which to disable enhanced
         /// monitoring.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
-        pub fn shard_level_metrics(mut self, inp: impl Into<crate::model::MetricsName>) -> Self {
+        pub fn shard_level_metrics(mut self, input: impl Into<crate::model::MetricsName>) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.shard_level_metrics = Some(v);
             self
         }
         pub fn set_shard_level_metrics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         ) -> Self {
-            self.shard_level_metrics = inp;
+            self.shard_level_metrics = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableEnhancedMonitoringInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DisableEnhancedMonitoringInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DisableEnhancedMonitoringInput {
                 stream_name: self.stream_name,
                 shard_level_metrics: self.shard_level_metrics,
@@ -1236,7 +1260,7 @@ impl DisableEnhancedMonitoringInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DisableEnhancedMonitoring,
             aws_http::AwsErrorRetryPolicy,
@@ -1292,7 +1316,7 @@ impl DisableEnhancedMonitoringInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1326,32 +1350,34 @@ pub mod enable_enhanced_monitoring_input {
     }
     impl Builder {
         /// <p>The name of the stream for which to enable enhanced monitoring.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
-        pub fn shard_level_metrics(mut self, inp: impl Into<crate::model::MetricsName>) -> Self {
+        pub fn shard_level_metrics(mut self, input: impl Into<crate::model::MetricsName>) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.shard_level_metrics = Some(v);
             self
         }
         pub fn set_shard_level_metrics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         ) -> Self {
-            self.shard_level_metrics = inp;
+            self.shard_level_metrics = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableEnhancedMonitoringInput`](crate::input::EnableEnhancedMonitoringInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableEnhancedMonitoringInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::EnableEnhancedMonitoringInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::EnableEnhancedMonitoringInput {
                 stream_name: self.stream_name,
                 shard_level_metrics: self.shard_level_metrics,
@@ -1370,7 +1396,7 @@ impl EnableEnhancedMonitoringInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::EnableEnhancedMonitoring,
             aws_http::AwsErrorRetryPolicy,
@@ -1426,7 +1452,7 @@ impl EnableEnhancedMonitoringInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1461,29 +1487,33 @@ pub mod get_records_input {
         /// <p>The position in the shard from which you want to start sequentially reading data
         /// records. A shard iterator specifies this position using the sequence number of a data
         /// record in the shard.</p>
-        pub fn shard_iterator(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_iterator = Some(inp.into());
+        pub fn shard_iterator(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shard_iterator = Some(input.into());
             self
         }
-        pub fn set_shard_iterator(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_iterator = inp;
+        pub fn set_shard_iterator(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.shard_iterator = input;
             self
         }
         /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you
         /// specify a value that is greater than 10,000, <a>GetRecords</a> throws
         /// <code>InvalidArgumentException</code>. The default value is 10,000.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRecordsInput`](crate::input::GetRecordsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRecordsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetRecordsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetRecordsInput {
                 shard_iterator: self.shard_iterator,
                 limit: self.limit,
@@ -1501,7 +1531,7 @@ impl GetRecordsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRecords,
             aws_http::AwsErrorRetryPolicy,
@@ -1557,7 +1587,7 @@ impl GetRecordsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1593,21 +1623,21 @@ pub mod get_shard_iterator_input {
     }
     impl Builder {
         /// <p>The name of the Amazon Kinesis data stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_id = Some(inp.into());
+        pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shard_id = Some(input.into());
             self
         }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = inp;
+        pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shard_id = input;
             self
         }
         /// <p>Determines how the shard iterator is used to start reading data records from the
@@ -1637,28 +1667,28 @@ pub mod get_shard_iterator_input {
         /// that you always read the most recent data in the shard.</p>
         /// </li>
         /// </ul>
-        pub fn shard_iterator_type(mut self, inp: crate::model::ShardIteratorType) -> Self {
-            self.shard_iterator_type = Some(inp);
+        pub fn shard_iterator_type(mut self, input: crate::model::ShardIteratorType) -> Self {
+            self.shard_iterator_type = Some(input);
             self
         }
         pub fn set_shard_iterator_type(
             mut self,
-            inp: std::option::Option<crate::model::ShardIteratorType>,
+            input: std::option::Option<crate::model::ShardIteratorType>,
         ) -> Self {
-            self.shard_iterator_type = inp;
+            self.shard_iterator_type = input;
             self
         }
         /// <p>The sequence number of the data record in the shard from which to start reading.
         /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-        pub fn starting_sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.starting_sequence_number = Some(inp.into());
+        pub fn starting_sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.starting_sequence_number = Some(input.into());
             self
         }
         pub fn set_starting_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.starting_sequence_number = inp;
+            self.starting_sequence_number = input;
             self
         }
         /// <p>The time stamp of the data record from which to start reading. Used with shard
@@ -1668,19 +1698,21 @@ pub mod get_shard_iterator_input {
         /// the iterator returned is for the next (later) record. If the time stamp is older than
         /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
         /// (TRIM_HORIZON).</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::input::GetShardIteratorInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetShardIteratorInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetShardIteratorInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetShardIteratorInput {
                 stream_name: self.stream_name,
                 shard_id: self.shard_id,
@@ -1701,7 +1733,7 @@ impl GetShardIteratorInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetShardIterator,
             aws_http::AwsErrorRetryPolicy,
@@ -1757,7 +1789,7 @@ impl GetShardIteratorInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1790,28 +1822,28 @@ pub mod increase_stream_retention_period_input {
     }
     impl Builder {
         /// <p>The name of the stream to modify.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The new retention period of the stream, in hours. Must be more than the current
         /// retention period.</p>
-        pub fn retention_period_hours(mut self, inp: i32) -> Self {
-            self.retention_period_hours = Some(inp);
+        pub fn retention_period_hours(mut self, input: i32) -> Self {
+            self.retention_period_hours = Some(input);
             self
         }
-        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
-            self.retention_period_hours = inp;
+        pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period_hours = input;
             self
         }
         /// Consumes the builder and constructs a [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::IncreaseStreamRetentionPeriodInput,
             smithy_http::operation::BuildError,
         > {
@@ -1833,7 +1865,7 @@ impl IncreaseStreamRetentionPeriodInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::IncreaseStreamRetentionPeriod,
             aws_http::AwsErrorRetryPolicy,
@@ -1890,7 +1922,7 @@ impl IncreaseStreamRetentionPeriodInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1932,12 +1964,12 @@ pub mod list_shards_input {
         /// <p>The name of the data stream whose shards you want to list. </p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>When the number of shards in the data stream is greater than the default value for
@@ -1962,12 +1994,12 @@ pub mod list_shards_input {
         /// <code>ListShards</code>, you get
         /// <code>ExpiredNextTokenException</code>.</p>
         /// </important>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>Specify this parameter to indicate that you want to list the shards starting with
@@ -1976,15 +2008,15 @@ pub mod list_shards_input {
         /// <code>ListShards</code> to list the shards starting with the first one in the
         /// stream.</p>
         /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
-        pub fn exclusive_start_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exclusive_start_shard_id = Some(inp.into());
+        pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exclusive_start_shard_id = Some(input.into());
             self
         }
         pub fn set_exclusive_start_shard_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exclusive_start_shard_id = inp;
+            self.exclusive_start_shard_id = input;
             self
         }
         /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
@@ -1994,12 +2026,12 @@ pub mod list_shards_input {
         /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
         /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
         /// shards.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>Specify this input parameter to distinguish data streams that have the same name.
@@ -2008,32 +2040,33 @@ pub mod list_shards_input {
         /// which of the two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.stream_creation_timestamp = Some(inp);
+        pub fn stream_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.stream_creation_timestamp = Some(input);
             self
         }
         pub fn set_stream_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.stream_creation_timestamp = inp;
+            self.stream_creation_timestamp = input;
             self
         }
-        pub fn shard_filter(mut self, inp: crate::model::ShardFilter) -> Self {
-            self.shard_filter = Some(inp);
+        pub fn shard_filter(mut self, input: crate::model::ShardFilter) -> Self {
+            self.shard_filter = Some(input);
             self
         }
         pub fn set_shard_filter(
             mut self,
-            inp: std::option::Option<crate::model::ShardFilter>,
+            input: std::option::Option<crate::model::ShardFilter>,
         ) -> Self {
-            self.shard_filter = inp;
+            self.shard_filter = input;
             self
         }
         /// Consumes the builder and constructs a [`ListShardsInput`](crate::input::ListShardsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListShardsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListShardsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListShardsInput {
                 stream_name: self.stream_name,
                 next_token: self.next_token,
@@ -2055,7 +2088,7 @@ impl ListShardsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListShards,
             aws_http::AwsErrorRetryPolicy,
@@ -2111,7 +2144,7 @@ impl ListShardsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2147,12 +2180,12 @@ pub mod list_stream_consumers_input {
     impl Builder {
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
         /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// <p>When the number of consumers that are registered with the data stream is greater than
@@ -2178,22 +2211,22 @@ pub mod list_stream_consumers_input {
         /// specify an expired token in a call to <code>ListStreamConsumers</code>, you get
         /// <code>ExpiredNextTokenException</code>.</p>
         /// </important>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of consumers that you want a single call of
         /// <code>ListStreamConsumers</code> to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>Specify this input parameter to distinguish data streams that have the same name. For
@@ -2201,22 +2234,24 @@ pub mod list_stream_consumers_input {
         /// data stream with the same name, you can use this input parameter to specify which of the
         /// two streams you want to list the consumers for. </p>
         /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-        pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.stream_creation_timestamp = Some(inp);
+        pub fn stream_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.stream_creation_timestamp = Some(input);
             self
         }
         pub fn set_stream_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.stream_creation_timestamp = inp;
+            self.stream_creation_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStreamConsumersInput`](crate::input::ListStreamConsumersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStreamConsumersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStreamConsumersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStreamConsumersInput {
                 stream_arn: self.stream_arn,
                 next_token: self.next_token,
@@ -2236,7 +2271,7 @@ impl ListStreamConsumersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListStreamConsumers,
             aws_http::AwsErrorRetryPolicy,
@@ -2292,7 +2327,7 @@ impl ListStreamConsumersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2325,30 +2360,34 @@ pub mod list_streams_input {
     }
     impl Builder {
         /// <p>The maximum number of streams to list.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>The name of the stream to start the list with.</p>
-        pub fn exclusive_start_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exclusive_start_stream_name = Some(inp.into());
+        pub fn exclusive_start_stream_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.exclusive_start_stream_name = Some(input.into());
             self
         }
         pub fn set_exclusive_start_stream_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exclusive_start_stream_name = inp;
+            self.exclusive_start_stream_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStreamsInput`](crate::input::ListStreamsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStreamsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListStreamsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListStreamsInput {
                 limit: self.limit,
                 exclusive_start_stream_name: self.exclusive_start_stream_name,
@@ -2366,7 +2405,7 @@ impl ListStreamsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListStreams,
             aws_http::AwsErrorRetryPolicy,
@@ -2422,7 +2461,7 @@ impl ListStreamsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2456,45 +2495,47 @@ pub mod list_tags_for_stream_input {
     }
     impl Builder {
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The key to use as the starting point for the list of tags. If this parameter is
         /// set, <code>ListTagsForStream</code> gets all tags that occur after
         /// <code>ExclusiveStartTagKey</code>. </p>
-        pub fn exclusive_start_tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exclusive_start_tag_key = Some(inp.into());
+        pub fn exclusive_start_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exclusive_start_tag_key = Some(input.into());
             self
         }
         pub fn set_exclusive_start_tag_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exclusive_start_tag_key = inp;
+            self.exclusive_start_tag_key = input;
             self
         }
         /// <p>The number of tags to return. If this number is less than the total number of tags
         /// associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To
         /// list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the
         /// response.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsForStreamInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTagsForStreamInput {
                 stream_name: self.stream_name,
                 exclusive_start_tag_key: self.exclusive_start_tag_key,
@@ -2513,7 +2554,7 @@ impl ListTagsForStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsForStream,
             aws_http::AwsErrorRetryPolicy,
@@ -2569,7 +2610,7 @@ impl ListTagsForStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2603,40 +2644,44 @@ pub mod merge_shards_input {
     }
     impl Builder {
         /// <p>The name of the stream for the merge.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The shard ID of the shard to combine with the adjacent shard for the
         /// merge.</p>
-        pub fn shard_to_merge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_to_merge = Some(inp.into());
+        pub fn shard_to_merge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shard_to_merge = Some(input.into());
             self
         }
-        pub fn set_shard_to_merge(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_to_merge = inp;
+        pub fn set_shard_to_merge(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.shard_to_merge = input;
             self
         }
         /// <p>The shard ID of the adjacent shard for the merge.</p>
-        pub fn adjacent_shard_to_merge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.adjacent_shard_to_merge = Some(inp.into());
+        pub fn adjacent_shard_to_merge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.adjacent_shard_to_merge = Some(input.into());
             self
         }
         pub fn set_adjacent_shard_to_merge(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.adjacent_shard_to_merge = inp;
+            self.adjacent_shard_to_merge = input;
             self
         }
         /// Consumes the builder and constructs a [`MergeShardsInput`](crate::input::MergeShardsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::MergeShardsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::MergeShardsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::MergeShardsInput {
                 stream_name: self.stream_name,
                 shard_to_merge: self.shard_to_merge,
@@ -2655,7 +2700,7 @@ impl MergeShardsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::MergeShards,
             aws_http::AwsErrorRetryPolicy,
@@ -2711,7 +2756,7 @@ impl MergeShardsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2747,24 +2792,24 @@ pub mod put_record_input {
     }
     impl Builder {
         /// <p>The name of the stream to put the data record into.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The data blob to put into the record, which is base64-encoded when the blob is
         /// serialized. When the data blob (the payload before base64-encoding) is added to the
         /// partition key size, the total size must not exceed the maximum record size (1
         /// MiB).</p>
-        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
-            self.data = Some(inp);
+        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+            self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.data = inp;
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = input;
             self
         }
         /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
@@ -2774,25 +2819,28 @@ pub mod put_record_input {
         /// function is used to map partition keys to 128-bit integer values and to map associated
         /// data records to shards. As a result of this hashing mechanism, all data records with the
         /// same partition key map to the same shard within the stream.</p>
-        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.partition_key = Some(inp.into());
+        pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partition_key = Some(input.into());
             self
         }
-        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.partition_key = inp;
+        pub fn set_partition_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partition_key = input;
             self
         }
         /// <p>The hash value used to explicitly determine the shard the data record is assigned
         /// to by overriding the partition key hash.</p>
-        pub fn explicit_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.explicit_hash_key = Some(inp.into());
+        pub fn explicit_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.explicit_hash_key = Some(input.into());
             self
         }
         pub fn set_explicit_hash_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.explicit_hash_key = inp;
+            self.explicit_hash_key = input;
             self
         }
         /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
@@ -2800,21 +2848,25 @@ pub mod put_record_input {
         /// record <i>n</i> to the sequence number of record <i>n-1</i>
         /// (as returned in the result when putting record <i>n-1</i>). If this
         /// parameter is not set, records are coarsely ordered based on arrival time.</p>
-        pub fn sequence_number_for_ordering(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number_for_ordering = Some(inp.into());
+        pub fn sequence_number_for_ordering(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.sequence_number_for_ordering = Some(input.into());
             self
         }
         pub fn set_sequence_number_for_ordering(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sequence_number_for_ordering = inp;
+            self.sequence_number_for_ordering = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRecordInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutRecordInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutRecordInput {
                 stream_name: self.stream_name,
                 data: self.data,
@@ -2835,7 +2887,7 @@ impl PutRecordInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutRecord,
             aws_http::AwsErrorRetryPolicy,
@@ -2889,7 +2941,7 @@ impl PutRecordInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2922,32 +2974,33 @@ pub mod put_records_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn records(mut self, inp: impl Into<crate::model::PutRecordsRequestEntry>) -> Self {
+        pub fn records(mut self, input: impl Into<crate::model::PutRecordsRequestEntry>) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.records = Some(v);
             self
         }
         pub fn set_records(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
         ) -> Self {
-            self.records = inp;
+            self.records = input;
             self
         }
         /// <p>The stream name associated with the request.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRecordsInput`](crate::input::PutRecordsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRecordsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutRecordsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutRecordsInput {
                 records: self.records,
                 stream_name: self.stream_name,
@@ -2965,7 +3018,7 @@ impl PutRecordsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutRecords,
             aws_http::AwsErrorRetryPolicy,
@@ -3021,7 +3074,7 @@ impl PutRecordsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3055,29 +3108,34 @@ pub mod register_stream_consumer_input {
     impl Builder {
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
         /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
         /// consumer names don't have to be unique across data streams.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_name = Some(inp.into());
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_name = Some(input.into());
             self
         }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_name = inp;
+        pub fn set_consumer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterStreamConsumerInput`](crate::input::RegisterStreamConsumerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterStreamConsumerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RegisterStreamConsumerInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RegisterStreamConsumerInput {
                 stream_arn: self.stream_arn,
                 consumer_name: self.consumer_name,
@@ -3095,7 +3153,7 @@ impl RegisterStreamConsumerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RegisterStreamConsumer,
             aws_http::AwsErrorRetryPolicy,
@@ -3151,7 +3209,7 @@ impl RegisterStreamConsumerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3184,32 +3242,34 @@ pub mod remove_tags_from_stream_input {
     }
     impl Builder {
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveTagsFromStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveTagsFromStreamInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveTagsFromStreamInput {
                 stream_name: self.stream_name,
                 tag_keys: self.tag_keys,
@@ -3227,7 +3287,7 @@ impl RemoveTagsFromStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromStream,
             aws_http::AwsErrorRetryPolicy,
@@ -3283,7 +3343,7 @@ impl RemoveTagsFromStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3317,21 +3377,24 @@ pub mod split_shard_input {
     }
     impl Builder {
         /// <p>The name of the stream for the shard split.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The shard ID of the shard to split.</p>
-        pub fn shard_to_split(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_to_split = Some(inp.into());
+        pub fn shard_to_split(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shard_to_split = Some(input.into());
             self
         }
-        pub fn set_shard_to_split(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_to_split = inp;
+        pub fn set_shard_to_split(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.shard_to_split = input;
             self
         }
         /// <p>A hash key value for the starting hash key of one of the child shards created by
@@ -3341,21 +3404,22 @@ pub mod split_shard_input {
         /// value and all higher hash key values in hash key range are distributed to one of the
         /// child shards. All the lower hash key values in the range are distributed to the other
         /// child shard.</p>
-        pub fn new_starting_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_starting_hash_key = Some(inp.into());
+        pub fn new_starting_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_starting_hash_key = Some(input.into());
             self
         }
         pub fn set_new_starting_hash_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_starting_hash_key = inp;
+            self.new_starting_hash_key = input;
             self
         }
         /// Consumes the builder and constructs a [`SplitShardInput`](crate::input::SplitShardInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SplitShardInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::SplitShardInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::SplitShardInput {
                 stream_name: self.stream_name,
                 shard_to_split: self.shard_to_split,
@@ -3374,7 +3438,7 @@ impl SplitShardInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SplitShard,
             aws_http::AwsErrorRetryPolicy,
@@ -3430,7 +3494,7 @@ impl SplitShardInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3464,24 +3528,24 @@ pub mod start_stream_encryption_input {
     }
     impl Builder {
         /// <p>The name of the stream for which to start encrypting records.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.encryption_type = Some(inp);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.encryption_type = Some(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
+            input: std::option::Option<crate::model::EncryptionType>,
         ) -> Self {
-            self.encryption_type = inp;
+            self.encryption_type = input;
             self
         }
         /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
@@ -3515,19 +3579,21 @@ pub mod start_stream_encryption_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StartStreamEncryptionInput`](crate::input::StartStreamEncryptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartStreamEncryptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartStreamEncryptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartStreamEncryptionInput {
                 stream_name: self.stream_name,
                 encryption_type: self.encryption_type,
@@ -3546,7 +3612,7 @@ impl StartStreamEncryptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartStreamEncryption,
             aws_http::AwsErrorRetryPolicy,
@@ -3602,7 +3668,7 @@ impl StartStreamEncryptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3636,24 +3702,24 @@ pub mod stop_stream_encryption_input {
     }
     impl Builder {
         /// <p>The name of the stream on which to stop encrypting records.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.encryption_type = Some(inp);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.encryption_type = Some(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
+            input: std::option::Option<crate::model::EncryptionType>,
         ) -> Self {
-            self.encryption_type = inp;
+            self.encryption_type = input;
             self
         }
         /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
@@ -3687,19 +3753,21 @@ pub mod stop_stream_encryption_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StopStreamEncryptionInput`](crate::input::StopStreamEncryptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopStreamEncryptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopStreamEncryptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopStreamEncryptionInput {
                 stream_name: self.stream_name,
                 encryption_type: self.encryption_type,
@@ -3718,7 +3786,7 @@ impl StopStreamEncryptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopStreamEncryption,
             aws_http::AwsErrorRetryPolicy,
@@ -3774,7 +3842,7 @@ impl StopStreamEncryptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3808,12 +3876,12 @@ pub mod update_shard_count_input {
     }
     impl Builder {
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The new number of shards. This value has the following default limits. By default,
@@ -3836,31 +3904,33 @@ pub mod update_shard_count_input {
         /// less than 500 shards.</p>
         /// </li>
         /// </ul>
-        pub fn target_shard_count(mut self, inp: i32) -> Self {
-            self.target_shard_count = Some(inp);
+        pub fn target_shard_count(mut self, input: i32) -> Self {
+            self.target_shard_count = Some(input);
             self
         }
-        pub fn set_target_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.target_shard_count = inp;
+        pub fn set_target_shard_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.target_shard_count = input;
             self
         }
         /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-        pub fn scaling_type(mut self, inp: crate::model::ScalingType) -> Self {
-            self.scaling_type = Some(inp);
+        pub fn scaling_type(mut self, input: crate::model::ScalingType) -> Self {
+            self.scaling_type = Some(input);
             self
         }
         pub fn set_scaling_type(
             mut self,
-            inp: std::option::Option<crate::model::ScalingType>,
+            input: std::option::Option<crate::model::ScalingType>,
         ) -> Self {
-            self.scaling_type = inp;
+            self.scaling_type = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateShardCountInput`](crate::input::UpdateShardCountInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateShardCountInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateShardCountInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateShardCountInput {
                 stream_name: self.stream_name,
                 target_shard_count: self.target_shard_count,
@@ -3879,7 +3949,7 @@ impl UpdateShardCountInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateShardCount,
             aws_http::AwsErrorRetryPolicy,
@@ -3935,7 +4005,7 @@ impl UpdateShardCountInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")

@@ -156,12 +156,12 @@ pub mod kinesis_configuration {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
@@ -171,12 +171,12 @@ pub mod kinesis_configuration {
         /// implications for processing records and requires de-aggregation in your stream consumer. To
         /// learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
         /// Guide</i>.</p>
-        pub fn aggregation_enabled(mut self, inp: bool) -> Self {
-            self.aggregation_enabled = Some(inp);
+        pub fn aggregation_enabled(mut self, input: bool) -> Self {
+            self.aggregation_enabled = Some(input);
             self
         }
-        pub fn set_aggregation_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.aggregation_enabled = inp;
+        pub fn set_aggregation_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.aggregation_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`KinesisConfiguration`](crate::model::KinesisConfiguration)
@@ -237,34 +237,34 @@ pub mod ledger_summary {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The current status of the ledger.</p>
-        pub fn state(mut self, inp: crate::model::LedgerState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::LedgerState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::LedgerState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::LedgerState>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn creation_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date_time = Some(inp);
+        pub fn creation_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date_time = Some(input);
             self
         }
         pub fn set_creation_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date_time = inp;
+            self.creation_date_time = input;
             self
         }
         /// Consumes the builder and constructs a [`LedgerSummary`](crate::model::LedgerSummary)
@@ -377,82 +377,88 @@ pub mod journal_s3_export_description {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ledger_name = Some(inp.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ledger_name = Some(input.into());
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ledger_name = inp;
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ledger_name = input;
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_id = Some(inp.into());
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_id = Some(input.into());
             self
         }
-        pub fn set_export_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.export_id = inp;
+        pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_id = input;
             self
         }
         /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
         /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn export_creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.export_creation_time = Some(inp);
+        pub fn export_creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.export_creation_time = Some(input);
             self
         }
         pub fn set_export_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.export_creation_time = inp;
+            self.export_creation_time = input;
             self
         }
         /// <p>The current state of the journal export job.</p>
-        pub fn status(mut self, inp: crate::model::ExportStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ExportStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::ExportStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ExportStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The inclusive start date and time for the range of journal contents that are specified
         /// in the original export request.</p>
-        pub fn inclusive_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inclusive_start_time = Some(inp);
+        pub fn inclusive_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inclusive_start_time = Some(input);
             self
         }
         pub fn set_inclusive_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inclusive_start_time = inp;
+            self.inclusive_start_time = input;
             self
         }
         /// <p>The exclusive end date and time for the range of journal contents that are specified in
         /// the original export request.</p>
-        pub fn exclusive_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.exclusive_end_time = Some(inp);
+        pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.exclusive_end_time = Some(input);
             self
         }
         pub fn set_exclusive_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.exclusive_end_time = inp;
+            self.exclusive_end_time = input;
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
         /// contents.</p>
-        pub fn s3_export_configuration(mut self, inp: crate::model::S3ExportConfiguration) -> Self {
-            self.s3_export_configuration = Some(inp);
+        pub fn s3_export_configuration(
+            mut self,
+            input: crate::model::S3ExportConfiguration,
+        ) -> Self {
+            self.s3_export_configuration = Some(input);
             self
         }
         pub fn set_s3_export_configuration(
             mut self,
-            inp: std::option::Option<crate::model::S3ExportConfiguration>,
+            input: std::option::Option<crate::model::S3ExportConfiguration>,
         ) -> Self {
-            self.s3_export_configuration = inp;
+            self.s3_export_configuration = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
@@ -466,12 +472,12 @@ pub mod journal_s3_export_description {
         /// KMS) for server-side encryption of your exported data.</p>
         /// </li>
         /// </ul>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription)
@@ -565,12 +571,12 @@ pub mod s3_export_configuration {
         /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
         /// Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket = inp;
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal
@@ -596,28 +602,28 @@ pub mod s3_export_configuration {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3
         /// bucket.</p>
         pub fn encryption_configuration(
             mut self,
-            inp: crate::model::S3EncryptionConfiguration,
+            input: crate::model::S3EncryptionConfiguration,
         ) -> Self {
-            self.encryption_configuration = Some(inp);
+            self.encryption_configuration = Some(input);
             self
         }
         pub fn set_encryption_configuration(
             mut self,
-            inp: std::option::Option<crate::model::S3EncryptionConfiguration>,
+            input: std::option::Option<crate::model::S3EncryptionConfiguration>,
         ) -> Self {
-            self.encryption_configuration = inp;
+            self.encryption_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::model::S3ExportConfiguration)
@@ -683,15 +689,18 @@ pub mod s3_encryption_configuration {
         /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data
         /// Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
         /// Guide</i>.</p>
-        pub fn object_encryption_type(mut self, inp: crate::model::S3ObjectEncryptionType) -> Self {
-            self.object_encryption_type = Some(inp);
+        pub fn object_encryption_type(
+            mut self,
+            input: crate::model::S3ObjectEncryptionType,
+        ) -> Self {
+            self.object_encryption_type = Some(input);
             self
         }
         pub fn set_object_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::S3ObjectEncryptionType>,
+            input: std::option::Option<crate::model::S3ObjectEncryptionType>,
         ) -> Self {
-            self.object_encryption_type = inp;
+            self.object_encryption_type = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key
@@ -701,12 +710,12 @@ pub mod s3_encryption_configuration {
         /// <p>
         /// <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
         /// <code>ObjectEncryptionType</code>.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(inp.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
             self
         }
-        pub fn set_kms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = inp;
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration)
@@ -947,124 +956,127 @@ pub mod journal_kinesis_stream_description {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ledger_name = Some(inp.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ledger_name = Some(input.into());
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ledger_name = inp;
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ledger_name = input;
             self
         }
         /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
         /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
         /// UTC.)</p>
-        pub fn creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time = Some(inp);
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
             self
         }
         pub fn set_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time = inp;
+            self.creation_time = input;
             self
         }
         /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-        pub fn inclusive_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inclusive_start_time = Some(inp);
+        pub fn inclusive_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inclusive_start_time = Some(input);
             self
         }
         pub fn set_inclusive_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inclusive_start_time = inp;
+            self.inclusive_start_time = input;
             self
         }
         /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
         /// blank, the stream runs indefinitely until you cancel it.</p>
-        pub fn exclusive_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.exclusive_end_time = Some(inp);
+        pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.exclusive_end_time = Some(input);
             self
         }
         pub fn set_exclusive_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.exclusive_end_time = inp;
+            self.exclusive_end_time = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
         /// journal stream to write data records to a Kinesis Data Streams resource.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_id = Some(inp.into());
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
             self
         }
-        pub fn set_stream_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = inp;
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The current state of the QLDB journal stream.</p>
-        pub fn status(mut self, inp: crate::model::StreamStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StreamStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StreamStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::StreamStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal
         /// stream.</p>
-        pub fn kinesis_configuration(mut self, inp: crate::model::KinesisConfiguration) -> Self {
-            self.kinesis_configuration = Some(inp);
+        pub fn kinesis_configuration(mut self, input: crate::model::KinesisConfiguration) -> Self {
+            self.kinesis_configuration = Some(input);
             self
         }
         pub fn set_kinesis_configuration(
             mut self,
-            inp: std::option::Option<crate::model::KinesisConfiguration>,
+            input: std::option::Option<crate::model::KinesisConfiguration>,
         ) -> Self {
-            self.kinesis_configuration = inp;
+            self.kinesis_configuration = input;
             self
         }
         /// <p>The error message that describes the reason that a stream has a status of
         /// <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that
         /// have other status values.</p>
-        pub fn error_cause(mut self, inp: crate::model::ErrorCause) -> Self {
-            self.error_cause = Some(inp);
+        pub fn error_cause(mut self, input: crate::model::ErrorCause) -> Self {
+            self.error_cause = Some(input);
             self
         }
         pub fn set_error_cause(
             mut self,
-            inp: std::option::Option<crate::model::ErrorCause>,
+            input: std::option::Option<crate::model::ErrorCause>,
         ) -> Self {
-            self.error_cause = inp;
+            self.error_cause = input;
             self
         }
         /// <p>The user-defined name of the QLDB journal stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// Consumes the builder and constructs a [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription)
@@ -1239,12 +1251,12 @@ pub mod value_holder {
     }
     impl Builder {
         /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-        pub fn ion_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ion_text = Some(inp.into());
+        pub fn ion_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ion_text = Some(input.into());
             self
         }
-        pub fn set_ion_text(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ion_text = inp;
+        pub fn set_ion_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ion_text = input;
             self
         }
         /// Consumes the builder and constructs a [`ValueHolder`](crate::model::ValueHolder)

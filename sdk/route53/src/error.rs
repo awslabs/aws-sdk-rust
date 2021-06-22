@@ -72,6 +72,33 @@ impl ActivateKeySigningKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            ActivateKeySigningKeyErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_key_signing_key_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_)
+        )
+    }
+    pub fn is_invalid_kms_arn(&self) -> bool {
+        matches!(&self.kind, ActivateKeySigningKeyErrorKind::InvalidKMSArn(_))
+    }
+    pub fn is_invalid_signing_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            ActivateKeySigningKeyErrorKind::InvalidSigningStatus(_)
+        )
+    }
+    pub fn is_no_such_key_signing_key(&self) -> bool {
+        matches!(
+            &self.kind,
+            ActivateKeySigningKeyErrorKind::NoSuchKeySigningKey(_)
+        )
+    }
 }
 impl std::error::Error for ActivateKeySigningKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -165,6 +192,54 @@ impl AssociateVPCWithHostedZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflicting_domain_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateVPCWithHostedZoneErrorKind::ConflictingDomainExists(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateVPCWithHostedZoneErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_invalid_vpc_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateVPCWithHostedZoneErrorKind::InvalidVPCId(_)
+        )
+    }
+    pub fn is_limits_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateVPCWithHostedZoneErrorKind::LimitsExceeded(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_not_authorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateVPCWithHostedZoneErrorKind::NotAuthorizedError(_)
+        )
+    }
+    pub fn is_prior_request_not_complete(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete(_)
+        )
+    }
+    pub fn is_public_zone_vpc_association(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateVPCWithHostedZoneErrorKind::PublicZoneVPCAssociation(_)
+        )
+    }
 }
 impl std::error::Error for AssociateVPCWithHostedZoneError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -255,6 +330,36 @@ impl ChangeResourceRecordSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_change_batch(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeResourceRecordSetsErrorKind::InvalidChangeBatch(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeResourceRecordSetsErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeResourceRecordSetsErrorKind::NoSuchHealthCheck(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeResourceRecordSetsErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_prior_request_not_complete(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeResourceRecordSetsErrorKind::PriorRequestNotComplete(_)
+        )
+    }
 }
 impl std::error::Error for ChangeResourceRecordSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -342,6 +447,33 @@ impl ChangeTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ChangeTagsForResourceErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeTagsForResourceErrorKind::NoSuchHealthCheck(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeTagsForResourceErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_prior_request_not_complete(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeTagsForResourceErrorKind::PriorRequestNotComplete(_)
+        )
+    }
+    pub fn is_throttling_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeTagsForResourceErrorKind::ThrottlingError(_)
+        )
+    }
 }
 impl std::error::Error for ChangeTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -424,6 +556,21 @@ impl CreateHealthCheckError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_health_check_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHealthCheckErrorKind::HealthCheckAlreadyExists(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, CreateHealthCheckErrorKind::InvalidInput(_))
+    }
+    pub fn is_too_many_health_checks(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHealthCheckErrorKind::TooManyHealthChecks(_)
+        )
     }
 }
 impl std::error::Error for CreateHealthCheckError {
@@ -517,6 +664,48 @@ impl CreateHostedZoneError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_conflicting_domain_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHostedZoneErrorKind::ConflictingDomainExists(_)
+        )
+    }
+    pub fn is_delegation_set_not_available(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHostedZoneErrorKind::DelegationSetNotAvailable(_)
+        )
+    }
+    pub fn is_delegation_set_not_reusable(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHostedZoneErrorKind::DelegationSetNotReusable(_)
+        )
+    }
+    pub fn is_hosted_zone_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHostedZoneErrorKind::HostedZoneAlreadyExists(_)
+        )
+    }
+    pub fn is_invalid_domain_name(&self) -> bool {
+        matches!(&self.kind, CreateHostedZoneErrorKind::InvalidDomainName(_))
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, CreateHostedZoneErrorKind::InvalidInput(_))
+    }
+    pub fn is_invalid_vpc_id(&self) -> bool {
+        matches!(&self.kind, CreateHostedZoneErrorKind::InvalidVPCId(_))
+    }
+    pub fn is_no_such_delegation_set(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHostedZoneErrorKind::NoSuchDelegationSet(_)
+        )
+    }
+    pub fn is_too_many_hosted_zones(&self) -> bool {
+        matches!(&self.kind, CreateHostedZoneErrorKind::TooManyHostedZones(_))
     }
 }
 impl std::error::Error for CreateHostedZoneError {
@@ -618,6 +807,57 @@ impl CreateKeySigningKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeySigningKeyErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(&self.kind, CreateKeySigningKeyErrorKind::InvalidArgument(_))
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, CreateKeySigningKeyErrorKind::InvalidInput(_))
+    }
+    pub fn is_invalid_key_signing_key_name(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeySigningKeyErrorKind::InvalidKeySigningKeyName(_)
+        )
+    }
+    pub fn is_invalid_key_signing_key_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_)
+        )
+    }
+    pub fn is_invalid_kms_arn(&self) -> bool {
+        matches!(&self.kind, CreateKeySigningKeyErrorKind::InvalidKMSArn(_))
+    }
+    pub fn is_invalid_signing_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeySigningKeyErrorKind::InvalidSigningStatus(_)
+        )
+    }
+    pub fn is_key_signing_key_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeySigningKeyErrorKind::KeySigningKeyAlreadyExists(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeySigningKeyErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_too_many_key_signing_keys(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeySigningKeyErrorKind::TooManyKeySigningKeys(_)
+        )
     }
 }
 impl std::error::Error for CreateKeySigningKeyError {
@@ -721,6 +961,42 @@ impl CreateQueryLoggingConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateQueryLoggingConfigErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_insufficient_cloud_watch_logs_resource_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateQueryLoggingConfigErrorKind::InsufficientCloudWatchLogsResourcePolicy(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateQueryLoggingConfigErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_cloud_watch_logs_log_group(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateQueryLoggingConfigErrorKind::NoSuchCloudWatchLogsLogGroup(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateQueryLoggingConfigErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_query_logging_config_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateQueryLoggingConfigErrorKind::QueryLoggingConfigAlreadyExists(_)
+        )
+    }
 }
 impl std::error::Error for CreateQueryLoggingConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -823,6 +1099,48 @@ impl CreateReusableDelegationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_delegation_set_already_created(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReusableDelegationSetErrorKind::DelegationSetAlreadyCreated(_)
+        )
+    }
+    pub fn is_delegation_set_already_reusable(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReusableDelegationSetErrorKind::DelegationSetAlreadyReusable(_)
+        )
+    }
+    pub fn is_delegation_set_not_available(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReusableDelegationSetErrorKind::DelegationSetNotAvailable(_)
+        )
+    }
+    pub fn is_hosted_zone_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReusableDelegationSetErrorKind::HostedZoneNotFound(_)
+        )
+    }
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReusableDelegationSetErrorKind::InvalidArgument(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReusableDelegationSetErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_limits_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReusableDelegationSetErrorKind::LimitsExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateReusableDelegationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -914,6 +1232,27 @@ impl CreateTrafficPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, CreateTrafficPolicyErrorKind::InvalidInput(_))
+    }
+    pub fn is_invalid_traffic_policy_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyErrorKind::InvalidTrafficPolicyDocument(_)
+        )
+    }
+    pub fn is_too_many_traffic_policies(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyErrorKind::TooManyTrafficPolicies(_)
+        )
+    }
+    pub fn is_traffic_policy_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyErrorKind::TrafficPolicyAlreadyExists(_)
+        )
+    }
 }
 impl std::error::Error for CreateTrafficPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1003,6 +1342,36 @@ impl CreateTrafficPolicyInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyInstanceErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyInstanceErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy(_)
+        )
+    }
+    pub fn is_too_many_traffic_policy_instances(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyInstanceErrorKind::TooManyTrafficPolicyInstances(_)
+        )
+    }
+    pub fn is_traffic_policy_instance_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyInstanceErrorKind::TrafficPolicyInstanceAlreadyExists(_)
+        )
     }
 }
 impl std::error::Error for CreateTrafficPolicyInstanceError {
@@ -1100,6 +1469,36 @@ impl CreateTrafficPolicyVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyVersionErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyVersionErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_invalid_traffic_policy_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyVersionErrorKind::InvalidTrafficPolicyDocument(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyVersionErrorKind::NoSuchTrafficPolicy(_)
+        )
+    }
+    pub fn is_too_many_traffic_policy_versions_for_current_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrafficPolicyVersionErrorKind::TooManyTrafficPolicyVersionsForCurrentPolicy(_)
+        )
     }
 }
 impl std::error::Error for CreateTrafficPolicyVersionError {
@@ -1199,6 +1598,36 @@ impl CreateVPCAssociationAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVPCAssociationAuthorizationErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVPCAssociationAuthorizationErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_invalid_vpc_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVPCAssociationAuthorizationErrorKind::InvalidVPCId(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_too_many_vpc_association_authorizations(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVPCAssociationAuthorizationErrorKind::TooManyVPCAssociationAuthorizations(_)
+        )
+    }
 }
 impl std::error::Error for CreateVPCAssociationAuthorizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1294,6 +1723,42 @@ impl DeactivateKeySigningKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateKeySigningKeyErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_key_signing_key_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_)
+        )
+    }
+    pub fn is_invalid_signing_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateKeySigningKeyErrorKind::InvalidSigningStatus(_)
+        )
+    }
+    pub fn is_key_signing_key_in_parent_ds_record(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDSRecord(_)
+        )
+    }
+    pub fn is_key_signing_key_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse(_)
+        )
+    }
+    pub fn is_no_such_key_signing_key(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateKeySigningKeyErrorKind::NoSuchKeySigningKey(_)
+        )
+    }
 }
 impl std::error::Error for DeactivateKeySigningKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1377,6 +1842,15 @@ impl DeleteHealthCheckError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_health_check_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteHealthCheckErrorKind::HealthCheckInUse(_))
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, DeleteHealthCheckErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(&self.kind, DeleteHealthCheckErrorKind::NoSuchHealthCheck(_))
     }
 }
 impl std::error::Error for DeleteHealthCheckError {
@@ -1462,6 +1936,24 @@ impl DeleteHostedZoneError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_hosted_zone_not_empty(&self) -> bool {
+        matches!(&self.kind, DeleteHostedZoneErrorKind::HostedZoneNotEmpty(_))
+    }
+    pub fn is_invalid_domain_name(&self) -> bool {
+        matches!(&self.kind, DeleteHostedZoneErrorKind::InvalidDomainName(_))
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, DeleteHostedZoneErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(&self.kind, DeleteHostedZoneErrorKind::NoSuchHostedZone(_))
+    }
+    pub fn is_prior_request_not_complete(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHostedZoneErrorKind::PriorRequestNotComplete(_)
+        )
     }
 }
 impl std::error::Error for DeleteHostedZoneError {
@@ -1550,6 +2042,33 @@ impl DeleteKeySigningKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteKeySigningKeyErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_key_signing_key_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_)
+        )
+    }
+    pub fn is_invalid_kms_arn(&self) -> bool {
+        matches!(&self.kind, DeleteKeySigningKeyErrorKind::InvalidKMSArn(_))
+    }
+    pub fn is_invalid_signing_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteKeySigningKeyErrorKind::InvalidSigningStatus(_)
+        )
+    }
+    pub fn is_no_such_key_signing_key(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteKeySigningKeyErrorKind::NoSuchKeySigningKey(_)
+        )
+    }
 }
 impl std::error::Error for DeleteKeySigningKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1633,6 +2152,24 @@ impl DeleteQueryLoggingConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteQueryLoggingConfigErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteQueryLoggingConfigErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_query_logging_config(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteQueryLoggingConfigErrorKind::NoSuchQueryLoggingConfig(_)
+        )
+    }
 }
 impl std::error::Error for DeleteQueryLoggingConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1715,6 +2252,30 @@ impl DeleteReusableDelegationSetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_delegation_set_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReusableDelegationSetErrorKind::DelegationSetInUse(_)
+        )
+    }
+    pub fn is_delegation_set_not_reusable(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReusableDelegationSetErrorKind::DelegationSetNotReusable(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReusableDelegationSetErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_delegation_set(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReusableDelegationSetErrorKind::NoSuchDelegationSet(_)
+        )
     }
 }
 impl std::error::Error for DeleteReusableDelegationSetError {
@@ -1800,6 +2361,27 @@ impl DeleteTrafficPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrafficPolicyErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, DeleteTrafficPolicyErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_traffic_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrafficPolicyErrorKind::NoSuchTrafficPolicy(_)
+        )
+    }
+    pub fn is_traffic_policy_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrafficPolicyErrorKind::TrafficPolicyInUse(_)
+        )
+    }
 }
 impl std::error::Error for DeleteTrafficPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1883,6 +2465,24 @@ impl DeleteTrafficPolicyInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrafficPolicyInstanceErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy_instance(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(_)
+        )
+    }
+    pub fn is_prior_request_not_complete(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrafficPolicyInstanceErrorKind::PriorRequestNotComplete(_)
+        )
     }
 }
 impl std::error::Error for DeleteTrafficPolicyInstanceError {
@@ -1977,6 +2577,36 @@ impl DeleteVPCAssociationAuthorizationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVPCAssociationAuthorizationErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVPCAssociationAuthorizationErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_invalid_vpc_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVPCAssociationAuthorizationErrorKind::InvalidVPCId(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_vpc_association_authorization_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVPCAssociationAuthorizationErrorKind::VPCAssociationAuthorizationNotFound(_)
+        )
     }
 }
 impl std::error::Error for DeleteVPCAssociationAuthorizationError {
@@ -2075,6 +2705,48 @@ impl DisableHostedZoneDNSSECError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableHostedZoneDNSSECErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_dnssec_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableHostedZoneDNSSECErrorKind::DNSSECNotFound(_)
+        )
+    }
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableHostedZoneDNSSECErrorKind::InvalidArgument(_)
+        )
+    }
+    pub fn is_invalid_key_signing_key_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_)
+        )
+    }
+    pub fn is_invalid_kms_arn(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableHostedZoneDNSSECErrorKind::InvalidKMSArn(_)
+        )
+    }
+    pub fn is_key_signing_key_in_parent_ds_record(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDSRecord(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableHostedZoneDNSSECErrorKind::NoSuchHostedZone(_)
+        )
+    }
 }
 impl std::error::Error for DisableHostedZoneDNSSECError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2163,6 +2835,36 @@ impl DisassociateVPCFromHostedZoneError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateVPCFromHostedZoneErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_invalid_vpc_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateVPCFromHostedZoneErrorKind::InvalidVPCId(_)
+        )
+    }
+    pub fn is_last_vpc_association(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateVPCFromHostedZoneErrorKind::LastVPCAssociation(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateVPCFromHostedZoneErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_vpc_association_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateVPCFromHostedZoneErrorKind::VPCAssociationNotFound(_)
+        )
     }
 }
 impl std::error::Error for DisassociateVPCFromHostedZoneError {
@@ -2259,6 +2961,54 @@ impl EnableHostedZoneDNSSECError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableHostedZoneDNSSECErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_dnssec_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableHostedZoneDNSSECErrorKind::DNSSECNotFound(_)
+        )
+    }
+    pub fn is_hosted_zone_partially_delegated(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(_)
+        )
+    }
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableHostedZoneDNSSECErrorKind::InvalidArgument(_)
+        )
+    }
+    pub fn is_invalid_key_signing_key_status(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_)
+        )
+    }
+    pub fn is_invalid_kms_arn(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableHostedZoneDNSSECErrorKind::InvalidKMSArn(_)
+        )
+    }
+    pub fn is_key_signing_key_with_active_status_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableHostedZoneDNSSECErrorKind::NoSuchHostedZone(_)
+        )
+    }
 }
 impl std::error::Error for EnableHostedZoneDNSSECError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2343,6 +3093,9 @@ impl GetAccountLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetAccountLimitErrorKind::InvalidInput(_))
+    }
 }
 impl std::error::Error for GetAccountLimitError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2419,6 +3172,12 @@ impl GetChangeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetChangeErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_change(&self) -> bool {
+        matches!(&self.kind, GetChangeErrorKind::NoSuchChange(_))
     }
 }
 impl std::error::Error for GetChangeError {
@@ -2570,6 +3329,12 @@ impl GetDNSSECError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(&self.kind, GetDNSSECErrorKind::InvalidArgument(_))
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(&self.kind, GetDNSSECErrorKind::NoSuchHostedZone(_))
+    }
 }
 impl std::error::Error for GetDNSSECError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2647,6 +3412,12 @@ impl GetGeoLocationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetGeoLocationErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_geo_location(&self) -> bool {
+        matches!(&self.kind, GetGeoLocationErrorKind::NoSuchGeoLocation(_))
     }
 }
 impl std::error::Error for GetGeoLocationError {
@@ -2727,6 +3498,15 @@ impl GetHealthCheckError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_incompatible_version(&self) -> bool {
+        matches!(&self.kind, GetHealthCheckErrorKind::IncompatibleVersion(_))
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetHealthCheckErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(&self.kind, GetHealthCheckErrorKind::NoSuchHealthCheck(_))
     }
 }
 impl std::error::Error for GetHealthCheckError {
@@ -2879,6 +3659,18 @@ impl GetHealthCheckLastFailureReasonError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetHealthCheckLastFailureReasonErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetHealthCheckLastFailureReasonErrorKind::NoSuchHealthCheck(_)
+        )
+    }
 }
 impl std::error::Error for GetHealthCheckLastFailureReasonError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2956,6 +3748,15 @@ impl GetHealthCheckStatusError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetHealthCheckStatusErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetHealthCheckStatusErrorKind::NoSuchHealthCheck(_)
+        )
     }
 }
 impl std::error::Error for GetHealthCheckStatusError {
@@ -3035,6 +3836,12 @@ impl GetHostedZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetHostedZoneErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(&self.kind, GetHostedZoneErrorKind::NoSuchHostedZone(_))
+    }
 }
 impl std::error::Error for GetHostedZoneError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3110,6 +3917,9 @@ impl GetHostedZoneCountError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetHostedZoneCountErrorKind::InvalidInput(_))
     }
 }
 impl std::error::Error for GetHostedZoneCountError {
@@ -3190,6 +4000,18 @@ impl GetHostedZoneLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_hosted_zone_not_private(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetHostedZoneLimitErrorKind::HostedZoneNotPrivate(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetHostedZoneLimitErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(&self.kind, GetHostedZoneLimitErrorKind::NoSuchHostedZone(_))
+    }
 }
 impl std::error::Error for GetHostedZoneLimitError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3268,6 +4090,15 @@ impl GetQueryLoggingConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetQueryLoggingConfigErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_query_logging_config(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryLoggingConfigErrorKind::NoSuchQueryLoggingConfig(_)
+        )
     }
 }
 impl std::error::Error for GetQueryLoggingConfigError {
@@ -3349,6 +4180,24 @@ impl GetReusableDelegationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_delegation_set_not_reusable(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReusableDelegationSetErrorKind::DelegationSetNotReusable(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReusableDelegationSetErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_delegation_set(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReusableDelegationSetErrorKind::NoSuchDelegationSet(_)
+        )
+    }
 }
 impl std::error::Error for GetReusableDelegationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3428,6 +4277,18 @@ impl GetReusableDelegationSetLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReusableDelegationSetLimitErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_delegation_set(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReusableDelegationSetLimitErrorKind::NoSuchDelegationSet(_)
+        )
+    }
 }
 impl std::error::Error for GetReusableDelegationSetLimitError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3506,6 +4367,15 @@ impl GetTrafficPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, GetTrafficPolicyErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_traffic_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTrafficPolicyErrorKind::NoSuchTrafficPolicy(_)
+        )
+    }
 }
 impl std::error::Error for GetTrafficPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3583,6 +4453,18 @@ impl GetTrafficPolicyInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTrafficPolicyInstanceErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy_instance(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(_)
+        )
     }
 }
 impl std::error::Error for GetTrafficPolicyInstanceError {
@@ -3732,6 +4614,9 @@ impl ListGeoLocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListGeoLocationsErrorKind::InvalidInput(_))
+    }
 }
 impl std::error::Error for ListGeoLocationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3808,6 +4693,15 @@ impl ListHealthChecksError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_incompatible_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHealthChecksErrorKind::IncompatibleVersion(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListHealthChecksErrorKind::InvalidInput(_))
     }
 }
 impl std::error::Error for ListHealthChecksError {
@@ -3889,6 +4783,18 @@ impl ListHostedZonesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_delegation_set_not_reusable(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHostedZonesErrorKind::DelegationSetNotReusable(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListHostedZonesErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_delegation_set(&self) -> bool {
+        matches!(&self.kind, ListHostedZonesErrorKind::NoSuchDelegationSet(_))
+    }
 }
 impl std::error::Error for ListHostedZonesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3968,6 +4874,15 @@ impl ListHostedZonesByNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_domain_name(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHostedZonesByNameErrorKind::InvalidDomainName(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListHostedZonesByNameErrorKind::InvalidInput(_))
+    }
 }
 impl std::error::Error for ListHostedZonesByNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4045,6 +4960,15 @@ impl ListHostedZonesByVPCError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListHostedZonesByVPCErrorKind::InvalidInput(_))
+    }
+    pub fn is_invalid_pagination_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHostedZonesByVPCErrorKind::InvalidPaginationToken(_)
+        )
     }
 }
 impl std::error::Error for ListHostedZonesByVPCError {
@@ -4126,6 +5050,24 @@ impl ListQueryLoggingConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueryLoggingConfigsErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_invalid_pagination_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueryLoggingConfigsErrorKind::InvalidPaginationToken(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueryLoggingConfigsErrorKind::NoSuchHostedZone(_)
+        )
+    }
 }
 impl std::error::Error for ListQueryLoggingConfigsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4205,6 +5147,15 @@ impl ListResourceRecordSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListResourceRecordSetsErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceRecordSetsErrorKind::NoSuchHostedZone(_)
+        )
+    }
 }
 impl std::error::Error for ListResourceRecordSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4280,6 +5231,12 @@ impl ListReusableDelegationSetsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReusableDelegationSetsErrorKind::InvalidInput(_)
+        )
     }
 }
 impl std::error::Error for ListReusableDelegationSetsError {
@@ -4363,6 +5320,30 @@ impl ListTagsForResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::NoSuchHealthCheck(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_prior_request_not_complete(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::PriorRequestNotComplete(_)
+        )
+    }
+    pub fn is_throttling_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ThrottlingError(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
@@ -4451,6 +5432,33 @@ impl ListTagsForResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourcesErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourcesErrorKind::NoSuchHealthCheck(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourcesErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_prior_request_not_complete(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourcesErrorKind::PriorRequestNotComplete(_)
+        )
+    }
+    pub fn is_throttling_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourcesErrorKind::ThrottlingError(_)
+        )
+    }
 }
 impl std::error::Error for ListTagsForResourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4530,6 +5538,9 @@ impl ListTrafficPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListTrafficPoliciesErrorKind::InvalidInput(_))
+    }
 }
 impl std::error::Error for ListTrafficPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4608,6 +5619,18 @@ impl ListTrafficPolicyInstancesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyInstancesErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy_instance(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyInstancesErrorKind::NoSuchTrafficPolicyInstance(_)
+        )
     }
 }
 impl std::error::Error for ListTrafficPolicyInstancesError {
@@ -4697,6 +5720,24 @@ impl ListTrafficPolicyInstancesByHostedZoneError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyInstancesByHostedZoneErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchHostedZone(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy_instance(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchTrafficPolicyInstance(_)
+        )
     }
 }
 impl std::error::Error for ListTrafficPolicyInstancesByHostedZoneError {
@@ -4792,6 +5833,24 @@ impl ListTrafficPolicyInstancesByPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyInstancesByPolicyErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicy(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy_instance(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicyInstance(_)
+        )
+    }
 }
 impl std::error::Error for ListTrafficPolicyInstancesByPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4875,6 +5934,18 @@ impl ListTrafficPolicyVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyVersionsErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrafficPolicyVersionsErrorKind::NoSuchTrafficPolicy(_)
+        )
+    }
 }
 impl std::error::Error for ListTrafficPolicyVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4957,6 +6028,24 @@ impl ListVPCAssociationAuthorizationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVPCAssociationAuthorizationsErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_invalid_pagination_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVPCAssociationAuthorizationsErrorKind::InvalidPaginationToken(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVPCAssociationAuthorizationsErrorKind::NoSuchHostedZone(_)
+        )
+    }
 }
 impl std::error::Error for ListVPCAssociationAuthorizationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5038,6 +6127,12 @@ impl TestDNSAnswerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, TestDNSAnswerErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(&self.kind, TestDNSAnswerErrorKind::NoSuchHostedZone(_))
+    }
 }
 impl std::error::Error for TestDNSAnswerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5118,6 +6213,18 @@ impl UpdateHealthCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_health_check_version_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHealthCheckErrorKind::HealthCheckVersionMismatch(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, UpdateHealthCheckErrorKind::InvalidInput(_))
+    }
+    pub fn is_no_such_health_check(&self) -> bool {
+        matches!(&self.kind, UpdateHealthCheckErrorKind::NoSuchHealthCheck(_))
+    }
 }
 impl std::error::Error for UpdateHealthCheckError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5196,6 +6303,18 @@ impl UpdateHostedZoneCommentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHostedZoneCommentErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_hosted_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHostedZoneCommentErrorKind::NoSuchHostedZone(_)
+        )
     }
 }
 impl std::error::Error for UpdateHostedZoneCommentError {
@@ -5276,6 +6395,24 @@ impl UpdateTrafficPolicyCommentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrafficPolicyCommentErrorKind::ConcurrentModification(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrafficPolicyCommentErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrafficPolicyCommentErrorKind::NoSuchTrafficPolicy(_)
+        )
     }
 }
 impl std::error::Error for UpdateTrafficPolicyCommentError {
@@ -5364,6 +6501,36 @@ impl UpdateTrafficPolicyInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflicting_types(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrafficPolicyInstanceErrorKind::ConflictingTypes(_)
+        )
+    }
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrafficPolicyInstanceErrorKind::InvalidInput(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy(_)
+        )
+    }
+    pub fn is_no_such_traffic_policy_instance(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(_)
+        )
+    }
+    pub fn is_prior_request_not_complete(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrafficPolicyInstanceErrorKind::PriorRequestNotComplete(_)
+        )
+    }
 }
 impl std::error::Error for UpdateTrafficPolicyInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5421,12 +6588,12 @@ pub mod prior_request_not_complete {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PriorRequestNotComplete`](crate::error::PriorRequestNotComplete)
@@ -5483,12 +6650,12 @@ pub mod no_such_traffic_policy_instance {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchTrafficPolicyInstance`](crate::error::NoSuchTrafficPolicyInstance)
@@ -5545,12 +6712,12 @@ pub mod no_such_traffic_policy {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchTrafficPolicy`](crate::error::NoSuchTrafficPolicy)
@@ -5607,12 +6774,12 @@ pub mod invalid_input {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidInput`](crate::error::InvalidInput)
@@ -5671,12 +6838,12 @@ pub mod conflicting_types {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConflictingTypes`](crate::error::ConflictingTypes)
@@ -5733,12 +6900,12 @@ pub mod concurrent_modification {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConcurrentModification`](crate::error::ConcurrentModification)
@@ -5795,12 +6962,12 @@ pub mod no_such_hosted_zone {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchHostedZone`](crate::error::NoSuchHostedZone)
@@ -5857,12 +7024,12 @@ pub mod no_such_health_check {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchHealthCheck`](crate::error::NoSuchHealthCheck)
@@ -5918,12 +7085,12 @@ pub mod health_check_version_mismatch {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HealthCheckVersionMismatch`](crate::error::HealthCheckVersionMismatch)
@@ -5978,12 +7145,12 @@ pub mod invalid_pagination_token {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidPaginationToken`](crate::error::InvalidPaginationToken)
@@ -6038,12 +7205,12 @@ pub mod throttling_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ThrottlingError`](crate::error::ThrottlingError)
@@ -6100,12 +7267,12 @@ pub mod invalid_domain_name {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDomainName`](crate::error::InvalidDomainName)
@@ -6162,12 +7329,12 @@ pub mod no_such_delegation_set {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchDelegationSet`](crate::error::NoSuchDelegationSet)
@@ -6224,12 +7391,12 @@ pub mod delegation_set_not_reusable {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DelegationSetNotReusable`](crate::error::DelegationSetNotReusable)
@@ -6284,12 +7451,12 @@ pub mod incompatible_version {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IncompatibleVersion`](crate::error::IncompatibleVersion)
@@ -6344,12 +7511,12 @@ pub mod no_such_query_logging_config {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchQueryLoggingConfig`](crate::error::NoSuchQueryLoggingConfig)
@@ -6406,12 +7573,12 @@ pub mod hosted_zone_not_private {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZoneNotPrivate`](crate::error::HostedZoneNotPrivate)
@@ -6469,12 +7636,12 @@ pub mod no_such_geo_location {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchGeoLocation`](crate::error::NoSuchGeoLocation)
@@ -6531,12 +7698,12 @@ pub mod invalid_argument {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidArgument`](crate::error::InvalidArgument)
@@ -6591,12 +7758,12 @@ pub mod no_such_change {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchChange`](crate::error::NoSuchChange)
@@ -6651,12 +7818,12 @@ pub mod key_signing_key_with_active_status_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KeySigningKeyWithActiveStatusNotFound`](crate::error::KeySigningKeyWithActiveStatusNotFound)
@@ -6711,12 +7878,12 @@ pub mod invalid_kms_arn {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidKMSArn`](crate::error::InvalidKMSArn)
@@ -6771,12 +7938,12 @@ pub mod invalid_key_signing_key_status {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidKeySigningKeyStatus`](crate::error::InvalidKeySigningKeyStatus)
@@ -6831,12 +7998,12 @@ pub mod hosted_zone_partially_delegated {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZonePartiallyDelegated`](crate::error::HostedZonePartiallyDelegated)
@@ -6891,12 +8058,12 @@ pub mod dnssec_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DNSSECNotFound`](crate::error::DNSSECNotFound)
@@ -6953,12 +8120,12 @@ pub mod vpc_association_not_found {
     }
     impl Builder {
         /// <p>The specified VPC or hosted zone weren't found.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`VPCAssociationNotFound`](crate::error::VPCAssociationNotFound)
@@ -7016,12 +8183,12 @@ pub mod last_vpc_association {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LastVPCAssociation`](crate::error::LastVPCAssociation)
@@ -7078,12 +8245,12 @@ pub mod invalid_vpc_id {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidVPCId`](crate::error::InvalidVPCId)
@@ -7138,12 +8305,12 @@ pub mod key_signing_key_in_parent_ds_record {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KeySigningKeyInParentDSRecord`](crate::error::KeySigningKeyInParentDSRecord)
@@ -7200,12 +8367,12 @@ pub mod vpc_association_authorization_not_found {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`VPCAssociationAuthorizationNotFound`](crate::error::VPCAssociationAuthorizationNotFound)
@@ -7262,12 +8429,12 @@ pub mod traffic_policy_in_use {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TrafficPolicyInUse`](crate::error::TrafficPolicyInUse)
@@ -7325,12 +8492,12 @@ pub mod delegation_set_in_use {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DelegationSetInUse`](crate::error::DelegationSetInUse)
@@ -7385,12 +8552,12 @@ pub mod no_such_key_signing_key {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchKeySigningKey`](crate::error::NoSuchKeySigningKey)
@@ -7446,12 +8613,12 @@ pub mod invalid_signing_status {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSigningStatus`](crate::error::InvalidSigningStatus)
@@ -7508,12 +8675,12 @@ pub mod hosted_zone_not_empty {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZoneNotEmpty`](crate::error::HostedZoneNotEmpty)
@@ -7570,12 +8737,12 @@ pub mod health_check_in_use {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HealthCheckInUse`](crate::error::HealthCheckInUse)
@@ -7631,12 +8798,12 @@ pub mod key_signing_key_in_use {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KeySigningKeyInUse`](crate::error::KeySigningKeyInUse)
@@ -7696,12 +8863,12 @@ pub mod too_many_vpc_association_authorizations {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyVPCAssociationAuthorizations`](crate::error::TooManyVPCAssociationAuthorizations)
@@ -7764,12 +8931,12 @@ pub mod too_many_traffic_policy_versions_for_current_policy {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyTrafficPolicyVersionsForCurrentPolicy`](crate::error::TooManyTrafficPolicyVersionsForCurrentPolicy)
@@ -7826,12 +8993,12 @@ pub mod invalid_traffic_policy_document {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidTrafficPolicyDocument`](crate::error::InvalidTrafficPolicyDocument)
@@ -7888,12 +9055,12 @@ pub mod traffic_policy_instance_already_exists {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TrafficPolicyInstanceAlreadyExists`](crate::error::TrafficPolicyInstanceAlreadyExists)
@@ -7957,12 +9124,12 @@ pub mod too_many_traffic_policy_instances {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyTrafficPolicyInstances`](crate::error::TooManyTrafficPolicyInstances)
@@ -8019,12 +9186,12 @@ pub mod traffic_policy_already_exists {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TrafficPolicyAlreadyExists`](crate::error::TrafficPolicyAlreadyExists)
@@ -8087,12 +9254,12 @@ pub mod too_many_traffic_policies {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyTrafficPolicies`](crate::error::TooManyTrafficPolicies)
@@ -8155,12 +9322,12 @@ pub mod limits_exceeded {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitsExceeded`](crate::error::LimitsExceeded)
@@ -8217,12 +9384,12 @@ pub mod hosted_zone_not_found {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZoneNotFound`](crate::error::HostedZoneNotFound)
@@ -8281,12 +9448,12 @@ pub mod delegation_set_not_available {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DelegationSetNotAvailable`](crate::error::DelegationSetNotAvailable)
@@ -8343,12 +9510,12 @@ pub mod delegation_set_already_reusable {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DelegationSetAlreadyReusable`](crate::error::DelegationSetAlreadyReusable)
@@ -8405,12 +9572,12 @@ pub mod delegation_set_already_created {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DelegationSetAlreadyCreated`](crate::error::DelegationSetAlreadyCreated)
@@ -8466,12 +9633,12 @@ pub mod query_logging_config_already_exists {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`QueryLoggingConfigAlreadyExists`](crate::error::QueryLoggingConfigAlreadyExists)
@@ -8526,12 +9693,12 @@ pub mod no_such_cloud_watch_logs_log_group {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchCloudWatchLogsLogGroup`](crate::error::NoSuchCloudWatchLogsLogGroup)
@@ -8599,12 +9766,12 @@ pub mod insufficient_cloud_watch_logs_resource_policy {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InsufficientCloudWatchLogsResourcePolicy`](crate::error::InsufficientCloudWatchLogsResourcePolicy)
@@ -8659,12 +9826,12 @@ pub mod too_many_key_signing_keys {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyKeySigningKeys`](crate::error::TooManyKeySigningKeys)
@@ -8719,12 +9886,12 @@ pub mod key_signing_key_already_exists {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KeySigningKeyAlreadyExists`](crate::error::KeySigningKeyAlreadyExists)
@@ -8779,12 +9946,12 @@ pub mod invalid_key_signing_key_name {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidKeySigningKeyName`](crate::error::InvalidKeySigningKeyName)
@@ -8849,12 +10016,12 @@ pub mod too_many_hosted_zones {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyHostedZones`](crate::error::TooManyHostedZones)
@@ -8912,12 +10079,12 @@ pub mod hosted_zone_already_exists {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZoneAlreadyExists`](crate::error::HostedZoneAlreadyExists)
@@ -8992,12 +10159,12 @@ pub mod conflicting_domain_exists {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConflictingDomainExists`](crate::error::ConflictingDomainExists)
@@ -9059,12 +10226,12 @@ pub mod too_many_health_checks {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyHealthChecks`](crate::error::TooManyHealthChecks)
@@ -9132,12 +10299,12 @@ pub mod health_check_already_exists {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HealthCheckAlreadyExists`](crate::error::HealthCheckAlreadyExists)
@@ -9197,25 +10364,25 @@ pub mod invalid_change_batch {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn messages(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn messages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.messages = Some(v);
             self
         }
         pub fn set_messages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.messages = inp;
+            self.messages = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidChangeBatch`](crate::error::InvalidChangeBatch)
@@ -9274,12 +10441,12 @@ pub mod public_zone_vpc_association {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PublicZoneVPCAssociation`](crate::error::PublicZoneVPCAssociation)
@@ -9336,12 +10503,12 @@ pub mod not_authorized_error {
     }
     impl Builder {
         /// <p></p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NotAuthorizedError`](crate::error::NotAuthorizedError)

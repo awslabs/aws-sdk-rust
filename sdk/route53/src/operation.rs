@@ -15,7 +15,7 @@ impl ActivateKeySigningKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ActivateKeySigningKey {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ActivateKeySigningKeyOutput,
         crate::error::ActivateKeySigningKeyError,
     >;
@@ -53,7 +53,7 @@ impl AssociateVPCWithHostedZone {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AssociateVPCWithHostedZone {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AssociateVPCWithHostedZoneOutput,
         crate::error::AssociateVPCWithHostedZoneError,
     >;
@@ -151,7 +151,7 @@ impl ChangeResourceRecordSets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ChangeResourceRecordSets {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ChangeResourceRecordSetsOutput,
         crate::error::ChangeResourceRecordSetsError,
     >;
@@ -182,7 +182,7 @@ impl ChangeTagsForResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ChangeTagsForResource {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ChangeTagsForResourceOutput,
         crate::error::ChangeTagsForResourceError,
     >;
@@ -241,8 +241,10 @@ impl CreateHealthCheck {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateHealthCheck {
-    type Output =
-        Result<crate::output::CreateHealthCheckOutput, crate::error::CreateHealthCheckError>;
+    type Output = std::result::Result<
+        crate::output::CreateHealthCheckOutput,
+        crate::error::CreateHealthCheckError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_create_health_check_error(response)
@@ -299,8 +301,10 @@ impl CreateHostedZone {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateHostedZone {
-    type Output =
-        Result<crate::output::CreateHostedZoneOutput, crate::error::CreateHostedZoneError>;
+    type Output = std::result::Result<
+        crate::output::CreateHostedZoneOutput,
+        crate::error::CreateHostedZoneError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_create_hosted_zone_error(response)
@@ -325,8 +329,10 @@ impl CreateKeySigningKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateKeySigningKey {
-    type Output =
-        Result<crate::output::CreateKeySigningKeyOutput, crate::error::CreateKeySigningKeyError>;
+    type Output = std::result::Result<
+        crate::output::CreateKeySigningKeyOutput,
+        crate::error::CreateKeySigningKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_create_key_signing_key_error(response)
@@ -466,7 +472,7 @@ impl CreateQueryLoggingConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateQueryLoggingConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateQueryLoggingConfigOutput,
         crate::error::CreateQueryLoggingConfigError,
     >;
@@ -542,7 +548,7 @@ impl CreateReusableDelegationSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateReusableDelegationSet {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateReusableDelegationSetOutput,
         crate::error::CreateReusableDelegationSetError,
     >;
@@ -571,8 +577,10 @@ impl CreateTrafficPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTrafficPolicy {
-    type Output =
-        Result<crate::output::CreateTrafficPolicyOutput, crate::error::CreateTrafficPolicyError>;
+    type Output = std::result::Result<
+        crate::output::CreateTrafficPolicyOutput,
+        crate::error::CreateTrafficPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_create_traffic_policy_error(response)
@@ -600,7 +608,7 @@ impl CreateTrafficPolicyInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTrafficPolicyInstance {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTrafficPolicyInstanceOutput,
         crate::error::CreateTrafficPolicyInstanceError,
     >;
@@ -632,7 +640,7 @@ impl CreateTrafficPolicyVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTrafficPolicyVersion {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateTrafficPolicyVersionOutput,
         crate::error::CreateTrafficPolicyVersionError,
     >;
@@ -668,7 +676,7 @@ impl CreateVPCAssociationAuthorization {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVPCAssociationAuthorization {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateVPCAssociationAuthorizationOutput,
         crate::error::CreateVPCAssociationAuthorizationError,
     >;
@@ -697,7 +705,7 @@ impl DeactivateKeySigningKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeactivateKeySigningKey {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeactivateKeySigningKeyOutput,
         crate::error::DeactivateKeySigningKeyError,
     >;
@@ -737,8 +745,10 @@ impl DeleteHealthCheck {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteHealthCheck {
-    type Output =
-        Result<crate::output::DeleteHealthCheckOutput, crate::error::DeleteHealthCheckError>;
+    type Output = std::result::Result<
+        crate::output::DeleteHealthCheckOutput,
+        crate::error::DeleteHealthCheckError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_health_check_error(response)
@@ -796,8 +806,10 @@ impl DeleteHostedZone {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteHostedZone {
-    type Output =
-        Result<crate::output::DeleteHostedZoneOutput, crate::error::DeleteHostedZoneError>;
+    type Output = std::result::Result<
+        crate::output::DeleteHostedZoneOutput,
+        crate::error::DeleteHostedZoneError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_hosted_zone_error(response)
@@ -823,8 +835,10 @@ impl DeleteKeySigningKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteKeySigningKey {
-    type Output =
-        Result<crate::output::DeleteKeySigningKeyOutput, crate::error::DeleteKeySigningKeyError>;
+    type Output = std::result::Result<
+        crate::output::DeleteKeySigningKeyOutput,
+        crate::error::DeleteKeySigningKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_key_signing_key_error(response)
@@ -852,7 +866,7 @@ impl DeleteQueryLoggingConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteQueryLoggingConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteQueryLoggingConfigOutput,
         crate::error::DeleteQueryLoggingConfigError,
     >;
@@ -886,7 +900,7 @@ impl DeleteReusableDelegationSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteReusableDelegationSet {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteReusableDelegationSetOutput,
         crate::error::DeleteReusableDelegationSetError,
     >;
@@ -928,8 +942,10 @@ impl DeleteTrafficPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTrafficPolicy {
-    type Output =
-        Result<crate::output::DeleteTrafficPolicyOutput, crate::error::DeleteTrafficPolicyError>;
+    type Output = std::result::Result<
+        crate::output::DeleteTrafficPolicyOutput,
+        crate::error::DeleteTrafficPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_traffic_policy_error(response)
@@ -957,7 +973,7 @@ impl DeleteTrafficPolicyInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTrafficPolicyInstance {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteTrafficPolicyInstanceOutput,
         crate::error::DeleteTrafficPolicyInstanceError,
     >;
@@ -993,7 +1009,7 @@ impl DeleteVPCAssociationAuthorization {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVPCAssociationAuthorization {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteVPCAssociationAuthorizationOutput,
         crate::error::DeleteVPCAssociationAuthorizationError,
     >;
@@ -1022,7 +1038,7 @@ impl DisableHostedZoneDNSSEC {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisableHostedZoneDNSSEC {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisableHostedZoneDNSSECOutput,
         crate::error::DisableHostedZoneDNSSECError,
     >;
@@ -1070,7 +1086,7 @@ impl DisassociateVPCFromHostedZone {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateVPCFromHostedZone {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DisassociateVPCFromHostedZoneOutput,
         crate::error::DisassociateVPCFromHostedZoneError,
     >;
@@ -1098,7 +1114,7 @@ impl EnableHostedZoneDNSSEC {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableHostedZoneDNSSEC {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::EnableHostedZoneDNSSECOutput,
         crate::error::EnableHostedZoneDNSSECError,
     >;
@@ -1135,7 +1151,10 @@ impl GetAccountLimit {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAccountLimit {
-    type Output = Result<crate::output::GetAccountLimitOutput, crate::error::GetAccountLimitError>;
+    type Output = std::result::Result<
+        crate::output::GetAccountLimitOutput,
+        crate::error::GetAccountLimitError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_account_limit_error(response)
@@ -1172,7 +1191,7 @@ impl GetChange {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetChange {
-    type Output = Result<crate::output::GetChangeOutput, crate::error::GetChangeError>;
+    type Output = std::result::Result<crate::output::GetChangeOutput, crate::error::GetChangeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_change_error(response)
@@ -1204,8 +1223,10 @@ impl GetCheckerIpRanges {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetCheckerIpRanges {
-    type Output =
-        Result<crate::output::GetCheckerIpRangesOutput, crate::error::GetCheckerIpRangesError>;
+    type Output = std::result::Result<
+        crate::output::GetCheckerIpRangesOutput,
+        crate::error::GetCheckerIpRangesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_checker_ip_ranges_error(response)
@@ -1230,7 +1251,7 @@ impl GetDNSSEC {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDNSSEC {
-    type Output = Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError>;
+    type Output = std::result::Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_dnssec_error(response)
@@ -1272,7 +1293,8 @@ impl GetGeoLocation {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetGeoLocation {
-    type Output = Result<crate::output::GetGeoLocationOutput, crate::error::GetGeoLocationError>;
+    type Output =
+        std::result::Result<crate::output::GetGeoLocationOutput, crate::error::GetGeoLocationError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_geo_location_error(response)
@@ -1297,7 +1319,8 @@ impl GetHealthCheck {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetHealthCheck {
-    type Output = Result<crate::output::GetHealthCheckOutput, crate::error::GetHealthCheckError>;
+    type Output =
+        std::result::Result<crate::output::GetHealthCheckOutput, crate::error::GetHealthCheckError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_health_check_error(response)
@@ -1322,8 +1345,10 @@ impl GetHealthCheckCount {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetHealthCheckCount {
-    type Output =
-        Result<crate::output::GetHealthCheckCountOutput, crate::error::GetHealthCheckCountError>;
+    type Output = std::result::Result<
+        crate::output::GetHealthCheckCountOutput,
+        crate::error::GetHealthCheckCountError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_health_check_count_error(response)
@@ -1348,7 +1373,7 @@ impl GetHealthCheckLastFailureReason {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetHealthCheckLastFailureReason {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetHealthCheckLastFailureReasonOutput,
         crate::error::GetHealthCheckLastFailureReasonError,
     >;
@@ -1376,8 +1401,10 @@ impl GetHealthCheckStatus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetHealthCheckStatus {
-    type Output =
-        Result<crate::output::GetHealthCheckStatusOutput, crate::error::GetHealthCheckStatusError>;
+    type Output = std::result::Result<
+        crate::output::GetHealthCheckStatusOutput,
+        crate::error::GetHealthCheckStatusError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_health_check_status_error(response)
@@ -1402,7 +1429,8 @@ impl GetHostedZone {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetHostedZone {
-    type Output = Result<crate::output::GetHostedZoneOutput, crate::error::GetHostedZoneError>;
+    type Output =
+        std::result::Result<crate::output::GetHostedZoneOutput, crate::error::GetHostedZoneError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_hosted_zone_error(response)
@@ -1427,8 +1455,10 @@ impl GetHostedZoneCount {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetHostedZoneCount {
-    type Output =
-        Result<crate::output::GetHostedZoneCountOutput, crate::error::GetHostedZoneCountError>;
+    type Output = std::result::Result<
+        crate::output::GetHostedZoneCountOutput,
+        crate::error::GetHostedZoneCountError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_hosted_zone_count_error(response)
@@ -1457,8 +1487,10 @@ impl GetHostedZoneLimit {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetHostedZoneLimit {
-    type Output =
-        Result<crate::output::GetHostedZoneLimitOutput, crate::error::GetHostedZoneLimitError>;
+    type Output = std::result::Result<
+        crate::output::GetHostedZoneLimitOutput,
+        crate::error::GetHostedZoneLimitError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_hosted_zone_limit_error(response)
@@ -1487,7 +1519,7 @@ impl GetQueryLoggingConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetQueryLoggingConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetQueryLoggingConfigOutput,
         crate::error::GetQueryLoggingConfigError,
     >;
@@ -1516,7 +1548,7 @@ impl GetReusableDelegationSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetReusableDelegationSet {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetReusableDelegationSetOutput,
         crate::error::GetReusableDelegationSetError,
     >;
@@ -1547,7 +1579,7 @@ impl GetReusableDelegationSetLimit {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetReusableDelegationSetLimit {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetReusableDelegationSetLimitOutput,
         crate::error::GetReusableDelegationSetLimitError,
     >;
@@ -1578,8 +1610,10 @@ impl GetTrafficPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTrafficPolicy {
-    type Output =
-        Result<crate::output::GetTrafficPolicyOutput, crate::error::GetTrafficPolicyError>;
+    type Output = std::result::Result<
+        crate::output::GetTrafficPolicyOutput,
+        crate::error::GetTrafficPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_traffic_policy_error(response)
@@ -1612,7 +1646,7 @@ impl GetTrafficPolicyInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTrafficPolicyInstance {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetTrafficPolicyInstanceOutput,
         crate::error::GetTrafficPolicyInstanceError,
     >;
@@ -1640,7 +1674,7 @@ impl GetTrafficPolicyInstanceCount {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTrafficPolicyInstanceCount {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetTrafficPolicyInstanceCountOutput,
         crate::error::GetTrafficPolicyInstanceCountError,
     >;
@@ -1673,8 +1707,10 @@ impl ListGeoLocations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListGeoLocations {
-    type Output =
-        Result<crate::output::ListGeoLocationsOutput, crate::error::ListGeoLocationsError>;
+    type Output = std::result::Result<
+        crate::output::ListGeoLocationsOutput,
+        crate::error::ListGeoLocationsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_geo_locations_error(response)
@@ -1699,8 +1735,10 @@ impl ListHealthChecks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListHealthChecks {
-    type Output =
-        Result<crate::output::ListHealthChecksOutput, crate::error::ListHealthChecksError>;
+    type Output = std::result::Result<
+        crate::output::ListHealthChecksOutput,
+        crate::error::ListHealthChecksError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_health_checks_error(response)
@@ -1728,7 +1766,10 @@ impl ListHostedZones {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListHostedZones {
-    type Output = Result<crate::output::ListHostedZonesOutput, crate::error::ListHostedZonesError>;
+    type Output = std::result::Result<
+        crate::output::ListHostedZonesOutput,
+        crate::error::ListHostedZonesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_hosted_zones_error(response)
@@ -1793,7 +1834,7 @@ impl ListHostedZonesByName {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListHostedZonesByName {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListHostedZonesByNameOutput,
         crate::error::ListHostedZonesByNameError,
     >;
@@ -1833,8 +1874,10 @@ impl ListHostedZonesByVPC {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListHostedZonesByVPC {
-    type Output =
-        Result<crate::output::ListHostedZonesByVPCOutput, crate::error::ListHostedZonesByVPCError>;
+    type Output = std::result::Result<
+        crate::output::ListHostedZonesByVPCOutput,
+        crate::error::ListHostedZonesByVPCError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_hosted_zones_by_vpc_error(response)
@@ -1865,7 +1908,7 @@ impl ListQueryLoggingConfigs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListQueryLoggingConfigs {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListQueryLoggingConfigsOutput,
         crate::error::ListQueryLoggingConfigsError,
     >;
@@ -1951,7 +1994,7 @@ impl ListResourceRecordSets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListResourceRecordSets {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListResourceRecordSetsOutput,
         crate::error::ListResourceRecordSetsError,
     >;
@@ -1979,7 +2022,7 @@ impl ListReusableDelegationSets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListReusableDelegationSets {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListReusableDelegationSetsOutput,
         crate::error::ListReusableDelegationSetsError,
     >;
@@ -2010,8 +2053,10 @@ impl ListTagsForResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
-    type Output =
-        Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
@@ -2039,8 +2084,10 @@ impl ListTagsForResources {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTagsForResources {
-    type Output =
-        Result<crate::output::ListTagsForResourcesOutput, crate::error::ListTagsForResourcesError>;
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourcesOutput,
+        crate::error::ListTagsForResourcesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resources_error(response)
@@ -2069,8 +2116,10 @@ impl ListTrafficPolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTrafficPolicies {
-    type Output =
-        Result<crate::output::ListTrafficPoliciesOutput, crate::error::ListTrafficPoliciesError>;
+    type Output = std::result::Result<
+        crate::output::ListTrafficPoliciesOutput,
+        crate::error::ListTrafficPoliciesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_traffic_policies_error(response)
@@ -2101,7 +2150,7 @@ impl ListTrafficPolicyInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListTrafficPolicyInstancesOutput,
         crate::error::ListTrafficPolicyInstancesError,
     >;
@@ -2136,7 +2185,7 @@ impl ListTrafficPolicyInstancesByHostedZone {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstancesByHostedZone {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListTrafficPolicyInstancesByHostedZoneOutput,
         crate::error::ListTrafficPolicyInstancesByHostedZoneError,
     >;
@@ -2175,7 +2224,7 @@ impl ListTrafficPolicyInstancesByPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstancesByPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListTrafficPolicyInstancesByPolicyOutput,
         crate::error::ListTrafficPolicyInstancesByPolicyError,
     >;
@@ -2204,7 +2253,7 @@ impl ListTrafficPolicyVersions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTrafficPolicyVersions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListTrafficPolicyVersionsOutput,
         crate::error::ListTrafficPolicyVersionsError,
     >;
@@ -2235,7 +2284,7 @@ impl ListVPCAssociationAuthorizations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListVPCAssociationAuthorizations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListVPCAssociationAuthorizationsOutput,
         crate::error::ListVPCAssociationAuthorizationsError,
     >;
@@ -2265,7 +2314,8 @@ impl TestDNSAnswer {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TestDNSAnswer {
-    type Output = Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError>;
+    type Output =
+        std::result::Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_test_dns_answer_error(response)
@@ -2293,8 +2343,10 @@ impl UpdateHealthCheck {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateHealthCheck {
-    type Output =
-        Result<crate::output::UpdateHealthCheckOutput, crate::error::UpdateHealthCheckError>;
+    type Output = std::result::Result<
+        crate::output::UpdateHealthCheckOutput,
+        crate::error::UpdateHealthCheckError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_health_check_error(response)
@@ -2319,7 +2371,7 @@ impl UpdateHostedZoneComment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateHostedZoneComment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateHostedZoneCommentOutput,
         crate::error::UpdateHostedZoneCommentError,
     >;
@@ -2347,7 +2399,7 @@ impl UpdateTrafficPolicyComment {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateTrafficPolicyComment {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateTrafficPolicyCommentOutput,
         crate::error::UpdateTrafficPolicyCommentError,
     >;
@@ -2390,7 +2442,7 @@ impl UpdateTrafficPolicyInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateTrafficPolicyInstance {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateTrafficPolicyInstanceOutput,
         crate::error::UpdateTrafficPolicyInstanceError,
     >;

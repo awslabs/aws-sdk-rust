@@ -50,87 +50,87 @@ pub mod send_command_output {
         /// <p>Contains the details of the started session that includes a session token. This
         /// <code>SessionToken</code> is required for every subsequent command that is issued during
         /// the current session.</p>
-        pub fn start_session(mut self, inp: crate::model::StartSessionResult) -> Self {
-            self.start_session = Some(inp);
+        pub fn start_session(mut self, input: crate::model::StartSessionResult) -> Self {
+            self.start_session = Some(input);
             self
         }
         pub fn set_start_session(
             mut self,
-            inp: std::option::Option<crate::model::StartSessionResult>,
+            input: std::option::Option<crate::model::StartSessionResult>,
         ) -> Self {
-            self.start_session = inp;
+            self.start_session = input;
             self
         }
         /// <p>Contains the details of the started transaction.</p>
-        pub fn start_transaction(mut self, inp: crate::model::StartTransactionResult) -> Self {
-            self.start_transaction = Some(inp);
+        pub fn start_transaction(mut self, input: crate::model::StartTransactionResult) -> Self {
+            self.start_transaction = Some(input);
             self
         }
         pub fn set_start_transaction(
             mut self,
-            inp: std::option::Option<crate::model::StartTransactionResult>,
+            input: std::option::Option<crate::model::StartTransactionResult>,
         ) -> Self {
-            self.start_transaction = inp;
+            self.start_transaction = input;
             self
         }
         /// <p>Contains the details of the ended session.</p>
-        pub fn end_session(mut self, inp: crate::model::EndSessionResult) -> Self {
-            self.end_session = Some(inp);
+        pub fn end_session(mut self, input: crate::model::EndSessionResult) -> Self {
+            self.end_session = Some(input);
             self
         }
         pub fn set_end_session(
             mut self,
-            inp: std::option::Option<crate::model::EndSessionResult>,
+            input: std::option::Option<crate::model::EndSessionResult>,
         ) -> Self {
-            self.end_session = inp;
+            self.end_session = input;
             self
         }
         /// <p>Contains the details of the committed transaction.</p>
-        pub fn commit_transaction(mut self, inp: crate::model::CommitTransactionResult) -> Self {
-            self.commit_transaction = Some(inp);
+        pub fn commit_transaction(mut self, input: crate::model::CommitTransactionResult) -> Self {
+            self.commit_transaction = Some(input);
             self
         }
         pub fn set_commit_transaction(
             mut self,
-            inp: std::option::Option<crate::model::CommitTransactionResult>,
+            input: std::option::Option<crate::model::CommitTransactionResult>,
         ) -> Self {
-            self.commit_transaction = inp;
+            self.commit_transaction = input;
             self
         }
         /// <p>Contains the details of the aborted transaction.</p>
-        pub fn abort_transaction(mut self, inp: crate::model::AbortTransactionResult) -> Self {
-            self.abort_transaction = Some(inp);
+        pub fn abort_transaction(mut self, input: crate::model::AbortTransactionResult) -> Self {
+            self.abort_transaction = Some(input);
             self
         }
         pub fn set_abort_transaction(
             mut self,
-            inp: std::option::Option<crate::model::AbortTransactionResult>,
+            input: std::option::Option<crate::model::AbortTransactionResult>,
         ) -> Self {
-            self.abort_transaction = inp;
+            self.abort_transaction = input;
             self
         }
         /// <p>Contains the details of the executed statement.</p>
-        pub fn execute_statement(mut self, inp: crate::model::ExecuteStatementResult) -> Self {
-            self.execute_statement = Some(inp);
+        pub fn execute_statement(mut self, input: crate::model::ExecuteStatementResult) -> Self {
+            self.execute_statement = Some(input);
             self
         }
         pub fn set_execute_statement(
             mut self,
-            inp: std::option::Option<crate::model::ExecuteStatementResult>,
+            input: std::option::Option<crate::model::ExecuteStatementResult>,
         ) -> Self {
-            self.execute_statement = inp;
+            self.execute_statement = input;
             self
         }
         /// <p>Contains the details of the fetched page.</p>
-        pub fn fetch_page(mut self, inp: crate::model::FetchPageResult) -> Self {
-            self.fetch_page = Some(inp);
+        pub fn fetch_page(mut self, input: crate::model::FetchPageResult) -> Self {
+            self.fetch_page = Some(input);
             self
         }
         pub fn set_fetch_page(
             mut self,
-            inp: std::option::Option<crate::model::FetchPageResult>,
+            input: std::option::Option<crate::model::FetchPageResult>,
         ) -> Self {
-            self.fetch_page = inp;
+            self.fetch_page = input;
             self
         }
         /// Consumes the builder and constructs a [`SendCommandOutput`](crate::output::SendCommandOutput)

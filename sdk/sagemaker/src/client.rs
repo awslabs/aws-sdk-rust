@@ -837,7 +837,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddAssociationOutput,
             smithy_http::result::SdkError<crate::error::AddAssociationError>,
         >
@@ -854,24 +854,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the source.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input);
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_arn(inp);
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_arn(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-        pub fn destination_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_arn(inp);
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input);
             self
         }
         pub fn set_destination_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_destination_arn(inp);
+            self.inner = self.inner.set_destination_arn(input);
             self
         }
         /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker
@@ -895,15 +895,15 @@ pub mod fluent_builders {
         /// produced a model artifact.</p>
         /// </li>
         /// </ul>
-        pub fn association_type(mut self, inp: crate::model::AssociationEdgeType) -> Self {
-            self.inner = self.inner.association_type(inp);
+        pub fn association_type(mut self, input: crate::model::AssociationEdgeType) -> Self {
+            self.inner = self.inner.association_type(input);
             self
         }
         pub fn set_association_type(
             mut self,
-            inp: std::option::Option<crate::model::AssociationEdgeType>,
+            input: std::option::Option<crate::model::AssociationEdgeType>,
         ) -> Self {
-            self.inner = self.inner.set_association_type(inp);
+            self.inner = self.inner.set_association_type(input);
             self
         }
     }
@@ -922,7 +922,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddTagsOutput,
             smithy_http::result::SdkError<crate::error::AddTagsError>,
         >
@@ -939,12 +939,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -957,9 +957,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -978,7 +978,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AssociateTrialComponentOutput,
             smithy_http::result::SdkError<crate::error::AssociateTrialComponentError>,
         >
@@ -995,24 +995,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component to associated with the trial.</p>
-        pub fn trial_component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(inp);
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input);
             self
         }
         pub fn set_trial_component_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_trial_component_name(inp);
+            self.inner = self.inner.set_trial_component_name(input);
             self
         }
         /// <p>The name of the trial to associate with.</p>
-        pub fn trial_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(inp);
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input);
             self
         }
-        pub fn set_trial_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_trial_name(inp);
+        pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_trial_name(input);
             self
         }
     }
@@ -1031,7 +1031,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateActionOutput,
             smithy_http::result::SdkError<crate::error::CreateActionError>,
         >
@@ -1048,48 +1048,54 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the action. Must be unique to your account in an AWS Region.</p>
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(inp);
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input);
             self
         }
-        pub fn set_action_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_action_name(inp);
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_name(input);
             self
         }
         /// <p>The source type, ID, and URI.</p>
-        pub fn source(mut self, inp: crate::model::ActionSource) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::ActionSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<crate::model::ActionSource>) -> Self {
-            self.inner = self.inner.set_source(inp);
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::ActionSource>,
+        ) -> Self {
+            self.inner = self.inner.set_source(input);
             self
         }
         /// <p>The action type.</p>
-        pub fn action_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_type(inp);
+        pub fn action_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_type(input);
             self
         }
-        pub fn set_action_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_action_type(inp);
+        pub fn set_action_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_type(input);
             self
         }
         /// <p>The description of the action.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The status of the action.</p>
-        pub fn status(mut self, inp: crate::model::ActionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::ActionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::ActionStatus>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ActionStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
         /// <p>A list of properties to add to the action.</p>
@@ -1103,23 +1109,23 @@ pub mod fluent_builders {
         }
         pub fn set_properties(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_properties(inp);
+            self.inner = self.inner.set_properties(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, inp: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(inp);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         pub fn set_metadata_properties(
             mut self,
-            inp: std::option::Option<crate::model::MetadataProperties>,
+            input: std::option::Option<crate::model::MetadataProperties>,
         ) -> Self {
-            self.inner = self.inner.set_metadata_properties(inp);
+            self.inner = self.inner.set_metadata_properties(input);
             self
         }
         /// <p>A list of tags to apply to the action.</p>
@@ -1129,9 +1135,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1150,7 +1156,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAlgorithmOutput,
             smithy_http::result::SdkError<crate::error::CreateAlgorithmError>,
         >
@@ -1167,24 +1173,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the algorithm.</p>
-        pub fn algorithm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_name(inp);
+        pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_name(input);
             self
         }
-        pub fn set_algorithm_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_algorithm_name(inp);
+        pub fn set_algorithm_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_algorithm_name(input);
             self
         }
         /// <p>A description of the algorithm.</p>
-        pub fn algorithm_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_description(inp);
+        pub fn algorithm_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_description(input);
             self
         }
         pub fn set_algorithm_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_algorithm_description(inp);
+            self.inner = self.inner.set_algorithm_description(input);
             self
         }
         /// <p>Specifies details about training jobs run by this algorithm, including the
@@ -1216,15 +1225,18 @@ pub mod fluent_builders {
         /// <code>test</code> channels.</p>
         /// </li>
         /// </ul>
-        pub fn training_specification(mut self, inp: crate::model::TrainingSpecification) -> Self {
-            self.inner = self.inner.training_specification(inp);
+        pub fn training_specification(
+            mut self,
+            input: crate::model::TrainingSpecification,
+        ) -> Self {
+            self.inner = self.inner.training_specification(input);
             self
         }
         pub fn set_training_specification(
             mut self,
-            inp: std::option::Option<crate::model::TrainingSpecification>,
+            input: std::option::Option<crate::model::TrainingSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_training_specification(inp);
+            self.inner = self.inner.set_training_specification(input);
             self
         }
         /// <p>Specifies details about inference jobs that the algorithm runs, including the
@@ -1245,16 +1257,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn inference_specification(
             mut self,
-            inp: crate::model::InferenceSpecification,
+            input: crate::model::InferenceSpecification,
         ) -> Self {
-            self.inner = self.inner.inference_specification(inp);
+            self.inner = self.inner.inference_specification(input);
             self
         }
         pub fn set_inference_specification(
             mut self,
-            inp: std::option::Option<crate::model::InferenceSpecification>,
+            input: std::option::Option<crate::model::InferenceSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_inference_specification(inp);
+            self.inner = self.inner.set_inference_specification(input);
             self
         }
         /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the
@@ -1262,25 +1274,25 @@ pub mod fluent_builders {
         /// runs to test the algorithm's inference code.</p>
         pub fn validation_specification(
             mut self,
-            inp: crate::model::AlgorithmValidationSpecification,
+            input: crate::model::AlgorithmValidationSpecification,
         ) -> Self {
-            self.inner = self.inner.validation_specification(inp);
+            self.inner = self.inner.validation_specification(input);
             self
         }
         pub fn set_validation_specification(
             mut self,
-            inp: std::option::Option<crate::model::AlgorithmValidationSpecification>,
+            input: std::option::Option<crate::model::AlgorithmValidationSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_validation_specification(inp);
+            self.inner = self.inner.set_validation_specification(input);
             self
         }
         /// <p>Whether to certify the algorithm so that it can be listed in AWS Marketplace.</p>
-        pub fn certify_for_marketplace(mut self, inp: bool) -> Self {
-            self.inner = self.inner.certify_for_marketplace(inp);
+        pub fn certify_for_marketplace(mut self, input: bool) -> Self {
+            self.inner = self.inner.certify_for_marketplace(input);
             self
         }
-        pub fn set_certify_for_marketplace(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_certify_for_marketplace(inp);
+        pub fn set_certify_for_marketplace(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_certify_for_marketplace(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -1293,9 +1305,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1314,7 +1326,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAppOutput,
             smithy_http::result::SdkError<crate::error::CreateAppError>,
         >
@@ -1331,43 +1343,43 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(inp);
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input);
             self
         }
         pub fn set_user_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name(inp);
+            self.inner = self.inner.set_user_profile_name(input);
             self
         }
         /// <p>The type of app. Supported apps are <code>JupyterServer</code> and
         /// <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
-        pub fn app_type(mut self, inp: crate::model::AppType) -> Self {
-            self.inner = self.inner.app_type(inp);
+        pub fn app_type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.app_type(input);
             self
         }
-        pub fn set_app_type(mut self, inp: std::option::Option<crate::model::AppType>) -> Self {
-            self.inner = self.inner.set_app_type(inp);
+        pub fn set_app_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
+            self.inner = self.inner.set_app_type(input);
             self
         }
         /// <p>The name of the app.</p>
-        pub fn app_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(inp);
+        pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_name(input);
             self
         }
-        pub fn set_app_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_name(inp);
+        pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_name(input);
             self
         }
         /// <p>Each tag consists of a key and an optional value.
@@ -1378,21 +1390,21 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-        pub fn resource_spec(mut self, inp: crate::model::ResourceSpec) -> Self {
-            self.inner = self.inner.resource_spec(inp);
+        pub fn resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
+            self.inner = self.inner.resource_spec(input);
             self
         }
         pub fn set_resource_spec(
             mut self,
-            inp: std::option::Option<crate::model::ResourceSpec>,
+            input: std::option::Option<crate::model::ResourceSpec>,
         ) -> Self {
-            self.inner = self.inner.set_resource_spec(inp);
+            self.inner = self.inner.set_resource_spec(input);
             self
         }
     }
@@ -1411,7 +1423,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAppImageConfigOutput,
             smithy_http::result::SdkError<crate::error::CreateAppImageConfigError>,
         >
@@ -1428,15 +1440,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-        pub fn app_image_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_image_config_name(inp);
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_image_config_name(input);
             self
         }
         pub fn set_app_image_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_app_image_config_name(inp);
+            self.inner = self.inner.set_app_image_config_name(input);
             self
         }
         /// <p>A list of tags to apply to the AppImageConfig.</p>
@@ -1446,24 +1458,24 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The KernelGatewayImageConfig.</p>
         pub fn kernel_gateway_image_config(
             mut self,
-            inp: crate::model::KernelGatewayImageConfig,
+            input: crate::model::KernelGatewayImageConfig,
         ) -> Self {
-            self.inner = self.inner.kernel_gateway_image_config(inp);
+            self.inner = self.inner.kernel_gateway_image_config(input);
             self
         }
         pub fn set_kernel_gateway_image_config(
             mut self,
-            inp: std::option::Option<crate::model::KernelGatewayImageConfig>,
+            input: std::option::Option<crate::model::KernelGatewayImageConfig>,
         ) -> Self {
-            self.inner = self.inner.set_kernel_gateway_image_config(inp);
+            self.inner = self.inner.set_kernel_gateway_image_config(input);
             self
         }
     }
@@ -1482,7 +1494,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateArtifactOutput,
             smithy_http::result::SdkError<crate::error::CreateArtifactError>,
         >
@@ -1499,33 +1511,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the artifact. Must be unique to your account in an AWS Region.</p>
-        pub fn artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_name(inp);
+        pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_name(input);
             self
         }
-        pub fn set_artifact_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_artifact_name(inp);
+        pub fn set_artifact_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_artifact_name(input);
             self
         }
         /// <p>The ID, ID type, and URI of the source.</p>
-        pub fn source(mut self, inp: crate::model::ArtifactSource) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::ArtifactSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         pub fn set_source(
             mut self,
-            inp: std::option::Option<crate::model::ArtifactSource>,
+            input: std::option::Option<crate::model::ArtifactSource>,
         ) -> Self {
-            self.inner = self.inner.set_source(inp);
+            self.inner = self.inner.set_source(input);
             self
         }
         /// <p>The artifact type.</p>
-        pub fn artifact_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_type(inp);
+        pub fn artifact_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_type(input);
             self
         }
-        pub fn set_artifact_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_artifact_type(inp);
+        pub fn set_artifact_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_artifact_type(input);
             self
         }
         /// <p>A list of properties to add to the artifact.</p>
@@ -1539,23 +1557,23 @@ pub mod fluent_builders {
         }
         pub fn set_properties(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_properties(inp);
+            self.inner = self.inner.set_properties(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, inp: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(inp);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         pub fn set_metadata_properties(
             mut self,
-            inp: std::option::Option<crate::model::MetadataProperties>,
+            input: std::option::Option<crate::model::MetadataProperties>,
         ) -> Self {
-            self.inner = self.inner.set_metadata_properties(inp);
+            self.inner = self.inner.set_metadata_properties(input);
             self
         }
         /// <p>A list of tags to apply to the artifact.</p>
@@ -1565,9 +1583,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1586,7 +1604,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAutoMLJobOutput,
             smithy_http::result::SdkError<crate::error::CreateAutoMLJobError>,
         >
@@ -1604,15 +1622,15 @@ pub mod fluent_builders {
         }
         /// <p>Identifies an Autopilot job. The name must be unique to your account and is
         /// case-insensitive.</p>
-        pub fn auto_ml_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_ml_job_name(inp);
+        pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_ml_job_name(input);
             self
         }
         pub fn set_auto_ml_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_auto_ml_job_name(inp);
+            self.inner = self.inner.set_auto_ml_job_name(input);
             self
         }
         /// <p>An array of channel objects that describes the input data and its location. Each channel
@@ -1624,83 +1642,86 @@ pub mod fluent_builders {
         }
         pub fn set_input_data_config(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AutoMLChannel>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AutoMLChannel>>,
         ) -> Self {
-            self.inner = self.inner.set_input_data_config(inp);
+            self.inner = self.inner.set_input_data_config(input);
             self
         }
         /// <p>Provides information about encryption and the Amazon S3 output path needed to store
         /// artifacts from an AutoML job. Format(s) supported: CSV.</p>
-        pub fn output_data_config(mut self, inp: crate::model::AutoMLOutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(inp);
+        pub fn output_data_config(mut self, input: crate::model::AutoMLOutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         pub fn set_output_data_config(
             mut self,
-            inp: std::option::Option<crate::model::AutoMLOutputDataConfig>,
+            input: std::option::Option<crate::model::AutoMLOutputDataConfig>,
         ) -> Self {
-            self.inner = self.inner.set_output_data_config(inp);
+            self.inner = self.inner.set_output_data_config(input);
             self
         }
         /// <p>Defines the type of supervised learning available for the candidates. Options include:
         /// <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and
         /// <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
         /// Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
-        pub fn problem_type(mut self, inp: crate::model::ProblemType) -> Self {
-            self.inner = self.inner.problem_type(inp);
+        pub fn problem_type(mut self, input: crate::model::ProblemType) -> Self {
+            self.inner = self.inner.problem_type(input);
             self
         }
         pub fn set_problem_type(
             mut self,
-            inp: std::option::Option<crate::model::ProblemType>,
+            input: std::option::Option<crate::model::ProblemType>,
         ) -> Self {
-            self.inner = self.inner.set_problem_type(inp);
+            self.inner = self.inner.set_problem_type(input);
             self
         }
         /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job.
         /// You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
         /// minimize or maximize it.</p>
-        pub fn auto_ml_job_objective(mut self, inp: crate::model::AutoMLJobObjective) -> Self {
-            self.inner = self.inner.auto_ml_job_objective(inp);
+        pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMLJobObjective) -> Self {
+            self.inner = self.inner.auto_ml_job_objective(input);
             self
         }
         pub fn set_auto_ml_job_objective(
             mut self,
-            inp: std::option::Option<crate::model::AutoMLJobObjective>,
+            input: std::option::Option<crate::model::AutoMLJobObjective>,
         ) -> Self {
-            self.inner = self.inner.set_auto_ml_job_objective(inp);
+            self.inner = self.inner.set_auto_ml_job_objective(input);
             self
         }
         /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for
         /// the AutoML job.</p>
-        pub fn auto_ml_job_config(mut self, inp: crate::model::AutoMLJobConfig) -> Self {
-            self.inner = self.inner.auto_ml_job_config(inp);
+        pub fn auto_ml_job_config(mut self, input: crate::model::AutoMLJobConfig) -> Self {
+            self.inner = self.inner.auto_ml_job_config(input);
             self
         }
         pub fn set_auto_ml_job_config(
             mut self,
-            inp: std::option::Option<crate::model::AutoMLJobConfig>,
+            input: std::option::Option<crate::model::AutoMLJobConfig>,
         ) -> Self {
-            self.inner = self.inner.set_auto_ml_job_config(inp);
+            self.inner = self.inner.set_auto_ml_job_config(input);
             self
         }
         /// <p>The ARN of the role that is used to access the data.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>Generates possible candidates without training the models. A candidate is a combination
         /// of data preprocessors, algorithms, and algorithm parameter settings.</p>
-        pub fn generate_candidate_definitions_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.generate_candidate_definitions_only(inp);
+        pub fn generate_candidate_definitions_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.generate_candidate_definitions_only(input);
             self
         }
-        pub fn set_generate_candidate_definitions_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_generate_candidate_definitions_only(inp);
+        pub fn set_generate_candidate_definitions_only(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_generate_candidate_definitions_only(input);
             self
         }
         /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per
@@ -1711,22 +1732,22 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model
         /// deployment.</p>
-        pub fn model_deploy_config(mut self, inp: crate::model::ModelDeployConfig) -> Self {
-            self.inner = self.inner.model_deploy_config(inp);
+        pub fn model_deploy_config(mut self, input: crate::model::ModelDeployConfig) -> Self {
+            self.inner = self.inner.model_deploy_config(input);
             self
         }
         pub fn set_model_deploy_config(
             mut self,
-            inp: std::option::Option<crate::model::ModelDeployConfig>,
+            input: std::option::Option<crate::model::ModelDeployConfig>,
         ) -> Self {
-            self.inner = self.inner.set_model_deploy_config(inp);
+            self.inner = self.inner.set_model_deploy_config(input);
             self
         }
     }
@@ -1745,7 +1766,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateCodeRepositoryOutput,
             smithy_http::result::SdkError<crate::error::CreateCodeRepositoryError>,
         >
@@ -1763,25 +1784,28 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
         /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-        pub fn code_repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_repository_name(inp);
+        pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_repository_name(input);
             self
         }
         pub fn set_code_repository_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_code_repository_name(inp);
+            self.inner = self.inner.set_code_repository_name(input);
             self
         }
         /// <p>Specifies details about the repository, including the URL where the repository is
         /// located, the default branch, and credentials to use to access the repository.</p>
-        pub fn git_config(mut self, inp: crate::model::GitConfig) -> Self {
-            self.inner = self.inner.git_config(inp);
+        pub fn git_config(mut self, input: crate::model::GitConfig) -> Self {
+            self.inner = self.inner.git_config(input);
             self
         }
-        pub fn set_git_config(mut self, inp: std::option::Option<crate::model::GitConfig>) -> Self {
-            self.inner = self.inner.set_git_config(inp);
+        pub fn set_git_config(
+            mut self,
+            input: std::option::Option<crate::model::GitConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_git_config(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -1794,9 +1818,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1815,7 +1839,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateCompilationJobOutput,
             smithy_http::result::SdkError<crate::error::CreateCompilationJobError>,
         >
@@ -1833,15 +1857,15 @@ pub mod fluent_builders {
         }
         /// <p>A name for the model compilation job. The name must be unique within the AWS Region
         /// and within your AWS account. </p>
-        pub fn compilation_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compilation_job_name(inp);
+        pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compilation_job_name(input);
             self
         }
         pub fn set_compilation_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_compilation_job_name(inp);
+            self.inner = self.inner.set_compilation_job_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on
@@ -1866,52 +1890,52 @@ pub mod fluent_builders {
         /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
         /// Roles.</a>
         /// </p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>Provides information about the location of input model artifacts, the name and shape
         /// of the expected data inputs, and the framework in which the model was trained.</p>
-        pub fn input_config(mut self, inp: crate::model::InputConfig) -> Self {
-            self.inner = self.inner.input_config(inp);
+        pub fn input_config(mut self, input: crate::model::InputConfig) -> Self {
+            self.inner = self.inner.input_config(input);
             self
         }
         pub fn set_input_config(
             mut self,
-            inp: std::option::Option<crate::model::InputConfig>,
+            input: std::option::Option<crate::model::InputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_input_config(inp);
+            self.inner = self.inner.set_input_config(input);
             self
         }
         /// <p>Provides information about the output location for the compiled model and the target
         /// device the model runs on.</p>
-        pub fn output_config(mut self, inp: crate::model::OutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         pub fn set_output_config(
             mut self,
-            inp: std::option::Option<crate::model::OutputConfig>,
+            input: std::option::Option<crate::model::OutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_output_config(inp);
+            self.inner = self.inner.set_output_config(input);
             self
         }
         /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches
         /// the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training
         /// costs.</p>
-        pub fn stopping_condition(mut self, inp: crate::model::StoppingCondition) -> Self {
-            self.inner = self.inner.stopping_condition(inp);
+        pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         pub fn set_stopping_condition(
             mut self,
-            inp: std::option::Option<crate::model::StoppingCondition>,
+            input: std::option::Option<crate::model::StoppingCondition>,
         ) -> Self {
-            self.inner = self.inner.set_stopping_condition(inp);
+            self.inner = self.inner.set_stopping_condition(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -1924,9 +1948,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1945,7 +1969,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateContextOutput,
             smithy_http::result::SdkError<crate::error::CreateContextError>,
         >
@@ -1962,39 +1986,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the context. Must be unique to your account in an AWS Region.</p>
-        pub fn context_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_name(inp);
+        pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_name(input);
             self
         }
-        pub fn set_context_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_context_name(inp);
+        pub fn set_context_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context_name(input);
             self
         }
         /// <p>The source type, ID, and URI.</p>
-        pub fn source(mut self, inp: crate::model::ContextSource) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::ContextSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<crate::model::ContextSource>) -> Self {
-            self.inner = self.inner.set_source(inp);
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::ContextSource>,
+        ) -> Self {
+            self.inner = self.inner.set_source(input);
             self
         }
         /// <p>The context type.</p>
-        pub fn context_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_type(inp);
+        pub fn context_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_type(input);
             self
         }
-        pub fn set_context_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_context_type(inp);
+        pub fn set_context_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context_type(input);
             self
         }
         /// <p>The description of the context.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>A list of properties to add to the context.</p>
@@ -2008,11 +2035,11 @@ pub mod fluent_builders {
         }
         pub fn set_properties(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_properties(inp);
+            self.inner = self.inner.set_properties(input);
             self
         }
         /// <p>A list of tags to apply to the context.</p>
@@ -2022,9 +2049,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2043,7 +2070,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDataQualityJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::CreateDataQualityJobDefinitionError>,
         >
@@ -2060,122 +2087,122 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the monitoring job definition.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
         /// <p>Configures the constraints and baselines for the monitoring job.</p>
         pub fn data_quality_baseline_config(
             mut self,
-            inp: crate::model::DataQualityBaselineConfig,
+            input: crate::model::DataQualityBaselineConfig,
         ) -> Self {
-            self.inner = self.inner.data_quality_baseline_config(inp);
+            self.inner = self.inner.data_quality_baseline_config(input);
             self
         }
         pub fn set_data_quality_baseline_config(
             mut self,
-            inp: std::option::Option<crate::model::DataQualityBaselineConfig>,
+            input: std::option::Option<crate::model::DataQualityBaselineConfig>,
         ) -> Self {
-            self.inner = self.inner.set_data_quality_baseline_config(inp);
+            self.inner = self.inner.set_data_quality_baseline_config(input);
             self
         }
         /// <p>Specifies the container that runs the monitoring job.</p>
         pub fn data_quality_app_specification(
             mut self,
-            inp: crate::model::DataQualityAppSpecification,
+            input: crate::model::DataQualityAppSpecification,
         ) -> Self {
-            self.inner = self.inner.data_quality_app_specification(inp);
+            self.inner = self.inner.data_quality_app_specification(input);
             self
         }
         pub fn set_data_quality_app_specification(
             mut self,
-            inp: std::option::Option<crate::model::DataQualityAppSpecification>,
+            input: std::option::Option<crate::model::DataQualityAppSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_data_quality_app_specification(inp);
+            self.inner = self.inner.set_data_quality_app_specification(input);
             self
         }
         /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring
         /// inputs.</p>
-        pub fn data_quality_job_input(mut self, inp: crate::model::DataQualityJobInput) -> Self {
-            self.inner = self.inner.data_quality_job_input(inp);
+        pub fn data_quality_job_input(mut self, input: crate::model::DataQualityJobInput) -> Self {
+            self.inner = self.inner.data_quality_job_input(input);
             self
         }
         pub fn set_data_quality_job_input(
             mut self,
-            inp: std::option::Option<crate::model::DataQualityJobInput>,
+            input: std::option::Option<crate::model::DataQualityJobInput>,
         ) -> Self {
-            self.inner = self.inner.set_data_quality_job_input(inp);
+            self.inner = self.inner.set_data_quality_job_input(input);
             self
         }
         /// <p>The output configuration for monitoring jobs.</p>
         pub fn data_quality_job_output_config(
             mut self,
-            inp: crate::model::MonitoringOutputConfig,
+            input: crate::model::MonitoringOutputConfig,
         ) -> Self {
-            self.inner = self.inner.data_quality_job_output_config(inp);
+            self.inner = self.inner.data_quality_job_output_config(input);
             self
         }
         pub fn set_data_quality_job_output_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringOutputConfig>,
+            input: std::option::Option<crate::model::MonitoringOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_data_quality_job_output_config(inp);
+            self.inner = self.inner.set_data_quality_job_output_config(input);
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
-        pub fn job_resources(mut self, inp: crate::model::MonitoringResources) -> Self {
-            self.inner = self.inner.job_resources(inp);
+        pub fn job_resources(mut self, input: crate::model::MonitoringResources) -> Self {
+            self.inner = self.inner.job_resources(input);
             self
         }
         pub fn set_job_resources(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringResources>,
+            input: std::option::Option<crate::model::MonitoringResources>,
         ) -> Self {
-            self.inner = self.inner.set_job_resources(inp);
+            self.inner = self.inner.set_job_resources(input);
             self
         }
         /// <p>Specifies networking configuration for the monitoring job.</p>
-        pub fn network_config(mut self, inp: crate::model::MonitoringNetworkConfig) -> Self {
-            self.inner = self.inner.network_config(inp);
+        pub fn network_config(mut self, input: crate::model::MonitoringNetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         pub fn set_network_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringNetworkConfig>,
+            input: std::option::Option<crate::model::MonitoringNetworkConfig>,
         ) -> Self {
-            self.inner = self.inner.set_network_config(inp);
+            self.inner = self.inner.set_network_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
         /// perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
         pub fn stopping_condition(
             mut self,
-            inp: crate::model::MonitoringStoppingCondition,
+            input: crate::model::MonitoringStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(inp);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         pub fn set_stopping_condition(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringStoppingCondition>,
+            input: std::option::Option<crate::model::MonitoringStoppingCondition>,
         ) -> Self {
-            self.inner = self.inner.set_stopping_condition(inp);
+            self.inner = self.inner.set_stopping_condition(input);
             self
         }
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
@@ -2186,9 +2213,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2207,7 +2234,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDeviceFleetOutput,
             smithy_http::result::SdkError<crate::error::CreateDeviceFleetError>,
         >
@@ -2224,45 +2251,45 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A description of the fleet.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The output configuration for storing sample data collected by the fleet.</p>
-        pub fn output_config(mut self, inp: crate::model::EdgeOutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, input: crate::model::EdgeOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         pub fn set_output_config(
             mut self,
-            inp: std::option::Option<crate::model::EdgeOutputConfig>,
+            input: std::option::Option<crate::model::EdgeOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_output_config(inp);
+            self.inner = self.inner.set_output_config(input);
             self
         }
         /// <p>Creates tags for the specified fleet.</p>
@@ -2272,9 +2299,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Whether to create an AWS IoT Role Alias during device fleet creation.
@@ -2282,12 +2309,12 @@ pub mod fluent_builders {
         /// "SageMakerEdge-{DeviceFleetName}".</p>
         /// <p>For example, if your device fleet is called "demo-fleet", the name of
         /// the role alias will be "SageMakerEdge-demo-fleet".</p>
-        pub fn enable_iot_role_alias(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iot_role_alias(inp);
+        pub fn enable_iot_role_alias(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iot_role_alias(input);
             self
         }
-        pub fn set_enable_iot_role_alias(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_iot_role_alias(inp);
+        pub fn set_enable_iot_role_alias(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_iot_role_alias(input);
             self
         }
     }
@@ -2306,7 +2333,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateDomainOutput,
             smithy_http::result::SdkError<crate::error::CreateDomainError>,
         >
@@ -2323,21 +2350,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input);
             self
         }
-        pub fn set_domain_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(inp);
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>The mode of authentication that members use to access the domain.</p>
-        pub fn auth_mode(mut self, inp: crate::model::AuthMode) -> Self {
-            self.inner = self.inner.auth_mode(inp);
+        pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
+            self.inner = self.inner.auth_mode(input);
             self
         }
-        pub fn set_auth_mode(mut self, inp: std::option::Option<crate::model::AuthMode>) -> Self {
-            self.inner = self.inner.set_auth_mode(inp);
+        pub fn set_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
+            self.inner = self.inner.set_auth_mode(input);
             self
         }
         /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified
@@ -2346,15 +2373,15 @@ pub mod fluent_builders {
         /// <code>SecurityGroups</code> is aggregated when specified in both calls. For all other
         /// settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>
         /// take precedence over those specified in <code>CreateDomain</code>.</p>
-        pub fn default_user_settings(mut self, inp: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.default_user_settings(inp);
+        pub fn default_user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.default_user_settings(input);
             self
         }
         pub fn set_default_user_settings(
             mut self,
-            inp: std::option::Option<crate::model::UserSettings>,
+            input: std::option::Option<crate::model::UserSettings>,
         ) -> Self {
-            self.inner = self.inner.set_default_user_settings(inp);
+            self.inner = self.inner.set_default_user_settings(input);
             self
         }
         /// <p>The VPC subnets that Studio uses for communication.</p>
@@ -2364,18 +2391,18 @@ pub mod fluent_builders {
         }
         pub fn set_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_subnet_ids(inp);
+            self.inner = self.inner.set_subnet_ids(input);
             self
         }
         /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input);
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_vpc_id(inp);
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_vpc_id(input);
             self
         }
         /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value.
@@ -2389,9 +2416,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Specifies the VPC used for non-EFS traffic. The default value is
@@ -2407,40 +2434,43 @@ pub mod fluent_builders {
         /// <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p>
         /// </li>
         /// </ul>
-        pub fn app_network_access_type(mut self, inp: crate::model::AppNetworkAccessType) -> Self {
-            self.inner = self.inner.app_network_access_type(inp);
+        pub fn app_network_access_type(
+            mut self,
+            input: crate::model::AppNetworkAccessType,
+        ) -> Self {
+            self.inner = self.inner.app_network_access_type(input);
             self
         }
         pub fn set_app_network_access_type(
             mut self,
-            inp: std::option::Option<crate::model::AppNetworkAccessType>,
+            input: std::option::Option<crate::model::AppNetworkAccessType>,
         ) -> Self {
-            self.inner = self.inner.set_app_network_access_type(inp);
+            self.inner = self.inner.set_app_network_access_type(input);
             self
         }
         /// <p>This member is deprecated and replaced with <code>KmsKeyId</code>.</p>
         pub fn home_efs_file_system_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.home_efs_file_system_kms_key_id(inp);
+            self.inner = self.inner.home_efs_file_system_kms_key_id(input);
             self
         }
         pub fn set_home_efs_file_system_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_home_efs_file_system_kms_key_id(inp);
+            self.inner = self.inner.set_home_efs_file_system_kms_key_id(input);
             self
         }
         /// <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed
         /// customer master key (CMK) by default. For more control, specify a customer managed CMK.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
     }
@@ -2459,7 +2489,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateEdgePackagingJobOutput,
             smithy_http::result::SdkError<crate::error::CreateEdgePackagingJobError>,
         >
@@ -2476,75 +2506,78 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the edge packaging job.</p>
-        pub fn edge_packaging_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.edge_packaging_job_name(inp);
+        pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_packaging_job_name(input);
             self
         }
         pub fn set_edge_packaging_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_edge_packaging_job_name(inp);
+            self.inner = self.inner.set_edge_packaging_job_name(input);
             self
         }
         /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-        pub fn compilation_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compilation_job_name(inp);
+        pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compilation_job_name(input);
             self
         }
         pub fn set_compilation_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_compilation_job_name(inp);
+            self.inner = self.inner.set_compilation_job_name(input);
             self
         }
         /// <p>The name of the model.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
         /// <p>The version of the model.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(input);
             self
         }
-        pub fn set_model_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_model_version(inp);
+        pub fn set_model_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_version(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>Provides information about the output location for the packaged model.</p>
-        pub fn output_config(mut self, inp: crate::model::EdgeOutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, input: crate::model::EdgeOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         pub fn set_output_config(
             mut self,
-            inp: std::option::Option<crate::model::EdgeOutputConfig>,
+            input: std::option::Option<crate::model::EdgeOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_output_config(inp);
+            self.inner = self.inner.set_output_config(input);
             self
         }
         /// <p>The CMK to use when encrypting the EBS volume the edge packaging job runs on.</p>
-        pub fn resource_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_key(inp);
+        pub fn resource_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_key(input);
             self
         }
-        pub fn set_resource_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_key(inp);
+        pub fn set_resource_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_key(input);
             self
         }
         /// <p>Creates tags for the packaging job.</p>
@@ -2554,9 +2587,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2575,7 +2608,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateEndpointOutput,
             smithy_http::result::SdkError<crate::error::CreateEndpointError>,
         >
@@ -2594,24 +2627,27 @@ pub mod fluent_builders {
         /// <p>The name of the endpoint.The name must be unique within an AWS Region in your AWS
         /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is
         /// preserved and must be matched in .</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>. </p>
-        pub fn endpoint_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(inp);
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input);
             self
         }
         pub fn set_endpoint_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_endpoint_config_name(inp);
+            self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -2624,9 +2660,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2645,7 +2681,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateEndpointConfigOutput,
             smithy_http::result::SdkError<crate::error::CreateEndpointConfigError>,
         >
@@ -2662,15 +2698,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request. </p>
-        pub fn endpoint_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(inp);
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input);
             self
         }
         pub fn set_endpoint_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_endpoint_config_name(inp);
+            self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
         /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want
@@ -2684,21 +2720,21 @@ pub mod fluent_builders {
         }
         pub fn set_production_variants(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
         ) -> Self {
-            self.inner = self.inner.set_production_variants(inp);
+            self.inner = self.inner.set_production_variants(input);
             self
         }
         /// <p></p>
-        pub fn data_capture_config(mut self, inp: crate::model::DataCaptureConfig) -> Self {
-            self.inner = self.inner.data_capture_config(inp);
+        pub fn data_capture_config(mut self, input: crate::model::DataCaptureConfig) -> Self {
+            self.inner = self.inner.data_capture_config(input);
             self
         }
         pub fn set_data_capture_config(
             mut self,
-            inp: std::option::Option<crate::model::DataCaptureConfig>,
+            input: std::option::Option<crate::model::DataCaptureConfig>,
         ) -> Self {
-            self.inner = self.inner.set_data_capture_config(inp);
+            self.inner = self.inner.set_data_capture_config(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -2711,9 +2747,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
@@ -2757,12 +2793,12 @@ pub mod fluent_builders {
         /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
         /// Instance Store Volumes</a>.</p>
         /// </note>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
     }
@@ -2781,7 +2817,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateExperimentOutput,
             smithy_http::result::SdkError<crate::error::CreateExperimentError>,
         >
@@ -2799,35 +2835,35 @@ pub mod fluent_builders {
         }
         /// <p>The name of the experiment. The name must be unique in your AWS account and is not
         /// case-sensitive.</p>
-        pub fn experiment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(inp);
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input);
             self
         }
         pub fn set_experiment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_name(inp);
+            self.inner = self.inner.set_experiment_name(input);
             self
         }
         /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't
         /// specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is
         /// displayed.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input);
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(inp);
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
             self
         }
         /// <p>The description of the experiment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>A list of tags to associate with the experiment. You can use <a>Search</a> API
@@ -2838,9 +2874,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2859,7 +2895,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateFeatureGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateFeatureGroupError>,
         >
@@ -2886,15 +2922,15 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input);
             self
         }
         pub fn set_feature_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_feature_group_name(inp);
+            self.inner = self.inner.set_feature_group_name(input);
             self
         }
         /// <p>The name of the <code>Feature</code> whose value uniquely identifies a
@@ -2916,16 +2952,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn record_identifier_feature_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.record_identifier_feature_name(inp);
+            self.inner = self.inner.record_identifier_feature_name(input);
             self
         }
         pub fn set_record_identifier_feature_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_record_identifier_feature_name(inp);
+            self.inner = self.inner.set_record_identifier_feature_name(input);
             self
         }
         /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code>
@@ -2952,15 +2988,15 @@ pub mod fluent_builders {
         /// milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p>
         /// </li>
         /// </ul>
-        pub fn event_time_feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_time_feature_name(inp);
+        pub fn event_time_feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_time_feature_name(input);
             self
         }
         pub fn set_event_time_feature_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_event_time_feature_name(inp);
+            self.inner = self.inner.set_event_time_feature_name(input);
             self
         }
         /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code>
@@ -2982,9 +3018,9 @@ pub mod fluent_builders {
         }
         pub fn set_feature_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
         ) -> Self {
-            self.inner = self.inner.set_feature_definitions(inp);
+            self.inner = self.inner.set_feature_definitions(input);
             self
         }
         /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for
@@ -2992,15 +3028,15 @@ pub mod fluent_builders {
         /// value is <code>False</code>.</p>
         /// <p>You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
         /// the <code>OnlineStore</code>.</p>
-        pub fn online_store_config(mut self, inp: crate::model::OnlineStoreConfig) -> Self {
-            self.inner = self.inner.online_store_config(inp);
+        pub fn online_store_config(mut self, input: crate::model::OnlineStoreConfig) -> Self {
+            self.inner = self.inner.online_store_config(input);
             self
         }
         pub fn set_online_store_config(
             mut self,
-            inp: std::option::Option<crate::model::OnlineStoreConfig>,
+            input: std::option::Option<crate::model::OnlineStoreConfig>,
         ) -> Self {
-            self.inner = self.inner.set_online_store_config(inp);
+            self.inner = self.inner.set_online_store_config(input);
             self
         }
         /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to
@@ -3019,34 +3055,34 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To learn more about this parameter, see <a>OfflineStoreConfig</a>.</p>
-        pub fn offline_store_config(mut self, inp: crate::model::OfflineStoreConfig) -> Self {
-            self.inner = self.inner.offline_store_config(inp);
+        pub fn offline_store_config(mut self, input: crate::model::OfflineStoreConfig) -> Self {
+            self.inner = self.inner.offline_store_config(input);
             self
         }
         pub fn set_offline_store_config(
             mut self,
-            inp: std::option::Option<crate::model::OfflineStoreConfig>,
+            input: std::option::Option<crate::model::OfflineStoreConfig>,
         ) -> Self {
-            self.inner = self.inner.set_offline_store_config(inp);
+            self.inner = self.inner.set_offline_store_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
         /// <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
@@ -3056,9 +3092,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3077,7 +3113,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateFlowDefinitionOutput,
             smithy_http::result::SdkError<crate::error::CreateFlowDefinitionError>,
         >
@@ -3094,79 +3130,79 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your flow definition.</p>
-        pub fn flow_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_name(inp);
+        pub fn flow_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_name(input);
             self
         }
         pub fn set_flow_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_flow_definition_name(inp);
+            self.inner = self.inner.set_flow_definition_name(input);
             self
         }
         /// <p>Container for configuring the source of human task requests. Use to specify if
         /// Amazon Rekognition or Amazon Textract is used as an integration source.</p>
         pub fn human_loop_request_source(
             mut self,
-            inp: crate::model::HumanLoopRequestSource,
+            input: crate::model::HumanLoopRequestSource,
         ) -> Self {
-            self.inner = self.inner.human_loop_request_source(inp);
+            self.inner = self.inner.human_loop_request_source(input);
             self
         }
         pub fn set_human_loop_request_source(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopRequestSource>,
+            input: std::option::Option<crate::model::HumanLoopRequestSource>,
         ) -> Self {
-            self.inner = self.inner.set_human_loop_request_source(inp);
+            self.inner = self.inner.set_human_loop_request_source(input);
             self
         }
         /// <p>An object containing information about the events that trigger a human workflow.</p>
         pub fn human_loop_activation_config(
             mut self,
-            inp: crate::model::HumanLoopActivationConfig,
+            input: crate::model::HumanLoopActivationConfig,
         ) -> Self {
-            self.inner = self.inner.human_loop_activation_config(inp);
+            self.inner = self.inner.human_loop_activation_config(input);
             self
         }
         pub fn set_human_loop_activation_config(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopActivationConfig>,
+            input: std::option::Option<crate::model::HumanLoopActivationConfig>,
         ) -> Self {
-            self.inner = self.inner.set_human_loop_activation_config(inp);
+            self.inner = self.inner.set_human_loop_activation_config(input);
             self
         }
         /// <p>An object containing information about the tasks the human reviewers will perform.</p>
-        pub fn human_loop_config(mut self, inp: crate::model::HumanLoopConfig) -> Self {
-            self.inner = self.inner.human_loop_config(inp);
+        pub fn human_loop_config(mut self, input: crate::model::HumanLoopConfig) -> Self {
+            self.inner = self.inner.human_loop_config(input);
             self
         }
         pub fn set_human_loop_config(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopConfig>,
+            input: std::option::Option<crate::model::HumanLoopConfig>,
         ) -> Self {
-            self.inner = self.inner.set_human_loop_config(inp);
+            self.inner = self.inner.set_human_loop_config(input);
             self
         }
         /// <p>An object containing information about where the human review results will be uploaded.</p>
-        pub fn output_config(mut self, inp: crate::model::FlowDefinitionOutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, input: crate::model::FlowDefinitionOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         pub fn set_output_config(
             mut self,
-            inp: std::option::Option<crate::model::FlowDefinitionOutputConfig>,
+            input: std::option::Option<crate::model::FlowDefinitionOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_output_config(inp);
+            self.inner = self.inner.set_output_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
@@ -3176,9 +3212,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3197,7 +3233,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateHumanTaskUiOutput,
             smithy_http::result::SdkError<crate::error::CreateHumanTaskUiError>,
         >
@@ -3214,27 +3250,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user interface you are creating.</p>
-        pub fn human_task_ui_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_task_ui_name(inp);
+        pub fn human_task_ui_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_task_ui_name(input);
             self
         }
         pub fn set_human_task_ui_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_human_task_ui_name(inp);
+            self.inner = self.inner.set_human_task_ui_name(input);
             self
         }
         /// <p>The Liquid template for the worker user interface.</p>
-        pub fn ui_template(mut self, inp: crate::model::UiTemplate) -> Self {
-            self.inner = self.inner.ui_template(inp);
+        pub fn ui_template(mut self, input: crate::model::UiTemplate) -> Self {
+            self.inner = self.inner.ui_template(input);
             self
         }
         pub fn set_ui_template(
             mut self,
-            inp: std::option::Option<crate::model::UiTemplate>,
+            input: std::option::Option<crate::model::UiTemplate>,
         ) -> Self {
-            self.inner = self.inner.set_ui_template(inp);
+            self.inner = self.inner.set_ui_template(input);
             self
         }
         /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
@@ -3244,9 +3280,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3265,7 +3301,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateHyperParameterTuningJobOutput,
             smithy_http::result::SdkError<crate::error::CreateHyperParameterTuningJobError>,
         >
@@ -3287,16 +3323,16 @@ pub mod fluent_builders {
         /// and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_name(inp);
+            self.inner = self.inner.hyper_parameter_tuning_job_name(input);
             self
         }
         pub fn set_hyper_parameter_tuning_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_hyper_parameter_tuning_job_name(inp);
+            self.inner = self.inner.set_hyper_parameter_tuning_job_name(input);
             self
         }
         /// <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
@@ -3306,16 +3342,16 @@ pub mod fluent_builders {
         /// Hyperparameter Tuning Works</a>.</p>
         pub fn hyper_parameter_tuning_job_config(
             mut self,
-            inp: crate::model::HyperParameterTuningJobConfig,
+            input: crate::model::HyperParameterTuningJobConfig,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_config(inp);
+            self.inner = self.inner.hyper_parameter_tuning_job_config(input);
             self
         }
         pub fn set_hyper_parameter_tuning_job_config(
             mut self,
-            inp: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
+            input: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
         ) -> Self {
-            self.inner = self.inner.set_hyper_parameter_tuning_job_config(inp);
+            self.inner = self.inner.set_hyper_parameter_tuning_job_config(input);
             self
         }
         /// <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
@@ -3325,16 +3361,16 @@ pub mod fluent_builders {
         /// configuration, and stopping condition.</p>
         pub fn training_job_definition(
             mut self,
-            inp: crate::model::HyperParameterTrainingJobDefinition,
+            input: crate::model::HyperParameterTrainingJobDefinition,
         ) -> Self {
-            self.inner = self.inner.training_job_definition(inp);
+            self.inner = self.inner.training_job_definition(input);
             self
         }
         pub fn set_training_job_definition(
             mut self,
-            inp: std::option::Option<crate::model::HyperParameterTrainingJobDefinition>,
+            input: std::option::Option<crate::model::HyperParameterTrainingJobDefinition>,
         ) -> Self {
-            self.inner = self.inner.set_training_job_definition(inp);
+            self.inner = self.inner.set_training_job_definition(input);
             self
         }
         /// <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched
@@ -3348,11 +3384,11 @@ pub mod fluent_builders {
         }
         pub fn set_training_job_definitions(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::HyperParameterTrainingJobDefinition>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_training_job_definitions(inp);
+            self.inner = self.inner.set_training_job_definitions(input);
             self
         }
         /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or
@@ -3372,16 +3408,16 @@ pub mod fluent_builders {
         /// </note>
         pub fn warm_start_config(
             mut self,
-            inp: crate::model::HyperParameterTuningJobWarmStartConfig,
+            input: crate::model::HyperParameterTuningJobWarmStartConfig,
         ) -> Self {
-            self.inner = self.inner.warm_start_config(inp);
+            self.inner = self.inner.warm_start_config(input);
             self
         }
         pub fn set_warm_start_config(
             mut self,
-            inp: std::option::Option<crate::model::HyperParameterTuningJobWarmStartConfig>,
+            input: std::option::Option<crate::model::HyperParameterTuningJobWarmStartConfig>,
         ) -> Self {
-            self.inner = self.inner.set_warm_start_config(inp);
+            self.inner = self.inner.set_warm_start_config(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -3396,9 +3432,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3417,7 +3453,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateImageOutput,
             smithy_http::result::SdkError<crate::error::CreateImageError>,
         >
@@ -3434,39 +3470,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the image.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input);
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(inp);
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
             self
         }
         /// <p>The name of the image. Must be unique to your account.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input);
             self
         }
-        pub fn set_image_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_name(inp);
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A list of tags to apply to the image.</p>
@@ -3476,9 +3512,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3497,7 +3533,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateImageVersionOutput,
             smithy_http::result::SdkError<crate::error::CreateImageVersionError>,
         >
@@ -3518,31 +3554,31 @@ pub mod fluent_builders {
         /// <p>
         /// <code><acct-id>.dkr.ecr.<region>.amazonaws.com/<repo-name[:tag] or [@digest]></code>
         /// </p>
-        pub fn base_image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_image(inp);
+        pub fn base_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_image(input);
             self
         }
-        pub fn set_base_image(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_base_image(inp);
+        pub fn set_base_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_base_image(input);
             self
         }
         /// <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python
         /// (Boto3), add a unique value to the call.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(inp);
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input);
             self
         }
-        pub fn set_image_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_name(inp);
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
             self
         }
     }
@@ -3561,7 +3597,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateLabelingJobOutput,
             smithy_http::result::SdkError<crate::error::CreateLabelingJobError>,
         >
@@ -3581,15 +3617,15 @@ pub mod fluent_builders {
         /// labeling jobs. Labeling job names must be unique within an AWS account and region.
         /// <code>LabelingJobName</code> is not case sensitive. For example, Example-job and
         /// example-job are considered the same labeling job name by Ground Truth.</p>
-        pub fn labeling_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labeling_job_name(inp);
+        pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labeling_job_name(input);
             self
         }
         pub fn set_labeling_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_labeling_job_name(inp);
+            self.inner = self.inner.set_labeling_job_name(input);
             self
         }
         /// <p>The attribute name to use for the label in the output manifest file. This is the key
@@ -3647,15 +3683,15 @@ pub mod fluent_builders {
         /// jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust
         /// Labels</a>.</p>
         /// </important>
-        pub fn label_attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label_attribute_name(inp);
+        pub fn label_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_attribute_name(input);
             self
         }
         pub fn set_label_attribute_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_label_attribute_name(inp);
+            self.inner = self.inner.set_label_attribute_name(input);
             self
         }
         /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the
@@ -3680,39 +3716,39 @@ pub mod fluent_builders {
         /// confidential information, personal information or protected health information. Use
         /// <code>ContentClassifiers</code> to specify that your data is free of personally
         /// identifiable information and adult content.</p>
-        pub fn input_config(mut self, inp: crate::model::LabelingJobInputConfig) -> Self {
-            self.inner = self.inner.input_config(inp);
+        pub fn input_config(mut self, input: crate::model::LabelingJobInputConfig) -> Self {
+            self.inner = self.inner.input_config(input);
             self
         }
         pub fn set_input_config(
             mut self,
-            inp: std::option::Option<crate::model::LabelingJobInputConfig>,
+            input: std::option::Option<crate::model::LabelingJobInputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_input_config(inp);
+            self.inner = self.inner.set_input_config(input);
             self
         }
         /// <p>The location of the output data and the AWS Key Management Service key ID for the key used to encrypt
         /// the output data, if any.</p>
-        pub fn output_config(mut self, inp: crate::model::LabelingJobOutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, input: crate::model::LabelingJobOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         pub fn set_output_config(
             mut self,
-            inp: std::option::Option<crate::model::LabelingJobOutputConfig>,
+            input: std::option::Option<crate::model::LabelingJobOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_output_config(inp);
+            self.inner = self.inner.set_output_config(input);
             self
         }
         /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf
         /// during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker
         /// can successfully complete data labeling.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The S3 URI of the file, referred to as a <i>label category configuration
@@ -3758,15 +3794,18 @@ pub mod fluent_builders {
         /// adjust or verify annotations of.</p>
         /// </li>
         /// </ul>
-        pub fn label_category_config_s3_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label_category_config_s3_uri(inp);
+        pub fn label_category_config_s3_uri(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.label_category_config_s3_uri(input);
             self
         }
         pub fn set_label_category_config_s3_uri(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_label_category_config_s3_uri(inp);
+            self.inner = self.inner.set_label_category_config_s3_uri(input);
             self
         }
         /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met,
@@ -3774,43 +3813,43 @@ pub mod fluent_builders {
         /// data labeling.</p>
         pub fn stopping_conditions(
             mut self,
-            inp: crate::model::LabelingJobStoppingConditions,
+            input: crate::model::LabelingJobStoppingConditions,
         ) -> Self {
-            self.inner = self.inner.stopping_conditions(inp);
+            self.inner = self.inner.stopping_conditions(input);
             self
         }
         pub fn set_stopping_conditions(
             mut self,
-            inp: std::option::Option<crate::model::LabelingJobStoppingConditions>,
+            input: std::option::Option<crate::model::LabelingJobStoppingConditions>,
         ) -> Self {
-            self.inner = self.inner.set_stopping_conditions(inp);
+            self.inner = self.inner.set_stopping_conditions(input);
             self
         }
         /// <p>Configures the information required to perform automated data labeling.</p>
         pub fn labeling_job_algorithms_config(
             mut self,
-            inp: crate::model::LabelingJobAlgorithmsConfig,
+            input: crate::model::LabelingJobAlgorithmsConfig,
         ) -> Self {
-            self.inner = self.inner.labeling_job_algorithms_config(inp);
+            self.inner = self.inner.labeling_job_algorithms_config(input);
             self
         }
         pub fn set_labeling_job_algorithms_config(
             mut self,
-            inp: std::option::Option<crate::model::LabelingJobAlgorithmsConfig>,
+            input: std::option::Option<crate::model::LabelingJobAlgorithmsConfig>,
         ) -> Self {
-            self.inner = self.inner.set_labeling_job_algorithms_config(inp);
+            self.inner = self.inner.set_labeling_job_algorithms_config(input);
             self
         }
         /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
-        pub fn human_task_config(mut self, inp: crate::model::HumanTaskConfig) -> Self {
-            self.inner = self.inner.human_task_config(inp);
+        pub fn human_task_config(mut self, input: crate::model::HumanTaskConfig) -> Self {
+            self.inner = self.inner.human_task_config(input);
             self
         }
         pub fn set_human_task_config(
             mut self,
-            inp: std::option::Option<crate::model::HumanTaskConfig>,
+            input: std::option::Option<crate::model::HumanTaskConfig>,
         ) -> Self {
-            self.inner = self.inner.set_human_task_config(inp);
+            self.inner = self.inner.set_human_task_config(input);
             self
         }
         /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
@@ -3821,9 +3860,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3842,7 +3881,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateModelOutput,
             smithy_http::result::SdkError<crate::error::CreateModelError>,
         >
@@ -3859,26 +3898,26 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new model.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
         /// <p>The location of the primary docker image containing inference code, associated
         /// artifacts, and custom environment map that the inference code uses when the model is
         /// deployed for predictions. </p>
-        pub fn primary_container(mut self, inp: crate::model::ContainerDefinition) -> Self {
-            self.inner = self.inner.primary_container(inp);
+        pub fn primary_container(mut self, input: crate::model::ContainerDefinition) -> Self {
+            self.inner = self.inner.primary_container(input);
             self
         }
         pub fn set_primary_container(
             mut self,
-            inp: std::option::Option<crate::model::ContainerDefinition>,
+            input: std::option::Option<crate::model::ContainerDefinition>,
         ) -> Self {
-            self.inner = self.inner.set_primary_container(inp);
+            self.inner = self.inner.set_primary_container(input);
             self
         }
         /// <p>Specifies the containers in the inference pipeline.</p>
@@ -3888,24 +3927,24 @@ pub mod fluent_builders {
         }
         pub fn set_containers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
         ) -> Self {
-            self.inner = self.inner.set_containers(inp);
+            self.inner = self.inner.set_containers(input);
             self
         }
         /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
         pub fn inference_execution_config(
             mut self,
-            inp: crate::model::InferenceExecutionConfig,
+            input: crate::model::InferenceExecutionConfig,
         ) -> Self {
-            self.inner = self.inner.inference_execution_config(inp);
+            self.inner = self.inner.inference_execution_config(input);
             self
         }
         pub fn set_inference_execution_config(
             mut self,
-            inp: std::option::Option<crate::model::InferenceExecutionConfig>,
+            input: std::option::Option<crate::model::InferenceExecutionConfig>,
         ) -> Self {
-            self.inner = self.inner.set_inference_execution_config(inp);
+            self.inner = self.inner.set_inference_execution_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model
@@ -3917,15 +3956,15 @@ pub mod fluent_builders {
         /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
         /// <code>iam:PassRole</code> permission.</p>
         /// </note>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input);
             self
         }
         pub fn set_execution_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_execution_role_arn(inp);
+            self.inner = self.inner.set_execution_role_arn(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -3938,9 +3977,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model
@@ -3948,22 +3987,25 @@ pub mod fluent_builders {
         /// <code>VpcConfig</code> is used in hosting services and in batch transform. For more
         /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch
         /// Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
-        pub fn set_vpc_config(mut self, inp: std::option::Option<crate::model::VpcConfig>) -> Self {
-            self.inner = self.inner.set_vpc_config(inp);
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_config(input);
             self
         }
         /// <p>Isolates the model container. No inbound or outbound network calls can be made to or
         /// from the model container.</p>
-        pub fn enable_network_isolation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_network_isolation(inp);
+        pub fn enable_network_isolation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_network_isolation(input);
             self
         }
-        pub fn set_enable_network_isolation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_enable_network_isolation(inp);
+        pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_network_isolation(input);
             self
         }
     }
@@ -3982,7 +4024,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateModelBiasJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::CreateModelBiasJobDefinitionError>,
         >
@@ -4000,121 +4042,121 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bias job definition. The name must be unique within an AWS Region in the
         /// AWS account.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
         /// <p>The baseline configuration for a model bias job.</p>
         pub fn model_bias_baseline_config(
             mut self,
-            inp: crate::model::ModelBiasBaselineConfig,
+            input: crate::model::ModelBiasBaselineConfig,
         ) -> Self {
-            self.inner = self.inner.model_bias_baseline_config(inp);
+            self.inner = self.inner.model_bias_baseline_config(input);
             self
         }
         pub fn set_model_bias_baseline_config(
             mut self,
-            inp: std::option::Option<crate::model::ModelBiasBaselineConfig>,
+            input: std::option::Option<crate::model::ModelBiasBaselineConfig>,
         ) -> Self {
-            self.inner = self.inner.set_model_bias_baseline_config(inp);
+            self.inner = self.inner.set_model_bias_baseline_config(input);
             self
         }
         /// <p>Configures the model bias job to run a specified Docker container image.</p>
         pub fn model_bias_app_specification(
             mut self,
-            inp: crate::model::ModelBiasAppSpecification,
+            input: crate::model::ModelBiasAppSpecification,
         ) -> Self {
-            self.inner = self.inner.model_bias_app_specification(inp);
+            self.inner = self.inner.model_bias_app_specification(input);
             self
         }
         pub fn set_model_bias_app_specification(
             mut self,
-            inp: std::option::Option<crate::model::ModelBiasAppSpecification>,
+            input: std::option::Option<crate::model::ModelBiasAppSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_model_bias_app_specification(inp);
+            self.inner = self.inner.set_model_bias_app_specification(input);
             self
         }
         /// <p>Inputs for the model bias job.</p>
-        pub fn model_bias_job_input(mut self, inp: crate::model::ModelBiasJobInput) -> Self {
-            self.inner = self.inner.model_bias_job_input(inp);
+        pub fn model_bias_job_input(mut self, input: crate::model::ModelBiasJobInput) -> Self {
+            self.inner = self.inner.model_bias_job_input(input);
             self
         }
         pub fn set_model_bias_job_input(
             mut self,
-            inp: std::option::Option<crate::model::ModelBiasJobInput>,
+            input: std::option::Option<crate::model::ModelBiasJobInput>,
         ) -> Self {
-            self.inner = self.inner.set_model_bias_job_input(inp);
+            self.inner = self.inner.set_model_bias_job_input(input);
             self
         }
         /// <p>The output configuration for monitoring jobs.</p>
         pub fn model_bias_job_output_config(
             mut self,
-            inp: crate::model::MonitoringOutputConfig,
+            input: crate::model::MonitoringOutputConfig,
         ) -> Self {
-            self.inner = self.inner.model_bias_job_output_config(inp);
+            self.inner = self.inner.model_bias_job_output_config(input);
             self
         }
         pub fn set_model_bias_job_output_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringOutputConfig>,
+            input: std::option::Option<crate::model::MonitoringOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_model_bias_job_output_config(inp);
+            self.inner = self.inner.set_model_bias_job_output_config(input);
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
-        pub fn job_resources(mut self, inp: crate::model::MonitoringResources) -> Self {
-            self.inner = self.inner.job_resources(inp);
+        pub fn job_resources(mut self, input: crate::model::MonitoringResources) -> Self {
+            self.inner = self.inner.job_resources(input);
             self
         }
         pub fn set_job_resources(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringResources>,
+            input: std::option::Option<crate::model::MonitoringResources>,
         ) -> Self {
-            self.inner = self.inner.set_job_resources(inp);
+            self.inner = self.inner.set_job_resources(input);
             self
         }
         /// <p>Networking options for a model bias job.</p>
-        pub fn network_config(mut self, inp: crate::model::MonitoringNetworkConfig) -> Self {
-            self.inner = self.inner.network_config(inp);
+        pub fn network_config(mut self, input: crate::model::MonitoringNetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         pub fn set_network_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringNetworkConfig>,
+            input: std::option::Option<crate::model::MonitoringNetworkConfig>,
         ) -> Self {
-            self.inner = self.inner.set_network_config(inp);
+            self.inner = self.inner.set_network_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
         /// perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
         pub fn stopping_condition(
             mut self,
-            inp: crate::model::MonitoringStoppingCondition,
+            input: crate::model::MonitoringStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(inp);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         pub fn set_stopping_condition(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringStoppingCondition>,
+            input: std::option::Option<crate::model::MonitoringStoppingCondition>,
         ) -> Self {
-            self.inner = self.inner.set_stopping_condition(inp);
+            self.inner = self.inner.set_stopping_condition(input);
             self
         }
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
@@ -4125,9 +4167,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4146,7 +4188,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateModelExplainabilityJobDefinitionOutput,
             smithy_http::result::SdkError<
                 crate::error::CreateModelExplainabilityJobDefinitionError,
@@ -4166,125 +4208,125 @@ pub mod fluent_builders {
         }
         /// <p> The name of the model explainability job definition. The name must be unique within an
         /// AWS Region in the AWS account.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
         /// <p>The baseline configuration for a model explainability job.</p>
         pub fn model_explainability_baseline_config(
             mut self,
-            inp: crate::model::ModelExplainabilityBaselineConfig,
+            input: crate::model::ModelExplainabilityBaselineConfig,
         ) -> Self {
-            self.inner = self.inner.model_explainability_baseline_config(inp);
+            self.inner = self.inner.model_explainability_baseline_config(input);
             self
         }
         pub fn set_model_explainability_baseline_config(
             mut self,
-            inp: std::option::Option<crate::model::ModelExplainabilityBaselineConfig>,
+            input: std::option::Option<crate::model::ModelExplainabilityBaselineConfig>,
         ) -> Self {
-            self.inner = self.inner.set_model_explainability_baseline_config(inp);
+            self.inner = self.inner.set_model_explainability_baseline_config(input);
             self
         }
         /// <p>Configures the model explainability job to run a specified Docker container
         /// image.</p>
         pub fn model_explainability_app_specification(
             mut self,
-            inp: crate::model::ModelExplainabilityAppSpecification,
+            input: crate::model::ModelExplainabilityAppSpecification,
         ) -> Self {
-            self.inner = self.inner.model_explainability_app_specification(inp);
+            self.inner = self.inner.model_explainability_app_specification(input);
             self
         }
         pub fn set_model_explainability_app_specification(
             mut self,
-            inp: std::option::Option<crate::model::ModelExplainabilityAppSpecification>,
+            input: std::option::Option<crate::model::ModelExplainabilityAppSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_model_explainability_app_specification(inp);
+            self.inner = self.inner.set_model_explainability_app_specification(input);
             self
         }
         /// <p>Inputs for the model explainability job.</p>
         pub fn model_explainability_job_input(
             mut self,
-            inp: crate::model::ModelExplainabilityJobInput,
+            input: crate::model::ModelExplainabilityJobInput,
         ) -> Self {
-            self.inner = self.inner.model_explainability_job_input(inp);
+            self.inner = self.inner.model_explainability_job_input(input);
             self
         }
         pub fn set_model_explainability_job_input(
             mut self,
-            inp: std::option::Option<crate::model::ModelExplainabilityJobInput>,
+            input: std::option::Option<crate::model::ModelExplainabilityJobInput>,
         ) -> Self {
-            self.inner = self.inner.set_model_explainability_job_input(inp);
+            self.inner = self.inner.set_model_explainability_job_input(input);
             self
         }
         /// <p>The output configuration for monitoring jobs.</p>
         pub fn model_explainability_job_output_config(
             mut self,
-            inp: crate::model::MonitoringOutputConfig,
+            input: crate::model::MonitoringOutputConfig,
         ) -> Self {
-            self.inner = self.inner.model_explainability_job_output_config(inp);
+            self.inner = self.inner.model_explainability_job_output_config(input);
             self
         }
         pub fn set_model_explainability_job_output_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringOutputConfig>,
+            input: std::option::Option<crate::model::MonitoringOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_model_explainability_job_output_config(inp);
+            self.inner = self.inner.set_model_explainability_job_output_config(input);
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
-        pub fn job_resources(mut self, inp: crate::model::MonitoringResources) -> Self {
-            self.inner = self.inner.job_resources(inp);
+        pub fn job_resources(mut self, input: crate::model::MonitoringResources) -> Self {
+            self.inner = self.inner.job_resources(input);
             self
         }
         pub fn set_job_resources(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringResources>,
+            input: std::option::Option<crate::model::MonitoringResources>,
         ) -> Self {
-            self.inner = self.inner.set_job_resources(inp);
+            self.inner = self.inner.set_job_resources(input);
             self
         }
         /// <p>Networking options for a model explainability job.</p>
-        pub fn network_config(mut self, inp: crate::model::MonitoringNetworkConfig) -> Self {
-            self.inner = self.inner.network_config(inp);
+        pub fn network_config(mut self, input: crate::model::MonitoringNetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         pub fn set_network_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringNetworkConfig>,
+            input: std::option::Option<crate::model::MonitoringNetworkConfig>,
         ) -> Self {
-            self.inner = self.inner.set_network_config(inp);
+            self.inner = self.inner.set_network_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
         /// perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
         pub fn stopping_condition(
             mut self,
-            inp: crate::model::MonitoringStoppingCondition,
+            input: crate::model::MonitoringStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(inp);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         pub fn set_stopping_condition(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringStoppingCondition>,
+            input: std::option::Option<crate::model::MonitoringStoppingCondition>,
         ) -> Self {
-            self.inner = self.inner.set_stopping_condition(inp);
+            self.inner = self.inner.set_stopping_condition(input);
             self
         }
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
@@ -4295,9 +4337,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4316,7 +4358,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateModelPackageOutput,
             smithy_http::result::SdkError<crate::error::CreateModelPackageError>,
         >
@@ -4336,41 +4378,41 @@ pub mod fluent_builders {
         /// are a-z, A-Z, 0-9, and - (hyphen).</p>
         /// <p>This parameter is required for unversioned models. It is not applicable to versioned
         /// models.</p>
-        pub fn model_package_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_name(inp);
+        pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_name(input);
             self
         }
         pub fn set_model_package_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_name(inp);
+            self.inner = self.inner.set_model_package_name(input);
             self
         }
         /// <p>The name of the model group that this model version belongs to.</p>
         /// <p>This parameter is required for versioned models, and does not apply to unversioned
         /// models.</p>
-        pub fn model_package_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_group_name(inp);
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input);
             self
         }
         pub fn set_model_package_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_name(inp);
+            self.inner = self.inner.set_model_package_group_name(input);
             self
         }
         /// <p>A description of the model package.</p>
-        pub fn model_package_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_description(inp);
+        pub fn model_package_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_description(input);
             self
         }
         pub fn set_model_package_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_description(inp);
+            self.inner = self.inner.set_model_package_description(input);
             self
         }
         /// <p>Specifies details about inference jobs that can be run with models based on this model
@@ -4391,58 +4433,58 @@ pub mod fluent_builders {
         /// </ul>
         pub fn inference_specification(
             mut self,
-            inp: crate::model::InferenceSpecification,
+            input: crate::model::InferenceSpecification,
         ) -> Self {
-            self.inner = self.inner.inference_specification(inp);
+            self.inner = self.inner.inference_specification(input);
             self
         }
         pub fn set_inference_specification(
             mut self,
-            inp: std::option::Option<crate::model::InferenceSpecification>,
+            input: std::option::Option<crate::model::InferenceSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_inference_specification(inp);
+            self.inner = self.inner.set_inference_specification(input);
             self
         }
         /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the
         /// model package.</p>
         pub fn validation_specification(
             mut self,
-            inp: crate::model::ModelPackageValidationSpecification,
+            input: crate::model::ModelPackageValidationSpecification,
         ) -> Self {
-            self.inner = self.inner.validation_specification(inp);
+            self.inner = self.inner.validation_specification(input);
             self
         }
         pub fn set_validation_specification(
             mut self,
-            inp: std::option::Option<crate::model::ModelPackageValidationSpecification>,
+            input: std::option::Option<crate::model::ModelPackageValidationSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_validation_specification(inp);
+            self.inner = self.inner.set_validation_specification(input);
             self
         }
         /// <p>Details about the algorithm that was used to create the model package.</p>
         pub fn source_algorithm_specification(
             mut self,
-            inp: crate::model::SourceAlgorithmSpecification,
+            input: crate::model::SourceAlgorithmSpecification,
         ) -> Self {
-            self.inner = self.inner.source_algorithm_specification(inp);
+            self.inner = self.inner.source_algorithm_specification(input);
             self
         }
         pub fn set_source_algorithm_specification(
             mut self,
-            inp: std::option::Option<crate::model::SourceAlgorithmSpecification>,
+            input: std::option::Option<crate::model::SourceAlgorithmSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_source_algorithm_specification(inp);
+            self.inner = self.inner.set_source_algorithm_specification(input);
             self
         }
         /// <p>Whether to certify the model package for listing on AWS Marketplace.</p>
         /// <p>This parameter is optional for unversioned models, and does not apply to versioned
         /// models.</p>
-        pub fn certify_for_marketplace(mut self, inp: bool) -> Self {
-            self.inner = self.inner.certify_for_marketplace(inp);
+        pub fn certify_for_marketplace(mut self, input: bool) -> Self {
+            self.inner = self.inner.certify_for_marketplace(input);
             self
         }
-        pub fn set_certify_for_marketplace(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_certify_for_marketplace(inp);
+        pub fn set_certify_for_marketplace(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_certify_for_marketplace(input);
             self
         }
         /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
@@ -4453,9 +4495,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Whether the model is approved for deployment.</p>
@@ -4463,48 +4505,48 @@ pub mod fluent_builders {
         /// models.</p>
         /// <p>For versioned models, the value of this parameter must be set to <code>Approved</code>
         /// to deploy the model.</p>
-        pub fn model_approval_status(mut self, inp: crate::model::ModelApprovalStatus) -> Self {
-            self.inner = self.inner.model_approval_status(inp);
+        pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
+            self.inner = self.inner.model_approval_status(input);
             self
         }
         pub fn set_model_approval_status(
             mut self,
-            inp: std::option::Option<crate::model::ModelApprovalStatus>,
+            input: std::option::Option<crate::model::ModelApprovalStatus>,
         ) -> Self {
-            self.inner = self.inner.set_model_approval_status(inp);
+            self.inner = self.inner.set_model_approval_status(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, inp: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(inp);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         pub fn set_metadata_properties(
             mut self,
-            inp: std::option::Option<crate::model::MetadataProperties>,
+            input: std::option::Option<crate::model::MetadataProperties>,
         ) -> Self {
-            self.inner = self.inner.set_metadata_properties(inp);
+            self.inner = self.inner.set_metadata_properties(input);
             self
         }
         /// <p>A structure that contains model metrics reports.</p>
-        pub fn model_metrics(mut self, inp: crate::model::ModelMetrics) -> Self {
-            self.inner = self.inner.model_metrics(inp);
+        pub fn model_metrics(mut self, input: crate::model::ModelMetrics) -> Self {
+            self.inner = self.inner.model_metrics(input);
             self
         }
         pub fn set_model_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ModelMetrics>,
+            input: std::option::Option<crate::model::ModelMetrics>,
         ) -> Self {
-            self.inner = self.inner.set_model_metrics(inp);
+            self.inner = self.inner.set_model_metrics(input);
             self
         }
         /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(inp);
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }
@@ -4523,7 +4565,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateModelPackageGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateModelPackageGroupError>,
         >
@@ -4540,30 +4582,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group.</p>
-        pub fn model_package_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_group_name(inp);
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input);
             self
         }
         pub fn set_model_package_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_name(inp);
+            self.inner = self.inner.set_model_package_group_name(input);
             self
         }
         /// <p>A description for the model group.</p>
         pub fn model_package_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.model_package_group_description(inp);
+            self.inner = self.inner.model_package_group_description(input);
             self
         }
         pub fn set_model_package_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_description(inp);
+            self.inner = self.inner.set_model_package_group_description(input);
             self
         }
         /// <p>A list of key value pairs associated with the model group. For more information, see
@@ -4575,9 +4617,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4596,7 +4638,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateModelQualityJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::CreateModelQualityJobDefinitionError>,
         >
@@ -4613,121 +4655,124 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the monitoring job definition.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
         /// <p>Specifies the constraints and baselines for the monitoring job.</p>
         pub fn model_quality_baseline_config(
             mut self,
-            inp: crate::model::ModelQualityBaselineConfig,
+            input: crate::model::ModelQualityBaselineConfig,
         ) -> Self {
-            self.inner = self.inner.model_quality_baseline_config(inp);
+            self.inner = self.inner.model_quality_baseline_config(input);
             self
         }
         pub fn set_model_quality_baseline_config(
             mut self,
-            inp: std::option::Option<crate::model::ModelQualityBaselineConfig>,
+            input: std::option::Option<crate::model::ModelQualityBaselineConfig>,
         ) -> Self {
-            self.inner = self.inner.set_model_quality_baseline_config(inp);
+            self.inner = self.inner.set_model_quality_baseline_config(input);
             self
         }
         /// <p>The container that runs the monitoring job.</p>
         pub fn model_quality_app_specification(
             mut self,
-            inp: crate::model::ModelQualityAppSpecification,
+            input: crate::model::ModelQualityAppSpecification,
         ) -> Self {
-            self.inner = self.inner.model_quality_app_specification(inp);
+            self.inner = self.inner.model_quality_app_specification(input);
             self
         }
         pub fn set_model_quality_app_specification(
             mut self,
-            inp: std::option::Option<crate::model::ModelQualityAppSpecification>,
+            input: std::option::Option<crate::model::ModelQualityAppSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_model_quality_app_specification(inp);
+            self.inner = self.inner.set_model_quality_app_specification(input);
             self
         }
         /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
-        pub fn model_quality_job_input(mut self, inp: crate::model::ModelQualityJobInput) -> Self {
-            self.inner = self.inner.model_quality_job_input(inp);
+        pub fn model_quality_job_input(
+            mut self,
+            input: crate::model::ModelQualityJobInput,
+        ) -> Self {
+            self.inner = self.inner.model_quality_job_input(input);
             self
         }
         pub fn set_model_quality_job_input(
             mut self,
-            inp: std::option::Option<crate::model::ModelQualityJobInput>,
+            input: std::option::Option<crate::model::ModelQualityJobInput>,
         ) -> Self {
-            self.inner = self.inner.set_model_quality_job_input(inp);
+            self.inner = self.inner.set_model_quality_job_input(input);
             self
         }
         /// <p>The output configuration for monitoring jobs.</p>
         pub fn model_quality_job_output_config(
             mut self,
-            inp: crate::model::MonitoringOutputConfig,
+            input: crate::model::MonitoringOutputConfig,
         ) -> Self {
-            self.inner = self.inner.model_quality_job_output_config(inp);
+            self.inner = self.inner.model_quality_job_output_config(input);
             self
         }
         pub fn set_model_quality_job_output_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringOutputConfig>,
+            input: std::option::Option<crate::model::MonitoringOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_model_quality_job_output_config(inp);
+            self.inner = self.inner.set_model_quality_job_output_config(input);
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
-        pub fn job_resources(mut self, inp: crate::model::MonitoringResources) -> Self {
-            self.inner = self.inner.job_resources(inp);
+        pub fn job_resources(mut self, input: crate::model::MonitoringResources) -> Self {
+            self.inner = self.inner.job_resources(input);
             self
         }
         pub fn set_job_resources(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringResources>,
+            input: std::option::Option<crate::model::MonitoringResources>,
         ) -> Self {
-            self.inner = self.inner.set_job_resources(inp);
+            self.inner = self.inner.set_job_resources(input);
             self
         }
         /// <p>Specifies the network configuration for the monitoring job.</p>
-        pub fn network_config(mut self, inp: crate::model::MonitoringNetworkConfig) -> Self {
-            self.inner = self.inner.network_config(inp);
+        pub fn network_config(mut self, input: crate::model::MonitoringNetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         pub fn set_network_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringNetworkConfig>,
+            input: std::option::Option<crate::model::MonitoringNetworkConfig>,
         ) -> Self {
-            self.inner = self.inner.set_network_config(inp);
+            self.inner = self.inner.set_network_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
         /// perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
         pub fn stopping_condition(
             mut self,
-            inp: crate::model::MonitoringStoppingCondition,
+            input: crate::model::MonitoringStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(inp);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         pub fn set_stopping_condition(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringStoppingCondition>,
+            input: std::option::Option<crate::model::MonitoringStoppingCondition>,
         ) -> Self {
-            self.inner = self.inner.set_stopping_condition(inp);
+            self.inner = self.inner.set_stopping_condition(input);
             self
         }
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
@@ -4738,9 +4783,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4759,7 +4804,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateMonitoringScheduleOutput,
             smithy_http::result::SdkError<crate::error::CreateMonitoringScheduleError>,
         >
@@ -4777,31 +4822,31 @@ pub mod fluent_builders {
         }
         /// <p>The name of the monitoring schedule. The name must be unique within an AWS Region within
         /// an AWS account.</p>
-        pub fn monitoring_schedule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(inp);
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input);
             self
         }
         pub fn set_monitoring_schedule_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_name(inp);
+            self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
         /// <p>The configuration object that specifies the monitoring schedule and defines the
         /// monitoring job.</p>
         pub fn monitoring_schedule_config(
             mut self,
-            inp: crate::model::MonitoringScheduleConfig,
+            input: crate::model::MonitoringScheduleConfig,
         ) -> Self {
-            self.inner = self.inner.monitoring_schedule_config(inp);
+            self.inner = self.inner.monitoring_schedule_config(input);
             self
         }
         pub fn set_monitoring_schedule_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringScheduleConfig>,
+            input: std::option::Option<crate::model::MonitoringScheduleConfig>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_config(inp);
+            self.inner = self.inner.set_monitoring_schedule_config(input);
             self
         }
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
@@ -4812,9 +4857,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4833,7 +4878,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateNotebookInstanceOutput,
             smithy_http::result::SdkError<crate::error::CreateNotebookInstanceError>,
         >
@@ -4850,37 +4895,37 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new notebook instance.</p>
-        pub fn notebook_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(inp);
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input);
             self
         }
         pub fn set_notebook_instance_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_name(inp);
+            self.inner = self.inner.set_notebook_instance_name(input);
             self
         }
         /// <p>The type of ML compute instance to launch for the notebook instance.</p>
-        pub fn instance_type(mut self, inp: crate::model::InstanceType) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
+            self.inner = self.inner.instance_type(input);
             self
         }
         pub fn set_instance_type(
             mut self,
-            inp: std::option::Option<crate::model::InstanceType>,
+            input: std::option::Option<crate::model::InstanceType>,
         ) -> Self {
-            self.inner = self.inner.set_instance_type(inp);
+            self.inner = self.inner.set_instance_type(input);
             self
         }
         /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from
         /// your ML compute instance. </p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input);
             self
         }
-        pub fn set_subnet_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subnet_id(inp);
+        pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_subnet_id(input);
             self
         }
         /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be
@@ -4891,9 +4936,9 @@ pub mod fluent_builders {
         }
         pub fn set_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_security_group_ids(inp);
+            self.inner = self.inner.set_security_group_ids(input);
             self
         }
         /// <p> When you send any requests to AWS resources from the notebook instance, Amazon SageMaker
@@ -4905,24 +4950,24 @@ pub mod fluent_builders {
         /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
         /// <code>iam:PassRole</code> permission.</p>
         /// </note>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
         /// the storage volume attached to your notebook instance. The KMS key you provide must be
         /// enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
         /// Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input);
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_id(inp);
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -4935,23 +4980,23 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
         /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
         /// Customize a Notebook Instance</a>.</p>
-        pub fn lifecycle_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_config_name(inp);
+        pub fn lifecycle_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_config_name(input);
             self
         }
         pub fn set_lifecycle_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_lifecycle_config_name(inp);
+            self.inner = self.inner.set_lifecycle_config_name(input);
             self
         }
         /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this
@@ -4961,25 +5006,25 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value
         /// of this parameter to <code>Disabled</code> only if you set a value for the
         /// <code>SubnetId</code> parameter.</p>
-        pub fn direct_internet_access(mut self, inp: crate::model::DirectInternetAccess) -> Self {
-            self.inner = self.inner.direct_internet_access(inp);
+        pub fn direct_internet_access(mut self, input: crate::model::DirectInternetAccess) -> Self {
+            self.inner = self.inner.direct_internet_access(input);
             self
         }
         pub fn set_direct_internet_access(
             mut self,
-            inp: std::option::Option<crate::model::DirectInternetAccess>,
+            input: std::option::Option<crate::model::DirectInternetAccess>,
         ) -> Self {
-            self.inner = self.inner.set_direct_internet_access(inp);
+            self.inner = self.inner.set_direct_internet_access(input);
             self
         }
         /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
         /// default value is 5 GB.</p>
-        pub fn volume_size_in_gb(mut self, inp: i32) -> Self {
-            self.inner = self.inner.volume_size_in_gb(inp);
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.inner = self.inner.volume_size_in_gb(input);
             self
         }
-        pub fn set_volume_size_in_gb(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_volume_size_in_gb(inp);
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_volume_size_in_gb(input);
             self
         }
         /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook
@@ -4994,9 +5039,11 @@ pub mod fluent_builders {
         }
         pub fn set_accelerator_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceAcceleratorType>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::NotebookInstanceAcceleratorType>,
+            >,
         ) -> Self {
-            self.inner = self.inner.set_accelerator_types(inp);
+            self.inner = self.inner.set_accelerator_types(input);
             self
         }
         /// <p>A Git repository to associate with the notebook instance as its default code
@@ -5005,15 +5052,15 @@ pub mod fluent_builders {
         /// other Git repository. When you open a notebook instance, it opens in the directory that
         /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
         /// Notebook Instances</a>.</p>
-        pub fn default_code_repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_code_repository(inp);
+        pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_code_repository(input);
             self
         }
         pub fn set_default_code_repository(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_default_code_repository(inp);
+            self.inner = self.inner.set_default_code_repository(input);
             self
         }
         /// <p>An array of up to three Git repositories to associate with the notebook instance.
@@ -5028,9 +5075,9 @@ pub mod fluent_builders {
         }
         pub fn set_additional_code_repositories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_additional_code_repositories(inp);
+            self.inner = self.inner.set_additional_code_repositories(input);
             self
         }
         /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
@@ -5041,15 +5088,15 @@ pub mod fluent_builders {
         /// instance always run with root access even if you disable root access for
         /// users.</p>
         /// </note>
-        pub fn root_access(mut self, inp: crate::model::RootAccess) -> Self {
-            self.inner = self.inner.root_access(inp);
+        pub fn root_access(mut self, input: crate::model::RootAccess) -> Self {
+            self.inner = self.inner.root_access(input);
             self
         }
         pub fn set_root_access(
             mut self,
-            inp: std::option::Option<crate::model::RootAccess>,
+            input: std::option::Option<crate::model::RootAccess>,
         ) -> Self {
-            self.inner = self.inner.set_root_access(inp);
+            self.inner = self.inner.set_root_access(input);
             self
         }
     }
@@ -5068,7 +5115,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateNotebookInstanceLifecycleConfigOutput,
             smithy_http::result::SdkError<crate::error::CreateNotebookInstanceLifecycleConfigError>,
         >
@@ -5087,16 +5134,18 @@ pub mod fluent_builders {
         /// <p>The name of the lifecycle configuration.</p>
         pub fn notebook_instance_lifecycle_config_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.notebook_instance_lifecycle_config_name(inp);
+            self.inner = self.inner.notebook_instance_lifecycle_config_name(input);
             self
         }
         pub fn set_notebook_instance_lifecycle_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_lifecycle_config_name(inp);
+            self.inner = self
+                .inner
+                .set_notebook_instance_lifecycle_config_name(input);
             self
         }
         /// <p>A shell script that runs only once, when you create a notebook instance. The shell
@@ -5110,9 +5159,9 @@ pub mod fluent_builders {
         }
         pub fn set_on_create(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
         ) -> Self {
-            self.inner = self.inner.set_on_create(inp);
+            self.inner = self.inner.set_on_create(input);
             self
         }
         /// <p>A shell script that runs every time you start a notebook instance, including when you
@@ -5126,9 +5175,9 @@ pub mod fluent_builders {
         }
         pub fn set_on_start(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
         ) -> Self {
-            self.inner = self.inner.set_on_start(inp);
+            self.inner = self.inner.set_on_start(input);
             self
         }
     }
@@ -5147,7 +5196,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreatePipelineOutput,
             smithy_http::result::SdkError<crate::error::CreatePipelineError>,
         >
@@ -5164,70 +5213,73 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input);
             self
         }
-        pub fn set_pipeline_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pipeline_name(inp);
+        pub fn set_pipeline_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pipeline_name(input);
             self
         }
         /// <p>The display name of the pipeline.</p>
-        pub fn pipeline_display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_display_name(inp);
+        pub fn pipeline_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_display_name(input);
             self
         }
         pub fn set_pipeline_display_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_display_name(inp);
+            self.inner = self.inner.set_pipeline_display_name(input);
             self
         }
         /// <p>The JSON pipeline definition of the pipeline.</p>
-        pub fn pipeline_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_definition(inp);
+        pub fn pipeline_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_definition(input);
             self
         }
         pub fn set_pipeline_definition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_definition(inp);
+            self.inner = self.inner.set_pipeline_definition(input);
             self
         }
         /// <p>A description of the pipeline.</p>
-        pub fn pipeline_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_description(inp);
+        pub fn pipeline_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_description(input);
             self
         }
         pub fn set_pipeline_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_description(inp);
+            self.inner = self.inner.set_pipeline_description(input);
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A list of tags to apply to the created pipeline.</p>
@@ -5237,9 +5289,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5258,7 +5310,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreatePresignedDomainUrlOutput,
             smithy_http::result::SdkError<crate::error::CreatePresignedDomainUrlError>,
         >
@@ -5275,46 +5327,46 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>The name of the UserProfile to sign-in as.</p>
-        pub fn user_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(inp);
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input);
             self
         }
         pub fn set_user_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name(inp);
+            self.inner = self.inner.set_user_profile_name(input);
             self
         }
         /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-        pub fn session_expiration_duration_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.session_expiration_duration_in_seconds(inp);
+        pub fn session_expiration_duration_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.session_expiration_duration_in_seconds(input);
             self
         }
         pub fn set_session_expiration_duration_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_session_expiration_duration_in_seconds(inp);
+            self.inner = self.inner.set_session_expiration_duration_in_seconds(input);
             self
         }
         /// <p>The number of seconds until the pre-signed URL expires. This value defaults to
         /// 300.</p>
-        pub fn expires_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.expires_in_seconds(inp);
+        pub fn expires_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.expires_in_seconds(input);
             self
         }
-        pub fn set_expires_in_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_expires_in_seconds(inp);
+        pub fn set_expires_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_expires_in_seconds(input);
             self
         }
     }
@@ -5333,7 +5385,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreatePresignedNotebookInstanceUrlOutput,
             smithy_http::result::SdkError<crate::error::CreatePresignedNotebookInstanceUrlError>,
         >
@@ -5350,27 +5402,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance.</p>
-        pub fn notebook_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(inp);
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input);
             self
         }
         pub fn set_notebook_instance_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_name(inp);
+            self.inner = self.inner.set_notebook_instance_name(input);
             self
         }
         /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
-        pub fn session_expiration_duration_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.session_expiration_duration_in_seconds(inp);
+        pub fn session_expiration_duration_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.session_expiration_duration_in_seconds(input);
             self
         }
         pub fn set_session_expiration_duration_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.inner = self.inner.set_session_expiration_duration_in_seconds(inp);
+            self.inner = self.inner.set_session_expiration_duration_in_seconds(input);
             self
         }
     }
@@ -5389,7 +5441,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateProcessingJobOutput,
             smithy_http::result::SdkError<crate::error::CreateProcessingJobError>,
         >
@@ -5413,77 +5465,77 @@ pub mod fluent_builders {
         }
         pub fn set_processing_inputs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessingInput>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessingInput>>,
         ) -> Self {
-            self.inner = self.inner.set_processing_inputs(inp);
+            self.inner = self.inner.set_processing_inputs(input);
             self
         }
         /// <p>Output configuration for the processing job.</p>
         pub fn processing_output_config(
             mut self,
-            inp: crate::model::ProcessingOutputConfig,
+            input: crate::model::ProcessingOutputConfig,
         ) -> Self {
-            self.inner = self.inner.processing_output_config(inp);
+            self.inner = self.inner.processing_output_config(input);
             self
         }
         pub fn set_processing_output_config(
             mut self,
-            inp: std::option::Option<crate::model::ProcessingOutputConfig>,
+            input: std::option::Option<crate::model::ProcessingOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_processing_output_config(inp);
+            self.inner = self.inner.set_processing_output_config(input);
             self
         }
         /// <p> The name of the processing job. The name must be unique within an AWS Region in the
         /// AWS account.</p>
-        pub fn processing_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.processing_job_name(inp);
+        pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.processing_job_name(input);
             self
         }
         pub fn set_processing_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_processing_job_name(inp);
+            self.inner = self.inner.set_processing_job_name(input);
             self
         }
         /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a
         /// processing job. In distributed training, you specify more than one instance.</p>
-        pub fn processing_resources(mut self, inp: crate::model::ProcessingResources) -> Self {
-            self.inner = self.inner.processing_resources(inp);
+        pub fn processing_resources(mut self, input: crate::model::ProcessingResources) -> Self {
+            self.inner = self.inner.processing_resources(input);
             self
         }
         pub fn set_processing_resources(
             mut self,
-            inp: std::option::Option<crate::model::ProcessingResources>,
+            input: std::option::Option<crate::model::ProcessingResources>,
         ) -> Self {
-            self.inner = self.inner.set_processing_resources(inp);
+            self.inner = self.inner.set_processing_resources(input);
             self
         }
         /// <p>The time limit for how long the processing job is allowed to run.</p>
         pub fn stopping_condition(
             mut self,
-            inp: crate::model::ProcessingStoppingCondition,
+            input: crate::model::ProcessingStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(inp);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         pub fn set_stopping_condition(
             mut self,
-            inp: std::option::Option<crate::model::ProcessingStoppingCondition>,
+            input: std::option::Option<crate::model::ProcessingStoppingCondition>,
         ) -> Self {
-            self.inner = self.inner.set_stopping_condition(inp);
+            self.inner = self.inner.set_stopping_condition(input);
             self
         }
         /// <p>Configures the processing job to run a specified Docker container image.</p>
-        pub fn app_specification(mut self, inp: crate::model::AppSpecification) -> Self {
-            self.inner = self.inner.app_specification(inp);
+        pub fn app_specification(mut self, input: crate::model::AppSpecification) -> Self {
+            self.inner = self.inner.app_specification(input);
             self
         }
         pub fn set_app_specification(
             mut self,
-            inp: std::option::Option<crate::model::AppSpecification>,
+            input: std::option::Option<crate::model::AppSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_app_specification(inp);
+            self.inner = self.inner.set_app_specification(input);
             self
         }
         /// <p>The environment variables to set in the Docker container. Up to
@@ -5498,35 +5550,35 @@ pub mod fluent_builders {
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_environment(inp);
+            self.inner = self.inner.set_environment(input);
             self
         }
         /// <p>Networking options for a processing job, such as whether to allow inbound and
         /// outbound network calls to and from processing containers, and the VPC subnets and
         /// security groups to use for VPC-enabled processing jobs.</p>
-        pub fn network_config(mut self, inp: crate::model::NetworkConfig) -> Self {
-            self.inner = self.inner.network_config(inp);
+        pub fn network_config(mut self, input: crate::model::NetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         pub fn set_network_config(
             mut self,
-            inp: std::option::Option<crate::model::NetworkConfig>,
+            input: std::option::Option<crate::model::NetworkConfig>,
         ) -> Self {
-            self.inner = self.inner.set_network_config(inp);
+            self.inner = self.inner.set_network_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on
         /// your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
@@ -5537,9 +5589,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
@@ -5561,15 +5613,15 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn experiment_config(mut self, inp: crate::model::ExperimentConfig) -> Self {
-            self.inner = self.inner.experiment_config(inp);
+        pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
+            self.inner = self.inner.experiment_config(input);
             self
         }
         pub fn set_experiment_config(
             mut self,
-            inp: std::option::Option<crate::model::ExperimentConfig>,
+            input: std::option::Option<crate::model::ExperimentConfig>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_config(inp);
+            self.inner = self.inner.set_experiment_config(input);
             self
         }
     }
@@ -5588,7 +5640,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateProjectOutput,
             smithy_http::result::SdkError<crate::error::CreateProjectError>,
         >
@@ -5605,24 +5657,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input);
             self
         }
-        pub fn set_project_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_project_name(inp);
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_name(input);
             self
         }
         /// <p>A description for the project.</p>
-        pub fn project_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_description(inp);
+        pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_description(input);
             self
         }
         pub fn set_project_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_project_description(inp);
+            self.inner = self.inner.set_project_description(input);
             self
         }
         /// <p>The product ID and provisioning artifact ID to provision a service catalog. For
@@ -5630,16 +5682,16 @@ pub mod fluent_builders {
         /// Catalog</a>.</p>
         pub fn service_catalog_provisioning_details(
             mut self,
-            inp: crate::model::ServiceCatalogProvisioningDetails,
+            input: crate::model::ServiceCatalogProvisioningDetails,
         ) -> Self {
-            self.inner = self.inner.service_catalog_provisioning_details(inp);
+            self.inner = self.inner.service_catalog_provisioning_details(input);
             self
         }
         pub fn set_service_catalog_provisioning_details(
             mut self,
-            inp: std::option::Option<crate::model::ServiceCatalogProvisioningDetails>,
+            input: std::option::Option<crate::model::ServiceCatalogProvisioningDetails>,
         ) -> Self {
-            self.inner = self.inner.set_service_catalog_provisioning_details(inp);
+            self.inner = self.inner.set_service_catalog_provisioning_details(input);
             self
         }
         /// <p>An array of key-value pairs that you want to use to organize and track your AWS
@@ -5650,9 +5702,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -5671,7 +5723,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTrainingJobOutput,
             smithy_http::result::SdkError<crate::error::CreateTrainingJobError>,
         >
@@ -5689,15 +5741,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the training job. The name must be unique within an AWS Region in an
         /// AWS account. </p>
-        pub fn training_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_job_name(inp);
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_job_name(input);
             self
         }
         pub fn set_training_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_training_job_name(inp);
+            self.inner = self.inner.set_training_job_name(input);
             self
         }
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set
@@ -5716,11 +5768,11 @@ pub mod fluent_builders {
         }
         pub fn set_hyper_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_hyper_parameters(inp);
+            self.inner = self.inner.set_hyper_parameters(input);
             self
         }
         /// <p>The registry path of the Docker image that contains the training algorithm and
@@ -5730,16 +5782,16 @@ pub mod fluent_builders {
         /// SageMaker</a>. </p>
         pub fn algorithm_specification(
             mut self,
-            inp: crate::model::AlgorithmSpecification,
+            input: crate::model::AlgorithmSpecification,
         ) -> Self {
-            self.inner = self.inner.algorithm_specification(inp);
+            self.inner = self.inner.algorithm_specification(input);
             self
         }
         pub fn set_algorithm_specification(
             mut self,
-            inp: std::option::Option<crate::model::AlgorithmSpecification>,
+            input: std::option::Option<crate::model::AlgorithmSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_algorithm_specification(inp);
+            self.inner = self.inner.set_algorithm_specification(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform
@@ -5753,12 +5805,12 @@ pub mod fluent_builders {
         /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
         /// <code>iam:PassRole</code> permission.</p>
         /// </note>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>An array of <code>Channel</code> objects. Each channel is a named input source.
@@ -5781,22 +5833,22 @@ pub mod fluent_builders {
         }
         pub fn set_input_data_config(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
         ) -> Self {
-            self.inner = self.inner.set_input_data_config(inp);
+            self.inner = self.inner.set_input_data_config(input);
             self
         }
         /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker
         /// creates subfolders for the artifacts. </p>
-        pub fn output_data_config(mut self, inp: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(inp);
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         pub fn set_output_data_config(
             mut self,
-            inp: std::option::Option<crate::model::OutputDataConfig>,
+            input: std::option::Option<crate::model::OutputDataConfig>,
         ) -> Self {
-            self.inner = self.inner.set_output_data_config(inp);
+            self.inner = self.inner.set_output_data_config(input);
             self
         }
         /// <p>The resources, including the ML compute instances and ML storage volumes, to use
@@ -5806,27 +5858,30 @@ pub mod fluent_builders {
         /// the ML storage volume to store the training data, choose <code>File</code> as the
         /// <code>TrainingInputMode</code> in the algorithm specification. For distributed
         /// training algorithms, specify an instance count greater than 1.</p>
-        pub fn resource_config(mut self, inp: crate::model::ResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
+            self.inner = self.inner.resource_config(input);
             self
         }
         pub fn set_resource_config(
             mut self,
-            inp: std::option::Option<crate::model::ResourceConfig>,
+            input: std::option::Option<crate::model::ResourceConfig>,
         ) -> Self {
-            self.inner = self.inner.set_resource_config(inp);
+            self.inner = self.inner.set_resource_config(input);
             self
         }
         /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
         /// training job to connect to. Control access to and from your training container by
         /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
         /// Virtual Private Cloud</a>.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
-        pub fn set_vpc_config(mut self, inp: std::option::Option<crate::model::VpcConfig>) -> Self {
-            self.inner = self.inner.set_vpc_config(inp);
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_config(input);
             self
         }
         /// <p>Specifies a limit to how long a model training job can run. It also specifies how long
@@ -5835,15 +5890,15 @@ pub mod fluent_builders {
         /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
         /// job termination for 120 seconds. Algorithms can use this 120-second window to save the
         /// model artifacts, so the results of training are not lost. </p>
-        pub fn stopping_condition(mut self, inp: crate::model::StoppingCondition) -> Self {
-            self.inner = self.inner.stopping_condition(inp);
+        pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         pub fn set_stopping_condition(
             mut self,
-            inp: std::option::Option<crate::model::StoppingCondition>,
+            input: std::option::Option<crate::model::StoppingCondition>,
         ) -> Self {
-            self.inner = self.inner.set_stopping_condition(inp);
+            self.inner = self.inner.set_stopping_condition(input);
             self
         }
         /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
@@ -5856,9 +5911,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Isolates the training container. No inbound or outbound network calls can be made,
@@ -5866,12 +5921,12 @@ pub mod fluent_builders {
         /// you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker
         /// downloads and uploads customer data and model artifacts through the specified VPC, but
         /// the training container does not have network access.</p>
-        pub fn enable_network_isolation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_network_isolation(inp);
+        pub fn enable_network_isolation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_network_isolation(input);
             self
         }
-        pub fn set_enable_network_isolation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_enable_network_isolation(inp);
+        pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_network_isolation(input);
             self
         }
         /// <p>To encrypt all communications between ML compute instances in distributed training,
@@ -5880,14 +5935,17 @@ pub mod fluent_builders {
         /// between compute instances, especially if you use a deep learning algorithm in
         /// distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML
         /// Compute Instances in a Distributed Training Job</a>.</p>
-        pub fn enable_inter_container_traffic_encryption(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_inter_container_traffic_encryption(inp);
+        pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_inter_container_traffic_encryption(input);
             self
         }
-        pub fn set_enable_inter_container_traffic_encryption(mut self, inp: bool) -> Self {
+        pub fn set_enable_inter_container_traffic_encryption(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
             self.inner = self
                 .inner
-                .set_enable_inter_container_traffic_encryption(inp);
+                .set_enable_inter_container_traffic_encryption(input);
             self
         }
         /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot
@@ -5898,40 +5956,43 @@ pub mod fluent_builders {
         /// used as a starting point to train models incrementally. Amazon SageMaker provides metrics and
         /// logs in CloudWatch. They can be used to see when managed spot training jobs are running,
         /// interrupted, resumed, or completed. </p>
-        pub fn enable_managed_spot_training(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_managed_spot_training(inp);
+        pub fn enable_managed_spot_training(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_managed_spot_training(input);
             self
         }
-        pub fn set_enable_managed_spot_training(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_enable_managed_spot_training(inp);
+        pub fn set_enable_managed_spot_training(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_enable_managed_spot_training(input);
             self
         }
         /// <p>Contains information about the output location for managed spot training checkpoint
         /// data.</p>
-        pub fn checkpoint_config(mut self, inp: crate::model::CheckpointConfig) -> Self {
-            self.inner = self.inner.checkpoint_config(inp);
+        pub fn checkpoint_config(mut self, input: crate::model::CheckpointConfig) -> Self {
+            self.inner = self.inner.checkpoint_config(input);
             self
         }
         pub fn set_checkpoint_config(
             mut self,
-            inp: std::option::Option<crate::model::CheckpointConfig>,
+            input: std::option::Option<crate::model::CheckpointConfig>,
         ) -> Self {
-            self.inner = self.inner.set_checkpoint_config(inp);
+            self.inner = self.inner.set_checkpoint_config(input);
             self
         }
         /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and
         /// storage paths. To learn more about
         /// how to configure the <code>DebugHookConfig</code> parameter,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-        pub fn debug_hook_config(mut self, inp: crate::model::DebugHookConfig) -> Self {
-            self.inner = self.inner.debug_hook_config(inp);
+        pub fn debug_hook_config(mut self, input: crate::model::DebugHookConfig) -> Self {
+            self.inner = self.inner.debug_hook_config(input);
             self
         }
         pub fn set_debug_hook_config(
             mut self,
-            inp: std::option::Option<crate::model::DebugHookConfig>,
+            input: std::option::Option<crate::model::DebugHookConfig>,
         ) -> Self {
-            self.inner = self.inner.set_debug_hook_config(inp);
+            self.inner = self.inner.set_debug_hook_config(input);
             self
         }
         /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
@@ -5944,24 +6005,24 @@ pub mod fluent_builders {
         }
         pub fn set_debug_rule_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DebugRuleConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DebugRuleConfiguration>>,
         ) -> Self {
-            self.inner = self.inner.set_debug_rule_configurations(inp);
+            self.inner = self.inner.set_debug_rule_configurations(input);
             self
         }
         /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
         pub fn tensor_board_output_config(
             mut self,
-            inp: crate::model::TensorBoardOutputConfig,
+            input: crate::model::TensorBoardOutputConfig,
         ) -> Self {
-            self.inner = self.inner.tensor_board_output_config(inp);
+            self.inner = self.inner.tensor_board_output_config(input);
             self
         }
         pub fn set_tensor_board_output_config(
             mut self,
-            inp: std::option::Option<crate::model::TensorBoardOutputConfig>,
+            input: std::option::Option<crate::model::TensorBoardOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_tensor_board_output_config(inp);
+            self.inner = self.inner.set_tensor_board_output_config(input);
             self
         }
         /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
@@ -5983,28 +6044,28 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn experiment_config(mut self, inp: crate::model::ExperimentConfig) -> Self {
-            self.inner = self.inner.experiment_config(inp);
+        pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
+            self.inner = self.inner.experiment_config(input);
             self
         }
         pub fn set_experiment_config(
             mut self,
-            inp: std::option::Option<crate::model::ExperimentConfig>,
+            input: std::option::Option<crate::model::ExperimentConfig>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_config(inp);
+            self.inner = self.inner.set_experiment_config(input);
             self
         }
         /// <p>Configuration information for Debugger system monitoring, framework profiling, and
         /// storage paths.</p>
-        pub fn profiler_config(mut self, inp: crate::model::ProfilerConfig) -> Self {
-            self.inner = self.inner.profiler_config(inp);
+        pub fn profiler_config(mut self, input: crate::model::ProfilerConfig) -> Self {
+            self.inner = self.inner.profiler_config(input);
             self
         }
         pub fn set_profiler_config(
             mut self,
-            inp: std::option::Option<crate::model::ProfilerConfig>,
+            input: std::option::Option<crate::model::ProfilerConfig>,
         ) -> Self {
-            self.inner = self.inner.set_profiler_config(inp);
+            self.inner = self.inner.set_profiler_config(input);
             self
         }
         /// <p>Configuration information for Debugger rules for profiling system and framework
@@ -6018,9 +6079,9 @@ pub mod fluent_builders {
         }
         pub fn set_profiler_rule_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
         ) -> Self {
-            self.inner = self.inner.set_profiler_rule_configurations(inp);
+            self.inner = self.inner.set_profiler_rule_configurations(input);
             self
         }
         /// <p>The environment variables to set in the Docker container.</p>
@@ -6034,24 +6095,24 @@ pub mod fluent_builders {
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_environment(inp);
+            self.inner = self.inner.set_environment(input);
             self
         }
         /// <p>The number of times to retry the job when the job fails due to an
         /// <code>InternalServerError</code>.</p>
-        pub fn retry_strategy(mut self, inp: crate::model::RetryStrategy) -> Self {
-            self.inner = self.inner.retry_strategy(inp);
+        pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
+            self.inner = self.inner.retry_strategy(input);
             self
         }
         pub fn set_retry_strategy(
             mut self,
-            inp: std::option::Option<crate::model::RetryStrategy>,
+            input: std::option::Option<crate::model::RetryStrategy>,
         ) -> Self {
-            self.inner = self.inner.set_retry_strategy(inp);
+            self.inner = self.inner.set_retry_strategy(input);
             self
         }
     }
@@ -6070,7 +6131,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTransformJobOutput,
             smithy_http::result::SdkError<crate::error::CreateTransformJobError>,
         >
@@ -6088,26 +6149,26 @@ pub mod fluent_builders {
         }
         /// <p>The name of the transform job. The name must be unique within an AWS Region in an
         /// AWS account. </p>
-        pub fn transform_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_job_name(inp);
+        pub fn transform_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_job_name(input);
             self
         }
         pub fn set_transform_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_transform_job_name(inp);
+            self.inner = self.inner.set_transform_job_name(input);
             self
         }
         /// <p>The name of the model that you want to use for the transform job.
         /// <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an AWS
         /// Region in an AWS account.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
         /// <p>The maximum number of parallel requests that can be sent to each instance in a
@@ -6116,25 +6177,25 @@ pub mod fluent_builders {
         /// chosen algorithm. If the execution-parameters endpoint is not enabled, the default value
         /// is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to
         /// set a value for <code>MaxConcurrentTransforms</code>.</p>
-        pub fn max_concurrent_transforms(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_concurrent_transforms(inp);
+        pub fn max_concurrent_transforms(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrent_transforms(input);
             self
         }
-        pub fn set_max_concurrent_transforms(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_concurrent_transforms(inp);
+        pub fn set_max_concurrent_transforms(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_concurrent_transforms(input);
             self
         }
         /// <p>Configures the timeout and maximum number of retries for processing a transform job
         /// invocation.</p>
-        pub fn model_client_config(mut self, inp: crate::model::ModelClientConfig) -> Self {
-            self.inner = self.inner.model_client_config(inp);
+        pub fn model_client_config(mut self, input: crate::model::ModelClientConfig) -> Self {
+            self.inner = self.inner.model_client_config(input);
             self
         }
         pub fn set_model_client_config(
             mut self,
-            inp: std::option::Option<crate::model::ModelClientConfig>,
+            input: std::option::Option<crate::model::ModelClientConfig>,
         ) -> Self {
-            self.inner = self.inner.set_model_client_config(inp);
+            self.inner = self.inner.set_model_client_config(input);
             self
         }
         /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the
@@ -6149,12 +6210,12 @@ pub mod fluent_builders {
         /// This
         /// feature works only in supported algorithms. Currently, Amazon SageMaker built-in
         /// algorithms do not support HTTP chunked encoding.</p>
-        pub fn max_payload_in_mb(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_payload_in_mb(inp);
+        pub fn max_payload_in_mb(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_payload_in_mb(input);
             self
         }
-        pub fn set_max_payload_in_mb(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_payload_in_mb(inp);
+        pub fn set_max_payload_in_mb(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_payload_in_mb(input);
             self
         }
         /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference
@@ -6169,15 +6230,15 @@ pub mod fluent_builders {
         /// <p>To fit as many records in a mini-batch as can fit within the
         /// <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to
         /// <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
-        pub fn batch_strategy(mut self, inp: crate::model::BatchStrategy) -> Self {
-            self.inner = self.inner.batch_strategy(inp);
+        pub fn batch_strategy(mut self, input: crate::model::BatchStrategy) -> Self {
+            self.inner = self.inner.batch_strategy(input);
             self
         }
         pub fn set_batch_strategy(
             mut self,
-            inp: std::option::Option<crate::model::BatchStrategy>,
+            input: std::option::Option<crate::model::BatchStrategy>,
         ) -> Self {
-            self.inner = self.inner.set_batch_strategy(inp);
+            self.inner = self.inner.set_batch_strategy(input);
             self
         }
         /// <p>The environment variables to set in the Docker container. We support up to 16 key and
@@ -6192,52 +6253,52 @@ pub mod fluent_builders {
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_environment(inp);
+            self.inner = self.inner.set_environment(input);
             self
         }
         /// <p>Describes the input source and
         /// the
         /// way the transform job consumes it.</p>
-        pub fn transform_input(mut self, inp: crate::model::TransformInput) -> Self {
-            self.inner = self.inner.transform_input(inp);
+        pub fn transform_input(mut self, input: crate::model::TransformInput) -> Self {
+            self.inner = self.inner.transform_input(input);
             self
         }
         pub fn set_transform_input(
             mut self,
-            inp: std::option::Option<crate::model::TransformInput>,
+            input: std::option::Option<crate::model::TransformInput>,
         ) -> Self {
-            self.inner = self.inner.set_transform_input(inp);
+            self.inner = self.inner.set_transform_input(input);
             self
         }
         /// <p>Describes the results of the transform job.</p>
-        pub fn transform_output(mut self, inp: crate::model::TransformOutput) -> Self {
-            self.inner = self.inner.transform_output(inp);
+        pub fn transform_output(mut self, input: crate::model::TransformOutput) -> Self {
+            self.inner = self.inner.transform_output(input);
             self
         }
         pub fn set_transform_output(
             mut self,
-            inp: std::option::Option<crate::model::TransformOutput>,
+            input: std::option::Option<crate::model::TransformOutput>,
         ) -> Self {
-            self.inner = self.inner.set_transform_output(inp);
+            self.inner = self.inner.set_transform_output(input);
             self
         }
         /// <p>Describes the resources, including
         /// ML
         /// instance types and ML instance count, to use for the transform
         /// job.</p>
-        pub fn transform_resources(mut self, inp: crate::model::TransformResources) -> Self {
-            self.inner = self.inner.transform_resources(inp);
+        pub fn transform_resources(mut self, input: crate::model::TransformResources) -> Self {
+            self.inner = self.inner.transform_resources(input);
             self
         }
         pub fn set_transform_resources(
             mut self,
-            inp: std::option::Option<crate::model::TransformResources>,
+            input: std::option::Option<crate::model::TransformResources>,
         ) -> Self {
-            self.inner = self.inner.set_transform_resources(inp);
+            self.inner = self.inner.set_transform_resources(input);
             self
         }
         /// <p>The data structure used to specify the data to be used for inference in a batch
@@ -6247,15 +6308,15 @@ pub mod fluent_builders {
         /// include input data relevant to interpreting the predictions in the output from the job.
         /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction
         /// Results with their Corresponding Input Records</a>.</p>
-        pub fn data_processing(mut self, inp: crate::model::DataProcessing) -> Self {
-            self.inner = self.inner.data_processing(inp);
+        pub fn data_processing(mut self, input: crate::model::DataProcessing) -> Self {
+            self.inner = self.inner.data_processing(input);
             self
         }
         pub fn set_data_processing(
             mut self,
-            inp: std::option::Option<crate::model::DataProcessing>,
+            input: std::option::Option<crate::model::DataProcessing>,
         ) -> Self {
-            self.inner = self.inner.set_data_processing(inp);
+            self.inner = self.inner.set_data_processing(input);
             self
         }
         /// <p>(Optional)
@@ -6269,9 +6330,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
@@ -6293,15 +6354,15 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn experiment_config(mut self, inp: crate::model::ExperimentConfig) -> Self {
-            self.inner = self.inner.experiment_config(inp);
+        pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
+            self.inner = self.inner.experiment_config(input);
             self
         }
         pub fn set_experiment_config(
             mut self,
-            inp: std::option::Option<crate::model::ExperimentConfig>,
+            input: std::option::Option<crate::model::ExperimentConfig>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_config(inp);
+            self.inner = self.inner.set_experiment_config(input);
             self
         }
     }
@@ -6320,7 +6381,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTrialOutput,
             smithy_http::result::SdkError<crate::error::CreateTrialError>,
         >
@@ -6338,46 +6399,46 @@ pub mod fluent_builders {
         }
         /// <p>The name of the trial. The name must be unique in your AWS account and is not
         /// case-sensitive.</p>
-        pub fn trial_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(inp);
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input);
             self
         }
-        pub fn set_trial_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_trial_name(inp);
+        pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_trial_name(input);
             self
         }
         /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input);
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(inp);
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
             self
         }
         /// <p>The name of the experiment to associate the trial with.</p>
-        pub fn experiment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(inp);
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input);
             self
         }
         pub fn set_experiment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_name(inp);
+            self.inner = self.inner.set_experiment_name(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, inp: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(inp);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         pub fn set_metadata_properties(
             mut self,
-            inp: std::option::Option<crate::model::MetadataProperties>,
+            input: std::option::Option<crate::model::MetadataProperties>,
         ) -> Self {
-            self.inner = self.inner.set_metadata_properties(inp);
+            self.inner = self.inner.set_metadata_properties(input);
             self
         }
         /// <p>A list of tags to associate with the trial. You can use <a>Search</a> API to
@@ -6388,9 +6449,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -6409,7 +6470,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTrialComponentOutput,
             smithy_http::result::SdkError<crate::error::CreateTrialComponentError>,
         >
@@ -6427,26 +6488,26 @@ pub mod fluent_builders {
         }
         /// <p>The name of the component. The name must be unique in your AWS account and is not
         /// case-sensitive.</p>
-        pub fn trial_component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(inp);
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input);
             self
         }
         pub fn set_trial_component_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_trial_component_name(inp);
+            self.inner = self.inner.set_trial_component_name(input);
             self
         }
         /// <p>The name of the component as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
         /// displayed.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input);
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(inp);
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
             self
         }
         /// <p>The status of the component. States include:</p>
@@ -6461,33 +6522,33 @@ pub mod fluent_builders {
         /// <p>Failed</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::TrialComponentStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::TrialComponentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::TrialComponentStatus>,
+            input: std::option::Option<crate::model::TrialComponentStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status(inp);
+            self.inner = self.inner.set_status(input);
             self
         }
         /// <p>When the component started.</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_start_time(inp);
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>When the component ended.</p>
-        pub fn end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_end_time(inp);
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_time(input);
             self
         }
         /// <p>The hyperparameters for the component.</p>
@@ -6501,14 +6562,14 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::TrialComponentParameterValue,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>The input artifacts for the component. Examples of input artifacts are datasets,
@@ -6523,14 +6584,14 @@ pub mod fluent_builders {
         }
         pub fn set_input_artifacts(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::TrialComponentArtifact,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_input_artifacts(inp);
+            self.inner = self.inner.set_input_artifacts(input);
             self
         }
         /// <p>The output artifacts for the component. Examples of output artifacts are metrics,
@@ -6545,26 +6606,26 @@ pub mod fluent_builders {
         }
         pub fn set_output_artifacts(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::TrialComponentArtifact,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_output_artifacts(inp);
+            self.inner = self.inner.set_output_artifacts(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, inp: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(inp);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         pub fn set_metadata_properties(
             mut self,
-            inp: std::option::Option<crate::model::MetadataProperties>,
+            input: std::option::Option<crate::model::MetadataProperties>,
         ) -> Self {
-            self.inner = self.inner.set_metadata_properties(inp);
+            self.inner = self.inner.set_metadata_properties(input);
             self
         }
         /// <p>A list of tags to associate with the component. You can use <a>Search</a> API
@@ -6575,9 +6636,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -6596,7 +6657,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateUserProfileOutput,
             smithy_http::result::SdkError<crate::error::CreateUserProfileError>,
         >
@@ -6613,24 +6674,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the associated Domain.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>A name for the UserProfile. This value is not case sensitive.</p>
-        pub fn user_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(inp);
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input);
             self
         }
         pub fn set_user_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name(inp);
+            self.inner = self.inner.set_user_profile_name(input);
             self
         }
         /// <p>A specifier for the type of value specified in SingleSignOnUserValue.  Currently, the only supported value is "UserName".
@@ -6638,30 +6699,30 @@ pub mod fluent_builders {
         /// </p>
         pub fn single_sign_on_user_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.single_sign_on_user_identifier(inp);
+            self.inner = self.inner.single_sign_on_user_identifier(input);
             self
         }
         pub fn set_single_sign_on_user_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_single_sign_on_user_identifier(inp);
+            self.inner = self.inner.set_single_sign_on_user_identifier(input);
             self
         }
         /// <p>The username of the associated AWS Single Sign-On User for this UserProfile.  If the Domain's AuthMode is SSO, this field is
         /// required, and must match a valid username of a user in your directory.  If the Domain's AuthMode is not SSO, this field cannot be specified.
         /// </p>
-        pub fn single_sign_on_user_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.single_sign_on_user_value(inp);
+        pub fn single_sign_on_user_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.single_sign_on_user_value(input);
             self
         }
         pub fn set_single_sign_on_user_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_single_sign_on_user_value(inp);
+            self.inner = self.inner.set_single_sign_on_user_value(input);
             self
         }
         /// <p>Each tag consists of a key and an optional value.
@@ -6674,21 +6735,21 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>A collection of settings.</p>
-        pub fn user_settings(mut self, inp: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.user_settings(inp);
+        pub fn user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         pub fn set_user_settings(
             mut self,
-            inp: std::option::Option<crate::model::UserSettings>,
+            input: std::option::Option<crate::model::UserSettings>,
         ) -> Self {
-            self.inner = self.inner.set_user_settings(inp);
+            self.inner = self.inner.set_user_settings(input);
             self
         }
     }
@@ -6707,7 +6768,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateWorkforceOutput,
             smithy_http::result::SdkError<crate::error::CreateWorkforceError>,
         >
@@ -6729,52 +6790,55 @@ pub mod fluent_builders {
         /// Amazon Cognito user pool</a>.</p>
         /// <p>Do not use <code>OidcConfig</code> if you specify values for
         /// <code>CognitoConfig</code>.</p>
-        pub fn cognito_config(mut self, inp: crate::model::CognitoConfig) -> Self {
-            self.inner = self.inner.cognito_config(inp);
+        pub fn cognito_config(mut self, input: crate::model::CognitoConfig) -> Self {
+            self.inner = self.inner.cognito_config(input);
             self
         }
         pub fn set_cognito_config(
             mut self,
-            inp: std::option::Option<crate::model::CognitoConfig>,
+            input: std::option::Option<crate::model::CognitoConfig>,
         ) -> Self {
-            self.inner = self.inner.set_cognito_config(inp);
+            self.inner = self.inner.set_cognito_config(input);
             self
         }
         /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
         /// <p>Do not use <code>CognitoConfig</code> if you specify values for
         /// <code>OidcConfig</code>.</p>
-        pub fn oidc_config(mut self, inp: crate::model::OidcConfig) -> Self {
-            self.inner = self.inner.oidc_config(inp);
+        pub fn oidc_config(mut self, input: crate::model::OidcConfig) -> Self {
+            self.inner = self.inner.oidc_config(input);
             self
         }
         pub fn set_oidc_config(
             mut self,
-            inp: std::option::Option<crate::model::OidcConfig>,
+            input: std::option::Option<crate::model::OidcConfig>,
         ) -> Self {
-            self.inner = self.inner.set_oidc_config(inp);
+            self.inner = self.inner.set_oidc_config(input);
             self
         }
         /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow
         /// list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an
         /// IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
-        pub fn source_ip_config(mut self, inp: crate::model::SourceIpConfig) -> Self {
-            self.inner = self.inner.source_ip_config(inp);
+        pub fn source_ip_config(mut self, input: crate::model::SourceIpConfig) -> Self {
+            self.inner = self.inner.source_ip_config(input);
             self
         }
         pub fn set_source_ip_config(
             mut self,
-            inp: std::option::Option<crate::model::SourceIpConfig>,
+            input: std::option::Option<crate::model::SourceIpConfig>,
         ) -> Self {
-            self.inner = self.inner.set_source_ip_config(inp);
+            self.inner = self.inner.set_source_ip_config(input);
             self
         }
         /// <p>The name of the private workforce.</p>
-        pub fn workforce_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(inp);
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input);
             self
         }
-        pub fn set_workforce_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workforce_name(inp);
+        pub fn set_workforce_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workforce_name(input);
             self
         }
         /// <p>An array of key-value pairs that contain metadata to help you categorize and
@@ -6786,9 +6850,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -6807,7 +6871,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateWorkteamOutput,
             smithy_http::result::SdkError<crate::error::CreateWorkteamError>,
         >
@@ -6824,21 +6888,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the work team. Use this name to identify the work team.</p>
-        pub fn workteam_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_name(inp);
+        pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_name(input);
             self
         }
-        pub fn set_workteam_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workteam_name(inp);
+        pub fn set_workteam_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workteam_name(input);
             self
         }
         /// <p>The name of the workforce.</p>
-        pub fn workforce_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(inp);
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input);
             self
         }
-        pub fn set_workforce_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workforce_name(inp);
+        pub fn set_workforce_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workforce_name(input);
             self
         }
         /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify
@@ -6867,33 +6937,33 @@ pub mod fluent_builders {
         }
         pub fn set_member_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MemberDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MemberDefinition>>,
         ) -> Self {
-            self.inner = self.inner.set_member_definitions(inp);
+            self.inner = self.inner.set_member_definitions(input);
             self
         }
         /// <p>A description of the work team.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Configures notification of workers regarding available or expiring work items.</p>
         pub fn notification_configuration(
             mut self,
-            inp: crate::model::NotificationConfiguration,
+            input: crate::model::NotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.notification_configuration(inp);
+            self.inner = self.inner.notification_configuration(input);
             self
         }
         pub fn set_notification_configuration(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfiguration>,
+            input: std::option::Option<crate::model::NotificationConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_notification_configuration(inp);
+            self.inner = self.inner.set_notification_configuration(input);
             self
         }
         /// <p>An array of key-value pairs.</p>
@@ -6907,9 +6977,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -6928,7 +6998,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteActionOutput,
             smithy_http::result::SdkError<crate::error::DeleteActionError>,
         >
@@ -6945,12 +7015,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the action to delete.</p>
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(inp);
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input);
             self
         }
-        pub fn set_action_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_action_name(inp);
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_name(input);
             self
         }
     }
@@ -6969,7 +7039,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAlgorithmOutput,
             smithy_http::result::SdkError<crate::error::DeleteAlgorithmError>,
         >
@@ -6986,12 +7056,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the algorithm to delete.</p>
-        pub fn algorithm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_name(inp);
+        pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_name(input);
             self
         }
-        pub fn set_algorithm_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_algorithm_name(inp);
+        pub fn set_algorithm_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_algorithm_name(input);
             self
         }
     }
@@ -7010,7 +7083,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAppOutput,
             smithy_http::result::SdkError<crate::error::DeleteAppError>,
         >
@@ -7027,42 +7100,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(inp);
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input);
             self
         }
         pub fn set_user_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name(inp);
+            self.inner = self.inner.set_user_profile_name(input);
             self
         }
         /// <p>The type of app.</p>
-        pub fn app_type(mut self, inp: crate::model::AppType) -> Self {
-            self.inner = self.inner.app_type(inp);
+        pub fn app_type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.app_type(input);
             self
         }
-        pub fn set_app_type(mut self, inp: std::option::Option<crate::model::AppType>) -> Self {
-            self.inner = self.inner.set_app_type(inp);
+        pub fn set_app_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
+            self.inner = self.inner.set_app_type(input);
             self
         }
         /// <p>The name of the app.</p>
-        pub fn app_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(inp);
+        pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_name(input);
             self
         }
-        pub fn set_app_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_name(inp);
+        pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_name(input);
             self
         }
     }
@@ -7081,7 +7154,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAppImageConfigOutput,
             smithy_http::result::SdkError<crate::error::DeleteAppImageConfigError>,
         >
@@ -7098,15 +7171,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the AppImageConfig to delete.</p>
-        pub fn app_image_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_image_config_name(inp);
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_image_config_name(input);
             self
         }
         pub fn set_app_image_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_app_image_config_name(inp);
+            self.inner = self.inner.set_app_image_config_name(input);
             self
         }
     }
@@ -7125,7 +7198,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteArtifactOutput,
             smithy_http::result::SdkError<crate::error::DeleteArtifactError>,
         >
@@ -7142,24 +7215,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
-        pub fn artifact_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_arn(inp);
+        pub fn artifact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_arn(input);
             self
         }
-        pub fn set_artifact_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_artifact_arn(inp);
+        pub fn set_artifact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_artifact_arn(input);
             self
         }
         /// <p>The URI of the source.</p>
-        pub fn source(mut self, inp: crate::model::ArtifactSource) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::ArtifactSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         pub fn set_source(
             mut self,
-            inp: std::option::Option<crate::model::ArtifactSource>,
+            input: std::option::Option<crate::model::ArtifactSource>,
         ) -> Self {
-            self.inner = self.inner.set_source(inp);
+            self.inner = self.inner.set_source(input);
             self
         }
     }
@@ -7178,7 +7251,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAssociationOutput,
             smithy_http::result::SdkError<crate::error::DeleteAssociationError>,
         >
@@ -7195,24 +7268,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the source.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input);
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_arn(inp);
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_arn(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-        pub fn destination_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_arn(inp);
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input);
             self
         }
         pub fn set_destination_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_destination_arn(inp);
+            self.inner = self.inner.set_destination_arn(input);
             self
         }
     }
@@ -7231,7 +7304,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteCodeRepositoryOutput,
             smithy_http::result::SdkError<crate::error::DeleteCodeRepositoryError>,
         >
@@ -7248,15 +7321,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Git repository to delete.</p>
-        pub fn code_repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_repository_name(inp);
+        pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_repository_name(input);
             self
         }
         pub fn set_code_repository_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_code_repository_name(inp);
+            self.inner = self.inner.set_code_repository_name(input);
             self
         }
     }
@@ -7275,7 +7348,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteContextOutput,
             smithy_http::result::SdkError<crate::error::DeleteContextError>,
         >
@@ -7292,12 +7365,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the context to delete.</p>
-        pub fn context_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_name(inp);
+        pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_name(input);
             self
         }
-        pub fn set_context_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_context_name(inp);
+        pub fn set_context_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context_name(input);
             self
         }
     }
@@ -7316,7 +7389,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDataQualityJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DeleteDataQualityJobDefinitionError>,
         >
@@ -7333,15 +7406,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data quality monitoring job definition to delete.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
     }
@@ -7360,7 +7433,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDeviceFleetOutput,
             smithy_http::result::SdkError<crate::error::DeleteDeviceFleetError>,
         >
@@ -7377,15 +7450,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet to delete.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
     }
@@ -7404,7 +7477,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteDomainOutput,
             smithy_http::result::SdkError<crate::error::DeleteDomainError>,
         >
@@ -7421,26 +7494,26 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted.
         /// By default, all resources are retained (not automatically deleted).
         /// </p>
-        pub fn retention_policy(mut self, inp: crate::model::RetentionPolicy) -> Self {
-            self.inner = self.inner.retention_policy(inp);
+        pub fn retention_policy(mut self, input: crate::model::RetentionPolicy) -> Self {
+            self.inner = self.inner.retention_policy(input);
             self
         }
         pub fn set_retention_policy(
             mut self,
-            inp: std::option::Option<crate::model::RetentionPolicy>,
+            input: std::option::Option<crate::model::RetentionPolicy>,
         ) -> Self {
-            self.inner = self.inner.set_retention_policy(inp);
+            self.inner = self.inner.set_retention_policy(input);
             self
         }
     }
@@ -7459,7 +7532,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteEndpointOutput,
             smithy_http::result::SdkError<crate::error::DeleteEndpointError>,
         >
@@ -7476,12 +7549,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint that you want to delete.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
     }
@@ -7500,7 +7576,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteEndpointConfigOutput,
             smithy_http::result::SdkError<crate::error::DeleteEndpointConfigError>,
         >
@@ -7517,15 +7593,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint configuration that you want to delete.</p>
-        pub fn endpoint_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(inp);
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input);
             self
         }
         pub fn set_endpoint_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_endpoint_config_name(inp);
+            self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
     }
@@ -7544,7 +7620,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteExperimentOutput,
             smithy_http::result::SdkError<crate::error::DeleteExperimentError>,
         >
@@ -7561,15 +7637,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the experiment to delete.</p>
-        pub fn experiment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(inp);
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input);
             self
         }
         pub fn set_experiment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_name(inp);
+            self.inner = self.inner.set_experiment_name(input);
             self
         }
     }
@@ -7588,7 +7664,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteFeatureGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteFeatureGroupError>,
         >
@@ -7606,15 +7682,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
         /// within an AWS Region in an AWS account. </p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input);
             self
         }
         pub fn set_feature_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_feature_group_name(inp);
+            self.inner = self.inner.set_feature_group_name(input);
             self
         }
     }
@@ -7633,7 +7709,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteFlowDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DeleteFlowDefinitionError>,
         >
@@ -7650,15 +7726,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the flow definition you are deleting.</p>
-        pub fn flow_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_name(inp);
+        pub fn flow_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_name(input);
             self
         }
         pub fn set_flow_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_flow_definition_name(inp);
+            self.inner = self.inner.set_flow_definition_name(input);
             self
         }
     }
@@ -7677,7 +7753,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteHumanTaskUiOutput,
             smithy_http::result::SdkError<crate::error::DeleteHumanTaskUiError>,
         >
@@ -7694,15 +7770,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human task user interface (work task template) you want to delete.</p>
-        pub fn human_task_ui_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_task_ui_name(inp);
+        pub fn human_task_ui_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_task_ui_name(input);
             self
         }
         pub fn set_human_task_ui_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_human_task_ui_name(inp);
+            self.inner = self.inner.set_human_task_ui_name(input);
             self
         }
     }
@@ -7721,7 +7797,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteImageOutput,
             smithy_http::result::SdkError<crate::error::DeleteImageError>,
         >
@@ -7738,12 +7814,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image to delete.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input);
             self
         }
-        pub fn set_image_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_name(inp);
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
             self
         }
     }
@@ -7762,7 +7838,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteImageVersionOutput,
             smithy_http::result::SdkError<crate::error::DeleteImageVersionError>,
         >
@@ -7779,21 +7855,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input);
             self
         }
-        pub fn set_image_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_name(inp);
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
             self
         }
         /// <p>The version to delete.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_version(inp);
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
     }
@@ -7812,7 +7888,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteModelOutput,
             smithy_http::result::SdkError<crate::error::DeleteModelError>,
         >
@@ -7829,12 +7905,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model to delete.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
     }
@@ -7853,7 +7929,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteModelBiasJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DeleteModelBiasJobDefinitionError>,
         >
@@ -7870,15 +7946,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model bias job definition to delete.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
     }
@@ -7897,7 +7973,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteModelExplainabilityJobDefinitionOutput,
             smithy_http::result::SdkError<
                 crate::error::DeleteModelExplainabilityJobDefinitionError,
@@ -7916,15 +7992,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model explainability job definition to delete.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
     }
@@ -7943,7 +8019,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteModelPackageOutput,
             smithy_http::result::SdkError<crate::error::DeleteModelPackageError>,
         >
@@ -7962,15 +8038,15 @@ pub mod fluent_builders {
         /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
         /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
         /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-        pub fn model_package_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_name(inp);
+        pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_name(input);
             self
         }
         pub fn set_model_package_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_name(inp);
+            self.inner = self.inner.set_model_package_name(input);
             self
         }
     }
@@ -7989,7 +8065,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteModelPackageGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteModelPackageGroupError>,
         >
@@ -8006,15 +8082,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group to delete.</p>
-        pub fn model_package_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_group_name(inp);
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input);
             self
         }
         pub fn set_model_package_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_name(inp);
+            self.inner = self.inner.set_model_package_group_name(input);
             self
         }
     }
@@ -8033,7 +8109,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteModelPackageGroupPolicyOutput,
             smithy_http::result::SdkError<crate::error::DeleteModelPackageGroupPolicyError>,
         >
@@ -8050,15 +8126,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group for which to delete the policy.</p>
-        pub fn model_package_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_group_name(inp);
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input);
             self
         }
         pub fn set_model_package_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_name(inp);
+            self.inner = self.inner.set_model_package_group_name(input);
             self
         }
     }
@@ -8077,7 +8153,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteModelQualityJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DeleteModelQualityJobDefinitionError>,
         >
@@ -8094,15 +8170,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model quality monitoring job definition to delete.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
     }
@@ -8121,7 +8197,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteMonitoringScheduleOutput,
             smithy_http::result::SdkError<crate::error::DeleteMonitoringScheduleError>,
         >
@@ -8138,15 +8214,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the monitoring schedule to delete.</p>
-        pub fn monitoring_schedule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(inp);
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input);
             self
         }
         pub fn set_monitoring_schedule_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_name(inp);
+            self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
     }
@@ -8165,7 +8241,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteNotebookInstanceOutput,
             smithy_http::result::SdkError<crate::error::DeleteNotebookInstanceError>,
         >
@@ -8182,15 +8258,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon SageMaker notebook instance to delete.</p>
-        pub fn notebook_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(inp);
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input);
             self
         }
         pub fn set_notebook_instance_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_name(inp);
+            self.inner = self.inner.set_notebook_instance_name(input);
             self
         }
     }
@@ -8209,7 +8285,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteNotebookInstanceLifecycleConfigOutput,
             smithy_http::result::SdkError<crate::error::DeleteNotebookInstanceLifecycleConfigError>,
         >
@@ -8228,16 +8304,18 @@ pub mod fluent_builders {
         /// <p>The name of the lifecycle configuration to delete.</p>
         pub fn notebook_instance_lifecycle_config_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.notebook_instance_lifecycle_config_name(inp);
+            self.inner = self.inner.notebook_instance_lifecycle_config_name(input);
             self
         }
         pub fn set_notebook_instance_lifecycle_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_lifecycle_config_name(inp);
+            self.inner = self
+                .inner
+                .set_notebook_instance_lifecycle_config_name(input);
             self
         }
     }
@@ -8256,7 +8334,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeletePipelineOutput,
             smithy_http::result::SdkError<crate::error::DeletePipelineError>,
         >
@@ -8273,25 +8351,28 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to delete.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input);
             self
         }
-        pub fn set_pipeline_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pipeline_name(inp);
+        pub fn set_pipeline_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pipeline_name(input);
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -8310,7 +8391,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteProjectOutput,
             smithy_http::result::SdkError<crate::error::DeleteProjectError>,
         >
@@ -8327,12 +8408,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input);
             self
         }
-        pub fn set_project_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_project_name(inp);
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_name(input);
             self
         }
     }
@@ -8351,7 +8432,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteTagsOutput,
             smithy_http::result::SdkError<crate::error::DeleteTagsError>,
         >
@@ -8369,12 +8450,12 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
         /// delete.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>An array or one or more tag keys to delete.</p>
@@ -8384,9 +8465,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -8405,7 +8486,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteTrialOutput,
             smithy_http::result::SdkError<crate::error::DeleteTrialError>,
         >
@@ -8422,12 +8503,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trial to delete.</p>
-        pub fn trial_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(inp);
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input);
             self
         }
-        pub fn set_trial_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_trial_name(inp);
+        pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_trial_name(input);
             self
         }
     }
@@ -8446,7 +8527,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteTrialComponentOutput,
             smithy_http::result::SdkError<crate::error::DeleteTrialComponentError>,
         >
@@ -8463,15 +8544,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component to delete.</p>
-        pub fn trial_component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(inp);
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input);
             self
         }
         pub fn set_trial_component_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_trial_component_name(inp);
+            self.inner = self.inner.set_trial_component_name(input);
             self
         }
     }
@@ -8490,7 +8571,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteUserProfileOutput,
             smithy_http::result::SdkError<crate::error::DeleteUserProfileError>,
         >
@@ -8507,24 +8588,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(inp);
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input);
             self
         }
         pub fn set_user_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name(inp);
+            self.inner = self.inner.set_user_profile_name(input);
             self
         }
     }
@@ -8543,7 +8624,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteWorkforceOutput,
             smithy_http::result::SdkError<crate::error::DeleteWorkforceError>,
         >
@@ -8560,12 +8641,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workforce.</p>
-        pub fn workforce_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(inp);
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input);
             self
         }
-        pub fn set_workforce_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workforce_name(inp);
+        pub fn set_workforce_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workforce_name(input);
             self
         }
     }
@@ -8584,7 +8668,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteWorkteamOutput,
             smithy_http::result::SdkError<crate::error::DeleteWorkteamError>,
         >
@@ -8601,12 +8685,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the work team to delete.</p>
-        pub fn workteam_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_name(inp);
+        pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_name(input);
             self
         }
-        pub fn set_workteam_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workteam_name(inp);
+        pub fn set_workteam_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workteam_name(input);
             self
         }
     }
@@ -8625,7 +8712,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeregisterDevicesOutput,
             smithy_http::result::SdkError<crate::error::DeregisterDevicesError>,
         >
@@ -8642,15 +8729,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet the devices belong to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
         /// <p>The unique IDs of the devices.</p>
@@ -8660,9 +8747,9 @@ pub mod fluent_builders {
         }
         pub fn set_device_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_device_names(inp);
+            self.inner = self.inner.set_device_names(input);
             self
         }
     }
@@ -8681,7 +8768,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeActionOutput,
             smithy_http::result::SdkError<crate::error::DescribeActionError>,
         >
@@ -8698,12 +8785,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the action to describe.</p>
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(inp);
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input);
             self
         }
-        pub fn set_action_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_action_name(inp);
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_name(input);
             self
         }
     }
@@ -8722,7 +8809,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeAlgorithmOutput,
             smithy_http::result::SdkError<crate::error::DescribeAlgorithmError>,
         >
@@ -8739,12 +8826,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the algorithm to describe.</p>
-        pub fn algorithm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_name(inp);
+        pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_name(input);
             self
         }
-        pub fn set_algorithm_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_algorithm_name(inp);
+        pub fn set_algorithm_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_algorithm_name(input);
             self
         }
     }
@@ -8763,7 +8853,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeAppOutput,
             smithy_http::result::SdkError<crate::error::DescribeAppError>,
         >
@@ -8780,42 +8870,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(inp);
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input);
             self
         }
         pub fn set_user_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name(inp);
+            self.inner = self.inner.set_user_profile_name(input);
             self
         }
         /// <p>The type of app.</p>
-        pub fn app_type(mut self, inp: crate::model::AppType) -> Self {
-            self.inner = self.inner.app_type(inp);
+        pub fn app_type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.app_type(input);
             self
         }
-        pub fn set_app_type(mut self, inp: std::option::Option<crate::model::AppType>) -> Self {
-            self.inner = self.inner.set_app_type(inp);
+        pub fn set_app_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
+            self.inner = self.inner.set_app_type(input);
             self
         }
         /// <p>The name of the app.</p>
-        pub fn app_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(inp);
+        pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_name(input);
             self
         }
-        pub fn set_app_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_name(inp);
+        pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_name(input);
             self
         }
     }
@@ -8834,7 +8924,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeAppImageConfigOutput,
             smithy_http::result::SdkError<crate::error::DescribeAppImageConfigError>,
         >
@@ -8851,15 +8941,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the AppImageConfig to describe.</p>
-        pub fn app_image_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_image_config_name(inp);
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_image_config_name(input);
             self
         }
         pub fn set_app_image_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_app_image_config_name(inp);
+            self.inner = self.inner.set_app_image_config_name(input);
             self
         }
     }
@@ -8878,7 +8968,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeArtifactOutput,
             smithy_http::result::SdkError<crate::error::DescribeArtifactError>,
         >
@@ -8895,12 +8985,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
-        pub fn artifact_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_arn(inp);
+        pub fn artifact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_arn(input);
             self
         }
-        pub fn set_artifact_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_artifact_arn(inp);
+        pub fn set_artifact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_artifact_arn(input);
             self
         }
     }
@@ -8919,7 +9009,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeAutoMLJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeAutoMLJobError>,
         >
@@ -8936,15 +9026,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Requests information about an AutoML job using its unique name.</p>
-        pub fn auto_ml_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_ml_job_name(inp);
+        pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_ml_job_name(input);
             self
         }
         pub fn set_auto_ml_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_auto_ml_job_name(inp);
+            self.inner = self.inner.set_auto_ml_job_name(input);
             self
         }
     }
@@ -8963,7 +9053,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeCodeRepositoryOutput,
             smithy_http::result::SdkError<crate::error::DescribeCodeRepositoryError>,
         >
@@ -8980,15 +9070,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Git repository to describe.</p>
-        pub fn code_repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_repository_name(inp);
+        pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_repository_name(input);
             self
         }
         pub fn set_code_repository_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_code_repository_name(inp);
+            self.inner = self.inner.set_code_repository_name(input);
             self
         }
     }
@@ -9007,7 +9097,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeCompilationJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeCompilationJobError>,
         >
@@ -9024,15 +9114,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model compilation job that you want information about.</p>
-        pub fn compilation_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compilation_job_name(inp);
+        pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compilation_job_name(input);
             self
         }
         pub fn set_compilation_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_compilation_job_name(inp);
+            self.inner = self.inner.set_compilation_job_name(input);
             self
         }
     }
@@ -9051,7 +9141,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeContextOutput,
             smithy_http::result::SdkError<crate::error::DescribeContextError>,
         >
@@ -9068,12 +9158,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the context to describe.</p>
-        pub fn context_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_name(inp);
+        pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_name(input);
             self
         }
-        pub fn set_context_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_context_name(inp);
+        pub fn set_context_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context_name(input);
             self
         }
     }
@@ -9092,7 +9182,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDataQualityJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DescribeDataQualityJobDefinitionError>,
         >
@@ -9109,15 +9199,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data quality monitoring job definition to describe.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
     }
@@ -9136,7 +9226,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDeviceOutput,
             smithy_http::result::SdkError<crate::error::DescribeDeviceError>,
         >
@@ -9153,33 +9243,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Next token of device description.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The unique ID of the device.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input);
             self
         }
-        pub fn set_device_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_name(inp);
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_name(input);
             self
         }
         /// <p>The name of the fleet the devices belong to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
     }
@@ -9198,7 +9288,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDeviceFleetOutput,
             smithy_http::result::SdkError<crate::error::DescribeDeviceFleetError>,
         >
@@ -9215,15 +9305,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
     }
@@ -9242,7 +9332,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeDomainOutput,
             smithy_http::result::SdkError<crate::error::DescribeDomainError>,
         >
@@ -9259,12 +9349,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
     }
@@ -9283,7 +9373,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEdgePackagingJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeEdgePackagingJobError>,
         >
@@ -9300,15 +9390,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the edge packaging job.</p>
-        pub fn edge_packaging_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.edge_packaging_job_name(inp);
+        pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_packaging_job_name(input);
             self
         }
         pub fn set_edge_packaging_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_edge_packaging_job_name(inp);
+            self.inner = self.inner.set_edge_packaging_job_name(input);
             self
         }
     }
@@ -9327,7 +9417,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEndpointOutput,
             smithy_http::result::SdkError<crate::error::DescribeEndpointError>,
         >
@@ -9344,12 +9434,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
     }
@@ -9368,7 +9461,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEndpointConfigOutput,
             smithy_http::result::SdkError<crate::error::DescribeEndpointConfigError>,
         >
@@ -9385,15 +9478,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint configuration.</p>
-        pub fn endpoint_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(inp);
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input);
             self
         }
         pub fn set_endpoint_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_endpoint_config_name(inp);
+            self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
     }
@@ -9412,7 +9505,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeExperimentOutput,
             smithy_http::result::SdkError<crate::error::DescribeExperimentError>,
         >
@@ -9429,15 +9522,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the experiment to describe.</p>
-        pub fn experiment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(inp);
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input);
             self
         }
         pub fn set_experiment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_name(inp);
+            self.inner = self.inner.set_experiment_name(input);
             self
         }
     }
@@ -9456,7 +9549,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeFeatureGroupOutput,
             smithy_http::result::SdkError<crate::error::DescribeFeatureGroupError>,
         >
@@ -9473,26 +9566,26 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input);
             self
         }
         pub fn set_feature_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_feature_group_name(inp);
+            self.inner = self.inner.set_feature_group_name(input);
             self
         }
         /// <p>A token to resume pagination of the list of <code>Features</code>
         /// (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by
         /// default.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -9511,7 +9604,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeFlowDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DescribeFlowDefinitionError>,
         >
@@ -9528,15 +9621,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the flow definition.</p>
-        pub fn flow_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_name(inp);
+        pub fn flow_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_name(input);
             self
         }
         pub fn set_flow_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_flow_definition_name(inp);
+            self.inner = self.inner.set_flow_definition_name(input);
             self
         }
     }
@@ -9555,7 +9648,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeHumanTaskUiOutput,
             smithy_http::result::SdkError<crate::error::DescribeHumanTaskUiError>,
         >
@@ -9573,15 +9666,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the human task user interface
         /// (worker task template) you want information about.</p>
-        pub fn human_task_ui_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_task_ui_name(inp);
+        pub fn human_task_ui_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_task_ui_name(input);
             self
         }
         pub fn set_human_task_ui_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_human_task_ui_name(inp);
+            self.inner = self.inner.set_human_task_ui_name(input);
             self
         }
     }
@@ -9600,7 +9693,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeHyperParameterTuningJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeHyperParameterTuningJobError>,
         >
@@ -9619,16 +9712,16 @@ pub mod fluent_builders {
         /// <p>The name of the tuning job.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_name(inp);
+            self.inner = self.inner.hyper_parameter_tuning_job_name(input);
             self
         }
         pub fn set_hyper_parameter_tuning_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_hyper_parameter_tuning_job_name(inp);
+            self.inner = self.inner.set_hyper_parameter_tuning_job_name(input);
             self
         }
     }
@@ -9647,7 +9740,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeImageOutput,
             smithy_http::result::SdkError<crate::error::DescribeImageError>,
         >
@@ -9664,12 +9757,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image to describe.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input);
             self
         }
-        pub fn set_image_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_name(inp);
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
             self
         }
     }
@@ -9688,7 +9781,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeImageVersionOutput,
             smithy_http::result::SdkError<crate::error::DescribeImageVersionError>,
         >
@@ -9705,21 +9798,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input);
             self
         }
-        pub fn set_image_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_name(inp);
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
             self
         }
         /// <p>The version of the image. If not specified, the latest version is described.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_version(inp);
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
     }
@@ -9738,7 +9831,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeLabelingJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeLabelingJobError>,
         >
@@ -9755,15 +9848,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the labeling job to return information for.</p>
-        pub fn labeling_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labeling_job_name(inp);
+        pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labeling_job_name(input);
             self
         }
         pub fn set_labeling_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_labeling_job_name(inp);
+            self.inner = self.inner.set_labeling_job_name(input);
             self
         }
     }
@@ -9782,7 +9875,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeModelOutput,
             smithy_http::result::SdkError<crate::error::DescribeModelError>,
         >
@@ -9799,12 +9892,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
     }
@@ -9823,7 +9916,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeModelBiasJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DescribeModelBiasJobDefinitionError>,
         >
@@ -9841,15 +9934,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the model bias job definition. The name must be unique within an AWS Region
         /// in the AWS account.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
     }
@@ -9868,7 +9961,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeModelExplainabilityJobDefinitionOutput,
             smithy_http::result::SdkError<
                 crate::error::DescribeModelExplainabilityJobDefinitionError,
@@ -9888,15 +9981,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the model explainability job definition. The name must be unique within an
         /// AWS Region in the AWS account.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
     }
@@ -9915,7 +10008,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeModelPackageOutput,
             smithy_http::result::SdkError<crate::error::DescribeModelPackageError>,
         >
@@ -9934,15 +10027,15 @@ pub mod fluent_builders {
         /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
         /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
         /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-        pub fn model_package_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_name(inp);
+        pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_name(input);
             self
         }
         pub fn set_model_package_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_name(inp);
+            self.inner = self.inner.set_model_package_name(input);
             self
         }
     }
@@ -9961,7 +10054,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeModelPackageGroupOutput,
             smithy_http::result::SdkError<crate::error::DescribeModelPackageGroupError>,
         >
@@ -9978,15 +10071,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group to describe.</p>
-        pub fn model_package_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_group_name(inp);
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input);
             self
         }
         pub fn set_model_package_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_name(inp);
+            self.inner = self.inner.set_model_package_group_name(input);
             self
         }
     }
@@ -10005,7 +10098,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeModelQualityJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DescribeModelQualityJobDefinitionError>,
         >
@@ -10023,15 +10116,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the model quality job. The name must be unique within an AWS Region in the
         /// AWS account.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
     }
@@ -10050,7 +10143,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeMonitoringScheduleOutput,
             smithy_http::result::SdkError<crate::error::DescribeMonitoringScheduleError>,
         >
@@ -10067,15 +10160,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a previously created monitoring schedule.</p>
-        pub fn monitoring_schedule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(inp);
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input);
             self
         }
         pub fn set_monitoring_schedule_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_name(inp);
+            self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
     }
@@ -10094,7 +10187,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeNotebookInstanceOutput,
             smithy_http::result::SdkError<crate::error::DescribeNotebookInstanceError>,
         >
@@ -10111,15 +10204,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance that you want information about.</p>
-        pub fn notebook_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(inp);
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input);
             self
         }
         pub fn set_notebook_instance_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_name(inp);
+            self.inner = self.inner.set_notebook_instance_name(input);
             self
         }
     }
@@ -10138,7 +10231,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeNotebookInstanceLifecycleConfigOutput,
             smithy_http::result::SdkError<
                 crate::error::DescribeNotebookInstanceLifecycleConfigError,
@@ -10159,16 +10252,18 @@ pub mod fluent_builders {
         /// <p>The name of the lifecycle configuration to describe.</p>
         pub fn notebook_instance_lifecycle_config_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.notebook_instance_lifecycle_config_name(inp);
+            self.inner = self.inner.notebook_instance_lifecycle_config_name(input);
             self
         }
         pub fn set_notebook_instance_lifecycle_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_lifecycle_config_name(inp);
+            self.inner = self
+                .inner
+                .set_notebook_instance_lifecycle_config_name(input);
             self
         }
     }
@@ -10187,7 +10282,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribePipelineOutput,
             smithy_http::result::SdkError<crate::error::DescribePipelineError>,
         >
@@ -10204,12 +10299,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to describe.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input);
             self
         }
-        pub fn set_pipeline_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pipeline_name(inp);
+        pub fn set_pipeline_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pipeline_name(input);
             self
         }
     }
@@ -10228,7 +10326,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribePipelineDefinitionForExecutionOutput,
             smithy_http::result::SdkError<
                 crate::error::DescribePipelineDefinitionForExecutionError,
@@ -10247,15 +10345,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(inp);
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input);
             self
         }
         pub fn set_pipeline_execution_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_arn(inp);
+            self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
     }
@@ -10274,7 +10372,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribePipelineExecutionOutput,
             smithy_http::result::SdkError<crate::error::DescribePipelineExecutionError>,
         >
@@ -10291,15 +10389,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(inp);
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input);
             self
         }
         pub fn set_pipeline_execution_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_arn(inp);
+            self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
     }
@@ -10318,7 +10416,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeProcessingJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeProcessingJobError>,
         >
@@ -10336,15 +10434,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the processing job. The name must be unique within an AWS Region in the
         /// AWS account.</p>
-        pub fn processing_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.processing_job_name(inp);
+        pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.processing_job_name(input);
             self
         }
         pub fn set_processing_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_processing_job_name(inp);
+            self.inner = self.inner.set_processing_job_name(input);
             self
         }
     }
@@ -10363,7 +10461,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeProjectOutput,
             smithy_http::result::SdkError<crate::error::DescribeProjectError>,
         >
@@ -10380,12 +10478,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to describe.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input);
             self
         }
-        pub fn set_project_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_project_name(inp);
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_name(input);
             self
         }
     }
@@ -10404,7 +10502,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeSubscribedWorkteamOutput,
             smithy_http::result::SdkError<crate::error::DescribeSubscribedWorkteamError>,
         >
@@ -10421,12 +10519,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-        pub fn workteam_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_arn(inp);
+        pub fn workteam_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_arn(input);
             self
         }
-        pub fn set_workteam_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workteam_arn(inp);
+        pub fn set_workteam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workteam_arn(input);
             self
         }
     }
@@ -10445,7 +10543,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTrainingJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeTrainingJobError>,
         >
@@ -10462,15 +10560,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the training job.</p>
-        pub fn training_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_job_name(inp);
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_job_name(input);
             self
         }
         pub fn set_training_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_training_job_name(inp);
+            self.inner = self.inner.set_training_job_name(input);
             self
         }
     }
@@ -10489,7 +10587,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTransformJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeTransformJobError>,
         >
@@ -10506,15 +10604,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the transform job that you want to view details of.</p>
-        pub fn transform_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_job_name(inp);
+        pub fn transform_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_job_name(input);
             self
         }
         pub fn set_transform_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_transform_job_name(inp);
+            self.inner = self.inner.set_transform_job_name(input);
             self
         }
     }
@@ -10533,7 +10631,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTrialOutput,
             smithy_http::result::SdkError<crate::error::DescribeTrialError>,
         >
@@ -10550,12 +10648,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trial to describe.</p>
-        pub fn trial_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(inp);
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input);
             self
         }
-        pub fn set_trial_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_trial_name(inp);
+        pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_trial_name(input);
             self
         }
     }
@@ -10574,7 +10672,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTrialComponentOutput,
             smithy_http::result::SdkError<crate::error::DescribeTrialComponentError>,
         >
@@ -10591,15 +10689,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trial component to describe.</p>
-        pub fn trial_component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(inp);
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input);
             self
         }
         pub fn set_trial_component_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_trial_component_name(inp);
+            self.inner = self.inner.set_trial_component_name(input);
             self
         }
     }
@@ -10618,7 +10716,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeUserProfileOutput,
             smithy_http::result::SdkError<crate::error::DescribeUserProfileError>,
         >
@@ -10635,24 +10733,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>The user profile name. This value is not case sensitive.</p>
-        pub fn user_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(inp);
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input);
             self
         }
         pub fn set_user_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name(inp);
+            self.inner = self.inner.set_user_profile_name(input);
             self
         }
     }
@@ -10671,7 +10769,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeWorkforceOutput,
             smithy_http::result::SdkError<crate::error::DescribeWorkforceError>,
         >
@@ -10690,12 +10788,15 @@ pub mod fluent_builders {
         /// <p>The name of the private workforce whose access you want to restrict.
         /// <code>WorkforceName</code> is automatically set to <code>default</code> when a
         /// workforce is created and cannot be modified. </p>
-        pub fn workforce_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(inp);
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input);
             self
         }
-        pub fn set_workforce_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workforce_name(inp);
+        pub fn set_workforce_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workforce_name(input);
             self
         }
     }
@@ -10714,7 +10815,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeWorkteamOutput,
             smithy_http::result::SdkError<crate::error::DescribeWorkteamError>,
         >
@@ -10731,12 +10832,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the work team to return a description of.</p>
-        pub fn workteam_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_name(inp);
+        pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_name(input);
             self
         }
-        pub fn set_workteam_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workteam_name(inp);
+        pub fn set_workteam_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workteam_name(input);
             self
         }
     }
@@ -10755,7 +10859,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisableSagemakerServicecatalogPortfolioOutput,
             smithy_http::result::SdkError<
                 crate::error::DisableSagemakerServicecatalogPortfolioError,
@@ -10789,7 +10893,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisassociateTrialComponentOutput,
             smithy_http::result::SdkError<crate::error::DisassociateTrialComponentError>,
         >
@@ -10806,24 +10910,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component to disassociate from the trial.</p>
-        pub fn trial_component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(inp);
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input);
             self
         }
         pub fn set_trial_component_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_trial_component_name(inp);
+            self.inner = self.inner.set_trial_component_name(input);
             self
         }
         /// <p>The name of the trial to disassociate from.</p>
-        pub fn trial_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(inp);
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input);
             self
         }
-        pub fn set_trial_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_trial_name(inp);
+        pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_trial_name(input);
             self
         }
     }
@@ -10842,7 +10946,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EnableSagemakerServicecatalogPortfolioOutput,
             smithy_http::result::SdkError<
                 crate::error::EnableSagemakerServicecatalogPortfolioError,
@@ -10876,7 +10980,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDeviceFleetReportOutput,
             smithy_http::result::SdkError<crate::error::GetDeviceFleetReportError>,
         >
@@ -10893,15 +10997,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
     }
@@ -10920,7 +11024,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetModelPackageGroupPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetModelPackageGroupPolicyError>,
         >
@@ -10937,15 +11041,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group for which to get the resource policy.</p>
-        pub fn model_package_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_group_name(inp);
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input);
             self
         }
         pub fn set_model_package_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_name(inp);
+            self.inner = self.inner.set_model_package_group_name(input);
             self
         }
     }
@@ -10964,7 +11068,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSagemakerServicecatalogPortfolioStatusOutput,
             smithy_http::result::SdkError<
                 crate::error::GetSagemakerServicecatalogPortfolioStatusError,
@@ -10998,7 +11102,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSearchSuggestionsOutput,
             smithy_http::result::SdkError<crate::error::GetSearchSuggestionsError>,
         >
@@ -11015,27 +11119,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon SageMaker resource to search for.</p>
-        pub fn resource(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource(input);
             self
         }
         pub fn set_resource(
             mut self,
-            inp: std::option::Option<crate::model::ResourceType>,
+            input: std::option::Option<crate::model::ResourceType>,
         ) -> Self {
-            self.inner = self.inner.set_resource(inp);
+            self.inner = self.inner.set_resource(input);
             self
         }
         /// <p>Limits the property names that are included in the response.</p>
-        pub fn suggestion_query(mut self, inp: crate::model::SuggestionQuery) -> Self {
-            self.inner = self.inner.suggestion_query(inp);
+        pub fn suggestion_query(mut self, input: crate::model::SuggestionQuery) -> Self {
+            self.inner = self.inner.suggestion_query(input);
             self
         }
         pub fn set_suggestion_query(
             mut self,
-            inp: std::option::Option<crate::model::SuggestionQuery>,
+            input: std::option::Option<crate::model::SuggestionQuery>,
         ) -> Self {
-            self.inner = self.inner.set_suggestion_query(inp);
+            self.inner = self.inner.set_suggestion_query(input);
             self
         }
     }
@@ -11054,7 +11158,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListActionsOutput,
             smithy_http::result::SdkError<crate::error::ListActionsError>,
         >
@@ -11071,85 +11175,88 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only actions with the specified source URI.</p>
-        pub fn source_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(inp);
+        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(input);
             self
         }
-        pub fn set_source_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_uri(inp);
+        pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_uri(input);
             self
         }
         /// <p>A filter that returns only actions of the specified type.</p>
-        pub fn action_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_type(inp);
+        pub fn action_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_type(input);
             self
         }
-        pub fn set_action_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_action_type(inp);
+        pub fn set_action_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_type(input);
             self
         }
         /// <p>A filter that returns only actions created on or after the specified time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only actions created on or before the specified time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortActionsBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortActionsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::SortActionsBy>,
+            input: std::option::Option<crate::model::SortActionsBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions,
         /// the call returns a token for getting the next set of actions.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -11168,7 +11275,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAlgorithmsOutput,
             smithy_http::result::SdkError<crate::error::ListAlgorithmsError>,
         >
@@ -11186,80 +11293,86 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only algorithms created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only algorithms created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>The maximum number of algorithms to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in the algorithm name. This filter returns only algorithms whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use
         /// the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is
         /// <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::AlgorithmSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::AlgorithmSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::AlgorithmSortBy>,
+            input: std::option::Option<crate::model::AlgorithmSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -11278,7 +11391,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAppImageConfigsOutput,
             smithy_http::result::SdkError<crate::error::ListAppImageConfigsError>,
         >
@@ -11296,100 +11409,106 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of AppImageConfigs to return in the response. The default value is
         /// 10. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous call to <code>ListImages</code> didn't return the full set of
         /// AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
-        pub fn modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.modified_time_before(inp);
+        pub fn modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.modified_time_before(input);
             self
         }
         pub fn set_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_modified_time_before(inp);
+            self.inner = self.inner.set_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
-        pub fn modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.modified_time_after(inp);
+        pub fn modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.modified_time_after(input);
             self
         }
         pub fn set_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_modified_time_after(inp);
+            self.inner = self.inner.set_modified_time_after(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::AppImageConfigSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::AppImageConfigSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::AppImageConfigSortKey>,
+            input: std::option::Option<crate::model::AppImageConfigSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -11408,7 +11527,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAppsOutput,
             smithy_http::result::SdkError<crate::error::ListAppsError>,
         >
@@ -11426,63 +11545,66 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was truncated, you will receive this token.
         /// Use it in your next request to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The sort order for the results. The default is Ascending.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
-        pub fn sort_by(mut self, inp: crate::model::AppSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::AppSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::AppSortKey>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::AppSortKey>) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>A parameter to search for the domain ID.</p>
-        pub fn domain_id_equals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id_equals(inp);
+        pub fn domain_id_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id_equals(input);
             self
         }
         pub fn set_domain_id_equals(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_id_equals(inp);
+            self.inner = self.inner.set_domain_id_equals(input);
             self
         }
         /// <p>A parameter to search by user profile name.</p>
-        pub fn user_profile_name_equals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name_equals(inp);
+        pub fn user_profile_name_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name_equals(input);
             self
         }
         pub fn set_user_profile_name_equals(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name_equals(inp);
+            self.inner = self.inner.set_user_profile_name_equals(input);
             self
         }
     }
@@ -11501,7 +11623,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListArtifactsOutput,
             smithy_http::result::SdkError<crate::error::ListArtifactsError>,
         >
@@ -11518,85 +11640,91 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only artifacts with the specified source URI.</p>
-        pub fn source_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(inp);
+        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(input);
             self
         }
-        pub fn set_source_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_uri(inp);
+        pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_uri(input);
             self
         }
         /// <p>A filter that returns only artifacts of the specified type.</p>
-        pub fn artifact_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_type(inp);
+        pub fn artifact_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_type(input);
             self
         }
-        pub fn set_artifact_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_artifact_type(inp);
+        pub fn set_artifact_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_artifact_type(input);
             self
         }
         /// <p>A filter that returns only artifacts created on or after the specified time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only artifacts created on or before the specified time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortArtifactsBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortArtifactsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::SortArtifactsBy>,
+            input: std::option::Option<crate::model::SortArtifactsBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts,
         /// the call returns a token for getting the next set of artifacts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -11615,7 +11743,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAssociationsOutput,
             smithy_http::result::SdkError<crate::error::ListAssociationsError>,
         >
@@ -11632,121 +11760,124 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only associations with the specified source ARN.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input);
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_arn(inp);
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_arn(input);
             self
         }
         /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
-        pub fn destination_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_arn(inp);
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input);
             self
         }
         pub fn set_destination_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_destination_arn(inp);
+            self.inner = self.inner.set_destination_arn(input);
             self
         }
         /// <p>A filter that returns only associations with the specified source type.</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_type(inp);
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_type(input);
             self
         }
         /// <p>A filter that returns only associations with the specified destination type.</p>
-        pub fn destination_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_type(inp);
+        pub fn destination_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_type(input);
             self
         }
         pub fn set_destination_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_destination_type(inp);
+            self.inner = self.inner.set_destination_type(input);
             self
         }
         /// <p>A filter that returns only associations of the specified type.</p>
-        pub fn association_type(mut self, inp: crate::model::AssociationEdgeType) -> Self {
-            self.inner = self.inner.association_type(inp);
+        pub fn association_type(mut self, input: crate::model::AssociationEdgeType) -> Self {
+            self.inner = self.inner.association_type(input);
             self
         }
         pub fn set_association_type(
             mut self,
-            inp: std::option::Option<crate::model::AssociationEdgeType>,
+            input: std::option::Option<crate::model::AssociationEdgeType>,
         ) -> Self {
-            self.inner = self.inner.set_association_type(inp);
+            self.inner = self.inner.set_association_type(input);
             self
         }
         /// <p>A filter that returns only associations created on or after the specified time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only associations created on or before the specified time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortAssociationsBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortAssociationsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::SortAssociationsBy>,
+            input: std::option::Option<crate::model::SortAssociationsBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations,
         /// the call returns a token for getting the next set of associations.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -11765,7 +11896,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAutoMLJobsOutput,
             smithy_http::result::SdkError<crate::error::ListAutoMLJobsError>,
         >
@@ -11782,112 +11913,118 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>Request a list of jobs, using a search filter for name.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for status.</p>
-        pub fn status_equals(mut self, inp: crate::model::AutoMlJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::AutoMlJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::AutoMlJobStatus>,
+            input: std::option::Option<crate::model::AutoMlJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::AutoMlSortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::AutoMlSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::AutoMlSortOrder>,
+            input: std::option::Option<crate::model::AutoMlSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::AutoMlSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::AutoMlSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::AutoMlSortBy>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::AutoMlSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>Request a list of jobs up to a specified limit.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next
         /// request to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -11906,7 +12043,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListCandidatesForAutoMLJobOutput,
             smithy_http::result::SdkError<crate::error::ListCandidatesForAutoMLJobError>,
         >
@@ -11923,83 +12060,83 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>List the candidates created for the job by providing the job's name.</p>
-        pub fn auto_ml_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_ml_job_name(inp);
+        pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_ml_job_name(input);
             self
         }
         pub fn set_auto_ml_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_auto_ml_job_name(inp);
+            self.inner = self.inner.set_auto_ml_job_name(input);
             self
         }
         /// <p>List the candidates for the job and filter by status.</p>
-        pub fn status_equals(mut self, inp: crate::model::CandidateStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::CandidateStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::CandidateStatus>,
+            input: std::option::Option<crate::model::CandidateStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>List the candidates for the job and filter by candidate name.</p>
-        pub fn candidate_name_equals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.candidate_name_equals(inp);
+        pub fn candidate_name_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.candidate_name_equals(input);
             self
         }
         pub fn set_candidate_name_equals(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_candidate_name_equals(inp);
+            self.inner = self.inner.set_candidate_name_equals(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::AutoMlSortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::AutoMlSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::AutoMlSortOrder>,
+            input: std::option::Option<crate::model::AutoMlSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is
         /// <code>Descending</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::CandidateSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::CandidateSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::CandidateSortBy>,
+            input: std::option::Option<crate::model::CandidateSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>List the job's candidates up to a specified limit.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next
         /// request to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -12018,7 +12155,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListCodeRepositoriesOutput,
             smithy_http::result::SdkError<crate::error::ListCodeRepositoriesError>,
         >
@@ -12036,108 +12173,111 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only Git repositories that were created after the specified
         /// time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were created before the specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were last modified after the
         /// specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were last modified before the
         /// specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>The maximum number of Git repositories to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in the Git repositories name. This filter returns only repositories whose
         /// name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To get the next set of Git repositories, use
         /// the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::CodeRepositorySortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::CodeRepositorySortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::CodeRepositorySortBy>,
+            input: std::option::Option<crate::model::CodeRepositorySortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::CodeRepositorySortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::CodeRepositorySortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::CodeRepositorySortOrder>,
+            input: std::option::Option<crate::model::CodeRepositorySortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -12156,7 +12296,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListCompilationJobsOutput,
             smithy_http::result::SdkError<crate::error::ListCompilationJobsError>,
         >
@@ -12175,116 +12315,122 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of model
         /// compilation jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of model compilation jobs to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were created after a specified
         /// time. </p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were modified after a specified
         /// time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were modified before a specified
         /// time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs whose name contains a specified
         /// string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that retrieves model compilation jobs with a specific <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
-        pub fn status_equals(mut self, inp: crate::model::CompilationJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::CompilationJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::CompilationJobStatus>,
+            input: std::option::Option<crate::model::CompilationJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ListCompilationJobsSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ListCompilationJobsSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ListCompilationJobsSortBy>,
+            input: std::option::Option<crate::model::ListCompilationJobsSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -12303,7 +12449,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListContextsOutput,
             smithy_http::result::SdkError<crate::error::ListContextsError>,
         >
@@ -12320,85 +12466,88 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only contexts with the specified source URI.</p>
-        pub fn source_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(inp);
+        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(input);
             self
         }
-        pub fn set_source_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_uri(inp);
+        pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_uri(input);
             self
         }
         /// <p>A filter that returns only contexts of the specified type.</p>
-        pub fn context_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_type(inp);
+        pub fn context_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_type(input);
             self
         }
-        pub fn set_context_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_context_type(inp);
+        pub fn set_context_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context_type(input);
             self
         }
         /// <p>A filter that returns only contexts created on or after the specified time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only contexts created on or before the specified time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortContextsBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortContextsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::SortContextsBy>,
+            input: std::option::Option<crate::model::SortContextsBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts,
         /// the call returns a token for getting the next set of contexts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -12417,7 +12566,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListDataQualityJobDefinitionsOutput,
             smithy_http::result::SdkError<crate::error::ListDataQualityJobDefinitionsError>,
         >
@@ -12435,90 +12584,99 @@ pub mod fluent_builders {
         }
         /// <p>A filter that lists the data quality job definitions associated with the specified
         /// endpoint.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::MonitoringJobDefinitionSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
+            input: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// transform jobs, use the token in the next request.></p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of data quality monitoring job definitions to return in the
         /// response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in the data quality monitoring job definition name. This filter returns only
         /// data quality monitoring job definitions whose name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only data quality monitoring job definitions created before the
         /// specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only data quality monitoring job definitions created after the
         /// specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
     }
@@ -12537,7 +12695,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListDeviceFleetsOutput,
             smithy_http::result::SdkError<crate::error::ListDeviceFleetsError>,
         >
@@ -12554,99 +12712,105 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to select.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Filter fleets where packaging job was created after specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>Select fleets where the job was updated before X</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>Filter for fleets containing this name in their fleet device name.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>The column to sort by.</p>
-        pub fn sort_by(mut self, inp: crate::model::ListDeviceFleetsSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ListDeviceFleetsSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ListDeviceFleetsSortBy>,
+            input: std::option::Option<crate::model::ListDeviceFleetsSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>What direction to sort in.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -12665,7 +12829,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListDevicesOutput,
             smithy_http::result::SdkError<crate::error::ListDevicesError>,
         >
@@ -12682,54 +12846,54 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of results to select.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
-        pub fn latest_heartbeat_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.latest_heartbeat_after(inp);
+        pub fn latest_heartbeat_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.latest_heartbeat_after(input);
             self
         }
         pub fn set_latest_heartbeat_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_latest_heartbeat_after(inp);
+            self.inner = self.inner.set_latest_heartbeat_after(input);
             self
         }
         /// <p>A filter that searches devices that contains this name in any of their models.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(inp);
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input);
             self
         }
-        pub fn set_model_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_model_name(inp);
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
             self
         }
         /// <p>Filter for fleets containing this name in their device fleet name.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
     }
@@ -12748,7 +12912,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListDomainsOutput,
             smithy_http::result::SdkError<crate::error::ListDomainsError>,
         >
@@ -12766,21 +12930,21 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was truncated, you will receive this token.
         /// Use it in your next request to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -12799,7 +12963,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListEdgePackagingJobsOutput,
             smithy_http::result::SdkError<crate::error::ListEdgePackagingJobsError>,
         >
@@ -12816,123 +12980,129 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of results to select.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Select jobs where the job was created after specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>Select jobs where the job was created before specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>Select jobs where the job was updated after specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>Select jobs where the job was updated before specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>Filter for jobs containing this name in their packaging job name.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>Filter for jobs where the model name contains this string.</p>
-        pub fn model_name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name_contains(inp);
+        pub fn model_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name_contains(input);
             self
         }
         pub fn set_model_name_contains(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_name_contains(inp);
+            self.inner = self.inner.set_model_name_contains(input);
             self
         }
         /// <p>The job status to filter for.</p>
-        pub fn status_equals(mut self, inp: crate::model::EdgePackagingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::EdgePackagingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::EdgePackagingJobStatus>,
+            input: std::option::Option<crate::model::EdgePackagingJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>Use to specify what column to sort by.</p>
-        pub fn sort_by(mut self, inp: crate::model::ListEdgePackagingJobsSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ListEdgePackagingJobsSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ListEdgePackagingJobsSortBy>,
+            input: std::option::Option<crate::model::ListEdgePackagingJobsSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>What direction to sort by.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -12951,7 +13121,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListEndpointConfigsOutput,
             smithy_http::result::SdkError<crate::error::ListEndpointConfigsError>,
         >
@@ -12968,80 +13138,86 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::EndpointConfigSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::EndpointConfigSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfigSortKey>,
+            input: std::option::Option<crate::model::EndpointConfigSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::OrderKey) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::OrderKey) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::OrderKey>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::OrderKey>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the result of the previous <code>ListEndpointConfig</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// endpoint configurations, use the token in the next request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of training jobs to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in the endpoint configuration name. This filter returns only endpoint
         /// configurations whose name contains the specified string. </p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only endpoint configurations created before the specified
         /// time (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only endpoint configurations with a creation time greater
         /// than or equal to the specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
     }
@@ -13060,7 +13236,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListEndpointsOutput,
             smithy_http::result::SdkError<crate::error::ListEndpointsError>,
         >
@@ -13077,119 +13253,125 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::EndpointSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::EndpointSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::EndpointSortKey>,
+            input: std::option::Option<crate::model::EndpointSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::OrderKey) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::OrderKey) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::OrderKey>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::OrderKey>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response
         /// includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token
         /// in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of endpoints to return in the response. This value defaults to
         /// 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in endpoint names. This filter returns only endpoints whose name contains
         /// the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only endpoints that were created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only endpoints with a creation time greater than or equal to
         /// the specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p> A filter that returns only endpoints that were modified before the specified
         /// timestamp. </p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p> A filter that returns only endpoints that were modified after the specified
         /// timestamp. </p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p> A filter that returns only endpoints with the specified status.</p>
-        pub fn status_equals(mut self, inp: crate::model::EndpointStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::EndpointStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::EndpointStatus>,
+            input: std::option::Option<crate::model::EndpointStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
     }
@@ -13208,7 +13390,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListExperimentsOutput,
             smithy_http::result::SdkError<crate::error::ListExperimentsError>,
         >
@@ -13225,68 +13407,71 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only experiments created after the specified time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only experiments created before the specified time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortExperimentsBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortExperimentsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::SortExperimentsBy>,
+            input: std::option::Option<crate::model::SortExperimentsBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of
         /// experiments, the call returns a token for getting the next set of experiments.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of experiments to return in the response. The default value is
         /// 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -13305,7 +13490,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListFeatureGroupsOutput,
             smithy_http::result::SdkError<crate::error::ListFeatureGroupsError>,
         >
@@ -13323,110 +13508,113 @@ pub mod fluent_builders {
         }
         /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters
         /// <code>FeatureGroup</code>s by name. </p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
         pub fn feature_group_status_equals(
             mut self,
-            inp: crate::model::FeatureGroupStatus,
+            input: crate::model::FeatureGroupStatus,
         ) -> Self {
-            self.inner = self.inner.feature_group_status_equals(inp);
+            self.inner = self.inner.feature_group_status_equals(input);
             self
         }
         pub fn set_feature_group_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::FeatureGroupStatus>,
+            input: std::option::Option<crate::model::FeatureGroupStatus>,
         ) -> Self {
-            self.inner = self.inner.set_feature_group_status_equals(inp);
+            self.inner = self.inner.set_feature_group_status_equals(input);
             self
         }
         /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
         pub fn offline_store_status_equals(
             mut self,
-            inp: crate::model::OfflineStoreStatusValue,
+            input: crate::model::OfflineStoreStatusValue,
         ) -> Self {
-            self.inner = self.inner.offline_store_status_equals(inp);
+            self.inner = self.inner.offline_store_status_equals(input);
             self
         }
         pub fn set_offline_store_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::OfflineStoreStatusValue>,
+            input: std::option::Option<crate::model::OfflineStoreStatusValue>,
         ) -> Self {
-            self.inner = self.inner.set_offline_store_status_equals(inp);
+            self.inner = self.inner.set_offline_store_status_equals(input);
             self
         }
         /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific
         /// date and time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific
         /// date and time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>The order in which feature groups are listed.</p>
-        pub fn sort_order(mut self, inp: crate::model::FeatureGroupSortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::FeatureGroupSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::FeatureGroupSortOrder>,
+            input: std::option::Option<crate::model::FeatureGroupSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The value on which the feature group list is sorted.</p>
-        pub fn sort_by(mut self, inp: crate::model::FeatureGroupSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::FeatureGroupSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::FeatureGroupSortBy>,
+            input: std::option::Option<crate::model::FeatureGroupSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -13445,7 +13633,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListFlowDefinitionsOutput,
             smithy_http::result::SdkError<crate::error::ListFlowDefinitionsError>,
         >
@@ -13462,54 +13650,57 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A token to resume pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -13528,7 +13719,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListHumanTaskUisOutput,
             smithy_http::result::SdkError<crate::error::ListHumanTaskUisError>,
         >
@@ -13545,54 +13736,57 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A token to resume pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -13611,7 +13805,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListHyperParameterTuningJobsOutput,
             smithy_http::result::SdkError<crate::error::ListHyperParameterTuningJobsError>,
         >
@@ -13630,126 +13824,135 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// tuning jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The
         /// maximum number of tuning jobs to return. The default value is
         /// 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The
         /// field
         /// to sort results by. The default is <code>Name</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::HyperParameterTuningJobSortByOptions) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(
+            mut self,
+            input: crate::model::HyperParameterTuningJobSortByOptions,
+        ) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::HyperParameterTuningJobSortByOptions>,
+            input: std::option::Option<crate::model::HyperParameterTuningJobSortByOptions>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort
         /// order
         /// for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were created after the
         /// specified
         /// time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were created before the
         /// specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were modified after the specified
         /// time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were modified before the specified
         /// time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only tuning jobs with the
         /// specified
         /// status.</p>
-        pub fn status_equals(mut self, inp: crate::model::HyperParameterTuningJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::HyperParameterTuningJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::HyperParameterTuningJobStatus>,
+            input: std::option::Option<crate::model::HyperParameterTuningJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
     }
@@ -13768,7 +13971,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListImagesOutput,
             smithy_http::result::SdkError<crate::error::ListImagesError>,
         >
@@ -13785,100 +13988,106 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only images created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only images created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only images modified on or after the specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only images modified on or before the specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>The maximum number of images to return in the response. The default value is 10. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A filter that returns only images whose name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images,
         /// the call returns a token for getting the next set of images.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ImageSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ImageSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::ImageSortBy>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ImageSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::ImageSortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::ImageSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::ImageSortOrder>,
+            input: std::option::Option<crate::model::ImageSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -13897,7 +14106,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListImageVersionsOutput,
             smithy_http::result::SdkError<crate::error::ListImageVersionsError>,
         >
@@ -13914,103 +14123,103 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only versions created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only versions created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>The name of the image to list the versions of.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input);
             self
         }
-        pub fn set_image_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_name(inp);
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
             self
         }
         /// <p>A filter that returns only versions modified on or after the specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only versions modified on or before the specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of
         /// versions, the call returns a token for getting the next set of versions.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ImageVersionSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ImageVersionSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ImageVersionSortBy>,
+            input: std::option::Option<crate::model::ImageVersionSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::ImageVersionSortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::ImageVersionSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::ImageVersionSortOrder>,
+            input: std::option::Option<crate::model::ImageVersionSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -14029,7 +14238,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListLabelingJobsOutput,
             smithy_http::result::SdkError<crate::error::ListLabelingJobsError>,
         >
@@ -14047,114 +14256,120 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only labeling jobs modified after the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs modified before the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
         /// use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::SortBy>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A filter that retrieves only labeling jobs with a specific status.</p>
-        pub fn status_equals(mut self, inp: crate::model::LabelingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::LabelingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::LabelingJobStatus>,
+            input: std::option::Option<crate::model::LabelingJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
     }
@@ -14173,7 +14388,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListLabelingJobsForWorkteamOutput,
             smithy_http::result::SdkError<crate::error::ListLabelingJobsForWorkteamError>,
         >
@@ -14191,95 +14406,101 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling
         /// jobs for.</p>
-        pub fn workteam_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_arn(inp);
+        pub fn workteam_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_arn(input);
             self
         }
-        pub fn set_workteam_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workteam_arn(inp);
+        pub fn set_workteam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workteam_arn(input);
             self
         }
         /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// labeling jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter the limits jobs to only the ones whose job reference code contains the
         /// specified string.</p>
-        pub fn job_reference_code_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_reference_code_contains(inp);
+        pub fn job_reference_code_contains(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.job_reference_code_contains(input);
             self
         }
         pub fn set_job_reference_code_contains(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_reference_code_contains(inp);
+            self.inner = self.inner.set_job_reference_code_contains(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(
             mut self,
-            inp: crate::model::ListLabelingJobsForWorkteamSortByOptions,
+            input: crate::model::ListLabelingJobsForWorkteamSortByOptions,
         ) -> Self {
-            self.inner = self.inner.sort_by(inp);
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ListLabelingJobsForWorkteamSortByOptions>,
+            input: std::option::Option<crate::model::ListLabelingJobsForWorkteamSortByOptions>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -14298,7 +14519,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListModelBiasJobDefinitionsOutput,
             smithy_http::result::SdkError<crate::error::ListModelBiasJobDefinitionsError>,
         >
@@ -14315,88 +14536,97 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the endpoint to monitor for model bias.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
         /// default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::MonitoringJobDefinitionSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
+            input: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
         /// The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
         /// executions, use it in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of model bias jobs to return in the response. The default value is
         /// 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Filter for model bias jobs whose name contains a specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only model bias jobs created before a specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model bias jobs created after a specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
     }
@@ -14415,7 +14645,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListModelExplainabilityJobDefinitionsOutput,
             smithy_http::result::SdkError<crate::error::ListModelExplainabilityJobDefinitionsError>,
         >
@@ -14432,89 +14662,98 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the endpoint to monitor for model explainability.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
         /// default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::MonitoringJobDefinitionSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
+            input: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
         /// The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
         /// executions, use it in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only model explainability jobs created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model explainability jobs created after a specified
         /// time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
     }
@@ -14533,7 +14772,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListModelPackageGroupsOutput,
             smithy_http::result::SdkError<crate::error::ListModelPackageGroupsError>,
         >
@@ -14550,78 +14789,84 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only model groups created after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model groups created before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in the model group name. This filter returns only model groups whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// model groups, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ModelPackageGroupSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ModelPackageGroupSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ModelPackageGroupSortBy>,
+            input: std::option::Option<crate::model::ModelPackageGroupSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -14640,7 +14885,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListModelPackagesOutput,
             smithy_http::result::SdkError<crate::error::ListModelPackagesError>,
         >
@@ -14658,72 +14903,75 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model packages created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model packages created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>The maximum number of model packages to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in the model package name. This filter returns only model packages whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only the model packages with the specified approval
         /// status.</p>
-        pub fn model_approval_status(mut self, inp: crate::model::ModelApprovalStatus) -> Self {
-            self.inner = self.inner.model_approval_status(inp);
+        pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
+            self.inner = self.inner.model_approval_status(input);
             self
         }
         pub fn set_model_approval_status(
             mut self,
-            inp: std::option::Option<crate::model::ModelApprovalStatus>,
+            input: std::option::Option<crate::model::ModelApprovalStatus>,
         ) -> Self {
-            self.inner = self.inner.set_model_approval_status(inp);
+            self.inner = self.inner.set_model_approval_status(input);
             self
         }
         /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-        pub fn model_package_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_group_name(inp);
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input);
             self
         }
         pub fn set_model_package_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_name(inp);
+            self.inner = self.inner.set_model_package_group_name(input);
             self
         }
         /// <p>A filter that returns onlyl the model packages of the specified type. This can be one
@@ -14742,48 +14990,51 @@ pub mod fluent_builders {
         /// <code>BOTH</code> - List both versioned and unversioned models.</p>
         /// </li>
         /// </ul>
-        pub fn model_package_type(mut self, inp: crate::model::ModelPackageType) -> Self {
-            self.inner = self.inner.model_package_type(inp);
+        pub fn model_package_type(mut self, input: crate::model::ModelPackageType) -> Self {
+            self.inner = self.inner.model_package_type(input);
             self
         }
         pub fn set_model_package_type(
             mut self,
-            inp: std::option::Option<crate::model::ModelPackageType>,
+            input: std::option::Option<crate::model::ModelPackageType>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_type(inp);
+            self.inner = self.inner.set_model_package_type(input);
             self
         }
         /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of model
         /// packages, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is
         /// <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ModelPackageSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ModelPackageSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ModelPackageSortBy>,
+            input: std::option::Option<crate::model::ModelPackageSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -14802,7 +15053,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListModelQualityJobDefinitionsOutput,
             smithy_http::result::SdkError<crate::error::ListModelQualityJobDefinitionsError>,
         >
@@ -14820,90 +15071,99 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model quality monitoring job definitions that are associated
         /// with the specified endpoint.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::MonitoringJobDefinitionSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
+            input: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// model quality monitoring job definitions, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a call to
         /// <code>ListModelQualityJobDefinitions</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in the transform job name. This filter returns only model quality monitoring
         /// job definitions whose name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only model quality monitoring job definitions created before the
         /// specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model quality monitoring job definitions created after the
         /// specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
     }
@@ -14922,7 +15182,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListModelsOutput,
             smithy_http::result::SdkError<crate::error::ListModelsError>,
         >
@@ -14939,77 +15199,86 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ModelSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ModelSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::ModelSortKey>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ModelSortKey>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::OrderKey) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::OrderKey) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::OrderKey>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::OrderKey>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the response to a previous <code>ListModels</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To retrieve the next set of models, use the
         /// token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of models to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A string in the training job name. This filter returns only models in the training
         /// job whose name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only models created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only models with a creation time greater than or equal to the
         /// specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
     }
@@ -15028,7 +15297,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListMonitoringExecutionsOutput,
             smithy_http::result::SdkError<crate::error::ListMonitoringExecutionsError>,
         >
@@ -15045,179 +15314,185 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a specific schedule to fetch jobs for.</p>
-        pub fn monitoring_schedule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(inp);
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input);
             self
         }
         pub fn set_monitoring_schedule_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_name(inp);
+            self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
         /// <p>Name of a specific endpoint to fetch jobs for.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
         /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::MonitoringExecutionSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::MonitoringExecutionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringExecutionSortKey>,
+            input: std::option::Option<crate::model::MonitoringExecutionSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
         /// The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
         /// executions, use it in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Filter for jobs scheduled before a specified time.</p>
-        pub fn scheduled_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.scheduled_time_before(inp);
+        pub fn scheduled_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.scheduled_time_before(input);
             self
         }
         pub fn set_scheduled_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_scheduled_time_before(inp);
+            self.inner = self.inner.set_scheduled_time_before(input);
             self
         }
         /// <p>Filter for jobs scheduled after a specified time.</p>
-        pub fn scheduled_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.scheduled_time_after(inp);
+        pub fn scheduled_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.scheduled_time_after(input);
             self
         }
         pub fn set_scheduled_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_scheduled_time_after(inp);
+            self.inner = self.inner.set_scheduled_time_after(input);
             self
         }
         /// <p>A filter that returns only jobs created before a specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only jobs created after a specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only jobs modified after a specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only jobs modified before a specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that retrieves only jobs with a specific status.</p>
-        pub fn status_equals(mut self, inp: crate::model::ExecutionStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::ExecutionStatus>,
+            input: std::option::Option<crate::model::ExecutionStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>Gets a list of the monitoring job runs of the specified monitoring job
         /// definitions.</p>
         pub fn monitoring_job_definition_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.monitoring_job_definition_name(inp);
+            self.inner = self.inner.monitoring_job_definition_name(input);
             self
         }
         pub fn set_monitoring_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_job_definition_name(inp);
+            self.inner = self.inner.set_monitoring_job_definition_name(input);
             self
         }
         /// <p>A filter that returns only the monitoring job runs of the specified monitoring
         /// type.</p>
-        pub fn monitoring_type_equals(mut self, inp: crate::model::MonitoringType) -> Self {
-            self.inner = self.inner.monitoring_type_equals(inp);
+        pub fn monitoring_type_equals(mut self, input: crate::model::MonitoringType) -> Self {
+            self.inner = self.inner.monitoring_type_equals(input);
             self
         }
         pub fn set_monitoring_type_equals(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringType>,
+            input: std::option::Option<crate::model::MonitoringType>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_type_equals(inp);
+            self.inner = self.inner.set_monitoring_type_equals(input);
             self
         }
     }
@@ -15236,7 +15511,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListMonitoringSchedulesOutput,
             smithy_http::result::SdkError<crate::error::ListMonitoringSchedulesError>,
         >
@@ -15253,152 +15528,161 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a specific endpoint to fetch schedules for.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
         /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::MonitoringScheduleSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::MonitoringScheduleSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringScheduleSortKey>,
+            input: std::option::Option<crate::model::MonitoringScheduleSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
         /// The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
         /// executions, use it in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Filter for monitoring schedules whose name contains a specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules created before a specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules created after a specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified after a specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
-        pub fn status_equals(mut self, inp: crate::model::ScheduleStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::ScheduleStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::ScheduleStatus>,
+            input: std::option::Option<crate::model::ScheduleStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>Gets a list of the monitoring schedules for the specified monitoring job
         /// definition.</p>
         pub fn monitoring_job_definition_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.monitoring_job_definition_name(inp);
+            self.inner = self.inner.monitoring_job_definition_name(input);
             self
         }
         pub fn set_monitoring_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_job_definition_name(inp);
+            self.inner = self.inner.set_monitoring_job_definition_name(input);
             self
         }
         /// <p>A filter that returns only the monitoring schedules for the specified monitoring
         /// type.</p>
-        pub fn monitoring_type_equals(mut self, inp: crate::model::MonitoringType) -> Self {
-            self.inner = self.inner.monitoring_type_equals(inp);
+        pub fn monitoring_type_equals(mut self, input: crate::model::MonitoringType) -> Self {
+            self.inner = self.inner.monitoring_type_equals(input);
             self
         }
         pub fn set_monitoring_type_equals(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringType>,
+            input: std::option::Option<crate::model::MonitoringType>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_type_equals(inp);
+            self.inner = self.inner.set_monitoring_type_equals(input);
             self
         }
     }
@@ -15417,7 +15701,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListNotebookInstanceLifecycleConfigsOutput,
             smithy_http::result::SdkError<crate::error::ListNotebookInstanceLifecycleConfigsError>,
         >
@@ -15436,113 +15720,116 @@ pub mod fluent_builders {
         /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To get the next set of
         /// lifecycle configurations, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of lifecycle configurations to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(
             mut self,
-            inp: crate::model::NotebookInstanceLifecycleConfigSortKey,
+            input: crate::model::NotebookInstanceLifecycleConfigSortKey,
         ) -> Self {
-            self.inner = self.inner.sort_by(inp);
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::NotebookInstanceLifecycleConfigSortKey>,
+            input: std::option::Option<crate::model::NotebookInstanceLifecycleConfigSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results.</p>
         pub fn sort_order(
             mut self,
-            inp: crate::model::NotebookInstanceLifecycleConfigSortOrder,
+            input: crate::model::NotebookInstanceLifecycleConfigSortOrder,
         ) -> Self {
-            self.inner = self.inner.sort_order(inp);
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::NotebookInstanceLifecycleConfigSortOrder>,
+            input: std::option::Option<crate::model::NotebookInstanceLifecycleConfigSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle
         /// configurations whose name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were created before the
         /// specified time (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were created after the
         /// specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were modified before the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were modified after the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
     }
@@ -15561,7 +15848,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListNotebookInstancesOutput,
             smithy_http::result::SdkError<crate::error::ListNotebookInstancesError>,
         >
@@ -15586,119 +15873,122 @@ pub mod fluent_builders {
         /// truncated, you must use the same values for the filer and sort order in the next
         /// request. </p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of notebook instances to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::NotebookInstanceSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::NotebookInstanceSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::NotebookInstanceSortKey>,
+            input: std::option::Option<crate::model::NotebookInstanceSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. </p>
-        pub fn sort_order(mut self, inp: crate::model::NotebookInstanceSortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::NotebookInstanceSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::NotebookInstanceSortOrder>,
+            input: std::option::Option<crate::model::NotebookInstanceSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A string in the notebook instances' name. This filter returns only notebook
         /// instances whose name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were created before the
         /// specified time (timestamp). </p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were created after the specified
         /// time (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were modified before the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were modified after the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only notebook instances with the specified status.</p>
-        pub fn status_equals(mut self, inp: crate::model::NotebookInstanceStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::NotebookInstanceStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::NotebookInstanceStatus>,
+            input: std::option::Option<crate::model::NotebookInstanceStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>A string in the name of a notebook instances lifecycle configuration associated with
@@ -15706,20 +15996,20 @@ pub mod fluent_builders {
         /// lifecycle configuration with a name that contains the specified string.</p>
         pub fn notebook_instance_lifecycle_config_name_contains(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .notebook_instance_lifecycle_config_name_contains(inp);
+                .notebook_instance_lifecycle_config_name_contains(input);
             self
         }
         pub fn set_notebook_instance_lifecycle_config_name_contains(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_notebook_instance_lifecycle_config_name_contains(inp);
+                .set_notebook_instance_lifecycle_config_name_contains(input);
             self
         }
         /// <p>A string in the name or URL of a Git repository associated with this notebook
@@ -15727,32 +16017,32 @@ pub mod fluent_builders {
         /// with a name that contains the specified string.</p>
         pub fn default_code_repository_contains(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_code_repository_contains(inp);
+            self.inner = self.inner.default_code_repository_contains(input);
             self
         }
         pub fn set_default_code_repository_contains(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_default_code_repository_contains(inp);
+            self.inner = self.inner.set_default_code_repository_contains(input);
             self
         }
         /// <p>A filter that returns only notebook instances with associated with the specified git
         /// repository.</p>
         pub fn additional_code_repository_equals(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.additional_code_repository_equals(inp);
+            self.inner = self.inner.additional_code_repository_equals(input);
             self
         }
         pub fn set_additional_code_repository_equals(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_additional_code_repository_equals(inp);
+            self.inner = self.inner.set_additional_code_repository_equals(input);
             self
         }
     }
@@ -15771,7 +16061,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPipelineExecutionsOutput,
             smithy_http::result::SdkError<crate::error::ListPipelineExecutionsError>,
         >
@@ -15788,78 +16078,84 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input);
             self
         }
-        pub fn set_pipeline_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pipeline_name(inp);
+        pub fn set_pipeline_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pipeline_name(input);
             self
         }
         /// <p>A filter that returns the pipeline executions that were created after a specified
         /// time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns the pipeline executions that were created before a specified
         /// time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortPipelineExecutionsBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortPipelineExecutionsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::SortPipelineExecutionsBy>,
+            input: std::option::Option<crate::model::SortPipelineExecutionsBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of pipeline executions to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -15878,7 +16174,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPipelineExecutionStepsOutput,
             smithy_http::result::SdkError<crate::error::ListPipelineExecutionStepsError>,
         >
@@ -15895,43 +16191,46 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(inp);
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input);
             self
         }
         pub fn set_pipeline_execution_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_arn(inp);
+            self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
         /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of pipeline execution steps to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -15950,7 +16249,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPipelineParametersForExecutionOutput,
             smithy_http::result::SdkError<crate::error::ListPipelineParametersForExecutionError>,
         >
@@ -15967,34 +16266,34 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(inp);
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input);
             self
         }
         pub fn set_pipeline_execution_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_arn(inp);
+            self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
         /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of parameters to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -16013,7 +16312,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPipelinesOutput,
             smithy_http::result::SdkError<crate::error::ListPipelinesError>,
         >
@@ -16030,81 +16329,84 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The prefix of the pipeline name.</p>
-        pub fn pipeline_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name_prefix(inp);
+        pub fn pipeline_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name_prefix(input);
             self
         }
         pub fn set_pipeline_name_prefix(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_name_prefix(inp);
+            self.inner = self.inner.set_pipeline_name_prefix(input);
             self
         }
         /// <p>A filter that returns the pipelines that were created after a specified
         /// time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns the pipelines that were created before a specified
         /// time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortPipelinesBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortPipelinesBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::SortPipelinesBy>,
+            input: std::option::Option<crate::model::SortPipelinesBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the result of the previous <code>ListPipelines</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of pipelines to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -16123,7 +16425,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListProcessingJobsOutput,
             smithy_http::result::SdkError<crate::error::ListProcessingJobsError>,
         >
@@ -16140,111 +16442,117 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only processing jobs modified after the specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only processing jobs modified before the specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A string in the processing job name. This filter returns only processing jobs whose
         /// name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that retrieves only processing jobs with a specific status.</p>
-        pub fn status_equals(mut self, inp: crate::model::ProcessingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::ProcessingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::ProcessingJobStatus>,
+            input: std::option::Option<crate::model::ProcessingJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::SortBy>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of processing
         /// jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of processing jobs to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -16263,7 +16571,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListProjectsOutput,
             smithy_http::result::SdkError<crate::error::ListProjectsError>,
         >
@@ -16281,81 +16589,84 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the projects that were created after a specified
         /// time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns the projects that were created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>The maximum number of projects to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A filter that returns the projects whose name contains a specified
         /// string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>If the result of the previous <code>ListProjects</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ProjectSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ProjectSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ProjectSortBy>,
+            input: std::option::Option<crate::model::ProjectSortBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::ProjectSortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::ProjectSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::ProjectSortOrder>,
+            input: std::option::Option<crate::model::ProjectSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -16374,7 +16685,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSubscribedWorkteamsOutput,
             smithy_http::result::SdkError<crate::error::ListSubscribedWorkteamsError>,
         >
@@ -16392,32 +16703,35 @@ pub mod fluent_builders {
         }
         /// <p>A string in the work team name. This filter returns only work teams whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// labeling jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of work teams to return in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -16436,7 +16750,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsOutput,
             smithy_http::result::SdkError<crate::error::ListTagsError>,
         >
@@ -16454,32 +16768,32 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
         /// retrieve.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker
         /// returns this token. To retrieve the next set of tags, use it in the subsequent request.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of tags to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -16498,7 +16812,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrainingJobsOutput,
             smithy_http::result::SdkError<crate::error::ListTrainingJobsError>,
         >
@@ -16517,113 +16831,119 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of training
         /// jobs, use the token in the next request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of training jobs to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A filter that returns only training jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only training jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only training jobs modified after the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only training jobs modified before the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A string in the training job name. This filter returns only training jobs whose
         /// name contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that retrieves only training jobs with a specific status.</p>
-        pub fn status_equals(mut self, inp: crate::model::TrainingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::TrainingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::TrainingJobStatus>,
+            input: std::option::Option<crate::model::TrainingJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::SortBy>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -16642,7 +16962,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrainingJobsForHyperParameterTuningJobOutput,
             smithy_http::result::SdkError<
                 crate::error::ListTrainingJobsForHyperParameterTuningJobError,
@@ -16663,50 +16983,50 @@ pub mod fluent_builders {
         /// <p>The name of the tuning job whose training jobs you want to list.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_name(inp);
+            self.inner = self.inner.hyper_parameter_tuning_job_name(input);
             self
         }
         pub fn set_hyper_parameter_tuning_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_hyper_parameter_tuning_job_name(inp);
+            self.inner = self.inner.set_hyper_parameter_tuning_job_name(input);
             self
         }
         /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code>
         /// request was truncated, the response includes a <code>NextToken</code>. To retrieve the
         /// next set of training jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of training jobs to return. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A filter that returns only training jobs with the
         /// specified
         /// status.</p>
-        pub fn status_equals(mut self, inp: crate::model::TrainingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::TrainingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::TrainingJobStatus>,
+            input: std::option::Option<crate::model::TrainingJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>The field to sort
@@ -16714,26 +17034,29 @@ pub mod fluent_builders {
         /// by. The default is <code>Name</code>.</p>
         /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training
         /// jobs that did not return an objective metric are not listed.</p>
-        pub fn sort_by(mut self, inp: crate::model::TrainingJobSortByOptions) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::TrainingJobSortByOptions) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::TrainingJobSortByOptions>,
+            input: std::option::Option<crate::model::TrainingJobSortByOptions>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order
         /// for
         /// results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -16752,7 +17075,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTransformJobsOutput,
             smithy_http::result::SdkError<crate::error::ListTransformJobsError>,
         >
@@ -16769,111 +17092,117 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only transform jobs created after the specified time.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>A filter that returns only transform jobs created before the specified time.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>A filter that returns only transform jobs modified after the specified time.</p>
-        pub fn last_modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_after(inp);
+        pub fn last_modified_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         pub fn set_last_modified_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_after(inp);
+            self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only transform jobs modified before the specified time.</p>
-        pub fn last_modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.last_modified_time_before(inp);
+        pub fn last_modified_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         pub fn set_last_modified_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_last_modified_time_before(inp);
+            self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
         /// <p>A string in the transform job name. This filter returns only transform jobs whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A filter that retrieves only transform jobs with a specific status.</p>
-        pub fn status_equals(mut self, inp: crate::model::TransformJobStatus) -> Self {
-            self.inner = self.inner.status_equals(inp);
+        pub fn status_equals(mut self, input: crate::model::TransformJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         pub fn set_status_equals(
             mut self,
-            inp: std::option::Option<crate::model::TransformJobStatus>,
+            input: std::option::Option<crate::model::TransformJobStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status_equals(inp);
+            self.inner = self.inner.set_status_equals(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::SortBy>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of transform
         /// jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of transform jobs to return in the response. The default value is <code>10</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -16892,7 +17221,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrialComponentsOutput,
             smithy_http::result::SdkError<crate::error::ListTrialComponentsError>,
         >
@@ -16911,102 +17240,105 @@ pub mod fluent_builders {
         /// <p>A filter that returns only components that are part of the specified experiment. If you
         /// specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or
         /// <code>TrialName</code>.</p>
-        pub fn experiment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(inp);
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input);
             self
         }
         pub fn set_experiment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_name(inp);
+            self.inner = self.inner.set_experiment_name(input);
             self
         }
         /// <p>A filter that returns only components that are part of the specified trial. If you specify
         /// <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or
         /// <code>SourceArn</code>.</p>
-        pub fn trial_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(inp);
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input);
             self
         }
-        pub fn set_trial_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_trial_name(inp);
+        pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_trial_name(input);
             self
         }
         /// <p>A filter that returns only components that have the specified source Amazon Resource Name
         /// (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code>
         /// or <code>TrialName</code>.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input);
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_arn(inp);
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_arn(input);
             self
         }
         /// <p>A filter that returns only components created after the specified time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only components created before the specified time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortTrialComponentsBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortTrialComponentsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::SortTrialComponentsBy>,
+            input: std::option::Option<crate::model::SortTrialComponentsBy>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The maximum number of components to return in the response. The default value is
         /// 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of
         /// components, the call returns a token for getting the next set of components.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -17025,7 +17357,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTrialsOutput,
             smithy_http::result::SdkError<crate::error::ListTrialsError>,
         >
@@ -17042,89 +17374,95 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only trials that are part of the specified experiment.</p>
-        pub fn experiment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(inp);
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input);
             self
         }
         pub fn set_experiment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_name(inp);
+            self.inner = self.inner.set_experiment_name(input);
             self
         }
         /// <p>A filter that returns only trials that are associated with the specified trial
         /// component.</p>
-        pub fn trial_component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(inp);
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input);
             self
         }
         pub fn set_trial_component_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_trial_component_name(inp);
+            self.inner = self.inner.set_trial_component_name(input);
             self
         }
         /// <p>A filter that returns only trials created after the specified time.</p>
-        pub fn created_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         pub fn set_created_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_after(inp);
+            self.inner = self.inner.set_created_after(input);
             self
         }
         /// <p>A filter that returns only trials created before the specified time.</p>
-        pub fn created_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         pub fn set_created_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_created_before(inp);
+            self.inner = self.inner.set_created_before(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortTrialsBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortTrialsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<crate::model::SortTrialsBy>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::SortTrialsBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The maximum number of trials to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the
         /// call returns a token for getting the next set of trials.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -17143,7 +17481,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListUserProfilesOutput,
             smithy_http::result::SdkError<crate::error::ListUserProfilesError>,
         >
@@ -17161,66 +17499,69 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was truncated, you will receive this token.
         /// Use it in your next request to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The sort order for the results. The default is Ascending.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
-        pub fn sort_by(mut self, inp: crate::model::UserProfileSortKey) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::UserProfileSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::UserProfileSortKey>,
+            input: std::option::Option<crate::model::UserProfileSortKey>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>A parameter by which to filter the results.</p>
-        pub fn domain_id_equals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id_equals(inp);
+        pub fn domain_id_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id_equals(input);
             self
         }
         pub fn set_domain_id_equals(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_domain_id_equals(inp);
+            self.inner = self.inner.set_domain_id_equals(input);
             self
         }
         /// <p>A parameter by which to filter the results.</p>
-        pub fn user_profile_name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name_contains(inp);
+        pub fn user_profile_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name_contains(input);
             self
         }
         pub fn set_user_profile_name_contains(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name_contains(inp);
+            self.inner = self.inner.set_user_profile_name_contains(input);
             self
         }
     }
@@ -17239,7 +17580,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListWorkforcesOutput,
             smithy_http::result::SdkError<crate::error::ListWorkforcesError>,
         >
@@ -17256,51 +17597,57 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Sort workforces using the workforce name or creation date.</p>
-        pub fn sort_by(mut self, inp: crate::model::ListWorkforcesSortByOptions) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ListWorkforcesSortByOptions) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ListWorkforcesSortByOptions>,
+            input: std::option::Option<crate::model::ListWorkforcesSortByOptions>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>Sort workforces in ascending or descending order.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>A token to resume pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of workforces returned in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -17319,7 +17666,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListWorkteamsOutput,
             smithy_http::result::SdkError<crate::error::ListWorkteamsError>,
         >
@@ -17336,54 +17683,60 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ListWorkteamsSortByOptions) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ListWorkteamsSortByOptions) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         pub fn set_sort_by(
             mut self,
-            inp: std::option::Option<crate::model::ListWorkteamsSortByOptions>,
+            input: std::option::Option<crate::model::ListWorkteamsSortByOptions>,
         ) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A string in the work team's name. This filter returns only work teams whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(inp);
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input);
             self
         }
-        pub fn set_name_contains(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name_contains(inp);
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
             self
         }
         /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
         /// use the token in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of work teams to return in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -17402,7 +17755,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutModelPackageGroupPolicyOutput,
             smithy_http::result::SdkError<crate::error::PutModelPackageGroupPolicyError>,
         >
@@ -17419,27 +17772,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group to add a resource policy to.</p>
-        pub fn model_package_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_group_name(inp);
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input);
             self
         }
         pub fn set_model_package_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_group_name(inp);
+            self.inner = self.inner.set_model_package_group_name(input);
             self
         }
         /// <p>The resource policy for the model group.</p>
-        pub fn resource_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_policy(inp);
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input);
             self
         }
         pub fn set_resource_policy(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_resource_policy(inp);
+            self.inner = self.inner.set_resource_policy(input);
             self
         }
     }
@@ -17458,7 +17811,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RegisterDevicesOutput,
             smithy_http::result::SdkError<crate::error::RegisterDevicesError>,
         >
@@ -17475,15 +17828,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
         /// <p>A list of devices to register with SageMaker Edge Manager.</p>
@@ -17493,9 +17846,9 @@ pub mod fluent_builders {
         }
         pub fn set_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Device>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Device>>,
         ) -> Self {
-            self.inner = self.inner.set_devices(inp);
+            self.inner = self.inner.set_devices(input);
             self
         }
         /// <p>The tags associated with devices.</p>
@@ -17505,9 +17858,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -17526,7 +17879,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RenderUiTemplateOutput,
             smithy_http::result::SdkError<crate::error::RenderUiTemplateError>,
         >
@@ -17543,50 +17896,53 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
-        pub fn ui_template(mut self, inp: crate::model::UiTemplate) -> Self {
-            self.inner = self.inner.ui_template(inp);
+        pub fn ui_template(mut self, input: crate::model::UiTemplate) -> Self {
+            self.inner = self.inner.ui_template(input);
             self
         }
         pub fn set_ui_template(
             mut self,
-            inp: std::option::Option<crate::model::UiTemplate>,
+            input: std::option::Option<crate::model::UiTemplate>,
         ) -> Self {
-            self.inner = self.inner.set_ui_template(inp);
+            self.inner = self.inner.set_ui_template(input);
             self
         }
         /// <p>A <code>RenderableTask</code> object containing a representative task to
         /// render.</p>
-        pub fn task(mut self, inp: crate::model::RenderableTask) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, input: crate::model::RenderableTask) -> Self {
+            self.inner = self.inner.task(input);
             self
         }
-        pub fn set_task(mut self, inp: std::option::Option<crate::model::RenderableTask>) -> Self {
-            self.inner = self.inner.set_task(inp);
+        pub fn set_task(
+            mut self,
+            input: std::option::Option<crate::model::RenderableTask>,
+        ) -> Self {
+            self.inner = self.inner.set_task(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the
         /// template.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not
         /// provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
         /// parameter.</p>
         /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.</p>
-        pub fn human_task_ui_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_task_ui_arn(inp);
+        pub fn human_task_ui_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_task_ui_arn(input);
             self
         }
         pub fn set_human_task_ui_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_human_task_ui_arn(inp);
+            self.inner = self.inner.set_human_task_ui_arn(input);
             self
         }
     }
@@ -17605,7 +17961,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SearchOutput,
             smithy_http::result::SdkError<crate::error::SearchError>,
         >
@@ -17622,15 +17978,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon SageMaker resource to search for.</p>
-        pub fn resource(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource(input);
             self
         }
         pub fn set_resource(
             mut self,
-            inp: std::option::Option<crate::model::ResourceType>,
+            input: std::option::Option<crate::model::ResourceType>,
         ) -> Self {
-            self.inner = self.inner.set_resource(inp);
+            self.inner = self.inner.set_resource(input);
             self
         }
         /// <p>A Boolean conditional statement. Resources must satisfy this condition to be
@@ -17638,59 +17994,59 @@ pub mod fluent_builders {
         /// nested filter. The maximum number of recursive <code>SubExpressions</code>,
         /// <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
         /// <code>SearchExpression</code> object is 50.</p>
-        pub fn search_expression(mut self, inp: crate::model::SearchExpression) -> Self {
-            self.inner = self.inner.search_expression(inp);
+        pub fn search_expression(mut self, input: crate::model::SearchExpression) -> Self {
+            self.inner = self.inner.search_expression(input);
             self
         }
         pub fn set_search_expression(
             mut self,
-            inp: std::option::Option<crate::model::SearchExpression>,
+            input: std::option::Option<crate::model::SearchExpression>,
         ) -> Self {
-            self.inner = self.inner.set_search_expression(inp);
+            self.inner = self.inner.set_search_expression(input);
             self
         }
         /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The
         /// default is <code>LastModifiedTime</code>.</p>
-        pub fn sort_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        pub fn set_sort_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sort_by(inp);
+        pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
         /// <code>Descending</code>. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SearchSortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SearchSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::SearchSortOrder>,
+            input: std::option::Option<crate::model::SearchSortOrder>,
         ) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>If more than <code>MaxResults</code> resources match the specified
         /// <code>SearchExpression</code>, the response includes a
         /// <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
         /// <code>SearchRequest</code> to continue retrieving results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -17709,7 +18065,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SendPipelineExecutionStepFailureOutput,
             smithy_http::result::SdkError<crate::error::SendPipelineExecutionStepFailureError>,
         >
@@ -17726,34 +18082,40 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-        pub fn callback_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.callback_token(inp);
+        pub fn callback_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.callback_token(input);
             self
         }
-        pub fn set_callback_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_callback_token(inp);
+        pub fn set_callback_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_callback_token(input);
             self
         }
         /// <p>A message describing why the step failed.</p>
-        pub fn failure_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.failure_reason(inp);
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.failure_reason(input);
             self
         }
-        pub fn set_failure_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_failure_reason(inp);
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_failure_reason(input);
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -17772,7 +18134,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SendPipelineExecutionStepSuccessOutput,
             smithy_http::result::SdkError<crate::error::SendPipelineExecutionStepSuccessError>,
         >
@@ -17789,12 +18151,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-        pub fn callback_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.callback_token(inp);
+        pub fn callback_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.callback_token(input);
             self
         }
-        pub fn set_callback_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_callback_token(inp);
+        pub fn set_callback_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_callback_token(input);
             self
         }
         /// <p>A list of the output parameters of the callback step.</p>
@@ -17804,22 +18169,22 @@ pub mod fluent_builders {
         }
         pub fn set_output_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputParameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputParameter>>,
         ) -> Self {
-            self.inner = self.inner.set_output_parameters(inp);
+            self.inner = self.inner.set_output_parameters(input);
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -17838,7 +18203,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartMonitoringScheduleOutput,
             smithy_http::result::SdkError<crate::error::StartMonitoringScheduleError>,
         >
@@ -17855,15 +18220,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the schedule to start.</p>
-        pub fn monitoring_schedule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(inp);
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input);
             self
         }
         pub fn set_monitoring_schedule_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_name(inp);
+            self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
     }
@@ -17882,7 +18247,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartNotebookInstanceOutput,
             smithy_http::result::SdkError<crate::error::StartNotebookInstanceError>,
         >
@@ -17899,15 +18264,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance to start.</p>
-        pub fn notebook_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(inp);
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input);
             self
         }
         pub fn set_notebook_instance_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_name(inp);
+            self.inner = self.inner.set_notebook_instance_name(input);
             self
         }
     }
@@ -17926,7 +18291,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartPipelineExecutionOutput,
             smithy_http::result::SdkError<crate::error::StartPipelineExecutionError>,
         >
@@ -17943,27 +18308,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input);
             self
         }
-        pub fn set_pipeline_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pipeline_name(inp);
+        pub fn set_pipeline_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pipeline_name(input);
             self
         }
         /// <p>The display name of the pipeline execution.</p>
         pub fn pipeline_execution_display_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pipeline_execution_display_name(inp);
+            self.inner = self.inner.pipeline_execution_display_name(input);
             self
         }
         pub fn set_pipeline_execution_display_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_display_name(inp);
+            self.inner = self.inner.set_pipeline_execution_display_name(input);
             self
         }
         /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
@@ -17973,37 +18341,37 @@ pub mod fluent_builders {
         }
         pub fn set_pipeline_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_parameters(inp);
+            self.inner = self.inner.set_pipeline_parameters(input);
             self
         }
         /// <p>The description of the pipeline execution.</p>
         pub fn pipeline_execution_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pipeline_execution_description(inp);
+            self.inner = self.inner.pipeline_execution_description(input);
             self
         }
         pub fn set_pipeline_execution_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_description(inp);
+            self.inner = self.inner.set_pipeline_execution_description(input);
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -18022,7 +18390,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopAutoMLJobOutput,
             smithy_http::result::SdkError<crate::error::StopAutoMLJobError>,
         >
@@ -18039,15 +18407,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the object you are requesting.</p>
-        pub fn auto_ml_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_ml_job_name(inp);
+        pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_ml_job_name(input);
             self
         }
         pub fn set_auto_ml_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_auto_ml_job_name(inp);
+            self.inner = self.inner.set_auto_ml_job_name(input);
             self
         }
     }
@@ -18066,7 +18434,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopCompilationJobOutput,
             smithy_http::result::SdkError<crate::error::StopCompilationJobError>,
         >
@@ -18083,15 +18451,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model compilation job to stop.</p>
-        pub fn compilation_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compilation_job_name(inp);
+        pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compilation_job_name(input);
             self
         }
         pub fn set_compilation_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_compilation_job_name(inp);
+            self.inner = self.inner.set_compilation_job_name(input);
             self
         }
     }
@@ -18110,7 +18478,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopEdgePackagingJobOutput,
             smithy_http::result::SdkError<crate::error::StopEdgePackagingJobError>,
         >
@@ -18127,15 +18495,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the edge packaging job.</p>
-        pub fn edge_packaging_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.edge_packaging_job_name(inp);
+        pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_packaging_job_name(input);
             self
         }
         pub fn set_edge_packaging_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_edge_packaging_job_name(inp);
+            self.inner = self.inner.set_edge_packaging_job_name(input);
             self
         }
     }
@@ -18154,7 +18522,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopHyperParameterTuningJobOutput,
             smithy_http::result::SdkError<crate::error::StopHyperParameterTuningJobError>,
         >
@@ -18173,16 +18541,16 @@ pub mod fluent_builders {
         /// <p>The name of the tuning job to stop.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_name(inp);
+            self.inner = self.inner.hyper_parameter_tuning_job_name(input);
             self
         }
         pub fn set_hyper_parameter_tuning_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_hyper_parameter_tuning_job_name(inp);
+            self.inner = self.inner.set_hyper_parameter_tuning_job_name(input);
             self
         }
     }
@@ -18201,7 +18569,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopLabelingJobOutput,
             smithy_http::result::SdkError<crate::error::StopLabelingJobError>,
         >
@@ -18218,15 +18586,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the labeling job to stop.</p>
-        pub fn labeling_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labeling_job_name(inp);
+        pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labeling_job_name(input);
             self
         }
         pub fn set_labeling_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_labeling_job_name(inp);
+            self.inner = self.inner.set_labeling_job_name(input);
             self
         }
     }
@@ -18245,7 +18613,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopMonitoringScheduleOutput,
             smithy_http::result::SdkError<crate::error::StopMonitoringScheduleError>,
         >
@@ -18262,15 +18630,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the schedule to stop.</p>
-        pub fn monitoring_schedule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(inp);
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input);
             self
         }
         pub fn set_monitoring_schedule_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_name(inp);
+            self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
     }
@@ -18289,7 +18657,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopNotebookInstanceOutput,
             smithy_http::result::SdkError<crate::error::StopNotebookInstanceError>,
         >
@@ -18306,15 +18674,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance to terminate.</p>
-        pub fn notebook_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(inp);
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input);
             self
         }
         pub fn set_notebook_instance_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_name(inp);
+            self.inner = self.inner.set_notebook_instance_name(input);
             self
         }
     }
@@ -18333,7 +18701,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopPipelineExecutionOutput,
             smithy_http::result::SdkError<crate::error::StopPipelineExecutionError>,
         >
@@ -18350,28 +18718,28 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(inp);
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input);
             self
         }
         pub fn set_pipeline_execution_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_arn(inp);
+            self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -18390,7 +18758,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopProcessingJobOutput,
             smithy_http::result::SdkError<crate::error::StopProcessingJobError>,
         >
@@ -18407,15 +18775,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the processing job to stop.</p>
-        pub fn processing_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.processing_job_name(inp);
+        pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.processing_job_name(input);
             self
         }
         pub fn set_processing_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_processing_job_name(inp);
+            self.inner = self.inner.set_processing_job_name(input);
             self
         }
     }
@@ -18434,7 +18802,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopTrainingJobOutput,
             smithy_http::result::SdkError<crate::error::StopTrainingJobError>,
         >
@@ -18451,15 +18819,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the training job to stop.</p>
-        pub fn training_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_job_name(inp);
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_job_name(input);
             self
         }
         pub fn set_training_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_training_job_name(inp);
+            self.inner = self.inner.set_training_job_name(input);
             self
         }
     }
@@ -18478,7 +18846,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopTransformJobOutput,
             smithy_http::result::SdkError<crate::error::StopTransformJobError>,
         >
@@ -18495,15 +18863,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the transform job to stop.</p>
-        pub fn transform_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_job_name(inp);
+        pub fn transform_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_job_name(input);
             self
         }
         pub fn set_transform_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_transform_job_name(inp);
+            self.inner = self.inner.set_transform_job_name(input);
             self
         }
     }
@@ -18522,7 +18890,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateActionOutput,
             smithy_http::result::SdkError<crate::error::UpdateActionError>,
         >
@@ -18539,30 +18907,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the action to update.</p>
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(inp);
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input);
             self
         }
-        pub fn set_action_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_action_name(inp);
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_action_name(input);
             self
         }
         /// <p>The new description for the action.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The new status for the action.</p>
-        pub fn status(mut self, inp: crate::model::ActionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::ActionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::ActionStatus>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ActionStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
         /// <p>The new list of properties. Overwrites the current property list.</p>
@@ -18576,11 +18947,11 @@ pub mod fluent_builders {
         }
         pub fn set_properties(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_properties(inp);
+            self.inner = self.inner.set_properties(input);
             self
         }
         /// <p>A list of properties to remove.</p>
@@ -18590,9 +18961,9 @@ pub mod fluent_builders {
         }
         pub fn set_properties_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_properties_to_remove(inp);
+            self.inner = self.inner.set_properties_to_remove(input);
             self
         }
     }
@@ -18611,7 +18982,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateAppImageConfigOutput,
             smithy_http::result::SdkError<crate::error::UpdateAppImageConfigError>,
         >
@@ -18628,30 +18999,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the AppImageConfig to update.</p>
-        pub fn app_image_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_image_config_name(inp);
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_image_config_name(input);
             self
         }
         pub fn set_app_image_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_app_image_config_name(inp);
+            self.inner = self.inner.set_app_image_config_name(input);
             self
         }
         /// <p>The new KernelGateway app to run on the image.</p>
         pub fn kernel_gateway_image_config(
             mut self,
-            inp: crate::model::KernelGatewayImageConfig,
+            input: crate::model::KernelGatewayImageConfig,
         ) -> Self {
-            self.inner = self.inner.kernel_gateway_image_config(inp);
+            self.inner = self.inner.kernel_gateway_image_config(input);
             self
         }
         pub fn set_kernel_gateway_image_config(
             mut self,
-            inp: std::option::Option<crate::model::KernelGatewayImageConfig>,
+            input: std::option::Option<crate::model::KernelGatewayImageConfig>,
         ) -> Self {
-            self.inner = self.inner.set_kernel_gateway_image_config(inp);
+            self.inner = self.inner.set_kernel_gateway_image_config(input);
             self
         }
     }
@@ -18670,7 +19041,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateArtifactOutput,
             smithy_http::result::SdkError<crate::error::UpdateArtifactError>,
         >
@@ -18687,21 +19058,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
-        pub fn artifact_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_arn(inp);
+        pub fn artifact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_arn(input);
             self
         }
-        pub fn set_artifact_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_artifact_arn(inp);
+        pub fn set_artifact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_artifact_arn(input);
             self
         }
         /// <p>The new name for the artifact.</p>
-        pub fn artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_name(inp);
+        pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_name(input);
             self
         }
-        pub fn set_artifact_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_artifact_name(inp);
+        pub fn set_artifact_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_artifact_name(input);
             self
         }
         /// <p>The new list of properties. Overwrites the current property list.</p>
@@ -18715,11 +19089,11 @@ pub mod fluent_builders {
         }
         pub fn set_properties(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_properties(inp);
+            self.inner = self.inner.set_properties(input);
             self
         }
         /// <p>A list of properties to remove.</p>
@@ -18729,9 +19103,9 @@ pub mod fluent_builders {
         }
         pub fn set_properties_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_properties_to_remove(inp);
+            self.inner = self.inner.set_properties_to_remove(input);
             self
         }
     }
@@ -18750,7 +19124,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateCodeRepositoryOutput,
             smithy_http::result::SdkError<crate::error::UpdateCodeRepositoryError>,
         >
@@ -18767,15 +19141,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Git repository to update.</p>
-        pub fn code_repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_repository_name(inp);
+        pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_repository_name(input);
             self
         }
         pub fn set_code_repository_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_code_repository_name(inp);
+            self.inner = self.inner.set_code_repository_name(input);
             self
         }
         /// <p>The configuration of the git repository, including the URL and the Amazon Resource
@@ -18786,15 +19160,15 @@ pub mod fluent_builders {
         /// <code>{"username": <i>UserName</i>, "password":
         /// <i>Password</i>}</code>
         /// </p>
-        pub fn git_config(mut self, inp: crate::model::GitConfigForUpdate) -> Self {
-            self.inner = self.inner.git_config(inp);
+        pub fn git_config(mut self, input: crate::model::GitConfigForUpdate) -> Self {
+            self.inner = self.inner.git_config(input);
             self
         }
         pub fn set_git_config(
             mut self,
-            inp: std::option::Option<crate::model::GitConfigForUpdate>,
+            input: std::option::Option<crate::model::GitConfigForUpdate>,
         ) -> Self {
-            self.inner = self.inner.set_git_config(inp);
+            self.inner = self.inner.set_git_config(input);
             self
         }
     }
@@ -18813,7 +19187,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateContextOutput,
             smithy_http::result::SdkError<crate::error::UpdateContextError>,
         >
@@ -18830,21 +19204,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the context to update.</p>
-        pub fn context_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_name(inp);
+        pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_name(input);
             self
         }
-        pub fn set_context_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_context_name(inp);
+        pub fn set_context_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context_name(input);
             self
         }
         /// <p>The new description for the context.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The new list of properties. Overwrites the current property list.</p>
@@ -18858,11 +19232,11 @@ pub mod fluent_builders {
         }
         pub fn set_properties(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_properties(inp);
+            self.inner = self.inner.set_properties(input);
             self
         }
         /// <p>A list of properties to remove.</p>
@@ -18872,9 +19246,9 @@ pub mod fluent_builders {
         }
         pub fn set_properties_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_properties_to_remove(inp);
+            self.inner = self.inner.set_properties_to_remove(input);
             self
         }
     }
@@ -18893,7 +19267,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateDeviceFleetOutput,
             smithy_http::result::SdkError<crate::error::UpdateDeviceFleetError>,
         >
@@ -18910,45 +19284,45 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>Description of the fleet.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Output configuration  for storing sample data collected by the fleet.</p>
-        pub fn output_config(mut self, inp: crate::model::EdgeOutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, input: crate::model::EdgeOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         pub fn set_output_config(
             mut self,
-            inp: std::option::Option<crate::model::EdgeOutputConfig>,
+            input: std::option::Option<crate::model::EdgeOutputConfig>,
         ) -> Self {
-            self.inner = self.inner.set_output_config(inp);
+            self.inner = self.inner.set_output_config(input);
             self
         }
         /// <p>Whether to create an AWS IoT Role Alias during device fleet creation.
@@ -18956,12 +19330,12 @@ pub mod fluent_builders {
         /// "SageMakerEdge-{DeviceFleetName}".</p>
         /// <p>For example, if your device fleet is called "demo-fleet", the name of
         /// the role alias will be "SageMakerEdge-demo-fleet".</p>
-        pub fn enable_iot_role_alias(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iot_role_alias(inp);
+        pub fn enable_iot_role_alias(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iot_role_alias(input);
             self
         }
-        pub fn set_enable_iot_role_alias(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_iot_role_alias(inp);
+        pub fn set_enable_iot_role_alias(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_iot_role_alias(input);
             self
         }
     }
@@ -18980,7 +19354,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateDevicesOutput,
             smithy_http::result::SdkError<crate::error::UpdateDevicesError>,
         >
@@ -18997,15 +19371,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet the devices belong to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
         /// <p>List of devices to register with Edge Manager agent.</p>
@@ -19015,9 +19389,9 @@ pub mod fluent_builders {
         }
         pub fn set_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Device>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Device>>,
         ) -> Self {
-            self.inner = self.inner.set_devices(inp);
+            self.inner = self.inner.set_devices(input);
             self
         }
     }
@@ -19036,7 +19410,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateDomainOutput,
             smithy_http::result::SdkError<crate::error::UpdateDomainError>,
         >
@@ -19053,24 +19427,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the domain to be updated.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>A collection of settings.</p>
-        pub fn default_user_settings(mut self, inp: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.default_user_settings(inp);
+        pub fn default_user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.default_user_settings(input);
             self
         }
         pub fn set_default_user_settings(
             mut self,
-            inp: std::option::Option<crate::model::UserSettings>,
+            input: std::option::Option<crate::model::UserSettings>,
         ) -> Self {
-            self.inner = self.inner.set_default_user_settings(inp);
+            self.inner = self.inner.set_default_user_settings(input);
             self
         }
     }
@@ -19089,7 +19463,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateEndpointOutput,
             smithy_http::result::SdkError<crate::error::UpdateEndpointError>,
         >
@@ -19106,24 +19480,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint whose configuration you want to update.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>The name of the new endpoint configuration.</p>
-        pub fn endpoint_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(inp);
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input);
             self
         }
         pub fn set_endpoint_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_endpoint_config_name(inp);
+            self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
         /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To
@@ -19132,12 +19509,15 @@ pub mod fluent_builders {
         /// properties specified in a new <code>EndpointConfig</code> call when updating an
         /// endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default
         /// is <code>false</code>.</p>
-        pub fn retain_all_variant_properties(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retain_all_variant_properties(inp);
+        pub fn retain_all_variant_properties(mut self, input: bool) -> Self {
+            self.inner = self.inner.retain_all_variant_properties(input);
             self
         }
-        pub fn set_retain_all_variant_properties(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_retain_all_variant_properties(inp);
+        pub fn set_retain_all_variant_properties(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_retain_all_variant_properties(input);
             self
         }
         /// <p>When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
@@ -19155,21 +19535,21 @@ pub mod fluent_builders {
         }
         pub fn set_exclude_retained_variant_properties(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VariantProperty>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VariantProperty>>,
         ) -> Self {
-            self.inner = self.inner.set_exclude_retained_variant_properties(inp);
+            self.inner = self.inner.set_exclude_retained_variant_properties(input);
             self
         }
         /// <p>The deployment configuration for the endpoint to be updated.</p>
-        pub fn deployment_config(mut self, inp: crate::model::DeploymentConfig) -> Self {
-            self.inner = self.inner.deployment_config(inp);
+        pub fn deployment_config(mut self, input: crate::model::DeploymentConfig) -> Self {
+            self.inner = self.inner.deployment_config(input);
             self
         }
         pub fn set_deployment_config(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentConfig>,
+            input: std::option::Option<crate::model::DeploymentConfig>,
         ) -> Self {
-            self.inner = self.inner.set_deployment_config(inp);
+            self.inner = self.inner.set_deployment_config(input);
             self
         }
     }
@@ -19188,7 +19568,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateEndpointWeightsAndCapacitiesOutput,
             smithy_http::result::SdkError<crate::error::UpdateEndpointWeightsAndCapacitiesError>,
         >
@@ -19205,12 +19585,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing Amazon SageMaker endpoint.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>An object that provides new capacity and weight values for a variant.</p>
@@ -19223,9 +19606,9 @@ pub mod fluent_builders {
         }
         pub fn set_desired_weights_and_capacities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DesiredWeightAndCapacity>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DesiredWeightAndCapacity>>,
         ) -> Self {
-            self.inner = self.inner.set_desired_weights_and_capacities(inp);
+            self.inner = self.inner.set_desired_weights_and_capacities(input);
             self
         }
     }
@@ -19244,7 +19627,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateExperimentOutput,
             smithy_http::result::SdkError<crate::error::UpdateExperimentError>,
         >
@@ -19261,34 +19644,34 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the experiment to update.</p>
-        pub fn experiment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(inp);
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input);
             self
         }
         pub fn set_experiment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_experiment_name(inp);
+            self.inner = self.inner.set_experiment_name(input);
             self
         }
         /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input);
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(inp);
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
             self
         }
         /// <p>The description of the experiment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }
@@ -19307,7 +19690,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateImageOutput,
             smithy_http::result::SdkError<crate::error::UpdateImageError>,
         >
@@ -19331,45 +19714,45 @@ pub mod fluent_builders {
         }
         pub fn set_delete_properties(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_delete_properties(inp);
+            self.inner = self.inner.set_delete_properties(input);
             self
         }
         /// <p>The new description for the image.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The new display name for the image.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input);
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(inp);
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
             self
         }
         /// <p>The name of the image to update.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input);
             self
         }
-        pub fn set_image_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_name(inp);
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_name(input);
             self
         }
         /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
     }
@@ -19388,7 +19771,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateModelPackageOutput,
             smithy_http::result::SdkError<crate::error::UpdateModelPackageError>,
         >
@@ -19405,39 +19788,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model.</p>
-        pub fn model_package_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_arn(inp);
+        pub fn model_package_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_arn(input);
             self
         }
         pub fn set_model_package_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_model_package_arn(inp);
+            self.inner = self.inner.set_model_package_arn(input);
             self
         }
         /// <p>The approval status of the model.</p>
-        pub fn model_approval_status(mut self, inp: crate::model::ModelApprovalStatus) -> Self {
-            self.inner = self.inner.model_approval_status(inp);
+        pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
+            self.inner = self.inner.model_approval_status(input);
             self
         }
         pub fn set_model_approval_status(
             mut self,
-            inp: std::option::Option<crate::model::ModelApprovalStatus>,
+            input: std::option::Option<crate::model::ModelApprovalStatus>,
         ) -> Self {
-            self.inner = self.inner.set_model_approval_status(inp);
+            self.inner = self.inner.set_model_approval_status(input);
             self
         }
         /// <p>A description for the approval status of the model.</p>
-        pub fn approval_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_description(inp);
+        pub fn approval_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_description(input);
             self
         }
         pub fn set_approval_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_approval_description(inp);
+            self.inner = self.inner.set_approval_description(input);
             self
         }
     }
@@ -19456,7 +19839,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateMonitoringScheduleOutput,
             smithy_http::result::SdkError<crate::error::UpdateMonitoringScheduleError>,
         >
@@ -19474,31 +19857,31 @@ pub mod fluent_builders {
         }
         /// <p>The name of the monitoring schedule. The name must be unique within an AWS Region within
         /// an AWS account.</p>
-        pub fn monitoring_schedule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(inp);
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input);
             self
         }
         pub fn set_monitoring_schedule_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_name(inp);
+            self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
         /// <p>The configuration object that specifies the monitoring schedule and defines the
         /// monitoring job.</p>
         pub fn monitoring_schedule_config(
             mut self,
-            inp: crate::model::MonitoringScheduleConfig,
+            input: crate::model::MonitoringScheduleConfig,
         ) -> Self {
-            self.inner = self.inner.monitoring_schedule_config(inp);
+            self.inner = self.inner.monitoring_schedule_config(input);
             self
         }
         pub fn set_monitoring_schedule_config(
             mut self,
-            inp: std::option::Option<crate::model::MonitoringScheduleConfig>,
+            input: std::option::Option<crate::model::MonitoringScheduleConfig>,
         ) -> Self {
-            self.inner = self.inner.set_monitoring_schedule_config(inp);
+            self.inner = self.inner.set_monitoring_schedule_config(input);
             self
         }
     }
@@ -19517,7 +19900,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateNotebookInstanceOutput,
             smithy_http::result::SdkError<crate::error::UpdateNotebookInstanceError>,
         >
@@ -19534,27 +19917,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance to update.</p>
-        pub fn notebook_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(inp);
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input);
             self
         }
         pub fn set_notebook_instance_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_name(inp);
+            self.inner = self.inner.set_notebook_instance_name(input);
             self
         }
         /// <p>The Amazon ML compute instance type.</p>
-        pub fn instance_type(mut self, inp: crate::model::InstanceType) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
+            self.inner = self.inner.instance_type(input);
             self
         }
         pub fn set_instance_type(
             mut self,
-            inp: std::option::Option<crate::model::InstanceType>,
+            input: std::option::Option<crate::model::InstanceType>,
         ) -> Self {
-            self.inner = self.inner.set_instance_type(inp);
+            self.inner = self.inner.set_instance_type(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the
@@ -19563,38 +19946,41 @@ pub mod fluent_builders {
         /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
         /// <code>iam:PassRole</code> permission.</p>
         /// </note>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
         /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
         /// Customize a Notebook Instance</a>.</p>
-        pub fn lifecycle_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_config_name(inp);
+        pub fn lifecycle_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_config_name(input);
             self
         }
         pub fn set_lifecycle_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_lifecycle_config_name(inp);
+            self.inner = self.inner.set_lifecycle_config_name(input);
             self
         }
         /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration
         /// currently associated with the notebook instance. This operation is idempotent. If you
         /// specify a lifecycle configuration that is not associated with the notebook instance when
         /// you call this method, it does not throw an error.</p>
-        pub fn disassociate_lifecycle_config(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disassociate_lifecycle_config(inp);
+        pub fn disassociate_lifecycle_config(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_lifecycle_config(input);
             self
         }
-        pub fn set_disassociate_lifecycle_config(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_disassociate_lifecycle_config(inp);
+        pub fn set_disassociate_lifecycle_config(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_disassociate_lifecycle_config(input);
             self
         }
         /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
@@ -19603,12 +19989,12 @@ pub mod fluent_builders {
         /// volume size when you update a notebook instance, but you can't decrease the volume size.
         /// If you want to decrease the size of the ML storage volume in use, create a new notebook
         /// instance with the desired size.</p>
-        pub fn volume_size_in_gb(mut self, inp: i32) -> Self {
-            self.inner = self.inner.volume_size_in_gb(inp);
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.inner = self.inner.volume_size_in_gb(input);
             self
         }
-        pub fn set_volume_size_in_gb(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_volume_size_in_gb(inp);
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_volume_size_in_gb(input);
             self
         }
         /// <p>The Git repository to associate with the notebook instance as its default code
@@ -19617,15 +20003,15 @@ pub mod fluent_builders {
         /// other Git repository. When you open a notebook instance, it opens in the directory that
         /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
         /// Notebook Instances</a>.</p>
-        pub fn default_code_repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_code_repository(inp);
+        pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_code_repository(input);
             self
         }
         pub fn set_default_code_repository(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_default_code_repository(inp);
+            self.inner = self.inner.set_default_code_repository(input);
             self
         }
         /// <p>An array of up to three Git repositories to associate with the notebook instance.
@@ -19640,9 +20026,9 @@ pub mod fluent_builders {
         }
         pub fn set_additional_code_repositories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_additional_code_repositories(inp);
+            self.inner = self.inner.set_additional_code_repositories(input);
             self
         }
         /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook
@@ -19658,46 +20044,57 @@ pub mod fluent_builders {
         }
         pub fn set_accelerator_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceAcceleratorType>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::NotebookInstanceAcceleratorType>,
+            >,
         ) -> Self {
-            self.inner = self.inner.set_accelerator_types(inp);
+            self.inner = self.inner.set_accelerator_types(input);
             self
         }
         /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook
         /// instance. This operation is idempotent. If you specify an accelerator type that is not
         /// associated with the notebook instance when you call this method, it does not throw an
         /// error.</p>
-        pub fn disassociate_accelerator_types(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disassociate_accelerator_types(inp);
+        pub fn disassociate_accelerator_types(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_accelerator_types(input);
             self
         }
-        pub fn set_disassociate_accelerator_types(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_disassociate_accelerator_types(inp);
+        pub fn set_disassociate_accelerator_types(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_disassociate_accelerator_types(input);
             self
         }
         /// <p>The name or URL of the default Git repository to remove from this notebook instance.
         /// This operation is idempotent. If you specify a Git repository that is not associated
         /// with the notebook instance when you call this method, it does not throw an error.</p>
-        pub fn disassociate_default_code_repository(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disassociate_default_code_repository(inp);
+        pub fn disassociate_default_code_repository(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_default_code_repository(input);
             self
         }
-        pub fn set_disassociate_default_code_repository(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_disassociate_default_code_repository(inp);
+        pub fn set_disassociate_default_code_repository(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_disassociate_default_code_repository(input);
             self
         }
         /// <p>A list of names or URLs of the default Git repositories to remove from this notebook
         /// instance. This operation is idempotent. If you specify a Git repository that is not
         /// associated with the notebook instance when you call this method, it does not throw an
         /// error.</p>
-        pub fn disassociate_additional_code_repositories(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disassociate_additional_code_repositories(inp);
+        pub fn disassociate_additional_code_repositories(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_additional_code_repositories(input);
             self
         }
-        pub fn set_disassociate_additional_code_repositories(mut self, inp: bool) -> Self {
+        pub fn set_disassociate_additional_code_repositories(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
             self.inner = self
                 .inner
-                .set_disassociate_additional_code_repositories(inp);
+                .set_disassociate_additional_code_repositories(input);
             self
         }
         /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
@@ -19707,15 +20104,15 @@ pub mod fluent_builders {
         /// notebook instance, but lifecycle configuration scripts still run with root
         /// permissions.</p>
         /// </note>
-        pub fn root_access(mut self, inp: crate::model::RootAccess) -> Self {
-            self.inner = self.inner.root_access(inp);
+        pub fn root_access(mut self, input: crate::model::RootAccess) -> Self {
+            self.inner = self.inner.root_access(input);
             self
         }
         pub fn set_root_access(
             mut self,
-            inp: std::option::Option<crate::model::RootAccess>,
+            input: std::option::Option<crate::model::RootAccess>,
         ) -> Self {
-            self.inner = self.inner.set_root_access(inp);
+            self.inner = self.inner.set_root_access(input);
             self
         }
     }
@@ -19734,7 +20131,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateNotebookInstanceLifecycleConfigOutput,
             smithy_http::result::SdkError<crate::error::UpdateNotebookInstanceLifecycleConfigError>,
         >
@@ -19753,16 +20150,18 @@ pub mod fluent_builders {
         /// <p>The name of the lifecycle configuration.</p>
         pub fn notebook_instance_lifecycle_config_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.notebook_instance_lifecycle_config_name(inp);
+            self.inner = self.inner.notebook_instance_lifecycle_config_name(input);
             self
         }
         pub fn set_notebook_instance_lifecycle_config_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_notebook_instance_lifecycle_config_name(inp);
+            self.inner = self
+                .inner
+                .set_notebook_instance_lifecycle_config_name(input);
             self
         }
         /// <p>The shell script that runs only once, when you create a notebook instance. The shell
@@ -19776,9 +20175,9 @@ pub mod fluent_builders {
         }
         pub fn set_on_create(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
         ) -> Self {
-            self.inner = self.inner.set_on_create(inp);
+            self.inner = self.inner.set_on_create(input);
             self
         }
         /// <p>The shell script that runs every time you start a notebook instance, including when
@@ -19793,9 +20192,9 @@ pub mod fluent_builders {
         }
         pub fn set_on_start(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
         ) -> Self {
-            self.inner = self.inner.set_on_start(inp);
+            self.inner = self.inner.set_on_start(input);
             self
         }
     }
@@ -19814,7 +20213,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdatePipelineOutput,
             smithy_http::result::SdkError<crate::error::UpdatePipelineError>,
         >
@@ -19831,57 +20230,60 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to update.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input);
             self
         }
-        pub fn set_pipeline_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_pipeline_name(inp);
+        pub fn set_pipeline_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pipeline_name(input);
             self
         }
         /// <p>The display name of the pipeline.</p>
-        pub fn pipeline_display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_display_name(inp);
+        pub fn pipeline_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_display_name(input);
             self
         }
         pub fn set_pipeline_display_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_display_name(inp);
+            self.inner = self.inner.set_pipeline_display_name(input);
             self
         }
         /// <p>The JSON pipeline definition.</p>
-        pub fn pipeline_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_definition(inp);
+        pub fn pipeline_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_definition(input);
             self
         }
         pub fn set_pipeline_definition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_definition(inp);
+            self.inner = self.inner.set_pipeline_definition(input);
             self
         }
         /// <p>The description of the pipeline.</p>
-        pub fn pipeline_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_description(inp);
+        pub fn pipeline_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_description(input);
             self
         }
         pub fn set_pipeline_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_description(inp);
+            self.inner = self.inner.set_pipeline_description(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
     }
@@ -19900,7 +20302,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdatePipelineExecutionOutput,
             smithy_http::result::SdkError<crate::error::UpdatePipelineExecutionError>,
         >
@@ -19917,45 +20319,45 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(inp);
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input);
             self
         }
         pub fn set_pipeline_execution_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_arn(inp);
+            self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
         /// <p>The description of the pipeline execution.</p>
         pub fn pipeline_execution_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pipeline_execution_description(inp);
+            self.inner = self.inner.pipeline_execution_description(input);
             self
         }
         pub fn set_pipeline_execution_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_description(inp);
+            self.inner = self.inner.set_pipeline_execution_description(input);
             self
         }
         /// <p>The display name of the pipeline execution.</p>
         pub fn pipeline_execution_display_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pipeline_execution_display_name(inp);
+            self.inner = self.inner.pipeline_execution_display_name(input);
             self
         }
         pub fn set_pipeline_execution_display_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_pipeline_execution_display_name(inp);
+            self.inner = self.inner.set_pipeline_execution_display_name(input);
             self
         }
     }
@@ -19974,7 +20376,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTrainingJobOutput,
             smithy_http::result::SdkError<crate::error::UpdateTrainingJobError>,
         >
@@ -19991,28 +20393,28 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a training job to update the Debugger profiling configuration.</p>
-        pub fn training_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_job_name(inp);
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_job_name(input);
             self
         }
         pub fn set_training_job_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_training_job_name(inp);
+            self.inner = self.inner.set_training_job_name(input);
             self
         }
         /// <p>Configuration information for Debugger system monitoring, framework profiling, and
         /// storage paths.</p>
-        pub fn profiler_config(mut self, inp: crate::model::ProfilerConfigForUpdate) -> Self {
-            self.inner = self.inner.profiler_config(inp);
+        pub fn profiler_config(mut self, input: crate::model::ProfilerConfigForUpdate) -> Self {
+            self.inner = self.inner.profiler_config(input);
             self
         }
         pub fn set_profiler_config(
             mut self,
-            inp: std::option::Option<crate::model::ProfilerConfigForUpdate>,
+            input: std::option::Option<crate::model::ProfilerConfigForUpdate>,
         ) -> Self {
-            self.inner = self.inner.set_profiler_config(inp);
+            self.inner = self.inner.set_profiler_config(input);
             self
         }
         /// <p>Configuration information for Debugger rules for profiling system and framework
@@ -20026,9 +20428,9 @@ pub mod fluent_builders {
         }
         pub fn set_profiler_rule_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
         ) -> Self {
-            self.inner = self.inner.set_profiler_rule_configurations(inp);
+            self.inner = self.inner.set_profiler_rule_configurations(input);
             self
         }
     }
@@ -20047,7 +20449,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTrialOutput,
             smithy_http::result::SdkError<crate::error::UpdateTrialError>,
         >
@@ -20064,22 +20466,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trial to update.</p>
-        pub fn trial_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(inp);
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input);
             self
         }
-        pub fn set_trial_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_trial_name(inp);
+        pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_trial_name(input);
             self
         }
         /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input);
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(inp);
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
             self
         }
     }
@@ -20098,7 +20500,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTrialComponentOutput,
             smithy_http::result::SdkError<crate::error::UpdateTrialComponentError>,
         >
@@ -20115,56 +20517,56 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component to update.</p>
-        pub fn trial_component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(inp);
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input);
             self
         }
         pub fn set_trial_component_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_trial_component_name(inp);
+            self.inner = self.inner.set_trial_component_name(input);
             self
         }
         /// <p>The name of the component as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
         /// displayed.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input);
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(inp);
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
             self
         }
         /// <p>The new status of the component.</p>
-        pub fn status(mut self, inp: crate::model::TrialComponentStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::TrialComponentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::TrialComponentStatus>,
+            input: std::option::Option<crate::model::TrialComponentStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status(inp);
+            self.inner = self.inner.set_status(input);
             self
         }
         /// <p>When the component started.</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_start_time(inp);
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>When the component ended.</p>
-        pub fn end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_end_time(inp);
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_time(input);
             self
         }
         /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
@@ -20178,14 +20580,14 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::TrialComponentParameterValue,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>The hyperparameters to remove from the component.</p>
@@ -20195,9 +20597,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters_to_remove(inp);
+            self.inner = self.inner.set_parameters_to_remove(input);
             self
         }
         /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
@@ -20211,14 +20613,14 @@ pub mod fluent_builders {
         }
         pub fn set_input_artifacts(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::TrialComponentArtifact,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_input_artifacts(inp);
+            self.inner = self.inner.set_input_artifacts(input);
             self
         }
         /// <p>The input artifacts to remove from the component.</p>
@@ -20228,9 +20630,9 @@ pub mod fluent_builders {
         }
         pub fn set_input_artifacts_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_input_artifacts_to_remove(inp);
+            self.inner = self.inner.set_input_artifacts_to_remove(input);
             self
         }
         /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
@@ -20244,14 +20646,14 @@ pub mod fluent_builders {
         }
         pub fn set_output_artifacts(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::TrialComponentArtifact,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_output_artifacts(inp);
+            self.inner = self.inner.set_output_artifacts(input);
             self
         }
         /// <p>The output artifacts to remove from the component.</p>
@@ -20261,9 +20663,9 @@ pub mod fluent_builders {
         }
         pub fn set_output_artifacts_to_remove(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_output_artifacts_to_remove(inp);
+            self.inner = self.inner.set_output_artifacts_to_remove(input);
             self
         }
     }
@@ -20282,7 +20684,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateUserProfileOutput,
             smithy_http::result::SdkError<crate::error::UpdateUserProfileError>,
         >
@@ -20299,36 +20701,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input);
             self
         }
-        pub fn set_domain_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_id(inp);
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_id(input);
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(inp);
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input);
             self
         }
         pub fn set_user_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_user_profile_name(inp);
+            self.inner = self.inner.set_user_profile_name(input);
             self
         }
         /// <p>A collection of settings.</p>
-        pub fn user_settings(mut self, inp: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.user_settings(inp);
+        pub fn user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         pub fn set_user_settings(
             mut self,
-            inp: std::option::Option<crate::model::UserSettings>,
+            input: std::option::Option<crate::model::UserSettings>,
         ) -> Self {
-            self.inner = self.inner.set_user_settings(inp);
+            self.inner = self.inner.set_user_settings(input);
             self
         }
     }
@@ -20347,7 +20749,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateWorkforceOutput,
             smithy_http::result::SdkError<crate::error::UpdateWorkforceError>,
         >
@@ -20365,39 +20767,42 @@ pub mod fluent_builders {
         }
         /// <p>The name of the private workforce that you want to update. You can find your workforce
         /// name by using the  operation.</p>
-        pub fn workforce_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(inp);
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input);
             self
         }
-        pub fn set_workforce_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workforce_name(inp);
+        pub fn set_workforce_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workforce_name(input);
             self
         }
         /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
         /// access tasks assigned to this workforce.</p>
         /// <p>Maximum: Ten CIDR values</p>
-        pub fn source_ip_config(mut self, inp: crate::model::SourceIpConfig) -> Self {
-            self.inner = self.inner.source_ip_config(inp);
+        pub fn source_ip_config(mut self, input: crate::model::SourceIpConfig) -> Self {
+            self.inner = self.inner.source_ip_config(input);
             self
         }
         pub fn set_source_ip_config(
             mut self,
-            inp: std::option::Option<crate::model::SourceIpConfig>,
+            input: std::option::Option<crate::model::SourceIpConfig>,
         ) -> Self {
-            self.inner = self.inner.set_source_ip_config(inp);
+            self.inner = self.inner.set_source_ip_config(input);
             self
         }
         /// <p>Use this parameter to update your OIDC Identity Provider (IdP)
         /// configuration for a workforce made using your own IdP.</p>
-        pub fn oidc_config(mut self, inp: crate::model::OidcConfig) -> Self {
-            self.inner = self.inner.oidc_config(inp);
+        pub fn oidc_config(mut self, input: crate::model::OidcConfig) -> Self {
+            self.inner = self.inner.oidc_config(input);
             self
         }
         pub fn set_oidc_config(
             mut self,
-            inp: std::option::Option<crate::model::OidcConfig>,
+            input: std::option::Option<crate::model::OidcConfig>,
         ) -> Self {
-            self.inner = self.inner.set_oidc_config(inp);
+            self.inner = self.inner.set_oidc_config(input);
             self
         }
     }
@@ -20416,7 +20821,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateWorkteamOutput,
             smithy_http::result::SdkError<crate::error::UpdateWorkteamError>,
         >
@@ -20433,12 +20838,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the work team to update.</p>
-        pub fn workteam_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_name(inp);
+        pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_name(input);
             self
         }
-        pub fn set_workteam_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workteam_name(inp);
+        pub fn set_workteam_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_workteam_name(input);
             self
         }
         /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify
@@ -20470,33 +20878,33 @@ pub mod fluent_builders {
         }
         pub fn set_member_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MemberDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MemberDefinition>>,
         ) -> Self {
-            self.inner = self.inner.set_member_definitions(inp);
+            self.inner = self.inner.set_member_definitions(input);
             self
         }
         /// <p>An updated description for the work team.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Configures SNS topic notifications for available or expiring work items</p>
         pub fn notification_configuration(
             mut self,
-            inp: crate::model::NotificationConfiguration,
+            input: crate::model::NotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.notification_configuration(inp);
+            self.inner = self.inner.notification_configuration(input);
             self
         }
         pub fn set_notification_configuration(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfiguration>,
+            input: std::option::Option<crate::model::NotificationConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_notification_configuration(inp);
+            self.inner = self.inner.set_notification_configuration(input);
             self
         }
     }

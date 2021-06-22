@@ -17,7 +17,7 @@ impl AddClientIDToOpenIDConnectProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddClientIDToOpenIDConnectProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AddClientIDToOpenIDConnectProviderOutput,
         crate::error::AddClientIDToOpenIDConnectProviderError,
     >;
@@ -59,7 +59,7 @@ impl AddRoleToInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddRoleToInstanceProfile {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AddRoleToInstanceProfileOutput,
         crate::error::AddRoleToInstanceProfileError,
     >;
@@ -87,7 +87,8 @@ impl AddUserToGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddUserToGroup {
-    type Output = Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError>;
+    type Output =
+        std::result::Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_add_user_to_group_error(response)
@@ -119,8 +120,10 @@ impl AttachGroupPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AttachGroupPolicy {
-    type Output =
-        Result<crate::output::AttachGroupPolicyOutput, crate::error::AttachGroupPolicyError>;
+    type Output = std::result::Result<
+        crate::output::AttachGroupPolicyOutput,
+        crate::error::AttachGroupPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_attach_group_policy_error(response)
@@ -159,8 +162,10 @@ impl AttachRolePolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AttachRolePolicy {
-    type Output =
-        Result<crate::output::AttachRolePolicyOutput, crate::error::AttachRolePolicyError>;
+    type Output = std::result::Result<
+        crate::output::AttachRolePolicyOutput,
+        crate::error::AttachRolePolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_attach_role_policy_error(response)
@@ -192,8 +197,10 @@ impl AttachUserPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AttachUserPolicy {
-    type Output =
-        Result<crate::output::AttachUserPolicyOutput, crate::error::AttachUserPolicyError>;
+    type Output = std::result::Result<
+        crate::output::AttachUserPolicyOutput,
+        crate::error::AttachUserPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_attach_user_policy_error(response)
@@ -225,7 +232,8 @@ impl ChangePassword {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ChangePassword {
-    type Output = Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError>;
+    type Output =
+        std::result::Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_change_password_error(response)
@@ -263,7 +271,10 @@ impl CreateAccessKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateAccessKey {
-    type Output = Result<crate::output::CreateAccessKeyOutput, crate::error::CreateAccessKeyError>;
+    type Output = std::result::Result<
+        crate::output::CreateAccessKeyOutput,
+        crate::error::CreateAccessKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_access_key_error(response)
@@ -291,8 +302,10 @@ impl CreateAccountAlias {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateAccountAlias {
-    type Output =
-        Result<crate::output::CreateAccountAliasOutput, crate::error::CreateAccountAliasError>;
+    type Output = std::result::Result<
+        crate::output::CreateAccountAliasOutput,
+        crate::error::CreateAccountAliasError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_account_alias_error(response)
@@ -319,7 +332,8 @@ impl CreateGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateGroup {
-    type Output = Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError>;
+    type Output =
+        std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_group_error(response)
@@ -348,7 +362,7 @@ impl CreateInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateInstanceProfile {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateInstanceProfileOutput,
         crate::error::CreateInstanceProfileError,
     >;
@@ -383,8 +397,10 @@ impl CreateLoginProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateLoginProfile {
-    type Output =
-        Result<crate::output::CreateLoginProfileOutput, crate::error::CreateLoginProfileError>;
+    type Output = std::result::Result<
+        crate::output::CreateLoginProfileOutput,
+        crate::error::CreateLoginProfileError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_login_profile_error(response)
@@ -439,7 +455,7 @@ impl CreateOpenIDConnectProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateOpenIDConnectProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateOpenIDConnectProviderOutput,
         crate::error::CreateOpenIDConnectProviderError,
     >;
@@ -477,7 +493,8 @@ impl CreatePolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreatePolicy {
-    type Output = Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError>;
+    type Output =
+        std::result::Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_policy_error(response)
@@ -509,8 +526,10 @@ impl CreatePolicyVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreatePolicyVersion {
-    type Output =
-        Result<crate::output::CreatePolicyVersionOutput, crate::error::CreatePolicyVersionError>;
+    type Output = std::result::Result<
+        crate::output::CreatePolicyVersionOutput,
+        crate::error::CreatePolicyVersionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_policy_version_error(response)
@@ -539,7 +558,8 @@ impl CreateRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateRole {
-    type Output = Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError>;
+    type Output =
+        std::result::Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_role_error(response)
@@ -581,8 +601,10 @@ impl CreateSAMLProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateSAMLProvider {
-    type Output =
-        Result<crate::output::CreateSAMLProviderOutput, crate::error::CreateSAMLProviderError>;
+    type Output = std::result::Result<
+        crate::output::CreateSAMLProviderOutput,
+        crate::error::CreateSAMLProviderError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_saml_provider_error(response)
@@ -615,7 +637,7 @@ impl CreateServiceLinkedRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateServiceLinkedRole {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateServiceLinkedRoleOutput,
         crate::error::CreateServiceLinkedRoleError,
     >;
@@ -653,7 +675,7 @@ impl CreateServiceSpecificCredential {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateServiceSpecificCredential {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateServiceSpecificCredentialOutput,
         crate::error::CreateServiceSpecificCredentialError,
     >;
@@ -683,7 +705,8 @@ impl CreateUser {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateUser {
-    type Output = Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
+    type Output =
+        std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_user_error(response)
@@ -720,7 +743,7 @@ impl CreateVirtualMFADevice {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateVirtualMFADevice {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateVirtualMFADeviceOutput,
         crate::error::CreateVirtualMFADeviceError,
     >;
@@ -752,8 +775,10 @@ impl DeactivateMFADevice {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeactivateMFADevice {
-    type Output =
-        Result<crate::output::DeactivateMFADeviceOutput, crate::error::DeactivateMFADeviceError>;
+    type Output = std::result::Result<
+        crate::output::DeactivateMFADeviceOutput,
+        crate::error::DeactivateMFADeviceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_deactivate_mfa_device_error(response)
@@ -782,7 +807,10 @@ impl DeleteAccessKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteAccessKey {
-    type Output = Result<crate::output::DeleteAccessKeyOutput, crate::error::DeleteAccessKeyError>;
+    type Output = std::result::Result<
+        crate::output::DeleteAccessKeyOutput,
+        crate::error::DeleteAccessKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_access_key_error(response)
@@ -809,8 +837,10 @@ impl DeleteAccountAlias {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteAccountAlias {
-    type Output =
-        Result<crate::output::DeleteAccountAliasOutput, crate::error::DeleteAccountAliasError>;
+    type Output = std::result::Result<
+        crate::output::DeleteAccountAliasOutput,
+        crate::error::DeleteAccountAliasError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_account_alias_error(response)
@@ -835,7 +865,7 @@ impl DeleteAccountPasswordPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteAccountPasswordPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteAccountPasswordPolicyOutput,
         crate::error::DeleteAccountPasswordPolicyError,
     >;
@@ -864,7 +894,8 @@ impl DeleteGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteGroup {
-    type Output = Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError>;
+    type Output =
+        std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_group_error(response)
@@ -894,8 +925,10 @@ impl DeleteGroupPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteGroupPolicy {
-    type Output =
-        Result<crate::output::DeleteGroupPolicyOutput, crate::error::DeleteGroupPolicyError>;
+    type Output = std::result::Result<
+        crate::output::DeleteGroupPolicyOutput,
+        crate::error::DeleteGroupPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_group_policy_error(response)
@@ -929,7 +962,7 @@ impl DeleteInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteInstanceProfile {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteInstanceProfileOutput,
         crate::error::DeleteInstanceProfileError,
     >;
@@ -969,8 +1002,10 @@ impl DeleteLoginProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteLoginProfile {
-    type Output =
-        Result<crate::output::DeleteLoginProfileOutput, crate::error::DeleteLoginProfileError>;
+    type Output = std::result::Result<
+        crate::output::DeleteLoginProfileOutput,
+        crate::error::DeleteLoginProfileError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_login_profile_error(response)
@@ -1000,7 +1035,7 @@ impl DeleteOpenIDConnectProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteOpenIDConnectProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteOpenIDConnectProviderOutput,
         crate::error::DeleteOpenIDConnectProviderError,
     >;
@@ -1052,7 +1087,8 @@ impl DeletePolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeletePolicy {
-    type Output = Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError>;
+    type Output =
+        std::result::Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_policy_error(response)
@@ -1082,8 +1118,10 @@ impl DeletePolicyVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeletePolicyVersion {
-    type Output =
-        Result<crate::output::DeletePolicyVersionOutput, crate::error::DeletePolicyVersionError>;
+    type Output = std::result::Result<
+        crate::output::DeletePolicyVersionOutput,
+        crate::error::DeletePolicyVersionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_policy_version_error(response)
@@ -1114,7 +1152,8 @@ impl DeleteRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteRole {
-    type Output = Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError>;
+    type Output =
+        std::result::Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_role_error(response)
@@ -1144,7 +1183,7 @@ impl DeleteRolePermissionsBoundary {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteRolePermissionsBoundary {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteRolePermissionsBoundaryOutput,
         crate::error::DeleteRolePermissionsBoundaryError,
     >;
@@ -1177,8 +1216,10 @@ impl DeleteRolePolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteRolePolicy {
-    type Output =
-        Result<crate::output::DeleteRolePolicyOutput, crate::error::DeleteRolePolicyError>;
+    type Output = std::result::Result<
+        crate::output::DeleteRolePolicyOutput,
+        crate::error::DeleteRolePolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_role_policy_error(response)
@@ -1209,8 +1250,10 @@ impl DeleteSAMLProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSAMLProvider {
-    type Output =
-        Result<crate::output::DeleteSAMLProviderOutput, crate::error::DeleteSAMLProviderError>;
+    type Output = std::result::Result<
+        crate::output::DeleteSAMLProviderOutput,
+        crate::error::DeleteSAMLProviderError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_saml_provider_error(response)
@@ -1249,7 +1292,7 @@ impl DeleteServerCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteServerCertificate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteServerCertificateOutput,
         crate::error::DeleteServerCertificateError,
     >;
@@ -1293,7 +1336,7 @@ impl DeleteServiceLinkedRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteServiceLinkedRole {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteServiceLinkedRoleOutput,
         crate::error::DeleteServiceLinkedRoleError,
     >;
@@ -1321,7 +1364,7 @@ impl DeleteServiceSpecificCredential {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteServiceSpecificCredential {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteServiceSpecificCredentialOutput,
         crate::error::DeleteServiceSpecificCredentialError,
     >;
@@ -1353,7 +1396,7 @@ impl DeleteSigningCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSigningCertificate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteSigningCertificateOutput,
         crate::error::DeleteSigningCertificateError,
     >;
@@ -1385,8 +1428,10 @@ impl DeleteSSHPublicKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSSHPublicKey {
-    type Output =
-        Result<crate::output::DeleteSSHPublicKeyOutput, crate::error::DeleteSSHPublicKeyError>;
+    type Output = std::result::Result<
+        crate::output::DeleteSSHPublicKeyOutput,
+        crate::error::DeleteSSHPublicKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_ssh_public_key_error(response)
@@ -1443,7 +1488,8 @@ impl DeleteUser {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteUser {
-    type Output = Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
+    type Output =
+        std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_user_error(response)
@@ -1473,7 +1519,7 @@ impl DeleteUserPermissionsBoundary {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteUserPermissionsBoundary {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteUserPermissionsBoundaryOutput,
         crate::error::DeleteUserPermissionsBoundaryError,
     >;
@@ -1506,8 +1552,10 @@ impl DeleteUserPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteUserPolicy {
-    type Output =
-        Result<crate::output::DeleteUserPolicyOutput, crate::error::DeleteUserPolicyError>;
+    type Output = std::result::Result<
+        crate::output::DeleteUserPolicyOutput,
+        crate::error::DeleteUserPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_user_policy_error(response)
@@ -1536,7 +1584,7 @@ impl DeleteVirtualMFADevice {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVirtualMFADevice {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteVirtualMFADeviceOutput,
         crate::error::DeleteVirtualMFADeviceError,
     >;
@@ -1568,8 +1616,10 @@ impl DetachGroupPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DetachGroupPolicy {
-    type Output =
-        Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError>;
+    type Output = std::result::Result<
+        crate::output::DetachGroupPolicyOutput,
+        crate::error::DetachGroupPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_detach_group_policy_error(response)
@@ -1598,8 +1648,10 @@ impl DetachRolePolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DetachRolePolicy {
-    type Output =
-        Result<crate::output::DetachRolePolicyOutput, crate::error::DetachRolePolicyError>;
+    type Output = std::result::Result<
+        crate::output::DetachRolePolicyOutput,
+        crate::error::DetachRolePolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_detach_role_policy_error(response)
@@ -1628,8 +1680,10 @@ impl DetachUserPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DetachUserPolicy {
-    type Output =
-        Result<crate::output::DetachUserPolicyOutput, crate::error::DetachUserPolicyError>;
+    type Output = std::result::Result<
+        crate::output::DetachUserPolicyOutput,
+        crate::error::DetachUserPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_detach_user_policy_error(response)
@@ -1656,7 +1710,10 @@ impl EnableMFADevice {
     }
 }
 impl smithy_http::response::ParseStrictResponse for EnableMFADevice {
-    type Output = Result<crate::output::EnableMFADeviceOutput, crate::error::EnableMFADeviceError>;
+    type Output = std::result::Result<
+        crate::output::EnableMFADeviceOutput,
+        crate::error::EnableMFADeviceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_mfa_device_error(response)
@@ -1683,7 +1740,7 @@ impl GenerateCredentialReport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GenerateCredentialReport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GenerateCredentialReportOutput,
         crate::error::GenerateCredentialReportError,
     >;
@@ -1842,7 +1899,7 @@ impl GenerateOrganizationsAccessReport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GenerateOrganizationsAccessReport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GenerateOrganizationsAccessReportOutput,
         crate::error::GenerateOrganizationsAccessReportError,
     >;
@@ -1923,7 +1980,7 @@ impl GenerateServiceLastAccessedDetails {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GenerateServiceLastAccessedDetails {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GenerateServiceLastAccessedDetailsOutput,
         crate::error::GenerateServiceLastAccessedDetailsError,
     >;
@@ -1953,8 +2010,10 @@ impl GetAccessKeyLastUsed {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAccessKeyLastUsed {
-    type Output =
-        Result<crate::output::GetAccessKeyLastUsedOutput, crate::error::GetAccessKeyLastUsedError>;
+    type Output = std::result::Result<
+        crate::output::GetAccessKeyLastUsedOutput,
+        crate::error::GetAccessKeyLastUsedError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_key_last_used_error(response)
@@ -1992,7 +2051,7 @@ impl GetAccountAuthorizationDetails {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAccountAuthorizationDetails {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetAccountAuthorizationDetailsOutput,
         crate::error::GetAccountAuthorizationDetailsError,
     >;
@@ -2023,7 +2082,7 @@ impl GetAccountPasswordPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAccountPasswordPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetAccountPasswordPolicyOutput,
         crate::error::GetAccountPasswordPolicyError,
     >;
@@ -2054,8 +2113,10 @@ impl GetAccountSummary {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAccountSummary {
-    type Output =
-        Result<crate::output::GetAccountSummaryOutput, crate::error::GetAccountSummaryError>;
+    type Output = std::result::Result<
+        crate::output::GetAccountSummaryOutput,
+        crate::error::GetAccountSummaryError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_account_summary_error(response)
@@ -2089,7 +2150,7 @@ impl GetContextKeysForCustomPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetContextKeysForCustomPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetContextKeysForCustomPolicyOutput,
         crate::error::GetContextKeysForCustomPolicyError,
     >;
@@ -2130,7 +2191,7 @@ impl GetContextKeysForPrincipalPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetContextKeysForPrincipalPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetContextKeysForPrincipalPolicyOutput,
         crate::error::GetContextKeysForPrincipalPolicyError,
     >;
@@ -2160,8 +2221,10 @@ impl GetCredentialReport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetCredentialReport {
-    type Output =
-        Result<crate::output::GetCredentialReportOutput, crate::error::GetCredentialReportError>;
+    type Output = std::result::Result<
+        crate::output::GetCredentialReportOutput,
+        crate::error::GetCredentialReportError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_credential_report_error(response)
@@ -2187,7 +2250,7 @@ impl GetGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetGroup {
-    type Output = Result<crate::output::GetGroupOutput, crate::error::GetGroupError>;
+    type Output = std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_group_error(response)
@@ -2226,7 +2289,8 @@ impl GetGroupPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetGroupPolicy {
-    type Output = Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError>;
+    type Output =
+        std::result::Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_group_policy_error(response)
@@ -2254,8 +2318,10 @@ impl GetInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetInstanceProfile {
-    type Output =
-        Result<crate::output::GetInstanceProfileOutput, crate::error::GetInstanceProfileError>;
+    type Output = std::result::Result<
+        crate::output::GetInstanceProfileOutput,
+        crate::error::GetInstanceProfileError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_instance_profile_error(response)
@@ -2282,7 +2348,10 @@ impl GetLoginProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetLoginProfile {
-    type Output = Result<crate::output::GetLoginProfileOutput, crate::error::GetLoginProfileError>;
+    type Output = std::result::Result<
+        crate::output::GetLoginProfileOutput,
+        crate::error::GetLoginProfileError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_login_profile_error(response)
@@ -2308,7 +2377,7 @@ impl GetOpenIDConnectProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetOpenIDConnectProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetOpenIDConnectProviderOutput,
         crate::error::GetOpenIDConnectProviderError,
     >;
@@ -2353,7 +2422,7 @@ impl GetOrganizationsAccessReport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetOrganizationsAccessReport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetOrganizationsAccessReportOutput,
         crate::error::GetOrganizationsAccessReportError,
     >;
@@ -2390,7 +2459,7 @@ impl GetPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetPolicy {
-    type Output = Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError>;
+    type Output = std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_policy_error(response)
@@ -2430,8 +2499,10 @@ impl GetPolicyVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetPolicyVersion {
-    type Output =
-        Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError>;
+    type Output = std::result::Result<
+        crate::output::GetPolicyVersionOutput,
+        crate::error::GetPolicyVersionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_policy_version_error(response)
@@ -2465,7 +2536,7 @@ impl GetRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetRole {
-    type Output = Result<crate::output::GetRoleOutput, crate::error::GetRoleError>;
+    type Output = std::result::Result<crate::output::GetRoleOutput, crate::error::GetRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_role_error(response)
@@ -2506,7 +2577,8 @@ impl GetRolePolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetRolePolicy {
-    type Output = Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError>;
+    type Output =
+        std::result::Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_role_policy_error(response)
@@ -2535,7 +2607,10 @@ impl GetSAMLProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSAMLProvider {
-    type Output = Result<crate::output::GetSAMLProviderOutput, crate::error::GetSAMLProviderError>;
+    type Output = std::result::Result<
+        crate::output::GetSAMLProviderOutput,
+        crate::error::GetSAMLProviderError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_saml_provider_error(response)
@@ -2564,8 +2639,10 @@ impl GetServerCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetServerCertificate {
-    type Output =
-        Result<crate::output::GetServerCertificateOutput, crate::error::GetServerCertificateError>;
+    type Output = std::result::Result<
+        crate::output::GetServerCertificateOutput,
+        crate::error::GetServerCertificateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_server_certificate_error(response)
@@ -2641,7 +2718,7 @@ impl GetServiceLastAccessedDetails {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetServiceLastAccessedDetails {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetServiceLastAccessedDetailsOutput,
         crate::error::GetServiceLastAccessedDetailsError,
     >;
@@ -2695,7 +2772,7 @@ impl GetServiceLastAccessedDetailsWithEntities {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetServiceLastAccessedDetailsWithEntities {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput,
         crate::error::GetServiceLastAccessedDetailsWithEntitiesError,
     >;
@@ -2731,7 +2808,7 @@ impl GetServiceLinkedRoleDeletionStatus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetServiceLinkedRoleDeletionStatus {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetServiceLinkedRoleDeletionStatusOutput,
         crate::error::GetServiceLinkedRoleDeletionStatusError,
     >;
@@ -2763,7 +2840,10 @@ impl GetSSHPublicKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSSHPublicKey {
-    type Output = Result<crate::output::GetSSHPublicKeyOutput, crate::error::GetSSHPublicKeyError>;
+    type Output = std::result::Result<
+        crate::output::GetSSHPublicKeyOutput,
+        crate::error::GetSSHPublicKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_ssh_public_key_error(response)
@@ -2791,7 +2871,7 @@ impl GetUser {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetUser {
-    type Output = Result<crate::output::GetUserOutput, crate::error::GetUserError>;
+    type Output = std::result::Result<crate::output::GetUserOutput, crate::error::GetUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_user_error(response)
@@ -2830,7 +2910,8 @@ impl GetUserPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetUserPolicy {
-    type Output = Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError>;
+    type Output =
+        std::result::Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_user_policy_error(response)
@@ -2867,7 +2948,8 @@ impl ListAccessKeys {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListAccessKeys {
-    type Output = Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError>;
+    type Output =
+        std::result::Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_access_keys_error(response)
@@ -2894,8 +2976,10 @@ impl ListAccountAliases {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListAccountAliases {
-    type Output =
-        Result<crate::output::ListAccountAliasesOutput, crate::error::ListAccountAliasesError>;
+    type Output = std::result::Result<
+        crate::output::ListAccountAliasesOutput,
+        crate::error::ListAccountAliasesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_account_aliases_error(response)
@@ -2929,7 +3013,7 @@ impl ListAttachedGroupPolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListAttachedGroupPolicies {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListAttachedGroupPoliciesOutput,
         crate::error::ListAttachedGroupPoliciesError,
     >;
@@ -2966,7 +3050,7 @@ impl ListAttachedRolePolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListAttachedRolePolicies {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListAttachedRolePoliciesOutput,
         crate::error::ListAttachedRolePoliciesError,
     >;
@@ -3003,7 +3087,7 @@ impl ListAttachedUserPolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListAttachedUserPolicies {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListAttachedUserPoliciesOutput,
         crate::error::ListAttachedUserPoliciesError,
     >;
@@ -3038,7 +3122,7 @@ impl ListEntitiesForPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListEntitiesForPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListEntitiesForPolicyOutput,
         crate::error::ListEntitiesForPolicyError,
     >;
@@ -3074,8 +3158,10 @@ impl ListGroupPolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListGroupPolicies {
-    type Output =
-        Result<crate::output::ListGroupPoliciesOutput, crate::error::ListGroupPoliciesError>;
+    type Output = std::result::Result<
+        crate::output::ListGroupPoliciesOutput,
+        crate::error::ListGroupPoliciesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_group_policies_error(response)
@@ -3102,7 +3188,8 @@ impl ListGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListGroups {
-    type Output = Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
+    type Output =
+        std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_groups_error(response)
@@ -3129,8 +3216,10 @@ impl ListGroupsForUser {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListGroupsForUser {
-    type Output =
-        Result<crate::output::ListGroupsForUserOutput, crate::error::ListGroupsForUserError>;
+    type Output = std::result::Result<
+        crate::output::ListGroupsForUserOutput,
+        crate::error::ListGroupsForUserError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_groups_for_user_error(response)
@@ -3164,8 +3253,10 @@ impl ListInstanceProfiles {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListInstanceProfiles {
-    type Output =
-        Result<crate::output::ListInstanceProfilesOutput, crate::error::ListInstanceProfilesError>;
+    type Output = std::result::Result<
+        crate::output::ListInstanceProfilesOutput,
+        crate::error::ListInstanceProfilesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_instance_profiles_error(response)
@@ -3195,7 +3286,7 @@ impl ListInstanceProfilesForRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListInstanceProfilesForRole {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListInstanceProfilesForRoleOutput,
         crate::error::ListInstanceProfilesForRoleError,
     >;
@@ -3225,7 +3316,7 @@ impl ListInstanceProfileTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListInstanceProfileTags {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListInstanceProfileTagsOutput,
         crate::error::ListInstanceProfileTagsError,
     >;
@@ -3258,7 +3349,8 @@ impl ListMFADevices {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListMFADevices {
-    type Output = Result<crate::output::ListMFADevicesOutput, crate::error::ListMFADevicesError>;
+    type Output =
+        std::result::Result<crate::output::ListMFADevicesOutput, crate::error::ListMFADevicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_mfa_devices_error(response)
@@ -3285,8 +3377,10 @@ impl ListMFADeviceTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListMFADeviceTags {
-    type Output =
-        Result<crate::output::ListMFADeviceTagsOutput, crate::error::ListMFADeviceTagsError>;
+    type Output = std::result::Result<
+        crate::output::ListMFADeviceTagsOutput,
+        crate::error::ListMFADeviceTagsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_mfa_device_tags_error(response)
@@ -3316,7 +3410,7 @@ impl ListOpenIDConnectProviders {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListOpenIDConnectProviders {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListOpenIDConnectProvidersOutput,
         crate::error::ListOpenIDConnectProvidersError,
     >;
@@ -3348,7 +3442,7 @@ impl ListOpenIDConnectProviderTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListOpenIDConnectProviderTags {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListOpenIDConnectProviderTagsOutput,
         crate::error::ListOpenIDConnectProviderTagsError,
     >;
@@ -3391,7 +3485,8 @@ impl ListPolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListPolicies {
-    type Output = Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError>;
+    type Output =
+        std::result::Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_policies_error(response)
@@ -3455,7 +3550,7 @@ impl ListPoliciesGrantingServiceAccess {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListPoliciesGrantingServiceAccess {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListPoliciesGrantingServiceAccessOutput,
         crate::error::ListPoliciesGrantingServiceAccessError,
     >;
@@ -3485,7 +3580,8 @@ impl ListPolicyTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListPolicyTags {
-    type Output = Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError>;
+    type Output =
+        std::result::Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_policy_tags_error(response)
@@ -3513,8 +3609,10 @@ impl ListPolicyVersions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListPolicyVersions {
-    type Output =
-        Result<crate::output::ListPolicyVersionsOutput, crate::error::ListPolicyVersionsError>;
+    type Output = std::result::Result<
+        crate::output::ListPolicyVersionsOutput,
+        crate::error::ListPolicyVersionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_policy_versions_error(response)
@@ -3547,8 +3645,10 @@ impl ListRolePolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListRolePolicies {
-    type Output =
-        Result<crate::output::ListRolePoliciesOutput, crate::error::ListRolePoliciesError>;
+    type Output = std::result::Result<
+        crate::output::ListRolePoliciesOutput,
+        crate::error::ListRolePoliciesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_role_policies_error(response)
@@ -3581,7 +3681,7 @@ impl ListRoles {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListRoles {
-    type Output = Result<crate::output::ListRolesOutput, crate::error::ListRolesError>;
+    type Output = std::result::Result<crate::output::ListRolesOutput, crate::error::ListRolesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_roles_error(response)
@@ -3608,7 +3708,8 @@ impl ListRoleTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListRoleTags {
-    type Output = Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError>;
+    type Output =
+        std::result::Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_role_tags_error(response)
@@ -3638,8 +3739,10 @@ impl ListSAMLProviders {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSAMLProviders {
-    type Output =
-        Result<crate::output::ListSAMLProvidersOutput, crate::error::ListSAMLProvidersError>;
+    type Output = std::result::Result<
+        crate::output::ListSAMLProvidersOutput,
+        crate::error::ListSAMLProvidersError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_saml_providers_error(response)
@@ -3668,8 +3771,10 @@ impl ListSAMLProviderTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSAMLProviderTags {
-    type Output =
-        Result<crate::output::ListSAMLProviderTagsOutput, crate::error::ListSAMLProviderTagsError>;
+    type Output = std::result::Result<
+        crate::output::ListSAMLProviderTagsOutput,
+        crate::error::ListSAMLProviderTagsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_saml_provider_tags_error(response)
@@ -3705,7 +3810,7 @@ impl ListServerCertificates {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListServerCertificates {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListServerCertificatesOutput,
         crate::error::ListServerCertificatesError,
     >;
@@ -3742,7 +3847,7 @@ impl ListServerCertificateTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListServerCertificateTags {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListServerCertificateTagsOutput,
         crate::error::ListServerCertificateTagsError,
     >;
@@ -3775,7 +3880,7 @@ impl ListServiceSpecificCredentials {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListServiceSpecificCredentials {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListServiceSpecificCredentialsOutput,
         crate::error::ListServiceSpecificCredentialsError,
     >;
@@ -3812,7 +3917,7 @@ impl ListSigningCertificates {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSigningCertificates {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListSigningCertificatesOutput,
         crate::error::ListSigningCertificatesError,
     >;
@@ -3847,8 +3952,10 @@ impl ListSSHPublicKeys {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSSHPublicKeys {
-    type Output =
-        Result<crate::output::ListSSHPublicKeysOutput, crate::error::ListSSHPublicKeysError>;
+    type Output = std::result::Result<
+        crate::output::ListSSHPublicKeysOutput,
+        crate::error::ListSSHPublicKeysError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_ssh_public_keys_error(response)
@@ -3880,8 +3987,10 @@ impl ListUserPolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListUserPolicies {
-    type Output =
-        Result<crate::output::ListUserPoliciesOutput, crate::error::ListUserPoliciesError>;
+    type Output = std::result::Result<
+        crate::output::ListUserPoliciesOutput,
+        crate::error::ListUserPoliciesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_user_policies_error(response)
@@ -3914,7 +4023,7 @@ impl ListUsers {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListUsers {
-    type Output = Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
+    type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_users_error(response)
@@ -3940,7 +4049,8 @@ impl ListUserTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListUserTags {
-    type Output = Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError>;
+    type Output =
+        std::result::Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_user_tags_error(response)
@@ -3975,7 +4085,7 @@ impl ListVirtualMFADevices {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListVirtualMFADevices {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListVirtualMFADevicesOutput,
         crate::error::ListVirtualMFADevicesError,
     >;
@@ -4017,7 +4127,8 @@ impl PutGroupPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutGroupPolicy {
-    type Output = Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError>;
+    type Output =
+        std::result::Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_group_policy_error(response)
@@ -4053,7 +4164,7 @@ impl PutRolePermissionsBoundary {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutRolePermissionsBoundary {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutRolePermissionsBoundaryOutput,
         crate::error::PutRolePermissionsBoundaryError,
     >;
@@ -4100,7 +4211,8 @@ impl PutRolePolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutRolePolicy {
-    type Output = Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError>;
+    type Output =
+        std::result::Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_role_policy_error(response)
@@ -4135,7 +4247,7 @@ impl PutUserPermissionsBoundary {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutUserPermissionsBoundary {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutUserPermissionsBoundaryOutput,
         crate::error::PutUserPermissionsBoundaryError,
     >;
@@ -4177,7 +4289,8 @@ impl PutUserPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutUserPolicy {
-    type Output = Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError>;
+    type Output =
+        std::result::Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_user_policy_error(response)
@@ -4207,7 +4320,7 @@ impl RemoveClientIDFromOpenIDConnectProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveClientIDFromOpenIDConnectProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RemoveClientIDFromOpenIDConnectProviderOutput,
         crate::error::RemoveClientIDFromOpenIDConnectProviderError,
     >;
@@ -4248,7 +4361,7 @@ impl RemoveRoleFromInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveRoleFromInstanceProfile {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RemoveRoleFromInstanceProfileOutput,
         crate::error::RemoveRoleFromInstanceProfileError,
     >;
@@ -4276,8 +4389,10 @@ impl RemoveUserFromGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveUserFromGroup {
-    type Output =
-        Result<crate::output::RemoveUserFromGroupOutput, crate::error::RemoveUserFromGroupError>;
+    type Output = std::result::Result<
+        crate::output::RemoveUserFromGroupOutput,
+        crate::error::RemoveUserFromGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_remove_user_from_group_error(response)
@@ -4305,7 +4420,7 @@ impl ResetServiceSpecificCredential {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetServiceSpecificCredential {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetServiceSpecificCredentialOutput,
         crate::error::ResetServiceSpecificCredentialError,
     >;
@@ -4336,7 +4451,10 @@ impl ResyncMFADevice {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResyncMFADevice {
-    type Output = Result<crate::output::ResyncMFADeviceOutput, crate::error::ResyncMFADeviceError>;
+    type Output = std::result::Result<
+        crate::output::ResyncMFADeviceOutput,
+        crate::error::ResyncMFADeviceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_resync_mfa_device_error(response)
@@ -4366,7 +4484,7 @@ impl SetDefaultPolicyVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SetDefaultPolicyVersion {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SetDefaultPolicyVersionOutput,
         crate::error::SetDefaultPolicyVersionError,
     >;
@@ -4413,7 +4531,7 @@ impl SetSecurityTokenServicePreferences {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SetSecurityTokenServicePreferences {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SetSecurityTokenServicePreferencesOutput,
         crate::error::SetSecurityTokenServicePreferencesError,
     >;
@@ -4457,8 +4575,10 @@ impl SimulateCustomPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SimulateCustomPolicy {
-    type Output =
-        Result<crate::output::SimulateCustomPolicyOutput, crate::error::SimulateCustomPolicyError>;
+    type Output = std::result::Result<
+        crate::output::SimulateCustomPolicyOutput,
+        crate::error::SimulateCustomPolicyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_simulate_custom_policy_error(response)
@@ -4508,7 +4628,7 @@ impl SimulatePrincipalPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SimulatePrincipalPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SimulatePrincipalPolicyOutput,
         crate::error::SimulatePrincipalPolicyError,
     >;
@@ -4571,8 +4691,10 @@ impl TagInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagInstanceProfile {
-    type Output =
-        Result<crate::output::TagInstanceProfileOutput, crate::error::TagInstanceProfileError>;
+    type Output = std::result::Result<
+        crate::output::TagInstanceProfileOutput,
+        crate::error::TagInstanceProfileError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_instance_profile_error(response)
@@ -4633,7 +4755,8 @@ impl TagMFADevice {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagMFADevice {
-    type Output = Result<crate::output::TagMFADeviceOutput, crate::error::TagMFADeviceError>;
+    type Output =
+        std::result::Result<crate::output::TagMFADeviceOutput, crate::error::TagMFADeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_mfa_device_error(response)
@@ -4695,7 +4818,7 @@ impl TagOpenIDConnectProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagOpenIDConnectProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::TagOpenIDConnectProviderOutput,
         crate::error::TagOpenIDConnectProviderError,
     >;
@@ -4758,7 +4881,7 @@ impl TagPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagPolicy {
-    type Output = Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError>;
+    type Output = std::result::Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_policy_error(response)
@@ -4827,7 +4950,7 @@ impl TagRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagRole {
-    type Output = Result<crate::output::TagRoleOutput, crate::error::TagRoleError>;
+    type Output = std::result::Result<crate::output::TagRoleOutput, crate::error::TagRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_role_error(response)
@@ -4889,7 +5012,10 @@ impl TagSAMLProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagSAMLProvider {
-    type Output = Result<crate::output::TagSAMLProviderOutput, crate::error::TagSAMLProviderError>;
+    type Output = std::result::Result<
+        crate::output::TagSAMLProviderOutput,
+        crate::error::TagSAMLProviderError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_saml_provider_error(response)
@@ -4961,8 +5087,10 @@ impl TagServerCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagServerCertificate {
-    type Output =
-        Result<crate::output::TagServerCertificateOutput, crate::error::TagServerCertificateError>;
+    type Output = std::result::Result<
+        crate::output::TagServerCertificateOutput,
+        crate::error::TagServerCertificateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_server_certificate_error(response)
@@ -5030,7 +5158,7 @@ impl TagUser {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagUser {
-    type Output = Result<crate::output::TagUserOutput, crate::error::TagUserError>;
+    type Output = std::result::Result<crate::output::TagUserOutput, crate::error::TagUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_user_error(response)
@@ -5056,8 +5184,10 @@ impl UntagInstanceProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagInstanceProfile {
-    type Output =
-        Result<crate::output::UntagInstanceProfileOutput, crate::error::UntagInstanceProfileError>;
+    type Output = std::result::Result<
+        crate::output::UntagInstanceProfileOutput,
+        crate::error::UntagInstanceProfileError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_instance_profile_error(response)
@@ -5084,7 +5214,8 @@ impl UntagMFADevice {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagMFADevice {
-    type Output = Result<crate::output::UntagMFADeviceOutput, crate::error::UntagMFADeviceError>;
+    type Output =
+        std::result::Result<crate::output::UntagMFADeviceOutput, crate::error::UntagMFADeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_mfa_device_error(response)
@@ -5112,7 +5243,7 @@ impl UntagOpenIDConnectProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagOpenIDConnectProvider {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UntagOpenIDConnectProviderOutput,
         crate::error::UntagOpenIDConnectProviderError,
     >;
@@ -5141,7 +5272,8 @@ impl UntagPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagPolicy {
-    type Output = Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError>;
+    type Output =
+        std::result::Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_policy_error(response)
@@ -5167,7 +5299,7 @@ impl UntagRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagRole {
-    type Output = Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError>;
+    type Output = std::result::Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_role_error(response)
@@ -5195,8 +5327,10 @@ impl UntagSAMLProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagSAMLProvider {
-    type Output =
-        Result<crate::output::UntagSAMLProviderOutput, crate::error::UntagSAMLProviderError>;
+    type Output = std::result::Result<
+        crate::output::UntagSAMLProviderOutput,
+        crate::error::UntagSAMLProviderError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_saml_provider_error(response)
@@ -5230,7 +5364,7 @@ impl UntagServerCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagServerCertificate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UntagServerCertificateOutput,
         crate::error::UntagServerCertificateError,
     >;
@@ -5259,7 +5393,7 @@ impl UntagUser {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagUser {
-    type Output = Result<crate::output::UntagUserOutput, crate::error::UntagUserError>;
+    type Output = std::result::Result<crate::output::UntagUserOutput, crate::error::UntagUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_user_error(response)
@@ -5293,7 +5427,10 @@ impl UpdateAccessKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateAccessKey {
-    type Output = Result<crate::output::UpdateAccessKeyOutput, crate::error::UpdateAccessKeyError>;
+    type Output = std::result::Result<
+        crate::output::UpdateAccessKeyOutput,
+        crate::error::UpdateAccessKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_access_key_error(response)
@@ -5333,7 +5470,7 @@ impl UpdateAccountPasswordPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateAccountPasswordPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateAccountPasswordPolicyOutput,
         crate::error::UpdateAccountPasswordPolicyError,
     >;
@@ -5364,7 +5501,7 @@ impl UpdateAssumeRolePolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateAssumeRolePolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateAssumeRolePolicyOutput,
         crate::error::UpdateAssumeRolePolicyError,
     >;
@@ -5406,7 +5543,8 @@ impl UpdateGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateGroup {
-    type Output = Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError>;
+    type Output =
+        std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_group_error(response)
@@ -5437,8 +5575,10 @@ impl UpdateLoginProfile {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateLoginProfile {
-    type Output =
-        Result<crate::output::UpdateLoginProfileOutput, crate::error::UpdateLoginProfileError>;
+    type Output = std::result::Result<
+        crate::output::UpdateLoginProfileOutput,
+        crate::error::UpdateLoginProfileError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_login_profile_error(response)
@@ -5477,7 +5617,7 @@ impl UpdateOpenIDConnectProviderThumbprint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateOpenIDConnectProviderThumbprint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateOpenIDConnectProviderThumbprintOutput,
         crate::error::UpdateOpenIDConnectProviderThumbprintError,
     >;
@@ -5507,7 +5647,8 @@ impl UpdateRole {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateRole {
-    type Output = Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError>;
+    type Output =
+        std::result::Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_role_error(response)
@@ -5534,7 +5675,7 @@ impl UpdateRoleDescription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateRoleDescription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateRoleDescriptionOutput,
         crate::error::UpdateRoleDescriptionError,
     >;
@@ -5565,8 +5706,10 @@ impl UpdateSAMLProvider {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateSAMLProvider {
-    type Output =
-        Result<crate::output::UpdateSAMLProviderOutput, crate::error::UpdateSAMLProviderError>;
+    type Output = std::result::Result<
+        crate::output::UpdateSAMLProviderOutput,
+        crate::error::UpdateSAMLProviderError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_saml_provider_error(response)
@@ -5610,7 +5753,7 @@ impl UpdateServerCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateServerCertificate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateServerCertificateOutput,
         crate::error::UpdateServerCertificateError,
     >;
@@ -5641,7 +5784,7 @@ impl UpdateServiceSpecificCredential {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateServiceSpecificCredential {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateServiceSpecificCredentialOutput,
         crate::error::UpdateServiceSpecificCredentialError,
     >;
@@ -5676,7 +5819,7 @@ impl UpdateSigningCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateSigningCertificate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateSigningCertificateOutput,
         crate::error::UpdateSigningCertificateError,
     >;
@@ -5710,8 +5853,10 @@ impl UpdateSSHPublicKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateSSHPublicKey {
-    type Output =
-        Result<crate::output::UpdateSSHPublicKeyOutput, crate::error::UpdateSSHPublicKeyError>;
+    type Output = std::result::Result<
+        crate::output::UpdateSSHPublicKeyOutput,
+        crate::error::UpdateSSHPublicKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_ssh_public_key_error(response)
@@ -5748,7 +5893,8 @@ impl UpdateUser {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateUser {
-    type Output = Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError>;
+    type Output =
+        std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_error(response)
@@ -5795,7 +5941,7 @@ impl UploadServerCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UploadServerCertificate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UploadServerCertificateOutput,
         crate::error::UploadServerCertificateError,
     >;
@@ -5842,7 +5988,7 @@ impl UploadSigningCertificate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UploadSigningCertificate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UploadSigningCertificateOutput,
         crate::error::UploadSigningCertificateError,
     >;
@@ -5874,8 +6020,10 @@ impl UploadSSHPublicKey {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UploadSSHPublicKey {
-    type Output =
-        Result<crate::output::UploadSSHPublicKeyOutput, crate::error::UploadSSHPublicKeyError>;
+    type Output = std::result::Result<
+        crate::output::UploadSSHPublicKeyOutput,
+        crate::error::UploadSSHPublicKeyError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_upload_ssh_public_key_error(response)

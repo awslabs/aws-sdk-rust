@@ -63,63 +63,63 @@ pub mod resource_data_sync_source {
         /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either
         /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
         /// <code>SingleAccountMultiRegions</code>.</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_type = Some(inp.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_type = Some(input.into());
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_type = inp;
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_type = input;
             self
         }
         /// <p>Information about the AwsOrganizationsSource resource data sync source. A sync source of
         /// this type can synchronize data from AWS Organizations.</p>
         pub fn aws_organizations_source(
             mut self,
-            inp: crate::model::ResourceDataSyncAwsOrganizationsSource,
+            input: crate::model::ResourceDataSyncAwsOrganizationsSource,
         ) -> Self {
-            self.aws_organizations_source = Some(inp);
+            self.aws_organizations_source = Some(input);
             self
         }
         pub fn set_aws_organizations_source(
             mut self,
-            inp: std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
+            input: std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
         ) -> Self {
-            self.aws_organizations_source = inp;
+            self.aws_organizations_source = input;
             self
         }
-        pub fn source_regions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn source_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_regions = Some(v);
             self
         }
         pub fn set_source_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.source_regions = inp;
+            self.source_regions = input;
             self
         }
         /// <p>Whether to automatically synchronize and aggregate data from new AWS Regions when those
         /// Regions come online.</p>
-        pub fn include_future_regions(mut self, inp: bool) -> Self {
-            self.include_future_regions = Some(inp);
+        pub fn include_future_regions(mut self, input: bool) -> Self {
+            self.include_future_regions = Some(input);
             self
         }
-        pub fn set_include_future_regions(mut self, inp: bool) -> Self {
-            self.include_future_regions = Some(inp);
+        pub fn set_include_future_regions(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_future_regions = input;
             self
         }
         /// <p>When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
         /// automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
         /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
         /// <i>AWS Systems Manager User Guide</i>.</p>
-        pub fn enable_all_ops_data_sources(mut self, inp: bool) -> Self {
-            self.enable_all_ops_data_sources = Some(inp);
+        pub fn enable_all_ops_data_sources(mut self, input: bool) -> Self {
+            self.enable_all_ops_data_sources = Some(input);
             self
         }
-        pub fn set_enable_all_ops_data_sources(mut self, inp: bool) -> Self {
-            self.enable_all_ops_data_sources = Some(inp);
+        pub fn set_enable_all_ops_data_sources(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_all_ops_data_sources = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncSource`](crate::model::ResourceDataSyncSource)
@@ -183,33 +183,33 @@ pub mod resource_data_sync_aws_organizations_source {
         /// <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated
         /// from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated
         /// from the entire AWS Organization. </p>
-        pub fn organization_source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.organization_source_type = Some(inp.into());
+        pub fn organization_source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_source_type = Some(input.into());
             self
         }
         pub fn set_organization_source_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.organization_source_type = inp;
+            self.organization_source_type = input;
             self
         }
         pub fn organizational_units(
             mut self,
-            inp: impl Into<crate::model::ResourceDataSyncOrganizationalUnit>,
+            input: impl Into<crate::model::ResourceDataSyncOrganizationalUnit>,
         ) -> Self {
             let mut v = self.organizational_units.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.organizational_units = Some(v);
             self
         }
         pub fn set_organizational_units(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::ResourceDataSyncOrganizationalUnit>,
             >,
         ) -> Self {
-            self.organizational_units = inp;
+            self.organizational_units = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncAwsOrganizationsSource`](crate::model::ResourceDataSyncAwsOrganizationsSource)
@@ -254,15 +254,15 @@ pub mod resource_data_sync_organizational_unit {
     }
     impl Builder {
         /// <p>The AWS Organization unit ID data source for the sync.</p>
-        pub fn organizational_unit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.organizational_unit_id = Some(inp.into());
+        pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organizational_unit_id = Some(input.into());
             self
         }
         pub fn set_organizational_unit_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.organizational_unit_id = inp;
+            self.organizational_unit_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncOrganizationalUnit`](crate::model::ResourceDataSyncOrganizationalUnit)
@@ -337,25 +337,25 @@ pub mod patch_source {
     }
     impl Builder {
         /// <p>The name specified to identify the patch source.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
-        pub fn products(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn products(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.products.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.products = Some(v);
             self
         }
         pub fn set_products(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.products = inp;
+            self.products = input;
             self
         }
         /// <p>The value of the yum repo configuration. For example:</p>
@@ -375,12 +375,15 @@ pub mod patch_source {
         /// <p>For information about other options available for your yum repository configuration, see
         /// <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
         /// </note>
-        pub fn configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration = Some(inp.into());
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration = Some(input.into());
             self
         }
-        pub fn set_configuration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.configuration = inp;
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchSource`](crate::model::PatchSource)
@@ -549,17 +552,17 @@ pub mod patch_rule_group {
         pub(crate) patch_rules: std::option::Option<std::vec::Vec<crate::model::PatchRule>>,
     }
     impl Builder {
-        pub fn patch_rules(mut self, inp: impl Into<crate::model::PatchRule>) -> Self {
+        pub fn patch_rules(mut self, input: impl Into<crate::model::PatchRule>) -> Self {
             let mut v = self.patch_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_rules = Some(v);
             self
         }
         pub fn set_patch_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchRule>>,
         ) -> Self {
-            self.patch_rules = inp;
+            self.patch_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchRuleGroup`](crate::model::PatchRuleGroup)
@@ -635,65 +638,65 @@ pub mod patch_rule {
     }
     impl Builder {
         /// <p>The patch filter group that defines the criteria for the rule.</p>
-        pub fn patch_filter_group(mut self, inp: crate::model::PatchFilterGroup) -> Self {
-            self.patch_filter_group = Some(inp);
+        pub fn patch_filter_group(mut self, input: crate::model::PatchFilterGroup) -> Self {
+            self.patch_filter_group = Some(input);
             self
         }
         pub fn set_patch_filter_group(
             mut self,
-            inp: std::option::Option<crate::model::PatchFilterGroup>,
+            input: std::option::Option<crate::model::PatchFilterGroup>,
         ) -> Self {
-            self.patch_filter_group = inp;
+            self.patch_filter_group = input;
             self
         }
         /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
-        pub fn compliance_level(mut self, inp: crate::model::PatchComplianceLevel) -> Self {
-            self.compliance_level = Some(inp);
+        pub fn compliance_level(mut self, input: crate::model::PatchComplianceLevel) -> Self {
+            self.compliance_level = Some(input);
             self
         }
         pub fn set_compliance_level(
             mut self,
-            inp: std::option::Option<crate::model::PatchComplianceLevel>,
+            input: std::option::Option<crate::model::PatchComplianceLevel>,
         ) -> Self {
-            self.compliance_level = inp;
+            self.compliance_level = input;
             self
         }
         /// <p>The number of days after the release date of each patch matched by the rule that the patch
         /// is marked as approved in the patch baseline. For example, a value of <code>7</code> means that
         /// patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu
         /// Server.</p>
-        pub fn approve_after_days(mut self, inp: i32) -> Self {
-            self.approve_after_days = Some(inp);
+        pub fn approve_after_days(mut self, input: i32) -> Self {
+            self.approve_after_days = Some(input);
             self
         }
-        pub fn set_approve_after_days(mut self, inp: std::option::Option<i32>) -> Self {
-            self.approve_after_days = inp;
+        pub fn set_approve_after_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.approve_after_days = input;
             self
         }
         /// <p>The cutoff date for auto approval of released patches. Any patches released on or before
         /// this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
         /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
         /// <code>2020-12-31</code>.</p>
-        pub fn approve_until_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.approve_until_date = Some(inp.into());
+        pub fn approve_until_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.approve_until_date = Some(input.into());
             self
         }
         pub fn set_approve_until_date(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.approve_until_date = inp;
+            self.approve_until_date = input;
             self
         }
         /// <p>For instances identified by the approval rule filters, enables a patch baseline to apply
         /// non-security updates available in the specified repository. The default value is 'false'. Applies
         /// to Linux instances only.</p>
-        pub fn enable_non_security(mut self, inp: bool) -> Self {
-            self.enable_non_security = Some(inp);
+        pub fn enable_non_security(mut self, input: bool) -> Self {
+            self.enable_non_security = Some(input);
             self
         }
-        pub fn set_enable_non_security(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_non_security = inp;
+        pub fn set_enable_non_security(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_non_security = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchRule`](crate::model::PatchRule)
@@ -740,17 +743,17 @@ pub mod patch_filter_group {
         pub(crate) patch_filters: std::option::Option<std::vec::Vec<crate::model::PatchFilter>>,
     }
     impl Builder {
-        pub fn patch_filters(mut self, inp: impl Into<crate::model::PatchFilter>) -> Self {
+        pub fn patch_filters(mut self, input: impl Into<crate::model::PatchFilter>) -> Self {
             let mut v = self.patch_filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.patch_filters = Some(v);
             self
         }
         pub fn set_patch_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchFilter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchFilter>>,
         ) -> Self {
-            self.patch_filters = inp;
+            self.patch_filters = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchFilterGroup`](crate::model::PatchFilterGroup)
@@ -816,25 +819,25 @@ pub mod patch_filter {
         /// <p>The key for the filter.</p>
         /// <p>Run the <a>DescribePatchProperties</a> command to view lists of valid keys for
         /// each operating system type.</p>
-        pub fn key(mut self, inp: crate::model::PatchFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::PatchFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<crate::model::PatchFilterKey>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<crate::model::PatchFilterKey>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchFilter`](crate::model::PatchFilter)
@@ -1066,12 +1069,12 @@ pub mod metadata_value {
     }
     impl Builder {
         /// <p>Metadata value to assign to an Application Manager application.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`MetadataValue`](crate::model::MetadataValue)
@@ -1219,12 +1222,12 @@ pub mod related_ops_item {
     }
     impl Builder {
         /// <p>The ID of an OpsItem related to the current OpsItem.</p>
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RelatedOpsItem`](crate::model::RelatedOpsItem)
@@ -1270,12 +1273,12 @@ pub mod ops_item_notification {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
         /// OpsItem is edited or changed.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemNotification`](crate::model::OpsItemNotification)
@@ -1324,22 +1327,25 @@ pub mod ops_item_data_value {
     }
     impl Builder {
         /// <p>The value of the OperationalData key.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and
         /// <code>String</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::OpsItemDataType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::OpsItemDataType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::OpsItemDataType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::OpsItemDataType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemDataValue`](crate::model::OpsItemDataValue)
@@ -1459,30 +1465,36 @@ pub mod logging_info {
     }
     impl Builder {
         /// <p>The name of an S3 bucket where execution logs are stored .</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket_name = Some(inp.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
             self
         }
-        pub fn set_s3_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket_name = inp;
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
             self
         }
         /// <p>(Optional) The S3 bucket subfolder. </p>
-        pub fn s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_key_prefix = Some(inp.into());
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_key_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_key_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_key_prefix = inp;
+        pub fn set_s3_key_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_key_prefix = input;
             self
         }
         /// <p>The Region where the S3 bucket is located.</p>
-        pub fn s3_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_region = Some(inp.into());
+        pub fn s3_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_region = Some(input.into());
             self
         }
-        pub fn set_s3_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_region = inp;
+        pub fn set_s3_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_region = input;
             self
         }
         /// Consumes the builder and constructs a [`LoggingInfo`](crate::model::LoggingInfo)
@@ -1551,58 +1563,58 @@ pub mod maintenance_window_task_invocation_parameters {
         /// <p>The parameters for a RUN_COMMAND task type.</p>
         pub fn run_command(
             mut self,
-            inp: crate::model::MaintenanceWindowRunCommandParameters,
+            input: crate::model::MaintenanceWindowRunCommandParameters,
         ) -> Self {
-            self.run_command = Some(inp);
+            self.run_command = Some(input);
             self
         }
         pub fn set_run_command(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowRunCommandParameters>,
+            input: std::option::Option<crate::model::MaintenanceWindowRunCommandParameters>,
         ) -> Self {
-            self.run_command = inp;
+            self.run_command = input;
             self
         }
         /// <p>The parameters for an AUTOMATION task type.</p>
         pub fn automation(
             mut self,
-            inp: crate::model::MaintenanceWindowAutomationParameters,
+            input: crate::model::MaintenanceWindowAutomationParameters,
         ) -> Self {
-            self.automation = Some(inp);
+            self.automation = Some(input);
             self
         }
         pub fn set_automation(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowAutomationParameters>,
+            input: std::option::Option<crate::model::MaintenanceWindowAutomationParameters>,
         ) -> Self {
-            self.automation = inp;
+            self.automation = input;
             self
         }
         /// <p>The parameters for a STEP_FUNCTIONS task type.</p>
         pub fn step_functions(
             mut self,
-            inp: crate::model::MaintenanceWindowStepFunctionsParameters,
+            input: crate::model::MaintenanceWindowStepFunctionsParameters,
         ) -> Self {
-            self.step_functions = Some(inp);
+            self.step_functions = Some(input);
             self
         }
         pub fn set_step_functions(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowStepFunctionsParameters>,
+            input: std::option::Option<crate::model::MaintenanceWindowStepFunctionsParameters>,
         ) -> Self {
-            self.step_functions = inp;
+            self.step_functions = input;
             self
         }
         /// <p>The parameters for a LAMBDA task type.</p>
-        pub fn lambda(mut self, inp: crate::model::MaintenanceWindowLambdaParameters) -> Self {
-            self.lambda = Some(inp);
+        pub fn lambda(mut self, input: crate::model::MaintenanceWindowLambdaParameters) -> Self {
+            self.lambda = Some(input);
             self
         }
         pub fn set_lambda(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowLambdaParameters>,
+            input: std::option::Option<crate::model::MaintenanceWindowLambdaParameters>,
         ) -> Self {
-            self.lambda = inp;
+            self.lambda = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowTaskInvocationParameters`](crate::model::MaintenanceWindowTaskInvocationParameters)
@@ -1684,33 +1696,36 @@ pub mod maintenance_window_lambda_parameters {
         /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then
         /// process the client information in your Lambda function as you choose through the context
         /// variable.</p>
-        pub fn client_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_context = Some(inp.into());
+        pub fn client_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_context = Some(input.into());
             self
         }
-        pub fn set_client_context(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_context = inp;
+        pub fn set_client_context(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_context = input;
             self
         }
         /// <p>(Optional) Specify a Lambda function version or alias name. If you specify a function
         /// version, the action uses the qualified function ARN to invoke a specific Lambda function. If you
         /// specify an alias name, the action uses the alias ARN to invoke the Lambda function version to
         /// which the alias points.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.qualifier = Some(inp.into());
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.qualifier = Some(input.into());
             self
         }
-        pub fn set_qualifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.qualifier = inp;
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.qualifier = input;
             self
         }
         /// <p>JSON to provide to your Lambda function as input.</p>
-        pub fn payload(mut self, inp: smithy_types::Blob) -> Self {
-            self.payload = Some(inp);
+        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+            self.payload = Some(input);
             self
         }
-        pub fn set_payload(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.payload = inp;
+        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.payload = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowLambdaParameters`](crate::model::MaintenanceWindowLambdaParameters)
@@ -1777,21 +1792,21 @@ pub mod maintenance_window_step_functions_parameters {
     }
     impl Builder {
         /// <p>The inputs for the STEP_FUNCTIONS task.</p>
-        pub fn input(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input = Some(inp.into());
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input = Some(input.into());
             self
         }
-        pub fn set_input(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.input = inp;
+        pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input = input;
             self
         }
         /// <p>The name of the STEP_FUNCTIONS task.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowStepFunctionsParameters`](crate::model::MaintenanceWindowStepFunctionsParameters)
@@ -1860,15 +1875,15 @@ pub mod maintenance_window_automation_parameters {
     }
     impl Builder {
         /// <p>The version of an Automation document to use during task execution.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         pub fn parameters(
@@ -1883,11 +1898,11 @@ pub mod maintenance_window_automation_parameters {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowAutomationParameters`](crate::model::MaintenanceWindowAutomationParameters)
@@ -2023,49 +2038,52 @@ pub mod maintenance_window_run_command_parameters {
     }
     impl Builder {
         /// <p>Information about the commands to run.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// <p>Configuration options for sending command output to CloudWatch Logs.</p>
         pub fn cloud_watch_output_config(
             mut self,
-            inp: crate::model::CloudWatchOutputConfig,
+            input: crate::model::CloudWatchOutputConfig,
         ) -> Self {
-            self.cloud_watch_output_config = Some(inp);
+            self.cloud_watch_output_config = Some(input);
             self
         }
         pub fn set_cloud_watch_output_config(
             mut self,
-            inp: std::option::Option<crate::model::CloudWatchOutputConfig>,
+            input: std::option::Option<crate::model::CloudWatchOutputConfig>,
         ) -> Self {
-            self.cloud_watch_output_config = inp;
+            self.cloud_watch_output_config = input;
             self
         }
         /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes
         /// have been deprecated.</p>
-        pub fn document_hash(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_hash = Some(inp.into());
+        pub fn document_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_hash = Some(input.into());
             self
         }
-        pub fn set_document_hash(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document_hash = inp;
+        pub fn set_document_hash(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_hash = input;
             self
         }
         /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
-        pub fn document_hash_type(mut self, inp: crate::model::DocumentHashType) -> Self {
-            self.document_hash_type = Some(inp);
+        pub fn document_hash_type(mut self, input: crate::model::DocumentHashType) -> Self {
+            self.document_hash_type = Some(input);
             self
         }
         pub fn set_document_hash_type(
             mut self,
-            inp: std::option::Option<crate::model::DocumentHashType>,
+            input: std::option::Option<crate::model::DocumentHashType>,
         ) -> Self {
-            self.document_hash_type = inp;
+            self.document_hash_type = input;
             self
         }
         /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
@@ -2075,52 +2093,52 @@ pub mod maintenance_window_run_command_parameters {
         /// <p>--document-version "\$DEFAULT"</p>
         /// <p>--document-version "\$LATEST"</p>
         /// <p>--document-version "3"</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>Configurations for sending notifications about command status changes on a per-instance
         /// basis.</p>
-        pub fn notification_config(mut self, inp: crate::model::NotificationConfig) -> Self {
-            self.notification_config = Some(inp);
+        pub fn notification_config(mut self, input: crate::model::NotificationConfig) -> Self {
+            self.notification_config = Some(input);
             self
         }
         pub fn set_notification_config(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfig>,
+            input: std::option::Option<crate::model::NotificationConfig>,
         ) -> Self {
-            self.notification_config = inp;
+            self.notification_config = input;
             self
         }
         /// <p>The name of the S3 bucket.</p>
-        pub fn output_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_bucket_name = Some(inp.into());
+        pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_bucket_name = Some(input.into());
             self
         }
         pub fn set_output_s3_bucket_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_bucket_name = inp;
+            self.output_s3_bucket_name = input;
             self
         }
         /// <p>The S3 bucket subfolder.</p>
-        pub fn output_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_key_prefix = Some(inp.into());
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_key_prefix = Some(input.into());
             self
         }
         pub fn set_output_s3_key_prefix(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_key_prefix = inp;
+            self.output_s3_key_prefix = input;
             self
         }
         pub fn parameters(
@@ -2135,34 +2153,34 @@ pub mod maintenance_window_run_command_parameters {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for
         /// maintenance window Run Command tasks.</p>
-        pub fn service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_role_arn = Some(inp.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_role_arn = Some(input.into());
             self
         }
         pub fn set_service_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_role_arn = inp;
+            self.service_role_arn = input;
             self
         }
         /// <p>If this time is reached and the command has not already started running, it doesn't
         /// run.</p>
-        pub fn timeout_seconds(mut self, inp: i32) -> Self {
-            self.timeout_seconds = Some(inp);
+        pub fn timeout_seconds(mut self, input: i32) -> Self {
+            self.timeout_seconds = Some(input);
             self
         }
-        pub fn set_timeout_seconds(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout_seconds = inp;
+        pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowRunCommandParameters`](crate::model::MaintenanceWindowRunCommandParameters)
@@ -2237,45 +2255,45 @@ pub mod notification_config {
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes
         /// notifications about command status changes to this topic.</p>
-        pub fn notification_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.notification_arn = Some(inp.into());
+        pub fn notification_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notification_arn = Some(input.into());
             self
         }
         pub fn set_notification_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.notification_arn = inp;
+            self.notification_arn = input;
             self
         }
         pub fn notification_events(
             mut self,
-            inp: impl Into<crate::model::NotificationEvent>,
+            input: impl Into<crate::model::NotificationEvent>,
         ) -> Self {
             let mut v = self.notification_events.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.notification_events = Some(v);
             self
         }
         pub fn set_notification_events(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NotificationEvent>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NotificationEvent>>,
         ) -> Self {
-            self.notification_events = inp;
+            self.notification_events = input;
             self
         }
         /// <p>Command: Receive notification when the status of a command changes. Invocation: For commands
         /// sent to multiple instances, receive notification on a per-instance basis when the status of a
         /// command changes. </p>
-        pub fn notification_type(mut self, inp: crate::model::NotificationType) -> Self {
-            self.notification_type = Some(inp);
+        pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
+            self.notification_type = Some(input);
             self
         }
         pub fn set_notification_type(
             mut self,
-            inp: std::option::Option<crate::model::NotificationType>,
+            input: std::option::Option<crate::model::NotificationType>,
         ) -> Self {
-            self.notification_type = inp;
+            self.notification_type = input;
             self
         }
         /// Consumes the builder and constructs a [`NotificationConfig`](crate::model::NotificationConfig)
@@ -2517,24 +2535,24 @@ pub mod cloud_watch_output_config {
         /// <p>The name of the CloudWatch log group where you want to send command output. If you don't
         /// specify a group name, Systems Manager automatically creates a log group for you. The log group uses the
         /// following naming format: aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
-        pub fn cloud_watch_log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloud_watch_log_group_name = Some(inp.into());
+        pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_watch_log_group_name = Some(input.into());
             self
         }
         pub fn set_cloud_watch_log_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_watch_log_group_name = inp;
+            self.cloud_watch_log_group_name = input;
             self
         }
         /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
-        pub fn cloud_watch_output_enabled(mut self, inp: bool) -> Self {
-            self.cloud_watch_output_enabled = Some(inp);
+        pub fn cloud_watch_output_enabled(mut self, input: bool) -> Self {
+            self.cloud_watch_output_enabled = Some(input);
             self
         }
-        pub fn set_cloud_watch_output_enabled(mut self, inp: bool) -> Self {
-            self.cloud_watch_output_enabled = Some(inp);
+        pub fn set_cloud_watch_output_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.cloud_watch_output_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudWatchOutputConfig`](crate::model::CloudWatchOutputConfig)
@@ -2579,17 +2597,17 @@ pub mod maintenance_window_task_parameter_value_expression {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowTaskParameterValueExpression`](crate::model::MaintenanceWindowTaskParameterValueExpression)
@@ -2747,25 +2765,25 @@ pub mod target {
     impl Builder {
         /// <p>User-defined criteria for sending commands that target instances that meet the
         /// criteria.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`Target`](crate::model::Target)
@@ -2817,31 +2835,31 @@ pub mod document_reviews {
     }
     impl Builder {
         /// <p>The action to take on a document approval review request.</p>
-        pub fn action(mut self, inp: crate::model::DocumentReviewAction) -> Self {
-            self.action = Some(inp);
+        pub fn action(mut self, input: crate::model::DocumentReviewAction) -> Self {
+            self.action = Some(input);
             self
         }
         pub fn set_action(
             mut self,
-            inp: std::option::Option<crate::model::DocumentReviewAction>,
+            input: std::option::Option<crate::model::DocumentReviewAction>,
         ) -> Self {
-            self.action = inp;
+            self.action = input;
             self
         }
         pub fn comment(
             mut self,
-            inp: impl Into<crate::model::DocumentReviewCommentSource>,
+            input: impl Into<crate::model::DocumentReviewCommentSource>,
         ) -> Self {
             let mut v = self.comment.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.comment = Some(v);
             self
         }
         pub fn set_comment(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DocumentReviewCommentSource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentReviewCommentSource>>,
         ) -> Self {
-            self.comment = inp;
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentReviews`](crate::model::DocumentReviews)
@@ -2895,25 +2913,25 @@ pub mod document_review_comment_source {
     impl Builder {
         /// <p>The type of information added to a review request. Currently, only the value
         /// <code>Comment</code> is supported.</p>
-        pub fn r#type(mut self, inp: crate::model::DocumentReviewCommentType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::DocumentReviewCommentType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::DocumentReviewCommentType>,
+            input: std::option::Option<crate::model::DocumentReviewCommentType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>The content of a comment entered by a user who requests a review of a new document version,
         /// or who reviews the new version.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content = Some(inp.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content = inp;
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentReviewCommentSource`](crate::model::DocumentReviewCommentSource)
@@ -3085,36 +3103,36 @@ pub mod document_default_version_description {
     }
     impl Builder {
         /// <p>The name of the document.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The default version of the document.</p>
-        pub fn default_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_version = Some(inp.into());
+        pub fn default_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_version = Some(input.into());
             self
         }
         pub fn set_default_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_version = inp;
+            self.default_version = input;
             self
         }
         /// <p>The default version of the artifact associated with the document.</p>
-        pub fn default_version_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_version_name = Some(inp.into());
+        pub fn default_version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_version_name = Some(input.into());
             self
         }
         pub fn set_default_version_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_version_name = inp;
+            self.default_version_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentDefaultVersionDescription`](crate::model::DocumentDefaultVersionDescription)
@@ -3342,24 +3360,24 @@ pub mod document_description {
     }
     impl Builder {
         /// <p>The SHA1 hash of the document, which you can use for verification.</p>
-        pub fn sha1(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sha1 = Some(inp.into());
+        pub fn sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sha1 = Some(input.into());
             self
         }
-        pub fn set_sha1(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sha1 = inp;
+        pub fn set_sha1(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sha1 = input;
             self
         }
         /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p>
         /// <note>
         /// <p>Sha1 hashes have been deprecated.</p>
         /// </note>
-        pub fn hash(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hash = Some(inp.into());
+        pub fn hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hash = Some(input.into());
             self
         }
-        pub fn set_hash(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hash = inp;
+        pub fn set_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hash = input;
             self
         }
         /// <p>The hash type of the document. Valid values include <code>Sha256</code> or
@@ -3367,302 +3385,311 @@ pub mod document_description {
         /// <note>
         /// <p>Sha1 hashes have been deprecated.</p>
         /// </note>
-        pub fn hash_type(mut self, inp: crate::model::DocumentHashType) -> Self {
-            self.hash_type = Some(inp);
+        pub fn hash_type(mut self, input: crate::model::DocumentHashType) -> Self {
+            self.hash_type = Some(input);
             self
         }
         pub fn set_hash_type(
             mut self,
-            inp: std::option::Option<crate::model::DocumentHashType>,
+            input: std::option::Option<crate::model::DocumentHashType>,
         ) -> Self {
-            self.hash_type = inp;
+            self.hash_type = input;
             self
         }
         /// <p>The name of the Systems Manager document.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The friendly name of the Systems Manager document. This value can differ for each version of the
         /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(inp.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.display_name = inp;
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
             self
         }
         /// <p>The version of the artifact associated with the document.</p>
-        pub fn version_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_name = Some(inp.into());
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
             self
         }
-        pub fn set_version_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_name = inp;
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
             self
         }
         /// <p>The AWS user account that created the document.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner = Some(inp.into());
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
             self
         }
         /// <p>The date when the document was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The status of the Systems Manager document.</p>
-        pub fn status(mut self, inp: crate::model::DocumentStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::DocumentStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::DocumentStatus>,
+            input: std::option::Option<crate::model::DocumentStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
         /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
         /// "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
-        pub fn status_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_information = Some(inp.into());
+        pub fn status_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_information = Some(input.into());
             self
         }
         pub fn set_status_information(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.status_information = inp;
+            self.status_information = input;
             self
         }
         /// <p>The document version.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>A description of the document. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::DocumentParameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::DocumentParameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
-        pub fn platform_types(mut self, inp: impl Into<crate::model::PlatformType>) -> Self {
+        pub fn platform_types(mut self, input: impl Into<crate::model::PlatformType>) -> Self {
             let mut v = self.platform_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.platform_types = Some(v);
             self
         }
         pub fn set_platform_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
         ) -> Self {
-            self.platform_types = inp;
+            self.platform_types = input;
             self
         }
         /// <p>The type of document.</p>
-        pub fn document_type(mut self, inp: crate::model::DocumentType) -> Self {
-            self.document_type = Some(inp);
+        pub fn document_type(mut self, input: crate::model::DocumentType) -> Self {
+            self.document_type = Some(input);
             self
         }
         pub fn set_document_type(
             mut self,
-            inp: std::option::Option<crate::model::DocumentType>,
+            input: std::option::Option<crate::model::DocumentType>,
         ) -> Self {
-            self.document_type = inp;
+            self.document_type = input;
             self
         }
         /// <p>The schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema_version = Some(inp.into());
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_version = Some(input.into());
             self
         }
-        pub fn set_schema_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema_version = inp;
+        pub fn set_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_version = input;
             self
         }
         /// <p>The latest version of the document.</p>
-        pub fn latest_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.latest_version = Some(inp.into());
+        pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.latest_version = Some(input.into());
             self
         }
-        pub fn set_latest_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.latest_version = inp;
+        pub fn set_latest_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.latest_version = input;
             self
         }
         /// <p>The default version.</p>
-        pub fn default_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_version = Some(inp.into());
+        pub fn default_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_version = Some(input.into());
             self
         }
         pub fn set_default_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_version = inp;
+            self.default_version = input;
             self
         }
         /// <p>The document format, either JSON or YAML.</p>
-        pub fn document_format(mut self, inp: crate::model::DocumentFormat) -> Self {
-            self.document_format = Some(inp);
+        pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
+            self.document_format = Some(input);
             self
         }
         pub fn set_document_format(
             mut self,
-            inp: std::option::Option<crate::model::DocumentFormat>,
+            input: std::option::Option<crate::model::DocumentFormat>,
         ) -> Self {
-            self.document_format = inp;
+            self.document_format = input;
             self
         }
         /// <p>The target type which defines the kinds of resources the document can run on. For example,
         /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
         /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
-        pub fn target_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_type = Some(inp.into());
+        pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_type = Some(input.into());
             self
         }
-        pub fn set_target_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_type = inp;
+        pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_type = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         pub fn attachments_information(
             mut self,
-            inp: impl Into<crate::model::AttachmentInformation>,
+            input: impl Into<crate::model::AttachmentInformation>,
         ) -> Self {
             let mut v = self.attachments_information.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attachments_information = Some(v);
             self
         }
         pub fn set_attachments_information(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttachmentInformation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttachmentInformation>>,
         ) -> Self {
-            self.attachments_information = inp;
+            self.attachments_information = input;
             self
         }
-        pub fn requires(mut self, inp: impl Into<crate::model::DocumentRequires>) -> Self {
+        pub fn requires(mut self, input: impl Into<crate::model::DocumentRequires>) -> Self {
             let mut v = self.requires.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.requires = Some(v);
             self
         }
         pub fn set_requires(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
         ) -> Self {
-            self.requires = inp;
+            self.requires = input;
             self
         }
         /// <p>The user in your organization who created the document.</p>
-        pub fn author(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.author = Some(inp.into());
+        pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
+            self.author = Some(input.into());
             self
         }
-        pub fn set_author(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.author = inp;
+        pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.author = input;
             self
         }
         pub fn review_information(
             mut self,
-            inp: impl Into<crate::model::ReviewInformation>,
+            input: impl Into<crate::model::ReviewInformation>,
         ) -> Self {
             let mut v = self.review_information.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.review_information = Some(v);
             self
         }
         pub fn set_review_information(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReviewInformation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReviewInformation>>,
         ) -> Self {
-            self.review_information = inp;
+            self.review_information = input;
             self
         }
         /// <p>The version of the document currently approved for use in the organization.</p>
-        pub fn approved_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.approved_version = Some(inp.into());
+        pub fn approved_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.approved_version = Some(input.into());
             self
         }
         pub fn set_approved_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.approved_version = inp;
+            self.approved_version = input;
             self
         }
         /// <p>The version of the document that is currently under review.</p>
-        pub fn pending_review_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pending_review_version = Some(inp.into());
+        pub fn pending_review_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pending_review_version = Some(input.into());
             self
         }
         pub fn set_pending_review_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.pending_review_version = inp;
+            self.pending_review_version = input;
             self
         }
         /// <p>The current status of the review.</p>
-        pub fn review_status(mut self, inp: crate::model::ReviewStatus) -> Self {
-            self.review_status = Some(inp);
+        pub fn review_status(mut self, input: crate::model::ReviewStatus) -> Self {
+            self.review_status = Some(input);
             self
         }
         pub fn set_review_status(
             mut self,
-            inp: std::option::Option<crate::model::ReviewStatus>,
+            input: std::option::Option<crate::model::ReviewStatus>,
         ) -> Self {
-            self.review_status = inp;
+            self.review_status = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentDescription`](crate::model::DocumentDescription)
@@ -3810,33 +3837,36 @@ pub mod review_information {
     }
     impl Builder {
         /// <p>The time that the reviewer took action on the document review request.</p>
-        pub fn reviewed_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.reviewed_time = Some(inp);
+        pub fn reviewed_time(mut self, input: smithy_types::Instant) -> Self {
+            self.reviewed_time = Some(input);
             self
         }
         pub fn set_reviewed_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.reviewed_time = inp;
+            self.reviewed_time = input;
             self
         }
         /// <p>The current status of the document review request.</p>
-        pub fn status(mut self, inp: crate::model::ReviewStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ReviewStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::ReviewStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ReviewStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The reviewer assigned to take action on the document review request.</p>
-        pub fn reviewer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reviewer = Some(inp.into());
+        pub fn reviewer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reviewer = Some(input.into());
             self
         }
-        pub fn set_reviewer(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reviewer = inp;
+        pub fn set_reviewer(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reviewer = input;
             self
         }
         /// Consumes the builder and constructs a [`ReviewInformation`](crate::model::ReviewInformation)
@@ -3888,21 +3918,21 @@ pub mod document_requires {
     }
     impl Builder {
         /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The document version required by the current document.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentRequires`](crate::model::DocumentRequires)
@@ -3947,12 +3977,12 @@ pub mod attachment_information {
     }
     impl Builder {
         /// <p>The name of the attachment.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachmentInformation`](crate::model::AttachmentInformation)
@@ -4003,21 +4033,21 @@ pub mod tag {
     }
     impl Builder {
         /// <p>The name of the tag.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The value of the tag.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -4284,44 +4314,47 @@ pub mod document_parameter {
     }
     impl Builder {
         /// <p>The name of the parameter.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The type of parameter. The type can be either String or StringList.</p>
-        pub fn r#type(mut self, inp: crate::model::DocumentParameterType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::DocumentParameterType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::DocumentParameterType>,
+            input: std::option::Option<crate::model::DocumentParameterType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>A description of what the parameter does, how to use it, the default value, and whether or
         /// not the parameter is optional.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>If specified, the default values for the parameters. Parameters without a default value are
         /// required. Parameters with a default value are optional.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_value = Some(inp.into());
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_value = Some(input.into());
             self
         }
-        pub fn set_default_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.default_value = inp;
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_value = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentParameter`](crate::model::DocumentParameter)
@@ -4538,37 +4571,37 @@ pub mod attachments_source {
     impl Builder {
         /// <p>The key of a key-value pair that identifies the location of an attachment to a
         /// document.</p>
-        pub fn key(mut self, inp: crate::model::AttachmentsSourceKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::AttachmentsSourceKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::AttachmentsSourceKey>,
+            input: std::option::Option<crate::model::AttachmentsSourceKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// <p>The name of the document attachment file.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachmentsSource`](crate::model::AttachmentsSource)
@@ -4874,106 +4907,106 @@ pub mod association_description {
     }
     impl Builder {
         /// <p>The name of the Systems Manager document.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The association version.</p>
-        pub fn association_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_version = Some(inp.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_version = Some(input.into());
             self
         }
         pub fn set_association_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_version = inp;
+            self.association_version = input;
             self
         }
         /// <p>The date when the association was made.</p>
-        pub fn date(mut self, inp: smithy_types::Instant) -> Self {
-            self.date = Some(inp);
+        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+            self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.date = inp;
+        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.date = input;
             self
         }
         /// <p>The date when the association was last updated.</p>
-        pub fn last_update_association_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_update_association_date = Some(inp);
+        pub fn last_update_association_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_update_association_date = Some(input);
             self
         }
         pub fn set_last_update_association_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_update_association_date = inp;
+            self.last_update_association_date = input;
             self
         }
         /// <p>The association status.</p>
-        pub fn status(mut self, inp: crate::model::AssociationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::AssociationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::AssociationStatus>,
+            input: std::option::Option<crate::model::AssociationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>Information about the association.</p>
-        pub fn overview(mut self, inp: crate::model::AssociationOverview) -> Self {
-            self.overview = Some(inp);
+        pub fn overview(mut self, input: crate::model::AssociationOverview) -> Self {
+            self.overview = Some(input);
             self
         }
         pub fn set_overview(
             mut self,
-            inp: std::option::Option<crate::model::AssociationOverview>,
+            input: std::option::Option<crate::model::AssociationOverview>,
         ) -> Self {
-            self.overview = inp;
+            self.overview = input;
             self
         }
         /// <p>The document version.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>Specify the target for the association. This target is required for associations that use an
         /// Automation document and target resources by using rate controls.</p>
         pub fn automation_target_parameter_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.automation_target_parameter_name = Some(inp.into());
+            self.automation_target_parameter_name = Some(input.into());
             self
         }
         pub fn set_automation_target_parameter_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.automation_target_parameter_name = inp;
+            self.automation_target_parameter_name = input;
             self
         }
         pub fn parameters(
@@ -4988,96 +5021,99 @@ pub mod association_description {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The association ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>A cron expression that specifies a schedule when the association runs.</p>
-        pub fn schedule_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schedule_expression = Some(inp.into());
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
             self
         }
         pub fn set_schedule_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.schedule_expression = inp;
+            self.schedule_expression = input;
             self
         }
         /// <p>An S3 bucket where you want to store the output details of the request.</p>
         pub fn output_location(
             mut self,
-            inp: crate::model::InstanceAssociationOutputLocation,
+            input: crate::model::InstanceAssociationOutputLocation,
         ) -> Self {
-            self.output_location = Some(inp);
+            self.output_location = Some(input);
             self
         }
         pub fn set_output_location(
             mut self,
-            inp: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
+            input: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
         ) -> Self {
-            self.output_location = inp;
+            self.output_location = input;
             self
         }
         /// <p>The date on which the association was last run.</p>
-        pub fn last_execution_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_execution_date = Some(inp);
+        pub fn last_execution_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_execution_date = Some(input);
             self
         }
         pub fn set_last_execution_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_execution_date = inp;
+            self.last_execution_date = input;
             self
         }
         /// <p>The last date on which the association was successfully run.</p>
-        pub fn last_successful_execution_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_successful_execution_date = Some(inp);
+        pub fn last_successful_execution_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_successful_execution_date = Some(input);
             self
         }
         pub fn set_last_successful_execution_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_successful_execution_date = inp;
+            self.last_successful_execution_date = input;
             self
         }
         /// <p>The association name.</p>
-        pub fn association_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_name = Some(inp.into());
+        pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_name = Some(input.into());
             self
         }
         pub fn set_association_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_name = inp;
+            self.association_name = input;
             self
         }
         /// <p>The number of errors that are allowed before the system stops sending requests to run the
@@ -5091,12 +5127,12 @@ pub mod association_description {
         /// complete, but some of these executions may fail as well. If you need to ensure that there won't
         /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
         /// at a time.</p>
-        pub fn max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_errors = Some(inp.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_errors = Some(input.into());
             self
         }
-        pub fn set_max_errors(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = inp;
+        pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_errors = input;
             self
         }
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
@@ -5106,30 +5142,30 @@ pub mod association_description {
         /// MaxConcurrency associations, the association is allowed to run. During the next association
         /// interval, the new instance will process its association within the limit specified for
         /// MaxConcurrency.</p>
-        pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_concurrency = Some(inp.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_concurrency = Some(input.into());
             self
         }
         pub fn set_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.max_concurrency = inp;
+            self.max_concurrency = input;
             self
         }
         /// <p>The severity level that is assigned to the association.</p>
         pub fn compliance_severity(
             mut self,
-            inp: crate::model::AssociationComplianceSeverity,
+            input: crate::model::AssociationComplianceSeverity,
         ) -> Self {
-            self.compliance_severity = Some(inp);
+            self.compliance_severity = Some(input);
             self
         }
         pub fn set_compliance_severity(
             mut self,
-            inp: std::option::Option<crate::model::AssociationComplianceSeverity>,
+            input: std::option::Option<crate::model::AssociationComplianceSeverity>,
         ) -> Self {
-            self.compliance_severity = inp;
+            self.compliance_severity = input;
             self
         }
         /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
@@ -5141,53 +5177,53 @@ pub mod association_description {
         /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
         /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-        pub fn sync_compliance(mut self, inp: crate::model::AssociationSyncCompliance) -> Self {
-            self.sync_compliance = Some(inp);
+        pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
+            self.sync_compliance = Some(input);
             self
         }
         pub fn set_sync_compliance(
             mut self,
-            inp: std::option::Option<crate::model::AssociationSyncCompliance>,
+            input: std::option::Option<crate::model::AssociationSyncCompliance>,
         ) -> Self {
-            self.sync_compliance = inp;
+            self.sync_compliance = input;
             self
         }
         /// <p>By default, when you create a new associations, the system runs it immediately after it is
         /// created and then according to the schedule you specified. Specify this option if you don't want
         /// an association to run immediately after you create it. This parameter is not supported for rate
         /// expressions.</p>
-        pub fn apply_only_at_cron_interval(mut self, inp: bool) -> Self {
-            self.apply_only_at_cron_interval = Some(inp);
+        pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
+            self.apply_only_at_cron_interval = Some(input);
             self
         }
-        pub fn set_apply_only_at_cron_interval(mut self, inp: bool) -> Self {
-            self.apply_only_at_cron_interval = Some(inp);
+        pub fn set_apply_only_at_cron_interval(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_only_at_cron_interval = input;
             self
         }
-        pub fn calendar_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn calendar_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.calendar_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.calendar_names = Some(v);
             self
         }
         pub fn set_calendar_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.calendar_names = inp;
+            self.calendar_names = input;
             self
         }
-        pub fn target_locations(mut self, inp: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_locations = Some(v);
             self
         }
         pub fn set_target_locations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         ) -> Self {
-            self.target_locations = inp;
+            self.target_locations = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationDescription`](crate::model::AssociationDescription)
@@ -5287,72 +5323,72 @@ pub mod target_location {
         pub(crate) execution_role_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn accounts(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.accounts = Some(v);
             self
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.accounts = inp;
+            self.accounts = input;
             self
         }
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.regions = Some(v);
             self
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.regions = inp;
+            self.regions = input;
             self
         }
         /// <p>The maximum number of AWS accounts and AWS regions allowed to run the Automation
         /// concurrently.</p>
         pub fn target_location_max_concurrency(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.target_location_max_concurrency = Some(inp.into());
+            self.target_location_max_concurrency = Some(input.into());
             self
         }
         pub fn set_target_location_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_location_max_concurrency = inp;
+            self.target_location_max_concurrency = input;
             self
         }
         /// <p>The maximum number of errors allowed before the system stops queueing additional Automation
         /// executions for the currently running Automation.</p>
-        pub fn target_location_max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_location_max_errors = Some(inp.into());
+        pub fn target_location_max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_location_max_errors = Some(input.into());
             self
         }
         pub fn set_target_location_max_errors(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_location_max_errors = inp;
+            self.target_location_max_errors = input;
             self
         }
         /// <p>The Automation execution role used by the currently running Automation. If not specified,
         /// the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
-        pub fn execution_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_name = Some(inp.into());
+        pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_name = Some(input.into());
             self
         }
         pub fn set_execution_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_name = inp;
+            self.execution_role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`TargetLocation`](crate::model::TargetLocation)
@@ -5523,15 +5559,15 @@ pub mod instance_association_output_location {
     }
     impl Builder {
         /// <p>An S3 bucket where you want to store the results of this request.</p>
-        pub fn s3_location(mut self, inp: crate::model::S3OutputLocation) -> Self {
-            self.s3_location = Some(inp);
+        pub fn s3_location(mut self, input: crate::model::S3OutputLocation) -> Self {
+            self.s3_location = Some(input);
             self
         }
         pub fn set_s3_location(
             mut self,
-            inp: std::option::Option<crate::model::S3OutputLocation>,
+            input: std::option::Option<crate::model::S3OutputLocation>,
         ) -> Self {
-            self.s3_location = inp;
+            self.s3_location = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceAssociationOutputLocation`](crate::model::InstanceAssociationOutputLocation)
@@ -5589,39 +5625,39 @@ pub mod s3_output_location {
     impl Builder {
         /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
         /// automatically determines the Region of the S3 bucket.</p>
-        pub fn output_s3_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_region = Some(inp.into());
+        pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_region = Some(input.into());
             self
         }
         pub fn set_output_s3_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_region = inp;
+            self.output_s3_region = input;
             self
         }
         /// <p>The name of the S3 bucket.</p>
-        pub fn output_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_bucket_name = Some(inp.into());
+        pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_bucket_name = Some(input.into());
             self
         }
         pub fn set_output_s3_bucket_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_bucket_name = inp;
+            self.output_s3_bucket_name = input;
             self
         }
         /// <p>The S3 bucket subfolder.</p>
-        pub fn output_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_key_prefix = Some(inp.into());
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_key_prefix = Some(input.into());
             self
         }
         pub fn set_output_s3_key_prefix(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_key_prefix = inp;
+            self.output_s3_key_prefix = input;
             self
         }
         /// Consumes the builder and constructs a [`S3OutputLocation`](crate::model::S3OutputLocation)
@@ -5686,24 +5722,24 @@ pub mod association_overview {
     }
     impl Builder {
         /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>A detailed status of the association.</p>
-        pub fn detailed_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detailed_status = Some(inp.into());
+        pub fn detailed_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detailed_status = Some(input.into());
             self
         }
         pub fn set_detailed_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.detailed_status = inp;
+            self.detailed_status = input;
             self
         }
         pub fn association_status_aggregated_count(
@@ -5718,9 +5754,9 @@ pub mod association_overview {
         }
         pub fn set_association_status_aggregated_count(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
         ) -> Self {
-            self.association_status_aggregated_count = inp;
+            self.association_status_aggregated_count = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationOverview`](crate::model::AssociationOverview)
@@ -5787,45 +5823,45 @@ pub mod association_status {
     }
     impl Builder {
         /// <p>The date when the status changed.</p>
-        pub fn date(mut self, inp: smithy_types::Instant) -> Self {
-            self.date = Some(inp);
+        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+            self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.date = inp;
+        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.date = input;
             self
         }
         /// <p>The status.</p>
-        pub fn name(mut self, inp: crate::model::AssociationStatusName) -> Self {
-            self.name = Some(inp);
+        pub fn name(mut self, input: crate::model::AssociationStatusName) -> Self {
+            self.name = Some(input);
             self
         }
         pub fn set_name(
             mut self,
-            inp: std::option::Option<crate::model::AssociationStatusName>,
+            input: std::option::Option<crate::model::AssociationStatusName>,
         ) -> Self {
-            self.name = inp;
+            self.name = input;
             self
         }
         /// <p>The reason for the status.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>A user-defined string.</p>
-        pub fn additional_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.additional_info = Some(inp.into());
+        pub fn additional_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.additional_info = Some(input.into());
             self
         }
         pub fn set_additional_info(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.additional_info = inp;
+            self.additional_info = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationStatus`](crate::model::AssociationStatus)
@@ -6048,25 +6084,28 @@ pub mod runbook {
     }
     impl Builder {
         /// <p>The name of the Automation runbook (Automation document) used in a runbook workflow.</p>
-        pub fn document_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_name = Some(inp.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_name = Some(input.into());
             self
         }
-        pub fn set_document_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document_name = inp;
+        pub fn set_document_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_name = input;
             self
         }
         /// <p>The version of the Automation runbook (Automation document) used in a
         /// runbook workflow.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         pub fn parameters(
@@ -6081,75 +6120,75 @@ pub mod runbook {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The name of the parameter used as the target resource for the rate-controlled
         /// runbook workflow. Required if you specify <code>Targets</code>. </p>
-        pub fn target_parameter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_parameter_name = Some(inp.into());
+        pub fn target_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_parameter_name = Some(input.into());
             self
         }
         pub fn set_target_parameter_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_parameter_name = inp;
+            self.target_parameter_name = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started,
         /// indicating the maximum number of resources that the runbook operation can run on at the same
         /// time.</p>
-        pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_concurrency = Some(inp.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_concurrency = Some(input.into());
             self
         }
         pub fn set_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.max_concurrency = inp;
+            self.max_concurrency = input;
             self
         }
         /// <p>The <code>MaxErrors</code> value specified by the user when the execution started,
         /// indicating the maximum number of errors that can occur during the operation before the updates
         /// are stopped or rolled back.</p>
-        pub fn max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_errors = Some(inp.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_errors = Some(input.into());
             self
         }
-        pub fn set_max_errors(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = inp;
+        pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_errors = input;
             self
         }
-        pub fn target_locations(mut self, inp: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_locations = Some(v);
             self
         }
         pub fn set_target_locations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         ) -> Self {
-            self.target_locations = inp;
+            self.target_locations = input;
             self
         }
         /// Consumes the builder and constructs a [`Runbook`](crate::model::Runbook)
@@ -6462,56 +6501,59 @@ pub mod command {
     }
     impl Builder {
         /// <p>A unique identifier for this command.</p>
-        pub fn command_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.command_id = Some(inp.into());
+        pub fn command_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.command_id = Some(input.into());
             self
         }
-        pub fn set_command_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.command_id = inp;
+        pub fn set_command_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.command_id = input;
             self
         }
         /// <p>The name of the document requested for execution.</p>
-        pub fn document_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_name = Some(inp.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_name = Some(input.into());
             self
         }
-        pub fn set_document_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document_name = inp;
+        pub fn set_document_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_name = input;
             self
         }
         /// <p>The SSM document version.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>User-specified information about the command, such as a brief description of what the
         /// command should do.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// <p>If this time is reached and the command has not already started running, it will not run.
         /// Calculated based on the ExpiresAfter user input provided as part of the SendCommand API.</p>
-        pub fn expires_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.expires_after = Some(inp);
+        pub fn expires_after(mut self, input: smithy_types::Instant) -> Self {
+            self.expires_after = Some(input);
             self
         }
         pub fn set_expires_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.expires_after = inp;
+            self.expires_after = input;
             self
         }
         pub fn parameters(
@@ -6526,58 +6568,61 @@ pub mod command {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
         pub fn set_instance_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.instance_ids = inp;
+            self.instance_ids = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>The date and time the command was requested.</p>
-        pub fn requested_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.requested_date_time = Some(inp);
+        pub fn requested_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.requested_date_time = Some(input);
             self
         }
         pub fn set_requested_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.requested_date_time = inp;
+            self.requested_date_time = input;
             self
         }
         /// <p>The status of the command.</p>
-        pub fn status(mut self, inp: crate::model::CommandStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::CommandStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::CommandStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CommandStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>A detailed status of the command execution. StatusDetails includes more information than
@@ -6623,162 +6668,165 @@ pub mod command {
         /// This is a terminal state.</p>
         /// </li>
         /// </ul>
-        pub fn status_details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_details = Some(inp.into());
+        pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_details = Some(input.into());
             self
         }
-        pub fn set_status_details(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_details = inp;
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_details = input;
             self
         }
         /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
         /// automatically determines the Region of the S3 bucket.</p>
-        pub fn output_s3_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_region = Some(inp.into());
+        pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_region = Some(input.into());
             self
         }
         pub fn set_output_s3_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_region = inp;
+            self.output_s3_region = input;
             self
         }
         /// <p>The S3 bucket where the responses to the command executions should be stored. This was
         /// requested when issuing the command.</p>
-        pub fn output_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_bucket_name = Some(inp.into());
+        pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_bucket_name = Some(input.into());
             self
         }
         pub fn set_output_s3_bucket_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_bucket_name = inp;
+            self.output_s3_bucket_name = input;
             self
         }
         /// <p>The S3 directory path inside the bucket where the responses to the command executions should
         /// be stored. This was requested when issuing the command.</p>
-        pub fn output_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_key_prefix = Some(inp.into());
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_key_prefix = Some(input.into());
             self
         }
         pub fn set_output_s3_key_prefix(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_key_prefix = inp;
+            self.output_s3_key_prefix = input;
             self
         }
         /// <p>The maximum number of instances that are allowed to run the command at the same time. You
         /// can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The
         /// default value is 50. For more information about how to use MaxConcurrency, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
         /// using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-        pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_concurrency = Some(inp.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_concurrency = Some(input.into());
             self
         }
         pub fn set_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.max_concurrency = inp;
+            self.max_concurrency = input;
             self
         }
         /// <p>The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage or errors,
         /// such as 10%. The default value is 0. For more information about how to use MaxErrors, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
         /// using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-        pub fn max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_errors = Some(inp.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_errors = Some(input.into());
             self
         }
-        pub fn set_max_errors(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = inp;
+        pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_errors = input;
             self
         }
         /// <p>The number of targets for the command.</p>
-        pub fn target_count(mut self, inp: i32) -> Self {
-            self.target_count = Some(inp);
+        pub fn target_count(mut self, input: i32) -> Self {
+            self.target_count = Some(input);
             self
         }
-        pub fn set_target_count(mut self, inp: i32) -> Self {
-            self.target_count = Some(inp);
+        pub fn set_target_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.target_count = input;
             self
         }
         /// <p>The number of targets for which the command invocation reached a terminal state. Terminal
         /// states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled,
         /// Terminated, or Undeliverable.</p>
-        pub fn completed_count(mut self, inp: i32) -> Self {
-            self.completed_count = Some(inp);
+        pub fn completed_count(mut self, input: i32) -> Self {
+            self.completed_count = Some(input);
             self
         }
-        pub fn set_completed_count(mut self, inp: i32) -> Self {
-            self.completed_count = Some(inp);
+        pub fn set_completed_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.completed_count = input;
             self
         }
         /// <p>The number of targets for which the status is Failed or Execution Timed Out.</p>
-        pub fn error_count(mut self, inp: i32) -> Self {
-            self.error_count = Some(inp);
+        pub fn error_count(mut self, input: i32) -> Self {
+            self.error_count = Some(input);
             self
         }
-        pub fn set_error_count(mut self, inp: i32) -> Self {
-            self.error_count = Some(inp);
+        pub fn set_error_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.error_count = input;
             self
         }
         /// <p>The number of targets for which the status is Delivery Timed Out.</p>
-        pub fn delivery_timed_out_count(mut self, inp: i32) -> Self {
-            self.delivery_timed_out_count = Some(inp);
+        pub fn delivery_timed_out_count(mut self, input: i32) -> Self {
+            self.delivery_timed_out_count = Some(input);
             self
         }
-        pub fn set_delivery_timed_out_count(mut self, inp: i32) -> Self {
-            self.delivery_timed_out_count = Some(inp);
+        pub fn set_delivery_timed_out_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.delivery_timed_out_count = input;
             self
         }
         /// <p>The IAM service role that Run Command uses to act on your behalf when sending notifications
         /// about command status changes. </p>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_role = Some(inp.into());
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_role = Some(input.into());
             self
         }
-        pub fn set_service_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_role = inp;
+        pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role = input;
             self
         }
         /// <p>Configurations for sending notifications about command status changes. </p>
-        pub fn notification_config(mut self, inp: crate::model::NotificationConfig) -> Self {
-            self.notification_config = Some(inp);
+        pub fn notification_config(mut self, input: crate::model::NotificationConfig) -> Self {
+            self.notification_config = Some(input);
             self
         }
         pub fn set_notification_config(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfig>,
+            input: std::option::Option<crate::model::NotificationConfig>,
         ) -> Self {
-            self.notification_config = inp;
+            self.notification_config = input;
             self
         }
         /// <p>CloudWatch Logs information where you want Systems Manager to send the command output.</p>
         pub fn cloud_watch_output_config(
             mut self,
-            inp: crate::model::CloudWatchOutputConfig,
+            input: crate::model::CloudWatchOutputConfig,
         ) -> Self {
-            self.cloud_watch_output_config = Some(inp);
+            self.cloud_watch_output_config = Some(input);
             self
         }
         pub fn set_cloud_watch_output_config(
             mut self,
-            inp: std::option::Option<crate::model::CloudWatchOutputConfig>,
+            input: std::option::Option<crate::model::CloudWatchOutputConfig>,
         ) -> Self {
-            self.cloud_watch_output_config = inp;
+            self.cloud_watch_output_config = input;
             self
         }
         /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
-        pub fn timeout_seconds(mut self, inp: i32) -> Self {
-            self.timeout_seconds = Some(inp);
+        pub fn timeout_seconds(mut self, input: i32) -> Self {
+            self.timeout_seconds = Some(input);
             self
         }
-        pub fn set_timeout_seconds(mut self, inp: i32) -> Self {
-            self.timeout_seconds = Some(inp);
+        pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`Command`](crate::model::Command)
@@ -7041,55 +7089,58 @@ pub mod service_setting {
     }
     impl Builder {
         /// <p>The ID of the service setting.</p>
-        pub fn setting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.setting_id = Some(inp.into());
+        pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.setting_id = Some(input.into());
             self
         }
-        pub fn set_setting_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.setting_id = inp;
+        pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.setting_id = input;
             self
         }
         /// <p>The value of the service setting.</p>
-        pub fn setting_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.setting_value = Some(inp.into());
+        pub fn setting_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.setting_value = Some(input.into());
             self
         }
-        pub fn set_setting_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.setting_value = inp;
+        pub fn set_setting_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.setting_value = input;
             self
         }
         /// <p>The last time the service setting was modified.</p>
-        pub fn last_modified_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_date = Some(inp);
+        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_date = Some(input);
             self
         }
         pub fn set_last_modified_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_date = inp;
+            self.last_modified_date = input;
             self
         }
         /// <p>The ARN of the last modified user. This field is populated only if the setting value was
         /// overwritten.</p>
-        pub fn last_modified_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified_user = Some(inp.into());
+        pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_user = Some(input.into());
             self
         }
         pub fn set_last_modified_user(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_modified_user = inp;
+            self.last_modified_user = input;
             self
         }
         /// <p>The ARN of the service setting.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The status of the service setting. The value can be Default, Customized or
@@ -7107,12 +7158,12 @@ pub mod service_setting {
         /// request is pending approval.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceSetting`](crate::model::ServiceSetting)
@@ -7515,59 +7566,62 @@ pub mod inventory_item {
         /// inventory type names will start with Custom. Default inventory item types include the following:
         /// AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network, and
         /// AWS:WindowsUpdate.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The schema version for the inventory item.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema_version = Some(inp.into());
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_version = Some(input.into());
             self
         }
-        pub fn set_schema_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema_version = inp;
+        pub fn set_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_version = input;
             self
         }
         /// <p>The time the inventory information was collected.</p>
-        pub fn capture_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capture_time = Some(inp.into());
+        pub fn capture_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capture_time = Some(input.into());
             self
         }
-        pub fn set_capture_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.capture_time = inp;
+        pub fn set_capture_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capture_time = input;
             self
         }
         /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether
         /// to update inventory information. The PutInventory API does not update the inventory item type
         /// contents if the MD5 hash has not changed since last update. </p>
-        pub fn content_hash(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_hash = Some(inp.into());
+        pub fn content_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_hash = Some(input.into());
             self
         }
-        pub fn set_content_hash(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_hash = inp;
+        pub fn set_content_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_hash = input;
             self
         }
         pub fn content(
             mut self,
-            inp: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
         ) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.content = Some(v);
             self
         }
         pub fn set_content(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
             >,
         ) -> Self {
-            self.content = inp;
+            self.content = input;
             self
         }
         pub fn context(
@@ -7582,11 +7636,11 @@ pub mod inventory_item {
         }
         pub fn set_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.context = inp;
+            self.context = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryItem`](crate::model::InventoryItem)
@@ -7723,48 +7777,48 @@ pub mod compliance_item_entry {
     impl Builder {
         /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could
         /// be the number of the KB article.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch,
         /// the title could be the title of the KB article for the patch; for example: Security Update for
         /// Active Directory Federation Services. </p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.title = Some(inp.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
             self
         }
-        pub fn set_title(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.title = inp;
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
             self
         }
         /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High,
         /// Medium, Low, Informational, Unspecified.</p>
-        pub fn severity(mut self, inp: crate::model::ComplianceSeverity) -> Self {
-            self.severity = Some(inp);
+        pub fn severity(mut self, input: crate::model::ComplianceSeverity) -> Self {
+            self.severity = Some(input);
             self
         }
         pub fn set_severity(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceSeverity>,
+            input: std::option::Option<crate::model::ComplianceSeverity>,
         ) -> Self {
-            self.severity = inp;
+            self.severity = input;
             self
         }
         /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
-        pub fn status(mut self, inp: crate::model::ComplianceStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ComplianceStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceStatus>,
+            input: std::option::Option<crate::model::ComplianceStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         pub fn details(
@@ -7779,11 +7833,11 @@ pub mod compliance_item_entry {
         }
         pub fn set_details(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.details = inp;
+            self.details = input;
             self
         }
         /// Consumes the builder and constructs a [`ComplianceItemEntry`](crate::model::ComplianceItemEntry)
@@ -7975,34 +8029,37 @@ pub mod compliance_execution_summary {
     impl Builder {
         /// <p>The time the execution ran as a datetime object that is saved in the following format:
         /// yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-        pub fn execution_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_time = Some(inp);
+        pub fn execution_time(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_time = Some(input);
             self
         }
         pub fn set_execution_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_time = inp;
+            self.execution_time = input;
             self
         }
         /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example,
         /// <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
-        pub fn execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_id = Some(inp.into());
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
             self
         }
-        pub fn set_execution_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = inp;
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
             self
         }
         /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
-        pub fn execution_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_type = Some(inp.into());
+        pub fn execution_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_type = Some(input.into());
             self
         }
-        pub fn set_execution_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.execution_type = inp;
+        pub fn set_execution_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ComplianceExecutionSummary`](crate::model::ComplianceExecutionSummary)
@@ -8171,120 +8228,123 @@ pub mod resource_data_sync_item {
     }
     impl Builder {
         /// <p>The name of the Resource Data Sync.</p>
-        pub fn sync_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sync_name = Some(inp.into());
+        pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_name = Some(input.into());
             self
         }
-        pub fn set_sync_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sync_name = inp;
+        pub fn set_sync_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_name = input;
             self
         }
         /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
         /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
         /// <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
         /// multiple AWS Regions.</p>
-        pub fn sync_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sync_type = Some(inp.into());
+        pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_type = Some(input.into());
             self
         }
-        pub fn set_sync_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sync_type = inp;
+        pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_type = input;
             self
         }
         /// <p>Information about the source where the data was synchronized. </p>
-        pub fn sync_source(mut self, inp: crate::model::ResourceDataSyncSourceWithState) -> Self {
-            self.sync_source = Some(inp);
+        pub fn sync_source(mut self, input: crate::model::ResourceDataSyncSourceWithState) -> Self {
+            self.sync_source = Some(input);
             self
         }
         pub fn set_sync_source(
             mut self,
-            inp: std::option::Option<crate::model::ResourceDataSyncSourceWithState>,
+            input: std::option::Option<crate::model::ResourceDataSyncSourceWithState>,
         ) -> Self {
-            self.sync_source = inp;
+            self.sync_source = input;
             self
         }
         /// <p>Configuration information for the target S3 bucket.</p>
-        pub fn s3_destination(mut self, inp: crate::model::ResourceDataSyncS3Destination) -> Self {
-            self.s3_destination = Some(inp);
+        pub fn s3_destination(
+            mut self,
+            input: crate::model::ResourceDataSyncS3Destination,
+        ) -> Self {
+            self.s3_destination = Some(input);
             self
         }
         pub fn set_s3_destination(
             mut self,
-            inp: std::option::Option<crate::model::ResourceDataSyncS3Destination>,
+            input: std::option::Option<crate::model::ResourceDataSyncS3Destination>,
         ) -> Self {
-            self.s3_destination = inp;
+            self.s3_destination = input;
             self
         }
         /// <p>The last time the configuration attempted to sync (UTC).</p>
-        pub fn last_sync_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_sync_time = Some(inp);
+        pub fn last_sync_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_sync_time = Some(input);
             self
         }
         pub fn set_last_sync_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_sync_time = inp;
+            self.last_sync_time = input;
             self
         }
         /// <p>The last time the sync operations returned a status of <code>SUCCESSFUL</code> (UTC).</p>
-        pub fn last_successful_sync_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_successful_sync_time = Some(inp);
+        pub fn last_successful_sync_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_successful_sync_time = Some(input);
             self
         }
         pub fn set_last_successful_sync_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_successful_sync_time = inp;
+            self.last_successful_sync_time = input;
             self
         }
         /// <p>The date and time the resource data sync was changed. </p>
-        pub fn sync_last_modified_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.sync_last_modified_time = Some(inp);
+        pub fn sync_last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+            self.sync_last_modified_time = Some(input);
             self
         }
         pub fn set_sync_last_modified_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.sync_last_modified_time = inp;
+            self.sync_last_modified_time = input;
             self
         }
         /// <p>The status reported by the last sync.</p>
-        pub fn last_status(mut self, inp: crate::model::LastResourceDataSyncStatus) -> Self {
-            self.last_status = Some(inp);
+        pub fn last_status(mut self, input: crate::model::LastResourceDataSyncStatus) -> Self {
+            self.last_status = Some(input);
             self
         }
         pub fn set_last_status(
             mut self,
-            inp: std::option::Option<crate::model::LastResourceDataSyncStatus>,
+            input: std::option::Option<crate::model::LastResourceDataSyncStatus>,
         ) -> Self {
-            self.last_status = inp;
+            self.last_status = input;
             self
         }
         /// <p>The date and time the configuration was created (UTC).</p>
-        pub fn sync_created_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.sync_created_time = Some(inp);
+        pub fn sync_created_time(mut self, input: smithy_types::Instant) -> Self {
+            self.sync_created_time = Some(input);
             self
         }
         pub fn set_sync_created_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.sync_created_time = inp;
+            self.sync_created_time = input;
             self
         }
         /// <p>The status message details reported by the last sync.</p>
-        pub fn last_sync_status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_sync_status_message = Some(inp.into());
+        pub fn last_sync_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_sync_status_message = Some(input.into());
             self
         }
         pub fn set_last_sync_status_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_sync_status_message = inp;
+            self.last_sync_status_message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncItem`](crate::model::ResourceDataSyncItem)
@@ -8429,67 +8489,70 @@ pub mod resource_data_sync_s3_destination {
     }
     impl Builder {
         /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket_name = Some(inp.into());
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
             self
         }
-        pub fn set_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = inp;
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
             self
         }
         /// <p>An Amazon S3 prefix for the bucket.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
-        pub fn sync_format(mut self, inp: crate::model::ResourceDataSyncS3Format) -> Self {
-            self.sync_format = Some(inp);
+        pub fn sync_format(mut self, input: crate::model::ResourceDataSyncS3Format) -> Self {
+            self.sync_format = Some(input);
             self
         }
         pub fn set_sync_format(
             mut self,
-            inp: std::option::Option<crate::model::ResourceDataSyncS3Format>,
+            input: std::option::Option<crate::model::ResourceDataSyncS3Format>,
         ) -> Self {
-            self.sync_format = inp;
+            self.sync_format = input;
             self
         }
         /// <p>The AWS Region with the S3 bucket targeted by the Resource Data Sync.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as
         /// the destination S3 bucket.</p>
-        pub fn awskms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.awskms_key_arn = Some(inp.into());
+        pub fn awskms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.awskms_key_arn = Some(input.into());
             self
         }
-        pub fn set_awskms_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.awskms_key_arn = inp;
+        pub fn set_awskms_key_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.awskms_key_arn = input;
             self
         }
         /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
         pub fn destination_data_sharing(
             mut self,
-            inp: crate::model::ResourceDataSyncDestinationDataSharing,
+            input: crate::model::ResourceDataSyncDestinationDataSharing,
         ) -> Self {
-            self.destination_data_sharing = Some(inp);
+            self.destination_data_sharing = Some(input);
             self
         }
         pub fn set_destination_data_sharing(
             mut self,
-            inp: std::option::Option<crate::model::ResourceDataSyncDestinationDataSharing>,
+            input: std::option::Option<crate::model::ResourceDataSyncDestinationDataSharing>,
         ) -> Self {
-            self.destination_data_sharing = inp;
+            self.destination_data_sharing = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncS3Destination`](crate::model::ResourceDataSyncS3Destination)
@@ -8545,16 +8608,16 @@ pub mod resource_data_sync_destination_data_sharing {
         /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
         pub fn destination_data_sharing_type(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.destination_data_sharing_type = Some(inp.into());
+            self.destination_data_sharing_type = Some(input.into());
             self
         }
         pub fn set_destination_data_sharing_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.destination_data_sharing_type = inp;
+            self.destination_data_sharing_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncDestinationDataSharing`](crate::model::ResourceDataSyncDestinationDataSharing)
@@ -8719,51 +8782,51 @@ pub mod resource_data_sync_source_with_state {
         /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either
         /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
         /// <code>singleAccountMultiRegions</code>.</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_type = Some(inp.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_type = Some(input.into());
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_type = inp;
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_type = input;
             self
         }
         /// <p>The field name in <code>SyncSource</code> for the
         /// <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
         pub fn aws_organizations_source(
             mut self,
-            inp: crate::model::ResourceDataSyncAwsOrganizationsSource,
+            input: crate::model::ResourceDataSyncAwsOrganizationsSource,
         ) -> Self {
-            self.aws_organizations_source = Some(inp);
+            self.aws_organizations_source = Some(input);
             self
         }
         pub fn set_aws_organizations_source(
             mut self,
-            inp: std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
+            input: std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
         ) -> Self {
-            self.aws_organizations_source = inp;
+            self.aws_organizations_source = input;
             self
         }
-        pub fn source_regions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn source_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_regions = Some(v);
             self
         }
         pub fn set_source_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.source_regions = inp;
+            self.source_regions = input;
             self
         }
         /// <p>Whether to automatically synchronize and aggregate data from new AWS Regions when those
         /// Regions come online.</p>
-        pub fn include_future_regions(mut self, inp: bool) -> Self {
-            self.include_future_regions = Some(inp);
+        pub fn include_future_regions(mut self, input: bool) -> Self {
+            self.include_future_regions = Some(input);
             self
         }
-        pub fn set_include_future_regions(mut self, inp: bool) -> Self {
-            self.include_future_regions = Some(inp);
+        pub fn set_include_future_regions(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_future_regions = input;
             self
         }
         /// <p>The data type name for including resource data sync state. There are four sync
@@ -8779,24 +8842,24 @@ pub mod resource_data_sync_source_with_state {
         /// <p>
         /// <code>TrustedAccessDisabled</code>: You disabled Systems Manager access in the organization in
         /// AWS Organizations.</p>
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
         /// <p>When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
         /// automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
         /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
         /// <i>AWS Systems Manager User Guide</i>.</p>
-        pub fn enable_all_ops_data_sources(mut self, inp: bool) -> Self {
-            self.enable_all_ops_data_sources = Some(inp);
+        pub fn enable_all_ops_data_sources(mut self, input: bool) -> Self {
+            self.enable_all_ops_data_sources = Some(input);
             self
         }
-        pub fn set_enable_all_ops_data_sources(mut self, inp: bool) -> Self {
-            self.enable_all_ops_data_sources = Some(inp);
+        pub fn set_enable_all_ops_data_sources(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_all_ops_data_sources = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncSourceWithState`](crate::model::ResourceDataSyncSourceWithState)
@@ -8888,94 +8951,100 @@ pub mod resource_compliance_summary_item {
     }
     impl Builder {
         /// <p>The compliance type.</p>
-        pub fn compliance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.compliance_type = Some(inp.into());
+        pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compliance_type = Some(input.into());
             self
         }
         pub fn set_compliance_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.compliance_type = inp;
+            self.compliance_type = input;
             self
         }
         /// <p>The resource type.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The resource ID.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = inp;
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>The compliance status for the resource.</p>
-        pub fn status(mut self, inp: crate::model::ComplianceStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ComplianceStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceStatus>,
+            input: std::option::Option<crate::model::ComplianceStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The highest severity item found for the resource. The resource is compliant for this
         /// item.</p>
-        pub fn overall_severity(mut self, inp: crate::model::ComplianceSeverity) -> Self {
-            self.overall_severity = Some(inp);
+        pub fn overall_severity(mut self, input: crate::model::ComplianceSeverity) -> Self {
+            self.overall_severity = Some(input);
             self
         }
         pub fn set_overall_severity(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceSeverity>,
+            input: std::option::Option<crate::model::ComplianceSeverity>,
         ) -> Self {
-            self.overall_severity = inp;
+            self.overall_severity = input;
             self
         }
         /// <p>Information about the execution.</p>
-        pub fn execution_summary(mut self, inp: crate::model::ComplianceExecutionSummary) -> Self {
-            self.execution_summary = Some(inp);
+        pub fn execution_summary(
+            mut self,
+            input: crate::model::ComplianceExecutionSummary,
+        ) -> Self {
+            self.execution_summary = Some(input);
             self
         }
         pub fn set_execution_summary(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceExecutionSummary>,
+            input: std::option::Option<crate::model::ComplianceExecutionSummary>,
         ) -> Self {
-            self.execution_summary = inp;
+            self.execution_summary = input;
             self
         }
         /// <p>A list of items that are compliant for the resource.</p>
-        pub fn compliant_summary(mut self, inp: crate::model::CompliantSummary) -> Self {
-            self.compliant_summary = Some(inp);
+        pub fn compliant_summary(mut self, input: crate::model::CompliantSummary) -> Self {
+            self.compliant_summary = Some(input);
             self
         }
         pub fn set_compliant_summary(
             mut self,
-            inp: std::option::Option<crate::model::CompliantSummary>,
+            input: std::option::Option<crate::model::CompliantSummary>,
         ) -> Self {
-            self.compliant_summary = inp;
+            self.compliant_summary = input;
             self
         }
         /// <p>A list of items that aren't compliant for the resource.</p>
-        pub fn non_compliant_summary(mut self, inp: crate::model::NonCompliantSummary) -> Self {
-            self.non_compliant_summary = Some(inp);
+        pub fn non_compliant_summary(mut self, input: crate::model::NonCompliantSummary) -> Self {
+            self.non_compliant_summary = Some(input);
             self
         }
         pub fn set_non_compliant_summary(
             mut self,
-            inp: std::option::Option<crate::model::NonCompliantSummary>,
+            input: std::option::Option<crate::model::NonCompliantSummary>,
         ) -> Self {
-            self.non_compliant_summary = inp;
+            self.non_compliant_summary = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceComplianceSummaryItem`](crate::model::ResourceComplianceSummaryItem)
@@ -9033,24 +9102,24 @@ pub mod non_compliant_summary {
     }
     impl Builder {
         /// <p>The total number of compliance items that are not compliant.</p>
-        pub fn non_compliant_count(mut self, inp: i32) -> Self {
-            self.non_compliant_count = Some(inp);
+        pub fn non_compliant_count(mut self, input: i32) -> Self {
+            self.non_compliant_count = Some(input);
             self
         }
-        pub fn set_non_compliant_count(mut self, inp: i32) -> Self {
-            self.non_compliant_count = Some(inp);
+        pub fn set_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.non_compliant_count = input;
             self
         }
         /// <p>A summary of the non-compliance severity by compliance type</p>
-        pub fn severity_summary(mut self, inp: crate::model::SeveritySummary) -> Self {
-            self.severity_summary = Some(inp);
+        pub fn severity_summary(mut self, input: crate::model::SeveritySummary) -> Self {
+            self.severity_summary = Some(input);
             self
         }
         pub fn set_severity_summary(
             mut self,
-            inp: std::option::Option<crate::model::SeveritySummary>,
+            input: std::option::Option<crate::model::SeveritySummary>,
         ) -> Self {
-            self.severity_summary = inp;
+            self.severity_summary = input;
             self
         }
         /// Consumes the builder and constructs a [`NonCompliantSummary`](crate::model::NonCompliantSummary)
@@ -9135,64 +9204,64 @@ pub mod severity_summary {
     impl Builder {
         /// <p>The total number of resources or compliance items that have a severity level of critical.
         /// Critical severity is determined by the organization that published the compliance items.</p>
-        pub fn critical_count(mut self, inp: i32) -> Self {
-            self.critical_count = Some(inp);
+        pub fn critical_count(mut self, input: i32) -> Self {
+            self.critical_count = Some(input);
             self
         }
-        pub fn set_critical_count(mut self, inp: i32) -> Self {
-            self.critical_count = Some(inp);
+        pub fn set_critical_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.critical_count = input;
             self
         }
         /// <p>The total number of resources or compliance items that have a severity level of high. High
         /// severity is determined by the organization that published the compliance items.</p>
-        pub fn high_count(mut self, inp: i32) -> Self {
-            self.high_count = Some(inp);
+        pub fn high_count(mut self, input: i32) -> Self {
+            self.high_count = Some(input);
             self
         }
-        pub fn set_high_count(mut self, inp: i32) -> Self {
-            self.high_count = Some(inp);
+        pub fn set_high_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.high_count = input;
             self
         }
         /// <p>The total number of resources or compliance items that have a severity level of medium.
         /// Medium severity is determined by the organization that published the compliance items.</p>
-        pub fn medium_count(mut self, inp: i32) -> Self {
-            self.medium_count = Some(inp);
+        pub fn medium_count(mut self, input: i32) -> Self {
+            self.medium_count = Some(input);
             self
         }
-        pub fn set_medium_count(mut self, inp: i32) -> Self {
-            self.medium_count = Some(inp);
+        pub fn set_medium_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.medium_count = input;
             self
         }
         /// <p>The total number of resources or compliance items that have a severity level of low. Low
         /// severity is determined by the organization that published the compliance items.</p>
-        pub fn low_count(mut self, inp: i32) -> Self {
-            self.low_count = Some(inp);
+        pub fn low_count(mut self, input: i32) -> Self {
+            self.low_count = Some(input);
             self
         }
-        pub fn set_low_count(mut self, inp: i32) -> Self {
-            self.low_count = Some(inp);
+        pub fn set_low_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.low_count = input;
             self
         }
         /// <p>The total number of resources or compliance items that have a severity level of
         /// informational. Informational severity is determined by the organization that published the
         /// compliance items.</p>
-        pub fn informational_count(mut self, inp: i32) -> Self {
-            self.informational_count = Some(inp);
+        pub fn informational_count(mut self, input: i32) -> Self {
+            self.informational_count = Some(input);
             self
         }
-        pub fn set_informational_count(mut self, inp: i32) -> Self {
-            self.informational_count = Some(inp);
+        pub fn set_informational_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.informational_count = input;
             self
         }
         /// <p>The total number of resources or compliance items that have a severity level of unspecified.
         /// Unspecified severity is determined by the organization that published the compliance
         /// items.</p>
-        pub fn unspecified_count(mut self, inp: i32) -> Self {
-            self.unspecified_count = Some(inp);
+        pub fn unspecified_count(mut self, input: i32) -> Self {
+            self.unspecified_count = Some(input);
             self
         }
-        pub fn set_unspecified_count(mut self, inp: i32) -> Self {
-            self.unspecified_count = Some(inp);
+        pub fn set_unspecified_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.unspecified_count = input;
             self
         }
         /// Consumes the builder and constructs a [`SeveritySummary`](crate::model::SeveritySummary)
@@ -9248,24 +9317,24 @@ pub mod compliant_summary {
     }
     impl Builder {
         /// <p>The total number of resources that are compliant.</p>
-        pub fn compliant_count(mut self, inp: i32) -> Self {
-            self.compliant_count = Some(inp);
+        pub fn compliant_count(mut self, input: i32) -> Self {
+            self.compliant_count = Some(input);
             self
         }
-        pub fn set_compliant_count(mut self, inp: i32) -> Self {
-            self.compliant_count = Some(inp);
+        pub fn set_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.compliant_count = input;
             self
         }
         /// <p>A summary of the compliance severity by compliance type.</p>
-        pub fn severity_summary(mut self, inp: crate::model::SeveritySummary) -> Self {
-            self.severity_summary = Some(inp);
+        pub fn severity_summary(mut self, input: crate::model::SeveritySummary) -> Self {
+            self.severity_summary = Some(input);
             self
         }
         pub fn set_severity_summary(
             mut self,
-            inp: std::option::Option<crate::model::SeveritySummary>,
+            input: std::option::Option<crate::model::SeveritySummary>,
         ) -> Self {
-            self.severity_summary = inp;
+            self.severity_summary = input;
             self
         }
         /// Consumes the builder and constructs a [`CompliantSummary`](crate::model::CompliantSummary)
@@ -9323,38 +9392,38 @@ pub mod compliance_string_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith,
         /// LessThan, or GreaterThan.</p>
-        pub fn r#type(mut self, inp: crate::model::ComplianceQueryOperatorType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ComplianceQueryOperatorType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceQueryOperatorType>,
+            input: std::option::Option<crate::model::ComplianceQueryOperatorType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`ComplianceStringFilter`](crate::model::ComplianceStringFilter)
@@ -9495,60 +9564,60 @@ pub mod ops_metadata {
     }
     impl Builder {
         /// <p>The ID of the Application Manager application.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = inp;
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob.</p>
-        pub fn ops_metadata_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_metadata_arn = Some(inp.into());
+        pub fn ops_metadata_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_metadata_arn = Some(input.into());
             self
         }
         pub fn set_ops_metadata_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ops_metadata_arn = inp;
+            self.ops_metadata_arn = input;
             self
         }
         /// <p>The date the OpsMetadata object was last updated.</p>
-        pub fn last_modified_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_date = Some(inp);
+        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_date = Some(input);
             self
         }
         pub fn set_last_modified_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_date = inp;
+            self.last_modified_date = input;
             self
         }
         /// <p>The user name who last updated the OpsMetadata object.</p>
-        pub fn last_modified_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified_user = Some(inp.into());
+        pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_user = Some(input.into());
             self
         }
         pub fn set_last_modified_user(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_modified_user = inp;
+            self.last_modified_user = input;
             self
         }
         /// <p>The date the OpsMetadata objects was created.</p>
-        pub fn creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date = Some(inp);
+        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date = Some(input);
             self
         }
         pub fn set_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date = inp;
+            self.creation_date = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsMetadata`](crate::model::OpsMetadata)
@@ -9602,25 +9671,25 @@ pub mod ops_metadata_filter {
     }
     impl Builder {
         /// <p>A filter key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsMetadataFilter`](crate::model::OpsMetadataFilter)
@@ -9719,96 +9788,105 @@ pub mod ops_item_related_item_summary {
     }
     impl Builder {
         /// <p>The OpsItem ID.</p>
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// <p>The association ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The resource type.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The association type.</p>
-        pub fn association_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_type = Some(inp.into());
+        pub fn association_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_type = Some(input.into());
             self
         }
         pub fn set_association_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_type = inp;
+            self.association_type = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the related-item resource.</p>
-        pub fn resource_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_uri = Some(inp.into());
+        pub fn resource_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_uri = Some(input.into());
             self
         }
-        pub fn set_resource_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_uri = inp;
+        pub fn set_resource_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_uri = input;
             self
         }
         /// <p>Information about the user or resource that created an OpsItem event.</p>
-        pub fn created_by(mut self, inp: crate::model::OpsItemIdentity) -> Self {
-            self.created_by = Some(inp);
+        pub fn created_by(mut self, input: crate::model::OpsItemIdentity) -> Self {
+            self.created_by = Some(input);
             self
         }
         pub fn set_created_by(
             mut self,
-            inp: std::option::Option<crate::model::OpsItemIdentity>,
+            input: std::option::Option<crate::model::OpsItemIdentity>,
         ) -> Self {
-            self.created_by = inp;
+            self.created_by = input;
             self
         }
         /// <p>The time the related-item association was created.</p>
-        pub fn created_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_time = Some(inp);
+        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+            self.created_time = Some(input);
             self
         }
-        pub fn set_created_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_time = inp;
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_time = input;
             self
         }
         /// <p>Information about the user or resource that created an OpsItem event.</p>
-        pub fn last_modified_by(mut self, inp: crate::model::OpsItemIdentity) -> Self {
-            self.last_modified_by = Some(inp);
+        pub fn last_modified_by(mut self, input: crate::model::OpsItemIdentity) -> Self {
+            self.last_modified_by = Some(input);
             self
         }
         pub fn set_last_modified_by(
             mut self,
-            inp: std::option::Option<crate::model::OpsItemIdentity>,
+            input: std::option::Option<crate::model::OpsItemIdentity>,
         ) -> Self {
-            self.last_modified_by = inp;
+            self.last_modified_by = input;
             self
         }
         /// <p>The time the related-item association was last updated.</p>
-        pub fn last_modified_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_time = Some(inp);
+        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
             self
         }
         pub fn set_last_modified_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_time = inp;
+            self.last_modified_time = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemRelatedItemSummary`](crate::model::OpsItemRelatedItemSummary)
@@ -9860,12 +9938,12 @@ pub mod ops_item_identity {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemIdentity`](crate::model::OpsItemIdentity)
@@ -9922,41 +10000,41 @@ pub mod ops_item_related_items_filter {
     impl Builder {
         /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>,
         /// <code>ResourceType</code>, or <code>AssociationId</code>.</p>
-        pub fn key(mut self, inp: crate::model::OpsItemRelatedItemsFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::OpsItemRelatedItemsFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::OpsItemRelatedItemsFilterKey>,
+            input: std::option::Option<crate::model::OpsItemRelatedItemsFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// <p>The operator used by the filter call. The only supported operator is
         /// <code>EQUAL</code>.</p>
-        pub fn operator(mut self, inp: crate::model::OpsItemRelatedItemsFilterOperator) -> Self {
-            self.operator = Some(inp);
+        pub fn operator(mut self, input: crate::model::OpsItemRelatedItemsFilterOperator) -> Self {
+            self.operator = Some(input);
             self
         }
         pub fn set_operator(
             mut self,
-            inp: std::option::Option<crate::model::OpsItemRelatedItemsFilterOperator>,
+            input: std::option::Option<crate::model::OpsItemRelatedItemsFilterOperator>,
         ) -> Self {
-            self.operator = inp;
+            self.operator = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemRelatedItemsFilter`](crate::model::OpsItemRelatedItemsFilter)
@@ -10154,69 +10232,72 @@ pub mod ops_item_event_summary {
     }
     impl Builder {
         /// <p>The ID of the OpsItem.</p>
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// <p>The ID of the OpsItem event.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_id = Some(inp.into());
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
             self
         }
-        pub fn set_event_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.event_id = inp;
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
             self
         }
         /// <p>The source of the OpsItem event.</p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source = Some(inp.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source = inp;
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
             self
         }
         /// <p>The type of information provided as a detail.</p>
-        pub fn detail_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detail_type = Some(inp.into());
+        pub fn detail_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detail_type = Some(input.into());
             self
         }
-        pub fn set_detail_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.detail_type = inp;
+        pub fn set_detail_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detail_type = input;
             self
         }
         /// <p>Specific information about the OpsItem event.</p>
-        pub fn detail(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detail = Some(inp.into());
+        pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detail = Some(input.into());
             self
         }
-        pub fn set_detail(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.detail = inp;
+        pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detail = input;
             self
         }
         /// <p>Information about the user or resource that created the OpsItem event.</p>
-        pub fn created_by(mut self, inp: crate::model::OpsItemIdentity) -> Self {
-            self.created_by = Some(inp);
+        pub fn created_by(mut self, input: crate::model::OpsItemIdentity) -> Self {
+            self.created_by = Some(input);
             self
         }
         pub fn set_created_by(
             mut self,
-            inp: std::option::Option<crate::model::OpsItemIdentity>,
+            input: std::option::Option<crate::model::OpsItemIdentity>,
         ) -> Self {
-            self.created_by = inp;
+            self.created_by = input;
             self
         }
         /// <p>The date and time the OpsItem event was created.</p>
-        pub fn created_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_time = Some(inp);
+        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+            self.created_time = Some(input);
             self
         }
-        pub fn set_created_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_time = inp;
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_time = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemEventSummary`](crate::model::OpsItemEventSummary)
@@ -10282,41 +10363,41 @@ pub mod ops_item_event_filter {
     impl Builder {
         /// <p>The name of the filter key. Currently, the only supported value is
         /// <code>OpsItemId</code>.</p>
-        pub fn key(mut self, inp: crate::model::OpsItemEventFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::OpsItemEventFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::OpsItemEventFilterKey>,
+            input: std::option::Option<crate::model::OpsItemEventFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// <p>The operator used by the filter call. Currently, the only supported value is
         /// <code>Equal</code>.</p>
-        pub fn operator(mut self, inp: crate::model::OpsItemEventFilterOperator) -> Self {
-            self.operator = Some(inp);
+        pub fn operator(mut self, input: crate::model::OpsItemEventFilterOperator) -> Self {
+            self.operator = Some(input);
             self
         }
         pub fn set_operator(
             mut self,
-            inp: std::option::Option<crate::model::OpsItemEventFilterOperator>,
+            input: std::option::Option<crate::model::OpsItemEventFilterOperator>,
         ) -> Self {
-            self.operator = inp;
+            self.operator = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemEventFilter`](crate::model::OpsItemEventFilter)
@@ -10487,25 +10568,25 @@ pub mod inventory_filter {
     }
     impl Builder {
         /// <p>The name of the filter key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// <p>The type of filter.</p>
@@ -10514,15 +10595,15 @@ pub mod inventory_filter {
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory
         /// data</a> in the <i>AWS Systems Manager User Guide</i>.</p>
         /// </note>
-        pub fn r#type(mut self, inp: crate::model::InventoryQueryOperatorType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::InventoryQueryOperatorType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::InventoryQueryOperatorType>,
+            input: std::option::Option<crate::model::InventoryQueryOperatorType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryFilter`](crate::model::InventoryFilter)
@@ -10698,113 +10779,116 @@ pub mod document_version_info {
     }
     impl Builder {
         /// <p>The document name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The friendly name of the Systems Manager document. This value can differ for each version of the
         /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(inp.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.display_name = inp;
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
             self
         }
         /// <p>The document version.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>The version of the artifact associated with the document. For example, "Release 12, Update
         /// 6". This value is unique across all versions of a document, and cannot be changed.</p>
-        pub fn version_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_name = Some(inp.into());
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
             self
         }
-        pub fn set_version_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_name = inp;
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
             self
         }
         /// <p>The date the document was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>An identifier for the default version of the document.</p>
-        pub fn is_default_version(mut self, inp: bool) -> Self {
-            self.is_default_version = Some(inp);
+        pub fn is_default_version(mut self, input: bool) -> Self {
+            self.is_default_version = Some(input);
             self
         }
-        pub fn set_is_default_version(mut self, inp: bool) -> Self {
-            self.is_default_version = Some(inp);
+        pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default_version = input;
             self
         }
         /// <p>The document format, either JSON or YAML.</p>
-        pub fn document_format(mut self, inp: crate::model::DocumentFormat) -> Self {
-            self.document_format = Some(inp);
+        pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
+            self.document_format = Some(input);
             self
         }
         pub fn set_document_format(
             mut self,
-            inp: std::option::Option<crate::model::DocumentFormat>,
+            input: std::option::Option<crate::model::DocumentFormat>,
         ) -> Self {
-            self.document_format = inp;
+            self.document_format = input;
             self
         }
         /// <p>The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
         /// <code>Failed</code>, and <code>Deleting</code>.</p>
-        pub fn status(mut self, inp: crate::model::DocumentStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::DocumentStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::DocumentStatus>,
+            input: std::option::Option<crate::model::DocumentStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
         /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
         /// "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
-        pub fn status_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_information = Some(inp.into());
+        pub fn status_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_information = Some(input.into());
             self
         }
         pub fn set_status_information(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.status_information = inp;
+            self.status_information = input;
             self
         }
         /// <p>The current status of the approval review for the latest version of the document.</p>
-        pub fn review_status(mut self, inp: crate::model::ReviewStatus) -> Self {
-            self.review_status = Some(inp);
+        pub fn review_status(mut self, input: crate::model::ReviewStatus) -> Self {
+            self.review_status = Some(input);
             self
         }
         pub fn set_review_status(
             mut self,
-            inp: std::option::Option<crate::model::ReviewStatus>,
+            input: std::option::Option<crate::model::ReviewStatus>,
         ) -> Self {
-            self.review_status = inp;
+            self.review_status = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentVersionInfo`](crate::model::DocumentVersionInfo)
@@ -10951,167 +11035,173 @@ pub mod document_identifier {
     }
     impl Builder {
         /// <p>The name of the Systems Manager document.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The date the Systems Manager document was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>An optional field where you can specify a friendly name for the Systems Manager document. This value
         /// can differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(inp.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.display_name = inp;
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
             self
         }
         /// <p>The AWS user account that created the document.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner = Some(inp.into());
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
             self
         }
         /// <p>An optional field specifying the version of the artifact associated with the document. For
         /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
         /// cannot be changed.</p>
-        pub fn version_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_name = Some(inp.into());
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
             self
         }
-        pub fn set_version_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_name = inp;
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
             self
         }
-        pub fn platform_types(mut self, inp: impl Into<crate::model::PlatformType>) -> Self {
+        pub fn platform_types(mut self, input: impl Into<crate::model::PlatformType>) -> Self {
             let mut v = self.platform_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.platform_types = Some(v);
             self
         }
         pub fn set_platform_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
         ) -> Self {
-            self.platform_types = inp;
+            self.platform_types = input;
             self
         }
         /// <p>The document version.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>The document type.</p>
-        pub fn document_type(mut self, inp: crate::model::DocumentType) -> Self {
-            self.document_type = Some(inp);
+        pub fn document_type(mut self, input: crate::model::DocumentType) -> Self {
+            self.document_type = Some(input);
             self
         }
         pub fn set_document_type(
             mut self,
-            inp: std::option::Option<crate::model::DocumentType>,
+            input: std::option::Option<crate::model::DocumentType>,
         ) -> Self {
-            self.document_type = inp;
+            self.document_type = input;
             self
         }
         /// <p>The schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema_version = Some(inp.into());
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_version = Some(input.into());
             self
         }
-        pub fn set_schema_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema_version = inp;
+        pub fn set_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_version = input;
             self
         }
         /// <p>The document format, either JSON or YAML.</p>
-        pub fn document_format(mut self, inp: crate::model::DocumentFormat) -> Self {
-            self.document_format = Some(inp);
+        pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
+            self.document_format = Some(input);
             self
         }
         pub fn set_document_format(
             mut self,
-            inp: std::option::Option<crate::model::DocumentFormat>,
+            input: std::option::Option<crate::model::DocumentFormat>,
         ) -> Self {
-            self.document_format = inp;
+            self.document_format = input;
             self
         }
         /// <p>The target type which defines the kinds of resources the document can run on. For example,
         /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
         /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
-        pub fn target_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_type = Some(inp.into());
+        pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_type = Some(input.into());
             self
         }
-        pub fn set_target_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_type = inp;
+        pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_type = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
-        pub fn requires(mut self, inp: impl Into<crate::model::DocumentRequires>) -> Self {
+        pub fn requires(mut self, input: impl Into<crate::model::DocumentRequires>) -> Self {
             let mut v = self.requires.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.requires = Some(v);
             self
         }
         pub fn set_requires(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
         ) -> Self {
-            self.requires = inp;
+            self.requires = input;
             self
         }
         /// <p>The current status of a document review.</p>
-        pub fn review_status(mut self, inp: crate::model::ReviewStatus) -> Self {
-            self.review_status = Some(inp);
+        pub fn review_status(mut self, input: crate::model::ReviewStatus) -> Self {
+            self.review_status = Some(input);
             self
         }
         pub fn set_review_status(
             mut self,
-            inp: std::option::Option<crate::model::ReviewStatus>,
+            input: std::option::Option<crate::model::ReviewStatus>,
         ) -> Self {
-            self.review_status = inp;
+            self.review_status = input;
             self
         }
         /// <p>The user in your organization who created the document.</p>
-        pub fn author(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.author = Some(inp.into());
+        pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
+            self.author = Some(input.into());
             self
         }
-        pub fn set_author(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.author = inp;
+        pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.author = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentIdentifier`](crate::model::DocumentIdentifier)
@@ -11266,25 +11356,25 @@ pub mod document_key_values_filter {
     }
     impl Builder {
         /// <p>The name of the filter key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentKeyValuesFilter`](crate::model::DocumentKeyValuesFilter)
@@ -11335,24 +11425,24 @@ pub mod document_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn key(mut self, inp: crate::model::DocumentFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::DocumentFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::DocumentFilterKey>,
+            input: std::option::Option<crate::model::DocumentFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
         /// <p>The value of the filter.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentFilter`](crate::model::DocumentFilter)
@@ -11462,18 +11552,18 @@ pub mod document_metadata_response_info {
     impl Builder {
         pub fn reviewer_response(
             mut self,
-            inp: impl Into<crate::model::DocumentReviewerResponseSource>,
+            input: impl Into<crate::model::DocumentReviewerResponseSource>,
         ) -> Self {
             let mut v = self.reviewer_response.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reviewer_response = Some(v);
             self
         }
         pub fn set_reviewer_response(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DocumentReviewerResponseSource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentReviewerResponseSource>>,
         ) -> Self {
-            self.reviewer_response = inp;
+            self.reviewer_response = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentMetadataResponseInfo`](crate::model::DocumentMetadataResponseInfo)
@@ -11553,22 +11643,28 @@ pub mod document_reviewer_response_source {
     }
     impl Builder {
         /// <p>The date and time that a reviewer entered a response to a document review request.</p>
-        pub fn create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_time = Some(inp);
+        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.create_time = Some(input);
             self
         }
-        pub fn set_create_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_time = inp;
+        pub fn set_create_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_time = input;
             self
         }
         /// <p>The date and time that a reviewer last updated a response to a document review
         /// request.</p>
-        pub fn updated_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.updated_time = Some(inp);
+        pub fn updated_time(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_time = Some(input);
             self
         }
-        pub fn set_updated_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.updated_time = inp;
+        pub fn set_updated_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.updated_time = input;
             self
         }
         /// <p>The current review status of a new custom SSM document created by a member of your
@@ -11576,40 +11672,40 @@ pub mod document_reviewer_response_source {
         /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is
         /// approved, the status of the previous version changes to REJECTED.</p>
         /// <p>Only one version of a document can be in review, or PENDING, at a time.</p>
-        pub fn review_status(mut self, inp: crate::model::ReviewStatus) -> Self {
-            self.review_status = Some(inp);
+        pub fn review_status(mut self, input: crate::model::ReviewStatus) -> Self {
+            self.review_status = Some(input);
             self
         }
         pub fn set_review_status(
             mut self,
-            inp: std::option::Option<crate::model::ReviewStatus>,
+            input: std::option::Option<crate::model::ReviewStatus>,
         ) -> Self {
-            self.review_status = inp;
+            self.review_status = input;
             self
         }
         pub fn comment(
             mut self,
-            inp: impl Into<crate::model::DocumentReviewCommentSource>,
+            input: impl Into<crate::model::DocumentReviewCommentSource>,
         ) -> Self {
             let mut v = self.comment.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.comment = Some(v);
             self
         }
         pub fn set_comment(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DocumentReviewCommentSource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentReviewCommentSource>>,
         ) -> Self {
-            self.comment = inp;
+            self.comment = input;
             self
         }
         /// <p>The user in your organization assigned to review a document request.</p>
-        pub fn reviewer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reviewer = Some(inp.into());
+        pub fn reviewer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reviewer = Some(input.into());
             self
         }
-        pub fn set_reviewer(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reviewer = inp;
+        pub fn set_reviewer(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reviewer = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentReviewerResponseSource`](crate::model::DocumentReviewerResponseSource)
@@ -11724,39 +11820,39 @@ pub mod compliance_summary_item {
     impl Builder {
         /// <p>The type of compliance item. For example, the compliance type can be Association, Patch, or
         /// Custom:string.</p>
-        pub fn compliance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.compliance_type = Some(inp.into());
+        pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compliance_type = Some(input.into());
             self
         }
         pub fn set_compliance_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.compliance_type = inp;
+            self.compliance_type = input;
             self
         }
         /// <p>A list of COMPLIANT items for the specified compliance type.</p>
-        pub fn compliant_summary(mut self, inp: crate::model::CompliantSummary) -> Self {
-            self.compliant_summary = Some(inp);
+        pub fn compliant_summary(mut self, input: crate::model::CompliantSummary) -> Self {
+            self.compliant_summary = Some(input);
             self
         }
         pub fn set_compliant_summary(
             mut self,
-            inp: std::option::Option<crate::model::CompliantSummary>,
+            input: std::option::Option<crate::model::CompliantSummary>,
         ) -> Self {
-            self.compliant_summary = inp;
+            self.compliant_summary = input;
             self
         }
         /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-        pub fn non_compliant_summary(mut self, inp: crate::model::NonCompliantSummary) -> Self {
-            self.non_compliant_summary = Some(inp);
+        pub fn non_compliant_summary(mut self, input: crate::model::NonCompliantSummary) -> Self {
+            self.non_compliant_summary = Some(input);
             self
         }
         pub fn set_non_compliant_summary(
             mut self,
-            inp: std::option::Option<crate::model::NonCompliantSummary>,
+            input: std::option::Option<crate::model::NonCompliantSummary>,
         ) -> Self {
-            self.non_compliant_summary = inp;
+            self.non_compliant_summary = input;
             self
         }
         /// Consumes the builder and constructs a [`ComplianceSummaryItem`](crate::model::ComplianceSummaryItem)
@@ -11864,94 +11960,100 @@ pub mod compliance_item {
     impl Builder {
         /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or
         /// Custom:<code>string</code> are all valid compliance types.</p>
-        pub fn compliance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.compliance_type = Some(inp.into());
+        pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compliance_type = Some(input.into());
             self
         }
         pub fn set_compliance_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.compliance_type = inp;
+            self.compliance_type = input;
             self
         }
         /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource
         /// type.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = inp;
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the
         /// ID could be the number of the KB article; for example: KB4010320.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>A title for the compliance item. For example, if the compliance item is a Windows patch, the
         /// title could be the title of the KB article for the patch; for example: Security Update for Active
         /// Directory Federation Services.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.title = Some(inp.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
             self
         }
-        pub fn set_title(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.title = inp;
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
             self
         }
         /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty
         /// string (for Windows patches that aren't applicable).</p>
-        pub fn status(mut self, inp: crate::model::ComplianceStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ComplianceStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceStatus>,
+            input: std::option::Option<crate::model::ComplianceStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High,
         /// Medium, Low, Informational, Unspecified.</p>
-        pub fn severity(mut self, inp: crate::model::ComplianceSeverity) -> Self {
-            self.severity = Some(inp);
+        pub fn severity(mut self, input: crate::model::ComplianceSeverity) -> Self {
+            self.severity = Some(input);
             self
         }
         pub fn set_severity(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceSeverity>,
+            input: std::option::Option<crate::model::ComplianceSeverity>,
         ) -> Self {
-            self.severity = inp;
+            self.severity = input;
             self
         }
         /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type
         /// (for example, command), and the execution time.</p>
-        pub fn execution_summary(mut self, inp: crate::model::ComplianceExecutionSummary) -> Self {
-            self.execution_summary = Some(inp);
+        pub fn execution_summary(
+            mut self,
+            input: crate::model::ComplianceExecutionSummary,
+        ) -> Self {
+            self.execution_summary = Some(input);
             self
         }
         pub fn set_execution_summary(
             mut self,
-            inp: std::option::Option<crate::model::ComplianceExecutionSummary>,
+            input: std::option::Option<crate::model::ComplianceExecutionSummary>,
         ) -> Self {
-            self.execution_summary = inp;
+            self.execution_summary = input;
             self
         }
         pub fn details(
@@ -11966,11 +12068,11 @@ pub mod compliance_item {
         }
         pub fn set_details(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.details = inp;
+            self.details = input;
             self
         }
         /// Consumes the builder and constructs a [`ComplianceItem`](crate::model::ComplianceItem)
@@ -12112,12 +12214,15 @@ pub mod command_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn key(mut self, inp: crate::model::CommandFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::CommandFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<crate::model::CommandFilterKey>) -> Self {
-            self.key = inp;
+        pub fn set_key(
+            mut self,
+            input: std::option::Option<crate::model::CommandFilterKey>,
+        ) -> Self {
+            self.key = input;
             self
         }
         /// <p>The filter value. Valid values for each filter key are as follows:</p>
@@ -12201,12 +12306,12 @@ pub mod command_filter {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`CommandFilter`](crate::model::CommandFilter)
@@ -12471,86 +12576,92 @@ pub mod command_invocation {
     }
     impl Builder {
         /// <p>The command against which this invocation was requested.</p>
-        pub fn command_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.command_id = Some(inp.into());
+        pub fn command_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.command_id = Some(input.into());
             self
         }
-        pub fn set_command_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.command_id = inp;
+        pub fn set_command_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.command_id = input;
             self
         }
         /// <p>The instance ID in which this invocation was requested.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The name of the invocation target. For EC2 instances this is the value for the aws:Name tag.
         /// For on-premises instances, this is the name of the instance.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_name = Some(inp.into());
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_name = Some(input.into());
             self
         }
-        pub fn set_instance_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_name = inp;
+        pub fn set_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_name = input;
             self
         }
         /// <p>User-specified information about the command, such as a brief description of what the
         /// command should do.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// <p>The document name that was requested for execution.</p>
-        pub fn document_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_name = Some(inp.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_name = Some(input.into());
             self
         }
-        pub fn set_document_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document_name = inp;
+        pub fn set_document_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_name = input;
             self
         }
         /// <p>The SSM document version.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>The time and date the request was sent to this instance.</p>
-        pub fn requested_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.requested_date_time = Some(inp);
+        pub fn requested_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.requested_date_time = Some(input);
             self
         }
         pub fn set_requested_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.requested_date_time = inp;
+            self.requested_date_time = input;
             self
         }
         /// <p>Whether or not the invocation succeeded, failed, or is pending.</p>
-        pub fn status(mut self, inp: crate::model::CommandInvocationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::CommandInvocationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::CommandInvocationStatus>,
+            input: std::option::Option<crate::model::CommandInvocationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>A detailed status of the command execution for each invocation (each instance targeted by
@@ -12603,100 +12714,103 @@ pub mod command_invocation {
         /// invocations were canceled by the system. This is a terminal state.</p>
         /// </li>
         /// </ul>
-        pub fn status_details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_details = Some(inp.into());
+        pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_details = Some(input.into());
             self
         }
-        pub fn set_status_details(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_details = inp;
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_details = input;
             self
         }
         /// <p> Gets the trace output sent by the agent. </p>
-        pub fn trace_output(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.trace_output = Some(inp.into());
+        pub fn trace_output(mut self, input: impl Into<std::string::String>) -> Self {
+            self.trace_output = Some(input.into());
             self
         }
-        pub fn set_trace_output(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.trace_output = inp;
+        pub fn set_trace_output(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.trace_output = input;
             self
         }
         /// <p>The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent
         /// command. For an invocation, StandardOutputUrl is populated if there is just one plugin defined
         /// for the command, and the S3 bucket was defined for the command.</p>
-        pub fn standard_output_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.standard_output_url = Some(inp.into());
+        pub fn standard_output_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.standard_output_url = Some(input.into());
             self
         }
         pub fn set_standard_output_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.standard_output_url = inp;
+            self.standard_output_url = input;
             self
         }
         /// <p>The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent
         /// command. For an invocation, StandardErrorUrl is populated if there is just one plugin defined for
         /// the command, and the S3 bucket was defined for the command.</p>
-        pub fn standard_error_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.standard_error_url = Some(inp.into());
+        pub fn standard_error_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.standard_error_url = Some(input.into());
             self
         }
         pub fn set_standard_error_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.standard_error_url = inp;
+            self.standard_error_url = input;
             self
         }
-        pub fn command_plugins(mut self, inp: impl Into<crate::model::CommandPlugin>) -> Self {
+        pub fn command_plugins(mut self, input: impl Into<crate::model::CommandPlugin>) -> Self {
             let mut v = self.command_plugins.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.command_plugins = Some(v);
             self
         }
         pub fn set_command_plugins(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CommandPlugin>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CommandPlugin>>,
         ) -> Self {
-            self.command_plugins = inp;
+            self.command_plugins = input;
             self
         }
         /// <p>The IAM service role that Run Command uses to act on your behalf when sending notifications
         /// about command status changes on a per instance basis.</p>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_role = Some(inp.into());
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_role = Some(input.into());
             self
         }
-        pub fn set_service_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_role = inp;
+        pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role = input;
             self
         }
         /// <p>Configurations for sending notifications about command status changes on a per instance
         /// basis.</p>
-        pub fn notification_config(mut self, inp: crate::model::NotificationConfig) -> Self {
-            self.notification_config = Some(inp);
+        pub fn notification_config(mut self, input: crate::model::NotificationConfig) -> Self {
+            self.notification_config = Some(input);
             self
         }
         pub fn set_notification_config(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfig>,
+            input: std::option::Option<crate::model::NotificationConfig>,
         ) -> Self {
-            self.notification_config = inp;
+            self.notification_config = input;
             self
         }
         /// <p>CloudWatch Logs information where you want Systems Manager to send the command output.</p>
         pub fn cloud_watch_output_config(
             mut self,
-            inp: crate::model::CloudWatchOutputConfig,
+            input: crate::model::CloudWatchOutputConfig,
         ) -> Self {
-            self.cloud_watch_output_config = Some(inp);
+            self.cloud_watch_output_config = Some(input);
             self
         }
         pub fn set_cloud_watch_output_config(
             mut self,
-            inp: std::option::Option<crate::model::CloudWatchOutputConfig>,
+            input: std::option::Option<crate::model::CloudWatchOutputConfig>,
         ) -> Self {
-            self.cloud_watch_output_config = inp;
+            self.cloud_watch_output_config = input;
             self
         }
         /// Consumes the builder and constructs a [`CommandInvocation`](crate::model::CommandInvocation)
@@ -12896,24 +13010,24 @@ pub mod command_plugin {
         /// <p>The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin,
         /// aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or
         /// aws:updateSSMAgent. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The status of this plugin. You can run a document with multiple plugins.</p>
-        pub fn status(mut self, inp: crate::model::CommandPluginStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::CommandPluginStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::CommandPluginStatus>,
+            input: std::option::Option<crate::model::CommandPluginStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>A detailed status of the plugin execution. StatusDetails includes more information than
@@ -12965,94 +13079,97 @@ pub mod command_plugin {
         /// invocations were canceled by the system. This is a terminal state.</p>
         /// </li>
         /// </ul>
-        pub fn status_details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_details = Some(inp.into());
+        pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_details = Some(input.into());
             self
         }
-        pub fn set_status_details(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_details = inp;
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_details = input;
             self
         }
         /// <p>A numeric response code generated after running the plugin. </p>
-        pub fn response_code(mut self, inp: i32) -> Self {
-            self.response_code = Some(inp);
+        pub fn response_code(mut self, input: i32) -> Self {
+            self.response_code = Some(input);
             self
         }
-        pub fn set_response_code(mut self, inp: i32) -> Self {
-            self.response_code = Some(inp);
+        pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.response_code = input;
             self
         }
         /// <p>The time the plugin started running. </p>
-        pub fn response_start_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.response_start_date_time = Some(inp);
+        pub fn response_start_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.response_start_date_time = Some(input);
             self
         }
         pub fn set_response_start_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.response_start_date_time = inp;
+            self.response_start_date_time = input;
             self
         }
         /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel
         /// command was sent. </p>
-        pub fn response_finish_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.response_finish_date_time = Some(inp);
+        pub fn response_finish_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.response_finish_date_time = Some(input);
             self
         }
         pub fn set_response_finish_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.response_finish_date_time = inp;
+            self.response_finish_date_time = input;
             self
         }
         /// <p>Output of the plugin execution.</p>
-        pub fn output(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output = Some(inp.into());
+        pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output = Some(input.into());
             self
         }
-        pub fn set_output(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.output = inp;
+        pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output = input;
             self
         }
         /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for
         /// the command was not specified, then this string is empty.</p>
-        pub fn standard_output_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.standard_output_url = Some(inp.into());
+        pub fn standard_output_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.standard_output_url = Some(input.into());
             self
         }
         pub fn set_standard_output_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.standard_output_url = inp;
+            self.standard_output_url = input;
             self
         }
         /// <p>The URL for the complete text written by the plugin to stderr. If execution is not yet
         /// complete, then this string is empty.</p>
-        pub fn standard_error_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.standard_error_url = Some(inp.into());
+        pub fn standard_error_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.standard_error_url = Some(input.into());
             self
         }
         pub fn set_standard_error_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.standard_error_url = inp;
+            self.standard_error_url = input;
             self
         }
         /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
         /// automatically determines the S3 bucket region.</p>
-        pub fn output_s3_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_region = Some(inp.into());
+        pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_region = Some(input.into());
             self
         }
         pub fn set_output_s3_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_region = inp;
+            self.output_s3_region = input;
             self
         }
         /// <p>The S3 bucket where the responses to the command executions should be stored. This was
@@ -13062,15 +13179,15 @@ pub mod command_plugin {
         /// <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
         /// <p>i-02573cafcfEXAMPLE is the instance ID;</p>
         /// <p>awsrunShellScript is the name of the plugin.</p>
-        pub fn output_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_bucket_name = Some(inp.into());
+        pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_bucket_name = Some(input.into());
             self
         }
         pub fn set_output_s3_bucket_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_bucket_name = inp;
+            self.output_s3_bucket_name = input;
             self
         }
         /// <p>The S3 directory path inside the bucket where the responses to the command executions should
@@ -13081,15 +13198,15 @@ pub mod command_plugin {
         /// <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
         /// <p>i-02573cafcfEXAMPLE is the instance ID;</p>
         /// <p>awsrunShellScript is the name of the plugin.</p>
-        pub fn output_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_key_prefix = Some(inp.into());
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_key_prefix = Some(input.into());
             self
         }
         pub fn set_output_s3_key_prefix(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_key_prefix = inp;
+            self.output_s3_key_prefix = input;
             self
         }
         /// Consumes the builder and constructs a [`CommandPlugin`](crate::model::CommandPlugin)
@@ -13429,54 +13546,60 @@ pub mod association_version_info {
     }
     impl Builder {
         /// <p>The ID created by the system when the association was created.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The association version.</p>
-        pub fn association_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_version = Some(inp.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_version = Some(input.into());
             self
         }
         pub fn set_association_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_version = inp;
+            self.association_version = input;
             self
         }
         /// <p>The date the association version was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The name specified when the association was created.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The version of a Systems Manager document used when the association version was created.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         pub fn parameters(
@@ -13491,66 +13614,66 @@ pub mod association_version_info {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>The cron or rate schedule specified for the association when the association version was
         /// created.</p>
-        pub fn schedule_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schedule_expression = Some(inp.into());
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
             self
         }
         pub fn set_schedule_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.schedule_expression = inp;
+            self.schedule_expression = input;
             self
         }
         /// <p>The location in Amazon S3 specified for the association when the association version was
         /// created.</p>
         pub fn output_location(
             mut self,
-            inp: crate::model::InstanceAssociationOutputLocation,
+            input: crate::model::InstanceAssociationOutputLocation,
         ) -> Self {
-            self.output_location = Some(inp);
+            self.output_location = Some(input);
             self
         }
         pub fn set_output_location(
             mut self,
-            inp: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
+            input: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
         ) -> Self {
-            self.output_location = inp;
+            self.output_location = input;
             self
         }
         /// <p>The name specified for the association version when the association version was
         /// created.</p>
-        pub fn association_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_name = Some(inp.into());
+        pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_name = Some(input.into());
             self
         }
         pub fn set_association_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_name = inp;
+            self.association_name = input;
             self
         }
         /// <p>The number of errors that are allowed before the system stops sending requests to run the
@@ -13564,12 +13687,12 @@ pub mod association_version_info {
         /// complete, but some of these executions may fail as well. If you need to ensure that there won't
         /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
         /// at a time.</p>
-        pub fn max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_errors = Some(inp.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_errors = Some(input.into());
             self
         }
-        pub fn set_max_errors(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = inp;
+        pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_errors = input;
             self
         }
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
@@ -13579,30 +13702,30 @@ pub mod association_version_info {
         /// MaxConcurrency associations, the association is allowed to run. During the next association
         /// interval, the new instance will process its association within the limit specified for
         /// MaxConcurrency.</p>
-        pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_concurrency = Some(inp.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_concurrency = Some(input.into());
             self
         }
         pub fn set_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.max_concurrency = inp;
+            self.max_concurrency = input;
             self
         }
         /// <p>The severity level that is assigned to the association.</p>
         pub fn compliance_severity(
             mut self,
-            inp: crate::model::AssociationComplianceSeverity,
+            input: crate::model::AssociationComplianceSeverity,
         ) -> Self {
-            self.compliance_severity = Some(inp);
+            self.compliance_severity = Some(input);
             self
         }
         pub fn set_compliance_severity(
             mut self,
-            inp: std::option::Option<crate::model::AssociationComplianceSeverity>,
+            input: std::option::Option<crate::model::AssociationComplianceSeverity>,
         ) -> Self {
-            self.compliance_severity = inp;
+            self.compliance_severity = input;
             self
         }
         /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
@@ -13614,53 +13737,53 @@ pub mod association_version_info {
         /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
         /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-        pub fn sync_compliance(mut self, inp: crate::model::AssociationSyncCompliance) -> Self {
-            self.sync_compliance = Some(inp);
+        pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
+            self.sync_compliance = Some(input);
             self
         }
         pub fn set_sync_compliance(
             mut self,
-            inp: std::option::Option<crate::model::AssociationSyncCompliance>,
+            input: std::option::Option<crate::model::AssociationSyncCompliance>,
         ) -> Self {
-            self.sync_compliance = inp;
+            self.sync_compliance = input;
             self
         }
         /// <p>By default, when you create a new associations, the system runs it immediately after it is
         /// created and then according to the schedule you specified. Specify this option if you don't want
         /// an association to run immediately after you create it. This parameter is not supported for rate
         /// expressions.</p>
-        pub fn apply_only_at_cron_interval(mut self, inp: bool) -> Self {
-            self.apply_only_at_cron_interval = Some(inp);
+        pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
+            self.apply_only_at_cron_interval = Some(input);
             self
         }
-        pub fn set_apply_only_at_cron_interval(mut self, inp: bool) -> Self {
-            self.apply_only_at_cron_interval = Some(inp);
+        pub fn set_apply_only_at_cron_interval(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_only_at_cron_interval = input;
             self
         }
-        pub fn calendar_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn calendar_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.calendar_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.calendar_names = Some(v);
             self
         }
         pub fn set_calendar_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.calendar_names = inp;
+            self.calendar_names = input;
             self
         }
-        pub fn target_locations(mut self, inp: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_locations = Some(v);
             self
         }
         pub fn set_target_locations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         ) -> Self {
-            self.target_locations = inp;
+            self.target_locations = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationVersionInfo`](crate::model::AssociationVersionInfo)
@@ -13779,117 +13902,120 @@ pub mod association {
     }
     impl Builder {
         /// <p>The name of the Systems Manager document.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The ID created by the system when you create an association. An association is a binding
         /// between a document and a set of targets with a schedule.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The association version.</p>
-        pub fn association_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_version = Some(inp.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_version = Some(input.into());
             self
         }
         pub fn set_association_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_version = inp;
+            self.association_version = input;
             self
         }
         /// <p>The version of the document used in the association.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>The date on which the association was last run.</p>
-        pub fn last_execution_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_execution_date = Some(inp);
+        pub fn last_execution_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_execution_date = Some(input);
             self
         }
         pub fn set_last_execution_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_execution_date = inp;
+            self.last_execution_date = input;
             self
         }
         /// <p>Information about the association.</p>
-        pub fn overview(mut self, inp: crate::model::AssociationOverview) -> Self {
-            self.overview = Some(inp);
+        pub fn overview(mut self, input: crate::model::AssociationOverview) -> Self {
+            self.overview = Some(input);
             self
         }
         pub fn set_overview(
             mut self,
-            inp: std::option::Option<crate::model::AssociationOverview>,
+            input: std::option::Option<crate::model::AssociationOverview>,
         ) -> Self {
-            self.overview = inp;
+            self.overview = input;
             self
         }
         /// <p>A cron expression that specifies a schedule when the association runs. The schedule runs in
         /// Coordinated Universal Time (UTC).</p>
-        pub fn schedule_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schedule_expression = Some(inp.into());
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
             self
         }
         pub fn set_schedule_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.schedule_expression = inp;
+            self.schedule_expression = input;
             self
         }
         /// <p>The association name.</p>
-        pub fn association_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_name = Some(inp.into());
+        pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_name = Some(input.into());
             self
         }
         pub fn set_association_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_name = inp;
+            self.association_name = input;
             self
         }
         /// Consumes the builder and constructs a [`Association`](crate::model::Association)
@@ -13956,24 +14082,24 @@ pub mod association_filter {
         /// <p>
         /// <code>InstanceId</code> has been deprecated.</p>
         /// </note>
-        pub fn key(mut self, inp: crate::model::AssociationFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::AssociationFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::AssociationFilterKey>,
+            input: std::option::Option<crate::model::AssociationFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
         /// <p>The filter value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationFilter`](crate::model::AssociationFilter)
@@ -14149,93 +14275,96 @@ pub mod parameter {
     }
     impl Builder {
         /// <p>The name of the parameter.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The type of parameter. Valid values include the following: <code>String</code>,
         /// <code>StringList</code>, and <code>SecureString</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ParameterType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ParameterType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::ParameterType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ParameterType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The parameter value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The parameter version.</p>
-        pub fn version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
             self
         }
         /// <p>Either the version number or the label used to retrieve the parameter value. Specify
         /// selectors by using one of the following formats:</p>
         /// <p>parameter_name:version</p>
         /// <p>parameter_name:label</p>
-        pub fn selector(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.selector = Some(inp.into());
+        pub fn selector(mut self, input: impl Into<std::string::String>) -> Self {
+            self.selector = Some(input.into());
             self
         }
-        pub fn set_selector(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.selector = inp;
+        pub fn set_selector(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.selector = input;
             self
         }
         /// <p>Applies to parameters that reference information in other AWS services. SourceResult is the
         /// raw result or response from the source.</p>
-        pub fn source_result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_result = Some(inp.into());
+        pub fn source_result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_result = Some(input.into());
             self
         }
-        pub fn set_source_result(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_result = inp;
+        pub fn set_source_result(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_result = input;
             self
         }
         /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
-        pub fn last_modified_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_date = Some(inp);
+        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_date = Some(input);
             self
         }
         pub fn set_last_modified_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_date = inp;
+            self.last_modified_date = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the parameter.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The
         /// default is <code>text</code>.</p>
-        pub fn data_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_type = Some(inp.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type = Some(input.into());
             self
         }
-        pub fn set_data_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data_type = inp;
+        pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type = input;
             self
         }
         /// Consumes the builder and constructs a [`Parameter`](crate::model::Parameter)
@@ -14328,12 +14457,12 @@ pub mod parameter_string_filter {
         /// <p>For examples of CLI commands demonstrating valid parameter filter constructions, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for
         /// Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
         /// </note>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>For all filters used with <a>DescribeParameters</a>, valid options include
@@ -14344,25 +14473,25 @@ pub mod parameter_string_filter {
         /// <p>For filters used with <a>GetParametersByPath</a>, valid options include
         /// <code>Equals</code> and <code>BeginsWith</code>. (Exception: For filters using
         /// <code>Label</code> as the Key name, the only valid option is <code>Equals</code>.)</p>
-        pub fn option(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option = Some(inp.into());
+        pub fn option(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option = Some(input.into());
             self
         }
-        pub fn set_option(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.option = inp;
+        pub fn set_option(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.option = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterStringFilter`](crate::model::ParameterStringFilter)
@@ -14489,139 +14618,139 @@ pub mod parameter_history {
     }
     impl Builder {
         /// <p>The name of the parameter.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The type of parameter used.</p>
-        pub fn r#type(mut self, inp: crate::model::ParameterType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ParameterType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::ParameterType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ParameterType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The ID of the query key used for this parameter.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Date the parameter was last changed or updated.</p>
-        pub fn last_modified_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_date = Some(inp);
+        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_date = Some(input);
             self
         }
         pub fn set_last_modified_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_date = inp;
+            self.last_modified_date = input;
             self
         }
         /// <p>Amazon Resource Name (ARN) of the AWS user who last changed the parameter.</p>
-        pub fn last_modified_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified_user = Some(inp.into());
+        pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_user = Some(input.into());
             self
         }
         pub fn set_last_modified_user(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_modified_user = inp;
+            self.last_modified_user = input;
             self
         }
         /// <p>Information about the parameter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The parameter value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>Parameter names can include the following letters and symbols.</p>
         /// <p>a-zA-Z0-9_.-</p>
-        pub fn allowed_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allowed_pattern = Some(inp.into());
+        pub fn allowed_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allowed_pattern = Some(input.into());
             self
         }
         pub fn set_allowed_pattern(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.allowed_pattern = inp;
+            self.allowed_pattern = input;
             self
         }
         /// <p>The parameter version.</p>
-        pub fn version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
             self
         }
-        pub fn labels(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.labels = Some(v);
             self
         }
         pub fn set_labels(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.labels = inp;
+            self.labels = input;
             self
         }
         /// <p>The parameter tier.</p>
-        pub fn tier(mut self, inp: crate::model::ParameterTier) -> Self {
-            self.tier = Some(inp);
+        pub fn tier(mut self, input: crate::model::ParameterTier) -> Self {
+            self.tier = Some(input);
             self
         }
-        pub fn set_tier(mut self, inp: std::option::Option<crate::model::ParameterTier>) -> Self {
-            self.tier = inp;
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::ParameterTier>) -> Self {
+            self.tier = input;
             self
         }
-        pub fn policies(mut self, inp: impl Into<crate::model::ParameterInlinePolicy>) -> Self {
+        pub fn policies(mut self, input: impl Into<crate::model::ParameterInlinePolicy>) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policies = Some(v);
             self
         }
         pub fn set_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ParameterInlinePolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterInlinePolicy>>,
         ) -> Self {
-            self.policies = inp;
+            self.policies = input;
             self
         }
         /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The
         /// default is <code>text</code>.</p>
-        pub fn data_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_type = Some(inp.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type = Some(input.into());
             self
         }
-        pub fn set_data_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data_type = inp;
+        pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterHistory`](crate::model::ParameterHistory)
@@ -14692,33 +14821,36 @@ pub mod parameter_inline_policy {
     }
     impl Builder {
         /// <p>The JSON text of the policy.</p>
-        pub fn policy_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_text = Some(inp.into());
+        pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_text = Some(input.into());
             self
         }
-        pub fn set_policy_text(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_text = inp;
+        pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_text = input;
             self
         }
         /// <p>The type of policy. Parameter Store supports the following policy types: Expiration,
         /// ExpirationNotification, and NoChangeNotification. </p>
-        pub fn policy_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_type = Some(inp.into());
+        pub fn policy_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_type = Some(input.into());
             self
         }
-        pub fn set_policy_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_type = inp;
+        pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_type = input;
             self
         }
         /// <p>The status of the policy. Policies report the following statuses: Pending (the policy has
         /// not been enforced or applied yet), Finished (the policy was applied), Failed (the policy was not
         /// applied), or InProgress (the policy is being applied now). </p>
-        pub fn policy_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_status = Some(inp.into());
+        pub fn policy_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_status = Some(input.into());
             self
         }
-        pub fn set_policy_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_status = inp;
+        pub fn set_policy_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_status = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterInlinePolicy`](crate::model::ParameterInlinePolicy)
@@ -14774,12 +14906,12 @@ pub mod ops_entity {
     }
     impl Builder {
         /// <p>The query ID.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         pub fn data(
@@ -14794,11 +14926,11 @@ pub mod ops_entity {
         }
         pub fn set_data(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::OpsEntityItem>,
             >,
         ) -> Self {
-            self.data = inp;
+            self.data = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsEntity`](crate::model::OpsEntity)
@@ -14853,30 +14985,30 @@ pub mod ops_entity_item {
     }
     impl Builder {
         /// <p>The time OpsItem data was captured.</p>
-        pub fn capture_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capture_time = Some(inp.into());
+        pub fn capture_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capture_time = Some(input.into());
             self
         }
-        pub fn set_capture_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.capture_time = inp;
+        pub fn set_capture_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capture_time = input;
             self
         }
         pub fn content(
             mut self,
-            inp: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
         ) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.content = Some(v);
             self
         }
         pub fn set_content(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
             >,
         ) -> Self {
-            self.content = inp;
+            self.content = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsEntityItem`](crate::model::OpsEntityItem)
@@ -14923,12 +15055,12 @@ pub mod ops_result_attribute {
     impl Builder {
         /// <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
         /// AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsResultAttribute`](crate::model::OpsResultAttribute)
@@ -15007,33 +15139,36 @@ pub mod ops_aggregator {
     }
     impl Builder {
         /// <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
-        pub fn aggregator_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.aggregator_type = Some(inp.into());
+        pub fn aggregator_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aggregator_type = Some(input.into());
             self
         }
         pub fn set_aggregator_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.aggregator_type = inp;
+            self.aggregator_type = input;
             self
         }
         /// <p>The data type name to use for viewing counts of OpsItems.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_name = Some(inp.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attribute_name = inp;
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
             self
         }
         pub fn values(
@@ -15048,37 +15183,37 @@ pub mod ops_aggregator {
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::OpsFilter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::OpsFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OpsFilter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OpsFilter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
-        pub fn aggregators(mut self, inp: impl Into<crate::model::OpsAggregator>) -> Self {
+        pub fn aggregators(mut self, input: impl Into<crate::model::OpsAggregator>) -> Self {
             let mut v = self.aggregators.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.aggregators = Some(v);
             self
         }
         pub fn set_aggregators(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OpsAggregator>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OpsAggregator>>,
         ) -> Self {
-            self.aggregators = inp;
+            self.aggregators = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsAggregator`](crate::model::OpsAggregator)
@@ -15139,37 +15274,37 @@ pub mod ops_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// <p>The type of filter.</p>
-        pub fn r#type(mut self, inp: crate::model::OpsFilterOperatorType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::OpsFilterOperatorType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::OpsFilterOperatorType>,
+            input: std::option::Option<crate::model::OpsFilterOperatorType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsFilter`](crate::model::OpsFilter)
@@ -15458,147 +15593,159 @@ pub mod ops_item {
     }
     impl Builder {
         /// <p>The ARN of the AWS account that created the OpsItem.</p>
-        pub fn created_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.created_by = Some(inp.into());
+        pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_by = Some(input.into());
             self
         }
-        pub fn set_created_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.created_by = inp;
+        pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by = input;
             self
         }
         /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code>
         /// and <code>/aws/issue</code>.</p>
-        pub fn ops_item_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_type = Some(inp.into());
+        pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_type = Some(input.into());
             self
         }
-        pub fn set_ops_item_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_type = inp;
+        pub fn set_ops_item_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ops_item_type = input;
             self
         }
         /// <p>The date and time the OpsItem was created.</p>
-        pub fn created_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_time = Some(inp);
+        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+            self.created_time = Some(input);
             self
         }
-        pub fn set_created_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_time = inp;
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_time = input;
             self
         }
         /// <p>The OpsItem description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The ARN of the AWS account that last updated the OpsItem.</p>
-        pub fn last_modified_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified_by = Some(inp.into());
+        pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_by = Some(input.into());
             self
         }
         pub fn set_last_modified_by(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_modified_by = inp;
+            self.last_modified_by = input;
             self
         }
         /// <p>The date and time the OpsItem was last updated.</p>
-        pub fn last_modified_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_time = Some(inp);
+        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
             self
         }
         pub fn set_last_modified_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_time = inp;
+            self.last_modified_time = input;
             self
         }
-        pub fn notifications(mut self, inp: impl Into<crate::model::OpsItemNotification>) -> Self {
+        pub fn notifications(
+            mut self,
+            input: impl Into<crate::model::OpsItemNotification>,
+        ) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.notifications = Some(v);
             self
         }
         pub fn set_notifications(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OpsItemNotification>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OpsItemNotification>>,
         ) -> Self {
-            self.notifications = inp;
+            self.notifications = input;
             self
         }
         /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-        pub fn priority(mut self, inp: i32) -> Self {
-            self.priority = Some(inp);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
             self
         }
-        pub fn set_priority(mut self, inp: std::option::Option<i32>) -> Self {
-            self.priority = inp;
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
             self
         }
-        pub fn related_ops_items(mut self, inp: impl Into<crate::model::RelatedOpsItem>) -> Self {
+        pub fn related_ops_items(mut self, input: impl Into<crate::model::RelatedOpsItem>) -> Self {
             let mut v = self.related_ops_items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.related_ops_items = Some(v);
             self
         }
         pub fn set_related_ops_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
         ) -> Self {
-            self.related_ops_items = inp;
+            self.related_ops_items = input;
             self
         }
         /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
         /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-        pub fn status(mut self, inp: crate::model::OpsItemStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::OpsItemStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::OpsItemStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::OpsItemStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The ID of the OpsItem.</p>
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// <p>The version of this OpsItem. Each time the OpsItem is edited the version number increments
         /// by one.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.title = Some(inp.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
             self
         }
-        pub fn set_title(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.title = inp;
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
             self
         }
         /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of
         /// source.</p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source = Some(inp.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source = inp;
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
             self
         }
         pub fn operational_data(
@@ -15613,82 +15760,82 @@ pub mod ops_item {
         }
         pub fn set_operational_data(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
             >,
         ) -> Self {
-            self.operational_data = inp;
+            self.operational_data = input;
             self
         }
         /// <p>An OpsItem category. Category options include: Availability, Cost, Performance, Recovery,
         /// Security.</p>
-        pub fn category(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.category = Some(inp.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.category = Some(input.into());
             self
         }
-        pub fn set_category(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.category = inp;
+        pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.category = input;
             self
         }
         /// <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
-        pub fn severity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.severity = Some(inp.into());
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.severity = Some(input.into());
             self
         }
-        pub fn set_severity(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.severity = inp;
+        pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.severity = input;
             self
         }
         /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.actual_start_time = Some(inp);
+        pub fn actual_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.actual_start_time = Some(input);
             self
         }
         pub fn set_actual_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.actual_start_time = inp;
+            self.actual_start_time = input;
             self
         }
         /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.actual_end_time = Some(inp);
+        pub fn actual_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.actual_end_time = Some(input);
             self
         }
         pub fn set_actual_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.actual_end_time = inp;
+            self.actual_end_time = input;
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.planned_start_time = Some(inp);
+        pub fn planned_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.planned_start_time = Some(input);
             self
         }
         pub fn set_planned_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.planned_start_time = inp;
+            self.planned_start_time = input;
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.planned_end_time = Some(inp);
+        pub fn planned_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.planned_end_time = Some(input);
             self
         }
         pub fn set_planned_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.planned_end_time = inp;
+            self.planned_end_time = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItem`](crate::model::OpsItem)
@@ -15852,43 +15999,46 @@ pub mod inventory_item_schema {
         /// inventory type names will start with Custom. Default inventory item types include the following:
         /// AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network, and
         /// AWS:WindowsUpdate.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The schema version for the inventory item.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
-        pub fn attributes(mut self, inp: impl Into<crate::model::InventoryItemAttribute>) -> Self {
+        pub fn attributes(
+            mut self,
+            input: impl Into<crate::model::InventoryItemAttribute>,
+        ) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes = Some(v);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InventoryItemAttribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InventoryItemAttribute>>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(inp.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.display_name = inp;
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryItemSchema`](crate::model::InventoryItemSchema)
@@ -15942,24 +16092,24 @@ pub mod inventory_item_attribute {
     }
     impl Builder {
         /// <p>Name of the inventory item attribute.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The data type of the inventory item attribute. </p>
-        pub fn data_type(mut self, inp: crate::model::InventoryAttributeDataType) -> Self {
-            self.data_type = Some(inp);
+        pub fn data_type(mut self, input: crate::model::InventoryAttributeDataType) -> Self {
+            self.data_type = Some(input);
             self
         }
         pub fn set_data_type(
             mut self,
-            inp: std::option::Option<crate::model::InventoryAttributeDataType>,
+            input: std::option::Option<crate::model::InventoryAttributeDataType>,
         ) -> Self {
-            self.data_type = inp;
+            self.data_type = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryItemAttribute`](crate::model::InventoryItemAttribute)
@@ -16074,12 +16224,12 @@ pub mod inventory_result_entity {
         /// <p>ID of the inventory result entity. For example, for managed instance inventory the result
         /// will be the managed instance ID. For EC2 instance inventory, the result will be the instance ID.
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         pub fn data(
@@ -16094,11 +16244,11 @@ pub mod inventory_result_entity {
         }
         pub fn set_data(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::InventoryResultItem>,
             >,
         ) -> Self {
-            self.data = inp;
+            self.data = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryResultEntity`](crate::model::InventoryResultEntity)
@@ -16174,59 +16324,62 @@ pub mod inventory_result_item {
     }
     impl Builder {
         /// <p>The name of the inventory result item type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The schema version for the inventory result item/</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema_version = Some(inp.into());
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_version = Some(input.into());
             self
         }
-        pub fn set_schema_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema_version = inp;
+        pub fn set_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_version = input;
             self
         }
         /// <p>The time inventory item data was captured.</p>
-        pub fn capture_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capture_time = Some(inp.into());
+        pub fn capture_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capture_time = Some(input.into());
             self
         }
-        pub fn set_capture_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.capture_time = inp;
+        pub fn set_capture_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capture_time = input;
             self
         }
         /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether
         /// to update inventory information. The PutInventory API does not update the inventory item type
         /// contents if the MD5 hash has not changed since last update. </p>
-        pub fn content_hash(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_hash = Some(inp.into());
+        pub fn content_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_hash = Some(input.into());
             self
         }
-        pub fn set_content_hash(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_hash = inp;
+        pub fn set_content_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_hash = input;
             self
         }
         pub fn content(
             mut self,
-            inp: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
         ) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.content = Some(v);
             self
         }
         pub fn set_content(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
             >,
         ) -> Self {
-            self.content = inp;
+            self.content = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryResultItem`](crate::model::InventoryResultItem)
@@ -16276,12 +16429,12 @@ pub mod result_attribute {
     impl Builder {
         /// <p>Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value:
         /// AWS:InstanceInformation.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ResultAttribute`](crate::model::ResultAttribute)
@@ -16339,38 +16492,38 @@ pub mod inventory_aggregator {
     }
     impl Builder {
         /// <p>The inventory type and attribute name for aggregation.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expression = Some(inp.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
             self
         }
-        pub fn set_expression(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expression = inp;
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
             self
         }
-        pub fn aggregators(mut self, inp: impl Into<crate::model::InventoryAggregator>) -> Self {
+        pub fn aggregators(mut self, input: impl Into<crate::model::InventoryAggregator>) -> Self {
             let mut v = self.aggregators.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.aggregators = Some(v);
             self
         }
         pub fn set_aggregators(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InventoryAggregator>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InventoryAggregator>>,
         ) -> Self {
-            self.aggregators = inp;
+            self.aggregators = input;
             self
         }
-        pub fn groups(mut self, inp: impl Into<crate::model::InventoryGroup>) -> Self {
+        pub fn groups(mut self, input: impl Into<crate::model::InventoryGroup>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.groups = Some(v);
             self
         }
         pub fn set_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InventoryGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InventoryGroup>>,
         ) -> Self {
-            self.groups = inp;
+            self.groups = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryAggregator`](crate::model::InventoryAggregator)
@@ -16425,25 +16578,25 @@ pub mod inventory_group {
     }
     impl Builder {
         /// <p>The name of the group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::InventoryFilter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::InventoryFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryGroup`](crate::model::InventoryGroup)
@@ -16512,51 +16665,51 @@ pub mod attachment_content {
     }
     impl Builder {
         /// <p>The name of an attachment.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The size of an attachment in bytes.</p>
-        pub fn size(mut self, inp: i64) -> Self {
-            self.size = Some(inp);
+        pub fn size(mut self, input: i64) -> Self {
+            self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, inp: i64) -> Self {
-            self.size = Some(inp);
+        pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.size = input;
             self
         }
         /// <p>The cryptographic hash value of the document content.</p>
-        pub fn hash(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hash = Some(inp.into());
+        pub fn hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hash = Some(input.into());
             self
         }
-        pub fn set_hash(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hash = inp;
+        pub fn set_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hash = input;
             self
         }
         /// <p>The hash algorithm used to calculate the hash value.</p>
-        pub fn hash_type(mut self, inp: crate::model::AttachmentHashType) -> Self {
-            self.hash_type = Some(inp);
+        pub fn hash_type(mut self, input: crate::model::AttachmentHashType) -> Self {
+            self.hash_type = Some(input);
             self
         }
         pub fn set_hash_type(
             mut self,
-            inp: std::option::Option<crate::model::AttachmentHashType>,
+            input: std::option::Option<crate::model::AttachmentHashType>,
         ) -> Self {
-            self.hash_type = inp;
+            self.hash_type = input;
             self
         }
         /// <p>The URL location of the attachment content.</p>
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachmentContent`](crate::model::AttachmentContent)
@@ -16723,118 +16876,121 @@ pub mod baseline_override {
     }
     impl Builder {
         /// <p>The operating system rule used by the patch baseline override.</p>
-        pub fn operating_system(mut self, inp: crate::model::OperatingSystem) -> Self {
-            self.operating_system = Some(inp);
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.operating_system = Some(input);
             self
         }
         pub fn set_operating_system(
             mut self,
-            inp: std::option::Option<crate::model::OperatingSystem>,
+            input: std::option::Option<crate::model::OperatingSystem>,
         ) -> Self {
-            self.operating_system = inp;
+            self.operating_system = input;
             self
         }
         /// <p>A set of patch filters, typically used for approval rules.</p>
-        pub fn global_filters(mut self, inp: crate::model::PatchFilterGroup) -> Self {
-            self.global_filters = Some(inp);
+        pub fn global_filters(mut self, input: crate::model::PatchFilterGroup) -> Self {
+            self.global_filters = Some(input);
             self
         }
         pub fn set_global_filters(
             mut self,
-            inp: std::option::Option<crate::model::PatchFilterGroup>,
+            input: std::option::Option<crate::model::PatchFilterGroup>,
         ) -> Self {
-            self.global_filters = inp;
+            self.global_filters = input;
             self
         }
         /// <p>A set of rules defining the approval rules for a patch baseline.</p>
-        pub fn approval_rules(mut self, inp: crate::model::PatchRuleGroup) -> Self {
-            self.approval_rules = Some(inp);
+        pub fn approval_rules(mut self, input: crate::model::PatchRuleGroup) -> Self {
+            self.approval_rules = Some(input);
             self
         }
         pub fn set_approval_rules(
             mut self,
-            inp: std::option::Option<crate::model::PatchRuleGroup>,
+            input: std::option::Option<crate::model::PatchRuleGroup>,
         ) -> Self {
-            self.approval_rules = inp;
+            self.approval_rules = input;
             self
         }
-        pub fn approved_patches(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn approved_patches(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.approved_patches.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.approved_patches = Some(v);
             self
         }
         pub fn set_approved_patches(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.approved_patches = inp;
+            self.approved_patches = input;
             self
         }
         /// <p>Defines the compliance level for approved patches. When an approved patch is reported as
         /// missing, this value describes the severity of the compliance violation.</p>
         pub fn approved_patches_compliance_level(
             mut self,
-            inp: crate::model::PatchComplianceLevel,
+            input: crate::model::PatchComplianceLevel,
         ) -> Self {
-            self.approved_patches_compliance_level = Some(inp);
+            self.approved_patches_compliance_level = Some(input);
             self
         }
         pub fn set_approved_patches_compliance_level(
             mut self,
-            inp: std::option::Option<crate::model::PatchComplianceLevel>,
+            input: std::option::Option<crate::model::PatchComplianceLevel>,
         ) -> Self {
-            self.approved_patches_compliance_level = inp;
+            self.approved_patches_compliance_level = input;
             self
         }
-        pub fn rejected_patches(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn rejected_patches(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rejected_patches.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.rejected_patches = Some(v);
             self
         }
         pub fn set_rejected_patches(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.rejected_patches = inp;
+            self.rejected_patches = input;
             self
         }
         /// <p>The action for Patch Manager to take on patches included in the RejectedPackages list. A
         /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
         /// with packages that include it as a dependency.</p>
-        pub fn rejected_patches_action(mut self, inp: crate::model::PatchAction) -> Self {
-            self.rejected_patches_action = Some(inp);
+        pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
+            self.rejected_patches_action = Some(input);
             self
         }
         pub fn set_rejected_patches_action(
             mut self,
-            inp: std::option::Option<crate::model::PatchAction>,
+            input: std::option::Option<crate::model::PatchAction>,
         ) -> Self {
-            self.rejected_patches_action = inp;
+            self.rejected_patches_action = input;
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
         /// applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>
-        pub fn approved_patches_enable_non_security(mut self, inp: bool) -> Self {
-            self.approved_patches_enable_non_security = Some(inp);
+        pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
+            self.approved_patches_enable_non_security = Some(input);
             self
         }
-        pub fn set_approved_patches_enable_non_security(mut self, inp: bool) -> Self {
-            self.approved_patches_enable_non_security = Some(inp);
+        pub fn set_approved_patches_enable_non_security(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.approved_patches_enable_non_security = input;
             self
         }
-        pub fn sources(mut self, inp: impl Into<crate::model::PatchSource>) -> Self {
+        pub fn sources(mut self, input: impl Into<crate::model::PatchSource>) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.sources = Some(v);
             self
         }
         pub fn set_sources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
         ) -> Self {
-            self.sources = inp;
+            self.sources = input;
             self
         }
         /// Consumes the builder and constructs a [`BaselineOverride`](crate::model::BaselineOverride)
@@ -17225,99 +17381,102 @@ pub mod automation_execution {
     }
     impl Builder {
         /// <p>The execution ID.</p>
-        pub fn automation_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.automation_execution_id = Some(inp.into());
+        pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.automation_execution_id = Some(input.into());
             self
         }
         pub fn set_automation_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.automation_execution_id = inp;
+            self.automation_execution_id = input;
             self
         }
         /// <p>The name of the Automation document used during the execution.</p>
-        pub fn document_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_name = Some(inp.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_name = Some(input.into());
             self
         }
-        pub fn set_document_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document_name = inp;
+        pub fn set_document_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_name = input;
             self
         }
         /// <p>The version of the document to use during execution.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>The time the execution started.</p>
-        pub fn execution_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_start_time = Some(inp);
+        pub fn execution_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_start_time = Some(input);
             self
         }
         pub fn set_execution_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_start_time = inp;
+            self.execution_start_time = input;
             self
         }
         /// <p>The time the execution finished.</p>
-        pub fn execution_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_end_time = Some(inp);
+        pub fn execution_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_end_time = Some(input);
             self
         }
         pub fn set_execution_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_end_time = inp;
+            self.execution_end_time = input;
             self
         }
         /// <p>The execution status of the Automation.</p>
         pub fn automation_execution_status(
             mut self,
-            inp: crate::model::AutomationExecutionStatus,
+            input: crate::model::AutomationExecutionStatus,
         ) -> Self {
-            self.automation_execution_status = Some(inp);
+            self.automation_execution_status = Some(input);
             self
         }
         pub fn set_automation_execution_status(
             mut self,
-            inp: std::option::Option<crate::model::AutomationExecutionStatus>,
+            input: std::option::Option<crate::model::AutomationExecutionStatus>,
         ) -> Self {
-            self.automation_execution_status = inp;
+            self.automation_execution_status = input;
             self
         }
-        pub fn step_executions(mut self, inp: impl Into<crate::model::StepExecution>) -> Self {
+        pub fn step_executions(mut self, input: impl Into<crate::model::StepExecution>) -> Self {
             let mut v = self.step_executions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.step_executions = Some(v);
             self
         }
         pub fn set_step_executions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
         ) -> Self {
-            self.step_executions = inp;
+            self.step_executions = input;
             self
         }
         /// <p>A boolean value that indicates if the response contains the full list of the Automation step
         /// executions. If true, use the DescribeAutomationStepExecutions API action to get the full list of
         /// step executions.</p>
-        pub fn step_executions_truncated(mut self, inp: bool) -> Self {
-            self.step_executions_truncated = Some(inp);
+        pub fn step_executions_truncated(mut self, input: bool) -> Self {
+            self.step_executions_truncated = Some(input);
             self
         }
-        pub fn set_step_executions_truncated(mut self, inp: bool) -> Self {
-            self.step_executions_truncated = Some(inp);
+        pub fn set_step_executions_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.step_executions_truncated = input;
             self
         }
         pub fn parameters(
@@ -17332,11 +17491,11 @@ pub mod automation_execution {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         pub fn outputs(
@@ -17351,118 +17510,121 @@ pub mod automation_execution {
         }
         pub fn set_outputs(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.outputs = inp;
+            self.outputs = input;
             self
         }
         /// <p>A message describing why an execution has failed, if the status is set to Failed.</p>
-        pub fn failure_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_message = Some(inp.into());
+        pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_message = Some(input.into());
             self
         }
         pub fn set_failure_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.failure_message = inp;
+            self.failure_message = input;
             self
         }
         /// <p>The automation execution mode.</p>
-        pub fn mode(mut self, inp: crate::model::ExecutionMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::ExecutionMode) -> Self {
+            self.mode = Some(input);
             self
         }
-        pub fn set_mode(mut self, inp: std::option::Option<crate::model::ExecutionMode>) -> Self {
-            self.mode = inp;
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::ExecutionMode>) -> Self {
+            self.mode = input;
             self
         }
         /// <p>The AutomationExecutionId of the parent automation.</p>
         pub fn parent_automation_execution_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.parent_automation_execution_id = Some(inp.into());
+            self.parent_automation_execution_id = Some(input.into());
             self
         }
         pub fn set_parent_automation_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.parent_automation_execution_id = inp;
+            self.parent_automation_execution_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
-        pub fn executed_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.executed_by = Some(inp.into());
+        pub fn executed_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.executed_by = Some(input.into());
             self
         }
-        pub fn set_executed_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.executed_by = inp;
+        pub fn set_executed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.executed_by = input;
             self
         }
         /// <p>The name of the step that is currently running.</p>
-        pub fn current_step_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.current_step_name = Some(inp.into());
+        pub fn current_step_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_step_name = Some(input.into());
             self
         }
         pub fn set_current_step_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.current_step_name = inp;
+            self.current_step_name = input;
             self
         }
         /// <p>The action of the step that is currently running.</p>
-        pub fn current_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.current_action = Some(inp.into());
+        pub fn current_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_action = Some(input.into());
             self
         }
-        pub fn set_current_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.current_action = inp;
+        pub fn set_current_action(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_action = input;
             self
         }
         /// <p>The parameter name.</p>
-        pub fn target_parameter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_parameter_name = Some(inp.into());
+        pub fn target_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_parameter_name = Some(input.into());
             self
         }
         pub fn set_target_parameter_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_parameter_name = inp;
+            self.target_parameter_name = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         pub fn target_maps(
             mut self,
-            inp: impl Into<
+            input: impl Into<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
             let mut v = self.target_maps.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_maps = Some(v);
             self
         }
         pub fn set_target_maps(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<
                     std::collections::HashMap<
                         std::string::String,
@@ -17471,143 +17633,146 @@ pub mod automation_execution {
                 >,
             >,
         ) -> Self {
-            self.target_maps = inp;
+            self.target_maps = input;
             self
         }
         /// <p>A list of resolved targets in the rate control execution.</p>
-        pub fn resolved_targets(mut self, inp: crate::model::ResolvedTargets) -> Self {
-            self.resolved_targets = Some(inp);
+        pub fn resolved_targets(mut self, input: crate::model::ResolvedTargets) -> Self {
+            self.resolved_targets = Some(input);
             self
         }
         pub fn set_resolved_targets(
             mut self,
-            inp: std::option::Option<crate::model::ResolvedTargets>,
+            input: std::option::Option<crate::model::ResolvedTargets>,
         ) -> Self {
-            self.resolved_targets = inp;
+            self.resolved_targets = input;
             self
         }
         /// <p>The MaxConcurrency value specified by the user when the execution started.</p>
-        pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_concurrency = Some(inp.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_concurrency = Some(input.into());
             self
         }
         pub fn set_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.max_concurrency = inp;
+            self.max_concurrency = input;
             self
         }
         /// <p>The MaxErrors value specified by the user when the execution started.</p>
-        pub fn max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_errors = Some(inp.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_errors = Some(input.into());
             self
         }
-        pub fn set_max_errors(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = inp;
+        pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_errors = input;
             self
         }
         /// <p>The target of the execution.</p>
-        pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target = Some(inp.into());
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target = Some(input.into());
             self
         }
-        pub fn set_target(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target = inp;
+        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target = input;
             self
         }
-        pub fn target_locations(mut self, inp: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_locations = Some(v);
             self
         }
         pub fn set_target_locations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         ) -> Self {
-            self.target_locations = inp;
+            self.target_locations = input;
             self
         }
         /// <p>An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and
         /// multi-account Automation execution.</p>
-        pub fn progress_counters(mut self, inp: crate::model::ProgressCounters) -> Self {
-            self.progress_counters = Some(inp);
+        pub fn progress_counters(mut self, input: crate::model::ProgressCounters) -> Self {
+            self.progress_counters = Some(input);
             self
         }
         pub fn set_progress_counters(
             mut self,
-            inp: std::option::Option<crate::model::ProgressCounters>,
+            input: std::option::Option<crate::model::ProgressCounters>,
         ) -> Self {
-            self.progress_counters = inp;
+            self.progress_counters = input;
             self
         }
         /// <p>The subtype of the Automation operation. Currently, the only supported value is
         /// <code>ChangeRequest</code>.</p>
-        pub fn automation_subtype(mut self, inp: crate::model::AutomationSubtype) -> Self {
-            self.automation_subtype = Some(inp);
+        pub fn automation_subtype(mut self, input: crate::model::AutomationSubtype) -> Self {
+            self.automation_subtype = Some(input);
             self
         }
         pub fn set_automation_subtype(
             mut self,
-            inp: std::option::Option<crate::model::AutomationSubtype>,
+            input: std::option::Option<crate::model::AutomationSubtype>,
         ) -> Self {
-            self.automation_subtype = inp;
+            self.automation_subtype = input;
             self
         }
         /// <p>The date and time the Automation operation is scheduled to start.</p>
-        pub fn scheduled_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.scheduled_time = Some(inp);
+        pub fn scheduled_time(mut self, input: smithy_types::Instant) -> Self {
+            self.scheduled_time = Some(input);
             self
         }
         pub fn set_scheduled_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.scheduled_time = inp;
+            self.scheduled_time = input;
             self
         }
-        pub fn runbooks(mut self, inp: impl Into<crate::model::Runbook>) -> Self {
+        pub fn runbooks(mut self, input: impl Into<crate::model::Runbook>) -> Self {
             let mut v = self.runbooks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.runbooks = Some(v);
             self
         }
         pub fn set_runbooks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
         ) -> Self {
-            self.runbooks = inp;
+            self.runbooks = input;
             self
         }
         /// <p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// <p>The ID of a State Manager association used in the Automation operation.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The name of the Change Manager change request.</p>
-        pub fn change_request_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_request_name = Some(inp.into());
+        pub fn change_request_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_request_name = Some(input.into());
             self
         }
         pub fn set_change_request_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_request_name = inp;
+            self.change_request_name = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationExecution`](crate::model::AutomationExecution)
@@ -17765,52 +17930,52 @@ pub mod progress_counters {
     impl Builder {
         /// <p>The total number of steps run in all specified AWS Regions and accounts for the current
         /// Automation execution.</p>
-        pub fn total_steps(mut self, inp: i32) -> Self {
-            self.total_steps = Some(inp);
+        pub fn total_steps(mut self, input: i32) -> Self {
+            self.total_steps = Some(input);
             self
         }
-        pub fn set_total_steps(mut self, inp: i32) -> Self {
-            self.total_steps = Some(inp);
+        pub fn set_total_steps(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_steps = input;
             self
         }
         /// <p>The total number of steps that successfully completed in all specified AWS Regions and
         /// accounts for the current Automation execution.</p>
-        pub fn success_steps(mut self, inp: i32) -> Self {
-            self.success_steps = Some(inp);
+        pub fn success_steps(mut self, input: i32) -> Self {
+            self.success_steps = Some(input);
             self
         }
-        pub fn set_success_steps(mut self, inp: i32) -> Self {
-            self.success_steps = Some(inp);
+        pub fn set_success_steps(mut self, input: std::option::Option<i32>) -> Self {
+            self.success_steps = input;
             self
         }
         /// <p>The total number of steps that failed to run in all specified AWS Regions and accounts for
         /// the current Automation execution.</p>
-        pub fn failed_steps(mut self, inp: i32) -> Self {
-            self.failed_steps = Some(inp);
+        pub fn failed_steps(mut self, input: i32) -> Self {
+            self.failed_steps = Some(input);
             self
         }
-        pub fn set_failed_steps(mut self, inp: i32) -> Self {
-            self.failed_steps = Some(inp);
+        pub fn set_failed_steps(mut self, input: std::option::Option<i32>) -> Self {
+            self.failed_steps = input;
             self
         }
         /// <p>The total number of steps that the system cancelled in all specified AWS Regions and
         /// accounts for the current Automation execution.</p>
-        pub fn cancelled_steps(mut self, inp: i32) -> Self {
-            self.cancelled_steps = Some(inp);
+        pub fn cancelled_steps(mut self, input: i32) -> Self {
+            self.cancelled_steps = Some(input);
             self
         }
-        pub fn set_cancelled_steps(mut self, inp: i32) -> Self {
-            self.cancelled_steps = Some(inp);
+        pub fn set_cancelled_steps(mut self, input: std::option::Option<i32>) -> Self {
+            self.cancelled_steps = input;
             self
         }
         /// <p>The total number of steps that timed out in all specified AWS Regions and accounts for the
         /// current Automation execution.</p>
-        pub fn timed_out_steps(mut self, inp: i32) -> Self {
-            self.timed_out_steps = Some(inp);
+        pub fn timed_out_steps(mut self, input: i32) -> Self {
+            self.timed_out_steps = Some(input);
             self
         }
-        pub fn set_timed_out_steps(mut self, inp: i32) -> Self {
-            self.timed_out_steps = Some(inp);
+        pub fn set_timed_out_steps(mut self, input: std::option::Option<i32>) -> Self {
+            self.timed_out_steps = input;
             self
         }
         /// Consumes the builder and constructs a [`ProgressCounters`](crate::model::ProgressCounters)
@@ -17864,26 +18029,26 @@ pub mod resolved_targets {
         pub(crate) truncated: std::option::Option<bool>,
     }
     impl Builder {
-        pub fn parameter_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn parameter_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameter_values = Some(v);
             self
         }
         pub fn set_parameter_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.parameter_values = inp;
+            self.parameter_values = input;
             self
         }
         /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
-        pub fn truncated(mut self, inp: bool) -> Self {
-            self.truncated = Some(inp);
+        pub fn truncated(mut self, input: bool) -> Self {
+            self.truncated = Some(input);
             self
         }
-        pub fn set_truncated(mut self, inp: bool) -> Self {
-            self.truncated = Some(inp);
+        pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.truncated = input;
             self
         }
         /// Consumes the builder and constructs a [`ResolvedTargets`](crate::model::ResolvedTargets)
@@ -18079,95 +18244,98 @@ pub mod step_execution {
     }
     impl Builder {
         /// <p>The name of this execution step.</p>
-        pub fn step_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.step_name = Some(inp.into());
+        pub fn step_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.step_name = Some(input.into());
             self
         }
-        pub fn set_step_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.step_name = inp;
+        pub fn set_step_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_name = input;
             self
         }
         /// <p>The action this step performs. The action determines the behavior of the step.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.action = Some(inp.into());
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.action = Some(input.into());
             self
         }
-        pub fn set_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.action = inp;
+        pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action = input;
             self
         }
         /// <p>The timeout seconds of the step.</p>
-        pub fn timeout_seconds(mut self, inp: i64) -> Self {
-            self.timeout_seconds = Some(inp);
+        pub fn timeout_seconds(mut self, input: i64) -> Self {
+            self.timeout_seconds = Some(input);
             self
         }
-        pub fn set_timeout_seconds(mut self, inp: std::option::Option<i64>) -> Self {
-            self.timeout_seconds = inp;
+        pub fn set_timeout_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.timeout_seconds = input;
             self
         }
         /// <p>The action to take if the step fails. The default value is Abort.</p>
-        pub fn on_failure(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.on_failure = Some(inp.into());
+        pub fn on_failure(mut self, input: impl Into<std::string::String>) -> Self {
+            self.on_failure = Some(input.into());
             self
         }
-        pub fn set_on_failure(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.on_failure = inp;
+        pub fn set_on_failure(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_failure = input;
             self
         }
         /// <p>The maximum number of tries to run the action of the step. The default value is 1.</p>
-        pub fn max_attempts(mut self, inp: i32) -> Self {
-            self.max_attempts = Some(inp);
+        pub fn max_attempts(mut self, input: i32) -> Self {
+            self.max_attempts = Some(input);
             self
         }
-        pub fn set_max_attempts(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_attempts = inp;
+        pub fn set_max_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_attempts = input;
             self
         }
         /// <p>If a step has begun execution, this contains the time the step started. If the step is in
         /// Pending status, this field is not populated.</p>
-        pub fn execution_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_start_time = Some(inp);
+        pub fn execution_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_start_time = Some(input);
             self
         }
         pub fn set_execution_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_start_time = inp;
+            self.execution_start_time = input;
             self
         }
         /// <p>If a step has finished execution, this contains the time the execution ended. If the step
         /// has not yet concluded, this field is not populated.</p>
-        pub fn execution_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_end_time = Some(inp);
+        pub fn execution_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_end_time = Some(input);
             self
         }
         pub fn set_execution_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_end_time = inp;
+            self.execution_end_time = input;
             self
         }
         /// <p>The execution status for this step.</p>
-        pub fn step_status(mut self, inp: crate::model::AutomationExecutionStatus) -> Self {
-            self.step_status = Some(inp);
+        pub fn step_status(mut self, input: crate::model::AutomationExecutionStatus) -> Self {
+            self.step_status = Some(input);
             self
         }
         pub fn set_step_status(
             mut self,
-            inp: std::option::Option<crate::model::AutomationExecutionStatus>,
+            input: std::option::Option<crate::model::AutomationExecutionStatus>,
         ) -> Self {
-            self.step_status = inp;
+            self.step_status = input;
             self
         }
         /// <p>The response code returned by the execution of the step.</p>
-        pub fn response_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.response_code = Some(inp.into());
+        pub fn response_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_code = Some(input.into());
             self
         }
-        pub fn set_response_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.response_code = inp;
+        pub fn set_response_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.response_code = input;
             self
         }
         pub fn inputs(
@@ -18182,11 +18350,11 @@ pub mod step_execution {
         }
         pub fn set_inputs(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inputs = inp;
+            self.inputs = input;
             self
         }
         pub fn outputs(
@@ -18201,56 +18369,56 @@ pub mod step_execution {
         }
         pub fn set_outputs(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.outputs = inp;
+            self.outputs = input;
             self
         }
         /// <p>A message associated with the response code for an execution.</p>
-        pub fn response(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.response = Some(inp.into());
+        pub fn response(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response = Some(input.into());
             self
         }
-        pub fn set_response(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.response = inp;
+        pub fn set_response(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.response = input;
             self
         }
         /// <p>If a step failed, this message explains why the execution failed.</p>
-        pub fn failure_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_message = Some(inp.into());
+        pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_message = Some(input.into());
             self
         }
         pub fn set_failure_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.failure_message = inp;
+            self.failure_message = input;
             self
         }
         /// <p>Information about the Automation failure.</p>
-        pub fn failure_details(mut self, inp: crate::model::FailureDetails) -> Self {
-            self.failure_details = Some(inp);
+        pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
+            self.failure_details = Some(input);
             self
         }
         pub fn set_failure_details(
             mut self,
-            inp: std::option::Option<crate::model::FailureDetails>,
+            input: std::option::Option<crate::model::FailureDetails>,
         ) -> Self {
-            self.failure_details = inp;
+            self.failure_details = input;
             self
         }
         /// <p>The unique ID of a step execution.</p>
-        pub fn step_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.step_execution_id = Some(inp.into());
+        pub fn step_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.step_execution_id = Some(input.into());
             self
         }
         pub fn set_step_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.step_execution_id = inp;
+            self.step_execution_id = input;
             self
         }
         pub fn overridden_parameters(
@@ -18265,79 +18433,79 @@ pub mod step_execution {
         }
         pub fn set_overridden_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.overridden_parameters = inp;
+            self.overridden_parameters = input;
             self
         }
         /// <p>The flag which can be used to end automation no matter whether the step succeeds or
         /// fails.</p>
-        pub fn is_end(mut self, inp: bool) -> Self {
-            self.is_end = Some(inp);
+        pub fn is_end(mut self, input: bool) -> Self {
+            self.is_end = Some(input);
             self
         }
-        pub fn set_is_end(mut self, inp: std::option::Option<bool>) -> Self {
-            self.is_end = inp;
+        pub fn set_is_end(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_end = input;
             self
         }
         /// <p>The next step after the step succeeds.</p>
-        pub fn next_step(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_step = Some(inp.into());
+        pub fn next_step(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_step = Some(input.into());
             self
         }
-        pub fn set_next_step(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_step = inp;
+        pub fn set_next_step(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_step = input;
             self
         }
         /// <p>The flag which can be used to help decide whether the failure of current step leads to the
         /// Automation failure.</p>
-        pub fn is_critical(mut self, inp: bool) -> Self {
-            self.is_critical = Some(inp);
+        pub fn is_critical(mut self, input: bool) -> Self {
+            self.is_critical = Some(input);
             self
         }
-        pub fn set_is_critical(mut self, inp: std::option::Option<bool>) -> Self {
-            self.is_critical = inp;
+        pub fn set_is_critical(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_critical = input;
             self
         }
-        pub fn valid_next_steps(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn valid_next_steps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.valid_next_steps.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.valid_next_steps = Some(v);
             self
         }
         pub fn set_valid_next_steps(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.valid_next_steps = inp;
+            self.valid_next_steps = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>The combination of AWS Regions and accounts targeted by the current Automation
         /// execution.</p>
-        pub fn target_location(mut self, inp: crate::model::TargetLocation) -> Self {
-            self.target_location = Some(inp);
+        pub fn target_location(mut self, input: crate::model::TargetLocation) -> Self {
+            self.target_location = Some(input);
             self
         }
         pub fn set_target_location(
             mut self,
-            inp: std::option::Option<crate::model::TargetLocation>,
+            input: std::option::Option<crate::model::TargetLocation>,
         ) -> Self {
-            self.target_location = inp;
+            self.target_location = input;
             self
         }
         /// Consumes the builder and constructs a [`StepExecution`](crate::model::StepExecution)
@@ -18421,22 +18589,25 @@ pub mod failure_details {
     impl Builder {
         /// <p>The stage of the Automation execution when the failure occurred. The stages include the
         /// following: InputValidation, PreVerification, Invocation, PostVerification.</p>
-        pub fn failure_stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_stage = Some(inp.into());
+        pub fn failure_stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_stage = Some(input.into());
             self
         }
-        pub fn set_failure_stage(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.failure_stage = inp;
+        pub fn set_failure_stage(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_stage = input;
             self
         }
         /// <p>The type of Automation failure. Failure types include the following: Action, Permission,
         /// Throttling, Verification, Internal.</p>
-        pub fn failure_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_type = Some(inp.into());
+        pub fn failure_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_type = Some(input.into());
             self
         }
-        pub fn set_failure_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.failure_type = inp;
+        pub fn set_failure_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_type = input;
             self
         }
         pub fn details(
@@ -18451,11 +18622,11 @@ pub mod failure_details {
         }
         pub fn set_details(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.details = inp;
+            self.details = input;
             self
         }
         /// Consumes the builder and constructs a [`FailureDetails`](crate::model::FailureDetails)
@@ -18672,88 +18843,94 @@ pub mod session {
     }
     impl Builder {
         /// <p>The ID of the session.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.session_id = Some(inp.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
             self
         }
-        pub fn set_session_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.session_id = inp;
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
             self
         }
         /// <p>The instance that the Session Manager session connected to.</p>
-        pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target = Some(inp.into());
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target = Some(input.into());
             self
         }
-        pub fn set_target(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target = inp;
+        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target = input;
             self
         }
         /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
-        pub fn status(mut self, inp: crate::model::SessionStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::SessionStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::SessionStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::SessionStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
-        pub fn start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_date = Some(inp);
+        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.start_date = Some(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
-        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_date = Some(inp);
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.end_date = Some(input);
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.end_date = inp;
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_date = input;
             self
         }
         /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the
         /// session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
-        pub fn document_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_name = Some(inp.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_name = Some(input.into());
             self
         }
-        pub fn set_document_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document_name = inp;
+        pub fn set_document_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_name = input;
             self
         }
         /// <p>The ID of the AWS user account that started the session.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner = Some(inp.into());
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner = inp;
-            self
-        }
-        /// <p>Reserved for future use.</p>
-        pub fn details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.details = Some(inp.into());
-            self
-        }
-        pub fn set_details(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.details = inp;
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn output_url(mut self, inp: crate::model::SessionManagerOutputUrl) -> Self {
-            self.output_url = Some(inp);
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.details = Some(input.into());
+            self
+        }
+        pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.details = input;
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn output_url(mut self, input: crate::model::SessionManagerOutputUrl) -> Self {
+            self.output_url = Some(input);
             self
         }
         pub fn set_output_url(
             mut self,
-            inp: std::option::Option<crate::model::SessionManagerOutputUrl>,
+            input: std::option::Option<crate::model::SessionManagerOutputUrl>,
         ) -> Self {
-            self.output_url = inp;
+            self.output_url = input;
             self
         }
         /// Consumes the builder and constructs a [`Session`](crate::model::Session)
@@ -18811,24 +18988,27 @@ pub mod session_manager_output_url {
     }
     impl Builder {
         /// <p>Reserved for future use.</p>
-        pub fn s3_output_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_output_url = Some(inp.into());
+        pub fn s3_output_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_output_url = Some(input.into());
             self
         }
-        pub fn set_s3_output_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_output_url = inp;
+        pub fn set_s3_output_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_output_url = input;
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn cloud_watch_output_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloud_watch_output_url = Some(inp.into());
+        pub fn cloud_watch_output_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_watch_output_url = Some(input.into());
             self
         }
         pub fn set_cloud_watch_output_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_watch_output_url = inp;
+            self.cloud_watch_output_url = input;
             self
         }
         /// Consumes the builder and constructs a [`SessionManagerOutputUrl`](crate::model::SessionManagerOutputUrl)
@@ -18990,12 +19170,15 @@ pub mod session_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn key(mut self, inp: crate::model::SessionFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::SessionFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<crate::model::SessionFilterKey>) -> Self {
-            self.key = inp;
+        pub fn set_key(
+            mut self,
+            input: std::option::Option<crate::model::SessionFilterKey>,
+        ) -> Self {
+            self.key = input;
             self
         }
         /// <p>The filter value. Valid values for each filter key are as follows:</p>
@@ -19042,12 +19225,12 @@ pub mod session_filter {
         /// <p>SessionId: Specify a session ID to return details about the session.</p>
         /// </li>
         /// </ul>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`SessionFilter`](crate::model::SessionFilter)
@@ -19347,24 +19530,24 @@ pub mod patch_group_patch_baseline_mapping {
     }
     impl Builder {
         /// <p>The name of the patch group registered with the patch baseline.</p>
-        pub fn patch_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.patch_group = Some(inp.into());
+        pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.patch_group = Some(input.into());
             self
         }
-        pub fn set_patch_group(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.patch_group = inp;
+        pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.patch_group = input;
             self
         }
         /// <p>The patch baseline the patch group is registered with.</p>
-        pub fn baseline_identity(mut self, inp: crate::model::PatchBaselineIdentity) -> Self {
-            self.baseline_identity = Some(inp);
+        pub fn baseline_identity(mut self, input: crate::model::PatchBaselineIdentity) -> Self {
+            self.baseline_identity = Some(input);
             self
         }
         pub fn set_baseline_identity(
             mut self,
-            inp: std::option::Option<crate::model::PatchBaselineIdentity>,
+            input: std::option::Option<crate::model::PatchBaselineIdentity>,
         ) -> Self {
-            self.baseline_identity = inp;
+            self.baseline_identity = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchGroupPatchBaselineMapping`](crate::model::PatchGroupPatchBaselineMapping)
@@ -19436,57 +19619,60 @@ pub mod patch_baseline_identity {
     }
     impl Builder {
         /// <p>The ID of the patch baseline.</p>
-        pub fn baseline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.baseline_id = Some(inp.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.baseline_id = Some(input.into());
             self
         }
-        pub fn set_baseline_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = inp;
+        pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.baseline_id = input;
             self
         }
         /// <p>The name of the patch baseline.</p>
-        pub fn baseline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.baseline_name = Some(inp.into());
+        pub fn baseline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.baseline_name = Some(input.into());
             self
         }
-        pub fn set_baseline_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.baseline_name = inp;
+        pub fn set_baseline_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.baseline_name = input;
             self
         }
         /// <p>Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
         /// </p>
-        pub fn operating_system(mut self, inp: crate::model::OperatingSystem) -> Self {
-            self.operating_system = Some(inp);
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.operating_system = Some(input);
             self
         }
         pub fn set_operating_system(
             mut self,
-            inp: std::option::Option<crate::model::OperatingSystem>,
+            input: std::option::Option<crate::model::OperatingSystem>,
         ) -> Self {
-            self.operating_system = inp;
+            self.operating_system = input;
             self
         }
         /// <p>The description of the patch baseline.</p>
-        pub fn baseline_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.baseline_description = Some(inp.into());
+        pub fn baseline_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.baseline_description = Some(input.into());
             self
         }
         pub fn set_baseline_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.baseline_description = inp;
+            self.baseline_description = input;
             self
         }
         /// <p>Whether this is the default baseline. Note that Systems Manager supports creating multiple default
         /// patch baselines. For example, you can create a default patch baseline for each operating
         /// system.</p>
-        pub fn default_baseline(mut self, inp: bool) -> Self {
-            self.default_baseline = Some(inp);
+        pub fn default_baseline(mut self, input: bool) -> Self {
+            self.default_baseline = Some(input);
             self
         }
-        pub fn set_default_baseline(mut self, inp: bool) -> Self {
-            self.default_baseline = Some(inp);
+        pub fn set_default_baseline(mut self, input: std::option::Option<bool>) -> Self {
+            self.default_baseline = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchBaselineIdentity`](crate::model::PatchBaselineIdentity)
@@ -19540,25 +19726,25 @@ pub mod patch_orchestrator_filter {
     }
     impl Builder {
         /// <p>The key for the filter.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchOrchestratorFilter`](crate::model::PatchOrchestratorFilter)
@@ -19671,118 +19857,118 @@ pub mod parameter_metadata {
     }
     impl Builder {
         /// <p>The parameter name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>,
         /// <code>StringList</code>, and <code>SecureString</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ParameterType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ParameterType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::ParameterType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ParameterType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The ID of the query key used for this parameter.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Date the parameter was last changed or updated.</p>
-        pub fn last_modified_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_date = Some(inp);
+        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_date = Some(input);
             self
         }
         pub fn set_last_modified_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_date = inp;
+            self.last_modified_date = input;
             self
         }
         /// <p>Amazon Resource Name (ARN) of the AWS user who last changed the parameter.</p>
-        pub fn last_modified_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified_user = Some(inp.into());
+        pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_user = Some(input.into());
             self
         }
         pub fn set_last_modified_user(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_modified_user = inp;
+            self.last_modified_user = input;
             self
         }
         /// <p>Description of the parameter actions.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>A parameter name can include only the following letters and symbols.</p>
         /// <p>a-zA-Z0-9_.-</p>
-        pub fn allowed_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allowed_pattern = Some(inp.into());
+        pub fn allowed_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allowed_pattern = Some(input.into());
             self
         }
         pub fn set_allowed_pattern(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.allowed_pattern = inp;
+            self.allowed_pattern = input;
             self
         }
         /// <p>The parameter version.</p>
-        pub fn version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The parameter tier.</p>
-        pub fn tier(mut self, inp: crate::model::ParameterTier) -> Self {
-            self.tier = Some(inp);
+        pub fn tier(mut self, input: crate::model::ParameterTier) -> Self {
+            self.tier = Some(input);
             self
         }
-        pub fn set_tier(mut self, inp: std::option::Option<crate::model::ParameterTier>) -> Self {
-            self.tier = inp;
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::ParameterTier>) -> Self {
+            self.tier = input;
             self
         }
-        pub fn policies(mut self, inp: impl Into<crate::model::ParameterInlinePolicy>) -> Self {
+        pub fn policies(mut self, input: impl Into<crate::model::ParameterInlinePolicy>) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policies = Some(v);
             self
         }
         pub fn set_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ParameterInlinePolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterInlinePolicy>>,
         ) -> Self {
-            self.policies = inp;
+            self.policies = input;
             self
         }
         /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The
         /// default is <code>text</code>.</p>
-        pub fn data_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_type = Some(inp.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type = Some(input.into());
             self
         }
-        pub fn set_data_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data_type = inp;
+        pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterMetadata`](crate::model::ParameterMetadata)
@@ -19842,28 +20028,28 @@ pub mod parameters_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn key(mut self, inp: crate::model::ParametersFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::ParametersFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::ParametersFilterKey>,
+            input: std::option::Option<crate::model::ParametersFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`ParametersFilter`](crate::model::ParametersFilter)
@@ -20092,91 +20278,97 @@ pub mod ops_item_summary {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
-        pub fn created_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.created_by = Some(inp.into());
+        pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_by = Some(input.into());
             self
         }
-        pub fn set_created_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.created_by = inp;
+        pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by = input;
             self
         }
         /// <p>The date and time the OpsItem was created.</p>
-        pub fn created_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_time = Some(inp);
+        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+            self.created_time = Some(input);
             self
         }
-        pub fn set_created_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_time = inp;
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_time = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
-        pub fn last_modified_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_modified_by = Some(inp.into());
+        pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_by = Some(input.into());
             self
         }
         pub fn set_last_modified_by(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_modified_by = inp;
+            self.last_modified_by = input;
             self
         }
         /// <p>The date and time the OpsItem was last updated.</p>
-        pub fn last_modified_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_time = Some(inp);
+        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
             self
         }
         pub fn set_last_modified_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_time = inp;
+            self.last_modified_time = input;
             self
         }
         /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-        pub fn priority(mut self, inp: i32) -> Self {
-            self.priority = Some(inp);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
             self
         }
-        pub fn set_priority(mut self, inp: std::option::Option<i32>) -> Self {
-            self.priority = inp;
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
             self
         }
         /// <p>The impacted AWS resource.</p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source = Some(inp.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source = inp;
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
             self
         }
         /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
         /// <code>Resolved</code>.</p>
-        pub fn status(mut self, inp: crate::model::OpsItemStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::OpsItemStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::OpsItemStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::OpsItemStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The ID of the OpsItem.</p>
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.title = Some(inp.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
             self
         }
-        pub fn set_title(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.title = inp;
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
             self
         }
         pub fn operational_data(
@@ -20191,91 +20383,94 @@ pub mod ops_item_summary {
         }
         pub fn set_operational_data(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
             >,
         ) -> Self {
-            self.operational_data = inp;
+            self.operational_data = input;
             self
         }
         /// <p>A list of OpsItems by category.</p>
-        pub fn category(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.category = Some(inp.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.category = Some(input.into());
             self
         }
-        pub fn set_category(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.category = inp;
+        pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.category = input;
             self
         }
         /// <p>A list of OpsItems by severity.</p>
-        pub fn severity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.severity = Some(inp.into());
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.severity = Some(input.into());
             self
         }
-        pub fn set_severity(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.severity = inp;
+        pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.severity = input;
             self
         }
         /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code>
         /// and <code>/aws/issue</code>.</p>
-        pub fn ops_item_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_type = Some(inp.into());
+        pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_type = Some(input.into());
             self
         }
-        pub fn set_ops_item_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_type = inp;
+        pub fn set_ops_item_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ops_item_type = input;
             self
         }
         /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.actual_start_time = Some(inp);
+        pub fn actual_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.actual_start_time = Some(input);
             self
         }
         pub fn set_actual_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.actual_start_time = inp;
+            self.actual_start_time = input;
             self
         }
         /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.actual_end_time = Some(inp);
+        pub fn actual_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.actual_end_time = Some(input);
             self
         }
         pub fn set_actual_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.actual_end_time = inp;
+            self.actual_end_time = input;
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.planned_start_time = Some(inp);
+        pub fn planned_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.planned_start_time = Some(input);
             self
         }
         pub fn set_planned_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.planned_start_time = inp;
+            self.planned_start_time = input;
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.planned_end_time = Some(inp);
+        pub fn planned_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.planned_end_time = Some(input);
             self
         }
         pub fn set_planned_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.planned_end_time = inp;
+            self.planned_end_time = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemSummary`](crate::model::OpsItemSummary)
@@ -20347,37 +20542,40 @@ pub mod ops_item_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn key(mut self, inp: crate::model::OpsItemFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::OpsItemFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<crate::model::OpsItemFilterKey>) -> Self {
-            self.key = inp;
+        pub fn set_key(
+            mut self,
+            input: std::option::Option<crate::model::OpsItemFilterKey>,
+        ) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// <p>The operator used by the filter call.</p>
-        pub fn operator(mut self, inp: crate::model::OpsItemFilterOperator) -> Self {
-            self.operator = Some(inp);
+        pub fn operator(mut self, input: crate::model::OpsItemFilterOperator) -> Self {
+            self.operator = Some(input);
             self
         }
         pub fn set_operator(
             mut self,
-            inp: std::option::Option<crate::model::OpsItemFilterOperator>,
+            input: std::option::Option<crate::model::OpsItemFilterOperator>,
         ) -> Self {
-            self.operator = inp;
+            self.operator = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemFilter`](crate::model::OpsItemFilter)
@@ -20720,58 +20918,61 @@ pub mod maintenance_window_task {
     }
     impl Builder {
         /// <p>The ID of the maintenance window where the task is registered.</p>
-        pub fn window_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_id = Some(inp.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_id = Some(input.into());
             self
         }
-        pub fn set_window_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.window_id = inp;
+        pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_id = input;
             self
         }
         /// <p>The task ID.</p>
-        pub fn window_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_task_id = Some(inp.into());
+        pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_task_id = Some(input.into());
             self
         }
-        pub fn set_window_task_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.window_task_id = inp;
+        pub fn set_window_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.window_task_id = input;
             self
         }
         /// <p>The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
         /// <code>TaskArn</code> is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name
         /// or ARN. For STEP_FUNCTIONS tasks, it's the state machine ARN.</p>
-        pub fn task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_arn = Some(inp.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_arn = Some(input.into());
             self
         }
-        pub fn set_task_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = inp;
+        pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_arn = input;
             self
         }
         /// <p>The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
         /// STEP_FUNCTIONS.</p>
-        pub fn r#type(mut self, inp: crate::model::MaintenanceWindowTaskType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::MaintenanceWindowTaskType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowTaskType>,
+            input: std::option::Option<crate::model::MaintenanceWindowTaskType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         pub fn task_parameters(
@@ -20786,24 +20987,24 @@ pub mod maintenance_window_task {
         }
         pub fn set_task_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::MaintenanceWindowTaskParameterValueExpression,
                 >,
             >,
         ) -> Self {
-            self.task_parameters = inp;
+            self.task_parameters = input;
             self
         }
         /// <p>The priority of the task in the maintenance window. The lower the number, the higher the
         /// priority. Tasks that have the same priority are scheduled in parallel.</p>
-        pub fn priority(mut self, inp: i32) -> Self {
-            self.priority = Some(inp);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
             self
         }
-        pub fn set_priority(mut self, inp: i32) -> Self {
-            self.priority = Some(inp);
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
             self
         }
         /// <p>Information about an S3 bucket to write task-level logs to.</p>
@@ -20814,67 +21015,67 @@ pub mod maintenance_window_task {
         /// For information about how Systems Manager handles these options for the supported maintenance
         /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
         /// </note>
-        pub fn logging_info(mut self, inp: crate::model::LoggingInfo) -> Self {
-            self.logging_info = Some(inp);
+        pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
+            self.logging_info = Some(input);
             self
         }
         pub fn set_logging_info(
             mut self,
-            inp: std::option::Option<crate::model::LoggingInfo>,
+            input: std::option::Option<crate::model::LoggingInfo>,
         ) -> Self {
-            self.logging_info = inp;
+            self.logging_info = input;
             self
         }
         /// <p>The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for
         /// maintenance window Run Command tasks.</p>
-        pub fn service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_role_arn = Some(inp.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_role_arn = Some(input.into());
             self
         }
         pub fn set_service_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_role_arn = inp;
+            self.service_role_arn = input;
             self
         }
         /// <p>The maximum number of targets this task can be run for, in parallel.</p>
-        pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_concurrency = Some(inp.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_concurrency = Some(input.into());
             self
         }
         pub fn set_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.max_concurrency = inp;
+            self.max_concurrency = input;
             self
         }
         /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
-        pub fn max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_errors = Some(inp.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_errors = Some(input.into());
             self
         }
-        pub fn set_max_errors(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = inp;
+        pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_errors = input;
             self
         }
         /// <p>The task name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>A description of the task.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowTask`](crate::model::MaintenanceWindowTask)
@@ -20936,25 +21137,25 @@ pub mod maintenance_window_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowFilter`](crate::model::MaintenanceWindowFilter)
@@ -21043,80 +21244,80 @@ pub mod maintenance_window_target {
     }
     impl Builder {
         /// <p>The ID of the maintenance window to register the target with.</p>
-        pub fn window_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_id = Some(inp.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_id = Some(input.into());
             self
         }
-        pub fn set_window_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.window_id = inp;
+        pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_id = input;
             self
         }
         /// <p>The ID of the target.</p>
-        pub fn window_target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_target_id = Some(inp.into());
+        pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_target_id = Some(input.into());
             self
         }
         pub fn set_window_target_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.window_target_id = inp;
+            self.window_target_id = input;
             self
         }
         /// <p>The type of target that is being registered with the maintenance window.</p>
-        pub fn resource_type(mut self, inp: crate::model::MaintenanceWindowResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn resource_type(mut self, input: crate::model::MaintenanceWindowResourceType) -> Self {
+            self.resource_type = Some(input);
             self
         }
         pub fn set_resource_type(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowResourceType>,
+            input: std::option::Option<crate::model::MaintenanceWindowResourceType>,
         ) -> Self {
-            self.resource_type = inp;
+            self.resource_type = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>A user-provided value that will be included in any CloudWatch events that are raised while
         /// running tasks for these targets in this maintenance window.</p>
-        pub fn owner_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner_information = Some(inp.into());
+        pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_information = Some(input.into());
             self
         }
         pub fn set_owner_information(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.owner_information = inp;
+            self.owner_information = input;
             self
         }
         /// <p>The name for the maintenance window target.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>A description for the target.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowTarget`](crate::model::MaintenanceWindowTarget)
@@ -21172,21 +21373,21 @@ pub mod maintenance_window_identity_for_target {
     }
     impl Builder {
         /// <p>The ID of the maintenance window.</p>
-        pub fn window_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_id = Some(inp.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_id = Some(input.into());
             self
         }
-        pub fn set_window_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.window_id = inp;
+        pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_id = input;
             self
         }
         /// <p>The name of the maintenance window.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowIdentityForTarget`](crate::model::MaintenanceWindowIdentityForTarget)
@@ -21244,31 +21445,34 @@ pub mod scheduled_window_execution {
     }
     impl Builder {
         /// <p>The ID of the maintenance window to be run.</p>
-        pub fn window_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_id = Some(inp.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_id = Some(input.into());
             self
         }
-        pub fn set_window_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.window_id = inp;
+        pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_id = input;
             self
         }
         /// <p>The name of the maintenance window to be run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be
         /// run.</p>
-        pub fn execution_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_time = Some(inp.into());
+        pub fn execution_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_time = Some(input.into());
             self
         }
-        pub fn set_execution_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.execution_time = inp;
+        pub fn set_execution_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_time = input;
             self
         }
         /// Consumes the builder and constructs a [`ScheduledWindowExecution`](crate::model::ScheduledWindowExecution)
@@ -21386,123 +21590,123 @@ pub mod maintenance_window_identity {
     }
     impl Builder {
         /// <p>The ID of the maintenance window.</p>
-        pub fn window_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_id = Some(inp.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_id = Some(input.into());
             self
         }
-        pub fn set_window_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.window_id = inp;
+        pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_id = input;
             self
         }
         /// <p>The name of the maintenance window.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>A description of the maintenance window.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Indicates whether the maintenance window is enabled.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// <p>The duration of the maintenance window in hours.</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
             self
         }
         /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
         /// tasks for execution.</p>
-        pub fn cutoff(mut self, inp: i32) -> Self {
-            self.cutoff = Some(inp);
+        pub fn cutoff(mut self, input: i32) -> Self {
+            self.cutoff = Some(input);
             self
         }
-        pub fn set_cutoff(mut self, inp: i32) -> Self {
-            self.cutoff = Some(inp);
+        pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
+            self.cutoff = input;
             self
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-        pub fn schedule(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schedule = Some(inp.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule = Some(input.into());
             self
         }
-        pub fn set_schedule(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schedule = inp;
+        pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule = input;
             self
         }
         /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
         /// Assigned Numbers Authority (IANA) format.</p>
-        pub fn schedule_timezone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schedule_timezone = Some(inp.into());
+        pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_timezone = Some(input.into());
             self
         }
         pub fn set_schedule_timezone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.schedule_timezone = inp;
+            self.schedule_timezone = input;
             self
         }
         /// <p>The number of days to wait to run a maintenance window after the scheduled CRON expression
         /// date and time.</p>
-        pub fn schedule_offset(mut self, inp: i32) -> Self {
-            self.schedule_offset = Some(inp);
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.schedule_offset = Some(input);
             self
         }
-        pub fn set_schedule_offset(mut self, inp: std::option::Option<i32>) -> Self {
-            self.schedule_offset = inp;
+        pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.schedule_offset = input;
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
         /// to become inactive.</p>
-        pub fn end_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.end_date = Some(inp.into());
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_date = Some(input.into());
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.end_date = inp;
+        pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_date = input;
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
         /// to become active.</p>
-        pub fn start_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_date = Some(inp.into());
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_date = Some(input.into());
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>The next time the maintenance window will actually run, taking into account any specified
         /// times for the maintenance window to become active or inactive.</p>
-        pub fn next_execution_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_execution_time = Some(inp.into());
+        pub fn next_execution_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_execution_time = Some(input.into());
             self
         }
         pub fn set_next_execution_time(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_execution_time = inp;
+            self.next_execution_time = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowIdentity`](crate::model::MaintenanceWindowIdentity)
@@ -21607,88 +21811,91 @@ pub mod maintenance_window_execution_task_identity {
     }
     impl Builder {
         /// <p>The ID of the maintenance window execution that ran the task.</p>
-        pub fn window_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_execution_id = Some(inp.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_execution_id = Some(input.into());
             self
         }
         pub fn set_window_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.window_execution_id = inp;
+            self.window_execution_id = input;
             self
         }
         /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-        pub fn task_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_execution_id = Some(inp.into());
+        pub fn task_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_execution_id = Some(input.into());
             self
         }
         pub fn set_task_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.task_execution_id = inp;
+            self.task_execution_id = input;
             self
         }
         /// <p>The status of the task execution.</p>
-        pub fn status(mut self, inp: crate::model::MaintenanceWindowExecutionStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::MaintenanceWindowExecutionStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
+            input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The details explaining the status of the task execution. Only available for certain status
         /// values.</p>
-        pub fn status_details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_details = Some(inp.into());
+        pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_details = Some(input.into());
             self
         }
-        pub fn set_status_details(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_details = inp;
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_details = input;
             self
         }
         /// <p>The time the task execution started.</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_time = Some(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
             self
         }
         /// <p>The time the task execution finished.</p>
-        pub fn end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_time = Some(inp);
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.end_time = inp;
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_time = input;
             self
         }
         /// <p>The ARN of the task that ran.</p>
-        pub fn task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_arn = Some(inp.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_arn = Some(input.into());
             self
         }
-        pub fn set_task_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = inp;
+        pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_arn = input;
             self
         }
         /// <p>The type of task that ran.</p>
-        pub fn task_type(mut self, inp: crate::model::MaintenanceWindowTaskType) -> Self {
-            self.task_type = Some(inp);
+        pub fn task_type(mut self, input: crate::model::MaintenanceWindowTaskType) -> Self {
+            self.task_type = Some(input);
             self
         }
         pub fn set_task_type(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowTaskType>,
+            input: std::option::Option<crate::model::MaintenanceWindowTaskType>,
         ) -> Self {
-            self.task_type = inp;
+            self.task_type = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowExecutionTaskIdentity`](crate::model::MaintenanceWindowExecutionTaskIdentity)
@@ -21816,133 +22023,139 @@ pub mod maintenance_window_execution_task_invocation_identity {
     }
     impl Builder {
         /// <p>The ID of the maintenance window execution that ran the task.</p>
-        pub fn window_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_execution_id = Some(inp.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_execution_id = Some(input.into());
             self
         }
         pub fn set_window_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.window_execution_id = inp;
+            self.window_execution_id = input;
             self
         }
         /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-        pub fn task_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_execution_id = Some(inp.into());
+        pub fn task_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_execution_id = Some(input.into());
             self
         }
         pub fn set_task_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.task_execution_id = inp;
+            self.task_execution_id = input;
             self
         }
         /// <p>The ID of the task invocation.</p>
-        pub fn invocation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.invocation_id = Some(inp.into());
+        pub fn invocation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invocation_id = Some(input.into());
             self
         }
-        pub fn set_invocation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.invocation_id = inp;
+        pub fn set_invocation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invocation_id = input;
             self
         }
         /// <p>The ID of the action performed in the service that actually handled the task invocation. If
         /// the task type is RUN_COMMAND, this value is the command ID.</p>
-        pub fn execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_id = Some(inp.into());
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
             self
         }
-        pub fn set_execution_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = inp;
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
             self
         }
         /// <p>The task type.</p>
-        pub fn task_type(mut self, inp: crate::model::MaintenanceWindowTaskType) -> Self {
-            self.task_type = Some(inp);
+        pub fn task_type(mut self, input: crate::model::MaintenanceWindowTaskType) -> Self {
+            self.task_type = Some(input);
             self
         }
         pub fn set_task_type(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowTaskType>,
+            input: std::option::Option<crate::model::MaintenanceWindowTaskType>,
         ) -> Self {
-            self.task_type = inp;
+            self.task_type = input;
             self
         }
         /// <p>The parameters that were provided for the invocation when it was run.</p>
-        pub fn parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameters = Some(inp.into());
+        pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameters = Some(input.into());
             self
         }
-        pub fn set_parameters(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parameters = inp;
+        pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameters = input;
             self
         }
         /// <p>The status of the task invocation.</p>
-        pub fn status(mut self, inp: crate::model::MaintenanceWindowExecutionStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::MaintenanceWindowExecutionStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
+            input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The details explaining the status of the task invocation. Only available for certain Status
         /// values. </p>
-        pub fn status_details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_details = Some(inp.into());
+        pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_details = Some(input.into());
             self
         }
-        pub fn set_status_details(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_details = inp;
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_details = input;
             self
         }
         /// <p>The time the invocation started.</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_time = Some(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
             self
         }
         /// <p>The time the invocation finished.</p>
-        pub fn end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_time = Some(inp);
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.end_time = inp;
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_time = input;
             self
         }
         /// <p>User-provided value that was specified when the target was registered with the maintenance
         /// window. This was also included in any CloudWatch events raised during the task invocation.</p>
-        pub fn owner_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner_information = Some(inp.into());
+        pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_information = Some(input.into());
             self
         }
         pub fn set_owner_information(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.owner_information = inp;
+            self.owner_information = input;
             self
         }
         /// <p>The ID of the target definition in this maintenance window the invocation was performed
         /// for.</p>
-        pub fn window_target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_target_id = Some(inp.into());
+        pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_target_id = Some(input.into());
             self
         }
         pub fn set_window_target_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.window_target_id = inp;
+            self.window_target_id = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowExecutionTaskInvocationIdentity`](crate::model::MaintenanceWindowExecutionTaskInvocationIdentity)
@@ -22034,63 +22247,66 @@ pub mod maintenance_window_execution {
     }
     impl Builder {
         /// <p>The ID of the maintenance window.</p>
-        pub fn window_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_id = Some(inp.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_id = Some(input.into());
             self
         }
-        pub fn set_window_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.window_id = inp;
+        pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_id = input;
             self
         }
         /// <p>The ID of the maintenance window execution.</p>
-        pub fn window_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.window_execution_id = Some(inp.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.window_execution_id = Some(input.into());
             self
         }
         pub fn set_window_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.window_execution_id = inp;
+            self.window_execution_id = input;
             self
         }
         /// <p>The status of the execution.</p>
-        pub fn status(mut self, inp: crate::model::MaintenanceWindowExecutionStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::MaintenanceWindowExecutionStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
+            input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The details explaining the Status. Only available for certain status values.</p>
-        pub fn status_details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_details = Some(inp.into());
+        pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_details = Some(input.into());
             self
         }
-        pub fn set_status_details(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_details = inp;
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_details = input;
             self
         }
         /// <p>The time the execution started.</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_time = Some(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
             self
         }
         /// <p>The time the execution finished.</p>
-        pub fn end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_time = Some(inp);
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.end_time = inp;
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_time = input;
             self
         }
         /// Consumes the builder and constructs a [`MaintenanceWindowExecution`](crate::model::MaintenanceWindowExecution)
@@ -22182,82 +22398,82 @@ pub mod inventory_deletion_status_item {
     }
     impl Builder {
         /// <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
-        pub fn deletion_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deletion_id = Some(inp.into());
+        pub fn deletion_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deletion_id = Some(input.into());
             self
         }
-        pub fn set_deletion_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.deletion_id = inp;
+        pub fn set_deletion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deletion_id = input;
             self
         }
         /// <p>The name of the inventory data type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The UTC timestamp when the delete operation started.</p>
-        pub fn deletion_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.deletion_start_time = Some(inp);
+        pub fn deletion_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.deletion_start_time = Some(input);
             self
         }
         pub fn set_deletion_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.deletion_start_time = inp;
+            self.deletion_start_time = input;
             self
         }
         /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
-        pub fn last_status(mut self, inp: crate::model::InventoryDeletionStatus) -> Self {
-            self.last_status = Some(inp);
+        pub fn last_status(mut self, input: crate::model::InventoryDeletionStatus) -> Self {
+            self.last_status = Some(input);
             self
         }
         pub fn set_last_status(
             mut self,
-            inp: std::option::Option<crate::model::InventoryDeletionStatus>,
+            input: std::option::Option<crate::model::InventoryDeletionStatus>,
         ) -> Self {
-            self.last_status = inp;
+            self.last_status = input;
             self
         }
         /// <p>Information about the status.</p>
-        pub fn last_status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_status_message = Some(inp.into());
+        pub fn last_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_status_message = Some(input.into());
             self
         }
         pub fn set_last_status_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_status_message = inp;
+            self.last_status_message = input;
             self
         }
         /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the
         /// <i>AWS Systems Manager User Guide</i>.</p>
-        pub fn deletion_summary(mut self, inp: crate::model::InventoryDeletionSummary) -> Self {
-            self.deletion_summary = Some(inp);
+        pub fn deletion_summary(mut self, input: crate::model::InventoryDeletionSummary) -> Self {
+            self.deletion_summary = Some(input);
             self
         }
         pub fn set_deletion_summary(
             mut self,
-            inp: std::option::Option<crate::model::InventoryDeletionSummary>,
+            input: std::option::Option<crate::model::InventoryDeletionSummary>,
         ) -> Self {
-            self.deletion_summary = inp;
+            self.deletion_summary = input;
             self
         }
         /// <p>The UTC timestamp of when the last status report.</p>
-        pub fn last_status_update_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_status_update_time = Some(inp);
+        pub fn last_status_update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_status_update_time = Some(input);
             self
         }
         pub fn set_last_status_update_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_status_update_time = inp;
+            self.last_status_update_time = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryDeletionStatusItem`](crate::model::InventoryDeletionStatusItem)
@@ -22323,37 +22539,37 @@ pub mod inventory_deletion_summary {
     impl Builder {
         /// <p>The total number of items to delete. This count does not change during the delete
         /// operation.</p>
-        pub fn total_count(mut self, inp: i32) -> Self {
-            self.total_count = Some(inp);
+        pub fn total_count(mut self, input: i32) -> Self {
+            self.total_count = Some(input);
             self
         }
-        pub fn set_total_count(mut self, inp: i32) -> Self {
-            self.total_count = Some(inp);
+        pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_count = input;
             self
         }
         /// <p>Remaining number of items to delete.</p>
-        pub fn remaining_count(mut self, inp: i32) -> Self {
-            self.remaining_count = Some(inp);
+        pub fn remaining_count(mut self, input: i32) -> Self {
+            self.remaining_count = Some(input);
             self
         }
-        pub fn set_remaining_count(mut self, inp: i32) -> Self {
-            self.remaining_count = Some(inp);
+        pub fn set_remaining_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.remaining_count = input;
             self
         }
         pub fn summary_items(
             mut self,
-            inp: impl Into<crate::model::InventoryDeletionSummaryItem>,
+            input: impl Into<crate::model::InventoryDeletionSummaryItem>,
         ) -> Self {
             let mut v = self.summary_items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.summary_items = Some(v);
             self
         }
         pub fn set_summary_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InventoryDeletionSummaryItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InventoryDeletionSummaryItem>>,
         ) -> Self {
-            self.summary_items = inp;
+            self.summary_items = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryDeletionSummary`](crate::model::InventoryDeletionSummary)
@@ -22411,30 +22627,30 @@ pub mod inventory_deletion_summary_item {
     }
     impl Builder {
         /// <p>The inventory type version.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>A count of the number of deleted items.</p>
-        pub fn count(mut self, inp: i32) -> Self {
-            self.count = Some(inp);
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
             self
         }
-        pub fn set_count(mut self, inp: i32) -> Self {
-            self.count = Some(inp);
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
             self
         }
         /// <p>The remaining number of items to delete.</p>
-        pub fn remaining_count(mut self, inp: i32) -> Self {
-            self.remaining_count = Some(inp);
+        pub fn remaining_count(mut self, input: i32) -> Self {
+            self.remaining_count = Some(input);
             self
         }
-        pub fn set_remaining_count(mut self, inp: i32) -> Self {
-            self.remaining_count = Some(inp);
+        pub fn set_remaining_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.remaining_count = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryDeletionSummaryItem`](crate::model::InventoryDeletionSummaryItem)
@@ -22743,40 +22959,40 @@ pub mod instance_patch_state {
     impl Builder {
         /// <p>The ID of the managed instance the high-level patch compliance information was collected
         /// for.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The name of the patch group the managed instance belongs to.</p>
-        pub fn patch_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.patch_group = Some(inp.into());
+        pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.patch_group = Some(input.into());
             self
         }
-        pub fn set_patch_group(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.patch_group = inp;
+        pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.patch_group = input;
             self
         }
         /// <p>The ID of the patch baseline used to patch the instance.</p>
-        pub fn baseline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.baseline_id = Some(inp.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.baseline_id = Some(input.into());
             self
         }
-        pub fn set_baseline_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = inp;
+        pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.baseline_id = input;
             self
         }
         /// <p>The ID of the patch baseline snapshot used during the patching operation when this
         /// compliance data was collected.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_id = Some(inp.into());
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
             self
         }
-        pub fn set_snapshot_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = inp;
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
             self
         }
         /// <p>An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch
@@ -22785,57 +23001,60 @@ pub mod instance_patch_state {
         /// baseline.</p>
         /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the
         /// SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-        pub fn install_override_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.install_override_list = Some(inp.into());
+        pub fn install_override_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.install_override_list = Some(input.into());
             self
         }
         pub fn set_install_override_list(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.install_override_list = inp;
+            self.install_override_list = input;
             self
         }
         /// <p>Placeholder information. This field will always be empty in the current release of the
         /// service.</p>
-        pub fn owner_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner_information = Some(inp.into());
+        pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_information = Some(input.into());
             self
         }
         pub fn set_owner_information(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.owner_information = inp;
+            self.owner_information = input;
             self
         }
         /// <p>The number of patches from the patch baseline that are installed on the instance.</p>
-        pub fn installed_count(mut self, inp: i32) -> Self {
-            self.installed_count = Some(inp);
+        pub fn installed_count(mut self, input: i32) -> Self {
+            self.installed_count = Some(input);
             self
         }
-        pub fn set_installed_count(mut self, inp: i32) -> Self {
-            self.installed_count = Some(inp);
+        pub fn set_installed_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.installed_count = input;
             self
         }
         /// <p>The number of patches not specified in the patch baseline that are installed on the
         /// instance.</p>
-        pub fn installed_other_count(mut self, inp: i32) -> Self {
-            self.installed_other_count = Some(inp);
+        pub fn installed_other_count(mut self, input: i32) -> Self {
+            self.installed_other_count = Some(input);
             self
         }
-        pub fn set_installed_other_count(mut self, inp: i32) -> Self {
-            self.installed_other_count = Some(inp);
+        pub fn set_installed_other_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.installed_other_count = input;
             self
         }
         /// <p>The number of patches installed by Patch Manager since the last time the instance was
         /// rebooted.</p>
-        pub fn installed_pending_reboot_count(mut self, inp: i32) -> Self {
-            self.installed_pending_reboot_count = Some(inp);
+        pub fn installed_pending_reboot_count(mut self, input: i32) -> Self {
+            self.installed_pending_reboot_count = Some(input);
             self
         }
-        pub fn set_installed_pending_reboot_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.installed_pending_reboot_count = inp;
+        pub fn set_installed_pending_reboot_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.installed_pending_reboot_count = input;
             self
         }
         /// <p>The number of patches installed on an instance that are specified in a
@@ -22847,107 +23066,110 @@ pub mod instance_patch_state {
         /// <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will
         /// always be <code>0</code> (zero).</p>
         /// </note>
-        pub fn installed_rejected_count(mut self, inp: i32) -> Self {
-            self.installed_rejected_count = Some(inp);
+        pub fn installed_rejected_count(mut self, input: i32) -> Self {
+            self.installed_rejected_count = Some(input);
             self
         }
-        pub fn set_installed_rejected_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.installed_rejected_count = inp;
+        pub fn set_installed_rejected_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.installed_rejected_count = input;
             self
         }
         /// <p>The number of patches from the patch baseline that are applicable for the instance but
         /// aren't currently installed.</p>
-        pub fn missing_count(mut self, inp: i32) -> Self {
-            self.missing_count = Some(inp);
+        pub fn missing_count(mut self, input: i32) -> Self {
+            self.missing_count = Some(input);
             self
         }
-        pub fn set_missing_count(mut self, inp: i32) -> Self {
-            self.missing_count = Some(inp);
+        pub fn set_missing_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.missing_count = input;
             self
         }
         /// <p>The number of patches from the patch baseline that were attempted to be installed during the
         /// last patching operation, but failed to install.</p>
-        pub fn failed_count(mut self, inp: i32) -> Self {
-            self.failed_count = Some(inp);
+        pub fn failed_count(mut self, input: i32) -> Self {
+            self.failed_count = Some(input);
             self
         }
-        pub fn set_failed_count(mut self, inp: i32) -> Self {
-            self.failed_count = Some(inp);
+        pub fn set_failed_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.failed_count = input;
             self
         }
         /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are
         /// not reported by name to Systems Manager Inventory.</p>
-        pub fn unreported_not_applicable_count(mut self, inp: i32) -> Self {
-            self.unreported_not_applicable_count = Some(inp);
+        pub fn unreported_not_applicable_count(mut self, input: i32) -> Self {
+            self.unreported_not_applicable_count = Some(input);
             self
         }
         pub fn set_unreported_not_applicable_count(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.unreported_not_applicable_count = inp;
+            self.unreported_not_applicable_count = input;
             self
         }
         /// <p>The number of patches from the patch baseline that aren't applicable for the instance and
         /// therefore aren't installed on the instance. This number may be truncated if the list of patch
         /// names is very large. The number of patches beyond this limit are reported in
         /// <code>UnreportedNotApplicableCount</code>.</p>
-        pub fn not_applicable_count(mut self, inp: i32) -> Self {
-            self.not_applicable_count = Some(inp);
+        pub fn not_applicable_count(mut self, input: i32) -> Self {
+            self.not_applicable_count = Some(input);
             self
         }
-        pub fn set_not_applicable_count(mut self, inp: i32) -> Self {
-            self.not_applicable_count = Some(inp);
+        pub fn set_not_applicable_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.not_applicable_count = input;
             self
         }
         /// <p>The time the most recent patching operation was started on the instance.</p>
-        pub fn operation_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.operation_start_time = Some(inp);
+        pub fn operation_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.operation_start_time = Some(input);
             self
         }
         pub fn set_operation_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.operation_start_time = inp;
+            self.operation_start_time = input;
             self
         }
         /// <p>The time the most recent patching operation completed on the instance.</p>
-        pub fn operation_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.operation_end_time = Some(inp);
+        pub fn operation_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.operation_end_time = Some(input);
             self
         }
         pub fn set_operation_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.operation_end_time = inp;
+            self.operation_end_time = input;
             self
         }
         /// <p>The type of patching operation that was performed: <code>SCAN</code> (assess patch
         /// compliance state) or <code>INSTALL</code> (install missing patches).</p>
-        pub fn operation(mut self, inp: crate::model::PatchOperationType) -> Self {
-            self.operation = Some(inp);
+        pub fn operation(mut self, input: crate::model::PatchOperationType) -> Self {
+            self.operation = Some(input);
             self
         }
         pub fn set_operation(
             mut self,
-            inp: std::option::Option<crate::model::PatchOperationType>,
+            input: std::option::Option<crate::model::PatchOperationType>,
         ) -> Self {
-            self.operation = inp;
+            self.operation = input;
             self
         }
         /// <p>The time of the last attempt to patch the instance with <code>NoReboot</code> specified as
         /// the reboot option.</p>
-        pub fn last_no_reboot_install_operation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_no_reboot_install_operation_time = Some(inp);
+        pub fn last_no_reboot_install_operation_time(
+            mut self,
+            input: smithy_types::Instant,
+        ) -> Self {
+            self.last_no_reboot_install_operation_time = Some(input);
             self
         }
         pub fn set_last_no_reboot_install_operation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_no_reboot_install_operation_time = inp;
+            self.last_no_reboot_install_operation_time = input;
             self
         }
         /// <p>Indicates the reboot option specified in the patch baseline.</p>
@@ -22970,50 +23192,50 @@ pub mod instance_patch_state {
         /// reboot is performed.</p>
         /// </li>
         /// </ul>
-        pub fn reboot_option(mut self, inp: crate::model::RebootOption) -> Self {
-            self.reboot_option = Some(inp);
+        pub fn reboot_option(mut self, input: crate::model::RebootOption) -> Self {
+            self.reboot_option = Some(input);
             self
         }
         pub fn set_reboot_option(
             mut self,
-            inp: std::option::Option<crate::model::RebootOption>,
+            input: std::option::Option<crate::model::RebootOption>,
         ) -> Self {
-            self.reboot_option = inp;
+            self.reboot_option = input;
             self
         }
         /// <p>The number of instances where patches that are specified as "Critical" for compliance
         /// reporting in the patch baseline are not installed. These patches might be missing, have failed
         /// installation, were rejected, or were installed but awaiting a required instance reboot. The
         /// status of these instances is <code>NON_COMPLIANT</code>.</p>
-        pub fn critical_non_compliant_count(mut self, inp: i32) -> Self {
-            self.critical_non_compliant_count = Some(inp);
+        pub fn critical_non_compliant_count(mut self, input: i32) -> Self {
+            self.critical_non_compliant_count = Some(input);
             self
         }
-        pub fn set_critical_non_compliant_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.critical_non_compliant_count = inp;
+        pub fn set_critical_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.critical_non_compliant_count = input;
             self
         }
         /// <p>The number of instances where patches that are specified as "Security" in a patch advisory
         /// are not installed. These patches might be missing, have failed installation, were rejected, or
         /// were installed but awaiting a required instance reboot. The status of these instances is
         /// <code>NON_COMPLIANT</code>.</p>
-        pub fn security_non_compliant_count(mut self, inp: i32) -> Self {
-            self.security_non_compliant_count = Some(inp);
+        pub fn security_non_compliant_count(mut self, input: i32) -> Self {
+            self.security_non_compliant_count = Some(input);
             self
         }
-        pub fn set_security_non_compliant_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.security_non_compliant_count = inp;
+        pub fn set_security_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.security_non_compliant_count = input;
             self
         }
         /// <p>The number of instances with patches installed that are specified as other than "Critical"
         /// or "Security" but are not compliant with the patch baseline. The status of these instances is
         /// NON_COMPLIANT.</p>
-        pub fn other_non_compliant_count(mut self, inp: i32) -> Self {
-            self.other_non_compliant_count = Some(inp);
+        pub fn other_non_compliant_count(mut self, input: i32) -> Self {
+            self.other_non_compliant_count = Some(input);
             self
         }
-        pub fn set_other_non_compliant_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.other_non_compliant_count = inp;
+        pub fn set_other_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.other_non_compliant_count = input;
             self
         }
         /// Consumes the builder and constructs a [`InstancePatchState`](crate::model::InstancePatchState)
@@ -23206,38 +23428,38 @@ pub mod instance_patch_state_filter {
     impl Builder {
         /// <p>The key for the filter. Supported values are FailedCount, InstalledCount,
         /// InstalledOtherCount, MissingCount and NotApplicableCount.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or
         /// GreaterThan.</p>
-        pub fn r#type(mut self, inp: crate::model::InstancePatchStateOperatorType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::InstancePatchStateOperatorType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::InstancePatchStateOperatorType>,
+            input: std::option::Option<crate::model::InstancePatchStateOperatorType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`InstancePatchStateFilter`](crate::model::InstancePatchStateFilter)
@@ -23389,76 +23611,79 @@ pub mod patch_compliance_data {
     }
     impl Builder {
         /// <p>The title of the patch.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.title = Some(inp.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
             self
         }
-        pub fn set_title(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.title = inp;
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
             self
         }
         /// <p>The operating system-specific ID of the patch.</p>
-        pub fn kb_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kb_id = Some(inp.into());
+        pub fn kb_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kb_id = Some(input.into());
             self
         }
-        pub fn set_kb_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kb_id = inp;
+        pub fn set_kb_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kb_id = input;
             self
         }
         /// <p>The classification of the patch (for example, SecurityUpdates, Updates,
         /// CriticalUpdates).</p>
-        pub fn classification(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.classification = Some(inp.into());
+        pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
+            self.classification = Some(input.into());
             self
         }
-        pub fn set_classification(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.classification = inp;
+        pub fn set_classification(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.classification = input;
             self
         }
         /// <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
-        pub fn severity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.severity = Some(inp.into());
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.severity = Some(input.into());
             self
         }
-        pub fn set_severity(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.severity = inp;
+        pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.severity = input;
             self
         }
         /// <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
         /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-        pub fn state(mut self, inp: crate::model::PatchComplianceDataState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::PatchComplianceDataState) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::PatchComplianceDataState>,
+            input: std::option::Option<crate::model::PatchComplianceDataState>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
         /// <p>The date/time the patch was installed on the instance. Note that not all operating systems
         /// provide this level of information.</p>
-        pub fn installed_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.installed_time = Some(inp);
+        pub fn installed_time(mut self, input: smithy_types::Instant) -> Self {
+            self.installed_time = Some(input);
             self
         }
         pub fn set_installed_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.installed_time = inp;
+            self.installed_time = input;
             self
         }
         /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by
         /// the patch.</p>
-        pub fn cve_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cve_ids = Some(inp.into());
+        pub fn cve_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cve_ids = Some(input.into());
             self
         }
-        pub fn set_cve_ids(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cve_ids = inp;
+        pub fn set_cve_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cve_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchComplianceData`](crate::model::PatchComplianceData)
@@ -23726,102 +23951,111 @@ pub mod instance_information {
     }
     impl Builder {
         /// <p>The instance ID. </p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>Connection status of SSM Agent. </p>
         /// <note>
         /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
         /// </note>
-        pub fn ping_status(mut self, inp: crate::model::PingStatus) -> Self {
-            self.ping_status = Some(inp);
+        pub fn ping_status(mut self, input: crate::model::PingStatus) -> Self {
+            self.ping_status = Some(input);
             self
         }
         pub fn set_ping_status(
             mut self,
-            inp: std::option::Option<crate::model::PingStatus>,
+            input: std::option::Option<crate::model::PingStatus>,
         ) -> Self {
-            self.ping_status = inp;
+            self.ping_status = input;
             self
         }
         /// <p>The date and time when the agent last pinged the Systems Manager service. </p>
-        pub fn last_ping_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_ping_date_time = Some(inp);
+        pub fn last_ping_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_ping_date_time = Some(input);
             self
         }
         pub fn set_last_ping_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_ping_date_time = inp;
+            self.last_ping_date_time = input;
             self
         }
         /// <p>The version of SSM Agent running on your Linux instance. </p>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.agent_version = Some(inp.into());
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agent_version = Some(input.into());
             self
         }
-        pub fn set_agent_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.agent_version = inp;
+        pub fn set_agent_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.agent_version = input;
             self
         }
         /// <p>Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance.
         /// This field does not indicate whether or not the latest version is installed on Windows managed
         /// instances, because some older versions of Windows Server use the EC2Config service to process SSM
         /// requests.</p>
-        pub fn is_latest_version(mut self, inp: bool) -> Self {
-            self.is_latest_version = Some(inp);
+        pub fn is_latest_version(mut self, input: bool) -> Self {
+            self.is_latest_version = Some(input);
             self
         }
-        pub fn set_is_latest_version(mut self, inp: std::option::Option<bool>) -> Self {
-            self.is_latest_version = inp;
+        pub fn set_is_latest_version(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_latest_version = input;
             self
         }
         /// <p>The operating system platform type. </p>
-        pub fn platform_type(mut self, inp: crate::model::PlatformType) -> Self {
-            self.platform_type = Some(inp);
+        pub fn platform_type(mut self, input: crate::model::PlatformType) -> Self {
+            self.platform_type = Some(input);
             self
         }
         pub fn set_platform_type(
             mut self,
-            inp: std::option::Option<crate::model::PlatformType>,
+            input: std::option::Option<crate::model::PlatformType>,
         ) -> Self {
-            self.platform_type = inp;
+            self.platform_type = input;
             self
         }
         /// <p>The name of the operating system platform running on your instance. </p>
-        pub fn platform_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_name = Some(inp.into());
+        pub fn platform_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_name = Some(input.into());
             self
         }
-        pub fn set_platform_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.platform_name = inp;
+        pub fn set_platform_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_name = input;
             self
         }
         /// <p>The version of the OS platform running on your instance. </p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_version = Some(inp.into());
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_version = Some(input.into());
             self
         }
         pub fn set_platform_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_version = inp;
+            self.platform_version = input;
             self
         }
         /// <p>The activation ID created by Systems Manager when the server or VM was registered.</p>
-        pub fn activation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.activation_id = Some(inp.into());
+        pub fn activation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.activation_id = Some(input.into());
             self
         }
-        pub fn set_activation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.activation_id = inp;
+        pub fn set_activation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.activation_id = input;
             self
         }
         /// <p>The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
@@ -23829,36 +24063,36 @@ pub mod instance_information {
         /// role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
         /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
-        pub fn iam_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iam_role = Some(inp.into());
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role = Some(input.into());
             self
         }
-        pub fn set_iam_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.iam_role = inp;
+        pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role = input;
             self
         }
         /// <p>The date the server or VM was registered with AWS as a managed instance.</p>
-        pub fn registration_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.registration_date = Some(inp);
+        pub fn registration_date(mut self, input: smithy_types::Instant) -> Self {
+            self.registration_date = Some(input);
             self
         }
         pub fn set_registration_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.registration_date = inp;
+            self.registration_date = input;
             self
         }
         /// <p>The type of instance. Instances are either EC2 instances or managed instances. </p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.resource_type = Some(input);
             self
         }
         pub fn set_resource_type(
             mut self,
-            inp: std::option::Option<crate::model::ResourceType>,
+            input: std::option::Option<crate::model::ResourceType>,
         ) -> Self {
-            self.resource_type = inp;
+            self.resource_type = input;
             self
         }
         /// <p>The name assigned to an on-premises server or virtual machine (VM) when it is activated as a
@@ -23870,84 +24104,87 @@ pub mod instance_information {
         /// (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
         /// <code>DescribeInstances</code> action. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
         /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The IP address of the managed instance.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip_address = Some(inp.into());
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
             self
         }
-        pub fn set_ip_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = inp;
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
             self
         }
         /// <p>The fully qualified host name of the managed instance.</p>
-        pub fn computer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.computer_name = Some(inp.into());
+        pub fn computer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.computer_name = Some(input.into());
             self
         }
-        pub fn set_computer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.computer_name = inp;
+        pub fn set_computer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.computer_name = input;
             self
         }
         /// <p>The status of the association.</p>
-        pub fn association_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_status = Some(inp.into());
+        pub fn association_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_status = Some(input.into());
             self
         }
         pub fn set_association_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_status = inp;
+            self.association_status = input;
             self
         }
         /// <p>The date the association was last run.</p>
-        pub fn last_association_execution_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_association_execution_date = Some(inp);
+        pub fn last_association_execution_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_association_execution_date = Some(input);
             self
         }
         pub fn set_last_association_execution_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_association_execution_date = inp;
+            self.last_association_execution_date = input;
             self
         }
         /// <p>The last date the association was successfully run.</p>
         pub fn last_successful_association_execution_date(
             mut self,
-            inp: smithy_types::Instant,
+            input: smithy_types::Instant,
         ) -> Self {
-            self.last_successful_association_execution_date = Some(inp);
+            self.last_successful_association_execution_date = Some(input);
             self
         }
         pub fn set_last_successful_association_execution_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_successful_association_execution_date = inp;
+            self.last_successful_association_execution_date = input;
             self
         }
         /// <p>Information about the association.</p>
         pub fn association_overview(
             mut self,
-            inp: crate::model::InstanceAggregatedAssociationOverview,
+            input: crate::model::InstanceAggregatedAssociationOverview,
         ) -> Self {
-            self.association_overview = Some(inp);
+            self.association_overview = Some(input);
             self
         }
         pub fn set_association_overview(
             mut self,
-            inp: std::option::Option<crate::model::InstanceAggregatedAssociationOverview>,
+            input: std::option::Option<crate::model::InstanceAggregatedAssociationOverview>,
         ) -> Self {
-            self.association_overview = inp;
+            self.association_overview = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceInformation`](crate::model::InstanceInformation)
@@ -24021,15 +24258,15 @@ pub mod instance_aggregated_association_overview {
     }
     impl Builder {
         /// <p>Detailed status information about the aggregated associations.</p>
-        pub fn detailed_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detailed_status = Some(inp.into());
+        pub fn detailed_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detailed_status = Some(input.into());
             self
         }
         pub fn set_detailed_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.detailed_status = inp;
+            self.detailed_status = input;
             self
         }
         pub fn instance_association_status_aggregated_count(
@@ -24046,9 +24283,9 @@ pub mod instance_aggregated_association_overview {
         }
         pub fn set_instance_association_status_aggregated_count(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
         ) -> Self {
-            self.instance_association_status_aggregated_count = inp;
+            self.instance_association_status_aggregated_count = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceAggregatedAssociationOverview`](crate::model::InstanceAggregatedAssociationOverview)
@@ -24236,25 +24473,25 @@ pub mod instance_information_string_filter {
         /// tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:,
         /// tagKey, abc:keyname.</p>
         /// </important>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceInformationStringFilter`](crate::model::InstanceInformationStringFilter)
@@ -24309,28 +24546,28 @@ pub mod instance_information_filter {
     }
     impl Builder {
         /// <p>The name of the filter. </p>
-        pub fn key(mut self, inp: crate::model::InstanceInformationFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::InstanceInformationFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::InstanceInformationFilterKey>,
+            input: std::option::Option<crate::model::InstanceInformationFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
-        pub fn value_set(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn value_set(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.value_set = Some(v);
             self
         }
         pub fn set_value_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.value_set = inp;
+            self.value_set = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceInformationFilter`](crate::model::InstanceInformationFilter)
@@ -24518,132 +24755,135 @@ pub mod instance_association_status_info {
     }
     impl Builder {
         /// <p>The association ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The name of the association.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The association document versions.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>The version of the association applied to the instance.</p>
-        pub fn association_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_version = Some(inp.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_version = Some(input.into());
             self
         }
         pub fn set_association_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_version = inp;
+            self.association_version = input;
             self
         }
         /// <p>The instance ID where the association was created.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The date the instance association ran. </p>
-        pub fn execution_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_date = Some(inp);
+        pub fn execution_date(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_date = Some(input);
             self
         }
         pub fn set_execution_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_date = inp;
+            self.execution_date = input;
             self
         }
         /// <p>Status information about the instance association.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Detailed status information about the instance association.</p>
-        pub fn detailed_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detailed_status = Some(inp.into());
+        pub fn detailed_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detailed_status = Some(input.into());
             self
         }
         pub fn set_detailed_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.detailed_status = inp;
+            self.detailed_status = input;
             self
         }
         /// <p>Summary information about association execution.</p>
-        pub fn execution_summary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_summary = Some(inp.into());
+        pub fn execution_summary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_summary = Some(input.into());
             self
         }
         pub fn set_execution_summary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_summary = inp;
+            self.execution_summary = input;
             self
         }
         /// <p>An error code returned by the request to create the association.</p>
-        pub fn error_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_code = Some(inp.into());
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
             self
         }
-        pub fn set_error_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_code = inp;
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
             self
         }
         /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-        pub fn output_url(mut self, inp: crate::model::InstanceAssociationOutputUrl) -> Self {
-            self.output_url = Some(inp);
+        pub fn output_url(mut self, input: crate::model::InstanceAssociationOutputUrl) -> Self {
+            self.output_url = Some(input);
             self
         }
         pub fn set_output_url(
             mut self,
-            inp: std::option::Option<crate::model::InstanceAssociationOutputUrl>,
+            input: std::option::Option<crate::model::InstanceAssociationOutputUrl>,
         ) -> Self {
-            self.output_url = inp;
+            self.output_url = input;
             self
         }
         /// <p>The name of the association applied to the instance.</p>
-        pub fn association_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_name = Some(inp.into());
+        pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_name = Some(input.into());
             self
         }
         pub fn set_association_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_name = inp;
+            self.association_name = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceAssociationStatusInfo`](crate::model::InstanceAssociationStatusInfo)
@@ -24698,15 +24938,15 @@ pub mod instance_association_output_url {
     }
     impl Builder {
         /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
-        pub fn s3_output_url(mut self, inp: crate::model::S3OutputUrl) -> Self {
-            self.s3_output_url = Some(inp);
+        pub fn s3_output_url(mut self, input: crate::model::S3OutputUrl) -> Self {
+            self.s3_output_url = Some(input);
             self
         }
         pub fn set_s3_output_url(
             mut self,
-            inp: std::option::Option<crate::model::S3OutputUrl>,
+            input: std::option::Option<crate::model::S3OutputUrl>,
         ) -> Self {
-            self.s3_output_url = inp;
+            self.s3_output_url = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceAssociationOutputUrl`](crate::model::InstanceAssociationOutputUrl)
@@ -24750,12 +24990,12 @@ pub mod s3_output_url {
     }
     impl Builder {
         /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-        pub fn output_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_url = Some(inp.into());
+        pub fn output_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_url = Some(input.into());
             self
         }
-        pub fn set_output_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.output_url = inp;
+        pub fn set_output_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_url = input;
             self
         }
         /// Consumes the builder and constructs a [`S3OutputUrl`](crate::model::S3OutputUrl)
@@ -24812,26 +25052,26 @@ pub mod effective_patch {
     impl Builder {
         /// <p>Provides metadata for a patch, including information such as the KB ID, severity,
         /// classification and a URL for where more information can be obtained about the patch.</p>
-        pub fn patch(mut self, inp: crate::model::Patch) -> Self {
-            self.patch = Some(inp);
+        pub fn patch(mut self, input: crate::model::Patch) -> Self {
+            self.patch = Some(input);
             self
         }
-        pub fn set_patch(mut self, inp: std::option::Option<crate::model::Patch>) -> Self {
-            self.patch = inp;
+        pub fn set_patch(mut self, input: std::option::Option<crate::model::Patch>) -> Self {
+            self.patch = input;
             self
         }
         /// <p>The status of the patch in a patch baseline. This includes information about whether the
         /// patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly
         /// rejected and the date the patch was or will be approved.</p>
-        pub fn patch_status(mut self, inp: crate::model::PatchStatus) -> Self {
-            self.patch_status = Some(inp);
+        pub fn patch_status(mut self, input: crate::model::PatchStatus) -> Self {
+            self.patch_status = Some(input);
             self
         }
         pub fn set_patch_status(
             mut self,
-            inp: std::option::Option<crate::model::PatchStatus>,
+            input: std::option::Option<crate::model::PatchStatus>,
         ) -> Self {
-            self.patch_status = inp;
+            self.patch_status = input;
             self
         }
         /// Consumes the builder and constructs a [`EffectivePatch`](crate::model::EffectivePatch)
@@ -24894,40 +25134,40 @@ pub mod patch_status {
     impl Builder {
         /// <p>The approval status of a patch (APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED,
         /// EXPLICIT_REJECTED).</p>
-        pub fn deployment_status(mut self, inp: crate::model::PatchDeploymentStatus) -> Self {
-            self.deployment_status = Some(inp);
+        pub fn deployment_status(mut self, input: crate::model::PatchDeploymentStatus) -> Self {
+            self.deployment_status = Some(input);
             self
         }
         pub fn set_deployment_status(
             mut self,
-            inp: std::option::Option<crate::model::PatchDeploymentStatus>,
+            input: std::option::Option<crate::model::PatchDeploymentStatus>,
         ) -> Self {
-            self.deployment_status = inp;
+            self.deployment_status = input;
             self
         }
         /// <p>The compliance severity level for a patch.</p>
-        pub fn compliance_level(mut self, inp: crate::model::PatchComplianceLevel) -> Self {
-            self.compliance_level = Some(inp);
+        pub fn compliance_level(mut self, input: crate::model::PatchComplianceLevel) -> Self {
+            self.compliance_level = Some(input);
             self
         }
         pub fn set_compliance_level(
             mut self,
-            inp: std::option::Option<crate::model::PatchComplianceLevel>,
+            input: std::option::Option<crate::model::PatchComplianceLevel>,
         ) -> Self {
-            self.compliance_level = inp;
+            self.compliance_level = input;
             self
         }
         /// <p>The date the patch was approved (or will be approved if the status is
         /// PENDING_APPROVAL).</p>
-        pub fn approval_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.approval_date = Some(inp);
+        pub fn approval_date(mut self, input: smithy_types::Instant) -> Self {
+            self.approval_date = Some(input);
             self
         }
         pub fn set_approval_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.approval_date = inp;
+            self.approval_date = input;
             self
         }
         /// Consumes the builder and constructs a [`PatchStatus`](crate::model::PatchStatus)
@@ -25195,238 +25435,250 @@ pub mod patch {
         /// <note>
         /// <p>This ID is not the same as the Microsoft Knowledge Base ID.</p>
         /// </note>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The date the patch was released.</p>
-        pub fn release_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.release_date = Some(inp);
+        pub fn release_date(mut self, input: smithy_types::Instant) -> Self {
+            self.release_date = Some(input);
             self
         }
-        pub fn set_release_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.release_date = inp;
+        pub fn set_release_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.release_date = input;
             self
         }
         /// <p>The title of the patch.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.title = Some(inp.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
             self
         }
-        pub fn set_title(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.title = inp;
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
             self
         }
         /// <p>The description of the patch.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The URL where more information can be obtained about the patch.</p>
-        pub fn content_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_url = Some(inp.into());
+        pub fn content_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_url = Some(input.into());
             self
         }
-        pub fn set_content_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_url = inp;
+        pub fn set_content_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_url = input;
             self
         }
         /// <p>The name of the vendor providing the patch.</p>
-        pub fn vendor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vendor = Some(inp.into());
+        pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vendor = Some(input.into());
             self
         }
-        pub fn set_vendor(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vendor = inp;
+        pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vendor = input;
             self
         }
         /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or
         /// <code>Amazon Linux 2</code>.</p>
-        pub fn product_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product_family = Some(inp.into());
+        pub fn product_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_family = Some(input.into());
             self
         }
-        pub fn set_product_family(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.product_family = inp;
+        pub fn set_product_family(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.product_family = input;
             self
         }
         /// <p>The specific product the patch is applicable for. For example,
         /// <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
-        pub fn product(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product = Some(inp.into());
+        pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product = Some(input.into());
             self
         }
-        pub fn set_product(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.product = inp;
+        pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product = input;
             self
         }
         /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
         /// <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
-        pub fn classification(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.classification = Some(inp.into());
+        pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
+            self.classification = Some(input.into());
             self
         }
-        pub fn set_classification(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.classification = inp;
+        pub fn set_classification(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.classification = input;
             self
         }
         /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or
         /// <code>Moderate</code>. Applies to Windows patches only.</p>
-        pub fn msrc_severity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.msrc_severity = Some(inp.into());
+        pub fn msrc_severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.msrc_severity = Some(input.into());
             self
         }
-        pub fn set_msrc_severity(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.msrc_severity = inp;
+        pub fn set_msrc_severity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.msrc_severity = input;
             self
         }
         /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
-        pub fn kb_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kb_number = Some(inp.into());
+        pub fn kb_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kb_number = Some(input.into());
             self
         }
-        pub fn set_kb_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kb_number = inp;
+        pub fn set_kb_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kb_number = input;
             self
         }
         /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to.
         /// For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
-        pub fn msrc_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.msrc_number = Some(inp.into());
+        pub fn msrc_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.msrc_number = Some(input.into());
             self
         }
-        pub fn set_msrc_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.msrc_number = inp;
+        pub fn set_msrc_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.msrc_number = input;
             self
         }
         /// <p>The language of the patch if it's language-specific.</p>
-        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.language = Some(inp.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language = Some(input.into());
             self
         }
-        pub fn set_language(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.language = inp;
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language = input;
             self
         }
-        pub fn advisory_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn advisory_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.advisory_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.advisory_ids = Some(v);
             self
         }
         pub fn set_advisory_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.advisory_ids = inp;
+            self.advisory_ids = input;
             self
         }
-        pub fn bugzilla_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn bugzilla_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bugzilla_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.bugzilla_ids = Some(v);
             self
         }
         pub fn set_bugzilla_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.bugzilla_ids = inp;
+            self.bugzilla_ids = input;
             self
         }
-        pub fn cve_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn cve_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cve_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cve_ids = Some(v);
             self
         }
         pub fn set_cve_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.cve_ids = inp;
+            self.cve_ids = input;
             self
         }
         /// <p>The name of the patch. Applies to Linux-based instances only.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The epoch of the patch. For example in
         /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
         /// <code>20180914-2</code>. Applies to Linux-based instances only.</p>
-        pub fn epoch(mut self, inp: i32) -> Self {
-            self.epoch = Some(inp);
+        pub fn epoch(mut self, input: i32) -> Self {
+            self.epoch = Some(input);
             self
         }
-        pub fn set_epoch(mut self, inp: i32) -> Self {
-            self.epoch = Some(inp);
+        pub fn set_epoch(mut self, input: std::option::Option<i32>) -> Self {
+            self.epoch = input;
             self
         }
         /// <p>The version number of the patch. For example, in
         /// <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by
         /// <code>-1</code>. Applies to Linux-based instances only.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The particular release of a patch. For example, in
         /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>.
         /// Applies to Linux-based instances only.</p>
-        pub fn release(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.release = Some(inp.into());
+        pub fn release(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release = Some(input.into());
             self
         }
-        pub fn set_release(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.release = inp;
+        pub fn set_release(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.release = input;
             self
         }
         /// <p>The architecture of the patch. For example, in
         /// <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by
         /// <code>x86_64</code>. Applies to Linux-based instances only.</p>
-        pub fn arch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arch = Some(inp.into());
+        pub fn arch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arch = Some(input.into());
             self
         }
-        pub fn set_arch(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arch = inp;
+        pub fn set_arch(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arch = input;
             self
         }
         /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or
         /// <code>MODERATE</code>.</p>
-        pub fn severity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.severity = Some(inp.into());
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.severity = Some(input.into());
             self
         }
-        pub fn set_severity(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.severity = inp;
+        pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.severity = input;
             self
         }
         /// <p>The source patch repository for the operating system and version, such as
         /// <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for
         /// Ubuntu Server 20.04 LTE. Applies to Linux-based instances only.</p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.repository = Some(inp.into());
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository = Some(input.into());
             self
         }
-        pub fn set_repository(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.repository = inp;
+        pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository = input;
             self
         }
         /// Consumes the builder and constructs a [`Patch`](crate::model::Patch)
@@ -25510,42 +25762,45 @@ pub mod instance_association {
     }
     impl Builder {
         /// <p>The association ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The content of the association document for the instance(s).</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content = Some(inp.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content = inp;
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
             self
         }
         /// <p>Version information for the association on the instance.</p>
-        pub fn association_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_version = Some(inp.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_version = Some(input.into());
             self
         }
         pub fn set_association_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_version = inp;
+            self.association_version = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceAssociation`](crate::model::InstanceAssociation)
@@ -25599,24 +25854,24 @@ pub mod account_sharing_info {
     }
     impl Builder {
         /// <p>The AWS account ID where the current document is shared.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account_id = Some(inp.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
             self
         }
-        pub fn set_account_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account_id = inp;
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
             self
         }
         /// <p>The version of the current document shared with the account.</p>
-        pub fn shared_document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shared_document_version = Some(inp.into());
+        pub fn shared_document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shared_document_version = Some(input.into());
             self
         }
         pub fn set_shared_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.shared_document_version = inp;
+            self.shared_document_version = input;
             self
         }
         /// Consumes the builder and constructs a [`AccountSharingInfo`](crate::model::AccountSharingInfo)
@@ -25669,28 +25924,28 @@ pub mod step_execution_filter {
     impl Builder {
         /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName,
         /// Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
-        pub fn key(mut self, inp: crate::model::StepExecutionFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::StepExecutionFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::StepExecutionFilterKey>,
+            input: std::option::Option<crate::model::StepExecutionFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`StepExecutionFilter`](crate::model::StepExecutionFilter)
@@ -26003,94 +26258,97 @@ pub mod automation_execution_metadata {
     }
     impl Builder {
         /// <p>The execution ID.</p>
-        pub fn automation_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.automation_execution_id = Some(inp.into());
+        pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.automation_execution_id = Some(input.into());
             self
         }
         pub fn set_automation_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.automation_execution_id = inp;
+            self.automation_execution_id = input;
             self
         }
         /// <p>The name of the Automation document used during execution.</p>
-        pub fn document_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_name = Some(inp.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_name = Some(input.into());
             self
         }
-        pub fn set_document_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document_name = inp;
+        pub fn set_document_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_name = input;
             self
         }
         /// <p>The document version used during the execution.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
         /// <p>The status of the execution.</p>
         pub fn automation_execution_status(
             mut self,
-            inp: crate::model::AutomationExecutionStatus,
+            input: crate::model::AutomationExecutionStatus,
         ) -> Self {
-            self.automation_execution_status = Some(inp);
+            self.automation_execution_status = Some(input);
             self
         }
         pub fn set_automation_execution_status(
             mut self,
-            inp: std::option::Option<crate::model::AutomationExecutionStatus>,
+            input: std::option::Option<crate::model::AutomationExecutionStatus>,
         ) -> Self {
-            self.automation_execution_status = inp;
+            self.automation_execution_status = input;
             self
         }
         /// <p>The time the execution started.</p>
-        pub fn execution_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_start_time = Some(inp);
+        pub fn execution_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_start_time = Some(input);
             self
         }
         pub fn set_execution_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_start_time = inp;
+            self.execution_start_time = input;
             self
         }
         /// <p>The time the execution finished. This is not populated if the execution is still in
         /// progress.</p>
-        pub fn execution_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_end_time = Some(inp);
+        pub fn execution_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_end_time = Some(input);
             self
         }
         pub fn set_execution_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_end_time = inp;
+            self.execution_end_time = input;
             self
         }
         /// <p>The IAM role ARN of the user who ran the Automation.</p>
-        pub fn executed_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.executed_by = Some(inp.into());
+        pub fn executed_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.executed_by = Some(input.into());
             self
         }
-        pub fn set_executed_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.executed_by = inp;
+        pub fn set_executed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.executed_by = input;
             self
         }
         /// <p>An S3 bucket where execution information is stored.</p>
-        pub fn log_file(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_file = Some(inp.into());
+        pub fn log_file(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_file = Some(input.into());
             self
         }
-        pub fn set_log_file(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_file = inp;
+        pub fn set_log_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_file = input;
             self
         }
         pub fn outputs(
@@ -26105,109 +26363,112 @@ pub mod automation_execution_metadata {
         }
         pub fn set_outputs(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.outputs = inp;
+            self.outputs = input;
             self
         }
         /// <p>The Automation execution mode.</p>
-        pub fn mode(mut self, inp: crate::model::ExecutionMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::ExecutionMode) -> Self {
+            self.mode = Some(input);
             self
         }
-        pub fn set_mode(mut self, inp: std::option::Option<crate::model::ExecutionMode>) -> Self {
-            self.mode = inp;
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::ExecutionMode>) -> Self {
+            self.mode = input;
             self
         }
         /// <p>The ExecutionId of the parent Automation.</p>
         pub fn parent_automation_execution_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.parent_automation_execution_id = Some(inp.into());
+            self.parent_automation_execution_id = Some(input.into());
             self
         }
         pub fn set_parent_automation_execution_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.parent_automation_execution_id = inp;
+            self.parent_automation_execution_id = input;
             self
         }
         /// <p>The name of the step that is currently running.</p>
-        pub fn current_step_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.current_step_name = Some(inp.into());
+        pub fn current_step_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_step_name = Some(input.into());
             self
         }
         pub fn set_current_step_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.current_step_name = inp;
+            self.current_step_name = input;
             self
         }
         /// <p>The action of the step that is currently running.</p>
-        pub fn current_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.current_action = Some(inp.into());
+        pub fn current_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_action = Some(input.into());
             self
         }
-        pub fn set_current_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.current_action = inp;
+        pub fn set_current_action(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_action = input;
             self
         }
         /// <p>The list of execution outputs as defined in the Automation document.</p>
-        pub fn failure_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_message = Some(inp.into());
+        pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_message = Some(input.into());
             self
         }
         pub fn set_failure_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.failure_message = inp;
+            self.failure_message = input;
             self
         }
         /// <p>The list of execution outputs as defined in the Automation document.</p>
-        pub fn target_parameter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_parameter_name = Some(inp.into());
+        pub fn target_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_parameter_name = Some(input.into());
             self
         }
         pub fn set_target_parameter_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_parameter_name = inp;
+            self.target_parameter_name = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         pub fn target_maps(
             mut self,
-            inp: impl Into<
+            input: impl Into<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
             let mut v = self.target_maps.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_maps = Some(v);
             self
         }
         pub fn set_target_maps(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<
                     std::collections::HashMap<
                         std::string::String,
@@ -26216,132 +26477,135 @@ pub mod automation_execution_metadata {
                 >,
             >,
         ) -> Self {
-            self.target_maps = inp;
+            self.target_maps = input;
             self
         }
         /// <p>A list of targets that resolved during the execution.</p>
-        pub fn resolved_targets(mut self, inp: crate::model::ResolvedTargets) -> Self {
-            self.resolved_targets = Some(inp);
+        pub fn resolved_targets(mut self, input: crate::model::ResolvedTargets) -> Self {
+            self.resolved_targets = Some(input);
             self
         }
         pub fn set_resolved_targets(
             mut self,
-            inp: std::option::Option<crate::model::ResolvedTargets>,
+            input: std::option::Option<crate::model::ResolvedTargets>,
         ) -> Self {
-            self.resolved_targets = inp;
+            self.resolved_targets = input;
             self
         }
         /// <p>The MaxConcurrency value specified by the user when starting the Automation.</p>
-        pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_concurrency = Some(inp.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_concurrency = Some(input.into());
             self
         }
         pub fn set_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.max_concurrency = inp;
+            self.max_concurrency = input;
             self
         }
         /// <p>The MaxErrors value specified by the user when starting the Automation.</p>
-        pub fn max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_errors = Some(inp.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_errors = Some(input.into());
             self
         }
-        pub fn set_max_errors(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = inp;
+        pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_errors = input;
             self
         }
         /// <p>The list of execution outputs as defined in the Automation document.</p>
-        pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target = Some(inp.into());
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target = Some(input.into());
             self
         }
-        pub fn set_target(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target = inp;
+        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target = input;
             self
         }
         /// <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
         /// CrossAccount. CrossAccount is an Automation that runs in multiple AWS Regions and accounts. For
         /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple AWS Regions and accounts</a> in the
         /// <i>AWS Systems Manager User Guide</i>. </p>
-        pub fn automation_type(mut self, inp: crate::model::AutomationType) -> Self {
-            self.automation_type = Some(inp);
+        pub fn automation_type(mut self, input: crate::model::AutomationType) -> Self {
+            self.automation_type = Some(input);
             self
         }
         pub fn set_automation_type(
             mut self,
-            inp: std::option::Option<crate::model::AutomationType>,
+            input: std::option::Option<crate::model::AutomationType>,
         ) -> Self {
-            self.automation_type = inp;
+            self.automation_type = input;
             self
         }
         /// <p>The subtype of the Automation operation. Currently, the only supported value is
         /// <code>ChangeRequest</code>.</p>
-        pub fn automation_subtype(mut self, inp: crate::model::AutomationSubtype) -> Self {
-            self.automation_subtype = Some(inp);
+        pub fn automation_subtype(mut self, input: crate::model::AutomationSubtype) -> Self {
+            self.automation_subtype = Some(input);
             self
         }
         pub fn set_automation_subtype(
             mut self,
-            inp: std::option::Option<crate::model::AutomationSubtype>,
+            input: std::option::Option<crate::model::AutomationSubtype>,
         ) -> Self {
-            self.automation_subtype = inp;
+            self.automation_subtype = input;
             self
         }
         /// <p>The date and time the Automation operation is scheduled to start.</p>
-        pub fn scheduled_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.scheduled_time = Some(inp);
+        pub fn scheduled_time(mut self, input: smithy_types::Instant) -> Self {
+            self.scheduled_time = Some(input);
             self
         }
         pub fn set_scheduled_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.scheduled_time = inp;
+            self.scheduled_time = input;
             self
         }
-        pub fn runbooks(mut self, inp: impl Into<crate::model::Runbook>) -> Self {
+        pub fn runbooks(mut self, input: impl Into<crate::model::Runbook>) -> Self {
             let mut v = self.runbooks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.runbooks = Some(v);
             self
         }
         pub fn set_runbooks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
         ) -> Self {
-            self.runbooks = inp;
+            self.runbooks = input;
             self
         }
         /// <p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// <p>The ID of a State Manager association used in the Automation operation.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The name of the Change Manager change request.</p>
-        pub fn change_request_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_request_name = Some(inp.into());
+        pub fn change_request_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_request_name = Some(input.into());
             self
         }
         pub fn set_change_request_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_request_name = inp;
+            self.change_request_name = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationExecutionMetadata`](crate::model::AutomationExecutionMetadata)
@@ -26475,28 +26739,28 @@ pub mod automation_execution_filter {
     }
     impl Builder {
         /// <p>One or more keys to limit the results.</p>
-        pub fn key(mut self, inp: crate::model::AutomationExecutionFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::AutomationExecutionFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::AutomationExecutionFilterKey>,
+            input: std::option::Option<crate::model::AutomationExecutionFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationExecutionFilter`](crate::model::AutomationExecutionFilter)
@@ -26678,96 +26942,102 @@ pub mod association_execution_target {
     }
     impl Builder {
         /// <p>The association ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The association version.</p>
-        pub fn association_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_version = Some(inp.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_version = Some(input.into());
             self
         }
         pub fn set_association_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_version = inp;
+            self.association_version = input;
             self
         }
         /// <p>The execution ID.</p>
-        pub fn execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_id = Some(inp.into());
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
             self
         }
-        pub fn set_execution_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = inp;
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
             self
         }
         /// <p>The resource ID, for example, the instance ID where the association ran.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = inp;
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// <p>The resource type, for example, instance.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The association execution status.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Detailed information about the execution status.</p>
-        pub fn detailed_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detailed_status = Some(inp.into());
+        pub fn detailed_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detailed_status = Some(input.into());
             self
         }
         pub fn set_detailed_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.detailed_status = inp;
+            self.detailed_status = input;
             self
         }
         /// <p>The date of the last execution.</p>
-        pub fn last_execution_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_execution_date = Some(inp);
+        pub fn last_execution_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_execution_date = Some(input);
             self
         }
         pub fn set_last_execution_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_execution_date = inp;
+            self.last_execution_date = input;
             self
         }
         /// <p>The location where the association details are saved.</p>
-        pub fn output_source(mut self, inp: crate::model::OutputSource) -> Self {
-            self.output_source = Some(inp);
+        pub fn output_source(mut self, input: crate::model::OutputSource) -> Self {
+            self.output_source = Some(input);
             self
         }
         pub fn set_output_source(
             mut self,
-            inp: std::option::Option<crate::model::OutputSource>,
+            input: std::option::Option<crate::model::OutputSource>,
         ) -> Self {
-            self.output_source = inp;
+            self.output_source = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationExecutionTarget`](crate::model::AssociationExecutionTarget)
@@ -26826,28 +27096,28 @@ pub mod output_source {
     }
     impl Builder {
         /// <p>The ID of the output source, for example the URL of an S3 bucket.</p>
-        pub fn output_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_source_id = Some(inp.into());
+        pub fn output_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_source_id = Some(input.into());
             self
         }
         pub fn set_output_source_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_source_id = inp;
+            self.output_source_id = input;
             self
         }
         /// <p>The type of source where the association execution details are stored, for example,
         /// Amazon S3.</p>
-        pub fn output_source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_source_type = Some(inp.into());
+        pub fn output_source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_source_type = Some(input.into());
             self
         }
         pub fn set_output_source_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_source_type = inp;
+            self.output_source_type = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputSource`](crate::model::OutputSource)
@@ -26898,24 +27168,24 @@ pub mod association_execution_targets_filter {
     }
     impl Builder {
         /// <p>The key value used in the request.</p>
-        pub fn key(mut self, inp: crate::model::AssociationExecutionTargetsFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::AssociationExecutionTargetsFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::AssociationExecutionTargetsFilterKey>,
+            input: std::option::Option<crate::model::AssociationExecutionTargetsFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
         /// <p>The value specified for the key.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationExecutionTargetsFilter`](crate::model::AssociationExecutionTargetsFilter)
@@ -27067,87 +27337,93 @@ pub mod association_execution {
     }
     impl Builder {
         /// <p>The association ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The association version.</p>
-        pub fn association_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_version = Some(inp.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_version = Some(input.into());
             self
         }
         pub fn set_association_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_version = inp;
+            self.association_version = input;
             self
         }
         /// <p>The execution ID for the association.</p>
-        pub fn execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_id = Some(inp.into());
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
             self
         }
-        pub fn set_execution_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = inp;
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
             self
         }
         /// <p>The status of the association execution.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Detailed status information about the execution.</p>
-        pub fn detailed_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detailed_status = Some(inp.into());
+        pub fn detailed_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detailed_status = Some(input.into());
             self
         }
         pub fn set_detailed_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.detailed_status = inp;
+            self.detailed_status = input;
             self
         }
         /// <p>The time the execution started.</p>
-        pub fn created_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_time = Some(inp);
+        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+            self.created_time = Some(input);
             self
         }
-        pub fn set_created_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_time = inp;
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_time = input;
             self
         }
         /// <p>The date of the last execution.</p>
-        pub fn last_execution_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_execution_date = Some(inp);
+        pub fn last_execution_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_execution_date = Some(input);
             self
         }
         pub fn set_last_execution_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_execution_date = inp;
+            self.last_execution_date = input;
             self
         }
         /// <p>An aggregate status of the resources in the execution based on the status type.</p>
-        pub fn resource_count_by_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_count_by_status = Some(inp.into());
+        pub fn resource_count_by_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_count_by_status = Some(input.into());
             self
         }
         pub fn set_resource_count_by_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_count_by_status = inp;
+            self.resource_count_by_status = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationExecution`](crate::model::AssociationExecution)
@@ -27210,36 +27486,36 @@ pub mod association_execution_filter {
     }
     impl Builder {
         /// <p>The key value used in the request.</p>
-        pub fn key(mut self, inp: crate::model::AssociationExecutionFilterKey) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::AssociationExecutionFilterKey) -> Self {
+            self.key = Some(input);
             self
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<crate::model::AssociationExecutionFilterKey>,
+            input: std::option::Option<crate::model::AssociationExecutionFilterKey>,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
         /// <p>The value specified for the key.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The filter type specified in the request.</p>
-        pub fn r#type(mut self, inp: crate::model::AssociationFilterOperatorType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::AssociationFilterOperatorType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::AssociationFilterOperatorType>,
+            input: std::option::Option<crate::model::AssociationFilterOperatorType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationExecutionFilter`](crate::model::AssociationExecutionFilter)
@@ -27466,104 +27742,110 @@ pub mod activation {
     }
     impl Builder {
         /// <p>The ID created by Systems Manager when you submitted the activation.</p>
-        pub fn activation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.activation_id = Some(inp.into());
+        pub fn activation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.activation_id = Some(input.into());
             self
         }
-        pub fn set_activation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.activation_id = inp;
+        pub fn set_activation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.activation_id = input;
             self
         }
         /// <p>A user defined description of the activation.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>A name for the managed instance when it is created.</p>
-        pub fn default_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_instance_name = Some(inp.into());
+        pub fn default_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_instance_name = Some(input.into());
             self
         }
         pub fn set_default_instance_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_instance_name = inp;
+            self.default_instance_name = input;
             self
         }
         /// <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
         /// instance.</p>
-        pub fn iam_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iam_role = Some(inp.into());
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role = Some(input.into());
             self
         }
-        pub fn set_iam_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.iam_role = inp;
+        pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role = input;
             self
         }
         /// <p>The maximum number of managed instances that can be registered using this activation.</p>
-        pub fn registration_limit(mut self, inp: i32) -> Self {
-            self.registration_limit = Some(inp);
+        pub fn registration_limit(mut self, input: i32) -> Self {
+            self.registration_limit = Some(input);
             self
         }
-        pub fn set_registration_limit(mut self, inp: i32) -> Self {
-            self.registration_limit = Some(inp);
+        pub fn set_registration_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.registration_limit = input;
             self
         }
         /// <p>The number of managed instances already registered with this activation.</p>
-        pub fn registrations_count(mut self, inp: i32) -> Self {
-            self.registrations_count = Some(inp);
+        pub fn registrations_count(mut self, input: i32) -> Self {
+            self.registrations_count = Some(input);
             self
         }
-        pub fn set_registrations_count(mut self, inp: i32) -> Self {
-            self.registrations_count = Some(inp);
+        pub fn set_registrations_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.registrations_count = input;
             self
         }
         /// <p>The date when this activation can no longer be used to register managed instances.</p>
-        pub fn expiration_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.expiration_date = Some(inp);
+        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+            self.expiration_date = Some(input);
             self
         }
         pub fn set_expiration_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.expiration_date = inp;
+            self.expiration_date = input;
             self
         }
         /// <p>Whether or not the activation is expired.</p>
-        pub fn expired(mut self, inp: bool) -> Self {
-            self.expired = Some(inp);
+        pub fn expired(mut self, input: bool) -> Self {
+            self.expired = Some(input);
             self
         }
-        pub fn set_expired(mut self, inp: bool) -> Self {
-            self.expired = Some(inp);
+        pub fn set_expired(mut self, input: std::option::Option<bool>) -> Self {
+            self.expired = input;
             self
         }
         /// <p>The date the activation was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`Activation`](crate::model::Activation)
@@ -27622,28 +27904,28 @@ pub mod describe_activations_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        pub fn filter_key(mut self, inp: crate::model::DescribeActivationsFilterKeys) -> Self {
-            self.filter_key = Some(inp);
+        pub fn filter_key(mut self, input: crate::model::DescribeActivationsFilterKeys) -> Self {
+            self.filter_key = Some(input);
             self
         }
         pub fn set_filter_key(
             mut self,
-            inp: std::option::Option<crate::model::DescribeActivationsFilterKeys>,
+            input: std::option::Option<crate::model::DescribeActivationsFilterKeys>,
         ) -> Self {
-            self.filter_key = inp;
+            self.filter_key = input;
             self
         }
-        pub fn filter_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn filter_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.filter_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filter_values = Some(v);
             self
         }
         pub fn set_filter_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.filter_values = inp;
+            self.filter_values = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeActivationsFilter`](crate::model::DescribeActivationsFilter)
@@ -27815,33 +28097,33 @@ pub mod failed_create_association {
     }
     impl Builder {
         /// <p>The association.</p>
-        pub fn entry(mut self, inp: crate::model::CreateAssociationBatchRequestEntry) -> Self {
-            self.entry = Some(inp);
+        pub fn entry(mut self, input: crate::model::CreateAssociationBatchRequestEntry) -> Self {
+            self.entry = Some(input);
             self
         }
         pub fn set_entry(
             mut self,
-            inp: std::option::Option<crate::model::CreateAssociationBatchRequestEntry>,
+            input: std::option::Option<crate::model::CreateAssociationBatchRequestEntry>,
         ) -> Self {
-            self.entry = inp;
+            self.entry = input;
             self
         }
         /// <p>A description of the failure.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The source of the failure.</p>
-        pub fn fault(mut self, inp: crate::model::Fault) -> Self {
-            self.fault = Some(inp);
+        pub fn fault(mut self, input: crate::model::Fault) -> Self {
+            self.fault = Some(input);
             self
         }
-        pub fn set_fault(mut self, inp: std::option::Option<crate::model::Fault>) -> Self {
-            self.fault = inp;
+        pub fn set_fault(mut self, input: std::option::Option<crate::model::Fault>) -> Self {
+            self.fault = input;
             self
         }
         /// Consumes the builder and constructs a [`FailedCreateAssociation`](crate::model::FailedCreateAssociation)
@@ -28114,21 +28396,21 @@ pub mod create_association_batch_request_entry {
         /// <p>For AWS-predefined documents and SSM documents you created in your account, you only need to
         /// specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
         /// <code>My-Document</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The ID of the instance. </p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         pub fn parameters(
@@ -28143,91 +28425,91 @@ pub mod create_association_batch_request_entry {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>Specify the target for the association. This target is required for associations that use an
         /// Automation document and target resources by using rate controls.</p>
         pub fn automation_target_parameter_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.automation_target_parameter_name = Some(inp.into());
+            self.automation_target_parameter_name = Some(input.into());
             self
         }
         pub fn set_automation_target_parameter_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.automation_target_parameter_name = inp;
+            self.automation_target_parameter_name = input;
             self
         }
         /// <p>The document version.</p>
-        pub fn document_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_version = Some(inp.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
             self
         }
         pub fn set_document_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.document_version = inp;
+            self.document_version = input;
             self
         }
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Target>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>A cron expression that specifies a schedule when the association runs.</p>
-        pub fn schedule_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schedule_expression = Some(inp.into());
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
             self
         }
         pub fn set_schedule_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.schedule_expression = inp;
+            self.schedule_expression = input;
             self
         }
         /// <p>An S3 bucket where you want to store the results of this request.</p>
         pub fn output_location(
             mut self,
-            inp: crate::model::InstanceAssociationOutputLocation,
+            input: crate::model::InstanceAssociationOutputLocation,
         ) -> Self {
-            self.output_location = Some(inp);
+            self.output_location = Some(input);
             self
         }
         pub fn set_output_location(
             mut self,
-            inp: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
+            input: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
         ) -> Self {
-            self.output_location = inp;
+            self.output_location = input;
             self
         }
         /// <p>Specify a descriptive name for the association.</p>
-        pub fn association_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_name = Some(inp.into());
+        pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_name = Some(input.into());
             self
         }
         pub fn set_association_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.association_name = inp;
+            self.association_name = input;
             self
         }
         /// <p>The number of errors that are allowed before the system stops sending requests to run the
@@ -28241,12 +28523,12 @@ pub mod create_association_batch_request_entry {
         /// complete, but some of these executions may fail as well. If you need to ensure that there won't
         /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
         /// at a time.</p>
-        pub fn max_errors(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_errors = Some(inp.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_errors = Some(input.into());
             self
         }
-        pub fn set_max_errors(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = inp;
+        pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_errors = input;
             self
         }
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
@@ -28256,30 +28538,30 @@ pub mod create_association_batch_request_entry {
         /// MaxConcurrency associations, the association is allowed to run. During the next association
         /// interval, the new instance will process its association within the limit specified for
         /// MaxConcurrency.</p>
-        pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.max_concurrency = Some(inp.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_concurrency = Some(input.into());
             self
         }
         pub fn set_max_concurrency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.max_concurrency = inp;
+            self.max_concurrency = input;
             self
         }
         /// <p>The severity level to assign to the association.</p>
         pub fn compliance_severity(
             mut self,
-            inp: crate::model::AssociationComplianceSeverity,
+            input: crate::model::AssociationComplianceSeverity,
         ) -> Self {
-            self.compliance_severity = Some(inp);
+            self.compliance_severity = Some(input);
             self
         }
         pub fn set_compliance_severity(
             mut self,
-            inp: std::option::Option<crate::model::AssociationComplianceSeverity>,
+            input: std::option::Option<crate::model::AssociationComplianceSeverity>,
         ) -> Self {
-            self.compliance_severity = inp;
+            self.compliance_severity = input;
             self
         }
         /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
@@ -28291,53 +28573,53 @@ pub mod create_association_batch_request_entry {
         /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
         /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-        pub fn sync_compliance(mut self, inp: crate::model::AssociationSyncCompliance) -> Self {
-            self.sync_compliance = Some(inp);
+        pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
+            self.sync_compliance = Some(input);
             self
         }
         pub fn set_sync_compliance(
             mut self,
-            inp: std::option::Option<crate::model::AssociationSyncCompliance>,
+            input: std::option::Option<crate::model::AssociationSyncCompliance>,
         ) -> Self {
-            self.sync_compliance = inp;
+            self.sync_compliance = input;
             self
         }
         /// <p>By default, when you create a new associations, the system runs it immediately after it is
         /// created and then according to the schedule you specified. Specify this option if you don't want
         /// an association to run immediately after you create it. This parameter is not supported for rate
         /// expressions.</p>
-        pub fn apply_only_at_cron_interval(mut self, inp: bool) -> Self {
-            self.apply_only_at_cron_interval = Some(inp);
+        pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
+            self.apply_only_at_cron_interval = Some(input);
             self
         }
-        pub fn set_apply_only_at_cron_interval(mut self, inp: bool) -> Self {
-            self.apply_only_at_cron_interval = Some(inp);
+        pub fn set_apply_only_at_cron_interval(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_only_at_cron_interval = input;
             self
         }
-        pub fn calendar_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn calendar_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.calendar_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.calendar_names = Some(v);
             self
         }
         pub fn set_calendar_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.calendar_names = inp;
+            self.calendar_names = input;
             self
         }
-        pub fn target_locations(mut self, inp: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_locations = Some(v);
             self
         }
         pub fn set_target_locations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         ) -> Self {
-            self.target_locations = inp;
+            self.target_locations = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateAssociationBatchRequestEntry`](crate::model::CreateAssociationBatchRequestEntry)

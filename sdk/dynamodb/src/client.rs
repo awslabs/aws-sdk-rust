@@ -218,7 +218,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchExecuteStatementOutput,
             smithy_http::result::SdkError<crate::error::BatchExecuteStatementError>,
         >
@@ -243,9 +243,9 @@ pub mod fluent_builders {
         }
         pub fn set_statements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
         ) -> Self {
-            self.inner = self.inner.set_statements(inp);
+            self.inner = self.inner.set_statements(input);
             self
         }
     }
@@ -264,7 +264,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchGetItemOutput,
             smithy_http::result::SdkError<crate::error::BatchGetItemError>,
         >
@@ -368,11 +368,11 @@ pub mod fluent_builders {
         }
         pub fn set_request_items(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_request_items(inp);
+            self.inner = self.inner.set_request_items(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -393,16 +393,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
     }
@@ -421,7 +421,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchWriteItemOutput,
             smithy_http::result::SdkError<crate::error::BatchWriteItemError>,
         >
@@ -484,14 +484,14 @@ pub mod fluent_builders {
         }
         pub fn set_request_items(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::vec::Vec<crate::model::WriteRequest>,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_request_items(inp);
+            self.inner = self.inner.set_request_items(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -512,32 +512,32 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
         /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(inp);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.inner = self.inner.set_return_item_collection_metrics(inp);
+            self.inner = self.inner.set_return_item_collection_metrics(input);
             self
         }
     }
@@ -556,7 +556,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateBackupOutput,
             smithy_http::result::SdkError<crate::error::CreateBackupError>,
         >
@@ -573,21 +573,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>Specified name for the backup.</p>
-        pub fn backup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_name(inp);
+        pub fn backup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_name(input);
             self
         }
-        pub fn set_backup_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backup_name(inp);
+        pub fn set_backup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_backup_name(input);
             self
         }
     }
@@ -606,7 +606,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateGlobalTableOutput,
             smithy_http::result::SdkError<crate::error::CreateGlobalTableError>,
         >
@@ -623,15 +623,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The global table name.</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(inp);
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input);
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_table_name(inp);
+            self.inner = self.inner.set_global_table_name(input);
             self
         }
         /// <p>The Regions where the global table needs to be created.</p>
@@ -641,9 +641,9 @@ pub mod fluent_builders {
         }
         pub fn set_replication_group(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Replica>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Replica>>,
         ) -> Self {
-            self.inner = self.inner.set_replication_group(inp);
+            self.inner = self.inner.set_replication_group(input);
             self
         }
     }
@@ -662,7 +662,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTableOutput,
             smithy_http::result::SdkError<crate::error::CreateTableError>,
         >
@@ -688,18 +688,18 @@ pub mod fluent_builders {
         }
         pub fn set_attribute_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
         ) -> Self {
-            self.inner = self.inner.set_attribute_definitions(inp);
+            self.inner = self.inner.set_attribute_definitions(input);
             self
         }
         /// <p>The name of the table to create.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes
@@ -749,9 +749,9 @@ pub mod fluent_builders {
         }
         pub fn set_key_schema(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
         ) -> Self {
-            self.inner = self.inner.set_key_schema(inp);
+            self.inner = self.inner.set_key_schema(input);
             self
         }
         /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
@@ -819,9 +819,9 @@ pub mod fluent_builders {
         }
         pub fn set_local_secondary_indexes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
         ) -> Self {
-            self.inner = self.inner.set_local_secondary_indexes(inp);
+            self.inner = self.inner.set_local_secondary_indexes(input);
             self
         }
         /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
@@ -888,9 +888,9 @@ pub mod fluent_builders {
         }
         pub fn set_global_secondary_indexes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
         ) -> Self {
-            self.inner = self.inner.set_global_secondary_indexes(inp);
+            self.inner = self.inner.set_global_secondary_indexes(input);
             self
         }
         /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
@@ -905,15 +905,15 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn billing_mode(mut self, inp: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.billing_mode(inp);
+        pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.billing_mode(input);
             self
         }
         pub fn set_billing_mode(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.inner = self.inner.set_billing_mode(inp);
+            self.inner = self.inner.set_billing_mode(input);
             self
         }
         /// <p>Represents the provisioned throughput settings for a specified table or index. The
@@ -924,15 +924,18 @@ pub mod fluent_builders {
         /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
         /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn provisioned_throughput(mut self, inp: crate::model::ProvisionedThroughput) -> Self {
-            self.inner = self.inner.provisioned_throughput(inp);
+        pub fn provisioned_throughput(
+            mut self,
+            input: crate::model::ProvisionedThroughput,
+        ) -> Self {
+            self.inner = self.inner.provisioned_throughput(input);
             self
         }
         pub fn set_provisioned_throughput(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedThroughput>,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
         ) -> Self {
-            self.inner = self.inner.set_provisioned_throughput(inp);
+            self.inner = self.inner.set_provisioned_throughput(input);
             self
         }
         /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
@@ -971,27 +974,27 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn stream_specification(mut self, inp: crate::model::StreamSpecification) -> Self {
-            self.inner = self.inner.stream_specification(inp);
+        pub fn stream_specification(mut self, input: crate::model::StreamSpecification) -> Self {
+            self.inner = self.inner.stream_specification(input);
             self
         }
         pub fn set_stream_specification(
             mut self,
-            inp: std::option::Option<crate::model::StreamSpecification>,
+            input: std::option::Option<crate::model::StreamSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_stream_specification(inp);
+            self.inner = self.inner.set_stream_specification(input);
             self
         }
         /// <p>Represents the settings used to enable server-side encryption.</p>
-        pub fn sse_specification(mut self, inp: crate::model::SSESpecification) -> Self {
-            self.inner = self.inner.sse_specification(inp);
+        pub fn sse_specification(mut self, input: crate::model::SSESpecification) -> Self {
+            self.inner = self.inner.sse_specification(input);
             self
         }
         pub fn set_sse_specification(
             mut self,
-            inp: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SSESpecification>,
         ) -> Self {
-            self.inner = self.inner.set_sse_specification(inp);
+            self.inner = self.inner.set_sse_specification(input);
             self
         }
         /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
@@ -1001,9 +1004,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1022,7 +1025,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteBackupOutput,
             smithy_http::result::SdkError<crate::error::DeleteBackupError>,
         >
@@ -1039,12 +1042,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN associated with the backup.</p>
-        pub fn backup_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_arn(inp);
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_arn(input);
             self
         }
-        pub fn set_backup_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backup_arn(inp);
+        pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_backup_arn(input);
             self
         }
     }
@@ -1063,7 +1066,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteItemOutput,
             smithy_http::result::SdkError<crate::error::DeleteItemError>,
         >
@@ -1080,12 +1083,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table from which to delete the item.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of
@@ -1101,11 +1104,11 @@ pub mod fluent_builders {
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_key(inp);
+            self.inner = self.inner.set_key(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
@@ -1120,27 +1123,27 @@ pub mod fluent_builders {
         }
         pub fn set_expected(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::ExpectedAttributeValue,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expected(inp);
+            self.inner = self.inner.set_expected(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.inner = self.inner.conditional_operator(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.inner = self.inner.set_conditional_operator(inp);
+            self.inner = self.inner.set_conditional_operator(input);
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they
@@ -1162,15 +1165,15 @@ pub mod fluent_builders {
         /// <code>DeleteItem</code> does not recognize any values other than <code>NONE</code> or
         /// <code>ALL_OLD</code>.</p>
         /// </note>
-        pub fn return_values(mut self, inp: crate::model::ReturnValue) -> Self {
-            self.inner = self.inner.return_values(inp);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.inner = self.inner.return_values(input);
             self
         }
         pub fn set_return_values(
             mut self,
-            inp: std::option::Option<crate::model::ReturnValue>,
+            input: std::option::Option<crate::model::ReturnValue>,
         ) -> Self {
-            self.inner = self.inner.set_return_values(inp);
+            self.inner = self.inner.set_return_values(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -1191,32 +1194,32 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
         /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(inp);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.inner = self.inner.set_return_item_collection_metrics(inp);
+            self.inner = self.inner.set_return_item_collection_metrics(input);
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code> to
@@ -1241,15 +1244,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.condition_expression(inp);
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.condition_expression(input);
             self
         }
         pub fn set_condition_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_condition_expression(inp);
+            self.inner = self.inner.set_condition_expression(input);
             self
         }
         /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
@@ -1303,11 +1306,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_names(inp);
+            self.inner = self.inner.set_expression_attribute_names(input);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
@@ -1335,11 +1338,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_values(inp);
+            self.inner = self.inner.set_expression_attribute_values(input);
             self
         }
     }
@@ -1358,7 +1361,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteTableOutput,
             smithy_http::result::SdkError<crate::error::DeleteTableError>,
         >
@@ -1375,12 +1378,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to delete.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
     }
@@ -1399,7 +1402,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeBackupOutput,
             smithy_http::result::SdkError<crate::error::DescribeBackupError>,
         >
@@ -1416,12 +1419,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-        pub fn backup_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_arn(inp);
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_arn(input);
             self
         }
-        pub fn set_backup_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backup_arn(inp);
+        pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_backup_arn(input);
             self
         }
     }
@@ -1440,7 +1443,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeContinuousBackupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeContinuousBackupsError>,
         >
@@ -1457,12 +1460,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
     }
@@ -1481,7 +1484,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeContributorInsightsOutput,
             smithy_http::result::SdkError<crate::error::DescribeContributorInsightsError>,
         >
@@ -1498,21 +1501,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to describe.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The name of the global secondary index to describe, if applicable.</p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(inp);
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input);
             self
         }
-        pub fn set_index_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_index_name(inp);
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
             self
         }
     }
@@ -1531,7 +1534,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeEndpointsOutput,
             smithy_http::result::SdkError<crate::error::DescribeEndpointsError>,
         >
@@ -1563,7 +1566,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeExportOutput,
             smithy_http::result::SdkError<crate::error::DescribeExportError>,
         >
@@ -1580,12 +1583,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
-        pub fn export_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_arn(inp);
+        pub fn export_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_arn(input);
             self
         }
-        pub fn set_export_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_export_arn(inp);
+        pub fn set_export_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_export_arn(input);
             self
         }
     }
@@ -1604,7 +1607,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeGlobalTableOutput,
             smithy_http::result::SdkError<crate::error::DescribeGlobalTableError>,
         >
@@ -1621,15 +1624,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the global table.</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(inp);
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input);
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_table_name(inp);
+            self.inner = self.inner.set_global_table_name(input);
             self
         }
     }
@@ -1648,7 +1651,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeGlobalTableSettingsOutput,
             smithy_http::result::SdkError<crate::error::DescribeGlobalTableSettingsError>,
         >
@@ -1665,15 +1668,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the global table to describe.</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(inp);
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input);
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_table_name(inp);
+            self.inner = self.inner.set_global_table_name(input);
             self
         }
     }
@@ -1692,7 +1695,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeKinesisStreamingDestinationOutput,
             smithy_http::result::SdkError<crate::error::DescribeKinesisStreamingDestinationError>,
         >
@@ -1709,12 +1712,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table being described.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
     }
@@ -1733,7 +1736,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeLimitsOutput,
             smithy_http::result::SdkError<crate::error::DescribeLimitsError>,
         >
@@ -1765,7 +1768,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTableOutput,
             smithy_http::result::SdkError<crate::error::DescribeTableError>,
         >
@@ -1782,12 +1785,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to describe.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
     }
@@ -1806,7 +1809,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTableReplicaAutoScalingOutput,
             smithy_http::result::SdkError<crate::error::DescribeTableReplicaAutoScalingError>,
         >
@@ -1823,12 +1826,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
     }
@@ -1847,7 +1850,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTimeToLiveOutput,
             smithy_http::result::SdkError<crate::error::DescribeTimeToLiveError>,
         >
@@ -1864,12 +1867,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to be described.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
     }
@@ -1888,7 +1891,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisableKinesisStreamingDestinationOutput,
             smithy_http::result::SdkError<crate::error::DisableKinesisStreamingDestinationError>,
         >
@@ -1905,21 +1908,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DynamoDB table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The ARN for a Kinesis data stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input);
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_arn(inp);
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
     }
@@ -1938,7 +1941,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EnableKinesisStreamingDestinationOutput,
             smithy_http::result::SdkError<crate::error::EnableKinesisStreamingDestinationError>,
         >
@@ -1955,21 +1958,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DynamoDB table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The ARN for a Kinesis data stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input);
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_arn(inp);
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
     }
@@ -1988,7 +1991,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ExecuteStatementOutput,
             smithy_http::result::SdkError<crate::error::ExecuteStatementError>,
         >
@@ -2007,12 +2010,12 @@ pub mod fluent_builders {
         /// <p>
         /// The PartiQL statement representing the operation to run.
         /// </p>
-        pub fn statement(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement(inp);
+        pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement(input);
             self
         }
-        pub fn set_statement(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_statement(inp);
+        pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_statement(input);
             self
         }
         /// <p>
@@ -2024,31 +2027,31 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>
         /// The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.
         /// </p>
-        pub fn consistent_read(mut self, inp: bool) -> Self {
-            self.inner = self.inner.consistent_read(inp);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.inner = self.inner.consistent_read(input);
             self
         }
-        pub fn set_consistent_read(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_consistent_read(inp);
+        pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_consistent_read(input);
             self
         }
         /// <p>
         /// Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2067,7 +2070,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ExecuteTransactionOutput,
             smithy_http::result::SdkError<crate::error::ExecuteTransactionError>,
         >
@@ -2095,23 +2098,23 @@ pub mod fluent_builders {
         }
         pub fn set_transact_statements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
         ) -> Self {
-            self.inner = self.inner.set_transact_statements(inp);
+            self.inner = self.inner.set_transact_statements(input);
             self
         }
         /// <p>
         /// Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.
         /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -2130,7 +2133,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ExportTableToPointInTimeOutput,
             smithy_http::result::SdkError<crate::error::ExportTableToPointInTimeError>,
         >
@@ -2147,22 +2150,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
-        pub fn table_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_arn(inp);
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_arn(input);
             self
         }
-        pub fn set_table_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_arn(inp);
+        pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_arn(input);
             self
         }
         /// <p>Time in the past from which to export table data. The table export will be a snapshot
         /// of the table's state at this point in time.</p>
-        pub fn export_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.export_time(inp);
+        pub fn export_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.export_time(input);
             self
         }
-        pub fn set_export_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_export_time(inp);
+        pub fn set_export_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_export_time(input);
             self
         }
         /// <p>Providing a <code>ClientToken</code> makes the call to
@@ -2175,43 +2181,43 @@ pub mod fluent_builders {
         /// <p>If you submit a request with the same client token but a change in other parameters
         /// within the 8-hour idempotency window, DynamoDB returns an
         /// <code>IdempotentParameterMismatch</code> exception.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(inp);
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(inp);
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(input);
             self
         }
-        pub fn set_s3_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_bucket(inp);
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_s3_bucket(input);
             self
         }
         /// <p>The ID of the AWS account that owns the bucket the export will be stored in.</p>
-        pub fn s3_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_owner(inp);
+        pub fn s3_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_owner(input);
             self
         }
         pub fn set_s3_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_s3_bucket_owner(inp);
+            self.inner = self.inner.set_s3_bucket_owner(input);
             self
         }
         /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
         /// snapshot.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(inp);
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input);
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_prefix(inp);
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_s3_prefix(input);
             self
         }
         /// <p>Type of encryption used on the bucket where export data will be stored. Valid values
@@ -2226,41 +2232,41 @@ pub mod fluent_builders {
         /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
         /// </li>
         /// </ul>
-        pub fn s3_sse_algorithm(mut self, inp: crate::model::S3SseAlgorithm) -> Self {
-            self.inner = self.inner.s3_sse_algorithm(inp);
+        pub fn s3_sse_algorithm(mut self, input: crate::model::S3SseAlgorithm) -> Self {
+            self.inner = self.inner.s3_sse_algorithm(input);
             self
         }
         pub fn set_s3_sse_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::S3SseAlgorithm>,
+            input: std::option::Option<crate::model::S3SseAlgorithm>,
         ) -> Self {
-            self.inner = self.inner.set_s3_sse_algorithm(inp);
+            self.inner = self.inner.set_s3_sse_algorithm(input);
             self
         }
         /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data will
         /// be stored (if applicable).</p>
-        pub fn s3_sse_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_sse_kms_key_id(inp);
+        pub fn s3_sse_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_sse_kms_key_id(input);
             self
         }
         pub fn set_s3_sse_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_s3_sse_kms_key_id(inp);
+            self.inner = self.inner.set_s3_sse_kms_key_id(input);
             self
         }
         /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
         /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-        pub fn export_format(mut self, inp: crate::model::ExportFormat) -> Self {
-            self.inner = self.inner.export_format(inp);
+        pub fn export_format(mut self, input: crate::model::ExportFormat) -> Self {
+            self.inner = self.inner.export_format(input);
             self
         }
         pub fn set_export_format(
             mut self,
-            inp: std::option::Option<crate::model::ExportFormat>,
+            input: std::option::Option<crate::model::ExportFormat>,
         ) -> Self {
-            self.inner = self.inner.set_export_format(inp);
+            self.inner = self.inner.set_export_format(input);
             self
         }
     }
@@ -2279,7 +2285,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetItemOutput,
             smithy_http::result::SdkError<crate::error::GetItemError>,
         >
@@ -2296,12 +2302,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table containing the requested item.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of
@@ -2317,11 +2323,11 @@ pub mod fluent_builders {
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_key(inp);
+            self.inner = self.inner.set_key(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
@@ -2332,18 +2338,18 @@ pub mod fluent_builders {
         }
         pub fn set_attributes_to_get(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_attributes_to_get(inp);
+            self.inner = self.inner.set_attributes_to_get(input);
             self
         }
         /// <p>Determines the read consistency model:  If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
-        pub fn consistent_read(mut self, inp: bool) -> Self {
-            self.inner = self.inner.consistent_read(inp);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.inner = self.inner.consistent_read(input);
             self
         }
-        pub fn set_consistent_read(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_consistent_read(inp);
+        pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_consistent_read(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -2364,16 +2370,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
@@ -2381,15 +2387,15 @@ pub mod fluent_builders {
         /// requested attributes are not found, they do not appear in the result.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn projection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.projection_expression(inp);
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.projection_expression(input);
             self
         }
         pub fn set_projection_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_projection_expression(inp);
+            self.inner = self.inner.set_projection_expression(input);
             self
         }
         /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
@@ -2443,11 +2449,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_names(inp);
+            self.inner = self.inner.set_expression_attribute_names(input);
             self
         }
     }
@@ -2466,7 +2472,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListBackupsOutput,
             smithy_http::result::SdkError<crate::error::ListBackupsError>,
         >
@@ -2483,45 +2489,45 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>Maximum number of backups to return at once.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
-        pub fn time_range_lower_bound(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.time_range_lower_bound(inp);
+        pub fn time_range_lower_bound(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.time_range_lower_bound(input);
             self
         }
         pub fn set_time_range_lower_bound(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_time_range_lower_bound(inp);
+            self.inner = self.inner.set_time_range_lower_bound(input);
             self
         }
         /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
-        pub fn time_range_upper_bound(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.time_range_upper_bound(inp);
+        pub fn time_range_upper_bound(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.time_range_upper_bound(input);
             self
         }
         pub fn set_time_range_upper_bound(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_time_range_upper_bound(inp);
+            self.inner = self.inner.set_time_range_upper_bound(input);
             self
         }
         /// <p>
@@ -2529,15 +2535,15 @@ pub mod fluent_builders {
         /// evaluated when the current page of results was returned, inclusive of the current page
         /// of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a
         /// new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-        pub fn exclusive_start_backup_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_backup_arn(inp);
+        pub fn exclusive_start_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_backup_arn(input);
             self
         }
         pub fn set_exclusive_start_backup_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_backup_arn(inp);
+            self.inner = self.inner.set_exclusive_start_backup_arn(input);
             self
         }
         /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
@@ -2557,15 +2563,15 @@ pub mod fluent_builders {
         /// <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p>
         /// </li>
         /// </ul>
-        pub fn backup_type(mut self, inp: crate::model::BackupTypeFilter) -> Self {
-            self.inner = self.inner.backup_type(inp);
+        pub fn backup_type(mut self, input: crate::model::BackupTypeFilter) -> Self {
+            self.inner = self.inner.backup_type(input);
             self
         }
         pub fn set_backup_type(
             mut self,
-            inp: std::option::Option<crate::model::BackupTypeFilter>,
+            input: std::option::Option<crate::model::BackupTypeFilter>,
         ) -> Self {
-            self.inner = self.inner.set_backup_type(inp);
+            self.inner = self.inner.set_backup_type(input);
             self
         }
     }
@@ -2584,7 +2590,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListContributorInsightsOutput,
             smithy_http::result::SdkError<crate::error::ListContributorInsightsError>,
         >
@@ -2601,30 +2607,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>A token to for the desired page, if there is one.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -2643,7 +2649,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListExportsOutput,
             smithy_http::result::SdkError<crate::error::ListExportsError>,
         >
@@ -2660,32 +2666,32 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
-        pub fn table_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_arn(inp);
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_arn(input);
             self
         }
-        pub fn set_table_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_arn(inp);
+        pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_arn(input);
             self
         }
         /// <p>Maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>An optional string that, if supplied, must be copied from the output of a previous
         /// call to <code>ListExports</code>. When provided in this manner, the API fetches the next
         /// page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2704,7 +2710,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListGlobalTablesOutput,
             smithy_http::result::SdkError<crate::error::ListGlobalTablesError>,
         >
@@ -2723,36 +2729,36 @@ pub mod fluent_builders {
         /// <p>The first global table name that this operation will evaluate.</p>
         pub fn exclusive_start_global_table_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.exclusive_start_global_table_name(inp);
+            self.inner = self.inner.exclusive_start_global_table_name(input);
             self
         }
         pub fn set_exclusive_start_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_global_table_name(inp);
+            self.inner = self.inner.set_exclusive_start_global_table_name(input);
             self
         }
         /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
         /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point,
         /// with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Lists the global tables in a specific Region.</p>
-        pub fn region_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_name(inp);
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_name(input);
             self
         }
-        pub fn set_region_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_region_name(inp);
+        pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_region_name(input);
             self
         }
     }
@@ -2771,7 +2777,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTablesOutput,
             smithy_http::result::SdkError<crate::error::ListTablesError>,
         >
@@ -2790,24 +2796,24 @@ pub mod fluent_builders {
         /// <p>The first table name that this operation will evaluate. Use the value that was returned for
         /// <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page
         /// of results.</p>
-        pub fn exclusive_start_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_table_name(inp);
+        pub fn exclusive_start_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_table_name(input);
             self
         }
         pub fn set_exclusive_start_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_table_name(inp);
+            self.inner = self.inner.set_exclusive_start_table_name(input);
             self
         }
         /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -2826,7 +2832,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsOfResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsOfResourceError>,
         >
@@ -2843,22 +2849,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>An optional string that, if supplied, must be copied from the output of a previous
         /// call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2877,7 +2883,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutItemOutput,
             smithy_http::result::SdkError<crate::error::PutItemError>,
         >
@@ -2894,12 +2900,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to contain the item.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
@@ -2919,11 +2925,11 @@ pub mod fluent_builders {
         }
         pub fn set_item(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_item(inp);
+            self.inner = self.inner.set_item(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
@@ -2938,14 +2944,14 @@ pub mod fluent_builders {
         }
         pub fn set_expected(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::ExpectedAttributeValue,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expected(inp);
+            self.inner = self.inner.set_expected(input);
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they
@@ -2968,15 +2974,15 @@ pub mod fluent_builders {
         /// <code>PutItem</code> does not recognize any values other than <code>NONE</code> or
         /// <code>ALL_OLD</code>.</p>
         /// </note>
-        pub fn return_values(mut self, inp: crate::model::ReturnValue) -> Self {
-            self.inner = self.inner.return_values(inp);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.inner = self.inner.return_values(input);
             self
         }
         pub fn set_return_values(
             mut self,
-            inp: std::option::Option<crate::model::ReturnValue>,
+            input: std::option::Option<crate::model::ReturnValue>,
         ) -> Self {
-            self.inner = self.inner.set_return_values(inp);
+            self.inner = self.inner.set_return_values(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -2997,45 +3003,45 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
         /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(inp);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.inner = self.inner.set_return_item_collection_metrics(inp);
+            self.inner = self.inner.set_return_item_collection_metrics(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.inner = self.inner.conditional_operator(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.inner = self.inner.set_conditional_operator(inp);
+            self.inner = self.inner.set_conditional_operator(input);
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to
@@ -3060,15 +3066,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.condition_expression(inp);
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.condition_expression(input);
             self
         }
         pub fn set_condition_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_condition_expression(inp);
+            self.inner = self.inner.set_condition_expression(input);
             self
         }
         /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
@@ -3122,11 +3128,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_names(inp);
+            self.inner = self.inner.set_expression_attribute_names(input);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
@@ -3154,11 +3160,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_values(inp);
+            self.inner = self.inner.set_expression_attribute_values(input);
             self
         }
     }
@@ -3177,7 +3183,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::QueryOutput,
             smithy_http::result::SdkError<crate::error::QueryError>,
         >
@@ -3194,23 +3200,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table containing the requested items.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The name of an index to query. This index can be any local secondary index or global secondary index on the table. Note that
         /// if you use the <code>IndexName</code> parameter, you must also provide <code>TableName.</code>
         /// </p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(inp);
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input);
             self
         }
-        pub fn set_index_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_index_name(inp);
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
             self
         }
         /// <p>The attributes to be returned in the
@@ -3269,12 +3275,12 @@ pub mod fluent_builders {
         /// <code>SPECIFIC_ATTRIBUTES</code>. Any other value for
         /// <code>Select</code> will return an error.</p>
         /// </note>
-        pub fn select(mut self, inp: crate::model::Select) -> Self {
-            self.inner = self.inner.select(inp);
+        pub fn select(mut self, input: crate::model::Select) -> Self {
+            self.inner = self.inner.select(input);
             self
         }
-        pub fn set_select(mut self, inp: std::option::Option<crate::model::Select>) -> Self {
-            self.inner = self.inner.set_select(inp);
+        pub fn set_select(mut self, input: std::option::Option<crate::model::Select>) -> Self {
+            self.inner = self.inner.set_select(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
@@ -3285,9 +3291,9 @@ pub mod fluent_builders {
         }
         pub fn set_attributes_to_get(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_attributes_to_get(inp);
+            self.inner = self.inner.set_attributes_to_get(input);
             self
         }
         /// <p>The maximum number of items to evaluate (not necessarily the number of matching items).
@@ -3299,24 +3305,24 @@ pub mod fluent_builders {
         /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
         /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Determines the read consistency model:  If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
         /// <p>Strongly consistent reads
         /// are not supported on global secondary indexes. If you query a global secondary index with <code>ConsistentRead</code> set to
         /// <code>true</code>, you will receive a <code>ValidationException</code>.</p>
-        pub fn consistent_read(mut self, inp: bool) -> Self {
-            self.inner = self.inner.consistent_read(inp);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.inner = self.inner.consistent_read(input);
             self
         }
-        pub fn set_consistent_read(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_consistent_read(inp);
+        pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_consistent_read(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>KeyConditionExpression</code> instead.   For more information, see
@@ -3331,11 +3337,11 @@ pub mod fluent_builders {
         }
         pub fn set_key_conditions(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Condition>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_key_conditions(inp);
+            self.inner = self.inner.set_key_conditions(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
@@ -3350,35 +3356,35 @@ pub mod fluent_builders {
         }
         pub fn set_query_filter(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Condition>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_query_filter(inp);
+            self.inner = self.inner.set_query_filter(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.  For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.inner = self.inner.conditional_operator(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.inner = self.inner.set_conditional_operator(inp);
+            self.inner = self.inner.set_conditional_operator(input);
             self
         }
         /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal is performed in ascending order; if <code>false</code>, the traversal is performed in descending order. </p>
         /// <p>Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.</p>
         /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they are stored (by sort key value). This is the default behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in reverse order by sort key value, and then returns the results to the client.</p>
-        pub fn scan_index_forward(mut self, inp: bool) -> Self {
-            self.inner = self.inner.scan_index_forward(inp);
+        pub fn scan_index_forward(mut self, input: bool) -> Self {
+            self.inner = self.inner.scan_index_forward(input);
             self
         }
-        pub fn set_scan_index_forward(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_scan_index_forward(inp);
+        pub fn set_scan_index_forward(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_scan_index_forward(input);
             self
         }
         /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
@@ -3394,11 +3400,11 @@ pub mod fluent_builders {
         }
         pub fn set_exclusive_start_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_key(inp);
+            self.inner = self.inner.set_exclusive_start_key(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -3419,31 +3425,31 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
         /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn projection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.projection_expression(inp);
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.projection_expression(input);
             self
         }
         pub fn set_projection_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_projection_expression(inp);
+            self.inner = self.inner.set_projection_expression(input);
             self
         }
         /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but
@@ -3456,15 +3462,15 @@ pub mod fluent_builders {
         /// </note>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(input);
             self
         }
         pub fn set_filter_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_filter_expression(inp);
+            self.inner = self.inner.set_filter_expression(input);
             self
         }
         /// <p>The condition that specifies the key values for items to be retrieved by the
@@ -3571,15 +3577,15 @@ pub mod fluent_builders {
         /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
         /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute
         /// Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn key_condition_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_condition_expression(inp);
+        pub fn key_condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_condition_expression(input);
             self
         }
         pub fn set_key_condition_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_key_condition_expression(inp);
+            self.inner = self.inner.set_key_condition_expression(input);
             self
         }
         /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
@@ -3634,11 +3640,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_names(inp);
+            self.inner = self.inner.set_expression_attribute_names(input);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
@@ -3666,11 +3672,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_values(inp);
+            self.inner = self.inner.set_expression_attribute_values(input);
             self
         }
     }
@@ -3689,7 +3695,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RestoreTableFromBackupOutput,
             smithy_http::result::SdkError<crate::error::RestoreTableFromBackupError>,
         >
@@ -3706,36 +3712,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new table to which the backup must be restored.</p>
-        pub fn target_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_table_name(inp);
+        pub fn target_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_table_name(input);
             self
         }
         pub fn set_target_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_table_name(inp);
+            self.inner = self.inner.set_target_table_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-        pub fn backup_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_arn(inp);
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_arn(input);
             self
         }
-        pub fn set_backup_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backup_arn(inp);
+        pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_backup_arn(input);
             self
         }
         /// <p>The billing mode of the restored table.</p>
-        pub fn billing_mode_override(mut self, inp: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.billing_mode_override(inp);
+        pub fn billing_mode_override(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.billing_mode_override(input);
             self
         }
         pub fn set_billing_mode_override(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.inner = self.inner.set_billing_mode_override(inp);
+            self.inner = self.inner.set_billing_mode_override(input);
             self
         }
         /// <p>List of global secondary indexes for the restored table. The indexes
@@ -3750,9 +3756,9 @@ pub mod fluent_builders {
         }
         pub fn set_global_secondary_index_override(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
         ) -> Self {
-            self.inner = self.inner.set_global_secondary_index_override(inp);
+            self.inner = self.inner.set_global_secondary_index_override(input);
             self
         }
         /// <p>List of local secondary indexes for the restored table. The indexes
@@ -3767,36 +3773,36 @@ pub mod fluent_builders {
         }
         pub fn set_local_secondary_index_override(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
         ) -> Self {
-            self.inner = self.inner.set_local_secondary_index_override(inp);
+            self.inner = self.inner.set_local_secondary_index_override(input);
             self
         }
         /// <p>Provisioned throughput settings for the restored table.</p>
         pub fn provisioned_throughput_override(
             mut self,
-            inp: crate::model::ProvisionedThroughput,
+            input: crate::model::ProvisionedThroughput,
         ) -> Self {
-            self.inner = self.inner.provisioned_throughput_override(inp);
+            self.inner = self.inner.provisioned_throughput_override(input);
             self
         }
         pub fn set_provisioned_throughput_override(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedThroughput>,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
         ) -> Self {
-            self.inner = self.inner.set_provisioned_throughput_override(inp);
+            self.inner = self.inner.set_provisioned_throughput_override(input);
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
-        pub fn sse_specification_override(mut self, inp: crate::model::SSESpecification) -> Self {
-            self.inner = self.inner.sse_specification_override(inp);
+        pub fn sse_specification_override(mut self, input: crate::model::SSESpecification) -> Self {
+            self.inner = self.inner.sse_specification_override(input);
             self
         }
         pub fn set_sse_specification_override(
             mut self,
-            inp: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SSESpecification>,
         ) -> Self {
-            self.inner = self.inner.set_sse_specification_override(inp);
+            self.inner = self.inner.set_sse_specification_override(input);
             self
         }
     }
@@ -3815,7 +3821,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RestoreTableToPointInTimeOutput,
             smithy_http::result::SdkError<crate::error::RestoreTableToPointInTimeError>,
         >
@@ -3833,73 +3839,73 @@ pub mod fluent_builders {
         }
         /// <p>The DynamoDB table that will be restored. This value is an Amazon
         /// Resource Name (ARN).</p>
-        pub fn source_table_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_table_arn(inp);
+        pub fn source_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_table_arn(input);
             self
         }
         pub fn set_source_table_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_table_arn(inp);
+            self.inner = self.inner.set_source_table_arn(input);
             self
         }
         /// <p>Name of the source table that is being restored.</p>
-        pub fn source_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_table_name(inp);
+        pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_table_name(input);
             self
         }
         pub fn set_source_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_source_table_name(inp);
+            self.inner = self.inner.set_source_table_name(input);
             self
         }
         /// <p>The name of the new table to which it must be restored to.</p>
-        pub fn target_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_table_name(inp);
+        pub fn target_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_table_name(input);
             self
         }
         pub fn set_target_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_table_name(inp);
+            self.inner = self.inner.set_target_table_name(input);
             self
         }
         /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
         /// is typically 5 minutes before the current time. </p>
-        pub fn use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_time(inp);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_time(input);
             self
         }
-        pub fn set_use_latest_restorable_time(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_use_latest_restorable_time(inp);
+        pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_use_latest_restorable_time(input);
             self
         }
         /// <p>Time in the past to restore the table to.</p>
-        pub fn restore_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.restore_date_time(inp);
+        pub fn restore_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.restore_date_time(input);
             self
         }
         pub fn set_restore_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_restore_date_time(inp);
+            self.inner = self.inner.set_restore_date_time(input);
             self
         }
         /// <p>The billing mode of the restored table.</p>
-        pub fn billing_mode_override(mut self, inp: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.billing_mode_override(inp);
+        pub fn billing_mode_override(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.billing_mode_override(input);
             self
         }
         pub fn set_billing_mode_override(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.inner = self.inner.set_billing_mode_override(inp);
+            self.inner = self.inner.set_billing_mode_override(input);
             self
         }
         /// <p>List of global secondary indexes for the restored table. The indexes
@@ -3914,9 +3920,9 @@ pub mod fluent_builders {
         }
         pub fn set_global_secondary_index_override(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
         ) -> Self {
-            self.inner = self.inner.set_global_secondary_index_override(inp);
+            self.inner = self.inner.set_global_secondary_index_override(input);
             self
         }
         /// <p>List of local secondary indexes for the restored table. The indexes
@@ -3931,36 +3937,36 @@ pub mod fluent_builders {
         }
         pub fn set_local_secondary_index_override(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
         ) -> Self {
-            self.inner = self.inner.set_local_secondary_index_override(inp);
+            self.inner = self.inner.set_local_secondary_index_override(input);
             self
         }
         /// <p>Provisioned throughput settings for the restored table.</p>
         pub fn provisioned_throughput_override(
             mut self,
-            inp: crate::model::ProvisionedThroughput,
+            input: crate::model::ProvisionedThroughput,
         ) -> Self {
-            self.inner = self.inner.provisioned_throughput_override(inp);
+            self.inner = self.inner.provisioned_throughput_override(input);
             self
         }
         pub fn set_provisioned_throughput_override(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedThroughput>,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
         ) -> Self {
-            self.inner = self.inner.set_provisioned_throughput_override(inp);
+            self.inner = self.inner.set_provisioned_throughput_override(input);
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
-        pub fn sse_specification_override(mut self, inp: crate::model::SSESpecification) -> Self {
-            self.inner = self.inner.sse_specification_override(inp);
+        pub fn sse_specification_override(mut self, input: crate::model::SSESpecification) -> Self {
+            self.inner = self.inner.sse_specification_override(input);
             self
         }
         pub fn set_sse_specification_override(
             mut self,
-            inp: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SSESpecification>,
         ) -> Self {
-            self.inner = self.inner.set_sse_specification_override(inp);
+            self.inner = self.inner.set_sse_specification_override(input);
             self
         }
     }
@@ -3979,7 +3985,10 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<crate::output::ScanOutput, smithy_http::result::SdkError<crate::error::ScanError>>
+        ) -> std::result::Result<
+            crate::output::ScanOutput,
+            smithy_http::result::SdkError<crate::error::ScanError>,
+        >
         where
             C: aws_hyper::SmithyConnector,
         {
@@ -3994,21 +4003,21 @@ pub mod fluent_builders {
         }
         /// <p>The name of the table containing the requested items; or, if you provide
         /// <code>IndexName</code>, the name of the table to which that index belongs.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index.  Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(inp);
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input);
             self
         }
-        pub fn set_index_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_index_name(inp);
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
@@ -4019,9 +4028,9 @@ pub mod fluent_builders {
         }
         pub fn set_attributes_to_get(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_attributes_to_get(inp);
+            self.inner = self.inner.set_attributes_to_get(input);
             self
         }
         /// <p>The maximum number of items to evaluate (not necessarily the number of matching items).
@@ -4033,12 +4042,12 @@ pub mod fluent_builders {
         /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
         /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The attributes to be returned in the
@@ -4097,12 +4106,12 @@ pub mod fluent_builders {
         /// <code>SPECIFIC_ATTRIBUTES</code>. Any other value for
         /// <code>Select</code> will return an error.</p>
         /// </note>
-        pub fn select(mut self, inp: crate::model::Select) -> Self {
-            self.inner = self.inner.select(inp);
+        pub fn select(mut self, input: crate::model::Select) -> Self {
+            self.inner = self.inner.select(input);
             self
         }
-        pub fn set_select(mut self, inp: std::option::Option<crate::model::Select>) -> Self {
-            self.inner = self.inner.set_select(inp);
+        pub fn set_select(mut self, input: std::option::Option<crate::model::Select>) -> Self {
+            self.inner = self.inner.set_select(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
@@ -4117,24 +4126,24 @@ pub mod fluent_builders {
         }
         pub fn set_scan_filter(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Condition>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_scan_filter(inp);
+            self.inner = self.inner.set_scan_filter(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.inner = self.inner.conditional_operator(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.inner = self.inner.set_conditional_operator(inp);
+            self.inner = self.inner.set_conditional_operator(input);
             self
         }
         /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
@@ -4152,11 +4161,11 @@ pub mod fluent_builders {
         }
         pub fn set_exclusive_start_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_key(inp);
+            self.inner = self.inner.set_exclusive_start_key(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -4177,16 +4186,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
         /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the total number of
@@ -4198,12 +4207,12 @@ pub mod fluent_builders {
         /// to 1000000. If you specify a <code>TotalSegments</code> value of 1, the <code>Scan</code> operation will
         /// be sequential rather than parallel.</p>
         /// <p>If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.</p>
-        pub fn total_segments(mut self, inp: i32) -> Self {
-            self.inner = self.inner.total_segments(inp);
+        pub fn total_segments(mut self, input: i32) -> Self {
+            self.inner = self.inner.total_segments(input);
             self
         }
-        pub fn set_total_segments(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_total_segments(inp);
+        pub fn set_total_segments(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_total_segments(input);
             self
         }
         /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual segment to be
@@ -4217,27 +4226,27 @@ pub mod fluent_builders {
         /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than the value
         /// provided for <code>TotalSegments</code>.</p>
         /// <p>If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.</p>
-        pub fn segment(mut self, inp: i32) -> Self {
-            self.inner = self.inner.segment(inp);
+        pub fn segment(mut self, input: i32) -> Self {
+            self.inner = self.inner.segment(input);
             self
         }
-        pub fn set_segment(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_segment(inp);
+        pub fn set_segment(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_segment(input);
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
         /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn projection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.projection_expression(inp);
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.projection_expression(input);
             self
         }
         pub fn set_projection_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_projection_expression(inp);
+            self.inner = self.inner.set_projection_expression(input);
             self
         }
         /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but
@@ -4249,15 +4258,15 @@ pub mod fluent_builders {
         /// </note>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(input);
             self
         }
         pub fn set_filter_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_filter_expression(inp);
+            self.inner = self.inner.set_filter_expression(input);
             self
         }
         /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
@@ -4311,11 +4320,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_names(inp);
+            self.inner = self.inner.set_expression_attribute_names(input);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
@@ -4345,11 +4354,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_values(inp);
+            self.inner = self.inner.set_expression_attribute_values(input);
             self
         }
         /// <p>A Boolean value that determines the read consistency model during the scan:</p>
@@ -4366,12 +4375,12 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The default setting for <code>ConsistentRead</code> is <code>false</code>.</p>
         /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to true, you will receive a <code>ValidationException</code>.</p>
-        pub fn consistent_read(mut self, inp: bool) -> Self {
-            self.inner = self.inner.consistent_read(inp);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.inner = self.inner.consistent_read(input);
             self
         }
-        pub fn set_consistent_read(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_consistent_read(inp);
+        pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_consistent_read(input);
             self
         }
     }
@@ -4390,7 +4399,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -4407,12 +4416,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The tags to be assigned to the Amazon DynamoDB resource.</p>
@@ -4422,9 +4431,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4443,7 +4452,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TransactGetItemsOutput,
             smithy_http::result::SdkError<crate::error::TransactGetItemsError>,
         >
@@ -4467,9 +4476,9 @@ pub mod fluent_builders {
         }
         pub fn set_transact_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
         ) -> Self {
-            self.inner = self.inner.set_transact_items(inp);
+            self.inner = self.inner.set_transact_items(input);
             self
         }
         /// <p>A value of <code>TOTAL</code> causes consumed capacity information
@@ -4477,16 +4486,16 @@ pub mod fluent_builders {
         /// from being returned. No other value is valid.</p>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
     }
@@ -4505,7 +4514,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TransactWriteItemsOutput,
             smithy_http::result::SdkError<crate::error::TransactWriteItemsError>,
         >
@@ -4532,9 +4541,9 @@ pub mod fluent_builders {
         }
         pub fn set_transact_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
         ) -> Self {
-            self.inner = self.inner.set_transact_items(inp);
+            self.inner = self.inner.set_transact_items(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -4555,16 +4564,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned. If set to
@@ -4574,16 +4583,16 @@ pub mod fluent_builders {
         /// </p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(inp);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.inner = self.inner.set_return_item_collection_metrics(inp);
+            self.inner = self.inner.set_return_item_collection_metrics(input);
             self
         }
         /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code>
@@ -4602,15 +4611,15 @@ pub mod fluent_builders {
         /// <p>If you submit a request with the same client token but a change in other parameters
         /// within the 10-minute idempotency window, DynamoDB returns an
         /// <code>IdempotentParameterMismatch</code> exception.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -4629,7 +4638,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -4647,12 +4656,12 @@ pub mod fluent_builders {
         }
         /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
         /// Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list
@@ -4663,9 +4672,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -4684,7 +4693,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateContinuousBackupsOutput,
             smithy_http::result::SdkError<crate::error::UpdateContinuousBackupsError>,
         >
@@ -4701,27 +4710,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>Represents the settings used to enable point in time recovery.</p>
         pub fn point_in_time_recovery_specification(
             mut self,
-            inp: crate::model::PointInTimeRecoverySpecification,
+            input: crate::model::PointInTimeRecoverySpecification,
         ) -> Self {
-            self.inner = self.inner.point_in_time_recovery_specification(inp);
+            self.inner = self.inner.point_in_time_recovery_specification(input);
             self
         }
         pub fn set_point_in_time_recovery_specification(
             mut self,
-            inp: std::option::Option<crate::model::PointInTimeRecoverySpecification>,
+            input: std::option::Option<crate::model::PointInTimeRecoverySpecification>,
         ) -> Self {
-            self.inner = self.inner.set_point_in_time_recovery_specification(inp);
+            self.inner = self.inner.set_point_in_time_recovery_specification(input);
             self
         }
     }
@@ -4740,7 +4749,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateContributorInsightsOutput,
             smithy_http::result::SdkError<crate::error::UpdateContributorInsightsError>,
         >
@@ -4757,36 +4766,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The global secondary index name, if applicable.</p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(inp);
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input);
             self
         }
-        pub fn set_index_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_index_name(inp);
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
             self
         }
         /// <p>Represents the contributor insights action.</p>
         pub fn contributor_insights_action(
             mut self,
-            inp: crate::model::ContributorInsightsAction,
+            input: crate::model::ContributorInsightsAction,
         ) -> Self {
-            self.inner = self.inner.contributor_insights_action(inp);
+            self.inner = self.inner.contributor_insights_action(input);
             self
         }
         pub fn set_contributor_insights_action(
             mut self,
-            inp: std::option::Option<crate::model::ContributorInsightsAction>,
+            input: std::option::Option<crate::model::ContributorInsightsAction>,
         ) -> Self {
-            self.inner = self.inner.set_contributor_insights_action(inp);
+            self.inner = self.inner.set_contributor_insights_action(input);
             self
         }
     }
@@ -4805,7 +4814,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateGlobalTableOutput,
             smithy_http::result::SdkError<crate::error::UpdateGlobalTableError>,
         >
@@ -4822,15 +4831,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The global table name.</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(inp);
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input);
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_table_name(inp);
+            self.inner = self.inner.set_global_table_name(input);
             self
         }
         /// <p>A list of Regions that should be added or removed from the global table.</p>
@@ -4840,9 +4849,9 @@ pub mod fluent_builders {
         }
         pub fn set_replica_updates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
         ) -> Self {
-            self.inner = self.inner.set_replica_updates(inp);
+            self.inner = self.inner.set_replica_updates(input);
             self
         }
     }
@@ -4861,7 +4870,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateGlobalTableSettingsOutput,
             smithy_http::result::SdkError<crate::error::UpdateGlobalTableSettingsError>,
         >
@@ -4878,15 +4887,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the global table</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(inp);
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input);
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_global_table_name(inp);
+            self.inner = self.inner.set_global_table_name(input);
             self
         }
         /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
@@ -4901,52 +4910,52 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn global_table_billing_mode(mut self, inp: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.global_table_billing_mode(inp);
+        pub fn global_table_billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.global_table_billing_mode(input);
             self
         }
         pub fn set_global_table_billing_mode(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.inner = self.inner.set_global_table_billing_mode(inp);
+            self.inner = self.inner.set_global_table_billing_mode(input);
             self
         }
         /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
         /// </p>
-        pub fn global_table_provisioned_write_capacity_units(mut self, inp: i64) -> Self {
+        pub fn global_table_provisioned_write_capacity_units(mut self, input: i64) -> Self {
             self.inner = self
                 .inner
-                .global_table_provisioned_write_capacity_units(inp);
+                .global_table_provisioned_write_capacity_units(input);
             self
         }
         pub fn set_global_table_provisioned_write_capacity_units(
             mut self,
-            inp: std::option::Option<i64>,
+            input: std::option::Option<i64>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_global_table_provisioned_write_capacity_units(inp);
+                .set_global_table_provisioned_write_capacity_units(input);
             self
         }
         /// <p>Auto scaling settings for managing provisioned write capacity for the global
         /// table.</p>
         pub fn global_table_provisioned_write_capacity_auto_scaling_settings_update(
             mut self,
-            inp: crate::model::AutoScalingSettingsUpdate,
+            input: crate::model::AutoScalingSettingsUpdate,
         ) -> Self {
             self.inner = self
                 .inner
-                .global_table_provisioned_write_capacity_auto_scaling_settings_update(inp);
+                .global_table_provisioned_write_capacity_auto_scaling_settings_update(input);
             self
         }
         pub fn set_global_table_provisioned_write_capacity_auto_scaling_settings_update(
             mut self,
-            inp: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
+            input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_global_table_provisioned_write_capacity_auto_scaling_settings_update(inp);
+                .set_global_table_provisioned_write_capacity_auto_scaling_settings_update(input);
             self
         }
         /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
@@ -4961,13 +4970,13 @@ pub mod fluent_builders {
         }
         pub fn set_global_table_global_secondary_index_settings_update(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
             >,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_global_table_global_secondary_index_settings_update(inp);
+                .set_global_table_global_secondary_index_settings_update(input);
             self
         }
         /// <p>Represents the settings for a global table in a Region that will be modified.</p>
@@ -4980,9 +4989,9 @@ pub mod fluent_builders {
         }
         pub fn set_replica_settings_update(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsUpdate>>,
         ) -> Self {
-            self.inner = self.inner.set_replica_settings_update(inp);
+            self.inner = self.inner.set_replica_settings_update(input);
             self
         }
     }
@@ -5001,7 +5010,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateItemOutput,
             smithy_http::result::SdkError<crate::error::UpdateItemError>,
         >
@@ -5018,12 +5027,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table containing the item to update.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
@@ -5038,11 +5047,11 @@ pub mod fluent_builders {
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_key(inp);
+            self.inner = self.inner.set_key(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>UpdateExpression</code> instead.   For more information, see
@@ -5057,11 +5066,11 @@ pub mod fluent_builders {
         }
         pub fn set_attribute_updates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValueUpdate>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_attribute_updates(inp);
+            self.inner = self.inner.set_attribute_updates(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.   For more information, see
@@ -5076,27 +5085,27 @@ pub mod fluent_builders {
         }
         pub fn set_expected(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::ExpectedAttributeValue,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expected(inp);
+            self.inner = self.inner.set_expected(input);
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.   For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.inner = self.inner.conditional_operator(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.inner = self.inner.set_conditional_operator(inp);
+            self.inner = self.inner.set_conditional_operator(input);
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear
@@ -5130,15 +5139,15 @@ pub mod fluent_builders {
         /// small network and processing overhead of receiving a larger response. No read capacity
         /// units are consumed.</p>
         /// <p>The values returned are strongly consistent.</p>
-        pub fn return_values(mut self, inp: crate::model::ReturnValue) -> Self {
-            self.inner = self.inner.return_values(inp);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.inner = self.inner.return_values(input);
             self
         }
         pub fn set_return_values(
             mut self,
-            inp: std::option::Option<crate::model::ReturnValue>,
+            input: std::option::Option<crate::model::ReturnValue>,
         ) -> Self {
-            self.inner = self.inner.set_return_values(inp);
+            self.inner = self.inner.set_return_values(input);
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -5159,32 +5168,32 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(inp);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.inner = self.inner.set_return_consumed_capacity(inp);
+            self.inner = self.inner.set_return_consumed_capacity(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
         /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(inp);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.inner = self.inner.set_return_item_collection_metrics(inp);
+            self.inner = self.inner.set_return_item_collection_metrics(input);
             self
         }
         /// <p>An expression that defines one or more attributes to be updated, the action to be
@@ -5275,15 +5284,15 @@ pub mod fluent_builders {
         /// b=:value2 DELETE :value3, :value4, :value5</code>
         /// </p>
         /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn update_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_expression(inp);
+        pub fn update_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_expression(input);
             self
         }
         pub fn set_update_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_update_expression(inp);
+            self.inner = self.inner.set_update_expression(input);
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
@@ -5307,15 +5316,15 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.condition_expression(inp);
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.condition_expression(input);
             self
         }
         pub fn set_condition_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_condition_expression(inp);
+            self.inner = self.inner.set_condition_expression(input);
             self
         }
         /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
@@ -5372,11 +5381,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_names(inp);
+            self.inner = self.inner.set_expression_attribute_names(input);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
@@ -5406,11 +5415,11 @@ pub mod fluent_builders {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_expression_attribute_values(inp);
+            self.inner = self.inner.set_expression_attribute_values(input);
             self
         }
     }
@@ -5429,7 +5438,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTableOutput,
             smithy_http::result::SdkError<crate::error::UpdateTableError>,
         >
@@ -5455,18 +5464,18 @@ pub mod fluent_builders {
         }
         pub fn set_attribute_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
         ) -> Self {
-            self.inner = self.inner.set_attribute_definitions(inp);
+            self.inner = self.inner.set_attribute_definitions(input);
             self
         }
         /// <p>The name of the table to be updated.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>Controls how you are charged for read and write throughput and how you manage capacity.
@@ -5484,27 +5493,30 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn billing_mode(mut self, inp: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.billing_mode(inp);
+        pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.billing_mode(input);
             self
         }
         pub fn set_billing_mode(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.inner = self.inner.set_billing_mode(inp);
+            self.inner = self.inner.set_billing_mode(input);
             self
         }
         /// <p>The new provisioned throughput settings for the specified table or index.</p>
-        pub fn provisioned_throughput(mut self, inp: crate::model::ProvisionedThroughput) -> Self {
-            self.inner = self.inner.provisioned_throughput(inp);
+        pub fn provisioned_throughput(
+            mut self,
+            input: crate::model::ProvisionedThroughput,
+        ) -> Self {
+            self.inner = self.inner.provisioned_throughput(input);
             self
         }
         pub fn set_provisioned_throughput(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedThroughput>,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
         ) -> Self {
-            self.inner = self.inner.set_provisioned_throughput(inp);
+            self.inner = self.inner.set_provisioned_throughput(input);
             self
         }
         /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
@@ -5534,9 +5546,9 @@ pub mod fluent_builders {
         }
         pub fn set_global_secondary_index_updates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
         ) -> Self {
-            self.inner = self.inner.set_global_secondary_index_updates(inp);
+            self.inner = self.inner.set_global_secondary_index_updates(input);
             self
         }
         /// <p>Represents the DynamoDB Streams configuration for the table.</p>
@@ -5545,27 +5557,27 @@ pub mod fluent_builders {
         /// table that already has a stream, or if you try to disable a stream on a table that
         /// doesn't have a stream.</p>
         /// </note>
-        pub fn stream_specification(mut self, inp: crate::model::StreamSpecification) -> Self {
-            self.inner = self.inner.stream_specification(inp);
+        pub fn stream_specification(mut self, input: crate::model::StreamSpecification) -> Self {
+            self.inner = self.inner.stream_specification(input);
             self
         }
         pub fn set_stream_specification(
             mut self,
-            inp: std::option::Option<crate::model::StreamSpecification>,
+            input: std::option::Option<crate::model::StreamSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_stream_specification(inp);
+            self.inner = self.inner.set_stream_specification(input);
             self
         }
         /// <p>The new server-side encryption settings for the specified table.</p>
-        pub fn sse_specification(mut self, inp: crate::model::SSESpecification) -> Self {
-            self.inner = self.inner.sse_specification(inp);
+        pub fn sse_specification(mut self, input: crate::model::SSESpecification) -> Self {
+            self.inner = self.inner.sse_specification(input);
             self
         }
         pub fn set_sse_specification(
             mut self,
-            inp: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SSESpecification>,
         ) -> Self {
-            self.inner = self.inner.set_sse_specification(inp);
+            self.inner = self.inner.set_sse_specification(input);
             self
         }
         /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
@@ -5581,9 +5593,9 @@ pub mod fluent_builders {
         }
         pub fn set_replica_updates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
         ) -> Self {
-            self.inner = self.inner.set_replica_updates(inp);
+            self.inner = self.inner.set_replica_updates(input);
             self
         }
     }
@@ -5602,7 +5614,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTableReplicaAutoScalingOutput,
             smithy_http::result::SdkError<crate::error::UpdateTableReplicaAutoScalingError>,
         >
@@ -5629,40 +5641,40 @@ pub mod fluent_builders {
         }
         pub fn set_global_secondary_index_updates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::GlobalSecondaryIndexAutoScalingUpdate>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_global_secondary_index_updates(inp);
+            self.inner = self.inner.set_global_secondary_index_updates(input);
             self
         }
         /// <p>The name of the global table to be updated.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>Represents the auto scaling settings to be modified for a global table or global
         /// secondary index.</p>
         pub fn provisioned_write_capacity_auto_scaling_update(
             mut self,
-            inp: crate::model::AutoScalingSettingsUpdate,
+            input: crate::model::AutoScalingSettingsUpdate,
         ) -> Self {
             self.inner = self
                 .inner
-                .provisioned_write_capacity_auto_scaling_update(inp);
+                .provisioned_write_capacity_auto_scaling_update(input);
             self
         }
         pub fn set_provisioned_write_capacity_auto_scaling_update(
             mut self,
-            inp: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
+            input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
         ) -> Self {
             self.inner = self
                 .inner
-                .set_provisioned_write_capacity_auto_scaling_update(inp);
+                .set_provisioned_write_capacity_auto_scaling_update(input);
             self
         }
         /// <p>Represents the auto scaling settings of replicas of the table that will be
@@ -5676,9 +5688,9 @@ pub mod fluent_builders {
         }
         pub fn set_replica_updates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
         ) -> Self {
-            self.inner = self.inner.set_replica_updates(inp);
+            self.inner = self.inner.set_replica_updates(input);
             self
         }
     }
@@ -5697,7 +5709,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTimeToLiveOutput,
             smithy_http::result::SdkError<crate::error::UpdateTimeToLiveError>,
         >
@@ -5714,27 +5726,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to be configured.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input);
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_table_name(inp);
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
         pub fn time_to_live_specification(
             mut self,
-            inp: crate::model::TimeToLiveSpecification,
+            input: crate::model::TimeToLiveSpecification,
         ) -> Self {
-            self.inner = self.inner.time_to_live_specification(inp);
+            self.inner = self.inner.time_to_live_specification(input);
             self
         }
         pub fn set_time_to_live_specification(
             mut self,
-            inp: std::option::Option<crate::model::TimeToLiveSpecification>,
+            input: std::option::Option<crate::model::TimeToLiveSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_time_to_live_specification(inp);
+            self.inner = self.inner.set_time_to_live_specification(input);
             self
         }
     }

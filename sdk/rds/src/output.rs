@@ -30,16 +30,16 @@ pub mod stop_db_instance_automated_backups_replication_output {
         /// existed at the time you deleted the source instance.</p>
         pub fn db_instance_automated_backup(
             mut self,
-            inp: crate::model::DBInstanceAutomatedBackup,
+            input: crate::model::DBInstanceAutomatedBackup,
         ) -> Self {
-            self.db_instance_automated_backup = Some(inp);
+            self.db_instance_automated_backup = Some(input);
             self
         }
         pub fn set_db_instance_automated_backup(
             mut self,
-            inp: std::option::Option<crate::model::DBInstanceAutomatedBackup>,
+            input: std::option::Option<crate::model::DBInstanceAutomatedBackup>,
         ) -> Self {
-            self.db_instance_automated_backup = inp;
+            self.db_instance_automated_backup = input;
             self
         }
         /// Consumes the builder and constructs a [`StopDBInstanceAutomatedBackupsReplicationOutput`](crate::output::StopDBInstanceAutomatedBackupsReplicationOutput)
@@ -87,15 +87,15 @@ pub mod stop_db_instance_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`StopDBInstanceOutput`](crate::output::StopDBInstanceOutput)
@@ -144,12 +144,15 @@ pub mod stop_db_cluster_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`StopDBClusterOutput`](crate::output::StopDBClusterOutput)
@@ -200,36 +203,36 @@ pub mod stop_activity_stream_output {
     impl Builder {
         /// <p>The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
         /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
-        pub fn kinesis_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kinesis_stream_name = Some(inp.into());
+        pub fn kinesis_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kinesis_stream_name = Some(input.into());
             self
         }
         pub fn set_kinesis_stream_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.kinesis_stream_name = inp;
+            self.kinesis_stream_name = input;
             self
         }
         /// <p>The status of the database activity stream.</p>
-        pub fn status(mut self, inp: crate::model::ActivityStreamStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ActivityStreamStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ActivityStreamStatus>,
+            input: std::option::Option<crate::model::ActivityStreamStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`StopActivityStreamOutput`](crate::output::StopActivityStreamOutput)
@@ -363,159 +366,162 @@ pub mod start_export_task_output {
     impl Builder {
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
         /// the Amazon S3 bucket where the snapshot is exported to. </p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_task_identifier = Some(inp.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_task_identifier = Some(input.into());
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.export_task_identifier = inp;
+            self.export_task_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_arn = Some(inp.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = inp;
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
             self
         }
-        pub fn export_only(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn export_only(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.export_only.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.export_only = Some(v);
             self
         }
         pub fn set_export_only(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.export_only = inp;
+            self.export_only = input;
             self
         }
         /// <p>The time that the snapshot was created.</p>
-        pub fn snapshot_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.snapshot_time = Some(inp);
+        pub fn snapshot_time(mut self, input: smithy_types::Instant) -> Self {
+            self.snapshot_time = Some(input);
             self
         }
         pub fn set_snapshot_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.snapshot_time = inp;
+            self.snapshot_time = input;
             self
         }
         /// <p>The time that the snapshot export task started.</p>
-        pub fn task_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.task_start_time = Some(inp);
+        pub fn task_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.task_start_time = Some(input);
             self
         }
         pub fn set_task_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.task_start_time = inp;
+            self.task_start_time = input;
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
-        pub fn task_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.task_end_time = Some(inp);
+        pub fn task_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.task_end_time = Some(input);
             self
         }
         pub fn set_task_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.task_end_time = inp;
+            self.task_end_time = input;
             self
         }
         /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket = Some(inp.into());
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket = Some(input.into());
             self
         }
-        pub fn set_s3_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = inp;
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket = input;
             self
         }
         /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_prefix = Some(inp.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = inp;
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_prefix = input;
             self
         }
         /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iam_role_arn = Some(inp.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
             self
         }
-        pub fn set_iam_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = inp;
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
             self
         }
         /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
         /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
         /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The progress status of the export task.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The progress of the snapshot export task as a percentage.</p>
-        pub fn percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn percent_progress(mut self, input: i32) -> Self {
+            self.percent_progress = Some(input);
             self
         }
-        pub fn set_percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn set_percent_progress(mut self, input: std::option::Option<i32>) -> Self {
+            self.percent_progress = input;
             self
         }
         /// <p>The total amount of data exported, in gigabytes.</p>
-        pub fn total_extracted_data_in_gb(mut self, inp: i32) -> Self {
-            self.total_extracted_data_in_gb = Some(inp);
+        pub fn total_extracted_data_in_gb(mut self, input: i32) -> Self {
+            self.total_extracted_data_in_gb = Some(input);
             self
         }
-        pub fn set_total_extracted_data_in_gb(mut self, inp: i32) -> Self {
-            self.total_extracted_data_in_gb = Some(inp);
+        pub fn set_total_extracted_data_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_extracted_data_in_gb = input;
             self
         }
         /// <p>The reason the export failed, if it failed.</p>
-        pub fn failure_cause(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_cause = Some(inp.into());
+        pub fn failure_cause(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_cause = Some(input.into());
             self
         }
-        pub fn set_failure_cause(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.failure_cause = inp;
+        pub fn set_failure_cause(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_cause = input;
             self
         }
         /// <p>A warning about the snapshot export task.</p>
-        pub fn warning_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.warning_message = Some(inp.into());
+        pub fn warning_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.warning_message = Some(input.into());
             self
         }
         pub fn set_warning_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.warning_message = inp;
+            self.warning_message = input;
             self
         }
         /// Consumes the builder and constructs a [`StartExportTaskOutput`](crate::output::StartExportTaskOutput)
@@ -578,16 +584,16 @@ pub mod start_db_instance_automated_backups_replication_output {
         /// existed at the time you deleted the source instance.</p>
         pub fn db_instance_automated_backup(
             mut self,
-            inp: crate::model::DBInstanceAutomatedBackup,
+            input: crate::model::DBInstanceAutomatedBackup,
         ) -> Self {
-            self.db_instance_automated_backup = Some(inp);
+            self.db_instance_automated_backup = Some(input);
             self
         }
         pub fn set_db_instance_automated_backup(
             mut self,
-            inp: std::option::Option<crate::model::DBInstanceAutomatedBackup>,
+            input: std::option::Option<crate::model::DBInstanceAutomatedBackup>,
         ) -> Self {
-            self.db_instance_automated_backup = inp;
+            self.db_instance_automated_backup = input;
             self
         }
         /// Consumes the builder and constructs a [`StartDBInstanceAutomatedBackupsReplicationOutput`](crate::output::StartDBInstanceAutomatedBackupsReplicationOutput)
@@ -635,15 +641,15 @@ pub mod start_db_instance_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`StartDBInstanceOutput`](crate::output::StartDBInstanceOutput)
@@ -692,12 +698,15 @@ pub mod start_db_cluster_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`StartDBClusterOutput`](crate::output::StartDBClusterOutput)
@@ -755,58 +764,58 @@ pub mod start_activity_stream_output {
     }
     impl Builder {
         /// <p>The AWS KMS key identifier for encryption of messages in the database activity stream.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-        pub fn kinesis_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kinesis_stream_name = Some(inp.into());
+        pub fn kinesis_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kinesis_stream_name = Some(input.into());
             self
         }
         pub fn set_kinesis_stream_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.kinesis_stream_name = inp;
+            self.kinesis_stream_name = input;
             self
         }
         /// <p>The status of the database activity stream.</p>
-        pub fn status(mut self, inp: crate::model::ActivityStreamStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ActivityStreamStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ActivityStreamStatus>,
+            input: std::option::Option<crate::model::ActivityStreamStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The mode of the database activity stream.</p>
-        pub fn mode(mut self, inp: crate::model::ActivityStreamMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
+            self.mode = Some(input);
             self
         }
         pub fn set_mode(
             mut self,
-            inp: std::option::Option<crate::model::ActivityStreamMode>,
+            input: std::option::Option<crate::model::ActivityStreamMode>,
         ) -> Self {
-            self.mode = inp;
+            self.mode = input;
             self
         }
         /// <p>Indicates whether or not the database activity stream will start as soon as possible,
         /// regardless of the maintenance window for the database.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.apply_immediately = Some(input);
             self
         }
-        pub fn set_apply_immediately(mut self, inp: bool) -> Self {
-            self.apply_immediately = Some(inp);
+        pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_immediately = input;
             self
         }
         /// Consumes the builder and constructs a [`StartActivityStreamOutput`](crate::output::StartActivityStreamOutput)
@@ -859,15 +868,15 @@ pub mod revoke_db_security_group_ingress_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSecurityGroups</code> action.
         /// </p>
-        pub fn db_security_group(mut self, inp: crate::model::DBSecurityGroup) -> Self {
-            self.db_security_group = Some(inp);
+        pub fn db_security_group(mut self, input: crate::model::DBSecurityGroup) -> Self {
+            self.db_security_group = Some(input);
             self
         }
         pub fn set_db_security_group(
             mut self,
-            inp: std::option::Option<crate::model::DBSecurityGroup>,
+            input: std::option::Option<crate::model::DBSecurityGroup>,
         ) -> Self {
-            self.db_security_group = inp;
+            self.db_security_group = input;
             self
         }
         /// Consumes the builder and constructs a [`RevokeDBSecurityGroupIngressOutput`](crate::output::RevokeDBSecurityGroupIngressOutput)
@@ -914,15 +923,15 @@ pub mod restore_db_instance_to_point_in_time_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBInstanceToPointInTimeOutput`](crate::output::RestoreDBInstanceToPointInTimeOutput)
@@ -969,15 +978,15 @@ pub mod restore_db_instance_from_s3_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBInstanceFromS3Output`](crate::output::RestoreDBInstanceFromS3Output)
@@ -1024,15 +1033,15 @@ pub mod restore_db_instance_from_db_snapshot_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBInstanceFromDBSnapshotOutput`](crate::output::RestoreDBInstanceFromDBSnapshotOutput)
@@ -1081,12 +1090,15 @@ pub mod restore_db_cluster_to_point_in_time_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBClusterToPointInTimeOutput`](crate::output::RestoreDBClusterToPointInTimeOutput)
@@ -1135,12 +1147,15 @@ pub mod restore_db_cluster_from_snapshot_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBClusterFromSnapshotOutput`](crate::output::RestoreDBClusterFromSnapshotOutput)
@@ -1189,12 +1204,15 @@ pub mod restore_db_cluster_from_s3_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDBClusterFromS3Output`](crate::output::RestoreDBClusterFromS3Output)
@@ -1239,15 +1257,15 @@ pub mod reset_db_parameter_group_output {
     }
     impl Builder {
         /// <p>The name of the DB parameter group.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetDBParameterGroupOutput`](crate::output::ResetDBParameterGroupOutput)
@@ -1324,16 +1342,16 @@ pub mod reset_db_cluster_parameter_group_output {
         /// </note>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetDBClusterParameterGroupOutput`](crate::output::ResetDBClusterParameterGroupOutput)
@@ -1403,15 +1421,15 @@ pub mod remove_source_identifier_from_subscription_output {
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn event_subscription(mut self, inp: crate::model::EventSubscription) -> Self {
-            self.event_subscription = Some(inp);
+        pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
+            self.event_subscription = Some(input);
             self
         }
         pub fn set_event_subscription(
             mut self,
-            inp: std::option::Option<crate::model::EventSubscription>,
+            input: std::option::Option<crate::model::EventSubscription>,
         ) -> Self {
-            self.event_subscription = inp;
+            self.event_subscription = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput)
@@ -1510,15 +1528,15 @@ pub mod remove_from_global_cluster_output {
     }
     impl Builder {
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn global_cluster(mut self, inp: crate::model::GlobalCluster) -> Self {
-            self.global_cluster = Some(inp);
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
             self
         }
         pub fn set_global_cluster(
             mut self,
-            inp: std::option::Option<crate::model::GlobalCluster>,
+            input: std::option::Option<crate::model::GlobalCluster>,
         ) -> Self {
-            self.global_cluster = inp;
+            self.global_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
@@ -1559,17 +1577,17 @@ pub mod register_db_proxy_targets_output {
             std::option::Option<std::vec::Vec<crate::model::DBProxyTarget>>,
     }
     impl Builder {
-        pub fn db_proxy_targets(mut self, inp: impl Into<crate::model::DBProxyTarget>) -> Self {
+        pub fn db_proxy_targets(mut self, input: impl Into<crate::model::DBProxyTarget>) -> Self {
             let mut v = self.db_proxy_targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_proxy_targets = Some(v);
             self
         }
         pub fn set_db_proxy_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBProxyTarget>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBProxyTarget>>,
         ) -> Self {
-            self.db_proxy_targets = inp;
+            self.db_proxy_targets = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterDBProxyTargetsOutput`](crate::output::RegisterDBProxyTargetsOutput)
@@ -1616,15 +1634,15 @@ pub mod reboot_db_instance_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`RebootDBInstanceOutput`](crate::output::RebootDBInstanceOutput)
@@ -1673,15 +1691,15 @@ pub mod purchase_reserved_db_instances_offering_output {
         /// <code>DescribeReservedDBInstances</code> and
         /// <code>PurchaseReservedDBInstancesOffering</code> actions.
         /// </p>
-        pub fn reserved_db_instance(mut self, inp: crate::model::ReservedDBInstance) -> Self {
-            self.reserved_db_instance = Some(inp);
+        pub fn reserved_db_instance(mut self, input: crate::model::ReservedDBInstance) -> Self {
+            self.reserved_db_instance = Some(input);
             self
         }
         pub fn set_reserved_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::ReservedDBInstance>,
+            input: std::option::Option<crate::model::ReservedDBInstance>,
         ) -> Self {
-            self.reserved_db_instance = inp;
+            self.reserved_db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`PurchaseReservedDBInstancesOfferingOutput`](crate::output::PurchaseReservedDBInstancesOfferingOutput)
@@ -1730,12 +1748,15 @@ pub mod promote_read_replica_db_cluster_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`PromoteReadReplicaDBClusterOutput`](crate::output::PromoteReadReplicaDBClusterOutput)
@@ -1782,15 +1803,15 @@ pub mod promote_read_replica_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`PromoteReadReplicaOutput`](crate::output::PromoteReadReplicaOutput)
@@ -1831,15 +1852,15 @@ pub mod modify_option_group_output {
     }
     impl Builder {
         /// <p></p>
-        pub fn option_group(mut self, inp: crate::model::OptionGroup) -> Self {
-            self.option_group = Some(inp);
+        pub fn option_group(mut self, input: crate::model::OptionGroup) -> Self {
+            self.option_group = Some(input);
             self
         }
         pub fn set_option_group(
             mut self,
-            inp: std::option::Option<crate::model::OptionGroup>,
+            input: std::option::Option<crate::model::OptionGroup>,
         ) -> Self {
-            self.option_group = inp;
+            self.option_group = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyOptionGroupOutput`](crate::output::ModifyOptionGroupOutput)
@@ -1880,15 +1901,15 @@ pub mod modify_global_cluster_output {
     }
     impl Builder {
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn global_cluster(mut self, inp: crate::model::GlobalCluster) -> Self {
-            self.global_cluster = Some(inp);
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
             self
         }
         pub fn set_global_cluster(
             mut self,
-            inp: std::option::Option<crate::model::GlobalCluster>,
+            input: std::option::Option<crate::model::GlobalCluster>,
         ) -> Self {
-            self.global_cluster = inp;
+            self.global_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
@@ -1929,15 +1950,15 @@ pub mod modify_event_subscription_output {
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn event_subscription(mut self, inp: crate::model::EventSubscription) -> Self {
-            self.event_subscription = Some(inp);
+        pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
+            self.event_subscription = Some(input);
             self
         }
         pub fn set_event_subscription(
             mut self,
-            inp: std::option::Option<crate::model::EventSubscription>,
+            input: std::option::Option<crate::model::EventSubscription>,
         ) -> Self {
-            self.event_subscription = inp;
+            self.event_subscription = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput)
@@ -1986,15 +2007,15 @@ pub mod modify_db_subnet_group_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSubnetGroups</code> action.
         /// </p>
-        pub fn db_subnet_group(mut self, inp: crate::model::DBSubnetGroup) -> Self {
-            self.db_subnet_group = Some(inp);
+        pub fn db_subnet_group(mut self, input: crate::model::DBSubnetGroup) -> Self {
+            self.db_subnet_group = Some(input);
             self
         }
         pub fn set_db_subnet_group(
             mut self,
-            inp: std::option::Option<crate::model::DBSubnetGroup>,
+            input: std::option::Option<crate::model::DBSubnetGroup>,
         ) -> Self {
-            self.db_subnet_group = inp;
+            self.db_subnet_group = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBSubnetGroupOutput`](crate::output::ModifyDBSubnetGroupOutput)
@@ -2050,16 +2071,16 @@ pub mod modify_db_snapshot_attribute_output {
         /// API action.</p>
         pub fn db_snapshot_attributes_result(
             mut self,
-            inp: crate::model::DBSnapshotAttributesResult,
+            input: crate::model::DBSnapshotAttributesResult,
         ) -> Self {
-            self.db_snapshot_attributes_result = Some(inp);
+            self.db_snapshot_attributes_result = Some(input);
             self
         }
         pub fn set_db_snapshot_attributes_result(
             mut self,
-            inp: std::option::Option<crate::model::DBSnapshotAttributesResult>,
+            input: std::option::Option<crate::model::DBSnapshotAttributesResult>,
         ) -> Self {
-            self.db_snapshot_attributes_result = inp;
+            self.db_snapshot_attributes_result = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBSnapshotAttributeOutput`](crate::output::ModifyDBSnapshotAttributeOutput)
@@ -2108,15 +2129,15 @@ pub mod modify_db_snapshot_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSnapshots</code> action.
         /// </p>
-        pub fn db_snapshot(mut self, inp: crate::model::DBSnapshot) -> Self {
-            self.db_snapshot = Some(inp);
+        pub fn db_snapshot(mut self, input: crate::model::DBSnapshot) -> Self {
+            self.db_snapshot = Some(input);
             self
         }
         pub fn set_db_snapshot(
             mut self,
-            inp: std::option::Option<crate::model::DBSnapshot>,
+            input: std::option::Option<crate::model::DBSnapshot>,
         ) -> Self {
-            self.db_snapshot = inp;
+            self.db_snapshot = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBSnapshotOutput`](crate::output::ModifyDBSnapshotOutput)
@@ -2157,15 +2178,15 @@ pub mod modify_db_proxy_target_group_output {
     }
     impl Builder {
         /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
-        pub fn db_proxy_target_group(mut self, inp: crate::model::DBProxyTargetGroup) -> Self {
-            self.db_proxy_target_group = Some(inp);
+        pub fn db_proxy_target_group(mut self, input: crate::model::DBProxyTargetGroup) -> Self {
+            self.db_proxy_target_group = Some(input);
             self
         }
         pub fn set_db_proxy_target_group(
             mut self,
-            inp: std::option::Option<crate::model::DBProxyTargetGroup>,
+            input: std::option::Option<crate::model::DBProxyTargetGroup>,
         ) -> Self {
-            self.db_proxy_target_group = inp;
+            self.db_proxy_target_group = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBProxyTargetGroupOutput`](crate::output::ModifyDBProxyTargetGroupOutput)
@@ -2206,15 +2227,15 @@ pub mod modify_db_proxy_endpoint_output {
     }
     impl Builder {
         /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
-        pub fn db_proxy_endpoint(mut self, inp: crate::model::DBProxyEndpoint) -> Self {
-            self.db_proxy_endpoint = Some(inp);
+        pub fn db_proxy_endpoint(mut self, input: crate::model::DBProxyEndpoint) -> Self {
+            self.db_proxy_endpoint = Some(input);
             self
         }
         pub fn set_db_proxy_endpoint(
             mut self,
-            inp: std::option::Option<crate::model::DBProxyEndpoint>,
+            input: std::option::Option<crate::model::DBProxyEndpoint>,
         ) -> Self {
-            self.db_proxy_endpoint = inp;
+            self.db_proxy_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBProxyEndpointOutput`](crate::output::ModifyDBProxyEndpointOutput)
@@ -2255,12 +2276,12 @@ pub mod modify_db_proxy_output {
     }
     impl Builder {
         /// <p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>
-        pub fn db_proxy(mut self, inp: crate::model::DBProxy) -> Self {
-            self.db_proxy = Some(inp);
+        pub fn db_proxy(mut self, input: crate::model::DBProxy) -> Self {
+            self.db_proxy = Some(input);
             self
         }
-        pub fn set_db_proxy(mut self, inp: std::option::Option<crate::model::DBProxy>) -> Self {
-            self.db_proxy = inp;
+        pub fn set_db_proxy(mut self, input: std::option::Option<crate::model::DBProxy>) -> Self {
+            self.db_proxy = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBProxyOutput`](crate::output::ModifyDBProxyOutput)
@@ -2305,15 +2326,15 @@ pub mod modify_db_parameter_group_output {
     }
     impl Builder {
         /// <p>The name of the DB parameter group.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBParameterGroupOutput`](crate::output::ModifyDBParameterGroupOutput)
@@ -2360,15 +2381,15 @@ pub mod modify_db_instance_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBInstanceOutput`](crate::output::ModifyDBInstanceOutput)
@@ -2424,16 +2445,16 @@ pub mod modify_db_cluster_snapshot_attribute_output {
         /// API action.</p>
         pub fn db_cluster_snapshot_attributes_result(
             mut self,
-            inp: crate::model::DBClusterSnapshotAttributesResult,
+            input: crate::model::DBClusterSnapshotAttributesResult,
         ) -> Self {
-            self.db_cluster_snapshot_attributes_result = Some(inp);
+            self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
         pub fn set_db_cluster_snapshot_attributes_result(
             mut self,
-            inp: std::option::Option<crate::model::DBClusterSnapshotAttributesResult>,
+            input: std::option::Option<crate::model::DBClusterSnapshotAttributesResult>,
         ) -> Self {
-            self.db_cluster_snapshot_attributes_result = inp;
+            self.db_cluster_snapshot_attributes_result = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBClusterSnapshotAttributeOutput`](crate::output::ModifyDBClusterSnapshotAttributeOutput)
@@ -2510,16 +2531,16 @@ pub mod modify_db_cluster_parameter_group_output {
         /// </note>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBClusterParameterGroupOutput`](crate::output::ModifyDBClusterParameterGroupOutput)
@@ -2636,123 +2657,126 @@ pub mod modify_db_cluster_endpoint_output {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = Some(inp.into());
+            self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = inp;
+            self.db_cluster_endpoint_identifier = input;
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
         pub fn db_cluster_endpoint_resource_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = Some(inp.into());
+            self.db_cluster_endpoint_resource_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = inp;
+            self.db_cluster_endpoint_resource_identifier = input;
             self
         }
         /// <p>The DNS address of the endpoint.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster,
         /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_type = Some(inp.into());
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_type = Some(input.into());
             self
         }
-        pub fn set_endpoint_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_type = inp;
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_type = input;
             self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
         /// <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn custom_endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_endpoint_type = Some(inp.into());
+        pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_endpoint_type = Some(input.into());
             self
         }
         pub fn set_custom_endpoint_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_endpoint_type = inp;
+            self.custom_endpoint_type = input;
             self
         }
-        pub fn static_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.static_members = Some(v);
             self
         }
         pub fn set_static_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.static_members = inp;
+            self.static_members = input;
             self
         }
-        pub fn excluded_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
         pub fn set_excluded_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.excluded_members = inp;
+            self.excluded_members = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-        pub fn db_cluster_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_endpoint_arn = Some(inp.into());
+        pub fn db_cluster_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_endpoint_arn = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_arn = inp;
+            self.db_cluster_endpoint_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBClusterEndpointOutput`](crate::output::ModifyDBClusterEndpointOutput)
@@ -2811,12 +2835,15 @@ pub mod modify_db_cluster_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDBClusterOutput`](crate::output::ModifyDBClusterOutput)
@@ -2876,52 +2903,55 @@ pub mod modify_current_db_cluster_capacity_output {
     impl Builder {
         /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that
         /// identifies a DB cluster. </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
-        pub fn pending_capacity(mut self, inp: i32) -> Self {
-            self.pending_capacity = Some(inp);
+        pub fn pending_capacity(mut self, input: i32) -> Self {
+            self.pending_capacity = Some(input);
             self
         }
-        pub fn set_pending_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.pending_capacity = inp;
+        pub fn set_pending_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_capacity = input;
             self
         }
         /// <p>The current capacity of the DB cluster.</p>
-        pub fn current_capacity(mut self, inp: i32) -> Self {
-            self.current_capacity = Some(inp);
+        pub fn current_capacity(mut self, input: i32) -> Self {
+            self.current_capacity = Some(input);
             self
         }
-        pub fn set_current_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.current_capacity = inp;
+        pub fn set_current_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.current_capacity = input;
             self
         }
         /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
-        pub fn seconds_before_timeout(mut self, inp: i32) -> Self {
-            self.seconds_before_timeout = Some(inp);
+        pub fn seconds_before_timeout(mut self, input: i32) -> Self {
+            self.seconds_before_timeout = Some(input);
             self
         }
-        pub fn set_seconds_before_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.seconds_before_timeout = inp;
+        pub fn set_seconds_before_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.seconds_before_timeout = input;
             self
         }
         /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
         /// <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-        pub fn timeout_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timeout_action = Some(inp.into());
+        pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timeout_action = Some(input.into());
             self
         }
-        pub fn set_timeout_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timeout_action = inp;
+        pub fn set_timeout_action(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.timeout_action = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyCurrentDBClusterCapacityOutput`](crate::output::ModifyCurrentDBClusterCapacityOutput)
@@ -2966,15 +2996,15 @@ pub mod modify_certificates_output {
     }
     impl Builder {
         /// <p>A CA certificate for an AWS account.</p>
-        pub fn certificate(mut self, inp: crate::model::Certificate) -> Self {
-            self.certificate = Some(inp);
+        pub fn certificate(mut self, input: crate::model::Certificate) -> Self {
+            self.certificate = Some(input);
             self
         }
         pub fn set_certificate(
             mut self,
-            inp: std::option::Option<crate::model::Certificate>,
+            input: std::option::Option<crate::model::Certificate>,
         ) -> Self {
-            self.certificate = inp;
+            self.certificate = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyCertificatesOutput`](crate::output::ModifyCertificatesOutput)
@@ -3015,17 +3045,17 @@ pub mod list_tags_for_resource_output {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_list = Some(v);
             self
         }
         pub fn set_tag_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tag_list = inp;
+            self.tag_list = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
@@ -3105,93 +3135,99 @@ pub mod import_installation_media_output {
     }
     impl Builder {
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.installation_media_id = Some(inp.into());
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.installation_media_id = Some(input.into());
             self
         }
         pub fn set_installation_media_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.installation_media_id = inp;
+            self.installation_media_id = input;
             self
         }
         /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_availability_zone_id = Some(inp.into());
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_availability_zone_id = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_id = inp;
+            self.custom_availability_zone_id = input;
             self
         }
         /// <p>The DB engine.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The engine version of the DB engine.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The path to the installation medium for the DB engine.</p>
         pub fn engine_installation_media_path(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.engine_installation_media_path = Some(inp.into());
+            self.engine_installation_media_path = Some(input.into());
             self
         }
         pub fn set_engine_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.engine_installation_media_path = inp;
+            self.engine_installation_media_path = input;
             self
         }
         /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-        pub fn os_installation_media_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.os_installation_media_path = Some(inp.into());
+        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.os_installation_media_path = Some(input.into());
             self
         }
         pub fn set_os_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.os_installation_media_path = inp;
+            self.os_installation_media_path = input;
             self
         }
         /// <p>The status of the installation medium.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>If an installation media failure occurred, the cause of the failure.</p>
-        pub fn failure_cause(mut self, inp: crate::model::InstallationMediaFailureCause) -> Self {
-            self.failure_cause = Some(inp);
+        pub fn failure_cause(mut self, input: crate::model::InstallationMediaFailureCause) -> Self {
+            self.failure_cause = Some(input);
             self
         }
         pub fn set_failure_cause(
             mut self,
-            inp: std::option::Option<crate::model::InstallationMediaFailureCause>,
+            input: std::option::Option<crate::model::InstallationMediaFailureCause>,
         ) -> Self {
-            self.failure_cause = inp;
+            self.failure_cause = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportInstallationMediaOutput`](crate::output::ImportInstallationMediaOutput)
@@ -3239,15 +3275,15 @@ pub mod failover_global_cluster_output {
     }
     impl Builder {
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn global_cluster(mut self, inp: crate::model::GlobalCluster) -> Self {
-            self.global_cluster = Some(inp);
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
             self
         }
         pub fn set_global_cluster(
             mut self,
-            inp: std::option::Option<crate::model::GlobalCluster>,
+            input: std::option::Option<crate::model::GlobalCluster>,
         ) -> Self {
-            self.global_cluster = inp;
+            self.global_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
@@ -3296,12 +3332,15 @@ pub mod failover_db_cluster_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`FailoverDBClusterOutput`](crate::output::FailoverDBClusterOutput)
@@ -3351,30 +3390,33 @@ pub mod download_db_log_file_portion_output {
     }
     impl Builder {
         /// <p>Entries from the specified log file.</p>
-        pub fn log_file_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_file_data = Some(inp.into());
+        pub fn log_file_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_file_data = Some(input.into());
             self
         }
-        pub fn set_log_file_data(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_file_data = inp;
+        pub fn set_log_file_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_file_data = input;
             self
         }
         /// <p>A pagination token that can be used in a later DownloadDBLogFilePortion request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
-        pub fn additional_data_pending(mut self, inp: bool) -> Self {
-            self.additional_data_pending = Some(inp);
+        pub fn additional_data_pending(mut self, input: bool) -> Self {
+            self.additional_data_pending = Some(input);
             self
         }
-        pub fn set_additional_data_pending(mut self, inp: bool) -> Self {
-            self.additional_data_pending = Some(inp);
+        pub fn set_additional_data_pending(mut self, input: std::option::Option<bool>) -> Self {
+            self.additional_data_pending = input;
             self
         }
         /// Consumes the builder and constructs a [`DownloadDBLogFilePortionOutput`](crate::output::DownloadDBLogFilePortionOutput)
@@ -3434,16 +3476,16 @@ pub mod describe_valid_db_instance_modifications_output {
         /// </p>
         pub fn valid_db_instance_modifications_message(
             mut self,
-            inp: crate::model::ValidDBInstanceModificationsMessage,
+            input: crate::model::ValidDBInstanceModificationsMessage,
         ) -> Self {
-            self.valid_db_instance_modifications_message = Some(inp);
+            self.valid_db_instance_modifications_message = Some(input);
             self
         }
         pub fn set_valid_db_instance_modifications_message(
             mut self,
-            inp: std::option::Option<crate::model::ValidDBInstanceModificationsMessage>,
+            input: std::option::Option<crate::model::ValidDBInstanceModificationsMessage>,
         ) -> Self {
-            self.valid_db_instance_modifications_message = inp;
+            self.valid_db_instance_modifications_message = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeValidDBInstanceModificationsOutput`](crate::output::DescribeValidDBInstanceModificationsOutput)
@@ -3501,25 +3543,25 @@ pub mod describe_source_regions_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn source_regions(mut self, inp: impl Into<crate::model::SourceRegion>) -> Self {
+        pub fn source_regions(mut self, input: impl Into<crate::model::SourceRegion>) -> Self {
             let mut v = self.source_regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_regions = Some(v);
             self
         }
         pub fn set_source_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SourceRegion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceRegion>>,
         ) -> Self {
-            self.source_regions = inp;
+            self.source_regions = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSourceRegionsOutput`](crate::output::DescribeSourceRegionsOutput)
@@ -3583,28 +3625,28 @@ pub mod describe_reserved_db_instances_offerings_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn reserved_db_instances_offerings(
             mut self,
-            inp: impl Into<crate::model::ReservedDBInstancesOffering>,
+            input: impl Into<crate::model::ReservedDBInstancesOffering>,
         ) -> Self {
             let mut v = self.reserved_db_instances_offerings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_db_instances_offerings = Some(v);
             self
         }
         pub fn set_reserved_db_instances_offerings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedDBInstancesOffering>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedDBInstancesOffering>>,
         ) -> Self {
-            self.reserved_db_instances_offerings = inp;
+            self.reserved_db_instances_offerings = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservedDBInstancesOfferingsOutput`](crate::output::DescribeReservedDBInstancesOfferingsOutput)
@@ -3664,28 +3706,28 @@ pub mod describe_reserved_db_instances_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn reserved_db_instances(
             mut self,
-            inp: impl Into<crate::model::ReservedDBInstance>,
+            input: impl Into<crate::model::ReservedDBInstance>,
         ) -> Self {
             let mut v = self.reserved_db_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_db_instances = Some(v);
             self
         }
         pub fn set_reserved_db_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedDBInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedDBInstance>>,
         ) -> Self {
-            self.reserved_db_instances = inp;
+            self.reserved_db_instances = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservedDBInstancesOutput`](crate::output::DescribeReservedDBInstancesOutput)
@@ -3744,20 +3786,20 @@ pub mod describe_pending_maintenance_actions_output {
     impl Builder {
         pub fn pending_maintenance_actions(
             mut self,
-            inp: impl Into<crate::model::ResourcePendingMaintenanceActions>,
+            input: impl Into<crate::model::ResourcePendingMaintenanceActions>,
         ) -> Self {
             let mut v = self.pending_maintenance_actions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.pending_maintenance_actions = Some(v);
             self
         }
         pub fn set_pending_maintenance_actions(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>,
             >,
         ) -> Self {
-            self.pending_maintenance_actions = inp;
+            self.pending_maintenance_actions = input;
             self
         }
         /// <p>
@@ -3767,12 +3809,12 @@ pub mod describe_pending_maintenance_actions_output {
         /// only records beyond the marker,
         /// up to a number of records specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput)
@@ -3833,18 +3875,18 @@ pub mod describe_orderable_db_instance_options_output {
     impl Builder {
         pub fn orderable_db_instance_options(
             mut self,
-            inp: impl Into<crate::model::OrderableDBInstanceOption>,
+            input: impl Into<crate::model::OrderableDBInstanceOption>,
         ) -> Self {
             let mut v = self.orderable_db_instance_options.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.orderable_db_instance_options = Some(v);
             self
         }
         pub fn set_orderable_db_instance_options(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OrderableDBInstanceOption>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OrderableDBInstanceOption>>,
         ) -> Self {
-            self.orderable_db_instance_options = inp;
+            self.orderable_db_instance_options = input;
             self
         }
         /// <p>
@@ -3854,12 +3896,12 @@ pub mod describe_orderable_db_instance_options_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeOrderableDBInstanceOptionsOutput`](crate::output::DescribeOrderableDBInstanceOptionsOutput)
@@ -3910,17 +3952,17 @@ pub mod describe_option_groups_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn option_groups_list(mut self, inp: impl Into<crate::model::OptionGroup>) -> Self {
+        pub fn option_groups_list(mut self, input: impl Into<crate::model::OptionGroup>) -> Self {
             let mut v = self.option_groups_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.option_groups_list = Some(v);
             self
         }
         pub fn set_option_groups_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionGroup>>,
         ) -> Self {
-            self.option_groups_list = inp;
+            self.option_groups_list = input;
             self
         }
         /// <p>An optional pagination token provided by a previous request.
@@ -3928,12 +3970,12 @@ pub mod describe_option_groups_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeOptionGroupsOutput`](crate::output::DescribeOptionGroupsOutput)
@@ -3985,30 +4027,30 @@ pub mod describe_option_group_options_output {
     impl Builder {
         pub fn option_group_options(
             mut self,
-            inp: impl Into<crate::model::OptionGroupOption>,
+            input: impl Into<crate::model::OptionGroupOption>,
         ) -> Self {
             let mut v = self.option_group_options.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.option_group_options = Some(v);
             self
         }
         pub fn set_option_group_options(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionGroupOption>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionGroupOption>>,
         ) -> Self {
-            self.option_group_options = inp;
+            self.option_group_options = input;
             self
         }
         /// <p>An optional pagination token provided by a previous request.
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeOptionGroupOptionsOutput`](crate::output::DescribeOptionGroupOptionsOutput)
@@ -4063,28 +4105,28 @@ pub mod describe_installation_media_output {
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn installation_media(
             mut self,
-            inp: impl Into<crate::model::InstallationMedia>,
+            input: impl Into<crate::model::InstallationMedia>,
         ) -> Self {
             let mut v = self.installation_media.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.installation_media = Some(v);
             self
         }
         pub fn set_installation_media(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstallationMedia>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstallationMedia>>,
         ) -> Self {
-            self.installation_media = inp;
+            self.installation_media = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstallationMediaOutput`](crate::output::DescribeInstallationMediaOutput)
@@ -4140,25 +4182,25 @@ pub mod describe_global_clusters_output {
         /// If this parameter is specified, the response includes
         /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn global_clusters(mut self, inp: impl Into<crate::model::GlobalCluster>) -> Self {
+        pub fn global_clusters(mut self, input: impl Into<crate::model::GlobalCluster>) -> Self {
             let mut v = self.global_clusters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.global_clusters = Some(v);
             self
         }
         pub fn set_global_clusters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
         ) -> Self {
-            self.global_clusters = inp;
+            self.global_clusters = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
@@ -4208,25 +4250,25 @@ pub mod describe_export_tasks_output {
         /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code>
         /// request. A marker is used for pagination to identify the location to begin output for
         /// the next response of <code>DescribeExportTasks</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn export_tasks(mut self, inp: impl Into<crate::model::ExportTask>) -> Self {
+        pub fn export_tasks(mut self, input: impl Into<crate::model::ExportTask>) -> Self {
             let mut v = self.export_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.export_tasks = Some(v);
             self
         }
         pub fn set_export_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
         ) -> Self {
-            self.export_tasks = inp;
+            self.export_tasks = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput)
@@ -4287,28 +4329,28 @@ pub mod describe_event_subscriptions_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn event_subscriptions_list(
             mut self,
-            inp: impl Into<crate::model::EventSubscription>,
+            input: impl Into<crate::model::EventSubscription>,
         ) -> Self {
             let mut v = self.event_subscriptions_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_subscriptions_list = Some(v);
             self
         }
         pub fn set_event_subscriptions_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
         ) -> Self {
-            self.event_subscriptions_list = inp;
+            self.event_subscriptions_list = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput)
@@ -4371,25 +4413,25 @@ pub mod describe_events_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn events(mut self, inp: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.events = Some(v);
             self
         }
         pub fn set_events(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Event>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
         ) -> Self {
-            self.events = inp;
+            self.events = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
@@ -4435,18 +4477,18 @@ pub mod describe_event_categories_output {
     impl Builder {
         pub fn event_categories_map_list(
             mut self,
-            inp: impl Into<crate::model::EventCategoriesMap>,
+            input: impl Into<crate::model::EventCategoriesMap>,
         ) -> Self {
             let mut v = self.event_categories_map_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_categories_map_list = Some(v);
             self
         }
         pub fn set_event_categories_map_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
         ) -> Self {
-            self.event_categories_map_list = inp;
+            self.event_categories_map_list = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput)
@@ -4491,15 +4533,15 @@ pub mod describe_engine_default_parameters_output {
         /// <p>
         /// Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.
         /// </p>
-        pub fn engine_defaults(mut self, inp: crate::model::EngineDefaults) -> Self {
-            self.engine_defaults = Some(inp);
+        pub fn engine_defaults(mut self, input: crate::model::EngineDefaults) -> Self {
+            self.engine_defaults = Some(input);
             self
         }
         pub fn set_engine_defaults(
             mut self,
-            inp: std::option::Option<crate::model::EngineDefaults>,
+            input: std::option::Option<crate::model::EngineDefaults>,
         ) -> Self {
-            self.engine_defaults = inp;
+            self.engine_defaults = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput)
@@ -4544,15 +4586,15 @@ pub mod describe_engine_default_cluster_parameters_output {
         /// <p>
         /// Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.
         /// </p>
-        pub fn engine_defaults(mut self, inp: crate::model::EngineDefaults) -> Self {
-            self.engine_defaults = Some(inp);
+        pub fn engine_defaults(mut self, input: crate::model::EngineDefaults) -> Self {
+            self.engine_defaults = Some(input);
             self
         }
         pub fn set_engine_defaults(
             mut self,
-            inp: std::option::Option<crate::model::EngineDefaults>,
+            input: std::option::Option<crate::model::EngineDefaults>,
         ) -> Self {
-            self.engine_defaults = inp;
+            self.engine_defaults = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput)
@@ -4613,25 +4655,25 @@ pub mod describe_db_subnet_groups_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn db_subnet_groups(mut self, inp: impl Into<crate::model::DBSubnetGroup>) -> Self {
+        pub fn db_subnet_groups(mut self, input: impl Into<crate::model::DBSubnetGroup>) -> Self {
             let mut v = self.db_subnet_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_subnet_groups = Some(v);
             self
         }
         pub fn set_db_subnet_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBSubnetGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBSubnetGroup>>,
         ) -> Self {
-            self.db_subnet_groups = inp;
+            self.db_subnet_groups = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBSubnetGroupsOutput`](crate::output::DescribeDBSubnetGroupsOutput)
@@ -4692,25 +4734,25 @@ pub mod describe_db_snapshots_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn db_snapshots(mut self, inp: impl Into<crate::model::DBSnapshot>) -> Self {
+        pub fn db_snapshots(mut self, input: impl Into<crate::model::DBSnapshot>) -> Self {
             let mut v = self.db_snapshots.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_snapshots = Some(v);
             self
         }
         pub fn set_db_snapshots(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBSnapshot>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBSnapshot>>,
         ) -> Self {
-            self.db_snapshots = inp;
+            self.db_snapshots = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBSnapshotsOutput`](crate::output::DescribeDBSnapshotsOutput)
@@ -4767,16 +4809,16 @@ pub mod describe_db_snapshot_attributes_output {
         /// API action.</p>
         pub fn db_snapshot_attributes_result(
             mut self,
-            inp: crate::model::DBSnapshotAttributesResult,
+            input: crate::model::DBSnapshotAttributesResult,
         ) -> Self {
-            self.db_snapshot_attributes_result = Some(inp);
+            self.db_snapshot_attributes_result = Some(input);
             self
         }
         pub fn set_db_snapshot_attributes_result(
             mut self,
-            inp: std::option::Option<crate::model::DBSnapshotAttributesResult>,
+            input: std::option::Option<crate::model::DBSnapshotAttributesResult>,
         ) -> Self {
-            self.db_snapshot_attributes_result = inp;
+            self.db_snapshot_attributes_result = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBSnapshotAttributesOutput`](crate::output::DescribeDBSnapshotAttributesOutput)
@@ -4837,25 +4879,28 @@ pub mod describe_db_security_groups_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn db_security_groups(mut self, inp: impl Into<crate::model::DBSecurityGroup>) -> Self {
+        pub fn db_security_groups(
+            mut self,
+            input: impl Into<crate::model::DBSecurityGroup>,
+        ) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_security_groups = Some(v);
             self
         }
         pub fn set_db_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBSecurityGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBSecurityGroup>>,
         ) -> Self {
-            self.db_security_groups = inp;
+            self.db_security_groups = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBSecurityGroupsOutput`](crate::output::DescribeDBSecurityGroupsOutput)
@@ -4904,17 +4949,17 @@ pub mod describe_db_proxy_targets_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn targets(mut self, inp: impl Into<crate::model::DBProxyTarget>) -> Self {
+        pub fn targets(mut self, input: impl Into<crate::model::DBProxyTarget>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.targets = Some(v);
             self
         }
         pub fn set_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBProxyTarget>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBProxyTarget>>,
         ) -> Self {
-            self.targets = inp;
+            self.targets = input;
             self
         }
         /// <p>
@@ -4922,12 +4967,12 @@ pub mod describe_db_proxy_targets_output {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBProxyTargetsOutput`](crate::output::DescribeDBProxyTargetsOutput)
@@ -4977,17 +5022,17 @@ pub mod describe_db_proxy_target_groups_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn target_groups(mut self, inp: impl Into<crate::model::DBProxyTargetGroup>) -> Self {
+        pub fn target_groups(mut self, input: impl Into<crate::model::DBProxyTargetGroup>) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_groups = Some(v);
             self
         }
         pub fn set_target_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBProxyTargetGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBProxyTargetGroup>>,
         ) -> Self {
-            self.target_groups = inp;
+            self.target_groups = input;
             self
         }
         /// <p>
@@ -4995,12 +5040,12 @@ pub mod describe_db_proxy_target_groups_output {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBProxyTargetGroupsOutput`](crate::output::DescribeDBProxyTargetGroupsOutput)
@@ -5050,17 +5095,20 @@ pub mod describe_db_proxy_endpoints_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn db_proxy_endpoints(mut self, inp: impl Into<crate::model::DBProxyEndpoint>) -> Self {
+        pub fn db_proxy_endpoints(
+            mut self,
+            input: impl Into<crate::model::DBProxyEndpoint>,
+        ) -> Self {
             let mut v = self.db_proxy_endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_proxy_endpoints = Some(v);
             self
         }
         pub fn set_db_proxy_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBProxyEndpoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBProxyEndpoint>>,
         ) -> Self {
-            self.db_proxy_endpoints = inp;
+            self.db_proxy_endpoints = input;
             self
         }
         /// <p>
@@ -5068,12 +5116,12 @@ pub mod describe_db_proxy_endpoints_output {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBProxyEndpointsOutput`](crate::output::DescribeDBProxyEndpointsOutput)
@@ -5122,17 +5170,17 @@ pub mod describe_db_proxies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn db_proxies(mut self, inp: impl Into<crate::model::DBProxy>) -> Self {
+        pub fn db_proxies(mut self, input: impl Into<crate::model::DBProxy>) -> Self {
             let mut v = self.db_proxies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_proxies = Some(v);
             self
         }
         pub fn set_db_proxies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBProxy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBProxy>>,
         ) -> Self {
-            self.db_proxies = inp;
+            self.db_proxies = input;
             self
         }
         /// <p>
@@ -5140,12 +5188,12 @@ pub mod describe_db_proxies_output {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBProxiesOutput`](crate::output::DescribeDBProxiesOutput)
@@ -5200,17 +5248,17 @@ pub mod describe_db_parameters_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>
@@ -5219,12 +5267,12 @@ pub mod describe_db_parameters_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBParametersOutput`](crate::output::DescribeDBParametersOutput)
@@ -5286,28 +5334,28 @@ pub mod describe_db_parameter_groups_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn db_parameter_groups(
             mut self,
-            inp: impl Into<crate::model::DBParameterGroup>,
+            input: impl Into<crate::model::DBParameterGroup>,
         ) -> Self {
             let mut v = self.db_parameter_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_parameter_groups = Some(v);
             self
         }
         pub fn set_db_parameter_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBParameterGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBParameterGroup>>,
         ) -> Self {
-            self.db_parameter_groups = inp;
+            self.db_parameter_groups = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBParameterGroupsOutput`](crate::output::DescribeDBParameterGroupsOutput)
@@ -5359,27 +5407,27 @@ pub mod describe_db_log_files_output {
     impl Builder {
         pub fn describe_db_log_files(
             mut self,
-            inp: impl Into<crate::model::DescribeDBLogFilesDetails>,
+            input: impl Into<crate::model::DescribeDBLogFilesDetails>,
         ) -> Self {
             let mut v = self.describe_db_log_files.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.describe_db_log_files = Some(v);
             self
         }
         pub fn set_describe_db_log_files(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DescribeDBLogFilesDetails>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DescribeDBLogFilesDetails>>,
         ) -> Self {
-            self.describe_db_log_files = inp;
+            self.describe_db_log_files = input;
             self
         }
         /// <p>A pagination token that can be used in a later DescribeDBLogFiles request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBLogFilesOutput`](crate::output::DescribeDBLogFilesOutput)
@@ -5440,25 +5488,25 @@ pub mod describe_db_instances_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn db_instances(mut self, inp: impl Into<crate::model::DBInstance>) -> Self {
+        pub fn db_instances(mut self, input: impl Into<crate::model::DBInstance>) -> Self {
             let mut v = self.db_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_instances = Some(v);
             self
         }
         pub fn set_db_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBInstance>>,
         ) -> Self {
-            self.db_instances = inp;
+            self.db_instances = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBInstancesOutput`](crate::output::DescribeDBInstancesOutput)
@@ -5524,28 +5572,28 @@ pub mod describe_db_instance_automated_backups_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn db_instance_automated_backups(
             mut self,
-            inp: impl Into<crate::model::DBInstanceAutomatedBackup>,
+            input: impl Into<crate::model::DBInstanceAutomatedBackup>,
         ) -> Self {
             let mut v = self.db_instance_automated_backups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_instance_automated_backups = Some(v);
             self
         }
         pub fn set_db_instance_automated_backups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBInstanceAutomatedBackup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBInstanceAutomatedBackup>>,
         ) -> Self {
-            self.db_instance_automated_backups = inp;
+            self.db_instance_automated_backups = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBInstanceAutomatedBackupsOutput`](crate::output::DescribeDBInstanceAutomatedBackupsOutput)
@@ -5607,25 +5655,28 @@ pub mod describe_db_engine_versions_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn db_engine_versions(mut self, inp: impl Into<crate::model::DBEngineVersion>) -> Self {
+        pub fn db_engine_versions(
+            mut self,
+            input: impl Into<crate::model::DBEngineVersion>,
+        ) -> Self {
             let mut v = self.db_engine_versions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_engine_versions = Some(v);
             self
         }
         pub fn set_db_engine_versions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBEngineVersion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBEngineVersion>>,
         ) -> Self {
-            self.db_engine_versions = inp;
+            self.db_engine_versions = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBEngineVersionsOutput`](crate::output::DescribeDBEngineVersionsOutput)
@@ -5687,28 +5738,28 @@ pub mod describe_db_cluster_snapshots_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn db_cluster_snapshots(
             mut self,
-            inp: impl Into<crate::model::DBClusterSnapshot>,
+            input: impl Into<crate::model::DBClusterSnapshot>,
         ) -> Self {
             let mut v = self.db_cluster_snapshots.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_snapshots = Some(v);
             self
         }
         pub fn set_db_cluster_snapshots(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBClusterSnapshot>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBClusterSnapshot>>,
         ) -> Self {
-            self.db_cluster_snapshots = inp;
+            self.db_cluster_snapshots = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterSnapshotsOutput`](crate::output::DescribeDBClusterSnapshotsOutput)
@@ -5765,16 +5816,16 @@ pub mod describe_db_cluster_snapshot_attributes_output {
         /// API action.</p>
         pub fn db_cluster_snapshot_attributes_result(
             mut self,
-            inp: crate::model::DBClusterSnapshotAttributesResult,
+            input: crate::model::DBClusterSnapshotAttributesResult,
         ) -> Self {
-            self.db_cluster_snapshot_attributes_result = Some(inp);
+            self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
         pub fn set_db_cluster_snapshot_attributes_result(
             mut self,
-            inp: std::option::Option<crate::model::DBClusterSnapshotAttributesResult>,
+            input: std::option::Option<crate::model::DBClusterSnapshotAttributesResult>,
         ) -> Self {
-            self.db_cluster_snapshot_attributes_result = inp;
+            self.db_cluster_snapshot_attributes_result = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterSnapshotAttributesOutput`](crate::output::DescribeDBClusterSnapshotAttributesOutput)
@@ -5820,25 +5871,25 @@ pub mod describe_db_clusters_output {
     }
     impl Builder {
         /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn db_clusters(mut self, inp: impl Into<crate::model::DBCluster>) -> Self {
+        pub fn db_clusters(mut self, input: impl Into<crate::model::DBCluster>) -> Self {
             let mut v = self.db_clusters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_clusters = Some(v);
             self
         }
         pub fn set_db_clusters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBCluster>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBCluster>>,
         ) -> Self {
-            self.db_clusters = inp;
+            self.db_clusters = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClustersOutput`](crate::output::DescribeDBClustersOutput)
@@ -5890,17 +5941,17 @@ pub mod describe_db_cluster_parameters_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>
@@ -5910,12 +5961,12 @@ pub mod describe_db_cluster_parameters_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterParametersOutput`](crate::output::DescribeDBClusterParametersOutput)
@@ -5979,28 +6030,28 @@ pub mod describe_db_cluster_parameter_groups_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn db_cluster_parameter_groups(
             mut self,
-            inp: impl Into<crate::model::DBClusterParameterGroup>,
+            input: impl Into<crate::model::DBClusterParameterGroup>,
         ) -> Self {
             let mut v = self.db_cluster_parameter_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_parameter_groups = Some(v);
             self
         }
         pub fn set_db_cluster_parameter_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBClusterParameterGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBClusterParameterGroup>>,
         ) -> Self {
-            self.db_cluster_parameter_groups = inp;
+            self.db_cluster_parameter_groups = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterParameterGroupsOutput`](crate::output::DescribeDBClusterParameterGroupsOutput)
@@ -6058,28 +6109,28 @@ pub mod describe_db_cluster_endpoints_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn db_cluster_endpoints(
             mut self,
-            inp: impl Into<crate::model::DBClusterEndpoint>,
+            input: impl Into<crate::model::DBClusterEndpoint>,
         ) -> Self {
             let mut v = self.db_cluster_endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_endpoints = Some(v);
             self
         }
         pub fn set_db_cluster_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBClusterEndpoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBClusterEndpoint>>,
         ) -> Self {
-            self.db_cluster_endpoints = inp;
+            self.db_cluster_endpoints = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterEndpointsOutput`](crate::output::DescribeDBClusterEndpointsOutput)
@@ -6127,28 +6178,28 @@ pub mod describe_db_cluster_backtracks_output {
     }
     impl Builder {
         /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn db_cluster_backtracks(
             mut self,
-            inp: impl Into<crate::model::DBClusterBacktrack>,
+            input: impl Into<crate::model::DBClusterBacktrack>,
         ) -> Self {
             let mut v = self.db_cluster_backtracks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_backtracks = Some(v);
             self
         }
         pub fn set_db_cluster_backtracks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBClusterBacktrack>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBClusterBacktrack>>,
         ) -> Self {
-            self.db_cluster_backtracks = inp;
+            self.db_cluster_backtracks = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBClusterBacktracksOutput`](crate::output::DescribeDBClusterBacktracksOutput)
@@ -6204,28 +6255,28 @@ pub mod describe_custom_availability_zones_output {
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         pub fn custom_availability_zones(
             mut self,
-            inp: impl Into<crate::model::CustomAvailabilityZone>,
+            input: impl Into<crate::model::CustomAvailabilityZone>,
         ) -> Self {
             let mut v = self.custom_availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.custom_availability_zones = Some(v);
             self
         }
         pub fn set_custom_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CustomAvailabilityZone>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomAvailabilityZone>>,
         ) -> Self {
-            self.custom_availability_zones = inp;
+            self.custom_availability_zones = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCustomAvailabilityZonesOutput`](crate::output::DescribeCustomAvailabilityZonesOutput)
@@ -6277,17 +6328,17 @@ pub mod describe_certificates_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn certificates(mut self, inp: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.certificates = Some(v);
             self
         }
         pub fn set_certificates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
         ) -> Self {
-            self.certificates = inp;
+            self.certificates = input;
             self
         }
         /// <p>
@@ -6297,12 +6348,12 @@ pub mod describe_certificates_output {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput)
@@ -6345,17 +6396,17 @@ pub mod describe_account_attributes_output {
         pub(crate) account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
     }
     impl Builder {
-        pub fn account_quotas(mut self, inp: impl Into<crate::model::AccountQuota>) -> Self {
+        pub fn account_quotas(mut self, input: impl Into<crate::model::AccountQuota>) -> Self {
             let mut v = self.account_quotas.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.account_quotas = Some(v);
             self
         }
         pub fn set_account_quotas(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
         ) -> Self {
-            self.account_quotas = inp;
+            self.account_quotas = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput)
@@ -6493,93 +6544,99 @@ pub mod delete_installation_media_output {
     }
     impl Builder {
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.installation_media_id = Some(inp.into());
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.installation_media_id = Some(input.into());
             self
         }
         pub fn set_installation_media_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.installation_media_id = inp;
+            self.installation_media_id = input;
             self
         }
         /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_availability_zone_id = Some(inp.into());
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_availability_zone_id = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_id = inp;
+            self.custom_availability_zone_id = input;
             self
         }
         /// <p>The DB engine.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The engine version of the DB engine.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The path to the installation medium for the DB engine.</p>
         pub fn engine_installation_media_path(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.engine_installation_media_path = Some(inp.into());
+            self.engine_installation_media_path = Some(input.into());
             self
         }
         pub fn set_engine_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.engine_installation_media_path = inp;
+            self.engine_installation_media_path = input;
             self
         }
         /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-        pub fn os_installation_media_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.os_installation_media_path = Some(inp.into());
+        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.os_installation_media_path = Some(input.into());
             self
         }
         pub fn set_os_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.os_installation_media_path = inp;
+            self.os_installation_media_path = input;
             self
         }
         /// <p>The status of the installation medium.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>If an installation media failure occurred, the cause of the failure.</p>
-        pub fn failure_cause(mut self, inp: crate::model::InstallationMediaFailureCause) -> Self {
-            self.failure_cause = Some(inp);
+        pub fn failure_cause(mut self, input: crate::model::InstallationMediaFailureCause) -> Self {
+            self.failure_cause = Some(input);
             self
         }
         pub fn set_failure_cause(
             mut self,
-            inp: std::option::Option<crate::model::InstallationMediaFailureCause>,
+            input: std::option::Option<crate::model::InstallationMediaFailureCause>,
         ) -> Self {
-            self.failure_cause = inp;
+            self.failure_cause = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteInstallationMediaOutput`](crate::output::DeleteInstallationMediaOutput)
@@ -6627,15 +6684,15 @@ pub mod delete_global_cluster_output {
     }
     impl Builder {
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn global_cluster(mut self, inp: crate::model::GlobalCluster) -> Self {
-            self.global_cluster = Some(inp);
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
             self
         }
         pub fn set_global_cluster(
             mut self,
-            inp: std::option::Option<crate::model::GlobalCluster>,
+            input: std::option::Option<crate::model::GlobalCluster>,
         ) -> Self {
-            self.global_cluster = inp;
+            self.global_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
@@ -6676,15 +6733,15 @@ pub mod delete_event_subscription_output {
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn event_subscription(mut self, inp: crate::model::EventSubscription) -> Self {
-            self.event_subscription = Some(inp);
+        pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
+            self.event_subscription = Some(input);
             self
         }
         pub fn set_event_subscription(
             mut self,
-            inp: std::option::Option<crate::model::EventSubscription>,
+            input: std::option::Option<crate::model::EventSubscription>,
         ) -> Self {
-            self.event_subscription = inp;
+            self.event_subscription = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput)
@@ -6762,15 +6819,15 @@ pub mod delete_db_snapshot_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSnapshots</code> action.
         /// </p>
-        pub fn db_snapshot(mut self, inp: crate::model::DBSnapshot) -> Self {
-            self.db_snapshot = Some(inp);
+        pub fn db_snapshot(mut self, input: crate::model::DBSnapshot) -> Self {
+            self.db_snapshot = Some(input);
             self
         }
         pub fn set_db_snapshot(
             mut self,
-            inp: std::option::Option<crate::model::DBSnapshot>,
+            input: std::option::Option<crate::model::DBSnapshot>,
         ) -> Self {
-            self.db_snapshot = inp;
+            self.db_snapshot = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBSnapshotOutput`](crate::output::DeleteDBSnapshotOutput)
@@ -6840,15 +6897,15 @@ pub mod delete_db_proxy_endpoint_output {
     }
     impl Builder {
         /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
-        pub fn db_proxy_endpoint(mut self, inp: crate::model::DBProxyEndpoint) -> Self {
-            self.db_proxy_endpoint = Some(inp);
+        pub fn db_proxy_endpoint(mut self, input: crate::model::DBProxyEndpoint) -> Self {
+            self.db_proxy_endpoint = Some(input);
             self
         }
         pub fn set_db_proxy_endpoint(
             mut self,
-            inp: std::option::Option<crate::model::DBProxyEndpoint>,
+            input: std::option::Option<crate::model::DBProxyEndpoint>,
         ) -> Self {
-            self.db_proxy_endpoint = inp;
+            self.db_proxy_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBProxyEndpointOutput`](crate::output::DeleteDBProxyEndpointOutput)
@@ -6889,12 +6946,12 @@ pub mod delete_db_proxy_output {
     }
     impl Builder {
         /// <p>The data structure representing the details of the DB proxy that you delete.</p>
-        pub fn db_proxy(mut self, inp: crate::model::DBProxy) -> Self {
-            self.db_proxy = Some(inp);
+        pub fn db_proxy(mut self, input: crate::model::DBProxy) -> Self {
+            self.db_proxy = Some(input);
             self
         }
-        pub fn set_db_proxy(mut self, inp: std::option::Option<crate::model::DBProxy>) -> Self {
-            self.db_proxy = inp;
+        pub fn set_db_proxy(mut self, input: std::option::Option<crate::model::DBProxy>) -> Self {
+            self.db_proxy = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBProxyOutput`](crate::output::DeleteDBProxyOutput)
@@ -6972,16 +7029,16 @@ pub mod delete_db_instance_automated_backup_output {
         /// existed at the time you deleted the source instance.</p>
         pub fn db_instance_automated_backup(
             mut self,
-            inp: crate::model::DBInstanceAutomatedBackup,
+            input: crate::model::DBInstanceAutomatedBackup,
         ) -> Self {
-            self.db_instance_automated_backup = Some(inp);
+            self.db_instance_automated_backup = Some(input);
             self
         }
         pub fn set_db_instance_automated_backup(
             mut self,
-            inp: std::option::Option<crate::model::DBInstanceAutomatedBackup>,
+            input: std::option::Option<crate::model::DBInstanceAutomatedBackup>,
         ) -> Self {
-            self.db_instance_automated_backup = inp;
+            self.db_instance_automated_backup = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBInstanceAutomatedBackupOutput`](crate::output::DeleteDBInstanceAutomatedBackupOutput)
@@ -7028,15 +7085,15 @@ pub mod delete_db_instance_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBInstanceOutput`](crate::output::DeleteDBInstanceOutput)
@@ -7085,15 +7142,15 @@ pub mod delete_db_cluster_snapshot_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBClusterSnapshots</code> action.
         /// </p>
-        pub fn db_cluster_snapshot(mut self, inp: crate::model::DBClusterSnapshot) -> Self {
-            self.db_cluster_snapshot = Some(inp);
+        pub fn db_cluster_snapshot(mut self, input: crate::model::DBClusterSnapshot) -> Self {
+            self.db_cluster_snapshot = Some(input);
             self
         }
         pub fn set_db_cluster_snapshot(
             mut self,
-            inp: std::option::Option<crate::model::DBClusterSnapshot>,
+            input: std::option::Option<crate::model::DBClusterSnapshot>,
         ) -> Self {
-            self.db_cluster_snapshot = inp;
+            self.db_cluster_snapshot = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBClusterSnapshotOutput`](crate::output::DeleteDBClusterSnapshotOutput)
@@ -7239,123 +7296,126 @@ pub mod delete_db_cluster_endpoint_output {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = Some(inp.into());
+            self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = inp;
+            self.db_cluster_endpoint_identifier = input;
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
         pub fn db_cluster_endpoint_resource_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = Some(inp.into());
+            self.db_cluster_endpoint_resource_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = inp;
+            self.db_cluster_endpoint_resource_identifier = input;
             self
         }
         /// <p>The DNS address of the endpoint.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster,
         /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_type = Some(inp.into());
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_type = Some(input.into());
             self
         }
-        pub fn set_endpoint_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_type = inp;
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_type = input;
             self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
         /// <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn custom_endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_endpoint_type = Some(inp.into());
+        pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_endpoint_type = Some(input.into());
             self
         }
         pub fn set_custom_endpoint_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_endpoint_type = inp;
+            self.custom_endpoint_type = input;
             self
         }
-        pub fn static_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.static_members = Some(v);
             self
         }
         pub fn set_static_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.static_members = inp;
+            self.static_members = input;
             self
         }
-        pub fn excluded_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
         pub fn set_excluded_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.excluded_members = inp;
+            self.excluded_members = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-        pub fn db_cluster_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_endpoint_arn = Some(inp.into());
+        pub fn db_cluster_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_endpoint_arn = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_arn = inp;
+            self.db_cluster_endpoint_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBClusterEndpointOutput`](crate::output::DeleteDBClusterEndpointOutput)
@@ -7414,12 +7474,15 @@ pub mod delete_db_cluster_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDBClusterOutput`](crate::output::DeleteDBClusterOutput)
@@ -7471,16 +7534,16 @@ pub mod delete_custom_availability_zone_output {
         /// </p>
         pub fn custom_availability_zone(
             mut self,
-            inp: crate::model::CustomAvailabilityZone,
+            input: crate::model::CustomAvailabilityZone,
         ) -> Self {
-            self.custom_availability_zone = Some(inp);
+            self.custom_availability_zone = Some(input);
             self
         }
         pub fn set_custom_availability_zone(
             mut self,
-            inp: std::option::Option<crate::model::CustomAvailabilityZone>,
+            input: std::option::Option<crate::model::CustomAvailabilityZone>,
         ) -> Self {
-            self.custom_availability_zone = inp;
+            self.custom_availability_zone = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteCustomAvailabilityZoneOutput`](crate::output::DeleteCustomAvailabilityZoneOutput)
@@ -7521,15 +7584,15 @@ pub mod create_option_group_output {
     }
     impl Builder {
         /// <p></p>
-        pub fn option_group(mut self, inp: crate::model::OptionGroup) -> Self {
-            self.option_group = Some(inp);
+        pub fn option_group(mut self, input: crate::model::OptionGroup) -> Self {
+            self.option_group = Some(input);
             self
         }
         pub fn set_option_group(
             mut self,
-            inp: std::option::Option<crate::model::OptionGroup>,
+            input: std::option::Option<crate::model::OptionGroup>,
         ) -> Self {
-            self.option_group = inp;
+            self.option_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateOptionGroupOutput`](crate::output::CreateOptionGroupOutput)
@@ -7570,15 +7633,15 @@ pub mod create_global_cluster_output {
     }
     impl Builder {
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn global_cluster(mut self, inp: crate::model::GlobalCluster) -> Self {
-            self.global_cluster = Some(inp);
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
             self
         }
         pub fn set_global_cluster(
             mut self,
-            inp: std::option::Option<crate::model::GlobalCluster>,
+            input: std::option::Option<crate::model::GlobalCluster>,
         ) -> Self {
-            self.global_cluster = inp;
+            self.global_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
@@ -7619,15 +7682,15 @@ pub mod create_event_subscription_output {
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn event_subscription(mut self, inp: crate::model::EventSubscription) -> Self {
-            self.event_subscription = Some(inp);
+        pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
+            self.event_subscription = Some(input);
             self
         }
         pub fn set_event_subscription(
             mut self,
-            inp: std::option::Option<crate::model::EventSubscription>,
+            input: std::option::Option<crate::model::EventSubscription>,
         ) -> Self {
-            self.event_subscription = inp;
+            self.event_subscription = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput)
@@ -7676,15 +7739,15 @@ pub mod create_db_subnet_group_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSubnetGroups</code> action.
         /// </p>
-        pub fn db_subnet_group(mut self, inp: crate::model::DBSubnetGroup) -> Self {
-            self.db_subnet_group = Some(inp);
+        pub fn db_subnet_group(mut self, input: crate::model::DBSubnetGroup) -> Self {
+            self.db_subnet_group = Some(input);
             self
         }
         pub fn set_db_subnet_group(
             mut self,
-            inp: std::option::Option<crate::model::DBSubnetGroup>,
+            input: std::option::Option<crate::model::DBSubnetGroup>,
         ) -> Self {
-            self.db_subnet_group = inp;
+            self.db_subnet_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBSubnetGroupOutput`](crate::output::CreateDBSubnetGroupOutput)
@@ -7733,15 +7796,15 @@ pub mod create_db_snapshot_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSnapshots</code> action.
         /// </p>
-        pub fn db_snapshot(mut self, inp: crate::model::DBSnapshot) -> Self {
-            self.db_snapshot = Some(inp);
+        pub fn db_snapshot(mut self, input: crate::model::DBSnapshot) -> Self {
+            self.db_snapshot = Some(input);
             self
         }
         pub fn set_db_snapshot(
             mut self,
-            inp: std::option::Option<crate::model::DBSnapshot>,
+            input: std::option::Option<crate::model::DBSnapshot>,
         ) -> Self {
-            self.db_snapshot = inp;
+            self.db_snapshot = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBSnapshotOutput`](crate::output::CreateDBSnapshotOutput)
@@ -7790,15 +7853,15 @@ pub mod create_db_security_group_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSecurityGroups</code> action.
         /// </p>
-        pub fn db_security_group(mut self, inp: crate::model::DBSecurityGroup) -> Self {
-            self.db_security_group = Some(inp);
+        pub fn db_security_group(mut self, input: crate::model::DBSecurityGroup) -> Self {
+            self.db_security_group = Some(input);
             self
         }
         pub fn set_db_security_group(
             mut self,
-            inp: std::option::Option<crate::model::DBSecurityGroup>,
+            input: std::option::Option<crate::model::DBSecurityGroup>,
         ) -> Self {
-            self.db_security_group = inp;
+            self.db_security_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBSecurityGroupOutput`](crate::output::CreateDBSecurityGroupOutput)
@@ -7843,15 +7906,15 @@ pub mod create_db_proxy_endpoint_output {
         /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation.
         /// The DB proxy endpoint that you create might provide capabilities such as read/write
         /// or read-only operations, or using a different VPC than the proxy's default VPC.</p>
-        pub fn db_proxy_endpoint(mut self, inp: crate::model::DBProxyEndpoint) -> Self {
-            self.db_proxy_endpoint = Some(inp);
+        pub fn db_proxy_endpoint(mut self, input: crate::model::DBProxyEndpoint) -> Self {
+            self.db_proxy_endpoint = Some(input);
             self
         }
         pub fn set_db_proxy_endpoint(
             mut self,
-            inp: std::option::Option<crate::model::DBProxyEndpoint>,
+            input: std::option::Option<crate::model::DBProxyEndpoint>,
         ) -> Self {
-            self.db_proxy_endpoint = inp;
+            self.db_proxy_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBProxyEndpointOutput`](crate::output::CreateDBProxyEndpointOutput)
@@ -7892,12 +7955,12 @@ pub mod create_db_proxy_output {
     }
     impl Builder {
         /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
-        pub fn db_proxy(mut self, inp: crate::model::DBProxy) -> Self {
-            self.db_proxy = Some(inp);
+        pub fn db_proxy(mut self, input: crate::model::DBProxy) -> Self {
+            self.db_proxy = Some(input);
             self
         }
-        pub fn set_db_proxy(mut self, inp: std::option::Option<crate::model::DBProxy>) -> Self {
-            self.db_proxy = inp;
+        pub fn set_db_proxy(mut self, input: std::option::Option<crate::model::DBProxy>) -> Self {
+            self.db_proxy = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBProxyOutput`](crate::output::CreateDBProxyOutput)
@@ -7944,15 +8007,15 @@ pub mod create_db_parameter_group_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
         /// </p>
-        pub fn db_parameter_group(mut self, inp: crate::model::DBParameterGroup) -> Self {
-            self.db_parameter_group = Some(inp);
+        pub fn db_parameter_group(mut self, input: crate::model::DBParameterGroup) -> Self {
+            self.db_parameter_group = Some(input);
             self
         }
         pub fn set_db_parameter_group(
             mut self,
-            inp: std::option::Option<crate::model::DBParameterGroup>,
+            input: std::option::Option<crate::model::DBParameterGroup>,
         ) -> Self {
-            self.db_parameter_group = inp;
+            self.db_parameter_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBParameterGroupOutput`](crate::output::CreateDBParameterGroupOutput)
@@ -7999,15 +8062,15 @@ pub mod create_db_instance_read_replica_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBInstanceReadReplicaOutput`](crate::output::CreateDBInstanceReadReplicaOutput)
@@ -8054,15 +8117,15 @@ pub mod create_db_instance_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
         /// </p>
-        pub fn db_instance(mut self, inp: crate::model::DBInstance) -> Self {
-            self.db_instance = Some(inp);
+        pub fn db_instance(mut self, input: crate::model::DBInstance) -> Self {
+            self.db_instance = Some(input);
             self
         }
         pub fn set_db_instance(
             mut self,
-            inp: std::option::Option<crate::model::DBInstance>,
+            input: std::option::Option<crate::model::DBInstance>,
         ) -> Self {
-            self.db_instance = inp;
+            self.db_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBInstanceOutput`](crate::output::CreateDBInstanceOutput)
@@ -8111,15 +8174,15 @@ pub mod create_db_cluster_snapshot_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBClusterSnapshots</code> action.
         /// </p>
-        pub fn db_cluster_snapshot(mut self, inp: crate::model::DBClusterSnapshot) -> Self {
-            self.db_cluster_snapshot = Some(inp);
+        pub fn db_cluster_snapshot(mut self, input: crate::model::DBClusterSnapshot) -> Self {
+            self.db_cluster_snapshot = Some(input);
             self
         }
         pub fn set_db_cluster_snapshot(
             mut self,
-            inp: std::option::Option<crate::model::DBClusterSnapshot>,
+            input: std::option::Option<crate::model::DBClusterSnapshot>,
         ) -> Self {
-            self.db_cluster_snapshot = inp;
+            self.db_cluster_snapshot = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBClusterSnapshotOutput`](crate::output::CreateDBClusterSnapshotOutput)
@@ -8172,16 +8235,16 @@ pub mod create_db_cluster_parameter_group_output {
         /// </p>
         pub fn db_cluster_parameter_group(
             mut self,
-            inp: crate::model::DBClusterParameterGroup,
+            input: crate::model::DBClusterParameterGroup,
         ) -> Self {
-            self.db_cluster_parameter_group = Some(inp);
+            self.db_cluster_parameter_group = Some(input);
             self
         }
         pub fn set_db_cluster_parameter_group(
             mut self,
-            inp: std::option::Option<crate::model::DBClusterParameterGroup>,
+            input: std::option::Option<crate::model::DBClusterParameterGroup>,
         ) -> Self {
-            self.db_cluster_parameter_group = inp;
+            self.db_cluster_parameter_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBClusterParameterGroupOutput`](crate::output::CreateDBClusterParameterGroupOutput)
@@ -8298,123 +8361,126 @@ pub mod create_db_cluster_endpoint_output {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = Some(inp.into());
+            self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = inp;
+            self.db_cluster_endpoint_identifier = input;
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
         pub fn db_cluster_endpoint_resource_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = Some(inp.into());
+            self.db_cluster_endpoint_resource_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = inp;
+            self.db_cluster_endpoint_resource_identifier = input;
             self
         }
         /// <p>The DNS address of the endpoint.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster,
         /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_type = Some(inp.into());
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_type = Some(input.into());
             self
         }
-        pub fn set_endpoint_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_type = inp;
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_type = input;
             self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
         /// <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn custom_endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_endpoint_type = Some(inp.into());
+        pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_endpoint_type = Some(input.into());
             self
         }
         pub fn set_custom_endpoint_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_endpoint_type = inp;
+            self.custom_endpoint_type = input;
             self
         }
-        pub fn static_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.static_members = Some(v);
             self
         }
         pub fn set_static_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.static_members = inp;
+            self.static_members = input;
             self
         }
-        pub fn excluded_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
         pub fn set_excluded_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.excluded_members = inp;
+            self.excluded_members = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-        pub fn db_cluster_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_endpoint_arn = Some(inp.into());
+        pub fn db_cluster_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_endpoint_arn = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_arn = inp;
+            self.db_cluster_endpoint_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBClusterEndpointOutput`](crate::output::CreateDBClusterEndpointOutput)
@@ -8473,12 +8539,15 @@ pub mod create_db_cluster_output {
         /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
         /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
         /// </p>
-        pub fn db_cluster(mut self, inp: crate::model::DBCluster) -> Self {
-            self.db_cluster = Some(inp);
+        pub fn db_cluster(mut self, input: crate::model::DBCluster) -> Self {
+            self.db_cluster = Some(input);
             self
         }
-        pub fn set_db_cluster(mut self, inp: std::option::Option<crate::model::DBCluster>) -> Self {
-            self.db_cluster = inp;
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DBCluster>,
+        ) -> Self {
+            self.db_cluster = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDBClusterOutput`](crate::output::CreateDBClusterOutput)
@@ -8530,16 +8599,16 @@ pub mod create_custom_availability_zone_output {
         /// </p>
         pub fn custom_availability_zone(
             mut self,
-            inp: crate::model::CustomAvailabilityZone,
+            input: crate::model::CustomAvailabilityZone,
         ) -> Self {
-            self.custom_availability_zone = Some(inp);
+            self.custom_availability_zone = Some(input);
             self
         }
         pub fn set_custom_availability_zone(
             mut self,
-            inp: std::option::Option<crate::model::CustomAvailabilityZone>,
+            input: std::option::Option<crate::model::CustomAvailabilityZone>,
         ) -> Self {
-            self.custom_availability_zone = inp;
+            self.custom_availability_zone = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCustomAvailabilityZoneOutput`](crate::output::CreateCustomAvailabilityZoneOutput)
@@ -8580,15 +8649,15 @@ pub mod copy_option_group_output {
     }
     impl Builder {
         /// <p></p>
-        pub fn option_group(mut self, inp: crate::model::OptionGroup) -> Self {
-            self.option_group = Some(inp);
+        pub fn option_group(mut self, input: crate::model::OptionGroup) -> Self {
+            self.option_group = Some(input);
             self
         }
         pub fn set_option_group(
             mut self,
-            inp: std::option::Option<crate::model::OptionGroup>,
+            input: std::option::Option<crate::model::OptionGroup>,
         ) -> Self {
-            self.option_group = inp;
+            self.option_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyOptionGroupOutput`](crate::output::CopyOptionGroupOutput)
@@ -8637,15 +8706,15 @@ pub mod copy_db_snapshot_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSnapshots</code> action.
         /// </p>
-        pub fn db_snapshot(mut self, inp: crate::model::DBSnapshot) -> Self {
-            self.db_snapshot = Some(inp);
+        pub fn db_snapshot(mut self, input: crate::model::DBSnapshot) -> Self {
+            self.db_snapshot = Some(input);
             self
         }
         pub fn set_db_snapshot(
             mut self,
-            inp: std::option::Option<crate::model::DBSnapshot>,
+            input: std::option::Option<crate::model::DBSnapshot>,
         ) -> Self {
-            self.db_snapshot = inp;
+            self.db_snapshot = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyDBSnapshotOutput`](crate::output::CopyDBSnapshotOutput)
@@ -8692,15 +8761,15 @@ pub mod copy_db_parameter_group_output {
         /// </p>
         /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
         /// </p>
-        pub fn db_parameter_group(mut self, inp: crate::model::DBParameterGroup) -> Self {
-            self.db_parameter_group = Some(inp);
+        pub fn db_parameter_group(mut self, input: crate::model::DBParameterGroup) -> Self {
+            self.db_parameter_group = Some(input);
             self
         }
         pub fn set_db_parameter_group(
             mut self,
-            inp: std::option::Option<crate::model::DBParameterGroup>,
+            input: std::option::Option<crate::model::DBParameterGroup>,
         ) -> Self {
-            self.db_parameter_group = inp;
+            self.db_parameter_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyDBParameterGroupOutput`](crate::output::CopyDBParameterGroupOutput)
@@ -8749,15 +8818,15 @@ pub mod copy_db_cluster_snapshot_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBClusterSnapshots</code> action.
         /// </p>
-        pub fn db_cluster_snapshot(mut self, inp: crate::model::DBClusterSnapshot) -> Self {
-            self.db_cluster_snapshot = Some(inp);
+        pub fn db_cluster_snapshot(mut self, input: crate::model::DBClusterSnapshot) -> Self {
+            self.db_cluster_snapshot = Some(input);
             self
         }
         pub fn set_db_cluster_snapshot(
             mut self,
-            inp: std::option::Option<crate::model::DBClusterSnapshot>,
+            input: std::option::Option<crate::model::DBClusterSnapshot>,
         ) -> Self {
-            self.db_cluster_snapshot = inp;
+            self.db_cluster_snapshot = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyDBClusterSnapshotOutput`](crate::output::CopyDBClusterSnapshotOutput)
@@ -8810,16 +8879,16 @@ pub mod copy_db_cluster_parameter_group_output {
         /// </p>
         pub fn db_cluster_parameter_group(
             mut self,
-            inp: crate::model::DBClusterParameterGroup,
+            input: crate::model::DBClusterParameterGroup,
         ) -> Self {
-            self.db_cluster_parameter_group = Some(inp);
+            self.db_cluster_parameter_group = Some(input);
             self
         }
         pub fn set_db_cluster_parameter_group(
             mut self,
-            inp: std::option::Option<crate::model::DBClusterParameterGroup>,
+            input: std::option::Option<crate::model::DBClusterParameterGroup>,
         ) -> Self {
-            self.db_cluster_parameter_group = inp;
+            self.db_cluster_parameter_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyDBClusterParameterGroupOutput`](crate::output::CopyDBClusterParameterGroupOutput)
@@ -8951,159 +9020,162 @@ pub mod cancel_export_task_output {
     impl Builder {
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
         /// the Amazon S3 bucket where the snapshot is exported to. </p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_task_identifier = Some(inp.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_task_identifier = Some(input.into());
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.export_task_identifier = inp;
+            self.export_task_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_arn = Some(inp.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = inp;
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
             self
         }
-        pub fn export_only(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn export_only(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.export_only.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.export_only = Some(v);
             self
         }
         pub fn set_export_only(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.export_only = inp;
+            self.export_only = input;
             self
         }
         /// <p>The time that the snapshot was created.</p>
-        pub fn snapshot_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.snapshot_time = Some(inp);
+        pub fn snapshot_time(mut self, input: smithy_types::Instant) -> Self {
+            self.snapshot_time = Some(input);
             self
         }
         pub fn set_snapshot_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.snapshot_time = inp;
+            self.snapshot_time = input;
             self
         }
         /// <p>The time that the snapshot export task started.</p>
-        pub fn task_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.task_start_time = Some(inp);
+        pub fn task_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.task_start_time = Some(input);
             self
         }
         pub fn set_task_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.task_start_time = inp;
+            self.task_start_time = input;
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
-        pub fn task_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.task_end_time = Some(inp);
+        pub fn task_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.task_end_time = Some(input);
             self
         }
         pub fn set_task_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.task_end_time = inp;
+            self.task_end_time = input;
             self
         }
         /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket = Some(inp.into());
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket = Some(input.into());
             self
         }
-        pub fn set_s3_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = inp;
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket = input;
             self
         }
         /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_prefix = Some(inp.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = inp;
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_prefix = input;
             self
         }
         /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iam_role_arn = Some(inp.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
             self
         }
-        pub fn set_iam_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = inp;
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
             self
         }
         /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
         /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
         /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The progress status of the export task.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The progress of the snapshot export task as a percentage.</p>
-        pub fn percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn percent_progress(mut self, input: i32) -> Self {
+            self.percent_progress = Some(input);
             self
         }
-        pub fn set_percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn set_percent_progress(mut self, input: std::option::Option<i32>) -> Self {
+            self.percent_progress = input;
             self
         }
         /// <p>The total amount of data exported, in gigabytes.</p>
-        pub fn total_extracted_data_in_gb(mut self, inp: i32) -> Self {
-            self.total_extracted_data_in_gb = Some(inp);
+        pub fn total_extracted_data_in_gb(mut self, input: i32) -> Self {
+            self.total_extracted_data_in_gb = Some(input);
             self
         }
-        pub fn set_total_extracted_data_in_gb(mut self, inp: i32) -> Self {
-            self.total_extracted_data_in_gb = Some(inp);
+        pub fn set_total_extracted_data_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_extracted_data_in_gb = input;
             self
         }
         /// <p>The reason the export failed, if it failed.</p>
-        pub fn failure_cause(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_cause = Some(inp.into());
+        pub fn failure_cause(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_cause = Some(input.into());
             self
         }
-        pub fn set_failure_cause(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.failure_cause = inp;
+        pub fn set_failure_cause(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_cause = input;
             self
         }
         /// <p>A warning about the snapshot export task.</p>
-        pub fn warning_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.warning_message = Some(inp.into());
+        pub fn warning_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.warning_message = Some(input.into());
             self
         }
         pub fn set_warning_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.warning_message = inp;
+            self.warning_message = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput)
@@ -9201,60 +9273,63 @@ pub mod backtrack_db_cluster_output {
     }
     impl Builder {
         /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>Contains the backtrack identifier.</p>
-        pub fn backtrack_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.backtrack_identifier = Some(inp.into());
+        pub fn backtrack_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backtrack_identifier = Some(input.into());
             self
         }
         pub fn set_backtrack_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.backtrack_identifier = inp;
+            self.backtrack_identifier = input;
             self
         }
         /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-        pub fn backtrack_to(mut self, inp: smithy_types::Instant) -> Self {
-            self.backtrack_to = Some(inp);
+        pub fn backtrack_to(mut self, input: smithy_types::Instant) -> Self {
+            self.backtrack_to = Some(input);
             self
         }
-        pub fn set_backtrack_to(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.backtrack_to = inp;
+        pub fn set_backtrack_to(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.backtrack_to = input;
             self
         }
         /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-        pub fn backtracked_from(mut self, inp: smithy_types::Instant) -> Self {
-            self.backtracked_from = Some(inp);
+        pub fn backtracked_from(mut self, input: smithy_types::Instant) -> Self {
+            self.backtracked_from = Some(input);
             self
         }
         pub fn set_backtracked_from(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.backtracked_from = inp;
+            self.backtracked_from = input;
             self
         }
         /// <p>The timestamp of the time at which the backtrack was requested.</p>
-        pub fn backtrack_request_creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.backtrack_request_creation_time = Some(inp);
+        pub fn backtrack_request_creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.backtrack_request_creation_time = Some(input);
             self
         }
         pub fn set_backtrack_request_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.backtrack_request_creation_time = inp;
+            self.backtrack_request_creation_time = input;
             self
         }
         /// <p>The status of the backtrack. This property returns one of the following
@@ -9277,12 +9352,12 @@ pub mod backtrack_db_cluster_output {
         /// <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`BacktrackDBClusterOutput`](crate::output::BacktrackDBClusterOutput)
@@ -9336,15 +9411,15 @@ pub mod authorize_db_security_group_ingress_output {
         /// <p>This data type is used as a response element
         /// in the <code>DescribeDBSecurityGroups</code> action.
         /// </p>
-        pub fn db_security_group(mut self, inp: crate::model::DBSecurityGroup) -> Self {
-            self.db_security_group = Some(inp);
+        pub fn db_security_group(mut self, input: crate::model::DBSecurityGroup) -> Self {
+            self.db_security_group = Some(input);
             self
         }
         pub fn set_db_security_group(
             mut self,
-            inp: std::option::Option<crate::model::DBSecurityGroup>,
+            input: std::option::Option<crate::model::DBSecurityGroup>,
         ) -> Self {
-            self.db_security_group = inp;
+            self.db_security_group = input;
             self
         }
         /// Consumes the builder and constructs a [`AuthorizeDBSecurityGroupIngressOutput`](crate::output::AuthorizeDBSecurityGroupIngressOutput)
@@ -9392,16 +9467,16 @@ pub mod apply_pending_maintenance_action_output {
         /// <p>Describes the pending maintenance actions for a resource.</p>
         pub fn resource_pending_maintenance_actions(
             mut self,
-            inp: crate::model::ResourcePendingMaintenanceActions,
+            input: crate::model::ResourcePendingMaintenanceActions,
         ) -> Self {
-            self.resource_pending_maintenance_actions = Some(inp);
+            self.resource_pending_maintenance_actions = Some(input);
             self
         }
         pub fn set_resource_pending_maintenance_actions(
             mut self,
-            inp: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+            input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
         ) -> Self {
-            self.resource_pending_maintenance_actions = inp;
+            self.resource_pending_maintenance_actions = input;
             self
         }
         /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput)
@@ -9471,15 +9546,15 @@ pub mod add_source_identifier_to_subscription_output {
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn event_subscription(mut self, inp: crate::model::EventSubscription) -> Self {
-            self.event_subscription = Some(inp);
+        pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
+            self.event_subscription = Some(input);
             self
         }
         pub fn set_event_subscription(
             mut self,
-            inp: std::option::Option<crate::model::EventSubscription>,
+            input: std::option::Option<crate::model::EventSubscription>,
         ) -> Self {
-            self.event_subscription = inp;
+            self.event_subscription = input;
             self
         }
         /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput)

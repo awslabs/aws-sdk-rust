@@ -87,99 +87,102 @@ pub mod upload_part_copy_output {
     impl Builder {
         /// <p>The version of the source object that was copied, if you have enabled versioning on the
         /// source bucket.</p>
-        pub fn copy_source_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_version_id = Some(inp.into());
+        pub fn copy_source_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source_version_id = Some(input.into());
             self
         }
         pub fn set_copy_source_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_version_id = inp;
+            self.copy_source_version_id = input;
             self
         }
         /// <p>Container for all response elements.</p>
-        pub fn copy_part_result(mut self, inp: crate::model::CopyPartResult) -> Self {
-            self.copy_part_result = Some(inp);
+        pub fn copy_part_result(mut self, input: crate::model::CopyPartResult) -> Self {
+            self.copy_part_result = Some(input);
             self
         }
         pub fn set_copy_part_result(
             mut self,
-            inp: std::option::Option<crate::model::CopyPartResult>,
+            input: std::option::Option<crate::model::CopyPartResult>,
         ) -> Self {
-            self.copy_part_result = inp;
+            self.copy_part_result = input;
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header confirming the encryption algorithm used.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to provide round-trip message integrity verification of
         /// the customer-provided encryption key.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadPartCopyOutput`](crate::output::UploadPartCopyOutput)
@@ -258,83 +261,86 @@ pub mod upload_part_output {
     impl Builder {
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>Entity tag for the uploaded object.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header confirming the encryption algorithm used.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to provide round-trip message integrity verification of
         /// the customer-provided encryption key.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
         /// customer managed customer master key (CMK) was used for the object.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadPartOutput`](crate::output::UploadPartOutput)
@@ -388,28 +394,28 @@ pub mod restore_object_output {
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// <p>Indicates the path in the provided S3 output location where Select results will be
         /// restored to.</p>
-        pub fn restore_output_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.restore_output_path = Some(inp.into());
+        pub fn restore_output_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.restore_output_path = Some(input.into());
             self
         }
         pub fn set_restore_output_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.restore_output_path = inp;
+            self.restore_output_path = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreObjectOutput`](crate::output::RestoreObjectOutput)
@@ -480,12 +486,12 @@ pub mod put_object_tagging_output {
     }
     impl Builder {
         /// <p>The versionId of the object the tag-set was added to.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectTaggingOutput`](crate::output::PutObjectTaggingOutput)
@@ -528,15 +534,15 @@ pub mod put_object_retention_output {
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectRetentionOutput`](crate::output::PutObjectRetentionOutput)
@@ -579,15 +585,15 @@ pub mod put_object_lock_configuration_output {
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectLockConfigurationOutput`](crate::output::PutObjectLockConfigurationOutput)
@@ -630,15 +636,15 @@ pub mod put_object_legal_hold_output {
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectLegalHoldOutput`](crate::output::PutObjectLegalHoldOutput)
@@ -681,15 +687,15 @@ pub mod put_object_acl_output {
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectAclOutput`](crate::output::PutObjectAclOutput)
@@ -784,119 +790,122 @@ pub mod put_object_output {
         /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It
         /// includes the expiry-date and rule-id key-value pairs that provide information about object
         /// expiration. The value of the rule-id is URL encoded.</p>
-        pub fn expiration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expiration = Some(inp.into());
+        pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expiration = Some(input.into());
             self
         }
-        pub fn set_expiration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expiration = inp;
+        pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration = input;
             self
         }
         /// <p>Entity tag for the uploaded object.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>If you specified server-side encryption either with an AWS KMS customer master key (CMK)
         /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
         /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>Version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header confirming the encryption algorithm used.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to provide round-trip message integrity verification of
         /// the customer-provided encryption key.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
         /// <code>aws:kms</code>, this header specifies the ID of the AWS Key Management Service
         /// (AWS KMS) symmetric customer managed customer master key (CMK) that was used for the
         /// object. </p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
         /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
         /// context key-value pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_encryption_context = Some(inp.into());
+        pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_encryption_context = Some(input.into());
             self
         }
         pub fn set_ssekms_encryption_context(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssekms_encryption_context = inp;
+            self.ssekms_encryption_context = input;
             self
         }
         /// <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`PutObjectOutput`](crate::output::PutObjectOutput)
@@ -1549,160 +1558,166 @@ pub mod list_parts_output {
         /// Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
         /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will
         /// provide the ID of the lifecycle configuration rule that defines this action.</p>
-        pub fn abort_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.abort_date = Some(inp);
+        pub fn abort_date(mut self, input: smithy_types::Instant) -> Self {
+            self.abort_date = Some(input);
             self
         }
-        pub fn set_abort_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.abort_date = inp;
+        pub fn set_abort_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.abort_date = input;
             self
         }
         /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
         /// identifies applicable lifecycle configuration rule that defines the action to abort
         /// incomplete multipart uploads.</p>
-        pub fn abort_rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.abort_rule_id = Some(inp.into());
+        pub fn abort_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.abort_rule_id = Some(input.into());
             self
         }
-        pub fn set_abort_rule_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.abort_rule_id = inp;
+        pub fn set_abort_rule_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.abort_rule_id = input;
             self
         }
         /// <p>The name of the bucket to which the multipart upload was initiated.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket = inp;
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id = Some(inp.into());
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id = Some(input.into());
             self
         }
-        pub fn set_upload_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = inp;
+        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_id = input;
             self
         }
         /// <p>When a list is truncated, this element specifies the last part in the list, as well as
         /// the value to use for the part-number-marker request parameter in a subsequent
         /// request.</p>
-        pub fn part_number_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.part_number_marker = Some(inp.into());
+        pub fn part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.part_number_marker = Some(input.into());
             self
         }
         pub fn set_part_number_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.part_number_marker = inp;
+            self.part_number_marker = input;
             self
         }
         /// <p>When a list is truncated, this element specifies the last part in the list, as well as
         /// the value to use for the part-number-marker request parameter in a subsequent
         /// request.</p>
-        pub fn next_part_number_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_part_number_marker = Some(inp.into());
+        pub fn next_part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_part_number_marker = Some(input.into());
             self
         }
         pub fn set_next_part_number_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_part_number_marker = inp;
+            self.next_part_number_marker = input;
             self
         }
         /// <p>Maximum number of parts that were allowed in the response.</p>
-        pub fn max_parts(mut self, inp: i32) -> Self {
-            self.max_parts = Some(inp);
+        pub fn max_parts(mut self, input: i32) -> Self {
+            self.max_parts = Some(input);
             self
         }
-        pub fn set_max_parts(mut self, inp: i32) -> Self {
-            self.max_parts = Some(inp);
+        pub fn set_max_parts(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parts = input;
             self
         }
         /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that
         /// the list was truncated. A list can be truncated if the number of parts exceeds the limit
         /// returned in the MaxParts element.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
-        pub fn parts(mut self, inp: impl Into<crate::model::Part>) -> Self {
+        pub fn parts(mut self, input: impl Into<crate::model::Part>) -> Self {
             let mut v = self.parts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parts = Some(v);
             self
         }
         pub fn set_parts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Part>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Part>>,
         ) -> Self {
-            self.parts = inp;
+            self.parts = input;
             self
         }
         /// <p>Container element that identifies who initiated the multipart upload. If the initiator
         /// is an AWS account, this element provides the same information as the <code>Owner</code>
         /// element. If the initiator is an IAM User, this element provides the user ARN and display
         /// name.</p>
-        pub fn initiator(mut self, inp: crate::model::Initiator) -> Self {
-            self.initiator = Some(inp);
+        pub fn initiator(mut self, input: crate::model::Initiator) -> Self {
+            self.initiator = Some(input);
             self
         }
-        pub fn set_initiator(mut self, inp: std::option::Option<crate::model::Initiator>) -> Self {
-            self.initiator = inp;
+        pub fn set_initiator(
+            mut self,
+            input: std::option::Option<crate::model::Initiator>,
+        ) -> Self {
+            self.initiator = input;
             self
         }
         /// <p> Container element that identifies the object owner, after the object is created. If
         /// multipart upload is initiated by an IAM user, this element provides the parent account ID
         /// and display name.</p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
         /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
         /// object.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPartsOutput`](crate::output::ListPartsOutput)
@@ -1826,107 +1841,107 @@ pub mod list_object_versions_output {
         /// criteria. If your results were truncated, you can make a follow-up paginated request using
         /// the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in
         /// another request to return the rest of the results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>Marks the last key returned in a truncated response.</p>
-        pub fn key_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_marker = Some(inp.into());
+        pub fn key_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_marker = Some(input.into());
             self
         }
-        pub fn set_key_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_marker = inp;
+        pub fn set_key_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_marker = input;
             self
         }
         /// <p>Marks the last version of the key returned in a truncated response.</p>
-        pub fn version_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id_marker = Some(inp.into());
+        pub fn version_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id_marker = Some(input.into());
             self
         }
         pub fn set_version_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.version_id_marker = inp;
+            self.version_id_marker = input;
             self
         }
         /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
         /// <code>NextKeyMarker</code> specifies the first key not returned that satisfies the
         /// search criteria. Use this value for the key-marker request parameter in a subsequent
         /// request.</p>
-        pub fn next_key_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_key_marker = Some(inp.into());
+        pub fn next_key_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_key_marker = Some(input.into());
             self
         }
         pub fn set_next_key_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_key_marker = inp;
+            self.next_key_marker = input;
             self
         }
         /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
         /// <code>NextVersionIdMarker</code> specifies the first object version not returned that
         /// satisfies the search criteria. Use this value for the version-id-marker request parameter
         /// in a subsequent request.</p>
-        pub fn next_version_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_version_id_marker = Some(inp.into());
+        pub fn next_version_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_version_id_marker = Some(input.into());
             self
         }
         pub fn set_next_version_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_version_id_marker = inp;
+            self.next_version_id_marker = input;
             self
         }
-        pub fn versions(mut self, inp: impl Into<crate::model::ObjectVersion>) -> Self {
+        pub fn versions(mut self, input: impl Into<crate::model::ObjectVersion>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.versions = Some(v);
             self
         }
         pub fn set_versions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ObjectVersion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ObjectVersion>>,
         ) -> Self {
-            self.versions = inp;
+            self.versions = input;
             self
         }
-        pub fn delete_markers(mut self, inp: impl Into<crate::model::DeleteMarkerEntry>) -> Self {
+        pub fn delete_markers(mut self, input: impl Into<crate::model::DeleteMarkerEntry>) -> Self {
             let mut v = self.delete_markers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.delete_markers = Some(v);
             self
         }
         pub fn set_delete_markers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DeleteMarkerEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DeleteMarkerEntry>>,
         ) -> Self {
-            self.delete_markers = inp;
+            self.delete_markers = input;
             self
         }
         /// <p>The bucket name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>Selects objects that start with the value supplied by this parameter.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to
@@ -1934,34 +1949,34 @@ pub mod list_object_versions_output {
         /// occurrence of the delimiter are grouped under a single result element in
         /// <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys
         /// limitation. These keys are not returned elsewhere in the response.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delimiter = Some(inp.into());
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
             self
         }
-        pub fn set_delimiter(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = inp;
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
             self
         }
         /// <p>Specifies the maximum number of objects to return.</p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn max_keys(mut self, input: i32) -> Self {
+            self.max_keys = Some(input);
             self
         }
-        pub fn set_max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_keys = input;
             self
         }
-        pub fn common_prefixes(mut self, inp: impl Into<crate::model::CommonPrefix>) -> Self {
+        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.common_prefixes = Some(v);
             self
         }
         pub fn set_common_prefixes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
         ) -> Self {
-            self.common_prefixes = inp;
+            self.common_prefixes = input;
             self
         }
         /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
@@ -1969,15 +1984,15 @@ pub mod list_object_versions_output {
         /// response, and returns encoded key name values in the following response elements:</p>
         /// <p>
         /// <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding_type = Some(inp);
+        pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding_type = Some(input);
             self
         }
         pub fn set_encoding_type(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding_type = inp;
+            self.encoding_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ListObjectVersionsOutput`](crate::output::ListObjectVersionsOutput)
@@ -2109,81 +2124,81 @@ pub mod list_objects_v2_output {
         /// <p>Set to false if all of the results were returned. Set to true if more keys are available
         /// to return. If the number of results exceeds that specified by MaxKeys, all of the results
         /// might not be returned.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
-        pub fn contents(mut self, inp: impl Into<crate::model::Object>) -> Self {
+        pub fn contents(mut self, input: impl Into<crate::model::Object>) -> Self {
             let mut v = self.contents.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.contents = Some(v);
             self
         }
         pub fn set_contents(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Object>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Object>>,
         ) -> Self {
-            self.contents = inp;
+            self.contents = input;
             self
         }
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p> Keys that begin with the indicated prefix.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
         /// the delimiter to be rolled up into a single result element in the CommonPrefixes
         /// collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up
         /// result counts as only one return against the <code>MaxKeys</code> value.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delimiter = Some(inp.into());
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
             self
         }
-        pub fn set_delimiter(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = inp;
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
             self
         }
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
         /// to 1,000 key names. The response might contain fewer keys but will never contain
         /// more.</p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn max_keys(mut self, input: i32) -> Self {
+            self.max_keys = Some(input);
             self
         }
-        pub fn set_max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_keys = input;
             self
         }
-        pub fn common_prefixes(mut self, inp: impl Into<crate::model::CommonPrefix>) -> Self {
+        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.common_prefixes = Some(v);
             self
         }
         pub fn set_common_prefixes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
         ) -> Self {
-            self.common_prefixes = inp;
+            self.common_prefixes = input;
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
@@ -2191,38 +2206,38 @@ pub mod list_objects_v2_output {
         /// response, and returns encoded key name values in the following response elements:</p>
         /// <p>
         /// <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding_type = Some(inp);
+        pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding_type = Some(input);
             self
         }
         pub fn set_encoding_type(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding_type = inp;
+            self.encoding_type = input;
             self
         }
         /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less
         /// than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than
         /// equals 50 keys </p>
-        pub fn key_count(mut self, inp: i32) -> Self {
-            self.key_count = Some(inp);
+        pub fn key_count(mut self, input: i32) -> Self {
+            self.key_count = Some(input);
             self
         }
-        pub fn set_key_count(mut self, inp: i32) -> Self {
-            self.key_count = Some(inp);
+        pub fn set_key_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.key_count = input;
             self
         }
         /// <p> If ContinuationToken was sent with the request, it is included in the response.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// <p>
@@ -2230,24 +2245,24 @@ pub mod list_objects_v2_output {
         /// means there are more keys in the bucket that can be listed. The next list requests to Amazon S3
         /// can be continued with this <code>NextContinuationToken</code>.
         /// <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
-        pub fn next_continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_continuation_token = Some(inp.into());
+        pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_continuation_token = Some(input.into());
             self
         }
         pub fn set_next_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_continuation_token = inp;
+            self.next_continuation_token = input;
             self
         }
         /// <p>If StartAfter was sent with the request, it is included in the response.</p>
-        pub fn start_after(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_after = Some(inp.into());
+        pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_after = Some(input.into());
             self
         }
-        pub fn set_start_after(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start_after = inp;
+        pub fn set_start_after(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_after = input;
             self
         }
         /// Consumes the builder and constructs a [`ListObjectsV2Output`](crate::output::ListObjectsV2Output)
@@ -2356,22 +2371,22 @@ pub mod list_objects_output {
     impl Builder {
         /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
         /// criteria.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it
         /// was sent with the request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>When response is truncated (the IsTruncated element value in the response is true), you
@@ -2380,43 +2395,43 @@ pub mod list_objects_output {
         /// you have delimiter request parameter specified. If response does not include the NextMarker
         /// and it is truncated, you can use the value of the last Key in the response as the marker in
         /// the subsequent request to get the next set of object keys.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
-        pub fn contents(mut self, inp: impl Into<crate::model::Object>) -> Self {
+        pub fn contents(mut self, input: impl Into<crate::model::Object>) -> Self {
             let mut v = self.contents.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.contents = Some(v);
             self
         }
         pub fn set_contents(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Object>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Object>>,
         ) -> Self {
-            self.contents = inp;
+            self.contents = input;
             self
         }
         /// <p>The bucket name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>Keys that begin with the indicated prefix.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
@@ -2424,46 +2439,46 @@ pub mod list_objects_output {
         /// <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere
         /// in the response. Each rolled-up result counts as only one return against the
         /// <code>MaxKeys</code> value.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delimiter = Some(inp.into());
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
             self
         }
-        pub fn set_delimiter(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = inp;
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
             self
         }
         /// <p>The maximum number of keys returned in the response body.</p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn max_keys(mut self, input: i32) -> Self {
+            self.max_keys = Some(input);
             self
         }
-        pub fn set_max_keys(mut self, inp: i32) -> Self {
-            self.max_keys = Some(inp);
+        pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_keys = input;
             self
         }
-        pub fn common_prefixes(mut self, inp: impl Into<crate::model::CommonPrefix>) -> Self {
+        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.common_prefixes = Some(v);
             self
         }
         pub fn set_common_prefixes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
         ) -> Self {
-            self.common_prefixes = inp;
+            self.common_prefixes = input;
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding_type = Some(inp);
+        pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding_type = Some(input);
             self
         }
         pub fn set_encoding_type(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding_type = inp;
+            self.encoding_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ListObjectsOutput`](crate::output::ListObjectsOutput)
@@ -2573,126 +2588,126 @@ pub mod list_multipart_uploads_output {
     }
     impl Builder {
         /// <p>The name of the bucket to which the multipart upload was initiated.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket = inp;
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The key at or after which the listing began.</p>
-        pub fn key_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_marker = Some(inp.into());
+        pub fn key_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_marker = Some(input.into());
             self
         }
-        pub fn set_key_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_marker = inp;
+        pub fn set_key_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_marker = input;
             self
         }
         /// <p>Upload ID after which listing began.</p>
-        pub fn upload_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id_marker = Some(inp.into());
+        pub fn upload_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id_marker = Some(input.into());
             self
         }
         pub fn set_upload_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.upload_id_marker = inp;
+            self.upload_id_marker = input;
             self
         }
         /// <p>When a list is truncated, this element specifies the value that should be used for the
         /// key-marker request parameter in a subsequent request.</p>
-        pub fn next_key_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_key_marker = Some(inp.into());
+        pub fn next_key_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_key_marker = Some(input.into());
             self
         }
         pub fn set_next_key_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_key_marker = inp;
+            self.next_key_marker = input;
             self
         }
         /// <p>When a prefix is provided in the request, this field contains the specified prefix. The
         /// result contains only keys starting with the specified prefix.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in
         /// your request, this element is absent from the response.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delimiter = Some(inp.into());
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
             self
         }
-        pub fn set_delimiter(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = inp;
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
             self
         }
         /// <p>When a list is truncated, this element specifies the value that should be used for the
         /// <code>upload-id-marker</code> request parameter in a subsequent request.</p>
-        pub fn next_upload_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_upload_id_marker = Some(inp.into());
+        pub fn next_upload_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_upload_id_marker = Some(input.into());
             self
         }
         pub fn set_next_upload_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_upload_id_marker = inp;
+            self.next_upload_id_marker = input;
             self
         }
         /// <p>Maximum number of multipart uploads that could have been included in the
         /// response.</p>
-        pub fn max_uploads(mut self, inp: i32) -> Self {
-            self.max_uploads = Some(inp);
+        pub fn max_uploads(mut self, input: i32) -> Self {
+            self.max_uploads = Some(input);
             self
         }
-        pub fn set_max_uploads(mut self, inp: i32) -> Self {
-            self.max_uploads = Some(inp);
+        pub fn set_max_uploads(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_uploads = input;
             self
         }
         /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true
         /// indicates that the list was truncated. The list can be truncated if the number of multipart
         /// uploads exceeds the limit allowed or specified by max uploads.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
-        pub fn uploads(mut self, inp: impl Into<crate::model::MultipartUpload>) -> Self {
+        pub fn uploads(mut self, input: impl Into<crate::model::MultipartUpload>) -> Self {
             let mut v = self.uploads.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.uploads = Some(v);
             self
         }
         pub fn set_uploads(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MultipartUpload>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MultipartUpload>>,
         ) -> Self {
-            self.uploads = inp;
+            self.uploads = input;
             self
         }
-        pub fn common_prefixes(mut self, inp: impl Into<crate::model::CommonPrefix>) -> Self {
+        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.common_prefixes = Some(v);
             self
         }
         pub fn set_common_prefixes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
         ) -> Self {
-            self.common_prefixes = inp;
+            self.common_prefixes = input;
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
@@ -2702,15 +2717,15 @@ pub mod list_multipart_uploads_output {
         /// <p>
         /// <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>,
         /// <code>NextKeyMarker</code>, <code>Key</code>.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding_type = Some(inp);
+        pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding_type = Some(input);
             self
         }
         pub fn set_encoding_type(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding_type = inp;
+            self.encoding_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput)
@@ -2765,26 +2780,26 @@ pub mod list_buckets_output {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
     }
     impl Builder {
-        pub fn buckets(mut self, inp: impl Into<crate::model::Bucket>) -> Self {
+        pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.buckets = Some(v);
             self
         }
         pub fn set_buckets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
         ) -> Self {
-            self.buckets = inp;
+            self.buckets = input;
             self
         }
         /// <p>The owner of the buckets listed.</p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketsOutput`](crate::output::ListBucketsOutput)
@@ -2851,56 +2866,56 @@ pub mod list_bucket_metrics_configurations_output {
         /// <p>Indicates whether the returned list of metrics configurations is complete. A value of
         /// true indicates that the list is not complete and the NextContinuationToken will be provided
         /// for a subsequent request.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>The marker that is used as a starting point for this metrics configuration list
         /// response. This value is present if it was sent in the request.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use
         /// the <code>NextContinuationToken</code> from a previously truncated list response to
         /// continue the listing. The continuation token is an opaque value that Amazon S3
         /// understands.</p>
-        pub fn next_continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_continuation_token = Some(inp.into());
+        pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_continuation_token = Some(input.into());
             self
         }
         pub fn set_next_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_continuation_token = inp;
+            self.next_continuation_token = input;
             self
         }
         pub fn metrics_configuration_list(
             mut self,
-            inp: impl Into<crate::model::MetricsConfiguration>,
+            input: impl Into<crate::model::MetricsConfiguration>,
         ) -> Self {
             let mut v = self.metrics_configuration_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.metrics_configuration_list = Some(v);
             self
         }
         pub fn set_metrics_configuration_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetricsConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricsConfiguration>>,
         ) -> Self {
-            self.metrics_configuration_list = inp;
+            self.metrics_configuration_list = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketMetricsConfigurationsOutput`](crate::output::ListBucketMetricsConfigurationsOutput)
@@ -2967,56 +2982,56 @@ pub mod list_bucket_inventory_configurations_output {
     impl Builder {
         /// <p>If sent in the request, the marker that is used as a starting point for this inventory
         /// configuration list response.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         pub fn inventory_configuration_list(
             mut self,
-            inp: impl Into<crate::model::InventoryConfiguration>,
+            input: impl Into<crate::model::InventoryConfiguration>,
         ) -> Self {
             let mut v = self.inventory_configuration_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.inventory_configuration_list = Some(v);
             self
         }
         pub fn set_inventory_configuration_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InventoryConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InventoryConfiguration>>,
         ) -> Self {
-            self.inventory_configuration_list = inp;
+            self.inventory_configuration_list = input;
             self
         }
         /// <p>Tells whether the returned list of inventory configurations is complete. A value of true
         /// indicates that the list is not complete and the NextContinuationToken is provided for a
         /// subsequent request.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>The marker used to continue this inventory configuration listing. Use the
         /// <code>NextContinuationToken</code> from this response to continue the listing in a
         /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
-        pub fn next_continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_continuation_token = Some(inp.into());
+        pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_continuation_token = Some(input.into());
             self
         }
         pub fn set_next_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_continuation_token = inp;
+            self.next_continuation_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketInventoryConfigurationsOutput`](crate::output::ListBucketInventoryConfigurationsOutput)
@@ -3084,57 +3099,59 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
         /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
         /// true indicates that the list is not complete and the NextContinuationToken will be provided
         /// for a subsequent request.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>The ContinuationToken that represents a placeholder from where this request should
         /// begin.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// <p>The marker used to continue this inventory configuration listing. Use the
         /// <code>NextContinuationToken</code> from this response to continue the listing in a
         /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
-        pub fn next_continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_continuation_token = Some(inp.into());
+        pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_continuation_token = Some(input.into());
             self
         }
         pub fn set_next_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_continuation_token = inp;
+            self.next_continuation_token = input;
             self
         }
         pub fn intelligent_tiering_configuration_list(
             mut self,
-            inp: impl Into<crate::model::IntelligentTieringConfiguration>,
+            input: impl Into<crate::model::IntelligentTieringConfiguration>,
         ) -> Self {
             let mut v = self
                 .intelligent_tiering_configuration_list
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.intelligent_tiering_configuration_list = Some(v);
             self
         }
         pub fn set_intelligent_tiering_configuration_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IntelligentTieringConfiguration>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::IntelligentTieringConfiguration>,
+            >,
         ) -> Self {
-            self.intelligent_tiering_configuration_list = inp;
+            self.intelligent_tiering_configuration_list = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketIntelligentTieringConfigurationsOutput`](crate::output::ListBucketIntelligentTieringConfigurationsOutput)
@@ -3205,25 +3222,25 @@ pub mod list_bucket_analytics_configurations_output {
         /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
         /// true indicates that the list is not complete and the NextContinuationToken will be provided
         /// for a subsequent request.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>The marker that is used as a starting point for this analytics configuration list
         /// response. This value is present if it was sent in the request.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_token = Some(inp.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continuation_token = Some(input.into());
             self
         }
         pub fn set_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.continuation_token = inp;
+            self.continuation_token = input;
             self
         }
         /// <p>
@@ -3231,31 +3248,31 @@ pub mod list_bucket_analytics_configurations_output {
         /// indicates that there are more analytics configurations to list. The next request must
         /// include this <code>NextContinuationToken</code>. The token is obfuscated and is not a
         /// usable value.</p>
-        pub fn next_continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_continuation_token = Some(inp.into());
+        pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_continuation_token = Some(input.into());
             self
         }
         pub fn set_next_continuation_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_continuation_token = inp;
+            self.next_continuation_token = input;
             self
         }
         pub fn analytics_configuration_list(
             mut self,
-            inp: impl Into<crate::model::AnalyticsConfiguration>,
+            input: impl Into<crate::model::AnalyticsConfiguration>,
         ) -> Self {
             let mut v = self.analytics_configuration_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.analytics_configuration_list = Some(v);
             self
         }
         pub fn set_analytics_configuration_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AnalyticsConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AnalyticsConfiguration>>,
         ) -> Self {
-            self.analytics_configuration_list = inp;
+            self.analytics_configuration_list = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBucketAnalyticsConfigurationsOutput`](crate::output::ListBucketAnalyticsConfigurationsOutput)
@@ -3500,32 +3517,35 @@ pub mod head_object_output {
     impl Builder {
         /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
         /// false, this response header does not appear in the response.</p>
-        pub fn delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn delete_marker(mut self, input: bool) -> Self {
+            self.delete_marker = Some(input);
             self
         }
-        pub fn set_delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_marker = input;
             self
         }
         /// <p>Indicates that a range of bytes was specified.</p>
-        pub fn accept_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.accept_ranges = Some(inp.into());
+        pub fn accept_ranges(mut self, input: impl Into<std::string::String>) -> Self {
+            self.accept_ranges = Some(input.into());
             self
         }
-        pub fn set_accept_ranges(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.accept_ranges = inp;
+        pub fn set_accept_ranges(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.accept_ranges = input;
             self
         }
         /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
         /// this header. It includes the expiry-date and rule-id key-value pairs providing object
         /// expiration information. The value of the rule-id is URL encoded.</p>
-        pub fn expiration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expiration = Some(inp.into());
+        pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expiration = Some(input.into());
             self
         }
-        pub fn set_expiration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expiration = inp;
+        pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration = input;
             self
         }
         /// <p>If the object is an archived object (an object whose storage class is GLACIER), the
@@ -3539,170 +3559,173 @@ pub mod head_object_output {
         /// <p>If the object restoration is in progress, the header returns the value
         /// <code>ongoing-request="true"</code>.</p>
         /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
-        pub fn restore(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.restore = Some(inp.into());
+        pub fn restore(mut self, input: impl Into<std::string::String>) -> Self {
+            self.restore = Some(input.into());
             self
         }
-        pub fn set_restore(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.restore = inp;
+        pub fn set_restore(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.restore = input;
             self
         }
         /// <p>The archive state of the head object.</p>
-        pub fn archive_status(mut self, inp: crate::model::ArchiveStatus) -> Self {
-            self.archive_status = Some(inp);
+        pub fn archive_status(mut self, input: crate::model::ArchiveStatus) -> Self {
+            self.archive_status = Some(input);
             self
         }
         pub fn set_archive_status(
             mut self,
-            inp: std::option::Option<crate::model::ArchiveStatus>,
+            input: std::option::Option<crate::model::ArchiveStatus>,
         ) -> Self {
-            self.archive_status = inp;
+            self.archive_status = input;
             self
         }
         /// <p>Creation date of the object.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>Size of the body in bytes.</p>
-        pub fn content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn content_length(mut self, input: i64) -> Self {
+            self.content_length = Some(input);
             self
         }
-        pub fn set_content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
+            self.content_length = input;
             self
         }
         /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
         /// resource found at a URL.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
         /// headers. This can happen if you create metadata using an API like SOAP that supports more
         /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
         /// values are not legal HTTP headers.</p>
-        pub fn missing_meta(mut self, inp: i32) -> Self {
-            self.missing_meta = Some(inp);
+        pub fn missing_meta(mut self, input: i32) -> Self {
+            self.missing_meta = Some(input);
             self
         }
-        pub fn set_missing_meta(mut self, inp: i32) -> Self {
-            self.missing_meta = Some(inp);
+        pub fn set_missing_meta(mut self, input: std::option::Option<i32>) -> Self {
+            self.missing_meta = input;
             self
         }
         /// <p>Version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_control = Some(inp.into());
+        pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_control = Some(input.into());
             self
         }
-        pub fn set_cache_control(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cache_control = inp;
+        pub fn set_cache_control(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cache_control = input;
             self
         }
         /// <p>Specifies presentational information for the object.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_disposition = Some(inp.into());
+        pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_disposition = Some(input.into());
             self
         }
         pub fn set_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_disposition = inp;
+            self.content_disposition = input;
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_encoding = Some(inp.into());
+        pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_encoding = Some(input.into());
             self
         }
         pub fn set_content_encoding(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_encoding = inp;
+            self.content_encoding = input;
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_language = Some(inp.into());
+        pub fn content_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_language = Some(input.into());
             self
         }
         pub fn set_content_language(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_language = inp;
+            self.content_language = input;
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: smithy_types::Instant) -> Self {
-            self.expires = Some(inp);
+        pub fn expires(mut self, input: smithy_types::Instant) -> Self {
+            self.expires = Some(input);
             self
         }
-        pub fn set_expires(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.expires = inp;
+        pub fn set_expires(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.expires = input;
             self
         }
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
         /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
         /// the object metadata.</p>
-        pub fn website_redirect_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.website_redirect_location = Some(inp.into());
+        pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.website_redirect_location = Some(input.into());
             self
         }
         pub fn set_website_redirect_location(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.website_redirect_location = inp;
+            self.website_redirect_location = input;
             self
         }
         /// <p>If the object is stored using server-side encryption either with an AWS KMS customer
         /// master key (CMK) or an Amazon S3-managed encryption key, the response includes this header with
         /// the value of the server-side encryption algorithm used when storing this object in Amazon
         /// S3 (for example, AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         pub fn metadata(
@@ -3717,85 +3740,88 @@ pub mod head_object_output {
         }
         pub fn set_metadata(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.metadata = inp;
+            self.metadata = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header confirming the encryption algorithm used.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to provide round-trip message integrity verification of
         /// the customer-provided encryption key.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
         /// objects except for S3 Standard storage class objects.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
         /// Classes</a>.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or
@@ -3834,52 +3860,52 @@ pub mod head_object_output {
         /// </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
-        pub fn replication_status(mut self, inp: crate::model::ReplicationStatus) -> Self {
-            self.replication_status = Some(inp);
+        pub fn replication_status(mut self, input: crate::model::ReplicationStatus) -> Self {
+            self.replication_status = Some(input);
             self
         }
         pub fn set_replication_status(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationStatus>,
+            input: std::option::Option<crate::model::ReplicationStatus>,
         ) -> Self {
-            self.replication_status = inp;
+            self.replication_status = input;
             self
         }
         /// <p>The count of parts this object has.</p>
-        pub fn parts_count(mut self, inp: i32) -> Self {
-            self.parts_count = Some(inp);
+        pub fn parts_count(mut self, input: i32) -> Self {
+            self.parts_count = Some(input);
             self
         }
-        pub fn set_parts_count(mut self, inp: i32) -> Self {
-            self.parts_count = Some(inp);
+        pub fn set_parts_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.parts_count = input;
             self
         }
         /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only
         /// returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more
         /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
         /// Lock</a>. </p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.object_lock_mode = Some(inp);
+        pub fn object_lock_mode(mut self, input: crate::model::ObjectLockMode) -> Self {
+            self.object_lock_mode = Some(input);
             self
         }
         pub fn set_object_lock_mode(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockMode>,
+            input: std::option::Option<crate::model::ObjectLockMode>,
         ) -> Self {
-            self.object_lock_mode = inp;
+            self.object_lock_mode = input;
             self
         }
         /// <p>The date and time when the Object Lock retention period expires. This header is only
         /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.object_lock_retain_until_date = Some(inp);
+        pub fn object_lock_retain_until_date(mut self, input: smithy_types::Instant) -> Self {
+            self.object_lock_retain_until_date = Some(input);
             self
         }
         pub fn set_object_lock_retain_until_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.object_lock_retain_until_date = inp;
+            self.object_lock_retain_until_date = input;
             self
         }
         /// <p>Specifies whether a legal hold is in effect for this object. This header is only
@@ -3888,16 +3914,16 @@ pub mod head_object_output {
         /// applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            input: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.object_lock_legal_hold_status = Some(inp);
+            self.object_lock_legal_hold_status = Some(input);
             self
         }
         pub fn set_object_lock_legal_hold_status(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+            input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
         ) -> Self {
-            self.object_lock_legal_hold_status = inp;
+            self.object_lock_legal_hold_status = input;
             self
         }
         /// Consumes the builder and constructs a [`HeadObjectOutput`](crate::output::HeadObjectOutput)
@@ -4005,16 +4031,16 @@ pub mod get_public_access_block_output {
         /// bucket.</p>
         pub fn public_access_block_configuration(
             mut self,
-            inp: crate::model::PublicAccessBlockConfiguration,
+            input: crate::model::PublicAccessBlockConfiguration,
         ) -> Self {
-            self.public_access_block_configuration = Some(inp);
+            self.public_access_block_configuration = Some(input);
             self
         }
         pub fn set_public_access_block_configuration(
             mut self,
-            inp: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         ) -> Self {
-            self.public_access_block_configuration = inp;
+            self.public_access_block_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
@@ -4059,25 +4085,28 @@ pub mod get_object_torrent_output {
     }
     impl Builder {
         /// <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
-        pub fn body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn set_body(
+            mut self,
+            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.body = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectTorrentOutput`](crate::output::GetObjectTorrentOutput)
@@ -4123,25 +4152,25 @@ pub mod get_object_tagging_output {
     }
     impl Builder {
         /// <p>The versionId of the object for which you got the tagging information.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
-        pub fn tag_set(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_set = Some(v);
             self
         }
         pub fn set_tag_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tag_set = inp;
+            self.tag_set = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectTaggingOutput`](crate::output::GetObjectTaggingOutput)
@@ -4183,15 +4212,15 @@ pub mod get_object_retention_output {
     }
     impl Builder {
         /// <p>The container element for an object's retention settings.</p>
-        pub fn retention(mut self, inp: crate::model::ObjectLockRetention) -> Self {
-            self.retention = Some(inp);
+        pub fn retention(mut self, input: crate::model::ObjectLockRetention) -> Self {
+            self.retention = Some(input);
             self
         }
         pub fn set_retention(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockRetention>,
+            input: std::option::Option<crate::model::ObjectLockRetention>,
         ) -> Self {
-            self.retention = inp;
+            self.retention = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectRetentionOutput`](crate::output::GetObjectRetentionOutput)
@@ -4235,16 +4264,16 @@ pub mod get_object_lock_configuration_output {
         /// <p>The specified bucket's Object Lock configuration.</p>
         pub fn object_lock_configuration(
             mut self,
-            inp: crate::model::ObjectLockConfiguration,
+            input: crate::model::ObjectLockConfiguration,
         ) -> Self {
-            self.object_lock_configuration = Some(inp);
+            self.object_lock_configuration = Some(input);
             self
         }
         pub fn set_object_lock_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockConfiguration>,
+            input: std::option::Option<crate::model::ObjectLockConfiguration>,
         ) -> Self {
-            self.object_lock_configuration = inp;
+            self.object_lock_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectLockConfigurationOutput`](crate::output::GetObjectLockConfigurationOutput)
@@ -4285,15 +4314,15 @@ pub mod get_object_legal_hold_output {
     }
     impl Builder {
         /// <p>The current Legal Hold status for the specified object.</p>
-        pub fn legal_hold(mut self, inp: crate::model::ObjectLockLegalHold) -> Self {
-            self.legal_hold = Some(inp);
+        pub fn legal_hold(mut self, input: crate::model::ObjectLockLegalHold) -> Self {
+            self.legal_hold = Some(input);
             self
         }
         pub fn set_legal_hold(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHold>,
+            input: std::option::Option<crate::model::ObjectLockLegalHold>,
         ) -> Self {
-            self.legal_hold = inp;
+            self.legal_hold = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectLegalHoldOutput`](crate::output::GetObjectLegalHoldOutput)
@@ -4343,38 +4372,38 @@ pub mod get_object_acl_output {
     }
     impl Builder {
         /// <p> Container for the bucket owner's display name and ID.</p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
-        pub fn grants(mut self, inp: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grants = Some(v);
             self
         }
         pub fn set_grants(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         ) -> Self {
-            self.grants = inp;
+            self.grants = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectAclOutput`](crate::output::GetObjectAclOutput)
@@ -4571,205 +4600,217 @@ pub mod get_object_output {
     }
     impl Builder {
         /// <p>Object data.</p>
-        pub fn body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.body = Some(inp);
+        pub fn set_body(
+            mut self,
+            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.body = input;
             self
         }
         /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
         /// false, this response header does not appear in the response.</p>
-        pub fn delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn delete_marker(mut self, input: bool) -> Self {
+            self.delete_marker = Some(input);
             self
         }
-        pub fn set_delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_marker = input;
             self
         }
         /// <p>Indicates that a range of bytes was specified.</p>
-        pub fn accept_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.accept_ranges = Some(inp.into());
+        pub fn accept_ranges(mut self, input: impl Into<std::string::String>) -> Self {
+            self.accept_ranges = Some(input.into());
             self
         }
-        pub fn set_accept_ranges(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.accept_ranges = inp;
+        pub fn set_accept_ranges(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.accept_ranges = input;
             self
         }
         /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
         /// this header. It includes the expiry-date and rule-id key-value pairs providing object
         /// expiration information. The value of the rule-id is URL encoded.</p>
-        pub fn expiration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expiration = Some(inp.into());
+        pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expiration = Some(input.into());
             self
         }
-        pub fn set_expiration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expiration = inp;
+        pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration = input;
             self
         }
         /// <p>Provides information about object restoration action and expiration time of the
         /// restored object copy.</p>
-        pub fn restore(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.restore = Some(inp.into());
+        pub fn restore(mut self, input: impl Into<std::string::String>) -> Self {
+            self.restore = Some(input.into());
             self
         }
-        pub fn set_restore(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.restore = inp;
+        pub fn set_restore(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.restore = input;
             self
         }
         /// <p>Creation date of the object.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>Size of the body in bytes.</p>
-        pub fn content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn content_length(mut self, input: i64) -> Self {
+            self.content_length = Some(input);
             self
         }
-        pub fn set_content_length(mut self, inp: i64) -> Self {
-            self.content_length = Some(inp);
+        pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
+            self.content_length = input;
             self
         }
         /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
         /// resource found at a URL.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
         /// headers. This can happen if you create metadata using an API like SOAP that supports more
         /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
         /// values are not legal HTTP headers.</p>
-        pub fn missing_meta(mut self, inp: i32) -> Self {
-            self.missing_meta = Some(inp);
+        pub fn missing_meta(mut self, input: i32) -> Self {
+            self.missing_meta = Some(input);
             self
         }
-        pub fn set_missing_meta(mut self, inp: i32) -> Self {
-            self.missing_meta = Some(inp);
+        pub fn set_missing_meta(mut self, input: std::option::Option<i32>) -> Self {
+            self.missing_meta = input;
             self
         }
         /// <p>Version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_control = Some(inp.into());
+        pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_control = Some(input.into());
             self
         }
-        pub fn set_cache_control(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cache_control = inp;
+        pub fn set_cache_control(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cache_control = input;
             self
         }
         /// <p>Specifies presentational information for the object.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_disposition = Some(inp.into());
+        pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_disposition = Some(input.into());
             self
         }
         pub fn set_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_disposition = inp;
+            self.content_disposition = input;
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_encoding = Some(inp.into());
+        pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_encoding = Some(input.into());
             self
         }
         pub fn set_content_encoding(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_encoding = inp;
+            self.content_encoding = input;
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_language = Some(inp.into());
+        pub fn content_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_language = Some(input.into());
             self
         }
         pub fn set_content_language(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_language = inp;
+            self.content_language = input;
             self
         }
         /// <p>The portion of the object returned in the response.</p>
-        pub fn content_range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_range = Some(inp.into());
+        pub fn content_range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_range = Some(input.into());
             self
         }
-        pub fn set_content_range(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_range = inp;
+        pub fn set_content_range(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.content_range = input;
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: smithy_types::Instant) -> Self {
-            self.expires = Some(inp);
+        pub fn expires(mut self, input: smithy_types::Instant) -> Self {
+            self.expires = Some(input);
             self
         }
-        pub fn set_expires(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.expires = inp;
+        pub fn set_expires(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.expires = input;
             self
         }
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
         /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
         /// the object metadata.</p>
-        pub fn website_redirect_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.website_redirect_location = Some(inp.into());
+        pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.website_redirect_location = Some(input.into());
             self
         }
         pub fn set_website_redirect_location(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.website_redirect_location = inp;
+            self.website_redirect_location = input;
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         pub fn metadata(
@@ -4784,154 +4825,157 @@ pub mod get_object_output {
         }
         pub fn set_metadata(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.metadata = inp;
+            self.metadata = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header confirming the encryption algorithm used.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to provide round-trip message integrity verification of
         /// the customer-provided encryption key.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
         /// objects except for S3 Standard storage class objects.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or
         /// destination in a replication rule.</p>
-        pub fn replication_status(mut self, inp: crate::model::ReplicationStatus) -> Self {
-            self.replication_status = Some(inp);
+        pub fn replication_status(mut self, input: crate::model::ReplicationStatus) -> Self {
+            self.replication_status = Some(input);
             self
         }
         pub fn set_replication_status(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationStatus>,
+            input: std::option::Option<crate::model::ReplicationStatus>,
         ) -> Self {
-            self.replication_status = inp;
+            self.replication_status = input;
             self
         }
         /// <p>The count of parts this object has.</p>
-        pub fn parts_count(mut self, inp: i32) -> Self {
-            self.parts_count = Some(inp);
+        pub fn parts_count(mut self, input: i32) -> Self {
+            self.parts_count = Some(input);
             self
         }
-        pub fn set_parts_count(mut self, inp: i32) -> Self {
-            self.parts_count = Some(inp);
+        pub fn set_parts_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.parts_count = input;
             self
         }
         /// <p>The number of tags, if any, on the object.</p>
-        pub fn tag_count(mut self, inp: i32) -> Self {
-            self.tag_count = Some(inp);
+        pub fn tag_count(mut self, input: i32) -> Self {
+            self.tag_count = Some(input);
             self
         }
-        pub fn set_tag_count(mut self, inp: i32) -> Self {
-            self.tag_count = Some(inp);
+        pub fn set_tag_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.tag_count = input;
             self
         }
         /// <p>The Object Lock mode currently in place for this object.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.object_lock_mode = Some(inp);
+        pub fn object_lock_mode(mut self, input: crate::model::ObjectLockMode) -> Self {
+            self.object_lock_mode = Some(input);
             self
         }
         pub fn set_object_lock_mode(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockMode>,
+            input: std::option::Option<crate::model::ObjectLockMode>,
         ) -> Self {
-            self.object_lock_mode = inp;
+            self.object_lock_mode = input;
             self
         }
         /// <p>The date and time when this object's Object Lock will expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.object_lock_retain_until_date = Some(inp);
+        pub fn object_lock_retain_until_date(mut self, input: smithy_types::Instant) -> Self {
+            self.object_lock_retain_until_date = Some(input);
             self
         }
         pub fn set_object_lock_retain_until_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.object_lock_retain_until_date = inp;
+            self.object_lock_retain_until_date = input;
             self
         }
         /// <p>Indicates whether this object has an active legal hold. This field is only returned if
         /// you have permission to view an object's legal hold status. </p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            input: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.object_lock_legal_hold_status = Some(inp);
+            self.object_lock_legal_hold_status = Some(input);
             self
         }
         pub fn set_object_lock_legal_hold_status(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+            input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
         ) -> Self {
-            self.object_lock_legal_hold_status = inp;
+            self.object_lock_legal_hold_status = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectOutput`](crate::output::GetObjectOutput)
@@ -5021,54 +5065,54 @@ pub mod get_bucket_website_output {
         /// bucket.</p>
         pub fn redirect_all_requests_to(
             mut self,
-            inp: crate::model::RedirectAllRequestsTo,
+            input: crate::model::RedirectAllRequestsTo,
         ) -> Self {
-            self.redirect_all_requests_to = Some(inp);
+            self.redirect_all_requests_to = Some(input);
             self
         }
         pub fn set_redirect_all_requests_to(
             mut self,
-            inp: std::option::Option<crate::model::RedirectAllRequestsTo>,
+            input: std::option::Option<crate::model::RedirectAllRequestsTo>,
         ) -> Self {
-            self.redirect_all_requests_to = inp;
+            self.redirect_all_requests_to = input;
             self
         }
         /// <p>The name of the index document for the website (for example
         /// <code>index.html</code>).</p>
-        pub fn index_document(mut self, inp: crate::model::IndexDocument) -> Self {
-            self.index_document = Some(inp);
+        pub fn index_document(mut self, input: crate::model::IndexDocument) -> Self {
+            self.index_document = Some(input);
             self
         }
         pub fn set_index_document(
             mut self,
-            inp: std::option::Option<crate::model::IndexDocument>,
+            input: std::option::Option<crate::model::IndexDocument>,
         ) -> Self {
-            self.index_document = inp;
+            self.index_document = input;
             self
         }
         /// <p>The object key name of the website error document to use for 4XX class errors.</p>
-        pub fn error_document(mut self, inp: crate::model::ErrorDocument) -> Self {
-            self.error_document = Some(inp);
+        pub fn error_document(mut self, input: crate::model::ErrorDocument) -> Self {
+            self.error_document = Some(input);
             self
         }
         pub fn set_error_document(
             mut self,
-            inp: std::option::Option<crate::model::ErrorDocument>,
+            input: std::option::Option<crate::model::ErrorDocument>,
         ) -> Self {
-            self.error_document = inp;
+            self.error_document = input;
             self
         }
-        pub fn routing_rules(mut self, inp: impl Into<crate::model::RoutingRule>) -> Self {
+        pub fn routing_rules(mut self, input: impl Into<crate::model::RoutingRule>) -> Self {
             let mut v = self.routing_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.routing_rules = Some(v);
             self
         }
         pub fn set_routing_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
         ) -> Self {
-            self.routing_rules = inp;
+            self.routing_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketWebsiteOutput`](crate::output::GetBucketWebsiteOutput)
@@ -5118,29 +5162,29 @@ pub mod get_bucket_versioning_output {
     }
     impl Builder {
         /// <p>The versioning state of the bucket.</p>
-        pub fn status(mut self, inp: crate::model::BucketVersioningStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::BucketVersioningStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::BucketVersioningStatus>,
+            input: std::option::Option<crate::model::BucketVersioningStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
         /// element is only returned if the bucket has been configured with MFA delete. If the bucket
         /// has never been so configured, this element is not returned.</p>
-        pub fn mfa_delete(mut self, inp: crate::model::MfaDeleteStatus) -> Self {
-            self.mfa_delete = Some(inp);
+        pub fn mfa_delete(mut self, input: crate::model::MfaDeleteStatus) -> Self {
+            self.mfa_delete = Some(input);
             self
         }
         pub fn set_mfa_delete(
             mut self,
-            inp: std::option::Option<crate::model::MfaDeleteStatus>,
+            input: std::option::Option<crate::model::MfaDeleteStatus>,
         ) -> Self {
-            self.mfa_delete = inp;
+            self.mfa_delete = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput)
@@ -5181,17 +5225,17 @@ pub mod get_bucket_tagging_output {
         pub(crate) tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        pub fn tag_set(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_set = Some(v);
             self
         }
         pub fn set_tag_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tag_set = inp;
+            self.tag_set = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
@@ -5232,12 +5276,12 @@ pub mod get_bucket_request_payment_output {
     }
     impl Builder {
         /// <p>Specifies who pays for the download and request fees.</p>
-        pub fn payer(mut self, inp: crate::model::Payer) -> Self {
-            self.payer = Some(inp);
+        pub fn payer(mut self, input: crate::model::Payer) -> Self {
+            self.payer = Some(input);
             self
         }
-        pub fn set_payer(mut self, inp: std::option::Option<crate::model::Payer>) -> Self {
-            self.payer = inp;
+        pub fn set_payer(mut self, input: std::option::Option<crate::model::Payer>) -> Self {
+            self.payer = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketRequestPaymentOutput`](crate::output::GetBucketRequestPaymentOutput)
@@ -5281,16 +5325,16 @@ pub mod get_bucket_replication_output {
         /// replication configuration is 2 MB.</p>
         pub fn replication_configuration(
             mut self,
-            inp: crate::model::ReplicationConfiguration,
+            input: crate::model::ReplicationConfiguration,
         ) -> Self {
-            self.replication_configuration = Some(inp);
+            self.replication_configuration = Some(input);
             self
         }
         pub fn set_replication_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationConfiguration>,
+            input: std::option::Option<crate::model::ReplicationConfiguration>,
         ) -> Self {
-            self.replication_configuration = inp;
+            self.replication_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketReplicationOutput`](crate::output::GetBucketReplicationOutput)
@@ -5331,15 +5375,15 @@ pub mod get_bucket_policy_status_output {
     }
     impl Builder {
         /// <p>The policy status for the specified bucket.</p>
-        pub fn policy_status(mut self, inp: crate::model::PolicyStatus) -> Self {
-            self.policy_status = Some(inp);
+        pub fn policy_status(mut self, input: crate::model::PolicyStatus) -> Self {
+            self.policy_status = Some(input);
             self
         }
         pub fn set_policy_status(
             mut self,
-            inp: std::option::Option<crate::model::PolicyStatus>,
+            input: std::option::Option<crate::model::PolicyStatus>,
         ) -> Self {
-            self.policy_status = inp;
+            self.policy_status = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketPolicyStatusOutput`](crate::output::GetBucketPolicyStatusOutput)
@@ -5380,12 +5424,12 @@ pub mod get_bucket_policy_output {
     }
     impl Builder {
         /// <p>The bucket policy as a JSON document.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
@@ -5428,15 +5472,15 @@ pub mod get_bucket_ownership_controls_output {
     impl Builder {
         /// <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter) currently in
         /// effect for this Amazon S3 bucket.</p>
-        pub fn ownership_controls(mut self, inp: crate::model::OwnershipControls) -> Self {
-            self.ownership_controls = Some(inp);
+        pub fn ownership_controls(mut self, input: crate::model::OwnershipControls) -> Self {
+            self.ownership_controls = Some(input);
             self
         }
         pub fn set_ownership_controls(
             mut self,
-            inp: std::option::Option<crate::model::OwnershipControls>,
+            input: std::option::Option<crate::model::OwnershipControls>,
         ) -> Self {
-            self.ownership_controls = inp;
+            self.ownership_controls = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketOwnershipControlsOutput`](crate::output::GetBucketOwnershipControlsOutput)
@@ -5498,50 +5542,50 @@ pub mod get_bucket_notification_configuration_output {
     impl Builder {
         pub fn topic_configurations(
             mut self,
-            inp: impl Into<crate::model::TopicConfiguration>,
+            input: impl Into<crate::model::TopicConfiguration>,
         ) -> Self {
             let mut v = self.topic_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topic_configurations = Some(v);
             self
         }
         pub fn set_topic_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
         ) -> Self {
-            self.topic_configurations = inp;
+            self.topic_configurations = input;
             self
         }
         pub fn queue_configurations(
             mut self,
-            inp: impl Into<crate::model::QueueConfiguration>,
+            input: impl Into<crate::model::QueueConfiguration>,
         ) -> Self {
             let mut v = self.queue_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.queue_configurations = Some(v);
             self
         }
         pub fn set_queue_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
         ) -> Self {
-            self.queue_configurations = inp;
+            self.queue_configurations = input;
             self
         }
         pub fn lambda_function_configurations(
             mut self,
-            inp: impl Into<crate::model::LambdaFunctionConfiguration>,
+            input: impl Into<crate::model::LambdaFunctionConfiguration>,
         ) -> Self {
             let mut v = self.lambda_function_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.lambda_function_configurations = Some(v);
             self
         }
         pub fn set_lambda_function_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
         ) -> Self {
-            self.lambda_function_configurations = inp;
+            self.lambda_function_configurations = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketNotificationConfigurationOutput`](crate::output::GetBucketNotificationConfigurationOutput)
@@ -5584,15 +5628,15 @@ pub mod get_bucket_metrics_configuration_output {
     }
     impl Builder {
         /// <p>Specifies the metrics configuration.</p>
-        pub fn metrics_configuration(mut self, inp: crate::model::MetricsConfiguration) -> Self {
-            self.metrics_configuration = Some(inp);
+        pub fn metrics_configuration(mut self, input: crate::model::MetricsConfiguration) -> Self {
+            self.metrics_configuration = Some(input);
             self
         }
         pub fn set_metrics_configuration(
             mut self,
-            inp: std::option::Option<crate::model::MetricsConfiguration>,
+            input: std::option::Option<crate::model::MetricsConfiguration>,
         ) -> Self {
-            self.metrics_configuration = inp;
+            self.metrics_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketMetricsConfigurationOutput`](crate::output::GetBucketMetricsConfigurationOutput)
@@ -5637,15 +5681,15 @@ pub mod get_bucket_logging_output {
         /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
         /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
         /// <i>Amazon S3 API Reference</i>.</p>
-        pub fn logging_enabled(mut self, inp: crate::model::LoggingEnabled) -> Self {
-            self.logging_enabled = Some(inp);
+        pub fn logging_enabled(mut self, input: crate::model::LoggingEnabled) -> Self {
+            self.logging_enabled = Some(input);
             self
         }
         pub fn set_logging_enabled(
             mut self,
-            inp: std::option::Option<crate::model::LoggingEnabled>,
+            input: std::option::Option<crate::model::LoggingEnabled>,
         ) -> Self {
-            self.logging_enabled = inp;
+            self.logging_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketLoggingOutput`](crate::output::GetBucketLoggingOutput)
@@ -5692,15 +5736,18 @@ pub mod get_bucket_location_output {
         /// location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.
         /// Buckets in Region <code>us-east-1</code> have a LocationConstraint of
         /// <code>null</code>.</p>
-        pub fn location_constraint(mut self, inp: crate::model::BucketLocationConstraint) -> Self {
-            self.location_constraint = Some(inp);
+        pub fn location_constraint(
+            mut self,
+            input: crate::model::BucketLocationConstraint,
+        ) -> Self {
+            self.location_constraint = Some(input);
             self
         }
         pub fn set_location_constraint(
             mut self,
-            inp: std::option::Option<crate::model::BucketLocationConstraint>,
+            input: std::option::Option<crate::model::BucketLocationConstraint>,
         ) -> Self {
-            self.location_constraint = inp;
+            self.location_constraint = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketLocationOutput`](crate::output::GetBucketLocationOutput)
@@ -5740,17 +5787,17 @@ pub mod get_bucket_lifecycle_configuration_output {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
     }
     impl Builder {
-        pub fn rules(mut self, inp: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.rules = Some(v);
             self
         }
         pub fn set_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
         ) -> Self {
-            self.rules = inp;
+            self.rules = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
@@ -5792,16 +5839,16 @@ pub mod get_bucket_inventory_configuration_output {
         /// <p>Specifies the inventory configuration.</p>
         pub fn inventory_configuration(
             mut self,
-            inp: crate::model::InventoryConfiguration,
+            input: crate::model::InventoryConfiguration,
         ) -> Self {
-            self.inventory_configuration = Some(inp);
+            self.inventory_configuration = Some(input);
             self
         }
         pub fn set_inventory_configuration(
             mut self,
-            inp: std::option::Option<crate::model::InventoryConfiguration>,
+            input: std::option::Option<crate::model::InventoryConfiguration>,
         ) -> Self {
-            self.inventory_configuration = inp;
+            self.inventory_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketInventoryConfigurationOutput`](crate::output::GetBucketInventoryConfigurationOutput)
@@ -5849,16 +5896,16 @@ pub mod get_bucket_intelligent_tiering_configuration_output {
         /// <p>Container for S3 Intelligent-Tiering configuration.</p>
         pub fn intelligent_tiering_configuration(
             mut self,
-            inp: crate::model::IntelligentTieringConfiguration,
+            input: crate::model::IntelligentTieringConfiguration,
         ) -> Self {
-            self.intelligent_tiering_configuration = Some(inp);
+            self.intelligent_tiering_configuration = Some(input);
             self
         }
         pub fn set_intelligent_tiering_configuration(
             mut self,
-            inp: std::option::Option<crate::model::IntelligentTieringConfiguration>,
+            input: std::option::Option<crate::model::IntelligentTieringConfiguration>,
         ) -> Self {
-            self.intelligent_tiering_configuration = inp;
+            self.intelligent_tiering_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketIntelligentTieringConfigurationOutput`](crate::output::GetBucketIntelligentTieringConfigurationOutput)
@@ -5907,16 +5954,16 @@ pub mod get_bucket_encryption_output {
         /// <p>Specifies the default server-side-encryption configuration.</p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            input: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.server_side_encryption_configuration = Some(inp);
+            self.server_side_encryption_configuration = Some(input);
             self
         }
         pub fn set_server_side_encryption_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+            input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         ) -> Self {
-            self.server_side_encryption_configuration = inp;
+            self.server_side_encryption_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketEncryptionOutput`](crate::output::GetBucketEncryptionOutput)
@@ -5957,17 +6004,17 @@ pub mod get_bucket_cors_output {
         pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
     }
     impl Builder {
-        pub fn cors_rules(mut self, inp: impl Into<crate::model::CORSRule>) -> Self {
+        pub fn cors_rules(mut self, input: impl Into<crate::model::CORSRule>) -> Self {
             let mut v = self.cors_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cors_rules = Some(v);
             self
         }
         pub fn set_cors_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
         ) -> Self {
-            self.cors_rules = inp;
+            self.cors_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketCorsOutput`](crate::output::GetBucketCorsOutput)
@@ -6011,16 +6058,16 @@ pub mod get_bucket_analytics_configuration_output {
         /// <p>The configuration and any analyses for the analytics filter.</p>
         pub fn analytics_configuration(
             mut self,
-            inp: crate::model::AnalyticsConfiguration,
+            input: crate::model::AnalyticsConfiguration,
         ) -> Self {
-            self.analytics_configuration = Some(inp);
+            self.analytics_configuration = Some(input);
             self
         }
         pub fn set_analytics_configuration(
             mut self,
-            inp: std::option::Option<crate::model::AnalyticsConfiguration>,
+            input: std::option::Option<crate::model::AnalyticsConfiguration>,
         ) -> Self {
-            self.analytics_configuration = inp;
+            self.analytics_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketAnalyticsConfigurationOutput`](crate::output::GetBucketAnalyticsConfigurationOutput)
@@ -6065,25 +6112,25 @@ pub mod get_bucket_acl_output {
     }
     impl Builder {
         /// <p>Container for the bucket owner's display name and ID.</p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
-        pub fn grants(mut self, inp: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grants = Some(v);
             self
         }
         pub fn set_grants(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         ) -> Self {
-            self.grants = inp;
+            self.grants = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketAclOutput`](crate::output::GetBucketAclOutput)
@@ -6125,15 +6172,15 @@ pub mod get_bucket_accelerate_configuration_output {
     }
     impl Builder {
         /// <p>The accelerate configuration of the bucket.</p>
-        pub fn status(mut self, inp: crate::model::BucketAccelerateStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::BucketAccelerateStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::BucketAccelerateStatus>,
+            input: std::option::Option<crate::model::BucketAccelerateStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBucketAccelerateConfigurationOutput`](crate::output::GetBucketAccelerateConfigurationOutput)
@@ -6203,12 +6250,12 @@ pub mod delete_object_tagging_output {
     }
     impl Builder {
         /// <p>The versionId of the object the tag-set was removed from.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteObjectTaggingOutput`](crate::output::DeleteObjectTaggingOutput)
@@ -6259,43 +6306,43 @@ pub mod delete_objects_output {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::Error>>,
     }
     impl Builder {
-        pub fn deleted(mut self, inp: impl Into<crate::model::DeletedObject>) -> Self {
+        pub fn deleted(mut self, input: impl Into<crate::model::DeletedObject>) -> Self {
             let mut v = self.deleted.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.deleted = Some(v);
             self
         }
         pub fn set_deleted(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DeletedObject>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DeletedObject>>,
         ) -> Self {
-            self.deleted = inp;
+            self.deleted = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
-        pub fn errors(mut self, inp: impl Into<crate::model::Error>) -> Self {
+        pub fn errors(mut self, input: impl Into<crate::model::Error>) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.errors = Some(v);
             self
         }
         pub fn set_errors(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Error>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Error>>,
         ) -> Self {
-            self.errors = inp;
+            self.errors = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteObjectsOutput`](crate::output::DeleteObjectsOutput)
@@ -6350,35 +6397,35 @@ pub mod delete_object_output {
     impl Builder {
         /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
         /// not (false) a delete marker.</p>
-        pub fn delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn delete_marker(mut self, input: bool) -> Self {
+            self.delete_marker = Some(input);
             self
         }
-        pub fn set_delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_marker = input;
             self
         }
         /// <p>Returns the version ID of the delete marker created as a result of the DELETE
         /// operation.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
@@ -6870,138 +6917,144 @@ pub mod create_multipart_upload_output {
         /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
         /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the
         /// ID of the lifecycle configuration rule that defines this action.</p>
-        pub fn abort_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.abort_date = Some(inp);
+        pub fn abort_date(mut self, input: smithy_types::Instant) -> Self {
+            self.abort_date = Some(input);
             self
         }
-        pub fn set_abort_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.abort_date = inp;
+        pub fn set_abort_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.abort_date = input;
             self
         }
         /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
         /// identifies the applicable lifecycle configuration rule that defines the action to abort
         /// incomplete multipart uploads.</p>
-        pub fn abort_rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.abort_rule_id = Some(inp.into());
+        pub fn abort_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.abort_rule_id = Some(input.into());
             self
         }
-        pub fn set_abort_rule_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.abort_rule_id = inp;
+        pub fn set_abort_rule_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.abort_rule_id = input;
             self
         }
         /// <p>The name of the bucket to which the multipart upload was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket = inp;
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>ID for the initiated multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id = Some(inp.into());
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id = Some(input.into());
             self
         }
-        pub fn set_upload_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = inp;
+        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_id = input;
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header confirming the encryption algorithm used.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to provide round-trip message integrity verification of
         /// the customer-provided encryption key.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
         /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
         /// context key-value pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_encryption_context = Some(inp.into());
+        pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_encryption_context = Some(input.into());
             self
         }
         pub fn set_ssekms_encryption_context(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssekms_encryption_context = inp;
+            self.ssekms_encryption_context = input;
             self
         }
         /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateMultipartUploadOutput`](crate::output::CreateMultipartUploadOutput)
@@ -7057,12 +7110,12 @@ pub mod create_bucket_output {
         /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on
         /// the US East (N. Virginia) Region (us-east-1), you do not need to specify the
         /// location.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateBucketOutput`](crate::output::CreateBucketOutput)
@@ -7154,131 +7207,134 @@ pub mod copy_object_output {
     }
     impl Builder {
         /// <p>Container for all response elements.</p>
-        pub fn copy_object_result(mut self, inp: crate::model::CopyObjectResult) -> Self {
-            self.copy_object_result = Some(inp);
+        pub fn copy_object_result(mut self, input: crate::model::CopyObjectResult) -> Self {
+            self.copy_object_result = Some(input);
             self
         }
         pub fn set_copy_object_result(
             mut self,
-            inp: std::option::Option<crate::model::CopyObjectResult>,
+            input: std::option::Option<crate::model::CopyObjectResult>,
         ) -> Self {
-            self.copy_object_result = inp;
+            self.copy_object_result = input;
             self
         }
         /// <p>If the object expiration is configured, the response includes this header.</p>
-        pub fn expiration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expiration = Some(inp.into());
+        pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expiration = Some(input.into());
             self
         }
-        pub fn set_expiration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expiration = inp;
+        pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration = input;
             self
         }
         /// <p>Version of the copied object in the destination bucket.</p>
-        pub fn copy_source_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copy_source_version_id = Some(inp.into());
+        pub fn copy_source_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copy_source_version_id = Some(input.into());
             self
         }
         pub fn set_copy_source_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copy_source_version_id = inp;
+            self.copy_source_version_id = input;
             self
         }
         /// <p>Version ID of the newly created copy.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header confirming the encryption algorithm used.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_algorithm = Some(inp.into());
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
             self
         }
         pub fn set_sse_customer_algorithm(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_algorithm = inp;
+            self.sse_customer_algorithm = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to provide round-trip message integrity verification of
         /// the customer-provided encryption key.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sse_customer_key_md5 = Some(inp.into());
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
             self
         }
         pub fn set_sse_customer_key_md5(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sse_customer_key_md5 = inp;
+            self.sse_customer_key_md5 = input;
             self
         }
         /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
         /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
         /// context key-value pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_encryption_context = Some(inp.into());
+        pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_encryption_context = Some(input.into());
             self
         }
         pub fn set_ssekms_encryption_context(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssekms_encryption_context = inp;
+            self.ssekms_encryption_context = input;
             self
         }
         /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyObjectOutput`](crate::output::CopyObjectOutput)
@@ -7378,42 +7434,42 @@ pub mod complete_multipart_upload_output {
     }
     impl Builder {
         /// <p>The URI that identifies the newly created object.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// <p>The name of the bucket that contains the newly created object.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket = inp;
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The object key of the newly created object.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>If the object expiration is configured, this will contain the expiration date
         /// (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
-        pub fn expiration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expiration = Some(inp.into());
+        pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expiration = Some(input.into());
             self
         }
-        pub fn set_expiration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expiration = inp;
+        pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration = input;
             self
         }
         /// <p>Entity tag that identifies the newly created object's data. Objects with different
@@ -7421,69 +7477,72 @@ pub mod complete_multipart_upload_output {
         /// tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5
         /// digest of the object data, it will contain one or more nonhexadecimal characters and/or
         /// will consist of less than 32 or more than 32 hexadecimal digits.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
         /// AWS KMS customer master key (CMK) in your initiate multipart upload request, the response
         /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
         /// object.</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.server_side_encryption = Some(inp);
+        pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.server_side_encryption = Some(input);
             self
         }
         pub fn set_server_side_encryption(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.server_side_encryption = inp;
+            self.server_side_encryption = input;
             self
         }
         /// <p>Version ID of the newly created object, in case the bucket has versioning turned
         /// on.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssekms_key_id = Some(inp.into());
+        pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssekms_key_id = Some(input.into());
             self
         }
-        pub fn set_ssekms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ssekms_key_id = inp;
+        pub fn set_ssekms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssekms_key_id = input;
             self
         }
         /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput)
@@ -7535,15 +7594,15 @@ pub mod abort_multipart_upload_output {
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.request_charged = Some(inp);
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
             self
         }
         pub fn set_request_charged(
             mut self,
-            inp: std::option::Option<crate::model::RequestCharged>,
+            input: std::option::Option<crate::model::RequestCharged>,
         ) -> Self {
-            self.request_charged = inp;
+            self.request_charged = input;
             self
         }
         /// Consumes the builder and constructs a [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput)

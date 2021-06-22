@@ -43,65 +43,65 @@ pub mod validate_template_output {
         pub(crate) declared_transforms: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn parameters(mut self, inp: impl Into<crate::model::TemplateParameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::TemplateParameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TemplateParameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TemplateParameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The description found within the template.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
         /// <p>The list of resources that generated the values in the <code>Capabilities</code>
         /// response element.</p>
-        pub fn capabilities_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capabilities_reason = Some(inp.into());
+        pub fn capabilities_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capabilities_reason = Some(input.into());
             self
         }
         pub fn set_capabilities_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.capabilities_reason = inp;
+            self.capabilities_reason = input;
             self
         }
-        pub fn declared_transforms(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn declared_transforms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.declared_transforms.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.declared_transforms = Some(v);
             self
         }
         pub fn set_declared_transforms(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.declared_transforms = inp;
+            self.declared_transforms = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidateTemplateOutput`](crate::output::ValidateTemplateOutput)
@@ -146,12 +146,12 @@ pub mod update_termination_protection_output {
     }
     impl Builder {
         /// <p>The unique ID of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTerminationProtectionOutput`](crate::output::UpdateTerminationProtectionOutput)
@@ -192,12 +192,12 @@ pub mod update_stack_set_output {
     }
     impl Builder {
         /// <p>The unique ID for this stack set operation.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateStackSetOutput`](crate::output::UpdateStackSetOutput)
@@ -238,12 +238,12 @@ pub mod update_stack_instances_output {
     }
     impl Builder {
         /// <p>The unique identifier for this stack set operation. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateStackInstancesOutput`](crate::output::UpdateStackInstancesOutput)
@@ -285,12 +285,12 @@ pub mod update_stack_output {
     }
     impl Builder {
         /// <p>Unique identifier of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateStackOutput`](crate::output::UpdateStackOutput)
@@ -453,15 +453,15 @@ pub mod register_type_output {
         /// <p>Use this registration token when calling <code>
         /// <a>DescribeTypeRegistration</a>
         /// </code>, which returns information about the status and IDs of the extension registration. </p>
-        pub fn registration_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.registration_token = Some(inp.into());
+        pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registration_token = Some(input.into());
             self
         }
         pub fn set_registration_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.registration_token = inp;
+            self.registration_token = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterTypeOutput`](crate::output::RegisterTypeOutput)
@@ -538,27 +538,27 @@ pub mod list_type_versions_output {
     impl Builder {
         pub fn type_version_summaries(
             mut self,
-            inp: impl Into<crate::model::TypeVersionSummary>,
+            input: impl Into<crate::model::TypeVersionSummary>,
         ) -> Self {
             let mut v = self.type_version_summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.type_version_summaries = Some(v);
             self
         }
         pub fn set_type_version_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
         ) -> Self {
-            self.type_version_summaries = inp;
+            self.type_version_summaries = input;
             self
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTypeVersionsOutput`](crate::output::ListTypeVersionsOutput)
@@ -603,26 +603,26 @@ pub mod list_types_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn type_summaries(mut self, inp: impl Into<crate::model::TypeSummary>) -> Self {
+        pub fn type_summaries(mut self, input: impl Into<crate::model::TypeSummary>) -> Self {
             let mut v = self.type_summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.type_summaries = Some(v);
             self
         }
         pub fn set_type_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TypeSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TypeSummary>>,
         ) -> Self {
-            self.type_summaries = inp;
+            self.type_summaries = input;
             self
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTypesOutput`](crate::output::ListTypesOutput)
@@ -670,26 +670,26 @@ pub mod list_type_registrations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn registration_token_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn registration_token_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.registration_token_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.registration_token_list = Some(v);
             self
         }
         pub fn set_registration_token_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.registration_token_list = inp;
+            self.registration_token_list = input;
             self
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTypeRegistrationsOutput`](crate::output::ListTypeRegistrationsOutput)
@@ -739,17 +739,17 @@ pub mod list_stack_sets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn summaries(mut self, inp: impl Into<crate::model::StackSetSummary>) -> Self {
+        pub fn summaries(mut self, input: impl Into<crate::model::StackSetSummary>) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.summaries = Some(v);
             self
         }
         pub fn set_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackSetSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackSetSummary>>,
         ) -> Self {
-            self.summaries = inp;
+            self.summaries = input;
             self
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
@@ -757,12 +757,12 @@ pub mod list_stack_sets_output {
         /// again and assign that token to the request object's <code>NextToken</code> parameter. If
         /// the request returns all results, <code>NextToken</code> is set to
         /// <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackSetsOutput`](crate::output::ListStackSetsOutput)
@@ -812,29 +812,32 @@ pub mod list_stack_set_operations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn summaries(mut self, inp: impl Into<crate::model::StackSetOperationSummary>) -> Self {
+        pub fn summaries(
+            mut self,
+            input: impl Into<crate::model::StackSetOperationSummary>,
+        ) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.summaries = Some(v);
             self
         }
         pub fn set_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
         ) -> Self {
-            self.summaries = inp;
+            self.summaries = input;
             self
         }
         /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
         /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
         /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
         /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackSetOperationsOutput`](crate::output::ListStackSetOperationsOutput)
@@ -887,30 +890,30 @@ pub mod list_stack_set_operation_results_output {
     impl Builder {
         pub fn summaries(
             mut self,
-            inp: impl Into<crate::model::StackSetOperationResultSummary>,
+            input: impl Into<crate::model::StackSetOperationResultSummary>,
         ) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.summaries = Some(v);
             self
         }
         pub fn set_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
         ) -> Self {
-            self.summaries = inp;
+            self.summaries = input;
             self
         }
         /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
         /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
         /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
         /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackSetOperationResultsOutput`](crate::output::ListStackSetOperationResultsOutput)
@@ -958,27 +961,27 @@ pub mod list_stacks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn stack_summaries(mut self, inp: impl Into<crate::model::StackSummary>) -> Self {
+        pub fn stack_summaries(mut self, input: impl Into<crate::model::StackSummary>) -> Self {
             let mut v = self.stack_summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stack_summaries = Some(v);
             self
         }
         pub fn set_stack_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackSummary>>,
         ) -> Self {
-            self.stack_summaries = inp;
+            self.stack_summaries = input;
             self
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
         /// If no additional page exists, this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStacksOutput`](crate::output::ListStacksOutput)
@@ -1029,28 +1032,28 @@ pub mod list_stack_resources_output {
     impl Builder {
         pub fn stack_resource_summaries(
             mut self,
-            inp: impl Into<crate::model::StackResourceSummary>,
+            input: impl Into<crate::model::StackResourceSummary>,
         ) -> Self {
             let mut v = self.stack_resource_summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stack_resource_summaries = Some(v);
             self
         }
         pub fn set_stack_resource_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
         ) -> Self {
-            self.stack_resource_summaries = inp;
+            self.stack_resource_summaries = input;
             self
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack
         /// resources. If no additional page exists, this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackResourcesOutput`](crate::output::ListStackResourcesOutput)
@@ -1101,17 +1104,17 @@ pub mod list_stack_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn summaries(mut self, inp: impl Into<crate::model::StackInstanceSummary>) -> Self {
+        pub fn summaries(mut self, input: impl Into<crate::model::StackInstanceSummary>) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.summaries = Some(v);
             self
         }
         pub fn set_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>,
         ) -> Self {
-            self.summaries = inp;
+            self.summaries = input;
             self
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
@@ -1119,12 +1122,12 @@ pub mod list_stack_instances_output {
         /// again and assign that token to the request object's <code>NextToken</code> parameter. If
         /// the request returns all results, <code>NextToken</code> is set to
         /// <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListStackInstancesOutput`](crate::output::ListStackInstancesOutput)
@@ -1171,27 +1174,27 @@ pub mod list_imports_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn imports(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn imports(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.imports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.imports = Some(v);
             self
         }
         pub fn set_imports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.imports = inp;
+            self.imports = input;
             self
         }
         /// <p>A string that identifies the next page of exports. If there is no additional page,
         /// this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListImportsOutput`](crate::output::ListImportsOutput)
@@ -1237,27 +1240,27 @@ pub mod list_exports_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn exports(mut self, inp: impl Into<crate::model::Export>) -> Self {
+        pub fn exports(mut self, input: impl Into<crate::model::Export>) -> Self {
             let mut v = self.exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.exports = Some(v);
             self
         }
         pub fn set_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Export>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Export>>,
         ) -> Self {
-            self.exports = inp;
+            self.exports = input;
             self
         }
         /// <p>If the output exceeds 100 exported output values, a string that identifies the next
         /// page of exports. If there is no additional page, this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListExportsOutput`](crate::output::ListExportsOutput)
@@ -1305,27 +1308,27 @@ pub mod list_change_sets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn summaries(mut self, inp: impl Into<crate::model::ChangeSetSummary>) -> Self {
+        pub fn summaries(mut self, input: impl Into<crate::model::ChangeSetSummary>) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.summaries = Some(v);
             self
         }
         pub fn set_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummary>>,
         ) -> Self {
-            self.summaries = inp;
+            self.summaries = input;
             self
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If
         /// there is no additional page, this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput)
@@ -1419,115 +1422,115 @@ pub mod get_template_summary_output {
             std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
     }
     impl Builder {
-        pub fn parameters(mut self, inp: impl Into<crate::model::ParameterDeclaration>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::ParameterDeclaration>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The value that is defined in the <code>Description</code> property of the
         /// template.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
         /// <p>The list of resources that generated the values in the <code>Capabilities</code>
         /// response element.</p>
-        pub fn capabilities_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capabilities_reason = Some(inp.into());
+        pub fn capabilities_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capabilities_reason = Some(input.into());
             self
         }
         pub fn set_capabilities_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.capabilities_reason = inp;
+            self.capabilities_reason = input;
             self
         }
-        pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_types = Some(v);
             self
         }
         pub fn set_resource_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_types = inp;
+            self.resource_types = input;
             self
         }
         /// <p>The AWS template format version, which identifies the capabilities of the
         /// template.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The value that is defined for the <code>Metadata</code> property of the
         /// template.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.metadata = Some(inp.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metadata = Some(input.into());
             self
         }
-        pub fn set_metadata(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.metadata = inp;
+        pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metadata = input;
             self
         }
-        pub fn declared_transforms(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn declared_transforms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.declared_transforms.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.declared_transforms = Some(v);
             self
         }
         pub fn set_declared_transforms(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.declared_transforms = inp;
+            self.declared_transforms = input;
             self
         }
         pub fn resource_identifier_summaries(
             mut self,
-            inp: impl Into<crate::model::ResourceIdentifierSummary>,
+            input: impl Into<crate::model::ResourceIdentifierSummary>,
         ) -> Self {
             let mut v = self.resource_identifier_summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_identifier_summaries = Some(v);
             self
         }
         pub fn set_resource_identifier_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
         ) -> Self {
-            self.resource_identifier_summaries = inp;
+            self.resource_identifier_summaries = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTemplateSummaryOutput`](crate::output::GetTemplateSummaryOutput)
@@ -1590,25 +1593,28 @@ pub mod get_template_output {
         /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
         /// <p>AWS CloudFormation returns the same template that was used when the stack was
         /// created.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_body = Some(inp.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_body = Some(input.into());
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_body = inp;
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
             self
         }
-        pub fn stages_available(mut self, inp: impl Into<crate::model::TemplateStage>) -> Self {
+        pub fn stages_available(mut self, input: impl Into<crate::model::TemplateStage>) -> Self {
             let mut v = self.stages_available.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stages_available = Some(v);
             self
         }
         pub fn set_stages_available(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
         ) -> Self {
-            self.stages_available = inp;
+            self.stages_available = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::output::GetTemplateOutput)
@@ -1653,15 +1659,15 @@ pub mod get_stack_policy_output {
     impl Builder {
         /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
         /// to Stack Resources</a> in the AWS CloudFormation User Guide.)</p>
-        pub fn stack_policy_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_policy_body = Some(inp.into());
+        pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_policy_body = Some(input.into());
             self
         }
         pub fn set_stack_policy_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_policy_body = inp;
+            self.stack_policy_body = input;
             self
         }
         /// Consumes the builder and constructs a [`GetStackPolicyOutput`](crate::output::GetStackPolicyOutput)
@@ -1735,12 +1741,12 @@ pub mod estimate_template_cost_output {
     impl Builder {
         /// <p>An AWS Simple Monthly Calculator URL with a query string that describes the resources
         /// required to run the template.</p>
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// Consumes the builder and constructs a [`EstimateTemplateCostOutput`](crate::output::EstimateTemplateCostOutput)
@@ -1785,12 +1791,12 @@ pub mod detect_stack_set_drift_output {
         /// <p>you can use this operation id with <code>
         /// <a>DescribeStackSetOperation</a>
         /// </code> to monitor the progress of the drift detection operation. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DetectStackSetDriftOutput`](crate::output::DetectStackSetDriftOutput)
@@ -1835,15 +1841,15 @@ pub mod detect_stack_resource_drift_output {
         /// <p>Information about whether the resource's actual configuration has drifted from its
         /// expected template configuration, including actual and expected property values and any
         /// differences detected.</p>
-        pub fn stack_resource_drift(mut self, inp: crate::model::StackResourceDrift) -> Self {
-            self.stack_resource_drift = Some(inp);
+        pub fn stack_resource_drift(mut self, input: crate::model::StackResourceDrift) -> Self {
+            self.stack_resource_drift = Some(input);
             self
         }
         pub fn set_stack_resource_drift(
             mut self,
-            inp: std::option::Option<crate::model::StackResourceDrift>,
+            input: std::option::Option<crate::model::StackResourceDrift>,
         ) -> Self {
-            self.stack_resource_drift = inp;
+            self.stack_resource_drift = input;
             self
         }
         /// Consumes the builder and constructs a [`DetectStackResourceDriftOutput`](crate::output::DetectStackResourceDriftOutput)
@@ -1890,15 +1896,15 @@ pub mod detect_stack_drift_output {
         /// <p>AWS CloudFormation generates new results, with a new drift detection ID, each time this operation
         /// is run. However, the number of drift results AWS CloudFormation retains for any given stack, and for how
         /// long, may vary. </p>
-        pub fn stack_drift_detection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_drift_detection_id = Some(inp.into());
+        pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_drift_detection_id = Some(input.into());
             self
         }
         pub fn set_stack_drift_detection_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_drift_detection_id = inp;
+            self.stack_drift_detection_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DetectStackDriftOutput`](crate::output::DetectStackDriftOutput)
@@ -1953,47 +1959,47 @@ pub mod describe_type_registration_output {
     }
     impl Builder {
         /// <p>The current status of the extension registration request.</p>
-        pub fn progress_status(mut self, inp: crate::model::RegistrationStatus) -> Self {
-            self.progress_status = Some(inp);
+        pub fn progress_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.progress_status = Some(input);
             self
         }
         pub fn set_progress_status(
             mut self,
-            inp: std::option::Option<crate::model::RegistrationStatus>,
+            input: std::option::Option<crate::model::RegistrationStatus>,
         ) -> Self {
-            self.progress_status = inp;
+            self.progress_status = input;
             self
         }
         /// <p>The description of the extension registration request.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
         /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-        pub fn type_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_arn = Some(inp.into());
+        pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_arn = Some(input.into());
             self
         }
-        pub fn set_type_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_arn = inp;
+        pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
         /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-        pub fn type_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_version_arn = Some(inp.into());
+        pub fn type_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_version_arn = Some(input.into());
             self
         }
         pub fn set_type_version_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.type_version_arn = inp;
+            self.type_version_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTypeRegistrationOutput`](crate::output::DescribeTypeRegistrationOutput)
@@ -2156,73 +2162,73 @@ pub mod describe_type_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The kind of extension. </p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The name of the registered extension.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
         /// <p>The ID of the default version of the extension. The default version is used when the extension version is not specified.</p>
         /// <p>To set the default version of an extension, use <code>
         /// <a>SetTypeDefaultVersion</a>
         /// </code>. </p>
-        pub fn default_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_version_id = Some(inp.into());
+        pub fn default_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_version_id = Some(input.into());
             self
         }
         pub fn set_default_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_version_id = inp;
+            self.default_version_id = input;
             self
         }
         /// <p>Whether the specified extension version is set as the default version.</p>
-        pub fn is_default_version(mut self, inp: bool) -> Self {
-            self.is_default_version = Some(inp);
+        pub fn is_default_version(mut self, input: bool) -> Self {
+            self.is_default_version = Some(input);
             self
         }
-        pub fn set_is_default_version(mut self, inp: std::option::Option<bool>) -> Self {
-            self.is_default_version = inp;
+        pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default_version = input;
             self
         }
         /// <p>The description of the registered extension.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The schema that defines the extension.</p>
         /// <p>For more information on extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
         /// <p>The provisioning behavior of the extension. AWS CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
@@ -2252,15 +2258,15 @@ pub mod describe_type_output {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn provisioning_type(mut self, inp: crate::model::ProvisioningType) -> Self {
-            self.provisioning_type = Some(inp);
+        pub fn provisioning_type(mut self, input: crate::model::ProvisioningType) -> Self {
+            self.provisioning_type = Some(input);
             self
         }
         pub fn set_provisioning_type(
             mut self,
-            inp: std::option::Option<crate::model::ProvisioningType>,
+            input: std::option::Option<crate::model::ProvisioningType>,
         ) -> Self {
-            self.provisioning_type = inp;
+            self.provisioning_type = input;
             self
         }
         /// <p>The deprecation status of the extension version.</p>
@@ -2275,27 +2281,27 @@ pub mod describe_type_output {
         /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations. </p>
         /// </li>
         /// </ul>
-        pub fn deprecated_status(mut self, inp: crate::model::DeprecatedStatus) -> Self {
-            self.deprecated_status = Some(inp);
+        pub fn deprecated_status(mut self, input: crate::model::DeprecatedStatus) -> Self {
+            self.deprecated_status = Some(input);
             self
         }
         pub fn set_deprecated_status(
             mut self,
-            inp: std::option::Option<crate::model::DeprecatedStatus>,
+            input: std::option::Option<crate::model::DeprecatedStatus>,
         ) -> Self {
-            self.deprecated_status = inp;
+            self.deprecated_status = input;
             self
         }
         /// <p>Contains logging configuration information for an extension.</p>
-        pub fn logging_config(mut self, inp: crate::model::LoggingConfig) -> Self {
-            self.logging_config = Some(inp);
+        pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
+            self.logging_config = Some(input);
             self
         }
         pub fn set_logging_config(
             mut self,
-            inp: std::option::Option<crate::model::LoggingConfig>,
+            input: std::option::Option<crate::model::LoggingConfig>,
         ) -> Self {
-            self.logging_config = inp;
+            self.logging_config = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. If your resource type calls AWS APIs in any of its handlers, you must create an
@@ -2306,15 +2312,15 @@ pub mod describe_type_output {
         /// AWS APIs, and provision that execution role in your account. CloudFormation then
         /// assumes that execution role to provide your extension with the appropriate
         /// credentials.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_arn = Some(inp.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_arn = Some(input.into());
             self
         }
         pub fn set_execution_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_arn = inp;
+            self.execution_role_arn = input;
             self
         }
         /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
@@ -2329,54 +2335,60 @@ pub mod describe_type_output {
         /// <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.</p>
         /// </li>
         /// </ul>
-        pub fn visibility(mut self, inp: crate::model::Visibility) -> Self {
-            self.visibility = Some(inp);
+        pub fn visibility(mut self, input: crate::model::Visibility) -> Self {
+            self.visibility = Some(input);
             self
         }
         pub fn set_visibility(
             mut self,
-            inp: std::option::Option<crate::model::Visibility>,
+            input: std::option::Option<crate::model::Visibility>,
         ) -> Self {
-            self.visibility = inp;
+            self.visibility = input;
             self
         }
         /// <p>The URL of the source code for the extension.</p>
-        pub fn source_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_url = Some(inp.into());
+        pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_url = Some(input.into());
             self
         }
-        pub fn set_source_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_url = inp;
+        pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_url = input;
             self
         }
         /// <p>The URL of a page providing detailed documentation for this extension.</p>
-        pub fn documentation_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_url = Some(inp.into());
+        pub fn documentation_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_url = Some(input.into());
             self
         }
         pub fn set_documentation_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.documentation_url = inp;
+            self.documentation_url = input;
             self
         }
         /// <p>When the specified extension version was registered.</p>
-        pub fn last_updated(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated = Some(inp);
+        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated = Some(input);
             self
         }
-        pub fn set_last_updated(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.last_updated = inp;
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_updated = input;
             self
         }
         /// <p>When the specified extension version was registered.</p>
-        pub fn time_created(mut self, inp: smithy_types::Instant) -> Self {
-            self.time_created = Some(inp);
+        pub fn time_created(mut self, input: smithy_types::Instant) -> Self {
+            self.time_created = Some(input);
             self
         }
-        pub fn set_time_created(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.time_created = inp;
+        pub fn set_time_created(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.time_created = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTypeOutput`](crate::output::DescribeTypeOutput)
@@ -2432,15 +2444,15 @@ pub mod describe_stack_set_operation_output {
     }
     impl Builder {
         /// <p>The specified stack set operation.</p>
-        pub fn stack_set_operation(mut self, inp: crate::model::StackSetOperation) -> Self {
-            self.stack_set_operation = Some(inp);
+        pub fn stack_set_operation(mut self, input: crate::model::StackSetOperation) -> Self {
+            self.stack_set_operation = Some(input);
             self
         }
         pub fn set_stack_set_operation(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperation>,
+            input: std::option::Option<crate::model::StackSetOperation>,
         ) -> Self {
-            self.stack_set_operation = inp;
+            self.stack_set_operation = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackSetOperationOutput`](crate::output::DescribeStackSetOperationOutput)
@@ -2481,12 +2493,12 @@ pub mod describe_stack_set_output {
     }
     impl Builder {
         /// <p>The specified stack set.</p>
-        pub fn stack_set(mut self, inp: crate::model::StackSet) -> Self {
-            self.stack_set = Some(inp);
+        pub fn stack_set(mut self, input: crate::model::StackSet) -> Self {
+            self.stack_set = Some(input);
             self
         }
-        pub fn set_stack_set(mut self, inp: std::option::Option<crate::model::StackSet>) -> Self {
-            self.stack_set = inp;
+        pub fn set_stack_set(mut self, input: std::option::Option<crate::model::StackSet>) -> Self {
+            self.stack_set = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackSetOutput`](crate::output::DescribeStackSetOutput)
@@ -2532,27 +2544,27 @@ pub mod describe_stacks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn stacks(mut self, inp: impl Into<crate::model::Stack>) -> Self {
+        pub fn stacks(mut self, input: impl Into<crate::model::Stack>) -> Self {
             let mut v = self.stacks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stacks = Some(v);
             self
         }
         pub fn set_stacks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Stack>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Stack>>,
         ) -> Self {
-            self.stacks = inp;
+            self.stacks = input;
             self
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
         /// If no additional page exists, this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStacksOutput`](crate::output::DescribeStacksOutput)
@@ -2594,17 +2606,17 @@ pub mod describe_stack_resources_output {
         pub(crate) stack_resources: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
     }
     impl Builder {
-        pub fn stack_resources(mut self, inp: impl Into<crate::model::StackResource>) -> Self {
+        pub fn stack_resources(mut self, input: impl Into<crate::model::StackResource>) -> Self {
             let mut v = self.stack_resources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stack_resources = Some(v);
             self
         }
         pub fn set_stack_resources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
         ) -> Self {
-            self.stack_resources = inp;
+            self.stack_resources = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourcesOutput`](crate::output::DescribeStackResourcesOutput)
@@ -2662,18 +2674,18 @@ pub mod describe_stack_resource_drifts_output {
     impl Builder {
         pub fn stack_resource_drifts(
             mut self,
-            inp: impl Into<crate::model::StackResourceDrift>,
+            input: impl Into<crate::model::StackResourceDrift>,
         ) -> Self {
             let mut v = self.stack_resource_drifts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stack_resource_drifts = Some(v);
             self
         }
         pub fn set_stack_resource_drifts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>,
         ) -> Self {
-            self.stack_resource_drifts = inp;
+            self.stack_resource_drifts = input;
             self
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
@@ -2681,12 +2693,12 @@ pub mod describe_stack_resource_drifts_output {
         /// <code>DescribeStackResourceDrifts</code> again and assign that token to the request
         /// object's <code>NextToken</code> parameter. If the request returns all results,
         /// <code>NextToken</code> is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourceDriftsOutput`](crate::output::DescribeStackResourceDriftsOutput)
@@ -2731,15 +2743,15 @@ pub mod describe_stack_resource_output {
     impl Builder {
         /// <p>A <code>StackResourceDetail</code> structure containing the description of the
         /// specified resource in the specified stack.</p>
-        pub fn stack_resource_detail(mut self, inp: crate::model::StackResourceDetail) -> Self {
-            self.stack_resource_detail = Some(inp);
+        pub fn stack_resource_detail(mut self, input: crate::model::StackResourceDetail) -> Self {
+            self.stack_resource_detail = Some(input);
             self
         }
         pub fn set_stack_resource_detail(
             mut self,
-            inp: std::option::Option<crate::model::StackResourceDetail>,
+            input: std::option::Option<crate::model::StackResourceDetail>,
         ) -> Self {
-            self.stack_resource_detail = inp;
+            self.stack_resource_detail = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourceOutput`](crate::output::DescribeStackResourceOutput)
@@ -2780,15 +2792,15 @@ pub mod describe_stack_instance_output {
     }
     impl Builder {
         /// <p>The stack instance that matches the specified request parameters.</p>
-        pub fn stack_instance(mut self, inp: crate::model::StackInstance) -> Self {
-            self.stack_instance = Some(inp);
+        pub fn stack_instance(mut self, input: crate::model::StackInstance) -> Self {
+            self.stack_instance = Some(input);
             self
         }
         pub fn set_stack_instance(
             mut self,
-            inp: std::option::Option<crate::model::StackInstance>,
+            input: std::option::Option<crate::model::StackInstance>,
         ) -> Self {
-            self.stack_instance = inp;
+            self.stack_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackInstanceOutput`](crate::output::DescribeStackInstanceOutput)
@@ -2834,27 +2846,27 @@ pub mod describe_stack_events_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn stack_events(mut self, inp: impl Into<crate::model::StackEvent>) -> Self {
+        pub fn stack_events(mut self, input: impl Into<crate::model::StackEvent>) -> Self {
             let mut v = self.stack_events.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stack_events = Some(v);
             self
         }
         pub fn set_stack_events(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackEvent>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackEvent>>,
         ) -> Self {
-            self.stack_events = inp;
+            self.stack_events = input;
             self
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events.
         /// If no additional page exists, this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackEventsOutput`](crate::output::DescribeStackEventsOutput)
@@ -2972,27 +2984,27 @@ pub mod describe_stack_drift_detection_status_output {
     }
     impl Builder {
         /// <p>The ID of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The ID of the drift detection results of this operation. </p>
         /// <p>AWS CloudFormation generates new results, with a new drift detection ID, each time this operation
         /// is run. However, the number of reports AWS CloudFormation retains for any given stack, and for how long,
         /// may vary.</p>
-        pub fn stack_drift_detection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_drift_detection_id = Some(inp.into());
+        pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_drift_detection_id = Some(input.into());
             self
         }
         pub fn set_stack_drift_detection_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.stack_drift_detection_id = inp;
+            self.stack_drift_detection_id = input;
             self
         }
         /// <p>Status of the stack's actual configuration compared to its expected configuration. </p>
@@ -3018,15 +3030,15 @@ pub mod describe_stack_drift_detection_status_output {
         /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
         /// </li>
         /// </ul>
-        pub fn stack_drift_status(mut self, inp: crate::model::StackDriftStatus) -> Self {
-            self.stack_drift_status = Some(inp);
+        pub fn stack_drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
+            self.stack_drift_status = Some(input);
             self
         }
         pub fn set_stack_drift_status(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftStatus>,
+            input: std::option::Option<crate::model::StackDriftStatus>,
         ) -> Self {
-            self.stack_drift_status = inp;
+            self.stack_drift_status = input;
             self
         }
         /// <p>The status of the stack drift detection operation.</p>
@@ -3052,47 +3064,47 @@ pub mod describe_stack_drift_detection_status_output {
         /// currently in progress.</p>
         /// </li>
         /// </ul>
-        pub fn detection_status(mut self, inp: crate::model::StackDriftDetectionStatus) -> Self {
-            self.detection_status = Some(inp);
+        pub fn detection_status(mut self, input: crate::model::StackDriftDetectionStatus) -> Self {
+            self.detection_status = Some(input);
             self
         }
         pub fn set_detection_status(
             mut self,
-            inp: std::option::Option<crate::model::StackDriftDetectionStatus>,
+            input: std::option::Option<crate::model::StackDriftDetectionStatus>,
         ) -> Self {
-            self.detection_status = inp;
+            self.detection_status = input;
             self
         }
         /// <p>The reason the stack drift detection operation has its current status.</p>
-        pub fn detection_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detection_status_reason = Some(inp.into());
+        pub fn detection_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detection_status_reason = Some(input.into());
             self
         }
         pub fn set_detection_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.detection_status_reason = inp;
+            self.detection_status_reason = input;
             self
         }
         /// <p>Total number of stack resources that have drifted. This is NULL until the drift
         /// detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be
         /// 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
-        pub fn drifted_stack_resource_count(mut self, inp: i32) -> Self {
-            self.drifted_stack_resource_count = Some(inp);
+        pub fn drifted_stack_resource_count(mut self, input: i32) -> Self {
+            self.drifted_stack_resource_count = Some(input);
             self
         }
-        pub fn set_drifted_stack_resource_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.drifted_stack_resource_count = inp;
+        pub fn set_drifted_stack_resource_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.drifted_stack_resource_count = input;
             self
         }
         /// <p>Time at which the stack drift detection operation was initiated.</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStackDriftDetectionStatusOutput`](crate::output::DescribeStackDriftDetectionStatusOutput)
@@ -3225,76 +3237,79 @@ pub mod describe_change_set_output {
     }
     impl Builder {
         /// <p>The name of the change set.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_name = Some(inp.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_name = Some(input.into());
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.change_set_name = inp;
+            self.change_set_name = input;
             self
         }
         /// <p>The ARN of the change set.</p>
-        pub fn change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.change_set_id = Some(inp.into());
+        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_set_id = Some(input.into());
             self
         }
-        pub fn set_change_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.change_set_id = inp;
+        pub fn set_change_set_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.change_set_id = input;
             self
         }
         /// <p>The ARN of the stack that is associated with the change set.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// <p>The name of the stack that is associated with the change set.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_name = Some(inp.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = inp;
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
             self
         }
         /// <p>Information about the change set.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
-        pub fn creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time = Some(inp);
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
             self
         }
         pub fn set_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time = inp;
+            self.creation_time = input;
             self
         }
         /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
@@ -3302,146 +3317,152 @@ pub mod describe_change_set_output {
         /// change set might be in an <code>UNAVAILABLE</code> state because AWS CloudFormation is
         /// still creating it or in an <code>OBSOLETE</code> state because the stack was already
         /// updated.</p>
-        pub fn execution_status(mut self, inp: crate::model::ExecutionStatus) -> Self {
-            self.execution_status = Some(inp);
+        pub fn execution_status(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.execution_status = Some(input);
             self
         }
         pub fn set_execution_status(
             mut self,
-            inp: std::option::Option<crate::model::ExecutionStatus>,
+            input: std::option::Option<crate::model::ExecutionStatus>,
         ) -> Self {
-            self.execution_status = inp;
+            self.execution_status = input;
             self
         }
         /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>,
         /// <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
-        pub fn status(mut self, inp: crate::model::ChangeSetStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ChangeSetStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ChangeSetStatus>,
+            input: std::option::Option<crate::model::ChangeSetStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>A description of the change set's status. For example, if your attempt to create a
         /// change set failed, AWS CloudFormation shows the error message.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
-        pub fn notification_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
         pub fn set_notification_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.notification_ar_ns = inp;
+            self.notification_ar_ns = input;
             self
         }
         /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.rollback_configuration = Some(inp);
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.rollback_configuration = Some(input);
             self
         }
         pub fn set_rollback_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RollbackConfiguration>,
+            input: std::option::Option<crate::model::RollbackConfiguration>,
         ) -> Self {
-            self.rollback_configuration = inp;
+            self.rollback_configuration = input;
             self
         }
-        pub fn capabilities(mut self, inp: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capabilities = Some(v);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
-        pub fn changes(mut self, inp: impl Into<crate::model::Change>) -> Self {
+        pub fn changes(mut self, input: impl Into<crate::model::Change>) -> Self {
             let mut v = self.changes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.changes = Some(v);
             self
         }
         pub fn set_changes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Change>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Change>>,
         ) -> Self {
-            self.changes = inp;
+            self.changes = input;
             self
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If
         /// there is no additional page, this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
-        pub fn include_nested_stacks(mut self, inp: bool) -> Self {
-            self.include_nested_stacks = Some(inp);
+        pub fn include_nested_stacks(mut self, input: bool) -> Self {
+            self.include_nested_stacks = Some(input);
             self
         }
-        pub fn set_include_nested_stacks(mut self, inp: std::option::Option<bool>) -> Self {
-            self.include_nested_stacks = inp;
+        pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_nested_stacks = input;
             self
         }
         /// <p>Specifies the change set ID of the parent change set in the current nested change set hierarchy.</p>
-        pub fn parent_change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_change_set_id = Some(inp.into());
+        pub fn parent_change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_change_set_id = Some(input.into());
             self
         }
         pub fn set_parent_change_set_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.parent_change_set_id = inp;
+            self.parent_change_set_id = input;
             self
         }
         /// <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
-        pub fn root_change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.root_change_set_id = Some(inp.into());
+        pub fn root_change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.root_change_set_id = Some(input.into());
             self
         }
         pub fn set_root_change_set_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.root_change_set_id = inp;
+            self.root_change_set_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput)
@@ -3506,27 +3527,27 @@ pub mod describe_account_limits_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn account_limits(mut self, inp: impl Into<crate::model::AccountLimit>) -> Self {
+        pub fn account_limits(mut self, input: impl Into<crate::model::AccountLimit>) -> Self {
             let mut v = self.account_limits.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.account_limits = Some(v);
             self
         }
         pub fn set_account_limits(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
         ) -> Self {
-            self.account_limits = inp;
+            self.account_limits = input;
             self
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits.
         /// If no additional page exists, this value is null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput)
@@ -3626,12 +3647,12 @@ pub mod delete_stack_instances_output {
     }
     impl Builder {
         /// <p>The unique identifier for this stack set operation.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteStackInstancesOutput`](crate::output::DeleteStackInstancesOutput)
@@ -3731,12 +3752,12 @@ pub mod create_stack_set_output {
     }
     impl Builder {
         /// <p>The ID of the stack set that you're creating.</p>
-        pub fn stack_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_set_id = Some(inp.into());
+        pub fn stack_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_id = Some(input.into());
             self
         }
-        pub fn set_stack_set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_id = inp;
+        pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_set_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStackSetOutput`](crate::output::CreateStackSetOutput)
@@ -3777,12 +3798,12 @@ pub mod create_stack_instances_output {
     }
     impl Builder {
         /// <p>The unique identifier for this stack set operation.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_id = Some(inp.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = inp;
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStackInstancesOutput`](crate::output::CreateStackInstancesOutput)
@@ -3824,12 +3845,12 @@ pub mod create_stack_output {
     }
     impl Builder {
         /// <p>Unique identifier of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStackOutput`](crate::output::CreateStackOutput)
@@ -3875,21 +3896,21 @@ pub mod create_change_set_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the change set.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The unique ID of the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stack_id = Some(inp.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
             self
         }
-        pub fn set_stack_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = inp;
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateChangeSetOutput`](crate::output::CreateChangeSetOutput)

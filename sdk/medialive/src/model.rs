@@ -131,165 +131,171 @@ pub mod reservation {
     }
     impl Builder {
         /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Number of reserved resources
-        pub fn count(mut self, inp: i32) -> Self {
-            self.count = Some(inp);
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
             self
         }
-        pub fn set_count(mut self, inp: i32) -> Self {
-            self.count = Some(inp);
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
             self
         }
         /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-        pub fn currency_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.currency_code = Some(inp.into());
+        pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.currency_code = Some(input.into());
             self
         }
-        pub fn set_currency_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.currency_code = inp;
+        pub fn set_currency_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.currency_code = input;
             self
         }
         /// Lease duration, e.g. '12'
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
             self
         }
         /// Units for duration, e.g. 'MONTHS'
-        pub fn duration_units(mut self, inp: crate::model::OfferingDurationUnits) -> Self {
-            self.duration_units = Some(inp);
+        pub fn duration_units(mut self, input: crate::model::OfferingDurationUnits) -> Self {
+            self.duration_units = Some(input);
             self
         }
         pub fn set_duration_units(
             mut self,
-            inp: std::option::Option<crate::model::OfferingDurationUnits>,
+            input: std::option::Option<crate::model::OfferingDurationUnits>,
         ) -> Self {
-            self.duration_units = inp;
+            self.duration_units = input;
             self
         }
         /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
-        pub fn end(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.end = Some(inp.into());
+        pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end = Some(input.into());
             self
         }
-        pub fn set_end(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.end = inp;
+        pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end = input;
             self
         }
         /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
-        pub fn fixed_price(mut self, inp: f64) -> Self {
-            self.fixed_price = Some(inp);
+        pub fn fixed_price(mut self, input: f64) -> Self {
+            self.fixed_price = Some(input);
             self
         }
-        pub fn set_fixed_price(mut self, inp: f64) -> Self {
-            self.fixed_price = Some(inp);
+        pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.fixed_price = input;
             self
         }
         /// User specified reservation name
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-        pub fn offering_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_description = Some(inp.into());
+        pub fn offering_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_description = Some(input.into());
             self
         }
         pub fn set_offering_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.offering_description = inp;
+            self.offering_description = input;
             self
         }
         /// Unique offering ID, e.g. '87654321'
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_id = Some(inp.into());
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_id = Some(input.into());
             self
         }
-        pub fn set_offering_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = inp;
+        pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_id = input;
             self
         }
         /// Offering type, e.g. 'NO_UPFRONT'
-        pub fn offering_type(mut self, inp: crate::model::OfferingType) -> Self {
-            self.offering_type = Some(inp);
+        pub fn offering_type(mut self, input: crate::model::OfferingType) -> Self {
+            self.offering_type = Some(input);
             self
         }
         pub fn set_offering_type(
             mut self,
-            inp: std::option::Option<crate::model::OfferingType>,
+            input: std::option::Option<crate::model::OfferingType>,
         ) -> Self {
-            self.offering_type = inp;
+            self.offering_type = input;
             self
         }
         /// AWS region, e.g. 'us-west-2'
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reservation_id = Some(inp.into());
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reservation_id = Some(input.into());
             self
         }
-        pub fn set_reservation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reservation_id = inp;
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reservation_id = input;
             self
         }
         /// Resource configuration details
         pub fn resource_specification(
             mut self,
-            inp: crate::model::ReservationResourceSpecification,
+            input: crate::model::ReservationResourceSpecification,
         ) -> Self {
-            self.resource_specification = Some(inp);
+            self.resource_specification = Some(input);
             self
         }
         pub fn set_resource_specification(
             mut self,
-            inp: std::option::Option<crate::model::ReservationResourceSpecification>,
+            input: std::option::Option<crate::model::ReservationResourceSpecification>,
         ) -> Self {
-            self.resource_specification = inp;
+            self.resource_specification = input;
             self
         }
         /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
-        pub fn start(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start = Some(inp.into());
+        pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start = Some(input.into());
             self
         }
-        pub fn set_start(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start = inp;
+        pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start = input;
             self
         }
         /// Current state of reservation, e.g. 'ACTIVE'
-        pub fn state(mut self, inp: crate::model::ReservationState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::ReservationState) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::ReservationState>,
+            input: std::option::Option<crate::model::ReservationState>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
         pub fn tags(
@@ -304,20 +310,20 @@ pub mod reservation {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Recurring usage charge for each reserved resource, e.g. '157.0'
-        pub fn usage_price(mut self, inp: f64) -> Self {
-            self.usage_price = Some(inp);
+        pub fn usage_price(mut self, input: f64) -> Self {
+            self.usage_price = Some(input);
             self
         }
-        pub fn set_usage_price(mut self, inp: f64) -> Self {
-            self.usage_price = Some(inp);
+        pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.usage_price = input;
             self
         }
         /// Consumes the builder and constructs a [`Reservation`](crate::model::Reservation)
@@ -484,99 +490,102 @@ pub mod reservation_resource_specification {
     }
     impl Builder {
         /// Channel class, e.g. 'STANDARD'
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.channel_class = Some(inp);
+        pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
+            self.channel_class = Some(input);
             self
         }
         pub fn set_channel_class(
             mut self,
-            inp: std::option::Option<crate::model::ChannelClass>,
+            input: std::option::Option<crate::model::ChannelClass>,
         ) -> Self {
-            self.channel_class = inp;
+            self.channel_class = input;
             self
         }
         /// Codec, e.g. 'AVC'
-        pub fn codec(mut self, inp: crate::model::ReservationCodec) -> Self {
-            self.codec = Some(inp);
+        pub fn codec(mut self, input: crate::model::ReservationCodec) -> Self {
+            self.codec = Some(input);
             self
         }
         pub fn set_codec(
             mut self,
-            inp: std::option::Option<crate::model::ReservationCodec>,
+            input: std::option::Option<crate::model::ReservationCodec>,
         ) -> Self {
-            self.codec = inp;
+            self.codec = input;
             self
         }
         /// Maximum bitrate, e.g. 'MAX_20_MBPS'
-        pub fn maximum_bitrate(mut self, inp: crate::model::ReservationMaximumBitrate) -> Self {
-            self.maximum_bitrate = Some(inp);
+        pub fn maximum_bitrate(mut self, input: crate::model::ReservationMaximumBitrate) -> Self {
+            self.maximum_bitrate = Some(input);
             self
         }
         pub fn set_maximum_bitrate(
             mut self,
-            inp: std::option::Option<crate::model::ReservationMaximumBitrate>,
+            input: std::option::Option<crate::model::ReservationMaximumBitrate>,
         ) -> Self {
-            self.maximum_bitrate = inp;
+            self.maximum_bitrate = input;
             self
         }
         /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
-        pub fn maximum_framerate(mut self, inp: crate::model::ReservationMaximumFramerate) -> Self {
-            self.maximum_framerate = Some(inp);
+        pub fn maximum_framerate(
+            mut self,
+            input: crate::model::ReservationMaximumFramerate,
+        ) -> Self {
+            self.maximum_framerate = Some(input);
             self
         }
         pub fn set_maximum_framerate(
             mut self,
-            inp: std::option::Option<crate::model::ReservationMaximumFramerate>,
+            input: std::option::Option<crate::model::ReservationMaximumFramerate>,
         ) -> Self {
-            self.maximum_framerate = inp;
+            self.maximum_framerate = input;
             self
         }
         /// Resolution, e.g. 'HD'
-        pub fn resolution(mut self, inp: crate::model::ReservationResolution) -> Self {
-            self.resolution = Some(inp);
+        pub fn resolution(mut self, input: crate::model::ReservationResolution) -> Self {
+            self.resolution = Some(input);
             self
         }
         pub fn set_resolution(
             mut self,
-            inp: std::option::Option<crate::model::ReservationResolution>,
+            input: std::option::Option<crate::model::ReservationResolution>,
         ) -> Self {
-            self.resolution = inp;
+            self.resolution = input;
             self
         }
         /// Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-        pub fn resource_type(mut self, inp: crate::model::ReservationResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn resource_type(mut self, input: crate::model::ReservationResourceType) -> Self {
+            self.resource_type = Some(input);
             self
         }
         pub fn set_resource_type(
             mut self,
-            inp: std::option::Option<crate::model::ReservationResourceType>,
+            input: std::option::Option<crate::model::ReservationResourceType>,
         ) -> Self {
-            self.resource_type = inp;
+            self.resource_type = input;
             self
         }
         /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
-        pub fn special_feature(mut self, inp: crate::model::ReservationSpecialFeature) -> Self {
-            self.special_feature = Some(inp);
+        pub fn special_feature(mut self, input: crate::model::ReservationSpecialFeature) -> Self {
+            self.special_feature = Some(input);
             self
         }
         pub fn set_special_feature(
             mut self,
-            inp: std::option::Option<crate::model::ReservationSpecialFeature>,
+            input: std::option::Option<crate::model::ReservationSpecialFeature>,
         ) -> Self {
-            self.special_feature = inp;
+            self.special_feature = input;
             self
         }
         /// Video quality, e.g. 'STANDARD' (Outputs only)
-        pub fn video_quality(mut self, inp: crate::model::ReservationVideoQuality) -> Self {
-            self.video_quality = Some(inp);
+        pub fn video_quality(mut self, input: crate::model::ReservationVideoQuality) -> Self {
+            self.video_quality = Some(input);
             self
         }
         pub fn set_video_quality(
             mut self,
-            inp: std::option::Option<crate::model::ReservationVideoQuality>,
+            input: std::option::Option<crate::model::ReservationVideoQuality>,
         ) -> Self {
-            self.video_quality = inp;
+            self.video_quality = input;
             self
         }
         /// Consumes the builder and constructs a [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification)
@@ -1224,21 +1233,24 @@ pub mod validation_error {
     }
     impl Builder {
         /// Path to the source of the error.
-        pub fn element_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.element_path = Some(inp.into());
+        pub fn element_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.element_path = Some(input.into());
             self
         }
-        pub fn set_element_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.element_path = inp;
+        pub fn set_element_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.element_path = input;
             self
         }
         /// The error message.
-        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_message = Some(inp.into());
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
             self
         }
-        pub fn set_error_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_message = inp;
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidationError`](crate::model::ValidationError)
@@ -1315,67 +1327,67 @@ pub mod multiplex_program {
     }
     impl Builder {
         /// The MediaLive channel associated with the program.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = inp;
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// The settings for this multiplex program.
         pub fn multiplex_program_settings(
             mut self,
-            inp: crate::model::MultiplexProgramSettings,
+            input: crate::model::MultiplexProgramSettings,
         ) -> Self {
-            self.multiplex_program_settings = Some(inp);
+            self.multiplex_program_settings = Some(input);
             self
         }
         pub fn set_multiplex_program_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexProgramSettings>,
+            input: std::option::Option<crate::model::MultiplexProgramSettings>,
         ) -> Self {
-            self.multiplex_program_settings = inp;
+            self.multiplex_program_settings = input;
             self
         }
         /// The packet identifier map for this multiplex program.
         pub fn packet_identifiers_map(
             mut self,
-            inp: crate::model::MultiplexProgramPacketIdentifiersMap,
+            input: crate::model::MultiplexProgramPacketIdentifiersMap,
         ) -> Self {
-            self.packet_identifiers_map = Some(inp);
+            self.packet_identifiers_map = Some(input);
             self
         }
         pub fn set_packet_identifiers_map(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
+            input: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
         ) -> Self {
-            self.packet_identifiers_map = inp;
+            self.packet_identifiers_map = input;
             self
         }
         pub fn pipeline_details(
             mut self,
-            inp: impl Into<crate::model::MultiplexProgramPipelineDetail>,
+            input: impl Into<crate::model::MultiplexProgramPipelineDetail>,
         ) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.pipeline_details = Some(v);
             self
         }
         pub fn set_pipeline_details(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
         ) -> Self {
-            self.pipeline_details = inp;
+            self.pipeline_details = input;
             self
         }
         /// The name of the multiplex program.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.program_name = Some(inp.into());
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.program_name = Some(input.into());
             self
         }
-        pub fn set_program_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.program_name = inp;
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.program_name = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexProgram`](crate::model::MultiplexProgram)
@@ -1429,24 +1441,24 @@ pub mod multiplex_program_pipeline_detail {
     }
     impl Builder {
         /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
-        pub fn active_channel_pipeline(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.active_channel_pipeline = Some(inp.into());
+        pub fn active_channel_pipeline(mut self, input: impl Into<std::string::String>) -> Self {
+            self.active_channel_pipeline = Some(input.into());
             self
         }
         pub fn set_active_channel_pipeline(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.active_channel_pipeline = inp;
+            self.active_channel_pipeline = input;
             self
         }
         /// Identifies a specific pipeline in the multiplex.
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pipeline_id = Some(inp.into());
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pipeline_id = Some(input.into());
             self
         }
-        pub fn set_pipeline_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = inp;
+        pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_id = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail)
@@ -1562,125 +1574,125 @@ pub mod multiplex_program_packet_identifiers_map {
         pub(crate) video_pid: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn audio_pids(mut self, inp: impl Into<i32>) -> Self {
+        pub fn audio_pids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.audio_pids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.audio_pids = Some(v);
             self
         }
-        pub fn set_audio_pids(mut self, inp: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.audio_pids = inp;
+        pub fn set_audio_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.audio_pids = input;
             self
         }
-        pub fn dvb_sub_pids(mut self, inp: impl Into<i32>) -> Self {
+        pub fn dvb_sub_pids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.dvb_sub_pids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.dvb_sub_pids = Some(v);
             self
         }
-        pub fn set_dvb_sub_pids(mut self, inp: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.dvb_sub_pids = inp;
+        pub fn set_dvb_sub_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.dvb_sub_pids = input;
             self
         }
         /// Placeholder documentation for __integer
-        pub fn dvb_teletext_pid(mut self, inp: i32) -> Self {
-            self.dvb_teletext_pid = Some(inp);
+        pub fn dvb_teletext_pid(mut self, input: i32) -> Self {
+            self.dvb_teletext_pid = Some(input);
             self
         }
-        pub fn set_dvb_teletext_pid(mut self, inp: i32) -> Self {
-            self.dvb_teletext_pid = Some(inp);
-            self
-        }
-        /// Placeholder documentation for __integer
-        pub fn etv_platform_pid(mut self, inp: i32) -> Self {
-            self.etv_platform_pid = Some(inp);
-            self
-        }
-        pub fn set_etv_platform_pid(mut self, inp: i32) -> Self {
-            self.etv_platform_pid = Some(inp);
+        pub fn set_dvb_teletext_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.dvb_teletext_pid = input;
             self
         }
         /// Placeholder documentation for __integer
-        pub fn etv_signal_pid(mut self, inp: i32) -> Self {
-            self.etv_signal_pid = Some(inp);
+        pub fn etv_platform_pid(mut self, input: i32) -> Self {
+            self.etv_platform_pid = Some(input);
             self
         }
-        pub fn set_etv_signal_pid(mut self, inp: i32) -> Self {
-            self.etv_signal_pid = Some(inp);
+        pub fn set_etv_platform_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.etv_platform_pid = input;
             self
         }
-        pub fn klv_data_pids(mut self, inp: impl Into<i32>) -> Self {
+        /// Placeholder documentation for __integer
+        pub fn etv_signal_pid(mut self, input: i32) -> Self {
+            self.etv_signal_pid = Some(input);
+            self
+        }
+        pub fn set_etv_signal_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.etv_signal_pid = input;
+            self
+        }
+        pub fn klv_data_pids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.klv_data_pids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.klv_data_pids = Some(v);
             self
         }
-        pub fn set_klv_data_pids(mut self, inp: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.klv_data_pids = inp;
+        pub fn set_klv_data_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.klv_data_pids = input;
             self
         }
         /// Placeholder documentation for __integer
-        pub fn pcr_pid(mut self, inp: i32) -> Self {
-            self.pcr_pid = Some(inp);
+        pub fn pcr_pid(mut self, input: i32) -> Self {
+            self.pcr_pid = Some(input);
             self
         }
-        pub fn set_pcr_pid(mut self, inp: i32) -> Self {
-            self.pcr_pid = Some(inp);
-            self
-        }
-        /// Placeholder documentation for __integer
-        pub fn pmt_pid(mut self, inp: i32) -> Self {
-            self.pmt_pid = Some(inp);
-            self
-        }
-        pub fn set_pmt_pid(mut self, inp: i32) -> Self {
-            self.pmt_pid = Some(inp);
+        pub fn set_pcr_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.pcr_pid = input;
             self
         }
         /// Placeholder documentation for __integer
-        pub fn private_metadata_pid(mut self, inp: i32) -> Self {
-            self.private_metadata_pid = Some(inp);
+        pub fn pmt_pid(mut self, input: i32) -> Self {
+            self.pmt_pid = Some(input);
             self
         }
-        pub fn set_private_metadata_pid(mut self, inp: i32) -> Self {
-            self.private_metadata_pid = Some(inp);
+        pub fn set_pmt_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.pmt_pid = input;
             self
         }
-        pub fn scte27_pids(mut self, inp: impl Into<i32>) -> Self {
+        /// Placeholder documentation for __integer
+        pub fn private_metadata_pid(mut self, input: i32) -> Self {
+            self.private_metadata_pid = Some(input);
+            self
+        }
+        pub fn set_private_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.private_metadata_pid = input;
+            self
+        }
+        pub fn scte27_pids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.scte27_pids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.scte27_pids = Some(v);
             self
         }
-        pub fn set_scte27_pids(mut self, inp: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.scte27_pids = inp;
+        pub fn set_scte27_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.scte27_pids = input;
             self
         }
         /// Placeholder documentation for __integer
-        pub fn scte35_pid(mut self, inp: i32) -> Self {
-            self.scte35_pid = Some(inp);
+        pub fn scte35_pid(mut self, input: i32) -> Self {
+            self.scte35_pid = Some(input);
             self
         }
-        pub fn set_scte35_pid(mut self, inp: i32) -> Self {
-            self.scte35_pid = Some(inp);
-            self
-        }
-        /// Placeholder documentation for __integer
-        pub fn timed_metadata_pid(mut self, inp: i32) -> Self {
-            self.timed_metadata_pid = Some(inp);
-            self
-        }
-        pub fn set_timed_metadata_pid(mut self, inp: i32) -> Self {
-            self.timed_metadata_pid = Some(inp);
+        pub fn set_scte35_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.scte35_pid = input;
             self
         }
         /// Placeholder documentation for __integer
-        pub fn video_pid(mut self, inp: i32) -> Self {
-            self.video_pid = Some(inp);
+        pub fn timed_metadata_pid(mut self, input: i32) -> Self {
+            self.timed_metadata_pid = Some(input);
             self
         }
-        pub fn set_video_pid(mut self, inp: i32) -> Self {
-            self.video_pid = Some(inp);
+        pub fn set_timed_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.timed_metadata_pid = input;
+            self
+        }
+        /// Placeholder documentation for __integer
+        pub fn video_pid(mut self, input: i32) -> Self {
+            self.video_pid = Some(input);
+            self
+        }
+        pub fn set_video_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.video_pid = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap)
@@ -1761,52 +1773,52 @@ pub mod multiplex_program_settings {
         /// Indicates which pipeline is preferred by the multiplex for program ingest.
         pub fn preferred_channel_pipeline(
             mut self,
-            inp: crate::model::PreferredChannelPipeline,
+            input: crate::model::PreferredChannelPipeline,
         ) -> Self {
-            self.preferred_channel_pipeline = Some(inp);
+            self.preferred_channel_pipeline = Some(input);
             self
         }
         pub fn set_preferred_channel_pipeline(
             mut self,
-            inp: std::option::Option<crate::model::PreferredChannelPipeline>,
+            input: std::option::Option<crate::model::PreferredChannelPipeline>,
         ) -> Self {
-            self.preferred_channel_pipeline = inp;
+            self.preferred_channel_pipeline = input;
             self
         }
         /// Unique program number.
-        pub fn program_number(mut self, inp: i32) -> Self {
-            self.program_number = Some(inp);
+        pub fn program_number(mut self, input: i32) -> Self {
+            self.program_number = Some(input);
             self
         }
-        pub fn set_program_number(mut self, inp: i32) -> Self {
-            self.program_number = Some(inp);
+        pub fn set_program_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.program_number = input;
             self
         }
         /// Transport stream service descriptor configuration for the Multiplex program.
         pub fn service_descriptor(
             mut self,
-            inp: crate::model::MultiplexProgramServiceDescriptor,
+            input: crate::model::MultiplexProgramServiceDescriptor,
         ) -> Self {
-            self.service_descriptor = Some(inp);
+            self.service_descriptor = Some(input);
             self
         }
         pub fn set_service_descriptor(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexProgramServiceDescriptor>,
+            input: std::option::Option<crate::model::MultiplexProgramServiceDescriptor>,
         ) -> Self {
-            self.service_descriptor = inp;
+            self.service_descriptor = input;
             self
         }
         /// Program video settings configuration.
-        pub fn video_settings(mut self, inp: crate::model::MultiplexVideoSettings) -> Self {
-            self.video_settings = Some(inp);
+        pub fn video_settings(mut self, input: crate::model::MultiplexVideoSettings) -> Self {
+            self.video_settings = Some(input);
             self
         }
         pub fn set_video_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexVideoSettings>,
+            input: std::option::Option<crate::model::MultiplexVideoSettings>,
         ) -> Self {
-            self.video_settings = inp;
+            self.video_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings)
@@ -1863,28 +1875,28 @@ pub mod multiplex_video_settings {
     impl Builder {
         /// The constant bitrate configuration for the video encode.
         /// When this field is defined, StatmuxSettings must be undefined.
-        pub fn constant_bitrate(mut self, inp: i32) -> Self {
-            self.constant_bitrate = Some(inp);
+        pub fn constant_bitrate(mut self, input: i32) -> Self {
+            self.constant_bitrate = Some(input);
             self
         }
-        pub fn set_constant_bitrate(mut self, inp: i32) -> Self {
-            self.constant_bitrate = Some(inp);
+        pub fn set_constant_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.constant_bitrate = input;
             self
         }
         /// Statmux rate control settings.
         /// When this field is defined, ConstantBitrate must be undefined.
         pub fn statmux_settings(
             mut self,
-            inp: crate::model::MultiplexStatmuxVideoSettings,
+            input: crate::model::MultiplexStatmuxVideoSettings,
         ) -> Self {
-            self.statmux_settings = Some(inp);
+            self.statmux_settings = Some(input);
             self
         }
         pub fn set_statmux_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexStatmuxVideoSettings>,
+            input: std::option::Option<crate::model::MultiplexStatmuxVideoSettings>,
         ) -> Self {
-            self.statmux_settings = inp;
+            self.statmux_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings)
@@ -1941,30 +1953,30 @@ pub mod multiplex_statmux_video_settings {
     }
     impl Builder {
         /// Maximum statmux bitrate.
-        pub fn maximum_bitrate(mut self, inp: i32) -> Self {
-            self.maximum_bitrate = Some(inp);
+        pub fn maximum_bitrate(mut self, input: i32) -> Self {
+            self.maximum_bitrate = Some(input);
             self
         }
-        pub fn set_maximum_bitrate(mut self, inp: i32) -> Self {
-            self.maximum_bitrate = Some(inp);
+        pub fn set_maximum_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_bitrate = input;
             self
         }
         /// Minimum statmux bitrate.
-        pub fn minimum_bitrate(mut self, inp: i32) -> Self {
-            self.minimum_bitrate = Some(inp);
+        pub fn minimum_bitrate(mut self, input: i32) -> Self {
+            self.minimum_bitrate = Some(input);
             self
         }
-        pub fn set_minimum_bitrate(mut self, inp: i32) -> Self {
-            self.minimum_bitrate = Some(inp);
+        pub fn set_minimum_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_bitrate = input;
             self
         }
         /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.  Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
-        pub fn priority(mut self, inp: i32) -> Self {
-            self.priority = Some(inp);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
             self
         }
-        pub fn set_priority(mut self, inp: i32) -> Self {
-            self.priority = Some(inp);
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings)
@@ -2016,21 +2028,24 @@ pub mod multiplex_program_service_descriptor {
     }
     impl Builder {
         /// Name of the provider.
-        pub fn provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.provider_name = Some(inp.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.provider_name = Some(input.into());
             self
         }
-        pub fn set_provider_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.provider_name = inp;
+        pub fn set_provider_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.provider_name = input;
             self
         }
         /// Name of the service.
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor)
@@ -2197,98 +2212,101 @@ pub mod multiplex {
     }
     impl Builder {
         /// The unique arn of the multiplex.
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         pub fn destinations(
             mut self,
-            inp: impl Into<crate::model::MultiplexOutputDestination>,
+            input: impl Into<crate::model::MultiplexOutputDestination>,
         ) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
         /// The unique id of the multiplex.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Configuration for a multiplex event.
-        pub fn multiplex_settings(mut self, inp: crate::model::MultiplexSettings) -> Self {
-            self.multiplex_settings = Some(inp);
+        pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
+            self.multiplex_settings = Some(input);
             self
         }
         pub fn set_multiplex_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexSettings>,
+            input: std::option::Option<crate::model::MultiplexSettings>,
         ) -> Self {
-            self.multiplex_settings = inp;
+            self.multiplex_settings = input;
             self
         }
         /// The name of the multiplex.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// The number of currently healthy pipelines.
-        pub fn pipelines_running_count(mut self, inp: i32) -> Self {
-            self.pipelines_running_count = Some(inp);
+        pub fn pipelines_running_count(mut self, input: i32) -> Self {
+            self.pipelines_running_count = Some(input);
             self
         }
-        pub fn set_pipelines_running_count(mut self, inp: i32) -> Self {
-            self.pipelines_running_count = Some(inp);
+        pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pipelines_running_count = input;
             self
         }
         /// The number of programs in the multiplex.
-        pub fn program_count(mut self, inp: i32) -> Self {
-            self.program_count = Some(inp);
+        pub fn program_count(mut self, input: i32) -> Self {
+            self.program_count = Some(input);
             self
         }
-        pub fn set_program_count(mut self, inp: i32) -> Self {
-            self.program_count = Some(inp);
+        pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.program_count = input;
             self
         }
         /// The current state of the multiplex.
-        pub fn state(mut self, inp: crate::model::MultiplexState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::MultiplexState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::MultiplexState>) -> Self {
-            self.state = inp;
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::MultiplexState>,
+        ) -> Self {
+            self.state = input;
             self
         }
         pub fn tags(
@@ -2303,11 +2321,11 @@ pub mod multiplex {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`Multiplex`](crate::model::Multiplex)
@@ -2462,39 +2480,45 @@ pub mod multiplex_settings {
     }
     impl Builder {
         /// Maximum video buffer delay in milliseconds.
-        pub fn maximum_video_buffer_delay_milliseconds(mut self, inp: i32) -> Self {
-            self.maximum_video_buffer_delay_milliseconds = Some(inp);
+        pub fn maximum_video_buffer_delay_milliseconds(mut self, input: i32) -> Self {
+            self.maximum_video_buffer_delay_milliseconds = Some(input);
             self
         }
-        pub fn set_maximum_video_buffer_delay_milliseconds(mut self, inp: i32) -> Self {
-            self.maximum_video_buffer_delay_milliseconds = Some(inp);
+        pub fn set_maximum_video_buffer_delay_milliseconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.maximum_video_buffer_delay_milliseconds = input;
             self
         }
         /// Transport stream bit rate.
-        pub fn transport_stream_bitrate(mut self, inp: i32) -> Self {
-            self.transport_stream_bitrate = Some(inp);
+        pub fn transport_stream_bitrate(mut self, input: i32) -> Self {
+            self.transport_stream_bitrate = Some(input);
             self
         }
-        pub fn set_transport_stream_bitrate(mut self, inp: i32) -> Self {
-            self.transport_stream_bitrate = Some(inp);
+        pub fn set_transport_stream_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.transport_stream_bitrate = input;
             self
         }
         /// Transport stream ID.
-        pub fn transport_stream_id(mut self, inp: i32) -> Self {
-            self.transport_stream_id = Some(inp);
+        pub fn transport_stream_id(mut self, input: i32) -> Self {
+            self.transport_stream_id = Some(input);
             self
         }
-        pub fn set_transport_stream_id(mut self, inp: i32) -> Self {
-            self.transport_stream_id = Some(inp);
+        pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.transport_stream_id = input;
             self
         }
         /// Transport stream reserved bit rate.
-        pub fn transport_stream_reserved_bitrate(mut self, inp: i32) -> Self {
-            self.transport_stream_reserved_bitrate = Some(inp);
+        pub fn transport_stream_reserved_bitrate(mut self, input: i32) -> Self {
+            self.transport_stream_reserved_bitrate = Some(input);
             self
         }
-        pub fn set_transport_stream_reserved_bitrate(mut self, inp: i32) -> Self {
-            self.transport_stream_reserved_bitrate = Some(inp);
+        pub fn set_transport_stream_reserved_bitrate(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.transport_stream_reserved_bitrate = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexSettings`](crate::model::MultiplexSettings)
@@ -2549,16 +2573,18 @@ pub mod multiplex_output_destination {
         /// Multiplex MediaConnect output destination settings.
         pub fn media_connect_settings(
             mut self,
-            inp: crate::model::MultiplexMediaConnectOutputDestinationSettings,
+            input: crate::model::MultiplexMediaConnectOutputDestinationSettings,
         ) -> Self {
-            self.media_connect_settings = Some(inp);
+            self.media_connect_settings = Some(input);
             self
         }
         pub fn set_media_connect_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexMediaConnectOutputDestinationSettings>,
+            input: std::option::Option<
+                crate::model::MultiplexMediaConnectOutputDestinationSettings,
+            >,
         ) -> Self {
-            self.media_connect_settings = inp;
+            self.media_connect_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination)
@@ -2602,15 +2628,15 @@ pub mod multiplex_media_connect_output_destination_settings {
     }
     impl Builder {
         /// The MediaConnect entitlement ARN available as a Flow source.
-        pub fn entitlement_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.entitlement_arn = Some(inp.into());
+        pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entitlement_arn = Some(input.into());
             self
         }
         pub fn set_entitlement_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.entitlement_arn = inp;
+            self.entitlement_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings)
@@ -2688,46 +2714,46 @@ pub mod input_security_group {
     }
     impl Builder {
         /// Unique ARN of Input Security Group
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// The Id of the Input Security Group
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
-        pub fn inputs(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.inputs = Some(v);
             self
         }
         pub fn set_inputs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inputs = inp;
+            self.inputs = input;
             self
         }
         /// The current state of the Input Security Group.
-        pub fn state(mut self, inp: crate::model::InputSecurityGroupState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::InputSecurityGroupState) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::InputSecurityGroupState>,
+            input: std::option::Option<crate::model::InputSecurityGroupState>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
         pub fn tags(
@@ -2742,24 +2768,27 @@ pub mod input_security_group {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
-        pub fn whitelist_rules(mut self, inp: impl Into<crate::model::InputWhitelistRule>) -> Self {
+        pub fn whitelist_rules(
+            mut self,
+            input: impl Into<crate::model::InputWhitelistRule>,
+        ) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.whitelist_rules = Some(v);
             self
         }
         pub fn set_whitelist_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
         ) -> Self {
-            self.whitelist_rules = inp;
+            self.whitelist_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`InputSecurityGroup`](crate::model::InputSecurityGroup)
@@ -2808,12 +2837,12 @@ pub mod input_whitelist_rule {
     }
     impl Builder {
         /// The IPv4 CIDR that's whitelisted.
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cidr = Some(inp.into());
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr = Some(input.into());
             self
         }
-        pub fn set_cidr(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cidr = inp;
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr = input;
             self
         }
         /// Consumes the builder and constructs a [`InputWhitelistRule`](crate::model::InputWhitelistRule)
@@ -2918,12 +2947,12 @@ pub mod input_whitelist_rule_cidr {
     }
     impl Builder {
         /// The IPv4 CIDR to whitelist.
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cidr = Some(inp.into());
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr = Some(input.into());
             self
         }
-        pub fn set_cidr(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cidr = inp;
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr = input;
             self
         }
         /// Consumes the builder and constructs a [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr)
@@ -3007,87 +3036,87 @@ pub mod input_device_uhd_settings {
     }
     impl Builder {
         /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
-        pub fn active_input(mut self, inp: crate::model::InputDeviceActiveInput) -> Self {
-            self.active_input = Some(inp);
+        pub fn active_input(mut self, input: crate::model::InputDeviceActiveInput) -> Self {
+            self.active_input = Some(input);
             self
         }
         pub fn set_active_input(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceActiveInput>,
+            input: std::option::Option<crate::model::InputDeviceActiveInput>,
         ) -> Self {
-            self.active_input = inp;
+            self.active_input = input;
             self
         }
         /// The source at the input device that is currently active. You can specify this source.
-        pub fn configured_input(mut self, inp: crate::model::InputDeviceConfiguredInput) -> Self {
-            self.configured_input = Some(inp);
+        pub fn configured_input(mut self, input: crate::model::InputDeviceConfiguredInput) -> Self {
+            self.configured_input = Some(input);
             self
         }
         pub fn set_configured_input(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceConfiguredInput>,
+            input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
         ) -> Self {
-            self.configured_input = inp;
+            self.configured_input = input;
             self
         }
         /// The state of the input device.
-        pub fn device_state(mut self, inp: crate::model::InputDeviceState) -> Self {
-            self.device_state = Some(inp);
+        pub fn device_state(mut self, input: crate::model::InputDeviceState) -> Self {
+            self.device_state = Some(input);
             self
         }
         pub fn set_device_state(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceState>,
+            input: std::option::Option<crate::model::InputDeviceState>,
         ) -> Self {
-            self.device_state = inp;
+            self.device_state = input;
             self
         }
         /// The frame rate of the video source.
-        pub fn framerate(mut self, inp: f64) -> Self {
-            self.framerate = Some(inp);
+        pub fn framerate(mut self, input: f64) -> Self {
+            self.framerate = Some(input);
             self
         }
-        pub fn set_framerate(mut self, inp: f64) -> Self {
-            self.framerate = Some(inp);
+        pub fn set_framerate(mut self, input: std::option::Option<f64>) -> Self {
+            self.framerate = input;
             self
         }
         /// The height of the video source, in pixels.
-        pub fn height(mut self, inp: i32) -> Self {
-            self.height = Some(inp);
+        pub fn height(mut self, input: i32) -> Self {
+            self.height = Some(input);
             self
         }
-        pub fn set_height(mut self, inp: i32) -> Self {
-            self.height = Some(inp);
+        pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.height = input;
             self
         }
         /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
-        pub fn max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn max_bitrate(mut self, input: i32) -> Self {
+            self.max_bitrate = Some(input);
             self
         }
-        pub fn set_max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_bitrate = input;
             self
         }
         /// The scan type of the video source.
-        pub fn scan_type(mut self, inp: crate::model::InputDeviceScanType) -> Self {
-            self.scan_type = Some(inp);
+        pub fn scan_type(mut self, input: crate::model::InputDeviceScanType) -> Self {
+            self.scan_type = Some(input);
             self
         }
         pub fn set_scan_type(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceScanType>,
+            input: std::option::Option<crate::model::InputDeviceScanType>,
         ) -> Self {
-            self.scan_type = inp;
+            self.scan_type = input;
             self
         }
         /// The width of the video source, in pixels.
-        pub fn width(mut self, inp: i32) -> Self {
-            self.width = Some(inp);
+        pub fn width(mut self, input: i32) -> Self {
+            self.width = Some(input);
             self
         }
-        pub fn set_width(mut self, inp: i32) -> Self {
-            self.width = Some(inp);
+        pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.width = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings)
@@ -3446,56 +3475,56 @@ pub mod input_device_network_settings {
         pub(crate) subnet_mask: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn dns_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn dns_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.dns_addresses = Some(v);
             self
         }
         pub fn set_dns_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.dns_addresses = inp;
+            self.dns_addresses = input;
             self
         }
         /// The network gateway IP address.
-        pub fn gateway(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.gateway = Some(inp.into());
+        pub fn gateway(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gateway = Some(input.into());
             self
         }
-        pub fn set_gateway(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.gateway = inp;
+        pub fn set_gateway(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway = input;
             self
         }
         /// The IP address of the input device.
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip_address = Some(inp.into());
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
             self
         }
-        pub fn set_ip_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = inp;
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
             self
         }
         /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
-        pub fn ip_scheme(mut self, inp: crate::model::InputDeviceIpScheme) -> Self {
-            self.ip_scheme = Some(inp);
+        pub fn ip_scheme(mut self, input: crate::model::InputDeviceIpScheme) -> Self {
+            self.ip_scheme = Some(input);
             self
         }
         pub fn set_ip_scheme(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceIpScheme>,
+            input: std::option::Option<crate::model::InputDeviceIpScheme>,
         ) -> Self {
-            self.ip_scheme = inp;
+            self.ip_scheme = input;
             self
         }
         /// The subnet mask of the input device.
-        pub fn subnet_mask(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subnet_mask = Some(inp.into());
+        pub fn subnet_mask(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_mask = Some(input.into());
             self
         }
-        pub fn set_subnet_mask(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subnet_mask = inp;
+        pub fn set_subnet_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subnet_mask = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings)
@@ -3642,87 +3671,87 @@ pub mod input_device_hd_settings {
     }
     impl Builder {
         /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
-        pub fn active_input(mut self, inp: crate::model::InputDeviceActiveInput) -> Self {
-            self.active_input = Some(inp);
+        pub fn active_input(mut self, input: crate::model::InputDeviceActiveInput) -> Self {
+            self.active_input = Some(input);
             self
         }
         pub fn set_active_input(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceActiveInput>,
+            input: std::option::Option<crate::model::InputDeviceActiveInput>,
         ) -> Self {
-            self.active_input = inp;
+            self.active_input = input;
             self
         }
         /// The source at the input device that is currently active. You can specify this source.
-        pub fn configured_input(mut self, inp: crate::model::InputDeviceConfiguredInput) -> Self {
-            self.configured_input = Some(inp);
+        pub fn configured_input(mut self, input: crate::model::InputDeviceConfiguredInput) -> Self {
+            self.configured_input = Some(input);
             self
         }
         pub fn set_configured_input(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceConfiguredInput>,
+            input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
         ) -> Self {
-            self.configured_input = inp;
+            self.configured_input = input;
             self
         }
         /// The state of the input device.
-        pub fn device_state(mut self, inp: crate::model::InputDeviceState) -> Self {
-            self.device_state = Some(inp);
+        pub fn device_state(mut self, input: crate::model::InputDeviceState) -> Self {
+            self.device_state = Some(input);
             self
         }
         pub fn set_device_state(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceState>,
+            input: std::option::Option<crate::model::InputDeviceState>,
         ) -> Self {
-            self.device_state = inp;
+            self.device_state = input;
             self
         }
         /// The frame rate of the video source.
-        pub fn framerate(mut self, inp: f64) -> Self {
-            self.framerate = Some(inp);
+        pub fn framerate(mut self, input: f64) -> Self {
+            self.framerate = Some(input);
             self
         }
-        pub fn set_framerate(mut self, inp: f64) -> Self {
-            self.framerate = Some(inp);
+        pub fn set_framerate(mut self, input: std::option::Option<f64>) -> Self {
+            self.framerate = input;
             self
         }
         /// The height of the video source, in pixels.
-        pub fn height(mut self, inp: i32) -> Self {
-            self.height = Some(inp);
+        pub fn height(mut self, input: i32) -> Self {
+            self.height = Some(input);
             self
         }
-        pub fn set_height(mut self, inp: i32) -> Self {
-            self.height = Some(inp);
+        pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.height = input;
             self
         }
         /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
-        pub fn max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn max_bitrate(mut self, input: i32) -> Self {
+            self.max_bitrate = Some(input);
             self
         }
-        pub fn set_max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_bitrate = input;
             self
         }
         /// The scan type of the video source.
-        pub fn scan_type(mut self, inp: crate::model::InputDeviceScanType) -> Self {
-            self.scan_type = Some(inp);
+        pub fn scan_type(mut self, input: crate::model::InputDeviceScanType) -> Self {
+            self.scan_type = Some(input);
             self
         }
         pub fn set_scan_type(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceScanType>,
+            input: std::option::Option<crate::model::InputDeviceScanType>,
         ) -> Self {
-            self.scan_type = inp;
+            self.scan_type = input;
             self
         }
         /// The width of the video source, in pixels.
-        pub fn width(mut self, inp: i32) -> Self {
-            self.width = Some(inp);
+        pub fn width(mut self, input: i32) -> Self {
+            self.width = Some(input);
             self
         }
-        pub fn set_width(mut self, inp: i32) -> Self {
-            self.width = Some(inp);
+        pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.width = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings)
@@ -3950,24 +3979,24 @@ pub mod input_device_configurable_settings {
     }
     impl Builder {
         /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
-        pub fn configured_input(mut self, inp: crate::model::InputDeviceConfiguredInput) -> Self {
-            self.configured_input = Some(inp);
+        pub fn configured_input(mut self, input: crate::model::InputDeviceConfiguredInput) -> Self {
+            self.configured_input = Some(input);
             self
         }
         pub fn set_configured_input(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceConfiguredInput>,
+            input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
         ) -> Self {
-            self.configured_input = inp;
+            self.configured_input = input;
             self
         }
         /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
-        pub fn max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn max_bitrate(mut self, input: i32) -> Self {
+            self.max_bitrate = Some(input);
             self
         }
-        pub fn set_max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_bitrate = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings)
@@ -4109,168 +4138,171 @@ pub mod input {
     }
     impl Builder {
         /// The Unique ARN of the input (generated, immutable).
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
-        pub fn attached_channels(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn attached_channels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attached_channels.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attached_channels = Some(v);
             self
         }
         pub fn set_attached_channels(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.attached_channels = inp;
+            self.attached_channels = input;
             self
         }
-        pub fn destinations(mut self, inp: impl Into<crate::model::InputDestination>) -> Self {
+        pub fn destinations(mut self, input: impl Into<crate::model::InputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
         /// The generated ID of the input (unique for user account, immutable).
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
         /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
-        pub fn input_class(mut self, inp: crate::model::InputClass) -> Self {
-            self.input_class = Some(inp);
+        pub fn input_class(mut self, input: crate::model::InputClass) -> Self {
+            self.input_class = Some(input);
             self
         }
         pub fn set_input_class(
             mut self,
-            inp: std::option::Option<crate::model::InputClass>,
+            input: std::option::Option<crate::model::InputClass>,
         ) -> Self {
-            self.input_class = inp;
+            self.input_class = input;
             self
         }
-        pub fn input_devices(mut self, inp: impl Into<crate::model::InputDeviceSettings>) -> Self {
+        pub fn input_devices(
+            mut self,
+            input: impl Into<crate::model::InputDeviceSettings>,
+        ) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_devices = Some(v);
             self
         }
         pub fn set_input_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
         ) -> Self {
-            self.input_devices = inp;
+            self.input_devices = input;
             self
         }
-        pub fn input_partner_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn input_partner_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_partner_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_partner_ids = Some(v);
             self
         }
         pub fn set_input_partner_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.input_partner_ids = inp;
+            self.input_partner_ids = input;
             self
         }
         /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
         /// during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
-        pub fn input_source_type(mut self, inp: crate::model::InputSourceType) -> Self {
-            self.input_source_type = Some(inp);
+        pub fn input_source_type(mut self, input: crate::model::InputSourceType) -> Self {
+            self.input_source_type = Some(input);
             self
         }
         pub fn set_input_source_type(
             mut self,
-            inp: std::option::Option<crate::model::InputSourceType>,
+            input: std::option::Option<crate::model::InputSourceType>,
         ) -> Self {
-            self.input_source_type = inp;
+            self.input_source_type = input;
             self
         }
         pub fn media_connect_flows(
             mut self,
-            inp: impl Into<crate::model::MediaConnectFlow>,
+            input: impl Into<crate::model::MediaConnectFlow>,
         ) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.media_connect_flows = Some(v);
             self
         }
         pub fn set_media_connect_flows(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
         ) -> Self {
-            self.media_connect_flows = inp;
+            self.media_connect_flows = input;
             self
         }
         /// The user-assigned name (This is a mutable value).
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_groups = Some(v);
             self
         }
         pub fn set_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.security_groups = inp;
+            self.security_groups = input;
             self
         }
-        pub fn sources(mut self, inp: impl Into<crate::model::InputSource>) -> Self {
+        pub fn sources(mut self, input: impl Into<crate::model::InputSource>) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.sources = Some(v);
             self
         }
         pub fn set_sources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputSource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputSource>>,
         ) -> Self {
-            self.sources = inp;
+            self.sources = input;
             self
         }
         /// Placeholder documentation for InputState
-        pub fn state(mut self, inp: crate::model::InputState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::InputState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::InputState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::InputState>) -> Self {
+            self.state = input;
             self
         }
         pub fn tags(
@@ -4285,20 +4317,20 @@ pub mod input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Placeholder documentation for InputType
-        pub fn r#type(mut self, inp: crate::model::InputType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::InputType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::InputType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::InputType>) -> Self {
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`Input`](crate::model::Input)
@@ -4514,31 +4546,34 @@ pub mod input_source {
     }
     impl Builder {
         /// The key used to extract the password from EC2 Parameter store.
-        pub fn password_param(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password_param = Some(inp.into());
+        pub fn password_param(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password_param = Some(input.into());
             self
         }
-        pub fn set_password_param(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password_param = inp;
+        pub fn set_password_param(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.password_param = input;
             self
         }
         /// This represents the customer's source URL where stream is
         /// pulled from.
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// The username for the input source.
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.username = Some(inp.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
             self
         }
-        pub fn set_username(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.username = inp;
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
             self
         }
         /// Consumes the builder and constructs a [`InputSource`](crate::model::InputSource)
@@ -4584,12 +4619,12 @@ pub mod media_connect_flow {
     }
     impl Builder {
         /// The unique ARN of the MediaConnect Flow being used as a source.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.flow_arn = Some(inp.into());
+        pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_arn = Some(input.into());
             self
         }
-        pub fn set_flow_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = inp;
+        pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`MediaConnectFlow`](crate::model::MediaConnectFlow)
@@ -4692,12 +4727,12 @@ pub mod input_device_settings {
     }
     impl Builder {
         /// The unique ID for the device.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDeviceSettings`](crate::model::InputDeviceSettings)
@@ -4817,43 +4852,43 @@ pub mod input_destination {
     impl Builder {
         /// The system-generated static IP address of endpoint.
         /// It remains fixed for the lifetime of the input.
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip = Some(inp.into());
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip = Some(input.into());
             self
         }
-        pub fn set_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ip = inp;
+        pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip = input;
             self
         }
         /// The port number for the input.
-        pub fn port(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.port = Some(inp.into());
+        pub fn port(mut self, input: impl Into<std::string::String>) -> Self {
+            self.port = Some(input.into());
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port = input;
             self
         }
         /// This represents the endpoint that the customer stream will be
         /// pushed to.
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// The properties for a VPC type input destination.
-        pub fn vpc(mut self, inp: crate::model::InputDestinationVpc) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::InputDestinationVpc) -> Self {
+            self.vpc = Some(input);
             self
         }
         pub fn set_vpc(
             mut self,
-            inp: std::option::Option<crate::model::InputDestinationVpc>,
+            input: std::option::Option<crate::model::InputDestinationVpc>,
         ) -> Self {
-            self.vpc = inp;
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDestination`](crate::model::InputDestination)
@@ -4906,27 +4941,27 @@ pub mod input_destination_vpc {
     }
     impl Builder {
         /// The availability zone of the Input destination.
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// The network interface ID of the Input destination in the VPC.
-        pub fn network_interface_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_interface_id = Some(inp.into());
+        pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_interface_id = Some(input.into());
             self
         }
         pub fn set_network_interface_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.network_interface_id = inp;
+            self.network_interface_id = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDestinationVpc`](crate::model::InputDestinationVpc)
@@ -4984,31 +5019,34 @@ pub mod input_source_request {
     }
     impl Builder {
         /// The key used to extract the password from EC2 Parameter store.
-        pub fn password_param(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password_param = Some(inp.into());
+        pub fn password_param(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password_param = Some(input.into());
             self
         }
-        pub fn set_password_param(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password_param = inp;
+        pub fn set_password_param(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.password_param = input;
             self
         }
         /// This represents the customer's source URL where stream is
         /// pulled from.
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// The username for the input source.
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.username = Some(inp.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
             self
         }
-        pub fn set_username(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.username = inp;
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
             self
         }
         /// Consumes the builder and constructs a [`InputSourceRequest`](crate::model::InputSourceRequest)
@@ -5054,12 +5092,12 @@ pub mod media_connect_flow_request {
     }
     impl Builder {
         /// The ARN of the MediaConnect Flow that you want to use as a source.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.flow_arn = Some(inp.into());
+        pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_arn = Some(input.into());
             self
         }
-        pub fn set_flow_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = inp;
+        pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest)
@@ -5103,12 +5141,12 @@ pub mod input_device_request {
     }
     impl Builder {
         /// The unique ID for the device.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDeviceRequest`](crate::model::InputDeviceRequest)
@@ -5152,12 +5190,12 @@ pub mod input_destination_request {
     impl Builder {
         /// A unique name for the location the RTMP stream is being pushed
         /// to.
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDestinationRequest`](crate::model::InputDestinationRequest)
@@ -5307,169 +5345,175 @@ pub mod channel {
     }
     impl Builder {
         /// The unique arn of the channel.
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(mut self, inp: crate::model::CdiInputSpecification) -> Self {
-            self.cdi_input_specification = Some(inp);
+        pub fn cdi_input_specification(
+            mut self,
+            input: crate::model::CdiInputSpecification,
+        ) -> Self {
+            self.cdi_input_specification = Some(input);
             self
         }
         pub fn set_cdi_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::CdiInputSpecification>,
+            input: std::option::Option<crate::model::CdiInputSpecification>,
         ) -> Self {
-            self.cdi_input_specification = inp;
+            self.cdi_input_specification = input;
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.channel_class = Some(inp);
+        pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
+            self.channel_class = Some(input);
             self
         }
         pub fn set_channel_class(
             mut self,
-            inp: std::option::Option<crate::model::ChannelClass>,
+            input: std::option::Option<crate::model::ChannelClass>,
         ) -> Self {
-            self.channel_class = inp;
+            self.channel_class = input;
             self
         }
-        pub fn destinations(mut self, inp: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
         pub fn egress_endpoints(
             mut self,
-            inp: impl Into<crate::model::ChannelEgressEndpoint>,
+            input: impl Into<crate::model::ChannelEgressEndpoint>,
         ) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.egress_endpoints = Some(v);
             self
         }
         pub fn set_egress_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
         ) -> Self {
-            self.egress_endpoints = inp;
+            self.egress_endpoints = input;
             self
         }
         /// Encoder Settings
-        pub fn encoder_settings(mut self, inp: crate::model::EncoderSettings) -> Self {
-            self.encoder_settings = Some(inp);
+        pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
+            self.encoder_settings = Some(input);
             self
         }
         pub fn set_encoder_settings(
             mut self,
-            inp: std::option::Option<crate::model::EncoderSettings>,
+            input: std::option::Option<crate::model::EncoderSettings>,
         ) -> Self {
-            self.encoder_settings = inp;
+            self.encoder_settings = input;
             self
         }
         /// The unique id of the channel.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
-        pub fn input_attachments(mut self, inp: impl Into<crate::model::InputAttachment>) -> Self {
+        pub fn input_attachments(
+            mut self,
+            input: impl Into<crate::model::InputAttachment>,
+        ) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_attachments = Some(v);
             self
         }
         pub fn set_input_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         ) -> Self {
-            self.input_attachments = inp;
+            self.input_attachments = input;
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn input_specification(mut self, inp: crate::model::InputSpecification) -> Self {
-            self.input_specification = Some(inp);
+        pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
+            self.input_specification = Some(input);
             self
         }
         pub fn set_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::InputSpecification>,
+            input: std::option::Option<crate::model::InputSpecification>,
         ) -> Self {
-            self.input_specification = inp;
+            self.input_specification = input;
             self
         }
         /// The log level being written to CloudWatch Logs.
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.log_level = Some(inp);
+        pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.log_level = Some(input);
             self
         }
-        pub fn set_log_level(mut self, inp: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = inp;
+        pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
+            self.log_level = input;
             self
         }
         /// The name of the channel. (user-mutable)
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
-        pub fn pipeline_details(mut self, inp: impl Into<crate::model::PipelineDetail>) -> Self {
+        pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.pipeline_details = Some(v);
             self
         }
         pub fn set_pipeline_details(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
         ) -> Self {
-            self.pipeline_details = inp;
+            self.pipeline_details = input;
             self
         }
         /// The number of currently healthy pipelines.
-        pub fn pipelines_running_count(mut self, inp: i32) -> Self {
-            self.pipelines_running_count = Some(inp);
+        pub fn pipelines_running_count(mut self, input: i32) -> Self {
+            self.pipelines_running_count = Some(input);
             self
         }
-        pub fn set_pipelines_running_count(mut self, inp: i32) -> Self {
-            self.pipelines_running_count = Some(inp);
+        pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pipelines_running_count = input;
             self
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// Placeholder documentation for ChannelState
-        pub fn state(mut self, inp: crate::model::ChannelState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::ChannelState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::ChannelState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
+            self.state = input;
             self
         }
         pub fn tags(
@@ -5484,23 +5528,23 @@ pub mod channel {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Settings for VPC output
-        pub fn vpc(mut self, inp: crate::model::VpcOutputSettingsDescription) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VpcOutputSettingsDescription) -> Self {
+            self.vpc = Some(input);
             self
         }
         pub fn set_vpc(
             mut self,
-            inp: std::option::Option<crate::model::VpcOutputSettingsDescription>,
+            input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
         ) -> Self {
-            self.vpc = inp;
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`Channel`](crate::model::Channel)
@@ -5580,56 +5624,56 @@ pub mod vpc_output_settings_description {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
-        pub fn network_interface_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.network_interface_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_interface_ids = Some(v);
             self
         }
         pub fn set_network_interface_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.network_interface_ids = inp;
+            self.network_interface_ids = input;
             self
         }
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
         pub fn set_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.security_group_ids = inp;
+            self.security_group_ids = input;
             self
         }
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
         pub fn set_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.subnet_ids = inp;
+            self.subnet_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription)
@@ -5796,66 +5840,69 @@ pub mod pipeline_detail {
     }
     impl Builder {
         /// The name of the active input attachment currently being ingested by this pipeline.
-        pub fn active_input_attachment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.active_input_attachment_name = Some(inp.into());
+        pub fn active_input_attachment_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.active_input_attachment_name = Some(input.into());
             self
         }
         pub fn set_active_input_attachment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.active_input_attachment_name = inp;
+            self.active_input_attachment_name = input;
             self
         }
         /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
         pub fn active_input_switch_action_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.active_input_switch_action_name = Some(inp.into());
+            self.active_input_switch_action_name = Some(input.into());
             self
         }
         pub fn set_active_input_switch_action_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.active_input_switch_action_name = inp;
+            self.active_input_switch_action_name = input;
             self
         }
         /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
         pub fn active_motion_graphics_action_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.active_motion_graphics_action_name = Some(inp.into());
+            self.active_motion_graphics_action_name = Some(input.into());
             self
         }
         pub fn set_active_motion_graphics_action_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.active_motion_graphics_action_name = inp;
+            self.active_motion_graphics_action_name = input;
             self
         }
         /// The current URI being used for HTML5 motion graphics for this pipeline.
-        pub fn active_motion_graphics_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.active_motion_graphics_uri = Some(inp.into());
+        pub fn active_motion_graphics_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.active_motion_graphics_uri = Some(input.into());
             self
         }
         pub fn set_active_motion_graphics_uri(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.active_motion_graphics_uri = inp;
+            self.active_motion_graphics_uri = input;
             self
         }
         /// Pipeline ID
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pipeline_id = Some(inp.into());
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pipeline_id = Some(input.into());
             self
         }
-        pub fn set_pipeline_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = inp;
+        pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_id = input;
             self
         }
         /// Consumes the builder and constructs a [`PipelineDetail`](crate::model::PipelineDetail)
@@ -5981,36 +6028,36 @@ pub mod input_specification {
     }
     impl Builder {
         /// Input codec
-        pub fn codec(mut self, inp: crate::model::InputCodec) -> Self {
-            self.codec = Some(inp);
+        pub fn codec(mut self, input: crate::model::InputCodec) -> Self {
+            self.codec = Some(input);
             self
         }
-        pub fn set_codec(mut self, inp: std::option::Option<crate::model::InputCodec>) -> Self {
-            self.codec = inp;
+        pub fn set_codec(mut self, input: std::option::Option<crate::model::InputCodec>) -> Self {
+            self.codec = input;
             self
         }
         /// Maximum input bitrate, categorized coarsely
-        pub fn maximum_bitrate(mut self, inp: crate::model::InputMaximumBitrate) -> Self {
-            self.maximum_bitrate = Some(inp);
+        pub fn maximum_bitrate(mut self, input: crate::model::InputMaximumBitrate) -> Self {
+            self.maximum_bitrate = Some(input);
             self
         }
         pub fn set_maximum_bitrate(
             mut self,
-            inp: std::option::Option<crate::model::InputMaximumBitrate>,
+            input: std::option::Option<crate::model::InputMaximumBitrate>,
         ) -> Self {
-            self.maximum_bitrate = inp;
+            self.maximum_bitrate = input;
             self
         }
         /// Input resolution, categorized coarsely
-        pub fn resolution(mut self, inp: crate::model::InputResolution) -> Self {
-            self.resolution = Some(inp);
+        pub fn resolution(mut self, input: crate::model::InputResolution) -> Self {
+            self.resolution = Some(input);
             self
         }
         pub fn set_resolution(
             mut self,
-            inp: std::option::Option<crate::model::InputResolution>,
+            input: std::option::Option<crate::model::InputResolution>,
         ) -> Self {
-            self.resolution = inp;
+            self.resolution = input;
             self
         }
         /// Consumes the builder and constructs a [`InputSpecification`](crate::model::InputSpecification)
@@ -6261,49 +6308,49 @@ pub mod input_attachment {
         /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
         pub fn automatic_input_failover_settings(
             mut self,
-            inp: crate::model::AutomaticInputFailoverSettings,
+            input: crate::model::AutomaticInputFailoverSettings,
         ) -> Self {
-            self.automatic_input_failover_settings = Some(inp);
+            self.automatic_input_failover_settings = Some(input);
             self
         }
         pub fn set_automatic_input_failover_settings(
             mut self,
-            inp: std::option::Option<crate::model::AutomaticInputFailoverSettings>,
+            input: std::option::Option<crate::model::AutomaticInputFailoverSettings>,
         ) -> Self {
-            self.automatic_input_failover_settings = inp;
+            self.automatic_input_failover_settings = input;
             self
         }
         /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
-        pub fn input_attachment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_attachment_name = Some(inp.into());
+        pub fn input_attachment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_attachment_name = Some(input.into());
             self
         }
         pub fn set_input_attachment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.input_attachment_name = inp;
+            self.input_attachment_name = input;
             self
         }
         /// The ID of the input
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_id = Some(inp.into());
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_id = Some(input.into());
             self
         }
-        pub fn set_input_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.input_id = inp;
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_id = input;
             self
         }
         /// Settings of an input (caption selector, etc.)
-        pub fn input_settings(mut self, inp: crate::model::InputSettings) -> Self {
-            self.input_settings = Some(inp);
+        pub fn input_settings(mut self, input: crate::model::InputSettings) -> Self {
+            self.input_settings = Some(input);
             self
         }
         pub fn set_input_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputSettings>,
+            input: std::option::Option<crate::model::InputSettings>,
         ) -> Self {
-            self.input_settings = inp;
+            self.input_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`InputAttachment`](crate::model::InputAttachment)
@@ -6410,90 +6457,93 @@ pub mod input_settings {
         pub(crate) video_selector: std::option::Option<crate::model::VideoSelector>,
     }
     impl Builder {
-        pub fn audio_selectors(mut self, inp: impl Into<crate::model::AudioSelector>) -> Self {
+        pub fn audio_selectors(mut self, input: impl Into<crate::model::AudioSelector>) -> Self {
             let mut v = self.audio_selectors.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.audio_selectors = Some(v);
             self
         }
         pub fn set_audio_selectors(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AudioSelector>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AudioSelector>>,
         ) -> Self {
-            self.audio_selectors = inp;
+            self.audio_selectors = input;
             self
         }
-        pub fn caption_selectors(mut self, inp: impl Into<crate::model::CaptionSelector>) -> Self {
+        pub fn caption_selectors(
+            mut self,
+            input: impl Into<crate::model::CaptionSelector>,
+        ) -> Self {
             let mut v = self.caption_selectors.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.caption_selectors = Some(v);
             self
         }
         pub fn set_caption_selectors(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CaptionSelector>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CaptionSelector>>,
         ) -> Self {
-            self.caption_selectors = inp;
+            self.caption_selectors = input;
             self
         }
         /// Enable or disable the deblock filter when filtering.
-        pub fn deblock_filter(mut self, inp: crate::model::InputDeblockFilter) -> Self {
-            self.deblock_filter = Some(inp);
+        pub fn deblock_filter(mut self, input: crate::model::InputDeblockFilter) -> Self {
+            self.deblock_filter = Some(input);
             self
         }
         pub fn set_deblock_filter(
             mut self,
-            inp: std::option::Option<crate::model::InputDeblockFilter>,
+            input: std::option::Option<crate::model::InputDeblockFilter>,
         ) -> Self {
-            self.deblock_filter = inp;
+            self.deblock_filter = input;
             self
         }
         /// Enable or disable the denoise filter when filtering.
-        pub fn denoise_filter(mut self, inp: crate::model::InputDenoiseFilter) -> Self {
-            self.denoise_filter = Some(inp);
+        pub fn denoise_filter(mut self, input: crate::model::InputDenoiseFilter) -> Self {
+            self.denoise_filter = Some(input);
             self
         }
         pub fn set_denoise_filter(
             mut self,
-            inp: std::option::Option<crate::model::InputDenoiseFilter>,
+            input: std::option::Option<crate::model::InputDenoiseFilter>,
         ) -> Self {
-            self.denoise_filter = inp;
+            self.denoise_filter = input;
             self
         }
         /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
-        pub fn filter_strength(mut self, inp: i32) -> Self {
-            self.filter_strength = Some(inp);
+        pub fn filter_strength(mut self, input: i32) -> Self {
+            self.filter_strength = Some(input);
             self
         }
-        pub fn set_filter_strength(mut self, inp: i32) -> Self {
-            self.filter_strength = Some(inp);
+        pub fn set_filter_strength(mut self, input: std::option::Option<i32>) -> Self {
+            self.filter_strength = input;
             self
         }
         /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default.
         /// 1) auto - filtering will be applied depending on input type/quality
         /// 2) disabled - no filtering will be applied to the input
         /// 3) forced - filtering will be applied regardless of input type
-        pub fn input_filter(mut self, inp: crate::model::InputFilter) -> Self {
-            self.input_filter = Some(inp);
+        pub fn input_filter(mut self, input: crate::model::InputFilter) -> Self {
+            self.input_filter = Some(input);
             self
         }
         pub fn set_input_filter(
             mut self,
-            inp: std::option::Option<crate::model::InputFilter>,
+            input: std::option::Option<crate::model::InputFilter>,
         ) -> Self {
-            self.input_filter = inp;
+            self.input_filter = input;
             self
         }
         /// Input settings.
-        pub fn network_input_settings(mut self, inp: crate::model::NetworkInputSettings) -> Self {
-            self.network_input_settings = Some(inp);
+        pub fn network_input_settings(mut self, input: crate::model::NetworkInputSettings) -> Self {
+            self.network_input_settings = Some(input);
             self
         }
         pub fn set_network_input_settings(
             mut self,
-            inp: std::option::Option<crate::model::NetworkInputSettings>,
+            input: std::option::Option<crate::model::NetworkInputSettings>,
         ) -> Self {
-            self.network_input_settings = inp;
+            self.network_input_settings = input;
             self
         }
         /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
@@ -6501,40 +6551,40 @@ pub mod input_settings {
         /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
         pub fn smpte2038_data_preference(
             mut self,
-            inp: crate::model::Smpte2038DataPreference,
+            input: crate::model::Smpte2038DataPreference,
         ) -> Self {
-            self.smpte2038_data_preference = Some(inp);
+            self.smpte2038_data_preference = Some(input);
             self
         }
         pub fn set_smpte2038_data_preference(
             mut self,
-            inp: std::option::Option<crate::model::Smpte2038DataPreference>,
+            input: std::option::Option<crate::model::Smpte2038DataPreference>,
         ) -> Self {
-            self.smpte2038_data_preference = inp;
+            self.smpte2038_data_preference = input;
             self
         }
         /// Loop input if it is a file. This allows a file input to be streamed indefinitely.
-        pub fn source_end_behavior(mut self, inp: crate::model::InputSourceEndBehavior) -> Self {
-            self.source_end_behavior = Some(inp);
+        pub fn source_end_behavior(mut self, input: crate::model::InputSourceEndBehavior) -> Self {
+            self.source_end_behavior = Some(input);
             self
         }
         pub fn set_source_end_behavior(
             mut self,
-            inp: std::option::Option<crate::model::InputSourceEndBehavior>,
+            input: std::option::Option<crate::model::InputSourceEndBehavior>,
         ) -> Self {
-            self.source_end_behavior = inp;
+            self.source_end_behavior = input;
             self
         }
         /// Informs which video elementary stream to decode for input types that have multiple available.
-        pub fn video_selector(mut self, inp: crate::model::VideoSelector) -> Self {
-            self.video_selector = Some(inp);
+        pub fn video_selector(mut self, input: crate::model::VideoSelector) -> Self {
+            self.video_selector = Some(input);
             self
         }
         pub fn set_video_selector(
             mut self,
-            inp: std::option::Option<crate::model::VideoSelector>,
+            input: std::option::Option<crate::model::VideoSelector>,
         ) -> Self {
-            self.video_selector = inp;
+            self.video_selector = input;
             self
         }
         /// Consumes the builder and constructs a [`InputSettings`](crate::model::InputSettings)
@@ -6607,57 +6657,57 @@ pub mod video_selector {
     }
     impl Builder {
         /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
-        pub fn color_space(mut self, inp: crate::model::VideoSelectorColorSpace) -> Self {
-            self.color_space = Some(inp);
+        pub fn color_space(mut self, input: crate::model::VideoSelectorColorSpace) -> Self {
+            self.color_space = Some(input);
             self
         }
         pub fn set_color_space(
             mut self,
-            inp: std::option::Option<crate::model::VideoSelectorColorSpace>,
+            input: std::option::Option<crate::model::VideoSelectorColorSpace>,
         ) -> Self {
-            self.color_space = inp;
+            self.color_space = input;
             self
         }
         /// Color space settings
         pub fn color_space_settings(
             mut self,
-            inp: crate::model::VideoSelectorColorSpaceSettings,
+            input: crate::model::VideoSelectorColorSpaceSettings,
         ) -> Self {
-            self.color_space_settings = Some(inp);
+            self.color_space_settings = Some(input);
             self
         }
         pub fn set_color_space_settings(
             mut self,
-            inp: std::option::Option<crate::model::VideoSelectorColorSpaceSettings>,
+            input: std::option::Option<crate::model::VideoSelectorColorSpaceSettings>,
         ) -> Self {
-            self.color_space_settings = inp;
+            self.color_space_settings = input;
             self
         }
         /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
         pub fn color_space_usage(
             mut self,
-            inp: crate::model::VideoSelectorColorSpaceUsage,
+            input: crate::model::VideoSelectorColorSpaceUsage,
         ) -> Self {
-            self.color_space_usage = Some(inp);
+            self.color_space_usage = Some(input);
             self
         }
         pub fn set_color_space_usage(
             mut self,
-            inp: std::option::Option<crate::model::VideoSelectorColorSpaceUsage>,
+            input: std::option::Option<crate::model::VideoSelectorColorSpaceUsage>,
         ) -> Self {
-            self.color_space_usage = inp;
+            self.color_space_usage = input;
             self
         }
         /// The video selector settings.
-        pub fn selector_settings(mut self, inp: crate::model::VideoSelectorSettings) -> Self {
-            self.selector_settings = Some(inp);
+        pub fn selector_settings(mut self, input: crate::model::VideoSelectorSettings) -> Self {
+            self.selector_settings = Some(input);
             self
         }
         pub fn set_selector_settings(
             mut self,
-            inp: std::option::Option<crate::model::VideoSelectorSettings>,
+            input: std::option::Option<crate::model::VideoSelectorSettings>,
         ) -> Self {
-            self.selector_settings = inp;
+            self.selector_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`VideoSelector`](crate::model::VideoSelector)
@@ -6711,30 +6761,30 @@ pub mod video_selector_settings {
     }
     impl Builder {
         /// Video Selector Pid
-        pub fn video_selector_pid(mut self, inp: crate::model::VideoSelectorPid) -> Self {
-            self.video_selector_pid = Some(inp);
+        pub fn video_selector_pid(mut self, input: crate::model::VideoSelectorPid) -> Self {
+            self.video_selector_pid = Some(input);
             self
         }
         pub fn set_video_selector_pid(
             mut self,
-            inp: std::option::Option<crate::model::VideoSelectorPid>,
+            input: std::option::Option<crate::model::VideoSelectorPid>,
         ) -> Self {
-            self.video_selector_pid = inp;
+            self.video_selector_pid = input;
             self
         }
         /// Video Selector Program Id
         pub fn video_selector_program_id(
             mut self,
-            inp: crate::model::VideoSelectorProgramId,
+            input: crate::model::VideoSelectorProgramId,
         ) -> Self {
-            self.video_selector_program_id = Some(inp);
+            self.video_selector_program_id = Some(input);
             self
         }
         pub fn set_video_selector_program_id(
             mut self,
-            inp: std::option::Option<crate::model::VideoSelectorProgramId>,
+            input: std::option::Option<crate::model::VideoSelectorProgramId>,
         ) -> Self {
-            self.video_selector_program_id = inp;
+            self.video_selector_program_id = input;
             self
         }
         /// Consumes the builder and constructs a [`VideoSelectorSettings`](crate::model::VideoSelectorSettings)
@@ -6779,12 +6829,12 @@ pub mod video_selector_program_id {
     }
     impl Builder {
         /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
-        pub fn program_id(mut self, inp: i32) -> Self {
-            self.program_id = Some(inp);
+        pub fn program_id(mut self, input: i32) -> Self {
+            self.program_id = Some(input);
             self
         }
-        pub fn set_program_id(mut self, inp: i32) -> Self {
-            self.program_id = Some(inp);
+        pub fn set_program_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.program_id = input;
             self
         }
         /// Consumes the builder and constructs a [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId)
@@ -6828,12 +6878,12 @@ pub mod video_selector_pid {
     }
     impl Builder {
         /// Selects a specific PID from within a video source.
-        pub fn pid(mut self, inp: i32) -> Self {
-            self.pid = Some(inp);
+        pub fn pid(mut self, input: i32) -> Self {
+            self.pid = Some(input);
             self
         }
-        pub fn set_pid(mut self, inp: i32) -> Self {
-            self.pid = Some(inp);
+        pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.pid = input;
             self
         }
         /// Consumes the builder and constructs a [`VideoSelectorPid`](crate::model::VideoSelectorPid)
@@ -6934,15 +6984,15 @@ pub mod video_selector_color_space_settings {
     }
     impl Builder {
         /// Hdr10 Settings
-        pub fn hdr10_settings(mut self, inp: crate::model::Hdr10Settings) -> Self {
-            self.hdr10_settings = Some(inp);
+        pub fn hdr10_settings(mut self, input: crate::model::Hdr10Settings) -> Self {
+            self.hdr10_settings = Some(input);
             self
         }
         pub fn set_hdr10_settings(
             mut self,
-            inp: std::option::Option<crate::model::Hdr10Settings>,
+            input: std::option::Option<crate::model::Hdr10Settings>,
         ) -> Self {
-            self.hdr10_settings = inp;
+            self.hdr10_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings)
@@ -6998,23 +7048,23 @@ pub mod hdr10_settings {
         /// Maximum Content Light Level
         /// An integer metadata value defining the maximum light level, in nits,
         /// of any single pixel within an encoded HDR video stream or file.
-        pub fn max_cll(mut self, inp: i32) -> Self {
-            self.max_cll = Some(inp);
+        pub fn max_cll(mut self, input: i32) -> Self {
+            self.max_cll = Some(input);
             self
         }
-        pub fn set_max_cll(mut self, inp: i32) -> Self {
-            self.max_cll = Some(inp);
+        pub fn set_max_cll(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_cll = input;
             self
         }
         /// Maximum Frame Average Light Level
         /// An integer metadata value defining the maximum average light level, in nits,
         /// for any single frame within an encoded HDR video stream or file.
-        pub fn max_fall(mut self, inp: i32) -> Self {
-            self.max_fall = Some(inp);
+        pub fn max_fall(mut self, input: i32) -> Self {
+            self.max_fall = Some(input);
             self
         }
-        pub fn set_max_fall(mut self, inp: i32) -> Self {
-            self.max_fall = Some(inp);
+        pub fn set_max_fall(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_fall = input;
             self
         }
         /// Consumes the builder and constructs a [`Hdr10Settings`](crate::model::Hdr10Settings)
@@ -7246,30 +7296,30 @@ pub mod network_input_settings {
     }
     impl Builder {
         /// Specifies HLS input settings when the uri is for a HLS manifest.
-        pub fn hls_input_settings(mut self, inp: crate::model::HlsInputSettings) -> Self {
-            self.hls_input_settings = Some(inp);
+        pub fn hls_input_settings(mut self, input: crate::model::HlsInputSettings) -> Self {
+            self.hls_input_settings = Some(input);
             self
         }
         pub fn set_hls_input_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsInputSettings>,
+            input: std::option::Option<crate::model::HlsInputSettings>,
         ) -> Self {
-            self.hls_input_settings = inp;
+            self.hls_input_settings = input;
             self
         }
         /// Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate will be checked, but not the server's name. Certain subdomains (notably S3 buckets that use dots in the bucket name) do not strictly match the corresponding certificate's wildcard pattern and would otherwise cause the event to error. This setting is ignored for protocols that do not use https.
         pub fn server_validation(
             mut self,
-            inp: crate::model::NetworkInputServerValidation,
+            input: crate::model::NetworkInputServerValidation,
         ) -> Self {
-            self.server_validation = Some(inp);
+            self.server_validation = Some(input);
             self
         }
         pub fn set_server_validation(
             mut self,
-            inp: std::option::Option<crate::model::NetworkInputServerValidation>,
+            input: std::option::Option<crate::model::NetworkInputServerValidation>,
         ) -> Self {
-            self.server_validation = inp;
+            self.server_validation = input;
             self
         }
         /// Consumes the builder and constructs a [`NetworkInputSettings`](crate::model::NetworkInputSettings)
@@ -7393,39 +7443,39 @@ pub mod hls_input_settings {
     }
     impl Builder {
         /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen.  The bitrate is specified in bits per second, as in an HLS manifest.
-        pub fn bandwidth(mut self, inp: i32) -> Self {
-            self.bandwidth = Some(inp);
+        pub fn bandwidth(mut self, input: i32) -> Self {
+            self.bandwidth = Some(input);
             self
         }
-        pub fn set_bandwidth(mut self, inp: i32) -> Self {
-            self.bandwidth = Some(inp);
+        pub fn set_bandwidth(mut self, input: std::option::Option<i32>) -> Self {
+            self.bandwidth = input;
             self
         }
         /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment).  When not specified, the HLS input will begin with the first segment specified in the m3u8.
-        pub fn buffer_segments(mut self, inp: i32) -> Self {
-            self.buffer_segments = Some(inp);
+        pub fn buffer_segments(mut self, input: i32) -> Self {
+            self.buffer_segments = Some(input);
             self
         }
-        pub fn set_buffer_segments(mut self, inp: i32) -> Self {
-            self.buffer_segments = Some(inp);
+        pub fn set_buffer_segments(mut self, input: std::option::Option<i32>) -> Self {
+            self.buffer_segments = input;
             self
         }
         /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
-        pub fn retries(mut self, inp: i32) -> Self {
-            self.retries = Some(inp);
+        pub fn retries(mut self, input: i32) -> Self {
+            self.retries = Some(input);
             self
         }
-        pub fn set_retries(mut self, inp: i32) -> Self {
-            self.retries = Some(inp);
+        pub fn set_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.retries = input;
             self
         }
         /// The number of seconds between retries when an attempt to read a manifest or segment fails.
-        pub fn retry_interval(mut self, inp: i32) -> Self {
-            self.retry_interval = Some(inp);
+        pub fn retry_interval(mut self, input: i32) -> Self {
+            self.retry_interval = Some(input);
             self
         }
-        pub fn set_retry_interval(mut self, inp: i32) -> Self {
-            self.retry_interval = Some(inp);
+        pub fn set_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.retry_interval = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsInputSettings`](crate::model::HlsInputSettings)
@@ -7658,33 +7708,36 @@ pub mod caption_selector {
     }
     impl Builder {
         /// When specified this field indicates the three letter language code of the caption track to extract from the source.
-        pub fn language_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.language_code = Some(inp.into());
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
             self
         }
-        pub fn set_language_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.language_code = inp;
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
             self
         }
         /// Name identifier for a caption selector.  This name is used to associate this caption selector with one or more caption descriptions.  Names must be unique within an event.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Caption selector settings.
-        pub fn selector_settings(mut self, inp: crate::model::CaptionSelectorSettings) -> Self {
-            self.selector_settings = Some(inp);
+        pub fn selector_settings(mut self, input: crate::model::CaptionSelectorSettings) -> Self {
+            self.selector_settings = Some(input);
             self
         }
         pub fn set_selector_settings(
             mut self,
-            inp: std::option::Option<crate::model::CaptionSelectorSettings>,
+            input: std::option::Option<crate::model::CaptionSelectorSettings>,
         ) -> Self {
-            self.selector_settings = inp;
+            self.selector_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`CaptionSelector`](crate::model::CaptionSelector)
@@ -7771,94 +7824,97 @@ pub mod caption_selector_settings {
         /// Ancillary Source Settings
         pub fn ancillary_source_settings(
             mut self,
-            inp: crate::model::AncillarySourceSettings,
+            input: crate::model::AncillarySourceSettings,
         ) -> Self {
-            self.ancillary_source_settings = Some(inp);
+            self.ancillary_source_settings = Some(input);
             self
         }
         pub fn set_ancillary_source_settings(
             mut self,
-            inp: std::option::Option<crate::model::AncillarySourceSettings>,
+            input: std::option::Option<crate::model::AncillarySourceSettings>,
         ) -> Self {
-            self.ancillary_source_settings = inp;
+            self.ancillary_source_settings = input;
             self
         }
         /// Arib Source Settings
-        pub fn arib_source_settings(mut self, inp: crate::model::AribSourceSettings) -> Self {
-            self.arib_source_settings = Some(inp);
+        pub fn arib_source_settings(mut self, input: crate::model::AribSourceSettings) -> Self {
+            self.arib_source_settings = Some(input);
             self
         }
         pub fn set_arib_source_settings(
             mut self,
-            inp: std::option::Option<crate::model::AribSourceSettings>,
+            input: std::option::Option<crate::model::AribSourceSettings>,
         ) -> Self {
-            self.arib_source_settings = inp;
+            self.arib_source_settings = input;
             self
         }
         /// Dvb Sub Source Settings
-        pub fn dvb_sub_source_settings(mut self, inp: crate::model::DvbSubSourceSettings) -> Self {
-            self.dvb_sub_source_settings = Some(inp);
+        pub fn dvb_sub_source_settings(
+            mut self,
+            input: crate::model::DvbSubSourceSettings,
+        ) -> Self {
+            self.dvb_sub_source_settings = Some(input);
             self
         }
         pub fn set_dvb_sub_source_settings(
             mut self,
-            inp: std::option::Option<crate::model::DvbSubSourceSettings>,
+            input: std::option::Option<crate::model::DvbSubSourceSettings>,
         ) -> Self {
-            self.dvb_sub_source_settings = inp;
+            self.dvb_sub_source_settings = input;
             self
         }
         /// Embedded Source Settings
         pub fn embedded_source_settings(
             mut self,
-            inp: crate::model::EmbeddedSourceSettings,
+            input: crate::model::EmbeddedSourceSettings,
         ) -> Self {
-            self.embedded_source_settings = Some(inp);
+            self.embedded_source_settings = Some(input);
             self
         }
         pub fn set_embedded_source_settings(
             mut self,
-            inp: std::option::Option<crate::model::EmbeddedSourceSettings>,
+            input: std::option::Option<crate::model::EmbeddedSourceSettings>,
         ) -> Self {
-            self.embedded_source_settings = inp;
+            self.embedded_source_settings = input;
             self
         }
         /// Scte20 Source Settings
-        pub fn scte20_source_settings(mut self, inp: crate::model::Scte20SourceSettings) -> Self {
-            self.scte20_source_settings = Some(inp);
+        pub fn scte20_source_settings(mut self, input: crate::model::Scte20SourceSettings) -> Self {
+            self.scte20_source_settings = Some(input);
             self
         }
         pub fn set_scte20_source_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte20SourceSettings>,
+            input: std::option::Option<crate::model::Scte20SourceSettings>,
         ) -> Self {
-            self.scte20_source_settings = inp;
+            self.scte20_source_settings = input;
             self
         }
         /// Scte27 Source Settings
-        pub fn scte27_source_settings(mut self, inp: crate::model::Scte27SourceSettings) -> Self {
-            self.scte27_source_settings = Some(inp);
+        pub fn scte27_source_settings(mut self, input: crate::model::Scte27SourceSettings) -> Self {
+            self.scte27_source_settings = Some(input);
             self
         }
         pub fn set_scte27_source_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte27SourceSettings>,
+            input: std::option::Option<crate::model::Scte27SourceSettings>,
         ) -> Self {
-            self.scte27_source_settings = inp;
+            self.scte27_source_settings = input;
             self
         }
         /// Teletext Source Settings
         pub fn teletext_source_settings(
             mut self,
-            inp: crate::model::TeletextSourceSettings,
+            input: crate::model::TeletextSourceSettings,
         ) -> Self {
-            self.teletext_source_settings = Some(inp);
+            self.teletext_source_settings = Some(input);
             self
         }
         pub fn set_teletext_source_settings(
             mut self,
-            inp: std::option::Option<crate::model::TeletextSourceSettings>,
+            input: std::option::Option<crate::model::TeletextSourceSettings>,
         ) -> Self {
-            self.teletext_source_settings = inp;
+            self.teletext_source_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings)
@@ -7914,24 +7970,24 @@ pub mod teletext_source_settings {
     }
     impl Builder {
         /// Optionally defines a region where TTML style captions will be displayed
-        pub fn output_rectangle(mut self, inp: crate::model::CaptionRectangle) -> Self {
-            self.output_rectangle = Some(inp);
+        pub fn output_rectangle(mut self, input: crate::model::CaptionRectangle) -> Self {
+            self.output_rectangle = Some(input);
             self
         }
         pub fn set_output_rectangle(
             mut self,
-            inp: std::option::Option<crate::model::CaptionRectangle>,
+            input: std::option::Option<crate::model::CaptionRectangle>,
         ) -> Self {
-            self.output_rectangle = inp;
+            self.output_rectangle = input;
             self
         }
         /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
-        pub fn page_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.page_number = Some(inp.into());
+        pub fn page_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.page_number = Some(input.into());
             self
         }
-        pub fn set_page_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.page_number = inp;
+        pub fn set_page_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.page_number = input;
             self
         }
         /// Consumes the builder and constructs a [`TeletextSourceSettings`](crate::model::TeletextSourceSettings)
@@ -8005,46 +8061,46 @@ pub mod caption_rectangle {
         /// See the description in leftOffset.
         /// For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less.
         /// This field corresponds to tts:extent - Y in the TTML standard.
-        pub fn height(mut self, inp: f64) -> Self {
-            self.height = Some(inp);
+        pub fn height(mut self, input: f64) -> Self {
+            self.height = Some(input);
             self
         }
-        pub fn set_height(mut self, inp: f64) -> Self {
-            self.height = Some(inp);
+        pub fn set_height(mut self, input: std::option::Option<f64>) -> Self {
+            self.height = input;
             self
         }
         /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages.
         /// If you specify a value for one of these fields, you must specify a value for all of them.
         /// For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame.
         /// This field corresponds to tts:origin - X in the TTML standard.
-        pub fn left_offset(mut self, inp: f64) -> Self {
-            self.left_offset = Some(inp);
+        pub fn left_offset(mut self, input: f64) -> Self {
+            self.left_offset = Some(input);
             self
         }
-        pub fn set_left_offset(mut self, inp: f64) -> Self {
-            self.left_offset = Some(inp);
+        pub fn set_left_offset(mut self, input: std::option::Option<f64>) -> Self {
+            self.left_offset = input;
             self
         }
         /// See the description in leftOffset.
         /// For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame.
         /// This field corresponds to tts:origin - Y in the TTML standard.
-        pub fn top_offset(mut self, inp: f64) -> Self {
-            self.top_offset = Some(inp);
+        pub fn top_offset(mut self, input: f64) -> Self {
+            self.top_offset = Some(input);
             self
         }
-        pub fn set_top_offset(mut self, inp: f64) -> Self {
-            self.top_offset = Some(inp);
+        pub fn set_top_offset(mut self, input: std::option::Option<f64>) -> Self {
+            self.top_offset = input;
             self
         }
         /// See the description in leftOffset.
         /// For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less.
         /// This field corresponds to tts:extent - X in the TTML standard.
-        pub fn width(mut self, inp: f64) -> Self {
-            self.width = Some(inp);
+        pub fn width(mut self, input: f64) -> Self {
+            self.width = Some(input);
             self
         }
-        pub fn set_width(mut self, inp: f64) -> Self {
-            self.width = Some(inp);
+        pub fn set_width(mut self, input: std::option::Option<f64>) -> Self {
+            self.width = input;
             self
         }
         /// Consumes the builder and constructs a [`CaptionRectangle`](crate::model::CaptionRectangle)
@@ -8099,12 +8155,12 @@ pub mod scte27_source_settings {
         /// - Specify PID and omit Language: Extracts the specified PID.
         /// - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be.
         /// - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
-        pub fn pid(mut self, inp: i32) -> Self {
-            self.pid = Some(inp);
+        pub fn pid(mut self, input: i32) -> Self {
+            self.pid = Some(input);
             self
         }
-        pub fn set_pid(mut self, inp: i32) -> Self {
-            self.pid = Some(inp);
+        pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.pid = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte27SourceSettings`](crate::model::Scte27SourceSettings)
@@ -8154,24 +8210,24 @@ pub mod scte20_source_settings {
     }
     impl Builder {
         /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-        pub fn convert608_to708(mut self, inp: crate::model::Scte20Convert608To708) -> Self {
-            self.convert608_to708 = Some(inp);
+        pub fn convert608_to708(mut self, input: crate::model::Scte20Convert608To708) -> Self {
+            self.convert608_to708 = Some(input);
             self
         }
         pub fn set_convert608_to708(
             mut self,
-            inp: std::option::Option<crate::model::Scte20Convert608To708>,
+            input: std::option::Option<crate::model::Scte20Convert608To708>,
         ) -> Self {
-            self.convert608_to708 = inp;
+            self.convert608_to708 = input;
             self
         }
         /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-        pub fn source608_channel_number(mut self, inp: i32) -> Self {
-            self.source608_channel_number = Some(inp);
+        pub fn source608_channel_number(mut self, input: i32) -> Self {
+            self.source608_channel_number = Some(input);
             self
         }
-        pub fn set_source608_channel_number(mut self, inp: i32) -> Self {
-            self.source608_channel_number = Some(inp);
+        pub fn set_source608_channel_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.source608_channel_number = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte20SourceSettings`](crate::model::Scte20SourceSettings)
@@ -8291,45 +8347,45 @@ pub mod embedded_source_settings {
     }
     impl Builder {
         /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-        pub fn convert608_to708(mut self, inp: crate::model::EmbeddedConvert608To708) -> Self {
-            self.convert608_to708 = Some(inp);
+        pub fn convert608_to708(mut self, input: crate::model::EmbeddedConvert608To708) -> Self {
+            self.convert608_to708 = Some(input);
             self
         }
         pub fn set_convert608_to708(
             mut self,
-            inp: std::option::Option<crate::model::EmbeddedConvert608To708>,
+            input: std::option::Option<crate::model::EmbeddedConvert608To708>,
         ) -> Self {
-            self.convert608_to708 = inp;
+            self.convert608_to708 = input;
             self
         }
         /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
-        pub fn scte20_detection(mut self, inp: crate::model::EmbeddedScte20Detection) -> Self {
-            self.scte20_detection = Some(inp);
+        pub fn scte20_detection(mut self, input: crate::model::EmbeddedScte20Detection) -> Self {
+            self.scte20_detection = Some(input);
             self
         }
         pub fn set_scte20_detection(
             mut self,
-            inp: std::option::Option<crate::model::EmbeddedScte20Detection>,
+            input: std::option::Option<crate::model::EmbeddedScte20Detection>,
         ) -> Self {
-            self.scte20_detection = inp;
+            self.scte20_detection = input;
             self
         }
         /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-        pub fn source608_channel_number(mut self, inp: i32) -> Self {
-            self.source608_channel_number = Some(inp);
+        pub fn source608_channel_number(mut self, input: i32) -> Self {
+            self.source608_channel_number = Some(input);
             self
         }
-        pub fn set_source608_channel_number(mut self, inp: i32) -> Self {
-            self.source608_channel_number = Some(inp);
+        pub fn set_source608_channel_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.source608_channel_number = input;
             self
         }
         /// This field is unused and deprecated.
-        pub fn source608_track_number(mut self, inp: i32) -> Self {
-            self.source608_track_number = Some(inp);
+        pub fn source608_track_number(mut self, input: i32) -> Self {
+            self.source608_track_number = Some(input);
             self
         }
-        pub fn set_source608_track_number(mut self, inp: i32) -> Self {
-            self.source608_track_number = Some(inp);
+        pub fn set_source608_track_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.source608_track_number = input;
             self
         }
         /// Consumes the builder and constructs a [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings)
@@ -8490,12 +8546,12 @@ pub mod dvb_sub_source_settings {
     }
     impl Builder {
         /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
-        pub fn pid(mut self, inp: i32) -> Self {
-            self.pid = Some(inp);
+        pub fn pid(mut self, input: i32) -> Self {
+            self.pid = Some(input);
             self
         }
-        pub fn set_pid(mut self, inp: i32) -> Self {
-            self.pid = Some(inp);
+        pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.pid = input;
             self
         }
         /// Consumes the builder and constructs a [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings)
@@ -8572,12 +8628,15 @@ pub mod ancillary_source_settings {
     }
     impl Builder {
         /// Specifies the number (1 to 4) of the captions channel you want to extract from the ancillary captions. If you plan to convert the ancillary captions to another format, complete this field. If you plan to choose Embedded as the captions destination in the output (to pass through all the channels in the ancillary captions), leave this field blank because MediaLive ignores the field.
-        pub fn source_ancillary_channel_number(mut self, inp: i32) -> Self {
-            self.source_ancillary_channel_number = Some(inp);
+        pub fn source_ancillary_channel_number(mut self, input: i32) -> Self {
+            self.source_ancillary_channel_number = Some(input);
             self
         }
-        pub fn set_source_ancillary_channel_number(mut self, inp: i32) -> Self {
-            self.source_ancillary_channel_number = Some(inp);
+        pub fn set_source_ancillary_channel_number(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.source_ancillary_channel_number = input;
             self
         }
         /// Consumes the builder and constructs a [`AncillarySourceSettings`](crate::model::AncillarySourceSettings)
@@ -8629,24 +8688,24 @@ pub mod audio_selector {
     }
     impl Builder {
         /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector.  Selector names should be unique per input.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// The audio selector settings.
-        pub fn selector_settings(mut self, inp: crate::model::AudioSelectorSettings) -> Self {
-            self.selector_settings = Some(inp);
+        pub fn selector_settings(mut self, input: crate::model::AudioSelectorSettings) -> Self {
+            self.selector_settings = Some(input);
             self
         }
         pub fn set_selector_settings(
             mut self,
-            inp: std::option::Option<crate::model::AudioSelectorSettings>,
+            input: std::option::Option<crate::model::AudioSelectorSettings>,
         ) -> Self {
-            self.selector_settings = inp;
+            self.selector_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioSelector`](crate::model::AudioSelector)
@@ -8706,40 +8765,40 @@ pub mod audio_selector_settings {
         /// Audio Language Selection
         pub fn audio_language_selection(
             mut self,
-            inp: crate::model::AudioLanguageSelection,
+            input: crate::model::AudioLanguageSelection,
         ) -> Self {
-            self.audio_language_selection = Some(inp);
+            self.audio_language_selection = Some(input);
             self
         }
         pub fn set_audio_language_selection(
             mut self,
-            inp: std::option::Option<crate::model::AudioLanguageSelection>,
+            input: std::option::Option<crate::model::AudioLanguageSelection>,
         ) -> Self {
-            self.audio_language_selection = inp;
+            self.audio_language_selection = input;
             self
         }
         /// Audio Pid Selection
-        pub fn audio_pid_selection(mut self, inp: crate::model::AudioPidSelection) -> Self {
-            self.audio_pid_selection = Some(inp);
+        pub fn audio_pid_selection(mut self, input: crate::model::AudioPidSelection) -> Self {
+            self.audio_pid_selection = Some(input);
             self
         }
         pub fn set_audio_pid_selection(
             mut self,
-            inp: std::option::Option<crate::model::AudioPidSelection>,
+            input: std::option::Option<crate::model::AudioPidSelection>,
         ) -> Self {
-            self.audio_pid_selection = inp;
+            self.audio_pid_selection = input;
             self
         }
         /// Audio Track Selection
-        pub fn audio_track_selection(mut self, inp: crate::model::AudioTrackSelection) -> Self {
-            self.audio_track_selection = Some(inp);
+        pub fn audio_track_selection(mut self, input: crate::model::AudioTrackSelection) -> Self {
+            self.audio_track_selection = Some(input);
             self
         }
         pub fn set_audio_track_selection(
             mut self,
-            inp: std::option::Option<crate::model::AudioTrackSelection>,
+            input: std::option::Option<crate::model::AudioTrackSelection>,
         ) -> Self {
-            self.audio_track_selection = inp;
+            self.audio_track_selection = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioSelectorSettings`](crate::model::AudioSelectorSettings)
@@ -8784,17 +8843,17 @@ pub mod audio_track_selection {
         pub(crate) tracks: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
     }
     impl Builder {
-        pub fn tracks(mut self, inp: impl Into<crate::model::AudioTrack>) -> Self {
+        pub fn tracks(mut self, input: impl Into<crate::model::AudioTrack>) -> Self {
             let mut v = self.tracks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tracks = Some(v);
             self
         }
         pub fn set_tracks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
         ) -> Self {
-            self.tracks = inp;
+            self.tracks = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioTrackSelection`](crate::model::AudioTrackSelection)
@@ -8838,12 +8897,12 @@ pub mod audio_track {
     }
     impl Builder {
         /// 1-based integer value that maps to a specific audio track
-        pub fn track(mut self, inp: i32) -> Self {
-            self.track = Some(inp);
+        pub fn track(mut self, input: i32) -> Self {
+            self.track = Some(input);
             self
         }
-        pub fn set_track(mut self, inp: i32) -> Self {
-            self.track = Some(inp);
+        pub fn set_track(mut self, input: std::option::Option<i32>) -> Self {
+            self.track = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioTrack`](crate::model::AudioTrack)
@@ -8887,12 +8946,12 @@ pub mod audio_pid_selection {
     }
     impl Builder {
         /// Selects a specific PID from within a source.
-        pub fn pid(mut self, inp: i32) -> Self {
-            self.pid = Some(inp);
+        pub fn pid(mut self, input: i32) -> Self {
+            self.pid = Some(input);
             self
         }
-        pub fn set_pid(mut self, inp: i32) -> Self {
-            self.pid = Some(inp);
+        pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.pid = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioPidSelection`](crate::model::AudioPidSelection)
@@ -8943,27 +9002,30 @@ pub mod audio_language_selection {
     }
     impl Builder {
         /// Selects a specific three-letter language code from within an audio source.
-        pub fn language_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.language_code = Some(inp.into());
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
             self
         }
-        pub fn set_language_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.language_code = inp;
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
             self
         }
         /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
         pub fn language_selection_policy(
             mut self,
-            inp: crate::model::AudioLanguageSelectionPolicy,
+            input: crate::model::AudioLanguageSelectionPolicy,
         ) -> Self {
-            self.language_selection_policy = Some(inp);
+            self.language_selection_policy = Some(input);
             self
         }
         pub fn set_language_selection_policy(
             mut self,
-            inp: std::option::Option<crate::model::AudioLanguageSelectionPolicy>,
+            input: std::option::Option<crate::model::AudioLanguageSelectionPolicy>,
         ) -> Self {
-            self.language_selection_policy = inp;
+            self.language_selection_policy = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioLanguageSelection`](crate::model::AudioLanguageSelection)
@@ -9084,52 +9146,52 @@ pub mod automatic_input_failover_settings {
     }
     impl Builder {
         /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
-        pub fn error_clear_time_msec(mut self, inp: i32) -> Self {
-            self.error_clear_time_msec = Some(inp);
+        pub fn error_clear_time_msec(mut self, input: i32) -> Self {
+            self.error_clear_time_msec = Some(input);
             self
         }
-        pub fn set_error_clear_time_msec(mut self, inp: i32) -> Self {
-            self.error_clear_time_msec = Some(inp);
+        pub fn set_error_clear_time_msec(mut self, input: std::option::Option<i32>) -> Self {
+            self.error_clear_time_msec = input;
             self
         }
         pub fn failover_conditions(
             mut self,
-            inp: impl Into<crate::model::FailoverCondition>,
+            input: impl Into<crate::model::FailoverCondition>,
         ) -> Self {
             let mut v = self.failover_conditions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failover_conditions = Some(v);
             self
         }
         pub fn set_failover_conditions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FailoverCondition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FailoverCondition>>,
         ) -> Self {
-            self.failover_conditions = inp;
+            self.failover_conditions = input;
             self
         }
         /// Input preference when deciding which input to make active when a previously failed input has recovered.
-        pub fn input_preference(mut self, inp: crate::model::InputPreference) -> Self {
-            self.input_preference = Some(inp);
+        pub fn input_preference(mut self, input: crate::model::InputPreference) -> Self {
+            self.input_preference = Some(input);
             self
         }
         pub fn set_input_preference(
             mut self,
-            inp: std::option::Option<crate::model::InputPreference>,
+            input: std::option::Option<crate::model::InputPreference>,
         ) -> Self {
-            self.input_preference = inp;
+            self.input_preference = input;
             self
         }
         /// The input ID of the secondary input in the automatic input failover pair.
-        pub fn secondary_input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secondary_input_id = Some(inp.into());
+        pub fn secondary_input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secondary_input_id = Some(input.into());
             self
         }
         pub fn set_secondary_input_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.secondary_input_id = inp;
+            self.secondary_input_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings)
@@ -9241,16 +9303,16 @@ pub mod failover_condition {
         /// Failover condition type-specific settings.
         pub fn failover_condition_settings(
             mut self,
-            inp: crate::model::FailoverConditionSettings,
+            input: crate::model::FailoverConditionSettings,
         ) -> Self {
-            self.failover_condition_settings = Some(inp);
+            self.failover_condition_settings = Some(input);
             self
         }
         pub fn set_failover_condition_settings(
             mut self,
-            inp: std::option::Option<crate::model::FailoverConditionSettings>,
+            input: std::option::Option<crate::model::FailoverConditionSettings>,
         ) -> Self {
-            self.failover_condition_settings = inp;
+            self.failover_condition_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`FailoverCondition`](crate::model::FailoverCondition)
@@ -9311,43 +9373,46 @@ pub mod failover_condition_settings {
         /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
         pub fn audio_silence_settings(
             mut self,
-            inp: crate::model::AudioSilenceFailoverSettings,
+            input: crate::model::AudioSilenceFailoverSettings,
         ) -> Self {
-            self.audio_silence_settings = Some(inp);
+            self.audio_silence_settings = Some(input);
             self
         }
         pub fn set_audio_silence_settings(
             mut self,
-            inp: std::option::Option<crate::model::AudioSilenceFailoverSettings>,
+            input: std::option::Option<crate::model::AudioSilenceFailoverSettings>,
         ) -> Self {
-            self.audio_silence_settings = inp;
+            self.audio_silence_settings = input;
             self
         }
         /// MediaLive will perform a failover if content is not detected in this input for the specified period.
-        pub fn input_loss_settings(mut self, inp: crate::model::InputLossFailoverSettings) -> Self {
-            self.input_loss_settings = Some(inp);
+        pub fn input_loss_settings(
+            mut self,
+            input: crate::model::InputLossFailoverSettings,
+        ) -> Self {
+            self.input_loss_settings = Some(input);
             self
         }
         pub fn set_input_loss_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputLossFailoverSettings>,
+            input: std::option::Option<crate::model::InputLossFailoverSettings>,
         ) -> Self {
-            self.input_loss_settings = inp;
+            self.input_loss_settings = input;
             self
         }
         /// MediaLive will perform a failover if content is considered black for the specified period.
         pub fn video_black_settings(
             mut self,
-            inp: crate::model::VideoBlackFailoverSettings,
+            input: crate::model::VideoBlackFailoverSettings,
         ) -> Self {
-            self.video_black_settings = Some(inp);
+            self.video_black_settings = Some(input);
             self
         }
         pub fn set_video_black_settings(
             mut self,
-            inp: std::option::Option<crate::model::VideoBlackFailoverSettings>,
+            input: std::option::Option<crate::model::VideoBlackFailoverSettings>,
         ) -> Self {
-            self.video_black_settings = inp;
+            self.video_black_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`FailoverConditionSettings`](crate::model::FailoverConditionSettings)
@@ -9402,21 +9467,21 @@ pub mod video_black_failover_settings {
     }
     impl Builder {
         /// A value used in calculating the threshold below which MediaLive considers a pixel to be 'black'. For the input to be considered black, every pixel in a frame must be below this threshold. The threshold is calculated as a percentage (expressed as a decimal) of white. Therefore .1 means 10% white (or 90% black). Note how the formula works for any color depth. For example, if you set this field to 0.1 in 10-bit color depth: (1023*0.1=102.3), which means a pixel value of 102 or less is 'black'. If you set this field to .1 in an 8-bit color depth: (255*0.1=25.5), which means a pixel value of 25 or less is 'black'. The range is 0.0 to 1.0, with any number of decimal places.
-        pub fn black_detect_threshold(mut self, inp: f64) -> Self {
-            self.black_detect_threshold = Some(inp);
+        pub fn black_detect_threshold(mut self, input: f64) -> Self {
+            self.black_detect_threshold = Some(input);
             self
         }
-        pub fn set_black_detect_threshold(mut self, inp: f64) -> Self {
-            self.black_detect_threshold = Some(inp);
+        pub fn set_black_detect_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.black_detect_threshold = input;
             self
         }
         /// The amount of time (in milliseconds) that the active input must be black before automatic input failover occurs.
-        pub fn video_black_threshold_msec(mut self, inp: i32) -> Self {
-            self.video_black_threshold_msec = Some(inp);
+        pub fn video_black_threshold_msec(mut self, input: i32) -> Self {
+            self.video_black_threshold_msec = Some(input);
             self
         }
-        pub fn set_video_black_threshold_msec(mut self, inp: i32) -> Self {
-            self.video_black_threshold_msec = Some(inp);
+        pub fn set_video_black_threshold_msec(mut self, input: std::option::Option<i32>) -> Self {
+            self.video_black_threshold_msec = input;
             self
         }
         /// Consumes the builder and constructs a [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings)
@@ -9461,12 +9526,12 @@ pub mod input_loss_failover_settings {
     }
     impl Builder {
         /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
-        pub fn input_loss_threshold_msec(mut self, inp: i32) -> Self {
-            self.input_loss_threshold_msec = Some(inp);
+        pub fn input_loss_threshold_msec(mut self, input: i32) -> Self {
+            self.input_loss_threshold_msec = Some(input);
             self
         }
-        pub fn set_input_loss_threshold_msec(mut self, inp: i32) -> Self {
-            self.input_loss_threshold_msec = Some(inp);
+        pub fn set_input_loss_threshold_msec(mut self, input: std::option::Option<i32>) -> Self {
+            self.input_loss_threshold_msec = input;
             self
         }
         /// Consumes the builder and constructs a [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings)
@@ -9519,24 +9584,24 @@ pub mod audio_silence_failover_settings {
     }
     impl Builder {
         /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
-        pub fn audio_selector_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audio_selector_name = Some(inp.into());
+        pub fn audio_selector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audio_selector_name = Some(input.into());
             self
         }
         pub fn set_audio_selector_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.audio_selector_name = inp;
+            self.audio_selector_name = input;
             self
         }
         /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
-        pub fn audio_silence_threshold_msec(mut self, inp: i32) -> Self {
-            self.audio_silence_threshold_msec = Some(inp);
+        pub fn audio_silence_threshold_msec(mut self, input: i32) -> Self {
+            self.audio_silence_threshold_msec = Some(input);
             self
         }
-        pub fn set_audio_silence_threshold_msec(mut self, inp: i32) -> Self {
-            self.audio_silence_threshold_msec = Some(inp);
+        pub fn set_audio_silence_threshold_msec(mut self, input: std::option::Option<i32>) -> Self {
+            self.audio_silence_threshold_msec = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings)
@@ -9656,162 +9721,162 @@ pub mod encoder_settings {
     impl Builder {
         pub fn audio_descriptions(
             mut self,
-            inp: impl Into<crate::model::AudioDescription>,
+            input: impl Into<crate::model::AudioDescription>,
         ) -> Self {
             let mut v = self.audio_descriptions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.audio_descriptions = Some(v);
             self
         }
         pub fn set_audio_descriptions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AudioDescription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AudioDescription>>,
         ) -> Self {
-            self.audio_descriptions = inp;
+            self.audio_descriptions = input;
             self
         }
         /// Settings for ad avail blanking.
-        pub fn avail_blanking(mut self, inp: crate::model::AvailBlanking) -> Self {
-            self.avail_blanking = Some(inp);
+        pub fn avail_blanking(mut self, input: crate::model::AvailBlanking) -> Self {
+            self.avail_blanking = Some(input);
             self
         }
         pub fn set_avail_blanking(
             mut self,
-            inp: std::option::Option<crate::model::AvailBlanking>,
+            input: std::option::Option<crate::model::AvailBlanking>,
         ) -> Self {
-            self.avail_blanking = inp;
+            self.avail_blanking = input;
             self
         }
         /// Event-wide configuration settings for ad avail insertion.
-        pub fn avail_configuration(mut self, inp: crate::model::AvailConfiguration) -> Self {
-            self.avail_configuration = Some(inp);
+        pub fn avail_configuration(mut self, input: crate::model::AvailConfiguration) -> Self {
+            self.avail_configuration = Some(input);
             self
         }
         pub fn set_avail_configuration(
             mut self,
-            inp: std::option::Option<crate::model::AvailConfiguration>,
+            input: std::option::Option<crate::model::AvailConfiguration>,
         ) -> Self {
-            self.avail_configuration = inp;
+            self.avail_configuration = input;
             self
         }
         /// Settings for blackout slate.
-        pub fn blackout_slate(mut self, inp: crate::model::BlackoutSlate) -> Self {
-            self.blackout_slate = Some(inp);
+        pub fn blackout_slate(mut self, input: crate::model::BlackoutSlate) -> Self {
+            self.blackout_slate = Some(input);
             self
         }
         pub fn set_blackout_slate(
             mut self,
-            inp: std::option::Option<crate::model::BlackoutSlate>,
+            input: std::option::Option<crate::model::BlackoutSlate>,
         ) -> Self {
-            self.blackout_slate = inp;
+            self.blackout_slate = input;
             self
         }
         pub fn caption_descriptions(
             mut self,
-            inp: impl Into<crate::model::CaptionDescription>,
+            input: impl Into<crate::model::CaptionDescription>,
         ) -> Self {
             let mut v = self.caption_descriptions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.caption_descriptions = Some(v);
             self
         }
         pub fn set_caption_descriptions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CaptionDescription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CaptionDescription>>,
         ) -> Self {
-            self.caption_descriptions = inp;
+            self.caption_descriptions = input;
             self
         }
         /// Feature Activations
-        pub fn feature_activations(mut self, inp: crate::model::FeatureActivations) -> Self {
-            self.feature_activations = Some(inp);
+        pub fn feature_activations(mut self, input: crate::model::FeatureActivations) -> Self {
+            self.feature_activations = Some(input);
             self
         }
         pub fn set_feature_activations(
             mut self,
-            inp: std::option::Option<crate::model::FeatureActivations>,
+            input: std::option::Option<crate::model::FeatureActivations>,
         ) -> Self {
-            self.feature_activations = inp;
+            self.feature_activations = input;
             self
         }
         /// Configuration settings that apply to the event as a whole.
-        pub fn global_configuration(mut self, inp: crate::model::GlobalConfiguration) -> Self {
-            self.global_configuration = Some(inp);
+        pub fn global_configuration(mut self, input: crate::model::GlobalConfiguration) -> Self {
+            self.global_configuration = Some(input);
             self
         }
         pub fn set_global_configuration(
             mut self,
-            inp: std::option::Option<crate::model::GlobalConfiguration>,
+            input: std::option::Option<crate::model::GlobalConfiguration>,
         ) -> Self {
-            self.global_configuration = inp;
+            self.global_configuration = input;
             self
         }
         /// Settings for motion graphics.
         pub fn motion_graphics_configuration(
             mut self,
-            inp: crate::model::MotionGraphicsConfiguration,
+            input: crate::model::MotionGraphicsConfiguration,
         ) -> Self {
-            self.motion_graphics_configuration = Some(inp);
+            self.motion_graphics_configuration = Some(input);
             self
         }
         pub fn set_motion_graphics_configuration(
             mut self,
-            inp: std::option::Option<crate::model::MotionGraphicsConfiguration>,
+            input: std::option::Option<crate::model::MotionGraphicsConfiguration>,
         ) -> Self {
-            self.motion_graphics_configuration = inp;
+            self.motion_graphics_configuration = input;
             self
         }
         /// Nielsen configuration settings.
-        pub fn nielsen_configuration(mut self, inp: crate::model::NielsenConfiguration) -> Self {
-            self.nielsen_configuration = Some(inp);
+        pub fn nielsen_configuration(mut self, input: crate::model::NielsenConfiguration) -> Self {
+            self.nielsen_configuration = Some(input);
             self
         }
         pub fn set_nielsen_configuration(
             mut self,
-            inp: std::option::Option<crate::model::NielsenConfiguration>,
+            input: std::option::Option<crate::model::NielsenConfiguration>,
         ) -> Self {
-            self.nielsen_configuration = inp;
+            self.nielsen_configuration = input;
             self
         }
-        pub fn output_groups(mut self, inp: impl Into<crate::model::OutputGroup>) -> Self {
+        pub fn output_groups(mut self, input: impl Into<crate::model::OutputGroup>) -> Self {
             let mut v = self.output_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.output_groups = Some(v);
             self
         }
         pub fn set_output_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
         ) -> Self {
-            self.output_groups = inp;
+            self.output_groups = input;
             self
         }
         /// Contains settings used to acquire and adjust timecode information from inputs.
-        pub fn timecode_config(mut self, inp: crate::model::TimecodeConfig) -> Self {
-            self.timecode_config = Some(inp);
+        pub fn timecode_config(mut self, input: crate::model::TimecodeConfig) -> Self {
+            self.timecode_config = Some(input);
             self
         }
         pub fn set_timecode_config(
             mut self,
-            inp: std::option::Option<crate::model::TimecodeConfig>,
+            input: std::option::Option<crate::model::TimecodeConfig>,
         ) -> Self {
-            self.timecode_config = inp;
+            self.timecode_config = input;
             self
         }
         pub fn video_descriptions(
             mut self,
-            inp: impl Into<crate::model::VideoDescription>,
+            input: impl Into<crate::model::VideoDescription>,
         ) -> Self {
             let mut v = self.video_descriptions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.video_descriptions = Some(v);
             self
         }
         pub fn set_video_descriptions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VideoDescription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VideoDescription>>,
         ) -> Self {
-            self.video_descriptions = inp;
+            self.video_descriptions = input;
             self
         }
         /// Consumes the builder and constructs a [`EncoderSettings`](crate::model::EncoderSettings)
@@ -9906,81 +9971,81 @@ pub mod video_description {
     }
     impl Builder {
         /// Video codec settings.
-        pub fn codec_settings(mut self, inp: crate::model::VideoCodecSettings) -> Self {
-            self.codec_settings = Some(inp);
+        pub fn codec_settings(mut self, input: crate::model::VideoCodecSettings) -> Self {
+            self.codec_settings = Some(input);
             self
         }
         pub fn set_codec_settings(
             mut self,
-            inp: std::option::Option<crate::model::VideoCodecSettings>,
+            input: std::option::Option<crate::model::VideoCodecSettings>,
         ) -> Self {
-            self.codec_settings = inp;
+            self.codec_settings = input;
             self
         }
         /// Output video height, in pixels. Must be an even number. For most codecs, you can leave this field and width blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
-        pub fn height(mut self, inp: i32) -> Self {
-            self.height = Some(inp);
+        pub fn height(mut self, input: i32) -> Self {
+            self.height = Some(input);
             self
         }
-        pub fn set_height(mut self, inp: i32) -> Self {
-            self.height = Some(inp);
+        pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.height = input;
             self
         }
         /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description.  Description names should be unique within this Live Event.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH.
         /// RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE.
         /// PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output.
         /// NONE: MediaLive does not clip the input video and does not include the AFD values in the output
-        pub fn respond_to_afd(mut self, inp: crate::model::VideoDescriptionRespondToAfd) -> Self {
-            self.respond_to_afd = Some(inp);
+        pub fn respond_to_afd(mut self, input: crate::model::VideoDescriptionRespondToAfd) -> Self {
+            self.respond_to_afd = Some(input);
             self
         }
         pub fn set_respond_to_afd(
             mut self,
-            inp: std::option::Option<crate::model::VideoDescriptionRespondToAfd>,
+            input: std::option::Option<crate::model::VideoDescriptionRespondToAfd>,
         ) -> Self {
-            self.respond_to_afd = inp;
+            self.respond_to_afd = input;
             self
         }
         /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
         pub fn scaling_behavior(
             mut self,
-            inp: crate::model::VideoDescriptionScalingBehavior,
+            input: crate::model::VideoDescriptionScalingBehavior,
         ) -> Self {
-            self.scaling_behavior = Some(inp);
+            self.scaling_behavior = Some(input);
             self
         }
         pub fn set_scaling_behavior(
             mut self,
-            inp: std::option::Option<crate::model::VideoDescriptionScalingBehavior>,
+            input: std::option::Option<crate::model::VideoDescriptionScalingBehavior>,
         ) -> Self {
-            self.scaling_behavior = inp;
+            self.scaling_behavior = input;
             self
         }
         /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
-        pub fn sharpness(mut self, inp: i32) -> Self {
-            self.sharpness = Some(inp);
+        pub fn sharpness(mut self, input: i32) -> Self {
+            self.sharpness = Some(input);
             self
         }
-        pub fn set_sharpness(mut self, inp: i32) -> Self {
-            self.sharpness = Some(inp);
+        pub fn set_sharpness(mut self, input: std::option::Option<i32>) -> Self {
+            self.sharpness = input;
             self
         }
         /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
-        pub fn width(mut self, inp: i32) -> Self {
-            self.width = Some(inp);
+        pub fn width(mut self, input: i32) -> Self {
+            self.width = Some(input);
             self
         }
-        pub fn set_width(mut self, inp: i32) -> Self {
-            self.width = Some(inp);
+        pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.width = input;
             self
         }
         /// Consumes the builder and constructs a [`VideoDescription`](crate::model::VideoDescription)
@@ -10165,51 +10230,51 @@ pub mod video_codec_settings {
     }
     impl Builder {
         /// Frame Capture Settings
-        pub fn frame_capture_settings(mut self, inp: crate::model::FrameCaptureSettings) -> Self {
-            self.frame_capture_settings = Some(inp);
+        pub fn frame_capture_settings(mut self, input: crate::model::FrameCaptureSettings) -> Self {
+            self.frame_capture_settings = Some(input);
             self
         }
         pub fn set_frame_capture_settings(
             mut self,
-            inp: std::option::Option<crate::model::FrameCaptureSettings>,
+            input: std::option::Option<crate::model::FrameCaptureSettings>,
         ) -> Self {
-            self.frame_capture_settings = inp;
+            self.frame_capture_settings = input;
             self
         }
         /// H264 Settings
-        pub fn h264_settings(mut self, inp: crate::model::H264Settings) -> Self {
-            self.h264_settings = Some(inp);
+        pub fn h264_settings(mut self, input: crate::model::H264Settings) -> Self {
+            self.h264_settings = Some(input);
             self
         }
         pub fn set_h264_settings(
             mut self,
-            inp: std::option::Option<crate::model::H264Settings>,
+            input: std::option::Option<crate::model::H264Settings>,
         ) -> Self {
-            self.h264_settings = inp;
+            self.h264_settings = input;
             self
         }
         /// H265 Settings
-        pub fn h265_settings(mut self, inp: crate::model::H265Settings) -> Self {
-            self.h265_settings = Some(inp);
+        pub fn h265_settings(mut self, input: crate::model::H265Settings) -> Self {
+            self.h265_settings = Some(input);
             self
         }
         pub fn set_h265_settings(
             mut self,
-            inp: std::option::Option<crate::model::H265Settings>,
+            input: std::option::Option<crate::model::H265Settings>,
         ) -> Self {
-            self.h265_settings = inp;
+            self.h265_settings = input;
             self
         }
         /// Mpeg2 Settings
-        pub fn mpeg2_settings(mut self, inp: crate::model::Mpeg2Settings) -> Self {
-            self.mpeg2_settings = Some(inp);
+        pub fn mpeg2_settings(mut self, input: crate::model::Mpeg2Settings) -> Self {
+            self.mpeg2_settings = Some(input);
             self
         }
         pub fn set_mpeg2_settings(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2Settings>,
+            input: std::option::Option<crate::model::Mpeg2Settings>,
         ) -> Self {
-            self.mpeg2_settings = inp;
+            self.mpeg2_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`VideoCodecSettings`](crate::model::VideoCodecSettings)
@@ -10363,177 +10428,177 @@ pub mod mpeg2_settings {
         /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
         pub fn adaptive_quantization(
             mut self,
-            inp: crate::model::Mpeg2AdaptiveQuantization,
+            input: crate::model::Mpeg2AdaptiveQuantization,
         ) -> Self {
-            self.adaptive_quantization = Some(inp);
+            self.adaptive_quantization = Some(input);
             self
         }
         pub fn set_adaptive_quantization(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2AdaptiveQuantization>,
+            input: std::option::Option<crate::model::Mpeg2AdaptiveQuantization>,
         ) -> Self {
-            self.adaptive_quantization = inp;
+            self.adaptive_quantization = input;
             self
         }
         /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO.
         /// AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid).
         /// FIXED: MediaLive will use the value you specify in fixedAFD.
-        pub fn afd_signaling(mut self, inp: crate::model::AfdSignaling) -> Self {
-            self.afd_signaling = Some(inp);
+        pub fn afd_signaling(mut self, input: crate::model::AfdSignaling) -> Self {
+            self.afd_signaling = Some(input);
             self
         }
         pub fn set_afd_signaling(
             mut self,
-            inp: std::option::Option<crate::model::AfdSignaling>,
+            input: std::option::Option<crate::model::AfdSignaling>,
         ) -> Self {
-            self.afd_signaling = inp;
+            self.afd_signaling = input;
             self
         }
         /// Specifies whether to include the color space metadata. The metadata describes the color space that applies to the video (the colorSpace field). We recommend that you insert the metadata.
-        pub fn color_metadata(mut self, inp: crate::model::Mpeg2ColorMetadata) -> Self {
-            self.color_metadata = Some(inp);
+        pub fn color_metadata(mut self, input: crate::model::Mpeg2ColorMetadata) -> Self {
+            self.color_metadata = Some(input);
             self
         }
         pub fn set_color_metadata(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2ColorMetadata>,
+            input: std::option::Option<crate::model::Mpeg2ColorMetadata>,
         ) -> Self {
-            self.color_metadata = inp;
+            self.color_metadata = input;
             self
         }
         /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide.
         /// PASSTHROUGH: Keep the color space of the input content - do not convert it.
         /// AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
-        pub fn color_space(mut self, inp: crate::model::Mpeg2ColorSpace) -> Self {
-            self.color_space = Some(inp);
+        pub fn color_space(mut self, input: crate::model::Mpeg2ColorSpace) -> Self {
+            self.color_space = Some(input);
             self
         }
         pub fn set_color_space(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2ColorSpace>,
+            input: std::option::Option<crate::model::Mpeg2ColorSpace>,
         ) -> Self {
-            self.color_space = inp;
+            self.color_space = input;
             self
         }
         /// Sets the pixel aspect ratio for the encode.
-        pub fn display_aspect_ratio(mut self, inp: crate::model::Mpeg2DisplayRatio) -> Self {
-            self.display_aspect_ratio = Some(inp);
+        pub fn display_aspect_ratio(mut self, input: crate::model::Mpeg2DisplayRatio) -> Self {
+            self.display_aspect_ratio = Some(input);
             self
         }
         pub fn set_display_aspect_ratio(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2DisplayRatio>,
+            input: std::option::Option<crate::model::Mpeg2DisplayRatio>,
         ) -> Self {
-            self.display_aspect_ratio = inp;
+            self.display_aspect_ratio = input;
             self
         }
         /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied.
         /// TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean.
         /// When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise.
         /// When the content is reasonably clean, the filter tends to decrease the bitrate.
-        pub fn filter_settings(mut self, inp: crate::model::Mpeg2FilterSettings) -> Self {
-            self.filter_settings = Some(inp);
+        pub fn filter_settings(mut self, input: crate::model::Mpeg2FilterSettings) -> Self {
+            self.filter_settings = Some(input);
             self
         }
         pub fn set_filter_settings(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2FilterSettings>,
+            input: std::option::Option<crate::model::Mpeg2FilterSettings>,
         ) -> Self {
-            self.filter_settings = inp;
+            self.filter_settings = input;
             self
         }
         /// Complete this field only when afdSignaling is set to FIXED. Enter the AFD value (4 bits) to write on all frames of the video encode.
-        pub fn fixed_afd(mut self, inp: crate::model::FixedAfd) -> Self {
-            self.fixed_afd = Some(inp);
+        pub fn fixed_afd(mut self, input: crate::model::FixedAfd) -> Self {
+            self.fixed_afd = Some(input);
             self
         }
-        pub fn set_fixed_afd(mut self, inp: std::option::Option<crate::model::FixedAfd>) -> Self {
-            self.fixed_afd = inp;
+        pub fn set_fixed_afd(mut self, input: std::option::Option<crate::model::FixedAfd>) -> Self {
+            self.fixed_afd = input;
             self
         }
         /// description": "The framerate denominator. For example, 1001. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
-        pub fn framerate_denominator(mut self, inp: i32) -> Self {
-            self.framerate_denominator = Some(inp);
+        pub fn framerate_denominator(mut self, input: i32) -> Self {
+            self.framerate_denominator = Some(input);
             self
         }
-        pub fn set_framerate_denominator(mut self, inp: i32) -> Self {
-            self.framerate_denominator = Some(inp);
+        pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
+            self.framerate_denominator = input;
             self
         }
         /// The framerate numerator. For example, 24000. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
-        pub fn framerate_numerator(mut self, inp: i32) -> Self {
-            self.framerate_numerator = Some(inp);
+        pub fn framerate_numerator(mut self, input: i32) -> Self {
+            self.framerate_numerator = Some(input);
             self
         }
-        pub fn set_framerate_numerator(mut self, inp: i32) -> Self {
-            self.framerate_numerator = Some(inp);
+        pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
+            self.framerate_numerator = input;
             self
         }
         /// MPEG2: default is open GOP.
-        pub fn gop_closed_cadence(mut self, inp: i32) -> Self {
-            self.gop_closed_cadence = Some(inp);
+        pub fn gop_closed_cadence(mut self, input: i32) -> Self {
+            self.gop_closed_cadence = Some(input);
             self
         }
-        pub fn set_gop_closed_cadence(mut self, inp: i32) -> Self {
-            self.gop_closed_cadence = Some(inp);
+        pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
+            self.gop_closed_cadence = input;
             self
         }
         /// Relates to the GOP structure. The number of B-frames between reference frames. If you do not know what a B-frame is, use the default.
-        pub fn gop_num_b_frames(mut self, inp: i32) -> Self {
-            self.gop_num_b_frames = Some(inp);
+        pub fn gop_num_b_frames(mut self, input: i32) -> Self {
+            self.gop_num_b_frames = Some(input);
             self
         }
-        pub fn set_gop_num_b_frames(mut self, inp: i32) -> Self {
-            self.gop_num_b_frames = Some(inp);
+        pub fn set_gop_num_b_frames(mut self, input: std::option::Option<i32>) -> Self {
+            self.gop_num_b_frames = input;
             self
         }
         /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default.
         /// If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1.
         /// If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
-        pub fn gop_size(mut self, inp: f64) -> Self {
-            self.gop_size = Some(inp);
+        pub fn gop_size(mut self, input: f64) -> Self {
+            self.gop_size = Some(input);
             self
         }
-        pub fn set_gop_size(mut self, inp: f64) -> Self {
-            self.gop_size = Some(inp);
+        pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
+            self.gop_size = input;
             self
         }
         /// Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count.
-        pub fn gop_size_units(mut self, inp: crate::model::Mpeg2GopSizeUnits) -> Self {
-            self.gop_size_units = Some(inp);
+        pub fn gop_size_units(mut self, input: crate::model::Mpeg2GopSizeUnits) -> Self {
+            self.gop_size_units = Some(input);
             self
         }
         pub fn set_gop_size_units(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2GopSizeUnits>,
+            input: std::option::Option<crate::model::Mpeg2GopSizeUnits>,
         ) -> Self {
-            self.gop_size_units = inp;
+            self.gop_size_units = input;
             self
         }
         /// Set the scan type of the output to PROGRESSIVE or INTERLACED (top field first).
-        pub fn scan_type(mut self, inp: crate::model::Mpeg2ScanType) -> Self {
-            self.scan_type = Some(inp);
+        pub fn scan_type(mut self, input: crate::model::Mpeg2ScanType) -> Self {
+            self.scan_type = Some(input);
             self
         }
         pub fn set_scan_type(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2ScanType>,
+            input: std::option::Option<crate::model::Mpeg2ScanType>,
         ) -> Self {
-            self.scan_type = inp;
+            self.scan_type = input;
             self
         }
         /// Relates to the GOP structure. If you do not know what GOP is, use the default.
         /// FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames.
         /// DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
-        pub fn subgop_length(mut self, inp: crate::model::Mpeg2SubGopLength) -> Self {
-            self.subgop_length = Some(inp);
+        pub fn subgop_length(mut self, input: crate::model::Mpeg2SubGopLength) -> Self {
+            self.subgop_length = Some(input);
             self
         }
         pub fn set_subgop_length(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2SubGopLength>,
+            input: std::option::Option<crate::model::Mpeg2SubGopLength>,
         ) -> Self {
-            self.subgop_length = inp;
+            self.subgop_length = input;
             self
         }
         /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide.
@@ -10541,16 +10606,16 @@ pub mod mpeg2_settings {
         /// GOP_TIMECODE: Include timecode metadata in the GOP header.
         pub fn timecode_insertion(
             mut self,
-            inp: crate::model::Mpeg2TimecodeInsertionBehavior,
+            input: crate::model::Mpeg2TimecodeInsertionBehavior,
         ) -> Self {
-            self.timecode_insertion = Some(inp);
+            self.timecode_insertion = Some(input);
             self
         }
         pub fn set_timecode_insertion(
             mut self,
-            inp: std::option::Option<crate::model::Mpeg2TimecodeInsertionBehavior>,
+            input: std::option::Option<crate::model::Mpeg2TimecodeInsertionBehavior>,
         ) -> Self {
-            self.timecode_insertion = inp;
+            self.timecode_insertion = input;
             self
         }
         /// Consumes the builder and constructs a [`Mpeg2Settings`](crate::model::Mpeg2Settings)
@@ -10924,16 +10989,16 @@ pub mod mpeg2_filter_settings {
         /// Temporal Filter Settings
         pub fn temporal_filter_settings(
             mut self,
-            inp: crate::model::TemporalFilterSettings,
+            input: crate::model::TemporalFilterSettings,
         ) -> Self {
-            self.temporal_filter_settings = Some(inp);
+            self.temporal_filter_settings = Some(input);
             self
         }
         pub fn set_temporal_filter_settings(
             mut self,
-            inp: std::option::Option<crate::model::TemporalFilterSettings>,
+            input: std::option::Option<crate::model::TemporalFilterSettings>,
         ) -> Self {
-            self.temporal_filter_settings = inp;
+            self.temporal_filter_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings)
@@ -10991,28 +11056,28 @@ pub mod temporal_filter_settings {
         /// - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
         pub fn post_filter_sharpening(
             mut self,
-            inp: crate::model::TemporalFilterPostFilterSharpening,
+            input: crate::model::TemporalFilterPostFilterSharpening,
         ) -> Self {
-            self.post_filter_sharpening = Some(inp);
+            self.post_filter_sharpening = Some(input);
             self
         }
         pub fn set_post_filter_sharpening(
             mut self,
-            inp: std::option::Option<crate::model::TemporalFilterPostFilterSharpening>,
+            input: std::option::Option<crate::model::TemporalFilterPostFilterSharpening>,
         ) -> Self {
-            self.post_filter_sharpening = inp;
+            self.post_filter_sharpening = input;
             self
         }
         /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
-        pub fn strength(mut self, inp: crate::model::TemporalFilterStrength) -> Self {
-            self.strength = Some(inp);
+        pub fn strength(mut self, input: crate::model::TemporalFilterStrength) -> Self {
+            self.strength = Some(input);
             self
         }
         pub fn set_strength(
             mut self,
-            inp: std::option::Option<crate::model::TemporalFilterStrength>,
+            input: std::option::Option<crate::model::TemporalFilterStrength>,
         ) -> Self {
-            self.strength = inp;
+            self.strength = input;
             self
         }
         /// Consumes the builder and constructs a [`TemporalFilterSettings`](crate::model::TemporalFilterSettings)
@@ -11709,249 +11774,252 @@ pub mod h265_settings {
         /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
         pub fn adaptive_quantization(
             mut self,
-            inp: crate::model::H265AdaptiveQuantization,
+            input: crate::model::H265AdaptiveQuantization,
         ) -> Self {
-            self.adaptive_quantization = Some(inp);
+            self.adaptive_quantization = Some(input);
             self
         }
         pub fn set_adaptive_quantization(
             mut self,
-            inp: std::option::Option<crate::model::H265AdaptiveQuantization>,
+            input: std::option::Option<crate::model::H265AdaptiveQuantization>,
         ) -> Self {
-            self.adaptive_quantization = inp;
+            self.adaptive_quantization = input;
             self
         }
         /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
-        pub fn afd_signaling(mut self, inp: crate::model::AfdSignaling) -> Self {
-            self.afd_signaling = Some(inp);
+        pub fn afd_signaling(mut self, input: crate::model::AfdSignaling) -> Self {
+            self.afd_signaling = Some(input);
             self
         }
         pub fn set_afd_signaling(
             mut self,
-            inp: std::option::Option<crate::model::AfdSignaling>,
+            input: std::option::Option<crate::model::AfdSignaling>,
         ) -> Self {
-            self.afd_signaling = inp;
+            self.afd_signaling = input;
             self
         }
         /// Whether or not EML should insert an Alternative Transfer Function SEI message to support backwards compatibility with non-HDR decoders and displays.
         pub fn alternative_transfer_function(
             mut self,
-            inp: crate::model::H265AlternativeTransferFunction,
+            input: crate::model::H265AlternativeTransferFunction,
         ) -> Self {
-            self.alternative_transfer_function = Some(inp);
+            self.alternative_transfer_function = Some(input);
             self
         }
         pub fn set_alternative_transfer_function(
             mut self,
-            inp: std::option::Option<crate::model::H265AlternativeTransferFunction>,
+            input: std::option::Option<crate::model::H265AlternativeTransferFunction>,
         ) -> Self {
-            self.alternative_transfer_function = inp;
+            self.alternative_transfer_function = input;
             self
         }
         /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
-        pub fn bitrate(mut self, inp: i32) -> Self {
-            self.bitrate = Some(inp);
+        pub fn bitrate(mut self, input: i32) -> Self {
+            self.bitrate = Some(input);
             self
         }
-        pub fn set_bitrate(mut self, inp: i32) -> Self {
-            self.bitrate = Some(inp);
+        pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.bitrate = input;
             self
         }
         /// Size of buffer (HRD buffer model) in bits.
-        pub fn buf_size(mut self, inp: i32) -> Self {
-            self.buf_size = Some(inp);
+        pub fn buf_size(mut self, input: i32) -> Self {
+            self.buf_size = Some(input);
             self
         }
-        pub fn set_buf_size(mut self, inp: i32) -> Self {
-            self.buf_size = Some(inp);
+        pub fn set_buf_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.buf_size = input;
             self
         }
         /// Includes colorspace metadata in the output.
-        pub fn color_metadata(mut self, inp: crate::model::H265ColorMetadata) -> Self {
-            self.color_metadata = Some(inp);
+        pub fn color_metadata(mut self, input: crate::model::H265ColorMetadata) -> Self {
+            self.color_metadata = Some(input);
             self
         }
         pub fn set_color_metadata(
             mut self,
-            inp: std::option::Option<crate::model::H265ColorMetadata>,
+            input: std::option::Option<crate::model::H265ColorMetadata>,
         ) -> Self {
-            self.color_metadata = inp;
+            self.color_metadata = input;
             self
         }
         /// Color Space settings
-        pub fn color_space_settings(mut self, inp: crate::model::H265ColorSpaceSettings) -> Self {
-            self.color_space_settings = Some(inp);
+        pub fn color_space_settings(mut self, input: crate::model::H265ColorSpaceSettings) -> Self {
+            self.color_space_settings = Some(input);
             self
         }
         pub fn set_color_space_settings(
             mut self,
-            inp: std::option::Option<crate::model::H265ColorSpaceSettings>,
+            input: std::option::Option<crate::model::H265ColorSpaceSettings>,
         ) -> Self {
-            self.color_space_settings = inp;
+            self.color_space_settings = input;
             self
         }
         /// Optional filters that you can apply to an encode.
-        pub fn filter_settings(mut self, inp: crate::model::H265FilterSettings) -> Self {
-            self.filter_settings = Some(inp);
+        pub fn filter_settings(mut self, input: crate::model::H265FilterSettings) -> Self {
+            self.filter_settings = Some(input);
             self
         }
         pub fn set_filter_settings(
             mut self,
-            inp: std::option::Option<crate::model::H265FilterSettings>,
+            input: std::option::Option<crate::model::H265FilterSettings>,
         ) -> Self {
-            self.filter_settings = inp;
+            self.filter_settings = input;
             self
         }
         /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
-        pub fn fixed_afd(mut self, inp: crate::model::FixedAfd) -> Self {
-            self.fixed_afd = Some(inp);
+        pub fn fixed_afd(mut self, input: crate::model::FixedAfd) -> Self {
+            self.fixed_afd = Some(input);
             self
         }
-        pub fn set_fixed_afd(mut self, inp: std::option::Option<crate::model::FixedAfd>) -> Self {
-            self.fixed_afd = inp;
+        pub fn set_fixed_afd(mut self, input: std::option::Option<crate::model::FixedAfd>) -> Self {
+            self.fixed_afd = input;
             self
         }
         /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
-        pub fn flicker_aq(mut self, inp: crate::model::H265FlickerAq) -> Self {
-            self.flicker_aq = Some(inp);
+        pub fn flicker_aq(mut self, input: crate::model::H265FlickerAq) -> Self {
+            self.flicker_aq = Some(input);
             self
         }
         pub fn set_flicker_aq(
             mut self,
-            inp: std::option::Option<crate::model::H265FlickerAq>,
+            input: std::option::Option<crate::model::H265FlickerAq>,
         ) -> Self {
-            self.flicker_aq = inp;
+            self.flicker_aq = input;
             self
         }
         /// Framerate denominator.
-        pub fn framerate_denominator(mut self, inp: i32) -> Self {
-            self.framerate_denominator = Some(inp);
+        pub fn framerate_denominator(mut self, input: i32) -> Self {
+            self.framerate_denominator = Some(input);
             self
         }
-        pub fn set_framerate_denominator(mut self, inp: i32) -> Self {
-            self.framerate_denominator = Some(inp);
+        pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
+            self.framerate_denominator = input;
             self
         }
         /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
-        pub fn framerate_numerator(mut self, inp: i32) -> Self {
-            self.framerate_numerator = Some(inp);
+        pub fn framerate_numerator(mut self, input: i32) -> Self {
+            self.framerate_numerator = Some(input);
             self
         }
-        pub fn set_framerate_numerator(mut self, inp: i32) -> Self {
-            self.framerate_numerator = Some(inp);
+        pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
+            self.framerate_numerator = input;
             self
         }
         /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
-        pub fn gop_closed_cadence(mut self, inp: i32) -> Self {
-            self.gop_closed_cadence = Some(inp);
+        pub fn gop_closed_cadence(mut self, input: i32) -> Self {
+            self.gop_closed_cadence = Some(input);
             self
         }
-        pub fn set_gop_closed_cadence(mut self, inp: i32) -> Self {
-            self.gop_closed_cadence = Some(inp);
+        pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
+            self.gop_closed_cadence = input;
             self
         }
         /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
         /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
         /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
-        pub fn gop_size(mut self, inp: f64) -> Self {
-            self.gop_size = Some(inp);
+        pub fn gop_size(mut self, input: f64) -> Self {
+            self.gop_size = Some(input);
             self
         }
-        pub fn set_gop_size(mut self, inp: f64) -> Self {
-            self.gop_size = Some(inp);
+        pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
+            self.gop_size = input;
             self
         }
         /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
-        pub fn gop_size_units(mut self, inp: crate::model::H265GopSizeUnits) -> Self {
-            self.gop_size_units = Some(inp);
+        pub fn gop_size_units(mut self, input: crate::model::H265GopSizeUnits) -> Self {
+            self.gop_size_units = Some(input);
             self
         }
         pub fn set_gop_size_units(
             mut self,
-            inp: std::option::Option<crate::model::H265GopSizeUnits>,
+            input: std::option::Option<crate::model::H265GopSizeUnits>,
         ) -> Self {
-            self.gop_size_units = inp;
+            self.gop_size_units = input;
             self
         }
         /// H.265 Level.
-        pub fn level(mut self, inp: crate::model::H265Level) -> Self {
-            self.level = Some(inp);
+        pub fn level(mut self, input: crate::model::H265Level) -> Self {
+            self.level = Some(input);
             self
         }
-        pub fn set_level(mut self, inp: std::option::Option<crate::model::H265Level>) -> Self {
-            self.level = inp;
+        pub fn set_level(mut self, input: std::option::Option<crate::model::H265Level>) -> Self {
+            self.level = input;
             self
         }
         /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
         pub fn look_ahead_rate_control(
             mut self,
-            inp: crate::model::H265LookAheadRateControl,
+            input: crate::model::H265LookAheadRateControl,
         ) -> Self {
-            self.look_ahead_rate_control = Some(inp);
+            self.look_ahead_rate_control = Some(input);
             self
         }
         pub fn set_look_ahead_rate_control(
             mut self,
-            inp: std::option::Option<crate::model::H265LookAheadRateControl>,
+            input: std::option::Option<crate::model::H265LookAheadRateControl>,
         ) -> Self {
-            self.look_ahead_rate_control = inp;
+            self.look_ahead_rate_control = input;
             self
         }
         /// For QVBR: See the tooltip for Quality level
-        pub fn max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn max_bitrate(mut self, input: i32) -> Self {
+            self.max_bitrate = Some(input);
             self
         }
-        pub fn set_max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_bitrate = input;
             self
         }
         /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
-        pub fn min_i_interval(mut self, inp: i32) -> Self {
-            self.min_i_interval = Some(inp);
+        pub fn min_i_interval(mut self, input: i32) -> Self {
+            self.min_i_interval = Some(input);
             self
         }
-        pub fn set_min_i_interval(mut self, inp: i32) -> Self {
-            self.min_i_interval = Some(inp);
+        pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_i_interval = input;
             self
         }
         /// Pixel Aspect Ratio denominator.
-        pub fn par_denominator(mut self, inp: i32) -> Self {
-            self.par_denominator = Some(inp);
+        pub fn par_denominator(mut self, input: i32) -> Self {
+            self.par_denominator = Some(input);
             self
         }
-        pub fn set_par_denominator(mut self, inp: i32) -> Self {
-            self.par_denominator = Some(inp);
+        pub fn set_par_denominator(mut self, input: std::option::Option<i32>) -> Self {
+            self.par_denominator = input;
             self
         }
         /// Pixel Aspect Ratio numerator.
-        pub fn par_numerator(mut self, inp: i32) -> Self {
-            self.par_numerator = Some(inp);
+        pub fn par_numerator(mut self, input: i32) -> Self {
+            self.par_numerator = Some(input);
             self
         }
-        pub fn set_par_numerator(mut self, inp: i32) -> Self {
-            self.par_numerator = Some(inp);
+        pub fn set_par_numerator(mut self, input: std::option::Option<i32>) -> Self {
+            self.par_numerator = input;
             self
         }
         /// H.265 Profile.
-        pub fn profile(mut self, inp: crate::model::H265Profile) -> Self {
-            self.profile = Some(inp);
+        pub fn profile(mut self, input: crate::model::H265Profile) -> Self {
+            self.profile = Some(input);
             self
         }
-        pub fn set_profile(mut self, inp: std::option::Option<crate::model::H265Profile>) -> Self {
-            self.profile = inp;
+        pub fn set_profile(
+            mut self,
+            input: std::option::Option<crate::model::H265Profile>,
+        ) -> Self {
+            self.profile = input;
             self
         }
         /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:
         /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
         /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
         /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
-        pub fn qvbr_quality_level(mut self, inp: i32) -> Self {
-            self.qvbr_quality_level = Some(inp);
+        pub fn qvbr_quality_level(mut self, input: i32) -> Self {
+            self.qvbr_quality_level = Some(input);
             self
         }
-        pub fn set_qvbr_quality_level(mut self, inp: i32) -> Self {
-            self.qvbr_quality_level = Some(inp);
+        pub fn set_qvbr_quality_level(mut self, input: std::option::Option<i32>) -> Self {
+            self.qvbr_quality_level = input;
             self
         }
         /// Rate control mode.
@@ -11962,58 +12030,58 @@ pub mod h265_settings {
         /// Multiplex: This rate control mode is only supported (and is required) when the video is being
         /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
         /// by the properties within the Multiplex Program.
-        pub fn rate_control_mode(mut self, inp: crate::model::H265RateControlMode) -> Self {
-            self.rate_control_mode = Some(inp);
+        pub fn rate_control_mode(mut self, input: crate::model::H265RateControlMode) -> Self {
+            self.rate_control_mode = Some(input);
             self
         }
         pub fn set_rate_control_mode(
             mut self,
-            inp: std::option::Option<crate::model::H265RateControlMode>,
+            input: std::option::Option<crate::model::H265RateControlMode>,
         ) -> Self {
-            self.rate_control_mode = inp;
+            self.rate_control_mode = input;
             self
         }
         /// Sets the scan type of the output to progressive or top-field-first interlaced.
-        pub fn scan_type(mut self, inp: crate::model::H265ScanType) -> Self {
-            self.scan_type = Some(inp);
+        pub fn scan_type(mut self, input: crate::model::H265ScanType) -> Self {
+            self.scan_type = Some(input);
             self
         }
         pub fn set_scan_type(
             mut self,
-            inp: std::option::Option<crate::model::H265ScanType>,
+            input: std::option::Option<crate::model::H265ScanType>,
         ) -> Self {
-            self.scan_type = inp;
+            self.scan_type = input;
             self
         }
         /// Scene change detection.
-        pub fn scene_change_detect(mut self, inp: crate::model::H265SceneChangeDetect) -> Self {
-            self.scene_change_detect = Some(inp);
+        pub fn scene_change_detect(mut self, input: crate::model::H265SceneChangeDetect) -> Self {
+            self.scene_change_detect = Some(input);
             self
         }
         pub fn set_scene_change_detect(
             mut self,
-            inp: std::option::Option<crate::model::H265SceneChangeDetect>,
+            input: std::option::Option<crate::model::H265SceneChangeDetect>,
         ) -> Self {
-            self.scene_change_detect = inp;
+            self.scene_change_detect = input;
             self
         }
         /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
         /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
-        pub fn slices(mut self, inp: i32) -> Self {
-            self.slices = Some(inp);
+        pub fn slices(mut self, input: i32) -> Self {
+            self.slices = Some(input);
             self
         }
-        pub fn set_slices(mut self, inp: i32) -> Self {
-            self.slices = Some(inp);
+        pub fn set_slices(mut self, input: std::option::Option<i32>) -> Self {
+            self.slices = input;
             self
         }
         /// H.265 Tier.
-        pub fn tier(mut self, inp: crate::model::H265Tier) -> Self {
-            self.tier = Some(inp);
+        pub fn tier(mut self, input: crate::model::H265Tier) -> Self {
+            self.tier = Some(input);
             self
         }
-        pub fn set_tier(mut self, inp: std::option::Option<crate::model::H265Tier>) -> Self {
-            self.tier = inp;
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::H265Tier>) -> Self {
+            self.tier = input;
             self
         }
         /// Determines how timecodes should be inserted into the video elementary stream.
@@ -12021,16 +12089,16 @@ pub mod h265_settings {
         /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
         pub fn timecode_insertion(
             mut self,
-            inp: crate::model::H265TimecodeInsertionBehavior,
+            input: crate::model::H265TimecodeInsertionBehavior,
         ) -> Self {
-            self.timecode_insertion = Some(inp);
+            self.timecode_insertion = Some(input);
             self
         }
         pub fn set_timecode_insertion(
             mut self,
-            inp: std::option::Option<crate::model::H265TimecodeInsertionBehavior>,
+            input: std::option::Option<crate::model::H265TimecodeInsertionBehavior>,
         ) -> Self {
-            self.timecode_insertion = inp;
+            self.timecode_insertion = input;
             self
         }
         /// Consumes the builder and constructs a [`H265Settings`](crate::model::H265Settings)
@@ -12717,16 +12785,16 @@ pub mod h265_filter_settings {
         /// Temporal Filter Settings
         pub fn temporal_filter_settings(
             mut self,
-            inp: crate::model::TemporalFilterSettings,
+            input: crate::model::TemporalFilterSettings,
         ) -> Self {
-            self.temporal_filter_settings = Some(inp);
+            self.temporal_filter_settings = Some(input);
             self
         }
         pub fn set_temporal_filter_settings(
             mut self,
-            inp: std::option::Option<crate::model::TemporalFilterSettings>,
+            input: std::option::Option<crate::model::TemporalFilterSettings>,
         ) -> Self {
-            self.temporal_filter_settings = inp;
+            self.temporal_filter_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`H265FilterSettings`](crate::model::H265FilterSettings)
@@ -12795,52 +12863,52 @@ pub mod h265_color_space_settings {
         /// Passthrough applies no color space conversion to the output
         pub fn color_space_passthrough_settings(
             mut self,
-            inp: crate::model::ColorSpacePassthroughSettings,
+            input: crate::model::ColorSpacePassthroughSettings,
         ) -> Self {
-            self.color_space_passthrough_settings = Some(inp);
+            self.color_space_passthrough_settings = Some(input);
             self
         }
         pub fn set_color_space_passthrough_settings(
             mut self,
-            inp: std::option::Option<crate::model::ColorSpacePassthroughSettings>,
+            input: std::option::Option<crate::model::ColorSpacePassthroughSettings>,
         ) -> Self {
-            self.color_space_passthrough_settings = inp;
+            self.color_space_passthrough_settings = input;
             self
         }
         /// Hdr10 Settings
-        pub fn hdr10_settings(mut self, inp: crate::model::Hdr10Settings) -> Self {
-            self.hdr10_settings = Some(inp);
+        pub fn hdr10_settings(mut self, input: crate::model::Hdr10Settings) -> Self {
+            self.hdr10_settings = Some(input);
             self
         }
         pub fn set_hdr10_settings(
             mut self,
-            inp: std::option::Option<crate::model::Hdr10Settings>,
+            input: std::option::Option<crate::model::Hdr10Settings>,
         ) -> Self {
-            self.hdr10_settings = inp;
+            self.hdr10_settings = input;
             self
         }
         /// Rec601 Settings
-        pub fn rec601_settings(mut self, inp: crate::model::Rec601Settings) -> Self {
-            self.rec601_settings = Some(inp);
+        pub fn rec601_settings(mut self, input: crate::model::Rec601Settings) -> Self {
+            self.rec601_settings = Some(input);
             self
         }
         pub fn set_rec601_settings(
             mut self,
-            inp: std::option::Option<crate::model::Rec601Settings>,
+            input: std::option::Option<crate::model::Rec601Settings>,
         ) -> Self {
-            self.rec601_settings = inp;
+            self.rec601_settings = input;
             self
         }
         /// Rec709 Settings
-        pub fn rec709_settings(mut self, inp: crate::model::Rec709Settings) -> Self {
-            self.rec709_settings = Some(inp);
+        pub fn rec709_settings(mut self, input: crate::model::Rec709Settings) -> Self {
+            self.rec709_settings = Some(input);
             self
         }
         pub fn set_rec709_settings(
             mut self,
-            inp: std::option::Option<crate::model::Rec709Settings>,
+            input: std::option::Option<crate::model::Rec709Settings>,
         ) -> Self {
-            self.rec709_settings = inp;
+            self.rec709_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings)
@@ -13433,326 +13501,329 @@ pub mod h264_settings {
         /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
         pub fn adaptive_quantization(
             mut self,
-            inp: crate::model::H264AdaptiveQuantization,
+            input: crate::model::H264AdaptiveQuantization,
         ) -> Self {
-            self.adaptive_quantization = Some(inp);
+            self.adaptive_quantization = Some(input);
             self
         }
         pub fn set_adaptive_quantization(
             mut self,
-            inp: std::option::Option<crate::model::H264AdaptiveQuantization>,
+            input: std::option::Option<crate::model::H264AdaptiveQuantization>,
         ) -> Self {
-            self.adaptive_quantization = inp;
+            self.adaptive_quantization = input;
             self
         }
         /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
-        pub fn afd_signaling(mut self, inp: crate::model::AfdSignaling) -> Self {
-            self.afd_signaling = Some(inp);
+        pub fn afd_signaling(mut self, input: crate::model::AfdSignaling) -> Self {
+            self.afd_signaling = Some(input);
             self
         }
         pub fn set_afd_signaling(
             mut self,
-            inp: std::option::Option<crate::model::AfdSignaling>,
+            input: std::option::Option<crate::model::AfdSignaling>,
         ) -> Self {
-            self.afd_signaling = inp;
+            self.afd_signaling = input;
             self
         }
         /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
-        pub fn bitrate(mut self, inp: i32) -> Self {
-            self.bitrate = Some(inp);
+        pub fn bitrate(mut self, input: i32) -> Self {
+            self.bitrate = Some(input);
             self
         }
-        pub fn set_bitrate(mut self, inp: i32) -> Self {
-            self.bitrate = Some(inp);
+        pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.bitrate = input;
             self
         }
         /// Percentage of the buffer that should initially be filled (HRD buffer model).
-        pub fn buf_fill_pct(mut self, inp: i32) -> Self {
-            self.buf_fill_pct = Some(inp);
+        pub fn buf_fill_pct(mut self, input: i32) -> Self {
+            self.buf_fill_pct = Some(input);
             self
         }
-        pub fn set_buf_fill_pct(mut self, inp: i32) -> Self {
-            self.buf_fill_pct = Some(inp);
+        pub fn set_buf_fill_pct(mut self, input: std::option::Option<i32>) -> Self {
+            self.buf_fill_pct = input;
             self
         }
         /// Size of buffer (HRD buffer model) in bits.
-        pub fn buf_size(mut self, inp: i32) -> Self {
-            self.buf_size = Some(inp);
+        pub fn buf_size(mut self, input: i32) -> Self {
+            self.buf_size = Some(input);
             self
         }
-        pub fn set_buf_size(mut self, inp: i32) -> Self {
-            self.buf_size = Some(inp);
+        pub fn set_buf_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.buf_size = input;
             self
         }
         /// Includes colorspace metadata in the output.
-        pub fn color_metadata(mut self, inp: crate::model::H264ColorMetadata) -> Self {
-            self.color_metadata = Some(inp);
+        pub fn color_metadata(mut self, input: crate::model::H264ColorMetadata) -> Self {
+            self.color_metadata = Some(input);
             self
         }
         pub fn set_color_metadata(
             mut self,
-            inp: std::option::Option<crate::model::H264ColorMetadata>,
+            input: std::option::Option<crate::model::H264ColorMetadata>,
         ) -> Self {
-            self.color_metadata = inp;
+            self.color_metadata = input;
             self
         }
         /// Color Space settings
-        pub fn color_space_settings(mut self, inp: crate::model::H264ColorSpaceSettings) -> Self {
-            self.color_space_settings = Some(inp);
+        pub fn color_space_settings(mut self, input: crate::model::H264ColorSpaceSettings) -> Self {
+            self.color_space_settings = Some(input);
             self
         }
         pub fn set_color_space_settings(
             mut self,
-            inp: std::option::Option<crate::model::H264ColorSpaceSettings>,
+            input: std::option::Option<crate::model::H264ColorSpaceSettings>,
         ) -> Self {
-            self.color_space_settings = inp;
+            self.color_space_settings = input;
             self
         }
         /// Entropy encoding mode.  Use cabac (must be in Main or High profile) or cavlc.
-        pub fn entropy_encoding(mut self, inp: crate::model::H264EntropyEncoding) -> Self {
-            self.entropy_encoding = Some(inp);
+        pub fn entropy_encoding(mut self, input: crate::model::H264EntropyEncoding) -> Self {
+            self.entropy_encoding = Some(input);
             self
         }
         pub fn set_entropy_encoding(
             mut self,
-            inp: std::option::Option<crate::model::H264EntropyEncoding>,
+            input: std::option::Option<crate::model::H264EntropyEncoding>,
         ) -> Self {
-            self.entropy_encoding = inp;
+            self.entropy_encoding = input;
             self
         }
         /// Optional filters that you can apply to an encode.
-        pub fn filter_settings(mut self, inp: crate::model::H264FilterSettings) -> Self {
-            self.filter_settings = Some(inp);
+        pub fn filter_settings(mut self, input: crate::model::H264FilterSettings) -> Self {
+            self.filter_settings = Some(input);
             self
         }
         pub fn set_filter_settings(
             mut self,
-            inp: std::option::Option<crate::model::H264FilterSettings>,
+            input: std::option::Option<crate::model::H264FilterSettings>,
         ) -> Self {
-            self.filter_settings = inp;
+            self.filter_settings = input;
             self
         }
         /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
-        pub fn fixed_afd(mut self, inp: crate::model::FixedAfd) -> Self {
-            self.fixed_afd = Some(inp);
+        pub fn fixed_afd(mut self, input: crate::model::FixedAfd) -> Self {
+            self.fixed_afd = Some(input);
             self
         }
-        pub fn set_fixed_afd(mut self, inp: std::option::Option<crate::model::FixedAfd>) -> Self {
-            self.fixed_afd = inp;
+        pub fn set_fixed_afd(mut self, input: std::option::Option<crate::model::FixedAfd>) -> Self {
+            self.fixed_afd = input;
             self
         }
         /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if flicker AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength. Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
-        pub fn flicker_aq(mut self, inp: crate::model::H264FlickerAq) -> Self {
-            self.flicker_aq = Some(inp);
+        pub fn flicker_aq(mut self, input: crate::model::H264FlickerAq) -> Self {
+            self.flicker_aq = Some(input);
             self
         }
         pub fn set_flicker_aq(
             mut self,
-            inp: std::option::Option<crate::model::H264FlickerAq>,
+            input: std::option::Option<crate::model::H264FlickerAq>,
         ) -> Self {
-            self.flicker_aq = inp;
+            self.flicker_aq = input;
             self
         }
         /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
         /// enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
         /// disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
-        pub fn force_field_pictures(mut self, inp: crate::model::H264ForceFieldPictures) -> Self {
-            self.force_field_pictures = Some(inp);
+        pub fn force_field_pictures(mut self, input: crate::model::H264ForceFieldPictures) -> Self {
+            self.force_field_pictures = Some(input);
             self
         }
         pub fn set_force_field_pictures(
             mut self,
-            inp: std::option::Option<crate::model::H264ForceFieldPictures>,
+            input: std::option::Option<crate::model::H264ForceFieldPictures>,
         ) -> Self {
-            self.force_field_pictures = inp;
+            self.force_field_pictures = input;
             self
         }
         /// This field indicates how the output video frame rate is specified.  If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
-        pub fn framerate_control(mut self, inp: crate::model::H264FramerateControl) -> Self {
-            self.framerate_control = Some(inp);
+        pub fn framerate_control(mut self, input: crate::model::H264FramerateControl) -> Self {
+            self.framerate_control = Some(input);
             self
         }
         pub fn set_framerate_control(
             mut self,
-            inp: std::option::Option<crate::model::H264FramerateControl>,
+            input: std::option::Option<crate::model::H264FramerateControl>,
         ) -> Self {
-            self.framerate_control = inp;
+            self.framerate_control = input;
             self
         }
         /// Framerate denominator.
-        pub fn framerate_denominator(mut self, inp: i32) -> Self {
-            self.framerate_denominator = Some(inp);
+        pub fn framerate_denominator(mut self, input: i32) -> Self {
+            self.framerate_denominator = Some(input);
             self
         }
-        pub fn set_framerate_denominator(mut self, inp: i32) -> Self {
-            self.framerate_denominator = Some(inp);
+        pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
+            self.framerate_denominator = input;
             self
         }
         /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
-        pub fn framerate_numerator(mut self, inp: i32) -> Self {
-            self.framerate_numerator = Some(inp);
+        pub fn framerate_numerator(mut self, input: i32) -> Self {
+            self.framerate_numerator = Some(input);
             self
         }
-        pub fn set_framerate_numerator(mut self, inp: i32) -> Self {
-            self.framerate_numerator = Some(inp);
+        pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
+            self.framerate_numerator = input;
             self
         }
         /// Documentation update needed
-        pub fn gop_b_reference(mut self, inp: crate::model::H264GopBReference) -> Self {
-            self.gop_b_reference = Some(inp);
+        pub fn gop_b_reference(mut self, input: crate::model::H264GopBReference) -> Self {
+            self.gop_b_reference = Some(input);
             self
         }
         pub fn set_gop_b_reference(
             mut self,
-            inp: std::option::Option<crate::model::H264GopBReference>,
+            input: std::option::Option<crate::model::H264GopBReference>,
         ) -> Self {
-            self.gop_b_reference = inp;
+            self.gop_b_reference = input;
             self
         }
         /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
-        pub fn gop_closed_cadence(mut self, inp: i32) -> Self {
-            self.gop_closed_cadence = Some(inp);
+        pub fn gop_closed_cadence(mut self, input: i32) -> Self {
+            self.gop_closed_cadence = Some(input);
             self
         }
-        pub fn set_gop_closed_cadence(mut self, inp: i32) -> Self {
-            self.gop_closed_cadence = Some(inp);
+        pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
+            self.gop_closed_cadence = input;
             self
         }
         /// Number of B-frames between reference frames.
-        pub fn gop_num_b_frames(mut self, inp: i32) -> Self {
-            self.gop_num_b_frames = Some(inp);
+        pub fn gop_num_b_frames(mut self, input: i32) -> Self {
+            self.gop_num_b_frames = Some(input);
             self
         }
-        pub fn set_gop_num_b_frames(mut self, inp: i32) -> Self {
-            self.gop_num_b_frames = Some(inp);
+        pub fn set_gop_num_b_frames(mut self, input: std::option::Option<i32>) -> Self {
+            self.gop_num_b_frames = input;
             self
         }
         /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
         /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
         /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
-        pub fn gop_size(mut self, inp: f64) -> Self {
-            self.gop_size = Some(inp);
+        pub fn gop_size(mut self, input: f64) -> Self {
+            self.gop_size = Some(input);
             self
         }
-        pub fn set_gop_size(mut self, inp: f64) -> Self {
-            self.gop_size = Some(inp);
+        pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
+            self.gop_size = input;
             self
         }
         /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
-        pub fn gop_size_units(mut self, inp: crate::model::H264GopSizeUnits) -> Self {
-            self.gop_size_units = Some(inp);
+        pub fn gop_size_units(mut self, input: crate::model::H264GopSizeUnits) -> Self {
+            self.gop_size_units = Some(input);
             self
         }
         pub fn set_gop_size_units(
             mut self,
-            inp: std::option::Option<crate::model::H264GopSizeUnits>,
+            input: std::option::Option<crate::model::H264GopSizeUnits>,
         ) -> Self {
-            self.gop_size_units = inp;
+            self.gop_size_units = input;
             self
         }
         /// H.264 Level.
-        pub fn level(mut self, inp: crate::model::H264Level) -> Self {
-            self.level = Some(inp);
+        pub fn level(mut self, input: crate::model::H264Level) -> Self {
+            self.level = Some(input);
             self
         }
-        pub fn set_level(mut self, inp: std::option::Option<crate::model::H264Level>) -> Self {
-            self.level = inp;
+        pub fn set_level(mut self, input: std::option::Option<crate::model::H264Level>) -> Self {
+            self.level = input;
             self
         }
         /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
         pub fn look_ahead_rate_control(
             mut self,
-            inp: crate::model::H264LookAheadRateControl,
+            input: crate::model::H264LookAheadRateControl,
         ) -> Self {
-            self.look_ahead_rate_control = Some(inp);
+            self.look_ahead_rate_control = Some(input);
             self
         }
         pub fn set_look_ahead_rate_control(
             mut self,
-            inp: std::option::Option<crate::model::H264LookAheadRateControl>,
+            input: std::option::Option<crate::model::H264LookAheadRateControl>,
         ) -> Self {
-            self.look_ahead_rate_control = inp;
+            self.look_ahead_rate_control = input;
             self
         }
         /// For QVBR: See the tooltip for Quality level
         /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
-        pub fn max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn max_bitrate(mut self, input: i32) -> Self {
+            self.max_bitrate = Some(input);
             self
         }
-        pub fn set_max_bitrate(mut self, inp: i32) -> Self {
-            self.max_bitrate = Some(inp);
+        pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_bitrate = input;
             self
         }
         /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
-        pub fn min_i_interval(mut self, inp: i32) -> Self {
-            self.min_i_interval = Some(inp);
+        pub fn min_i_interval(mut self, input: i32) -> Self {
+            self.min_i_interval = Some(input);
             self
         }
-        pub fn set_min_i_interval(mut self, inp: i32) -> Self {
-            self.min_i_interval = Some(inp);
+        pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_i_interval = input;
             self
         }
         /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
-        pub fn num_ref_frames(mut self, inp: i32) -> Self {
-            self.num_ref_frames = Some(inp);
+        pub fn num_ref_frames(mut self, input: i32) -> Self {
+            self.num_ref_frames = Some(input);
             self
         }
-        pub fn set_num_ref_frames(mut self, inp: i32) -> Self {
-            self.num_ref_frames = Some(inp);
+        pub fn set_num_ref_frames(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_ref_frames = input;
             self
         }
         /// This field indicates how the output pixel aspect ratio is specified.  If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
-        pub fn par_control(mut self, inp: crate::model::H264ParControl) -> Self {
-            self.par_control = Some(inp);
+        pub fn par_control(mut self, input: crate::model::H264ParControl) -> Self {
+            self.par_control = Some(input);
             self
         }
         pub fn set_par_control(
             mut self,
-            inp: std::option::Option<crate::model::H264ParControl>,
+            input: std::option::Option<crate::model::H264ParControl>,
         ) -> Self {
-            self.par_control = inp;
+            self.par_control = input;
             self
         }
         /// Pixel Aspect Ratio denominator.
-        pub fn par_denominator(mut self, inp: i32) -> Self {
-            self.par_denominator = Some(inp);
+        pub fn par_denominator(mut self, input: i32) -> Self {
+            self.par_denominator = Some(input);
             self
         }
-        pub fn set_par_denominator(mut self, inp: i32) -> Self {
-            self.par_denominator = Some(inp);
+        pub fn set_par_denominator(mut self, input: std::option::Option<i32>) -> Self {
+            self.par_denominator = input;
             self
         }
         /// Pixel Aspect Ratio numerator.
-        pub fn par_numerator(mut self, inp: i32) -> Self {
-            self.par_numerator = Some(inp);
+        pub fn par_numerator(mut self, input: i32) -> Self {
+            self.par_numerator = Some(input);
             self
         }
-        pub fn set_par_numerator(mut self, inp: i32) -> Self {
-            self.par_numerator = Some(inp);
+        pub fn set_par_numerator(mut self, input: std::option::Option<i32>) -> Self {
+            self.par_numerator = input;
             self
         }
         /// H.264 Profile.
-        pub fn profile(mut self, inp: crate::model::H264Profile) -> Self {
-            self.profile = Some(inp);
+        pub fn profile(mut self, input: crate::model::H264Profile) -> Self {
+            self.profile = Some(input);
             self
         }
-        pub fn set_profile(mut self, inp: std::option::Option<crate::model::H264Profile>) -> Self {
-            self.profile = inp;
+        pub fn set_profile(
+            mut self,
+            input: std::option::Option<crate::model::H264Profile>,
+        ) -> Self {
+            self.profile = input;
             self
         }
         /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel).
         /// - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY.
         /// - STANDARD_QUALITY: Valid for any Rate control mode.
-        pub fn quality_level(mut self, inp: crate::model::H264QualityLevel) -> Self {
-            self.quality_level = Some(inp);
+        pub fn quality_level(mut self, input: crate::model::H264QualityLevel) -> Self {
+            self.quality_level = Some(input);
             self
         }
         pub fn set_quality_level(
             mut self,
-            inp: std::option::Option<crate::model::H264QualityLevel>,
+            input: std::option::Option<crate::model::H264QualityLevel>,
         ) -> Self {
-            self.quality_level = inp;
+            self.quality_level = input;
             self
         }
         /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:
@@ -13760,12 +13831,12 @@ pub mod h264_settings {
         /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
         /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
         /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
-        pub fn qvbr_quality_level(mut self, inp: i32) -> Self {
-            self.qvbr_quality_level = Some(inp);
+        pub fn qvbr_quality_level(mut self, input: i32) -> Self {
+            self.qvbr_quality_level = Some(input);
             self
         }
-        pub fn set_qvbr_quality_level(mut self, inp: i32) -> Self {
-            self.qvbr_quality_level = Some(inp);
+        pub fn set_qvbr_quality_level(mut self, input: std::option::Option<i32>) -> Self {
+            self.qvbr_quality_level = input;
             self
         }
         /// Rate control mode.
@@ -13778,105 +13849,105 @@ pub mod h264_settings {
         /// Multiplex: This rate control mode is only supported (and is required) when the video is being
         /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
         /// by the properties within the Multiplex Program.
-        pub fn rate_control_mode(mut self, inp: crate::model::H264RateControlMode) -> Self {
-            self.rate_control_mode = Some(inp);
+        pub fn rate_control_mode(mut self, input: crate::model::H264RateControlMode) -> Self {
+            self.rate_control_mode = Some(input);
             self
         }
         pub fn set_rate_control_mode(
             mut self,
-            inp: std::option::Option<crate::model::H264RateControlMode>,
+            input: std::option::Option<crate::model::H264RateControlMode>,
         ) -> Self {
-            self.rate_control_mode = inp;
+            self.rate_control_mode = input;
             self
         }
         /// Sets the scan type of the output to progressive or top-field-first interlaced.
-        pub fn scan_type(mut self, inp: crate::model::H264ScanType) -> Self {
-            self.scan_type = Some(inp);
+        pub fn scan_type(mut self, input: crate::model::H264ScanType) -> Self {
+            self.scan_type = Some(input);
             self
         }
         pub fn set_scan_type(
             mut self,
-            inp: std::option::Option<crate::model::H264ScanType>,
+            input: std::option::Option<crate::model::H264ScanType>,
         ) -> Self {
-            self.scan_type = inp;
+            self.scan_type = input;
             self
         }
         /// Scene change detection.
         /// - On: inserts I-frames when scene change is detected.
         /// - Off: does not force an I-frame when scene change is detected.
-        pub fn scene_change_detect(mut self, inp: crate::model::H264SceneChangeDetect) -> Self {
-            self.scene_change_detect = Some(inp);
+        pub fn scene_change_detect(mut self, input: crate::model::H264SceneChangeDetect) -> Self {
+            self.scene_change_detect = Some(input);
             self
         }
         pub fn set_scene_change_detect(
             mut self,
-            inp: std::option::Option<crate::model::H264SceneChangeDetect>,
+            input: std::option::Option<crate::model::H264SceneChangeDetect>,
         ) -> Self {
-            self.scene_change_detect = inp;
+            self.scene_change_detect = input;
             self
         }
         /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
         /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
-        pub fn slices(mut self, inp: i32) -> Self {
-            self.slices = Some(inp);
+        pub fn slices(mut self, input: i32) -> Self {
+            self.slices = Some(input);
             self
         }
-        pub fn set_slices(mut self, inp: i32) -> Self {
-            self.slices = Some(inp);
+        pub fn set_slices(mut self, input: std::option::Option<i32>) -> Self {
+            self.slices = input;
             self
         }
         /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.  If not set to zero, must be greater than 15.
-        pub fn softness(mut self, inp: i32) -> Self {
-            self.softness = Some(inp);
+        pub fn softness(mut self, input: i32) -> Self {
+            self.softness = Some(input);
             self
         }
-        pub fn set_softness(mut self, inp: i32) -> Self {
-            self.softness = Some(inp);
+        pub fn set_softness(mut self, input: std::option::Option<i32>) -> Self {
+            self.softness = input;
             self
         }
         /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
-        pub fn spatial_aq(mut self, inp: crate::model::H264SpatialAq) -> Self {
-            self.spatial_aq = Some(inp);
+        pub fn spatial_aq(mut self, input: crate::model::H264SpatialAq) -> Self {
+            self.spatial_aq = Some(input);
             self
         }
         pub fn set_spatial_aq(
             mut self,
-            inp: std::option::Option<crate::model::H264SpatialAq>,
+            input: std::option::Option<crate::model::H264SpatialAq>,
         ) -> Self {
-            self.spatial_aq = inp;
+            self.spatial_aq = input;
             self
         }
         /// If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used for each sub-GOP to improve visual quality.
-        pub fn subgop_length(mut self, inp: crate::model::H264SubGopLength) -> Self {
-            self.subgop_length = Some(inp);
+        pub fn subgop_length(mut self, input: crate::model::H264SubGopLength) -> Self {
+            self.subgop_length = Some(input);
             self
         }
         pub fn set_subgop_length(
             mut self,
-            inp: std::option::Option<crate::model::H264SubGopLength>,
+            input: std::option::Option<crate::model::H264SubGopLength>,
         ) -> Self {
-            self.subgop_length = inp;
+            self.subgop_length = input;
             self
         }
         /// Produces a bitstream compliant with SMPTE RP-2027.
-        pub fn syntax(mut self, inp: crate::model::H264Syntax) -> Self {
-            self.syntax = Some(inp);
+        pub fn syntax(mut self, input: crate::model::H264Syntax) -> Self {
+            self.syntax = Some(input);
             self
         }
-        pub fn set_syntax(mut self, inp: std::option::Option<crate::model::H264Syntax>) -> Self {
-            self.syntax = inp;
+        pub fn set_syntax(mut self, input: std::option::Option<crate::model::H264Syntax>) -> Self {
+            self.syntax = input;
             self
         }
         /// Temporal makes adjustments within each frame based on temporal variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if temporal AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply temporal AQ.
-        pub fn temporal_aq(mut self, inp: crate::model::H264TemporalAq) -> Self {
-            self.temporal_aq = Some(inp);
+        pub fn temporal_aq(mut self, input: crate::model::H264TemporalAq) -> Self {
+            self.temporal_aq = Some(input);
             self
         }
         pub fn set_temporal_aq(
             mut self,
-            inp: std::option::Option<crate::model::H264TemporalAq>,
+            input: std::option::Option<crate::model::H264TemporalAq>,
         ) -> Self {
-            self.temporal_aq = inp;
+            self.temporal_aq = input;
             self
         }
         /// Determines how timecodes should be inserted into the video elementary stream.
@@ -13884,16 +13955,16 @@ pub mod h264_settings {
         /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
         pub fn timecode_insertion(
             mut self,
-            inp: crate::model::H264TimecodeInsertionBehavior,
+            input: crate::model::H264TimecodeInsertionBehavior,
         ) -> Self {
-            self.timecode_insertion = Some(inp);
+            self.timecode_insertion = Some(input);
             self
         }
         pub fn set_timecode_insertion(
             mut self,
-            inp: std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
+            input: std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
         ) -> Self {
-            self.timecode_insertion = inp;
+            self.timecode_insertion = input;
             self
         }
         /// Consumes the builder and constructs a [`H264Settings`](crate::model::H264Settings)
@@ -15072,16 +15143,16 @@ pub mod h264_filter_settings {
         /// Temporal Filter Settings
         pub fn temporal_filter_settings(
             mut self,
-            inp: crate::model::TemporalFilterSettings,
+            input: crate::model::TemporalFilterSettings,
         ) -> Self {
-            self.temporal_filter_settings = Some(inp);
+            self.temporal_filter_settings = Some(input);
             self
         }
         pub fn set_temporal_filter_settings(
             mut self,
-            inp: std::option::Option<crate::model::TemporalFilterSettings>,
+            input: std::option::Option<crate::model::TemporalFilterSettings>,
         ) -> Self {
-            self.temporal_filter_settings = inp;
+            self.temporal_filter_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`H264FilterSettings`](crate::model::H264FilterSettings)
@@ -15201,40 +15272,40 @@ pub mod h264_color_space_settings {
         /// Passthrough applies no color space conversion to the output
         pub fn color_space_passthrough_settings(
             mut self,
-            inp: crate::model::ColorSpacePassthroughSettings,
+            input: crate::model::ColorSpacePassthroughSettings,
         ) -> Self {
-            self.color_space_passthrough_settings = Some(inp);
+            self.color_space_passthrough_settings = Some(input);
             self
         }
         pub fn set_color_space_passthrough_settings(
             mut self,
-            inp: std::option::Option<crate::model::ColorSpacePassthroughSettings>,
+            input: std::option::Option<crate::model::ColorSpacePassthroughSettings>,
         ) -> Self {
-            self.color_space_passthrough_settings = inp;
+            self.color_space_passthrough_settings = input;
             self
         }
         /// Rec601 Settings
-        pub fn rec601_settings(mut self, inp: crate::model::Rec601Settings) -> Self {
-            self.rec601_settings = Some(inp);
+        pub fn rec601_settings(mut self, input: crate::model::Rec601Settings) -> Self {
+            self.rec601_settings = Some(input);
             self
         }
         pub fn set_rec601_settings(
             mut self,
-            inp: std::option::Option<crate::model::Rec601Settings>,
+            input: std::option::Option<crate::model::Rec601Settings>,
         ) -> Self {
-            self.rec601_settings = inp;
+            self.rec601_settings = input;
             self
         }
         /// Rec709 Settings
-        pub fn rec709_settings(mut self, inp: crate::model::Rec709Settings) -> Self {
-            self.rec709_settings = Some(inp);
+        pub fn rec709_settings(mut self, input: crate::model::Rec709Settings) -> Self {
+            self.rec709_settings = Some(input);
             self
         }
         pub fn set_rec709_settings(
             mut self,
-            inp: std::option::Option<crate::model::Rec709Settings>,
+            input: std::option::Option<crate::model::Rec709Settings>,
         ) -> Self {
-            self.rec709_settings = inp;
+            self.rec709_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings)
@@ -15416,27 +15487,27 @@ pub mod frame_capture_settings {
     }
     impl Builder {
         /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
-        pub fn capture_interval(mut self, inp: i32) -> Self {
-            self.capture_interval = Some(inp);
+        pub fn capture_interval(mut self, input: i32) -> Self {
+            self.capture_interval = Some(input);
             self
         }
-        pub fn set_capture_interval(mut self, inp: i32) -> Self {
-            self.capture_interval = Some(inp);
+        pub fn set_capture_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.capture_interval = input;
             self
         }
         /// Unit for the frame capture interval.
         pub fn capture_interval_units(
             mut self,
-            inp: crate::model::FrameCaptureIntervalUnit,
+            input: crate::model::FrameCaptureIntervalUnit,
         ) -> Self {
-            self.capture_interval_units = Some(inp);
+            self.capture_interval_units = Some(input);
             self
         }
         pub fn set_capture_interval_units(
             mut self,
-            inp: std::option::Option<crate::model::FrameCaptureIntervalUnit>,
+            input: std::option::Option<crate::model::FrameCaptureIntervalUnit>,
         ) -> Self {
-            self.capture_interval_units = inp;
+            self.capture_interval_units = input;
             self
         }
         /// Consumes the builder and constructs a [`FrameCaptureSettings`](crate::model::FrameCaptureSettings)
@@ -15550,24 +15621,24 @@ pub mod timecode_config {
         /// -Embedded (embedded): Initialize the output timecode with timecode from the the source.  If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased).
         /// -System Clock (systemclock): Use the UTC time.
         /// -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
-        pub fn source(mut self, inp: crate::model::TimecodeConfigSource) -> Self {
-            self.source = Some(inp);
+        pub fn source(mut self, input: crate::model::TimecodeConfigSource) -> Self {
+            self.source = Some(input);
             self
         }
         pub fn set_source(
             mut self,
-            inp: std::option::Option<crate::model::TimecodeConfigSource>,
+            input: std::option::Option<crate::model::TimecodeConfigSource>,
         ) -> Self {
-            self.source = inp;
+            self.source = input;
             self
         }
         /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
-        pub fn sync_threshold(mut self, inp: i32) -> Self {
-            self.sync_threshold = Some(inp);
+        pub fn sync_threshold(mut self, input: i32) -> Self {
+            self.sync_threshold = Some(input);
             self
         }
-        pub fn set_sync_threshold(mut self, inp: i32) -> Self {
-            self.sync_threshold = Some(inp);
+        pub fn set_sync_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.sync_threshold = input;
             self
         }
         /// Consumes the builder and constructs a [`TimecodeConfig`](crate::model::TimecodeConfig)
@@ -15684,37 +15755,37 @@ pub mod output_group {
     }
     impl Builder {
         /// Custom output group name optionally defined by the user.  Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Settings associated with the output group.
-        pub fn output_group_settings(mut self, inp: crate::model::OutputGroupSettings) -> Self {
-            self.output_group_settings = Some(inp);
+        pub fn output_group_settings(mut self, input: crate::model::OutputGroupSettings) -> Self {
+            self.output_group_settings = Some(input);
             self
         }
         pub fn set_output_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::OutputGroupSettings>,
+            input: std::option::Option<crate::model::OutputGroupSettings>,
         ) -> Self {
-            self.output_group_settings = inp;
+            self.output_group_settings = input;
             self
         }
-        pub fn outputs(mut self, inp: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.outputs = Some(v);
             self
         }
         pub fn set_outputs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Output>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Output>>,
         ) -> Self {
-            self.outputs = inp;
+            self.outputs = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputGroup`](crate::model::OutputGroup)
@@ -15784,63 +15855,63 @@ pub mod output {
         pub(crate) video_description_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn audio_description_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn audio_description_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.audio_description_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.audio_description_names = Some(v);
             self
         }
         pub fn set_audio_description_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.audio_description_names = inp;
+            self.audio_description_names = input;
             self
         }
-        pub fn caption_description_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn caption_description_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.caption_description_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.caption_description_names = Some(v);
             self
         }
         pub fn set_caption_description_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.caption_description_names = inp;
+            self.caption_description_names = input;
             self
         }
         /// The name used to identify an output.
-        pub fn output_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_name = Some(inp.into());
+        pub fn output_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_name = Some(input.into());
             self
         }
-        pub fn set_output_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.output_name = inp;
+        pub fn set_output_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_name = input;
             self
         }
         /// Output type-specific settings.
-        pub fn output_settings(mut self, inp: crate::model::OutputSettings) -> Self {
-            self.output_settings = Some(inp);
+        pub fn output_settings(mut self, input: crate::model::OutputSettings) -> Self {
+            self.output_settings = Some(input);
             self
         }
         pub fn set_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::OutputSettings>,
+            input: std::option::Option<crate::model::OutputSettings>,
         ) -> Self {
-            self.output_settings = inp;
+            self.output_settings = input;
             self
         }
         /// The name of the VideoDescription used as the source for this output.
-        pub fn video_description_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.video_description_name = Some(inp.into());
+        pub fn video_description_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.video_description_name = Some(input.into());
             self
         }
         pub fn set_video_description_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.video_description_name = inp;
+            self.video_description_name = input;
             self
         }
         /// Consumes the builder and constructs a [`Output`](crate::model::Output)
@@ -15943,111 +16014,114 @@ pub mod output_settings {
     }
     impl Builder {
         /// Archive Output Settings
-        pub fn archive_output_settings(mut self, inp: crate::model::ArchiveOutputSettings) -> Self {
-            self.archive_output_settings = Some(inp);
+        pub fn archive_output_settings(
+            mut self,
+            input: crate::model::ArchiveOutputSettings,
+        ) -> Self {
+            self.archive_output_settings = Some(input);
             self
         }
         pub fn set_archive_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::ArchiveOutputSettings>,
+            input: std::option::Option<crate::model::ArchiveOutputSettings>,
         ) -> Self {
-            self.archive_output_settings = inp;
+            self.archive_output_settings = input;
             self
         }
         /// Frame Capture Output Settings
         pub fn frame_capture_output_settings(
             mut self,
-            inp: crate::model::FrameCaptureOutputSettings,
+            input: crate::model::FrameCaptureOutputSettings,
         ) -> Self {
-            self.frame_capture_output_settings = Some(inp);
+            self.frame_capture_output_settings = Some(input);
             self
         }
         pub fn set_frame_capture_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::FrameCaptureOutputSettings>,
+            input: std::option::Option<crate::model::FrameCaptureOutputSettings>,
         ) -> Self {
-            self.frame_capture_output_settings = inp;
+            self.frame_capture_output_settings = input;
             self
         }
         /// Hls Output Settings
-        pub fn hls_output_settings(mut self, inp: crate::model::HlsOutputSettings) -> Self {
-            self.hls_output_settings = Some(inp);
+        pub fn hls_output_settings(mut self, input: crate::model::HlsOutputSettings) -> Self {
+            self.hls_output_settings = Some(input);
             self
         }
         pub fn set_hls_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsOutputSettings>,
+            input: std::option::Option<crate::model::HlsOutputSettings>,
         ) -> Self {
-            self.hls_output_settings = inp;
+            self.hls_output_settings = input;
             self
         }
         /// Media Package Output Settings
         pub fn media_package_output_settings(
             mut self,
-            inp: crate::model::MediaPackageOutputSettings,
+            input: crate::model::MediaPackageOutputSettings,
         ) -> Self {
-            self.media_package_output_settings = Some(inp);
+            self.media_package_output_settings = Some(input);
             self
         }
         pub fn set_media_package_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::MediaPackageOutputSettings>,
+            input: std::option::Option<crate::model::MediaPackageOutputSettings>,
         ) -> Self {
-            self.media_package_output_settings = inp;
+            self.media_package_output_settings = input;
             self
         }
         /// Ms Smooth Output Settings
         pub fn ms_smooth_output_settings(
             mut self,
-            inp: crate::model::MsSmoothOutputSettings,
+            input: crate::model::MsSmoothOutputSettings,
         ) -> Self {
-            self.ms_smooth_output_settings = Some(inp);
+            self.ms_smooth_output_settings = Some(input);
             self
         }
         pub fn set_ms_smooth_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::MsSmoothOutputSettings>,
+            input: std::option::Option<crate::model::MsSmoothOutputSettings>,
         ) -> Self {
-            self.ms_smooth_output_settings = inp;
+            self.ms_smooth_output_settings = input;
             self
         }
         /// Multiplex Output Settings
         pub fn multiplex_output_settings(
             mut self,
-            inp: crate::model::MultiplexOutputSettings,
+            input: crate::model::MultiplexOutputSettings,
         ) -> Self {
-            self.multiplex_output_settings = Some(inp);
+            self.multiplex_output_settings = Some(input);
             self
         }
         pub fn set_multiplex_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexOutputSettings>,
+            input: std::option::Option<crate::model::MultiplexOutputSettings>,
         ) -> Self {
-            self.multiplex_output_settings = inp;
+            self.multiplex_output_settings = input;
             self
         }
         /// Rtmp Output Settings
-        pub fn rtmp_output_settings(mut self, inp: crate::model::RtmpOutputSettings) -> Self {
-            self.rtmp_output_settings = Some(inp);
+        pub fn rtmp_output_settings(mut self, input: crate::model::RtmpOutputSettings) -> Self {
+            self.rtmp_output_settings = Some(input);
             self
         }
         pub fn set_rtmp_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::RtmpOutputSettings>,
+            input: std::option::Option<crate::model::RtmpOutputSettings>,
         ) -> Self {
-            self.rtmp_output_settings = inp;
+            self.rtmp_output_settings = input;
             self
         }
         /// Udp Output Settings
-        pub fn udp_output_settings(mut self, inp: crate::model::UdpOutputSettings) -> Self {
-            self.udp_output_settings = Some(inp);
+        pub fn udp_output_settings(mut self, input: crate::model::UdpOutputSettings) -> Self {
+            self.udp_output_settings = Some(input);
             self
         }
         pub fn set_udp_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::UdpOutputSettings>,
+            input: std::option::Option<crate::model::UdpOutputSettings>,
         ) -> Self {
-            self.udp_output_settings = inp;
+            self.udp_output_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputSettings`](crate::model::OutputSettings)
@@ -16116,48 +16190,48 @@ pub mod udp_output_settings {
     }
     impl Builder {
         /// UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.
-        pub fn buffer_msec(mut self, inp: i32) -> Self {
-            self.buffer_msec = Some(inp);
+        pub fn buffer_msec(mut self, input: i32) -> Self {
+            self.buffer_msec = Some(input);
             self
         }
-        pub fn set_buffer_msec(mut self, inp: i32) -> Self {
-            self.buffer_msec = Some(inp);
+        pub fn set_buffer_msec(mut self, input: std::option::Option<i32>) -> Self {
+            self.buffer_msec = input;
             self
         }
         /// Udp Container Settings
-        pub fn container_settings(mut self, inp: crate::model::UdpContainerSettings) -> Self {
-            self.container_settings = Some(inp);
+        pub fn container_settings(mut self, input: crate::model::UdpContainerSettings) -> Self {
+            self.container_settings = Some(input);
             self
         }
         pub fn set_container_settings(
             mut self,
-            inp: std::option::Option<crate::model::UdpContainerSettings>,
+            input: std::option::Option<crate::model::UdpContainerSettings>,
         ) -> Self {
-            self.container_settings = inp;
+            self.container_settings = input;
             self
         }
         /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-        pub fn destination(mut self, inp: crate::model::OutputLocationRef) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocationRef>,
+            input: std::option::Option<crate::model::OutputLocationRef>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-        pub fn fec_output_settings(mut self, inp: crate::model::FecOutputSettings) -> Self {
-            self.fec_output_settings = Some(inp);
+        pub fn fec_output_settings(mut self, input: crate::model::FecOutputSettings) -> Self {
+            self.fec_output_settings = Some(input);
             self
         }
         pub fn set_fec_output_settings(
             mut self,
-            inp: std::option::Option<crate::model::FecOutputSettings>,
+            input: std::option::Option<crate::model::FecOutputSettings>,
         ) -> Self {
-            self.fec_output_settings = inp;
+            self.fec_output_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`UdpOutputSettings`](crate::model::UdpOutputSettings)
@@ -16216,33 +16290,33 @@ pub mod fec_output_settings {
     }
     impl Builder {
         /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix.  The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
-        pub fn column_depth(mut self, inp: i32) -> Self {
-            self.column_depth = Some(inp);
+        pub fn column_depth(mut self, input: i32) -> Self {
+            self.column_depth = Some(input);
             self
         }
-        pub fn set_column_depth(mut self, inp: i32) -> Self {
-            self.column_depth = Some(inp);
+        pub fn set_column_depth(mut self, input: std::option::Option<i32>) -> Self {
+            self.column_depth = input;
             self
         }
         /// Enables column only or column and row based FEC
-        pub fn include_fec(mut self, inp: crate::model::FecOutputIncludeFec) -> Self {
-            self.include_fec = Some(inp);
+        pub fn include_fec(mut self, input: crate::model::FecOutputIncludeFec) -> Self {
+            self.include_fec = Some(input);
             self
         }
         pub fn set_include_fec(
             mut self,
-            inp: std::option::Option<crate::model::FecOutputIncludeFec>,
+            input: std::option::Option<crate::model::FecOutputIncludeFec>,
         ) -> Self {
-            self.include_fec = inp;
+            self.include_fec = input;
             self
         }
         /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix.  Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness.  If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
-        pub fn row_length(mut self, inp: i32) -> Self {
-            self.row_length = Some(inp);
+        pub fn row_length(mut self, input: i32) -> Self {
+            self.row_length = Some(input);
             self
         }
-        pub fn set_row_length(mut self, inp: i32) -> Self {
-            self.row_length = Some(inp);
+        pub fn set_row_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.row_length = input;
             self
         }
         /// Consumes the builder and constructs a [`FecOutputSettings`](crate::model::FecOutputSettings)
@@ -16345,15 +16419,15 @@ pub mod output_location_ref {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn destination_ref_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.destination_ref_id = Some(inp.into());
+        pub fn destination_ref_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_ref_id = Some(input.into());
             self
         }
         pub fn set_destination_ref_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.destination_ref_id = inp;
+            self.destination_ref_id = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputLocationRef`](crate::model::OutputLocationRef)
@@ -16397,15 +16471,15 @@ pub mod udp_container_settings {
     }
     impl Builder {
         /// M2ts Settings
-        pub fn m2ts_settings(mut self, inp: crate::model::M2tsSettings) -> Self {
-            self.m2ts_settings = Some(inp);
+        pub fn m2ts_settings(mut self, input: crate::model::M2tsSettings) -> Self {
+            self.m2ts_settings = Some(input);
             self
         }
         pub fn set_m2ts_settings(
             mut self,
-            inp: std::option::Option<crate::model::M2tsSettings>,
+            input: std::option::Option<crate::model::M2tsSettings>,
         ) -> Self {
-            self.m2ts_settings = inp;
+            self.m2ts_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`UdpContainerSettings`](crate::model::UdpContainerSettings)
@@ -16736,504 +16810,516 @@ pub mod m2ts_settings {
         /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
         pub fn absent_input_audio_behavior(
             mut self,
-            inp: crate::model::M2tsAbsentInputAudioBehavior,
+            input: crate::model::M2tsAbsentInputAudioBehavior,
         ) -> Self {
-            self.absent_input_audio_behavior = Some(inp);
+            self.absent_input_audio_behavior = Some(input);
             self
         }
         pub fn set_absent_input_audio_behavior(
             mut self,
-            inp: std::option::Option<crate::model::M2tsAbsentInputAudioBehavior>,
+            input: std::option::Option<crate::model::M2tsAbsentInputAudioBehavior>,
         ) -> Self {
-            self.absent_input_audio_behavior = inp;
+            self.absent_input_audio_behavior = input;
             self
         }
         /// When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.
-        pub fn arib(mut self, inp: crate::model::M2tsArib) -> Self {
-            self.arib = Some(inp);
+        pub fn arib(mut self, input: crate::model::M2tsArib) -> Self {
+            self.arib = Some(input);
             self
         }
-        pub fn set_arib(mut self, inp: std::option::Option<crate::model::M2tsArib>) -> Self {
-            self.arib = inp;
+        pub fn set_arib(mut self, input: std::option::Option<crate::model::M2tsArib>) -> Self {
+            self.arib = input;
             self
         }
         /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn arib_captions_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arib_captions_pid = Some(inp.into());
+        pub fn arib_captions_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arib_captions_pid = Some(input.into());
             self
         }
         pub fn set_arib_captions_pid(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.arib_captions_pid = inp;
+            self.arib_captions_pid = input;
             self
         }
         /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids.  If set to useConfigured, ARIB Captions will be on the configured pid number.
         pub fn arib_captions_pid_control(
             mut self,
-            inp: crate::model::M2tsAribCaptionsPidControl,
+            input: crate::model::M2tsAribCaptionsPidControl,
         ) -> Self {
-            self.arib_captions_pid_control = Some(inp);
+            self.arib_captions_pid_control = Some(input);
             self
         }
         pub fn set_arib_captions_pid_control(
             mut self,
-            inp: std::option::Option<crate::model::M2tsAribCaptionsPidControl>,
+            input: std::option::Option<crate::model::M2tsAribCaptionsPidControl>,
         ) -> Self {
-            self.arib_captions_pid_control = inp;
+            self.arib_captions_pid_control = input;
             self
         }
         /// When set to dvb, uses DVB buffer model for Dolby Digital audio.  When set to atsc, the ATSC model is used.
-        pub fn audio_buffer_model(mut self, inp: crate::model::M2tsAudioBufferModel) -> Self {
-            self.audio_buffer_model = Some(inp);
+        pub fn audio_buffer_model(mut self, input: crate::model::M2tsAudioBufferModel) -> Self {
+            self.audio_buffer_model = Some(input);
             self
         }
         pub fn set_audio_buffer_model(
             mut self,
-            inp: std::option::Option<crate::model::M2tsAudioBufferModel>,
+            input: std::option::Option<crate::model::M2tsAudioBufferModel>,
         ) -> Self {
-            self.audio_buffer_model = inp;
+            self.audio_buffer_model = input;
             self
         }
         /// The number of audio frames to insert for each PES packet.
-        pub fn audio_frames_per_pes(mut self, inp: i32) -> Self {
-            self.audio_frames_per_pes = Some(inp);
+        pub fn audio_frames_per_pes(mut self, input: i32) -> Self {
+            self.audio_frames_per_pes = Some(input);
             self
         }
-        pub fn set_audio_frames_per_pes(mut self, inp: i32) -> Self {
-            self.audio_frames_per_pes = Some(inp);
+        pub fn set_audio_frames_per_pes(mut self, input: std::option::Option<i32>) -> Self {
+            self.audio_frames_per_pes = input;
             self
         }
         /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn audio_pids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audio_pids = Some(inp.into());
+        pub fn audio_pids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audio_pids = Some(input.into());
             self
         }
-        pub fn set_audio_pids(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.audio_pids = inp;
+        pub fn set_audio_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audio_pids = input;
             self
         }
         /// When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for EAC3. When set to dvb, uses stream type = 0x06.
-        pub fn audio_stream_type(mut self, inp: crate::model::M2tsAudioStreamType) -> Self {
-            self.audio_stream_type = Some(inp);
+        pub fn audio_stream_type(mut self, input: crate::model::M2tsAudioStreamType) -> Self {
+            self.audio_stream_type = Some(input);
             self
         }
         pub fn set_audio_stream_type(
             mut self,
-            inp: std::option::Option<crate::model::M2tsAudioStreamType>,
+            input: std::option::Option<crate::model::M2tsAudioStreamType>,
         ) -> Self {
-            self.audio_stream_type = inp;
+            self.audio_stream_type = input;
             self
         }
         /// The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.
-        pub fn bitrate(mut self, inp: i32) -> Self {
-            self.bitrate = Some(inp);
+        pub fn bitrate(mut self, input: i32) -> Self {
+            self.bitrate = Some(input);
             self
         }
-        pub fn set_bitrate(mut self, inp: i32) -> Self {
-            self.bitrate = Some(inp);
+        pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.bitrate = input;
             self
         }
         /// Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices.
-        pub fn buffer_model(mut self, inp: crate::model::M2tsBufferModel) -> Self {
-            self.buffer_model = Some(inp);
+        pub fn buffer_model(mut self, input: crate::model::M2tsBufferModel) -> Self {
+            self.buffer_model = Some(input);
             self
         }
         pub fn set_buffer_model(
             mut self,
-            inp: std::option::Option<crate::model::M2tsBufferModel>,
+            input: std::option::Option<crate::model::M2tsBufferModel>,
         ) -> Self {
-            self.buffer_model = inp;
+            self.buffer_model = input;
             self
         }
         /// When set to enabled, generates captionServiceDescriptor in PMT.
-        pub fn cc_descriptor(mut self, inp: crate::model::M2tsCcDescriptor) -> Self {
-            self.cc_descriptor = Some(inp);
+        pub fn cc_descriptor(mut self, input: crate::model::M2tsCcDescriptor) -> Self {
+            self.cc_descriptor = Some(input);
             self
         }
         pub fn set_cc_descriptor(
             mut self,
-            inp: std::option::Option<crate::model::M2tsCcDescriptor>,
+            input: std::option::Option<crate::model::M2tsCcDescriptor>,
         ) -> Self {
-            self.cc_descriptor = inp;
+            self.cc_descriptor = input;
             self
         }
         /// Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
-        pub fn dvb_nit_settings(mut self, inp: crate::model::DvbNitSettings) -> Self {
-            self.dvb_nit_settings = Some(inp);
+        pub fn dvb_nit_settings(mut self, input: crate::model::DvbNitSettings) -> Self {
+            self.dvb_nit_settings = Some(input);
             self
         }
         pub fn set_dvb_nit_settings(
             mut self,
-            inp: std::option::Option<crate::model::DvbNitSettings>,
+            input: std::option::Option<crate::model::DvbNitSettings>,
         ) -> Self {
-            self.dvb_nit_settings = inp;
+            self.dvb_nit_settings = input;
             self
         }
         /// Inserts DVB Service Description Table (SDT) at the specified table repetition interval.
-        pub fn dvb_sdt_settings(mut self, inp: crate::model::DvbSdtSettings) -> Self {
-            self.dvb_sdt_settings = Some(inp);
+        pub fn dvb_sdt_settings(mut self, input: crate::model::DvbSdtSettings) -> Self {
+            self.dvb_sdt_settings = Some(input);
             self
         }
         pub fn set_dvb_sdt_settings(
             mut self,
-            inp: std::option::Option<crate::model::DvbSdtSettings>,
+            input: std::option::Option<crate::model::DvbSdtSettings>,
         ) -> Self {
-            self.dvb_sdt_settings = inp;
+            self.dvb_sdt_settings = input;
             self
         }
         /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn dvb_sub_pids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dvb_sub_pids = Some(inp.into());
+        pub fn dvb_sub_pids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dvb_sub_pids = Some(input.into());
             self
         }
-        pub fn set_dvb_sub_pids(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.dvb_sub_pids = inp;
+        pub fn set_dvb_sub_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dvb_sub_pids = input;
             self
         }
         /// Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
-        pub fn dvb_tdt_settings(mut self, inp: crate::model::DvbTdtSettings) -> Self {
-            self.dvb_tdt_settings = Some(inp);
+        pub fn dvb_tdt_settings(mut self, input: crate::model::DvbTdtSettings) -> Self {
+            self.dvb_tdt_settings = Some(input);
             self
         }
         pub fn set_dvb_tdt_settings(
             mut self,
-            inp: std::option::Option<crate::model::DvbTdtSettings>,
+            input: std::option::Option<crate::model::DvbTdtSettings>,
         ) -> Self {
-            self.dvb_tdt_settings = inp;
+            self.dvb_tdt_settings = input;
             self
         }
         /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn dvb_teletext_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dvb_teletext_pid = Some(inp.into());
+        pub fn dvb_teletext_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dvb_teletext_pid = Some(input.into());
             self
         }
         pub fn set_dvb_teletext_pid(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.dvb_teletext_pid = inp;
+            self.dvb_teletext_pid = input;
             self
         }
         /// If set to passthrough, passes any EBIF data from the input source to this output.
-        pub fn ebif(mut self, inp: crate::model::M2tsEbifControl) -> Self {
-            self.ebif = Some(inp);
+        pub fn ebif(mut self, input: crate::model::M2tsEbifControl) -> Self {
+            self.ebif = Some(input);
             self
         }
-        pub fn set_ebif(mut self, inp: std::option::Option<crate::model::M2tsEbifControl>) -> Self {
-            self.ebif = inp;
+        pub fn set_ebif(
+            mut self,
+            input: std::option::Option<crate::model::M2tsEbifControl>,
+        ) -> Self {
+            self.ebif = input;
             self
         }
         /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected.  Partitions 1 and 2 will always follow the video interval.
-        pub fn ebp_audio_interval(mut self, inp: crate::model::M2tsAudioInterval) -> Self {
-            self.ebp_audio_interval = Some(inp);
+        pub fn ebp_audio_interval(mut self, input: crate::model::M2tsAudioInterval) -> Self {
+            self.ebp_audio_interval = Some(input);
             self
         }
         pub fn set_ebp_audio_interval(
             mut self,
-            inp: std::option::Option<crate::model::M2tsAudioInterval>,
+            input: std::option::Option<crate::model::M2tsAudioInterval>,
         ) -> Self {
-            self.ebp_audio_interval = inp;
+            self.ebp_audio_interval = input;
             self
         }
         /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker.  The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
-        pub fn ebp_lookahead_ms(mut self, inp: i32) -> Self {
-            self.ebp_lookahead_ms = Some(inp);
+        pub fn ebp_lookahead_ms(mut self, input: i32) -> Self {
+            self.ebp_lookahead_ms = Some(input);
             self
         }
-        pub fn set_ebp_lookahead_ms(mut self, inp: i32) -> Self {
-            self.ebp_lookahead_ms = Some(inp);
+        pub fn set_ebp_lookahead_ms(mut self, input: std::option::Option<i32>) -> Self {
+            self.ebp_lookahead_ms = input;
             self
         }
         /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs.  If set to videoPid, EBP markers will be placed on only the video PID.
-        pub fn ebp_placement(mut self, inp: crate::model::M2tsEbpPlacement) -> Self {
-            self.ebp_placement = Some(inp);
+        pub fn ebp_placement(mut self, input: crate::model::M2tsEbpPlacement) -> Self {
+            self.ebp_placement = Some(input);
             self
         }
         pub fn set_ebp_placement(
             mut self,
-            inp: std::option::Option<crate::model::M2tsEbpPlacement>,
+            input: std::option::Option<crate::model::M2tsEbpPlacement>,
         ) -> Self {
-            self.ebp_placement = inp;
+            self.ebp_placement = input;
             self
         }
         /// This field is unused and deprecated.
-        pub fn ecm_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ecm_pid = Some(inp.into());
+        pub fn ecm_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ecm_pid = Some(input.into());
             self
         }
-        pub fn set_ecm_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ecm_pid = inp;
+        pub fn set_ecm_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ecm_pid = input;
             self
         }
         /// Include or exclude the ES Rate field in the PES header.
-        pub fn es_rate_in_pes(mut self, inp: crate::model::M2tsEsRateInPes) -> Self {
-            self.es_rate_in_pes = Some(inp);
+        pub fn es_rate_in_pes(mut self, input: crate::model::M2tsEsRateInPes) -> Self {
+            self.es_rate_in_pes = Some(input);
             self
         }
         pub fn set_es_rate_in_pes(
             mut self,
-            inp: std::option::Option<crate::model::M2tsEsRateInPes>,
+            input: std::option::Option<crate::model::M2tsEsRateInPes>,
         ) -> Self {
-            self.es_rate_in_pes = inp;
+            self.es_rate_in_pes = input;
             self
         }
         /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn etv_platform_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.etv_platform_pid = Some(inp.into());
+        pub fn etv_platform_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.etv_platform_pid = Some(input.into());
             self
         }
         pub fn set_etv_platform_pid(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.etv_platform_pid = inp;
+            self.etv_platform_pid = input;
             self
         }
         /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn etv_signal_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.etv_signal_pid = Some(inp.into());
+        pub fn etv_signal_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.etv_signal_pid = Some(input.into());
             self
         }
-        pub fn set_etv_signal_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.etv_signal_pid = inp;
+        pub fn set_etv_signal_pid(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.etv_signal_pid = input;
             self
         }
         /// The length in seconds of each fragment. Only used with EBP markers.
-        pub fn fragment_time(mut self, inp: f64) -> Self {
-            self.fragment_time = Some(inp);
+        pub fn fragment_time(mut self, input: f64) -> Self {
+            self.fragment_time = Some(input);
             self
         }
-        pub fn set_fragment_time(mut self, inp: f64) -> Self {
-            self.fragment_time = Some(inp);
+        pub fn set_fragment_time(mut self, input: std::option::Option<f64>) -> Self {
+            self.fragment_time = input;
             self
         }
         /// If set to passthrough, passes any KLV data from the input source to this output.
-        pub fn klv(mut self, inp: crate::model::M2tsKlv) -> Self {
-            self.klv = Some(inp);
+        pub fn klv(mut self, input: crate::model::M2tsKlv) -> Self {
+            self.klv = Some(input);
             self
         }
-        pub fn set_klv(mut self, inp: std::option::Option<crate::model::M2tsKlv>) -> Self {
-            self.klv = inp;
+        pub fn set_klv(mut self, input: std::option::Option<crate::model::M2tsKlv>) -> Self {
+            self.klv = input;
             self
         }
         /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn klv_data_pids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.klv_data_pids = Some(inp.into());
+        pub fn klv_data_pids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.klv_data_pids = Some(input.into());
             self
         }
-        pub fn set_klv_data_pids(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.klv_data_pids = inp;
+        pub fn set_klv_data_pids(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.klv_data_pids = input;
             self
         }
         /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-        pub fn nielsen_id3_behavior(mut self, inp: crate::model::M2tsNielsenId3Behavior) -> Self {
-            self.nielsen_id3_behavior = Some(inp);
+        pub fn nielsen_id3_behavior(mut self, input: crate::model::M2tsNielsenId3Behavior) -> Self {
+            self.nielsen_id3_behavior = Some(input);
             self
         }
         pub fn set_nielsen_id3_behavior(
             mut self,
-            inp: std::option::Option<crate::model::M2tsNielsenId3Behavior>,
+            input: std::option::Option<crate::model::M2tsNielsenId3Behavior>,
         ) -> Self {
-            self.nielsen_id3_behavior = inp;
+            self.nielsen_id3_behavior = input;
             self
         }
         /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
-        pub fn null_packet_bitrate(mut self, inp: f64) -> Self {
-            self.null_packet_bitrate = Some(inp);
+        pub fn null_packet_bitrate(mut self, input: f64) -> Self {
+            self.null_packet_bitrate = Some(input);
             self
         }
-        pub fn set_null_packet_bitrate(mut self, inp: f64) -> Self {
-            self.null_packet_bitrate = Some(inp);
+        pub fn set_null_packet_bitrate(mut self, input: std::option::Option<f64>) -> Self {
+            self.null_packet_bitrate = input;
             self
         }
         /// The number of milliseconds between instances of this table in the output transport stream.  Valid values are 0, 10..1000.
-        pub fn pat_interval(mut self, inp: i32) -> Self {
-            self.pat_interval = Some(inp);
+        pub fn pat_interval(mut self, input: i32) -> Self {
+            self.pat_interval = Some(input);
             self
         }
-        pub fn set_pat_interval(mut self, inp: i32) -> Self {
-            self.pat_interval = Some(inp);
+        pub fn set_pat_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.pat_interval = input;
             self
         }
         /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-        pub fn pcr_control(mut self, inp: crate::model::M2tsPcrControl) -> Self {
-            self.pcr_control = Some(inp);
+        pub fn pcr_control(mut self, input: crate::model::M2tsPcrControl) -> Self {
+            self.pcr_control = Some(input);
             self
         }
         pub fn set_pcr_control(
             mut self,
-            inp: std::option::Option<crate::model::M2tsPcrControl>,
+            input: std::option::Option<crate::model::M2tsPcrControl>,
         ) -> Self {
-            self.pcr_control = inp;
+            self.pcr_control = input;
             self
         }
         /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
-        pub fn pcr_period(mut self, inp: i32) -> Self {
-            self.pcr_period = Some(inp);
+        pub fn pcr_period(mut self, input: i32) -> Self {
+            self.pcr_period = Some(input);
             self
         }
-        pub fn set_pcr_period(mut self, inp: i32) -> Self {
-            self.pcr_period = Some(inp);
+        pub fn set_pcr_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.pcr_period = input;
             self
         }
         /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn pcr_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pcr_pid = Some(inp.into());
+        pub fn pcr_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pcr_pid = Some(input.into());
             self
         }
-        pub fn set_pcr_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pcr_pid = inp;
+        pub fn set_pcr_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pcr_pid = input;
             self
         }
         /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
-        pub fn pmt_interval(mut self, inp: i32) -> Self {
-            self.pmt_interval = Some(inp);
+        pub fn pmt_interval(mut self, input: i32) -> Self {
+            self.pmt_interval = Some(input);
             self
         }
-        pub fn set_pmt_interval(mut self, inp: i32) -> Self {
-            self.pmt_interval = Some(inp);
+        pub fn set_pmt_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.pmt_interval = input;
             self
         }
         /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn pmt_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pmt_pid = Some(inp.into());
+        pub fn pmt_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pmt_pid = Some(input.into());
             self
         }
-        pub fn set_pmt_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pmt_pid = inp;
+        pub fn set_pmt_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pmt_pid = input;
             self
         }
         /// The value of the program number field in the Program Map Table.
-        pub fn program_num(mut self, inp: i32) -> Self {
-            self.program_num = Some(inp);
+        pub fn program_num(mut self, input: i32) -> Self {
+            self.program_num = Some(input);
             self
         }
-        pub fn set_program_num(mut self, inp: i32) -> Self {
-            self.program_num = Some(inp);
+        pub fn set_program_num(mut self, input: std::option::Option<i32>) -> Self {
+            self.program_num = input;
             self
         }
         /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
-        pub fn rate_mode(mut self, inp: crate::model::M2tsRateMode) -> Self {
-            self.rate_mode = Some(inp);
+        pub fn rate_mode(mut self, input: crate::model::M2tsRateMode) -> Self {
+            self.rate_mode = Some(input);
             self
         }
         pub fn set_rate_mode(
             mut self,
-            inp: std::option::Option<crate::model::M2tsRateMode>,
+            input: std::option::Option<crate::model::M2tsRateMode>,
         ) -> Self {
-            self.rate_mode = inp;
+            self.rate_mode = input;
             self
         }
         /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn scte27_pids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.scte27_pids = Some(inp.into());
+        pub fn scte27_pids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scte27_pids = Some(input.into());
             self
         }
-        pub fn set_scte27_pids(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.scte27_pids = inp;
+        pub fn set_scte27_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.scte27_pids = input;
             self
         }
         /// Optionally pass SCTE-35 signals from the input source to this output.
-        pub fn scte35_control(mut self, inp: crate::model::M2tsScte35Control) -> Self {
-            self.scte35_control = Some(inp);
+        pub fn scte35_control(mut self, input: crate::model::M2tsScte35Control) -> Self {
+            self.scte35_control = Some(input);
             self
         }
         pub fn set_scte35_control(
             mut self,
-            inp: std::option::Option<crate::model::M2tsScte35Control>,
+            input: std::option::Option<crate::model::M2tsScte35Control>,
         ) -> Self {
-            self.scte35_control = inp;
+            self.scte35_control = input;
             self
         }
         /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn scte35_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.scte35_pid = Some(inp.into());
+        pub fn scte35_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scte35_pid = Some(input.into());
             self
         }
-        pub fn set_scte35_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.scte35_pid = inp;
+        pub fn set_scte35_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.scte35_pid = input;
             self
         }
         /// Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
-        pub fn segmentation_markers(mut self, inp: crate::model::M2tsSegmentationMarkers) -> Self {
-            self.segmentation_markers = Some(inp);
+        pub fn segmentation_markers(
+            mut self,
+            input: crate::model::M2tsSegmentationMarkers,
+        ) -> Self {
+            self.segmentation_markers = Some(input);
             self
         }
         pub fn set_segmentation_markers(
             mut self,
-            inp: std::option::Option<crate::model::M2tsSegmentationMarkers>,
+            input: std::option::Option<crate::model::M2tsSegmentationMarkers>,
         ) -> Self {
-            self.segmentation_markers = inp;
+            self.segmentation_markers = input;
             self
         }
         /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted.
         /// When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds.
         /// When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
-        pub fn segmentation_style(mut self, inp: crate::model::M2tsSegmentationStyle) -> Self {
-            self.segmentation_style = Some(inp);
+        pub fn segmentation_style(mut self, input: crate::model::M2tsSegmentationStyle) -> Self {
+            self.segmentation_style = Some(input);
             self
         }
         pub fn set_segmentation_style(
             mut self,
-            inp: std::option::Option<crate::model::M2tsSegmentationStyle>,
+            input: std::option::Option<crate::model::M2tsSegmentationStyle>,
         ) -> Self {
-            self.segmentation_style = inp;
+            self.segmentation_style = input;
             self
         }
         /// The length in seconds of each segment. Required unless markers is set to _none_.
-        pub fn segmentation_time(mut self, inp: f64) -> Self {
-            self.segmentation_time = Some(inp);
+        pub fn segmentation_time(mut self, input: f64) -> Self {
+            self.segmentation_time = Some(input);
             self
         }
-        pub fn set_segmentation_time(mut self, inp: f64) -> Self {
-            self.segmentation_time = Some(inp);
+        pub fn set_segmentation_time(mut self, input: std::option::Option<f64>) -> Self {
+            self.segmentation_time = input;
             self
         }
         /// When set to passthrough, timed metadata will be passed through from input to output.
         pub fn timed_metadata_behavior(
             mut self,
-            inp: crate::model::M2tsTimedMetadataBehavior,
+            input: crate::model::M2tsTimedMetadataBehavior,
         ) -> Self {
-            self.timed_metadata_behavior = Some(inp);
+            self.timed_metadata_behavior = Some(input);
             self
         }
         pub fn set_timed_metadata_behavior(
             mut self,
-            inp: std::option::Option<crate::model::M2tsTimedMetadataBehavior>,
+            input: std::option::Option<crate::model::M2tsTimedMetadataBehavior>,
         ) -> Self {
-            self.timed_metadata_behavior = inp;
+            self.timed_metadata_behavior = input;
             self
         }
         /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn timed_metadata_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timed_metadata_pid = Some(inp.into());
+        pub fn timed_metadata_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timed_metadata_pid = Some(input.into());
             self
         }
         pub fn set_timed_metadata_pid(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.timed_metadata_pid = inp;
+            self.timed_metadata_pid = input;
             self
         }
         /// The value of the transport stream ID field in the Program Map Table.
-        pub fn transport_stream_id(mut self, inp: i32) -> Self {
-            self.transport_stream_id = Some(inp);
+        pub fn transport_stream_id(mut self, input: i32) -> Self {
+            self.transport_stream_id = Some(input);
             self
         }
-        pub fn set_transport_stream_id(mut self, inp: i32) -> Self {
-            self.transport_stream_id = Some(inp);
+        pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.transport_stream_id = input;
             self
         }
         /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn video_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.video_pid = Some(inp.into());
+        pub fn video_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.video_pid = Some(input.into());
             self
         }
-        pub fn set_video_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.video_pid = inp;
+        pub fn set_video_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.video_pid = input;
             self
         }
         /// Consumes the builder and constructs a [`M2tsSettings`](crate::model::M2tsSettings)
@@ -18019,12 +18105,12 @@ pub mod dvb_tdt_settings {
     }
     impl Builder {
         /// The number of milliseconds between instances of this table in the output transport stream.
-        pub fn rep_interval(mut self, inp: i32) -> Self {
-            self.rep_interval = Some(inp);
+        pub fn rep_interval(mut self, input: i32) -> Self {
+            self.rep_interval = Some(input);
             self
         }
-        pub fn set_rep_interval(mut self, inp: i32) -> Self {
-            self.rep_interval = Some(inp);
+        pub fn set_rep_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.rep_interval = input;
             self
         }
         /// Consumes the builder and constructs a [`DvbTdtSettings`](crate::model::DvbTdtSettings)
@@ -18086,45 +18172,45 @@ pub mod dvb_sdt_settings {
     }
     impl Builder {
         /// Selects method of inserting SDT information into output stream. The sdtFollow setting copies SDT information from input stream to output stream. The sdtFollowIfPresent setting copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. The sdtManual setting means user will enter the SDT information. The sdtNone setting means output stream will not contain SDT information.
-        pub fn output_sdt(mut self, inp: crate::model::DvbSdtOutputSdt) -> Self {
-            self.output_sdt = Some(inp);
+        pub fn output_sdt(mut self, input: crate::model::DvbSdtOutputSdt) -> Self {
+            self.output_sdt = Some(input);
             self
         }
         pub fn set_output_sdt(
             mut self,
-            inp: std::option::Option<crate::model::DvbSdtOutputSdt>,
+            input: std::option::Option<crate::model::DvbSdtOutputSdt>,
         ) -> Self {
-            self.output_sdt = inp;
+            self.output_sdt = input;
             self
         }
         /// The number of milliseconds between instances of this table in the output transport stream.
-        pub fn rep_interval(mut self, inp: i32) -> Self {
-            self.rep_interval = Some(inp);
+        pub fn rep_interval(mut self, input: i32) -> Self {
+            self.rep_interval = Some(input);
             self
         }
-        pub fn set_rep_interval(mut self, inp: i32) -> Self {
-            self.rep_interval = Some(inp);
+        pub fn set_rep_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.rep_interval = input;
             self
         }
         /// The service name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// The service provider name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
-        pub fn service_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_provider_name = Some(inp.into());
+        pub fn service_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_provider_name = Some(input.into());
             self
         }
         pub fn set_service_provider_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_provider_name = inp;
+            self.service_provider_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DvbSdtSettings`](crate::model::DvbSdtSettings)
@@ -18246,30 +18332,30 @@ pub mod dvb_nit_settings {
     }
     impl Builder {
         /// The numeric value placed in the Network Information Table (NIT).
-        pub fn network_id(mut self, inp: i32) -> Self {
-            self.network_id = Some(inp);
+        pub fn network_id(mut self, input: i32) -> Self {
+            self.network_id = Some(input);
             self
         }
-        pub fn set_network_id(mut self, inp: i32) -> Self {
-            self.network_id = Some(inp);
+        pub fn set_network_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.network_id = input;
             self
         }
         /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
-        pub fn network_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_name = Some(inp.into());
+        pub fn network_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_name = Some(input.into());
             self
         }
-        pub fn set_network_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.network_name = inp;
+        pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_name = input;
             self
         }
         /// The number of milliseconds between instances of this table in the output transport stream.
-        pub fn rep_interval(mut self, inp: i32) -> Self {
-            self.rep_interval = Some(inp);
+        pub fn rep_interval(mut self, input: i32) -> Self {
+            self.rep_interval = Some(input);
             self
         }
-        pub fn set_rep_interval(mut self, inp: i32) -> Self {
-            self.rep_interval = Some(inp);
+        pub fn set_rep_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.rep_interval = input;
             self
         }
         /// Consumes the builder and constructs a [`DvbNitSettings`](crate::model::DvbNitSettings)
@@ -18732,45 +18818,45 @@ pub mod rtmp_output_settings {
     }
     impl Builder {
         /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA).  This will cause rtmps outputs with self-signed certificates to fail.
-        pub fn certificate_mode(mut self, inp: crate::model::RtmpOutputCertificateMode) -> Self {
-            self.certificate_mode = Some(inp);
+        pub fn certificate_mode(mut self, input: crate::model::RtmpOutputCertificateMode) -> Self {
+            self.certificate_mode = Some(input);
             self
         }
         pub fn set_certificate_mode(
             mut self,
-            inp: std::option::Option<crate::model::RtmpOutputCertificateMode>,
+            input: std::option::Option<crate::model::RtmpOutputCertificateMode>,
         ) -> Self {
-            self.certificate_mode = inp;
+            self.certificate_mode = input;
             self
         }
         /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
-        pub fn connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn connection_retry_interval(mut self, input: i32) -> Self {
+            self.connection_retry_interval = Some(input);
             self
         }
-        pub fn set_connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.connection_retry_interval = input;
             self
         }
         /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
-        pub fn destination(mut self, inp: crate::model::OutputLocationRef) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocationRef>,
+            input: std::option::Option<crate::model::OutputLocationRef>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// Number of retry attempts.
-        pub fn num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn num_retries(mut self, input: i32) -> Self {
+            self.num_retries = Some(input);
             self
         }
-        pub fn set_num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_retries = input;
             self
         }
         /// Consumes the builder and constructs a [`RtmpOutputSettings`](crate::model::RtmpOutputSettings)
@@ -18874,15 +18960,15 @@ pub mod multiplex_output_settings {
     }
     impl Builder {
         /// Destination is a Multiplex.
-        pub fn destination(mut self, inp: crate::model::OutputLocationRef) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocationRef>,
+            input: std::option::Option<crate::model::OutputLocationRef>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings)
@@ -18935,24 +19021,30 @@ pub mod ms_smooth_output_settings {
     impl Builder {
         /// Only applicable when this output is referencing an H.265 video description.
         /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
-        pub fn h265_packaging_type(mut self, inp: crate::model::MsSmoothH265PackagingType) -> Self {
-            self.h265_packaging_type = Some(inp);
+        pub fn h265_packaging_type(
+            mut self,
+            input: crate::model::MsSmoothH265PackagingType,
+        ) -> Self {
+            self.h265_packaging_type = Some(input);
             self
         }
         pub fn set_h265_packaging_type(
             mut self,
-            inp: std::option::Option<crate::model::MsSmoothH265PackagingType>,
+            input: std::option::Option<crate::model::MsSmoothH265PackagingType>,
         ) -> Self {
-            self.h265_packaging_type = inp;
+            self.h265_packaging_type = input;
             self
         }
         /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
-        pub fn name_modifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name_modifier = Some(inp.into());
+        pub fn name_modifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_modifier = Some(input.into());
             self
         }
-        pub fn set_name_modifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name_modifier = inp;
+        pub fn set_name_modifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_modifier = input;
             self
         }
         /// Consumes the builder and constructs a [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings)
@@ -19104,48 +19196,51 @@ pub mod hls_output_settings {
     impl Builder {
         /// Only applicable when this output is referencing an H.265 video description.
         /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
-        pub fn h265_packaging_type(mut self, inp: crate::model::HlsH265PackagingType) -> Self {
-            self.h265_packaging_type = Some(inp);
+        pub fn h265_packaging_type(mut self, input: crate::model::HlsH265PackagingType) -> Self {
+            self.h265_packaging_type = Some(input);
             self
         }
         pub fn set_h265_packaging_type(
             mut self,
-            inp: std::option::Option<crate::model::HlsH265PackagingType>,
+            input: std::option::Option<crate::model::HlsH265PackagingType>,
         ) -> Self {
-            self.h265_packaging_type = inp;
+            self.h265_packaging_type = input;
             self
         }
         /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
-        pub fn hls_settings(mut self, inp: crate::model::HlsSettings) -> Self {
-            self.hls_settings = Some(inp);
+        pub fn hls_settings(mut self, input: crate::model::HlsSettings) -> Self {
+            self.hls_settings = Some(input);
             self
         }
         pub fn set_hls_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsSettings>,
+            input: std::option::Option<crate::model::HlsSettings>,
         ) -> Self {
-            self.hls_settings = inp;
+            self.hls_settings = input;
             self
         }
         /// String concatenated to the end of the destination filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
-        pub fn name_modifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name_modifier = Some(inp.into());
+        pub fn name_modifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_modifier = Some(input.into());
             self
         }
-        pub fn set_name_modifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name_modifier = inp;
+        pub fn set_name_modifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_modifier = input;
             self
         }
         /// String concatenated to end of segment filenames.
-        pub fn segment_modifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.segment_modifier = Some(inp.into());
+        pub fn segment_modifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment_modifier = Some(input.into());
             self
         }
         pub fn set_segment_modifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.segment_modifier = inp;
+            self.segment_modifier = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsOutputSettings`](crate::model::HlsOutputSettings)
@@ -19214,54 +19309,57 @@ pub mod hls_settings {
     }
     impl Builder {
         /// Audio Only Hls Settings
-        pub fn audio_only_hls_settings(mut self, inp: crate::model::AudioOnlyHlsSettings) -> Self {
-            self.audio_only_hls_settings = Some(inp);
+        pub fn audio_only_hls_settings(
+            mut self,
+            input: crate::model::AudioOnlyHlsSettings,
+        ) -> Self {
+            self.audio_only_hls_settings = Some(input);
             self
         }
         pub fn set_audio_only_hls_settings(
             mut self,
-            inp: std::option::Option<crate::model::AudioOnlyHlsSettings>,
+            input: std::option::Option<crate::model::AudioOnlyHlsSettings>,
         ) -> Self {
-            self.audio_only_hls_settings = inp;
+            self.audio_only_hls_settings = input;
             self
         }
         /// Fmp4 Hls Settings
-        pub fn fmp4_hls_settings(mut self, inp: crate::model::Fmp4HlsSettings) -> Self {
-            self.fmp4_hls_settings = Some(inp);
+        pub fn fmp4_hls_settings(mut self, input: crate::model::Fmp4HlsSettings) -> Self {
+            self.fmp4_hls_settings = Some(input);
             self
         }
         pub fn set_fmp4_hls_settings(
             mut self,
-            inp: std::option::Option<crate::model::Fmp4HlsSettings>,
+            input: std::option::Option<crate::model::Fmp4HlsSettings>,
         ) -> Self {
-            self.fmp4_hls_settings = inp;
+            self.fmp4_hls_settings = input;
             self
         }
         /// Frame Capture Hls Settings
         pub fn frame_capture_hls_settings(
             mut self,
-            inp: crate::model::FrameCaptureHlsSettings,
+            input: crate::model::FrameCaptureHlsSettings,
         ) -> Self {
-            self.frame_capture_hls_settings = Some(inp);
+            self.frame_capture_hls_settings = Some(input);
             self
         }
         pub fn set_frame_capture_hls_settings(
             mut self,
-            inp: std::option::Option<crate::model::FrameCaptureHlsSettings>,
+            input: std::option::Option<crate::model::FrameCaptureHlsSettings>,
         ) -> Self {
-            self.frame_capture_hls_settings = inp;
+            self.frame_capture_hls_settings = input;
             self
         }
         /// Standard Hls Settings
-        pub fn standard_hls_settings(mut self, inp: crate::model::StandardHlsSettings) -> Self {
-            self.standard_hls_settings = Some(inp);
+        pub fn standard_hls_settings(mut self, input: crate::model::StandardHlsSettings) -> Self {
+            self.standard_hls_settings = Some(input);
             self
         }
         pub fn set_standard_hls_settings(
             mut self,
-            inp: std::option::Option<crate::model::StandardHlsSettings>,
+            input: std::option::Option<crate::model::StandardHlsSettings>,
         ) -> Self {
-            self.standard_hls_settings = inp;
+            self.standard_hls_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsSettings`](crate::model::HlsSettings)
@@ -19314,27 +19412,27 @@ pub mod standard_hls_settings {
     }
     impl Builder {
         /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
-        pub fn audio_rendition_sets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audio_rendition_sets = Some(inp.into());
+        pub fn audio_rendition_sets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audio_rendition_sets = Some(input.into());
             self
         }
         pub fn set_audio_rendition_sets(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.audio_rendition_sets = inp;
+            self.audio_rendition_sets = input;
             self
         }
         /// Settings information for the .m3u8 container
-        pub fn m3u8_settings(mut self, inp: crate::model::M3u8Settings) -> Self {
-            self.m3u8_settings = Some(inp);
+        pub fn m3u8_settings(mut self, input: crate::model::M3u8Settings) -> Self {
+            self.m3u8_settings = Some(input);
             self
         }
         pub fn set_m3u8_settings(
             mut self,
-            inp: std::option::Option<crate::model::M3u8Settings>,
+            input: std::option::Option<crate::model::M3u8Settings>,
         ) -> Self {
-            self.m3u8_settings = inp;
+            self.m3u8_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`StandardHlsSettings`](crate::model::StandardHlsSettings)
@@ -19476,174 +19574,174 @@ pub mod m3u8_settings {
     }
     impl Builder {
         /// The number of audio frames to insert for each PES packet.
-        pub fn audio_frames_per_pes(mut self, inp: i32) -> Self {
-            self.audio_frames_per_pes = Some(inp);
+        pub fn audio_frames_per_pes(mut self, input: i32) -> Self {
+            self.audio_frames_per_pes = Some(input);
             self
         }
-        pub fn set_audio_frames_per_pes(mut self, inp: i32) -> Self {
-            self.audio_frames_per_pes = Some(inp);
+        pub fn set_audio_frames_per_pes(mut self, input: std::option::Option<i32>) -> Self {
+            self.audio_frames_per_pes = input;
             self
         }
         /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
-        pub fn audio_pids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audio_pids = Some(inp.into());
+        pub fn audio_pids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audio_pids = Some(input.into());
             self
         }
-        pub fn set_audio_pids(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.audio_pids = inp;
+        pub fn set_audio_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audio_pids = input;
             self
         }
         /// This parameter is unused and deprecated.
-        pub fn ecm_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ecm_pid = Some(inp.into());
+        pub fn ecm_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ecm_pid = Some(input.into());
             self
         }
-        pub fn set_ecm_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ecm_pid = inp;
+        pub fn set_ecm_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ecm_pid = input;
             self
         }
         /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-        pub fn nielsen_id3_behavior(mut self, inp: crate::model::M3u8NielsenId3Behavior) -> Self {
-            self.nielsen_id3_behavior = Some(inp);
+        pub fn nielsen_id3_behavior(mut self, input: crate::model::M3u8NielsenId3Behavior) -> Self {
+            self.nielsen_id3_behavior = Some(input);
             self
         }
         pub fn set_nielsen_id3_behavior(
             mut self,
-            inp: std::option::Option<crate::model::M3u8NielsenId3Behavior>,
+            input: std::option::Option<crate::model::M3u8NielsenId3Behavior>,
         ) -> Self {
-            self.nielsen_id3_behavior = inp;
+            self.nielsen_id3_behavior = input;
             self
         }
         /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-        pub fn pat_interval(mut self, inp: i32) -> Self {
-            self.pat_interval = Some(inp);
+        pub fn pat_interval(mut self, input: i32) -> Self {
+            self.pat_interval = Some(input);
             self
         }
-        pub fn set_pat_interval(mut self, inp: i32) -> Self {
-            self.pat_interval = Some(inp);
+        pub fn set_pat_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.pat_interval = input;
             self
         }
         /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-        pub fn pcr_control(mut self, inp: crate::model::M3u8PcrControl) -> Self {
-            self.pcr_control = Some(inp);
+        pub fn pcr_control(mut self, input: crate::model::M3u8PcrControl) -> Self {
+            self.pcr_control = Some(input);
             self
         }
         pub fn set_pcr_control(
             mut self,
-            inp: std::option::Option<crate::model::M3u8PcrControl>,
+            input: std::option::Option<crate::model::M3u8PcrControl>,
         ) -> Self {
-            self.pcr_control = inp;
+            self.pcr_control = input;
             self
         }
         /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
-        pub fn pcr_period(mut self, inp: i32) -> Self {
-            self.pcr_period = Some(inp);
+        pub fn pcr_period(mut self, input: i32) -> Self {
+            self.pcr_period = Some(input);
             self
         }
-        pub fn set_pcr_period(mut self, inp: i32) -> Self {
-            self.pcr_period = Some(inp);
+        pub fn set_pcr_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.pcr_period = input;
             self
         }
         /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
-        pub fn pcr_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pcr_pid = Some(inp.into());
+        pub fn pcr_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pcr_pid = Some(input.into());
             self
         }
-        pub fn set_pcr_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pcr_pid = inp;
+        pub fn set_pcr_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pcr_pid = input;
             self
         }
         /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-        pub fn pmt_interval(mut self, inp: i32) -> Self {
-            self.pmt_interval = Some(inp);
+        pub fn pmt_interval(mut self, input: i32) -> Self {
+            self.pmt_interval = Some(input);
             self
         }
-        pub fn set_pmt_interval(mut self, inp: i32) -> Self {
-            self.pmt_interval = Some(inp);
+        pub fn set_pmt_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.pmt_interval = input;
             self
         }
         /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
-        pub fn pmt_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pmt_pid = Some(inp.into());
+        pub fn pmt_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pmt_pid = Some(input.into());
             self
         }
-        pub fn set_pmt_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pmt_pid = inp;
+        pub fn set_pmt_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pmt_pid = input;
             self
         }
         /// The value of the program number field in the Program Map Table.
-        pub fn program_num(mut self, inp: i32) -> Self {
-            self.program_num = Some(inp);
+        pub fn program_num(mut self, input: i32) -> Self {
+            self.program_num = Some(input);
             self
         }
-        pub fn set_program_num(mut self, inp: i32) -> Self {
-            self.program_num = Some(inp);
+        pub fn set_program_num(mut self, input: std::option::Option<i32>) -> Self {
+            self.program_num = input;
             self
         }
         /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
-        pub fn scte35_behavior(mut self, inp: crate::model::M3u8Scte35Behavior) -> Self {
-            self.scte35_behavior = Some(inp);
+        pub fn scte35_behavior(mut self, input: crate::model::M3u8Scte35Behavior) -> Self {
+            self.scte35_behavior = Some(input);
             self
         }
         pub fn set_scte35_behavior(
             mut self,
-            inp: std::option::Option<crate::model::M3u8Scte35Behavior>,
+            input: std::option::Option<crate::model::M3u8Scte35Behavior>,
         ) -> Self {
-            self.scte35_behavior = inp;
+            self.scte35_behavior = input;
             self
         }
         /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-        pub fn scte35_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.scte35_pid = Some(inp.into());
+        pub fn scte35_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scte35_pid = Some(input.into());
             self
         }
-        pub fn set_scte35_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.scte35_pid = inp;
+        pub fn set_scte35_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.scte35_pid = input;
             self
         }
         /// When set to passthrough, timed metadata is passed through from input to output.
         pub fn timed_metadata_behavior(
             mut self,
-            inp: crate::model::M3u8TimedMetadataBehavior,
+            input: crate::model::M3u8TimedMetadataBehavior,
         ) -> Self {
-            self.timed_metadata_behavior = Some(inp);
+            self.timed_metadata_behavior = Some(input);
             self
         }
         pub fn set_timed_metadata_behavior(
             mut self,
-            inp: std::option::Option<crate::model::M3u8TimedMetadataBehavior>,
+            input: std::option::Option<crate::model::M3u8TimedMetadataBehavior>,
         ) -> Self {
-            self.timed_metadata_behavior = inp;
+            self.timed_metadata_behavior = input;
             self
         }
         /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-        pub fn timed_metadata_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timed_metadata_pid = Some(inp.into());
+        pub fn timed_metadata_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timed_metadata_pid = Some(input.into());
             self
         }
         pub fn set_timed_metadata_pid(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.timed_metadata_pid = inp;
+            self.timed_metadata_pid = input;
             self
         }
         /// The value of the transport stream ID field in the Program Map Table.
-        pub fn transport_stream_id(mut self, inp: i32) -> Self {
-            self.transport_stream_id = Some(inp);
+        pub fn transport_stream_id(mut self, input: i32) -> Self {
+            self.transport_stream_id = Some(input);
             self
         }
-        pub fn set_transport_stream_id(mut self, inp: i32) -> Self {
-            self.transport_stream_id = Some(inp);
+        pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.transport_stream_id = input;
             self
         }
         /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-        pub fn video_pid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.video_pid = Some(inp.into());
+        pub fn video_pid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.video_pid = Some(input.into());
             self
         }
-        pub fn set_video_pid(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.video_pid = inp;
+        pub fn set_video_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.video_pid = input;
             self
         }
         /// Consumes the builder and constructs a [`M3u8Settings`](crate::model::M3u8Settings)
@@ -19974,42 +20072,42 @@ pub mod fmp4_hls_settings {
     }
     impl Builder {
         /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
-        pub fn audio_rendition_sets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audio_rendition_sets = Some(inp.into());
+        pub fn audio_rendition_sets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audio_rendition_sets = Some(input.into());
             self
         }
         pub fn set_audio_rendition_sets(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.audio_rendition_sets = inp;
+            self.audio_rendition_sets = input;
             self
         }
         /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-        pub fn nielsen_id3_behavior(mut self, inp: crate::model::Fmp4NielsenId3Behavior) -> Self {
-            self.nielsen_id3_behavior = Some(inp);
+        pub fn nielsen_id3_behavior(mut self, input: crate::model::Fmp4NielsenId3Behavior) -> Self {
+            self.nielsen_id3_behavior = Some(input);
             self
         }
         pub fn set_nielsen_id3_behavior(
             mut self,
-            inp: std::option::Option<crate::model::Fmp4NielsenId3Behavior>,
+            input: std::option::Option<crate::model::Fmp4NielsenId3Behavior>,
         ) -> Self {
-            self.nielsen_id3_behavior = inp;
+            self.nielsen_id3_behavior = input;
             self
         }
         /// When set to passthrough, timed metadata is passed through from input to output.
         pub fn timed_metadata_behavior(
             mut self,
-            inp: crate::model::Fmp4TimedMetadataBehavior,
+            input: crate::model::Fmp4TimedMetadataBehavior,
         ) -> Self {
-            self.timed_metadata_behavior = Some(inp);
+            self.timed_metadata_behavior = Some(input);
             self
         }
         pub fn set_timed_metadata_behavior(
             mut self,
-            inp: std::option::Option<crate::model::Fmp4TimedMetadataBehavior>,
+            input: std::option::Option<crate::model::Fmp4TimedMetadataBehavior>,
         ) -> Self {
-            self.timed_metadata_behavior = inp;
+            self.timed_metadata_behavior = input;
             self
         }
         /// Consumes the builder and constructs a [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings)
@@ -20196,25 +20294,28 @@ pub mod audio_only_hls_settings {
     }
     impl Builder {
         /// Specifies the group to which the audio Rendition belongs.
-        pub fn audio_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audio_group_id = Some(inp.into());
+        pub fn audio_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audio_group_id = Some(input.into());
             self
         }
-        pub fn set_audio_group_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.audio_group_id = inp;
+        pub fn set_audio_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.audio_group_id = input;
             self
         }
         /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth.
         /// The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
-        pub fn audio_only_image(mut self, inp: crate::model::InputLocation) -> Self {
-            self.audio_only_image = Some(inp);
+        pub fn audio_only_image(mut self, input: crate::model::InputLocation) -> Self {
+            self.audio_only_image = Some(input);
             self
         }
         pub fn set_audio_only_image(
             mut self,
-            inp: std::option::Option<crate::model::InputLocation>,
+            input: std::option::Option<crate::model::InputLocation>,
         ) -> Self {
-            self.audio_only_image = inp;
+            self.audio_only_image = input;
             self
         }
         /// Four types of audio-only tracks are supported:
@@ -20226,27 +20327,27 @@ pub mod audio_only_hls_settings {
         /// Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES
         /// Alternate Audio, not Auto Select
         /// Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
-        pub fn audio_track_type(mut self, inp: crate::model::AudioOnlyHlsTrackType) -> Self {
-            self.audio_track_type = Some(inp);
+        pub fn audio_track_type(mut self, input: crate::model::AudioOnlyHlsTrackType) -> Self {
+            self.audio_track_type = Some(input);
             self
         }
         pub fn set_audio_track_type(
             mut self,
-            inp: std::option::Option<crate::model::AudioOnlyHlsTrackType>,
+            input: std::option::Option<crate::model::AudioOnlyHlsTrackType>,
         ) -> Self {
-            self.audio_track_type = inp;
+            self.audio_track_type = input;
             self
         }
         /// Specifies the segment type.
-        pub fn segment_type(mut self, inp: crate::model::AudioOnlyHlsSegmentType) -> Self {
-            self.segment_type = Some(inp);
+        pub fn segment_type(mut self, input: crate::model::AudioOnlyHlsSegmentType) -> Self {
+            self.segment_type = Some(input);
             self
         }
         pub fn set_segment_type(
             mut self,
-            inp: std::option::Option<crate::model::AudioOnlyHlsSegmentType>,
+            input: std::option::Option<crate::model::AudioOnlyHlsSegmentType>,
         ) -> Self {
-            self.segment_type = inp;
+            self.segment_type = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings)
@@ -20429,30 +20530,33 @@ pub mod input_location {
     }
     impl Builder {
         /// key used to extract the password from EC2 Parameter store
-        pub fn password_param(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password_param = Some(inp.into());
+        pub fn password_param(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password_param = Some(input.into());
             self
         }
-        pub fn set_password_param(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password_param = inp;
+        pub fn set_password_param(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.password_param = input;
             self
         }
         /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uri = Some(inp.into());
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
             self
         }
-        pub fn set_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uri = inp;
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
             self
         }
         /// Documentation update needed
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.username = Some(inp.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
             self
         }
-        pub fn set_username(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.username = inp;
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
             self
         }
         /// Consumes the builder and constructs a [`InputLocation`](crate::model::InputLocation)
@@ -20555,12 +20659,15 @@ pub mod frame_capture_output_settings {
     }
     impl Builder {
         /// Required if the output group contains more than one output. This modifier forms part of the output file name.
-        pub fn name_modifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name_modifier = Some(inp.into());
+        pub fn name_modifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_modifier = Some(input.into());
             self
         }
-        pub fn set_name_modifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name_modifier = inp;
+        pub fn set_name_modifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_modifier = input;
             self
         }
         /// Consumes the builder and constructs a [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings)
@@ -20616,33 +20723,36 @@ pub mod archive_output_settings {
     }
     impl Builder {
         /// Settings specific to the container type of the file.
-        pub fn container_settings(mut self, inp: crate::model::ArchiveContainerSettings) -> Self {
-            self.container_settings = Some(inp);
+        pub fn container_settings(mut self, input: crate::model::ArchiveContainerSettings) -> Self {
+            self.container_settings = Some(input);
             self
         }
         pub fn set_container_settings(
             mut self,
-            inp: std::option::Option<crate::model::ArchiveContainerSettings>,
+            input: std::option::Option<crate::model::ArchiveContainerSettings>,
         ) -> Self {
-            self.container_settings = inp;
+            self.container_settings = input;
             self
         }
         /// Output file extension. If excluded, this will be auto-selected from the container type.
-        pub fn extension(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.extension = Some(inp.into());
+        pub fn extension(mut self, input: impl Into<std::string::String>) -> Self {
+            self.extension = Some(input.into());
             self
         }
-        pub fn set_extension(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.extension = inp;
+        pub fn set_extension(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.extension = input;
             self
         }
         /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
-        pub fn name_modifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name_modifier = Some(inp.into());
+        pub fn name_modifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_modifier = Some(input.into());
             self
         }
-        pub fn set_name_modifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name_modifier = inp;
+        pub fn set_name_modifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_modifier = input;
             self
         }
         /// Consumes the builder and constructs a [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings)
@@ -20694,27 +20804,27 @@ pub mod archive_container_settings {
     }
     impl Builder {
         /// M2ts Settings
-        pub fn m2ts_settings(mut self, inp: crate::model::M2tsSettings) -> Self {
-            self.m2ts_settings = Some(inp);
+        pub fn m2ts_settings(mut self, input: crate::model::M2tsSettings) -> Self {
+            self.m2ts_settings = Some(input);
             self
         }
         pub fn set_m2ts_settings(
             mut self,
-            inp: std::option::Option<crate::model::M2tsSettings>,
+            input: std::option::Option<crate::model::M2tsSettings>,
         ) -> Self {
-            self.m2ts_settings = inp;
+            self.m2ts_settings = input;
             self
         }
         /// Raw Settings
-        pub fn raw_settings(mut self, inp: crate::model::RawSettings) -> Self {
-            self.raw_settings = Some(inp);
+        pub fn raw_settings(mut self, input: crate::model::RawSettings) -> Self {
+            self.raw_settings = Some(input);
             self
         }
         pub fn set_raw_settings(
             mut self,
-            inp: std::option::Option<crate::model::RawSettings>,
+            input: std::option::Option<crate::model::RawSettings>,
         ) -> Self {
-            self.raw_settings = inp;
+            self.raw_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings)
@@ -20841,111 +20951,111 @@ pub mod output_group_settings {
     }
     impl Builder {
         /// Archive Group Settings
-        pub fn archive_group_settings(mut self, inp: crate::model::ArchiveGroupSettings) -> Self {
-            self.archive_group_settings = Some(inp);
+        pub fn archive_group_settings(mut self, input: crate::model::ArchiveGroupSettings) -> Self {
+            self.archive_group_settings = Some(input);
             self
         }
         pub fn set_archive_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::ArchiveGroupSettings>,
+            input: std::option::Option<crate::model::ArchiveGroupSettings>,
         ) -> Self {
-            self.archive_group_settings = inp;
+            self.archive_group_settings = input;
             self
         }
         /// Frame Capture Group Settings
         pub fn frame_capture_group_settings(
             mut self,
-            inp: crate::model::FrameCaptureGroupSettings,
+            input: crate::model::FrameCaptureGroupSettings,
         ) -> Self {
-            self.frame_capture_group_settings = Some(inp);
+            self.frame_capture_group_settings = Some(input);
             self
         }
         pub fn set_frame_capture_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::FrameCaptureGroupSettings>,
+            input: std::option::Option<crate::model::FrameCaptureGroupSettings>,
         ) -> Self {
-            self.frame_capture_group_settings = inp;
+            self.frame_capture_group_settings = input;
             self
         }
         /// Hls Group Settings
-        pub fn hls_group_settings(mut self, inp: crate::model::HlsGroupSettings) -> Self {
-            self.hls_group_settings = Some(inp);
+        pub fn hls_group_settings(mut self, input: crate::model::HlsGroupSettings) -> Self {
+            self.hls_group_settings = Some(input);
             self
         }
         pub fn set_hls_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsGroupSettings>,
+            input: std::option::Option<crate::model::HlsGroupSettings>,
         ) -> Self {
-            self.hls_group_settings = inp;
+            self.hls_group_settings = input;
             self
         }
         /// Media Package Group Settings
         pub fn media_package_group_settings(
             mut self,
-            inp: crate::model::MediaPackageGroupSettings,
+            input: crate::model::MediaPackageGroupSettings,
         ) -> Self {
-            self.media_package_group_settings = Some(inp);
+            self.media_package_group_settings = Some(input);
             self
         }
         pub fn set_media_package_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::MediaPackageGroupSettings>,
+            input: std::option::Option<crate::model::MediaPackageGroupSettings>,
         ) -> Self {
-            self.media_package_group_settings = inp;
+            self.media_package_group_settings = input;
             self
         }
         /// Ms Smooth Group Settings
         pub fn ms_smooth_group_settings(
             mut self,
-            inp: crate::model::MsSmoothGroupSettings,
+            input: crate::model::MsSmoothGroupSettings,
         ) -> Self {
-            self.ms_smooth_group_settings = Some(inp);
+            self.ms_smooth_group_settings = Some(input);
             self
         }
         pub fn set_ms_smooth_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::MsSmoothGroupSettings>,
+            input: std::option::Option<crate::model::MsSmoothGroupSettings>,
         ) -> Self {
-            self.ms_smooth_group_settings = inp;
+            self.ms_smooth_group_settings = input;
             self
         }
         /// Multiplex Group Settings
         pub fn multiplex_group_settings(
             mut self,
-            inp: crate::model::MultiplexGroupSettings,
+            input: crate::model::MultiplexGroupSettings,
         ) -> Self {
-            self.multiplex_group_settings = Some(inp);
+            self.multiplex_group_settings = Some(input);
             self
         }
         pub fn set_multiplex_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexGroupSettings>,
+            input: std::option::Option<crate::model::MultiplexGroupSettings>,
         ) -> Self {
-            self.multiplex_group_settings = inp;
+            self.multiplex_group_settings = input;
             self
         }
         /// Rtmp Group Settings
-        pub fn rtmp_group_settings(mut self, inp: crate::model::RtmpGroupSettings) -> Self {
-            self.rtmp_group_settings = Some(inp);
+        pub fn rtmp_group_settings(mut self, input: crate::model::RtmpGroupSettings) -> Self {
+            self.rtmp_group_settings = Some(input);
             self
         }
         pub fn set_rtmp_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::RtmpGroupSettings>,
+            input: std::option::Option<crate::model::RtmpGroupSettings>,
         ) -> Self {
-            self.rtmp_group_settings = inp;
+            self.rtmp_group_settings = input;
             self
         }
         /// Udp Group Settings
-        pub fn udp_group_settings(mut self, inp: crate::model::UdpGroupSettings) -> Self {
-            self.udp_group_settings = Some(inp);
+        pub fn udp_group_settings(mut self, input: crate::model::UdpGroupSettings) -> Self {
+            self.udp_group_settings = Some(input);
             self
         }
         pub fn set_udp_group_settings(
             mut self,
-            inp: std::option::Option<crate::model::UdpGroupSettings>,
+            input: std::option::Option<crate::model::UdpGroupSettings>,
         ) -> Self {
-            self.udp_group_settings = inp;
+            self.udp_group_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::model::OutputGroupSettings)
@@ -21009,39 +21119,39 @@ pub mod udp_group_settings {
     }
     impl Builder {
         /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted.  When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement).  Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
-        pub fn input_loss_action(mut self, inp: crate::model::InputLossActionForUdpOut) -> Self {
-            self.input_loss_action = Some(inp);
+        pub fn input_loss_action(mut self, input: crate::model::InputLossActionForUdpOut) -> Self {
+            self.input_loss_action = Some(input);
             self
         }
         pub fn set_input_loss_action(
             mut self,
-            inp: std::option::Option<crate::model::InputLossActionForUdpOut>,
+            input: std::option::Option<crate::model::InputLossActionForUdpOut>,
         ) -> Self {
-            self.input_loss_action = inp;
+            self.input_loss_action = input;
             self
         }
         /// Indicates ID3 frame that has the timecode.
         pub fn timed_metadata_id3_frame(
             mut self,
-            inp: crate::model::UdpTimedMetadataId3Frame,
+            input: crate::model::UdpTimedMetadataId3Frame,
         ) -> Self {
-            self.timed_metadata_id3_frame = Some(inp);
+            self.timed_metadata_id3_frame = Some(input);
             self
         }
         pub fn set_timed_metadata_id3_frame(
             mut self,
-            inp: std::option::Option<crate::model::UdpTimedMetadataId3Frame>,
+            input: std::option::Option<crate::model::UdpTimedMetadataId3Frame>,
         ) -> Self {
-            self.timed_metadata_id3_frame = inp;
+            self.timed_metadata_id3_frame = input;
             self
         }
         /// Timed Metadata interval in seconds.
-        pub fn timed_metadata_id3_period(mut self, inp: i32) -> Self {
-            self.timed_metadata_id3_period = Some(inp);
+        pub fn timed_metadata_id3_period(mut self, input: i32) -> Self {
+            self.timed_metadata_id3_period = Some(input);
             self
         }
-        pub fn set_timed_metadata_id3_period(mut self, inp: i32) -> Self {
-            self.timed_metadata_id3_period = Some(inp);
+        pub fn set_timed_metadata_id3_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.timed_metadata_id3_period = input;
             self
         }
         /// Consumes the builder and constructs a [`UdpGroupSettings`](crate::model::UdpGroupSettings)
@@ -21244,85 +21354,85 @@ pub mod rtmp_group_settings {
         pub(crate) restart_delay: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn ad_markers(mut self, inp: impl Into<crate::model::RtmpAdMarkers>) -> Self {
+        pub fn ad_markers(mut self, input: impl Into<crate::model::RtmpAdMarkers>) -> Self {
             let mut v = self.ad_markers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ad_markers = Some(v);
             self
         }
         pub fn set_ad_markers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RtmpAdMarkers>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RtmpAdMarkers>>,
         ) -> Self {
-            self.ad_markers = inp;
+            self.ad_markers = input;
             self
         }
         /// Authentication scheme to use when connecting with CDN
-        pub fn authentication_scheme(mut self, inp: crate::model::AuthenticationScheme) -> Self {
-            self.authentication_scheme = Some(inp);
+        pub fn authentication_scheme(mut self, input: crate::model::AuthenticationScheme) -> Self {
+            self.authentication_scheme = Some(input);
             self
         }
         pub fn set_authentication_scheme(
             mut self,
-            inp: std::option::Option<crate::model::AuthenticationScheme>,
+            input: std::option::Option<crate::model::AuthenticationScheme>,
         ) -> Self {
-            self.authentication_scheme = inp;
+            self.authentication_scheme = input;
             self
         }
         /// Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.
-        pub fn cache_full_behavior(mut self, inp: crate::model::RtmpCacheFullBehavior) -> Self {
-            self.cache_full_behavior = Some(inp);
+        pub fn cache_full_behavior(mut self, input: crate::model::RtmpCacheFullBehavior) -> Self {
+            self.cache_full_behavior = Some(input);
             self
         }
         pub fn set_cache_full_behavior(
             mut self,
-            inp: std::option::Option<crate::model::RtmpCacheFullBehavior>,
+            input: std::option::Option<crate::model::RtmpCacheFullBehavior>,
         ) -> Self {
-            self.cache_full_behavior = inp;
+            self.cache_full_behavior = input;
             self
         }
         /// Cache length, in seconds, is used to calculate buffer size.
-        pub fn cache_length(mut self, inp: i32) -> Self {
-            self.cache_length = Some(inp);
+        pub fn cache_length(mut self, input: i32) -> Self {
+            self.cache_length = Some(input);
             self
         }
-        pub fn set_cache_length(mut self, inp: i32) -> Self {
-            self.cache_length = Some(inp);
+        pub fn set_cache_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.cache_length = input;
             self
         }
         /// Controls the types of data that passes to onCaptionInfo outputs.  If set to 'all' then 608 and 708 carried DTVCC data will be passed.  If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
-        pub fn caption_data(mut self, inp: crate::model::RtmpCaptionData) -> Self {
-            self.caption_data = Some(inp);
+        pub fn caption_data(mut self, input: crate::model::RtmpCaptionData) -> Self {
+            self.caption_data = Some(input);
             self
         }
         pub fn set_caption_data(
             mut self,
-            inp: std::option::Option<crate::model::RtmpCaptionData>,
+            input: std::option::Option<crate::model::RtmpCaptionData>,
         ) -> Self {
-            self.caption_data = inp;
+            self.caption_data = input;
             self
         }
         /// Controls the behavior of this RTMP group if input becomes unavailable.
         /// - emitOutput: Emit a slate until input returns.
         /// - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
-        pub fn input_loss_action(mut self, inp: crate::model::InputLossActionForRtmpOut) -> Self {
-            self.input_loss_action = Some(inp);
+        pub fn input_loss_action(mut self, input: crate::model::InputLossActionForRtmpOut) -> Self {
+            self.input_loss_action = Some(input);
             self
         }
         pub fn set_input_loss_action(
             mut self,
-            inp: std::option::Option<crate::model::InputLossActionForRtmpOut>,
+            input: std::option::Option<crate::model::InputLossActionForRtmpOut>,
         ) -> Self {
-            self.input_loss_action = inp;
+            self.input_loss_action = input;
             self
         }
         /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-        pub fn restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn restart_delay(mut self, input: i32) -> Self {
+            self.restart_delay = Some(input);
             self
         }
-        pub fn set_restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
+            self.restart_delay = input;
             self
         }
         /// Consumes the builder and constructs a [`RtmpGroupSettings`](crate::model::RtmpGroupSettings)
@@ -21816,73 +21926,73 @@ pub mod ms_smooth_group_settings {
     }
     impl Builder {
         /// The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
-        pub fn acquisition_point_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.acquisition_point_id = Some(inp.into());
+        pub fn acquisition_point_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.acquisition_point_id = Some(input.into());
             self
         }
         pub fn set_acquisition_point_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.acquisition_point_id = inp;
+            self.acquisition_point_id = input;
             self
         }
         /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
         pub fn audio_only_timecode_control(
             mut self,
-            inp: crate::model::SmoothGroupAudioOnlyTimecodeControl,
+            input: crate::model::SmoothGroupAudioOnlyTimecodeControl,
         ) -> Self {
-            self.audio_only_timecode_control = Some(inp);
+            self.audio_only_timecode_control = Some(input);
             self
         }
         pub fn set_audio_only_timecode_control(
             mut self,
-            inp: std::option::Option<crate::model::SmoothGroupAudioOnlyTimecodeControl>,
+            input: std::option::Option<crate::model::SmoothGroupAudioOnlyTimecodeControl>,
         ) -> Self {
-            self.audio_only_timecode_control = inp;
+            self.audio_only_timecode_control = input;
             self
         }
         /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).  This will cause https outputs to self-signed certificates to fail.
-        pub fn certificate_mode(mut self, inp: crate::model::SmoothGroupCertificateMode) -> Self {
-            self.certificate_mode = Some(inp);
+        pub fn certificate_mode(mut self, input: crate::model::SmoothGroupCertificateMode) -> Self {
+            self.certificate_mode = Some(input);
             self
         }
         pub fn set_certificate_mode(
             mut self,
-            inp: std::option::Option<crate::model::SmoothGroupCertificateMode>,
+            input: std::option::Option<crate::model::SmoothGroupCertificateMode>,
         ) -> Self {
-            self.certificate_mode = inp;
+            self.certificate_mode = input;
             self
         }
         /// Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.
-        pub fn connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn connection_retry_interval(mut self, input: i32) -> Self {
+            self.connection_retry_interval = Some(input);
             self
         }
-        pub fn set_connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.connection_retry_interval = input;
             self
         }
         /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
-        pub fn destination(mut self, inp: crate::model::OutputLocationRef) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocationRef>,
+            input: std::option::Option<crate::model::OutputLocationRef>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// MS Smooth event ID to be sent to the IIS server.
         /// Should only be specified if eventIdMode is set to useConfigured.
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_id = Some(inp.into());
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
             self
         }
-        pub fn set_event_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.event_id = inp;
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
             self
         }
         /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run.
@@ -21890,144 +22000,150 @@ pub mod ms_smooth_group_settings {
         /// - "useConfigured" - use the value provided in eventId
         /// - "useTimestamp" - generate and send an event ID based on the current timestamp
         /// - "noEventId" - do not send an event ID to the IIS server.
-        pub fn event_id_mode(mut self, inp: crate::model::SmoothGroupEventIdMode) -> Self {
-            self.event_id_mode = Some(inp);
+        pub fn event_id_mode(mut self, input: crate::model::SmoothGroupEventIdMode) -> Self {
+            self.event_id_mode = Some(input);
             self
         }
         pub fn set_event_id_mode(
             mut self,
-            inp: std::option::Option<crate::model::SmoothGroupEventIdMode>,
+            input: std::option::Option<crate::model::SmoothGroupEventIdMode>,
         ) -> Self {
-            self.event_id_mode = inp;
+            self.event_id_mode = input;
             self
         }
         /// When set to sendEos, send EOS signal to IIS server when stopping the event
         pub fn event_stop_behavior(
             mut self,
-            inp: crate::model::SmoothGroupEventStopBehavior,
+            input: crate::model::SmoothGroupEventStopBehavior,
         ) -> Self {
-            self.event_stop_behavior = Some(inp);
+            self.event_stop_behavior = Some(input);
             self
         }
         pub fn set_event_stop_behavior(
             mut self,
-            inp: std::option::Option<crate::model::SmoothGroupEventStopBehavior>,
+            input: std::option::Option<crate::model::SmoothGroupEventStopBehavior>,
         ) -> Self {
-            self.event_stop_behavior = inp;
+            self.event_stop_behavior = input;
             self
         }
         /// Size in seconds of file cache for streaming outputs.
-        pub fn filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn filecache_duration(mut self, input: i32) -> Self {
+            self.filecache_duration = Some(input);
             self
         }
-        pub fn set_filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.filecache_duration = input;
             self
         }
         /// Length of mp4 fragments to generate (in seconds). Fragment length must be compatible with GOP size and framerate.
-        pub fn fragment_length(mut self, inp: i32) -> Self {
-            self.fragment_length = Some(inp);
+        pub fn fragment_length(mut self, input: i32) -> Self {
+            self.fragment_length = Some(input);
             self
         }
-        pub fn set_fragment_length(mut self, inp: i32) -> Self {
-            self.fragment_length = Some(inp);
+        pub fn set_fragment_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.fragment_length = input;
             self
         }
         /// Parameter that control output group behavior on input loss.
         pub fn input_loss_action(
             mut self,
-            inp: crate::model::InputLossActionForMsSmoothOut,
+            input: crate::model::InputLossActionForMsSmoothOut,
         ) -> Self {
-            self.input_loss_action = Some(inp);
+            self.input_loss_action = Some(input);
             self
         }
         pub fn set_input_loss_action(
             mut self,
-            inp: std::option::Option<crate::model::InputLossActionForMsSmoothOut>,
+            input: std::option::Option<crate::model::InputLossActionForMsSmoothOut>,
         ) -> Self {
-            self.input_loss_action = inp;
+            self.input_loss_action = input;
             self
         }
         /// Number of retry attempts.
-        pub fn num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn num_retries(mut self, input: i32) -> Self {
+            self.num_retries = Some(input);
             self
         }
-        pub fn set_num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_retries = input;
             self
         }
         /// Number of seconds before initiating a restart due to output failure, due to exhausting the numRetries on one segment, or exceeding filecacheDuration.
-        pub fn restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn restart_delay(mut self, input: i32) -> Self {
+            self.restart_delay = Some(input);
             self
         }
-        pub fn set_restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
+            self.restart_delay = input;
             self
         }
         /// useInputSegmentation has been deprecated. The configured segment size is always used.
-        pub fn segmentation_mode(mut self, inp: crate::model::SmoothGroupSegmentationMode) -> Self {
-            self.segmentation_mode = Some(inp);
+        pub fn segmentation_mode(
+            mut self,
+            input: crate::model::SmoothGroupSegmentationMode,
+        ) -> Self {
+            self.segmentation_mode = Some(input);
             self
         }
         pub fn set_segmentation_mode(
             mut self,
-            inp: std::option::Option<crate::model::SmoothGroupSegmentationMode>,
+            input: std::option::Option<crate::model::SmoothGroupSegmentationMode>,
         ) -> Self {
-            self.segmentation_mode = inp;
+            self.segmentation_mode = input;
             self
         }
         /// Number of milliseconds to delay the output from the second pipeline.
-        pub fn send_delay_ms(mut self, inp: i32) -> Self {
-            self.send_delay_ms = Some(inp);
+        pub fn send_delay_ms(mut self, input: i32) -> Self {
+            self.send_delay_ms = Some(input);
             self
         }
-        pub fn set_send_delay_ms(mut self, inp: i32) -> Self {
-            self.send_delay_ms = Some(inp);
+        pub fn set_send_delay_ms(mut self, input: std::option::Option<i32>) -> Self {
+            self.send_delay_ms = input;
             self
         }
         /// Identifies the type of data to place in the sparse track:
         /// - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment.
         /// - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment.
         /// - NONE: Don't generate a sparse track for any outputs in this output group.
-        pub fn sparse_track_type(mut self, inp: crate::model::SmoothGroupSparseTrackType) -> Self {
-            self.sparse_track_type = Some(inp);
+        pub fn sparse_track_type(
+            mut self,
+            input: crate::model::SmoothGroupSparseTrackType,
+        ) -> Self {
+            self.sparse_track_type = Some(input);
             self
         }
         pub fn set_sparse_track_type(
             mut self,
-            inp: std::option::Option<crate::model::SmoothGroupSparseTrackType>,
+            input: std::option::Option<crate::model::SmoothGroupSparseTrackType>,
         ) -> Self {
-            self.sparse_track_type = inp;
+            self.sparse_track_type = input;
             self
         }
         /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
         pub fn stream_manifest_behavior(
             mut self,
-            inp: crate::model::SmoothGroupStreamManifestBehavior,
+            input: crate::model::SmoothGroupStreamManifestBehavior,
         ) -> Self {
-            self.stream_manifest_behavior = Some(inp);
+            self.stream_manifest_behavior = Some(input);
             self
         }
         pub fn set_stream_manifest_behavior(
             mut self,
-            inp: std::option::Option<crate::model::SmoothGroupStreamManifestBehavior>,
+            input: std::option::Option<crate::model::SmoothGroupStreamManifestBehavior>,
         ) -> Self {
-            self.stream_manifest_behavior = inp;
+            self.stream_manifest_behavior = input;
             self
         }
         /// Timestamp offset for the event.  Only used if timestampOffsetMode is set to useConfiguredOffset.
-        pub fn timestamp_offset(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timestamp_offset = Some(inp.into());
+        pub fn timestamp_offset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timestamp_offset = Some(input.into());
             self
         }
         pub fn set_timestamp_offset(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.timestamp_offset = inp;
+            self.timestamp_offset = input;
             self
         }
         /// Type of timestamp date offset to use.
@@ -22035,16 +22151,16 @@ pub mod ms_smooth_group_settings {
         /// - useConfiguredOffset: Use an explicitly configured date as the offset
         pub fn timestamp_offset_mode(
             mut self,
-            inp: crate::model::SmoothGroupTimestampOffsetMode,
+            input: crate::model::SmoothGroupTimestampOffsetMode,
         ) -> Self {
-            self.timestamp_offset_mode = Some(inp);
+            self.timestamp_offset_mode = Some(input);
             self
         }
         pub fn set_timestamp_offset_mode(
             mut self,
-            inp: std::option::Option<crate::model::SmoothGroupTimestampOffsetMode>,
+            input: std::option::Option<crate::model::SmoothGroupTimestampOffsetMode>,
         ) -> Self {
-            self.timestamp_offset_mode = inp;
+            self.timestamp_offset_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings)
@@ -22625,15 +22741,15 @@ pub mod media_package_group_settings {
     }
     impl Builder {
         /// MediaPackage channel destination.
-        pub fn destination(mut self, inp: crate::model::OutputLocationRef) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocationRef>,
+            input: std::option::Option<crate::model::OutputLocationRef>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// Consumes the builder and constructs a [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings)
@@ -22956,83 +23072,83 @@ pub mod hls_group_settings {
         pub(crate) ts_file_mode: std::option::Option<crate::model::HlsTsFileMode>,
     }
     impl Builder {
-        pub fn ad_markers(mut self, inp: impl Into<crate::model::HlsAdMarkers>) -> Self {
+        pub fn ad_markers(mut self, input: impl Into<crate::model::HlsAdMarkers>) -> Self {
             let mut v = self.ad_markers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ad_markers = Some(v);
             self
         }
         pub fn set_ad_markers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HlsAdMarkers>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HlsAdMarkers>>,
         ) -> Self {
-            self.ad_markers = inp;
+            self.ad_markers = input;
             self
         }
         /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
-        pub fn base_url_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_url_content = Some(inp.into());
+        pub fn base_url_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_url_content = Some(input.into());
             self
         }
         pub fn set_base_url_content(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.base_url_content = inp;
+            self.base_url_content = input;
             self
         }
         /// Optional. One value per output group.
         /// This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
-        pub fn base_url_content1(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_url_content1 = Some(inp.into());
+        pub fn base_url_content1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_url_content1 = Some(input.into());
             self
         }
         pub fn set_base_url_content1(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.base_url_content1 = inp;
+            self.base_url_content1 = input;
             self
         }
         /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
-        pub fn base_url_manifest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_url_manifest = Some(inp.into());
+        pub fn base_url_manifest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_url_manifest = Some(input.into());
             self
         }
         pub fn set_base_url_manifest(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.base_url_manifest = inp;
+            self.base_url_manifest = input;
             self
         }
         /// Optional. One value per output group.
         /// Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
-        pub fn base_url_manifest1(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_url_manifest1 = Some(inp.into());
+        pub fn base_url_manifest1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_url_manifest1 = Some(input.into());
             self
         }
         pub fn set_base_url_manifest1(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.base_url_manifest1 = inp;
+            self.base_url_manifest1 = input;
             self
         }
         pub fn caption_language_mappings(
             mut self,
-            inp: impl Into<crate::model::CaptionLanguageMapping>,
+            input: impl Into<crate::model::CaptionLanguageMapping>,
         ) -> Self {
             let mut v = self.caption_language_mappings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.caption_language_mappings = Some(v);
             self
         }
         pub fn set_caption_language_mappings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CaptionLanguageMapping>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CaptionLanguageMapping>>,
         ) -> Self {
-            self.caption_language_mappings = inp;
+            self.caption_language_mappings = input;
             self
         }
         /// Applies only to 608 Embedded output captions.
@@ -23041,139 +23157,142 @@ pub mod hls_group_settings {
         /// omit: Omit any CLOSED-CAPTIONS line from the manifest.
         pub fn caption_language_setting(
             mut self,
-            inp: crate::model::HlsCaptionLanguageSetting,
+            input: crate::model::HlsCaptionLanguageSetting,
         ) -> Self {
-            self.caption_language_setting = Some(inp);
+            self.caption_language_setting = Some(input);
             self
         }
         pub fn set_caption_language_setting(
             mut self,
-            inp: std::option::Option<crate::model::HlsCaptionLanguageSetting>,
+            input: std::option::Option<crate::model::HlsCaptionLanguageSetting>,
         ) -> Self {
-            self.caption_language_setting = inp;
+            self.caption_language_setting = input;
             self
         }
         /// When set to "disabled", sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.
-        pub fn client_cache(mut self, inp: crate::model::HlsClientCache) -> Self {
-            self.client_cache = Some(inp);
+        pub fn client_cache(mut self, input: crate::model::HlsClientCache) -> Self {
+            self.client_cache = Some(input);
             self
         }
         pub fn set_client_cache(
             mut self,
-            inp: std::option::Option<crate::model::HlsClientCache>,
+            input: std::option::Option<crate::model::HlsClientCache>,
         ) -> Self {
-            self.client_cache = inp;
+            self.client_cache = input;
             self
         }
         /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
-        pub fn codec_specification(mut self, inp: crate::model::HlsCodecSpecification) -> Self {
-            self.codec_specification = Some(inp);
+        pub fn codec_specification(mut self, input: crate::model::HlsCodecSpecification) -> Self {
+            self.codec_specification = Some(input);
             self
         }
         pub fn set_codec_specification(
             mut self,
-            inp: std::option::Option<crate::model::HlsCodecSpecification>,
+            input: std::option::Option<crate::model::HlsCodecSpecification>,
         ) -> Self {
-            self.codec_specification = inp;
+            self.codec_specification = input;
             self
         }
         /// For use with encryptionType. This is a 128-bit, 16-byte hex value represented by a 32-character text string. If ivSource is set to "explicit" then this parameter is required and is used as the IV for encryption.
-        pub fn constant_iv(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.constant_iv = Some(inp.into());
+        pub fn constant_iv(mut self, input: impl Into<std::string::String>) -> Self {
+            self.constant_iv = Some(input.into());
             self
         }
-        pub fn set_constant_iv(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.constant_iv = inp;
+        pub fn set_constant_iv(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constant_iv = input;
             self
         }
         /// A directory or HTTP destination for the HLS segments, manifest files, and encryption keys (if enabled).
-        pub fn destination(mut self, inp: crate::model::OutputLocationRef) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocationRef>,
+            input: std::option::Option<crate::model::OutputLocationRef>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// Place segments in subdirectories.
-        pub fn directory_structure(mut self, inp: crate::model::HlsDirectoryStructure) -> Self {
-            self.directory_structure = Some(inp);
+        pub fn directory_structure(mut self, input: crate::model::HlsDirectoryStructure) -> Self {
+            self.directory_structure = Some(input);
             self
         }
         pub fn set_directory_structure(
             mut self,
-            inp: std::option::Option<crate::model::HlsDirectoryStructure>,
+            input: std::option::Option<crate::model::HlsDirectoryStructure>,
         ) -> Self {
-            self.directory_structure = inp;
+            self.directory_structure = input;
             self
         }
         /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
         /// Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose.
         /// Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
-        pub fn discontinuity_tags(mut self, inp: crate::model::HlsDiscontinuityTags) -> Self {
-            self.discontinuity_tags = Some(inp);
+        pub fn discontinuity_tags(mut self, input: crate::model::HlsDiscontinuityTags) -> Self {
+            self.discontinuity_tags = Some(input);
             self
         }
         pub fn set_discontinuity_tags(
             mut self,
-            inp: std::option::Option<crate::model::HlsDiscontinuityTags>,
+            input: std::option::Option<crate::model::HlsDiscontinuityTags>,
         ) -> Self {
-            self.discontinuity_tags = inp;
+            self.discontinuity_tags = input;
             self
         }
         /// Encrypts the segments with the given encryption scheme.  Exclude this parameter if no encryption is desired.
-        pub fn encryption_type(mut self, inp: crate::model::HlsEncryptionType) -> Self {
-            self.encryption_type = Some(inp);
+        pub fn encryption_type(mut self, input: crate::model::HlsEncryptionType) -> Self {
+            self.encryption_type = Some(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::HlsEncryptionType>,
+            input: std::option::Option<crate::model::HlsEncryptionType>,
         ) -> Self {
-            self.encryption_type = inp;
+            self.encryption_type = input;
             self
         }
         /// Parameters that control interactions with the CDN.
-        pub fn hls_cdn_settings(mut self, inp: crate::model::HlsCdnSettings) -> Self {
-            self.hls_cdn_settings = Some(inp);
+        pub fn hls_cdn_settings(mut self, input: crate::model::HlsCdnSettings) -> Self {
+            self.hls_cdn_settings = Some(input);
             self
         }
         pub fn set_hls_cdn_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsCdnSettings>,
+            input: std::option::Option<crate::model::HlsCdnSettings>,
         ) -> Self {
-            self.hls_cdn_settings = inp;
+            self.hls_cdn_settings = input;
             self
         }
         /// State of HLS ID3 Segment Tagging
         pub fn hls_id3_segment_tagging(
             mut self,
-            inp: crate::model::HlsId3SegmentTaggingState,
+            input: crate::model::HlsId3SegmentTaggingState,
         ) -> Self {
-            self.hls_id3_segment_tagging = Some(inp);
+            self.hls_id3_segment_tagging = Some(input);
             self
         }
         pub fn set_hls_id3_segment_tagging(
             mut self,
-            inp: std::option::Option<crate::model::HlsId3SegmentTaggingState>,
+            input: std::option::Option<crate::model::HlsId3SegmentTaggingState>,
         ) -> Self {
-            self.hls_id3_segment_tagging = inp;
+            self.hls_id3_segment_tagging = input;
             self
         }
         /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).
         /// STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
-        pub fn i_frame_only_playlists(mut self, inp: crate::model::IFrameOnlyPlaylistType) -> Self {
-            self.i_frame_only_playlists = Some(inp);
+        pub fn i_frame_only_playlists(
+            mut self,
+            input: crate::model::IFrameOnlyPlaylistType,
+        ) -> Self {
+            self.i_frame_only_playlists = Some(input);
             self
         }
         pub fn set_i_frame_only_playlists(
             mut self,
-            inp: std::option::Option<crate::model::IFrameOnlyPlaylistType>,
+            input: std::option::Option<crate::model::IFrameOnlyPlaylistType>,
         ) -> Self {
-            self.i_frame_only_playlists = inp;
+            self.i_frame_only_playlists = input;
             self
         }
         /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline.
@@ -23181,289 +23300,292 @@ pub mod hls_group_settings {
         /// Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
         pub fn incomplete_segment_behavior(
             mut self,
-            inp: crate::model::HlsIncompleteSegmentBehavior,
+            input: crate::model::HlsIncompleteSegmentBehavior,
         ) -> Self {
-            self.incomplete_segment_behavior = Some(inp);
+            self.incomplete_segment_behavior = Some(input);
             self
         }
         pub fn set_incomplete_segment_behavior(
             mut self,
-            inp: std::option::Option<crate::model::HlsIncompleteSegmentBehavior>,
+            input: std::option::Option<crate::model::HlsIncompleteSegmentBehavior>,
         ) -> Self {
-            self.incomplete_segment_behavior = inp;
+            self.incomplete_segment_behavior = input;
             self
         }
         /// Applies only if Mode field is LIVE.
         /// Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
-        pub fn index_n_segments(mut self, inp: i32) -> Self {
-            self.index_n_segments = Some(inp);
+        pub fn index_n_segments(mut self, input: i32) -> Self {
+            self.index_n_segments = Some(input);
             self
         }
-        pub fn set_index_n_segments(mut self, inp: i32) -> Self {
-            self.index_n_segments = Some(inp);
+        pub fn set_index_n_segments(mut self, input: std::option::Option<i32>) -> Self {
+            self.index_n_segments = input;
             self
         }
         /// Parameter that control output group behavior on input loss.
-        pub fn input_loss_action(mut self, inp: crate::model::InputLossActionForHlsOut) -> Self {
-            self.input_loss_action = Some(inp);
+        pub fn input_loss_action(mut self, input: crate::model::InputLossActionForHlsOut) -> Self {
+            self.input_loss_action = Some(input);
             self
         }
         pub fn set_input_loss_action(
             mut self,
-            inp: std::option::Option<crate::model::InputLossActionForHlsOut>,
+            input: std::option::Option<crate::model::InputLossActionForHlsOut>,
         ) -> Self {
-            self.input_loss_action = inp;
+            self.input_loss_action = input;
             self
         }
         /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If set to "include", IV is listed in the manifest, otherwise the IV is not in the manifest.
-        pub fn iv_in_manifest(mut self, inp: crate::model::HlsIvInManifest) -> Self {
-            self.iv_in_manifest = Some(inp);
+        pub fn iv_in_manifest(mut self, input: crate::model::HlsIvInManifest) -> Self {
+            self.iv_in_manifest = Some(input);
             self
         }
         pub fn set_iv_in_manifest(
             mut self,
-            inp: std::option::Option<crate::model::HlsIvInManifest>,
+            input: std::option::Option<crate::model::HlsIvInManifest>,
         ) -> Self {
-            self.iv_in_manifest = inp;
+            self.iv_in_manifest = input;
             self
         }
         /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is "followsSegmentNumber", it will cause the IV to change every segment (to match the segment number). If this is set to "explicit", you must enter a constantIv value.
-        pub fn iv_source(mut self, inp: crate::model::HlsIvSource) -> Self {
-            self.iv_source = Some(inp);
+        pub fn iv_source(mut self, input: crate::model::HlsIvSource) -> Self {
+            self.iv_source = Some(input);
             self
         }
         pub fn set_iv_source(
             mut self,
-            inp: std::option::Option<crate::model::HlsIvSource>,
+            input: std::option::Option<crate::model::HlsIvSource>,
         ) -> Self {
-            self.iv_source = inp;
+            self.iv_source = input;
             self
         }
         /// Applies only if Mode field is LIVE.
         /// Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
         /// If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
-        pub fn keep_segments(mut self, inp: i32) -> Self {
-            self.keep_segments = Some(inp);
+        pub fn keep_segments(mut self, input: i32) -> Self {
+            self.keep_segments = Some(input);
             self
         }
-        pub fn set_keep_segments(mut self, inp: i32) -> Self {
-            self.keep_segments = Some(inp);
+        pub fn set_keep_segments(mut self, input: std::option::Option<i32>) -> Self {
+            self.keep_segments = input;
             self
         }
         /// The value specifies how the key is represented in the resource identified by the URI.  If parameter is absent, an implicit value of "identity" is used.  A reverse DNS string can also be given.
-        pub fn key_format(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_format = Some(inp.into());
+        pub fn key_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_format = Some(input.into());
             self
         }
-        pub fn set_key_format(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_format = inp;
+        pub fn set_key_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_format = input;
             self
         }
         /// Either a single positive integer version value or a slash delimited list of version values (1/2/3).
-        pub fn key_format_versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_format_versions = Some(inp.into());
+        pub fn key_format_versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_format_versions = Some(input.into());
             self
         }
         pub fn set_key_format_versions(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.key_format_versions = inp;
+            self.key_format_versions = input;
             self
         }
         /// The key provider settings.
-        pub fn key_provider_settings(mut self, inp: crate::model::KeyProviderSettings) -> Self {
-            self.key_provider_settings = Some(inp);
+        pub fn key_provider_settings(mut self, input: crate::model::KeyProviderSettings) -> Self {
+            self.key_provider_settings = Some(input);
             self
         }
         pub fn set_key_provider_settings(
             mut self,
-            inp: std::option::Option<crate::model::KeyProviderSettings>,
+            input: std::option::Option<crate::model::KeyProviderSettings>,
         ) -> Self {
-            self.key_provider_settings = inp;
+            self.key_provider_settings = input;
             self
         }
         /// When set to gzip, compresses HLS playlist.
-        pub fn manifest_compression(mut self, inp: crate::model::HlsManifestCompression) -> Self {
-            self.manifest_compression = Some(inp);
+        pub fn manifest_compression(mut self, input: crate::model::HlsManifestCompression) -> Self {
+            self.manifest_compression = Some(input);
             self
         }
         pub fn set_manifest_compression(
             mut self,
-            inp: std::option::Option<crate::model::HlsManifestCompression>,
+            input: std::option::Option<crate::model::HlsManifestCompression>,
         ) -> Self {
-            self.manifest_compression = inp;
+            self.manifest_compression = input;
             self
         }
         /// Indicates whether the output manifest should use floating point or integer values for segment duration.
         pub fn manifest_duration_format(
             mut self,
-            inp: crate::model::HlsManifestDurationFormat,
+            input: crate::model::HlsManifestDurationFormat,
         ) -> Self {
-            self.manifest_duration_format = Some(inp);
+            self.manifest_duration_format = Some(input);
             self
         }
         pub fn set_manifest_duration_format(
             mut self,
-            inp: std::option::Option<crate::model::HlsManifestDurationFormat>,
+            input: std::option::Option<crate::model::HlsManifestDurationFormat>,
         ) -> Self {
-            self.manifest_duration_format = inp;
+            self.manifest_duration_format = input;
             self
         }
         /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
-        pub fn min_segment_length(mut self, inp: i32) -> Self {
-            self.min_segment_length = Some(inp);
+        pub fn min_segment_length(mut self, input: i32) -> Self {
+            self.min_segment_length = Some(input);
             self
         }
-        pub fn set_min_segment_length(mut self, inp: i32) -> Self {
-            self.min_segment_length = Some(inp);
+        pub fn set_min_segment_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_segment_length = input;
             self
         }
         /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event.
         /// VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
-        pub fn mode(mut self, inp: crate::model::HlsMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::HlsMode) -> Self {
+            self.mode = Some(input);
             self
         }
-        pub fn set_mode(mut self, inp: std::option::Option<crate::model::HlsMode>) -> Self {
-            self.mode = inp;
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::HlsMode>) -> Self {
+            self.mode = input;
             self
         }
         /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group.
         /// VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
         /// SEGMENTS_ONLY: Does not generate any manifests for this output group.
-        pub fn output_selection(mut self, inp: crate::model::HlsOutputSelection) -> Self {
-            self.output_selection = Some(inp);
+        pub fn output_selection(mut self, input: crate::model::HlsOutputSelection) -> Self {
+            self.output_selection = Some(input);
             self
         }
         pub fn set_output_selection(
             mut self,
-            inp: std::option::Option<crate::model::HlsOutputSelection>,
+            input: std::option::Option<crate::model::HlsOutputSelection>,
         ) -> Self {
-            self.output_selection = inp;
+            self.output_selection = input;
             self
         }
         /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.
-        pub fn program_date_time(mut self, inp: crate::model::HlsProgramDateTime) -> Self {
-            self.program_date_time = Some(inp);
+        pub fn program_date_time(mut self, input: crate::model::HlsProgramDateTime) -> Self {
+            self.program_date_time = Some(input);
             self
         }
         pub fn set_program_date_time(
             mut self,
-            inp: std::option::Option<crate::model::HlsProgramDateTime>,
+            input: std::option::Option<crate::model::HlsProgramDateTime>,
         ) -> Self {
-            self.program_date_time = inp;
+            self.program_date_time = input;
             self
         }
         /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
-        pub fn program_date_time_period(mut self, inp: i32) -> Self {
-            self.program_date_time_period = Some(inp);
+        pub fn program_date_time_period(mut self, input: i32) -> Self {
+            self.program_date_time_period = Some(input);
             self
         }
-        pub fn set_program_date_time_period(mut self, inp: i32) -> Self {
-            self.program_date_time_period = Some(inp);
+        pub fn set_program_date_time_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.program_date_time_period = input;
             self
         }
         /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines.
         /// DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only.
         /// For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
-        pub fn redundant_manifest(mut self, inp: crate::model::HlsRedundantManifest) -> Self {
-            self.redundant_manifest = Some(inp);
+        pub fn redundant_manifest(mut self, input: crate::model::HlsRedundantManifest) -> Self {
+            self.redundant_manifest = Some(input);
             self
         }
         pub fn set_redundant_manifest(
             mut self,
-            inp: std::option::Option<crate::model::HlsRedundantManifest>,
+            input: std::option::Option<crate::model::HlsRedundantManifest>,
         ) -> Self {
-            self.redundant_manifest = inp;
+            self.redundant_manifest = input;
             self
         }
         /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
-        pub fn segment_length(mut self, inp: i32) -> Self {
-            self.segment_length = Some(inp);
+        pub fn segment_length(mut self, input: i32) -> Self {
+            self.segment_length = Some(input);
             self
         }
-        pub fn set_segment_length(mut self, inp: i32) -> Self {
-            self.segment_length = Some(inp);
+        pub fn set_segment_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.segment_length = input;
             self
         }
         /// useInputSegmentation has been deprecated. The configured segment size is always used.
-        pub fn segmentation_mode(mut self, inp: crate::model::HlsSegmentationMode) -> Self {
-            self.segmentation_mode = Some(inp);
+        pub fn segmentation_mode(mut self, input: crate::model::HlsSegmentationMode) -> Self {
+            self.segmentation_mode = Some(input);
             self
         }
         pub fn set_segmentation_mode(
             mut self,
-            inp: std::option::Option<crate::model::HlsSegmentationMode>,
+            input: std::option::Option<crate::model::HlsSegmentationMode>,
         ) -> Self {
-            self.segmentation_mode = inp;
+            self.segmentation_mode = input;
             self
         }
         /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.
-        pub fn segments_per_subdirectory(mut self, inp: i32) -> Self {
-            self.segments_per_subdirectory = Some(inp);
+        pub fn segments_per_subdirectory(mut self, input: i32) -> Self {
+            self.segments_per_subdirectory = Some(input);
             self
         }
-        pub fn set_segments_per_subdirectory(mut self, inp: i32) -> Self {
-            self.segments_per_subdirectory = Some(inp);
+        pub fn set_segments_per_subdirectory(mut self, input: std::option::Option<i32>) -> Self {
+            self.segments_per_subdirectory = input;
             self
         }
         /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
-        pub fn stream_inf_resolution(mut self, inp: crate::model::HlsStreamInfResolution) -> Self {
-            self.stream_inf_resolution = Some(inp);
+        pub fn stream_inf_resolution(
+            mut self,
+            input: crate::model::HlsStreamInfResolution,
+        ) -> Self {
+            self.stream_inf_resolution = Some(input);
             self
         }
         pub fn set_stream_inf_resolution(
             mut self,
-            inp: std::option::Option<crate::model::HlsStreamInfResolution>,
+            input: std::option::Option<crate::model::HlsStreamInfResolution>,
         ) -> Self {
-            self.stream_inf_resolution = inp;
+            self.stream_inf_resolution = input;
             self
         }
         /// Indicates ID3 frame that has the timecode.
         pub fn timed_metadata_id3_frame(
             mut self,
-            inp: crate::model::HlsTimedMetadataId3Frame,
+            input: crate::model::HlsTimedMetadataId3Frame,
         ) -> Self {
-            self.timed_metadata_id3_frame = Some(inp);
+            self.timed_metadata_id3_frame = Some(input);
             self
         }
         pub fn set_timed_metadata_id3_frame(
             mut self,
-            inp: std::option::Option<crate::model::HlsTimedMetadataId3Frame>,
+            input: std::option::Option<crate::model::HlsTimedMetadataId3Frame>,
         ) -> Self {
-            self.timed_metadata_id3_frame = inp;
+            self.timed_metadata_id3_frame = input;
             self
         }
         /// Timed Metadata interval in seconds.
-        pub fn timed_metadata_id3_period(mut self, inp: i32) -> Self {
-            self.timed_metadata_id3_period = Some(inp);
+        pub fn timed_metadata_id3_period(mut self, input: i32) -> Self {
+            self.timed_metadata_id3_period = Some(input);
             self
         }
-        pub fn set_timed_metadata_id3_period(mut self, inp: i32) -> Self {
-            self.timed_metadata_id3_period = Some(inp);
+        pub fn set_timed_metadata_id3_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.timed_metadata_id3_period = input;
             self
         }
         /// Provides an extra millisecond delta offset to fine tune the timestamps.
-        pub fn timestamp_delta_milliseconds(mut self, inp: i32) -> Self {
-            self.timestamp_delta_milliseconds = Some(inp);
+        pub fn timestamp_delta_milliseconds(mut self, input: i32) -> Self {
+            self.timestamp_delta_milliseconds = Some(input);
             self
         }
-        pub fn set_timestamp_delta_milliseconds(mut self, inp: i32) -> Self {
-            self.timestamp_delta_milliseconds = Some(inp);
+        pub fn set_timestamp_delta_milliseconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.timestamp_delta_milliseconds = input;
             self
         }
         /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
         /// SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
-        pub fn ts_file_mode(mut self, inp: crate::model::HlsTsFileMode) -> Self {
-            self.ts_file_mode = Some(inp);
+        pub fn ts_file_mode(mut self, input: crate::model::HlsTsFileMode) -> Self {
+            self.ts_file_mode = Some(input);
             self
         }
         pub fn set_ts_file_mode(
             mut self,
-            inp: std::option::Option<crate::model::HlsTsFileMode>,
+            input: std::option::Option<crate::model::HlsTsFileMode>,
         ) -> Self {
-            self.ts_file_mode = inp;
+            self.ts_file_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsGroupSettings`](crate::model::HlsGroupSettings)
@@ -24124,15 +24246,15 @@ pub mod key_provider_settings {
     }
     impl Builder {
         /// Static Key Settings
-        pub fn static_key_settings(mut self, inp: crate::model::StaticKeySettings) -> Self {
-            self.static_key_settings = Some(inp);
+        pub fn static_key_settings(mut self, input: crate::model::StaticKeySettings) -> Self {
+            self.static_key_settings = Some(input);
             self
         }
         pub fn set_static_key_settings(
             mut self,
-            inp: std::option::Option<crate::model::StaticKeySettings>,
+            input: std::option::Option<crate::model::StaticKeySettings>,
         ) -> Self {
-            self.static_key_settings = inp;
+            self.static_key_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`KeyProviderSettings`](crate::model::KeyProviderSettings)
@@ -24182,27 +24304,27 @@ pub mod static_key_settings {
     }
     impl Builder {
         /// The URL of the license server used for protecting content.
-        pub fn key_provider_server(mut self, inp: crate::model::InputLocation) -> Self {
-            self.key_provider_server = Some(inp);
+        pub fn key_provider_server(mut self, input: crate::model::InputLocation) -> Self {
+            self.key_provider_server = Some(input);
             self
         }
         pub fn set_key_provider_server(
             mut self,
-            inp: std::option::Option<crate::model::InputLocation>,
+            input: std::option::Option<crate::model::InputLocation>,
         ) -> Self {
-            self.key_provider_server = inp;
+            self.key_provider_server = input;
             self
         }
         /// Static key value as a 32 character hexadecimal string.
-        pub fn static_key_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.static_key_value = Some(inp.into());
+        pub fn static_key_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.static_key_value = Some(input.into());
             self
         }
         pub fn set_static_key_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.static_key_value = inp;
+            self.static_key_value = input;
             self
         }
         /// Consumes the builder and constructs a [`StaticKeySettings`](crate::model::StaticKeySettings)
@@ -24614,66 +24736,66 @@ pub mod hls_cdn_settings {
     }
     impl Builder {
         /// Hls Akamai Settings
-        pub fn hls_akamai_settings(mut self, inp: crate::model::HlsAkamaiSettings) -> Self {
-            self.hls_akamai_settings = Some(inp);
+        pub fn hls_akamai_settings(mut self, input: crate::model::HlsAkamaiSettings) -> Self {
+            self.hls_akamai_settings = Some(input);
             self
         }
         pub fn set_hls_akamai_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsAkamaiSettings>,
+            input: std::option::Option<crate::model::HlsAkamaiSettings>,
         ) -> Self {
-            self.hls_akamai_settings = inp;
+            self.hls_akamai_settings = input;
             self
         }
         /// Hls Basic Put Settings
-        pub fn hls_basic_put_settings(mut self, inp: crate::model::HlsBasicPutSettings) -> Self {
-            self.hls_basic_put_settings = Some(inp);
+        pub fn hls_basic_put_settings(mut self, input: crate::model::HlsBasicPutSettings) -> Self {
+            self.hls_basic_put_settings = Some(input);
             self
         }
         pub fn set_hls_basic_put_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsBasicPutSettings>,
+            input: std::option::Option<crate::model::HlsBasicPutSettings>,
         ) -> Self {
-            self.hls_basic_put_settings = inp;
+            self.hls_basic_put_settings = input;
             self
         }
         /// Hls Media Store Settings
         pub fn hls_media_store_settings(
             mut self,
-            inp: crate::model::HlsMediaStoreSettings,
+            input: crate::model::HlsMediaStoreSettings,
         ) -> Self {
-            self.hls_media_store_settings = Some(inp);
+            self.hls_media_store_settings = Some(input);
             self
         }
         pub fn set_hls_media_store_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsMediaStoreSettings>,
+            input: std::option::Option<crate::model::HlsMediaStoreSettings>,
         ) -> Self {
-            self.hls_media_store_settings = inp;
+            self.hls_media_store_settings = input;
             self
         }
         /// Hls S3 Settings
-        pub fn hls_s3_settings(mut self, inp: crate::model::HlsS3Settings) -> Self {
-            self.hls_s3_settings = Some(inp);
+        pub fn hls_s3_settings(mut self, input: crate::model::HlsS3Settings) -> Self {
+            self.hls_s3_settings = Some(input);
             self
         }
         pub fn set_hls_s3_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsS3Settings>,
+            input: std::option::Option<crate::model::HlsS3Settings>,
         ) -> Self {
-            self.hls_s3_settings = inp;
+            self.hls_s3_settings = input;
             self
         }
         /// Hls Webdav Settings
-        pub fn hls_webdav_settings(mut self, inp: crate::model::HlsWebdavSettings) -> Self {
-            self.hls_webdav_settings = Some(inp);
+        pub fn hls_webdav_settings(mut self, input: crate::model::HlsWebdavSettings) -> Self {
+            self.hls_webdav_settings = Some(input);
             self
         }
         pub fn set_hls_webdav_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsWebdavSettings>,
+            input: std::option::Option<crate::model::HlsWebdavSettings>,
         ) -> Self {
-            self.hls_webdav_settings = inp;
+            self.hls_webdav_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsCdnSettings`](crate::model::HlsCdnSettings)
@@ -24745,51 +24867,54 @@ pub mod hls_webdav_settings {
     }
     impl Builder {
         /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
-        pub fn connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn connection_retry_interval(mut self, input: i32) -> Self {
+            self.connection_retry_interval = Some(input);
             self
         }
-        pub fn set_connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.connection_retry_interval = input;
             self
         }
         /// Size in seconds of file cache for streaming outputs.
-        pub fn filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn filecache_duration(mut self, input: i32) -> Self {
+            self.filecache_duration = Some(input);
             self
         }
-        pub fn set_filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.filecache_duration = input;
             self
         }
         /// Specify whether or not to use chunked transfer encoding to WebDAV.
-        pub fn http_transfer_mode(mut self, inp: crate::model::HlsWebdavHttpTransferMode) -> Self {
-            self.http_transfer_mode = Some(inp);
+        pub fn http_transfer_mode(
+            mut self,
+            input: crate::model::HlsWebdavHttpTransferMode,
+        ) -> Self {
+            self.http_transfer_mode = Some(input);
             self
         }
         pub fn set_http_transfer_mode(
             mut self,
-            inp: std::option::Option<crate::model::HlsWebdavHttpTransferMode>,
+            input: std::option::Option<crate::model::HlsWebdavHttpTransferMode>,
         ) -> Self {
-            self.http_transfer_mode = inp;
+            self.http_transfer_mode = input;
             self
         }
         /// Number of retry attempts that will be made before the Live Event is put into an error state.
-        pub fn num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn num_retries(mut self, input: i32) -> Self {
+            self.num_retries = Some(input);
             self
         }
-        pub fn set_num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_retries = input;
             self
         }
         /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-        pub fn restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn restart_delay(mut self, input: i32) -> Self {
+            self.restart_delay = Some(input);
             self
         }
-        pub fn set_restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
+            self.restart_delay = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsWebdavSettings`](crate::model::HlsWebdavSettings)
@@ -24894,15 +25019,15 @@ pub mod hls_s3_settings {
     }
     impl Builder {
         /// Specify the canned ACL to apply to each S3 request. Defaults to none.
-        pub fn canned_acl(mut self, inp: crate::model::S3CannedAcl) -> Self {
-            self.canned_acl = Some(inp);
+        pub fn canned_acl(mut self, input: crate::model::S3CannedAcl) -> Self {
+            self.canned_acl = Some(input);
             self
         }
         pub fn set_canned_acl(
             mut self,
-            inp: std::option::Option<crate::model::S3CannedAcl>,
+            input: std::option::Option<crate::model::S3CannedAcl>,
         ) -> Self {
-            self.canned_acl = inp;
+            self.canned_acl = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsS3Settings`](crate::model::HlsS3Settings)
@@ -25034,54 +25159,54 @@ pub mod hls_media_store_settings {
     }
     impl Builder {
         /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
-        pub fn connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn connection_retry_interval(mut self, input: i32) -> Self {
+            self.connection_retry_interval = Some(input);
             self
         }
-        pub fn set_connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.connection_retry_interval = input;
             self
         }
         /// Size in seconds of file cache for streaming outputs.
-        pub fn filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn filecache_duration(mut self, input: i32) -> Self {
+            self.filecache_duration = Some(input);
             self
         }
-        pub fn set_filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.filecache_duration = input;
             self
         }
         /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
         pub fn media_store_storage_class(
             mut self,
-            inp: crate::model::HlsMediaStoreStorageClass,
+            input: crate::model::HlsMediaStoreStorageClass,
         ) -> Self {
-            self.media_store_storage_class = Some(inp);
+            self.media_store_storage_class = Some(input);
             self
         }
         pub fn set_media_store_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::HlsMediaStoreStorageClass>,
+            input: std::option::Option<crate::model::HlsMediaStoreStorageClass>,
         ) -> Self {
-            self.media_store_storage_class = inp;
+            self.media_store_storage_class = input;
             self
         }
         /// Number of retry attempts that will be made before the Live Event is put into an error state.
-        pub fn num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn num_retries(mut self, input: i32) -> Self {
+            self.num_retries = Some(input);
             self
         }
-        pub fn set_num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_retries = input;
             self
         }
         /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-        pub fn restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn restart_delay(mut self, input: i32) -> Self {
+            self.restart_delay = Some(input);
             self
         }
-        pub fn set_restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
+            self.restart_delay = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings)
@@ -25201,39 +25326,39 @@ pub mod hls_basic_put_settings {
     }
     impl Builder {
         /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
-        pub fn connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn connection_retry_interval(mut self, input: i32) -> Self {
+            self.connection_retry_interval = Some(input);
             self
         }
-        pub fn set_connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.connection_retry_interval = input;
             self
         }
         /// Size in seconds of file cache for streaming outputs.
-        pub fn filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn filecache_duration(mut self, input: i32) -> Self {
+            self.filecache_duration = Some(input);
             self
         }
-        pub fn set_filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.filecache_duration = input;
             self
         }
         /// Number of retry attempts that will be made before the Live Event is put into an error state.
-        pub fn num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn num_retries(mut self, input: i32) -> Self {
+            self.num_retries = Some(input);
             self
         }
-        pub fn set_num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_retries = input;
             self
         }
         /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-        pub fn restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn restart_delay(mut self, input: i32) -> Self {
+            self.restart_delay = Some(input);
             self
         }
-        pub fn set_restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
+            self.restart_delay = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings)
@@ -25316,69 +25441,72 @@ pub mod hls_akamai_settings {
     }
     impl Builder {
         /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
-        pub fn connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn connection_retry_interval(mut self, input: i32) -> Self {
+            self.connection_retry_interval = Some(input);
             self
         }
-        pub fn set_connection_retry_interval(mut self, inp: i32) -> Self {
-            self.connection_retry_interval = Some(inp);
+        pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.connection_retry_interval = input;
             self
         }
         /// Size in seconds of file cache for streaming outputs.
-        pub fn filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn filecache_duration(mut self, input: i32) -> Self {
+            self.filecache_duration = Some(input);
             self
         }
-        pub fn set_filecache_duration(mut self, inp: i32) -> Self {
-            self.filecache_duration = Some(inp);
+        pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.filecache_duration = input;
             self
         }
         /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
-        pub fn http_transfer_mode(mut self, inp: crate::model::HlsAkamaiHttpTransferMode) -> Self {
-            self.http_transfer_mode = Some(inp);
+        pub fn http_transfer_mode(
+            mut self,
+            input: crate::model::HlsAkamaiHttpTransferMode,
+        ) -> Self {
+            self.http_transfer_mode = Some(input);
             self
         }
         pub fn set_http_transfer_mode(
             mut self,
-            inp: std::option::Option<crate::model::HlsAkamaiHttpTransferMode>,
+            input: std::option::Option<crate::model::HlsAkamaiHttpTransferMode>,
         ) -> Self {
-            self.http_transfer_mode = inp;
+            self.http_transfer_mode = input;
             self
         }
         /// Number of retry attempts that will be made before the Live Event is put into an error state.
-        pub fn num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn num_retries(mut self, input: i32) -> Self {
+            self.num_retries = Some(input);
             self
         }
-        pub fn set_num_retries(mut self, inp: i32) -> Self {
-            self.num_retries = Some(inp);
+        pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.num_retries = input;
             self
         }
         /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-        pub fn restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn restart_delay(mut self, input: i32) -> Self {
+            self.restart_delay = Some(input);
             self
         }
-        pub fn set_restart_delay(mut self, inp: i32) -> Self {
-            self.restart_delay = Some(inp);
+        pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
+            self.restart_delay = input;
             self
         }
         /// Salt for authenticated Akamai.
-        pub fn salt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.salt = Some(inp.into());
+        pub fn salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.salt = Some(input.into());
             self
         }
-        pub fn set_salt(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.salt = inp;
+        pub fn set_salt(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.salt = input;
             self
         }
         /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.token = Some(inp.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token = Some(input.into());
             self
         }
-        pub fn set_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.token = inp;
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings)
@@ -25842,33 +25970,36 @@ pub mod caption_language_mapping {
     }
     impl Builder {
         /// The closed caption channel being described by this CaptionLanguageMapping.  Each channel mapping must have a unique channel number (maximum of 4)
-        pub fn caption_channel(mut self, inp: i32) -> Self {
-            self.caption_channel = Some(inp);
+        pub fn caption_channel(mut self, input: i32) -> Self {
+            self.caption_channel = Some(input);
             self
         }
-        pub fn set_caption_channel(mut self, inp: i32) -> Self {
-            self.caption_channel = Some(inp);
+        pub fn set_caption_channel(mut self, input: std::option::Option<i32>) -> Self {
+            self.caption_channel = input;
             self
         }
         /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
-        pub fn language_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.language_code = Some(inp.into());
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
             self
         }
-        pub fn set_language_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.language_code = inp;
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
             self
         }
         /// Textual description of language
-        pub fn language_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.language_description = Some(inp.into());
+        pub fn language_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_description = Some(input.into());
             self
         }
         pub fn set_language_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.language_description = inp;
+            self.language_description = input;
             self
         }
         /// Consumes the builder and constructs a [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping)
@@ -25984,30 +26115,30 @@ pub mod frame_capture_group_settings {
     }
     impl Builder {
         /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg
-        pub fn destination(mut self, inp: crate::model::OutputLocationRef) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocationRef>,
+            input: std::option::Option<crate::model::OutputLocationRef>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// Parameters that control interactions with the CDN.
         pub fn frame_capture_cdn_settings(
             mut self,
-            inp: crate::model::FrameCaptureCdnSettings,
+            input: crate::model::FrameCaptureCdnSettings,
         ) -> Self {
-            self.frame_capture_cdn_settings = Some(inp);
+            self.frame_capture_cdn_settings = Some(input);
             self
         }
         pub fn set_frame_capture_cdn_settings(
             mut self,
-            inp: std::option::Option<crate::model::FrameCaptureCdnSettings>,
+            input: std::option::Option<crate::model::FrameCaptureCdnSettings>,
         ) -> Self {
-            self.frame_capture_cdn_settings = inp;
+            self.frame_capture_cdn_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings)
@@ -26055,16 +26186,16 @@ pub mod frame_capture_cdn_settings {
         /// Frame Capture S3 Settings
         pub fn frame_capture_s3_settings(
             mut self,
-            inp: crate::model::FrameCaptureS3Settings,
+            input: crate::model::FrameCaptureS3Settings,
         ) -> Self {
-            self.frame_capture_s3_settings = Some(inp);
+            self.frame_capture_s3_settings = Some(input);
             self
         }
         pub fn set_frame_capture_s3_settings(
             mut self,
-            inp: std::option::Option<crate::model::FrameCaptureS3Settings>,
+            input: std::option::Option<crate::model::FrameCaptureS3Settings>,
         ) -> Self {
-            self.frame_capture_s3_settings = inp;
+            self.frame_capture_s3_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings)
@@ -26108,15 +26239,15 @@ pub mod frame_capture_s3_settings {
     }
     impl Builder {
         /// Specify the canned ACL to apply to each S3 request. Defaults to none.
-        pub fn canned_acl(mut self, inp: crate::model::S3CannedAcl) -> Self {
-            self.canned_acl = Some(inp);
+        pub fn canned_acl(mut self, input: crate::model::S3CannedAcl) -> Self {
+            self.canned_acl = Some(input);
             self
         }
         pub fn set_canned_acl(
             mut self,
-            inp: std::option::Option<crate::model::S3CannedAcl>,
+            input: std::option::Option<crate::model::S3CannedAcl>,
         ) -> Self {
-            self.canned_acl = inp;
+            self.canned_acl = input;
             self
         }
         /// Consumes the builder and constructs a [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings)
@@ -26172,36 +26303,36 @@ pub mod archive_group_settings {
     }
     impl Builder {
         /// Parameters that control interactions with the CDN.
-        pub fn archive_cdn_settings(mut self, inp: crate::model::ArchiveCdnSettings) -> Self {
-            self.archive_cdn_settings = Some(inp);
+        pub fn archive_cdn_settings(mut self, input: crate::model::ArchiveCdnSettings) -> Self {
+            self.archive_cdn_settings = Some(input);
             self
         }
         pub fn set_archive_cdn_settings(
             mut self,
-            inp: std::option::Option<crate::model::ArchiveCdnSettings>,
+            input: std::option::Option<crate::model::ArchiveCdnSettings>,
         ) -> Self {
-            self.archive_cdn_settings = inp;
+            self.archive_cdn_settings = input;
             self
         }
         /// A directory and base filename where archive files should be written.
-        pub fn destination(mut self, inp: crate::model::OutputLocationRef) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocationRef>,
+            input: std::option::Option<crate::model::OutputLocationRef>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// Number of seconds to write to archive file before closing and starting a new one.
-        pub fn rollover_interval(mut self, inp: i32) -> Self {
-            self.rollover_interval = Some(inp);
+        pub fn rollover_interval(mut self, input: i32) -> Self {
+            self.rollover_interval = Some(input);
             self
         }
-        pub fn set_rollover_interval(mut self, inp: i32) -> Self {
-            self.rollover_interval = Some(inp);
+        pub fn set_rollover_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.rollover_interval = input;
             self
         }
         /// Consumes the builder and constructs a [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings)
@@ -26247,15 +26378,15 @@ pub mod archive_cdn_settings {
     }
     impl Builder {
         /// Archive S3 Settings
-        pub fn archive_s3_settings(mut self, inp: crate::model::ArchiveS3Settings) -> Self {
-            self.archive_s3_settings = Some(inp);
+        pub fn archive_s3_settings(mut self, input: crate::model::ArchiveS3Settings) -> Self {
+            self.archive_s3_settings = Some(input);
             self
         }
         pub fn set_archive_s3_settings(
             mut self,
-            inp: std::option::Option<crate::model::ArchiveS3Settings>,
+            input: std::option::Option<crate::model::ArchiveS3Settings>,
         ) -> Self {
-            self.archive_s3_settings = inp;
+            self.archive_s3_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings)
@@ -26299,15 +26430,15 @@ pub mod archive_s3_settings {
     }
     impl Builder {
         /// Specify the canned ACL to apply to each S3 request. Defaults to none.
-        pub fn canned_acl(mut self, inp: crate::model::S3CannedAcl) -> Self {
-            self.canned_acl = Some(inp);
+        pub fn canned_acl(mut self, input: crate::model::S3CannedAcl) -> Self {
+            self.canned_acl = Some(input);
             self
         }
         pub fn set_canned_acl(
             mut self,
-            inp: std::option::Option<crate::model::S3CannedAcl>,
+            input: std::option::Option<crate::model::S3CannedAcl>,
         ) -> Self {
-            self.canned_acl = inp;
+            self.canned_acl = input;
             self
         }
         /// Consumes the builder and constructs a [`ArchiveS3Settings`](crate::model::ArchiveS3Settings)
@@ -26361,27 +26492,30 @@ pub mod nielsen_configuration {
     }
     impl Builder {
         /// Enter the Distributor ID assigned to your organization by Nielsen.
-        pub fn distributor_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.distributor_id = Some(inp.into());
+        pub fn distributor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.distributor_id = Some(input.into());
             self
         }
-        pub fn set_distributor_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.distributor_id = inp;
+        pub fn set_distributor_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.distributor_id = input;
             self
         }
         /// Enables Nielsen PCM to ID3 tagging
         pub fn nielsen_pcm_to_id3_tagging(
             mut self,
-            inp: crate::model::NielsenPcmToId3TaggingState,
+            input: crate::model::NielsenPcmToId3TaggingState,
         ) -> Self {
-            self.nielsen_pcm_to_id3_tagging = Some(inp);
+            self.nielsen_pcm_to_id3_tagging = Some(input);
             self
         }
         pub fn set_nielsen_pcm_to_id3_tagging(
             mut self,
-            inp: std::option::Option<crate::model::NielsenPcmToId3TaggingState>,
+            input: std::option::Option<crate::model::NielsenPcmToId3TaggingState>,
         ) -> Self {
-            self.nielsen_pcm_to_id3_tagging = inp;
+            self.nielsen_pcm_to_id3_tagging = input;
             self
         }
         /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::model::NielsenConfiguration)
@@ -26493,31 +26627,31 @@ pub mod motion_graphics_configuration {
         /// Motion Graphics Insertion
         pub fn motion_graphics_insertion(
             mut self,
-            inp: crate::model::MotionGraphicsInsertion,
+            input: crate::model::MotionGraphicsInsertion,
         ) -> Self {
-            self.motion_graphics_insertion = Some(inp);
+            self.motion_graphics_insertion = Some(input);
             self
         }
         pub fn set_motion_graphics_insertion(
             mut self,
-            inp: std::option::Option<crate::model::MotionGraphicsInsertion>,
+            input: std::option::Option<crate::model::MotionGraphicsInsertion>,
         ) -> Self {
-            self.motion_graphics_insertion = inp;
+            self.motion_graphics_insertion = input;
             self
         }
         /// Motion Graphics Settings
         pub fn motion_graphics_settings(
             mut self,
-            inp: crate::model::MotionGraphicsSettings,
+            input: crate::model::MotionGraphicsSettings,
         ) -> Self {
-            self.motion_graphics_settings = Some(inp);
+            self.motion_graphics_settings = Some(input);
             self
         }
         pub fn set_motion_graphics_settings(
             mut self,
-            inp: std::option::Option<crate::model::MotionGraphicsSettings>,
+            input: std::option::Option<crate::model::MotionGraphicsSettings>,
         ) -> Self {
-            self.motion_graphics_settings = inp;
+            self.motion_graphics_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration)
@@ -26569,16 +26703,16 @@ pub mod motion_graphics_settings {
         /// Html Motion Graphics Settings
         pub fn html_motion_graphics_settings(
             mut self,
-            inp: crate::model::HtmlMotionGraphicsSettings,
+            input: crate::model::HtmlMotionGraphicsSettings,
         ) -> Self {
-            self.html_motion_graphics_settings = Some(inp);
+            self.html_motion_graphics_settings = Some(input);
             self
         }
         pub fn set_html_motion_graphics_settings(
             mut self,
-            inp: std::option::Option<crate::model::HtmlMotionGraphicsSettings>,
+            input: std::option::Option<crate::model::HtmlMotionGraphicsSettings>,
         ) -> Self {
-            self.html_motion_graphics_settings = inp;
+            self.html_motion_graphics_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings)
@@ -26751,39 +26885,39 @@ pub mod global_configuration {
     }
     impl Builder {
         /// Value to set the initial audio gain for the Live Event.
-        pub fn initial_audio_gain(mut self, inp: i32) -> Self {
-            self.initial_audio_gain = Some(inp);
+        pub fn initial_audio_gain(mut self, input: i32) -> Self {
+            self.initial_audio_gain = Some(input);
             self
         }
-        pub fn set_initial_audio_gain(mut self, inp: i32) -> Self {
-            self.initial_audio_gain = Some(inp);
+        pub fn set_initial_audio_gain(mut self, input: std::option::Option<i32>) -> Self {
+            self.initial_audio_gain = input;
             self
         }
         /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input.  When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
         pub fn input_end_action(
             mut self,
-            inp: crate::model::GlobalConfigurationInputEndAction,
+            input: crate::model::GlobalConfigurationInputEndAction,
         ) -> Self {
-            self.input_end_action = Some(inp);
+            self.input_end_action = Some(input);
             self
         }
         pub fn set_input_end_action(
             mut self,
-            inp: std::option::Option<crate::model::GlobalConfigurationInputEndAction>,
+            input: std::option::Option<crate::model::GlobalConfigurationInputEndAction>,
         ) -> Self {
-            self.input_end_action = inp;
+            self.input_end_action = input;
             self
         }
         /// Settings for system actions when input is lost.
-        pub fn input_loss_behavior(mut self, inp: crate::model::InputLossBehavior) -> Self {
-            self.input_loss_behavior = Some(inp);
+        pub fn input_loss_behavior(mut self, input: crate::model::InputLossBehavior) -> Self {
+            self.input_loss_behavior = Some(input);
             self
         }
         pub fn set_input_loss_behavior(
             mut self,
-            inp: std::option::Option<crate::model::InputLossBehavior>,
+            input: std::option::Option<crate::model::InputLossBehavior>,
         ) -> Self {
-            self.input_loss_behavior = inp;
+            self.input_loss_behavior = input;
             self
         }
         /// Indicates how MediaLive pipelines are synchronized.
@@ -26791,46 +26925,46 @@ pub mod global_configuration {
         /// EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
         pub fn output_locking_mode(
             mut self,
-            inp: crate::model::GlobalConfigurationOutputLockingMode,
+            input: crate::model::GlobalConfigurationOutputLockingMode,
         ) -> Self {
-            self.output_locking_mode = Some(inp);
+            self.output_locking_mode = Some(input);
             self
         }
         pub fn set_output_locking_mode(
             mut self,
-            inp: std::option::Option<crate::model::GlobalConfigurationOutputLockingMode>,
+            input: std::option::Option<crate::model::GlobalConfigurationOutputLockingMode>,
         ) -> Self {
-            self.output_locking_mode = inp;
+            self.output_locking_mode = input;
             self
         }
         /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
         pub fn output_timing_source(
             mut self,
-            inp: crate::model::GlobalConfigurationOutputTimingSource,
+            input: crate::model::GlobalConfigurationOutputTimingSource,
         ) -> Self {
-            self.output_timing_source = Some(inp);
+            self.output_timing_source = Some(input);
             self
         }
         pub fn set_output_timing_source(
             mut self,
-            inp: std::option::Option<crate::model::GlobalConfigurationOutputTimingSource>,
+            input: std::option::Option<crate::model::GlobalConfigurationOutputTimingSource>,
         ) -> Self {
-            self.output_timing_source = inp;
+            self.output_timing_source = input;
             self
         }
         /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
         pub fn support_low_framerate_inputs(
             mut self,
-            inp: crate::model::GlobalConfigurationLowFramerateInputs,
+            input: crate::model::GlobalConfigurationLowFramerateInputs,
         ) -> Self {
-            self.support_low_framerate_inputs = Some(inp);
+            self.support_low_framerate_inputs = Some(input);
             self
         }
         pub fn set_support_low_framerate_inputs(
             mut self,
-            inp: std::option::Option<crate::model::GlobalConfigurationLowFramerateInputs>,
+            input: std::option::Option<crate::model::GlobalConfigurationLowFramerateInputs>,
         ) -> Self {
-            self.support_low_framerate_inputs = inp;
+            self.support_low_framerate_inputs = input;
             self
         }
         /// Consumes the builder and constructs a [`GlobalConfiguration`](crate::model::GlobalConfiguration)
@@ -27074,57 +27208,57 @@ pub mod input_loss_behavior {
     }
     impl Builder {
         /// Documentation update needed
-        pub fn black_frame_msec(mut self, inp: i32) -> Self {
-            self.black_frame_msec = Some(inp);
+        pub fn black_frame_msec(mut self, input: i32) -> Self {
+            self.black_frame_msec = Some(input);
             self
         }
-        pub fn set_black_frame_msec(mut self, inp: i32) -> Self {
-            self.black_frame_msec = Some(inp);
+        pub fn set_black_frame_msec(mut self, input: std::option::Option<i32>) -> Self {
+            self.black_frame_msec = input;
             self
         }
         /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
-        pub fn input_loss_image_color(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_loss_image_color = Some(inp.into());
+        pub fn input_loss_image_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_loss_image_color = Some(input.into());
             self
         }
         pub fn set_input_loss_image_color(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.input_loss_image_color = inp;
+            self.input_loss_image_color = input;
             self
         }
         /// When input loss image type is "slate" these fields specify the parameters for accessing the slate.
-        pub fn input_loss_image_slate(mut self, inp: crate::model::InputLocation) -> Self {
-            self.input_loss_image_slate = Some(inp);
+        pub fn input_loss_image_slate(mut self, input: crate::model::InputLocation) -> Self {
+            self.input_loss_image_slate = Some(input);
             self
         }
         pub fn set_input_loss_image_slate(
             mut self,
-            inp: std::option::Option<crate::model::InputLocation>,
+            input: std::option::Option<crate::model::InputLocation>,
         ) -> Self {
-            self.input_loss_image_slate = inp;
+            self.input_loss_image_slate = input;
             self
         }
         /// Indicates whether to substitute a solid color or a slate into the output after input loss exceeds blackFrameMsec.
-        pub fn input_loss_image_type(mut self, inp: crate::model::InputLossImageType) -> Self {
-            self.input_loss_image_type = Some(inp);
+        pub fn input_loss_image_type(mut self, input: crate::model::InputLossImageType) -> Self {
+            self.input_loss_image_type = Some(input);
             self
         }
         pub fn set_input_loss_image_type(
             mut self,
-            inp: std::option::Option<crate::model::InputLossImageType>,
+            input: std::option::Option<crate::model::InputLossImageType>,
         ) -> Self {
-            self.input_loss_image_type = inp;
+            self.input_loss_image_type = input;
             self
         }
         /// Documentation update needed
-        pub fn repeat_frame_msec(mut self, inp: i32) -> Self {
-            self.repeat_frame_msec = Some(inp);
+        pub fn repeat_frame_msec(mut self, input: i32) -> Self {
+            self.repeat_frame_msec = Some(input);
             self
         }
-        pub fn set_repeat_frame_msec(mut self, inp: i32) -> Self {
-            self.repeat_frame_msec = Some(inp);
+        pub fn set_repeat_frame_msec(mut self, input: std::option::Option<i32>) -> Self {
+            self.repeat_frame_msec = input;
             self
         }
         /// Consumes the builder and constructs a [`InputLossBehavior`](crate::model::InputLossBehavior)
@@ -27295,16 +27429,16 @@ pub mod feature_activations {
         /// If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
         pub fn input_prepare_schedule_actions(
             mut self,
-            inp: crate::model::FeatureActivationsInputPrepareScheduleActions,
+            input: crate::model::FeatureActivationsInputPrepareScheduleActions,
         ) -> Self {
-            self.input_prepare_schedule_actions = Some(inp);
+            self.input_prepare_schedule_actions = Some(input);
             self
         }
         pub fn set_input_prepare_schedule_actions(
             mut self,
-            inp: std::option::Option<crate::model::FeatureActivationsInputPrepareScheduleActions>,
+            input: std::option::Option<crate::model::FeatureActivationsInputPrepareScheduleActions>,
         ) -> Self {
-            self.input_prepare_schedule_actions = inp;
+            self.input_prepare_schedule_actions = input;
             self
         }
         /// Consumes the builder and constructs a [`FeatureActivations`](crate::model::FeatureActivations)
@@ -27430,60 +27564,63 @@ pub mod caption_description {
     }
     impl Builder {
         /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
-        pub fn caption_selector_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caption_selector_name = Some(inp.into());
+        pub fn caption_selector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caption_selector_name = Some(input.into());
             self
         }
         pub fn set_caption_selector_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.caption_selector_name = inp;
+            self.caption_selector_name = input;
             self
         }
         /// Additional settings for captions destination that depend on the destination type.
         pub fn destination_settings(
             mut self,
-            inp: crate::model::CaptionDestinationSettings,
+            input: crate::model::CaptionDestinationSettings,
         ) -> Self {
-            self.destination_settings = Some(inp);
+            self.destination_settings = Some(input);
             self
         }
         pub fn set_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::CaptionDestinationSettings>,
+            input: std::option::Option<crate::model::CaptionDestinationSettings>,
         ) -> Self {
-            self.destination_settings = inp;
+            self.destination_settings = input;
             self
         }
         /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
-        pub fn language_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.language_code = Some(inp.into());
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
             self
         }
-        pub fn set_language_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.language_code = inp;
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
             self
         }
         /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-        pub fn language_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.language_description = Some(inp.into());
+        pub fn language_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_description = Some(input.into());
             self
         }
         pub fn set_language_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.language_description = inp;
+            self.language_description = input;
             self
         }
         /// Name of the caption description.  Used to associate a caption description with an output.  Names must be unique within an event.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`CaptionDescription`](crate::model::CaptionDescription)
@@ -27657,196 +27794,196 @@ pub mod caption_destination_settings {
         /// Arib Destination Settings
         pub fn arib_destination_settings(
             mut self,
-            inp: crate::model::AribDestinationSettings,
+            input: crate::model::AribDestinationSettings,
         ) -> Self {
-            self.arib_destination_settings = Some(inp);
+            self.arib_destination_settings = Some(input);
             self
         }
         pub fn set_arib_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::AribDestinationSettings>,
+            input: std::option::Option<crate::model::AribDestinationSettings>,
         ) -> Self {
-            self.arib_destination_settings = inp;
+            self.arib_destination_settings = input;
             self
         }
         /// Burn In Destination Settings
         pub fn burn_in_destination_settings(
             mut self,
-            inp: crate::model::BurnInDestinationSettings,
+            input: crate::model::BurnInDestinationSettings,
         ) -> Self {
-            self.burn_in_destination_settings = Some(inp);
+            self.burn_in_destination_settings = Some(input);
             self
         }
         pub fn set_burn_in_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::BurnInDestinationSettings>,
+            input: std::option::Option<crate::model::BurnInDestinationSettings>,
         ) -> Self {
-            self.burn_in_destination_settings = inp;
+            self.burn_in_destination_settings = input;
             self
         }
         /// Dvb Sub Destination Settings
         pub fn dvb_sub_destination_settings(
             mut self,
-            inp: crate::model::DvbSubDestinationSettings,
+            input: crate::model::DvbSubDestinationSettings,
         ) -> Self {
-            self.dvb_sub_destination_settings = Some(inp);
+            self.dvb_sub_destination_settings = Some(input);
             self
         }
         pub fn set_dvb_sub_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::DvbSubDestinationSettings>,
+            input: std::option::Option<crate::model::DvbSubDestinationSettings>,
         ) -> Self {
-            self.dvb_sub_destination_settings = inp;
+            self.dvb_sub_destination_settings = input;
             self
         }
         /// Ebu Tt DDestination Settings
         pub fn ebu_tt_d_destination_settings(
             mut self,
-            inp: crate::model::EbuTtDDestinationSettings,
+            input: crate::model::EbuTtDDestinationSettings,
         ) -> Self {
-            self.ebu_tt_d_destination_settings = Some(inp);
+            self.ebu_tt_d_destination_settings = Some(input);
             self
         }
         pub fn set_ebu_tt_d_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::EbuTtDDestinationSettings>,
+            input: std::option::Option<crate::model::EbuTtDDestinationSettings>,
         ) -> Self {
-            self.ebu_tt_d_destination_settings = inp;
+            self.ebu_tt_d_destination_settings = input;
             self
         }
         /// Embedded Destination Settings
         pub fn embedded_destination_settings(
             mut self,
-            inp: crate::model::EmbeddedDestinationSettings,
+            input: crate::model::EmbeddedDestinationSettings,
         ) -> Self {
-            self.embedded_destination_settings = Some(inp);
+            self.embedded_destination_settings = Some(input);
             self
         }
         pub fn set_embedded_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::EmbeddedDestinationSettings>,
+            input: std::option::Option<crate::model::EmbeddedDestinationSettings>,
         ) -> Self {
-            self.embedded_destination_settings = inp;
+            self.embedded_destination_settings = input;
             self
         }
         /// Embedded Plus Scte20 Destination Settings
         pub fn embedded_plus_scte20_destination_settings(
             mut self,
-            inp: crate::model::EmbeddedPlusScte20DestinationSettings,
+            input: crate::model::EmbeddedPlusScte20DestinationSettings,
         ) -> Self {
-            self.embedded_plus_scte20_destination_settings = Some(inp);
+            self.embedded_plus_scte20_destination_settings = Some(input);
             self
         }
         pub fn set_embedded_plus_scte20_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::EmbeddedPlusScte20DestinationSettings>,
+            input: std::option::Option<crate::model::EmbeddedPlusScte20DestinationSettings>,
         ) -> Self {
-            self.embedded_plus_scte20_destination_settings = inp;
+            self.embedded_plus_scte20_destination_settings = input;
             self
         }
         /// Rtmp Caption Info Destination Settings
         pub fn rtmp_caption_info_destination_settings(
             mut self,
-            inp: crate::model::RtmpCaptionInfoDestinationSettings,
+            input: crate::model::RtmpCaptionInfoDestinationSettings,
         ) -> Self {
-            self.rtmp_caption_info_destination_settings = Some(inp);
+            self.rtmp_caption_info_destination_settings = Some(input);
             self
         }
         pub fn set_rtmp_caption_info_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::RtmpCaptionInfoDestinationSettings>,
+            input: std::option::Option<crate::model::RtmpCaptionInfoDestinationSettings>,
         ) -> Self {
-            self.rtmp_caption_info_destination_settings = inp;
+            self.rtmp_caption_info_destination_settings = input;
             self
         }
         /// Scte20 Plus Embedded Destination Settings
         pub fn scte20_plus_embedded_destination_settings(
             mut self,
-            inp: crate::model::Scte20PlusEmbeddedDestinationSettings,
+            input: crate::model::Scte20PlusEmbeddedDestinationSettings,
         ) -> Self {
-            self.scte20_plus_embedded_destination_settings = Some(inp);
+            self.scte20_plus_embedded_destination_settings = Some(input);
             self
         }
         pub fn set_scte20_plus_embedded_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte20PlusEmbeddedDestinationSettings>,
+            input: std::option::Option<crate::model::Scte20PlusEmbeddedDestinationSettings>,
         ) -> Self {
-            self.scte20_plus_embedded_destination_settings = inp;
+            self.scte20_plus_embedded_destination_settings = input;
             self
         }
         /// Scte27 Destination Settings
         pub fn scte27_destination_settings(
             mut self,
-            inp: crate::model::Scte27DestinationSettings,
+            input: crate::model::Scte27DestinationSettings,
         ) -> Self {
-            self.scte27_destination_settings = Some(inp);
+            self.scte27_destination_settings = Some(input);
             self
         }
         pub fn set_scte27_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte27DestinationSettings>,
+            input: std::option::Option<crate::model::Scte27DestinationSettings>,
         ) -> Self {
-            self.scte27_destination_settings = inp;
+            self.scte27_destination_settings = input;
             self
         }
         /// Smpte Tt Destination Settings
         pub fn smpte_tt_destination_settings(
             mut self,
-            inp: crate::model::SmpteTtDestinationSettings,
+            input: crate::model::SmpteTtDestinationSettings,
         ) -> Self {
-            self.smpte_tt_destination_settings = Some(inp);
+            self.smpte_tt_destination_settings = Some(input);
             self
         }
         pub fn set_smpte_tt_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::SmpteTtDestinationSettings>,
+            input: std::option::Option<crate::model::SmpteTtDestinationSettings>,
         ) -> Self {
-            self.smpte_tt_destination_settings = inp;
+            self.smpte_tt_destination_settings = input;
             self
         }
         /// Teletext Destination Settings
         pub fn teletext_destination_settings(
             mut self,
-            inp: crate::model::TeletextDestinationSettings,
+            input: crate::model::TeletextDestinationSettings,
         ) -> Self {
-            self.teletext_destination_settings = Some(inp);
+            self.teletext_destination_settings = Some(input);
             self
         }
         pub fn set_teletext_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::TeletextDestinationSettings>,
+            input: std::option::Option<crate::model::TeletextDestinationSettings>,
         ) -> Self {
-            self.teletext_destination_settings = inp;
+            self.teletext_destination_settings = input;
             self
         }
         /// Ttml Destination Settings
         pub fn ttml_destination_settings(
             mut self,
-            inp: crate::model::TtmlDestinationSettings,
+            input: crate::model::TtmlDestinationSettings,
         ) -> Self {
-            self.ttml_destination_settings = Some(inp);
+            self.ttml_destination_settings = Some(input);
             self
         }
         pub fn set_ttml_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::TtmlDestinationSettings>,
+            input: std::option::Option<crate::model::TtmlDestinationSettings>,
         ) -> Self {
-            self.ttml_destination_settings = inp;
+            self.ttml_destination_settings = input;
             self
         }
         /// Webvtt Destination Settings
         pub fn webvtt_destination_settings(
             mut self,
-            inp: crate::model::WebvttDestinationSettings,
+            input: crate::model::WebvttDestinationSettings,
         ) -> Self {
-            self.webvtt_destination_settings = Some(inp);
+            self.webvtt_destination_settings = Some(input);
             self
         }
         pub fn set_webvtt_destination_settings(
             mut self,
-            inp: std::option::Option<crate::model::WebvttDestinationSettings>,
+            input: std::option::Option<crate::model::WebvttDestinationSettings>,
         ) -> Self {
-            self.webvtt_destination_settings = inp;
+            self.webvtt_destination_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings)
@@ -27934,15 +28071,15 @@ pub mod ttml_destination_settings {
     }
     impl Builder {
         /// When set to passthrough, passes through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
-        pub fn style_control(mut self, inp: crate::model::TtmlDestinationStyleControl) -> Self {
-            self.style_control = Some(inp);
+        pub fn style_control(mut self, input: crate::model::TtmlDestinationStyleControl) -> Self {
+            self.style_control = Some(input);
             self
         }
         pub fn set_style_control(
             mut self,
-            inp: std::option::Option<crate::model::TtmlDestinationStyleControl>,
+            input: std::option::Option<crate::model::TtmlDestinationStyleControl>,
         ) -> Self {
-            self.style_control = inp;
+            self.style_control = input;
             self
         }
         /// Consumes the builder and constructs a [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings)
@@ -28278,55 +28415,55 @@ pub mod ebu_tt_d_destination_settings {
     }
     impl Builder {
         /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
-        pub fn copyright_holder(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.copyright_holder = Some(inp.into());
+        pub fn copyright_holder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.copyright_holder = Some(input.into());
             self
         }
         pub fn set_copyright_holder(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.copyright_holder = inp;
+            self.copyright_holder = input;
             self
         }
         /// Specifies how to handle the gap between the lines (in multi-line captions).
         /// - enabled: Fill with the captions background color (as specified in the input captions).
         /// - disabled: Leave the gap unfilled.
-        pub fn fill_line_gap(mut self, inp: crate::model::EbuTtDFillLineGapControl) -> Self {
-            self.fill_line_gap = Some(inp);
+        pub fn fill_line_gap(mut self, input: crate::model::EbuTtDFillLineGapControl) -> Self {
+            self.fill_line_gap = Some(input);
             self
         }
         pub fn set_fill_line_gap(
             mut self,
-            inp: std::option::Option<crate::model::EbuTtDFillLineGapControl>,
+            input: std::option::Option<crate::model::EbuTtDFillLineGapControl>,
         ) -> Self {
-            self.fill_line_gap = inp;
+            self.fill_line_gap = input;
             self
         }
         /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".)
         /// You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
         /// - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).
         /// - Leave blank to set the family to “monospace”.
-        pub fn font_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.font_family = Some(inp.into());
+        pub fn font_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.font_family = Some(input.into());
             self
         }
-        pub fn set_font_family(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.font_family = inp;
+        pub fn set_font_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.font_family = input;
             self
         }
         /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions.
         /// - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext.
         /// - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
-        pub fn style_control(mut self, inp: crate::model::EbuTtDDestinationStyleControl) -> Self {
-            self.style_control = Some(inp);
+        pub fn style_control(mut self, input: crate::model::EbuTtDDestinationStyleControl) -> Self {
+            self.style_control = Some(input);
             self
         }
         pub fn set_style_control(
             mut self,
-            inp: std::option::Option<crate::model::EbuTtDDestinationStyleControl>,
+            input: std::option::Option<crate::model::EbuTtDDestinationStyleControl>,
         ) -> Self {
-            self.style_control = inp;
+            self.style_control = input;
             self
         }
         /// Consumes the builder and constructs a [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings)
@@ -28586,180 +28723,180 @@ pub mod dvb_sub_destination_settings {
     }
     impl Builder {
         /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  This option is not valid for source captions that are STL or 608/embedded.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
-        pub fn alignment(mut self, inp: crate::model::DvbSubDestinationAlignment) -> Self {
-            self.alignment = Some(inp);
+        pub fn alignment(mut self, input: crate::model::DvbSubDestinationAlignment) -> Self {
+            self.alignment = Some(input);
             self
         }
         pub fn set_alignment(
             mut self,
-            inp: std::option::Option<crate::model::DvbSubDestinationAlignment>,
+            input: std::option::Option<crate::model::DvbSubDestinationAlignment>,
         ) -> Self {
-            self.alignment = inp;
+            self.alignment = input;
             self
         }
         /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
         pub fn background_color(
             mut self,
-            inp: crate::model::DvbSubDestinationBackgroundColor,
+            input: crate::model::DvbSubDestinationBackgroundColor,
         ) -> Self {
-            self.background_color = Some(inp);
+            self.background_color = Some(input);
             self
         }
         pub fn set_background_color(
             mut self,
-            inp: std::option::Option<crate::model::DvbSubDestinationBackgroundColor>,
+            input: std::option::Option<crate::model::DvbSubDestinationBackgroundColor>,
         ) -> Self {
-            self.background_color = inp;
+            self.background_color = input;
             self
         }
         /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
-        pub fn background_opacity(mut self, inp: i32) -> Self {
-            self.background_opacity = Some(inp);
+        pub fn background_opacity(mut self, input: i32) -> Self {
+            self.background_opacity = Some(input);
             self
         }
-        pub fn set_background_opacity(mut self, inp: i32) -> Self {
-            self.background_opacity = Some(inp);
+        pub fn set_background_opacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.background_opacity = input;
             self
         }
         /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
-        pub fn font(mut self, inp: crate::model::InputLocation) -> Self {
-            self.font = Some(inp);
+        pub fn font(mut self, input: crate::model::InputLocation) -> Self {
+            self.font = Some(input);
             self
         }
-        pub fn set_font(mut self, inp: std::option::Option<crate::model::InputLocation>) -> Self {
-            self.font = inp;
+        pub fn set_font(mut self, input: std::option::Option<crate::model::InputLocation>) -> Self {
+            self.font = input;
             self
         }
         /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
-        pub fn font_color(mut self, inp: crate::model::DvbSubDestinationFontColor) -> Self {
-            self.font_color = Some(inp);
+        pub fn font_color(mut self, input: crate::model::DvbSubDestinationFontColor) -> Self {
+            self.font_color = Some(input);
             self
         }
         pub fn set_font_color(
             mut self,
-            inp: std::option::Option<crate::model::DvbSubDestinationFontColor>,
+            input: std::option::Option<crate::model::DvbSubDestinationFontColor>,
         ) -> Self {
-            self.font_color = inp;
+            self.font_color = input;
             self
         }
         /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
-        pub fn font_opacity(mut self, inp: i32) -> Self {
-            self.font_opacity = Some(inp);
+        pub fn font_opacity(mut self, input: i32) -> Self {
+            self.font_opacity = Some(input);
             self
         }
-        pub fn set_font_opacity(mut self, inp: i32) -> Self {
-            self.font_opacity = Some(inp);
+        pub fn set_font_opacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.font_opacity = input;
             self
         }
         /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
-        pub fn font_resolution(mut self, inp: i32) -> Self {
-            self.font_resolution = Some(inp);
+        pub fn font_resolution(mut self, input: i32) -> Self {
+            self.font_resolution = Some(input);
             self
         }
-        pub fn set_font_resolution(mut self, inp: i32) -> Self {
-            self.font_resolution = Some(inp);
+        pub fn set_font_resolution(mut self, input: std::option::Option<i32>) -> Self {
+            self.font_resolution = input;
             self
         }
         /// When set to auto fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
-        pub fn font_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.font_size = Some(inp.into());
+        pub fn font_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.font_size = Some(input.into());
             self
         }
-        pub fn set_font_size(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.font_size = inp;
+        pub fn set_font_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.font_size = input;
             self
         }
         /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
-        pub fn outline_color(mut self, inp: crate::model::DvbSubDestinationOutlineColor) -> Self {
-            self.outline_color = Some(inp);
+        pub fn outline_color(mut self, input: crate::model::DvbSubDestinationOutlineColor) -> Self {
+            self.outline_color = Some(input);
             self
         }
         pub fn set_outline_color(
             mut self,
-            inp: std::option::Option<crate::model::DvbSubDestinationOutlineColor>,
+            input: std::option::Option<crate::model::DvbSubDestinationOutlineColor>,
         ) -> Self {
-            self.outline_color = inp;
+            self.outline_color = input;
             self
         }
         /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
-        pub fn outline_size(mut self, inp: i32) -> Self {
-            self.outline_size = Some(inp);
+        pub fn outline_size(mut self, input: i32) -> Self {
+            self.outline_size = Some(input);
             self
         }
-        pub fn set_outline_size(mut self, inp: i32) -> Self {
-            self.outline_size = Some(inp);
+        pub fn set_outline_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.outline_size = input;
             self
         }
         /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
-        pub fn shadow_color(mut self, inp: crate::model::DvbSubDestinationShadowColor) -> Self {
-            self.shadow_color = Some(inp);
+        pub fn shadow_color(mut self, input: crate::model::DvbSubDestinationShadowColor) -> Self {
+            self.shadow_color = Some(input);
             self
         }
         pub fn set_shadow_color(
             mut self,
-            inp: std::option::Option<crate::model::DvbSubDestinationShadowColor>,
+            input: std::option::Option<crate::model::DvbSubDestinationShadowColor>,
         ) -> Self {
-            self.shadow_color = inp;
+            self.shadow_color = input;
             self
         }
         /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
-        pub fn shadow_opacity(mut self, inp: i32) -> Self {
-            self.shadow_opacity = Some(inp);
+        pub fn shadow_opacity(mut self, input: i32) -> Self {
+            self.shadow_opacity = Some(input);
             self
         }
-        pub fn set_shadow_opacity(mut self, inp: i32) -> Self {
-            self.shadow_opacity = Some(inp);
+        pub fn set_shadow_opacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.shadow_opacity = input;
             self
         }
         /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
-        pub fn shadow_x_offset(mut self, inp: i32) -> Self {
-            self.shadow_x_offset = Some(inp);
+        pub fn shadow_x_offset(mut self, input: i32) -> Self {
+            self.shadow_x_offset = Some(input);
             self
         }
-        pub fn set_shadow_x_offset(mut self, inp: i32) -> Self {
-            self.shadow_x_offset = Some(inp);
+        pub fn set_shadow_x_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.shadow_x_offset = input;
             self
         }
         /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
-        pub fn shadow_y_offset(mut self, inp: i32) -> Self {
-            self.shadow_y_offset = Some(inp);
+        pub fn shadow_y_offset(mut self, input: i32) -> Self {
+            self.shadow_y_offset = Some(input);
             self
         }
-        pub fn set_shadow_y_offset(mut self, inp: i32) -> Self {
-            self.shadow_y_offset = Some(inp);
+        pub fn set_shadow_y_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.shadow_y_offset = input;
             self
         }
         /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
         pub fn teletext_grid_control(
             mut self,
-            inp: crate::model::DvbSubDestinationTeletextGridControl,
+            input: crate::model::DvbSubDestinationTeletextGridControl,
         ) -> Self {
-            self.teletext_grid_control = Some(inp);
+            self.teletext_grid_control = Some(input);
             self
         }
         pub fn set_teletext_grid_control(
             mut self,
-            inp: std::option::Option<crate::model::DvbSubDestinationTeletextGridControl>,
+            input: std::option::Option<crate::model::DvbSubDestinationTeletextGridControl>,
         ) -> Self {
-            self.teletext_grid_control = inp;
+            self.teletext_grid_control = input;
             self
         }
         /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
-        pub fn x_position(mut self, inp: i32) -> Self {
-            self.x_position = Some(inp);
+        pub fn x_position(mut self, input: i32) -> Self {
+            self.x_position = Some(input);
             self
         }
-        pub fn set_x_position(mut self, inp: i32) -> Self {
-            self.x_position = Some(inp);
+        pub fn set_x_position(mut self, input: std::option::Option<i32>) -> Self {
+            self.x_position = input;
             self
         }
         /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
-        pub fn y_position(mut self, inp: i32) -> Self {
-            self.y_position = Some(inp);
+        pub fn y_position(mut self, input: i32) -> Self {
+            self.y_position = Some(input);
             self
         }
-        pub fn set_y_position(mut self, inp: i32) -> Self {
-            self.y_position = Some(inp);
+        pub fn set_y_position(mut self, input: std::option::Option<i32>) -> Self {
+            self.y_position = input;
             self
         }
         /// Consumes the builder and constructs a [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings)
@@ -29291,177 +29428,177 @@ pub mod burn_in_destination_settings {
     }
     impl Builder {
         /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  All burn-in and DVB-Sub font settings must match.
-        pub fn alignment(mut self, inp: crate::model::BurnInAlignment) -> Self {
-            self.alignment = Some(inp);
+        pub fn alignment(mut self, input: crate::model::BurnInAlignment) -> Self {
+            self.alignment = Some(input);
             self
         }
         pub fn set_alignment(
             mut self,
-            inp: std::option::Option<crate::model::BurnInAlignment>,
+            input: std::option::Option<crate::model::BurnInAlignment>,
         ) -> Self {
-            self.alignment = inp;
+            self.alignment = input;
             self
         }
         /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
-        pub fn background_color(mut self, inp: crate::model::BurnInBackgroundColor) -> Self {
-            self.background_color = Some(inp);
+        pub fn background_color(mut self, input: crate::model::BurnInBackgroundColor) -> Self {
+            self.background_color = Some(input);
             self
         }
         pub fn set_background_color(
             mut self,
-            inp: std::option::Option<crate::model::BurnInBackgroundColor>,
+            input: std::option::Option<crate::model::BurnInBackgroundColor>,
         ) -> Self {
-            self.background_color = inp;
+            self.background_color = input;
             self
         }
         /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
-        pub fn background_opacity(mut self, inp: i32) -> Self {
-            self.background_opacity = Some(inp);
+        pub fn background_opacity(mut self, input: i32) -> Self {
+            self.background_opacity = Some(input);
             self
         }
-        pub fn set_background_opacity(mut self, inp: i32) -> Self {
-            self.background_opacity = Some(inp);
+        pub fn set_background_opacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.background_opacity = input;
             self
         }
         /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions,  embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
-        pub fn font(mut self, inp: crate::model::InputLocation) -> Self {
-            self.font = Some(inp);
+        pub fn font(mut self, input: crate::model::InputLocation) -> Self {
+            self.font = Some(input);
             self
         }
-        pub fn set_font(mut self, inp: std::option::Option<crate::model::InputLocation>) -> Self {
-            self.font = inp;
+        pub fn set_font(mut self, input: std::option::Option<crate::model::InputLocation>) -> Self {
+            self.font = input;
             self
         }
         /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
-        pub fn font_color(mut self, inp: crate::model::BurnInFontColor) -> Self {
-            self.font_color = Some(inp);
+        pub fn font_color(mut self, input: crate::model::BurnInFontColor) -> Self {
+            self.font_color = Some(input);
             self
         }
         pub fn set_font_color(
             mut self,
-            inp: std::option::Option<crate::model::BurnInFontColor>,
+            input: std::option::Option<crate::model::BurnInFontColor>,
         ) -> Self {
-            self.font_color = inp;
+            self.font_color = input;
             self
         }
         /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
-        pub fn font_opacity(mut self, inp: i32) -> Self {
-            self.font_opacity = Some(inp);
+        pub fn font_opacity(mut self, input: i32) -> Self {
+            self.font_opacity = Some(input);
             self
         }
-        pub fn set_font_opacity(mut self, inp: i32) -> Self {
-            self.font_opacity = Some(inp);
+        pub fn set_font_opacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.font_opacity = input;
             self
         }
         /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
-        pub fn font_resolution(mut self, inp: i32) -> Self {
-            self.font_resolution = Some(inp);
+        pub fn font_resolution(mut self, input: i32) -> Self {
+            self.font_resolution = Some(input);
             self
         }
-        pub fn set_font_resolution(mut self, inp: i32) -> Self {
-            self.font_resolution = Some(inp);
+        pub fn set_font_resolution(mut self, input: std::option::Option<i32>) -> Self {
+            self.font_resolution = input;
             self
         }
         /// When set to 'auto' fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
-        pub fn font_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.font_size = Some(inp.into());
+        pub fn font_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.font_size = Some(input.into());
             self
         }
-        pub fn set_font_size(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.font_size = inp;
+        pub fn set_font_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.font_size = input;
             self
         }
         /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
-        pub fn outline_color(mut self, inp: crate::model::BurnInOutlineColor) -> Self {
-            self.outline_color = Some(inp);
+        pub fn outline_color(mut self, input: crate::model::BurnInOutlineColor) -> Self {
+            self.outline_color = Some(input);
             self
         }
         pub fn set_outline_color(
             mut self,
-            inp: std::option::Option<crate::model::BurnInOutlineColor>,
+            input: std::option::Option<crate::model::BurnInOutlineColor>,
         ) -> Self {
-            self.outline_color = inp;
+            self.outline_color = input;
             self
         }
         /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
-        pub fn outline_size(mut self, inp: i32) -> Self {
-            self.outline_size = Some(inp);
+        pub fn outline_size(mut self, input: i32) -> Self {
+            self.outline_size = Some(input);
             self
         }
-        pub fn set_outline_size(mut self, inp: i32) -> Self {
-            self.outline_size = Some(inp);
+        pub fn set_outline_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.outline_size = input;
             self
         }
         /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
-        pub fn shadow_color(mut self, inp: crate::model::BurnInShadowColor) -> Self {
-            self.shadow_color = Some(inp);
+        pub fn shadow_color(mut self, input: crate::model::BurnInShadowColor) -> Self {
+            self.shadow_color = Some(input);
             self
         }
         pub fn set_shadow_color(
             mut self,
-            inp: std::option::Option<crate::model::BurnInShadowColor>,
+            input: std::option::Option<crate::model::BurnInShadowColor>,
         ) -> Self {
-            self.shadow_color = inp;
+            self.shadow_color = input;
             self
         }
         /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
-        pub fn shadow_opacity(mut self, inp: i32) -> Self {
-            self.shadow_opacity = Some(inp);
+        pub fn shadow_opacity(mut self, input: i32) -> Self {
+            self.shadow_opacity = Some(input);
             self
         }
-        pub fn set_shadow_opacity(mut self, inp: i32) -> Self {
-            self.shadow_opacity = Some(inp);
+        pub fn set_shadow_opacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.shadow_opacity = input;
             self
         }
         /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
-        pub fn shadow_x_offset(mut self, inp: i32) -> Self {
-            self.shadow_x_offset = Some(inp);
+        pub fn shadow_x_offset(mut self, input: i32) -> Self {
+            self.shadow_x_offset = Some(input);
             self
         }
-        pub fn set_shadow_x_offset(mut self, inp: i32) -> Self {
-            self.shadow_x_offset = Some(inp);
+        pub fn set_shadow_x_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.shadow_x_offset = input;
             self
         }
         /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
-        pub fn shadow_y_offset(mut self, inp: i32) -> Self {
-            self.shadow_y_offset = Some(inp);
+        pub fn shadow_y_offset(mut self, input: i32) -> Self {
+            self.shadow_y_offset = Some(input);
             self
         }
-        pub fn set_shadow_y_offset(mut self, inp: i32) -> Self {
-            self.shadow_y_offset = Some(inp);
+        pub fn set_shadow_y_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.shadow_y_offset = input;
             self
         }
         /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
         pub fn teletext_grid_control(
             mut self,
-            inp: crate::model::BurnInTeletextGridControl,
+            input: crate::model::BurnInTeletextGridControl,
         ) -> Self {
-            self.teletext_grid_control = Some(inp);
+            self.teletext_grid_control = Some(input);
             self
         }
         pub fn set_teletext_grid_control(
             mut self,
-            inp: std::option::Option<crate::model::BurnInTeletextGridControl>,
+            input: std::option::Option<crate::model::BurnInTeletextGridControl>,
         ) -> Self {
-            self.teletext_grid_control = inp;
+            self.teletext_grid_control = input;
             self
         }
         /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  All burn-in and DVB-Sub font settings must match.
-        pub fn x_position(mut self, inp: i32) -> Self {
-            self.x_position = Some(inp);
+        pub fn x_position(mut self, input: i32) -> Self {
+            self.x_position = Some(input);
             self
         }
-        pub fn set_x_position(mut self, inp: i32) -> Self {
-            self.x_position = Some(inp);
+        pub fn set_x_position(mut self, input: std::option::Option<i32>) -> Self {
+            self.x_position = input;
             self
         }
         /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  All burn-in and DVB-Sub font settings must match.
-        pub fn y_position(mut self, inp: i32) -> Self {
-            self.y_position = Some(inp);
+        pub fn y_position(mut self, input: i32) -> Self {
+            self.y_position = Some(input);
             self
         }
-        pub fn set_y_position(mut self, inp: i32) -> Self {
-            self.y_position = Some(inp);
+        pub fn set_y_position(mut self, input: std::option::Option<i32>) -> Self {
+            self.y_position = input;
             self
         }
         /// Consumes the builder and constructs a [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings)
@@ -29954,63 +30091,63 @@ pub mod blackout_slate {
     }
     impl Builder {
         /// Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.
-        pub fn blackout_slate_image(mut self, inp: crate::model::InputLocation) -> Self {
-            self.blackout_slate_image = Some(inp);
+        pub fn blackout_slate_image(mut self, input: crate::model::InputLocation) -> Self {
+            self.blackout_slate_image = Some(input);
             self
         }
         pub fn set_blackout_slate_image(
             mut self,
-            inp: std::option::Option<crate::model::InputLocation>,
+            input: std::option::Option<crate::model::InputLocation>,
         ) -> Self {
-            self.blackout_slate_image = inp;
+            self.blackout_slate_image = input;
             self
         }
         /// Setting to enabled causes the encoder to blackout the video, audio, and captions, and raise the "Network Blackout Image" slate when an SCTE104/35 Network End Segmentation Descriptor is encountered. The blackout will be lifted when the Network Start Segmentation Descriptor is encountered. The Network End and Network Start descriptors must contain a network ID that matches the value entered in "Network ID".
         pub fn network_end_blackout(
             mut self,
-            inp: crate::model::BlackoutSlateNetworkEndBlackout,
+            input: crate::model::BlackoutSlateNetworkEndBlackout,
         ) -> Self {
-            self.network_end_blackout = Some(inp);
+            self.network_end_blackout = Some(input);
             self
         }
         pub fn set_network_end_blackout(
             mut self,
-            inp: std::option::Option<crate::model::BlackoutSlateNetworkEndBlackout>,
+            input: std::option::Option<crate::model::BlackoutSlateNetworkEndBlackout>,
         ) -> Self {
-            self.network_end_blackout = inp;
+            self.network_end_blackout = input;
             self
         }
         /// Path to local file to use as Network End Blackout image. Image will be scaled to fill the entire output raster.
-        pub fn network_end_blackout_image(mut self, inp: crate::model::InputLocation) -> Self {
-            self.network_end_blackout_image = Some(inp);
+        pub fn network_end_blackout_image(mut self, input: crate::model::InputLocation) -> Self {
+            self.network_end_blackout_image = Some(input);
             self
         }
         pub fn set_network_end_blackout_image(
             mut self,
-            inp: std::option::Option<crate::model::InputLocation>,
+            input: std::option::Option<crate::model::InputLocation>,
         ) -> Self {
-            self.network_end_blackout_image = inp;
+            self.network_end_blackout_image = input;
             self
         }
         /// Provides Network ID that matches EIDR ID format (e.g., "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_id = Some(inp.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_id = Some(input.into());
             self
         }
-        pub fn set_network_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.network_id = inp;
+        pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_id = input;
             self
         }
         /// When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.
-        pub fn state(mut self, inp: crate::model::BlackoutSlateState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::BlackoutSlateState) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::BlackoutSlateState>,
+            input: std::option::Option<crate::model::BlackoutSlateState>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
         /// Consumes the builder and constructs a [`BlackoutSlate`](crate::model::BlackoutSlate)
@@ -30172,15 +30309,15 @@ pub mod avail_configuration {
     }
     impl Builder {
         /// Ad avail settings.
-        pub fn avail_settings(mut self, inp: crate::model::AvailSettings) -> Self {
-            self.avail_settings = Some(inp);
+        pub fn avail_settings(mut self, input: crate::model::AvailSettings) -> Self {
+            self.avail_settings = Some(input);
             self
         }
         pub fn set_avail_settings(
             mut self,
-            inp: std::option::Option<crate::model::AvailSettings>,
+            input: std::option::Option<crate::model::AvailSettings>,
         ) -> Self {
-            self.avail_settings = inp;
+            self.avail_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`AvailConfiguration`](crate::model::AvailConfiguration)
@@ -30230,27 +30367,30 @@ pub mod avail_settings {
     }
     impl Builder {
         /// Scte35 Splice Insert
-        pub fn scte35_splice_insert(mut self, inp: crate::model::Scte35SpliceInsert) -> Self {
-            self.scte35_splice_insert = Some(inp);
+        pub fn scte35_splice_insert(mut self, input: crate::model::Scte35SpliceInsert) -> Self {
+            self.scte35_splice_insert = Some(input);
             self
         }
         pub fn set_scte35_splice_insert(
             mut self,
-            inp: std::option::Option<crate::model::Scte35SpliceInsert>,
+            input: std::option::Option<crate::model::Scte35SpliceInsert>,
         ) -> Self {
-            self.scte35_splice_insert = inp;
+            self.scte35_splice_insert = input;
             self
         }
         /// Scte35 Time Signal Apos
-        pub fn scte35_time_signal_apos(mut self, inp: crate::model::Scte35TimeSignalApos) -> Self {
-            self.scte35_time_signal_apos = Some(inp);
+        pub fn scte35_time_signal_apos(
+            mut self,
+            input: crate::model::Scte35TimeSignalApos,
+        ) -> Self {
+            self.scte35_time_signal_apos = Some(input);
             self
         }
         pub fn set_scte35_time_signal_apos(
             mut self,
-            inp: std::option::Option<crate::model::Scte35TimeSignalApos>,
+            input: std::option::Option<crate::model::Scte35TimeSignalApos>,
         ) -> Self {
-            self.scte35_time_signal_apos = inp;
+            self.scte35_time_signal_apos = input;
             self
         }
         /// Consumes the builder and constructs a [`AvailSettings`](crate::model::AvailSettings)
@@ -30311,42 +30451,42 @@ pub mod scte35_time_signal_apos {
     }
     impl Builder {
         /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
-        pub fn ad_avail_offset(mut self, inp: i32) -> Self {
-            self.ad_avail_offset = Some(inp);
+        pub fn ad_avail_offset(mut self, input: i32) -> Self {
+            self.ad_avail_offset = Some(input);
             self
         }
-        pub fn set_ad_avail_offset(mut self, inp: i32) -> Self {
-            self.ad_avail_offset = Some(inp);
+        pub fn set_ad_avail_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.ad_avail_offset = input;
             self
         }
         /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
         pub fn no_regional_blackout_flag(
             mut self,
-            inp: crate::model::Scte35AposNoRegionalBlackoutBehavior,
+            input: crate::model::Scte35AposNoRegionalBlackoutBehavior,
         ) -> Self {
-            self.no_regional_blackout_flag = Some(inp);
+            self.no_regional_blackout_flag = Some(input);
             self
         }
         pub fn set_no_regional_blackout_flag(
             mut self,
-            inp: std::option::Option<crate::model::Scte35AposNoRegionalBlackoutBehavior>,
+            input: std::option::Option<crate::model::Scte35AposNoRegionalBlackoutBehavior>,
         ) -> Self {
-            self.no_regional_blackout_flag = inp;
+            self.no_regional_blackout_flag = input;
             self
         }
         /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
         pub fn web_delivery_allowed_flag(
             mut self,
-            inp: crate::model::Scte35AposWebDeliveryAllowedBehavior,
+            input: crate::model::Scte35AposWebDeliveryAllowedBehavior,
         ) -> Self {
-            self.web_delivery_allowed_flag = Some(inp);
+            self.web_delivery_allowed_flag = Some(input);
             self
         }
         pub fn set_web_delivery_allowed_flag(
             mut self,
-            inp: std::option::Option<crate::model::Scte35AposWebDeliveryAllowedBehavior>,
+            input: std::option::Option<crate::model::Scte35AposWebDeliveryAllowedBehavior>,
         ) -> Self {
-            self.web_delivery_allowed_flag = inp;
+            self.web_delivery_allowed_flag = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos)
@@ -30522,42 +30662,42 @@ pub mod scte35_splice_insert {
     }
     impl Builder {
         /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
-        pub fn ad_avail_offset(mut self, inp: i32) -> Self {
-            self.ad_avail_offset = Some(inp);
+        pub fn ad_avail_offset(mut self, input: i32) -> Self {
+            self.ad_avail_offset = Some(input);
             self
         }
-        pub fn set_ad_avail_offset(mut self, inp: i32) -> Self {
-            self.ad_avail_offset = Some(inp);
+        pub fn set_ad_avail_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.ad_avail_offset = input;
             self
         }
         /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
         pub fn no_regional_blackout_flag(
             mut self,
-            inp: crate::model::Scte35SpliceInsertNoRegionalBlackoutBehavior,
+            input: crate::model::Scte35SpliceInsertNoRegionalBlackoutBehavior,
         ) -> Self {
-            self.no_regional_blackout_flag = Some(inp);
+            self.no_regional_blackout_flag = Some(input);
             self
         }
         pub fn set_no_regional_blackout_flag(
             mut self,
-            inp: std::option::Option<crate::model::Scte35SpliceInsertNoRegionalBlackoutBehavior>,
+            input: std::option::Option<crate::model::Scte35SpliceInsertNoRegionalBlackoutBehavior>,
         ) -> Self {
-            self.no_regional_blackout_flag = inp;
+            self.no_regional_blackout_flag = input;
             self
         }
         /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
         pub fn web_delivery_allowed_flag(
             mut self,
-            inp: crate::model::Scte35SpliceInsertWebDeliveryAllowedBehavior,
+            input: crate::model::Scte35SpliceInsertWebDeliveryAllowedBehavior,
         ) -> Self {
-            self.web_delivery_allowed_flag = Some(inp);
+            self.web_delivery_allowed_flag = Some(input);
             self
         }
         pub fn set_web_delivery_allowed_flag(
             mut self,
-            inp: std::option::Option<crate::model::Scte35SpliceInsertWebDeliveryAllowedBehavior>,
+            input: std::option::Option<crate::model::Scte35SpliceInsertWebDeliveryAllowedBehavior>,
         ) -> Self {
-            self.web_delivery_allowed_flag = inp;
+            self.web_delivery_allowed_flag = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert)
@@ -30723,27 +30863,27 @@ pub mod avail_blanking {
     }
     impl Builder {
         /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
-        pub fn avail_blanking_image(mut self, inp: crate::model::InputLocation) -> Self {
-            self.avail_blanking_image = Some(inp);
+        pub fn avail_blanking_image(mut self, input: crate::model::InputLocation) -> Self {
+            self.avail_blanking_image = Some(input);
             self
         }
         pub fn set_avail_blanking_image(
             mut self,
-            inp: std::option::Option<crate::model::InputLocation>,
+            input: std::option::Option<crate::model::InputLocation>,
         ) -> Self {
-            self.avail_blanking_image = inp;
+            self.avail_blanking_image = input;
             self
         }
         /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
-        pub fn state(mut self, inp: crate::model::AvailBlankingState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::AvailBlankingState) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::AvailBlankingState>,
+            input: std::option::Option<crate::model::AvailBlankingState>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
         /// Consumes the builder and constructs a [`AvailBlanking`](crate::model::AvailBlanking)
@@ -30911,37 +31051,40 @@ pub mod audio_description {
         /// Advanced audio normalization settings.
         pub fn audio_normalization_settings(
             mut self,
-            inp: crate::model::AudioNormalizationSettings,
+            input: crate::model::AudioNormalizationSettings,
         ) -> Self {
-            self.audio_normalization_settings = Some(inp);
+            self.audio_normalization_settings = Some(input);
             self
         }
         pub fn set_audio_normalization_settings(
             mut self,
-            inp: std::option::Option<crate::model::AudioNormalizationSettings>,
+            input: std::option::Option<crate::model::AudioNormalizationSettings>,
         ) -> Self {
-            self.audio_normalization_settings = inp;
+            self.audio_normalization_settings = input;
             self
         }
         /// The name of the AudioSelector used as the source for this AudioDescription.
-        pub fn audio_selector_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.audio_selector_name = Some(inp.into());
+        pub fn audio_selector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.audio_selector_name = Some(input.into());
             self
         }
         pub fn set_audio_selector_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.audio_selector_name = inp;
+            self.audio_selector_name = input;
             self
         }
         /// Applies only if audioTypeControl is useConfigured. The values for audioType are defined in ISO-IEC 13818-1.
-        pub fn audio_type(mut self, inp: crate::model::AudioType) -> Self {
-            self.audio_type = Some(inp);
+        pub fn audio_type(mut self, input: crate::model::AudioType) -> Self {
+            self.audio_type = Some(input);
             self
         }
-        pub fn set_audio_type(mut self, inp: std::option::Option<crate::model::AudioType>) -> Self {
-            self.audio_type = inp;
+        pub fn set_audio_type(
+            mut self,
+            input: std::option::Option<crate::model::AudioType>,
+        ) -> Self {
+            self.audio_type = input;
             self
         }
         /// Determines how audio type is determined.
@@ -30950,82 +31093,85 @@ pub mod audio_description {
         /// Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
         pub fn audio_type_control(
             mut self,
-            inp: crate::model::AudioDescriptionAudioTypeControl,
+            input: crate::model::AudioDescriptionAudioTypeControl,
         ) -> Self {
-            self.audio_type_control = Some(inp);
+            self.audio_type_control = Some(input);
             self
         }
         pub fn set_audio_type_control(
             mut self,
-            inp: std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
+            input: std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
         ) -> Self {
-            self.audio_type_control = inp;
+            self.audio_type_control = input;
             self
         }
         /// Audio codec settings.
-        pub fn codec_settings(mut self, inp: crate::model::AudioCodecSettings) -> Self {
-            self.codec_settings = Some(inp);
+        pub fn codec_settings(mut self, input: crate::model::AudioCodecSettings) -> Self {
+            self.codec_settings = Some(input);
             self
         }
         pub fn set_codec_settings(
             mut self,
-            inp: std::option::Option<crate::model::AudioCodecSettings>,
+            input: std::option::Option<crate::model::AudioCodecSettings>,
         ) -> Self {
-            self.codec_settings = inp;
+            self.codec_settings = input;
             self
         }
         /// RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
-        pub fn language_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.language_code = Some(inp.into());
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
             self
         }
-        pub fn set_language_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.language_code = inp;
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
             self
         }
         /// Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input.
         pub fn language_code_control(
             mut self,
-            inp: crate::model::AudioDescriptionLanguageCodeControl,
+            input: crate::model::AudioDescriptionLanguageCodeControl,
         ) -> Self {
-            self.language_code_control = Some(inp);
+            self.language_code_control = Some(input);
             self
         }
         pub fn set_language_code_control(
             mut self,
-            inp: std::option::Option<crate::model::AudioDescriptionLanguageCodeControl>,
+            input: std::option::Option<crate::model::AudioDescriptionLanguageCodeControl>,
         ) -> Self {
-            self.language_code_control = inp;
+            self.language_code_control = input;
             self
         }
         /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription.  Description names should be unique within this Live Event.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Settings that control how input audio channels are remixed into the output audio channels.
-        pub fn remix_settings(mut self, inp: crate::model::RemixSettings) -> Self {
-            self.remix_settings = Some(inp);
+        pub fn remix_settings(mut self, input: crate::model::RemixSettings) -> Self {
+            self.remix_settings = Some(input);
             self
         }
         pub fn set_remix_settings(
             mut self,
-            inp: std::option::Option<crate::model::RemixSettings>,
+            input: std::option::Option<crate::model::RemixSettings>,
         ) -> Self {
-            self.remix_settings = inp;
+            self.remix_settings = input;
             self
         }
         /// Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary).
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioDescription`](crate::model::AudioDescription)
@@ -31093,37 +31239,37 @@ pub mod remix_settings {
     impl Builder {
         pub fn channel_mappings(
             mut self,
-            inp: impl Into<crate::model::AudioChannelMapping>,
+            input: impl Into<crate::model::AudioChannelMapping>,
         ) -> Self {
             let mut v = self.channel_mappings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.channel_mappings = Some(v);
             self
         }
         pub fn set_channel_mappings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AudioChannelMapping>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AudioChannelMapping>>,
         ) -> Self {
-            self.channel_mappings = inp;
+            self.channel_mappings = input;
             self
         }
         /// Number of input channels to be used.
-        pub fn channels_in(mut self, inp: i32) -> Self {
-            self.channels_in = Some(inp);
+        pub fn channels_in(mut self, input: i32) -> Self {
+            self.channels_in = Some(input);
             self
         }
-        pub fn set_channels_in(mut self, inp: i32) -> Self {
-            self.channels_in = Some(inp);
+        pub fn set_channels_in(mut self, input: std::option::Option<i32>) -> Self {
+            self.channels_in = input;
             self
         }
         /// Number of output channels to be produced.
         /// Valid values: 1, 2, 4, 6, 8
-        pub fn channels_out(mut self, inp: i32) -> Self {
-            self.channels_out = Some(inp);
+        pub fn channels_out(mut self, input: i32) -> Self {
+            self.channels_out = Some(input);
             self
         }
-        pub fn set_channels_out(mut self, inp: i32) -> Self {
-            self.channels_out = Some(inp);
+        pub fn set_channels_out(mut self, input: std::option::Option<i32>) -> Self {
+            self.channels_out = input;
             self
         }
         /// Consumes the builder and constructs a [`RemixSettings`](crate::model::RemixSettings)
@@ -31177,27 +31323,27 @@ pub mod audio_channel_mapping {
     impl Builder {
         pub fn input_channel_levels(
             mut self,
-            inp: impl Into<crate::model::InputChannelLevel>,
+            input: impl Into<crate::model::InputChannelLevel>,
         ) -> Self {
             let mut v = self.input_channel_levels.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_channel_levels = Some(v);
             self
         }
         pub fn set_input_channel_levels(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputChannelLevel>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputChannelLevel>>,
         ) -> Self {
-            self.input_channel_levels = inp;
+            self.input_channel_levels = input;
             self
         }
         /// The index of the output channel being produced.
-        pub fn output_channel(mut self, inp: i32) -> Self {
-            self.output_channel = Some(inp);
+        pub fn output_channel(mut self, input: i32) -> Self {
+            self.output_channel = Some(input);
             self
         }
-        pub fn set_output_channel(mut self, inp: i32) -> Self {
-            self.output_channel = Some(inp);
+        pub fn set_output_channel(mut self, input: std::option::Option<i32>) -> Self {
+            self.output_channel = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioChannelMapping`](crate::model::AudioChannelMapping)
@@ -31248,21 +31394,21 @@ pub mod input_channel_level {
     }
     impl Builder {
         /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
-        pub fn gain(mut self, inp: i32) -> Self {
-            self.gain = Some(inp);
+        pub fn gain(mut self, input: i32) -> Self {
+            self.gain = Some(input);
             self
         }
-        pub fn set_gain(mut self, inp: i32) -> Self {
-            self.gain = Some(inp);
+        pub fn set_gain(mut self, input: std::option::Option<i32>) -> Self {
+            self.gain = input;
             self
         }
         /// The index of the input channel used as a source.
-        pub fn input_channel(mut self, inp: i32) -> Self {
-            self.input_channel = Some(inp);
+        pub fn input_channel(mut self, input: i32) -> Self {
+            self.input_channel = Some(input);
             self
         }
-        pub fn set_input_channel(mut self, inp: i32) -> Self {
-            self.input_channel = Some(inp);
+        pub fn set_input_channel(mut self, input: std::option::Option<i32>) -> Self {
+            self.input_channel = input;
             self
         }
         /// Consumes the builder and constructs a [`InputChannelLevel`](crate::model::InputChannelLevel)
@@ -31394,75 +31540,75 @@ pub mod audio_codec_settings {
     }
     impl Builder {
         /// Aac Settings
-        pub fn aac_settings(mut self, inp: crate::model::AacSettings) -> Self {
-            self.aac_settings = Some(inp);
+        pub fn aac_settings(mut self, input: crate::model::AacSettings) -> Self {
+            self.aac_settings = Some(input);
             self
         }
         pub fn set_aac_settings(
             mut self,
-            inp: std::option::Option<crate::model::AacSettings>,
+            input: std::option::Option<crate::model::AacSettings>,
         ) -> Self {
-            self.aac_settings = inp;
+            self.aac_settings = input;
             self
         }
         /// Ac3 Settings
-        pub fn ac3_settings(mut self, inp: crate::model::Ac3Settings) -> Self {
-            self.ac3_settings = Some(inp);
+        pub fn ac3_settings(mut self, input: crate::model::Ac3Settings) -> Self {
+            self.ac3_settings = Some(input);
             self
         }
         pub fn set_ac3_settings(
             mut self,
-            inp: std::option::Option<crate::model::Ac3Settings>,
+            input: std::option::Option<crate::model::Ac3Settings>,
         ) -> Self {
-            self.ac3_settings = inp;
+            self.ac3_settings = input;
             self
         }
         /// Eac3 Settings
-        pub fn eac3_settings(mut self, inp: crate::model::Eac3Settings) -> Self {
-            self.eac3_settings = Some(inp);
+        pub fn eac3_settings(mut self, input: crate::model::Eac3Settings) -> Self {
+            self.eac3_settings = Some(input);
             self
         }
         pub fn set_eac3_settings(
             mut self,
-            inp: std::option::Option<crate::model::Eac3Settings>,
+            input: std::option::Option<crate::model::Eac3Settings>,
         ) -> Self {
-            self.eac3_settings = inp;
+            self.eac3_settings = input;
             self
         }
         /// Mp2 Settings
-        pub fn mp2_settings(mut self, inp: crate::model::Mp2Settings) -> Self {
-            self.mp2_settings = Some(inp);
+        pub fn mp2_settings(mut self, input: crate::model::Mp2Settings) -> Self {
+            self.mp2_settings = Some(input);
             self
         }
         pub fn set_mp2_settings(
             mut self,
-            inp: std::option::Option<crate::model::Mp2Settings>,
+            input: std::option::Option<crate::model::Mp2Settings>,
         ) -> Self {
-            self.mp2_settings = inp;
+            self.mp2_settings = input;
             self
         }
         /// Pass Through Settings
-        pub fn pass_through_settings(mut self, inp: crate::model::PassThroughSettings) -> Self {
-            self.pass_through_settings = Some(inp);
+        pub fn pass_through_settings(mut self, input: crate::model::PassThroughSettings) -> Self {
+            self.pass_through_settings = Some(input);
             self
         }
         pub fn set_pass_through_settings(
             mut self,
-            inp: std::option::Option<crate::model::PassThroughSettings>,
+            input: std::option::Option<crate::model::PassThroughSettings>,
         ) -> Self {
-            self.pass_through_settings = inp;
+            self.pass_through_settings = input;
             self
         }
         /// Wav Settings
-        pub fn wav_settings(mut self, inp: crate::model::WavSettings) -> Self {
-            self.wav_settings = Some(inp);
+        pub fn wav_settings(mut self, input: crate::model::WavSettings) -> Self {
+            self.wav_settings = Some(input);
             self
         }
         pub fn set_wav_settings(
             mut self,
-            inp: std::option::Option<crate::model::WavSettings>,
+            input: std::option::Option<crate::model::WavSettings>,
         ) -> Self {
-            self.wav_settings = inp;
+            self.wav_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioCodecSettings`](crate::model::AudioCodecSettings)
@@ -31523,33 +31669,33 @@ pub mod wav_settings {
     }
     impl Builder {
         /// Bits per sample.
-        pub fn bit_depth(mut self, inp: f64) -> Self {
-            self.bit_depth = Some(inp);
+        pub fn bit_depth(mut self, input: f64) -> Self {
+            self.bit_depth = Some(input);
             self
         }
-        pub fn set_bit_depth(mut self, inp: f64) -> Self {
-            self.bit_depth = Some(inp);
+        pub fn set_bit_depth(mut self, input: std::option::Option<f64>) -> Self {
+            self.bit_depth = input;
             self
         }
         /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
-        pub fn coding_mode(mut self, inp: crate::model::WavCodingMode) -> Self {
-            self.coding_mode = Some(inp);
+        pub fn coding_mode(mut self, input: crate::model::WavCodingMode) -> Self {
+            self.coding_mode = Some(input);
             self
         }
         pub fn set_coding_mode(
             mut self,
-            inp: std::option::Option<crate::model::WavCodingMode>,
+            input: std::option::Option<crate::model::WavCodingMode>,
         ) -> Self {
-            self.coding_mode = inp;
+            self.coding_mode = input;
             self
         }
         /// Sample rate in Hz.
-        pub fn sample_rate(mut self, inp: f64) -> Self {
-            self.sample_rate = Some(inp);
+        pub fn sample_rate(mut self, input: f64) -> Self {
+            self.sample_rate = Some(input);
             self
         }
-        pub fn set_sample_rate(mut self, inp: f64) -> Self {
-            self.sample_rate = Some(inp);
+        pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.sample_rate = input;
             self
         }
         /// Consumes the builder and constructs a [`WavSettings`](crate::model::WavSettings)
@@ -31700,33 +31846,33 @@ pub mod mp2_settings {
     }
     impl Builder {
         /// Average bitrate in bits/second.
-        pub fn bitrate(mut self, inp: f64) -> Self {
-            self.bitrate = Some(inp);
+        pub fn bitrate(mut self, input: f64) -> Self {
+            self.bitrate = Some(input);
             self
         }
-        pub fn set_bitrate(mut self, inp: f64) -> Self {
-            self.bitrate = Some(inp);
+        pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
+            self.bitrate = input;
             self
         }
         /// The MPEG2 Audio coding mode.  Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
-        pub fn coding_mode(mut self, inp: crate::model::Mp2CodingMode) -> Self {
-            self.coding_mode = Some(inp);
+        pub fn coding_mode(mut self, input: crate::model::Mp2CodingMode) -> Self {
+            self.coding_mode = Some(input);
             self
         }
         pub fn set_coding_mode(
             mut self,
-            inp: std::option::Option<crate::model::Mp2CodingMode>,
+            input: std::option::Option<crate::model::Mp2CodingMode>,
         ) -> Self {
-            self.coding_mode = inp;
+            self.coding_mode = input;
             self
         }
         /// Sample rate in Hz.
-        pub fn sample_rate(mut self, inp: f64) -> Self {
-            self.sample_rate = Some(inp);
+        pub fn sample_rate(mut self, input: f64) -> Self {
+            self.sample_rate = Some(input);
             self
         }
-        pub fn set_sample_rate(mut self, inp: f64) -> Self {
-            self.sample_rate = Some(inp);
+        pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.sample_rate = input;
             self
         }
         /// Consumes the builder and constructs a [`Mp2Settings`](crate::model::Mp2Settings)
@@ -31943,219 +32089,222 @@ pub mod eac3_settings {
     }
     impl Builder {
         /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-        pub fn attenuation_control(mut self, inp: crate::model::Eac3AttenuationControl) -> Self {
-            self.attenuation_control = Some(inp);
+        pub fn attenuation_control(mut self, input: crate::model::Eac3AttenuationControl) -> Self {
+            self.attenuation_control = Some(input);
             self
         }
         pub fn set_attenuation_control(
             mut self,
-            inp: std::option::Option<crate::model::Eac3AttenuationControl>,
+            input: std::option::Option<crate::model::Eac3AttenuationControl>,
         ) -> Self {
-            self.attenuation_control = inp;
+            self.attenuation_control = input;
             self
         }
         /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
-        pub fn bitrate(mut self, inp: f64) -> Self {
-            self.bitrate = Some(inp);
+        pub fn bitrate(mut self, input: f64) -> Self {
+            self.bitrate = Some(input);
             self
         }
-        pub fn set_bitrate(mut self, inp: f64) -> Self {
-            self.bitrate = Some(inp);
+        pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
+            self.bitrate = input;
             self
         }
         /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
-        pub fn bitstream_mode(mut self, inp: crate::model::Eac3BitstreamMode) -> Self {
-            self.bitstream_mode = Some(inp);
+        pub fn bitstream_mode(mut self, input: crate::model::Eac3BitstreamMode) -> Self {
+            self.bitstream_mode = Some(input);
             self
         }
         pub fn set_bitstream_mode(
             mut self,
-            inp: std::option::Option<crate::model::Eac3BitstreamMode>,
+            input: std::option::Option<crate::model::Eac3BitstreamMode>,
         ) -> Self {
-            self.bitstream_mode = inp;
+            self.bitstream_mode = input;
             self
         }
         /// Dolby Digital Plus coding mode. Determines number of channels.
-        pub fn coding_mode(mut self, inp: crate::model::Eac3CodingMode) -> Self {
-            self.coding_mode = Some(inp);
+        pub fn coding_mode(mut self, input: crate::model::Eac3CodingMode) -> Self {
+            self.coding_mode = Some(input);
             self
         }
         pub fn set_coding_mode(
             mut self,
-            inp: std::option::Option<crate::model::Eac3CodingMode>,
+            input: std::option::Option<crate::model::Eac3CodingMode>,
         ) -> Self {
-            self.coding_mode = inp;
+            self.coding_mode = input;
             self
         }
         /// When set to enabled, activates a DC highpass filter for all input channels.
-        pub fn dc_filter(mut self, inp: crate::model::Eac3DcFilter) -> Self {
-            self.dc_filter = Some(inp);
+        pub fn dc_filter(mut self, input: crate::model::Eac3DcFilter) -> Self {
+            self.dc_filter = Some(input);
             self
         }
         pub fn set_dc_filter(
             mut self,
-            inp: std::option::Option<crate::model::Eac3DcFilter>,
+            input: std::option::Option<crate::model::Eac3DcFilter>,
         ) -> Self {
-            self.dc_filter = inp;
+            self.dc_filter = input;
             self
         }
         /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
-        pub fn dialnorm(mut self, inp: i32) -> Self {
-            self.dialnorm = Some(inp);
+        pub fn dialnorm(mut self, input: i32) -> Self {
+            self.dialnorm = Some(input);
             self
         }
-        pub fn set_dialnorm(mut self, inp: i32) -> Self {
-            self.dialnorm = Some(inp);
+        pub fn set_dialnorm(mut self, input: std::option::Option<i32>) -> Self {
+            self.dialnorm = input;
             self
         }
         /// Sets the Dolby dynamic range compression profile.
-        pub fn drc_line(mut self, inp: crate::model::Eac3DrcLine) -> Self {
-            self.drc_line = Some(inp);
+        pub fn drc_line(mut self, input: crate::model::Eac3DrcLine) -> Self {
+            self.drc_line = Some(input);
             self
         }
-        pub fn set_drc_line(mut self, inp: std::option::Option<crate::model::Eac3DrcLine>) -> Self {
-            self.drc_line = inp;
+        pub fn set_drc_line(
+            mut self,
+            input: std::option::Option<crate::model::Eac3DrcLine>,
+        ) -> Self {
+            self.drc_line = input;
             self
         }
         /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
-        pub fn drc_rf(mut self, inp: crate::model::Eac3DrcRf) -> Self {
-            self.drc_rf = Some(inp);
+        pub fn drc_rf(mut self, input: crate::model::Eac3DrcRf) -> Self {
+            self.drc_rf = Some(input);
             self
         }
-        pub fn set_drc_rf(mut self, inp: std::option::Option<crate::model::Eac3DrcRf>) -> Self {
-            self.drc_rf = inp;
+        pub fn set_drc_rf(mut self, input: std::option::Option<crate::model::Eac3DrcRf>) -> Self {
+            self.drc_rf = input;
             self
         }
         /// When encoding 3/2 audio, setting to lfe enables the LFE channel
-        pub fn lfe_control(mut self, inp: crate::model::Eac3LfeControl) -> Self {
-            self.lfe_control = Some(inp);
+        pub fn lfe_control(mut self, input: crate::model::Eac3LfeControl) -> Self {
+            self.lfe_control = Some(input);
             self
         }
         pub fn set_lfe_control(
             mut self,
-            inp: std::option::Option<crate::model::Eac3LfeControl>,
+            input: std::option::Option<crate::model::Eac3LfeControl>,
         ) -> Self {
-            self.lfe_control = inp;
+            self.lfe_control = input;
             self
         }
         /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.
-        pub fn lfe_filter(mut self, inp: crate::model::Eac3LfeFilter) -> Self {
-            self.lfe_filter = Some(inp);
+        pub fn lfe_filter(mut self, input: crate::model::Eac3LfeFilter) -> Self {
+            self.lfe_filter = Some(input);
             self
         }
         pub fn set_lfe_filter(
             mut self,
-            inp: std::option::Option<crate::model::Eac3LfeFilter>,
+            input: std::option::Option<crate::model::Eac3LfeFilter>,
         ) -> Self {
-            self.lfe_filter = inp;
+            self.lfe_filter = input;
             self
         }
         /// Left only/Right only center mix level. Only used for 3/2 coding mode.
-        pub fn lo_ro_center_mix_level(mut self, inp: f64) -> Self {
-            self.lo_ro_center_mix_level = Some(inp);
+        pub fn lo_ro_center_mix_level(mut self, input: f64) -> Self {
+            self.lo_ro_center_mix_level = Some(input);
             self
         }
-        pub fn set_lo_ro_center_mix_level(mut self, inp: f64) -> Self {
-            self.lo_ro_center_mix_level = Some(inp);
+        pub fn set_lo_ro_center_mix_level(mut self, input: std::option::Option<f64>) -> Self {
+            self.lo_ro_center_mix_level = input;
             self
         }
         /// Left only/Right only surround mix level. Only used for 3/2 coding mode.
-        pub fn lo_ro_surround_mix_level(mut self, inp: f64) -> Self {
-            self.lo_ro_surround_mix_level = Some(inp);
+        pub fn lo_ro_surround_mix_level(mut self, input: f64) -> Self {
+            self.lo_ro_surround_mix_level = Some(input);
             self
         }
-        pub fn set_lo_ro_surround_mix_level(mut self, inp: f64) -> Self {
-            self.lo_ro_surround_mix_level = Some(inp);
+        pub fn set_lo_ro_surround_mix_level(mut self, input: std::option::Option<f64>) -> Self {
+            self.lo_ro_surround_mix_level = input;
             self
         }
         /// Left total/Right total center mix level. Only used for 3/2 coding mode.
-        pub fn lt_rt_center_mix_level(mut self, inp: f64) -> Self {
-            self.lt_rt_center_mix_level = Some(inp);
+        pub fn lt_rt_center_mix_level(mut self, input: f64) -> Self {
+            self.lt_rt_center_mix_level = Some(input);
             self
         }
-        pub fn set_lt_rt_center_mix_level(mut self, inp: f64) -> Self {
-            self.lt_rt_center_mix_level = Some(inp);
+        pub fn set_lt_rt_center_mix_level(mut self, input: std::option::Option<f64>) -> Self {
+            self.lt_rt_center_mix_level = input;
             self
         }
         /// Left total/Right total surround mix level. Only used for 3/2 coding mode.
-        pub fn lt_rt_surround_mix_level(mut self, inp: f64) -> Self {
-            self.lt_rt_surround_mix_level = Some(inp);
+        pub fn lt_rt_surround_mix_level(mut self, input: f64) -> Self {
+            self.lt_rt_surround_mix_level = Some(input);
             self
         }
-        pub fn set_lt_rt_surround_mix_level(mut self, inp: f64) -> Self {
-            self.lt_rt_surround_mix_level = Some(inp);
+        pub fn set_lt_rt_surround_mix_level(mut self, input: std::option::Option<f64>) -> Self {
+            self.lt_rt_surround_mix_level = input;
             self
         }
         /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-        pub fn metadata_control(mut self, inp: crate::model::Eac3MetadataControl) -> Self {
-            self.metadata_control = Some(inp);
+        pub fn metadata_control(mut self, input: crate::model::Eac3MetadataControl) -> Self {
+            self.metadata_control = Some(input);
             self
         }
         pub fn set_metadata_control(
             mut self,
-            inp: std::option::Option<crate::model::Eac3MetadataControl>,
+            input: std::option::Option<crate::model::Eac3MetadataControl>,
         ) -> Self {
-            self.metadata_control = inp;
+            self.metadata_control = input;
             self
         }
         /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-        pub fn passthrough_control(mut self, inp: crate::model::Eac3PassthroughControl) -> Self {
-            self.passthrough_control = Some(inp);
+        pub fn passthrough_control(mut self, input: crate::model::Eac3PassthroughControl) -> Self {
+            self.passthrough_control = Some(input);
             self
         }
         pub fn set_passthrough_control(
             mut self,
-            inp: std::option::Option<crate::model::Eac3PassthroughControl>,
+            input: std::option::Option<crate::model::Eac3PassthroughControl>,
         ) -> Self {
-            self.passthrough_control = inp;
+            self.passthrough_control = input;
             self
         }
         /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
-        pub fn phase_control(mut self, inp: crate::model::Eac3PhaseControl) -> Self {
-            self.phase_control = Some(inp);
+        pub fn phase_control(mut self, input: crate::model::Eac3PhaseControl) -> Self {
+            self.phase_control = Some(input);
             self
         }
         pub fn set_phase_control(
             mut self,
-            inp: std::option::Option<crate::model::Eac3PhaseControl>,
+            input: std::option::Option<crate::model::Eac3PhaseControl>,
         ) -> Self {
-            self.phase_control = inp;
+            self.phase_control = input;
             self
         }
         /// Stereo downmix preference. Only used for 3/2 coding mode.
-        pub fn stereo_downmix(mut self, inp: crate::model::Eac3StereoDownmix) -> Self {
-            self.stereo_downmix = Some(inp);
+        pub fn stereo_downmix(mut self, input: crate::model::Eac3StereoDownmix) -> Self {
+            self.stereo_downmix = Some(input);
             self
         }
         pub fn set_stereo_downmix(
             mut self,
-            inp: std::option::Option<crate::model::Eac3StereoDownmix>,
+            input: std::option::Option<crate::model::Eac3StereoDownmix>,
         ) -> Self {
-            self.stereo_downmix = inp;
+            self.stereo_downmix = input;
             self
         }
         /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
-        pub fn surround_ex_mode(mut self, inp: crate::model::Eac3SurroundExMode) -> Self {
-            self.surround_ex_mode = Some(inp);
+        pub fn surround_ex_mode(mut self, input: crate::model::Eac3SurroundExMode) -> Self {
+            self.surround_ex_mode = Some(input);
             self
         }
         pub fn set_surround_ex_mode(
             mut self,
-            inp: std::option::Option<crate::model::Eac3SurroundExMode>,
+            input: std::option::Option<crate::model::Eac3SurroundExMode>,
         ) -> Self {
-            self.surround_ex_mode = inp;
+            self.surround_ex_mode = input;
             self
         }
         /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
-        pub fn surround_mode(mut self, inp: crate::model::Eac3SurroundMode) -> Self {
-            self.surround_mode = Some(inp);
+        pub fn surround_mode(mut self, input: crate::model::Eac3SurroundMode) -> Self {
+            self.surround_mode = Some(input);
             self
         }
         pub fn set_surround_mode(
             mut self,
-            inp: std::option::Option<crate::model::Eac3SurroundMode>,
+            input: std::option::Option<crate::model::Eac3SurroundMode>,
         ) -> Self {
-            self.surround_mode = inp;
+            self.surround_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`Eac3Settings`](crate::model::Eac3Settings)
@@ -33100,81 +33249,81 @@ pub mod ac3_settings {
     }
     impl Builder {
         /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
-        pub fn bitrate(mut self, inp: f64) -> Self {
-            self.bitrate = Some(inp);
+        pub fn bitrate(mut self, input: f64) -> Self {
+            self.bitrate = Some(input);
             self
         }
-        pub fn set_bitrate(mut self, inp: f64) -> Self {
-            self.bitrate = Some(inp);
+        pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
+            self.bitrate = input;
             self
         }
         /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
-        pub fn bitstream_mode(mut self, inp: crate::model::Ac3BitstreamMode) -> Self {
-            self.bitstream_mode = Some(inp);
+        pub fn bitstream_mode(mut self, input: crate::model::Ac3BitstreamMode) -> Self {
+            self.bitstream_mode = Some(input);
             self
         }
         pub fn set_bitstream_mode(
             mut self,
-            inp: std::option::Option<crate::model::Ac3BitstreamMode>,
+            input: std::option::Option<crate::model::Ac3BitstreamMode>,
         ) -> Self {
-            self.bitstream_mode = inp;
+            self.bitstream_mode = input;
             self
         }
         /// Dolby Digital coding mode. Determines number of channels.
-        pub fn coding_mode(mut self, inp: crate::model::Ac3CodingMode) -> Self {
-            self.coding_mode = Some(inp);
+        pub fn coding_mode(mut self, input: crate::model::Ac3CodingMode) -> Self {
+            self.coding_mode = Some(input);
             self
         }
         pub fn set_coding_mode(
             mut self,
-            inp: std::option::Option<crate::model::Ac3CodingMode>,
+            input: std::option::Option<crate::model::Ac3CodingMode>,
         ) -> Self {
-            self.coding_mode = inp;
+            self.coding_mode = input;
             self
         }
         /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
-        pub fn dialnorm(mut self, inp: i32) -> Self {
-            self.dialnorm = Some(inp);
+        pub fn dialnorm(mut self, input: i32) -> Self {
+            self.dialnorm = Some(input);
             self
         }
-        pub fn set_dialnorm(mut self, inp: i32) -> Self {
-            self.dialnorm = Some(inp);
+        pub fn set_dialnorm(mut self, input: std::option::Option<i32>) -> Self {
+            self.dialnorm = input;
             self
         }
         /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
-        pub fn drc_profile(mut self, inp: crate::model::Ac3DrcProfile) -> Self {
-            self.drc_profile = Some(inp);
+        pub fn drc_profile(mut self, input: crate::model::Ac3DrcProfile) -> Self {
+            self.drc_profile = Some(input);
             self
         }
         pub fn set_drc_profile(
             mut self,
-            inp: std::option::Option<crate::model::Ac3DrcProfile>,
+            input: std::option::Option<crate::model::Ac3DrcProfile>,
         ) -> Self {
-            self.drc_profile = inp;
+            self.drc_profile = input;
             self
         }
         /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
-        pub fn lfe_filter(mut self, inp: crate::model::Ac3LfeFilter) -> Self {
-            self.lfe_filter = Some(inp);
+        pub fn lfe_filter(mut self, input: crate::model::Ac3LfeFilter) -> Self {
+            self.lfe_filter = Some(input);
             self
         }
         pub fn set_lfe_filter(
             mut self,
-            inp: std::option::Option<crate::model::Ac3LfeFilter>,
+            input: std::option::Option<crate::model::Ac3LfeFilter>,
         ) -> Self {
-            self.lfe_filter = inp;
+            self.lfe_filter = input;
             self
         }
         /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-        pub fn metadata_control(mut self, inp: crate::model::Ac3MetadataControl) -> Self {
-            self.metadata_control = Some(inp);
+        pub fn metadata_control(mut self, input: crate::model::Ac3MetadataControl) -> Self {
+            self.metadata_control = Some(input);
             self
         }
         pub fn set_metadata_control(
             mut self,
-            inp: std::option::Option<crate::model::Ac3MetadataControl>,
+            input: std::option::Option<crate::model::Ac3MetadataControl>,
         ) -> Self {
-            self.metadata_control = inp;
+            self.metadata_control = input;
             self
         }
         /// Consumes the builder and constructs a [`Ac3Settings`](crate::model::Ac3Settings)
@@ -33582,100 +33731,100 @@ pub mod aac_settings {
     }
     impl Builder {
         /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
-        pub fn bitrate(mut self, inp: f64) -> Self {
-            self.bitrate = Some(inp);
+        pub fn bitrate(mut self, input: f64) -> Self {
+            self.bitrate = Some(input);
             self
         }
-        pub fn set_bitrate(mut self, inp: f64) -> Self {
-            self.bitrate = Some(inp);
+        pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
+            self.bitrate = input;
             self
         }
         /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
-        pub fn coding_mode(mut self, inp: crate::model::AacCodingMode) -> Self {
-            self.coding_mode = Some(inp);
+        pub fn coding_mode(mut self, input: crate::model::AacCodingMode) -> Self {
+            self.coding_mode = Some(input);
             self
         }
         pub fn set_coding_mode(
             mut self,
-            inp: std::option::Option<crate::model::AacCodingMode>,
+            input: std::option::Option<crate::model::AacCodingMode>,
         ) -> Self {
-            self.coding_mode = inp;
+            self.coding_mode = input;
             self
         }
         /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.  The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd.
         /// Leave set to "normal" when input does not contain pre-mixed audio + AD.
-        pub fn input_type(mut self, inp: crate::model::AacInputType) -> Self {
-            self.input_type = Some(inp);
+        pub fn input_type(mut self, input: crate::model::AacInputType) -> Self {
+            self.input_type = Some(input);
             self
         }
         pub fn set_input_type(
             mut self,
-            inp: std::option::Option<crate::model::AacInputType>,
+            input: std::option::Option<crate::model::AacInputType>,
         ) -> Self {
-            self.input_type = inp;
+            self.input_type = input;
             self
         }
         /// AAC Profile.
-        pub fn profile(mut self, inp: crate::model::AacProfile) -> Self {
-            self.profile = Some(inp);
+        pub fn profile(mut self, input: crate::model::AacProfile) -> Self {
+            self.profile = Some(input);
             self
         }
-        pub fn set_profile(mut self, inp: std::option::Option<crate::model::AacProfile>) -> Self {
-            self.profile = inp;
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::AacProfile>) -> Self {
+            self.profile = input;
             self
         }
         /// Rate Control Mode.
-        pub fn rate_control_mode(mut self, inp: crate::model::AacRateControlMode) -> Self {
-            self.rate_control_mode = Some(inp);
+        pub fn rate_control_mode(mut self, input: crate::model::AacRateControlMode) -> Self {
+            self.rate_control_mode = Some(input);
             self
         }
         pub fn set_rate_control_mode(
             mut self,
-            inp: std::option::Option<crate::model::AacRateControlMode>,
+            input: std::option::Option<crate::model::AacRateControlMode>,
         ) -> Self {
-            self.rate_control_mode = inp;
+            self.rate_control_mode = input;
             self
         }
         /// Sets LATM / LOAS AAC output for raw containers.
-        pub fn raw_format(mut self, inp: crate::model::AacRawFormat) -> Self {
-            self.raw_format = Some(inp);
+        pub fn raw_format(mut self, input: crate::model::AacRawFormat) -> Self {
+            self.raw_format = Some(input);
             self
         }
         pub fn set_raw_format(
             mut self,
-            inp: std::option::Option<crate::model::AacRawFormat>,
+            input: std::option::Option<crate::model::AacRawFormat>,
         ) -> Self {
-            self.raw_format = inp;
+            self.raw_format = input;
             self
         }
         /// Sample rate in Hz. Valid values depend on rate control mode and profile.
-        pub fn sample_rate(mut self, inp: f64) -> Self {
-            self.sample_rate = Some(inp);
+        pub fn sample_rate(mut self, input: f64) -> Self {
+            self.sample_rate = Some(input);
             self
         }
-        pub fn set_sample_rate(mut self, inp: f64) -> Self {
-            self.sample_rate = Some(inp);
+        pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.sample_rate = input;
             self
         }
         /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
-        pub fn spec(mut self, inp: crate::model::AacSpec) -> Self {
-            self.spec = Some(inp);
+        pub fn spec(mut self, input: crate::model::AacSpec) -> Self {
+            self.spec = Some(input);
             self
         }
-        pub fn set_spec(mut self, inp: std::option::Option<crate::model::AacSpec>) -> Self {
-            self.spec = inp;
+        pub fn set_spec(mut self, input: std::option::Option<crate::model::AacSpec>) -> Self {
+            self.spec = input;
             self
         }
         /// VBR Quality Level - Only used if rateControlMode is VBR.
-        pub fn vbr_quality(mut self, inp: crate::model::AacVbrQuality) -> Self {
-            self.vbr_quality = Some(inp);
+        pub fn vbr_quality(mut self, input: crate::model::AacVbrQuality) -> Self {
+            self.vbr_quality = Some(input);
             self
         }
         pub fn set_vbr_quality(
             mut self,
-            inp: std::option::Option<crate::model::AacVbrQuality>,
+            input: std::option::Option<crate::model::AacVbrQuality>,
         ) -> Self {
-            self.vbr_quality = inp;
+            self.vbr_quality = input;
             self
         }
         /// Consumes the builder and constructs a [`AacSettings`](crate::model::AacSettings)
@@ -34277,39 +34426,39 @@ pub mod audio_normalization_settings {
     }
     impl Builder {
         /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
-        pub fn algorithm(mut self, inp: crate::model::AudioNormalizationAlgorithm) -> Self {
-            self.algorithm = Some(inp);
+        pub fn algorithm(mut self, input: crate::model::AudioNormalizationAlgorithm) -> Self {
+            self.algorithm = Some(input);
             self
         }
         pub fn set_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::AudioNormalizationAlgorithm>,
+            input: std::option::Option<crate::model::AudioNormalizationAlgorithm>,
         ) -> Self {
-            self.algorithm = inp;
+            self.algorithm = input;
             self
         }
         /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
         pub fn algorithm_control(
             mut self,
-            inp: crate::model::AudioNormalizationAlgorithmControl,
+            input: crate::model::AudioNormalizationAlgorithmControl,
         ) -> Self {
-            self.algorithm_control = Some(inp);
+            self.algorithm_control = Some(input);
             self
         }
         pub fn set_algorithm_control(
             mut self,
-            inp: std::option::Option<crate::model::AudioNormalizationAlgorithmControl>,
+            input: std::option::Option<crate::model::AudioNormalizationAlgorithmControl>,
         ) -> Self {
-            self.algorithm_control = inp;
+            self.algorithm_control = input;
             self
         }
         /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm.  The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
-        pub fn target_lkfs(mut self, inp: f64) -> Self {
-            self.target_lkfs = Some(inp);
+        pub fn target_lkfs(mut self, input: f64) -> Self {
+            self.target_lkfs = Some(input);
             self
         }
-        pub fn set_target_lkfs(mut self, inp: f64) -> Self {
-            self.target_lkfs = Some(inp);
+        pub fn set_target_lkfs(mut self, input: std::option::Option<f64>) -> Self {
+            self.target_lkfs = input;
             self
         }
         /// Consumes the builder and constructs a [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings)
@@ -34466,12 +34615,12 @@ pub mod channel_egress_endpoint {
     }
     impl Builder {
         /// Public IP of where a channel's output comes from
-        pub fn source_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_ip = Some(inp.into());
+        pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_ip = Some(input.into());
             self
         }
-        pub fn set_source_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_ip = inp;
+        pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_ip = input;
             self
         }
         /// Consumes the builder and constructs a [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint)
@@ -34538,58 +34687,61 @@ pub mod output_destination {
     }
     impl Builder {
         /// User-specified id. This is used in an output group or an output.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         pub fn media_package_settings(
             mut self,
-            inp: impl Into<crate::model::MediaPackageOutputDestinationSettings>,
+            input: impl Into<crate::model::MediaPackageOutputDestinationSettings>,
         ) -> Self {
             let mut v = self.media_package_settings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.media_package_settings = Some(v);
             self
         }
         pub fn set_media_package_settings(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::MediaPackageOutputDestinationSettings>,
             >,
         ) -> Self {
-            self.media_package_settings = inp;
+            self.media_package_settings = input;
             self
         }
         /// Destination settings for a Multiplex output; one destination for both encoders.
         pub fn multiplex_settings(
             mut self,
-            inp: crate::model::MultiplexProgramChannelDestinationSettings,
+            input: crate::model::MultiplexProgramChannelDestinationSettings,
         ) -> Self {
-            self.multiplex_settings = Some(inp);
+            self.multiplex_settings = Some(input);
             self
         }
         pub fn set_multiplex_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexProgramChannelDestinationSettings>,
+            input: std::option::Option<crate::model::MultiplexProgramChannelDestinationSettings>,
         ) -> Self {
-            self.multiplex_settings = inp;
+            self.multiplex_settings = input;
             self
         }
-        pub fn settings(mut self, inp: impl Into<crate::model::OutputDestinationSettings>) -> Self {
+        pub fn settings(
+            mut self,
+            input: impl Into<crate::model::OutputDestinationSettings>,
+        ) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.settings = Some(v);
             self
         }
         pub fn set_settings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestinationSettings>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestinationSettings>>,
         ) -> Self {
-            self.settings = inp;
+            self.settings = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputDestination`](crate::model::OutputDestination)
@@ -34654,39 +34806,42 @@ pub mod output_destination_settings {
     }
     impl Builder {
         /// key used to extract the password from EC2 Parameter store
-        pub fn password_param(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password_param = Some(inp.into());
+        pub fn password_param(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password_param = Some(input.into());
             self
         }
-        pub fn set_password_param(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password_param = inp;
+        pub fn set_password_param(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.password_param = input;
             self
         }
         /// Stream name for RTMP destinations (URLs of type rtmp://)
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// A URL specifying a destination
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// username for destination
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.username = Some(inp.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
             self
         }
-        pub fn set_username(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.username = inp;
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputDestinationSettings`](crate::model::OutputDestinationSettings)
@@ -34741,21 +34896,21 @@ pub mod multiplex_program_channel_destination_settings {
     impl Builder {
         /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances.
         /// The Multiplex must be in the same region as the Channel.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.multiplex_id = inp;
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// The program name of the Multiplex program that the encoder is providing output to.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.program_name = Some(inp.into());
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.program_name = Some(input.into());
             self
         }
-        pub fn set_program_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.program_name = inp;
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.program_name = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings)
@@ -34800,12 +34955,12 @@ pub mod media_package_output_destination_settings {
     }
     impl Builder {
         /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = inp;
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// Consumes the builder and constructs a [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings)
@@ -34849,15 +35004,15 @@ pub mod cdi_input_specification {
     }
     impl Builder {
         /// Maximum CDI input resolution
-        pub fn resolution(mut self, inp: crate::model::CdiInputResolution) -> Self {
-            self.resolution = Some(inp);
+        pub fn resolution(mut self, input: crate::model::CdiInputResolution) -> Self {
+            self.resolution = Some(input);
             self
         }
         pub fn set_resolution(
             mut self,
-            inp: std::option::Option<crate::model::CdiInputResolution>,
+            input: std::option::Option<crate::model::CdiInputResolution>,
         ) -> Self {
-            self.resolution = inp;
+            self.resolution = input;
             self
         }
         /// Consumes the builder and constructs a [`CdiInputSpecification`](crate::model::CdiInputSpecification)
@@ -35025,117 +35180,120 @@ pub mod offering {
     }
     impl Builder {
         /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-        pub fn currency_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.currency_code = Some(inp.into());
+        pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.currency_code = Some(input.into());
             self
         }
-        pub fn set_currency_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.currency_code = inp;
+        pub fn set_currency_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.currency_code = input;
             self
         }
         /// Lease duration, e.g. '12'
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
             self
         }
         /// Units for duration, e.g. 'MONTHS'
-        pub fn duration_units(mut self, inp: crate::model::OfferingDurationUnits) -> Self {
-            self.duration_units = Some(inp);
+        pub fn duration_units(mut self, input: crate::model::OfferingDurationUnits) -> Self {
+            self.duration_units = Some(input);
             self
         }
         pub fn set_duration_units(
             mut self,
-            inp: std::option::Option<crate::model::OfferingDurationUnits>,
+            input: std::option::Option<crate::model::OfferingDurationUnits>,
         ) -> Self {
-            self.duration_units = inp;
+            self.duration_units = input;
             self
         }
         /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
-        pub fn fixed_price(mut self, inp: f64) -> Self {
-            self.fixed_price = Some(inp);
+        pub fn fixed_price(mut self, input: f64) -> Self {
+            self.fixed_price = Some(input);
             self
         }
-        pub fn set_fixed_price(mut self, inp: f64) -> Self {
-            self.fixed_price = Some(inp);
+        pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.fixed_price = input;
             self
         }
         /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-        pub fn offering_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_description = Some(inp.into());
+        pub fn offering_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_description = Some(input.into());
             self
         }
         pub fn set_offering_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.offering_description = inp;
+            self.offering_description = input;
             self
         }
         /// Unique offering ID, e.g. '87654321'
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_id = Some(inp.into());
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_id = Some(input.into());
             self
         }
-        pub fn set_offering_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = inp;
+        pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_id = input;
             self
         }
         /// Offering type, e.g. 'NO_UPFRONT'
-        pub fn offering_type(mut self, inp: crate::model::OfferingType) -> Self {
-            self.offering_type = Some(inp);
+        pub fn offering_type(mut self, input: crate::model::OfferingType) -> Self {
+            self.offering_type = Some(input);
             self
         }
         pub fn set_offering_type(
             mut self,
-            inp: std::option::Option<crate::model::OfferingType>,
+            input: std::option::Option<crate::model::OfferingType>,
         ) -> Self {
-            self.offering_type = inp;
+            self.offering_type = input;
             self
         }
         /// AWS region, e.g. 'us-west-2'
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// Resource configuration details
         pub fn resource_specification(
             mut self,
-            inp: crate::model::ReservationResourceSpecification,
+            input: crate::model::ReservationResourceSpecification,
         ) -> Self {
-            self.resource_specification = Some(inp);
+            self.resource_specification = Some(input);
             self
         }
         pub fn set_resource_specification(
             mut self,
-            inp: std::option::Option<crate::model::ReservationResourceSpecification>,
+            input: std::option::Option<crate::model::ReservationResourceSpecification>,
         ) -> Self {
-            self.resource_specification = inp;
+            self.resource_specification = input;
             self
         }
         /// Recurring usage charge for each reserved resource, e.g. '157.0'
-        pub fn usage_price(mut self, inp: f64) -> Self {
-            self.usage_price = Some(inp);
+        pub fn usage_price(mut self, input: f64) -> Self {
+            self.usage_price = Some(input);
             self
         }
-        pub fn set_usage_price(mut self, inp: f64) -> Self {
-            self.usage_price = Some(inp);
+        pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.usage_price = input;
             self
         }
         /// Consumes the builder and constructs a [`Offering`](crate::model::Offering)
@@ -35195,21 +35353,21 @@ pub mod multiplex_program_summary {
     }
     impl Builder {
         /// The MediaLive Channel associated with the program.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = inp;
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// The name of the multiplex program.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.program_name = Some(inp.into());
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.program_name = Some(input.into());
             self
         }
-        pub fn set_program_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.program_name = inp;
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.program_name = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary)
@@ -35305,82 +35463,85 @@ pub mod multiplex_summary {
     }
     impl Builder {
         /// The unique arn of the multiplex.
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// The unique id of the multiplex.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Configuration for a multiplex event.
-        pub fn multiplex_settings(mut self, inp: crate::model::MultiplexSettingsSummary) -> Self {
-            self.multiplex_settings = Some(inp);
+        pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettingsSummary) -> Self {
+            self.multiplex_settings = Some(input);
             self
         }
         pub fn set_multiplex_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexSettingsSummary>,
+            input: std::option::Option<crate::model::MultiplexSettingsSummary>,
         ) -> Self {
-            self.multiplex_settings = inp;
+            self.multiplex_settings = input;
             self
         }
         /// The name of the multiplex.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// The number of currently healthy pipelines.
-        pub fn pipelines_running_count(mut self, inp: i32) -> Self {
-            self.pipelines_running_count = Some(inp);
+        pub fn pipelines_running_count(mut self, input: i32) -> Self {
+            self.pipelines_running_count = Some(input);
             self
         }
-        pub fn set_pipelines_running_count(mut self, inp: i32) -> Self {
-            self.pipelines_running_count = Some(inp);
+        pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pipelines_running_count = input;
             self
         }
         /// The number of programs in the multiplex.
-        pub fn program_count(mut self, inp: i32) -> Self {
-            self.program_count = Some(inp);
+        pub fn program_count(mut self, input: i32) -> Self {
+            self.program_count = Some(input);
             self
         }
-        pub fn set_program_count(mut self, inp: i32) -> Self {
-            self.program_count = Some(inp);
+        pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.program_count = input;
             self
         }
         /// The current state of the multiplex.
-        pub fn state(mut self, inp: crate::model::MultiplexState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::MultiplexState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::MultiplexState>) -> Self {
-            self.state = inp;
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::MultiplexState>,
+        ) -> Self {
+            self.state = input;
             self
         }
         pub fn tags(
@@ -35395,11 +35556,11 @@ pub mod multiplex_summary {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexSummary`](crate::model::MultiplexSummary)
@@ -35451,12 +35612,12 @@ pub mod multiplex_settings_summary {
     }
     impl Builder {
         /// Transport stream bit rate.
-        pub fn transport_stream_bitrate(mut self, inp: i32) -> Self {
-            self.transport_stream_bitrate = Some(inp);
+        pub fn transport_stream_bitrate(mut self, input: i32) -> Self {
+            self.transport_stream_bitrate = Some(input);
             self
         }
-        pub fn set_transport_stream_bitrate(mut self, inp: i32) -> Self {
-            self.transport_stream_bitrate = Some(inp);
+        pub fn set_transport_stream_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+            self.transport_stream_bitrate = input;
             self
         }
         /// Consumes the builder and constructs a [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary)
@@ -35518,45 +35679,45 @@ pub mod transferring_input_device_summary {
     }
     impl Builder {
         /// The unique ID of the input device.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// The optional message that the sender has attached to the transfer.
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// The AWS account ID for the recipient of the input device transfer.
-        pub fn target_customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_customer_id = Some(inp.into());
+        pub fn target_customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_customer_id = Some(input.into());
             self
         }
         pub fn set_target_customer_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_customer_id = inp;
+            self.target_customer_id = input;
             self
         }
         /// The type (direction) of the input device transfer.
-        pub fn transfer_type(mut self, inp: crate::model::InputDeviceTransferType) -> Self {
-            self.transfer_type = Some(inp);
+        pub fn transfer_type(mut self, input: crate::model::InputDeviceTransferType) -> Self {
+            self.transfer_type = Some(input);
             self
         }
         pub fn set_transfer_type(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceTransferType>,
+            input: std::option::Option<crate::model::InputDeviceTransferType>,
         ) -> Self {
-            self.transfer_type = inp;
+            self.transfer_type = input;
             self
         }
         /// Consumes the builder and constructs a [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary)
@@ -35730,132 +35891,138 @@ pub mod input_device_summary {
     }
     impl Builder {
         /// The unique ARN of the input device.
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// The state of the connection between the input device and AWS.
-        pub fn connection_state(mut self, inp: crate::model::InputDeviceConnectionState) -> Self {
-            self.connection_state = Some(inp);
+        pub fn connection_state(mut self, input: crate::model::InputDeviceConnectionState) -> Self {
+            self.connection_state = Some(input);
             self
         }
         pub fn set_connection_state(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceConnectionState>,
+            input: std::option::Option<crate::model::InputDeviceConnectionState>,
         ) -> Self {
-            self.connection_state = inp;
+            self.connection_state = input;
             self
         }
         /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
         pub fn device_settings_sync_state(
             mut self,
-            inp: crate::model::DeviceSettingsSyncState,
+            input: crate::model::DeviceSettingsSyncState,
         ) -> Self {
-            self.device_settings_sync_state = Some(inp);
+            self.device_settings_sync_state = Some(input);
             self
         }
         pub fn set_device_settings_sync_state(
             mut self,
-            inp: std::option::Option<crate::model::DeviceSettingsSyncState>,
+            input: std::option::Option<crate::model::DeviceSettingsSyncState>,
         ) -> Self {
-            self.device_settings_sync_state = inp;
+            self.device_settings_sync_state = input;
             self
         }
         /// The status of software on the input device.
-        pub fn device_update_status(mut self, inp: crate::model::DeviceUpdateStatus) -> Self {
-            self.device_update_status = Some(inp);
+        pub fn device_update_status(mut self, input: crate::model::DeviceUpdateStatus) -> Self {
+            self.device_update_status = Some(input);
             self
         }
         pub fn set_device_update_status(
             mut self,
-            inp: std::option::Option<crate::model::DeviceUpdateStatus>,
+            input: std::option::Option<crate::model::DeviceUpdateStatus>,
         ) -> Self {
-            self.device_update_status = inp;
+            self.device_update_status = input;
             self
         }
         /// Settings that describe an input device that is type HD.
-        pub fn hd_device_settings(mut self, inp: crate::model::InputDeviceHdSettings) -> Self {
-            self.hd_device_settings = Some(inp);
+        pub fn hd_device_settings(mut self, input: crate::model::InputDeviceHdSettings) -> Self {
+            self.hd_device_settings = Some(input);
             self
         }
         pub fn set_hd_device_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceHdSettings>,
+            input: std::option::Option<crate::model::InputDeviceHdSettings>,
         ) -> Self {
-            self.hd_device_settings = inp;
+            self.hd_device_settings = input;
             self
         }
         /// The unique ID of the input device.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// The network MAC address of the input device.
-        pub fn mac_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.mac_address = Some(inp.into());
+        pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mac_address = Some(input.into());
             self
         }
-        pub fn set_mac_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = inp;
+        pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mac_address = input;
             self
         }
         /// A name that you specify for the input device.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Network settings for the input device.
-        pub fn network_settings(mut self, inp: crate::model::InputDeviceNetworkSettings) -> Self {
-            self.network_settings = Some(inp);
+        pub fn network_settings(mut self, input: crate::model::InputDeviceNetworkSettings) -> Self {
+            self.network_settings = Some(input);
             self
         }
         pub fn set_network_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceNetworkSettings>,
+            input: std::option::Option<crate::model::InputDeviceNetworkSettings>,
         ) -> Self {
-            self.network_settings = inp;
+            self.network_settings = input;
             self
         }
         /// The unique serial number of the input device.
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// The type of the input device.
-        pub fn r#type(mut self, inp: crate::model::InputDeviceType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::InputDeviceType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::InputDeviceType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::InputDeviceType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// Settings that describe an input device that is type UHD.
-        pub fn uhd_device_settings(mut self, inp: crate::model::InputDeviceUhdSettings) -> Self {
-            self.uhd_device_settings = Some(inp);
+        pub fn uhd_device_settings(mut self, input: crate::model::InputDeviceUhdSettings) -> Self {
+            self.uhd_device_settings = Some(input);
             self
         }
         pub fn set_uhd_device_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceUhdSettings>,
+            input: std::option::Option<crate::model::InputDeviceUhdSettings>,
         ) -> Self {
-            self.uhd_device_settings = inp;
+            self.uhd_device_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`InputDeviceSummary`](crate::model::InputDeviceSummary)
@@ -36003,144 +36170,150 @@ pub mod channel_summary {
     }
     impl Builder {
         /// The unique arn of the channel.
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(mut self, inp: crate::model::CdiInputSpecification) -> Self {
-            self.cdi_input_specification = Some(inp);
+        pub fn cdi_input_specification(
+            mut self,
+            input: crate::model::CdiInputSpecification,
+        ) -> Self {
+            self.cdi_input_specification = Some(input);
             self
         }
         pub fn set_cdi_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::CdiInputSpecification>,
+            input: std::option::Option<crate::model::CdiInputSpecification>,
         ) -> Self {
-            self.cdi_input_specification = inp;
+            self.cdi_input_specification = input;
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.channel_class = Some(inp);
+        pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
+            self.channel_class = Some(input);
             self
         }
         pub fn set_channel_class(
             mut self,
-            inp: std::option::Option<crate::model::ChannelClass>,
+            input: std::option::Option<crate::model::ChannelClass>,
         ) -> Self {
-            self.channel_class = inp;
+            self.channel_class = input;
             self
         }
-        pub fn destinations(mut self, inp: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
         pub fn egress_endpoints(
             mut self,
-            inp: impl Into<crate::model::ChannelEgressEndpoint>,
+            input: impl Into<crate::model::ChannelEgressEndpoint>,
         ) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.egress_endpoints = Some(v);
             self
         }
         pub fn set_egress_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
         ) -> Self {
-            self.egress_endpoints = inp;
+            self.egress_endpoints = input;
             self
         }
         /// The unique id of the channel.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
-        pub fn input_attachments(mut self, inp: impl Into<crate::model::InputAttachment>) -> Self {
+        pub fn input_attachments(
+            mut self,
+            input: impl Into<crate::model::InputAttachment>,
+        ) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_attachments = Some(v);
             self
         }
         pub fn set_input_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         ) -> Self {
-            self.input_attachments = inp;
+            self.input_attachments = input;
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn input_specification(mut self, inp: crate::model::InputSpecification) -> Self {
-            self.input_specification = Some(inp);
+        pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
+            self.input_specification = Some(input);
             self
         }
         pub fn set_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::InputSpecification>,
+            input: std::option::Option<crate::model::InputSpecification>,
         ) -> Self {
-            self.input_specification = inp;
+            self.input_specification = input;
             self
         }
         /// The log level being written to CloudWatch Logs.
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.log_level = Some(inp);
+        pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.log_level = Some(input);
             self
         }
-        pub fn set_log_level(mut self, inp: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = inp;
+        pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
+            self.log_level = input;
             self
         }
         /// The name of the channel. (user-mutable)
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// The number of currently healthy pipelines.
-        pub fn pipelines_running_count(mut self, inp: i32) -> Self {
-            self.pipelines_running_count = Some(inp);
+        pub fn pipelines_running_count(mut self, input: i32) -> Self {
+            self.pipelines_running_count = Some(input);
             self
         }
-        pub fn set_pipelines_running_count(mut self, inp: i32) -> Self {
-            self.pipelines_running_count = Some(inp);
+        pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pipelines_running_count = input;
             self
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// Placeholder documentation for ChannelState
-        pub fn state(mut self, inp: crate::model::ChannelState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::ChannelState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::ChannelState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
+            self.state = input;
             self
         }
         pub fn tags(
@@ -36155,23 +36328,23 @@ pub mod channel_summary {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Settings for VPC output
-        pub fn vpc(mut self, inp: crate::model::VpcOutputSettingsDescription) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VpcOutputSettingsDescription) -> Self {
+            self.vpc = Some(input);
             self
         }
         pub fn set_vpc(
             mut self,
-            inp: std::option::Option<crate::model::VpcOutputSettingsDescription>,
+            input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
         ) -> Self {
-            self.vpc = inp;
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`ChannelSummary`](crate::model::ChannelSummary)
@@ -36247,42 +36420,42 @@ pub mod schedule_action {
     }
     impl Builder {
         /// The name of the action, must be unique within the schedule. This name provides the main reference to an action once it is added to the schedule. A name is unique if it is no longer in the schedule. The schedule is automatically cleaned up to remove actions with a start time of more than 1 hour ago (approximately) so at that point a name can be reused.
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.action_name = Some(inp.into());
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.action_name = Some(input.into());
             self
         }
-        pub fn set_action_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.action_name = inp;
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_name = input;
             self
         }
         /// Settings for this schedule action.
         pub fn schedule_action_settings(
             mut self,
-            inp: crate::model::ScheduleActionSettings,
+            input: crate::model::ScheduleActionSettings,
         ) -> Self {
-            self.schedule_action_settings = Some(inp);
+            self.schedule_action_settings = Some(input);
             self
         }
         pub fn set_schedule_action_settings(
             mut self,
-            inp: std::option::Option<crate::model::ScheduleActionSettings>,
+            input: std::option::Option<crate::model::ScheduleActionSettings>,
         ) -> Self {
-            self.schedule_action_settings = inp;
+            self.schedule_action_settings = input;
             self
         }
         /// The time for the action to start in the channel.
         pub fn schedule_action_start_settings(
             mut self,
-            inp: crate::model::ScheduleActionStartSettings,
+            input: crate::model::ScheduleActionStartSettings,
         ) -> Self {
-            self.schedule_action_start_settings = Some(inp);
+            self.schedule_action_start_settings = Some(input);
             self
         }
         pub fn set_schedule_action_start_settings(
             mut self,
-            inp: std::option::Option<crate::model::ScheduleActionStartSettings>,
+            input: std::option::Option<crate::model::ScheduleActionStartSettings>,
         ) -> Self {
-            self.schedule_action_start_settings = inp;
+            self.schedule_action_start_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`ScheduleAction`](crate::model::ScheduleAction)
@@ -36357,46 +36530,46 @@ pub mod schedule_action_start_settings {
         /// Option for specifying the start time for an action.
         pub fn fixed_mode_schedule_action_start_settings(
             mut self,
-            inp: crate::model::FixedModeScheduleActionStartSettings,
+            input: crate::model::FixedModeScheduleActionStartSettings,
         ) -> Self {
-            self.fixed_mode_schedule_action_start_settings = Some(inp);
+            self.fixed_mode_schedule_action_start_settings = Some(input);
             self
         }
         pub fn set_fixed_mode_schedule_action_start_settings(
             mut self,
-            inp: std::option::Option<crate::model::FixedModeScheduleActionStartSettings>,
+            input: std::option::Option<crate::model::FixedModeScheduleActionStartSettings>,
         ) -> Self {
-            self.fixed_mode_schedule_action_start_settings = inp;
+            self.fixed_mode_schedule_action_start_settings = input;
             self
         }
         /// Option for specifying an action as relative to another action.
         pub fn follow_mode_schedule_action_start_settings(
             mut self,
-            inp: crate::model::FollowModeScheduleActionStartSettings,
+            input: crate::model::FollowModeScheduleActionStartSettings,
         ) -> Self {
-            self.follow_mode_schedule_action_start_settings = Some(inp);
+            self.follow_mode_schedule_action_start_settings = Some(input);
             self
         }
         pub fn set_follow_mode_schedule_action_start_settings(
             mut self,
-            inp: std::option::Option<crate::model::FollowModeScheduleActionStartSettings>,
+            input: std::option::Option<crate::model::FollowModeScheduleActionStartSettings>,
         ) -> Self {
-            self.follow_mode_schedule_action_start_settings = inp;
+            self.follow_mode_schedule_action_start_settings = input;
             self
         }
         /// Option for specifying an action that should be applied immediately.
         pub fn immediate_mode_schedule_action_start_settings(
             mut self,
-            inp: crate::model::ImmediateModeScheduleActionStartSettings,
+            input: crate::model::ImmediateModeScheduleActionStartSettings,
         ) -> Self {
-            self.immediate_mode_schedule_action_start_settings = Some(inp);
+            self.immediate_mode_schedule_action_start_settings = Some(input);
             self
         }
         pub fn set_immediate_mode_schedule_action_start_settings(
             mut self,
-            inp: std::option::Option<crate::model::ImmediateModeScheduleActionStartSettings>,
+            input: std::option::Option<crate::model::ImmediateModeScheduleActionStartSettings>,
         ) -> Self {
-            self.immediate_mode_schedule_action_start_settings = inp;
+            self.immediate_mode_schedule_action_start_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings)
@@ -36481,27 +36654,27 @@ pub mod follow_mode_schedule_action_start_settings {
     }
     impl Builder {
         /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
-        pub fn follow_point(mut self, inp: crate::model::FollowPoint) -> Self {
-            self.follow_point = Some(inp);
+        pub fn follow_point(mut self, input: crate::model::FollowPoint) -> Self {
+            self.follow_point = Some(input);
             self
         }
         pub fn set_follow_point(
             mut self,
-            inp: std::option::Option<crate::model::FollowPoint>,
+            input: std::option::Option<crate::model::FollowPoint>,
         ) -> Self {
-            self.follow_point = inp;
+            self.follow_point = input;
             self
         }
         /// The action name of another action that this one refers to.
-        pub fn reference_action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reference_action_name = Some(inp.into());
+        pub fn reference_action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reference_action_name = Some(input.into());
             self
         }
         pub fn set_reference_action_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reference_action_name = inp;
+            self.reference_action_name = input;
             self
         }
         /// Consumes the builder and constructs a [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings)
@@ -36603,12 +36776,12 @@ pub mod fixed_mode_schedule_action_start_settings {
     }
     impl Builder {
         /// Start time for the action to start in the channel. (Not the time for the action to be added to the schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
-        pub fn time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.time = Some(inp.into());
+        pub fn time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.time = Some(input.into());
             self
         }
-        pub fn set_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.time = inp;
+        pub fn set_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time = input;
             self
         }
         /// Consumes the builder and constructs a [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings)
@@ -36767,181 +36940,183 @@ pub mod schedule_action_settings {
         /// Action to insert HLS ID3 segment tagging
         pub fn hls_id3_segment_tagging_settings(
             mut self,
-            inp: crate::model::HlsId3SegmentTaggingScheduleActionSettings,
+            input: crate::model::HlsId3SegmentTaggingScheduleActionSettings,
         ) -> Self {
-            self.hls_id3_segment_tagging_settings = Some(inp);
+            self.hls_id3_segment_tagging_settings = Some(input);
             self
         }
         pub fn set_hls_id3_segment_tagging_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsId3SegmentTaggingScheduleActionSettings>,
+            input: std::option::Option<crate::model::HlsId3SegmentTaggingScheduleActionSettings>,
         ) -> Self {
-            self.hls_id3_segment_tagging_settings = inp;
+            self.hls_id3_segment_tagging_settings = input;
             self
         }
         /// Action to insert HLS metadata
         pub fn hls_timed_metadata_settings(
             mut self,
-            inp: crate::model::HlsTimedMetadataScheduleActionSettings,
+            input: crate::model::HlsTimedMetadataScheduleActionSettings,
         ) -> Self {
-            self.hls_timed_metadata_settings = Some(inp);
+            self.hls_timed_metadata_settings = Some(input);
             self
         }
         pub fn set_hls_timed_metadata_settings(
             mut self,
-            inp: std::option::Option<crate::model::HlsTimedMetadataScheduleActionSettings>,
+            input: std::option::Option<crate::model::HlsTimedMetadataScheduleActionSettings>,
         ) -> Self {
-            self.hls_timed_metadata_settings = inp;
+            self.hls_timed_metadata_settings = input;
             self
         }
         /// Action to prepare an input for a future immediate input switch
         pub fn input_prepare_settings(
             mut self,
-            inp: crate::model::InputPrepareScheduleActionSettings,
+            input: crate::model::InputPrepareScheduleActionSettings,
         ) -> Self {
-            self.input_prepare_settings = Some(inp);
+            self.input_prepare_settings = Some(input);
             self
         }
         pub fn set_input_prepare_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputPrepareScheduleActionSettings>,
+            input: std::option::Option<crate::model::InputPrepareScheduleActionSettings>,
         ) -> Self {
-            self.input_prepare_settings = inp;
+            self.input_prepare_settings = input;
             self
         }
         /// Action to switch the input
         pub fn input_switch_settings(
             mut self,
-            inp: crate::model::InputSwitchScheduleActionSettings,
+            input: crate::model::InputSwitchScheduleActionSettings,
         ) -> Self {
-            self.input_switch_settings = Some(inp);
+            self.input_switch_settings = Some(input);
             self
         }
         pub fn set_input_switch_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputSwitchScheduleActionSettings>,
+            input: std::option::Option<crate::model::InputSwitchScheduleActionSettings>,
         ) -> Self {
-            self.input_switch_settings = inp;
+            self.input_switch_settings = input;
             self
         }
         /// Action to activate a motion graphics image overlay
         pub fn motion_graphics_image_activate_settings(
             mut self,
-            inp: crate::model::MotionGraphicsActivateScheduleActionSettings,
+            input: crate::model::MotionGraphicsActivateScheduleActionSettings,
         ) -> Self {
-            self.motion_graphics_image_activate_settings = Some(inp);
+            self.motion_graphics_image_activate_settings = Some(input);
             self
         }
         pub fn set_motion_graphics_image_activate_settings(
             mut self,
-            inp: std::option::Option<crate::model::MotionGraphicsActivateScheduleActionSettings>,
+            input: std::option::Option<crate::model::MotionGraphicsActivateScheduleActionSettings>,
         ) -> Self {
-            self.motion_graphics_image_activate_settings = inp;
+            self.motion_graphics_image_activate_settings = input;
             self
         }
         /// Action to deactivate a motion graphics image overlay
         pub fn motion_graphics_image_deactivate_settings(
             mut self,
-            inp: crate::model::MotionGraphicsDeactivateScheduleActionSettings,
+            input: crate::model::MotionGraphicsDeactivateScheduleActionSettings,
         ) -> Self {
-            self.motion_graphics_image_deactivate_settings = Some(inp);
+            self.motion_graphics_image_deactivate_settings = Some(input);
             self
         }
         pub fn set_motion_graphics_image_deactivate_settings(
             mut self,
-            inp: std::option::Option<crate::model::MotionGraphicsDeactivateScheduleActionSettings>,
+            input: std::option::Option<
+                crate::model::MotionGraphicsDeactivateScheduleActionSettings,
+            >,
         ) -> Self {
-            self.motion_graphics_image_deactivate_settings = inp;
+            self.motion_graphics_image_deactivate_settings = input;
             self
         }
         /// Action to pause or unpause one or both channel pipelines
         pub fn pause_state_settings(
             mut self,
-            inp: crate::model::PauseStateScheduleActionSettings,
+            input: crate::model::PauseStateScheduleActionSettings,
         ) -> Self {
-            self.pause_state_settings = Some(inp);
+            self.pause_state_settings = Some(input);
             self
         }
         pub fn set_pause_state_settings(
             mut self,
-            inp: std::option::Option<crate::model::PauseStateScheduleActionSettings>,
+            input: std::option::Option<crate::model::PauseStateScheduleActionSettings>,
         ) -> Self {
-            self.pause_state_settings = inp;
+            self.pause_state_settings = input;
             self
         }
         /// Action to insert SCTE-35 return_to_network message
         pub fn scte35_return_to_network_settings(
             mut self,
-            inp: crate::model::Scte35ReturnToNetworkScheduleActionSettings,
+            input: crate::model::Scte35ReturnToNetworkScheduleActionSettings,
         ) -> Self {
-            self.scte35_return_to_network_settings = Some(inp);
+            self.scte35_return_to_network_settings = Some(input);
             self
         }
         pub fn set_scte35_return_to_network_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte35ReturnToNetworkScheduleActionSettings>,
+            input: std::option::Option<crate::model::Scte35ReturnToNetworkScheduleActionSettings>,
         ) -> Self {
-            self.scte35_return_to_network_settings = inp;
+            self.scte35_return_to_network_settings = input;
             self
         }
         /// Action to insert SCTE-35 splice_insert message
         pub fn scte35_splice_insert_settings(
             mut self,
-            inp: crate::model::Scte35SpliceInsertScheduleActionSettings,
+            input: crate::model::Scte35SpliceInsertScheduleActionSettings,
         ) -> Self {
-            self.scte35_splice_insert_settings = Some(inp);
+            self.scte35_splice_insert_settings = Some(input);
             self
         }
         pub fn set_scte35_splice_insert_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte35SpliceInsertScheduleActionSettings>,
+            input: std::option::Option<crate::model::Scte35SpliceInsertScheduleActionSettings>,
         ) -> Self {
-            self.scte35_splice_insert_settings = inp;
+            self.scte35_splice_insert_settings = input;
             self
         }
         /// Action to insert SCTE-35 time_signal message
         pub fn scte35_time_signal_settings(
             mut self,
-            inp: crate::model::Scte35TimeSignalScheduleActionSettings,
+            input: crate::model::Scte35TimeSignalScheduleActionSettings,
         ) -> Self {
-            self.scte35_time_signal_settings = Some(inp);
+            self.scte35_time_signal_settings = Some(input);
             self
         }
         pub fn set_scte35_time_signal_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte35TimeSignalScheduleActionSettings>,
+            input: std::option::Option<crate::model::Scte35TimeSignalScheduleActionSettings>,
         ) -> Self {
-            self.scte35_time_signal_settings = inp;
+            self.scte35_time_signal_settings = input;
             self
         }
         /// Action to activate a static image overlay
         pub fn static_image_activate_settings(
             mut self,
-            inp: crate::model::StaticImageActivateScheduleActionSettings,
+            input: crate::model::StaticImageActivateScheduleActionSettings,
         ) -> Self {
-            self.static_image_activate_settings = Some(inp);
+            self.static_image_activate_settings = Some(input);
             self
         }
         pub fn set_static_image_activate_settings(
             mut self,
-            inp: std::option::Option<crate::model::StaticImageActivateScheduleActionSettings>,
+            input: std::option::Option<crate::model::StaticImageActivateScheduleActionSettings>,
         ) -> Self {
-            self.static_image_activate_settings = inp;
+            self.static_image_activate_settings = input;
             self
         }
         /// Action to deactivate a static image overlay
         pub fn static_image_deactivate_settings(
             mut self,
-            inp: crate::model::StaticImageDeactivateScheduleActionSettings,
+            input: crate::model::StaticImageDeactivateScheduleActionSettings,
         ) -> Self {
-            self.static_image_deactivate_settings = Some(inp);
+            self.static_image_deactivate_settings = Some(input);
             self
         }
         pub fn set_static_image_deactivate_settings(
             mut self,
-            inp: std::option::Option<crate::model::StaticImageDeactivateScheduleActionSettings>,
+            input: std::option::Option<crate::model::StaticImageDeactivateScheduleActionSettings>,
         ) -> Self {
-            self.static_image_deactivate_settings = inp;
+            self.static_image_deactivate_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`ScheduleActionSettings`](crate::model::ScheduleActionSettings)
@@ -37004,21 +37179,21 @@ pub mod static_image_deactivate_schedule_action_settings {
     }
     impl Builder {
         /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
-        pub fn fade_out(mut self, inp: i32) -> Self {
-            self.fade_out = Some(inp);
+        pub fn fade_out(mut self, input: i32) -> Self {
+            self.fade_out = Some(input);
             self
         }
-        pub fn set_fade_out(mut self, inp: i32) -> Self {
-            self.fade_out = Some(inp);
+        pub fn set_fade_out(mut self, input: std::option::Option<i32>) -> Self {
+            self.fade_out = input;
             self
         }
         /// The image overlay layer to deactivate, 0 to 7. Default is 0.
-        pub fn layer(mut self, inp: i32) -> Self {
-            self.layer = Some(inp);
+        pub fn layer(mut self, input: i32) -> Self {
+            self.layer = Some(input);
             self
         }
-        pub fn set_layer(mut self, inp: i32) -> Self {
-            self.layer = Some(inp);
+        pub fn set_layer(mut self, input: std::option::Option<i32>) -> Self {
+            self.layer = input;
             self
         }
         /// Consumes the builder and constructs a [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings)
@@ -37117,93 +37292,96 @@ pub mod static_image_activate_schedule_action_settings {
     }
     impl Builder {
         /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
             self
         }
         /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
-        pub fn fade_in(mut self, inp: i32) -> Self {
-            self.fade_in = Some(inp);
+        pub fn fade_in(mut self, input: i32) -> Self {
+            self.fade_in = Some(input);
             self
         }
-        pub fn set_fade_in(mut self, inp: i32) -> Self {
-            self.fade_in = Some(inp);
+        pub fn set_fade_in(mut self, input: std::option::Option<i32>) -> Self {
+            self.fade_in = input;
             self
         }
         /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
-        pub fn fade_out(mut self, inp: i32) -> Self {
-            self.fade_out = Some(inp);
+        pub fn fade_out(mut self, input: i32) -> Self {
+            self.fade_out = Some(input);
             self
         }
-        pub fn set_fade_out(mut self, inp: i32) -> Self {
-            self.fade_out = Some(inp);
+        pub fn set_fade_out(mut self, input: std::option::Option<i32>) -> Self {
+            self.fade_out = input;
             self
         }
         /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
-        pub fn height(mut self, inp: i32) -> Self {
-            self.height = Some(inp);
+        pub fn height(mut self, input: i32) -> Self {
+            self.height = Some(input);
             self
         }
-        pub fn set_height(mut self, inp: i32) -> Self {
-            self.height = Some(inp);
+        pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.height = input;
             self
         }
         /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
-        pub fn image(mut self, inp: crate::model::InputLocation) -> Self {
-            self.image = Some(inp);
+        pub fn image(mut self, input: crate::model::InputLocation) -> Self {
+            self.image = Some(input);
             self
         }
-        pub fn set_image(mut self, inp: std::option::Option<crate::model::InputLocation>) -> Self {
-            self.image = inp;
+        pub fn set_image(
+            mut self,
+            input: std::option::Option<crate::model::InputLocation>,
+        ) -> Self {
+            self.image = input;
             self
         }
         /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
-        pub fn image_x(mut self, inp: i32) -> Self {
-            self.image_x = Some(inp);
+        pub fn image_x(mut self, input: i32) -> Self {
+            self.image_x = Some(input);
             self
         }
-        pub fn set_image_x(mut self, inp: i32) -> Self {
-            self.image_x = Some(inp);
+        pub fn set_image_x(mut self, input: std::option::Option<i32>) -> Self {
+            self.image_x = input;
             self
         }
         /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
-        pub fn image_y(mut self, inp: i32) -> Self {
-            self.image_y = Some(inp);
+        pub fn image_y(mut self, input: i32) -> Self {
+            self.image_y = Some(input);
             self
         }
-        pub fn set_image_y(mut self, inp: i32) -> Self {
-            self.image_y = Some(inp);
+        pub fn set_image_y(mut self, input: std::option::Option<i32>) -> Self {
+            self.image_y = input;
             self
         }
         /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
-        pub fn layer(mut self, inp: i32) -> Self {
-            self.layer = Some(inp);
+        pub fn layer(mut self, input: i32) -> Self {
+            self.layer = Some(input);
             self
         }
-        pub fn set_layer(mut self, inp: i32) -> Self {
-            self.layer = Some(inp);
+        pub fn set_layer(mut self, input: std::option::Option<i32>) -> Self {
+            self.layer = input;
             self
         }
         /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
-        pub fn opacity(mut self, inp: i32) -> Self {
-            self.opacity = Some(inp);
+        pub fn opacity(mut self, input: i32) -> Self {
+            self.opacity = Some(input);
             self
         }
-        pub fn set_opacity(mut self, inp: i32) -> Self {
-            self.opacity = Some(inp);
+        pub fn set_opacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.opacity = input;
             self
         }
         /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
-        pub fn width(mut self, inp: i32) -> Self {
-            self.width = Some(inp);
+        pub fn width(mut self, input: i32) -> Self {
+            self.width = Some(input);
             self
         }
-        pub fn set_width(mut self, inp: i32) -> Self {
-            self.width = Some(inp);
+        pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.width = input;
             self
         }
         /// Consumes the builder and constructs a [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings)
@@ -37258,18 +37436,18 @@ pub mod scte35_time_signal_schedule_action_settings {
     impl Builder {
         pub fn scte35_descriptors(
             mut self,
-            inp: impl Into<crate::model::Scte35Descriptor>,
+            input: impl Into<crate::model::Scte35Descriptor>,
         ) -> Self {
             let mut v = self.scte35_descriptors.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.scte35_descriptors = Some(v);
             self
         }
         pub fn set_scte35_descriptors(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Scte35Descriptor>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Scte35Descriptor>>,
         ) -> Self {
-            self.scte35_descriptors = inp;
+            self.scte35_descriptors = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings)
@@ -37319,16 +37497,16 @@ pub mod scte35_descriptor {
         /// SCTE-35 Descriptor Settings.
         pub fn scte35_descriptor_settings(
             mut self,
-            inp: crate::model::Scte35DescriptorSettings,
+            input: crate::model::Scte35DescriptorSettings,
         ) -> Self {
-            self.scte35_descriptor_settings = Some(inp);
+            self.scte35_descriptor_settings = Some(input);
             self
         }
         pub fn set_scte35_descriptor_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte35DescriptorSettings>,
+            input: std::option::Option<crate::model::Scte35DescriptorSettings>,
         ) -> Self {
-            self.scte35_descriptor_settings = inp;
+            self.scte35_descriptor_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35Descriptor`](crate::model::Scte35Descriptor)
@@ -37379,16 +37557,16 @@ pub mod scte35_descriptor_settings {
         /// SCTE-35 Segmentation Descriptor.
         pub fn segmentation_descriptor_scte35_descriptor_settings(
             mut self,
-            inp: crate::model::Scte35SegmentationDescriptor,
+            input: crate::model::Scte35SegmentationDescriptor,
         ) -> Self {
-            self.segmentation_descriptor_scte35_descriptor_settings = Some(inp);
+            self.segmentation_descriptor_scte35_descriptor_settings = Some(input);
             self
         }
         pub fn set_segmentation_descriptor_scte35_descriptor_settings(
             mut self,
-            inp: std::option::Option<crate::model::Scte35SegmentationDescriptor>,
+            input: std::option::Option<crate::model::Scte35SegmentationDescriptor>,
         ) -> Self {
-            self.segmentation_descriptor_scte35_descriptor_settings = inp;
+            self.segmentation_descriptor_scte35_descriptor_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings)
@@ -37501,115 +37679,115 @@ pub mod scte35_segmentation_descriptor {
         /// Holds the four SCTE-35 delivery restriction parameters.
         pub fn delivery_restrictions(
             mut self,
-            inp: crate::model::Scte35DeliveryRestrictions,
+            input: crate::model::Scte35DeliveryRestrictions,
         ) -> Self {
-            self.delivery_restrictions = Some(inp);
+            self.delivery_restrictions = Some(input);
             self
         }
         pub fn set_delivery_restrictions(
             mut self,
-            inp: std::option::Option<crate::model::Scte35DeliveryRestrictions>,
+            input: std::option::Option<crate::model::Scte35DeliveryRestrictions>,
         ) -> Self {
-            self.delivery_restrictions = inp;
+            self.delivery_restrictions = input;
             self
         }
         /// Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
-        pub fn segment_num(mut self, inp: i32) -> Self {
-            self.segment_num = Some(inp);
+        pub fn segment_num(mut self, input: i32) -> Self {
+            self.segment_num = Some(input);
             self
         }
-        pub fn set_segment_num(mut self, inp: i32) -> Self {
-            self.segment_num = Some(inp);
+        pub fn set_segment_num(mut self, input: std::option::Option<i32>) -> Self {
+            self.segment_num = input;
             self
         }
         /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
         pub fn segmentation_cancel_indicator(
             mut self,
-            inp: crate::model::Scte35SegmentationCancelIndicator,
+            input: crate::model::Scte35SegmentationCancelIndicator,
         ) -> Self {
-            self.segmentation_cancel_indicator = Some(inp);
+            self.segmentation_cancel_indicator = Some(input);
             self
         }
         pub fn set_segmentation_cancel_indicator(
             mut self,
-            inp: std::option::Option<crate::model::Scte35SegmentationCancelIndicator>,
+            input: std::option::Option<crate::model::Scte35SegmentationCancelIndicator>,
         ) -> Self {
-            self.segmentation_cancel_indicator = inp;
+            self.segmentation_cancel_indicator = input;
             self
         }
         /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
-        pub fn segmentation_duration(mut self, inp: i64) -> Self {
-            self.segmentation_duration = Some(inp);
+        pub fn segmentation_duration(mut self, input: i64) -> Self {
+            self.segmentation_duration = Some(input);
             self
         }
-        pub fn set_segmentation_duration(mut self, inp: i64) -> Self {
-            self.segmentation_duration = Some(inp);
+        pub fn set_segmentation_duration(mut self, input: std::option::Option<i64>) -> Self {
+            self.segmentation_duration = input;
             self
         }
         /// Corresponds to SCTE-35 segmentation_event_id.
-        pub fn segmentation_event_id(mut self, inp: i64) -> Self {
-            self.segmentation_event_id = Some(inp);
+        pub fn segmentation_event_id(mut self, input: i64) -> Self {
+            self.segmentation_event_id = Some(input);
             self
         }
-        pub fn set_segmentation_event_id(mut self, inp: i64) -> Self {
-            self.segmentation_event_id = Some(inp);
+        pub fn set_segmentation_event_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.segmentation_event_id = input;
             self
         }
         /// Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35 specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the ID in hex (for example, "0x34") or decimal (for example, "52").
-        pub fn segmentation_type_id(mut self, inp: i32) -> Self {
-            self.segmentation_type_id = Some(inp);
+        pub fn segmentation_type_id(mut self, input: i32) -> Self {
+            self.segmentation_type_id = Some(input);
             self
         }
-        pub fn set_segmentation_type_id(mut self, inp: i32) -> Self {
-            self.segmentation_type_id = Some(inp);
+        pub fn set_segmentation_type_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.segmentation_type_id = input;
             self
         }
         /// Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex "41445320496e666f726d6174696f6e.
-        pub fn segmentation_upid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.segmentation_upid = Some(inp.into());
+        pub fn segmentation_upid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segmentation_upid = Some(input.into());
             self
         }
         pub fn set_segmentation_upid(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.segmentation_upid = inp;
+            self.segmentation_upid = input;
             self
         }
         /// Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example, "0x0C" ) or in decimal (for example, "12").
-        pub fn segmentation_upid_type(mut self, inp: i32) -> Self {
-            self.segmentation_upid_type = Some(inp);
+        pub fn segmentation_upid_type(mut self, input: i32) -> Self {
+            self.segmentation_upid_type = Some(input);
             self
         }
-        pub fn set_segmentation_upid_type(mut self, inp: i32) -> Self {
-            self.segmentation_upid_type = Some(inp);
+        pub fn set_segmentation_upid_type(mut self, input: std::option::Option<i32>) -> Self {
+            self.segmentation_upid_type = input;
             self
         }
         /// Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
-        pub fn segments_expected(mut self, inp: i32) -> Self {
-            self.segments_expected = Some(inp);
+        pub fn segments_expected(mut self, input: i32) -> Self {
+            self.segments_expected = Some(input);
             self
         }
-        pub fn set_segments_expected(mut self, inp: i32) -> Self {
-            self.segments_expected = Some(inp);
+        pub fn set_segments_expected(mut self, input: std::option::Option<i32>) -> Self {
+            self.segments_expected = input;
             self
         }
         /// Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
-        pub fn sub_segment_num(mut self, inp: i32) -> Self {
-            self.sub_segment_num = Some(inp);
+        pub fn sub_segment_num(mut self, input: i32) -> Self {
+            self.sub_segment_num = Some(input);
             self
         }
-        pub fn set_sub_segment_num(mut self, inp: i32) -> Self {
-            self.sub_segment_num = Some(inp);
+        pub fn set_sub_segment_num(mut self, input: std::option::Option<i32>) -> Self {
+            self.sub_segment_num = input;
             self
         }
         /// Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
-        pub fn sub_segments_expected(mut self, inp: i32) -> Self {
-            self.sub_segments_expected = Some(inp);
+        pub fn sub_segments_expected(mut self, input: i32) -> Self {
+            self.sub_segments_expected = Some(input);
             self
         }
-        pub fn set_sub_segments_expected(mut self, inp: i32) -> Self {
-            self.sub_segments_expected = Some(inp);
+        pub fn set_sub_segments_expected(mut self, input: std::option::Option<i32>) -> Self {
+            self.sub_segments_expected = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor)
@@ -37749,57 +37927,63 @@ pub mod scte35_delivery_restrictions {
     }
     impl Builder {
         /// Corresponds to SCTE-35 archive_allowed_flag.
-        pub fn archive_allowed_flag(mut self, inp: crate::model::Scte35ArchiveAllowedFlag) -> Self {
-            self.archive_allowed_flag = Some(inp);
+        pub fn archive_allowed_flag(
+            mut self,
+            input: crate::model::Scte35ArchiveAllowedFlag,
+        ) -> Self {
+            self.archive_allowed_flag = Some(input);
             self
         }
         pub fn set_archive_allowed_flag(
             mut self,
-            inp: std::option::Option<crate::model::Scte35ArchiveAllowedFlag>,
+            input: std::option::Option<crate::model::Scte35ArchiveAllowedFlag>,
         ) -> Self {
-            self.archive_allowed_flag = inp;
+            self.archive_allowed_flag = input;
             self
         }
         /// Corresponds to SCTE-35 device_restrictions parameter.
-        pub fn device_restrictions(mut self, inp: crate::model::Scte35DeviceRestrictions) -> Self {
-            self.device_restrictions = Some(inp);
+        pub fn device_restrictions(
+            mut self,
+            input: crate::model::Scte35DeviceRestrictions,
+        ) -> Self {
+            self.device_restrictions = Some(input);
             self
         }
         pub fn set_device_restrictions(
             mut self,
-            inp: std::option::Option<crate::model::Scte35DeviceRestrictions>,
+            input: std::option::Option<crate::model::Scte35DeviceRestrictions>,
         ) -> Self {
-            self.device_restrictions = inp;
+            self.device_restrictions = input;
             self
         }
         /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
         pub fn no_regional_blackout_flag(
             mut self,
-            inp: crate::model::Scte35NoRegionalBlackoutFlag,
+            input: crate::model::Scte35NoRegionalBlackoutFlag,
         ) -> Self {
-            self.no_regional_blackout_flag = Some(inp);
+            self.no_regional_blackout_flag = Some(input);
             self
         }
         pub fn set_no_regional_blackout_flag(
             mut self,
-            inp: std::option::Option<crate::model::Scte35NoRegionalBlackoutFlag>,
+            input: std::option::Option<crate::model::Scte35NoRegionalBlackoutFlag>,
         ) -> Self {
-            self.no_regional_blackout_flag = inp;
+            self.no_regional_blackout_flag = input;
             self
         }
         /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
         pub fn web_delivery_allowed_flag(
             mut self,
-            inp: crate::model::Scte35WebDeliveryAllowedFlag,
+            input: crate::model::Scte35WebDeliveryAllowedFlag,
         ) -> Self {
-            self.web_delivery_allowed_flag = Some(inp);
+            self.web_delivery_allowed_flag = Some(input);
             self
         }
         pub fn set_web_delivery_allowed_flag(
             mut self,
-            inp: std::option::Option<crate::model::Scte35WebDeliveryAllowedFlag>,
+            input: std::option::Option<crate::model::Scte35WebDeliveryAllowedFlag>,
         ) -> Self {
-            self.web_delivery_allowed_flag = inp;
+            self.web_delivery_allowed_flag = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions)
@@ -38086,21 +38270,21 @@ pub mod scte35_splice_insert_schedule_action_settings {
     }
     impl Builder {
         /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
-        pub fn duration(mut self, inp: i64) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i64) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: i64) -> Self {
-            self.duration = Some(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
+            self.duration = input;
             self
         }
         /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-        pub fn splice_event_id(mut self, inp: i64) -> Self {
-            self.splice_event_id = Some(inp);
+        pub fn splice_event_id(mut self, input: i64) -> Self {
+            self.splice_event_id = Some(input);
             self
         }
-        pub fn set_splice_event_id(mut self, inp: i64) -> Self {
-            self.splice_event_id = Some(inp);
+        pub fn set_splice_event_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.splice_event_id = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings)
@@ -38145,12 +38329,12 @@ pub mod scte35_return_to_network_schedule_action_settings {
     }
     impl Builder {
         /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-        pub fn splice_event_id(mut self, inp: i64) -> Self {
-            self.splice_event_id = Some(inp);
+        pub fn splice_event_id(mut self, input: i64) -> Self {
+            self.splice_event_id = Some(input);
             self
         }
-        pub fn set_splice_event_id(mut self, inp: i64) -> Self {
-            self.splice_event_id = Some(inp);
+        pub fn set_splice_event_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.splice_event_id = input;
             self
         }
         /// Consumes the builder and constructs a [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings)
@@ -38196,18 +38380,18 @@ pub mod pause_state_schedule_action_settings {
     impl Builder {
         pub fn pipelines(
             mut self,
-            inp: impl Into<crate::model::PipelinePauseStateSettings>,
+            input: impl Into<crate::model::PipelinePauseStateSettings>,
         ) -> Self {
             let mut v = self.pipelines.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.pipelines = Some(v);
             self
         }
         pub fn set_pipelines(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PipelinePauseStateSettings>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PipelinePauseStateSettings>>,
         ) -> Self {
-            self.pipelines = inp;
+            self.pipelines = input;
             self
         }
         /// Consumes the builder and constructs a [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings)
@@ -38251,15 +38435,15 @@ pub mod pipeline_pause_state_settings {
     }
     impl Builder {
         /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-        pub fn pipeline_id(mut self, inp: crate::model::PipelineId) -> Self {
-            self.pipeline_id = Some(inp);
+        pub fn pipeline_id(mut self, input: crate::model::PipelineId) -> Self {
+            self.pipeline_id = Some(input);
             self
         }
         pub fn set_pipeline_id(
             mut self,
-            inp: std::option::Option<crate::model::PipelineId>,
+            input: std::option::Option<crate::model::PipelineId>,
         ) -> Self {
-            self.pipeline_id = inp;
+            self.pipeline_id = input;
             self
         }
         /// Consumes the builder and constructs a [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings)
@@ -38408,39 +38592,42 @@ pub mod motion_graphics_activate_schedule_action_settings {
     }
     impl Builder {
         /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
-        pub fn duration(mut self, inp: i64) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i64) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: i64) -> Self {
-            self.duration = Some(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
+            self.duration = input;
             self
         }
         /// Key used to extract the password from EC2 Parameter store
-        pub fn password_param(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password_param = Some(inp.into());
+        pub fn password_param(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password_param = Some(input.into());
             self
         }
-        pub fn set_password_param(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password_param = inp;
+        pub fn set_password_param(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.password_param = input;
             self
         }
         /// URI of the HTML5 content to be rendered into the live stream.
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
         /// Documentation update needed
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.username = Some(inp.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
             self
         }
-        pub fn set_username(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.username = inp;
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
             self
         }
         /// Consumes the builder and constructs a [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings)
@@ -38505,41 +38692,44 @@ pub mod input_switch_schedule_action_settings {
         /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
         pub fn input_attachment_name_reference(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.input_attachment_name_reference = Some(inp.into());
+            self.input_attachment_name_reference = Some(input.into());
             self
         }
         pub fn set_input_attachment_name_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.input_attachment_name_reference = inp;
+            self.input_attachment_name_reference = input;
             self
         }
         /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
-        pub fn input_clipping_settings(mut self, inp: crate::model::InputClippingSettings) -> Self {
-            self.input_clipping_settings = Some(inp);
+        pub fn input_clipping_settings(
+            mut self,
+            input: crate::model::InputClippingSettings,
+        ) -> Self {
+            self.input_clipping_settings = Some(input);
             self
         }
         pub fn set_input_clipping_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputClippingSettings>,
+            input: std::option::Option<crate::model::InputClippingSettings>,
         ) -> Self {
-            self.input_clipping_settings = inp;
+            self.input_clipping_settings = input;
             self
         }
-        pub fn url_path(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn url_path(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.url_path.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.url_path = Some(v);
             self
         }
         pub fn set_url_path(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.url_path = inp;
+            self.url_path = input;
             self
         }
         /// Consumes the builder and constructs a [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings)
@@ -38597,39 +38787,39 @@ pub mod input_clipping_settings {
     }
     impl Builder {
         /// The source of the timecodes in the source being clipped.
-        pub fn input_timecode_source(mut self, inp: crate::model::InputTimecodeSource) -> Self {
-            self.input_timecode_source = Some(inp);
+        pub fn input_timecode_source(mut self, input: crate::model::InputTimecodeSource) -> Self {
+            self.input_timecode_source = Some(input);
             self
         }
         pub fn set_input_timecode_source(
             mut self,
-            inp: std::option::Option<crate::model::InputTimecodeSource>,
+            input: std::option::Option<crate::model::InputTimecodeSource>,
         ) -> Self {
-            self.input_timecode_source = inp;
+            self.input_timecode_source = input;
             self
         }
         /// Settings to identify the start of the clip.
-        pub fn start_timecode(mut self, inp: crate::model::StartTimecode) -> Self {
-            self.start_timecode = Some(inp);
+        pub fn start_timecode(mut self, input: crate::model::StartTimecode) -> Self {
+            self.start_timecode = Some(input);
             self
         }
         pub fn set_start_timecode(
             mut self,
-            inp: std::option::Option<crate::model::StartTimecode>,
+            input: std::option::Option<crate::model::StartTimecode>,
         ) -> Self {
-            self.start_timecode = inp;
+            self.start_timecode = input;
             self
         }
         /// Settings to identify the end of the clip.
-        pub fn stop_timecode(mut self, inp: crate::model::StopTimecode) -> Self {
-            self.stop_timecode = Some(inp);
+        pub fn stop_timecode(mut self, input: crate::model::StopTimecode) -> Self {
+            self.stop_timecode = Some(input);
             self
         }
         pub fn set_stop_timecode(
             mut self,
-            inp: std::option::Option<crate::model::StopTimecode>,
+            input: std::option::Option<crate::model::StopTimecode>,
         ) -> Self {
-            self.stop_timecode = inp;
+            self.stop_timecode = input;
             self
         }
         /// Consumes the builder and constructs a [`InputClippingSettings`](crate::model::InputClippingSettings)
@@ -38687,25 +38877,25 @@ pub mod stop_timecode {
         /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
         pub fn last_frame_clipping_behavior(
             mut self,
-            inp: crate::model::LastFrameClippingBehavior,
+            input: crate::model::LastFrameClippingBehavior,
         ) -> Self {
-            self.last_frame_clipping_behavior = Some(inp);
+            self.last_frame_clipping_behavior = Some(input);
             self
         }
         pub fn set_last_frame_clipping_behavior(
             mut self,
-            inp: std::option::Option<crate::model::LastFrameClippingBehavior>,
+            input: std::option::Option<crate::model::LastFrameClippingBehavior>,
         ) -> Self {
-            self.last_frame_clipping_behavior = inp;
+            self.last_frame_clipping_behavior = input;
             self
         }
         /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
-        pub fn timecode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timecode = Some(inp.into());
+        pub fn timecode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timecode = Some(input.into());
             self
         }
-        pub fn set_timecode(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timecode = inp;
+        pub fn set_timecode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timecode = input;
             self
         }
         /// Consumes the builder and constructs a [`StopTimecode`](crate::model::StopTimecode)
@@ -38807,12 +38997,12 @@ pub mod start_timecode {
     }
     impl Builder {
         /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
-        pub fn timecode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timecode = Some(inp.into());
+        pub fn timecode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timecode = Some(input.into());
             self
         }
-        pub fn set_timecode(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timecode = inp;
+        pub fn set_timecode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timecode = input;
             self
         }
         /// Consumes the builder and constructs a [`StartTimecode`](crate::model::StartTimecode)
@@ -38931,41 +39121,44 @@ pub mod input_prepare_schedule_action_settings {
         /// The name of the input attachment that should be prepared by this action. If no name is provided, the action will stop the most recent prepare (if any) when activated.
         pub fn input_attachment_name_reference(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.input_attachment_name_reference = Some(inp.into());
+            self.input_attachment_name_reference = Some(input.into());
             self
         }
         pub fn set_input_attachment_name_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.input_attachment_name_reference = inp;
+            self.input_attachment_name_reference = input;
             self
         }
         /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
-        pub fn input_clipping_settings(mut self, inp: crate::model::InputClippingSettings) -> Self {
-            self.input_clipping_settings = Some(inp);
+        pub fn input_clipping_settings(
+            mut self,
+            input: crate::model::InputClippingSettings,
+        ) -> Self {
+            self.input_clipping_settings = Some(input);
             self
         }
         pub fn set_input_clipping_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputClippingSettings>,
+            input: std::option::Option<crate::model::InputClippingSettings>,
         ) -> Self {
-            self.input_clipping_settings = inp;
+            self.input_clipping_settings = input;
             self
         }
-        pub fn url_path(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn url_path(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.url_path.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.url_path = Some(v);
             self
         }
         pub fn set_url_path(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.url_path = inp;
+            self.url_path = input;
             self
         }
         /// Consumes the builder and constructs a [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings)
@@ -39011,12 +39204,12 @@ pub mod hls_timed_metadata_schedule_action_settings {
     }
     impl Builder {
         /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
-        pub fn id3(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id3 = Some(inp.into());
+        pub fn id3(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id3 = Some(input.into());
             self
         }
-        pub fn set_id3(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id3 = inp;
+        pub fn set_id3(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id3 = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings)
@@ -39058,12 +39251,12 @@ pub mod hls_id3_segment_tagging_schedule_action_settings {
     }
     impl Builder {
         /// ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers: https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
-        pub fn tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tag = Some(inp.into());
+        pub fn tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag = Some(input.into());
             self
         }
-        pub fn set_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.tag = inp;
+        pub fn set_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag = input;
             self
         }
         /// Consumes the builder and constructs a [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings)
@@ -39223,30 +39416,30 @@ pub mod input_vpc_request {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
         pub fn set_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.security_group_ids = inp;
+            self.security_group_ids = input;
             self
         }
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
         pub fn set_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.subnet_ids = inp;
+            self.subnet_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`InputVpcRequest`](crate::model::InputVpcRequest)
@@ -39312,44 +39505,44 @@ pub mod vpc_output_settings {
     impl Builder {
         pub fn public_address_allocation_ids(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.public_address_allocation_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.public_address_allocation_ids = Some(v);
             self
         }
         pub fn set_public_address_allocation_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.public_address_allocation_ids = inp;
+            self.public_address_allocation_ids = input;
             self
         }
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
         pub fn set_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.security_group_ids = inp;
+            self.security_group_ids = input;
             self
         }
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
         pub fn set_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.subnet_ids = inp;
+            self.subnet_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`VpcOutputSettings`](crate::model::VpcOutputSettings)
@@ -39395,17 +39588,17 @@ pub mod batch_schedule_action_delete_result {
             std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
     }
     impl Builder {
-        pub fn schedule_actions(mut self, inp: impl Into<crate::model::ScheduleAction>) -> Self {
+        pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.schedule_actions = Some(v);
             self
         }
         pub fn set_schedule_actions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
         ) -> Self {
-            self.schedule_actions = inp;
+            self.schedule_actions = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult)
@@ -39449,17 +39642,17 @@ pub mod batch_schedule_action_create_result {
             std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
     }
     impl Builder {
-        pub fn schedule_actions(mut self, inp: impl Into<crate::model::ScheduleAction>) -> Self {
+        pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.schedule_actions = Some(v);
             self
         }
         pub fn set_schedule_actions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
         ) -> Self {
-            self.schedule_actions = inp;
+            self.schedule_actions = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult)
@@ -39502,17 +39695,17 @@ pub mod batch_schedule_action_delete_request {
         pub(crate) action_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn action_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn action_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.action_names = Some(v);
             self
         }
         pub fn set_action_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.action_names = inp;
+            self.action_names = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest)
@@ -39556,17 +39749,17 @@ pub mod batch_schedule_action_create_request {
             std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
     }
     impl Builder {
-        pub fn schedule_actions(mut self, inp: impl Into<crate::model::ScheduleAction>) -> Self {
+        pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.schedule_actions = Some(v);
             self
         }
         pub fn set_schedule_actions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
         ) -> Self {
-            self.schedule_actions = inp;
+            self.schedule_actions = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest)
@@ -39622,30 +39815,30 @@ pub mod batch_successful_result_model {
     }
     impl Builder {
         /// ARN of the resource
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// ID of the resource
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Current state of the resource
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel)
@@ -39709,39 +39902,39 @@ pub mod batch_failed_result_model {
     }
     impl Builder {
         /// ARN of the resource
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Error code for the failed operation
-        pub fn code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code = Some(inp.into());
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
             self
         }
-        pub fn set_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code = inp;
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
             self
         }
         /// ID of the resource
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Error message for the failed operation
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchFailedResultModel`](crate::model::BatchFailedResultModel)

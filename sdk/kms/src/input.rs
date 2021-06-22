@@ -23,19 +23,21 @@ pub mod cancel_key_deletion_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelKeyDeletionInput`](crate::input::CancelKeyDeletionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelKeyDeletionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CancelKeyDeletionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CancelKeyDeletionInput {
                 key_id: self.key_id,
             })
@@ -52,7 +54,7 @@ impl CancelKeyDeletionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CancelKeyDeletion,
             aws_http::AwsErrorRetryPolicy,
@@ -108,7 +110,7 @@ impl CancelKeyDeletionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -141,22 +143,24 @@ pub mod connect_custom_key_store_input {
     impl Builder {
         /// <p>Enter the key store ID of the custom key store that you want to connect.
         /// To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ConnectCustomKeyStoreInput`](crate::input::ConnectCustomKeyStoreInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ConnectCustomKeyStoreInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ConnectCustomKeyStoreInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ConnectCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
             })
@@ -173,7 +177,7 @@ impl ConnectCustomKeyStoreInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ConnectCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
@@ -229,7 +233,7 @@ impl ConnectCustomKeyStoreInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -266,12 +270,12 @@ pub mod create_alias_input {
         /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
         /// forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved
         /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMKs</a>.</p>
-        pub fn alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.alias_name = Some(inp.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_name = Some(input.into());
             self
         }
-        pub fn set_alias_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.alias_name = inp;
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_name = input;
             self
         }
         /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a>. The CMK must be
@@ -293,18 +297,22 @@ pub mod create_alias_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn target_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_key_id = Some(inp.into());
+        pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_key_id = Some(input.into());
             self
         }
-        pub fn set_target_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_key_id = inp;
+        pub fn set_target_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateAliasInput`](crate::input::CreateAliasInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAliasInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateAliasInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateAliasInput {
                 alias_name: self.alias_name,
                 target_key_id: self.target_key_id,
@@ -322,7 +330,7 @@ impl CreateAliasInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateAlias,
             aws_http::AwsErrorRetryPolicy,
@@ -375,7 +383,7 @@ impl CreateAliasInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -411,42 +419,42 @@ pub mod create_custom_key_store_input {
     impl Builder {
         /// <p>Specifies a friendly name for the custom key store. The name must be unique in your AWS
         /// account.</p>
-        pub fn custom_key_store_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_name = Some(inp.into());
+        pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_name = Some(input.into());
             self
         }
         pub fn set_custom_key_store_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_name = inp;
+            self.custom_key_store_name = input;
             self
         }
         /// <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active
         /// AWS CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID,
         /// use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
-        pub fn cloud_hsm_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloud_hsm_cluster_id = Some(inp.into());
+        pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
         pub fn set_cloud_hsm_cluster_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_hsm_cluster_id = inp;
+            self.cloud_hsm_cluster_id = input;
             self
         }
         /// <p>Enter the content of the trust anchor certificate for the cluster. This is the content of
         /// the <code>customerCA.crt</code> file that you created when you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.</p>
-        pub fn trust_anchor_certificate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.trust_anchor_certificate = Some(inp.into());
+        pub fn trust_anchor_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.trust_anchor_certificate = Some(input.into());
             self
         }
         pub fn set_trust_anchor_certificate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.trust_anchor_certificate = inp;
+            self.trust_anchor_certificate = input;
             self
         }
         /// <p>Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
@@ -456,22 +464,24 @@ pub mod create_custom_key_store_input {
         /// <p>The password must be a string of 7 to 32 characters. Its value is case sensitive.</p>
         /// <p>This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change
         /// the password in the AWS CloudHSM cluster.</p>
-        pub fn key_store_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_store_password = Some(inp.into());
+        pub fn key_store_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_store_password = Some(input.into());
             self
         }
         pub fn set_key_store_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.key_store_password = inp;
+            self.key_store_password = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCustomKeyStoreInput`](crate::input::CreateCustomKeyStoreInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateCustomKeyStoreInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateCustomKeyStoreInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateCustomKeyStoreInput {
                 custom_key_store_name: self.custom_key_store_name,
                 cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
@@ -491,7 +501,7 @@ impl CreateCustomKeyStoreInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
@@ -547,7 +557,7 @@ impl CreateCustomKeyStoreInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -599,12 +609,12 @@ pub mod create_grant_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The principal that is given permission to perform the operations that the grant
@@ -615,15 +625,15 @@ pub mod create_grant_input {
         /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access
         /// Management (IAM)</a> in the Example ARNs section of the <i>AWS General
         /// Reference</i>.</p>
-        pub fn grantee_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grantee_principal = Some(inp.into());
+        pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grantee_principal = Some(input.into());
             self
         }
         pub fn set_grantee_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grantee_principal = inp;
+            self.grantee_principal = input;
             self
         }
         /// <p>The principal that is given permission to retire the grant by using <a>RetireGrant</a> operation.</p>
@@ -632,28 +642,28 @@ pub mod create_grant_input {
         /// assumed role users. For examples of the ARN syntax to use for specifying a principal, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the
         /// <i>AWS General Reference</i>.</p>
-        pub fn retiring_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.retiring_principal = Some(inp.into());
+        pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.retiring_principal = Some(input.into());
             self
         }
         pub fn set_retiring_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.retiring_principal = inp;
+            self.retiring_principal = input;
             self
         }
-        pub fn operations(mut self, inp: impl Into<crate::model::GrantOperation>) -> Self {
+        pub fn operations(mut self, input: impl Into<crate::model::GrantOperation>) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.operations = Some(v);
             self
         }
         pub fn set_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
         ) -> Self {
-            self.operations = inp;
+            self.operations = input;
             self
         }
         /// <p>Allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> only when the encryption context matches or includes the encryption
@@ -664,28 +674,28 @@ pub mod create_grant_input {
         /// <p>Grant constraints are not applied to operations that do not support an encryption context,
         /// such as cryptographic operations with asymmetric CMKs and management operations, such as
         /// <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
-        pub fn constraints(mut self, inp: crate::model::GrantConstraints) -> Self {
-            self.constraints = Some(inp);
+        pub fn constraints(mut self, input: crate::model::GrantConstraints) -> Self {
+            self.constraints = Some(input);
             self
         }
         pub fn set_constraints(
             mut self,
-            inp: std::option::Option<crate::model::GrantConstraints>,
+            input: std::option::Option<crate::model::GrantConstraints>,
         ) -> Self {
-            self.constraints = inp;
+            self.constraints = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// <p>A friendly name for the grant. Use this value to prevent the unintended
@@ -698,18 +708,19 @@ pub mod create_grant_input {
         /// returned without creating a new grant. Note that the returned grant token is unique with every
         /// <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is returned.
         /// All grant tokens for the same grant ID can be used interchangeably.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateGrantInput`](crate::input::CreateGrantInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGrantInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateGrantInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateGrantInput {
                 key_id: self.key_id,
                 grantee_principal: self.grantee_principal,
@@ -732,7 +743,7 @@ impl CreateGrantInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateGrant,
             aws_http::AwsErrorRetryPolicy,
@@ -785,7 +796,7 @@ impl CreateGrantInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -851,22 +862,22 @@ pub mod create_key_input {
         /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i>
         /// <i>IAM User Guide</i>
         /// </i>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// <p>A description of the CMK.</p>
         /// <p>Use a description that helps you decide whether the CMK is appropriate for a task.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK. The default value
@@ -885,15 +896,15 @@ pub mod create_key_input {
         /// <p>For asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
         /// </li>
         /// </ul>
-        pub fn key_usage(mut self, inp: crate::model::KeyUsageType) -> Self {
-            self.key_usage = Some(inp);
+        pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
+            self.key_usage = Some(input);
             self
         }
         pub fn set_key_usage(
             mut self,
-            inp: std::option::Option<crate::model::KeyUsageType>,
+            input: std::option::Option<crate::model::KeyUsageType>,
         ) -> Self {
-            self.key_usage = inp;
+            self.key_usage = input;
             self
         }
         /// <p>Specifies the type of CMK to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
@@ -977,16 +988,16 @@ pub mod create_key_input {
         /// </ul>
         pub fn customer_master_key_spec(
             mut self,
-            inp: crate::model::CustomerMasterKeySpec,
+            input: crate::model::CustomerMasterKeySpec,
         ) -> Self {
-            self.customer_master_key_spec = Some(inp);
+            self.customer_master_key_spec = Some(input);
             self
         }
         pub fn set_customer_master_key_spec(
             mut self,
-            inp: std::option::Option<crate::model::CustomerMasterKeySpec>,
+            input: std::option::Option<crate::model::CustomerMasterKeySpec>,
         ) -> Self {
-            self.customer_master_key_spec = inp;
+            self.customer_master_key_spec = input;
             self
         }
         /// <p>The source of the key material for the CMK. You cannot change the origin after you create
@@ -1000,12 +1011,12 @@ pub mod create_key_input {
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and creates its key material in the associated AWS CloudHSM cluster. You must also
         /// use the <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value
         /// is valid only for symmetric CMKs.</p>
-        pub fn origin(mut self, inp: crate::model::OriginType) -> Self {
-            self.origin = Some(inp);
+        pub fn origin(mut self, input: crate::model::OriginType) -> Self {
+            self.origin = Some(input);
             self
         }
-        pub fn set_origin(mut self, inp: std::option::Option<crate::model::OriginType>) -> Self {
-            self.origin = inp;
+        pub fn set_origin(mut self, input: std::option::Option<crate::model::OriginType>) -> Self {
+            self.origin = input;
             self
         }
         /// <p>Creates the CMK in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its associated
@@ -1020,15 +1031,15 @@ pub mod create_key_input {
         /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in AWS KMS, which
         /// combines the convenience and extensive integration of AWS KMS with the isolation and control of a
         /// single-tenant key store.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
@@ -1042,31 +1053,35 @@ pub mod create_key_input {
         /// <p>Use this parameter only when you include a policy in the request and you intend to prevent
         /// the principal that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
         /// <p>The default value is false.</p>
-        pub fn bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.bypass_policy_lockout_safety_check = Some(inp);
+        pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
+            self.bypass_policy_lockout_safety_check = Some(input);
             self
         }
-        pub fn set_bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.bypass_policy_lockout_safety_check = Some(inp);
+        pub fn set_bypass_policy_lockout_safety_check(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.bypass_policy_lockout_safety_check = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateKeyInput`](crate::input::CreateKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateKeyInput {
                 policy: self.policy,
                 description: self.description,
@@ -1092,7 +1107,7 @@ impl CreateKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateKey,
             aws_http::AwsErrorRetryPolicy,
@@ -1143,7 +1158,7 @@ impl CreateKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1181,12 +1196,15 @@ pub mod decrypt_input {
     }
     impl Builder {
         /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
-        pub fn ciphertext_blob(mut self, inp: smithy_types::Blob) -> Self {
-            self.ciphertext_blob = Some(inp);
+        pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
+            self.ciphertext_blob = Some(input);
             self
         }
-        pub fn set_ciphertext_blob(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.ciphertext_blob = inp;
+        pub fn set_ciphertext_blob(
+            mut self,
+            input: std::option::Option<smithy_types::Blob>,
+        ) -> Self {
+            self.ciphertext_blob = input;
             self
         }
         pub fn encryption_context(
@@ -1201,24 +1219,24 @@ pub mod decrypt_input {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.encryption_context = inp;
+            self.encryption_context = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the ciphertext. Enter a
@@ -1248,12 +1266,12 @@ pub mod decrypt_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Specifies the encryption algorithm that will be used to decrypt the ciphertext. Specify
@@ -1262,21 +1280,25 @@ pub mod decrypt_input {
         /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
         /// The default value, <code>SYMMETRIC_DEFAULT</code>, represents the only supported algorithm
         /// that is valid for symmetric CMKs.</p>
-        pub fn encryption_algorithm(mut self, inp: crate::model::EncryptionAlgorithmSpec) -> Self {
-            self.encryption_algorithm = Some(inp);
+        pub fn encryption_algorithm(
+            mut self,
+            input: crate::model::EncryptionAlgorithmSpec,
+        ) -> Self {
+            self.encryption_algorithm = Some(input);
             self
         }
         pub fn set_encryption_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+            input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
-            self.encryption_algorithm = inp;
+            self.encryption_algorithm = input;
             self
         }
         /// Consumes the builder and constructs a [`DecryptInput`](crate::input::DecryptInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DecryptInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DecryptInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DecryptInput {
                 ciphertext_blob: self.ciphertext_blob,
                 encryption_context: self.encryption_context,
@@ -1297,7 +1319,7 @@ impl DecryptInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::Decrypt, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -1344,7 +1366,7 @@ impl DecryptInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1377,18 +1399,19 @@ pub mod delete_alias_input {
     impl Builder {
         /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by
         /// the alias name, such as <code>alias/ExampleAlias</code>.</p>
-        pub fn alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.alias_name = Some(inp.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_name = Some(input.into());
             self
         }
-        pub fn set_alias_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.alias_name = inp;
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::input::DeleteAliasInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAliasInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteAliasInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteAliasInput {
                 alias_name: self.alias_name,
             })
@@ -1405,7 +1428,7 @@ impl DeleteAliasInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteAlias,
             aws_http::AwsErrorRetryPolicy,
@@ -1458,7 +1481,7 @@ impl DeleteAliasInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1490,22 +1513,24 @@ pub mod delete_custom_key_store_input {
     }
     impl Builder {
         /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteCustomKeyStoreInput`](crate::input::DeleteCustomKeyStoreInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteCustomKeyStoreInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteCustomKeyStoreInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
             })
@@ -1522,7 +1547,7 @@ impl DeleteCustomKeyStoreInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
@@ -1578,7 +1603,7 @@ impl DeleteCustomKeyStoreInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1624,19 +1649,21 @@ pub mod delete_imported_key_material_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteImportedKeyMaterialInput`](crate::input::DeleteImportedKeyMaterialInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteImportedKeyMaterialInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteImportedKeyMaterialInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteImportedKeyMaterialInput {
                 key_id: self.key_id,
             })
@@ -1654,7 +1681,7 @@ impl DeleteImportedKeyMaterialInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteImportedKeyMaterial,
             aws_http::AwsErrorRetryPolicy,
@@ -1711,7 +1738,7 @@ impl DeleteImportedKeyMaterialInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1750,15 +1777,15 @@ pub mod describe_custom_key_stores_input {
         /// region. To limit the output to a particular custom key store, you can use either the
         /// <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not
         /// both.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// <p>Gets only information about the specified custom key store. Enter the friendly name of the
@@ -1767,44 +1794,46 @@ pub mod describe_custom_key_stores_input {
         /// region. To limit the output to a particular custom key store, you can use either the
         /// <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not
         /// both.</p>
-        pub fn custom_key_store_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_name = Some(inp.into());
+        pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_name = Some(input.into());
             self
         }
         pub fn set_custom_key_store_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_name = inp;
+            self.custom_key_store_name = input;
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
         /// value is present, AWS KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCustomKeyStoresInput`](crate::input::DescribeCustomKeyStoresInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeCustomKeyStoresInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeCustomKeyStoresInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeCustomKeyStoresInput {
                 custom_key_store_id: self.custom_key_store_id,
                 custom_key_store_name: self.custom_key_store_name,
@@ -1825,7 +1854,7 @@ impl DescribeCustomKeyStoresInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeCustomKeyStores,
             aws_http::AwsErrorRetryPolicy,
@@ -1881,7 +1910,7 @@ impl DescribeCustomKeyStoresInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1939,31 +1968,32 @@ pub mod describe_key_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeKeyInput`](crate::input::DescribeKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DescribeKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DescribeKeyInput {
                 key_id: self.key_id,
                 grant_tokens: self.grant_tokens,
@@ -1981,7 +2011,7 @@ impl DescribeKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeKey,
             aws_http::AwsErrorRetryPolicy,
@@ -2034,7 +2064,7 @@ impl DescribeKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2079,18 +2109,19 @@ pub mod disable_key_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableKeyInput`](crate::input::DisableKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DisableKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DisableKeyInput {
                 key_id: self.key_id,
             })
@@ -2107,7 +2138,7 @@ impl DisableKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DisableKey,
             aws_http::AwsErrorRetryPolicy,
@@ -2160,7 +2191,7 @@ impl DisableKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2208,19 +2239,21 @@ pub mod disable_key_rotation_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableKeyRotationInput`](crate::input::DisableKeyRotationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableKeyRotationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DisableKeyRotationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DisableKeyRotationInput {
                 key_id: self.key_id,
             })
@@ -2237,7 +2270,7 @@ impl DisableKeyRotationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DisableKeyRotation,
             aws_http::AwsErrorRetryPolicy,
@@ -2293,7 +2326,7 @@ impl DisableKeyRotationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2325,22 +2358,24 @@ pub mod disconnect_custom_key_store_input {
     }
     impl Builder {
         /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DisconnectCustomKeyStoreInput`](crate::input::DisconnectCustomKeyStoreInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DisconnectCustomKeyStoreInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DisconnectCustomKeyStoreInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DisconnectCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
             })
@@ -2358,7 +2393,7 @@ impl DisconnectCustomKeyStoreInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DisconnectCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
@@ -2414,7 +2449,7 @@ impl DisconnectCustomKeyStoreInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2459,18 +2494,19 @@ pub mod enable_key_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableKeyInput`](crate::input::EnableKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::EnableKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::EnableKeyInput {
                 key_id: self.key_id,
             })
@@ -2487,7 +2523,7 @@ impl EnableKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::EnableKey,
             aws_http::AwsErrorRetryPolicy,
@@ -2538,7 +2574,7 @@ impl EnableKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2583,19 +2619,21 @@ pub mod enable_key_rotation_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableKeyRotationInput`](crate::input::EnableKeyRotationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableKeyRotationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::EnableKeyRotationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::EnableKeyRotationInput {
                 key_id: self.key_id,
             })
@@ -2612,7 +2650,7 @@ impl EnableKeyRotationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::EnableKeyRotation,
             aws_http::AwsErrorRetryPolicy,
@@ -2668,7 +2706,7 @@ impl EnableKeyRotationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2727,21 +2765,21 @@ pub mod encrypt_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Data to be encrypted.</p>
-        pub fn plaintext(mut self, inp: smithy_types::Blob) -> Self {
-            self.plaintext = Some(inp);
+        pub fn plaintext(mut self, input: smithy_types::Blob) -> Self {
+            self.plaintext = Some(input);
             self
         }
-        pub fn set_plaintext(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.plaintext = inp;
+        pub fn set_plaintext(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.plaintext = input;
             self
         }
         pub fn encryption_context(
@@ -2756,24 +2794,24 @@ pub mod encrypt_input {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.encryption_context = inp;
+            self.encryption_context = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the plaintext message.
@@ -2781,21 +2819,25 @@ pub mod encrypt_input {
         /// <p>This parameter is required only for asymmetric CMKs. The default value,
         /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs. If you are using
         /// an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
-        pub fn encryption_algorithm(mut self, inp: crate::model::EncryptionAlgorithmSpec) -> Self {
-            self.encryption_algorithm = Some(inp);
+        pub fn encryption_algorithm(
+            mut self,
+            input: crate::model::EncryptionAlgorithmSpec,
+        ) -> Self {
+            self.encryption_algorithm = Some(input);
             self
         }
         pub fn set_encryption_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+            input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
-            self.encryption_algorithm = inp;
+            self.encryption_algorithm = input;
             self
         }
         /// Consumes the builder and constructs a [`EncryptInput`](crate::input::EncryptInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::EncryptInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::EncryptInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::EncryptInput {
                 key_id: self.key_id,
                 plaintext: self.plaintext,
@@ -2816,7 +2858,7 @@ impl EncryptInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::Encrypt, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -2863,7 +2905,7 @@ impl EncryptInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2922,12 +2964,12 @@ pub mod generate_data_key_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         pub fn encryption_context(
@@ -2942,11 +2984,11 @@ pub mod generate_data_key_input {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.encryption_context = inp;
+            self.encryption_context = input;
             self
         }
         /// <p>Specifies the length of the data key in bytes. For example, use the value 64 to generate a
@@ -2954,44 +2996,49 @@ pub mod generate_data_key_input {
         /// keys, use the <code>KeySpec</code> parameter.</p>
         /// <p>You must specify either the <code>KeySpec</code> or the <code>NumberOfBytes</code>
         /// parameter (but not both) in every <code>GenerateDataKey</code> request.</p>
-        pub fn number_of_bytes(mut self, inp: i32) -> Self {
-            self.number_of_bytes = Some(inp);
+        pub fn number_of_bytes(mut self, input: i32) -> Self {
+            self.number_of_bytes = Some(input);
             self
         }
-        pub fn set_number_of_bytes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.number_of_bytes = inp;
+        pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_bytes = input;
             self
         }
         /// <p>Specifies the length of the data key. Use <code>AES_128</code> to generate a 128-bit
         /// symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
         /// <p>You must specify either the <code>KeySpec</code> or the <code>NumberOfBytes</code>
         /// parameter (but not both) in every <code>GenerateDataKey</code> request.</p>
-        pub fn key_spec(mut self, inp: crate::model::DataKeySpec) -> Self {
-            self.key_spec = Some(inp);
+        pub fn key_spec(mut self, input: crate::model::DataKeySpec) -> Self {
+            self.key_spec = Some(input);
             self
         }
-        pub fn set_key_spec(mut self, inp: std::option::Option<crate::model::DataKeySpec>) -> Self {
-            self.key_spec = inp;
+        pub fn set_key_spec(
+            mut self,
+            input: std::option::Option<crate::model::DataKeySpec>,
+        ) -> Self {
+            self.key_spec = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateDataKeyInput`](crate::input::GenerateDataKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateDataKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GenerateDataKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GenerateDataKeyInput {
                 key_id: self.key_id,
                 encryption_context: self.encryption_context,
@@ -3012,7 +3059,7 @@ impl GenerateDataKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateDataKey,
             aws_http::AwsErrorRetryPolicy,
@@ -3067,7 +3114,7 @@ impl GenerateDataKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3115,11 +3162,11 @@ pub mod generate_data_key_pair_input {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.encryption_context = inp;
+            self.encryption_context = input;
             self
         }
         /// <p>Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot
@@ -3146,45 +3193,47 @@ pub mod generate_data_key_pair_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Determines the type of data key pair that is generated. </p>
         /// <p>The AWS KMS rule that restricts the use of asymmetric RSA CMKs to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC CMKs only to sign and verify, are not effective outside of AWS KMS.</p>
-        pub fn key_pair_spec(mut self, inp: crate::model::DataKeyPairSpec) -> Self {
-            self.key_pair_spec = Some(inp);
+        pub fn key_pair_spec(mut self, input: crate::model::DataKeyPairSpec) -> Self {
+            self.key_pair_spec = Some(input);
             self
         }
         pub fn set_key_pair_spec(
             mut self,
-            inp: std::option::Option<crate::model::DataKeyPairSpec>,
+            input: std::option::Option<crate::model::DataKeyPairSpec>,
         ) -> Self {
-            self.key_pair_spec = inp;
+            self.key_pair_spec = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateDataKeyPairInput`](crate::input::GenerateDataKeyPairInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateDataKeyPairInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GenerateDataKeyPairInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GenerateDataKeyPairInput {
                 encryption_context: self.encryption_context,
                 key_id: self.key_id,
@@ -3204,7 +3253,7 @@ impl GenerateDataKeyPairInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateDataKeyPair,
             aws_http::AwsErrorRetryPolicy,
@@ -3260,7 +3309,7 @@ impl GenerateDataKeyPairInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3308,11 +3357,11 @@ pub mod generate_data_key_pair_without_plaintext_input {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.encryption_context = inp;
+            self.encryption_context = input;
             self
         }
         /// <p>Specifies the CMK that encrypts the private key in the data key pair. You must specify a
@@ -3339,44 +3388,44 @@ pub mod generate_data_key_pair_without_plaintext_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Determines the type of data key pair that is generated.</p>
         /// <p>The AWS KMS rule that restricts the use of asymmetric RSA CMKs to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC CMKs only to sign and verify, are not effective outside of AWS KMS.</p>
-        pub fn key_pair_spec(mut self, inp: crate::model::DataKeyPairSpec) -> Self {
-            self.key_pair_spec = Some(inp);
+        pub fn key_pair_spec(mut self, input: crate::model::DataKeyPairSpec) -> Self {
+            self.key_pair_spec = Some(input);
             self
         }
         pub fn set_key_pair_spec(
             mut self,
-            inp: std::option::Option<crate::model::DataKeyPairSpec>,
+            input: std::option::Option<crate::model::DataKeyPairSpec>,
         ) -> Self {
-            self.key_pair_spec = inp;
+            self.key_pair_spec = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateDataKeyPairWithoutPlaintextInput`](crate::input::GenerateDataKeyPairWithoutPlaintextInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GenerateDataKeyPairWithoutPlaintextInput,
             smithy_http::operation::BuildError,
         > {
@@ -3401,7 +3450,7 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateDataKeyPairWithoutPlaintext,
             aws_http::AwsErrorRetryPolicy,
@@ -3460,7 +3509,7 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3523,12 +3572,12 @@ pub mod generate_data_key_without_plaintext_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         pub fn encryption_context(
@@ -3543,51 +3592,54 @@ pub mod generate_data_key_without_plaintext_input {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.encryption_context = inp;
+            self.encryption_context = input;
             self
         }
         /// <p>The length of the data key. Use <code>AES_128</code> to generate a 128-bit symmetric key,
         /// or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
-        pub fn key_spec(mut self, inp: crate::model::DataKeySpec) -> Self {
-            self.key_spec = Some(inp);
+        pub fn key_spec(mut self, input: crate::model::DataKeySpec) -> Self {
+            self.key_spec = Some(input);
             self
         }
-        pub fn set_key_spec(mut self, inp: std::option::Option<crate::model::DataKeySpec>) -> Self {
-            self.key_spec = inp;
+        pub fn set_key_spec(
+            mut self,
+            input: std::option::Option<crate::model::DataKeySpec>,
+        ) -> Self {
+            self.key_spec = input;
             self
         }
         /// <p>The length of the data key in bytes. For example, use the value 64 to generate a 512-bit
         /// data key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys),
         /// we recommend that you use the <code>KeySpec</code> field instead of this one.</p>
-        pub fn number_of_bytes(mut self, inp: i32) -> Self {
-            self.number_of_bytes = Some(inp);
+        pub fn number_of_bytes(mut self, input: i32) -> Self {
+            self.number_of_bytes = Some(input);
             self
         }
-        pub fn set_number_of_bytes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.number_of_bytes = inp;
+        pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_bytes = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateDataKeyWithoutPlaintextInput`](crate::input::GenerateDataKeyWithoutPlaintextInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GenerateDataKeyWithoutPlaintextInput,
             smithy_http::operation::BuildError,
         > {
@@ -3612,7 +3664,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateDataKeyWithoutPlaintext,
             aws_http::AwsErrorRetryPolicy,
@@ -3671,7 +3723,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3707,31 +3759,34 @@ pub mod generate_random_input {
     }
     impl Builder {
         /// <p>The length of the byte string.</p>
-        pub fn number_of_bytes(mut self, inp: i32) -> Self {
-            self.number_of_bytes = Some(inp);
+        pub fn number_of_bytes(mut self, input: i32) -> Self {
+            self.number_of_bytes = Some(input);
             self
         }
-        pub fn set_number_of_bytes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.number_of_bytes = inp;
+        pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_bytes = input;
             self
         }
         /// <p>Generates the random byte string in the AWS CloudHSM cluster that is associated with the
         /// specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateRandomInput`](crate::input::GenerateRandomInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateRandomInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GenerateRandomInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GenerateRandomInput {
                 number_of_bytes: self.number_of_bytes,
                 custom_key_store_id: self.custom_key_store_id,
@@ -3749,7 +3804,7 @@ impl GenerateRandomInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateRandom,
             aws_http::AwsErrorRetryPolicy,
@@ -3804,7 +3859,7 @@ impl GenerateRandomInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3850,28 +3905,29 @@ pub mod get_key_policy_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Specifies the name of the key policy. The only valid name is <code>default</code>. To get
         /// the names of key policies, use <a>ListKeyPolicies</a>.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetKeyPolicyInput`](crate::input::GetKeyPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetKeyPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetKeyPolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetKeyPolicyInput {
                 key_id: self.key_id,
                 policy_name: self.policy_name,
@@ -3889,7 +3945,7 @@ impl GetKeyPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetKeyPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -3942,7 +3998,7 @@ impl GetKeyPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3988,19 +4044,21 @@ pub mod get_key_rotation_status_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetKeyRotationStatusInput`](crate::input::GetKeyRotationStatusInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetKeyRotationStatusInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetKeyRotationStatusInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetKeyRotationStatusInput {
                 key_id: self.key_id,
             })
@@ -4017,7 +4075,7 @@ impl GetKeyRotationStatusInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetKeyRotationStatus,
             aws_http::AwsErrorRetryPolicy,
@@ -4073,7 +4131,7 @@ impl GetKeyRotationStatusInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4121,45 +4179,47 @@ pub mod get_parameters_for_import_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn wrapping_algorithm(mut self, inp: crate::model::AlgorithmSpec) -> Self {
-            self.wrapping_algorithm = Some(inp);
+        pub fn wrapping_algorithm(mut self, input: crate::model::AlgorithmSpec) -> Self {
+            self.wrapping_algorithm = Some(input);
             self
         }
         pub fn set_wrapping_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::AlgorithmSpec>,
+            input: std::option::Option<crate::model::AlgorithmSpec>,
         ) -> Self {
-            self.wrapping_algorithm = inp;
+            self.wrapping_algorithm = input;
             self
         }
         /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public
         /// keys are supported.</p>
-        pub fn wrapping_key_spec(mut self, inp: crate::model::WrappingKeySpec) -> Self {
-            self.wrapping_key_spec = Some(inp);
+        pub fn wrapping_key_spec(mut self, input: crate::model::WrappingKeySpec) -> Self {
+            self.wrapping_key_spec = Some(input);
             self
         }
         pub fn set_wrapping_key_spec(
             mut self,
-            inp: std::option::Option<crate::model::WrappingKeySpec>,
+            input: std::option::Option<crate::model::WrappingKeySpec>,
         ) -> Self {
-            self.wrapping_key_spec = inp;
+            self.wrapping_key_spec = input;
             self
         }
         /// Consumes the builder and constructs a [`GetParametersForImportInput`](crate::input::GetParametersForImportInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetParametersForImportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetParametersForImportInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetParametersForImportInput {
                 key_id: self.key_id,
                 wrapping_algorithm: self.wrapping_algorithm,
@@ -4178,7 +4238,7 @@ impl GetParametersForImportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetParametersForImport,
             aws_http::AwsErrorRetryPolicy,
@@ -4234,7 +4294,7 @@ impl GetParametersForImportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4288,31 +4348,32 @@ pub mod get_public_key_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPublicKeyInput`](crate::input::GetPublicKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPublicKeyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetPublicKeyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetPublicKeyInput {
                 key_id: self.key_id,
                 grant_tokens: self.grant_tokens,
@@ -4330,7 +4391,7 @@ impl GetPublicKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetPublicKey,
             aws_http::AwsErrorRetryPolicy,
@@ -4383,7 +4444,7 @@ impl GetPublicKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4435,70 +4496,72 @@ pub mod import_key_material_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must be from the same response that contained
         /// the public key that you used to encrypt the key material.</p>
-        pub fn import_token(mut self, inp: smithy_types::Blob) -> Self {
-            self.import_token = Some(inp);
+        pub fn import_token(mut self, input: smithy_types::Blob) -> Self {
+            self.import_token = Some(input);
             self
         }
-        pub fn set_import_token(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.import_token = inp;
+        pub fn set_import_token(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.import_token = input;
             self
         }
         /// <p>The encrypted key material to import. The key material must be encrypted with the public
         /// wrapping key that <a>GetParametersForImport</a> returned, using the wrapping
         /// algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
-        pub fn encrypted_key_material(mut self, inp: smithy_types::Blob) -> Self {
-            self.encrypted_key_material = Some(inp);
+        pub fn encrypted_key_material(mut self, input: smithy_types::Blob) -> Self {
+            self.encrypted_key_material = Some(input);
             self
         }
         pub fn set_encrypted_key_material(
             mut self,
-            inp: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<smithy_types::Blob>,
         ) -> Self {
-            self.encrypted_key_material = inp;
+            self.encrypted_key_material = input;
             self
         }
         /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
         /// deletes the key material and the CMK becomes unusable. You must omit this parameter when the
         /// <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>.
         /// Otherwise it is required.</p>
-        pub fn valid_to(mut self, inp: smithy_types::Instant) -> Self {
-            self.valid_to = Some(inp);
+        pub fn valid_to(mut self, input: smithy_types::Instant) -> Self {
+            self.valid_to = Some(input);
             self
         }
-        pub fn set_valid_to(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.valid_to = inp;
+        pub fn set_valid_to(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.valid_to = input;
             self
         }
         /// <p>Specifies whether the key material expires. The default is
         /// <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the <code>ValidTo</code>
         /// parameter. When this parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must
         /// omit the <code>ValidTo</code> parameter.</p>
-        pub fn expiration_model(mut self, inp: crate::model::ExpirationModelType) -> Self {
-            self.expiration_model = Some(inp);
+        pub fn expiration_model(mut self, input: crate::model::ExpirationModelType) -> Self {
+            self.expiration_model = Some(input);
             self
         }
         pub fn set_expiration_model(
             mut self,
-            inp: std::option::Option<crate::model::ExpirationModelType>,
+            input: std::option::Option<crate::model::ExpirationModelType>,
         ) -> Self {
-            self.expiration_model = inp;
+            self.expiration_model = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportKeyMaterialInput`](crate::input::ImportKeyMaterialInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportKeyMaterialInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ImportKeyMaterialInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ImportKeyMaterialInput {
                 key_id: self.key_id,
                 import_token: self.import_token,
@@ -4519,7 +4582,7 @@ impl ImportKeyMaterialInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ImportKeyMaterial,
             aws_http::AwsErrorRetryPolicy,
@@ -4575,7 +4638,7 @@ impl ImportKeyMaterialInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4625,12 +4688,12 @@ pub mod list_aliases_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -4638,29 +4701,30 @@ pub mod list_aliases_input {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAliasesInput`](crate::input::ListAliasesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAliasesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListAliasesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListAliasesInput {
                 key_id: self.key_id,
                 limit: self.limit,
@@ -4679,7 +4743,7 @@ impl ListAliasesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListAliases,
             aws_http::AwsErrorRetryPolicy,
@@ -4732,7 +4796,7 @@ impl ListAliasesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4772,23 +4836,23 @@ pub mod list_grants_input {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Returns only grants for the specified customer master key (CMK). This parameter is
@@ -4807,41 +4871,42 @@ pub mod list_grants_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the
         /// grant. </p>
-        pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_id = Some(inp.into());
+        pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_id = Some(input.into());
             self
         }
-        pub fn set_grant_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_id = inp;
+        pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_id = input;
             self
         }
         /// <p>Returns only grants where the specified principal is the grantee principal for the
         /// grant.</p>
-        pub fn grantee_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grantee_principal = Some(inp.into());
+        pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grantee_principal = Some(input.into());
             self
         }
         pub fn set_grantee_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grantee_principal = inp;
+            self.grantee_principal = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGrantsInput`](crate::input::ListGrantsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGrantsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListGrantsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListGrantsInput {
                 limit: self.limit,
                 marker: self.marker,
@@ -4862,7 +4927,7 @@ impl ListGrantsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListGrants,
             aws_http::AwsErrorRetryPolicy,
@@ -4915,7 +4980,7 @@ impl ListGrantsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4962,12 +5027,12 @@ pub mod list_key_policies_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -4976,30 +5041,32 @@ pub mod list_key_policies_input {
         /// <p>This value is optional. If you include a value, it must be between
         /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
         /// <p>Only one policy can be attached to a key.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListKeyPoliciesInput`](crate::input::ListKeyPoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListKeyPoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListKeyPoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListKeyPoliciesInput {
                 key_id: self.key_id,
                 limit: self.limit,
@@ -5018,7 +5085,7 @@ impl ListKeyPoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListKeyPolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -5073,7 +5140,7 @@ impl ListKeyPoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -5110,29 +5177,30 @@ pub mod list_keys_input {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between
         /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListKeysInput`](crate::input::ListKeysInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListKeysInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListKeysInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListKeysInput {
                 limit: self.limit,
                 marker: self.marker,
@@ -5150,7 +5218,7 @@ impl ListKeysInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListKeys,
             aws_http::AwsErrorRetryPolicy,
@@ -5201,7 +5269,7 @@ impl ListKeysInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -5248,12 +5316,12 @@ pub mod list_resource_tags_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -5261,12 +5329,12 @@ pub mod list_resource_tags_input {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1 and 50, inclusive. If
         /// you do not include a value, it defaults to 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
@@ -5274,19 +5342,21 @@ pub mod list_resource_tags_input {
         /// you just received.</p>
         /// <p>Do not attempt to construct this value. Use only the value of <code>NextMarker</code> from
         /// the truncated response you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListResourceTagsInput`](crate::input::ListResourceTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourceTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListResourceTagsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListResourceTagsInput {
                 key_id: self.key_id,
                 limit: self.limit,
@@ -5305,7 +5375,7 @@ impl ListResourceTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListResourceTags,
             aws_http::AwsErrorRetryPolicy,
@@ -5361,7 +5431,7 @@ impl ListResourceTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -5399,23 +5469,23 @@ pub mod list_retirable_grants_input {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The retiring principal for which to list grants. Enter a principal in your AWS
@@ -5425,22 +5495,24 @@ pub mod list_retirable_grants_input {
         /// assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
         /// Identity and Access Management (IAM)</a> in the Example ARNs section of the
         /// <i>Amazon Web Services General Reference</i>.</p>
-        pub fn retiring_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.retiring_principal = Some(inp.into());
+        pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.retiring_principal = Some(input.into());
             self
         }
         pub fn set_retiring_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.retiring_principal = inp;
+            self.retiring_principal = input;
             self
         }
         /// Consumes the builder and constructs a [`ListRetirableGrantsInput`](crate::input::ListRetirableGrantsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRetirableGrantsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListRetirableGrantsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListRetirableGrantsInput {
                 limit: self.limit,
                 marker: self.marker,
@@ -5459,7 +5531,7 @@ impl ListRetirableGrantsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListRetirableGrants,
             aws_http::AwsErrorRetryPolicy,
@@ -5515,7 +5587,7 @@ impl ListRetirableGrantsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -5563,21 +5635,21 @@ pub mod put_key_policy_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The key policy to attach to the CMK.</p>
@@ -5599,12 +5671,12 @@ pub mod put_key_policy_input {
         /// </li>
         /// </ul>
         /// <p>The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
@@ -5616,18 +5688,22 @@ pub mod put_key_policy_input {
         /// <p>Use this parameter only when you intend to prevent the principal that is making the
         /// request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.</p>
         /// <p>The default value is false.</p>
-        pub fn bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.bypass_policy_lockout_safety_check = Some(inp);
+        pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
+            self.bypass_policy_lockout_safety_check = Some(input);
             self
         }
-        pub fn set_bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.bypass_policy_lockout_safety_check = Some(inp);
+        pub fn set_bypass_policy_lockout_safety_check(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.bypass_policy_lockout_safety_check = input;
             self
         }
         /// Consumes the builder and constructs a [`PutKeyPolicyInput`](crate::input::PutKeyPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutKeyPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutKeyPolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutKeyPolicyInput {
                 key_id: self.key_id,
                 policy_name: self.policy_name,
@@ -5649,7 +5725,7 @@ impl PutKeyPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutKeyPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -5702,7 +5778,7 @@ impl PutKeyPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -5747,12 +5823,15 @@ pub mod re_encrypt_input {
     }
     impl Builder {
         /// <p>Ciphertext of the data to reencrypt.</p>
-        pub fn ciphertext_blob(mut self, inp: smithy_types::Blob) -> Self {
-            self.ciphertext_blob = Some(inp);
+        pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
+            self.ciphertext_blob = Some(input);
             self
         }
-        pub fn set_ciphertext_blob(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.ciphertext_blob = inp;
+        pub fn set_ciphertext_blob(
+            mut self,
+            input: std::option::Option<smithy_types::Blob>,
+        ) -> Self {
+            self.ciphertext_blob = input;
             self
         }
         pub fn source_encryption_context(
@@ -5767,11 +5846,11 @@ pub mod re_encrypt_input {
         }
         pub fn set_source_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.source_encryption_context = inp;
+            self.source_encryption_context = input;
             self
         }
         /// <p>Specifies the customer master key (CMK) that
@@ -5802,12 +5881,15 @@ pub mod re_encrypt_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn source_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_key_id = Some(inp.into());
+        pub fn source_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_key_id = Some(input.into());
             self
         }
-        pub fn set_source_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_key_id = inp;
+        pub fn set_source_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_key_id = input;
             self
         }
         /// <p>A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or
@@ -5835,15 +5917,15 @@ pub mod re_encrypt_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn destination_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.destination_key_id = Some(inp.into());
+        pub fn destination_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_key_id = Some(input.into());
             self
         }
         pub fn set_destination_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.destination_key_id = inp;
+            self.destination_key_id = input;
             self
         }
         pub fn destination_encryption_context(
@@ -5858,11 +5940,11 @@ pub mod re_encrypt_input {
         }
         pub fn set_destination_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.destination_encryption_context = inp;
+            self.destination_encryption_context = input;
             self
         }
         /// <p>Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it
@@ -5874,16 +5956,16 @@ pub mod re_encrypt_input {
         /// CMK.</p>
         pub fn source_encryption_algorithm(
             mut self,
-            inp: crate::model::EncryptionAlgorithmSpec,
+            input: crate::model::EncryptionAlgorithmSpec,
         ) -> Self {
-            self.source_encryption_algorithm = Some(inp);
+            self.source_encryption_algorithm = Some(input);
             self
         }
         pub fn set_source_encryption_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+            input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
-            self.source_encryption_algorithm = inp;
+            self.source_encryption_algorithm = input;
             self
         }
         /// <p>Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has
@@ -5892,35 +5974,36 @@ pub mod re_encrypt_input {
         /// <p>This parameter is required only when the destination CMK is an asymmetric CMK.</p>
         pub fn destination_encryption_algorithm(
             mut self,
-            inp: crate::model::EncryptionAlgorithmSpec,
+            input: crate::model::EncryptionAlgorithmSpec,
         ) -> Self {
-            self.destination_encryption_algorithm = Some(inp);
+            self.destination_encryption_algorithm = Some(input);
             self
         }
         pub fn set_destination_encryption_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+            input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
-            self.destination_encryption_algorithm = inp;
+            self.destination_encryption_algorithm = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// Consumes the builder and constructs a [`ReEncryptInput`](crate::input::ReEncryptInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ReEncryptInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ReEncryptInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ReEncryptInput {
                 ciphertext_blob: self.ciphertext_blob,
                 source_encryption_context: self.source_encryption_context,
@@ -5944,7 +6027,7 @@ impl ReEncryptInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ReEncrypt,
             aws_http::AwsErrorRetryPolicy,
@@ -5995,7 +6078,7 @@ impl ReEncryptInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6029,23 +6112,23 @@ pub mod retire_grant_input {
     }
     impl Builder {
         /// <p>Token that identifies the grant to be retired.</p>
-        pub fn grant_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_token = Some(inp.into());
+        pub fn grant_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_token = Some(input.into());
             self
         }
-        pub fn set_grant_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_token = inp;
+        pub fn set_grant_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_token = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
         /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
         /// </p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Unique identifier of the grant to retire. The grant ID is returned in the response to a
@@ -6056,18 +6139,19 @@ pub mod retire_grant_input {
         /// 0123456789012345678901234567890123456789012345678901234567890123</p>
         /// </li>
         /// </ul>
-        pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_id = Some(inp.into());
+        pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_id = Some(input.into());
             self
         }
-        pub fn set_grant_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_id = inp;
+        pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RetireGrantInput`](crate::input::RetireGrantInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RetireGrantInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::RetireGrantInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::RetireGrantInput {
                 grant_token: self.grant_token,
                 key_id: self.key_id,
@@ -6086,7 +6170,7 @@ impl RetireGrantInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RetireGrant,
             aws_http::AwsErrorRetryPolicy,
@@ -6139,7 +6223,7 @@ impl RetireGrantInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6186,27 +6270,28 @@ pub mod revoke_grant_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Identifier of the grant to be revoked.</p>
-        pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_id = Some(inp.into());
+        pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_id = Some(input.into());
             self
         }
-        pub fn set_grant_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_id = inp;
+        pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RevokeGrantInput`](crate::input::RevokeGrantInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RevokeGrantInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::RevokeGrantInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::RevokeGrantInput {
                 key_id: self.key_id,
                 grant_id: self.grant_id,
@@ -6224,7 +6309,7 @@ impl RevokeGrantInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RevokeGrant,
             aws_http::AwsErrorRetryPolicy,
@@ -6277,7 +6362,7 @@ impl RevokeGrantInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6323,31 +6408,33 @@ pub mod schedule_key_deletion_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The waiting period, specified in number of days. After the waiting period ends, AWS KMS
         /// deletes the customer master key (CMK).</p>
         /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If
         /// you do not include a value, it defaults to 30.</p>
-        pub fn pending_window_in_days(mut self, inp: i32) -> Self {
-            self.pending_window_in_days = Some(inp);
+        pub fn pending_window_in_days(mut self, input: i32) -> Self {
+            self.pending_window_in_days = Some(input);
             self
         }
-        pub fn set_pending_window_in_days(mut self, inp: std::option::Option<i32>) -> Self {
-            self.pending_window_in_days = inp;
+        pub fn set_pending_window_in_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_window_in_days = input;
             self
         }
         /// Consumes the builder and constructs a [`ScheduleKeyDeletionInput`](crate::input::ScheduleKeyDeletionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ScheduleKeyDeletionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ScheduleKeyDeletionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ScheduleKeyDeletionInput {
                 key_id: self.key_id,
                 pending_window_in_days: self.pending_window_in_days,
@@ -6365,7 +6452,7 @@ impl ScheduleKeyDeletionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ScheduleKeyDeletion,
             aws_http::AwsErrorRetryPolicy,
@@ -6421,7 +6508,7 @@ impl ScheduleKeyDeletionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6480,69 +6567,72 @@ pub mod sign_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a
         /// larger message, provide the message digest.</p>
         /// <p>If you provide a message, AWS KMS generates a hash digest of the message and then signs
         /// it.</p>
-        pub fn message(mut self, inp: smithy_types::Blob) -> Self {
-            self.message = Some(inp);
+        pub fn message(mut self, input: smithy_types::Blob) -> Self {
+            self.message = Some(input);
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.message = input;
             self
         }
         /// <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a message or
         /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
         /// enter <code>DIGEST</code>.</p>
-        pub fn message_type(mut self, inp: crate::model::MessageType) -> Self {
-            self.message_type = Some(inp);
+        pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
+            self.message_type = Some(input);
             self
         }
         pub fn set_message_type(
             mut self,
-            inp: std::option::Option<crate::model::MessageType>,
+            input: std::option::Option<crate::model::MessageType>,
         ) -> Self {
-            self.message_type = inp;
+            self.message_type = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// <p>Specifies the signing algorithm to use when signing the message. </p>
         /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric
         /// CMK.</p>
-        pub fn signing_algorithm(mut self, inp: crate::model::SigningAlgorithmSpec) -> Self {
-            self.signing_algorithm = Some(inp);
+        pub fn signing_algorithm(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
+            self.signing_algorithm = Some(input);
             self
         }
         pub fn set_signing_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::SigningAlgorithmSpec>,
+            input: std::option::Option<crate::model::SigningAlgorithmSpec>,
         ) -> Self {
-            self.signing_algorithm = inp;
+            self.signing_algorithm = input;
             self
         }
         /// Consumes the builder and constructs a [`SignInput`](crate::input::SignInput)
-        pub fn build(self) -> Result<crate::input::SignInput, smithy_http::operation::BuildError> {
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::SignInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::SignInput {
                 key_id: self.key_id,
                 message: self.message,
@@ -6563,7 +6653,7 @@ impl SignInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::Sign, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -6609,7 +6699,7 @@ impl SignInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6655,31 +6745,32 @@ pub mod tag_resource_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagResourceInput {
                 key_id: self.key_id,
                 tags: self.tags,
@@ -6697,7 +6788,7 @@ impl TagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -6750,7 +6841,7 @@ impl TagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6796,31 +6887,32 @@ pub mod untag_resource_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagResourceInput {
                 key_id: self.key_id,
                 tag_keys: self.tag_keys,
@@ -6838,7 +6930,7 @@ impl UntagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -6894,7 +6986,7 @@ impl UntagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6929,12 +7021,12 @@ pub mod update_alias_input {
         /// <p>Identifies the alias that is changing its CMK. This value must begin with
         /// <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You
         /// cannot use UpdateAlias to change the alias name.</p>
-        pub fn alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.alias_name = Some(inp.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_name = Some(input.into());
             self
         }
-        pub fn set_alias_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.alias_name = inp;
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_name = input;
             self
         }
         /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a> to associate with the alias. You don't have permission
@@ -6957,18 +7049,22 @@ pub mod update_alias_input {
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         /// <p>To verify that the alias
         /// is mapped to the correct CMK, use <a>ListAliases</a>.</p>
-        pub fn target_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_key_id = Some(inp.into());
+        pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_key_id = Some(input.into());
             self
         }
-        pub fn set_target_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_key_id = inp;
+        pub fn set_target_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::input::UpdateAliasInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAliasInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateAliasInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateAliasInput {
                 alias_name: self.alias_name,
                 target_key_id: self.target_key_id,
@@ -6986,7 +7082,7 @@ impl UpdateAliasInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateAlias,
             aws_http::AwsErrorRetryPolicy,
@@ -7039,7 +7135,7 @@ impl UpdateAliasInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7075,43 +7171,43 @@ pub mod update_custom_key_store_input {
     impl Builder {
         /// <p>Identifies the custom key store that you want to update. Enter the ID of the custom key
         /// store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// <p>Changes the friendly name of the custom key store to the value that you specify. The
         /// custom key store name must be unique in the AWS account.</p>
-        pub fn new_custom_key_store_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_custom_key_store_name = Some(inp.into());
+        pub fn new_custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_custom_key_store_name = Some(input.into());
             self
         }
         pub fn set_new_custom_key_store_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_custom_key_store_name = inp;
+            self.new_custom_key_store_name = input;
             self
         }
         /// <p>Enter the current password of the <code>kmsuser</code> crypto user (CU) in the AWS CloudHSM
         /// cluster that is associated with the custom key store.</p>
         /// <p>This parameter tells AWS KMS the current password of the <code>kmsuser</code> crypto user
         /// (CU). It does not set or change the password of any users in the AWS CloudHSM cluster.</p>
-        pub fn key_store_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_store_password = Some(inp.into());
+        pub fn key_store_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_store_password = Some(input.into());
             self
         }
         pub fn set_key_store_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.key_store_password = inp;
+            self.key_store_password = input;
             self
         }
         /// <p>Associates the custom key store with a related AWS CloudHSM cluster. </p>
@@ -7121,22 +7217,24 @@ pub mod update_custom_key_store_input {
         /// cluster. In addition, the replacement cluster must <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">fulfill the requirements</a> for
         /// a cluster associated with a custom key store. To view the cluster certificate of a cluster,
         /// use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
-        pub fn cloud_hsm_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloud_hsm_cluster_id = Some(inp.into());
+        pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
         pub fn set_cloud_hsm_cluster_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_hsm_cluster_id = inp;
+            self.cloud_hsm_cluster_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateCustomKeyStoreInput`](crate::input::UpdateCustomKeyStoreInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateCustomKeyStoreInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateCustomKeyStoreInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
                 new_custom_key_store_name: self.new_custom_key_store_name,
@@ -7156,7 +7254,7 @@ impl UpdateCustomKeyStoreInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
@@ -7212,7 +7310,7 @@ impl UpdateCustomKeyStoreInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7258,28 +7356,30 @@ pub mod update_key_description_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>New description for the CMK.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateKeyDescriptionInput`](crate::input::UpdateKeyDescriptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateKeyDescriptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateKeyDescriptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateKeyDescriptionInput {
                 key_id: self.key_id,
                 description: self.description,
@@ -7297,7 +7397,7 @@ impl UpdateKeyDescriptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateKeyDescription,
             aws_http::AwsErrorRetryPolicy,
@@ -7353,7 +7453,7 @@ impl UpdateKeyDescriptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7413,12 +7513,12 @@ pub mod verify_input {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>Specifies the message that was signed. You can submit a raw message of up to 4096 bytes,
@@ -7427,12 +7527,12 @@ pub mod verify_input {
         /// <p>If the message specified here is different from the message that was signed, the signature
         /// verification fails. A message and its hash digest are considered to be the same
         /// message.</p>
-        pub fn message(mut self, inp: smithy_types::Blob) -> Self {
-            self.message = Some(inp);
+        pub fn message(mut self, input: smithy_types::Blob) -> Self {
+            self.message = Some(input);
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.message = input;
             self
         }
         /// <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a message or
@@ -7443,56 +7543,57 @@ pub mod verify_input {
         /// parameter is a message digest. If you use the <code>DIGEST</code> value with a raw message,
         /// the security of the verification operation can be compromised.</p>
         /// </important>
-        pub fn message_type(mut self, inp: crate::model::MessageType) -> Self {
-            self.message_type = Some(inp);
+        pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
+            self.message_type = Some(input);
             self
         }
         pub fn set_message_type(
             mut self,
-            inp: std::option::Option<crate::model::MessageType>,
+            input: std::option::Option<crate::model::MessageType>,
         ) -> Self {
-            self.message_type = inp;
+            self.message_type = input;
             self
         }
         /// <p>The signature that the <code>Sign</code> operation generated.</p>
-        pub fn signature(mut self, inp: smithy_types::Blob) -> Self {
-            self.signature = Some(inp);
+        pub fn signature(mut self, input: smithy_types::Blob) -> Self {
+            self.signature = Some(input);
             self
         }
-        pub fn set_signature(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.signature = inp;
+        pub fn set_signature(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.signature = input;
             self
         }
         /// <p>The signing algorithm that was used to sign the message. If you submit a different
         /// algorithm, the signature verification fails.</p>
-        pub fn signing_algorithm(mut self, inp: crate::model::SigningAlgorithmSpec) -> Self {
-            self.signing_algorithm = Some(inp);
+        pub fn signing_algorithm(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
+            self.signing_algorithm = Some(input);
             self
         }
         pub fn set_signing_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::SigningAlgorithmSpec>,
+            input: std::option::Option<crate::model::SigningAlgorithmSpec>,
         ) -> Self {
-            self.signing_algorithm = inp;
+            self.signing_algorithm = input;
             self
         }
-        pub fn grant_tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.grant_tokens = inp;
+            self.grant_tokens = input;
             self
         }
         /// Consumes the builder and constructs a [`VerifyInput`](crate::input::VerifyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::VerifyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::VerifyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::VerifyInput {
                 key_id: self.key_id,
                 message: self.message,
@@ -7514,7 +7615,7 @@ impl VerifyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::Verify, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -7561,7 +7662,7 @@ impl VerifyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")

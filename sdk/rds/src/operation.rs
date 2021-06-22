@@ -19,8 +19,10 @@ impl AddRoleToDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddRoleToDBCluster {
-    type Output =
-        Result<crate::output::AddRoleToDBClusterOutput, crate::error::AddRoleToDBClusterError>;
+    type Output = std::result::Result<
+        crate::output::AddRoleToDBClusterOutput,
+        crate::error::AddRoleToDBClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_add_role_to_db_cluster_error(response)
@@ -48,8 +50,10 @@ impl AddRoleToDBInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddRoleToDBInstance {
-    type Output =
-        Result<crate::output::AddRoleToDBInstanceOutput, crate::error::AddRoleToDBInstanceError>;
+    type Output = std::result::Result<
+        crate::output::AddRoleToDBInstanceOutput,
+        crate::error::AddRoleToDBInstanceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_add_role_to_db_instance_error(response)
@@ -74,7 +78,7 @@ impl AddSourceIdentifierToSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddSourceIdentifierToSubscription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AddSourceIdentifierToSubscriptionOutput,
         crate::error::AddSourceIdentifierToSubscriptionError,
     >;
@@ -104,8 +108,10 @@ impl AddTagsToResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddTagsToResource {
-    type Output =
-        Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>;
+    type Output = std::result::Result<
+        crate::output::AddTagsToResourceOutput,
+        crate::error::AddTagsToResourceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_add_tags_to_resource_error(response)
@@ -130,7 +136,7 @@ impl ApplyPendingMaintenanceAction {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ApplyPendingMaintenanceAction {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ApplyPendingMaintenanceActionOutput,
         crate::error::ApplyPendingMaintenanceActionError,
     >;
@@ -169,7 +175,7 @@ impl AuthorizeDBSecurityGroupIngress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AuthorizeDBSecurityGroupIngress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AuthorizeDBSecurityGroupIngressOutput,
         crate::error::AuthorizeDBSecurityGroupIngressError,
     >;
@@ -205,8 +211,10 @@ impl BacktrackDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for BacktrackDBCluster {
-    type Output =
-        Result<crate::output::BacktrackDBClusterOutput, crate::error::BacktrackDBClusterError>;
+    type Output = std::result::Result<
+        crate::output::BacktrackDBClusterOutput,
+        crate::error::BacktrackDBClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_backtrack_db_cluster_error(response)
@@ -233,8 +241,10 @@ impl CancelExportTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelExportTask {
-    type Output =
-        Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>;
+    type Output = std::result::Result<
+        crate::output::CancelExportTaskOutput,
+        crate::error::CancelExportTaskError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_cancel_export_task_error(response)
@@ -262,7 +272,7 @@ impl CopyDBClusterParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopyDBClusterParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CopyDBClusterParameterGroupOutput,
         crate::error::CopyDBClusterParameterGroupError,
     >;
@@ -361,7 +371,7 @@ impl CopyDBClusterSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopyDBClusterSnapshot {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CopyDBClusterSnapshotOutput,
         crate::error::CopyDBClusterSnapshotError,
     >;
@@ -389,8 +399,10 @@ impl CopyDBParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopyDBParameterGroup {
-    type Output =
-        Result<crate::output::CopyDBParameterGroupOutput, crate::error::CopyDBParameterGroupError>;
+    type Output = std::result::Result<
+        crate::output::CopyDBParameterGroupOutput,
+        crate::error::CopyDBParameterGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_db_parameter_group_error(response)
@@ -421,7 +433,8 @@ impl CopyDBSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopyDBSnapshot {
-    type Output = Result<crate::output::CopyDBSnapshotOutput, crate::error::CopyDBSnapshotError>;
+    type Output =
+        std::result::Result<crate::output::CopyDBSnapshotOutput, crate::error::CopyDBSnapshotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_db_snapshot_error(response)
@@ -446,7 +459,10 @@ impl CopyOptionGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CopyOptionGroup {
-    type Output = Result<crate::output::CopyOptionGroupOutput, crate::error::CopyOptionGroupError>;
+    type Output = std::result::Result<
+        crate::output::CopyOptionGroupOutput,
+        crate::error::CopyOptionGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_option_group_error(response)
@@ -476,7 +492,7 @@ impl CreateCustomAvailabilityZone {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateCustomAvailabilityZone {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateCustomAvailabilityZoneOutput,
         crate::error::CreateCustomAvailabilityZoneError,
     >;
@@ -516,7 +532,10 @@ impl CreateDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBCluster {
-    type Output = Result<crate::output::CreateDBClusterOutput, crate::error::CreateDBClusterError>;
+    type Output = std::result::Result<
+        crate::output::CreateDBClusterOutput,
+        crate::error::CreateDBClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_db_cluster_error(response)
@@ -544,7 +563,7 @@ impl CreateDBClusterEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBClusterEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDBClusterEndpointOutput,
         crate::error::CreateDBClusterEndpointError,
     >;
@@ -602,7 +621,7 @@ impl CreateDBClusterParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBClusterParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDBClusterParameterGroupOutput,
         crate::error::CreateDBClusterParameterGroupError,
     >;
@@ -636,7 +655,7 @@ impl CreateDBClusterSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBClusterSnapshot {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDBClusterSnapshotOutput,
         crate::error::CreateDBClusterSnapshotError,
     >;
@@ -664,8 +683,10 @@ impl CreateDBInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBInstance {
-    type Output =
-        Result<crate::output::CreateDBInstanceOutput, crate::error::CreateDBInstanceError>;
+    type Output = std::result::Result<
+        crate::output::CreateDBInstanceOutput,
+        crate::error::CreateDBInstanceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_db_instance_error(response)
@@ -702,7 +723,7 @@ impl CreateDBInstanceReadReplica {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBInstanceReadReplica {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDBInstanceReadReplicaOutput,
         crate::error::CreateDBInstanceReadReplicaError,
     >;
@@ -750,7 +771,7 @@ impl CreateDBParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDBParameterGroupOutput,
         crate::error::CreateDBParameterGroupError,
     >;
@@ -778,7 +799,8 @@ impl CreateDBProxy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBProxy {
-    type Output = Result<crate::output::CreateDBProxyOutput, crate::error::CreateDBProxyError>;
+    type Output =
+        std::result::Result<crate::output::CreateDBProxyOutput, crate::error::CreateDBProxyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_db_proxy_error(response)
@@ -807,7 +829,7 @@ impl CreateDBProxyEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBProxyEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDBProxyEndpointOutput,
         crate::error::CreateDBProxyEndpointError,
     >;
@@ -838,7 +860,7 @@ impl CreateDBSecurityGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBSecurityGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDBSecurityGroupOutput,
         crate::error::CreateDBSecurityGroupError,
     >;
@@ -867,8 +889,10 @@ impl CreateDBSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBSnapshot {
-    type Output =
-        Result<crate::output::CreateDBSnapshotOutput, crate::error::CreateDBSnapshotError>;
+    type Output = std::result::Result<
+        crate::output::CreateDBSnapshotOutput,
+        crate::error::CreateDBSnapshotError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_db_snapshot_error(response)
@@ -893,8 +917,10 @@ impl CreateDBSubnetGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBSubnetGroup {
-    type Output =
-        Result<crate::output::CreateDBSubnetGroupOutput, crate::error::CreateDBSubnetGroupError>;
+    type Output = std::result::Result<
+        crate::output::CreateDBSubnetGroupOutput,
+        crate::error::CreateDBSubnetGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_db_subnet_group_error(response)
@@ -940,7 +966,7 @@ impl CreateEventSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateEventSubscription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateEventSubscriptionOutput,
         crate::error::CreateEventSubscriptionError,
     >;
@@ -984,8 +1010,10 @@ impl CreateGlobalCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateGlobalCluster {
-    type Output =
-        Result<crate::output::CreateGlobalClusterOutput, crate::error::CreateGlobalClusterError>;
+    type Output = std::result::Result<
+        crate::output::CreateGlobalClusterOutput,
+        crate::error::CreateGlobalClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_global_cluster_error(response)
@@ -1010,8 +1038,10 @@ impl CreateOptionGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateOptionGroup {
-    type Output =
-        Result<crate::output::CreateOptionGroupOutput, crate::error::CreateOptionGroupError>;
+    type Output = std::result::Result<
+        crate::output::CreateOptionGroupOutput,
+        crate::error::CreateOptionGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_option_group_error(response)
@@ -1041,7 +1071,7 @@ impl DeleteCustomAvailabilityZone {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteCustomAvailabilityZone {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteCustomAvailabilityZoneOutput,
         crate::error::DeleteCustomAvailabilityZoneError,
     >;
@@ -1079,7 +1109,10 @@ impl DeleteDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBCluster {
-    type Output = Result<crate::output::DeleteDBClusterOutput, crate::error::DeleteDBClusterError>;
+    type Output = std::result::Result<
+        crate::output::DeleteDBClusterOutput,
+        crate::error::DeleteDBClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_db_cluster_error(response)
@@ -1107,7 +1140,7 @@ impl DeleteDBClusterEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBClusterEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteDBClusterEndpointOutput,
         crate::error::DeleteDBClusterEndpointError,
     >;
@@ -1142,7 +1175,7 @@ impl DeleteDBClusterParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBClusterParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteDBClusterParameterGroupOutput,
         crate::error::DeleteDBClusterParameterGroupError,
     >;
@@ -1181,7 +1214,7 @@ impl DeleteDBClusterSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBClusterSnapshot {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteDBClusterSnapshotOutput,
         crate::error::DeleteDBClusterSnapshotError,
     >;
@@ -1233,8 +1266,10 @@ impl DeleteDBInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBInstance {
-    type Output =
-        Result<crate::output::DeleteDBInstanceOutput, crate::error::DeleteDBInstanceError>;
+    type Output = std::result::Result<
+        crate::output::DeleteDBInstanceOutput,
+        crate::error::DeleteDBInstanceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_db_instance_error(response)
@@ -1259,7 +1294,7 @@ impl DeleteDBInstanceAutomatedBackup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBInstanceAutomatedBackup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteDBInstanceAutomatedBackupOutput,
         crate::error::DeleteDBInstanceAutomatedBackupError,
     >;
@@ -1287,7 +1322,7 @@ impl DeleteDBParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteDBParameterGroupOutput,
         crate::error::DeleteDBParameterGroupError,
     >;
@@ -1315,7 +1350,8 @@ impl DeleteDBProxy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBProxy {
-    type Output = Result<crate::output::DeleteDBProxyOutput, crate::error::DeleteDBProxyError>;
+    type Output =
+        std::result::Result<crate::output::DeleteDBProxyOutput, crate::error::DeleteDBProxyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_db_proxy_error(response)
@@ -1342,7 +1378,7 @@ impl DeleteDBProxyEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBProxyEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteDBProxyEndpointOutput,
         crate::error::DeleteDBProxyEndpointError,
     >;
@@ -1373,7 +1409,7 @@ impl DeleteDBSecurityGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBSecurityGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteDBSecurityGroupOutput,
         crate::error::DeleteDBSecurityGroupError,
     >;
@@ -1405,8 +1441,10 @@ impl DeleteDBSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBSnapshot {
-    type Output =
-        Result<crate::output::DeleteDBSnapshotOutput, crate::error::DeleteDBSnapshotError>;
+    type Output = std::result::Result<
+        crate::output::DeleteDBSnapshotOutput,
+        crate::error::DeleteDBSnapshotError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_db_snapshot_error(response)
@@ -1434,8 +1472,10 @@ impl DeleteDBSubnetGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBSubnetGroup {
-    type Output =
-        Result<crate::output::DeleteDBSubnetGroupOutput, crate::error::DeleteDBSubnetGroupError>;
+    type Output = std::result::Result<
+        crate::output::DeleteDBSubnetGroupOutput,
+        crate::error::DeleteDBSubnetGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_db_subnet_group_error(response)
@@ -1460,7 +1500,7 @@ impl DeleteEventSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteEventSubscription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteEventSubscriptionOutput,
         crate::error::DeleteEventSubscriptionError,
     >;
@@ -1494,8 +1534,10 @@ impl DeleteGlobalCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteGlobalCluster {
-    type Output =
-        Result<crate::output::DeleteGlobalClusterOutput, crate::error::DeleteGlobalClusterError>;
+    type Output = std::result::Result<
+        crate::output::DeleteGlobalClusterOutput,
+        crate::error::DeleteGlobalClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_global_cluster_error(response)
@@ -1521,7 +1563,7 @@ impl DeleteInstallationMedia {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteInstallationMedia {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteInstallationMediaOutput,
         crate::error::DeleteInstallationMediaError,
     >;
@@ -1549,8 +1591,10 @@ impl DeleteOptionGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteOptionGroup {
-    type Output =
-        Result<crate::output::DeleteOptionGroupOutput, crate::error::DeleteOptionGroupError>;
+    type Output = std::result::Result<
+        crate::output::DeleteOptionGroupOutput,
+        crate::error::DeleteOptionGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_option_group_error(response)
@@ -1575,7 +1619,7 @@ impl DeregisterDBProxyTargets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterDBProxyTargets {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeregisterDBProxyTargetsOutput,
         crate::error::DeregisterDBProxyTargetsError,
     >;
@@ -1604,7 +1648,7 @@ impl DescribeAccountAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeAccountAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeAccountAttributesOutput,
         crate::error::DescribeAccountAttributesError,
     >;
@@ -1632,8 +1676,10 @@ impl DescribeCertificates {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeCertificates {
-    type Output =
-        Result<crate::output::DescribeCertificatesOutput, crate::error::DescribeCertificatesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeCertificatesOutput,
+        crate::error::DescribeCertificatesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_certificates_error(response)
@@ -1663,7 +1709,7 @@ impl DescribeCustomAvailabilityZones {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeCustomAvailabilityZones {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeCustomAvailabilityZonesOutput,
         crate::error::DescribeCustomAvailabilityZonesError,
     >;
@@ -1698,7 +1744,7 @@ impl DescribeDBClusterBacktracks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterBacktracks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBClusterBacktracksOutput,
         crate::error::DescribeDBClusterBacktracksError,
     >;
@@ -1729,7 +1775,7 @@ impl DescribeDBClusterEndpoints {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterEndpoints {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBClusterEndpointsOutput,
         crate::error::DescribeDBClusterEndpointsError,
     >;
@@ -1768,7 +1814,7 @@ impl DescribeDBClusterParameterGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterParameterGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBClusterParameterGroupsOutput,
         crate::error::DescribeDBClusterParameterGroupsError,
     >;
@@ -1803,7 +1849,7 @@ impl DescribeDBClusterParameters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterParameters {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBClusterParametersOutput,
         crate::error::DescribeDBClusterParametersError,
     >;
@@ -1838,8 +1884,10 @@ impl DescribeDBClusters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusters {
-    type Output =
-        Result<crate::output::DescribeDBClustersOutput, crate::error::DescribeDBClustersError>;
+    type Output = std::result::Result<
+        crate::output::DescribeDBClustersOutput,
+        crate::error::DescribeDBClustersError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_db_clusters_error(response)
@@ -1874,7 +1922,7 @@ impl DescribeDBClusterSnapshotAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterSnapshotAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBClusterSnapshotAttributesOutput,
         crate::error::DescribeDBClusterSnapshotAttributesError,
     >;
@@ -1909,7 +1957,7 @@ impl DescribeDBClusterSnapshots {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterSnapshots {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBClusterSnapshotsOutput,
         crate::error::DescribeDBClusterSnapshotsError,
     >;
@@ -1937,7 +1985,7 @@ impl DescribeDBEngineVersions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBEngineVersions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBEngineVersionsOutput,
         crate::error::DescribeDBEngineVersionsError,
     >;
@@ -1971,7 +2019,7 @@ impl DescribeDBInstanceAutomatedBackups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBInstanceAutomatedBackups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBInstanceAutomatedBackupsOutput,
         crate::error::DescribeDBInstanceAutomatedBackupsError,
     >;
@@ -2002,8 +2050,10 @@ impl DescribeDBInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBInstances {
-    type Output =
-        Result<crate::output::DescribeDBInstancesOutput, crate::error::DescribeDBInstancesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeDBInstancesOutput,
+        crate::error::DescribeDBInstancesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_db_instances_error(response)
@@ -2028,8 +2078,10 @@ impl DescribeDBLogFiles {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBLogFiles {
-    type Output =
-        Result<crate::output::DescribeDBLogFilesOutput, crate::error::DescribeDBLogFilesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeDBLogFilesOutput,
+        crate::error::DescribeDBLogFilesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_db_log_files_error(response)
@@ -2057,7 +2109,7 @@ impl DescribeDBParameterGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBParameterGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBParameterGroupsOutput,
         crate::error::DescribeDBParameterGroupsError,
     >;
@@ -2085,8 +2137,10 @@ impl DescribeDBParameters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBParameters {
-    type Output =
-        Result<crate::output::DescribeDBParametersOutput, crate::error::DescribeDBParametersError>;
+    type Output = std::result::Result<
+        crate::output::DescribeDBParametersOutput,
+        crate::error::DescribeDBParametersError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_db_parameters_error(response)
@@ -2111,8 +2165,10 @@ impl DescribeDBProxies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBProxies {
-    type Output =
-        Result<crate::output::DescribeDBProxiesOutput, crate::error::DescribeDBProxiesError>;
+    type Output = std::result::Result<
+        crate::output::DescribeDBProxiesOutput,
+        crate::error::DescribeDBProxiesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_db_proxies_error(response)
@@ -2137,7 +2193,7 @@ impl DescribeDBProxyEndpoints {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBProxyEndpoints {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBProxyEndpointsOutput,
         crate::error::DescribeDBProxyEndpointsError,
     >;
@@ -2165,7 +2221,7 @@ impl DescribeDBProxyTargetGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBProxyTargetGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBProxyTargetGroupsOutput,
         crate::error::DescribeDBProxyTargetGroupsError,
     >;
@@ -2193,7 +2249,7 @@ impl DescribeDBProxyTargets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBProxyTargets {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBProxyTargetsOutput,
         crate::error::DescribeDBProxyTargetsError,
     >;
@@ -2224,7 +2280,7 @@ impl DescribeDBSecurityGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBSecurityGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBSecurityGroupsOutput,
         crate::error::DescribeDBSecurityGroupsError,
     >;
@@ -2259,7 +2315,7 @@ impl DescribeDBSnapshotAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBSnapshotAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBSnapshotAttributesOutput,
         crate::error::DescribeDBSnapshotAttributesError,
     >;
@@ -2287,8 +2343,10 @@ impl DescribeDBSnapshots {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBSnapshots {
-    type Output =
-        Result<crate::output::DescribeDBSnapshotsOutput, crate::error::DescribeDBSnapshotsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeDBSnapshotsOutput,
+        crate::error::DescribeDBSnapshotsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_db_snapshots_error(response)
@@ -2316,7 +2374,7 @@ impl DescribeDBSubnetGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBSubnetGroups {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeDBSubnetGroupsOutput,
         crate::error::DescribeDBSubnetGroupsError,
     >;
@@ -2348,7 +2406,7 @@ impl DescribeEngineDefaultClusterParameters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeEngineDefaultClusterParameters {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeEngineDefaultClusterParametersOutput,
         crate::error::DescribeEngineDefaultClusterParametersError,
     >;
@@ -2378,7 +2436,7 @@ impl DescribeEngineDefaultParameters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeEngineDefaultParameters {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeEngineDefaultParametersOutput,
         crate::error::DescribeEngineDefaultParametersError,
     >;
@@ -2410,7 +2468,7 @@ impl DescribeEventCategories {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeEventCategories {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeEventCategoriesOutput,
         crate::error::DescribeEventCategoriesError,
     >;
@@ -2443,7 +2501,8 @@ impl DescribeEvents {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeEvents {
-    type Output = Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError>;
+    type Output =
+        std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_events_error(response)
@@ -2470,7 +2529,7 @@ impl DescribeEventSubscriptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeEventSubscriptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeEventSubscriptionsOutput,
         crate::error::DescribeEventSubscriptionsError,
     >;
@@ -2499,8 +2558,10 @@ impl DescribeExportTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeExportTasks {
-    type Output =
-        Result<crate::output::DescribeExportTasksOutput, crate::error::DescribeExportTasksError>;
+    type Output = std::result::Result<
+        crate::output::DescribeExportTasksOutput,
+        crate::error::DescribeExportTasksError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_export_tasks_error(response)
@@ -2534,7 +2595,7 @@ impl DescribeGlobalClusters {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeGlobalClusters {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeGlobalClustersOutput,
         crate::error::DescribeGlobalClustersError,
     >;
@@ -2563,7 +2624,7 @@ impl DescribeInstallationMedia {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeInstallationMedia {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeInstallationMediaOutput,
         crate::error::DescribeInstallationMediaError,
     >;
@@ -2591,7 +2652,7 @@ impl DescribeOptionGroupOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeOptionGroupOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeOptionGroupOptionsOutput,
         crate::error::DescribeOptionGroupOptionsError,
     >;
@@ -2619,8 +2680,10 @@ impl DescribeOptionGroups {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeOptionGroups {
-    type Output =
-        Result<crate::output::DescribeOptionGroupsOutput, crate::error::DescribeOptionGroupsError>;
+    type Output = std::result::Result<
+        crate::output::DescribeOptionGroupsOutput,
+        crate::error::DescribeOptionGroupsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_option_groups_error(response)
@@ -2645,7 +2708,7 @@ impl DescribeOrderableDBInstanceOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeOrderableDBInstanceOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeOrderableDBInstanceOptionsOutput,
         crate::error::DescribeOrderableDBInstanceOptionsError,
     >;
@@ -2673,7 +2736,7 @@ impl DescribePendingMaintenanceActions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribePendingMaintenanceActions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribePendingMaintenanceActionsOutput,
         crate::error::DescribePendingMaintenanceActionsError,
     >;
@@ -2701,7 +2764,7 @@ impl DescribeReservedDBInstances {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReservedDBInstances {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeReservedDBInstancesOutput,
         crate::error::DescribeReservedDBInstancesError,
     >;
@@ -2729,7 +2792,7 @@ impl DescribeReservedDBInstancesOfferings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReservedDBInstancesOfferings {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeReservedDBInstancesOfferingsOutput,
         crate::error::DescribeReservedDBInstancesOfferingsError,
     >;
@@ -2760,7 +2823,7 @@ impl DescribeSourceRegions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeSourceRegions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeSourceRegionsOutput,
         crate::error::DescribeSourceRegionsError,
     >;
@@ -2792,7 +2855,7 @@ impl DescribeValidDBInstanceModifications {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeValidDBInstanceModifications {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeValidDBInstanceModificationsOutput,
         crate::error::DescribeValidDBInstanceModificationsError,
     >;
@@ -2822,7 +2885,7 @@ impl DownloadDBLogFilePortion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DownloadDBLogFilePortion {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DownloadDBLogFilePortionOutput,
         crate::error::DownloadDBLogFilePortionError,
     >;
@@ -2863,8 +2926,10 @@ impl FailoverDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for FailoverDBCluster {
-    type Output =
-        Result<crate::output::FailoverDBClusterOutput, crate::error::FailoverDBClusterError>;
+    type Output = std::result::Result<
+        crate::output::FailoverDBClusterOutput,
+        crate::error::FailoverDBClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_failover_db_cluster_error(response)
@@ -2903,7 +2968,7 @@ impl FailoverGlobalCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for FailoverGlobalCluster {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::FailoverGlobalClusterOutput,
         crate::error::FailoverGlobalClusterError,
     >;
@@ -2932,7 +2997,7 @@ impl ImportInstallationMedia {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ImportInstallationMedia {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ImportInstallationMediaOutput,
         crate::error::ImportInstallationMediaError,
     >;
@@ -2963,8 +3028,10 @@ impl ListTagsForResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
-    type Output =
-        Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
@@ -3013,8 +3080,10 @@ impl ModifyCertificates {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyCertificates {
-    type Output =
-        Result<crate::output::ModifyCertificatesOutput, crate::error::ModifyCertificatesError>;
+    type Output = std::result::Result<
+        crate::output::ModifyCertificatesOutput,
+        crate::error::ModifyCertificatesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_certificates_error(response)
@@ -3056,7 +3125,7 @@ impl ModifyCurrentDBClusterCapacity {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyCurrentDBClusterCapacity {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyCurrentDBClusterCapacityOutput,
         crate::error::ModifyCurrentDBClusterCapacityError,
     >;
@@ -3093,7 +3162,10 @@ impl ModifyDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBCluster {
-    type Output = Result<crate::output::ModifyDBClusterOutput, crate::error::ModifyDBClusterError>;
+    type Output = std::result::Result<
+        crate::output::ModifyDBClusterOutput,
+        crate::error::ModifyDBClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_db_cluster_error(response)
@@ -3121,7 +3193,7 @@ impl ModifyDBClusterEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBClusterEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyDBClusterEndpointOutput,
         crate::error::ModifyDBClusterEndpointError,
     >;
@@ -3176,7 +3248,7 @@ impl ModifyDBClusterParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBClusterParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyDBClusterParameterGroupOutput,
         crate::error::ModifyDBClusterParameterGroupError,
     >;
@@ -3225,7 +3297,7 @@ impl ModifyDBClusterSnapshotAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBClusterSnapshotAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyDBClusterSnapshotAttributeOutput,
         crate::error::ModifyDBClusterSnapshotAttributeError,
     >;
@@ -3258,8 +3330,10 @@ impl ModifyDBInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBInstance {
-    type Output =
-        Result<crate::output::ModifyDBInstanceOutput, crate::error::ModifyDBInstanceError>;
+    type Output = std::result::Result<
+        crate::output::ModifyDBInstanceOutput,
+        crate::error::ModifyDBInstanceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_db_instance_error(response)
@@ -3299,7 +3373,7 @@ impl ModifyDBParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyDBParameterGroupOutput,
         crate::error::ModifyDBParameterGroupError,
     >;
@@ -3327,7 +3401,8 @@ impl ModifyDBProxy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBProxy {
-    type Output = Result<crate::output::ModifyDBProxyOutput, crate::error::ModifyDBProxyError>;
+    type Output =
+        std::result::Result<crate::output::ModifyDBProxyOutput, crate::error::ModifyDBProxyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_db_proxy_error(response)
@@ -3352,7 +3427,7 @@ impl ModifyDBProxyEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBProxyEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyDBProxyEndpointOutput,
         crate::error::ModifyDBProxyEndpointError,
     >;
@@ -3380,7 +3455,7 @@ impl ModifyDBProxyTargetGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBProxyTargetGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyDBProxyTargetGroupOutput,
         crate::error::ModifyDBProxyTargetGroupError,
     >;
@@ -3412,8 +3487,10 @@ impl ModifyDBSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBSnapshot {
-    type Output =
-        Result<crate::output::ModifyDBSnapshotOutput, crate::error::ModifyDBSnapshotError>;
+    type Output = std::result::Result<
+        crate::output::ModifyDBSnapshotOutput,
+        crate::error::ModifyDBSnapshotError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_db_snapshot_error(response)
@@ -3454,7 +3531,7 @@ impl ModifyDBSnapshotAttribute {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBSnapshotAttribute {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyDBSnapshotAttributeOutput,
         crate::error::ModifyDBSnapshotAttributeError,
     >;
@@ -3482,8 +3559,10 @@ impl ModifyDBSubnetGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBSubnetGroup {
-    type Output =
-        Result<crate::output::ModifyDBSubnetGroupOutput, crate::error::ModifyDBSubnetGroupError>;
+    type Output = std::result::Result<
+        crate::output::ModifyDBSubnetGroupOutput,
+        crate::error::ModifyDBSubnetGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_db_subnet_group_error(response)
@@ -3512,7 +3591,7 @@ impl ModifyEventSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyEventSubscription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ModifyEventSubscriptionOutput,
         crate::error::ModifyEventSubscriptionError,
     >;
@@ -3548,8 +3627,10 @@ impl ModifyGlobalCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyGlobalCluster {
-    type Output =
-        Result<crate::output::ModifyGlobalClusterOutput, crate::error::ModifyGlobalClusterError>;
+    type Output = std::result::Result<
+        crate::output::ModifyGlobalClusterOutput,
+        crate::error::ModifyGlobalClusterError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_global_cluster_error(response)
@@ -3574,8 +3655,10 @@ impl ModifyOptionGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ModifyOptionGroup {
-    type Output =
-        Result<crate::output::ModifyOptionGroupOutput, crate::error::ModifyOptionGroupError>;
+    type Output = std::result::Result<
+        crate::output::ModifyOptionGroupOutput,
+        crate::error::ModifyOptionGroupError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_option_group_error(response)
@@ -3617,8 +3700,10 @@ impl PromoteReadReplica {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PromoteReadReplica {
-    type Output =
-        Result<crate::output::PromoteReadReplicaOutput, crate::error::PromoteReadReplicaError>;
+    type Output = std::result::Result<
+        crate::output::PromoteReadReplicaOutput,
+        crate::error::PromoteReadReplicaError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_promote_read_replica_error(response)
@@ -3646,7 +3731,7 @@ impl PromoteReadReplicaDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PromoteReadReplicaDBCluster {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PromoteReadReplicaDBClusterOutput,
         crate::error::PromoteReadReplicaDBClusterError,
     >;
@@ -3674,7 +3759,7 @@ impl PurchaseReservedDBInstancesOffering {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PurchaseReservedDBInstancesOffering {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PurchaseReservedDBInstancesOfferingOutput,
         crate::error::PurchaseReservedDBInstancesOfferingError,
     >;
@@ -3711,8 +3796,10 @@ impl RebootDBInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RebootDBInstance {
-    type Output =
-        Result<crate::output::RebootDBInstanceOutput, crate::error::RebootDBInstanceError>;
+    type Output = std::result::Result<
+        crate::output::RebootDBInstanceOutput,
+        crate::error::RebootDBInstanceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_reboot_db_instance_error(response)
@@ -3737,7 +3824,7 @@ impl RegisterDBProxyTargets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RegisterDBProxyTargets {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RegisterDBProxyTargetsOutput,
         crate::error::RegisterDBProxyTargetsError,
     >;
@@ -3772,7 +3859,7 @@ impl RemoveFromGlobalCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveFromGlobalCluster {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RemoveFromGlobalClusterOutput,
         crate::error::RemoveFromGlobalClusterError,
     >;
@@ -3805,7 +3892,7 @@ impl RemoveRoleFromDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveRoleFromDBCluster {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RemoveRoleFromDBClusterOutput,
         crate::error::RemoveRoleFromDBClusterError,
     >;
@@ -3833,7 +3920,7 @@ impl RemoveRoleFromDBInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveRoleFromDBInstance {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RemoveRoleFromDBInstanceOutput,
         crate::error::RemoveRoleFromDBInstanceError,
     >;
@@ -3861,7 +3948,7 @@ impl RemoveSourceIdentifierFromSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveSourceIdentifierFromSubscription {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RemoveSourceIdentifierFromSubscriptionOutput,
         crate::error::RemoveSourceIdentifierFromSubscriptionError,
     >;
@@ -3895,7 +3982,7 @@ impl RemoveTagsFromResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RemoveTagsFromResourceOutput,
         crate::error::RemoveTagsFromResourceError,
     >;
@@ -3941,7 +4028,7 @@ impl ResetDBClusterParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetDBClusterParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetDBClusterParameterGroupOutput,
         crate::error::ResetDBClusterParameterGroupError,
     >;
@@ -3976,7 +4063,7 @@ impl ResetDBParameterGroup {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ResetDBParameterGroup {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ResetDBParameterGroupOutput,
         crate::error::ResetDBParameterGroupError,
     >;
@@ -4023,7 +4110,7 @@ impl RestoreDBClusterFromS3 {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBClusterFromS3 {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RestoreDBClusterFromS3Output,
         crate::error::RestoreDBClusterFromS3Error,
     >;
@@ -4070,7 +4157,7 @@ impl RestoreDBClusterFromSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBClusterFromSnapshot {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RestoreDBClusterFromSnapshotOutput,
         crate::error::RestoreDBClusterFromSnapshotError,
     >;
@@ -4117,7 +4204,7 @@ impl RestoreDBClusterToPointInTime {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBClusterToPointInTime {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RestoreDBClusterToPointInTimeOutput,
         crate::error::RestoreDBClusterToPointInTimeError,
     >;
@@ -4158,7 +4245,7 @@ impl RestoreDBInstanceFromDBSnapshot {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBInstanceFromDBSnapshot {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RestoreDBInstanceFromDBSnapshotOutput,
         crate::error::RestoreDBInstanceFromDBSnapshotError,
     >;
@@ -4193,7 +4280,7 @@ impl RestoreDBInstanceFromS3 {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBInstanceFromS3 {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RestoreDBInstanceFromS3Output,
         crate::error::RestoreDBInstanceFromS3Error,
     >;
@@ -4230,7 +4317,7 @@ impl RestoreDBInstanceToPointInTime {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBInstanceToPointInTime {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RestoreDBInstanceToPointInTimeOutput,
         crate::error::RestoreDBInstanceToPointInTimeError,
     >;
@@ -4258,7 +4345,7 @@ impl RevokeDBSecurityGroupIngress {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RevokeDBSecurityGroupIngress {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RevokeDBSecurityGroupIngressOutput,
         crate::error::RevokeDBSecurityGroupIngressError,
     >;
@@ -4288,8 +4375,10 @@ impl StartActivityStream {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartActivityStream {
-    type Output =
-        Result<crate::output::StartActivityStreamOutput, crate::error::StartActivityStreamError>;
+    type Output = std::result::Result<
+        crate::output::StartActivityStreamOutput,
+        crate::error::StartActivityStreamError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_activity_stream_error(response)
@@ -4322,7 +4411,8 @@ impl StartDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartDBCluster {
-    type Output = Result<crate::output::StartDBClusterOutput, crate::error::StartDBClusterError>;
+    type Output =
+        std::result::Result<crate::output::StartDBClusterOutput, crate::error::StartDBClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_db_cluster_error(response)
@@ -4360,7 +4450,10 @@ impl StartDBInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartDBInstance {
-    type Output = Result<crate::output::StartDBInstanceOutput, crate::error::StartDBInstanceError>;
+    type Output = std::result::Result<
+        crate::output::StartDBInstanceOutput,
+        crate::error::StartDBInstanceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_db_instance_error(response)
@@ -4389,7 +4482,7 @@ impl StartDBInstanceAutomatedBackupsReplication {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartDBInstanceAutomatedBackupsReplication {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::StartDBInstanceAutomatedBackupsReplicationOutput,
         crate::error::StartDBInstanceAutomatedBackupsReplicationError,
     >;
@@ -4423,7 +4516,10 @@ impl StartExportTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartExportTask {
-    type Output = Result<crate::output::StartExportTaskOutput, crate::error::StartExportTaskError>;
+    type Output = std::result::Result<
+        crate::output::StartExportTaskOutput,
+        crate::error::StartExportTaskError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_export_task_error(response)
@@ -4452,8 +4548,10 @@ impl StopActivityStream {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StopActivityStream {
-    type Output =
-        Result<crate::output::StopActivityStreamOutput, crate::error::StopActivityStreamError>;
+    type Output = std::result::Result<
+        crate::output::StopActivityStreamOutput,
+        crate::error::StopActivityStreamError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_activity_stream_error(response)
@@ -4489,7 +4587,8 @@ impl StopDBCluster {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StopDBCluster {
-    type Output = Result<crate::output::StopDBClusterOutput, crate::error::StopDBClusterError>;
+    type Output =
+        std::result::Result<crate::output::StopDBClusterOutput, crate::error::StopDBClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_db_cluster_error(response)
@@ -4529,7 +4628,8 @@ impl StopDBInstance {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StopDBInstance {
-    type Output = Result<crate::output::StopDBInstanceOutput, crate::error::StopDBInstanceError>;
+    type Output =
+        std::result::Result<crate::output::StopDBInstanceOutput, crate::error::StopDBInstanceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_db_instance_error(response)
@@ -4558,7 +4658,7 @@ impl StopDBInstanceAutomatedBackupsReplication {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StopDBInstanceAutomatedBackupsReplication {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::StopDBInstanceAutomatedBackupsReplicationOutput,
         crate::error::StopDBInstanceAutomatedBackupsReplicationError,
     >;

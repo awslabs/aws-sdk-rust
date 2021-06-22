@@ -115,7 +115,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ConfigureLogsOutput,
             smithy_http::result::SdkError<crate::error::ConfigureLogsError>,
         >
@@ -132,36 +132,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, inp: crate::model::EgressAccessLogs) -> Self {
-            self.inner = self.inner.egress_access_logs(inp);
+        pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
+            self.inner = self.inner.egress_access_logs(input);
             self
         }
         pub fn set_egress_access_logs(
             mut self,
-            inp: std::option::Option<crate::model::EgressAccessLogs>,
+            input: std::option::Option<crate::model::EgressAccessLogs>,
         ) -> Self {
-            self.inner = self.inner.set_egress_access_logs(inp);
+            self.inner = self.inner.set_egress_access_logs(input);
             self
         }
         /// The ID of the channel to log subscription.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// Configure ingress access logging.
-        pub fn ingress_access_logs(mut self, inp: crate::model::IngressAccessLogs) -> Self {
-            self.inner = self.inner.ingress_access_logs(inp);
+        pub fn ingress_access_logs(mut self, input: crate::model::IngressAccessLogs) -> Self {
+            self.inner = self.inner.ingress_access_logs(input);
             self
         }
         pub fn set_ingress_access_logs(
             mut self,
-            inp: std::option::Option<crate::model::IngressAccessLogs>,
+            input: std::option::Option<crate::model::IngressAccessLogs>,
         ) -> Self {
-            self.inner = self.inner.set_ingress_access_logs(inp);
+            self.inner = self.inner.set_ingress_access_logs(input);
             self
         }
     }
@@ -180,7 +180,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateChannelOutput,
             smithy_http::result::SdkError<crate::error::CreateChannelError>,
         >
@@ -197,22 +197,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A short text description of the Channel.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// The ID of the Channel. The ID must be unique within the region and it
         /// cannot be changed after a Channel is created.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// A collection of tags associated with a resource
@@ -226,11 +226,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -249,7 +249,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateHarvestJobOutput,
             smithy_http::result::SdkError<crate::error::CreateHarvestJobError>,
         >
@@ -266,56 +266,56 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The end of the time-window which will be harvested
-        pub fn end_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        pub fn set_end_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_end_time(inp);
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_end_time(input);
             self
         }
         /// The ID of the HarvestJob. The ID must be unique within the region
         /// and it cannot be changed after the HarvestJob is submitted
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
         /// This cannot be changed after the HarvestJob is submitted.
-        pub fn origin_endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin_endpoint_id(inp);
+        pub fn origin_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin_endpoint_id(input);
             self
         }
         pub fn set_origin_endpoint_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_origin_endpoint_id(inp);
+            self.inner = self.inner.set_origin_endpoint_id(input);
             self
         }
         /// Configuration parameters for where in an S3 bucket to place the harvested content
-        pub fn s3_destination(mut self, inp: crate::model::S3Destination) -> Self {
-            self.inner = self.inner.s3_destination(inp);
+        pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
+            self.inner = self.inner.s3_destination(input);
             self
         }
         pub fn set_s3_destination(
             mut self,
-            inp: std::option::Option<crate::model::S3Destination>,
+            input: std::option::Option<crate::model::S3Destination>,
         ) -> Self {
-            self.inner = self.inner.set_s3_destination(inp);
+            self.inner = self.inner.set_s3_destination(input);
             self
         }
         /// The start of the time-window which will be harvested
-        pub fn start_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_start_time(inp);
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_start_time(input);
             self
         }
     }
@@ -334,7 +334,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateOriginEndpointOutput,
             smithy_http::result::SdkError<crate::error::CreateOriginEndpointError>,
         >
@@ -351,128 +351,131 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, inp: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(inp);
+        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
+            self.inner = self.inner.authorization(input);
             self
         }
         pub fn set_authorization(
             mut self,
-            inp: std::option::Option<crate::model::Authorization>,
+            input: std::option::Option<crate::model::Authorization>,
         ) -> Self {
-            self.inner = self.inner.set_authorization(inp);
+            self.inner = self.inner.set_authorization(input);
             self
         }
         /// The ID of the Channel that the OriginEndpoint will be associated with.
         /// This cannot be changed after the OriginEndpoint is created.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
         pub fn cmaf_package(
             mut self,
-            inp: crate::model::CmafPackageCreateOrUpdateParameters,
+            input: crate::model::CmafPackageCreateOrUpdateParameters,
         ) -> Self {
-            self.inner = self.inner.cmaf_package(inp);
+            self.inner = self.inner.cmaf_package(input);
             self
         }
         pub fn set_cmaf_package(
             mut self,
-            inp: std::option::Option<crate::model::CmafPackageCreateOrUpdateParameters>,
+            input: std::option::Option<crate::model::CmafPackageCreateOrUpdateParameters>,
         ) -> Self {
-            self.inner = self.inner.set_cmaf_package(inp);
+            self.inner = self.inner.set_cmaf_package(input);
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn dash_package(mut self, inp: crate::model::DashPackage) -> Self {
-            self.inner = self.inner.dash_package(inp);
+        pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
+            self.inner = self.inner.dash_package(input);
             self
         }
         pub fn set_dash_package(
             mut self,
-            inp: std::option::Option<crate::model::DashPackage>,
+            input: std::option::Option<crate::model::DashPackage>,
         ) -> Self {
-            self.inner = self.inner.set_dash_package(inp);
+            self.inner = self.inner.set_dash_package(input);
             self
         }
         /// A short text description of the OriginEndpoint.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn hls_package(mut self, inp: crate::model::HlsPackage) -> Self {
-            self.inner = self.inner.hls_package(inp);
+        pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
+            self.inner = self.inner.hls_package(input);
             self
         }
         pub fn set_hls_package(
             mut self,
-            inp: std::option::Option<crate::model::HlsPackage>,
+            input: std::option::Option<crate::model::HlsPackage>,
         ) -> Self {
-            self.inner = self.inner.set_hls_package(inp);
+            self.inner = self.inner.set_hls_package(input);
             self
         }
         /// The ID of the OriginEndpoint.  The ID must be unique within the region
         /// and it cannot be changed after the OriginEndpoint is created.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
-        pub fn manifest_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.manifest_name(inp);
+        pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.manifest_name(input);
             self
         }
-        pub fn set_manifest_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_manifest_name(inp);
+        pub fn set_manifest_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_manifest_name(input);
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-        pub fn mss_package(mut self, inp: crate::model::MssPackage) -> Self {
-            self.inner = self.inner.mss_package(inp);
+        pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
+            self.inner = self.inner.mss_package(input);
             self
         }
         pub fn set_mss_package(
             mut self,
-            inp: std::option::Option<crate::model::MssPackage>,
+            input: std::option::Option<crate::model::MssPackage>,
         ) -> Self {
-            self.inner = self.inner.set_mss_package(inp);
+            self.inner = self.inner.set_mss_package(input);
             self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
         /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
         /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-        pub fn origination(mut self, inp: crate::model::Origination) -> Self {
-            self.inner = self.inner.origination(inp);
+        pub fn origination(mut self, input: crate::model::Origination) -> Self {
+            self.inner = self.inner.origination(input);
             self
         }
         pub fn set_origination(
             mut self,
-            inp: std::option::Option<crate::model::Origination>,
+            input: std::option::Option<crate::model::Origination>,
         ) -> Self {
-            self.inner = self.inner.set_origination(inp);
+            self.inner = self.inner.set_origination(input);
             self
         }
         /// Maximum duration (seconds) of content to retain for startover playback.
         /// If not specified, startover playback will be disabled for the OriginEndpoint.
-        pub fn startover_window_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.startover_window_seconds(inp);
+        pub fn startover_window_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.startover_window_seconds(input);
             self
         }
-        pub fn set_startover_window_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_startover_window_seconds(inp);
+        pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_startover_window_seconds(input);
             self
         }
         /// A collection of tags associated with a resource
@@ -486,21 +489,21 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// Amount of delay (seconds) to enforce on the playback of live content.
         /// If not specified, there will be no time delay in effect for the OriginEndpoint.
-        pub fn time_delay_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.time_delay_seconds(inp);
+        pub fn time_delay_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.time_delay_seconds(input);
             self
         }
-        pub fn set_time_delay_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_time_delay_seconds(inp);
+        pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_time_delay_seconds(input);
             self
         }
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
@@ -510,9 +513,9 @@ pub mod fluent_builders {
         }
         pub fn set_whitelist(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_whitelist(inp);
+            self.inner = self.inner.set_whitelist(input);
             self
         }
     }
@@ -531,7 +534,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteChannelOutput,
             smithy_http::result::SdkError<crate::error::DeleteChannelError>,
         >
@@ -548,12 +551,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Channel to delete.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -572,7 +575,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteOriginEndpointOutput,
             smithy_http::result::SdkError<crate::error::DeleteOriginEndpointError>,
         >
@@ -589,12 +592,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the OriginEndpoint to delete.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -613,7 +616,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeChannelOutput,
             smithy_http::result::SdkError<crate::error::DescribeChannelError>,
         >
@@ -630,12 +633,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of a Channel.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -654,7 +657,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeHarvestJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeHarvestJobError>,
         >
@@ -671,12 +674,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the HarvestJob.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -695,7 +698,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeOriginEndpointOutput,
             smithy_http::result::SdkError<crate::error::DescribeOriginEndpointError>,
         >
@@ -712,12 +715,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the OriginEndpoint.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -736,7 +739,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListChannelsOutput,
             smithy_http::result::SdkError<crate::error::ListChannelsError>,
         >
@@ -753,21 +756,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -786,7 +789,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListHarvestJobsOutput,
             smithy_http::result::SdkError<crate::error::ListHarvestJobsError>,
         >
@@ -803,42 +806,45 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
-        pub fn include_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include_channel_id(inp);
+        pub fn include_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include_channel_id(input);
             self
         }
         pub fn set_include_channel_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_include_channel_id(inp);
+            self.inner = self.inner.set_include_channel_id(input);
             self
         }
         /// When specified, the request will return only HarvestJobs in the given status.
-        pub fn include_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include_status(inp);
+        pub fn include_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include_status(input);
             self
         }
-        pub fn set_include_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_include_status(inp);
+        pub fn set_include_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_include_status(input);
             self
         }
         /// The upper bound on the number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -857,7 +863,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListOriginEndpointsOutput,
             smithy_http::result::SdkError<crate::error::ListOriginEndpointsError>,
         >
@@ -874,30 +880,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
         /// The upper bound on the number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -916,7 +922,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         >
@@ -932,12 +938,12 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -956,7 +962,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RotateChannelCredentialsOutput,
             smithy_http::result::SdkError<crate::error::RotateChannelCredentialsError>,
         >
@@ -973,12 +979,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the channel to update.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -997,7 +1003,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RotateIngestEndpointCredentialsOutput,
             smithy_http::result::SdkError<crate::error::RotateIngestEndpointCredentialsError>,
         >
@@ -1014,21 +1020,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the channel the IngestEndpoint is on.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// The id of the IngestEndpoint whose credentials should be rotated
-        pub fn ingest_endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ingest_endpoint_id(inp);
+        pub fn ingest_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ingest_endpoint_id(input);
             self
         }
-        pub fn set_ingest_endpoint_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_ingest_endpoint_id(inp);
+        pub fn set_ingest_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ingest_endpoint_id(input);
             self
         }
     }
@@ -1047,7 +1056,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -1063,12 +1072,12 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         pub fn tags(
@@ -1081,11 +1090,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1104,7 +1113,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -1120,12 +1129,12 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// The key(s) of tag to be deleted
@@ -1135,9 +1144,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -1156,7 +1165,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateChannelOutput,
             smithy_http::result::SdkError<crate::error::UpdateChannelError>,
         >
@@ -1173,21 +1182,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A short text description of the Channel.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// The ID of the Channel to update.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1206,7 +1215,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateOriginEndpointOutput,
             smithy_http::result::SdkError<crate::error::UpdateOriginEndpointError>,
         >
@@ -1223,127 +1232,130 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, inp: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(inp);
+        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
+            self.inner = self.inner.authorization(input);
             self
         }
         pub fn set_authorization(
             mut self,
-            inp: std::option::Option<crate::model::Authorization>,
+            input: std::option::Option<crate::model::Authorization>,
         ) -> Self {
-            self.inner = self.inner.set_authorization(inp);
+            self.inner = self.inner.set_authorization(input);
             self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
         pub fn cmaf_package(
             mut self,
-            inp: crate::model::CmafPackageCreateOrUpdateParameters,
+            input: crate::model::CmafPackageCreateOrUpdateParameters,
         ) -> Self {
-            self.inner = self.inner.cmaf_package(inp);
+            self.inner = self.inner.cmaf_package(input);
             self
         }
         pub fn set_cmaf_package(
             mut self,
-            inp: std::option::Option<crate::model::CmafPackageCreateOrUpdateParameters>,
+            input: std::option::Option<crate::model::CmafPackageCreateOrUpdateParameters>,
         ) -> Self {
-            self.inner = self.inner.set_cmaf_package(inp);
+            self.inner = self.inner.set_cmaf_package(input);
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn dash_package(mut self, inp: crate::model::DashPackage) -> Self {
-            self.inner = self.inner.dash_package(inp);
+        pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
+            self.inner = self.inner.dash_package(input);
             self
         }
         pub fn set_dash_package(
             mut self,
-            inp: std::option::Option<crate::model::DashPackage>,
+            input: std::option::Option<crate::model::DashPackage>,
         ) -> Self {
-            self.inner = self.inner.set_dash_package(inp);
+            self.inner = self.inner.set_dash_package(input);
             self
         }
         /// A short text description of the OriginEndpoint.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn hls_package(mut self, inp: crate::model::HlsPackage) -> Self {
-            self.inner = self.inner.hls_package(inp);
+        pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
+            self.inner = self.inner.hls_package(input);
             self
         }
         pub fn set_hls_package(
             mut self,
-            inp: std::option::Option<crate::model::HlsPackage>,
+            input: std::option::Option<crate::model::HlsPackage>,
         ) -> Self {
-            self.inner = self.inner.set_hls_package(inp);
+            self.inner = self.inner.set_hls_package(input);
             self
         }
         /// The ID of the OriginEndpoint to update.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_id(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
         /// A short string that will be appended to the end of the Endpoint URL.
-        pub fn manifest_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.manifest_name(inp);
+        pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.manifest_name(input);
             self
         }
-        pub fn set_manifest_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_manifest_name(inp);
+        pub fn set_manifest_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_manifest_name(input);
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-        pub fn mss_package(mut self, inp: crate::model::MssPackage) -> Self {
-            self.inner = self.inner.mss_package(inp);
+        pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
+            self.inner = self.inner.mss_package(input);
             self
         }
         pub fn set_mss_package(
             mut self,
-            inp: std::option::Option<crate::model::MssPackage>,
+            input: std::option::Option<crate::model::MssPackage>,
         ) -> Self {
-            self.inner = self.inner.set_mss_package(inp);
+            self.inner = self.inner.set_mss_package(input);
             self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
         /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
         /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-        pub fn origination(mut self, inp: crate::model::Origination) -> Self {
-            self.inner = self.inner.origination(inp);
+        pub fn origination(mut self, input: crate::model::Origination) -> Self {
+            self.inner = self.inner.origination(input);
             self
         }
         pub fn set_origination(
             mut self,
-            inp: std::option::Option<crate::model::Origination>,
+            input: std::option::Option<crate::model::Origination>,
         ) -> Self {
-            self.inner = self.inner.set_origination(inp);
+            self.inner = self.inner.set_origination(input);
             self
         }
         /// Maximum duration (in seconds) of content to retain for startover playback.
         /// If not specified, startover playback will be disabled for the OriginEndpoint.
-        pub fn startover_window_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.startover_window_seconds(inp);
+        pub fn startover_window_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.startover_window_seconds(input);
             self
         }
-        pub fn set_startover_window_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_startover_window_seconds(inp);
+        pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_startover_window_seconds(input);
             self
         }
         /// Amount of delay (in seconds) to enforce on the playback of live content.
         /// If not specified, there will be no time delay in effect for the OriginEndpoint.
-        pub fn time_delay_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.time_delay_seconds(inp);
+        pub fn time_delay_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.time_delay_seconds(input);
             self
         }
-        pub fn set_time_delay_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_time_delay_seconds(inp);
+        pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_time_delay_seconds(input);
             self
         }
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
@@ -1353,9 +1365,9 @@ pub mod fluent_builders {
         }
         pub fn set_whitelist(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_whitelist(inp);
+            self.inner = self.inner.set_whitelist(input);
             self
         }
     }

@@ -11,29 +11,31 @@ pub mod cancel_journal_kinesis_stream_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ledger_name = Some(inp.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ledger_name = Some(input.into());
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::string::String) -> Self {
-            self.ledger_name = Some(inp);
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ledger_name = input;
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
         /// canceled.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_id = Some(inp.into());
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
             self
         }
-        pub fn set_stream_id(mut self, inp: std::string::String) -> Self {
-            self.stream_id = Some(inp);
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelJournalKinesisStreamInput`](crate::input::CancelJournalKinesisStreamInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelJournalKinesisStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CancelJournalKinesisStreamInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CancelJournalKinesisStreamInput {
                 ledger_name: self.ledger_name.unwrap_or_default(),
                 stream_id: self.stream_id.unwrap_or_default(),
@@ -52,7 +54,7 @@ impl CancelJournalKinesisStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CancelJournalKinesisStream,
             aws_http::AwsErrorRetryPolicy,
@@ -115,7 +117,7 @@ impl CancelJournalKinesisStreamInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -123,7 +125,7 @@ impl CancelJournalKinesisStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -164,12 +166,12 @@ pub mod create_ledger_input {
         /// your ledgers in the current AWS Region.</p>
         /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
         /// in the <i>Amazon QLDB Developer Guide</i>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         pub fn tags(
@@ -184,14 +186,14 @@ pub mod create_ledger_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::option::Option<std::string::String>,
                 >,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
@@ -224,33 +226,34 @@ pub mod create_ledger_input {
         /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
         /// the security of your ledger data.</p>
         /// </note>
-        pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
-            self.permissions_mode = Some(inp);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.permissions_mode = Some(input);
             self
         }
         pub fn set_permissions_mode(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsMode>,
+            input: std::option::Option<crate::model::PermissionsMode>,
         ) -> Self {
-            self.permissions_mode = inp;
+            self.permissions_mode = input;
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateLedgerInput`](crate::input::CreateLedgerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLedgerInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateLedgerInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateLedgerInput {
                 name: self.name,
                 tags: self.tags,
@@ -270,7 +273,7 @@ impl CreateLedgerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateLedger,
             aws_http::AwsErrorRetryPolicy,
@@ -330,7 +333,7 @@ impl CreateLedgerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -338,7 +341,7 @@ impl CreateLedgerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -368,18 +371,19 @@ pub mod delete_ledger_input {
     }
     impl Builder {
         /// <p>The name of the ledger that you want to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteLedgerInput`](crate::input::DeleteLedgerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLedgerInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteLedgerInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteLedgerInput {
                 name: self.name.unwrap_or_default(),
             })
@@ -396,7 +400,7 @@ impl DeleteLedgerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteLedger,
             aws_http::AwsErrorRetryPolicy,
@@ -458,7 +462,7 @@ impl DeleteLedgerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -466,7 +470,7 @@ impl DeleteLedgerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -497,28 +501,28 @@ pub mod describe_journal_kinesis_stream_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ledger_name = Some(inp.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ledger_name = Some(input.into());
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::string::String) -> Self {
-            self.ledger_name = Some(inp);
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ledger_name = input;
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
         /// describe.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_id = Some(inp.into());
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
             self
         }
-        pub fn set_stream_id(mut self, inp: std::string::String) -> Self {
-            self.stream_id = Some(inp);
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeJournalKinesisStreamInput`](crate::input::DescribeJournalKinesisStreamInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeJournalKinesisStreamInput,
             smithy_http::operation::BuildError,
         > {
@@ -540,7 +544,7 @@ impl DescribeJournalKinesisStreamInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeJournalKinesisStream,
             aws_http::AwsErrorRetryPolicy,
@@ -603,7 +607,7 @@ impl DescribeJournalKinesisStreamInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -611,7 +615,7 @@ impl DescribeJournalKinesisStreamInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -642,29 +646,31 @@ pub mod describe_journal_s3_export_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
         /// describe.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_id = Some(inp.into());
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_id = Some(input.into());
             self
         }
-        pub fn set_export_id(mut self, inp: std::string::String) -> Self {
-            self.export_id = Some(inp);
+        pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeJournalS3ExportInput`](crate::input::DescribeJournalS3ExportInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeJournalS3ExportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeJournalS3ExportInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeJournalS3ExportInput {
                 name: self.name.unwrap_or_default(),
                 export_id: self.export_id.unwrap_or_default(),
@@ -683,7 +689,7 @@ impl DescribeJournalS3ExportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeJournalS3Export,
             aws_http::AwsErrorRetryPolicy,
@@ -746,7 +752,7 @@ impl DescribeJournalS3ExportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -754,7 +760,7 @@ impl DescribeJournalS3ExportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -784,18 +790,21 @@ pub mod describe_ledger_input {
     }
     impl Builder {
         /// <p>The name of the ledger that you want to describe.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLedgerInput`](crate::input::DescribeLedgerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLedgerInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeLedgerInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeLedgerInput {
                 name: self.name.unwrap_or_default(),
             })
@@ -812,7 +821,7 @@ impl DescribeLedgerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeLedger,
             aws_http::AwsErrorRetryPolicy,
@@ -874,7 +883,7 @@ impl DescribeLedgerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -882,7 +891,7 @@ impl DescribeLedgerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -917,12 +926,12 @@ pub mod export_journal_to_s3_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The inclusive start date and time for the range of journal contents to export.</p>
@@ -933,15 +942,15 @@ pub mod export_journal_to_s3_input {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inclusive_start_time = Some(inp);
+        pub fn inclusive_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inclusive_start_time = Some(input);
             self
         }
         pub fn set_inclusive_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inclusive_start_time = inp;
+            self.inclusive_start_time = input;
             self
         }
         /// <p>The exclusive end date and time for the range of journal contents to export.</p>
@@ -950,28 +959,31 @@ pub mod export_journal_to_s3_input {
         /// <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
         /// time.</p>
-        pub fn exclusive_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.exclusive_end_time = Some(inp);
+        pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.exclusive_end_time = Some(input);
             self
         }
         pub fn set_exclusive_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.exclusive_end_time = inp;
+            self.exclusive_end_time = input;
             self
         }
         /// <p>The configuration settings of the Amazon S3 bucket destination for your export
         /// request.</p>
-        pub fn s3_export_configuration(mut self, inp: crate::model::S3ExportConfiguration) -> Self {
-            self.s3_export_configuration = Some(inp);
+        pub fn s3_export_configuration(
+            mut self,
+            input: crate::model::S3ExportConfiguration,
+        ) -> Self {
+            self.s3_export_configuration = Some(input);
             self
         }
         pub fn set_s3_export_configuration(
             mut self,
-            inp: std::option::Option<crate::model::S3ExportConfiguration>,
+            input: std::option::Option<crate::model::S3ExportConfiguration>,
         ) -> Self {
-            self.s3_export_configuration = inp;
+            self.s3_export_configuration = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
@@ -985,19 +997,21 @@ pub mod export_journal_to_s3_input {
         /// KMS) for server-side encryption of your exported data.</p>
         /// </li>
         /// </ul>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportJournalToS3Input`](crate::input::ExportJournalToS3Input)
         pub fn build(
             self,
-        ) -> Result<crate::input::ExportJournalToS3Input, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExportJournalToS3Input,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExportJournalToS3Input {
                 name: self.name.unwrap_or_default(),
                 inclusive_start_time: self.inclusive_start_time,
@@ -1018,7 +1032,7 @@ impl ExportJournalToS3Input {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ExportJournalToS3,
             aws_http::AwsErrorRetryPolicy,
@@ -1083,7 +1097,7 @@ impl ExportJournalToS3Input {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1091,7 +1105,7 @@ impl ExportJournalToS3Input {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1123,47 +1137,48 @@ pub mod get_block_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The location of the block that you want to request. An address is an Amazon Ion
         /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-        pub fn block_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.block_address = Some(inp);
+        pub fn block_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.block_address = Some(input);
             self
         }
         pub fn set_block_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.block_address = inp;
+            self.block_address = input;
             self
         }
         /// <p>The latest block location covered by the digest for which to request a proof. An address
         /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-        pub fn digest_tip_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.digest_tip_address = Some(inp);
+        pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.digest_tip_address = Some(input);
             self
         }
         pub fn set_digest_tip_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.digest_tip_address = inp;
+            self.digest_tip_address = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBlockInput`](crate::input::GetBlockInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBlockInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetBlockInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetBlockInput {
                 name: self.name.unwrap_or_default(),
                 block_address: self.block_address,
@@ -1182,7 +1197,7 @@ impl GetBlockInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBlock,
             aws_http::AwsErrorRetryPolicy,
@@ -1242,7 +1257,7 @@ impl GetBlockInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1250,7 +1265,7 @@ impl GetBlockInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1280,18 +1295,19 @@ pub mod get_digest_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDigestInput`](crate::input::GetDigestInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDigestInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetDigestInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetDigestInput {
                 name: self.name.unwrap_or_default(),
             })
@@ -1308,7 +1324,7 @@ impl GetDigestInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDigest,
             aws_http::AwsErrorRetryPolicy,
@@ -1365,7 +1381,7 @@ impl GetDigestInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1373,7 +1389,7 @@ impl GetDigestInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1406,56 +1422,57 @@ pub mod get_revision_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
         /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-        pub fn block_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.block_address = Some(inp);
+        pub fn block_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.block_address = Some(input);
             self
         }
         pub fn set_block_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.block_address = inp;
+            self.block_address = input;
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document_id = Some(inp.into());
+        pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_id = Some(input.into());
             self
         }
-        pub fn set_document_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document_id = inp;
+        pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_id = input;
             self
         }
         /// <p>The latest block location covered by the digest for which to request a proof. An address
         /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-        pub fn digest_tip_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.digest_tip_address = Some(inp);
+        pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.digest_tip_address = Some(input);
             self
         }
         pub fn set_digest_tip_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.digest_tip_address = inp;
+            self.digest_tip_address = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRevisionInput`](crate::input::GetRevisionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRevisionInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetRevisionInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetRevisionInput {
                 name: self.name.unwrap_or_default(),
                 block_address: self.block_address,
@@ -1475,7 +1492,7 @@ impl GetRevisionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRevision,
             aws_http::AwsErrorRetryPolicy,
@@ -1537,7 +1554,7 @@ impl GetRevisionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1545,7 +1562,7 @@ impl GetRevisionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1577,41 +1594,41 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ledger_name = Some(inp.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ledger_name = Some(input.into());
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::string::String) -> Self {
-            self.ledger_name = Some(inp);
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ledger_name = input;
             self
         }
         /// <p>The maximum number of results to return in a single
         /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
         /// returned might be fewer.)</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerInput`](crate::input::ListJournalKinesisStreamsForLedgerInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListJournalKinesisStreamsForLedgerInput,
             smithy_http::operation::BuildError,
         > {
@@ -1634,7 +1651,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListJournalKinesisStreamsForLedger,
             aws_http::AwsErrorRetryPolicy,
@@ -1705,7 +1722,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -1714,7 +1731,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1746,31 +1763,33 @@ pub mod list_journal_s3_exports_input {
     impl Builder {
         /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
         /// request. (The actual number of results returned might be fewer.)</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalS3Exports</code> call, then you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListJournalS3ExportsInput`](crate::input::ListJournalS3ExportsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListJournalS3ExportsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListJournalS3ExportsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListJournalS3ExportsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -1788,7 +1807,7 @@ impl ListJournalS3ExportsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListJournalS3Exports,
             aws_http::AwsErrorRetryPolicy,
@@ -1854,7 +1873,7 @@ impl ListJournalS3ExportsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -1863,7 +1882,7 @@ impl ListJournalS3ExportsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1895,41 +1914,41 @@ pub mod list_journal_s3_exports_for_ledger_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The maximum number of results to return in a single
         /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
         /// returned might be fewer.)</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListJournalS3ExportsForLedgerInput`](crate::input::ListJournalS3ExportsForLedgerInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListJournalS3ExportsForLedgerInput,
             smithy_http::operation::BuildError,
         > {
@@ -1952,7 +1971,7 @@ impl ListJournalS3ExportsForLedgerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListJournalS3ExportsForLedger,
             aws_http::AwsErrorRetryPolicy,
@@ -2023,7 +2042,7 @@ impl ListJournalS3ExportsForLedgerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -2032,7 +2051,7 @@ impl ListJournalS3ExportsForLedgerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2064,29 +2083,30 @@ pub mod list_ledgers_input {
     impl Builder {
         /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
         /// (The actual number of results returned might be fewer.)</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListLedgers</code> call, then you should use that value as input here.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListLedgersInput`](crate::input::ListLedgersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLedgersInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListLedgersInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListLedgersInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -2104,7 +2124,7 @@ impl ListLedgersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListLedgers,
             aws_http::AwsErrorRetryPolicy,
@@ -2167,7 +2187,7 @@ impl ListLedgersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -2176,7 +2196,7 @@ impl ListLedgersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2209,19 +2229,21 @@ pub mod list_tags_for_resource_input {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
             })
@@ -2238,7 +2260,7 @@ impl ListTagsForResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
@@ -2300,7 +2322,7 @@ impl ListTagsForResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -2308,7 +2330,7 @@ impl ListTagsForResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2349,22 +2371,22 @@ pub mod stream_journal_to_kinesis_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ledger_name = Some(inp.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ledger_name = Some(input.into());
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::string::String) -> Self {
-            self.ledger_name = Some(inp);
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ledger_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
         /// journal stream to write data records to a Kinesis Data Streams resource.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         pub fn tags(
@@ -2379,14 +2401,14 @@ pub mod stream_journal_to_kinesis_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::option::Option<std::string::String>,
                 >,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The inclusive start date and time from which to start streaming journal data. This
@@ -2397,15 +2419,15 @@ pub mod stream_journal_to_kinesis_input {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inclusive_start_time = Some(inp);
+        pub fn inclusive_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inclusive_start_time = Some(input);
             self
         }
         pub fn set_inclusive_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inclusive_start_time = inp;
+            self.inclusive_start_time = input;
             self
         }
         /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
@@ -2413,27 +2435,27 @@ pub mod stream_journal_to_kinesis_input {
         /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
         /// and in Universal Coordinated Time (UTC). For example:
         /// <code>2019-06-13T21:36:34Z</code>.</p>
-        pub fn exclusive_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.exclusive_end_time = Some(inp);
+        pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.exclusive_end_time = Some(input);
             self
         }
         pub fn set_exclusive_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.exclusive_end_time = inp;
+            self.exclusive_end_time = input;
             self
         }
         /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
-        pub fn kinesis_configuration(mut self, inp: crate::model::KinesisConfiguration) -> Self {
-            self.kinesis_configuration = Some(inp);
+        pub fn kinesis_configuration(mut self, input: crate::model::KinesisConfiguration) -> Self {
+            self.kinesis_configuration = Some(input);
             self
         }
         pub fn set_kinesis_configuration(
             mut self,
-            inp: std::option::Option<crate::model::KinesisConfiguration>,
+            input: std::option::Option<crate::model::KinesisConfiguration>,
         ) -> Self {
-            self.kinesis_configuration = inp;
+            self.kinesis_configuration = input;
             self
         }
         /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
@@ -2442,19 +2464,21 @@ pub mod stream_journal_to_kinesis_input {
         /// given ledger. Stream names have the same naming constraints as ledger names, as defined in
         /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer
         /// Guide</i>.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// Consumes the builder and constructs a [`StreamJournalToKinesisInput`](crate::input::StreamJournalToKinesisInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StreamJournalToKinesisInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StreamJournalToKinesisInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StreamJournalToKinesisInput {
                 ledger_name: self.ledger_name.unwrap_or_default(),
                 role_arn: self.role_arn,
@@ -2477,7 +2501,7 @@ impl StreamJournalToKinesisInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StreamJournalToKinesis,
             aws_http::AwsErrorRetryPolicy,
@@ -2542,7 +2566,7 @@ impl StreamJournalToKinesisInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2550,7 +2574,7 @@ impl StreamJournalToKinesisInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2589,12 +2613,12 @@ pub mod tag_resource_input {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         pub fn tags(
@@ -2609,20 +2633,21 @@ pub mod tag_resource_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::option::Option<std::string::String>,
                 >,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
                 tags: self.tags,
@@ -2640,7 +2665,7 @@ impl TagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -2702,7 +2727,7 @@ impl TagResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2710,7 +2735,7 @@ impl TagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2744,31 +2769,32 @@ pub mod untag_resource_input {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
                 tag_keys: self.tag_keys,
@@ -2786,7 +2812,7 @@ impl UntagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -2856,7 +2882,7 @@ impl UntagResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -2865,7 +2891,7 @@ impl UntagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2896,30 +2922,31 @@ pub mod update_ledger_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateLedgerInput`](crate::input::UpdateLedgerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateLedgerInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateLedgerInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateLedgerInput {
                 name: self.name.unwrap_or_default(),
                 deletion_protection: self.deletion_protection,
@@ -2937,7 +2964,7 @@ impl UpdateLedgerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateLedger,
             aws_http::AwsErrorRetryPolicy,
@@ -3002,7 +3029,7 @@ impl UpdateLedgerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -3010,7 +3037,7 @@ impl UpdateLedgerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3041,12 +3068,12 @@ pub mod update_ledger_permissions_mode_input {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
@@ -3079,21 +3106,21 @@ pub mod update_ledger_permissions_mode_input {
         /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
         /// the security of your ledger data.</p>
         /// </note>
-        pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
-            self.permissions_mode = Some(inp);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.permissions_mode = Some(input);
             self
         }
         pub fn set_permissions_mode(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsMode>,
+            input: std::option::Option<crate::model::PermissionsMode>,
         ) -> Self {
-            self.permissions_mode = inp;
+            self.permissions_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeInput`](crate::input::UpdateLedgerPermissionsModeInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateLedgerPermissionsModeInput,
             smithy_http::operation::BuildError,
         > {
@@ -3115,7 +3142,7 @@ impl UpdateLedgerPermissionsModeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateLedgerPermissionsMode,
             aws_http::AwsErrorRetryPolicy,
@@ -3181,7 +3208,7 @@ impl UpdateLedgerPermissionsModeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
@@ -3189,7 +3216,7 @@ impl UpdateLedgerPermissionsModeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)

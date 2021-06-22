@@ -226,7 +226,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AcceptInputDeviceTransferOutput,
             smithy_http::result::SdkError<crate::error::AcceptInputDeviceTransferError>,
         >
@@ -243,12 +243,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input);
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_device_id(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
             self
         }
     }
@@ -267,7 +270,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchDeleteOutput,
             smithy_http::result::SdkError<crate::error::BatchDeleteError>,
         >
@@ -290,9 +293,9 @@ pub mod fluent_builders {
         }
         pub fn set_channel_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_channel_ids(inp);
+            self.inner = self.inner.set_channel_ids(input);
             self
         }
         /// List of input IDs
@@ -302,9 +305,9 @@ pub mod fluent_builders {
         }
         pub fn set_input_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_input_ids(inp);
+            self.inner = self.inner.set_input_ids(input);
             self
         }
         /// List of input security group IDs
@@ -314,9 +317,9 @@ pub mod fluent_builders {
         }
         pub fn set_input_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_input_security_group_ids(inp);
+            self.inner = self.inner.set_input_security_group_ids(input);
             self
         }
         /// List of multiplex IDs
@@ -326,9 +329,9 @@ pub mod fluent_builders {
         }
         pub fn set_multiplex_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_multiplex_ids(inp);
+            self.inner = self.inner.set_multiplex_ids(input);
             self
         }
     }
@@ -347,7 +350,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchStartOutput,
             smithy_http::result::SdkError<crate::error::BatchStartError>,
         >
@@ -370,9 +373,9 @@ pub mod fluent_builders {
         }
         pub fn set_channel_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_channel_ids(inp);
+            self.inner = self.inner.set_channel_ids(input);
             self
         }
         /// List of multiplex IDs
@@ -382,9 +385,9 @@ pub mod fluent_builders {
         }
         pub fn set_multiplex_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_multiplex_ids(inp);
+            self.inner = self.inner.set_multiplex_ids(input);
             self
         }
     }
@@ -403,7 +406,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchStopOutput,
             smithy_http::result::SdkError<crate::error::BatchStopError>,
         >
@@ -426,9 +429,9 @@ pub mod fluent_builders {
         }
         pub fn set_channel_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_channel_ids(inp);
+            self.inner = self.inner.set_channel_ids(input);
             self
         }
         /// List of multiplex IDs
@@ -438,9 +441,9 @@ pub mod fluent_builders {
         }
         pub fn set_multiplex_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_multiplex_ids(inp);
+            self.inner = self.inner.set_multiplex_ids(input);
             self
         }
     }
@@ -459,7 +462,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchUpdateScheduleOutput,
             smithy_http::result::SdkError<crate::error::BatchUpdateScheduleError>,
         >
@@ -476,36 +479,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Id of the channel whose schedule is being updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
         /// Schedule actions to create in the schedule.
-        pub fn creates(mut self, inp: crate::model::BatchScheduleActionCreateRequest) -> Self {
-            self.inner = self.inner.creates(inp);
+        pub fn creates(mut self, input: crate::model::BatchScheduleActionCreateRequest) -> Self {
+            self.inner = self.inner.creates(input);
             self
         }
         pub fn set_creates(
             mut self,
-            inp: std::option::Option<crate::model::BatchScheduleActionCreateRequest>,
+            input: std::option::Option<crate::model::BatchScheduleActionCreateRequest>,
         ) -> Self {
-            self.inner = self.inner.set_creates(inp);
+            self.inner = self.inner.set_creates(input);
             self
         }
         /// Schedule actions to delete from the schedule.
-        pub fn deletes(mut self, inp: crate::model::BatchScheduleActionDeleteRequest) -> Self {
-            self.inner = self.inner.deletes(inp);
+        pub fn deletes(mut self, input: crate::model::BatchScheduleActionDeleteRequest) -> Self {
+            self.inner = self.inner.deletes(input);
             self
         }
         pub fn set_deletes(
             mut self,
-            inp: std::option::Option<crate::model::BatchScheduleActionDeleteRequest>,
+            input: std::option::Option<crate::model::BatchScheduleActionDeleteRequest>,
         ) -> Self {
-            self.inner = self.inner.set_deletes(inp);
+            self.inner = self.inner.set_deletes(input);
             self
         }
     }
@@ -524,7 +527,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CancelInputDeviceTransferOutput,
             smithy_http::result::SdkError<crate::error::CancelInputDeviceTransferError>,
         >
@@ -541,12 +544,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input);
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_device_id(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
             self
         }
     }
@@ -565,7 +571,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateChannelOutput,
             smithy_http::result::SdkError<crate::error::CreateChannelError>,
         >
@@ -582,27 +588,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(mut self, inp: crate::model::CdiInputSpecification) -> Self {
-            self.inner = self.inner.cdi_input_specification(inp);
+        pub fn cdi_input_specification(
+            mut self,
+            input: crate::model::CdiInputSpecification,
+        ) -> Self {
+            self.inner = self.inner.cdi_input_specification(input);
             self
         }
         pub fn set_cdi_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::CdiInputSpecification>,
+            input: std::option::Option<crate::model::CdiInputSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_cdi_input_specification(inp);
+            self.inner = self.inner.set_cdi_input_specification(input);
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.inner = self.inner.channel_class(inp);
+        pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
+            self.inner = self.inner.channel_class(input);
             self
         }
         pub fn set_channel_class(
             mut self,
-            inp: std::option::Option<crate::model::ChannelClass>,
+            input: std::option::Option<crate::model::ChannelClass>,
         ) -> Self {
-            self.inner = self.inner.set_channel_class(inp);
+            self.inner = self.inner.set_channel_class(input);
             self
         }
         /// Placeholder documentation for __listOfOutputDestination
@@ -612,21 +621,21 @@ pub mod fluent_builders {
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
         ) -> Self {
-            self.inner = self.inner.set_destinations(inp);
+            self.inner = self.inner.set_destinations(input);
             self
         }
         /// Encoder Settings
-        pub fn encoder_settings(mut self, inp: crate::model::EncoderSettings) -> Self {
-            self.inner = self.inner.encoder_settings(inp);
+        pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
+            self.inner = self.inner.encoder_settings(input);
             self
         }
         pub fn set_encoder_settings(
             mut self,
-            inp: std::option::Option<crate::model::EncoderSettings>,
+            input: std::option::Option<crate::model::EncoderSettings>,
         ) -> Self {
-            self.inner = self.inner.set_encoder_settings(inp);
+            self.inner = self.inner.set_encoder_settings(input);
             self
         }
         /// List of input attachments for channel.
@@ -636,67 +645,67 @@ pub mod fluent_builders {
         }
         pub fn set_input_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         ) -> Self {
-            self.inner = self.inner.set_input_attachments(inp);
+            self.inner = self.inner.set_input_attachments(input);
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn input_specification(mut self, inp: crate::model::InputSpecification) -> Self {
-            self.inner = self.inner.input_specification(inp);
+        pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
+            self.inner = self.inner.input_specification(input);
             self
         }
         pub fn set_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::InputSpecification>,
+            input: std::option::Option<crate::model::InputSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_input_specification(inp);
+            self.inner = self.inner.set_input_specification(input);
             self
         }
         /// The log level to write to CloudWatch Logs.
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.inner = self.inner.log_level(inp);
+        pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.inner = self.inner.log_level(input);
             self
         }
-        pub fn set_log_level(mut self, inp: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.inner = self.inner.set_log_level(inp);
+        pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
+            self.inner = self.inner.set_log_level(input);
             self
         }
         /// Name of channel.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// Unique request ID to be specified. This is needed to prevent retries from
         /// creating multiple resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input);
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_request_id(inp);
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_request_id(input);
             self
         }
         /// Deprecated field that's only usable by whitelisted customers.
-        pub fn reserved(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved(inp);
+        pub fn reserved(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved(input);
             self
         }
-        pub fn set_reserved(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_reserved(inp);
+        pub fn set_reserved(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_reserved(input);
             self
         }
         /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// A collection of key-value pairs.
@@ -710,23 +719,23 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// Settings for VPC output
-        pub fn vpc(mut self, inp: crate::model::VpcOutputSettings) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: crate::model::VpcOutputSettings) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
         pub fn set_vpc(
             mut self,
-            inp: std::option::Option<crate::model::VpcOutputSettings>,
+            input: std::option::Option<crate::model::VpcOutputSettings>,
         ) -> Self {
-            self.inner = self.inner.set_vpc(inp);
+            self.inner = self.inner.set_vpc(input);
             self
         }
     }
@@ -745,7 +754,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateInputOutput,
             smithy_http::result::SdkError<crate::error::CreateInputError>,
         >
@@ -771,9 +780,9 @@ pub mod fluent_builders {
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
         ) -> Self {
-            self.inner = self.inner.set_destinations(inp);
+            self.inner = self.inner.set_destinations(input);
             self
         }
         /// Settings for the devices.
@@ -783,9 +792,9 @@ pub mod fluent_builders {
         }
         pub fn set_input_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
         ) -> Self {
-            self.inner = self.inner.set_input_devices(inp);
+            self.inner = self.inner.set_input_devices(input);
             self
         }
         /// A list of security groups referenced by IDs to attach to the input.
@@ -795,9 +804,9 @@ pub mod fluent_builders {
         }
         pub fn set_input_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_input_security_groups(inp);
+            self.inner = self.inner.set_input_security_groups(input);
             self
         }
         /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
@@ -812,37 +821,37 @@ pub mod fluent_builders {
         }
         pub fn set_media_connect_flows(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
         ) -> Self {
-            self.inner = self.inner.set_media_connect_flows(inp);
+            self.inner = self.inner.set_media_connect_flows(input);
             self
         }
         /// Name of the input.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// Unique identifier of the request to ensure the request is handled
         /// exactly once in case of retries.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input);
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_request_id(inp);
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_request_id(input);
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// The source URLs for a PULL-type input. Every PULL type input needs
@@ -854,9 +863,9 @@ pub mod fluent_builders {
         }
         pub fn set_sources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
         ) -> Self {
-            self.inner = self.inner.set_sources(inp);
+            self.inner = self.inner.set_sources(input);
             self
         }
         /// A collection of key-value pairs.
@@ -870,32 +879,35 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// Placeholder documentation for InputType
-        pub fn r#type(mut self, inp: crate::model::InputType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::InputType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::InputType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::InputType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// Settings for a private VPC Input.
         /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
         /// This property requires setting the roleArn property on Input creation.
         /// Not compatible with the inputSecurityGroups property.
-        pub fn vpc(mut self, inp: crate::model::InputVpcRequest) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: crate::model::InputVpcRequest) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::InputVpcRequest>) -> Self {
-            self.inner = self.inner.set_vpc(inp);
+        pub fn set_vpc(
+            mut self,
+            input: std::option::Option<crate::model::InputVpcRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc(input);
             self
         }
     }
@@ -914,7 +926,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateInputSecurityGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateInputSecurityGroupError>,
         >
@@ -941,11 +953,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// List of IPv4 CIDR addresses to whitelist
@@ -958,9 +970,9 @@ pub mod fluent_builders {
         }
         pub fn set_whitelist_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
         ) -> Self {
-            self.inner = self.inner.set_whitelist_rules(inp);
+            self.inner = self.inner.set_whitelist_rules(input);
             self
         }
     }
@@ -979,7 +991,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateMultiplexOutput,
             smithy_http::result::SdkError<crate::error::CreateMultiplexError>,
         >
@@ -1002,40 +1014,40 @@ pub mod fluent_builders {
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_availability_zones(inp);
+            self.inner = self.inner.set_availability_zones(input);
             self
         }
         /// Configuration for a multiplex event.
-        pub fn multiplex_settings(mut self, inp: crate::model::MultiplexSettings) -> Self {
-            self.inner = self.inner.multiplex_settings(inp);
+        pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
+            self.inner = self.inner.multiplex_settings(input);
             self
         }
         pub fn set_multiplex_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexSettings>,
+            input: std::option::Option<crate::model::MultiplexSettings>,
         ) -> Self {
-            self.inner = self.inner.set_multiplex_settings(inp);
+            self.inner = self.inner.set_multiplex_settings(input);
             self
         }
         /// Name of multiplex.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// Unique request ID. This prevents retries from creating multiple
         /// resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input);
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_request_id(inp);
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_request_id(input);
             self
         }
         /// A collection of key-value pairs.
@@ -1049,11 +1061,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1072,7 +1084,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateMultiplexProgramOutput,
             smithy_http::result::SdkError<crate::error::CreateMultiplexProgramError>,
         >
@@ -1089,46 +1101,46 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ID of the multiplex where the program is to be created.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
         /// The settings for this multiplex program.
         pub fn multiplex_program_settings(
             mut self,
-            inp: crate::model::MultiplexProgramSettings,
+            input: crate::model::MultiplexProgramSettings,
         ) -> Self {
-            self.inner = self.inner.multiplex_program_settings(inp);
+            self.inner = self.inner.multiplex_program_settings(input);
             self
         }
         pub fn set_multiplex_program_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexProgramSettings>,
+            input: std::option::Option<crate::model::MultiplexProgramSettings>,
         ) -> Self {
-            self.inner = self.inner.set_multiplex_program_settings(inp);
+            self.inner = self.inner.set_multiplex_program_settings(input);
             self
         }
         /// Name of multiplex program.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(input);
             self
         }
-        pub fn set_program_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_program_name(inp);
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_program_name(input);
             self
         }
         /// Unique request ID. This prevents retries from creating multiple
         /// resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input);
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_request_id(inp);
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_request_id(input);
             self
         }
     }
@@ -1147,7 +1159,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreatePartnerInputOutput,
             smithy_http::result::SdkError<crate::error::CreatePartnerInputError>,
         >
@@ -1164,22 +1176,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique ID of the input.
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input);
             self
         }
-        pub fn set_input_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_id(inp);
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_input_id(input);
             self
         }
         /// Unique identifier of the request to ensure the request is handled
         /// exactly once in case of retries.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input);
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_request_id(inp);
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_request_id(input);
             self
         }
         /// A collection of key-value pairs.
@@ -1193,11 +1205,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1216,7 +1228,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTagsOutput,
             smithy_http::result::SdkError<crate::error::CreateTagsError>,
         >
@@ -1233,12 +1245,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// Placeholder documentation for Tags
@@ -1252,11 +1264,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1275,7 +1287,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteChannelOutput,
             smithy_http::result::SdkError<crate::error::DeleteChannelError>,
         >
@@ -1292,12 +1304,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique ID of the channel.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
     }
@@ -1316,7 +1328,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteInputOutput,
             smithy_http::result::SdkError<crate::error::DeleteInputError>,
         >
@@ -1333,12 +1345,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique ID of the input
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input);
             self
         }
-        pub fn set_input_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_id(inp);
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_input_id(input);
             self
         }
     }
@@ -1357,7 +1369,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteInputSecurityGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteInputSecurityGroupError>,
         >
@@ -1374,12 +1386,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Input Security Group to delete
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_group_id(inp);
+        pub fn input_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_security_group_id(input);
             self
         }
-        pub fn set_input_security_group_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_security_group_id(inp);
+        pub fn set_input_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_security_group_id(input);
             self
         }
     }
@@ -1398,7 +1413,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteMultiplexOutput,
             smithy_http::result::SdkError<crate::error::DeleteMultiplexError>,
         >
@@ -1415,12 +1430,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
     }
@@ -1439,7 +1454,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteMultiplexProgramOutput,
             smithy_http::result::SdkError<crate::error::DeleteMultiplexProgramError>,
         >
@@ -1456,21 +1471,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex that the program belongs to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
         /// The multiplex program name.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(input);
             self
         }
-        pub fn set_program_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_program_name(inp);
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_program_name(input);
             self
         }
     }
@@ -1489,7 +1504,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteReservationOutput,
             smithy_http::result::SdkError<crate::error::DeleteReservationError>,
         >
@@ -1506,12 +1521,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_id(inp);
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_id(input);
             self
         }
-        pub fn set_reservation_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_reservation_id(inp);
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reservation_id(input);
             self
         }
     }
@@ -1530,7 +1548,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteScheduleOutput,
             smithy_http::result::SdkError<crate::error::DeleteScheduleError>,
         >
@@ -1547,12 +1565,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Id of the channel whose schedule is being deleted.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
     }
@@ -1571,7 +1589,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteTagsOutput,
             smithy_http::result::SdkError<crate::error::DeleteTagsError>,
         >
@@ -1588,12 +1606,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// An array of tag keys to delete
@@ -1603,9 +1621,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -1624,7 +1642,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeChannelOutput,
             smithy_http::result::SdkError<crate::error::DescribeChannelError>,
         >
@@ -1641,12 +1659,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// channel ID
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
     }
@@ -1665,7 +1683,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeInputOutput,
             smithy_http::result::SdkError<crate::error::DescribeInputError>,
         >
@@ -1682,12 +1700,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique ID of the input
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input);
             self
         }
-        pub fn set_input_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_id(inp);
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_input_id(input);
             self
         }
     }
@@ -1706,7 +1724,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeInputDeviceOutput,
             smithy_http::result::SdkError<crate::error::DescribeInputDeviceError>,
         >
@@ -1723,12 +1741,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input);
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_device_id(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
             self
         }
     }
@@ -1747,7 +1768,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeInputDeviceThumbnailOutput,
             smithy_http::result::SdkError<crate::error::DescribeInputDeviceThumbnailError>,
         >
@@ -1764,21 +1785,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input);
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_device_id(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
             self
         }
         /// The HTTP Accept header. Indicates the requested type for the thumbnail.
-        pub fn accept(mut self, inp: crate::model::AcceptHeader) -> Self {
-            self.inner = self.inner.accept(inp);
+        pub fn accept(mut self, input: crate::model::AcceptHeader) -> Self {
+            self.inner = self.inner.accept(input);
             self
         }
-        pub fn set_accept(mut self, inp: std::option::Option<crate::model::AcceptHeader>) -> Self {
-            self.inner = self.inner.set_accept(inp);
+        pub fn set_accept(
+            mut self,
+            input: std::option::Option<crate::model::AcceptHeader>,
+        ) -> Self {
+            self.inner = self.inner.set_accept(input);
             self
         }
     }
@@ -1797,7 +1824,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeInputSecurityGroupOutput,
             smithy_http::result::SdkError<crate::error::DescribeInputSecurityGroupError>,
         >
@@ -1814,12 +1841,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The id of the Input Security Group to describe
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_group_id(inp);
+        pub fn input_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_security_group_id(input);
             self
         }
-        pub fn set_input_security_group_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_security_group_id(inp);
+        pub fn set_input_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_security_group_id(input);
             self
         }
     }
@@ -1838,7 +1868,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeMultiplexOutput,
             smithy_http::result::SdkError<crate::error::DescribeMultiplexError>,
         >
@@ -1855,12 +1885,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
     }
@@ -1879,7 +1909,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeMultiplexProgramOutput,
             smithy_http::result::SdkError<crate::error::DescribeMultiplexProgramError>,
         >
@@ -1896,21 +1926,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex that the program belongs to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
         /// The name of the program.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(input);
             self
         }
-        pub fn set_program_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_program_name(inp);
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_program_name(input);
             self
         }
     }
@@ -1929,7 +1959,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeOfferingOutput,
             smithy_http::result::SdkError<crate::error::DescribeOfferingError>,
         >
@@ -1946,12 +1976,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique offering ID, e.g. '87654321'
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_id(inp);
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_id(input);
             self
         }
-        pub fn set_offering_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_offering_id(inp);
+        pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_offering_id(input);
             self
         }
     }
@@ -1970,7 +2000,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeReservationOutput,
             smithy_http::result::SdkError<crate::error::DescribeReservationError>,
         >
@@ -1987,12 +2017,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_id(inp);
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_id(input);
             self
         }
-        pub fn set_reservation_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_reservation_id(inp);
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reservation_id(input);
             self
         }
     }
@@ -2011,7 +2044,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeScheduleOutput,
             smithy_http::result::SdkError<crate::error::DescribeScheduleError>,
         >
@@ -2028,30 +2061,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Id of the channel whose schedule is being updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2070,7 +2103,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListChannelsOutput,
             smithy_http::result::SdkError<crate::error::ListChannelsError>,
         >
@@ -2087,21 +2120,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2120,7 +2153,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListInputDevicesOutput,
             smithy_http::result::SdkError<crate::error::ListInputDevicesError>,
         >
@@ -2137,21 +2170,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2170,7 +2203,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListInputDeviceTransfersOutput,
             smithy_http::result::SdkError<crate::error::ListInputDeviceTransfersError>,
         >
@@ -2187,30 +2220,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
-            self
-        }
-        /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
-            self
-        }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// Placeholder documentation for __string
-        pub fn transfer_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transfer_type(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_transfer_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_transfer_type(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// Placeholder documentation for __string
+        pub fn transfer_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transfer_type(input);
+            self
+        }
+        pub fn set_transfer_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transfer_type(input);
             self
         }
     }
@@ -2229,7 +2265,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListInputsOutput,
             smithy_http::result::SdkError<crate::error::ListInputsError>,
         >
@@ -2246,21 +2282,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2279,7 +2315,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListInputSecurityGroupsOutput,
             smithy_http::result::SdkError<crate::error::ListInputSecurityGroupsError>,
         >
@@ -2296,21 +2332,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2329,7 +2365,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListMultiplexesOutput,
             smithy_http::result::SdkError<crate::error::ListMultiplexesError>,
         >
@@ -2346,21 +2382,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of items to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// The token to retrieve the next page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2379,7 +2415,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListMultiplexProgramsOutput,
             smithy_http::result::SdkError<crate::error::ListMultiplexProgramsError>,
         >
@@ -2396,30 +2432,30 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of items to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// The ID of the multiplex that the programs belong to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
         /// The token to retrieve the next page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2438,7 +2474,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListOfferingsOutput,
             smithy_http::result::SdkError<crate::error::ListOfferingsError>,
         >
@@ -2455,123 +2491,132 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-        pub fn channel_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_class(inp);
+        pub fn channel_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_class(input);
             self
         }
-        pub fn set_channel_class(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_channel_class(inp);
+        pub fn set_channel_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_channel_class(input);
             self
         }
         /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-        pub fn channel_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_configuration(inp);
+        pub fn channel_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_configuration(input);
             self
         }
         pub fn set_channel_configuration(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_channel_configuration(inp);
+            self.inner = self.inner.set_channel_configuration(input);
             self
         }
         /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
-        pub fn codec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.codec(inp);
+        pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.codec(input);
             self
         }
-        pub fn set_codec(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_codec(inp);
+        pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_codec(input);
             self
         }
         /// Filter by offering duration, e.g. '12'
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
-        pub fn set_duration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_duration(inp);
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_duration(input);
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-        pub fn maximum_bitrate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_bitrate(inp);
+        pub fn maximum_bitrate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maximum_bitrate(input);
             self
         }
         pub fn set_maximum_bitrate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_maximum_bitrate(inp);
+            self.inner = self.inner.set_maximum_bitrate(input);
             self
         }
         /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-        pub fn maximum_framerate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_framerate(inp);
+        pub fn maximum_framerate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maximum_framerate(input);
             self
         }
         pub fn set_maximum_framerate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_maximum_framerate(inp);
+            self.inner = self.inner.set_maximum_framerate(input);
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
-        pub fn resolution(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution(inp);
+        pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution(input);
             self
         }
-        pub fn set_resolution(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resolution(inp);
+        pub fn set_resolution(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resolution(input);
             self
         }
         /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_type(inp);
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
             self
         }
         /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-        pub fn special_feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.special_feature(inp);
+        pub fn special_feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.special_feature(input);
             self
         }
         pub fn set_special_feature(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_special_feature(inp);
+            self.inner = self.inner.set_special_feature(input);
             self
         }
         /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-        pub fn video_quality(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.video_quality(inp);
+        pub fn video_quality(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.video_quality(input);
             self
         }
-        pub fn set_video_quality(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_video_quality(inp);
+        pub fn set_video_quality(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_video_quality(input);
             self
         }
     }
@@ -2590,7 +2635,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListReservationsOutput,
             smithy_http::result::SdkError<crate::error::ListReservationsError>,
         >
@@ -2607,102 +2652,111 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-        pub fn channel_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_class(inp);
+        pub fn channel_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_class(input);
             self
         }
-        pub fn set_channel_class(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_channel_class(inp);
+        pub fn set_channel_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_channel_class(input);
             self
         }
         /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
-        pub fn codec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.codec(inp);
+        pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.codec(input);
             self
         }
-        pub fn set_codec(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_codec(inp);
+        pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_codec(input);
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-        pub fn maximum_bitrate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_bitrate(inp);
+        pub fn maximum_bitrate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maximum_bitrate(input);
             self
         }
         pub fn set_maximum_bitrate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_maximum_bitrate(inp);
+            self.inner = self.inner.set_maximum_bitrate(input);
             self
         }
         /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-        pub fn maximum_framerate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_framerate(inp);
+        pub fn maximum_framerate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maximum_framerate(input);
             self
         }
         pub fn set_maximum_framerate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_maximum_framerate(inp);
+            self.inner = self.inner.set_maximum_framerate(input);
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
-        pub fn resolution(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution(inp);
+        pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution(input);
             self
         }
-        pub fn set_resolution(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resolution(inp);
+        pub fn set_resolution(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resolution(input);
             self
         }
         /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_type(inp);
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
             self
         }
         /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-        pub fn special_feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.special_feature(inp);
+        pub fn special_feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.special_feature(input);
             self
         }
         pub fn set_special_feature(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_special_feature(inp);
+            self.inner = self.inner.set_special_feature(input);
             self
         }
         /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-        pub fn video_quality(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.video_quality(inp);
+        pub fn video_quality(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.video_quality(input);
             self
         }
-        pub fn set_video_quality(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_video_quality(inp);
+        pub fn set_video_quality(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_video_quality(input);
             self
         }
     }
@@ -2721,7 +2775,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         >
@@ -2738,12 +2792,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -2762,7 +2816,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PurchaseOfferingOutput,
             smithy_http::result::SdkError<crate::error::PurchaseOfferingError>,
         >
@@ -2779,48 +2833,48 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Number of resources
-        pub fn count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.count(inp);
+        pub fn count(mut self, input: i32) -> Self {
+            self.inner = self.inner.count(input);
             self
         }
-        pub fn set_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_count(inp);
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_count(input);
             self
         }
         /// Name for the new reservation
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// Offering to purchase, e.g. '87654321'
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_id(inp);
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_id(input);
             self
         }
-        pub fn set_offering_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_offering_id(inp);
+        pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_offering_id(input);
             self
         }
         /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input);
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_request_id(inp);
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_request_id(input);
             self
         }
         /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-        pub fn start(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start(inp);
+        pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start(input);
             self
         }
-        pub fn set_start(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_start(inp);
+        pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_start(input);
             self
         }
         /// A collection of key-value pairs
@@ -2834,11 +2888,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2857,7 +2911,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RejectInputDeviceTransferOutput,
             smithy_http::result::SdkError<crate::error::RejectInputDeviceTransferError>,
         >
@@ -2874,12 +2928,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input);
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_device_id(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
             self
         }
     }
@@ -2898,7 +2955,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartChannelOutput,
             smithy_http::result::SdkError<crate::error::StartChannelError>,
         >
@@ -2915,12 +2972,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A request to start a channel
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
     }
@@ -2939,7 +2996,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartMultiplexOutput,
             smithy_http::result::SdkError<crate::error::StartMultiplexError>,
         >
@@ -2956,12 +3013,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
     }
@@ -2980,7 +3037,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopChannelOutput,
             smithy_http::result::SdkError<crate::error::StopChannelError>,
         >
@@ -2997,12 +3054,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A request to stop a running channel
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
     }
@@ -3021,7 +3078,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopMultiplexOutput,
             smithy_http::result::SdkError<crate::error::StopMultiplexError>,
         >
@@ -3038,12 +3095,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
     }
@@ -3062,7 +3119,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TransferInputDeviceOutput,
             smithy_http::result::SdkError<crate::error::TransferInputDeviceError>,
         >
@@ -3079,45 +3136,51 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input);
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_device_id(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
             self
         }
         /// The AWS account ID (12 digits) for the recipient of the device transfer.
-        pub fn target_customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_customer_id(inp);
+        pub fn target_customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_customer_id(input);
             self
         }
         pub fn set_target_customer_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_customer_id(inp);
+            self.inner = self.inner.set_target_customer_id(input);
             self
         }
         /// The target AWS region to transfer the device.
-        pub fn target_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_region(inp);
+        pub fn target_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_region(input);
             self
         }
-        pub fn set_target_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_region(inp);
+        pub fn set_target_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_region(input);
             self
         }
         /// An optional message for the recipient. Maximum 280 characters.
-        pub fn transfer_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transfer_message(inp);
+        pub fn transfer_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transfer_message(input);
             self
         }
         pub fn set_transfer_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_transfer_message(inp);
+            self.inner = self.inner.set_transfer_message(input);
             self
         }
     }
@@ -3136,7 +3199,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateChannelOutput,
             smithy_http::result::SdkError<crate::error::UpdateChannelError>,
         >
@@ -3153,24 +3216,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(mut self, inp: crate::model::CdiInputSpecification) -> Self {
-            self.inner = self.inner.cdi_input_specification(inp);
+        pub fn cdi_input_specification(
+            mut self,
+            input: crate::model::CdiInputSpecification,
+        ) -> Self {
+            self.inner = self.inner.cdi_input_specification(input);
             self
         }
         pub fn set_cdi_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::CdiInputSpecification>,
+            input: std::option::Option<crate::model::CdiInputSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_cdi_input_specification(inp);
+            self.inner = self.inner.set_cdi_input_specification(input);
             self
         }
         /// channel ID
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
         /// A list of output destinations for this channel.
@@ -3180,21 +3246,21 @@ pub mod fluent_builders {
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
         ) -> Self {
-            self.inner = self.inner.set_destinations(inp);
+            self.inner = self.inner.set_destinations(input);
             self
         }
         /// The encoder settings for this channel.
-        pub fn encoder_settings(mut self, inp: crate::model::EncoderSettings) -> Self {
-            self.inner = self.inner.encoder_settings(inp);
+        pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
+            self.inner = self.inner.encoder_settings(input);
             self
         }
         pub fn set_encoder_settings(
             mut self,
-            inp: std::option::Option<crate::model::EncoderSettings>,
+            input: std::option::Option<crate::model::EncoderSettings>,
         ) -> Self {
-            self.inner = self.inner.set_encoder_settings(inp);
+            self.inner = self.inner.set_encoder_settings(input);
             self
         }
         /// Placeholder documentation for __listOfInputAttachment
@@ -3204,48 +3270,48 @@ pub mod fluent_builders {
         }
         pub fn set_input_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         ) -> Self {
-            self.inner = self.inner.set_input_attachments(inp);
+            self.inner = self.inner.set_input_attachments(input);
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn input_specification(mut self, inp: crate::model::InputSpecification) -> Self {
-            self.inner = self.inner.input_specification(inp);
+        pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
+            self.inner = self.inner.input_specification(input);
             self
         }
         pub fn set_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::InputSpecification>,
+            input: std::option::Option<crate::model::InputSpecification>,
         ) -> Self {
-            self.inner = self.inner.set_input_specification(inp);
+            self.inner = self.inner.set_input_specification(input);
             self
         }
         /// The log level to write to CloudWatch Logs.
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.inner = self.inner.log_level(inp);
+        pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.inner = self.inner.log_level(input);
             self
         }
-        pub fn set_log_level(mut self, inp: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.inner = self.inner.set_log_level(inp);
+        pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
+            self.inner = self.inner.set_log_level(input);
             self
         }
         /// The name of the channel.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
     }
@@ -3264,7 +3330,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateChannelClassOutput,
             smithy_http::result::SdkError<crate::error::UpdateChannelClassError>,
         >
@@ -3281,24 +3347,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The channel class that you wish to update this channel to use.
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.inner = self.inner.channel_class(inp);
+        pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
+            self.inner = self.inner.channel_class(input);
             self
         }
         pub fn set_channel_class(
             mut self,
-            inp: std::option::Option<crate::model::ChannelClass>,
+            input: std::option::Option<crate::model::ChannelClass>,
         ) -> Self {
-            self.inner = self.inner.set_channel_class(inp);
+            self.inner = self.inner.set_channel_class(input);
             self
         }
         /// Channel Id of the channel whose class should be updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input);
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_channel_id(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
             self
         }
         /// A list of output destinations for this channel.
@@ -3308,9 +3374,9 @@ pub mod fluent_builders {
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
         ) -> Self {
-            self.inner = self.inner.set_destinations(inp);
+            self.inner = self.inner.set_destinations(input);
             self
         }
     }
@@ -3329,7 +3395,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateInputOutput,
             smithy_http::result::SdkError<crate::error::UpdateInputError>,
         >
@@ -3355,9 +3421,9 @@ pub mod fluent_builders {
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
         ) -> Self {
-            self.inner = self.inner.set_destinations(inp);
+            self.inner = self.inner.set_destinations(input);
             self
         }
         /// Settings for the devices.
@@ -3367,18 +3433,18 @@ pub mod fluent_builders {
         }
         pub fn set_input_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDeviceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDeviceRequest>>,
         ) -> Self {
-            self.inner = self.inner.set_input_devices(inp);
+            self.inner = self.inner.set_input_devices(input);
             self
         }
         /// Unique ID of the input.
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input);
             self
         }
-        pub fn set_input_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_id(inp);
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_input_id(input);
             self
         }
         /// A list of security groups referenced by IDs to attach to the input.
@@ -3388,9 +3454,9 @@ pub mod fluent_builders {
         }
         pub fn set_input_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_input_security_groups(inp);
+            self.inner = self.inner.set_input_security_groups(input);
             self
         }
         /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
@@ -3405,27 +3471,27 @@ pub mod fluent_builders {
         }
         pub fn set_media_connect_flows(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
         ) -> Self {
-            self.inner = self.inner.set_media_connect_flows(inp);
+            self.inner = self.inner.set_media_connect_flows(input);
             self
         }
         /// Name of the input.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// The source URLs for a PULL-type input. Every PULL type input needs
@@ -3437,9 +3503,9 @@ pub mod fluent_builders {
         }
         pub fn set_sources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
         ) -> Self {
-            self.inner = self.inner.set_sources(inp);
+            self.inner = self.inner.set_sources(input);
             self
         }
     }
@@ -3458,7 +3524,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateInputDeviceOutput,
             smithy_http::result::SdkError<crate::error::UpdateInputDeviceError>,
         >
@@ -3477,49 +3543,52 @@ pub mod fluent_builders {
         /// The settings that you want to apply to the HD input device.
         pub fn hd_device_settings(
             mut self,
-            inp: crate::model::InputDeviceConfigurableSettings,
+            input: crate::model::InputDeviceConfigurableSettings,
         ) -> Self {
-            self.inner = self.inner.hd_device_settings(inp);
+            self.inner = self.inner.hd_device_settings(input);
             self
         }
         pub fn set_hd_device_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
+            input: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
         ) -> Self {
-            self.inner = self.inner.set_hd_device_settings(inp);
+            self.inner = self.inner.set_hd_device_settings(input);
             self
         }
         /// The unique ID of the input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input);
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_device_id(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
             self
         }
         /// The name that you assigned to this input device (not the unique ID).
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// The settings that you want to apply to the UHD input device.
         pub fn uhd_device_settings(
             mut self,
-            inp: crate::model::InputDeviceConfigurableSettings,
+            input: crate::model::InputDeviceConfigurableSettings,
         ) -> Self {
-            self.inner = self.inner.uhd_device_settings(inp);
+            self.inner = self.inner.uhd_device_settings(input);
             self
         }
         pub fn set_uhd_device_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
+            input: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
         ) -> Self {
-            self.inner = self.inner.set_uhd_device_settings(inp);
+            self.inner = self.inner.set_uhd_device_settings(input);
             self
         }
     }
@@ -3538,7 +3607,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateInputSecurityGroupOutput,
             smithy_http::result::SdkError<crate::error::UpdateInputSecurityGroupError>,
         >
@@ -3555,12 +3624,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The id of the Input Security Group to update.
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_group_id(inp);
+        pub fn input_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_security_group_id(input);
             self
         }
-        pub fn set_input_security_group_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_input_security_group_id(inp);
+        pub fn set_input_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_security_group_id(input);
             self
         }
         /// A collection of key-value pairs.
@@ -3574,11 +3646,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// List of IPv4 CIDR addresses to whitelist
@@ -3591,9 +3663,9 @@ pub mod fluent_builders {
         }
         pub fn set_whitelist_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
         ) -> Self {
-            self.inner = self.inner.set_whitelist_rules(inp);
+            self.inner = self.inner.set_whitelist_rules(input);
             self
         }
     }
@@ -3612,7 +3684,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateMultiplexOutput,
             smithy_http::result::SdkError<crate::error::UpdateMultiplexError>,
         >
@@ -3629,33 +3701,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ID of the multiplex to update.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
         /// The new settings for a multiplex.
-        pub fn multiplex_settings(mut self, inp: crate::model::MultiplexSettings) -> Self {
-            self.inner = self.inner.multiplex_settings(inp);
+        pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
+            self.inner = self.inner.multiplex_settings(input);
             self
         }
         pub fn set_multiplex_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexSettings>,
+            input: std::option::Option<crate::model::MultiplexSettings>,
         ) -> Self {
-            self.inner = self.inner.set_multiplex_settings(inp);
+            self.inner = self.inner.set_multiplex_settings(input);
             self
         }
         /// Name of the multiplex.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -3674,7 +3746,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateMultiplexProgramOutput,
             smithy_http::result::SdkError<crate::error::UpdateMultiplexProgramError>,
         >
@@ -3691,36 +3763,36 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex of the program to update.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(input);
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_multiplex_id(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_multiplex_id(input);
             self
         }
         /// The new settings for a multiplex program.
         pub fn multiplex_program_settings(
             mut self,
-            inp: crate::model::MultiplexProgramSettings,
+            input: crate::model::MultiplexProgramSettings,
         ) -> Self {
-            self.inner = self.inner.multiplex_program_settings(inp);
+            self.inner = self.inner.multiplex_program_settings(input);
             self
         }
         pub fn set_multiplex_program_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexProgramSettings>,
+            input: std::option::Option<crate::model::MultiplexProgramSettings>,
         ) -> Self {
-            self.inner = self.inner.set_multiplex_program_settings(inp);
+            self.inner = self.inner.set_multiplex_program_settings(input);
             self
         }
         /// The name of the program to update.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(input);
             self
         }
-        pub fn set_program_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_program_name(inp);
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_program_name(input);
             self
         }
     }
@@ -3739,7 +3811,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateReservationOutput,
             smithy_http::result::SdkError<crate::error::UpdateReservationError>,
         >
@@ -3756,21 +3828,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Name of the reservation
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_id(inp);
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_id(input);
             self
         }
-        pub fn set_reservation_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_reservation_id(inp);
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reservation_id(input);
             self
         }
     }

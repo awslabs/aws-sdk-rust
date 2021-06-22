@@ -187,7 +187,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddPermissionOutput,
             smithy_http::result::SdkError<crate::error::AddPermissionError>,
         >
@@ -204,21 +204,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
         /// <p>A unique identifier for the new policy statement.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(inp);
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input);
             self
         }
-        pub fn set_label(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_label(inp);
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_label(input);
             self
         }
         /// <p>The AWS account IDs of the users (principals) who will be given access to the
@@ -230,9 +230,9 @@ pub mod fluent_builders {
         }
         pub fn set_aws_account_id(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_aws_account_id(inp);
+            self.inner = self.inner.set_aws_account_id(input);
             self
         }
         /// <p>The action you want to allow for the specified principal(s).</p>
@@ -243,9 +243,9 @@ pub mod fluent_builders {
         }
         pub fn set_action_name(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_action_name(inp);
+            self.inner = self.inner.set_action_name(input);
             self
         }
     }
@@ -264,7 +264,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CheckIfPhoneNumberIsOptedOutOutput,
             smithy_http::result::SdkError<crate::error::CheckIfPhoneNumberIsOptedOutError>,
         >
@@ -281,12 +281,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number for which you want to check the opt out status.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input);
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_phone_number(inp);
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_phone_number(input);
             self
         }
     }
@@ -305,7 +305,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ConfirmSubscriptionOutput,
             smithy_http::result::SdkError<crate::error::ConfirmSubscriptionError>,
         >
@@ -322,36 +322,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
         /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input);
             self
         }
-        pub fn set_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_token(inp);
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_token(input);
             self
         }
         /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this
         /// parameter is <code>true</code> and the request has an AWS signature, then only the topic
         /// owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action
         /// requires AWS authentication. </p>
-        pub fn authenticate_on_unsubscribe(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authenticate_on_unsubscribe(inp);
+        pub fn authenticate_on_unsubscribe(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.authenticate_on_unsubscribe(input);
             self
         }
         pub fn set_authenticate_on_unsubscribe(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_authenticate_on_unsubscribe(inp);
+            self.inner = self.inner.set_authenticate_on_unsubscribe(input);
             self
         }
     }
@@ -370,7 +373,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreatePlatformApplicationOutput,
             smithy_http::result::SdkError<crate::error::CreatePlatformApplicationError>,
         >
@@ -389,22 +392,22 @@ pub mod fluent_builders {
         /// <p>Application names must be made up of only uppercase and lowercase ASCII letters,
         /// numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters
         /// long.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push
         /// Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
-        pub fn platform(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
-        pub fn set_platform(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_platform(inp);
+        pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_platform(input);
             self
         }
         /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
@@ -418,11 +421,11 @@ pub mod fluent_builders {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_attributes(inp);
+            self.inner = self.inner.set_attributes(input);
             self
         }
     }
@@ -441,7 +444,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreatePlatformEndpointOutput,
             smithy_http::result::SdkError<crate::error::CreatePlatformEndpointError>,
         >
@@ -459,15 +462,15 @@ pub mod fluent_builders {
         }
         /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an
         /// endpoint.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input);
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_platform_application_arn(inp);
+            self.inner = self.inner.set_platform_application_arn(input);
             self
         }
         /// <p>Unique identifier created by the notification service for an app on a device. The
@@ -475,25 +478,25 @@ pub mod fluent_builders {
         /// used. For example, when using APNS as the notification service, you need the device
         /// token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token
         /// equivalent is called the registration ID.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input);
             self
         }
-        pub fn set_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_token(inp);
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_token(input);
             self
         }
         /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The
         /// data must be in UTF-8 format and less than 2KB.</p>
-        pub fn custom_user_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_user_data(inp);
+        pub fn custom_user_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_user_data(input);
             self
         }
         pub fn set_custom_user_data(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_user_data(inp);
+            self.inner = self.inner.set_custom_user_data(input);
             self
         }
         /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
@@ -507,11 +510,11 @@ pub mod fluent_builders {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_attributes(inp);
+            self.inner = self.inner.set_attributes(input);
             self
         }
     }
@@ -530,7 +533,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateSMSSandboxPhoneNumberOutput,
             smithy_http::result::SdkError<crate::error::CreateSMSSandboxPhoneNumberError>,
         >
@@ -548,25 +551,25 @@ pub mod fluent_builders {
         }
         /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
         /// to the list of verified phone numbers that you can send SMS messages to.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input);
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_phone_number(inp);
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_phone_number(input);
             self
         }
         /// <p>The language to use for sending the OTP. The default value is
         /// <code>en-US</code>.</p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCodeString) -> Self {
-            self.inner = self.inner.language_code(inp);
+        pub fn language_code(mut self, input: crate::model::LanguageCodeString) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         pub fn set_language_code(
             mut self,
-            inp: std::option::Option<crate::model::LanguageCodeString>,
+            input: std::option::Option<crate::model::LanguageCodeString>,
         ) -> Self {
-            self.inner = self.inner.set_language_code(inp);
+            self.inner = self.inner.set_language_code(input);
             self
         }
     }
@@ -585,7 +588,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateTopicOutput,
             smithy_http::result::SdkError<crate::error::CreateTopicError>,
         >
@@ -607,12 +610,12 @@ pub mod fluent_builders {
         /// long.</p>
         /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
         /// suffix. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
@@ -690,11 +693,11 @@ pub mod fluent_builders {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_attributes(inp);
+            self.inner = self.inner.set_attributes(input);
             self
         }
         /// <p>The list of tags to add to a new topic.</p>
@@ -709,9 +712,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -730,7 +733,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteEndpointOutput,
             smithy_http::result::SdkError<crate::error::DeleteEndpointError>,
         >
@@ -747,12 +750,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>EndpointArn of endpoint to delete.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input);
             self
         }
-        pub fn set_endpoint_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_arn(inp);
+        pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint_arn(input);
             self
         }
     }
@@ -771,7 +774,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeletePlatformApplicationOutput,
             smithy_http::result::SdkError<crate::error::DeletePlatformApplicationError>,
         >
@@ -788,15 +791,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>PlatformApplicationArn of platform application object to delete.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input);
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_platform_application_arn(inp);
+            self.inner = self.inner.set_platform_application_arn(input);
             self
         }
     }
@@ -815,7 +818,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteSMSSandboxPhoneNumberOutput,
             smithy_http::result::SdkError<crate::error::DeleteSMSSandboxPhoneNumberError>,
         >
@@ -832,12 +835,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The destination phone number to delete.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input);
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_phone_number(inp);
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_phone_number(input);
             self
         }
     }
@@ -856,7 +859,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteTopicOutput,
             smithy_http::result::SdkError<crate::error::DeleteTopicError>,
         >
@@ -873,12 +876,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic you want to delete.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
     }
@@ -897,7 +900,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetEndpointAttributesOutput,
             smithy_http::result::SdkError<crate::error::GetEndpointAttributesError>,
         >
@@ -914,12 +917,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>EndpointArn for GetEndpointAttributes input.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input);
             self
         }
-        pub fn set_endpoint_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_arn(inp);
+        pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint_arn(input);
             self
         }
     }
@@ -938,7 +941,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetPlatformApplicationAttributesOutput,
             smithy_http::result::SdkError<crate::error::GetPlatformApplicationAttributesError>,
         >
@@ -955,15 +958,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input);
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_platform_application_arn(inp);
+            self.inner = self.inner.set_platform_application_arn(input);
             self
         }
     }
@@ -982,7 +985,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSMSAttributesOutput,
             smithy_http::result::SdkError<crate::error::GetSMSAttributesError>,
         >
@@ -1008,9 +1011,9 @@ pub mod fluent_builders {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_attributes(inp);
+            self.inner = self.inner.set_attributes(input);
             self
         }
     }
@@ -1029,7 +1032,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSMSSandboxAccountStatusOutput,
             smithy_http::result::SdkError<crate::error::GetSMSSandboxAccountStatusError>,
         >
@@ -1061,7 +1064,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSubscriptionAttributesOutput,
             smithy_http::result::SdkError<crate::error::GetSubscriptionAttributesError>,
         >
@@ -1078,15 +1081,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the subscription whose properties you want to get.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(inp);
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input);
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_arn(inp);
+            self.inner = self.inner.set_subscription_arn(input);
             self
         }
     }
@@ -1105,7 +1108,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetTopicAttributesOutput,
             smithy_http::result::SdkError<crate::error::GetTopicAttributesError>,
         >
@@ -1122,12 +1125,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic whose properties you want to get.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
     }
@@ -1146,7 +1149,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListEndpointsByPlatformApplicationOutput,
             smithy_http::result::SdkError<crate::error::ListEndpointsByPlatformApplicationError>,
         >
@@ -1163,25 +1166,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input);
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_platform_application_arn(inp);
+            self.inner = self.inner.set_platform_application_arn(input);
             self
         }
         /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to
         /// retrieve additional records that are available after the first page results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1200,7 +1203,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListOriginationNumbersOutput,
             smithy_http::result::SdkError<crate::error::ListOriginationNumbersError>,
         >
@@ -1217,21 +1220,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of origination numbers to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -1250,7 +1253,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPhoneNumbersOptedOutOutput,
             smithy_http::result::SdkError<crate::error::ListPhoneNumbersOptedOutError>,
         >
@@ -1269,12 +1272,12 @@ pub mod fluent_builders {
         /// <p>A <code>NextToken</code> string is used when you call the
         /// <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are
         /// available after the first page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1293,7 +1296,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPlatformApplicationsOutput,
             smithy_http::result::SdkError<crate::error::ListPlatformApplicationsError>,
         >
@@ -1311,12 +1314,12 @@ pub mod fluent_builders {
         }
         /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve
         /// additional records that are available after the first page results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1335,7 +1338,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSMSSandboxPhoneNumbersOutput,
             smithy_http::result::SdkError<crate::error::ListSMSSandboxPhoneNumbersError>,
         >
@@ -1353,21 +1356,21 @@ pub mod fluent_builders {
         }
         /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
         /// returns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of phone numbers to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -1386,7 +1389,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSubscriptionsOutput,
             smithy_http::result::SdkError<crate::error::ListSubscriptionsError>,
         >
@@ -1403,12 +1406,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1427,7 +1430,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSubscriptionsByTopicOutput,
             smithy_http::result::SdkError<crate::error::ListSubscriptionsByTopicError>,
         >
@@ -1444,21 +1447,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
         /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1477,7 +1480,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         >
@@ -1494,12 +1497,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic for which to list tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -1518,7 +1521,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTopicsOutput,
             smithy_http::result::SdkError<crate::error::ListTopicsError>,
         >
@@ -1535,12 +1538,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1559,7 +1562,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::OptInPhoneNumberOutput,
             smithy_http::result::SdkError<crate::error::OptInPhoneNumberError>,
         >
@@ -1576,12 +1579,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number to opt in. Use E.164 format.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input);
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_phone_number(inp);
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_phone_number(input);
             self
         }
     }
@@ -1600,7 +1603,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PublishOutput,
             smithy_http::result::SdkError<crate::error::PublishError>,
         >
@@ -1619,35 +1622,35 @@ pub mod fluent_builders {
         /// <p>The topic you want to publish to.</p>
         /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify
         /// a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
         /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must
         /// specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
         /// parameters.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_arn(inp);
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input);
             self
         }
-        pub fn set_target_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_arn(inp);
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_arn(input);
             self
         }
         /// <p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>
         /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must
         /// specify a value for the <code>TargetArn</code> or <code>TopicArn</code>
         /// parameters.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input);
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_phone_number(inp);
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_phone_number(input);
             self
         }
         /// <p>The message you want to send.</p>
@@ -1711,12 +1714,12 @@ pub mod fluent_builders {
         /// <code>Publish</code> call to return an error (no partial delivery).</p>
         /// </li>
         /// </ul>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(input);
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_message(inp);
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_message(input);
             self
         }
         /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to
@@ -1725,12 +1728,12 @@ pub mod fluent_builders {
         /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or
         /// punctuation mark; must not include line breaks or control characters; and must be less
         /// than 100 characters long.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject(inp);
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject(input);
             self
         }
-        pub fn set_subject(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subject(inp);
+        pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_subject(input);
             self
         }
         /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different
@@ -1751,15 +1754,15 @@ pub mod fluent_builders {
         /// specific transport protocol (e.g., "http").</p>
         /// <p>Valid value: <code>json</code>
         /// </p>
-        pub fn message_structure(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_structure(inp);
+        pub fn message_structure(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_structure(input);
             self
         }
         pub fn set_message_structure(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_message_structure(inp);
+            self.inner = self.inner.set_message_structure(input);
             self
         }
         /// <p>Message attributes for Publish action.</p>
@@ -1773,11 +1776,11 @@ pub mod fluent_builders {
         }
         pub fn set_message_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_message_attributes(inp);
+            self.inner = self.inner.set_message_attributes(input);
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
@@ -1792,15 +1795,15 @@ pub mod fluent_builders {
         /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a
         /// <code>MessageDeduplicationId</code> based on the contents of the message. Your
         /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        pub fn message_deduplication_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_deduplication_id(inp);
+        pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_deduplication_id(input);
             self
         }
         pub fn set_message_deduplication_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_message_deduplication_id(inp);
+            self.inner = self.inner.set_message_deduplication_id(input);
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
@@ -1810,15 +1813,15 @@ pub mod fluent_builders {
         /// specific message group. Messages that belong to the same message group are processed in
         /// a FIFO manner (however, messages in different message groups might be processed out of
         /// order). Every message must include a <code>MessageGroupId</code>.</p>
-        pub fn message_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_group_id(inp);
+        pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_group_id(input);
             self
         }
         pub fn set_message_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_message_group_id(inp);
+            self.inner = self.inner.set_message_group_id(input);
             self
         }
     }
@@ -1837,7 +1840,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemovePermissionOutput,
             smithy_http::result::SdkError<crate::error::RemovePermissionError>,
         >
@@ -1854,21 +1857,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
         /// <p>The unique label of the statement you want to remove.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(inp);
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input);
             self
         }
-        pub fn set_label(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_label(inp);
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_label(input);
             self
         }
     }
@@ -1887,7 +1890,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetEndpointAttributesOutput,
             smithy_http::result::SdkError<crate::error::SetEndpointAttributesError>,
         >
@@ -1904,12 +1907,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>EndpointArn used for SetEndpointAttributes action.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input);
             self
         }
-        pub fn set_endpoint_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_arn(inp);
+        pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint_arn(input);
             self
         }
         /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
@@ -1945,11 +1948,11 @@ pub mod fluent_builders {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_attributes(inp);
+            self.inner = self.inner.set_attributes(input);
             self
         }
     }
@@ -1968,7 +1971,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetPlatformApplicationAttributesOutput,
             smithy_http::result::SdkError<crate::error::SetPlatformApplicationAttributesError>,
         >
@@ -1985,15 +1988,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input);
             self
         }
         pub fn set_platform_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_platform_application_arn(inp);
+            self.inner = self.inner.set_platform_application_arn(input);
             self
         }
         /// <p>A map of the platform application attributes. Attributes in this map include the
@@ -2065,11 +2068,11 @@ pub mod fluent_builders {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_attributes(inp);
+            self.inner = self.inner.set_attributes(input);
             self
         }
     }
@@ -2088,7 +2091,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetSMSAttributesOutput,
             smithy_http::result::SdkError<crate::error::SetSMSAttributesError>,
         >
@@ -2200,11 +2203,11 @@ pub mod fluent_builders {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_attributes(inp);
+            self.inner = self.inner.set_attributes(input);
             self
         }
     }
@@ -2223,7 +2226,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetSubscriptionAttributesOutput,
             smithy_http::result::SdkError<crate::error::SetSubscriptionAttributesError>,
         >
@@ -2240,15 +2243,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the subscription to modify.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(inp);
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input);
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_arn(inp);
+            self.inner = self.inner.set_subscription_arn(input);
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
@@ -2299,24 +2302,27 @@ pub mod fluent_builders {
         /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input);
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_attribute_name(inp);
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attribute_name(input);
             self
         }
         /// <p>The new value for the attribute in JSON format.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_value(inp);
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_value(input);
             self
         }
         pub fn set_attribute_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_attribute_value(inp);
+            self.inner = self.inner.set_attribute_value(input);
             self
         }
     }
@@ -2335,7 +2341,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetTopicAttributesOutput,
             smithy_http::result::SdkError<crate::error::SetTopicAttributesError>,
         >
@@ -2352,12 +2358,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
@@ -2415,24 +2421,27 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input);
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_attribute_name(inp);
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attribute_name(input);
             self
         }
         /// <p>The new value for the attribute.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_value(inp);
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_value(input);
             self
         }
         pub fn set_attribute_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_attribute_value(inp);
+            self.inner = self.inner.set_attribute_value(input);
             self
         }
     }
@@ -2451,7 +2460,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SubscribeOutput,
             smithy_http::result::SdkError<crate::error::SubscribeError>,
         >
@@ -2468,12 +2477,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic you want to subscribe to.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input);
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_topic_arn(inp);
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_topic_arn(input);
             self
         }
         /// <p>The protocol that you want to use. Supported protocols include:</p>
@@ -2522,12 +2531,12 @@ pub mod fluent_builders {
         /// Kinesis Data Firehose delivery stream.</p>
         /// </li>
         /// </ul>
-        pub fn protocol(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protocol(input);
             self
         }
-        pub fn set_protocol(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_protocol(inp);
+        pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_protocol(input);
             self
         }
         /// <p>The endpoint that you want to receive notifications. Endpoints vary by
@@ -2569,12 +2578,12 @@ pub mod fluent_builders {
         /// Kinesis Data Firehose delivery stream.</p>
         /// </li>
         /// </ul>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint(inp);
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint(input);
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint(inp);
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint(input);
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
@@ -2635,11 +2644,11 @@ pub mod fluent_builders {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_attributes(inp);
+            self.inner = self.inner.set_attributes(input);
             self
         }
         /// <p>Sets whether the response from the <code>Subscribe</code> request includes the
@@ -2652,12 +2661,12 @@ pub mod fluent_builders {
         /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
         /// <p></p>
         /// <p>The default value is <code>false</code>.</p>
-        pub fn return_subscription_arn(mut self, inp: bool) -> Self {
-            self.inner = self.inner.return_subscription_arn(inp);
+        pub fn return_subscription_arn(mut self, input: bool) -> Self {
+            self.inner = self.inner.return_subscription_arn(input);
             self
         }
-        pub fn set_return_subscription_arn(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_return_subscription_arn(inp);
+        pub fn set_return_subscription_arn(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_return_subscription_arn(input);
             self
         }
     }
@@ -2676,7 +2685,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -2693,12 +2702,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic to which to add tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
@@ -2709,9 +2718,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2730,7 +2739,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UnsubscribeOutput,
             smithy_http::result::SdkError<crate::error::UnsubscribeError>,
         >
@@ -2747,15 +2756,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the subscription to be deleted.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(inp);
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input);
             self
         }
         pub fn set_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_subscription_arn(inp);
+            self.inner = self.inner.set_subscription_arn(input);
             self
         }
     }
@@ -2774,7 +2783,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -2791,12 +2800,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic from which to remove tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The list of tag keys to remove from the specified topic.</p>
@@ -2806,9 +2815,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -2827,7 +2836,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::VerifySMSSandboxPhoneNumberOutput,
             smithy_http::result::SdkError<crate::error::VerifySMSSandboxPhoneNumberError>,
         >
@@ -2844,25 +2853,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The destination phone number to verify.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input);
             self
         }
-        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_phone_number(inp);
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_phone_number(input);
             self
         }
         /// <p>The OTP sent to the destination number from the
         /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
-        pub fn one_time_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.one_time_password(inp);
+        pub fn one_time_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.one_time_password(input);
             self
         }
         pub fn set_one_time_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_one_time_password(inp);
+            self.inner = self.inner.set_one_time_password(input);
             self
         }
     }

@@ -72,6 +72,27 @@ impl AddTagsToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToResourceErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(&self.kind, AddTagsToResourceErrorKind::InvalidResourceId(_))
+    }
+    pub fn is_invalid_resource_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToResourceErrorKind::InvalidResourceType(_)
+        )
+    }
+    pub fn is_too_many_tags_error(&self) -> bool {
+        matches!(&self.kind, AddTagsToResourceErrorKind::TooManyTagsError(_))
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(&self.kind, AddTagsToResourceErrorKind::TooManyUpdates(_))
+    }
 }
 impl std::error::Error for AddTagsToResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -165,6 +186,36 @@ impl AssociateOpsItemRelatedItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateOpsItemRelatedItemErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_ops_item_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterError(_)
+        )
+    }
+    pub fn is_ops_item_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateOpsItemRelatedItemErrorKind::OpsItemLimitExceededError(_)
+        )
+    }
+    pub fn is_ops_item_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateOpsItemRelatedItemErrorKind::OpsItemNotFoundError(_)
+        )
+    }
+    pub fn is_ops_item_related_item_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAlreadyExistsError(_)
+        )
+    }
 }
 impl std::error::Error for AssociateOpsItemRelatedItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -254,6 +305,18 @@ impl CancelCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_duplicate_instance_id(&self) -> bool {
+        matches!(&self.kind, CancelCommandErrorKind::DuplicateInstanceId(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, CancelCommandErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_command_id(&self) -> bool {
+        matches!(&self.kind, CancelCommandErrorKind::InvalidCommandId(_))
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(&self.kind, CancelCommandErrorKind::InvalidInstanceId(_))
+    }
 }
 impl std::error::Error for CancelCommandError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -334,6 +397,18 @@ impl CancelMaintenanceWindowExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelMaintenanceWindowExecutionErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelMaintenanceWindowExecutionErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for CancelMaintenanceWindowExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -409,6 +484,12 @@ impl CreateActivationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateActivationErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for CreateActivationError {
@@ -504,6 +585,57 @@ impl CreateAssociationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_association_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationErrorKind::AssociationAlreadyExists(_)
+        )
+    }
+    pub fn is_association_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationErrorKind::AssociationLimitExceeded(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, CreateAssociationErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationErrorKind::InvalidDocumentVersion(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(&self.kind, CreateAssociationErrorKind::InvalidInstanceId(_))
+    }
+    pub fn is_invalid_output_location(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationErrorKind::InvalidOutputLocation(_)
+        )
+    }
+    pub fn is_invalid_parameters(&self) -> bool {
+        matches!(&self.kind, CreateAssociationErrorKind::InvalidParameters(_))
+    }
+    pub fn is_invalid_schedule(&self) -> bool {
+        matches!(&self.kind, CreateAssociationErrorKind::InvalidSchedule(_))
+    }
+    pub fn is_invalid_target(&self) -> bool {
+        matches!(&self.kind, CreateAssociationErrorKind::InvalidTarget(_))
+    }
+    pub fn is_unsupported_platform_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationErrorKind::UnsupportedPlatformType(_)
+        )
     }
 }
 impl std::error::Error for CreateAssociationError {
@@ -610,6 +742,72 @@ impl CreateAssociationBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_association_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::AssociationLimitExceeded(_)
+        )
+    }
+    pub fn is_duplicate_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::DuplicateInstanceId(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::InvalidDocument(_)
+        )
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::InvalidDocumentVersion(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_invalid_output_location(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::InvalidOutputLocation(_)
+        )
+    }
+    pub fn is_invalid_parameters(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::InvalidParameters(_)
+        )
+    }
+    pub fn is_invalid_schedule(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::InvalidSchedule(_)
+        )
+    }
+    pub fn is_invalid_target(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::InvalidTarget(_)
+        )
+    }
+    pub fn is_unsupported_platform_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssociationBatchErrorKind::UnsupportedPlatformType(_)
+        )
+    }
 }
 impl std::error::Error for CreateAssociationBatchError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -705,6 +903,39 @@ impl CreateDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_document_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentErrorKind::DocumentAlreadyExists(_)
+        )
+    }
+    pub fn is_document_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentErrorKind::DocumentLimitExceeded(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, CreateDocumentErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_document_content(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentErrorKind::InvalidDocumentContent(_)
+        )
+    }
+    pub fn is_invalid_document_schema_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentErrorKind::InvalidDocumentSchemaVersion(_)
+        )
+    }
+    pub fn is_max_document_size_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentErrorKind::MaxDocumentSizeExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateDocumentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -789,6 +1020,24 @@ impl CreateMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_idempotent_parameter_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMaintenanceWindowErrorKind::IdempotentParameterMismatch(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMaintenanceWindowErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMaintenanceWindowErrorKind::ResourceLimitExceededError(_)
+        )
+    }
 }
 impl std::error::Error for CreateMaintenanceWindowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -871,6 +1120,27 @@ impl CreateOpsItemError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, CreateOpsItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_ops_item_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsItemErrorKind::OpsItemAlreadyExistsError(_)
+        )
+    }
+    pub fn is_ops_item_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsItemErrorKind::OpsItemInvalidParameterError(_)
+        )
+    }
+    pub fn is_ops_item_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsItemErrorKind::OpsItemLimitExceededError(_)
+        )
     }
 }
 impl std::error::Error for CreateOpsItemError {
@@ -958,6 +1228,36 @@ impl CreateOpsMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsMetadataErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_ops_metadata_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsMetadataErrorKind::OpsMetadataAlreadyExistsError(_)
+        )
+    }
+    pub fn is_ops_metadata_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(_)
+        )
+    }
+    pub fn is_ops_metadata_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsMetadataErrorKind::OpsMetadataLimitExceededError(_)
+        )
+    }
+    pub fn is_ops_metadata_too_many_updates_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesError(_)
+        )
+    }
 }
 impl std::error::Error for CreateOpsMetadataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1040,6 +1340,24 @@ impl CreatePatchBaselineError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_idempotent_parameter_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePatchBaselineErrorKind::IdempotentParameterMismatch(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePatchBaselineErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePatchBaselineErrorKind::ResourceLimitExceededError(_)
+        )
     }
 }
 impl std::error::Error for CreatePatchBaselineError {
@@ -1132,6 +1450,30 @@ impl CreateResourceDataSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResourceDataSyncErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_data_sync_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResourceDataSyncErrorKind::ResourceDataSyncAlreadyExistsError(_)
+        )
+    }
+    pub fn is_resource_data_sync_count_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResourceDataSyncErrorKind::ResourceDataSyncCountExceededError(_)
+        )
+    }
+    pub fn is_resource_data_sync_invalid_configuration_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationError(_)
+        )
+    }
 }
 impl std::error::Error for CreateResourceDataSyncError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1222,6 +1564,24 @@ impl DeleteActivationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteActivationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_activation(&self) -> bool {
+        matches!(&self.kind, DeleteActivationErrorKind::InvalidActivation(_))
+    }
+    pub fn is_invalid_activation_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteActivationErrorKind::InvalidActivationId(_)
+        )
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(&self.kind, DeleteActivationErrorKind::TooManyUpdates(_))
+    }
 }
 impl std::error::Error for DeleteActivationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1308,6 +1668,27 @@ impl DeleteAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_association_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAssociationErrorKind::AssociationDoesNotExist(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAssociationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, DeleteAssociationErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(&self.kind, DeleteAssociationErrorKind::InvalidInstanceId(_))
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(&self.kind, DeleteAssociationErrorKind::TooManyUpdates(_))
+    }
 }
 impl std::error::Error for DeleteAssociationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1392,6 +1773,21 @@ impl DeleteDocumentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_associated_instances(&self) -> bool {
+        matches!(&self.kind, DeleteDocumentErrorKind::AssociatedInstances(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteDocumentErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, DeleteDocumentErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_document_operation(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentErrorKind::InvalidDocumentOperation(_)
+        )
     }
 }
 impl std::error::Error for DeleteDocumentError {
@@ -1481,6 +1877,30 @@ impl DeleteInventoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteInventoryErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_delete_inventory_parameters_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInventoryErrorKind::InvalidDeleteInventoryParametersError(_)
+        )
+    }
+    pub fn is_invalid_inventory_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInventoryErrorKind::InvalidInventoryRequestError(_)
+        )
+    }
+    pub fn is_invalid_option_error(&self) -> bool {
+        matches!(&self.kind, DeleteInventoryErrorKind::InvalidOptionError(_))
+    }
+    pub fn is_invalid_type_name_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInventoryErrorKind::InvalidTypeNameError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteInventoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1559,6 +1979,12 @@ impl DeleteMaintenanceWindowError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMaintenanceWindowErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for DeleteMaintenanceWindowError {
@@ -1639,6 +2065,24 @@ impl DeleteOpsMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOpsMetadataErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_ops_metadata_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(_)
+        )
+    }
+    pub fn is_ops_metadata_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOpsMetadataErrorKind::OpsMetadataNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteOpsMetadataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1718,6 +2162,12 @@ impl DeleteParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteParameterErrorKind::InternalServerError(_))
+    }
+    pub fn is_parameter_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteParameterErrorKind::ParameterNotFound(_))
+    }
 }
 impl std::error::Error for DeleteParameterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1793,6 +2243,12 @@ impl DeleteParametersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteParametersErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for DeleteParametersError {
@@ -1870,6 +2326,18 @@ impl DeletePatchBaselineError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePatchBaselineErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePatchBaselineErrorKind::ResourceInUseError(_)
+        )
     }
 }
 impl std::error::Error for DeletePatchBaselineError {
@@ -1955,6 +2423,24 @@ impl DeleteResourceDataSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceDataSyncErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_data_sync_invalid_configuration_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationError(_)
+        )
+    }
+    pub fn is_resource_data_sync_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceDataSyncErrorKind::ResourceDataSyncNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteResourceDataSyncError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2035,6 +2521,18 @@ impl DeregisterManagedInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterManagedInstanceErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterManagedInstanceErrorKind::InvalidInstanceId(_)
+        )
     }
 }
 impl std::error::Error for DeregisterManagedInstanceError {
@@ -2120,6 +2618,18 @@ impl DeregisterPatchBaselineForPatchGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterPatchBaselineForPatchGroupErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterPatchBaselineForPatchGroupErrorKind::InvalidResourceId(_)
+        )
     }
 }
 impl std::error::Error for DeregisterPatchBaselineForPatchGroupError {
@@ -2216,6 +2726,24 @@ impl DeregisterTargetFromMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTargetFromMaintenanceWindowErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTargetFromMaintenanceWindowErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_target_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTargetFromMaintenanceWindowErrorKind::TargetInUseError(_)
+        )
+    }
 }
 impl std::error::Error for DeregisterTargetFromMaintenanceWindowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2310,6 +2838,18 @@ impl DeregisterTaskFromMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTaskFromMaintenanceWindowErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTaskFromMaintenanceWindowErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for DeregisterTaskFromMaintenanceWindowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2393,6 +2933,21 @@ impl DescribeActivationsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeActivationsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(&self.kind, DescribeActivationsErrorKind::InvalidFilter(_))
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeActivationsErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for DescribeActivationsError {
@@ -2479,6 +3034,33 @@ impl DescribeAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_association_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationErrorKind::AssociationDoesNotExist(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_association_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationErrorKind::InvalidAssociationVersion(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, DescribeAssociationErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationErrorKind::InvalidInstanceId(_)
+        )
+    }
 }
 impl std::error::Error for DescribeAssociationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2563,6 +3145,24 @@ impl DescribeAssociationExecutionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_association_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationExecutionsErrorKind::AssociationDoesNotExist(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationExecutionsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationExecutionsErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for DescribeAssociationExecutionsError {
@@ -2656,6 +3256,30 @@ impl DescribeAssociationExecutionTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_association_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationExecutionTargetsErrorKind::AssociationDoesNotExist(_)
+        )
+    }
+    pub fn is_association_execution_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationExecutionTargetsErrorKind::AssociationExecutionDoesNotExist(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationExecutionTargetsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAssociationExecutionTargetsErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribeAssociationExecutionTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2748,6 +3372,30 @@ impl DescribeAutomationExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationExecutionsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationExecutionsErrorKind::InvalidFilterKey(_)
+        )
+    }
+    pub fn is_invalid_filter_value(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationExecutionsErrorKind::InvalidFilterValue(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationExecutionsErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribeAutomationExecutionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2836,6 +3484,36 @@ impl DescribeAutomationStepExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_automation_execution_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationStepExecutionsErrorKind::AutomationExecutionNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationStepExecutionsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationStepExecutionsErrorKind::InvalidFilterKey(_)
+        )
+    }
+    pub fn is_invalid_filter_value(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationStepExecutionsErrorKind::InvalidFilterValue(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAutomationStepExecutionsErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribeAutomationStepExecutionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2917,6 +3595,12 @@ impl DescribeAvailablePatchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAvailablePatchesErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeAvailablePatchesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2995,6 +3679,21 @@ impl DescribeDocumentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDocumentErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, DescribeDocumentErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDocumentErrorKind::InvalidDocumentVersion(_)
+        )
     }
 }
 impl std::error::Error for DescribeDocumentError {
@@ -3080,6 +3779,36 @@ impl DescribeDocumentPermissionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDocumentPermissionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDocumentPermissionErrorKind::InvalidDocument(_)
+        )
+    }
+    pub fn is_invalid_document_operation(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDocumentPermissionErrorKind::InvalidDocumentOperation(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDocumentPermissionErrorKind::InvalidNextToken(_)
+        )
+    }
+    pub fn is_invalid_permission_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDocumentPermissionErrorKind::InvalidPermissionType(_)
+        )
     }
 }
 impl std::error::Error for DescribeDocumentPermissionError {
@@ -3172,6 +3901,24 @@ impl DescribeEffectiveInstanceAssociationsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEffectiveInstanceAssociationsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEffectiveInstanceAssociationsErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEffectiveInstanceAssociationsErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for DescribeEffectiveInstanceAssociationsError {
@@ -3275,6 +4022,30 @@ impl DescribeEffectivePatchesForPatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEffectivePatchesForPatchBaselineErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEffectivePatchesForPatchBaselineErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEffectivePatchesForPatchBaselineErrorKind::InvalidResourceId(_)
+        )
+    }
+    pub fn is_unsupported_operating_system(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEffectivePatchesForPatchBaselineErrorKind::UnsupportedOperatingSystem(_)
+        )
+    }
 }
 impl std::error::Error for DescribeEffectivePatchesForPatchBaselineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3372,6 +4143,24 @@ impl DescribeInstanceAssociationsStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstanceAssociationsStatusErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstanceAssociationsStatusErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstanceAssociationsStatusErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribeInstanceAssociationsStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3461,6 +4250,36 @@ impl DescribeInstanceInformationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstanceInformationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstanceInformationErrorKind::InvalidFilterKey(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstanceInformationErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_invalid_instance_information_filter_value(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstanceInformationErrorKind::InvalidInstanceInformationFilterValue(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstanceInformationErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribeInstanceInformationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3548,6 +4367,30 @@ impl DescribeInstancePatchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchesErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchesErrorKind::InvalidFilter(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchesErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchesErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribeInstancePatchesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3627,6 +4470,18 @@ impl DescribeInstancePatchStatesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchStatesErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchStatesErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for DescribeInstancePatchStatesError {
@@ -3717,6 +4572,24 @@ impl DescribeInstancePatchStatesForPatchGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchStatesForPatchGroupErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchStatesForPatchGroupErrorKind::InvalidFilter(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancePatchStatesForPatchGroupErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribeInstancePatchStatesForPatchGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3806,6 +4679,24 @@ impl DescribeInventoryDeletionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInventoryDeletionsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_deletion_id_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInventoryDeletionsErrorKind::InvalidDeletionIdError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInventoryDeletionsErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribeInventoryDeletionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3887,6 +4778,12 @@ impl DescribeMaintenanceWindowExecutionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowExecutionsErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for DescribeMaintenanceWindowExecutionsError {
@@ -3980,6 +4877,18 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeMaintenanceWindowExecutionTaskInvocationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4071,6 +4980,18 @@ impl DescribeMaintenanceWindowExecutionTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowExecutionTasksErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowExecutionTasksErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeMaintenanceWindowExecutionTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4152,6 +5073,12 @@ impl DescribeMaintenanceWindowsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowsErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for DescribeMaintenanceWindowsError {
@@ -4235,6 +5162,18 @@ impl DescribeMaintenanceWindowScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowScheduleErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowScheduleErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeMaintenanceWindowScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4315,6 +5254,12 @@ impl DescribeMaintenanceWindowsForTargetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowsForTargetErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for DescribeMaintenanceWindowsForTargetError {
@@ -4397,6 +5342,18 @@ impl DescribeMaintenanceWindowTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowTargetsErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowTargetsErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeMaintenanceWindowTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4475,6 +5432,18 @@ impl DescribeMaintenanceWindowTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowTasksErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMaintenanceWindowTasksErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeMaintenanceWindowTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4550,6 +5519,12 @@ impl DescribeOpsItemsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOpsItemsErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for DescribeOpsItemsError {
@@ -4634,6 +5609,30 @@ impl DescribeParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeParametersErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(&self.kind, DescribeParametersErrorKind::InvalidFilterKey(_))
+    }
+    pub fn is_invalid_filter_option(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeParametersErrorKind::InvalidFilterOption(_)
+        )
+    }
+    pub fn is_invalid_filter_value(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeParametersErrorKind::InvalidFilterValue(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(&self.kind, DescribeParametersErrorKind::InvalidNextToken(_))
+    }
 }
 impl std::error::Error for DescribeParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4713,6 +5712,12 @@ impl DescribePatchBaselinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePatchBaselinesErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribePatchBaselinesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4787,6 +5792,12 @@ impl DescribePatchGroupsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePatchGroupsErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for DescribePatchGroupsError {
@@ -4865,6 +5876,18 @@ impl DescribePatchGroupStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePatchGroupStateErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePatchGroupStateErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for DescribePatchGroupStateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4940,6 +5963,12 @@ impl DescribePatchPropertiesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePatchPropertiesErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for DescribePatchPropertiesError {
@@ -5019,6 +6048,18 @@ impl DescribeSessionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSessionsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(&self.kind, DescribeSessionsErrorKind::InvalidFilterKey(_))
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(&self.kind, DescribeSessionsErrorKind::InvalidNextToken(_))
     }
 }
 impl std::error::Error for DescribeSessionsError {
@@ -5109,6 +6150,30 @@ impl DisassociateOpsItemRelatedItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateOpsItemRelatedItemErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_ops_item_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterError(_)
+        )
+    }
+    pub fn is_ops_item_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateOpsItemRelatedItemErrorKind::OpsItemNotFoundError(_)
+        )
+    }
+    pub fn is_ops_item_related_item_association_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAssociationNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DisassociateOpsItemRelatedItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5195,6 +6260,18 @@ impl GetAutomationExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_automation_execution_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAutomationExecutionErrorKind::AutomationExecutionNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAutomationExecutionErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for GetAutomationExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5278,6 +6355,27 @@ impl GetCalendarStateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCalendarStateErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, GetCalendarStateErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_document_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCalendarStateErrorKind::InvalidDocumentType(_)
+        )
+    }
+    pub fn is_unsupported_calendar_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCalendarStateErrorKind::UnsupportedCalendarError(_)
+        )
     }
 }
 impl std::error::Error for GetCalendarStateError {
@@ -5365,6 +6463,36 @@ impl GetCommandInvocationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCommandInvocationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_command_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCommandInvocationErrorKind::InvalidCommandId(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCommandInvocationErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_invalid_plugin_name(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCommandInvocationErrorKind::InvalidPluginName(_)
+        )
+    }
+    pub fn is_invocation_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCommandInvocationErrorKind::InvocationDoesNotExist(_)
+        )
+    }
 }
 impl std::error::Error for GetCommandInvocationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5444,6 +6572,12 @@ impl GetConnectionStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetConnectionStatusErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for GetConnectionStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5518,6 +6652,12 @@ impl GetDefaultPatchBaselineError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDefaultPatchBaselineErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for GetDefaultPatchBaselineError {
@@ -5606,6 +6746,24 @@ impl GetDeployablePatchSnapshotForInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeployablePatchSnapshotForInstanceErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_unsupported_feature_required_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedFeatureRequiredError(_)
+        )
+    }
+    pub fn is_unsupported_operating_system(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedOperatingSystem(_)
+        )
     }
 }
 impl std::error::Error for GetDeployablePatchSnapshotForInstanceError {
@@ -5696,6 +6854,15 @@ impl GetDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, GetDocumentErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, GetDocumentErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(&self.kind, GetDocumentErrorKind::InvalidDocumentVersion(_))
+    }
 }
 impl std::error::Error for GetDocumentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5785,6 +6952,33 @@ impl GetInventoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, GetInventoryErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_aggregator_error(&self) -> bool {
+        matches!(&self.kind, GetInventoryErrorKind::InvalidAggregatorError(_))
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(&self.kind, GetInventoryErrorKind::InvalidFilter(_))
+    }
+    pub fn is_invalid_inventory_group_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInventoryErrorKind::InvalidInventoryGroupError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(&self.kind, GetInventoryErrorKind::InvalidNextToken(_))
+    }
+    pub fn is_invalid_result_attribute_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInventoryErrorKind::InvalidResultAttributeError(_)
+        )
+    }
+    pub fn is_invalid_type_name_error(&self) -> bool {
+        matches!(&self.kind, GetInventoryErrorKind::InvalidTypeNameError(_))
+    }
 }
 impl std::error::Error for GetInventoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5870,6 +7064,21 @@ impl GetInventorySchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInventorySchemaErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(&self.kind, GetInventorySchemaErrorKind::InvalidNextToken(_))
+    }
+    pub fn is_invalid_type_name_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInventorySchemaErrorKind::InvalidTypeNameError(_)
+        )
+    }
 }
 impl std::error::Error for GetInventorySchemaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5949,6 +7158,18 @@ impl GetMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for GetMaintenanceWindowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6026,6 +7247,18 @@ impl GetMaintenanceWindowExecutionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowExecutionErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowExecutionErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for GetMaintenanceWindowExecutionError {
@@ -6109,6 +7342,18 @@ impl GetMaintenanceWindowExecutionTaskError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowExecutionTaskErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowExecutionTaskErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for GetMaintenanceWindowExecutionTaskError {
@@ -6197,6 +7442,18 @@ impl GetMaintenanceWindowExecutionTaskInvocationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowExecutionTaskInvocationErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowExecutionTaskInvocationErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for GetMaintenanceWindowExecutionTaskInvocationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6281,6 +7538,18 @@ impl GetMaintenanceWindowTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowTaskErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMaintenanceWindowTaskErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for GetMaintenanceWindowTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6358,6 +7627,12 @@ impl GetOpsItemError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, GetOpsItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_ops_item_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetOpsItemErrorKind::OpsItemNotFoundError(_))
     }
 }
 impl std::error::Error for GetOpsItemError {
@@ -6438,6 +7713,21 @@ impl GetOpsMetadataError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, GetOpsMetadataErrorKind::InternalServerError(_))
+    }
+    pub fn is_ops_metadata_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(_)
+        )
+    }
+    pub fn is_ops_metadata_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOpsMetadataErrorKind::OpsMetadataNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for GetOpsMetadataError {
@@ -6526,6 +7816,30 @@ impl GetOpsSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, GetOpsSummaryErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_aggregator_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOpsSummaryErrorKind::InvalidAggregatorError(_)
+        )
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(&self.kind, GetOpsSummaryErrorKind::InvalidFilter(_))
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(&self.kind, GetOpsSummaryErrorKind::InvalidNextToken(_))
+    }
+    pub fn is_invalid_type_name_error(&self) -> bool {
+        matches!(&self.kind, GetOpsSummaryErrorKind::InvalidTypeNameError(_))
+    }
+    pub fn is_resource_data_sync_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOpsSummaryErrorKind::ResourceDataSyncNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for GetOpsSummaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6612,6 +7926,21 @@ impl GetParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, GetParameterErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_key_id(&self) -> bool {
+        matches!(&self.kind, GetParameterErrorKind::InvalidKeyId(_))
+    }
+    pub fn is_parameter_not_found(&self) -> bool {
+        matches!(&self.kind, GetParameterErrorKind::ParameterNotFound(_))
+    }
+    pub fn is_parameter_version_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParameterErrorKind::ParameterVersionNotFound(_)
+        )
+    }
 }
 impl std::error::Error for GetParameterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6696,6 +8025,27 @@ impl GetParameterHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParameterHistoryErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_key_id(&self) -> bool {
+        matches!(&self.kind, GetParameterHistoryErrorKind::InvalidKeyId(_))
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParameterHistoryErrorKind::InvalidNextToken(_)
+        )
+    }
+    pub fn is_parameter_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParameterHistoryErrorKind::ParameterNotFound(_)
+        )
+    }
 }
 impl std::error::Error for GetParameterHistoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6775,6 +8125,12 @@ impl GetParametersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, GetParametersErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_key_id(&self) -> bool {
+        matches!(&self.kind, GetParametersErrorKind::InvalidKeyId(_))
     }
 }
 impl std::error::Error for GetParametersError {
@@ -6862,6 +8218,39 @@ impl GetParametersByPathError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersByPathErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersByPathErrorKind::InvalidFilterKey(_)
+        )
+    }
+    pub fn is_invalid_filter_option(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersByPathErrorKind::InvalidFilterOption(_)
+        )
+    }
+    pub fn is_invalid_filter_value(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersByPathErrorKind::InvalidFilterValue(_)
+        )
+    }
+    pub fn is_invalid_key_id(&self) -> bool {
+        matches!(&self.kind, GetParametersByPathErrorKind::InvalidKeyId(_))
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersByPathErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for GetParametersByPathError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6946,6 +8335,18 @@ impl GetPatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(&self.kind, GetPatchBaselineErrorKind::DoesNotExistError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPatchBaselineErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(&self.kind, GetPatchBaselineErrorKind::InvalidResourceId(_))
+    }
 }
 impl std::error::Error for GetPatchBaselineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7023,6 +8424,12 @@ impl GetPatchBaselineForPatchGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPatchBaselineForPatchGroupErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for GetPatchBaselineForPatchGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7099,6 +8506,18 @@ impl GetServiceSettingError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceSettingErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_service_setting_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceSettingErrorKind::ServiceSettingNotFound(_)
+        )
     }
 }
 impl std::error::Error for GetServiceSettingError {
@@ -7186,6 +8605,36 @@ impl LabelParameterVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            LabelParameterVersionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_parameter_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            LabelParameterVersionErrorKind::ParameterNotFound(_)
+        )
+    }
+    pub fn is_parameter_version_label_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            LabelParameterVersionErrorKind::ParameterVersionLabelLimitExceeded(_)
+        )
+    }
+    pub fn is_parameter_version_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            LabelParameterVersionErrorKind::ParameterVersionNotFound(_)
+        )
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(
+            &self.kind,
+            LabelParameterVersionErrorKind::TooManyUpdates(_)
+        )
+    }
 }
 impl std::error::Error for LabelParameterVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7269,6 +8718,15 @@ impl ListAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssociationsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(&self.kind, ListAssociationsErrorKind::InvalidNextToken(_))
+    }
 }
 impl std::error::Error for ListAssociationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7348,6 +8806,24 @@ impl ListAssociationVersionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_association_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssociationVersionsErrorKind::AssociationDoesNotExist(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssociationVersionsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssociationVersionsErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for ListAssociationVersionsError {
@@ -7433,6 +8909,36 @@ impl ListCommandInvocationsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCommandInvocationsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_command_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCommandInvocationsErrorKind::InvalidCommandId(_)
+        )
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCommandInvocationsErrorKind::InvalidFilterKey(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCommandInvocationsErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCommandInvocationsErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for ListCommandInvocationsError {
@@ -7521,6 +9027,21 @@ impl ListCommandsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ListCommandsErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_command_id(&self) -> bool {
+        matches!(&self.kind, ListCommandsErrorKind::InvalidCommandId(_))
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(&self.kind, ListCommandsErrorKind::InvalidFilterKey(_))
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(&self.kind, ListCommandsErrorKind::InvalidInstanceId(_))
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(&self.kind, ListCommandsErrorKind::InvalidNextToken(_))
+    }
 }
 impl std::error::Error for ListCommandsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7608,6 +9129,33 @@ impl ListComplianceItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComplianceItemsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(&self.kind, ListComplianceItemsErrorKind::InvalidFilter(_))
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComplianceItemsErrorKind::InvalidNextToken(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComplianceItemsErrorKind::InvalidResourceId(_)
+        )
+    }
+    pub fn is_invalid_resource_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComplianceItemsErrorKind::InvalidResourceType(_)
+        )
+    }
 }
 impl std::error::Error for ListComplianceItemsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7690,6 +9238,24 @@ impl ListComplianceSummariesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComplianceSummariesErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComplianceSummariesErrorKind::InvalidFilter(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComplianceSummariesErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for ListComplianceSummariesError {
@@ -7774,6 +9340,30 @@ impl ListDocumentMetadataHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentMetadataHistoryErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentMetadataHistoryErrorKind::InvalidDocument(_)
+        )
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentMetadataHistoryErrorKind::InvalidDocumentVersion(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentMetadataHistoryErrorKind::InvalidNextToken(_)
+        )
+    }
 }
 impl std::error::Error for ListDocumentMetadataHistoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7856,6 +9446,15 @@ impl ListDocumentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ListDocumentsErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_filter_key(&self) -> bool {
+        matches!(&self.kind, ListDocumentsErrorKind::InvalidFilterKey(_))
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(&self.kind, ListDocumentsErrorKind::InvalidNextToken(_))
+    }
 }
 impl std::error::Error for ListDocumentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7936,6 +9535,24 @@ impl ListDocumentVersionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentVersionsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentVersionsErrorKind::InvalidDocument(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentVersionsErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for ListDocumentVersionsError {
@@ -8022,6 +9639,33 @@ impl ListInventoryEntriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInventoryEntriesErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(&self.kind, ListInventoryEntriesErrorKind::InvalidFilter(_))
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInventoryEntriesErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInventoryEntriesErrorKind::InvalidNextToken(_)
+        )
+    }
+    pub fn is_invalid_type_name_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInventoryEntriesErrorKind::InvalidTypeNameError(_)
+        )
+    }
 }
 impl std::error::Error for ListInventoryEntriesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8107,6 +9751,30 @@ impl ListOpsItemEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpsItemEventsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_ops_item_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpsItemEventsErrorKind::OpsItemInvalidParameterError(_)
+        )
+    }
+    pub fn is_ops_item_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpsItemEventsErrorKind::OpsItemLimitExceededError(_)
+        )
+    }
+    pub fn is_ops_item_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpsItemEventsErrorKind::OpsItemNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for ListOpsItemEventsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8187,6 +9855,18 @@ impl ListOpsItemRelatedItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpsItemRelatedItemsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_ops_item_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpsItemRelatedItemsErrorKind::OpsItemInvalidParameterError(_)
+        )
+    }
 }
 impl std::error::Error for ListOpsItemRelatedItemsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8264,6 +9944,15 @@ impl ListOpsMetadataError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ListOpsMetadataErrorKind::InternalServerError(_))
+    }
+    pub fn is_ops_metadata_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(_)
+        )
     }
 }
 impl std::error::Error for ListOpsMetadataError {
@@ -8344,6 +10033,24 @@ impl ListResourceComplianceSummariesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceComplianceSummariesErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_filter(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceComplianceSummariesErrorKind::InvalidFilter(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceComplianceSummariesErrorKind::InvalidNextToken(_)
+        )
     }
 }
 impl std::error::Error for ListResourceComplianceSummariesError {
@@ -8430,6 +10137,24 @@ impl ListResourceDataSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceDataSyncErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceDataSyncErrorKind::InvalidNextToken(_)
+        )
+    }
+    pub fn is_resource_data_sync_invalid_configuration_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationError(_)
+        )
+    }
 }
 impl std::error::Error for ListResourceDataSyncError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8512,6 +10237,24 @@ impl ListTagsForResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InvalidResourceId(_)
+        )
+    }
+    pub fn is_invalid_resource_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InvalidResourceType(_)
+        )
     }
 }
 impl std::error::Error for ListTagsForResourceError {
@@ -8597,6 +10340,36 @@ impl ModifyDocumentPermissionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_document_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDocumentPermissionErrorKind::DocumentLimitExceeded(_)
+        )
+    }
+    pub fn is_document_permission_limit(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDocumentPermissionErrorKind::DocumentPermissionLimit(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDocumentPermissionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDocumentPermissionErrorKind::InvalidDocument(_)
+        )
+    }
+    pub fn is_invalid_permission_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDocumentPermissionErrorKind::InvalidPermissionType(_)
+        )
     }
 }
 impl std::error::Error for ModifyDocumentPermissionError {
@@ -8690,6 +10463,48 @@ impl PutComplianceItemsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_compliance_type_count_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutComplianceItemsErrorKind::ComplianceTypeCountLimitExceededError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutComplianceItemsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_item_content_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutComplianceItemsErrorKind::InvalidItemContentError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutComplianceItemsErrorKind::InvalidResourceId(_)
+        )
+    }
+    pub fn is_invalid_resource_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutComplianceItemsErrorKind::InvalidResourceType(_)
+        )
+    }
+    pub fn is_item_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutComplianceItemsErrorKind::ItemSizeLimitExceededError(_)
+        )
+    }
+    pub fn is_total_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutComplianceItemsErrorKind::TotalSizeLimitExceededError(_)
+        )
     }
 }
 impl std::error::Error for PutComplianceItemsError {
@@ -8795,6 +10610,69 @@ impl PutInventoryError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_custom_schema_count_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::CustomSchemaCountLimitExceededError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, PutInventoryErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(&self.kind, PutInventoryErrorKind::InvalidInstanceId(_))
+    }
+    pub fn is_invalid_inventory_item_context_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::InvalidInventoryItemContextError(_)
+        )
+    }
+    pub fn is_invalid_item_content_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::InvalidItemContentError(_)
+        )
+    }
+    pub fn is_invalid_type_name_error(&self) -> bool {
+        matches!(&self.kind, PutInventoryErrorKind::InvalidTypeNameError(_))
+    }
+    pub fn is_item_content_mismatch_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::ItemContentMismatchError(_)
+        )
+    }
+    pub fn is_item_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::ItemSizeLimitExceededError(_)
+        )
+    }
+    pub fn is_sub_type_count_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::SubTypeCountLimitExceededError(_)
+        )
+    }
+    pub fn is_total_size_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::TotalSizeLimitExceededError(_)
+        )
+    }
+    pub fn is_unsupported_inventory_item_context_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::UnsupportedInventoryItemContextError(_)
+        )
+    }
+    pub fn is_unsupported_inventory_schema_version_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInventoryErrorKind::UnsupportedInventorySchemaVersionError(_)
+        )
     }
 }
 impl std::error::Error for PutInventoryError {
@@ -8910,6 +10788,78 @@ impl PutParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_hierarchy_level_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::HierarchyLevelLimitExceededError(_)
+        )
+    }
+    pub fn is_hierarchy_type_mismatch_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::HierarchyTypeMismatchError(_)
+        )
+    }
+    pub fn is_incompatible_policy_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::IncompatiblePolicyError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, PutParameterErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_allowed_pattern_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::InvalidAllowedPatternError(_)
+        )
+    }
+    pub fn is_invalid_key_id(&self) -> bool {
+        matches!(&self.kind, PutParameterErrorKind::InvalidKeyId(_))
+    }
+    pub fn is_invalid_policy_attribute_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::InvalidPolicyAttributeError(_)
+        )
+    }
+    pub fn is_invalid_policy_type_error(&self) -> bool {
+        matches!(&self.kind, PutParameterErrorKind::InvalidPolicyTypeError(_))
+    }
+    pub fn is_parameter_already_exists(&self) -> bool {
+        matches!(&self.kind, PutParameterErrorKind::ParameterAlreadyExists(_))
+    }
+    pub fn is_parameter_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, PutParameterErrorKind::ParameterLimitExceeded(_))
+    }
+    pub fn is_parameter_max_version_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::ParameterMaxVersionLimitExceeded(_)
+        )
+    }
+    pub fn is_parameter_pattern_mismatch_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::ParameterPatternMismatchError(_)
+        )
+    }
+    pub fn is_policies_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::PoliciesLimitExceededError(_)
+        )
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(&self.kind, PutParameterErrorKind::TooManyUpdates(_))
+    }
+    pub fn is_unsupported_parameter_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutParameterErrorKind::UnsupportedParameterType(_)
+        )
+    }
 }
 impl std::error::Error for PutParameterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9002,6 +10952,24 @@ impl RegisterDefaultPatchBaselineError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDefaultPatchBaselineErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDefaultPatchBaselineErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDefaultPatchBaselineErrorKind::InvalidResourceId(_)
+        )
     }
 }
 impl std::error::Error for RegisterDefaultPatchBaselineError {
@@ -9096,6 +11064,36 @@ impl RegisterPatchBaselineForPatchGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterPatchBaselineForPatchGroupErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterPatchBaselineForPatchGroupErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterPatchBaselineForPatchGroupErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterPatchBaselineForPatchGroupErrorKind::InvalidResourceId(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterPatchBaselineForPatchGroupErrorKind::ResourceLimitExceededError(_)
+        )
     }
 }
 impl std::error::Error for RegisterPatchBaselineForPatchGroupError {
@@ -9196,6 +11194,30 @@ impl RegisterTargetWithMaintenanceWindowError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTargetWithMaintenanceWindowErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_idempotent_parameter_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTargetWithMaintenanceWindowErrorKind::IdempotentParameterMismatch(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTargetWithMaintenanceWindowErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTargetWithMaintenanceWindowErrorKind::ResourceLimitExceededError(_)
+        )
     }
 }
 impl std::error::Error for RegisterTargetWithMaintenanceWindowError {
@@ -9302,6 +11324,36 @@ impl RegisterTaskWithMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTaskWithMaintenanceWindowErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_feature_not_available_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTaskWithMaintenanceWindowErrorKind::FeatureNotAvailableError(_)
+        )
+    }
+    pub fn is_idempotent_parameter_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTaskWithMaintenanceWindowErrorKind::IdempotentParameterMismatch(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTaskWithMaintenanceWindowErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTaskWithMaintenanceWindowErrorKind::ResourceLimitExceededError(_)
+        )
+    }
 }
 impl std::error::Error for RegisterTaskWithMaintenanceWindowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9393,6 +11445,30 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_resource_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::InvalidResourceId(_)
+        )
+    }
+    pub fn is_invalid_resource_type(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::InvalidResourceType(_)
+        )
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::TooManyUpdates(_)
+        )
+    }
 }
 impl std::error::Error for RemoveTagsFromResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9475,6 +11551,21 @@ impl ResetServiceSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResetServiceSettingErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_service_setting_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResetServiceSettingErrorKind::ServiceSettingNotFound(_)
+        )
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(&self.kind, ResetServiceSettingErrorKind::TooManyUpdates(_))
+    }
 }
 impl std::error::Error for ResetServiceSettingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9553,6 +11644,12 @@ impl ResumeSessionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(&self.kind, ResumeSessionErrorKind::DoesNotExistError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ResumeSessionErrorKind::InternalServerError(_))
     }
 }
 impl std::error::Error for ResumeSessionError {
@@ -9637,6 +11734,30 @@ impl SendAutomationSignalError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_automation_execution_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendAutomationSignalErrorKind::AutomationExecutionNotFoundError(_)
+        )
+    }
+    pub fn is_automation_step_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendAutomationSignalErrorKind::AutomationStepNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendAutomationSignalErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_automation_signal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendAutomationSignalErrorKind::InvalidAutomationSignalError(_)
+        )
     }
 }
 impl std::error::Error for SendAutomationSignalError {
@@ -9736,6 +11857,42 @@ impl SendCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_duplicate_instance_id(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::DuplicateInstanceId(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::InvalidDocumentVersion(_))
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::InvalidInstanceId(_))
+    }
+    pub fn is_invalid_notification_config(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCommandErrorKind::InvalidNotificationConfig(_)
+        )
+    }
+    pub fn is_invalid_output_folder(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::InvalidOutputFolder(_))
+    }
+    pub fn is_invalid_parameters(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::InvalidParameters(_))
+    }
+    pub fn is_invalid_role(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::InvalidRole(_))
+    }
+    pub fn is_max_document_size_exceeded(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::MaxDocumentSizeExceeded(_))
+    }
+    pub fn is_unsupported_platform_type(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::UnsupportedPlatformType(_))
+    }
 }
 impl std::error::Error for SendCommandError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9822,6 +11979,18 @@ impl StartAssociationsOnceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_association_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAssociationsOnceErrorKind::AssociationDoesNotExist(_)
+        )
+    }
+    pub fn is_invalid_association(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAssociationsOnceErrorKind::InvalidAssociation(_)
+        )
     }
 }
 impl std::error::Error for StartAssociationsOnceError {
@@ -9922,6 +12091,48 @@ impl StartAutomationExecutionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_automation_definition_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAutomationExecutionErrorKind::AutomationDefinitionNotFoundError(_)
+        )
+    }
+    pub fn is_automation_definition_version_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAutomationExecutionErrorKind::AutomationDefinitionVersionNotFoundError(_)
+        )
+    }
+    pub fn is_automation_execution_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAutomationExecutionErrorKind::AutomationExecutionLimitExceededError(_)
+        )
+    }
+    pub fn is_idempotent_parameter_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAutomationExecutionErrorKind::IdempotentParameterMismatch(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAutomationExecutionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_automation_execution_parameters_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAutomationExecutionErrorKind::InvalidAutomationExecutionParametersError(_)
+        )
+    }
+    pub fn is_invalid_target(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAutomationExecutionErrorKind::InvalidTarget(_)
+        )
     }
 }
 impl std::error::Error for StartAutomationExecutionError {
@@ -10040,6 +12251,48 @@ impl StartChangeRequestExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_automation_definition_not_approved_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChangeRequestExecutionErrorKind::AutomationDefinitionNotApprovedError(_)
+        )
+    }
+    pub fn is_automation_definition_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChangeRequestExecutionErrorKind::AutomationDefinitionNotFoundError(_)
+        )
+    }
+    pub fn is_automation_definition_version_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChangeRequestExecutionErrorKind::AutomationDefinitionVersionNotFoundError(_)
+        )
+    }
+    pub fn is_automation_execution_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChangeRequestExecutionErrorKind::AutomationExecutionLimitExceededError(_)
+        )
+    }
+    pub fn is_idempotent_parameter_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChangeRequestExecutionErrorKind::IdempotentParameterMismatch(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChangeRequestExecutionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_automation_execution_parameters_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChangeRequestExecutionErrorKind::InvalidAutomationExecutionParametersError(_)
+        )
+    }
 }
 impl std::error::Error for StartChangeRequestExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10137,6 +12390,15 @@ impl StartSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, StartSessionErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, StartSessionErrorKind::InvalidDocument(_))
+    }
+    pub fn is_target_not_connected(&self) -> bool {
+        matches!(&self.kind, StartSessionErrorKind::TargetNotConnected(_))
+    }
 }
 impl std::error::Error for StartSessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10222,6 +12484,24 @@ impl StopAutomationExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_automation_execution_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopAutomationExecutionErrorKind::AutomationExecutionNotFoundError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopAutomationExecutionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_automation_status_update_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopAutomationExecutionErrorKind::InvalidAutomationStatusUpdateError(_)
+        )
+    }
 }
 impl std::error::Error for StopAutomationExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10305,6 +12585,15 @@ impl TerminateSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(&self.kind, TerminateSessionErrorKind::DoesNotExistError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TerminateSessionErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for TerminateSessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10386,6 +12675,30 @@ impl UnlabelParameterVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UnlabelParameterVersionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_parameter_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UnlabelParameterVersionErrorKind::ParameterNotFound(_)
+        )
+    }
+    pub fn is_parameter_version_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UnlabelParameterVersionErrorKind::ParameterVersionNotFound(_)
+        )
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(
+            &self.kind,
+            UnlabelParameterVersionErrorKind::TooManyUpdates(_)
+        )
     }
 }
 impl std::error::Error for UnlabelParameterVersionError {
@@ -10487,6 +12800,60 @@ impl UpdateAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_association_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationErrorKind::AssociationDoesNotExist(_)
+        )
+    }
+    pub fn is_association_version_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationErrorKind::AssociationVersionLimitExceeded(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_association_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationErrorKind::InvalidAssociationVersion(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, UpdateAssociationErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationErrorKind::InvalidDocumentVersion(_)
+        )
+    }
+    pub fn is_invalid_output_location(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationErrorKind::InvalidOutputLocation(_)
+        )
+    }
+    pub fn is_invalid_parameters(&self) -> bool {
+        matches!(&self.kind, UpdateAssociationErrorKind::InvalidParameters(_))
+    }
+    pub fn is_invalid_schedule(&self) -> bool {
+        matches!(&self.kind, UpdateAssociationErrorKind::InvalidSchedule(_))
+    }
+    pub fn is_invalid_target(&self) -> bool {
+        matches!(&self.kind, UpdateAssociationErrorKind::InvalidTarget(_))
+    }
+    pub fn is_invalid_update(&self) -> bool {
+        matches!(&self.kind, UpdateAssociationErrorKind::InvalidUpdate(_))
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(&self.kind, UpdateAssociationErrorKind::TooManyUpdates(_))
+    }
 }
 impl std::error::Error for UpdateAssociationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10582,6 +12949,42 @@ impl UpdateAssociationStatusError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_association_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationStatusErrorKind::AssociationDoesNotExist(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationStatusErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationStatusErrorKind::InvalidDocument(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationStatusErrorKind::InvalidInstanceId(_)
+        )
+    }
+    pub fn is_status_unchanged(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationStatusErrorKind::StatusUnchanged(_)
+        )
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssociationStatusErrorKind::TooManyUpdates(_)
+        )
     }
 }
 impl std::error::Error for UpdateAssociationStatusError {
@@ -10681,6 +13084,60 @@ impl UpdateDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_document_version_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentErrorKind::DocumentVersionLimitExceeded(_)
+        )
+    }
+    pub fn is_duplicate_document_content(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentErrorKind::DuplicateDocumentContent(_)
+        )
+    }
+    pub fn is_duplicate_document_version_name(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentErrorKind::DuplicateDocumentVersionName(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateDocumentErrorKind::InternalServerError(_))
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(&self.kind, UpdateDocumentErrorKind::InvalidDocument(_))
+    }
+    pub fn is_invalid_document_content(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentErrorKind::InvalidDocumentContent(_)
+        )
+    }
+    pub fn is_invalid_document_operation(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentErrorKind::InvalidDocumentOperation(_)
+        )
+    }
+    pub fn is_invalid_document_schema_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentErrorKind::InvalidDocumentSchemaVersion(_)
+        )
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentErrorKind::InvalidDocumentVersion(_)
+        )
+    }
+    pub fn is_max_document_size_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentErrorKind::MaxDocumentSizeExceeded(_)
+        )
+    }
 }
 impl std::error::Error for UpdateDocumentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10773,6 +13230,30 @@ impl UpdateDocumentDefaultVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentDefaultVersionErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentDefaultVersionErrorKind::InvalidDocument(_)
+        )
+    }
+    pub fn is_invalid_document_schema_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentDefaultVersionErrorKind::InvalidDocumentSchemaVersion(_)
+        )
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentDefaultVersionErrorKind::InvalidDocumentVersion(_)
+        )
+    }
 }
 impl std::error::Error for UpdateDocumentDefaultVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10859,6 +13340,30 @@ impl UpdateDocumentMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentMetadataErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_document(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentMetadataErrorKind::InvalidDocument(_)
+        )
+    }
+    pub fn is_invalid_document_operation(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentMetadataErrorKind::InvalidDocumentOperation(_)
+        )
+    }
+    pub fn is_invalid_document_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentMetadataErrorKind::InvalidDocumentVersion(_)
+        )
+    }
 }
 impl std::error::Error for UpdateDocumentMetadataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10939,6 +13444,18 @@ impl UpdateMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMaintenanceWindowErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMaintenanceWindowErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateMaintenanceWindowError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11016,6 +13533,18 @@ impl UpdateMaintenanceWindowTargetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMaintenanceWindowTargetErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMaintenanceWindowTargetErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for UpdateMaintenanceWindowTargetError {
@@ -11095,6 +13624,18 @@ impl UpdateMaintenanceWindowTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMaintenanceWindowTaskErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMaintenanceWindowTaskErrorKind::InternalServerError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateMaintenanceWindowTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11172,6 +13713,18 @@ impl UpdateManagedInstanceRoleError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateManagedInstanceRoleErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_instance_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateManagedInstanceRoleErrorKind::InvalidInstanceId(_)
+        )
     }
 }
 impl std::error::Error for UpdateManagedInstanceRoleError {
@@ -11256,6 +13809,30 @@ impl UpdateOpsItemError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateOpsItemErrorKind::InternalServerError(_))
+    }
+    pub fn is_ops_item_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsItemErrorKind::OpsItemAlreadyExistsError(_)
+        )
+    }
+    pub fn is_ops_item_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsItemErrorKind::OpsItemInvalidParameterError(_)
+        )
+    }
+    pub fn is_ops_item_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsItemErrorKind::OpsItemLimitExceededError(_)
+        )
+    }
+    pub fn is_ops_item_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateOpsItemErrorKind::OpsItemNotFoundError(_))
     }
 }
 impl std::error::Error for UpdateOpsItemError {
@@ -11344,6 +13921,36 @@ impl UpdateOpsMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsMetadataErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_ops_metadata_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(_)
+        )
+    }
+    pub fn is_ops_metadata_key_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsMetadataErrorKind::OpsMetadataKeyLimitExceededError(_)
+        )
+    }
+    pub fn is_ops_metadata_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsMetadataErrorKind::OpsMetadataNotFoundError(_)
+        )
+    }
+    pub fn is_ops_metadata_too_many_updates_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateOpsMetadataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11424,6 +14031,18 @@ impl UpdatePatchBaselineError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_does_not_exist_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePatchBaselineErrorKind::DoesNotExistError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePatchBaselineErrorKind::InternalServerError(_)
+        )
     }
 }
 impl std::error::Error for UpdatePatchBaselineError {
@@ -11511,6 +14130,30 @@ impl UpdateResourceDataSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceDataSyncErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_data_sync_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceDataSyncErrorKind::ResourceDataSyncConflictError(_)
+        )
+    }
+    pub fn is_resource_data_sync_invalid_configuration_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationError(_)
+        )
+    }
+    pub fn is_resource_data_sync_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceDataSyncErrorKind::ResourceDataSyncNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateResourceDataSyncError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11595,6 +14238,21 @@ impl UpdateServiceSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceSettingErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_service_setting_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceSettingErrorKind::ServiceSettingNotFound(_)
+        )
+    }
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(&self.kind, UpdateServiceSettingErrorKind::TooManyUpdates(_))
+    }
 }
 impl std::error::Error for UpdateServiceSettingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11646,12 +14304,12 @@ pub mod too_many_updates {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyUpdates`](crate::error::TooManyUpdates)
@@ -11709,12 +14367,12 @@ pub mod service_setting_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceSettingNotFound`](crate::error::ServiceSettingNotFound)
@@ -11771,12 +14429,12 @@ pub mod internal_server_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError)
@@ -11846,28 +14504,28 @@ pub mod resource_data_sync_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn sync_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sync_name = Some(inp.into());
+        pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_name = Some(input.into());
             self
         }
-        pub fn set_sync_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sync_name = inp;
+        pub fn set_sync_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_name = input;
             self
         }
-        pub fn sync_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sync_type = Some(inp.into());
+        pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_type = Some(input.into());
             self
         }
-        pub fn set_sync_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sync_type = inp;
+        pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncNotFoundError`](crate::error::ResourceDataSyncNotFoundError)
@@ -11926,12 +14584,12 @@ pub mod resource_data_sync_invalid_configuration_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncInvalidConfigurationError`](crate::error::ResourceDataSyncInvalidConfigurationError)
@@ -11992,12 +14650,12 @@ pub mod resource_data_sync_conflict_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncConflictError`](crate::error::ResourceDataSyncConflictError)
@@ -12057,12 +14715,12 @@ pub mod does_not_exist_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DoesNotExistError`](crate::error::DoesNotExistError)
@@ -12123,12 +14781,12 @@ pub mod ops_metadata_too_many_updates_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsMetadataTooManyUpdatesError`](crate::error::OpsMetadataTooManyUpdatesError)
@@ -12185,12 +14843,12 @@ pub mod ops_metadata_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsMetadataNotFoundError`](crate::error::OpsMetadataNotFoundError)
@@ -12251,12 +14909,12 @@ pub mod ops_metadata_key_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsMetadataKeyLimitExceededError`](crate::error::OpsMetadataKeyLimitExceededError)
@@ -12316,12 +14974,12 @@ pub mod ops_metadata_invalid_argument_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsMetadataInvalidArgumentError`](crate::error::OpsMetadataInvalidArgumentError)
@@ -12378,12 +15036,12 @@ pub mod ops_item_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemNotFoundError`](crate::error::OpsItemNotFoundError)
@@ -12459,41 +15117,41 @@ pub mod ops_item_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_types = Some(v);
             self
         }
         pub fn set_resource_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_types = inp;
+            self.resource_types = input;
             self
         }
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
-        pub fn limit_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.limit_type = Some(inp.into());
+        pub fn limit_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.limit_type = Some(input.into());
             self
         }
-        pub fn set_limit_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.limit_type = inp;
+        pub fn set_limit_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.limit_type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemLimitExceededError`](crate::error::OpsItemLimitExceededError)
@@ -12562,25 +15220,25 @@ pub mod ops_item_invalid_parameter_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn parameter_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn parameter_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parameter_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameter_names = Some(v);
             self
         }
         pub fn set_parameter_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.parameter_names = inp;
+            self.parameter_names = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemInvalidParameterError`](crate::error::OpsItemInvalidParameterError)
@@ -12646,20 +15304,20 @@ pub mod ops_item_already_exists_error {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemAlreadyExistsError`](crate::error::OpsItemAlreadyExistsError)
@@ -12722,12 +15380,12 @@ pub mod invalid_instance_id {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidInstanceId`](crate::error::InvalidInstanceId)
@@ -12784,12 +15442,12 @@ pub mod invalid_document_version {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDocumentVersion`](crate::error::InvalidDocumentVersion)
@@ -12847,12 +15505,12 @@ pub mod invalid_document_operation {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDocumentOperation`](crate::error::InvalidDocumentOperation)
@@ -12917,12 +15575,12 @@ pub mod invalid_document {
         /// be issued by CreateAssociation, CreateAssociationBatch, DeleteAssociation, DeleteDocument,
         /// DescribeAssociation, DescribeDocument, GetDocument, SendCommand, or UpdateAssociationStatus.
         /// </p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDocument`](crate::error::InvalidDocument)
@@ -12979,12 +15637,12 @@ pub mod invalid_document_schema_version {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDocumentSchemaVersion`](crate::error::InvalidDocumentSchemaVersion)
@@ -13041,12 +15699,12 @@ pub mod max_document_size_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MaxDocumentSizeExceeded`](crate::error::MaxDocumentSizeExceeded)
@@ -13105,12 +15763,12 @@ pub mod invalid_document_content {
     }
     impl Builder {
         /// <p>A description of the validation error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDocumentContent`](crate::error::InvalidDocumentContent)
@@ -13168,12 +15826,12 @@ pub mod duplicate_document_version_name {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DuplicateDocumentVersionName`](crate::error::DuplicateDocumentVersionName)
@@ -13231,12 +15889,12 @@ pub mod duplicate_document_content {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DuplicateDocumentContent`](crate::error::DuplicateDocumentContent)
@@ -13294,12 +15952,12 @@ pub mod document_version_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentVersionLimitExceeded`](crate::error::DocumentVersionLimitExceeded)
@@ -13398,12 +16056,12 @@ pub mod association_does_not_exist {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationDoesNotExist`](crate::error::AssociationDoesNotExist)
@@ -13460,12 +16118,12 @@ pub mod invalid_update {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidUpdate`](crate::error::InvalidUpdate)
@@ -13523,12 +16181,12 @@ pub mod invalid_target {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidTarget`](crate::error::InvalidTarget)
@@ -13585,12 +16243,12 @@ pub mod invalid_schedule {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSchedule`](crate::error::InvalidSchedule)
@@ -13648,12 +16306,12 @@ pub mod invalid_parameters {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidParameters`](crate::error::InvalidParameters)
@@ -13754,12 +16412,12 @@ pub mod invalid_association_version {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAssociationVersion`](crate::error::InvalidAssociationVersion)
@@ -13817,12 +16475,12 @@ pub mod association_version_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationVersionLimitExceeded`](crate::error::AssociationVersionLimitExceeded)
@@ -13880,12 +16538,12 @@ pub mod parameter_version_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterVersionNotFound`](crate::error::ParameterVersionNotFound)
@@ -13942,12 +16600,12 @@ pub mod parameter_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterNotFound`](crate::error::ParameterNotFound)
@@ -14007,12 +16665,12 @@ pub mod invalid_automation_status_update_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAutomationStatusUpdateError`](crate::error::InvalidAutomationStatusUpdateError)
@@ -14073,12 +16731,12 @@ pub mod automation_execution_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationExecutionNotFoundError`](crate::error::AutomationExecutionNotFoundError)
@@ -14138,12 +16796,12 @@ pub mod target_not_connected {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TargetNotConnected`](crate::error::TargetNotConnected)
@@ -14202,12 +16860,12 @@ pub mod invalid_automation_execution_parameters_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAutomationExecutionParametersError`](crate::error::InvalidAutomationExecutionParametersError)
@@ -14265,12 +16923,12 @@ pub mod idempotent_parameter_mismatch {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IdempotentParameterMismatch`](crate::error::IdempotentParameterMismatch)
@@ -14331,12 +16989,12 @@ pub mod automation_execution_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationExecutionLimitExceededError`](crate::error::AutomationExecutionLimitExceededError)
@@ -14393,12 +17051,12 @@ pub mod automation_definition_version_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationDefinitionVersionNotFoundError`](crate::error::AutomationDefinitionVersionNotFoundError)
@@ -14458,12 +17116,12 @@ pub mod automation_definition_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationDefinitionNotFoundError`](crate::error::AutomationDefinitionNotFoundError)
@@ -14524,12 +17182,12 @@ pub mod automation_definition_not_approved_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationDefinitionNotApprovedError`](crate::error::AutomationDefinitionNotApprovedError)
@@ -14586,12 +17244,12 @@ pub mod invalid_association {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAssociation`](crate::error::InvalidAssociation)
@@ -14649,12 +17307,12 @@ pub mod unsupported_platform_type {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedPlatformType`](crate::error::UnsupportedPlatformType)
@@ -14714,12 +17372,12 @@ pub mod invalid_role {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidRole`](crate::error::InvalidRole)
@@ -14819,12 +17477,12 @@ pub mod invalid_notification_config {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidNotificationConfig`](crate::error::InvalidNotificationConfig)
@@ -14926,12 +17584,12 @@ pub mod invalid_automation_signal_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAutomationSignalError`](crate::error::InvalidAutomationSignalError)
@@ -14992,12 +17650,12 @@ pub mod automation_step_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AutomationStepNotFoundError`](crate::error::AutomationStepNotFoundError)
@@ -15145,12 +17803,12 @@ pub mod resource_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceLimitExceededError`](crate::error::ResourceLimitExceededError)
@@ -15208,12 +17866,12 @@ pub mod feature_not_available_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`FeatureNotAvailableError`](crate::error::FeatureNotAvailableError)
@@ -15271,12 +17929,12 @@ pub mod already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AlreadyExistsError`](crate::error::AlreadyExistsError)
@@ -15333,12 +17991,12 @@ pub mod unsupported_parameter_type {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedParameterType`](crate::error::UnsupportedParameterType)
@@ -15399,12 +18057,12 @@ pub mod policies_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PoliciesLimitExceededError`](crate::error::PoliciesLimitExceededError)
@@ -15466,12 +18124,12 @@ pub mod parameter_pattern_mismatch_error {
     }
     impl Builder {
         /// <p>The parameter name is not valid.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterPatternMismatchError`](crate::error::ParameterPatternMismatchError)
@@ -15545,12 +18203,12 @@ pub mod parameter_max_version_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterMaxVersionLimitExceeded`](crate::error::ParameterMaxVersionLimitExceeded)
@@ -15608,12 +18266,12 @@ pub mod parameter_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterLimitExceeded`](crate::error::ParameterLimitExceeded)
@@ -15670,12 +18328,12 @@ pub mod parameter_already_exists {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterAlreadyExists`](crate::error::ParameterAlreadyExists)
@@ -15733,12 +18391,12 @@ pub mod invalid_policy_type_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidPolicyTypeError`](crate::error::InvalidPolicyTypeError)
@@ -15798,12 +18456,12 @@ pub mod invalid_policy_attribute_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidPolicyAttributeError`](crate::error::InvalidPolicyAttributeError)
@@ -15860,12 +18518,12 @@ pub mod invalid_key_id {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidKeyId`](crate::error::InvalidKeyId)
@@ -15927,12 +18585,12 @@ pub mod invalid_allowed_pattern_error {
     }
     impl Builder {
         /// <p>The request does not meet the regular expression requirement.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAllowedPatternError`](crate::error::InvalidAllowedPatternError)
@@ -15990,12 +18648,12 @@ pub mod incompatible_policy_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IncompatiblePolicyError`](crate::error::IncompatiblePolicyError)
@@ -16063,12 +18721,12 @@ pub mod hierarchy_type_mismatch_error {
         /// <p>Parameter Store does not support changing a parameter type in a hierarchy. For example, you
         /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
         /// must create a new, unique parameter.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HierarchyTypeMismatchError`](crate::error::HierarchyTypeMismatchError)
@@ -16133,12 +18791,12 @@ pub mod hierarchy_level_limit_exceeded_error {
     impl Builder {
         /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
         /// constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>. </p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`HierarchyLevelLimitExceededError`](crate::error::HierarchyLevelLimitExceededError)
@@ -16199,12 +18857,12 @@ pub mod unsupported_inventory_schema_version_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedInventorySchemaVersionError`](crate::error::UnsupportedInventorySchemaVersionError)
@@ -16271,20 +18929,20 @@ pub mod unsupported_inventory_item_context_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedInventoryItemContextError`](crate::error::UnsupportedInventoryItemContextError)
@@ -16345,12 +19003,12 @@ pub mod total_size_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TotalSizeLimitExceededError`](crate::error::TotalSizeLimitExceededError)
@@ -16410,12 +19068,12 @@ pub mod sub_type_count_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SubTypeCountLimitExceededError`](crate::error::SubTypeCountLimitExceededError)
@@ -16480,20 +19138,20 @@ pub mod item_size_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ItemSizeLimitExceededError`](crate::error::ItemSizeLimitExceededError)
@@ -16556,20 +19214,20 @@ pub mod item_content_mismatch_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ItemContentMismatchError`](crate::error::ItemContentMismatchError)
@@ -16627,12 +19285,12 @@ pub mod invalid_type_name_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidTypeNameError`](crate::error::InvalidTypeNameError)
@@ -16694,20 +19352,20 @@ pub mod invalid_item_content_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.type_name = Some(inp.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.type_name = inp;
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidItemContentError`](crate::error::InvalidItemContentError)
@@ -16769,12 +19427,12 @@ pub mod invalid_inventory_item_context_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidInventoryItemContextError`](crate::error::InvalidInventoryItemContextError)
@@ -16835,12 +19493,12 @@ pub mod custom_schema_count_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomSchemaCountLimitExceededError`](crate::error::CustomSchemaCountLimitExceededError)
@@ -16901,12 +19559,12 @@ pub mod compliance_type_count_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ComplianceTypeCountLimitExceededError`](crate::error::ComplianceTypeCountLimitExceededError)
@@ -16964,12 +19622,12 @@ pub mod invalid_permission_type {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidPermissionType`](crate::error::InvalidPermissionType)
@@ -17028,12 +19686,12 @@ pub mod document_permission_limit {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentPermissionLimit`](crate::error::DocumentPermissionLimit)
@@ -17090,12 +19748,12 @@ pub mod document_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentLimitExceeded`](crate::error::DocumentLimitExceeded)
@@ -17152,12 +19810,12 @@ pub mod invalid_next_token {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidNextToken`](crate::error::InvalidNextToken)
@@ -17214,12 +19872,12 @@ pub mod invalid_filter {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidFilter`](crate::error::InvalidFilter)
@@ -17360,12 +20018,12 @@ pub mod parameter_version_label_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ParameterVersionLabelLimitExceeded`](crate::error::ParameterVersionLabelLimitExceeded)
@@ -17422,12 +20080,12 @@ pub mod invalid_filter_value {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidFilterValue`](crate::error::InvalidFilterValue)
@@ -17489,12 +20147,12 @@ pub mod invalid_filter_option {
     impl Builder {
         /// <p>The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path
         /// filter, valid options are Recursive and OneLevel.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidFilterOption`](crate::error::InvalidFilterOption)
@@ -17553,12 +20211,12 @@ pub mod invalid_aggregator_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAggregatorError`](crate::error::InvalidAggregatorError)
@@ -17618,12 +20276,12 @@ pub mod invalid_result_attribute_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidResultAttributeError`](crate::error::InvalidResultAttributeError)
@@ -17683,12 +20341,12 @@ pub mod invalid_inventory_group_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidInventoryGroupError`](crate::error::InvalidInventoryGroupError)
@@ -17746,12 +20404,12 @@ pub mod unsupported_operating_system {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedOperatingSystem`](crate::error::UnsupportedOperatingSystem)
@@ -17814,12 +20472,12 @@ pub mod unsupported_feature_required_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedFeatureRequiredError`](crate::error::UnsupportedFeatureRequiredError)
@@ -17961,12 +20619,12 @@ pub mod unsupported_calendar_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedCalendarError`](crate::error::UnsupportedCalendarError)
@@ -18024,12 +20682,12 @@ pub mod invalid_document_type {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDocumentType`](crate::error::InvalidDocumentType)
@@ -18087,12 +20745,12 @@ pub mod ops_item_related_item_association_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemRelatedItemAssociationNotFoundError`](crate::error::OpsItemRelatedItemAssociationNotFoundError)
@@ -18150,12 +20808,12 @@ pub mod invalid_deletion_id_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDeletionIdError`](crate::error::InvalidDeletionIdError)
@@ -18212,12 +20870,12 @@ pub mod invalid_instance_information_filter_value {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidInstanceInformationFilterValue`](crate::error::InvalidInstanceInformationFilterValue)
@@ -18274,12 +20932,12 @@ pub mod association_execution_does_not_exist {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociationExecutionDoesNotExist`](crate::error::AssociationExecutionDoesNotExist)
@@ -18337,12 +20995,12 @@ pub mod target_in_use_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TargetInUseError`](crate::error::TargetInUseError)
@@ -18400,12 +21058,12 @@ pub mod resource_in_use_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
@@ -18462,12 +21120,12 @@ pub mod invalid_option_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidOptionError`](crate::error::InvalidOptionError)
@@ -18527,12 +21185,12 @@ pub mod invalid_inventory_request_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidInventoryRequestError`](crate::error::InvalidInventoryRequestError)
@@ -18593,12 +21251,12 @@ pub mod invalid_delete_inventory_parameters_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDeleteInventoryParametersError`](crate::error::InvalidDeleteInventoryParametersError)
@@ -18698,12 +21356,12 @@ pub mod invalid_activation_id {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidActivationId`](crate::error::InvalidActivationId)
@@ -18761,12 +21419,12 @@ pub mod invalid_activation {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidActivation`](crate::error::InvalidActivation)
@@ -18826,12 +21484,12 @@ pub mod resource_data_sync_count_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncCountExceededError`](crate::error::ResourceDataSyncCountExceededError)
@@ -18888,12 +21546,12 @@ pub mod resource_data_sync_already_exists_error {
         pub(crate) sync_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn sync_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sync_name = Some(inp.into());
+        pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_name = Some(input.into());
             self
         }
-        pub fn set_sync_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sync_name = inp;
+        pub fn set_sync_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceDataSyncAlreadyExistsError`](crate::error::ResourceDataSyncAlreadyExistsError)
@@ -18954,12 +21612,12 @@ pub mod ops_metadata_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsMetadataLimitExceededError`](crate::error::OpsMetadataLimitExceededError)
@@ -19019,12 +21677,12 @@ pub mod ops_metadata_already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsMetadataAlreadyExistsError`](crate::error::OpsMetadataAlreadyExistsError)
@@ -19081,12 +21739,12 @@ pub mod document_already_exists {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DocumentAlreadyExists`](crate::error::DocumentAlreadyExists)
@@ -19240,28 +21898,28 @@ pub mod ops_item_related_item_already_exists_error {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
-        pub fn resource_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_uri = Some(inp.into());
+        pub fn resource_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_uri = Some(input.into());
             self
         }
-        pub fn set_resource_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_uri = inp;
+        pub fn set_resource_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_uri = input;
             self
         }
-        pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ops_item_id = Some(inp.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_id = Some(input.into());
             self
         }
-        pub fn set_ops_item_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = inp;
+        pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_id = input;
             self
         }
         /// Consumes the builder and constructs a [`OpsItemRelatedItemAlreadyExistsError`](crate::error::OpsItemRelatedItemAlreadyExistsError)

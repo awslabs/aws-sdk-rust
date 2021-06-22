@@ -10,19 +10,24 @@ pub mod accept_input_device_transfer_input {
     }
     impl Builder {
         /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_device_id = Some(inp.into());
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.input_device_id = Some(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AcceptInputDeviceTransferInput`](crate::input::AcceptInputDeviceTransferInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AcceptInputDeviceTransferInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AcceptInputDeviceTransferInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AcceptInputDeviceTransferInput {
                 input_device_id: self.input_device_id.unwrap_or_default(),
             })
@@ -40,7 +45,7 @@ impl AcceptInputDeviceTransferInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AcceptInputDeviceTransfer,
             aws_http::AwsErrorRetryPolicy,
@@ -102,7 +107,7 @@ impl AcceptInputDeviceTransferInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -110,7 +115,7 @@ impl AcceptInputDeviceTransferInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -143,62 +148,63 @@ pub mod batch_delete_input {
         pub(crate) multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn channel_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn channel_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.channel_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.channel_ids = Some(v);
             self
         }
         pub fn set_channel_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.channel_ids = inp;
+            self.channel_ids = input;
             self
         }
-        pub fn input_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn input_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_ids = Some(v);
             self
         }
         pub fn set_input_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.input_ids = inp;
+            self.input_ids = input;
             self
         }
-        pub fn input_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn input_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_security_group_ids = Some(v);
             self
         }
         pub fn set_input_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.input_security_group_ids = inp;
+            self.input_security_group_ids = input;
             self
         }
-        pub fn multiplex_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn multiplex_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.multiplex_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.multiplex_ids = Some(v);
             self
         }
         pub fn set_multiplex_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.multiplex_ids = inp;
+            self.multiplex_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchDeleteInput`](crate::input::BatchDeleteInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchDeleteInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::BatchDeleteInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::BatchDeleteInput {
                 channel_ids: self.channel_ids,
                 input_ids: self.input_ids,
@@ -218,7 +224,7 @@ impl BatchDeleteInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchDelete,
             aws_http::AwsErrorRetryPolicy,
@@ -278,7 +284,7 @@ impl BatchDeleteInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -286,7 +292,7 @@ impl BatchDeleteInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -316,36 +322,37 @@ pub mod batch_start_input {
         pub(crate) multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn channel_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn channel_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.channel_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.channel_ids = Some(v);
             self
         }
         pub fn set_channel_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.channel_ids = inp;
+            self.channel_ids = input;
             self
         }
-        pub fn multiplex_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn multiplex_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.multiplex_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.multiplex_ids = Some(v);
             self
         }
         pub fn set_multiplex_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.multiplex_ids = inp;
+            self.multiplex_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchStartInput`](crate::input::BatchStartInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchStartInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::BatchStartInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::BatchStartInput {
                 channel_ids: self.channel_ids,
                 multiplex_ids: self.multiplex_ids,
@@ -363,7 +370,7 @@ impl BatchStartInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchStart,
             aws_http::AwsErrorRetryPolicy,
@@ -423,7 +430,7 @@ impl BatchStartInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -431,7 +438,7 @@ impl BatchStartInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -461,36 +468,37 @@ pub mod batch_stop_input {
         pub(crate) multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn channel_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn channel_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.channel_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.channel_ids = Some(v);
             self
         }
         pub fn set_channel_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.channel_ids = inp;
+            self.channel_ids = input;
             self
         }
-        pub fn multiplex_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn multiplex_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.multiplex_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.multiplex_ids = Some(v);
             self
         }
         pub fn set_multiplex_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.multiplex_ids = inp;
+            self.multiplex_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchStopInput`](crate::input::BatchStopInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchStopInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::BatchStopInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::BatchStopInput {
                 channel_ids: self.channel_ids,
                 multiplex_ids: self.multiplex_ids,
@@ -508,7 +516,7 @@ impl BatchStopInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchStop,
             aws_http::AwsErrorRetryPolicy,
@@ -566,7 +574,7 @@ impl BatchStopInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -574,7 +582,7 @@ impl BatchStopInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -606,43 +614,45 @@ pub mod batch_update_schedule_input {
     }
     impl Builder {
         /// Id of the channel whose schedule is being updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// Schedule actions to create in the schedule.
-        pub fn creates(mut self, inp: crate::model::BatchScheduleActionCreateRequest) -> Self {
-            self.creates = Some(inp);
+        pub fn creates(mut self, input: crate::model::BatchScheduleActionCreateRequest) -> Self {
+            self.creates = Some(input);
             self
         }
         pub fn set_creates(
             mut self,
-            inp: std::option::Option<crate::model::BatchScheduleActionCreateRequest>,
+            input: std::option::Option<crate::model::BatchScheduleActionCreateRequest>,
         ) -> Self {
-            self.creates = inp;
+            self.creates = input;
             self
         }
         /// Schedule actions to delete from the schedule.
-        pub fn deletes(mut self, inp: crate::model::BatchScheduleActionDeleteRequest) -> Self {
-            self.deletes = Some(inp);
+        pub fn deletes(mut self, input: crate::model::BatchScheduleActionDeleteRequest) -> Self {
+            self.deletes = Some(input);
             self
         }
         pub fn set_deletes(
             mut self,
-            inp: std::option::Option<crate::model::BatchScheduleActionDeleteRequest>,
+            input: std::option::Option<crate::model::BatchScheduleActionDeleteRequest>,
         ) -> Self {
-            self.deletes = inp;
+            self.deletes = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchUpdateScheduleInput`](crate::input::BatchUpdateScheduleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchUpdateScheduleInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::BatchUpdateScheduleInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BatchUpdateScheduleInput {
                 channel_id: self.channel_id.unwrap_or_default(),
                 creates: self.creates,
@@ -661,7 +671,7 @@ impl BatchUpdateScheduleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchUpdateSchedule,
             aws_http::AwsErrorRetryPolicy,
@@ -726,7 +736,7 @@ impl BatchUpdateScheduleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -734,7 +744,7 @@ impl BatchUpdateScheduleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -764,19 +774,24 @@ pub mod cancel_input_device_transfer_input {
     }
     impl Builder {
         /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_device_id = Some(inp.into());
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.input_device_id = Some(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelInputDeviceTransferInput`](crate::input::CancelInputDeviceTransferInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelInputDeviceTransferInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CancelInputDeviceTransferInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CancelInputDeviceTransferInput {
                 input_device_id: self.input_device_id.unwrap_or_default(),
             })
@@ -794,7 +809,7 @@ impl CancelInputDeviceTransferInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CancelInputDeviceTransfer,
             aws_http::AwsErrorRetryPolicy,
@@ -856,7 +871,7 @@ impl CancelInputDeviceTransferInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -864,7 +879,7 @@ impl CancelInputDeviceTransferInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -911,123 +926,129 @@ pub mod create_channel_input {
     }
     impl Builder {
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(mut self, inp: crate::model::CdiInputSpecification) -> Self {
-            self.cdi_input_specification = Some(inp);
+        pub fn cdi_input_specification(
+            mut self,
+            input: crate::model::CdiInputSpecification,
+        ) -> Self {
+            self.cdi_input_specification = Some(input);
             self
         }
         pub fn set_cdi_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::CdiInputSpecification>,
+            input: std::option::Option<crate::model::CdiInputSpecification>,
         ) -> Self {
-            self.cdi_input_specification = inp;
+            self.cdi_input_specification = input;
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.channel_class = Some(inp);
+        pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
+            self.channel_class = Some(input);
             self
         }
         pub fn set_channel_class(
             mut self,
-            inp: std::option::Option<crate::model::ChannelClass>,
+            input: std::option::Option<crate::model::ChannelClass>,
         ) -> Self {
-            self.channel_class = inp;
+            self.channel_class = input;
             self
         }
-        pub fn destinations(mut self, inp: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
         /// Encoder Settings
-        pub fn encoder_settings(mut self, inp: crate::model::EncoderSettings) -> Self {
-            self.encoder_settings = Some(inp);
+        pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
+            self.encoder_settings = Some(input);
             self
         }
         pub fn set_encoder_settings(
             mut self,
-            inp: std::option::Option<crate::model::EncoderSettings>,
+            input: std::option::Option<crate::model::EncoderSettings>,
         ) -> Self {
-            self.encoder_settings = inp;
+            self.encoder_settings = input;
             self
         }
-        pub fn input_attachments(mut self, inp: impl Into<crate::model::InputAttachment>) -> Self {
+        pub fn input_attachments(
+            mut self,
+            input: impl Into<crate::model::InputAttachment>,
+        ) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_attachments = Some(v);
             self
         }
         pub fn set_input_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         ) -> Self {
-            self.input_attachments = inp;
+            self.input_attachments = input;
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn input_specification(mut self, inp: crate::model::InputSpecification) -> Self {
-            self.input_specification = Some(inp);
+        pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
+            self.input_specification = Some(input);
             self
         }
         pub fn set_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::InputSpecification>,
+            input: std::option::Option<crate::model::InputSpecification>,
         ) -> Self {
-            self.input_specification = inp;
+            self.input_specification = input;
             self
         }
         /// The log level to write to CloudWatch Logs.
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.log_level = Some(inp);
+        pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.log_level = Some(input);
             self
         }
-        pub fn set_log_level(mut self, inp: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = inp;
+        pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
+            self.log_level = input;
             self
         }
         /// Name of channel.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Unique request ID to be specified. This is needed to prevent retries from
         /// creating multiple resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(inp.into());
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.request_id = inp;
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
             self
         }
         /// Deprecated field that's only usable by whitelisted customers.
-        pub fn reserved(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reserved = Some(inp.into());
+        pub fn reserved(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved = Some(input.into());
             self
         }
-        pub fn set_reserved(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reserved = inp;
+        pub fn set_reserved(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved = input;
             self
         }
         /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         pub fn tags(
@@ -1042,29 +1063,30 @@ pub mod create_channel_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Settings for VPC output
-        pub fn vpc(mut self, inp: crate::model::VpcOutputSettings) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VpcOutputSettings) -> Self {
+            self.vpc = Some(input);
             self
         }
         pub fn set_vpc(
             mut self,
-            inp: std::option::Option<crate::model::VpcOutputSettings>,
+            input: std::option::Option<crate::model::VpcOutputSettings>,
         ) -> Self {
-            self.vpc = inp;
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateChannelInput`](crate::input::CreateChannelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateChannelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateChannelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateChannelInput {
                 cdi_input_specification: self.cdi_input_specification,
                 channel_class: self.channel_class,
@@ -1093,7 +1115,7 @@ impl CreateChannelInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateChannel,
             aws_http::AwsErrorRetryPolicy,
@@ -1156,7 +1178,7 @@ impl CreateChannelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1164,7 +1186,7 @@ impl CreateChannelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1210,101 +1232,104 @@ pub mod create_input_input {
     impl Builder {
         pub fn destinations(
             mut self,
-            inp: impl Into<crate::model::InputDestinationRequest>,
+            input: impl Into<crate::model::InputDestinationRequest>,
         ) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
-        pub fn input_devices(mut self, inp: impl Into<crate::model::InputDeviceSettings>) -> Self {
+        pub fn input_devices(
+            mut self,
+            input: impl Into<crate::model::InputDeviceSettings>,
+        ) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_devices = Some(v);
             self
         }
         pub fn set_input_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
         ) -> Self {
-            self.input_devices = inp;
+            self.input_devices = input;
             self
         }
-        pub fn input_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn input_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_security_groups = Some(v);
             self
         }
         pub fn set_input_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.input_security_groups = inp;
+            self.input_security_groups = input;
             self
         }
         pub fn media_connect_flows(
             mut self,
-            inp: impl Into<crate::model::MediaConnectFlowRequest>,
+            input: impl Into<crate::model::MediaConnectFlowRequest>,
         ) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.media_connect_flows = Some(v);
             self
         }
         pub fn set_media_connect_flows(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
         ) -> Self {
-            self.media_connect_flows = inp;
+            self.media_connect_flows = input;
             self
         }
         /// Name of the input.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Unique identifier of the request to ensure the request is handled
         /// exactly once in case of retries.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(inp.into());
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.request_id = inp;
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn sources(mut self, inp: impl Into<crate::model::InputSourceRequest>) -> Self {
+        pub fn sources(mut self, input: impl Into<crate::model::InputSourceRequest>) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.sources = Some(v);
             self
         }
         pub fn set_sources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
         ) -> Self {
-            self.sources = inp;
+            self.sources = input;
             self
         }
         pub fn tags(
@@ -1319,38 +1344,42 @@ pub mod create_input_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Placeholder documentation for InputType
-        pub fn r#type(mut self, inp: crate::model::InputType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::InputType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::InputType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::InputType>) -> Self {
+            self.r#type = input;
             self
         }
         /// Settings for a private VPC Input.
         /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
         /// This property requires setting the roleArn property on Input creation.
         /// Not compatible with the inputSecurityGroups property.
-        pub fn vpc(mut self, inp: crate::model::InputVpcRequest) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::InputVpcRequest) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::InputVpcRequest>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(
+            mut self,
+            input: std::option::Option<crate::model::InputVpcRequest>,
+        ) -> Self {
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateInputInput`](crate::input::CreateInputInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateInputInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateInputInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateInputInput {
                 destinations: self.destinations,
                 input_devices: self.input_devices,
@@ -1377,7 +1406,7 @@ impl CreateInputInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateInput,
             aws_http::AwsErrorRetryPolicy,
@@ -1440,7 +1469,7 @@ impl CreateInputInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1448,7 +1477,7 @@ impl CreateInputInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1493,34 +1522,36 @@ pub mod create_input_security_group_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         pub fn whitelist_rules(
             mut self,
-            inp: impl Into<crate::model::InputWhitelistRuleCidr>,
+            input: impl Into<crate::model::InputWhitelistRuleCidr>,
         ) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.whitelist_rules = Some(v);
             self
         }
         pub fn set_whitelist_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
         ) -> Self {
-            self.whitelist_rules = inp;
+            self.whitelist_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateInputSecurityGroupInput`](crate::input::CreateInputSecurityGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateInputSecurityGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateInputSecurityGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateInputSecurityGroupInput {
                 tags: self.tags,
                 whitelist_rules: self.whitelist_rules,
@@ -1539,7 +1570,7 @@ impl CreateInputSecurityGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateInputSecurityGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -1599,7 +1630,7 @@ impl CreateInputSecurityGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1607,7 +1638,7 @@ impl CreateInputSecurityGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1642,48 +1673,48 @@ pub mod create_multiplex_input {
         >,
     }
     impl Builder {
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// Configuration for a multiplex event.
-        pub fn multiplex_settings(mut self, inp: crate::model::MultiplexSettings) -> Self {
-            self.multiplex_settings = Some(inp);
+        pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
+            self.multiplex_settings = Some(input);
             self
         }
         pub fn set_multiplex_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexSettings>,
+            input: std::option::Option<crate::model::MultiplexSettings>,
         ) -> Self {
-            self.multiplex_settings = inp;
+            self.multiplex_settings = input;
             self
         }
         /// Name of multiplex.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Unique request ID. This prevents retries from creating multiple
         /// resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(inp.into());
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.request_id = inp;
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
             self
         }
         pub fn tags(
@@ -1698,18 +1729,20 @@ pub mod create_multiplex_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateMultiplexInput`](crate::input::CreateMultiplexInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateMultiplexInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateMultiplexInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateMultiplexInput {
                 availability_zones: self.availability_zones,
                 multiplex_settings: self.multiplex_settings,
@@ -1730,7 +1763,7 @@ impl CreateMultiplexInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateMultiplex,
             aws_http::AwsErrorRetryPolicy,
@@ -1792,7 +1825,7 @@ impl CreateMultiplexInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1800,7 +1833,7 @@ impl CreateMultiplexInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1834,53 +1867,55 @@ pub mod create_multiplex_program_input {
     }
     impl Builder {
         /// ID of the multiplex where the program is to be created.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// The settings for this multiplex program.
         pub fn multiplex_program_settings(
             mut self,
-            inp: crate::model::MultiplexProgramSettings,
+            input: crate::model::MultiplexProgramSettings,
         ) -> Self {
-            self.multiplex_program_settings = Some(inp);
+            self.multiplex_program_settings = Some(input);
             self
         }
         pub fn set_multiplex_program_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexProgramSettings>,
+            input: std::option::Option<crate::model::MultiplexProgramSettings>,
         ) -> Self {
-            self.multiplex_program_settings = inp;
+            self.multiplex_program_settings = input;
             self
         }
         /// Name of multiplex program.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.program_name = Some(inp.into());
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.program_name = Some(input.into());
             self
         }
-        pub fn set_program_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.program_name = inp;
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.program_name = input;
             self
         }
         /// Unique request ID. This prevents retries from creating multiple
         /// resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(inp.into());
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.request_id = inp;
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateMultiplexProgramInput`](crate::input::CreateMultiplexProgramInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateMultiplexProgramInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateMultiplexProgramInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateMultiplexProgramInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
                 multiplex_program_settings: self.multiplex_program_settings,
@@ -1900,7 +1935,7 @@ impl CreateMultiplexProgramInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateMultiplexProgram,
             aws_http::AwsErrorRetryPolicy,
@@ -1968,7 +2003,7 @@ impl CreateMultiplexProgramInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1976,7 +2011,7 @@ impl CreateMultiplexProgramInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2010,22 +2045,22 @@ pub mod create_partner_input_input {
     }
     impl Builder {
         /// Unique ID of the input.
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_id = Some(inp.into());
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_id = Some(input.into());
             self
         }
-        pub fn set_input_id(mut self, inp: std::string::String) -> Self {
-            self.input_id = Some(inp);
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_id = input;
             self
         }
         /// Unique identifier of the request to ensure the request is handled
         /// exactly once in case of retries.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(inp.into());
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.request_id = inp;
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
             self
         }
         pub fn tags(
@@ -2040,18 +2075,20 @@ pub mod create_partner_input_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePartnerInputInput`](crate::input::CreatePartnerInputInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePartnerInputInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreatePartnerInputInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreatePartnerInputInput {
                 input_id: self.input_id.unwrap_or_default(),
                 request_id: self.request_id,
@@ -2070,7 +2107,7 @@ impl CreatePartnerInputInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreatePartnerInput,
             aws_http::AwsErrorRetryPolicy,
@@ -2138,7 +2175,7 @@ impl CreatePartnerInputInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2146,7 +2183,7 @@ impl CreatePartnerInputInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2179,12 +2216,12 @@ pub mod create_tags_input {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         pub fn tags(
@@ -2199,17 +2236,18 @@ pub mod create_tags_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTagsInput`](crate::input::CreateTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTagsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateTagsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateTagsInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
                 tags: self.tags,
@@ -2227,7 +2265,7 @@ impl CreateTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateTags,
             aws_http::AwsErrorRetryPolicy,
@@ -2292,7 +2330,7 @@ impl CreateTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2300,7 +2338,7 @@ impl CreateTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2330,18 +2368,19 @@ pub mod delete_channel_input {
     }
     impl Builder {
         /// Unique ID of the channel.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::input::DeleteChannelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteChannelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteChannelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteChannelInput {
                 channel_id: self.channel_id.unwrap_or_default(),
             })
@@ -2358,7 +2397,7 @@ impl DeleteChannelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteChannel,
             aws_http::AwsErrorRetryPolicy,
@@ -2420,7 +2459,7 @@ impl DeleteChannelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2428,7 +2467,7 @@ impl DeleteChannelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2458,18 +2497,19 @@ pub mod delete_input_input {
     }
     impl Builder {
         /// Unique ID of the input
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_id = Some(inp.into());
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_id = Some(input.into());
             self
         }
-        pub fn set_input_id(mut self, inp: std::string::String) -> Self {
-            self.input_id = Some(inp);
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteInputInput`](crate::input::DeleteInputInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteInputInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteInputInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteInputInput {
                 input_id: self.input_id.unwrap_or_default(),
             })
@@ -2486,7 +2526,7 @@ impl DeleteInputInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteInput,
             aws_http::AwsErrorRetryPolicy,
@@ -2548,7 +2588,7 @@ impl DeleteInputInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2556,7 +2596,7 @@ impl DeleteInputInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2586,19 +2626,24 @@ pub mod delete_input_security_group_input {
     }
     impl Builder {
         /// The Input Security Group to delete
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_security_group_id = Some(inp.into());
+        pub fn input_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_security_group_id = Some(input.into());
             self
         }
-        pub fn set_input_security_group_id(mut self, inp: std::string::String) -> Self {
-            self.input_security_group_id = Some(inp);
+        pub fn set_input_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_security_group_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteInputSecurityGroupInput`](crate::input::DeleteInputSecurityGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteInputSecurityGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteInputSecurityGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteInputSecurityGroupInput {
                 input_security_group_id: self.input_security_group_id.unwrap_or_default(),
             })
@@ -2616,7 +2661,7 @@ impl DeleteInputSecurityGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteInputSecurityGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -2679,7 +2724,7 @@ impl DeleteInputSecurityGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2687,7 +2732,7 @@ impl DeleteInputSecurityGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2717,19 +2762,21 @@ pub mod delete_multiplex_input {
     }
     impl Builder {
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMultiplexInput`](crate::input::DeleteMultiplexInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMultiplexInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteMultiplexInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteMultiplexInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
             })
@@ -2746,7 +2793,7 @@ impl DeleteMultiplexInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteMultiplex,
             aws_http::AwsErrorRetryPolicy,
@@ -2808,7 +2855,7 @@ impl DeleteMultiplexInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2816,7 +2863,7 @@ impl DeleteMultiplexInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2847,28 +2894,30 @@ pub mod delete_multiplex_program_input {
     }
     impl Builder {
         /// The ID of the multiplex that the program belongs to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// The multiplex program name.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.program_name = Some(inp.into());
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.program_name = Some(input.into());
             self
         }
-        pub fn set_program_name(mut self, inp: std::string::String) -> Self {
-            self.program_name = Some(inp);
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.program_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMultiplexProgramInput`](crate::input::DeleteMultiplexProgramInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMultiplexProgramInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteMultiplexProgramInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteMultiplexProgramInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
                 program_name: self.program_name.unwrap_or_default(),
@@ -2886,7 +2935,7 @@ impl DeleteMultiplexProgramInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteMultiplexProgram,
             aws_http::AwsErrorRetryPolicy,
@@ -2949,7 +2998,7 @@ impl DeleteMultiplexProgramInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2957,7 +3006,7 @@ impl DeleteMultiplexProgramInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2987,19 +3036,24 @@ pub mod delete_reservation_input {
     }
     impl Builder {
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reservation_id = Some(inp.into());
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reservation_id = Some(input.into());
             self
         }
-        pub fn set_reservation_id(mut self, inp: std::string::String) -> Self {
-            self.reservation_id = Some(inp);
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reservation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteReservationInput`](crate::input::DeleteReservationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteReservationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteReservationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteReservationInput {
                 reservation_id: self.reservation_id.unwrap_or_default(),
             })
@@ -3016,7 +3070,7 @@ impl DeleteReservationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteReservation,
             aws_http::AwsErrorRetryPolicy,
@@ -3078,7 +3132,7 @@ impl DeleteReservationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3086,7 +3140,7 @@ impl DeleteReservationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3116,18 +3170,21 @@ pub mod delete_schedule_input {
     }
     impl Builder {
         /// Id of the channel whose schedule is being deleted.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteScheduleInput`](crate::input::DeleteScheduleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteScheduleInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DeleteScheduleInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteScheduleInput {
                 channel_id: self.channel_id.unwrap_or_default(),
             })
@@ -3144,7 +3201,7 @@ impl DeleteScheduleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteSchedule,
             aws_http::AwsErrorRetryPolicy,
@@ -3206,7 +3263,7 @@ impl DeleteScheduleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3214,7 +3271,7 @@ impl DeleteScheduleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3245,31 +3302,32 @@ pub mod delete_tags_input {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::input::DeleteTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTagsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteTagsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteTagsInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
                 tag_keys: self.tag_keys,
@@ -3287,7 +3345,7 @@ impl DeleteTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteTags,
             aws_http::AwsErrorRetryPolicy,
@@ -3357,7 +3415,7 @@ impl DeleteTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -3366,7 +3424,7 @@ impl DeleteTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3396,19 +3454,21 @@ pub mod describe_channel_input {
     }
     impl Builder {
         /// channel ID
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::input::DescribeChannelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeChannelInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeChannelInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeChannelInput {
                 channel_id: self.channel_id.unwrap_or_default(),
             })
@@ -3425,7 +3485,7 @@ impl DescribeChannelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeChannel,
             aws_http::AwsErrorRetryPolicy,
@@ -3487,7 +3547,7 @@ impl DescribeChannelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3495,7 +3555,7 @@ impl DescribeChannelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3525,18 +3585,19 @@ pub mod describe_input_input {
     }
     impl Builder {
         /// Unique ID of the input
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_id = Some(inp.into());
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_id = Some(input.into());
             self
         }
-        pub fn set_input_id(mut self, inp: std::string::String) -> Self {
-            self.input_id = Some(inp);
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInputInput`](crate::input::DescribeInputInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeInputInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DescribeInputInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DescribeInputInput {
                 input_id: self.input_id.unwrap_or_default(),
             })
@@ -3553,7 +3614,7 @@ impl DescribeInputInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeInput,
             aws_http::AwsErrorRetryPolicy,
@@ -3615,7 +3676,7 @@ impl DescribeInputInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3623,7 +3684,7 @@ impl DescribeInputInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3653,19 +3714,24 @@ pub mod describe_input_device_input {
     }
     impl Builder {
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_device_id = Some(inp.into());
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.input_device_id = Some(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInputDeviceInput`](crate::input::DescribeInputDeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeInputDeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeInputDeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeInputDeviceInput {
                 input_device_id: self.input_device_id.unwrap_or_default(),
             })
@@ -3682,7 +3748,7 @@ impl DescribeInputDeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeInputDevice,
             aws_http::AwsErrorRetryPolicy,
@@ -3744,7 +3810,7 @@ impl DescribeInputDeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3752,7 +3818,7 @@ impl DescribeInputDeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3783,27 +3849,33 @@ pub mod describe_input_device_thumbnail_input {
     }
     impl Builder {
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_device_id = Some(inp.into());
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.input_device_id = Some(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
             self
         }
         /// The HTTP Accept header. Indicates the requested type for the thumbnail.
-        pub fn accept(mut self, inp: crate::model::AcceptHeader) -> Self {
-            self.accept = Some(inp);
+        pub fn accept(mut self, input: crate::model::AcceptHeader) -> Self {
+            self.accept = Some(input);
             self
         }
-        pub fn set_accept(mut self, inp: std::option::Option<crate::model::AcceptHeader>) -> Self {
-            self.accept = inp;
+        pub fn set_accept(
+            mut self,
+            input: std::option::Option<crate::model::AcceptHeader>,
+        ) -> Self {
+            self.accept = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInputDeviceThumbnailInput`](crate::input::DescribeInputDeviceThumbnailInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeInputDeviceThumbnailInput,
             smithy_http::operation::BuildError,
         > {
@@ -3825,7 +3897,7 @@ impl DescribeInputDeviceThumbnailInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeInputDeviceThumbnail,
             aws_http::AwsErrorRetryPolicy,
@@ -3886,7 +3958,7 @@ impl DescribeInputDeviceThumbnailInput {
     fn add_headers(
         &self,
         mut builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if let Some(inner_3) = &self.accept {
             let formatted_4 = AsRef::<str>::as_ref(inner_3);
             if !formatted_4.is_empty() {
@@ -3911,7 +3983,7 @@ impl DescribeInputDeviceThumbnailInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         let builder = self.add_headers(builder)?;
@@ -3920,7 +3992,7 @@ impl DescribeInputDeviceThumbnailInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3950,19 +4022,24 @@ pub mod describe_input_security_group_input {
     }
     impl Builder {
         /// The id of the Input Security Group to describe
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_security_group_id = Some(inp.into());
+        pub fn input_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_security_group_id = Some(input.into());
             self
         }
-        pub fn set_input_security_group_id(mut self, inp: std::string::String) -> Self {
-            self.input_security_group_id = Some(inp);
+        pub fn set_input_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_security_group_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInputSecurityGroupInput`](crate::input::DescribeInputSecurityGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeInputSecurityGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeInputSecurityGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeInputSecurityGroupInput {
                 input_security_group_id: self.input_security_group_id.unwrap_or_default(),
             })
@@ -3980,7 +4057,7 @@ impl DescribeInputSecurityGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeInputSecurityGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -4043,7 +4120,7 @@ impl DescribeInputSecurityGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4051,7 +4128,7 @@ impl DescribeInputSecurityGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4081,19 +4158,21 @@ pub mod describe_multiplex_input {
     }
     impl Builder {
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeMultiplexInput`](crate::input::DescribeMultiplexInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeMultiplexInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeMultiplexInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeMultiplexInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
             })
@@ -4110,7 +4189,7 @@ impl DescribeMultiplexInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeMultiplex,
             aws_http::AwsErrorRetryPolicy,
@@ -4172,7 +4251,7 @@ impl DescribeMultiplexInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4180,7 +4259,7 @@ impl DescribeMultiplexInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4211,28 +4290,30 @@ pub mod describe_multiplex_program_input {
     }
     impl Builder {
         /// The ID of the multiplex that the program belongs to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// The name of the program.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.program_name = Some(inp.into());
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.program_name = Some(input.into());
             self
         }
-        pub fn set_program_name(mut self, inp: std::string::String) -> Self {
-            self.program_name = Some(inp);
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.program_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeMultiplexProgramInput`](crate::input::DescribeMultiplexProgramInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeMultiplexProgramInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeMultiplexProgramInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeMultiplexProgramInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
                 program_name: self.program_name.unwrap_or_default(),
@@ -4251,7 +4332,7 @@ impl DescribeMultiplexProgramInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeMultiplexProgram,
             aws_http::AwsErrorRetryPolicy,
@@ -4314,7 +4395,7 @@ impl DescribeMultiplexProgramInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4322,7 +4403,7 @@ impl DescribeMultiplexProgramInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4352,19 +4433,21 @@ pub mod describe_offering_input {
     }
     impl Builder {
         /// Unique offering ID, e.g. '87654321'
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_id = Some(inp.into());
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_id = Some(input.into());
             self
         }
-        pub fn set_offering_id(mut self, inp: std::string::String) -> Self {
-            self.offering_id = Some(inp);
+        pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::input::DescribeOfferingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeOfferingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeOfferingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeOfferingInput {
                 offering_id: self.offering_id.unwrap_or_default(),
             })
@@ -4381,7 +4464,7 @@ impl DescribeOfferingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeOffering,
             aws_http::AwsErrorRetryPolicy,
@@ -4443,7 +4526,7 @@ impl DescribeOfferingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4451,7 +4534,7 @@ impl DescribeOfferingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4481,19 +4564,24 @@ pub mod describe_reservation_input {
     }
     impl Builder {
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reservation_id = Some(inp.into());
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reservation_id = Some(input.into());
             self
         }
-        pub fn set_reservation_id(mut self, inp: std::string::String) -> Self {
-            self.reservation_id = Some(inp);
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reservation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::input::DescribeReservationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeReservationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeReservationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeReservationInput {
                 reservation_id: self.reservation_id.unwrap_or_default(),
             })
@@ -4510,7 +4598,7 @@ impl DescribeReservationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeReservation,
             aws_http::AwsErrorRetryPolicy,
@@ -4572,7 +4660,7 @@ impl DescribeReservationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4580,7 +4668,7 @@ impl DescribeReservationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4612,37 +4700,39 @@ pub mod describe_schedule_input {
     }
     impl Builder {
         /// Id of the channel whose schedule is being updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeScheduleInput`](crate::input::DescribeScheduleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeScheduleInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeScheduleInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeScheduleInput {
                 channel_id: self.channel_id.unwrap_or_default(),
                 max_results: self.max_results.unwrap_or_default(),
@@ -4661,7 +4751,7 @@ impl DescribeScheduleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeSchedule,
             aws_http::AwsErrorRetryPolicy,
@@ -4735,7 +4825,7 @@ impl DescribeScheduleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4744,7 +4834,7 @@ impl DescribeScheduleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4775,27 +4865,28 @@ pub mod list_channels_input {
     }
     impl Builder {
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListChannelsInput`](crate::input::ListChannelsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListChannelsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListChannelsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListChannelsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -4813,7 +4904,7 @@ impl ListChannelsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListChannels,
             aws_http::AwsErrorRetryPolicy,
@@ -4882,7 +4973,7 @@ impl ListChannelsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4891,7 +4982,7 @@ impl ListChannelsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4922,28 +5013,30 @@ pub mod list_input_devices_input {
     }
     impl Builder {
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInputDevicesInput`](crate::input::ListInputDevicesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListInputDevicesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListInputDevicesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListInputDevicesInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -4961,7 +5054,7 @@ impl ListInputDevicesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListInputDevices,
             aws_http::AwsErrorRetryPolicy,
@@ -5030,7 +5123,7 @@ impl ListInputDevicesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5039,7 +5132,7 @@ impl ListInputDevicesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5071,37 +5164,42 @@ pub mod list_input_device_transfers_input {
     }
     impl Builder {
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
-            self
-        }
-        /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
-            self
-        }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Placeholder documentation for __string
-        pub fn transfer_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transfer_type = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_transfer_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.transfer_type = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Placeholder documentation for __string
+        pub fn transfer_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transfer_type = Some(input.into());
+            self
+        }
+        pub fn set_transfer_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transfer_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInputDeviceTransfersInput`](crate::input::ListInputDeviceTransfersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListInputDeviceTransfersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListInputDeviceTransfersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListInputDeviceTransfersInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -5121,7 +5219,7 @@ impl ListInputDeviceTransfersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListInputDeviceTransfers,
             aws_http::AwsErrorRetryPolicy,
@@ -5193,7 +5291,7 @@ impl ListInputDeviceTransfersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5202,7 +5300,7 @@ impl ListInputDeviceTransfersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5233,27 +5331,28 @@ pub mod list_inputs_input {
     }
     impl Builder {
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInputsInput`](crate::input::ListInputsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListInputsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListInputsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListInputsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -5271,7 +5370,7 @@ impl ListInputsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListInputs,
             aws_http::AwsErrorRetryPolicy,
@@ -5340,7 +5439,7 @@ impl ListInputsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5349,7 +5448,7 @@ impl ListInputsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5380,28 +5479,30 @@ pub mod list_input_security_groups_input {
     }
     impl Builder {
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInputSecurityGroupsInput`](crate::input::ListInputSecurityGroupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListInputSecurityGroupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListInputSecurityGroupsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListInputSecurityGroupsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -5420,7 +5521,7 @@ impl ListInputSecurityGroupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListInputSecurityGroups,
             aws_http::AwsErrorRetryPolicy,
@@ -5489,7 +5590,7 @@ impl ListInputSecurityGroupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5498,7 +5599,7 @@ impl ListInputSecurityGroupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5529,28 +5630,30 @@ pub mod list_multiplexes_input {
     }
     impl Builder {
         /// The maximum number of items to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// The token to retrieve the next page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListMultiplexesInput`](crate::input::ListMultiplexesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMultiplexesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListMultiplexesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListMultiplexesInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -5568,7 +5671,7 @@ impl ListMultiplexesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListMultiplexes,
             aws_http::AwsErrorRetryPolicy,
@@ -5637,7 +5740,7 @@ impl ListMultiplexesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5646,7 +5749,7 @@ impl ListMultiplexesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5678,37 +5781,39 @@ pub mod list_multiplex_programs_input {
     }
     impl Builder {
         /// The maximum number of items to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// The ID of the multiplex that the programs belong to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// The token to retrieve the next page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListMultiplexProgramsInput`](crate::input::ListMultiplexProgramsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMultiplexProgramsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListMultiplexProgramsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListMultiplexProgramsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
@@ -5727,7 +5832,7 @@ impl ListMultiplexProgramsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListMultiplexPrograms,
             aws_http::AwsErrorRetryPolicy,
@@ -5801,7 +5906,7 @@ impl ListMultiplexProgramsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5810,7 +5915,7 @@ impl ListMultiplexProgramsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5851,129 +5956,139 @@ pub mod list_offerings_input {
     }
     impl Builder {
         /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-        pub fn channel_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_class = Some(inp.into());
+        pub fn channel_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_class = Some(input.into());
             self
         }
-        pub fn set_channel_class(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.channel_class = inp;
+        pub fn set_channel_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.channel_class = input;
             self
         }
         /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-        pub fn channel_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_configuration = Some(inp.into());
+        pub fn channel_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_configuration = Some(input.into());
             self
         }
         pub fn set_channel_configuration(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.channel_configuration = inp;
+            self.channel_configuration = input;
             self
         }
         /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
-        pub fn codec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.codec = Some(inp.into());
+        pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codec = Some(input.into());
             self
         }
-        pub fn set_codec(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.codec = inp;
+        pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.codec = input;
             self
         }
         /// Filter by offering duration, e.g. '12'
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.duration = Some(inp.into());
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.duration = Some(input.into());
             self
         }
-        pub fn set_duration(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.duration = inp;
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.duration = input;
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-        pub fn maximum_bitrate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.maximum_bitrate = Some(inp.into());
+        pub fn maximum_bitrate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maximum_bitrate = Some(input.into());
             self
         }
         pub fn set_maximum_bitrate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.maximum_bitrate = inp;
+            self.maximum_bitrate = input;
             self
         }
         /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-        pub fn maximum_framerate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.maximum_framerate = Some(inp.into());
+        pub fn maximum_framerate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maximum_framerate = Some(input.into());
             self
         }
         pub fn set_maximum_framerate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.maximum_framerate = inp;
+            self.maximum_framerate = input;
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
-        pub fn resolution(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resolution = Some(inp.into());
+        pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resolution = Some(input.into());
             self
         }
-        pub fn set_resolution(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resolution = inp;
+        pub fn set_resolution(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolution = input;
             self
         }
         /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-        pub fn special_feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.special_feature = Some(inp.into());
+        pub fn special_feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.special_feature = Some(input.into());
             self
         }
         pub fn set_special_feature(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.special_feature = inp;
+            self.special_feature = input;
             self
         }
         /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-        pub fn video_quality(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.video_quality = Some(inp.into());
+        pub fn video_quality(mut self, input: impl Into<std::string::String>) -> Self {
+            self.video_quality = Some(input.into());
             self
         }
-        pub fn set_video_quality(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.video_quality = inp;
+        pub fn set_video_quality(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.video_quality = input;
             self
         }
         /// Consumes the builder and constructs a [`ListOfferingsInput`](crate::input::ListOfferingsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListOfferingsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListOfferingsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListOfferingsInput {
                 channel_class: self.channel_class,
                 channel_configuration: self.channel_configuration,
@@ -6001,7 +6116,7 @@ impl ListOfferingsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListOfferings,
             aws_http::AwsErrorRetryPolicy,
@@ -6106,7 +6221,7 @@ impl ListOfferingsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6115,7 +6230,7 @@ impl ListOfferingsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6154,109 +6269,120 @@ pub mod list_reservations_input {
     }
     impl Builder {
         /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-        pub fn channel_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_class = Some(inp.into());
+        pub fn channel_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_class = Some(input.into());
             self
         }
-        pub fn set_channel_class(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.channel_class = inp;
+        pub fn set_channel_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.channel_class = input;
             self
         }
         /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
-        pub fn codec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.codec = Some(inp.into());
+        pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codec = Some(input.into());
             self
         }
-        pub fn set_codec(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.codec = inp;
+        pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.codec = input;
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-        pub fn maximum_bitrate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.maximum_bitrate = Some(inp.into());
+        pub fn maximum_bitrate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maximum_bitrate = Some(input.into());
             self
         }
         pub fn set_maximum_bitrate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.maximum_bitrate = inp;
+            self.maximum_bitrate = input;
             self
         }
         /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-        pub fn maximum_framerate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.maximum_framerate = Some(inp.into());
+        pub fn maximum_framerate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maximum_framerate = Some(input.into());
             self
         }
         pub fn set_maximum_framerate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.maximum_framerate = inp;
+            self.maximum_framerate = input;
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
-        pub fn resolution(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resolution = Some(inp.into());
+        pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resolution = Some(input.into());
             self
         }
-        pub fn set_resolution(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resolution = inp;
+        pub fn set_resolution(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolution = input;
             self
         }
         /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-        pub fn special_feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.special_feature = Some(inp.into());
+        pub fn special_feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.special_feature = Some(input.into());
             self
         }
         pub fn set_special_feature(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.special_feature = inp;
+            self.special_feature = input;
             self
         }
         /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-        pub fn video_quality(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.video_quality = Some(inp.into());
+        pub fn video_quality(mut self, input: impl Into<std::string::String>) -> Self {
+            self.video_quality = Some(input.into());
             self
         }
-        pub fn set_video_quality(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.video_quality = inp;
+        pub fn set_video_quality(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.video_quality = input;
             self
         }
         /// Consumes the builder and constructs a [`ListReservationsInput`](crate::input::ListReservationsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListReservationsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListReservationsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListReservationsInput {
                 channel_class: self.channel_class,
                 codec: self.codec,
@@ -6282,7 +6408,7 @@ impl ListReservationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListReservations,
             aws_http::AwsErrorRetryPolicy,
@@ -6378,7 +6504,7 @@ impl ListReservationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6387,7 +6513,7 @@ impl ListReservationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6417,19 +6543,21 @@ pub mod list_tags_for_resource_input {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.resource_arn = Some(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn.unwrap_or_default(),
             })
@@ -6446,7 +6574,7 @@ impl ListTagsForResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
@@ -6508,7 +6636,7 @@ impl ListTagsForResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -6516,7 +6644,7 @@ impl ListTagsForResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6553,48 +6681,48 @@ pub mod purchase_offering_input {
     }
     impl Builder {
         /// Number of resources
-        pub fn count(mut self, inp: i32) -> Self {
-            self.count = Some(inp);
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
             self
         }
-        pub fn set_count(mut self, inp: i32) -> Self {
-            self.count = Some(inp);
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
             self
         }
         /// Name for the new reservation
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Offering to purchase, e.g. '87654321'
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_id = Some(inp.into());
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_id = Some(input.into());
             self
         }
-        pub fn set_offering_id(mut self, inp: std::string::String) -> Self {
-            self.offering_id = Some(inp);
+        pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_id = input;
             self
         }
         /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(inp.into());
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
             self
         }
-        pub fn set_request_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.request_id = inp;
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
             self
         }
         /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-        pub fn start(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start = Some(inp.into());
+        pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start = Some(input.into());
             self
         }
-        pub fn set_start(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start = inp;
+        pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start = input;
             self
         }
         pub fn tags(
@@ -6609,18 +6737,20 @@ pub mod purchase_offering_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PurchaseOfferingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PurchaseOfferingInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PurchaseOfferingInput {
                 count: self.count.unwrap_or_default(),
                 name: self.name,
@@ -6642,7 +6772,7 @@ impl PurchaseOfferingInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PurchaseOffering,
             aws_http::AwsErrorRetryPolicy,
@@ -6709,7 +6839,7 @@ impl PurchaseOfferingInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6717,7 +6847,7 @@ impl PurchaseOfferingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6747,19 +6877,24 @@ pub mod reject_input_device_transfer_input {
     }
     impl Builder {
         /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_device_id = Some(inp.into());
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.input_device_id = Some(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RejectInputDeviceTransferInput`](crate::input::RejectInputDeviceTransferInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RejectInputDeviceTransferInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RejectInputDeviceTransferInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RejectInputDeviceTransferInput {
                 input_device_id: self.input_device_id.unwrap_or_default(),
             })
@@ -6777,7 +6912,7 @@ impl RejectInputDeviceTransferInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RejectInputDeviceTransfer,
             aws_http::AwsErrorRetryPolicy,
@@ -6839,7 +6974,7 @@ impl RejectInputDeviceTransferInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6847,7 +6982,7 @@ impl RejectInputDeviceTransferInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6877,18 +7012,19 @@ pub mod start_channel_input {
     }
     impl Builder {
         /// A request to start a channel
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StartChannelInput`](crate::input::StartChannelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartChannelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::StartChannelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::StartChannelInput {
                 channel_id: self.channel_id.unwrap_or_default(),
             })
@@ -6905,7 +7041,7 @@ impl StartChannelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartChannel,
             aws_http::AwsErrorRetryPolicy,
@@ -6967,7 +7103,7 @@ impl StartChannelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6975,7 +7111,7 @@ impl StartChannelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7005,18 +7141,21 @@ pub mod start_multiplex_input {
     }
     impl Builder {
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StartMultiplexInput`](crate::input::StartMultiplexInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartMultiplexInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::StartMultiplexInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartMultiplexInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
             })
@@ -7033,7 +7172,7 @@ impl StartMultiplexInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartMultiplex,
             aws_http::AwsErrorRetryPolicy,
@@ -7095,7 +7234,7 @@ impl StartMultiplexInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7103,7 +7242,7 @@ impl StartMultiplexInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7133,18 +7272,19 @@ pub mod stop_channel_input {
     }
     impl Builder {
         /// A request to stop a running channel
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StopChannelInput`](crate::input::StopChannelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopChannelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::StopChannelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::StopChannelInput {
                 channel_id: self.channel_id.unwrap_or_default(),
             })
@@ -7161,7 +7301,7 @@ impl StopChannelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopChannel,
             aws_http::AwsErrorRetryPolicy,
@@ -7223,7 +7363,7 @@ impl StopChannelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7231,7 +7371,7 @@ impl StopChannelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7261,18 +7401,19 @@ pub mod stop_multiplex_input {
     }
     impl Builder {
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StopMultiplexInput`](crate::input::StopMultiplexInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopMultiplexInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::StopMultiplexInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::StopMultiplexInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
             })
@@ -7289,7 +7430,7 @@ impl StopMultiplexInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopMultiplex,
             aws_http::AwsErrorRetryPolicy,
@@ -7351,7 +7492,7 @@ impl StopMultiplexInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7359,7 +7500,7 @@ impl StopMultiplexInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7392,52 +7533,60 @@ pub mod transfer_input_device_input {
     }
     impl Builder {
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_device_id = Some(inp.into());
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.input_device_id = Some(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
             self
         }
         /// The AWS account ID (12 digits) for the recipient of the device transfer.
-        pub fn target_customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_customer_id = Some(inp.into());
+        pub fn target_customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_customer_id = Some(input.into());
             self
         }
         pub fn set_target_customer_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_customer_id = inp;
+            self.target_customer_id = input;
             self
         }
         /// The target AWS region to transfer the device.
-        pub fn target_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_region = Some(inp.into());
+        pub fn target_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_region = Some(input.into());
             self
         }
-        pub fn set_target_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_region = inp;
+        pub fn set_target_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_region = input;
             self
         }
         /// An optional message for the recipient. Maximum 280 characters.
-        pub fn transfer_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transfer_message = Some(inp.into());
+        pub fn transfer_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transfer_message = Some(input.into());
             self
         }
         pub fn set_transfer_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.transfer_message = inp;
+            self.transfer_message = input;
             self
         }
         /// Consumes the builder and constructs a [`TransferInputDeviceInput`](crate::input::TransferInputDeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TransferInputDeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TransferInputDeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TransferInputDeviceInput {
                 input_device_id: self.input_device_id.unwrap_or_default(),
                 target_customer_id: self.target_customer_id,
@@ -7457,7 +7606,7 @@ impl TransferInputDeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TransferInputDevice,
             aws_http::AwsErrorRetryPolicy,
@@ -7522,7 +7671,7 @@ impl TransferInputDeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7530,7 +7679,7 @@ impl TransferInputDeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7571,107 +7720,114 @@ pub mod update_channel_input {
     }
     impl Builder {
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(mut self, inp: crate::model::CdiInputSpecification) -> Self {
-            self.cdi_input_specification = Some(inp);
+        pub fn cdi_input_specification(
+            mut self,
+            input: crate::model::CdiInputSpecification,
+        ) -> Self {
+            self.cdi_input_specification = Some(input);
             self
         }
         pub fn set_cdi_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::CdiInputSpecification>,
+            input: std::option::Option<crate::model::CdiInputSpecification>,
         ) -> Self {
-            self.cdi_input_specification = inp;
+            self.cdi_input_specification = input;
             self
         }
         /// channel ID
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
-        pub fn destinations(mut self, inp: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
         /// The encoder settings for this channel.
-        pub fn encoder_settings(mut self, inp: crate::model::EncoderSettings) -> Self {
-            self.encoder_settings = Some(inp);
+        pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
+            self.encoder_settings = Some(input);
             self
         }
         pub fn set_encoder_settings(
             mut self,
-            inp: std::option::Option<crate::model::EncoderSettings>,
+            input: std::option::Option<crate::model::EncoderSettings>,
         ) -> Self {
-            self.encoder_settings = inp;
+            self.encoder_settings = input;
             self
         }
-        pub fn input_attachments(mut self, inp: impl Into<crate::model::InputAttachment>) -> Self {
+        pub fn input_attachments(
+            mut self,
+            input: impl Into<crate::model::InputAttachment>,
+        ) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_attachments = Some(v);
             self
         }
         pub fn set_input_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         ) -> Self {
-            self.input_attachments = inp;
+            self.input_attachments = input;
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn input_specification(mut self, inp: crate::model::InputSpecification) -> Self {
-            self.input_specification = Some(inp);
+        pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
+            self.input_specification = Some(input);
             self
         }
         pub fn set_input_specification(
             mut self,
-            inp: std::option::Option<crate::model::InputSpecification>,
+            input: std::option::Option<crate::model::InputSpecification>,
         ) -> Self {
-            self.input_specification = inp;
+            self.input_specification = input;
             self
         }
         /// The log level to write to CloudWatch Logs.
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.log_level = Some(inp);
+        pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.log_level = Some(input);
             self
         }
-        pub fn set_log_level(mut self, inp: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = inp;
+        pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
+            self.log_level = input;
             self
         }
         /// The name of the channel.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::input::UpdateChannelInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateChannelInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateChannelInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateChannelInput {
                 cdi_input_specification: self.cdi_input_specification,
                 channel_id: self.channel_id.unwrap_or_default(),
@@ -7696,7 +7852,7 @@ impl UpdateChannelInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateChannel,
             aws_http::AwsErrorRetryPolicy,
@@ -7761,7 +7917,7 @@ impl UpdateChannelInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -7769,7 +7925,7 @@ impl UpdateChannelInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7802,44 +7958,46 @@ pub mod update_channel_class_input {
     }
     impl Builder {
         /// The channel class that you wish to update this channel to use.
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.channel_class = Some(inp);
+        pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
+            self.channel_class = Some(input);
             self
         }
         pub fn set_channel_class(
             mut self,
-            inp: std::option::Option<crate::model::ChannelClass>,
+            input: std::option::Option<crate::model::ChannelClass>,
         ) -> Self {
-            self.channel_class = inp;
+            self.channel_class = input;
             self
         }
         /// Channel Id of the channel whose class should be updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.channel_id = Some(inp.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_id = Some(input.into());
             self
         }
-        pub fn set_channel_id(mut self, inp: std::string::String) -> Self {
-            self.channel_id = Some(inp);
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_id = input;
             self
         }
-        pub fn destinations(mut self, inp: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateChannelClassInput`](crate::input::UpdateChannelClassInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateChannelClassInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateChannelClassInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateChannelClassInput {
                 channel_class: self.channel_class,
                 channel_id: self.channel_id.unwrap_or_default(),
@@ -7858,7 +8016,7 @@ impl UpdateChannelClassInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateChannelClass,
             aws_http::AwsErrorRetryPolicy,
@@ -7923,7 +8081,7 @@ impl UpdateChannelClassInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -7931,7 +8089,7 @@ impl UpdateChannelClassInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7972,106 +8130,107 @@ pub mod update_input_input {
     impl Builder {
         pub fn destinations(
             mut self,
-            inp: impl Into<crate::model::InputDestinationRequest>,
+            input: impl Into<crate::model::InputDestinationRequest>,
         ) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.destinations = Some(v);
             self
         }
         pub fn set_destinations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
         ) -> Self {
-            self.destinations = inp;
+            self.destinations = input;
             self
         }
-        pub fn input_devices(mut self, inp: impl Into<crate::model::InputDeviceRequest>) -> Self {
+        pub fn input_devices(mut self, input: impl Into<crate::model::InputDeviceRequest>) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_devices = Some(v);
             self
         }
         pub fn set_input_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputDeviceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputDeviceRequest>>,
         ) -> Self {
-            self.input_devices = inp;
+            self.input_devices = input;
             self
         }
         /// Unique ID of the input.
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_id = Some(inp.into());
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_id = Some(input.into());
             self
         }
-        pub fn set_input_id(mut self, inp: std::string::String) -> Self {
-            self.input_id = Some(inp);
+        pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_id = input;
             self
         }
-        pub fn input_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn input_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.input_security_groups = Some(v);
             self
         }
         pub fn set_input_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.input_security_groups = inp;
+            self.input_security_groups = input;
             self
         }
         pub fn media_connect_flows(
             mut self,
-            inp: impl Into<crate::model::MediaConnectFlowRequest>,
+            input: impl Into<crate::model::MediaConnectFlowRequest>,
         ) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.media_connect_flows = Some(v);
             self
         }
         pub fn set_media_connect_flows(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
         ) -> Self {
-            self.media_connect_flows = inp;
+            self.media_connect_flows = input;
             self
         }
         /// Name of the input.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn sources(mut self, inp: impl Into<crate::model::InputSourceRequest>) -> Self {
+        pub fn sources(mut self, input: impl Into<crate::model::InputSourceRequest>) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.sources = Some(v);
             self
         }
         pub fn set_sources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
         ) -> Self {
-            self.sources = inp;
+            self.sources = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateInputInput`](crate::input::UpdateInputInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateInputInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateInputInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateInputInput {
                 destinations: self.destinations,
                 input_devices: self.input_devices,
@@ -8095,7 +8254,7 @@ impl UpdateInputInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateInput,
             aws_http::AwsErrorRetryPolicy,
@@ -8160,7 +8319,7 @@ impl UpdateInputInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8168,7 +8327,7 @@ impl UpdateInputInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8205,56 +8364,61 @@ pub mod update_input_device_input {
         /// The settings that you want to apply to the HD input device.
         pub fn hd_device_settings(
             mut self,
-            inp: crate::model::InputDeviceConfigurableSettings,
+            input: crate::model::InputDeviceConfigurableSettings,
         ) -> Self {
-            self.hd_device_settings = Some(inp);
+            self.hd_device_settings = Some(input);
             self
         }
         pub fn set_hd_device_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
+            input: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
         ) -> Self {
-            self.hd_device_settings = inp;
+            self.hd_device_settings = input;
             self
         }
         /// The unique ID of the input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_device_id = Some(inp.into());
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
             self
         }
-        pub fn set_input_device_id(mut self, inp: std::string::String) -> Self {
-            self.input_device_id = Some(inp);
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
             self
         }
         /// The name that you assigned to this input device (not the unique ID).
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// The settings that you want to apply to the UHD input device.
         pub fn uhd_device_settings(
             mut self,
-            inp: crate::model::InputDeviceConfigurableSettings,
+            input: crate::model::InputDeviceConfigurableSettings,
         ) -> Self {
-            self.uhd_device_settings = Some(inp);
+            self.uhd_device_settings = Some(input);
             self
         }
         pub fn set_uhd_device_settings(
             mut self,
-            inp: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
+            input: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
         ) -> Self {
-            self.uhd_device_settings = inp;
+            self.uhd_device_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateInputDeviceInput`](crate::input::UpdateInputDeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateInputDeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateInputDeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateInputDeviceInput {
                 hd_device_settings: self.hd_device_settings,
                 input_device_id: self.input_device_id.unwrap_or_default(),
@@ -8274,7 +8438,7 @@ impl UpdateInputDeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateInputDevice,
             aws_http::AwsErrorRetryPolicy,
@@ -8339,7 +8503,7 @@ impl UpdateInputDeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8347,7 +8511,7 @@ impl UpdateInputDeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8382,12 +8546,15 @@ pub mod update_input_security_group_input {
     }
     impl Builder {
         /// The id of the Input Security Group to update.
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_security_group_id = Some(inp.into());
+        pub fn input_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_security_group_id = Some(input.into());
             self
         }
-        pub fn set_input_security_group_id(mut self, inp: std::string::String) -> Self {
-            self.input_security_group_id = Some(inp);
+        pub fn set_input_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_security_group_id = input;
             self
         }
         pub fn tags(
@@ -8402,34 +8569,36 @@ pub mod update_input_security_group_input {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         pub fn whitelist_rules(
             mut self,
-            inp: impl Into<crate::model::InputWhitelistRuleCidr>,
+            input: impl Into<crate::model::InputWhitelistRuleCidr>,
         ) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.whitelist_rules = Some(v);
             self
         }
         pub fn set_whitelist_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
         ) -> Self {
-            self.whitelist_rules = inp;
+            self.whitelist_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateInputSecurityGroupInput`](crate::input::UpdateInputSecurityGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateInputSecurityGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateInputSecurityGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateInputSecurityGroupInput {
                 input_security_group_id: self.input_security_group_id.unwrap_or_default(),
                 tags: self.tags,
@@ -8449,7 +8618,7 @@ impl UpdateInputSecurityGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateInputSecurityGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -8515,7 +8684,7 @@ impl UpdateInputSecurityGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8523,7 +8692,7 @@ impl UpdateInputSecurityGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8555,40 +8724,42 @@ pub mod update_multiplex_input {
     }
     impl Builder {
         /// ID of the multiplex to update.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// The new settings for a multiplex.
-        pub fn multiplex_settings(mut self, inp: crate::model::MultiplexSettings) -> Self {
-            self.multiplex_settings = Some(inp);
+        pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
+            self.multiplex_settings = Some(input);
             self
         }
         pub fn set_multiplex_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexSettings>,
+            input: std::option::Option<crate::model::MultiplexSettings>,
         ) -> Self {
-            self.multiplex_settings = inp;
+            self.multiplex_settings = input;
             self
         }
         /// Name of the multiplex.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateMultiplexInput`](crate::input::UpdateMultiplexInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateMultiplexInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateMultiplexInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateMultiplexInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
                 multiplex_settings: self.multiplex_settings,
@@ -8607,7 +8778,7 @@ impl UpdateMultiplexInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateMultiplex,
             aws_http::AwsErrorRetryPolicy,
@@ -8671,7 +8842,7 @@ impl UpdateMultiplexInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8679,7 +8850,7 @@ impl UpdateMultiplexInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8712,43 +8883,45 @@ pub mod update_multiplex_program_input {
     }
     impl Builder {
         /// The ID of the multiplex of the program to update.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.multiplex_id = Some(inp.into());
+        pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multiplex_id = Some(input.into());
             self
         }
-        pub fn set_multiplex_id(mut self, inp: std::string::String) -> Self {
-            self.multiplex_id = Some(inp);
+        pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multiplex_id = input;
             self
         }
         /// The new settings for a multiplex program.
         pub fn multiplex_program_settings(
             mut self,
-            inp: crate::model::MultiplexProgramSettings,
+            input: crate::model::MultiplexProgramSettings,
         ) -> Self {
-            self.multiplex_program_settings = Some(inp);
+            self.multiplex_program_settings = Some(input);
             self
         }
         pub fn set_multiplex_program_settings(
             mut self,
-            inp: std::option::Option<crate::model::MultiplexProgramSettings>,
+            input: std::option::Option<crate::model::MultiplexProgramSettings>,
         ) -> Self {
-            self.multiplex_program_settings = inp;
+            self.multiplex_program_settings = input;
             self
         }
         /// The name of the program to update.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.program_name = Some(inp.into());
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.program_name = Some(input.into());
             self
         }
-        pub fn set_program_name(mut self, inp: std::string::String) -> Self {
-            self.program_name = Some(inp);
+        pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.program_name = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateMultiplexProgramInput`](crate::input::UpdateMultiplexProgramInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateMultiplexProgramInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateMultiplexProgramInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateMultiplexProgramInput {
                 multiplex_id: self.multiplex_id.unwrap_or_default(),
                 multiplex_program_settings: self.multiplex_program_settings,
@@ -8767,7 +8940,7 @@ impl UpdateMultiplexProgramInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateMultiplexProgram,
             aws_http::AwsErrorRetryPolicy,
@@ -8833,7 +9006,7 @@ impl UpdateMultiplexProgramInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8841,7 +9014,7 @@ impl UpdateMultiplexProgramInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8872,28 +9045,33 @@ pub mod update_reservation_input {
     }
     impl Builder {
         /// Name of the reservation
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reservation_id = Some(inp.into());
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reservation_id = Some(input.into());
             self
         }
-        pub fn set_reservation_id(mut self, inp: std::string::String) -> Self {
-            self.reservation_id = Some(inp);
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reservation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateReservationInput`](crate::input::UpdateReservationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateReservationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateReservationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateReservationInput {
                 name: self.name,
                 reservation_id: self.reservation_id.unwrap_or_default(),
@@ -8911,7 +9089,7 @@ impl UpdateReservationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateReservation,
             aws_http::AwsErrorRetryPolicy,
@@ -8976,7 +9154,7 @@ impl UpdateReservationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8984,7 +9162,7 @@ impl UpdateReservationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)

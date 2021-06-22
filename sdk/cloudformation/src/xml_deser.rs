@@ -6084,70 +6084,80 @@ pub fn deser_structure_stack_set_drift_detection_details(
             ,
             s if s.matches("TotalStackInstancesCount") /* TotalStackInstancesCount com.amazonaws.cloudformation#StackSetDriftDetectionDetails$TotalStackInstancesCount */ =>  {
                 let var_263 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#TotalStackInstancesCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#TotalStackInstancesCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_total_stack_instances_count(var_263);
             }
             ,
             s if s.matches("DriftedStackInstancesCount") /* DriftedStackInstancesCount com.amazonaws.cloudformation#StackSetDriftDetectionDetails$DriftedStackInstancesCount */ =>  {
                 let var_264 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#DriftedStackInstancesCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#DriftedStackInstancesCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_drifted_stack_instances_count(var_264);
             }
             ,
             s if s.matches("InSyncStackInstancesCount") /* InSyncStackInstancesCount com.amazonaws.cloudformation#StackSetDriftDetectionDetails$InSyncStackInstancesCount */ =>  {
                 let var_265 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#InSyncStackInstancesCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#InSyncStackInstancesCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_in_sync_stack_instances_count(var_265);
             }
             ,
             s if s.matches("InProgressStackInstancesCount") /* InProgressStackInstancesCount com.amazonaws.cloudformation#StackSetDriftDetectionDetails$InProgressStackInstancesCount */ =>  {
                 let var_266 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#InProgressStackInstancesCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#InProgressStackInstancesCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_in_progress_stack_instances_count(var_266);
             }
             ,
             s if s.matches("FailedStackInstancesCount") /* FailedStackInstancesCount com.amazonaws.cloudformation#StackSetDriftDetectionDetails$FailedStackInstancesCount */ =>  {
                 let var_267 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#FailedStackInstancesCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudformation#FailedStackInstancesCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_failed_stack_instances_count(var_267);
             }

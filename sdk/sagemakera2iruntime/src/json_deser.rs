@@ -10,80 +10,80 @@ pub fn parse_generic_error(
 }
 
 pub fn internal_server_exception(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::internal_server_error::Builder,
-) -> Result<crate::error::internal_server_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::InternalServerError = if inp.is_empty() {
+) -> std::result::Result<crate::error::internal_server_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::InternalServerError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn resource_not_found_exception(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::resource_not_found_error::Builder,
-) -> Result<crate::error::resource_not_found_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ResourceNotFoundError = if inp.is_empty() {
+) -> std::result::Result<crate::error::resource_not_found_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ResourceNotFoundError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn throttling_exception(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::throttling_error::Builder,
-) -> Result<crate::error::throttling_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ThrottlingError = if inp.is_empty() {
+) -> std::result::Result<crate::error::throttling_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ThrottlingError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn validation_exception(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::validation_error::Builder,
-) -> Result<crate::error::validation_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ValidationError = if inp.is_empty() {
+) -> std::result::Result<crate::error::validation_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ValidationError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn describe_human_loop_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::describe_human_loop_output::Builder,
-) -> Result<crate::output::describe_human_loop_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::DescribeHumanLoopOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::describe_human_loop_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::DescribeHumanLoopOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_creation_time(parsed_body.creation_time);
     builder = builder.set_failure_reason(parsed_body.failure_reason);
@@ -97,16 +97,16 @@ pub fn describe_human_loop_deser_operation(
 }
 
 pub fn list_human_loops_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::list_human_loops_output::Builder,
-) -> Result<crate::output::list_human_loops_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::ListHumanLoopsOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::list_human_loops_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::ListHumanLoopsOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_human_loop_summaries(parsed_body.human_loop_summaries);
     builder = builder.set_next_token(parsed_body.next_token);
@@ -114,48 +114,48 @@ pub fn list_human_loops_deser_operation(
 }
 
 pub fn conflict_exception(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::conflict_error::Builder,
-) -> Result<crate::error::conflict_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ConflictError = if inp.is_empty() {
+) -> std::result::Result<crate::error::conflict_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ConflictError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn service_quota_exceeded_exception(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::error::service_quota_exceeded_error::Builder,
-) -> Result<crate::error::service_quota_exceeded_error::Builder, serde_json::Error> {
-    let parsed_body: crate::error::ServiceQuotaExceededError = if inp.is_empty() {
+) -> std::result::Result<crate::error::service_quota_exceeded_error::Builder, serde_json::Error> {
+    let parsed_body: crate::error::ServiceQuotaExceededError = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
 
 pub fn start_human_loop_deser_operation(
-    inp: &[u8],
+    input: &[u8],
     mut builder: crate::output::start_human_loop_output::Builder,
-) -> Result<crate::output::start_human_loop_output::Builder, serde_json::Error> {
-    let parsed_body: crate::serializer::StartHumanLoopOutputBody = if inp.is_empty() {
+) -> std::result::Result<crate::output::start_human_loop_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::StartHumanLoopOutputBody = if input.is_empty() {
         // To enable JSON parsing to succeed, replace an empty body
         // with an empty JSON body. If a member was required, it will fail slightly later
         // during the operation construction phase when a required field was missing.
         serde_json::from_slice(b"{}")?
     } else {
-        serde_json::from_slice(inp)?
+        serde_json::from_slice(input)?
     };
     builder = builder.set_human_loop_arn(parsed_body.human_loop_arn);
     Ok(builder)

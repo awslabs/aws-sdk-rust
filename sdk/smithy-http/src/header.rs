@@ -73,8 +73,25 @@ where
     Ok(out)
 }
 
+/// Read exactly one or none from a headers iterator
+///
+/// This function does not perform comma splitting like `read_many`
+pub fn one_or_none<T: FromStr>(
+    mut values: ValueIter<HeaderValue>,
+) -> Result<Option<T>, ParseError> {
+    let first = match values.next() {
+        Some(v) => v,
+        None => return Ok(None),
+    };
+    let value = std::str::from_utf8(first.as_bytes()).map_err(|_| ParseError)?;
+    match values.next() {
+        None => T::from_str(value.trim()).map_err(|_| ParseError).map(Some),
+        Some(_) => Err(ParseError),
+    }
+}
+
 /// Read one comma delimited value for `FromStr` types
-pub fn read_one<T>(s: &[u8]) -> Result<(T, &[u8]), ParseError>
+fn read_one<T>(s: &[u8]) -> Result<(T, &[u8]), ParseError>
 where
     T: FromStr,
 {

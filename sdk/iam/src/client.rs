@@ -586,7 +586,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddClientIDToOpenIDConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::AddClientIDToOpenIDConnectProviderError>,
         >
@@ -604,25 +604,28 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to
         /// add the client ID to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(inp);
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.open_id_connect_provider_arn(input);
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_open_id_connect_provider_arn(inp);
+            self.inner = self.inner.set_open_id_connect_provider_arn(input);
             self
         }
         /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider
         /// resource.</p>
-        pub fn client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(inp);
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input);
             self
         }
-        pub fn set_client_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_id(inp);
+        pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_id(input);
             self
         }
     }
@@ -641,7 +644,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddRoleToInstanceProfileOutput,
             smithy_http::result::SdkError<crate::error::AddRoleToInstanceProfileError>,
         >
@@ -660,26 +663,26 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input);
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_instance_profile_name(inp);
+            self.inner = self.inner.set_instance_profile_name(input);
             self
         }
         /// <p>The name of the role to add.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
     }
@@ -698,7 +701,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddUserToGroupOutput,
             smithy_http::result::SdkError<crate::error::AddUserToGroupError>,
         >
@@ -717,23 +720,23 @@ pub mod fluent_builders {
         /// <p>The name of the group to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The name of the user to add.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
     }
@@ -752,7 +755,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AttachGroupPolicyOutput,
             smithy_http::result::SdkError<crate::error::AttachGroupPolicyError>,
         >
@@ -771,22 +774,22 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
     }
@@ -805,7 +808,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AttachRolePolicyOutput,
             smithy_http::result::SdkError<crate::error::AttachRolePolicyError>,
         >
@@ -824,22 +827,22 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
     }
@@ -858,7 +861,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AttachUserPolicyOutput,
             smithy_http::result::SdkError<crate::error::AttachUserPolicyError>,
         >
@@ -877,22 +880,22 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
     }
@@ -911,7 +914,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ChangePasswordOutput,
             smithy_http::result::SdkError<crate::error::ChangePasswordError>,
         >
@@ -928,12 +931,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The IAM user's current password.</p>
-        pub fn old_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.old_password(inp);
+        pub fn old_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.old_password(input);
             self
         }
-        pub fn set_old_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_old_password(inp);
+        pub fn set_old_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_old_password(input);
             self
         }
         /// <p>The new password. The new password must conform to the AWS account's password
@@ -945,12 +948,12 @@ pub mod fluent_builders {
         /// characters. Any of these characters are valid in a password. However, many tools, such
         /// as the AWS Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
-        pub fn new_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_password(inp);
+        pub fn new_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_password(input);
             self
         }
-        pub fn set_new_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_new_password(inp);
+        pub fn set_new_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_new_password(input);
             self
         }
     }
@@ -969,7 +972,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAccessKeyOutput,
             smithy_http::result::SdkError<crate::error::CreateAccessKeyError>,
         >
@@ -988,12 +991,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user that the new key will belong to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
     }
@@ -1012,7 +1015,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAccountAliasOutput,
             smithy_http::result::SdkError<crate::error::CreateAccountAliasError>,
         >
@@ -1032,12 +1035,15 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
         /// lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have
         /// two dashes in a row.</p>
-        pub fn account_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_alias(inp);
+        pub fn account_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_alias(input);
             self
         }
-        pub fn set_account_alias(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_account_alias(inp);
+        pub fn set_account_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_account_alias(input);
             self
         }
     }
@@ -1056,7 +1062,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateGroupError>,
         >
@@ -1079,24 +1085,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input);
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(inp);
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path(input);
             self
         }
         /// <p>The name of the group to create. Do not include the path in this value.</p>
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
     }
@@ -1115,7 +1121,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateInstanceProfileOutput,
             smithy_http::result::SdkError<crate::error::CreateInstanceProfileError>,
         >
@@ -1134,15 +1140,15 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to create.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input);
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_instance_profile_name(inp);
+            self.inner = self.inner.set_instance_profile_name(input);
             self
         }
         /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -1152,12 +1158,12 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input);
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(inp);
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path(input);
             self
         }
         /// <p>A list of tags that you want to attach to the newly created IAM instance profile.
@@ -1173,9 +1179,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1194,7 +1200,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateLoginProfileOutput,
             smithy_http::result::SdkError<crate::error::CreateLoginProfileError>,
         >
@@ -1214,12 +1220,12 @@ pub mod fluent_builders {
         /// exist.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The new password for the user.</p>
@@ -1230,21 +1236,21 @@ pub mod fluent_builders {
         /// characters. Any of these characters are valid in a password. However, many tools, such
         /// as the AWS Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input);
             self
         }
-        pub fn set_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_password(inp);
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_password(input);
             self
         }
         /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
-        pub fn password_reset_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.password_reset_required(inp);
+        pub fn password_reset_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.password_reset_required(input);
             self
         }
-        pub fn set_password_reset_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_password_reset_required(inp);
+        pub fn set_password_reset_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_password_reset_required(input);
             self
         }
     }
@@ -1263,7 +1269,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateOpenIDConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::CreateOpenIDConnectProviderError>,
         >
@@ -1287,12 +1293,12 @@ pub mod fluent_builders {
         /// <p>You cannot register the same provider multiple times in a single AWS account. If you
         /// try to submit a URL that has already been used for an OpenID Connect provider in the
         /// AWS account, you will get an error.</p>
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.url(inp);
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.url(input);
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_url(inp);
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_url(input);
             self
         }
         /// <p>A list of client IDs (also known as audiences). When a mobile or web app registers
@@ -1311,9 +1317,9 @@ pub mod fluent_builders {
         }
         pub fn set_client_id_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_client_id_list(inp);
+            self.inner = self.inner.set_client_id_list(input);
             self
         }
         /// <p>A list of server certificate thumbprints for the OpenID Connect (OIDC) identity
@@ -1337,9 +1343,9 @@ pub mod fluent_builders {
         }
         pub fn set_thumbprint_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_thumbprint_list(inp);
+            self.inner = self.inner.set_thumbprint_list(input);
             self
         }
         /// <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider.
@@ -1355,9 +1361,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1376,7 +1382,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreatePolicyOutput,
             smithy_http::result::SdkError<crate::error::CreatePolicyError>,
         >
@@ -1396,12 +1402,12 @@ pub mod fluent_builders {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The path for the policy.</p>
@@ -1412,12 +1418,12 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input);
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(inp);
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path(input);
             self
         }
         /// <p>The JSON policy document that you want to use as the content for the new
@@ -1444,15 +1450,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input);
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_policy_document(inp);
+            self.inner = self.inner.set_policy_document(input);
             self
         }
         /// <p>A friendly description of the policy.</p>
@@ -1460,12 +1466,12 @@ pub mod fluent_builders {
         /// example, "Grants access to production DynamoDB tables."</p>
         /// <p>The policy description is immutable. After a value is assigned, it cannot be
         /// changed.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>A list of tags that you want to attach to the new IAM customer managed policy.
@@ -1481,9 +1487,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1502,7 +1508,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreatePolicyVersionOutput,
             smithy_http::result::SdkError<crate::error::CreatePolicyVersionError>,
         >
@@ -1521,12 +1527,12 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new
         /// version.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>The JSON policy document that you want to use as the content for this new version of
@@ -1551,15 +1557,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input);
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_policy_document(inp);
+            self.inner = self.inner.set_policy_document(input);
             self
         }
         /// <p>Specifies whether to set this version as the policy's default version.</p>
@@ -1568,12 +1574,12 @@ pub mod fluent_builders {
         /// and roles that the policy is attached to.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_as_default(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_as_default(inp);
+        pub fn set_as_default(mut self, input: bool) -> Self {
+            self.inner = self.inner.set_as_default(input);
             self
         }
-        pub fn set_set_as_default(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_set_as_default(inp);
+        pub fn set_set_as_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_set_as_default(input);
             self
         }
     }
@@ -1592,7 +1598,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateRoleOutput,
             smithy_http::result::SdkError<crate::error::CreateRoleError>,
         >
@@ -1615,24 +1621,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input);
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(inp);
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path(input);
             self
         }
         /// <p>The name of the role to create.</p>
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The trust relationship policy document that grants an entity permission to assume the
@@ -1658,24 +1664,27 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p> Upon success, the response includes the same trust policy in JSON format.</p>
-        pub fn assume_role_policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assume_role_policy_document(inp);
+        pub fn assume_role_policy_document(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.assume_role_policy_document(input);
             self
         }
         pub fn set_assume_role_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_assume_role_policy_document(inp);
+            self.inner = self.inner.set_assume_role_policy_document(input);
             self
         }
         /// <p>A description of the role.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
@@ -1691,25 +1700,25 @@ pub mod fluent_builders {
         /// or the <code>assume-role*</code> CLI operations but does not apply when you use those
         /// operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
         /// roles</a> in the <i>IAM User Guide</i>.</p>
-        pub fn max_session_duration(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_session_duration(inp);
+        pub fn max_session_duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_session_duration(input);
             self
         }
-        pub fn set_max_session_duration(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_session_duration(inp);
+        pub fn set_max_session_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_session_duration(input);
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// role.</p>
-        pub fn permissions_boundary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions_boundary(inp);
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions_boundary(input);
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_permissions_boundary(inp);
+            self.inner = self.inner.set_permissions_boundary(input);
             self
         }
         /// <p>A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value.
@@ -1725,9 +1734,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1746,7 +1755,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateSAMLProviderOutput,
             smithy_http::result::SdkError<crate::error::CreateSAMLProviderError>,
         >
@@ -1770,26 +1779,26 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
         /// federation</a> in the <i>IAM User Guide</i>
         /// </p>
-        pub fn saml_metadata_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_metadata_document(inp);
+        pub fn saml_metadata_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_metadata_document(input);
             self
         }
         pub fn set_saml_metadata_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_saml_metadata_document(inp);
+            self.inner = self.inner.set_saml_metadata_document(input);
             self
         }
         /// <p>The name of the provider to create.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>A list of tags that you want to attach to the new IAM SAML provider.
@@ -1805,9 +1814,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1826,7 +1835,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateServiceLinkedRoleOutput,
             smithy_http::result::SdkError<crate::error::CreateServiceLinkedRoleError>,
         >
@@ -1850,24 +1859,24 @@ pub mod fluent_builders {
         /// that work with IAM</a> in the <i>IAM User Guide</i>. Look for
         /// the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that
         /// service.</p>
-        pub fn aws_service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_service_name(inp);
+        pub fn aws_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_service_name(input);
             self
         }
         pub fn set_aws_service_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_aws_service_name(inp);
+            self.inner = self.inner.set_aws_service_name(input);
             self
         }
         /// <p>The description of the role.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p></p>
@@ -1879,12 +1888,15 @@ pub mod fluent_builders {
         /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide
         /// an optional suffix and the operation fails, try the operation again without the
         /// suffix.</p>
-        pub fn custom_suffix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_suffix(inp);
+        pub fn custom_suffix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_suffix(input);
             self
         }
-        pub fn set_custom_suffix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_custom_suffix(inp);
+        pub fn set_custom_suffix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_suffix(input);
             self
         }
     }
@@ -1903,7 +1915,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateServiceSpecificCredentialOutput,
             smithy_http::result::SdkError<crate::error::CreateServiceSpecificCredentialError>,
         >
@@ -1924,23 +1936,23 @@ pub mod fluent_builders {
         /// that they can be used only to access the specified service.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The name of the AWS service that is to be associated with the credentials. The
         /// service you specify here is the only service that can be accessed using these
         /// credentials.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input);
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_name(inp);
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_name(input);
             self
         }
     }
@@ -1959,7 +1971,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateUserOutput,
             smithy_http::result::SdkError<crate::error::CreateUserError>,
         >
@@ -1982,37 +1994,37 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input);
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(inp);
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path(input);
             self
         }
         /// <p>The name of the user to create.</p>
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// user.</p>
-        pub fn permissions_boundary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions_boundary(inp);
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions_boundary(input);
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_permissions_boundary(inp);
+            self.inner = self.inner.set_permissions_boundary(input);
             self
         }
         /// <p>A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value.
@@ -2028,9 +2040,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2049,7 +2061,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateVirtualMFADeviceOutput,
             smithy_http::result::SdkError<crate::error::CreateVirtualMFADeviceError>,
         >
@@ -2072,27 +2084,27 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input);
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(inp);
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path(input);
             self
         }
         /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA
         /// device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn virtual_mfa_device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_mfa_device_name(inp);
+        pub fn virtual_mfa_device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_mfa_device_name(input);
             self
         }
         pub fn set_virtual_mfa_device_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_virtual_mfa_device_name(inp);
+            self.inner = self.inner.set_virtual_mfa_device_name(input);
             self
         }
         /// <p>A list of tags that you want to attach to the new IAM virtual MFA device.
@@ -2108,9 +2120,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2129,7 +2141,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeactivateMFADeviceOutput,
             smithy_http::result::SdkError<crate::error::DeactivateMFADeviceError>,
         >
@@ -2148,12 +2160,12 @@ pub mod fluent_builders {
         /// <p>The name of the user whose MFA device you want to deactivate.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
@@ -2161,12 +2173,15 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input);
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_serial_number(inp);
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_serial_number(input);
             self
         }
     }
@@ -2185,7 +2200,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAccessKeyOutput,
             smithy_http::result::SdkError<crate::error::DeleteAccessKeyError>,
         >
@@ -2204,24 +2219,27 @@ pub mod fluent_builders {
         /// <p>The name of the user whose access key pair you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The access key ID for the access key ID and secret access key you want to
         /// delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key_id(inp);
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(input);
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_access_key_id(inp);
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_access_key_id(input);
             self
         }
     }
@@ -2240,7 +2258,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAccountAliasOutput,
             smithy_http::result::SdkError<crate::error::DeleteAccountAliasError>,
         >
@@ -2260,12 +2278,15 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
         /// lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have
         /// two dashes in a row.</p>
-        pub fn account_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_alias(inp);
+        pub fn account_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_alias(input);
             self
         }
-        pub fn set_account_alias(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_account_alias(inp);
+        pub fn set_account_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_account_alias(input);
             self
         }
     }
@@ -2284,7 +2305,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAccountPasswordPolicyOutput,
             smithy_http::result::SdkError<crate::error::DeleteAccountPasswordPolicyError>,
         >
@@ -2316,7 +2337,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteGroupError>,
         >
@@ -2335,12 +2356,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM group to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
     }
@@ -2359,7 +2380,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteGroupPolicyOutput,
             smithy_http::result::SdkError<crate::error::DeleteGroupPolicyError>,
         >
@@ -2379,23 +2400,23 @@ pub mod fluent_builders {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The name identifying the policy document to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
     }
@@ -2414,7 +2435,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteInstanceProfileOutput,
             smithy_http::result::SdkError<crate::error::DeleteInstanceProfileError>,
         >
@@ -2433,15 +2454,15 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input);
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_instance_profile_name(inp);
+            self.inner = self.inner.set_instance_profile_name(input);
             self
         }
     }
@@ -2460,7 +2481,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteLoginProfileOutput,
             smithy_http::result::SdkError<crate::error::DeleteLoginProfileError>,
         >
@@ -2479,12 +2500,12 @@ pub mod fluent_builders {
         /// <p>The name of the user whose password you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
     }
@@ -2503,7 +2524,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteOpenIDConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::DeleteOpenIDConnectProviderError>,
         >
@@ -2521,15 +2542,18 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to
         /// delete. You can get a list of OpenID Connect provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(inp);
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.open_id_connect_provider_arn(input);
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_open_id_connect_provider_arn(inp);
+            self.inner = self.inner.set_open_id_connect_provider_arn(input);
             self
         }
     }
@@ -2548,7 +2572,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeletePolicyOutput,
             smithy_http::result::SdkError<crate::error::DeletePolicyError>,
         >
@@ -2566,12 +2590,12 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
     }
@@ -2590,7 +2614,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeletePolicyVersionOutput,
             smithy_http::result::SdkError<crate::error::DeletePolicyVersionError>,
         >
@@ -2609,12 +2633,12 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a
         /// version.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>The policy version to delete.</p>
@@ -2623,12 +2647,12 @@ pub mod fluent_builders {
         /// followed by a period '.' and a string of letters and digits.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input);
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_version_id(inp);
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
             self
         }
     }
@@ -2647,7 +2671,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteRoleOutput,
             smithy_http::result::SdkError<crate::error::DeleteRoleError>,
         >
@@ -2666,12 +2690,12 @@ pub mod fluent_builders {
         /// <p>The name of the role to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
     }
@@ -2690,7 +2714,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteRolePermissionsBoundaryOutput,
             smithy_http::result::SdkError<crate::error::DeleteRolePermissionsBoundaryError>,
         >
@@ -2708,12 +2732,12 @@ pub mod fluent_builders {
         }
         /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the
         /// permissions boundary.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
     }
@@ -2732,7 +2756,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteRolePolicyOutput,
             smithy_http::result::SdkError<crate::error::DeleteRolePolicyError>,
         >
@@ -2752,23 +2776,23 @@ pub mod fluent_builders {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The name of the inline policy to delete from the specified IAM role.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
     }
@@ -2787,7 +2811,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteSAMLProviderOutput,
             smithy_http::result::SdkError<crate::error::DeleteSAMLProviderError>,
         >
@@ -2804,15 +2828,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(inp);
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input);
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_saml_provider_arn(inp);
+            self.inner = self.inner.set_saml_provider_arn(input);
             self
         }
     }
@@ -2831,7 +2855,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteServerCertificateOutput,
             smithy_http::result::SdkError<crate::error::DeleteServerCertificateError>,
         >
@@ -2850,15 +2874,15 @@ pub mod fluent_builders {
         /// <p>The name of the server certificate you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_certificate_name(inp);
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input);
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_server_certificate_name(inp);
+            self.inner = self.inner.set_server_certificate_name(input);
             self
         }
     }
@@ -2877,7 +2901,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteServiceLinkedRoleOutput,
             smithy_http::result::SdkError<crate::error::DeleteServiceLinkedRoleError>,
         >
@@ -2894,12 +2918,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service-linked role to be deleted.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
     }
@@ -2918,7 +2942,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteServiceSpecificCredentialOutput,
             smithy_http::result::SdkError<crate::error::DeleteServiceSpecificCredentialError>,
         >
@@ -2939,12 +2963,12 @@ pub mod fluent_builders {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The unique identifier of the service-specific credential. You can get this value by
@@ -2953,16 +2977,16 @@ pub mod fluent_builders {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.service_specific_credential_id(inp);
+            self.inner = self.inner.service_specific_credential_id(input);
             self
         }
         pub fn set_service_specific_credential_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_service_specific_credential_id(inp);
+            self.inner = self.inner.set_service_specific_credential_id(input);
             self
         }
     }
@@ -2981,7 +3005,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteSigningCertificateOutput,
             smithy_http::result::SdkError<crate::error::DeleteSigningCertificateError>,
         >
@@ -3000,23 +3024,26 @@ pub mod fluent_builders {
         /// <p>The name of the user the signing certificate belongs to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The ID of the signing certificate to delete.</p>
         /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
         /// characters that can be upper- or lower-cased letters or digits.</p>
-        pub fn certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_id(inp);
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_id(input);
             self
         }
-        pub fn set_certificate_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_certificate_id(inp);
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_certificate_id(input);
             self
         }
     }
@@ -3035,7 +3062,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteSSHPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::DeleteSSHPublicKeyError>,
         >
@@ -3054,26 +3081,26 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_id(inp);
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_id(input);
             self
         }
         pub fn set_ssh_public_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ssh_public_key_id(inp);
+            self.inner = self.inner.set_ssh_public_key_id(input);
             self
         }
     }
@@ -3092,7 +3119,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteUserOutput,
             smithy_http::result::SdkError<crate::error::DeleteUserError>,
         >
@@ -3111,12 +3138,12 @@ pub mod fluent_builders {
         /// <p>The name of the user to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
     }
@@ -3135,7 +3162,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteUserPermissionsBoundaryOutput,
             smithy_http::result::SdkError<crate::error::DeleteUserPermissionsBoundaryError>,
         >
@@ -3153,12 +3180,12 @@ pub mod fluent_builders {
         }
         /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the
         /// permissions boundary.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
     }
@@ -3177,7 +3204,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteUserPolicyOutput,
             smithy_http::result::SdkError<crate::error::DeleteUserPolicyError>,
         >
@@ -3197,23 +3224,23 @@ pub mod fluent_builders {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The name identifying the policy document to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
     }
@@ -3232,7 +3259,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteVirtualMFADeviceOutput,
             smithy_http::result::SdkError<crate::error::DeleteVirtualMFADeviceError>,
         >
@@ -3253,12 +3280,15 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input);
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_serial_number(inp);
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_serial_number(input);
             self
         }
     }
@@ -3277,7 +3307,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DetachGroupPolicyOutput,
             smithy_http::result::SdkError<crate::error::DetachGroupPolicyError>,
         >
@@ -3296,22 +3326,22 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
     }
@@ -3330,7 +3360,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DetachRolePolicyOutput,
             smithy_http::result::SdkError<crate::error::DetachRolePolicyError>,
         >
@@ -3349,22 +3379,22 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
     }
@@ -3383,7 +3413,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DetachUserPolicyOutput,
             smithy_http::result::SdkError<crate::error::DetachUserPolicyError>,
         >
@@ -3402,22 +3432,22 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
     }
@@ -3436,7 +3466,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EnableMFADeviceOutput,
             smithy_http::result::SdkError<crate::error::EnableMFADeviceError>,
         >
@@ -3455,12 +3485,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user for whom you want to enable the MFA device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
@@ -3468,12 +3498,15 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input);
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_serial_number(inp);
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_serial_number(input);
             self
         }
         /// <p>An authentication code emitted by the device. </p>
@@ -3486,15 +3519,15 @@ pub mod fluent_builders {
         /// time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
         /// device</a>.</p>
         /// </important>
-        pub fn authentication_code1(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_code1(inp);
+        pub fn authentication_code1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_code1(input);
             self
         }
         pub fn set_authentication_code1(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_authentication_code1(inp);
+            self.inner = self.inner.set_authentication_code1(input);
             self
         }
         /// <p>A subsequent authentication code emitted by the device.</p>
@@ -3507,15 +3540,15 @@ pub mod fluent_builders {
         /// time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
         /// device</a>.</p>
         /// </important>
-        pub fn authentication_code2(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_code2(inp);
+        pub fn authentication_code2(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_code2(input);
             self
         }
         pub fn set_authentication_code2(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_authentication_code2(inp);
+            self.inner = self.inner.set_authentication_code2(input);
             self
         }
     }
@@ -3534,7 +3567,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateCredentialReportOutput,
             smithy_http::result::SdkError<crate::error::GenerateCredentialReportError>,
         >
@@ -3566,7 +3599,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateOrganizationsAccessReportOutput,
             smithy_http::result::SdkError<crate::error::GenerateOrganizationsAccessReportError>,
         >
@@ -3588,27 +3621,27 @@ pub mod fluent_builders {
         /// organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is
         /// <code>o-a1b2c3d4e5</code>. Your entity path is
         /// <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
-        pub fn entity_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_path(inp);
+        pub fn entity_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_path(input);
             self
         }
-        pub fn set_entity_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_entity_path(inp);
+        pub fn set_entity_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_entity_path(input);
             self
         }
         /// <p>The identifier of the AWS Organizations service control policy (SCP). This parameter is
         /// optional.</p>
         /// <p>This ID is used to generate information about when an account principal that is
         /// limited by the SCP attempted to access an AWS service.</p>
-        pub fn organizations_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organizations_policy_id(inp);
+        pub fn organizations_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizations_policy_id(input);
             self
         }
         pub fn set_organizations_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_organizations_policy_id(inp);
+            self.inner = self.inner.set_organizations_policy_id(input);
             self
         }
     }
@@ -3627,7 +3660,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateServiceLastAccessedDetailsOutput,
             smithy_http::result::SdkError<crate::error::GenerateServiceLastAccessedDetailsError>,
         >
@@ -3646,12 +3679,12 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate
         /// information about when the resource was last used in an attempt to access an AWS
         /// service.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(inp);
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
             self
         }
         /// <p>The level of detail that you want to generate. You can specify whether you want to
@@ -3659,15 +3692,18 @@ pub mod fluent_builders {
         /// specify service-level granularity, this operation generates only service data. If you
         /// specify action-level granularity, it generates service and action data. If you don't
         /// include this optional parameter, the operation generates service data.</p>
-        pub fn granularity(mut self, inp: crate::model::AccessAdvisorUsageGranularityType) -> Self {
-            self.inner = self.inner.granularity(inp);
+        pub fn granularity(
+            mut self,
+            input: crate::model::AccessAdvisorUsageGranularityType,
+        ) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         pub fn set_granularity(
             mut self,
-            inp: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
+            input: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
         ) -> Self {
-            self.inner = self.inner.set_granularity(inp);
+            self.inner = self.inner.set_granularity(input);
             self
         }
     }
@@ -3686,7 +3722,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAccessKeyLastUsedOutput,
             smithy_http::result::SdkError<crate::error::GetAccessKeyLastUsedError>,
         >
@@ -3705,12 +3741,15 @@ pub mod fluent_builders {
         /// <p>The identifier of an access key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key_id(inp);
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(input);
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_access_key_id(inp);
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_access_key_id(input);
             self
         }
     }
@@ -3729,7 +3768,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAccountAuthorizationDetailsOutput,
             smithy_http::result::SdkError<crate::error::GetAccountAuthorizationDetailsError>,
         >
@@ -3756,9 +3795,9 @@ pub mod fluent_builders {
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
         ) -> Self {
-            self.inner = self.inner.set_filter(inp);
+            self.inner = self.inner.set_filter(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -3769,24 +3808,24 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -3805,7 +3844,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAccountPasswordPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetAccountPasswordPolicyError>,
         >
@@ -3837,7 +3876,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetAccountSummaryOutput,
             smithy_http::result::SdkError<crate::error::GetAccountSummaryError>,
         >
@@ -3869,7 +3908,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetContextKeysForCustomPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetContextKeysForCustomPolicyError>,
         >
@@ -3910,9 +3949,9 @@ pub mod fluent_builders {
         }
         pub fn set_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_policy_input_list(inp);
+            self.inner = self.inner.set_policy_input_list(input);
             self
         }
     }
@@ -3931,7 +3970,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetContextKeysForPrincipalPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetContextKeysForPrincipalPolicyError>,
         >
@@ -3955,15 +3994,15 @@ pub mod fluent_builders {
         /// in unencoded form here for clarity, but must be URL encoded to be included as a part of
         /// a real HTML request.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_source_arn(inp);
+        pub fn policy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_source_arn(input);
             self
         }
         pub fn set_policy_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_policy_source_arn(inp);
+            self.inner = self.inner.set_policy_source_arn(input);
             self
         }
         /// <p>An optional list of additional policies for which you want the list of context keys
@@ -3990,9 +4029,9 @@ pub mod fluent_builders {
         }
         pub fn set_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_policy_input_list(inp);
+            self.inner = self.inner.set_policy_input_list(input);
             self
         }
     }
@@ -4011,7 +4050,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetCredentialReportOutput,
             smithy_http::result::SdkError<crate::error::GetCredentialReportError>,
         >
@@ -4043,7 +4082,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetGroupOutput,
             smithy_http::result::SdkError<crate::error::GetGroupError>,
         >
@@ -4062,24 +4101,24 @@ pub mod fluent_builders {
         /// <p>The name of the group.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -4090,12 +4129,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -4114,7 +4153,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetGroupPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetGroupPolicyError>,
         >
@@ -4133,23 +4172,23 @@ pub mod fluent_builders {
         /// <p>The name of the group the policy is associated with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
     }
@@ -4168,7 +4207,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetInstanceProfileOutput,
             smithy_http::result::SdkError<crate::error::GetInstanceProfileError>,
         >
@@ -4187,15 +4226,15 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to get information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input);
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_instance_profile_name(inp);
+            self.inner = self.inner.set_instance_profile_name(input);
             self
         }
     }
@@ -4214,7 +4253,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetLoginProfileOutput,
             smithy_http::result::SdkError<crate::error::GetLoginProfileError>,
         >
@@ -4233,12 +4272,12 @@ pub mod fluent_builders {
         /// <p>The name of the user whose login profile you want to retrieve.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
     }
@@ -4257,7 +4296,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetOpenIDConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::GetOpenIDConnectProviderError>,
         >
@@ -4276,15 +4315,18 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get
         /// information for. You can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(inp);
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.open_id_connect_provider_arn(input);
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_open_id_connect_provider_arn(inp);
+            self.inner = self.inner.set_open_id_connect_provider_arn(input);
             self
         }
     }
@@ -4303,7 +4345,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetOrganizationsAccessReportOutput,
             smithy_http::result::SdkError<crate::error::GetOrganizationsAccessReportError>,
         >
@@ -4320,12 +4362,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the request generated by the <a>GenerateOrganizationsAccessReport</a> operation.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input);
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(inp);
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -4336,35 +4378,38 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The key that is used to sort the results. If you choose the namespace key, the results
         /// are returned in alphabetical order. If you choose the time key, the results are sorted
         /// numerically by the date and time.</p>
-        pub fn sort_key(mut self, inp: crate::model::SortKeyType) -> Self {
-            self.inner = self.inner.sort_key(inp);
+        pub fn sort_key(mut self, input: crate::model::SortKeyType) -> Self {
+            self.inner = self.inner.sort_key(input);
             self
         }
-        pub fn set_sort_key(mut self, inp: std::option::Option<crate::model::SortKeyType>) -> Self {
-            self.inner = self.inner.set_sort_key(inp);
+        pub fn set_sort_key(
+            mut self,
+            input: std::option::Option<crate::model::SortKeyType>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_key(input);
             self
         }
     }
@@ -4383,7 +4428,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetPolicyError>,
         >
@@ -4402,12 +4447,12 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
         /// about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
     }
@@ -4426,7 +4471,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetPolicyVersionOutput,
             smithy_http::result::SdkError<crate::error::GetPolicyVersionError>,
         >
@@ -4445,24 +4490,24 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
         /// about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>Identifies the policy version to retrieve.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that
         /// consists of the lowercase letter 'v' followed by one or two digits, and optionally
         /// followed by a period '.' and a string of letters and digits.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input);
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_version_id(inp);
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
             self
         }
     }
@@ -4481,7 +4526,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRoleOutput,
             smithy_http::result::SdkError<crate::error::GetRoleError>,
         >
@@ -4500,12 +4545,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM role to get information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
     }
@@ -4524,7 +4569,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRolePolicyOutput,
             smithy_http::result::SdkError<crate::error::GetRolePolicyError>,
         >
@@ -4543,23 +4588,23 @@ pub mod fluent_builders {
         /// <p>The name of the role associated with the policy.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
     }
@@ -4578,7 +4623,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSAMLProviderOutput,
             smithy_http::result::SdkError<crate::error::GetSAMLProviderError>,
         >
@@ -4597,15 +4642,15 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get
         /// information about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(inp);
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input);
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_saml_provider_arn(inp);
+            self.inner = self.inner.set_saml_provider_arn(input);
             self
         }
     }
@@ -4624,7 +4669,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetServerCertificateOutput,
             smithy_http::result::SdkError<crate::error::GetServerCertificateError>,
         >
@@ -4643,15 +4688,15 @@ pub mod fluent_builders {
         /// <p>The name of the server certificate you want to retrieve information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_certificate_name(inp);
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input);
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_server_certificate_name(inp);
+            self.inner = self.inner.set_server_certificate_name(input);
             self
         }
     }
@@ -4670,7 +4715,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetServiceLastAccessedDetailsOutput,
             smithy_http::result::SdkError<crate::error::GetServiceLastAccessedDetailsError>,
         >
@@ -4690,12 +4735,12 @@ pub mod fluent_builders {
         /// returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role
         /// within a session, or by the same user when used to call
         /// <code>GetServiceLastAccessedDetail</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input);
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(inp);
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -4706,24 +4751,24 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -4742,7 +4787,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput,
             smithy_http::result::SdkError<
                 crate::error::GetServiceLastAccessedDetailsWithEntitiesError,
@@ -4762,12 +4807,12 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the request generated by the <code>GenerateServiceLastAccessedDetails</code>
         /// operation.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input);
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(inp);
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
         /// <p>The service namespace for an AWS service. Provide the service namespace to learn
@@ -4778,15 +4823,15 @@ pub mod fluent_builders {
         /// <code>(service prefix: a4b)</code>. For more information about service namespaces,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn service_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_namespace(inp);
+        pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         pub fn set_service_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_service_namespace(inp);
+            self.inner = self.inner.set_service_namespace(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -4797,24 +4842,24 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -4833,7 +4878,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetServiceLinkedRoleDeletionStatusOutput,
             smithy_http::result::SdkError<crate::error::GetServiceLinkedRoleDeletionStatusError>,
         >
@@ -4851,15 +4896,15 @@ pub mod fluent_builders {
         }
         /// <p>The deletion task identifier. This identifier is returned by the <a>DeleteServiceLinkedRole</a> operation in the format
         /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
-        pub fn deletion_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deletion_task_id(inp);
+        pub fn deletion_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deletion_task_id(input);
             self
         }
         pub fn set_deletion_task_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_deletion_task_id(inp);
+            self.inner = self.inner.set_deletion_task_id(input);
             self
         }
     }
@@ -4878,7 +4923,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSSHPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::GetSSHPublicKeyError>,
         >
@@ -4897,40 +4942,40 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_id(inp);
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_id(input);
             self
         }
         pub fn set_ssh_public_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ssh_public_key_id(inp);
+            self.inner = self.inner.set_ssh_public_key_id(input);
             self
         }
         /// <p>Specifies the public key encoding format to use in the response. To retrieve the
         /// public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM
         /// format, use <code>PEM</code>.</p>
-        pub fn encoding(mut self, inp: crate::model::EncodingType) -> Self {
-            self.inner = self.inner.encoding(inp);
+        pub fn encoding(mut self, input: crate::model::EncodingType) -> Self {
+            self.inner = self.inner.encoding(input);
             self
         }
         pub fn set_encoding(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.inner = self.inner.set_encoding(inp);
+            self.inner = self.inner.set_encoding(input);
             self
         }
     }
@@ -4949,7 +4994,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetUserOutput,
             smithy_http::result::SdkError<crate::error::GetUserError>,
         >
@@ -4969,12 +5014,12 @@ pub mod fluent_builders {
         /// <p>This parameter is optional. If it is not included, it defaults to the user making the
         /// request. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
     }
@@ -4993,7 +5038,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetUserPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetUserPolicyError>,
         >
@@ -5012,23 +5057,23 @@ pub mod fluent_builders {
         /// <p>The name of the user who the policy is associated with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
     }
@@ -5047,7 +5092,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAccessKeysOutput,
             smithy_http::result::SdkError<crate::error::ListAccessKeysError>,
         >
@@ -5066,24 +5111,24 @@ pub mod fluent_builders {
         /// <p>The name of the user.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5094,12 +5139,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5118,7 +5163,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAccountAliasesOutput,
             smithy_http::result::SdkError<crate::error::ListAccountAliasesError>,
         >
@@ -5138,12 +5183,12 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5154,12 +5199,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5178,7 +5223,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAttachedGroupPoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListAttachedGroupPoliciesError>,
         >
@@ -5197,12 +5242,12 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -5211,24 +5256,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5239,12 +5284,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5263,7 +5308,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAttachedRolePoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListAttachedRolePoliciesError>,
         >
@@ -5282,12 +5327,12 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -5296,24 +5341,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5324,12 +5369,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5348,7 +5393,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAttachedUserPoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListAttachedUserPoliciesError>,
         >
@@ -5367,12 +5412,12 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -5381,24 +5426,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5409,12 +5454,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5433,7 +5478,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListEntitiesForPolicyOutput,
             smithy_http::result::SdkError<crate::error::ListEntitiesForPolicyError>,
         >
@@ -5452,12 +5497,12 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
         /// versions.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>The entity type to use for filtering the results.</p>
@@ -5465,15 +5510,15 @@ pub mod fluent_builders {
         /// are attached to the specified policy are returned. This parameter is optional. If it is
         /// not included, all attached entities (users, groups, and roles) are returned. The
         /// argument for this parameter must be one of the valid values listed below.</p>
-        pub fn entity_filter(mut self, inp: crate::model::EntityType) -> Self {
-            self.inner = self.inner.entity_filter(inp);
+        pub fn entity_filter(mut self, input: crate::model::EntityType) -> Self {
+            self.inner = self.inner.entity_filter(input);
             self
         }
         pub fn set_entity_filter(
             mut self,
-            inp: std::option::Option<crate::model::EntityType>,
+            input: std::option::Option<crate::model::EntityType>,
         ) -> Self {
-            self.inner = self.inner.set_entity_filter(inp);
+            self.inner = self.inner.set_entity_filter(input);
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -5482,12 +5527,12 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>The policy usage method to use for filtering the results.</p>
@@ -5496,27 +5541,27 @@ pub mod fluent_builders {
         /// the policies used to set permissions boundaries, set the value
         /// to <code>PermissionsBoundary</code>.</p>
         /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-        pub fn policy_usage_filter(mut self, inp: crate::model::PolicyUsageType) -> Self {
-            self.inner = self.inner.policy_usage_filter(inp);
+        pub fn policy_usage_filter(mut self, input: crate::model::PolicyUsageType) -> Self {
+            self.inner = self.inner.policy_usage_filter(input);
             self
         }
         pub fn set_policy_usage_filter(
             mut self,
-            inp: std::option::Option<crate::model::PolicyUsageType>,
+            input: std::option::Option<crate::model::PolicyUsageType>,
         ) -> Self {
-            self.inner = self.inner.set_policy_usage_filter(inp);
+            self.inner = self.inner.set_policy_usage_filter(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5527,12 +5572,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5551,7 +5596,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListGroupPoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListGroupPoliciesError>,
         >
@@ -5570,24 +5615,24 @@ pub mod fluent_builders {
         /// <p>The name of the group to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5598,12 +5643,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5622,7 +5667,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListGroupsOutput,
             smithy_http::result::SdkError<crate::error::ListGroupsError>,
         >
@@ -5646,24 +5691,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5674,12 +5719,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5698,7 +5743,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListGroupsForUserOutput,
             smithy_http::result::SdkError<crate::error::ListGroupsForUserError>,
         >
@@ -5717,24 +5762,24 @@ pub mod fluent_builders {
         /// <p>The name of the user to list groups for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5745,12 +5790,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5769,7 +5814,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListInstanceProfilesOutput,
             smithy_http::result::SdkError<crate::error::ListInstanceProfilesError>,
         >
@@ -5793,24 +5838,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5821,12 +5866,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5845,7 +5890,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListInstanceProfilesForRoleOutput,
             smithy_http::result::SdkError<crate::error::ListInstanceProfilesForRoleError>,
         >
@@ -5864,24 +5909,24 @@ pub mod fluent_builders {
         /// <p>The name of the role to list instance profiles for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -5892,12 +5937,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5916,7 +5961,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListInstanceProfileTagsOutput,
             smithy_http::result::SdkError<crate::error::ListInstanceProfileTagsError>,
         >
@@ -5935,27 +5980,27 @@ pub mod fluent_builders {
         /// <p>The name of the IAM instance profile whose tags you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input);
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_instance_profile_name(inp);
+            self.inner = self.inner.set_instance_profile_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -5965,12 +6010,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -5989,7 +6034,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListMFADevicesOutput,
             smithy_http::result::SdkError<crate::error::ListMFADevicesError>,
         >
@@ -6008,24 +6053,24 @@ pub mod fluent_builders {
         /// <p>The name of the user whose MFA devices you want to list.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -6036,12 +6081,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6060,7 +6105,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListMFADeviceTagsOutput,
             smithy_http::result::SdkError<crate::error::ListMFADeviceTagsError>,
         >
@@ -6080,24 +6125,27 @@ pub mod fluent_builders {
         /// For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input);
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_serial_number(inp);
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_serial_number(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -6107,12 +6155,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6131,7 +6179,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListOpenIDConnectProvidersOutput,
             smithy_http::result::SdkError<crate::error::ListOpenIDConnectProvidersError>,
         >
@@ -6163,7 +6211,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListOpenIDConnectProviderTagsOutput,
             smithy_http::result::SdkError<crate::error::ListOpenIDConnectProviderTagsError>,
         >
@@ -6183,27 +6231,30 @@ pub mod fluent_builders {
         /// see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(inp);
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.open_id_connect_provider_arn(input);
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_open_id_connect_provider_arn(inp);
+            self.inner = self.inner.set_open_id_connect_provider_arn(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -6213,12 +6264,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6237,7 +6288,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListPoliciesError>,
         >
@@ -6259,15 +6310,15 @@ pub mod fluent_builders {
         /// <code>Local</code>.</p>
         /// <p>This parameter is optional. If it is not included, or if it is set to
         /// <code>All</code>, all policies are returned.</p>
-        pub fn scope(mut self, inp: crate::model::PolicyScopeType) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::PolicyScopeType) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
         pub fn set_scope(
             mut self,
-            inp: std::option::Option<crate::model::PolicyScopeType>,
+            input: std::option::Option<crate::model::PolicyScopeType>,
         ) -> Self {
-            self.inner = self.inner.set_scope(inp);
+            self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A flag to filter the results to only the attached policies.</p>
@@ -6275,12 +6326,12 @@ pub mod fluent_builders {
         /// the policies that are attached to an IAM user, group, or role. When
         /// <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not
         /// included, all policies are returned.</p>
-        pub fn only_attached(mut self, inp: bool) -> Self {
-            self.inner = self.inner.only_attached(inp);
+        pub fn only_attached(mut self, input: bool) -> Self {
+            self.inner = self.inner.only_attached(input);
             self
         }
-        pub fn set_only_attached(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_only_attached(inp);
+        pub fn set_only_attached(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_only_attached(input);
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -6288,12 +6339,12 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>The policy usage method to use for filtering the results.</p>
@@ -6302,27 +6353,27 @@ pub mod fluent_builders {
         /// the policies used to set permissions boundaries, set the value
         /// to <code>PermissionsBoundary</code>.</p>
         /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-        pub fn policy_usage_filter(mut self, inp: crate::model::PolicyUsageType) -> Self {
-            self.inner = self.inner.policy_usage_filter(inp);
+        pub fn policy_usage_filter(mut self, input: crate::model::PolicyUsageType) -> Self {
+            self.inner = self.inner.policy_usage_filter(input);
             self
         }
         pub fn set_policy_usage_filter(
             mut self,
-            inp: std::option::Option<crate::model::PolicyUsageType>,
+            input: std::option::Option<crate::model::PolicyUsageType>,
         ) -> Self {
-            self.inner = self.inner.set_policy_usage_filter(inp);
+            self.inner = self.inner.set_policy_usage_filter(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -6333,12 +6384,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6357,7 +6408,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPoliciesGrantingServiceAccessOutput,
             smithy_http::result::SdkError<crate::error::ListPoliciesGrantingServiceAccessError>,
         >
@@ -6377,22 +6428,22 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The ARN of the IAM identity (user, group, or role) whose policies you want to
         /// list.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(inp);
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
             self
         }
         /// <p>The service namespace for the AWS services whose policies you want to list.</p>
@@ -6408,9 +6459,9 @@ pub mod fluent_builders {
         }
         pub fn set_service_namespaces(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_service_namespaces(inp);
+            self.inner = self.inner.set_service_namespaces(input);
             self
         }
     }
@@ -6429,7 +6480,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPolicyTagsOutput,
             smithy_http::result::SdkError<crate::error::ListPolicyTagsError>,
         >
@@ -6448,24 +6499,24 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -6475,12 +6526,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6499,7 +6550,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListPolicyVersionsOutput,
             smithy_http::result::SdkError<crate::error::ListPolicyVersionsError>,
         >
@@ -6518,24 +6569,24 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
         /// versions.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -6546,12 +6597,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6570,7 +6621,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListRolePoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListRolePoliciesError>,
         >
@@ -6589,24 +6640,24 @@ pub mod fluent_builders {
         /// <p>The name of the role to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -6617,12 +6668,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6641,7 +6692,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListRolesOutput,
             smithy_http::result::SdkError<crate::error::ListRolesError>,
         >
@@ -6665,24 +6716,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -6693,12 +6744,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6717,7 +6768,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListRoleTagsOutput,
             smithy_http::result::SdkError<crate::error::ListRoleTagsError>,
         >
@@ -6736,24 +6787,24 @@ pub mod fluent_builders {
         /// <p>The name of the IAM role for which you want to see the list of tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -6763,12 +6814,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6787,7 +6838,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSAMLProvidersOutput,
             smithy_http::result::SdkError<crate::error::ListSAMLProvidersError>,
         >
@@ -6819,7 +6870,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSAMLProviderTagsOutput,
             smithy_http::result::SdkError<crate::error::ListSAMLProviderTagsError>,
         >
@@ -6839,27 +6890,27 @@ pub mod fluent_builders {
         /// you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(inp);
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input);
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_saml_provider_arn(inp);
+            self.inner = self.inner.set_saml_provider_arn(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -6869,12 +6920,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6893,7 +6944,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListServerCertificatesOutput,
             smithy_http::result::SdkError<crate::error::ListServerCertificatesError>,
         >
@@ -6917,24 +6968,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -6945,12 +6996,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6969,7 +7020,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListServerCertificateTagsOutput,
             smithy_http::result::SdkError<crate::error::ListServerCertificateTagsError>,
         >
@@ -6988,27 +7039,27 @@ pub mod fluent_builders {
         /// <p>The name of the IAM server certificate whose tags you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_certificate_name(inp);
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input);
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_server_certificate_name(inp);
+            self.inner = self.inner.set_server_certificate_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -7018,12 +7069,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -7042,7 +7093,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListServiceSpecificCredentialsOutput,
             smithy_http::result::SdkError<crate::error::ListServiceSpecificCredentialsError>,
         >
@@ -7063,22 +7114,22 @@ pub mod fluent_builders {
         /// used to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Filters the returned results to only those for the specified AWS service. If not
         /// specified, then AWS returns service-specific credentials for all services.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input);
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_name(inp);
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_name(input);
             self
         }
     }
@@ -7097,7 +7148,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSigningCertificatesOutput,
             smithy_http::result::SdkError<crate::error::ListSigningCertificatesError>,
         >
@@ -7116,24 +7167,24 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user whose signing certificates you want to examine.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -7144,12 +7195,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -7168,7 +7219,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSSHPublicKeysOutput,
             smithy_http::result::SdkError<crate::error::ListSSHPublicKeysError>,
         >
@@ -7189,24 +7240,24 @@ pub mod fluent_builders {
         /// used to sign the request.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -7217,12 +7268,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -7241,7 +7292,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListUserPoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListUserPoliciesError>,
         >
@@ -7260,24 +7311,24 @@ pub mod fluent_builders {
         /// <p>The name of the user to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -7288,12 +7339,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -7312,7 +7363,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListUsersOutput,
             smithy_http::result::SdkError<crate::error::ListUsersError>,
         >
@@ -7336,24 +7387,24 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(inp);
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input);
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path_prefix(inp);
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path_prefix(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -7364,12 +7415,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -7388,7 +7439,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListUserTagsOutput,
             smithy_http::result::SdkError<crate::error::ListUserTagsError>,
         >
@@ -7407,24 +7458,24 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user whose tags you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -7434,12 +7485,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -7458,7 +7509,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListVirtualMFADevicesOutput,
             smithy_http::result::SdkError<crate::error::ListVirtualMFADevicesError>,
         >
@@ -7478,27 +7529,27 @@ pub mod fluent_builders {
         /// If you do not specify an <code>AssignmentStatus</code>, the operation defaults to
         /// <code>Any</code>, which lists both assigned and unassigned virtual MFA
         /// devices.,</p>
-        pub fn assignment_status(mut self, inp: crate::model::AssignmentStatusType) -> Self {
-            self.inner = self.inner.assignment_status(inp);
+        pub fn assignment_status(mut self, input: crate::model::AssignmentStatusType) -> Self {
+            self.inner = self.inner.assignment_status(input);
             self
         }
         pub fn set_assignment_status(
             mut self,
-            inp: std::option::Option<crate::model::AssignmentStatusType>,
+            input: std::option::Option<crate::model::AssignmentStatusType>,
         ) -> Self {
-            self.inner = self.inner.set_assignment_status(inp);
+            self.inner = self.inner.set_assignment_status(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -7509,12 +7560,12 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -7533,7 +7584,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutGroupPolicyOutput,
             smithy_http::result::SdkError<crate::error::PutGroupPolicyError>,
         >
@@ -7552,23 +7603,23 @@ pub mod fluent_builders {
         /// <p>The name of the group to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The policy document.</p>
@@ -7592,15 +7643,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input);
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_policy_document(inp);
+            self.inner = self.inner.set_policy_document(input);
             self
         }
     }
@@ -7619,7 +7670,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutRolePermissionsBoundaryOutput,
             smithy_http::result::SdkError<crate::error::PutRolePermissionsBoundaryError>,
         >
@@ -7637,25 +7688,25 @@ pub mod fluent_builders {
         }
         /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the
         /// permissions boundary.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// role.</p>
-        pub fn permissions_boundary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions_boundary(inp);
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions_boundary(input);
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_permissions_boundary(inp);
+            self.inner = self.inner.set_permissions_boundary(input);
             self
         }
     }
@@ -7674,7 +7725,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutRolePolicyOutput,
             smithy_http::result::SdkError<crate::error::PutRolePolicyError>,
         >
@@ -7693,23 +7744,23 @@ pub mod fluent_builders {
         /// <p>The name of the role to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The policy document.</p>
@@ -7733,15 +7784,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input);
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_policy_document(inp);
+            self.inner = self.inner.set_policy_document(input);
             self
         }
     }
@@ -7760,7 +7811,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutUserPermissionsBoundaryOutput,
             smithy_http::result::SdkError<crate::error::PutUserPermissionsBoundaryError>,
         >
@@ -7778,25 +7829,25 @@ pub mod fluent_builders {
         }
         /// <p>The name (friendly name, not ARN) of the IAM user for which you want to set the
         /// permissions boundary.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// user.</p>
-        pub fn permissions_boundary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions_boundary(inp);
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions_boundary(input);
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_permissions_boundary(inp);
+            self.inner = self.inner.set_permissions_boundary(input);
             self
         }
     }
@@ -7815,7 +7866,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutUserPolicyOutput,
             smithy_http::result::SdkError<crate::error::PutUserPolicyError>,
         >
@@ -7834,23 +7885,23 @@ pub mod fluent_builders {
         /// <p>The name of the user to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The policy document.</p>
@@ -7874,15 +7925,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input);
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_policy_document(inp);
+            self.inner = self.inner.set_policy_document(input);
             self
         }
     }
@@ -7901,7 +7952,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveClientIDFromOpenIDConnectProviderOutput,
             smithy_http::result::SdkError<
                 crate::error::RemoveClientIDFromOpenIDConnectProviderError,
@@ -7922,25 +7973,28 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the
         /// client ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(inp);
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.open_id_connect_provider_arn(input);
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_open_id_connect_provider_arn(inp);
+            self.inner = self.inner.set_open_id_connect_provider_arn(input);
             self
         }
         /// <p>The client ID (also known as audience) to remove from the IAM OIDC provider
         /// resource. For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.</p>
-        pub fn client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(inp);
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input);
             self
         }
-        pub fn set_client_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_id(inp);
+        pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_id(input);
             self
         }
     }
@@ -7959,7 +8013,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveRoleFromInstanceProfileOutput,
             smithy_http::result::SdkError<crate::error::RemoveRoleFromInstanceProfileError>,
         >
@@ -7978,26 +8032,26 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input);
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_instance_profile_name(inp);
+            self.inner = self.inner.set_instance_profile_name(input);
             self
         }
         /// <p>The name of the role to remove.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
     }
@@ -8016,7 +8070,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveUserFromGroupOutput,
             smithy_http::result::SdkError<crate::error::RemoveUserFromGroupError>,
         >
@@ -8035,23 +8089,23 @@ pub mod fluent_builders {
         /// <p>The name of the group to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The name of the user to remove.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
     }
@@ -8070,7 +8124,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ResetServiceSpecificCredentialOutput,
             smithy_http::result::SdkError<crate::error::ResetServiceSpecificCredentialError>,
         >
@@ -8091,12 +8145,12 @@ pub mod fluent_builders {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The unique identifier of the service-specific credential.</p>
@@ -8104,16 +8158,16 @@ pub mod fluent_builders {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.service_specific_credential_id(inp);
+            self.inner = self.inner.service_specific_credential_id(input);
             self
         }
         pub fn set_service_specific_credential_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_service_specific_credential_id(inp);
+            self.inner = self.inner.set_service_specific_credential_id(input);
             self
         }
     }
@@ -8132,7 +8186,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ResyncMFADeviceOutput,
             smithy_http::result::SdkError<crate::error::ResyncMFADeviceError>,
         >
@@ -8151,49 +8205,52 @@ pub mod fluent_builders {
         /// <p>The name of the user whose MFA device you want to resynchronize.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>Serial number that uniquely identifies the MFA device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input);
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_serial_number(inp);
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_serial_number(input);
             self
         }
         /// <p>An authentication code emitted by the device.</p>
         /// <p>The format for this parameter is a sequence of six digits.</p>
-        pub fn authentication_code1(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_code1(inp);
+        pub fn authentication_code1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_code1(input);
             self
         }
         pub fn set_authentication_code1(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_authentication_code1(inp);
+            self.inner = self.inner.set_authentication_code1(input);
             self
         }
         /// <p>A subsequent authentication code emitted by the device.</p>
         /// <p>The format for this parameter is a sequence of six digits.</p>
-        pub fn authentication_code2(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_code2(inp);
+        pub fn authentication_code2(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_code2(input);
             self
         }
         pub fn set_authentication_code2(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_authentication_code2(inp);
+            self.inner = self.inner.set_authentication_code2(input);
             self
         }
     }
@@ -8212,7 +8269,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetDefaultPolicyVersionOutput,
             smithy_http::result::SdkError<crate::error::SetDefaultPolicyVersionError>,
         >
@@ -8231,23 +8288,23 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to
         /// set.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>The version of the policy to set as the default (operative) version.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input);
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_version_id(inp);
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
             self
         }
     }
@@ -8266,7 +8323,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetSecurityTokenServicePreferencesOutput,
             smithy_http::result::SdkError<crate::error::SetSecurityTokenServicePreferencesError>,
         >
@@ -8292,16 +8349,16 @@ pub mod fluent_builders {
         /// <i>IAM User Guide</i>.</p>
         pub fn global_endpoint_token_version(
             mut self,
-            inp: crate::model::GlobalEndpointTokenVersion,
+            input: crate::model::GlobalEndpointTokenVersion,
         ) -> Self {
-            self.inner = self.inner.global_endpoint_token_version(inp);
+            self.inner = self.inner.global_endpoint_token_version(input);
             self
         }
         pub fn set_global_endpoint_token_version(
             mut self,
-            inp: std::option::Option<crate::model::GlobalEndpointTokenVersion>,
+            input: std::option::Option<crate::model::GlobalEndpointTokenVersion>,
         ) -> Self {
-            self.inner = self.inner.set_global_endpoint_token_version(inp);
+            self.inner = self.inner.set_global_endpoint_token_version(input);
             self
         }
     }
@@ -8320,7 +8377,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SimulateCustomPolicyOutput,
             smithy_http::result::SdkError<crate::error::SimulateCustomPolicyError>,
         >
@@ -8365,9 +8422,9 @@ pub mod fluent_builders {
         }
         pub fn set_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_policy_input_list(inp);
+            self.inner = self.inner.set_policy_input_list(input);
             self
         }
         /// <p>The IAM permissions boundary policy to simulate. The permissions boundary sets the
@@ -8402,9 +8459,9 @@ pub mod fluent_builders {
         }
         pub fn set_permissions_boundary_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_permissions_boundary_policy_input_list(inp);
+            self.inner = self.inner.set_permissions_boundary_policy_input_list(input);
             self
         }
         /// <p>A list of names of API operations to evaluate in the simulation. Each operation is
@@ -8417,9 +8474,9 @@ pub mod fluent_builders {
         }
         pub fn set_action_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_action_names(inp);
+            self.inner = self.inner.set_action_names(input);
             self
         }
         /// <p>A list of ARNs of AWS resources to include in the simulation. If this parameter is
@@ -8440,9 +8497,9 @@ pub mod fluent_builders {
         }
         pub fn set_resource_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_resource_arns(inp);
+            self.inner = self.inner.set_resource_arns(input);
             self
         }
         /// <p>A resource-based policy to include in the simulation provided as a string. Each
@@ -8464,15 +8521,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn resource_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_policy(inp);
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input);
             self
         }
         pub fn set_resource_policy(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_resource_policy(inp);
+            self.inner = self.inner.set_resource_policy(input);
             self
         }
         /// <p>An ARN representing the AWS account ID that specifies the owner of any simulated
@@ -8488,12 +8545,15 @@ pub mod fluent_builders {
         /// <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example,
         /// to represent the account with the 112233445566 ID, use the following ARN:
         /// <code>arn:aws:iam::112233445566-ID:root</code>. </p>
-        pub fn resource_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_owner(input);
             self
         }
-        pub fn set_resource_owner(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_owner(inp);
+        pub fn set_resource_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_owner(input);
             self
         }
         /// <p>The ARN of the IAM user that you want to use as the simulated caller of the API
@@ -8502,12 +8562,12 @@ pub mod fluent_builders {
         /// a value to use in evaluating the policy.</p>
         /// <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
         /// assumed role, federated user, or a service principal.</p>
-        pub fn caller_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_arn(inp);
+        pub fn caller_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_arn(input);
             self
         }
-        pub fn set_caller_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_caller_arn(inp);
+        pub fn set_caller_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_caller_arn(input);
             self
         }
         /// <p>A list of context keys and corresponding values for the simulation to use. Whenever a
@@ -8519,9 +8579,9 @@ pub mod fluent_builders {
         }
         pub fn set_context_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContextEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContextEntry>>,
         ) -> Self {
-            self.inner = self.inner.set_context_entries(inp);
+            self.inner = self.inner.set_context_entries(input);
             self
         }
         /// <p>Specifies the type of simulation to run. Different API operations that support
@@ -8575,15 +8635,15 @@ pub mod fluent_builders {
         /// <p>instance, image, security-group, network-interface, subnet, volume</p>
         /// </li>
         /// </ul>
-        pub fn resource_handling_option(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_handling_option(inp);
+        pub fn resource_handling_option(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_handling_option(input);
             self
         }
         pub fn set_resource_handling_option(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_resource_handling_option(inp);
+            self.inner = self.inner.set_resource_handling_option(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -8594,24 +8654,24 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -8630,7 +8690,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SimulatePrincipalPolicyOutput,
             smithy_http::result::SdkError<crate::error::SimulatePrincipalPolicyError>,
         >
@@ -8652,15 +8712,15 @@ pub mod fluent_builders {
         /// simulation also includes all policies that are attached to any groups the user belongs
         /// to.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_source_arn(inp);
+        pub fn policy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_source_arn(input);
             self
         }
         pub fn set_policy_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_policy_source_arn(inp);
+            self.inner = self.inner.set_policy_source_arn(input);
             self
         }
         /// <p>An optional list of additional policy documents to include in the simulation. Each
@@ -8688,9 +8748,9 @@ pub mod fluent_builders {
         }
         pub fn set_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_policy_input_list(inp);
+            self.inner = self.inner.set_policy_input_list(input);
             self
         }
         /// <p>The IAM permissions boundary policy to simulate. The permissions boundary sets the
@@ -8728,9 +8788,9 @@ pub mod fluent_builders {
         }
         pub fn set_permissions_boundary_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_permissions_boundary_policy_input_list(inp);
+            self.inner = self.inner.set_permissions_boundary_policy_input_list(input);
             self
         }
         /// <p>A list of names of API operations to evaluate in the simulation. Each operation is
@@ -8742,9 +8802,9 @@ pub mod fluent_builders {
         }
         pub fn set_action_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_action_names(inp);
+            self.inner = self.inner.set_action_names(input);
             self
         }
         /// <p>A list of ARNs of AWS resources to include in the simulation. If this parameter is
@@ -8763,9 +8823,9 @@ pub mod fluent_builders {
         }
         pub fn set_resource_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_resource_arns(inp);
+            self.inner = self.inner.set_resource_arns(input);
             self
         }
         /// <p>A resource-based policy to include in the simulation provided as a string. Each
@@ -8787,15 +8847,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn resource_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_policy(inp);
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input);
             self
         }
         pub fn set_resource_policy(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_resource_policy(inp);
+            self.inner = self.inner.set_resource_policy(input);
             self
         }
         /// <p>An AWS account ID that specifies the owner of any simulated resource that does not
@@ -8807,12 +8867,15 @@ pub mod fluent_builders {
         /// <code>CallerArn</code>. This parameter is required only if you specify a
         /// resource-based policy and account that owns the resource is different from the account
         /// that owns the simulated calling user <code>CallerArn</code>.</p>
-        pub fn resource_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_owner(input);
             self
         }
-        pub fn set_resource_owner(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_owner(inp);
+        pub fn set_resource_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_owner(input);
             self
         }
         /// <p>The ARN of the IAM user that you want to specify as the simulated caller of the API
@@ -8830,12 +8893,12 @@ pub mod fluent_builders {
         /// that the resource-based policy's <code>Principal</code> element has a value to use in
         /// evaluating the policy.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn caller_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_arn(inp);
+        pub fn caller_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_arn(input);
             self
         }
-        pub fn set_caller_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_caller_arn(inp);
+        pub fn set_caller_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_caller_arn(input);
             self
         }
         /// <p>A list of context keys and corresponding values for the simulation to use. Whenever a
@@ -8847,9 +8910,9 @@ pub mod fluent_builders {
         }
         pub fn set_context_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContextEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContextEntry>>,
         ) -> Self {
-            self.inner = self.inner.set_context_entries(inp);
+            self.inner = self.inner.set_context_entries(input);
             self
         }
         /// <p>Specifies the type of simulation to run. Different API operations that support
@@ -8903,15 +8966,15 @@ pub mod fluent_builders {
         /// <p>instance, image, security group, network interface, subnet, volume</p>
         /// </li>
         /// </ul>
-        pub fn resource_handling_option(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_handling_option(inp);
+        pub fn resource_handling_option(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_handling_option(input);
             self
         }
         pub fn set_resource_handling_option(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_resource_handling_option(inp);
+            self.inner = self.inner.set_resource_handling_option(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -8922,24 +8985,24 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(inp);
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -8958,7 +9021,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagInstanceProfileOutput,
             smithy_http::result::SdkError<crate::error::TagInstanceProfileError>,
         >
@@ -8977,15 +9040,15 @@ pub mod fluent_builders {
         /// <p>The name of the IAM instance profile to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input);
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_instance_profile_name(inp);
+            self.inner = self.inner.set_instance_profile_name(input);
             self
         }
         /// <p>The list of tags that you want to attach to the IAM instance profile.
@@ -8996,9 +9059,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9017,7 +9080,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagMFADeviceOutput,
             smithy_http::result::SdkError<crate::error::TagMFADeviceError>,
         >
@@ -9037,12 +9100,15 @@ pub mod fluent_builders {
         /// For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input);
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_serial_number(inp);
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_serial_number(input);
             self
         }
         /// <p>The list of tags that you want to attach to the IAM virtual MFA device.
@@ -9053,9 +9119,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9074,7 +9140,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagOpenIDConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::TagOpenIDConnectProviderError>,
         >
@@ -9093,15 +9159,18 @@ pub mod fluent_builders {
         /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(inp);
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.open_id_connect_provider_arn(input);
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_open_id_connect_provider_arn(inp);
+            self.inner = self.inner.set_open_id_connect_provider_arn(input);
             self
         }
         /// <p>The list of tags that you want to attach to the OIDC identity provider in IAM.
@@ -9112,9 +9181,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9133,7 +9202,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagPolicyOutput,
             smithy_http::result::SdkError<crate::error::TagPolicyError>,
         >
@@ -9152,12 +9221,12 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>The list of tags that you want to attach to the IAM customer managed policy.
@@ -9168,9 +9237,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9189,7 +9258,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagRoleOutput,
             smithy_http::result::SdkError<crate::error::TagRoleError>,
         >
@@ -9208,12 +9277,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM role to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The list of tags that you want to attach to the IAM role. Each tag consists of a key name and an associated value.</p>
@@ -9223,9 +9292,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9244,7 +9313,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagSAMLProviderOutput,
             smithy_http::result::SdkError<crate::error::TagSAMLProviderError>,
         >
@@ -9263,15 +9332,15 @@ pub mod fluent_builders {
         /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(inp);
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input);
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_saml_provider_arn(inp);
+            self.inner = self.inner.set_saml_provider_arn(input);
             self
         }
         /// <p>The list of tags that you want to attach to the SAML identity provider in IAM.
@@ -9282,9 +9351,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9303,7 +9372,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagServerCertificateOutput,
             smithy_http::result::SdkError<crate::error::TagServerCertificateError>,
         >
@@ -9322,15 +9391,15 @@ pub mod fluent_builders {
         /// <p>The name of the IAM server certificate to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_certificate_name(inp);
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input);
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_server_certificate_name(inp);
+            self.inner = self.inner.set_server_certificate_name(input);
             self
         }
         /// <p>The list of tags that you want to attach to the IAM server certificate.
@@ -9341,9 +9410,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9362,7 +9431,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagUserOutput,
             smithy_http::result::SdkError<crate::error::TagUserError>,
         >
@@ -9381,12 +9450,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated value.</p>
@@ -9396,9 +9465,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -9417,7 +9486,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagInstanceProfileOutput,
             smithy_http::result::SdkError<crate::error::UntagInstanceProfileError>,
         >
@@ -9436,15 +9505,15 @@ pub mod fluent_builders {
         /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input);
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_instance_profile_name(inp);
+            self.inner = self.inner.set_instance_profile_name(input);
             self
         }
         /// <p>A list of key names as a simple array of strings. The tags with matching keys are
@@ -9455,9 +9524,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -9476,7 +9545,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagMFADeviceOutput,
             smithy_http::result::SdkError<crate::error::UntagMFADeviceError>,
         >
@@ -9496,12 +9565,15 @@ pub mod fluent_builders {
         /// tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input);
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_serial_number(inp);
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_serial_number(input);
             self
         }
         /// <p>A list of key names as a simple array of strings. The tags with matching keys are
@@ -9512,9 +9584,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -9533,7 +9605,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagOpenIDConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::UntagOpenIDConnectProviderError>,
         >
@@ -9552,15 +9624,18 @@ pub mod fluent_builders {
         /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(inp);
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.open_id_connect_provider_arn(input);
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_open_id_connect_provider_arn(inp);
+            self.inner = self.inner.set_open_id_connect_provider_arn(input);
             self
         }
         /// <p>A list of key names as a simple array of strings. The tags with matching keys are
@@ -9571,9 +9646,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -9592,7 +9667,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagPolicyOutput,
             smithy_http::result::SdkError<crate::error::UntagPolicyError>,
         >
@@ -9612,12 +9687,12 @@ pub mod fluent_builders {
         /// tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input);
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_arn(inp);
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>A list of key names as a simple array of strings. The tags with matching keys are
@@ -9628,9 +9703,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -9649,7 +9724,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagRoleOutput,
             smithy_http::result::SdkError<crate::error::UntagRoleError>,
         >
@@ -9668,12 +9743,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM role from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>A list of key names as a simple array of strings. The tags with matching keys are
@@ -9684,9 +9759,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -9705,7 +9780,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagSAMLProviderOutput,
             smithy_http::result::SdkError<crate::error::UntagSAMLProviderError>,
         >
@@ -9725,15 +9800,15 @@ pub mod fluent_builders {
         /// tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(inp);
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input);
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_saml_provider_arn(inp);
+            self.inner = self.inner.set_saml_provider_arn(input);
             self
         }
         /// <p>A list of key names as a simple array of strings. The tags with matching keys are
@@ -9744,9 +9819,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -9765,7 +9840,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagServerCertificateOutput,
             smithy_http::result::SdkError<crate::error::UntagServerCertificateError>,
         >
@@ -9784,15 +9859,15 @@ pub mod fluent_builders {
         /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_certificate_name(inp);
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input);
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_server_certificate_name(inp);
+            self.inner = self.inner.set_server_certificate_name(input);
             self
         }
         /// <p>A list of key names as a simple array of strings. The tags with matching keys are
@@ -9803,9 +9878,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -9824,7 +9899,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagUserOutput,
             smithy_http::result::SdkError<crate::error::UntagUserError>,
         >
@@ -9843,12 +9918,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>A list of key names as a simple array of strings. The tags with matching keys are
@@ -9859,9 +9934,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -9880,7 +9955,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateAccessKeyOutput,
             smithy_http::result::SdkError<crate::error::UpdateAccessKeyError>,
         >
@@ -9899,34 +9974,37 @@ pub mod fluent_builders {
         /// <p>The name of the user whose key you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The access key ID of the secret access key you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key_id(inp);
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(input);
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_access_key_id(inp);
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_access_key_id(input);
             self
         }
         /// <p> The status you want to assign to the secret access key. <code>Active</code> means
         /// that the key can be used for programmatic calls to AWS, while <code>Inactive</code>
         /// means that the key cannot be used.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -9945,7 +10023,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateAccountPasswordPolicyOutput,
             smithy_http::result::SdkError<crate::error::UpdateAccountPasswordPolicyError>,
         >
@@ -9964,12 +10042,12 @@ pub mod fluent_builders {
         /// <p>The minimum number of characters allowed in an IAM user password.</p>
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>6</code>.</p>
-        pub fn minimum_password_length(mut self, inp: i32) -> Self {
-            self.inner = self.inner.minimum_password_length(inp);
+        pub fn minimum_password_length(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_password_length(input);
             self
         }
-        pub fn set_minimum_password_length(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_minimum_password_length(inp);
+        pub fn set_minimum_password_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_minimum_password_length(input);
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one of the following
@@ -9978,12 +10056,12 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// symbol character.</p>
-        pub fn require_symbols(mut self, inp: bool) -> Self {
-            self.inner = self.inner.require_symbols(inp);
+        pub fn require_symbols(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_symbols(input);
             self
         }
-        pub fn set_require_symbols(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_require_symbols(inp);
+        pub fn set_require_symbols(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_require_symbols(input);
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0
@@ -9991,12 +10069,12 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// numeric character.</p>
-        pub fn require_numbers(mut self, inp: bool) -> Self {
-            self.inner = self.inner.require_numbers(inp);
+        pub fn require_numbers(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_numbers(input);
             self
         }
-        pub fn set_require_numbers(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_require_numbers(inp);
+        pub fn set_require_numbers(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_require_numbers(input);
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one uppercase character
@@ -10004,12 +10082,15 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// uppercase character.</p>
-        pub fn require_uppercase_characters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.require_uppercase_characters(inp);
+        pub fn require_uppercase_characters(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_uppercase_characters(input);
             self
         }
-        pub fn set_require_uppercase_characters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_require_uppercase_characters(inp);
+        pub fn set_require_uppercase_characters(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_require_uppercase_characters(input);
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one lowercase character
@@ -10017,12 +10098,15 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// lowercase character.</p>
-        pub fn require_lowercase_characters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.require_lowercase_characters(inp);
+        pub fn require_lowercase_characters(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_lowercase_characters(input);
             self
         }
-        pub fn set_require_lowercase_characters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_require_lowercase_characters(inp);
+        pub fn set_require_lowercase_characters(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_require_lowercase_characters(input);
             self
         }
         /// <p> Allows all IAM users in your account to use the AWS Management Console to change their own
@@ -10031,23 +10115,26 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that IAM users in the account do not
         /// automatically have permissions to change their own password.</p>
-        pub fn allow_users_to_change_password(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_users_to_change_password(inp);
+        pub fn allow_users_to_change_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_users_to_change_password(input);
             self
         }
-        pub fn set_allow_users_to_change_password(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_allow_users_to_change_password(inp);
+        pub fn set_allow_users_to_change_password(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_allow_users_to_change_password(input);
             self
         }
         /// <p>The number of days that an IAM user password is valid.</p>
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>0</code>. The result is that IAM user passwords never expire.</p>
-        pub fn max_password_age(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_password_age(inp);
+        pub fn max_password_age(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_password_age(input);
             self
         }
-        pub fn set_max_password_age(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_password_age(inp);
+        pub fn set_max_password_age(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_password_age(input);
             self
         }
         /// <p>Specifies the number of previous passwords that IAM users are prevented from
@@ -10055,12 +10142,12 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>0</code>. The result is that IAM users are not prevented from reusing
         /// previous passwords.</p>
-        pub fn password_reuse_prevention(mut self, inp: i32) -> Self {
-            self.inner = self.inner.password_reuse_prevention(inp);
+        pub fn password_reuse_prevention(mut self, input: i32) -> Self {
+            self.inner = self.inner.password_reuse_prevention(input);
             self
         }
-        pub fn set_password_reuse_prevention(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_password_reuse_prevention(inp);
+        pub fn set_password_reuse_prevention(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_password_reuse_prevention(input);
             self
         }
         /// <p>Prevents IAM users from setting a new password after their password has expired. The
@@ -10068,12 +10155,12 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that IAM users can change their passwords
         /// after they expire and continue to sign in as the user.</p>
-        pub fn hard_expiry(mut self, inp: bool) -> Self {
-            self.inner = self.inner.hard_expiry(inp);
+        pub fn hard_expiry(mut self, input: bool) -> Self {
+            self.inner = self.inner.hard_expiry(input);
             self
         }
-        pub fn set_hard_expiry(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_hard_expiry(inp);
+        pub fn set_hard_expiry(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_hard_expiry(input);
             self
         }
     }
@@ -10092,7 +10179,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateAssumeRolePolicyOutput,
             smithy_http::result::SdkError<crate::error::UpdateAssumeRolePolicyError>,
         >
@@ -10111,12 +10198,12 @@ pub mod fluent_builders {
         /// <p>The name of the role to update with the new policy.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The policy that grants an entity permission to assume the role.</p>
@@ -10140,15 +10227,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input);
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_policy_document(inp);
+            self.inner = self.inner.set_policy_document(input);
             self
         }
     }
@@ -10167,7 +10254,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateGroupOutput,
             smithy_http::result::SdkError<crate::error::UpdateGroupError>,
         >
@@ -10187,12 +10274,12 @@ pub mod fluent_builders {
         /// the original name.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input);
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_name(inp);
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>New path for the IAM group. Only include this if changing the group's path.</p>
@@ -10200,24 +10287,27 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_path(inp);
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_path(input);
             self
         }
-        pub fn set_new_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_new_path(inp);
+        pub fn set_new_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_new_path(input);
             self
         }
         /// <p>New name for the IAM group. Only include this if changing the group's name.</p>
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn new_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_group_name(inp);
+        pub fn new_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_group_name(input);
             self
         }
-        pub fn set_new_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_new_group_name(inp);
+        pub fn set_new_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_new_group_name(input);
             self
         }
     }
@@ -10236,7 +10326,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateLoginProfileOutput,
             smithy_http::result::SdkError<crate::error::UpdateLoginProfileError>,
         >
@@ -10255,12 +10345,12 @@ pub mod fluent_builders {
         /// <p>The name of the user whose password you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The new password for the specified IAM user.</p>
@@ -10282,22 +10372,22 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>However, the format can be further restricted by the account administrator by setting
         /// a password policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input);
             self
         }
-        pub fn set_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_password(inp);
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_password(input);
             self
         }
         /// <p>Allows this new password to be used only once by requiring the specified IAM user to
         /// set a new password on next sign-in.</p>
-        pub fn password_reset_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.password_reset_required(inp);
+        pub fn password_reset_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.password_reset_required(input);
             self
         }
-        pub fn set_password_reset_required(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_password_reset_required(inp);
+        pub fn set_password_reset_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_password_reset_required(input);
             self
         }
     }
@@ -10316,7 +10406,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateOpenIDConnectProviderThumbprintOutput,
             smithy_http::result::SdkError<crate::error::UpdateOpenIDConnectProviderThumbprintError>,
         >
@@ -10336,15 +10426,18 @@ pub mod fluent_builders {
         /// you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the
         /// <a>ListOpenIDConnectProviders</a> operation.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(inp);
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.open_id_connect_provider_arn(input);
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_open_id_connect_provider_arn(inp);
+            self.inner = self.inner.set_open_id_connect_provider_arn(input);
             self
         }
         /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID
@@ -10355,9 +10448,9 @@ pub mod fluent_builders {
         }
         pub fn set_thumbprint_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_thumbprint_list(inp);
+            self.inner = self.inner.set_thumbprint_list(input);
             self
         }
     }
@@ -10376,7 +10469,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateRoleOutput,
             smithy_http::result::SdkError<crate::error::UpdateRoleError>,
         >
@@ -10393,21 +10486,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the role that you want to modify.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The new description that you want to apply to the specified role.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
@@ -10423,12 +10516,12 @@ pub mod fluent_builders {
         /// or the <code>assume-role*</code> CLI operations but does not apply when you use those
         /// operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
         /// roles</a> in the <i>IAM User Guide</i>.</p>
-        pub fn max_session_duration(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_session_duration(inp);
+        pub fn max_session_duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_session_duration(input);
             self
         }
-        pub fn set_max_session_duration(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_session_duration(inp);
+        pub fn set_max_session_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_session_duration(input);
             self
         }
     }
@@ -10447,7 +10540,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateRoleDescriptionOutput,
             smithy_http::result::SdkError<crate::error::UpdateRoleDescriptionError>,
         >
@@ -10464,21 +10557,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the role that you want to modify.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input);
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_name(inp);
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_name(input);
             self
         }
         /// <p>The new description that you want to apply to the specified role.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }
@@ -10497,7 +10590,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateSAMLProviderOutput,
             smithy_http::result::SdkError<crate::error::UpdateSAMLProviderError>,
         >
@@ -10518,28 +10611,28 @@ pub mod fluent_builders {
         /// to validate the SAML authentication response (assertions) that are received from the
         /// IdP. You must generate the metadata document using the identity management software that
         /// is used as your organization's IdP.</p>
-        pub fn saml_metadata_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_metadata_document(inp);
+        pub fn saml_metadata_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_metadata_document(input);
             self
         }
         pub fn set_saml_metadata_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_saml_metadata_document(inp);
+            self.inner = self.inner.set_saml_metadata_document(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(inp);
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input);
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_saml_provider_arn(inp);
+            self.inner = self.inner.set_saml_provider_arn(input);
             self
         }
     }
@@ -10558,7 +10651,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateServerCertificateOutput,
             smithy_http::result::SdkError<crate::error::UpdateServerCertificateError>,
         >
@@ -10577,15 +10670,15 @@ pub mod fluent_builders {
         /// <p>The name of the server certificate that you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_certificate_name(inp);
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input);
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_server_certificate_name(inp);
+            self.inner = self.inner.set_server_certificate_name(input);
             self
         }
         /// <p>The new path for the server certificate. Include this only if you are updating the
@@ -10594,27 +10687,30 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_path(inp);
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_path(input);
             self
         }
-        pub fn set_new_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_new_path(inp);
+        pub fn set_new_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_new_path(input);
             self
         }
         /// <p>The new name for the server certificate. Include this only if you are updating the
         /// server certificate's name. The name of the certificate cannot contain any spaces.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn new_server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_server_certificate_name(inp);
+        pub fn new_server_certificate_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.new_server_certificate_name(input);
             self
         }
         pub fn set_new_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_server_certificate_name(inp);
+            self.inner = self.inner.set_new_server_certificate_name(input);
             self
         }
     }
@@ -10633,7 +10729,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateServiceSpecificCredentialOutput,
             smithy_http::result::SdkError<crate::error::UpdateServiceSpecificCredentialError>,
         >
@@ -10654,12 +10750,12 @@ pub mod fluent_builders {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The unique identifier of the service-specific credential.</p>
@@ -10667,25 +10763,25 @@ pub mod fluent_builders {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.service_specific_credential_id(inp);
+            self.inner = self.inner.service_specific_credential_id(input);
             self
         }
         pub fn set_service_specific_credential_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_service_specific_credential_id(inp);
+            self.inner = self.inner.set_service_specific_credential_id(input);
             self
         }
         /// <p>The status to be assigned to the service-specific credential.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -10704,7 +10800,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateSigningCertificateOutput,
             smithy_http::result::SdkError<crate::error::UpdateSigningCertificateError>,
         >
@@ -10723,34 +10819,37 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user the signing certificate belongs to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The ID of the signing certificate you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_id(inp);
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_id(input);
             self
         }
-        pub fn set_certificate_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_certificate_id(inp);
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_certificate_id(input);
             self
         }
         /// <p> The status you want to assign to the certificate. <code>Active</code> means that the
         /// certificate can be used for programmatic calls to AWS <code>Inactive</code> means that
         /// the certificate cannot be used.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -10769,7 +10868,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateSSHPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::UpdateSSHPublicKeyError>,
         >
@@ -10788,37 +10887,37 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_id(inp);
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_id(input);
             self
         }
         pub fn set_ssh_public_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ssh_public_key_id(inp);
+            self.inner = self.inner.set_ssh_public_key_id(input);
             self
         }
         /// <p>The status to assign to the SSH public key. <code>Active</code> means that the key can
         /// be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means that
         /// the key cannot be used.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -10837,7 +10936,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateUserOutput,
             smithy_http::result::SdkError<crate::error::UpdateUserError>,
         >
@@ -10857,12 +10956,12 @@ pub mod fluent_builders {
         /// original user name.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>New path for the IAM user. Include this parameter only if you're changing the user's
@@ -10871,12 +10970,12 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_path(inp);
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_path(input);
             self
         }
-        pub fn set_new_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_new_path(inp);
+        pub fn set_new_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_new_path(input);
             self
         }
         /// <p>New name for the user. Include this parameter only if you're changing the user's
@@ -10884,12 +10983,15 @@ pub mod fluent_builders {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn new_user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_user_name(inp);
+        pub fn new_user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_user_name(input);
             self
         }
-        pub fn set_new_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_new_user_name(inp);
+        pub fn set_new_user_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_new_user_name(input);
             self
         }
     }
@@ -10908,7 +11010,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UploadServerCertificateOutput,
             smithy_http::result::SdkError<crate::error::UploadServerCertificateError>,
         >
@@ -10937,27 +11039,27 @@ pub mod fluent_builders {
         /// parameter. The path must begin with <code>/cloudfront</code> and must include a
         /// trailing slash (for example, <code>/cloudfront/test/</code>).</p>
         /// </note>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input);
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_path(inp);
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_path(input);
             self
         }
         /// <p>The name for the server certificate. Do not include the path in this value. The name
         /// of the certificate cannot contain any spaces.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_certificate_name(inp);
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input);
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_server_certificate_name(inp);
+            self.inner = self.inner.set_server_certificate_name(input);
             self
         }
         /// <p>The contents of the public key certificate in PEM-encoded format.</p>
@@ -10977,15 +11079,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_body(inp);
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_body(input);
             self
         }
         pub fn set_certificate_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_body(inp);
+            self.inner = self.inner.set_certificate_body(input);
             self
         }
         /// <p>The contents of the private key in PEM-encoded format.</p>
@@ -11005,12 +11107,12 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn private_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.private_key(inp);
+        pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.private_key(input);
             self
         }
-        pub fn set_private_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_private_key(inp);
+        pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_private_key(input);
             self
         }
         /// <p>The contents of the certificate chain. This is typically a concatenation of the
@@ -11031,15 +11133,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_chain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_chain(inp);
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_chain(input);
             self
         }
         pub fn set_certificate_chain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_chain(inp);
+            self.inner = self.inner.set_certificate_chain(input);
             self
         }
         /// <p>A list of tags that you want to attach to the new IAM server certificate resource.
@@ -11055,9 +11157,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -11076,7 +11178,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UploadSigningCertificateOutput,
             smithy_http::result::SdkError<crate::error::UploadSigningCertificateError>,
         >
@@ -11095,12 +11197,12 @@ pub mod fluent_builders {
         /// <p>The name of the user the signing certificate is for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The contents of the signing certificate.</p>
@@ -11120,15 +11222,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_body(inp);
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_body(input);
             self
         }
         pub fn set_certificate_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_certificate_body(inp);
+            self.inner = self.inner.set_certificate_body(input);
             self
         }
     }
@@ -11147,7 +11249,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UploadSSHPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::UploadSSHPublicKeyError>,
         >
@@ -11166,12 +11268,12 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user to associate the SSH public key with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input);
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_name(inp);
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
             self
         }
         /// <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
@@ -11193,15 +11295,15 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn ssh_public_key_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_body(inp);
+        pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_body(input);
             self
         }
         pub fn set_ssh_public_key_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_ssh_public_key_body(inp);
+            self.inner = self.inner.set_ssh_public_key_body(input);
             self
         }
     }

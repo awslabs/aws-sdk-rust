@@ -64,6 +64,12 @@ impl CancelUpdateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_token_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelUpdateStackErrorKind::TokenAlreadyExistsError(_)
+        )
+    }
 }
 impl std::error::Error for CancelUpdateStackError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -138,6 +144,12 @@ impl ContinueUpdateRollbackError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_token_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ContinueUpdateRollbackErrorKind::TokenAlreadyExistsError(_)
+        )
     }
 }
 impl std::error::Error for ContinueUpdateRollbackError {
@@ -217,6 +229,18 @@ impl CreateChangeSetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(&self.kind, CreateChangeSetErrorKind::AlreadyExistsError(_))
+    }
+    pub fn is_insufficient_capabilities_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChangeSetErrorKind::InsufficientCapabilitiesError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateChangeSetErrorKind::LimitExceededError(_))
     }
 }
 impl std::error::Error for CreateChangeSetError {
@@ -300,6 +324,21 @@ impl CreateStackError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(&self.kind, CreateStackErrorKind::AlreadyExistsError(_))
+    }
+    pub fn is_insufficient_capabilities_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackErrorKind::InsufficientCapabilitiesError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateStackErrorKind::LimitExceededError(_))
+    }
+    pub fn is_token_already_exists_error(&self) -> bool {
+        matches!(&self.kind, CreateStackErrorKind::TokenAlreadyExistsError(_))
     }
 }
 impl std::error::Error for CreateStackError {
@@ -389,6 +428,42 @@ impl CreateStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackInstancesErrorKind::InvalidOperationError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackInstancesErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_operation_id_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackInstancesErrorKind::OperationIdAlreadyExistsError(_)
+        )
+    }
+    pub fn is_operation_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackInstancesErrorKind::OperationInProgressError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackInstancesErrorKind::StackSetNotFoundError(_)
+        )
+    }
+    pub fn is_stale_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackInstancesErrorKind::StaleRequestError(_)
+        )
+    }
 }
 impl std::error::Error for CreateStackInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -473,6 +548,21 @@ impl CreateStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_created_but_modified_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackSetErrorKind::CreatedButModifiedError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateStackSetErrorKind::LimitExceededError(_))
+    }
+    pub fn is_name_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackSetErrorKind::NameAlreadyExistsError(_)
+        )
+    }
 }
 impl std::error::Error for CreateStackSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -550,6 +640,12 @@ impl DeleteChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_change_set_status_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteChangeSetErrorKind::InvalidChangeSetStatusError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteChangeSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -624,6 +720,9 @@ impl DeleteStackError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_token_already_exists_error(&self) -> bool {
+        matches!(&self.kind, DeleteStackErrorKind::TokenAlreadyExistsError(_))
     }
 }
 impl std::error::Error for DeleteStackError {
@@ -708,6 +807,36 @@ impl DeleteStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackInstancesErrorKind::InvalidOperationError(_)
+        )
+    }
+    pub fn is_operation_id_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackInstancesErrorKind::OperationIdAlreadyExistsError(_)
+        )
+    }
+    pub fn is_operation_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackInstancesErrorKind::OperationInProgressError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackInstancesErrorKind::StackSetNotFoundError(_)
+        )
+    }
+    pub fn is_stale_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackInstancesErrorKind::StaleRequestError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteStackInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -789,6 +918,18 @@ impl DeleteStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_operation_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackSetErrorKind::OperationInProgressError(_)
+        )
+    }
+    pub fn is_stack_set_not_empty_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackSetErrorKind::StackSetNotEmptyError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteStackSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -866,6 +1007,12 @@ impl DeregisterTypeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_cfn_registry_error(&self) -> bool {
+        matches!(&self.kind, DeregisterTypeErrorKind::CFNRegistryError(_))
+    }
+    pub fn is_type_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeregisterTypeErrorKind::TypeNotFoundError(_))
     }
 }
 impl std::error::Error for DeregisterTypeError {
@@ -1014,6 +1161,12 @@ impl DescribeChangeSetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_change_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChangeSetErrorKind::ChangeSetNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeChangeSetError {
@@ -1238,6 +1391,18 @@ impl DescribeStackInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_stack_instance_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStackInstanceErrorKind::StackInstanceNotFoundError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStackInstanceErrorKind::StackSetNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeStackInstanceError {
@@ -1603,6 +1768,12 @@ impl DescribeStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStackSetErrorKind::StackSetNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeStackSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1679,6 +1850,18 @@ impl DescribeStackSetOperationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_operation_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStackSetOperationErrorKind::OperationNotFoundError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStackSetOperationErrorKind::StackSetNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeStackSetOperationError {
@@ -1758,6 +1941,12 @@ impl DescribeTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_cfn_registry_error(&self) -> bool {
+        matches!(&self.kind, DescribeTypeErrorKind::CFNRegistryError(_))
+    }
+    pub fn is_type_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeTypeErrorKind::TypeNotFoundError(_))
+    }
 }
 impl std::error::Error for DescribeTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1833,6 +2022,12 @@ impl DescribeTypeRegistrationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_cfn_registry_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTypeRegistrationErrorKind::CFNRegistryError(_)
+        )
     }
 }
 impl std::error::Error for DescribeTypeRegistrationError {
@@ -2057,6 +2252,24 @@ impl DetectStackSetDriftError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectStackSetDriftErrorKind::InvalidOperationError(_)
+        )
+    }
+    pub fn is_operation_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectStackSetDriftErrorKind::OperationInProgressError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectStackSetDriftErrorKind::StackSetNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DetectStackSetDriftError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2212,6 +2425,30 @@ impl ExecuteChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_change_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteChangeSetErrorKind::ChangeSetNotFoundError(_)
+        )
+    }
+    pub fn is_insufficient_capabilities_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteChangeSetErrorKind::InsufficientCapabilitiesError(_)
+        )
+    }
+    pub fn is_invalid_change_set_status_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteChangeSetErrorKind::InvalidChangeSetStatusError(_)
+        )
+    }
+    pub fn is_token_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteChangeSetErrorKind::TokenAlreadyExistsError(_)
+        )
+    }
 }
 impl std::error::Error for ExecuteChangeSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2362,6 +2599,9 @@ impl GetTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_change_set_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetTemplateErrorKind::ChangeSetNotFoundError(_))
+    }
 }
 impl std::error::Error for GetTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2436,6 +2676,12 @@ impl GetTemplateSummaryError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemplateSummaryErrorKind::StackSetNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for GetTemplateSummaryError {
@@ -2728,6 +2974,12 @@ impl ListStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStackInstancesErrorKind::StackSetNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for ListStackInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2949,6 +3201,18 @@ impl ListStackSetOperationResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_operation_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStackSetOperationResultsErrorKind::OperationNotFoundError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStackSetOperationResultsErrorKind::StackSetNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for ListStackSetOperationResultsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3024,6 +3288,12 @@ impl ListStackSetOperationsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStackSetOperationsErrorKind::StackSetNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for ListStackSetOperationsError {
@@ -3172,6 +3442,12 @@ impl ListTypeRegistrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_cfn_registry_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTypeRegistrationsErrorKind::CFNRegistryError(_)
+        )
+    }
 }
 impl std::error::Error for ListTypeRegistrationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3247,6 +3523,9 @@ impl ListTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_cfn_registry_error(&self) -> bool {
+        matches!(&self.kind, ListTypesErrorKind::CFNRegistryError(_))
+    }
 }
 impl std::error::Error for ListTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3321,6 +3600,9 @@ impl ListTypeVersionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_cfn_registry_error(&self) -> bool {
+        matches!(&self.kind, ListTypeVersionsErrorKind::CFNRegistryError(_))
     }
 }
 impl std::error::Error for ListTypeVersionsError {
@@ -3401,6 +3683,18 @@ impl RecordHandlerProgressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_state_transition_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RecordHandlerProgressErrorKind::InvalidStateTransitionError(_)
+        )
+    }
+    pub fn is_operation_status_check_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RecordHandlerProgressErrorKind::OperationStatusCheckFailedError(_)
+        )
+    }
 }
 impl std::error::Error for RecordHandlerProgressError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3476,6 +3770,9 @@ impl RegisterTypeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_cfn_registry_error(&self) -> bool {
+        matches!(&self.kind, RegisterTypeErrorKind::CFNRegistryError(_))
     }
 }
 impl std::error::Error for RegisterTypeError {
@@ -3625,6 +3922,18 @@ impl SetTypeDefaultVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_cfn_registry_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetTypeDefaultVersionErrorKind::CFNRegistryError(_)
+        )
+    }
+    pub fn is_type_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetTypeDefaultVersionErrorKind::TypeNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for SetTypeDefaultVersionError {
@@ -3778,6 +4087,24 @@ impl StopStackSetOperationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStackSetOperationErrorKind::InvalidOperationError(_)
+        )
+    }
+    pub fn is_operation_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStackSetOperationErrorKind::OperationNotFoundError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStackSetOperationErrorKind::StackSetNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for StopStackSetOperationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3856,6 +4183,15 @@ impl UpdateStackError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_insufficient_capabilities_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackErrorKind::InsufficientCapabilitiesError(_)
+        )
+    }
+    pub fn is_token_already_exists_error(&self) -> bool {
+        matches!(&self.kind, UpdateStackErrorKind::TokenAlreadyExistsError(_))
     }
 }
 impl std::error::Error for UpdateStackError {
@@ -3942,6 +4278,42 @@ impl UpdateStackInstancesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackInstancesErrorKind::InvalidOperationError(_)
+        )
+    }
+    pub fn is_operation_id_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackInstancesErrorKind::OperationIdAlreadyExistsError(_)
+        )
+    }
+    pub fn is_operation_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackInstancesErrorKind::OperationInProgressError(_)
+        )
+    }
+    pub fn is_stack_instance_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackInstancesErrorKind::StackInstanceNotFoundError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackInstancesErrorKind::StackSetNotFoundError(_)
+        )
+    }
+    pub fn is_stale_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackInstancesErrorKind::StaleRequestError(_)
+        )
     }
 }
 impl std::error::Error for UpdateStackInstancesError {
@@ -4032,6 +4404,39 @@ impl UpdateStackSetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackSetErrorKind::InvalidOperationError(_)
+        )
+    }
+    pub fn is_operation_id_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackSetErrorKind::OperationIdAlreadyExistsError(_)
+        )
+    }
+    pub fn is_operation_in_progress_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackSetErrorKind::OperationInProgressError(_)
+        )
+    }
+    pub fn is_stack_instance_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackSetErrorKind::StackInstanceNotFoundError(_)
+        )
+    }
+    pub fn is_stack_set_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackSetErrorKind::StackSetNotFoundError(_)
+        )
+    }
+    pub fn is_stale_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateStackSetErrorKind::StaleRequestError(_))
     }
 }
 impl std::error::Error for UpdateStackSetError {
@@ -4230,12 +4635,12 @@ pub mod stale_request_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`StaleRequestError`](crate::error::StaleRequestError)
@@ -4290,12 +4695,12 @@ pub mod stack_set_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSetNotFoundError`](crate::error::StackSetNotFoundError)
@@ -4353,12 +4758,12 @@ pub mod stack_instance_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`StackInstanceNotFoundError`](crate::error::StackInstanceNotFoundError)
@@ -4414,12 +4819,12 @@ pub mod operation_in_progress_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OperationInProgressError`](crate::error::OperationInProgressError)
@@ -4477,12 +4882,12 @@ pub mod operation_id_already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OperationIdAlreadyExistsError`](crate::error::OperationIdAlreadyExistsError)
@@ -4537,12 +4942,12 @@ pub mod invalid_operation_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidOperationError`](crate::error::InvalidOperationError)
@@ -4597,12 +5002,12 @@ pub mod token_already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TokenAlreadyExistsError`](crate::error::TokenAlreadyExistsError)
@@ -4661,12 +5066,12 @@ pub mod insufficient_capabilities_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InsufficientCapabilitiesError`](crate::error::InsufficientCapabilitiesError)
@@ -4721,12 +5126,12 @@ pub mod operation_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OperationNotFoundError`](crate::error::OperationNotFoundError)
@@ -4781,12 +5186,12 @@ pub mod type_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TypeNotFoundError`](crate::error::TypeNotFoundError)
@@ -4841,12 +5246,12 @@ pub mod cfn_registry_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CFNRegistryError`](crate::error::CFNRegistryError)
@@ -4904,12 +5309,12 @@ pub mod operation_status_check_failed_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OperationStatusCheckFailedError`](crate::error::OperationStatusCheckFailedError)
@@ -4967,12 +5372,12 @@ pub mod invalid_state_transition_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidStateTransitionError`](crate::error::InvalidStateTransitionError)
@@ -5028,12 +5433,12 @@ pub mod change_set_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeSetNotFoundError`](crate::error::ChangeSetNotFoundError)
@@ -5093,12 +5498,12 @@ pub mod invalid_change_set_status_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidChangeSetStatusError`](crate::error::InvalidChangeSetStatusError)
@@ -5155,12 +5560,12 @@ pub mod stack_set_not_empty_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`StackSetNotEmptyError`](crate::error::StackSetNotEmptyError)
@@ -5215,12 +5620,12 @@ pub mod name_already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NameAlreadyExistsError`](crate::error::NameAlreadyExistsError)
@@ -5277,12 +5682,12 @@ pub mod limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
@@ -5337,12 +5742,12 @@ pub mod created_but_modified_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatedButModifiedError`](crate::error::CreatedButModifiedError)
@@ -5397,12 +5802,12 @@ pub mod already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AlreadyExistsError`](crate::error::AlreadyExistsError)

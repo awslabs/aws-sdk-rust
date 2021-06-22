@@ -62,7 +62,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDeviceRegistrationOutput,
             smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError>,
         >
@@ -79,24 +79,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the device you want to get the registration status from.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input);
             self
         }
-        pub fn set_device_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_name(inp);
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_name(input);
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
     }
@@ -115,7 +115,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SendHeartbeatOutput,
             smithy_http::result::SdkError<crate::error::SendHeartbeatError>,
         >
@@ -138,9 +138,9 @@ pub mod fluent_builders {
         }
         pub fn set_agent_metrics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
         ) -> Self {
-            self.inner = self.inner.set_agent_metrics(inp);
+            self.inner = self.inner.set_agent_metrics(input);
             self
         }
         /// <p>Returns a list of models deployed on the the device.</p>
@@ -150,39 +150,42 @@ pub mod fluent_builders {
         }
         pub fn set_models(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Model>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Model>>,
         ) -> Self {
-            self.inner = self.inner.set_models(inp);
+            self.inner = self.inner.set_models(input);
             self
         }
         /// <p>Returns the version of the agent.</p>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(inp);
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input);
             self
         }
-        pub fn set_agent_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_agent_version(inp);
+        pub fn set_agent_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_agent_version(input);
             self
         }
         /// <p>The unique name of the device.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input);
             self
         }
-        pub fn set_device_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_name(inp);
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_name(input);
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input);
             self
         }
         pub fn set_device_fleet_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_device_fleet_name(inp);
+            self.inner = self.inner.set_device_fleet_name(input);
             self
         }
     }

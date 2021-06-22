@@ -266,51 +266,51 @@ pub mod task_set {
     }
     impl Builder {
         /// <p>The ID of the task set.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task set.</p>
-        pub fn task_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_set_arn = Some(inp.into());
+        pub fn task_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_set_arn = Some(input.into());
             self
         }
-        pub fn set_task_set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.task_set_arn = inp;
+        pub fn set_task_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_set_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_arn = Some(inp.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_arn = Some(input.into());
             self
         }
-        pub fn set_service_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_arn = inp;
+        pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists
         /// in.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cluster_arn = Some(inp.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
             self
         }
-        pub fn set_cluster_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = inp;
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
             self
         }
         /// <p>The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy
         /// deployment, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task
         /// set created for an external deployment, the startedBy field isn't used.</p>
-        pub fn started_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.started_by = Some(inp.into());
+        pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.started_by = Some(input.into());
             self
         }
-        pub fn set_started_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.started_by = inp;
+        pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.started_by = input;
             self
         }
         /// <p>The external ID associated with the task set.</p>
@@ -319,12 +319,12 @@ pub mod task_set {
         /// <p>If a task set is created for an external deployment and is associated with a service
         /// discovery registry, the <code>externalId</code> parameter contains the
         /// <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
-        pub fn external_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.external_id = Some(inp.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.external_id = Some(input.into());
             self
         }
-        pub fn set_external_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.external_id = inp;
+        pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_id = input;
             self
         }
         /// <p>The status of the task set. The following describes each state:</p>
@@ -343,36 +343,36 @@ pub mod task_set {
         /// targets are being deregistered from their target group.</p>
         /// </dd>
         /// </dl>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The task definition the task set is using.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_definition = Some(inp.into());
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_definition = Some(input.into());
             self
         }
         pub fn set_task_definition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.task_definition = inp;
+            self.task_definition = input;
             self
         }
         /// <p>The computed desired count for the task set. This is calculated by multiplying the
         /// service's <code>desiredCount</code> by the task set's <code>scale</code> percentage. The
         /// result is always rounded up. For example, if the computed desired count is 1.2, it
         /// rounds up to 2 tasks.</p>
-        pub fn computed_desired_count(mut self, inp: i32) -> Self {
-            self.computed_desired_count = Some(inp);
+        pub fn computed_desired_count(mut self, input: i32) -> Self {
+            self.computed_desired_count = Some(input);
             self
         }
-        pub fn set_computed_desired_count(mut self, inp: i32) -> Self {
-            self.computed_desired_count = Some(inp);
+        pub fn set_computed_desired_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.computed_desired_count = input;
             self
         }
         /// <p>The number of tasks in the task set that are in the <code>PENDING</code> status during
@@ -380,133 +380,136 @@ pub mod task_set {
         /// <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when
         /// it launches for the first time or when it is restarted after being in the
         /// <code>STOPPED</code> state.</p>
-        pub fn pending_count(mut self, inp: i32) -> Self {
-            self.pending_count = Some(inp);
+        pub fn pending_count(mut self, input: i32) -> Self {
+            self.pending_count = Some(input);
             self
         }
-        pub fn set_pending_count(mut self, inp: i32) -> Self {
-            self.pending_count = Some(inp);
+        pub fn set_pending_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_count = input;
             self
         }
         /// <p>The number of tasks in the task set that are in the <code>RUNNING</code> status during
         /// a deployment. A task in the <code>RUNNING</code> state is running and ready for
         /// use.</p>
-        pub fn running_count(mut self, inp: i32) -> Self {
-            self.running_count = Some(inp);
+        pub fn running_count(mut self, input: i32) -> Self {
+            self.running_count = Some(input);
             self
         }
-        pub fn set_running_count(mut self, inp: i32) -> Self {
-            self.running_count = Some(inp);
+        pub fn set_running_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.running_count = input;
             self
         }
         /// <p>The Unix timestamp for when the task set was created.</p>
-        pub fn created_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_at = Some(inp);
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_at = inp;
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
             self
         }
         /// <p>The Unix timestamp for when the task set was last updated.</p>
-        pub fn updated_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.updated_at = Some(inp);
+        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.updated_at = inp;
+        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.updated_at = input;
             self
         }
         /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
         /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.launch_type = Some(inp);
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.launch_type = Some(input);
             self
         }
         pub fn set_launch_type(
             mut self,
-            inp: std::option::Option<crate::model::LaunchType>,
+            input: std::option::Option<crate::model::LaunchType>,
         ) -> Self {
-            self.launch_type = inp;
+            self.launch_type = input;
             self
         }
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: impl Into<crate::model::CapacityProviderStrategyItem>,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capacity_provider_strategy = Some(v);
             self
         }
         pub fn set_capacity_provider_strategy(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         ) -> Self {
-            self.capacity_provider_strategy = inp;
+            self.capacity_provider_strategy = input;
             self
         }
         /// <p>The AWS Fargate platform version on which the tasks in the task set are running. A
         /// platform version is only specified for tasks run on AWS Fargate. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
         /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_version = Some(inp.into());
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_version = Some(input.into());
             self
         }
         pub fn set_platform_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_version = inp;
+            self.platform_version = input;
             self
         }
         /// <p>The network configuration for the task set.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.network_configuration = Some(inp);
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.network_configuration = Some(input);
             self
         }
         pub fn set_network_configuration(
             mut self,
-            inp: std::option::Option<crate::model::NetworkConfiguration>,
+            input: std::option::Option<crate::model::NetworkConfiguration>,
         ) -> Self {
-            self.network_configuration = inp;
+            self.network_configuration = input;
             self
         }
-        pub fn load_balancers(mut self, inp: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.load_balancers = Some(v);
             self
         }
         pub fn set_load_balancers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
         ) -> Self {
-            self.load_balancers = inp;
+            self.load_balancers = input;
             self
         }
-        pub fn service_registries(mut self, inp: impl Into<crate::model::ServiceRegistry>) -> Self {
+        pub fn service_registries(
+            mut self,
+            input: impl Into<crate::model::ServiceRegistry>,
+        ) -> Self {
             let mut v = self.service_registries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.service_registries = Some(v);
             self
         }
         pub fn set_service_registries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
         ) -> Self {
-            self.service_registries = inp;
+            self.service_registries = input;
             self
         }
         /// <p>A floating-point percentage of the desired number of tasks to place and keep running
         /// in the task set.</p>
-        pub fn scale(mut self, inp: crate::model::Scale) -> Self {
-            self.scale = Some(inp);
+        pub fn scale(mut self, input: crate::model::Scale) -> Self {
+            self.scale = Some(input);
             self
         }
-        pub fn set_scale(mut self, inp: std::option::Option<crate::model::Scale>) -> Self {
-            self.scale = inp;
+        pub fn set_scale(mut self, input: std::option::Option<crate::model::Scale>) -> Self {
+            self.scale = input;
             self
         }
         /// <p>The stability status, which indicates whether the task set has reached a steady state.
@@ -531,40 +534,40 @@ pub mod task_set {
         /// </ul>
         /// <p>If any of those conditions are not met, the stability status returns
         /// <code>STABILIZING</code>.</p>
-        pub fn stability_status(mut self, inp: crate::model::StabilityStatus) -> Self {
-            self.stability_status = Some(inp);
+        pub fn stability_status(mut self, input: crate::model::StabilityStatus) -> Self {
+            self.stability_status = Some(input);
             self
         }
         pub fn set_stability_status(
             mut self,
-            inp: std::option::Option<crate::model::StabilityStatus>,
+            input: std::option::Option<crate::model::StabilityStatus>,
         ) -> Self {
-            self.stability_status = inp;
+            self.stability_status = input;
             self
         }
         /// <p>The Unix timestamp for when the task set stability status was retrieved.</p>
-        pub fn stability_status_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.stability_status_at = Some(inp);
+        pub fn stability_status_at(mut self, input: smithy_types::Instant) -> Self {
+            self.stability_status_at = Some(input);
             self
         }
         pub fn set_stability_status_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.stability_status_at = inp;
+            self.stability_status_at = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TaskSet`](crate::model::TaskSet)
@@ -671,22 +674,22 @@ pub mod tag {
     impl Builder {
         /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
         /// that acts like a category for more specific tag values.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as
         /// a descriptor within a tag category (key).</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -796,21 +799,21 @@ pub mod scale {
     impl Builder {
         /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to
         /// scale the task set. Accepted values are numbers between 0 and 100.</p>
-        pub fn value(mut self, inp: f64) -> Self {
-            self.value = Some(inp);
+        pub fn value(mut self, input: f64) -> Self {
+            self.value = Some(input);
             self
         }
-        pub fn set_value(mut self, inp: f64) -> Self {
-            self.value = Some(inp);
+        pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The unit of measure for the scale value.</p>
-        pub fn unit(mut self, inp: crate::model::ScaleUnit) -> Self {
-            self.unit = Some(inp);
+        pub fn unit(mut self, input: crate::model::ScaleUnit) -> Self {
+            self.unit = Some(input);
             self
         }
-        pub fn set_unit(mut self, inp: std::option::Option<crate::model::ScaleUnit>) -> Self {
-            self.unit = inp;
+        pub fn set_unit(mut self, input: std::option::Option<crate::model::ScaleUnit>) -> Self {
+            self.unit = input;
             self
         }
         /// Consumes the builder and constructs a [`Scale`](crate::model::Scale)
@@ -944,23 +947,23 @@ pub mod service_registry {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is
         /// AWS Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
-        pub fn registry_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.registry_arn = Some(inp.into());
+        pub fn registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_arn = Some(input.into());
             self
         }
-        pub fn set_registry_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.registry_arn = inp;
+        pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_arn = input;
             self
         }
         /// <p>The port value used if your service discovery service specified an SRV record. This
         /// field may be used if both the <code>awsvpc</code> network mode and SRV records are
         /// used.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The container name value, already specified in the task definition, to be used for
@@ -971,12 +974,15 @@ pub mod service_registry {
         /// <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify
         /// either a <code>containerName</code> and <code>containerPort</code> combination or a
         /// <code>port</code> value, but not both.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_name = Some(inp.into());
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
             self
         }
-        pub fn set_container_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_name = inp;
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
             self
         }
         /// <p>The port value, already specified in the task definition, to be used for your service
@@ -987,12 +993,12 @@ pub mod service_registry {
         /// <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify
         /// either a <code>containerName</code> and <code>containerPort</code> combination or a
         /// <code>port</code> value, but not both.</p>
-        pub fn container_port(mut self, inp: i32) -> Self {
-            self.container_port = Some(inp);
+        pub fn container_port(mut self, input: i32) -> Self {
+            self.container_port = Some(input);
             self
         }
-        pub fn set_container_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.container_port = inp;
+        pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.container_port = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceRegistry`](crate::model::ServiceRegistry)
@@ -1100,39 +1106,42 @@ pub mod load_balancer {
         /// your target groups because tasks that use the <code>awsvpc</code> network mode are
         /// associated with an elastic network interface, not an Amazon EC2 instance.</p>
         /// </important>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_group_arn = Some(inp.into());
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_arn = Some(input.into());
             self
         }
         pub fn set_target_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_group_arn = inp;
+            self.target_group_arn = input;
             self
         }
         /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
         /// <p>A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load Balancer
         /// or a Network Load Balancer the load balancer name parameter should be omitted.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.load_balancer_name = Some(inp.into());
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.load_balancer_name = Some(input.into());
             self
         }
         pub fn set_load_balancer_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.load_balancer_name = inp;
+            self.load_balancer_name = input;
             self
         }
         /// <p>The name of the container (as it appears in a container definition) to associate with
         /// the load balancer.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_name = Some(inp.into());
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
             self
         }
-        pub fn set_container_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_name = inp;
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
             self
         }
         /// <p>The port on the container to associate with the load balancer. This port must
@@ -1140,12 +1149,12 @@ pub mod load_balancer {
         /// service are using. For tasks that use the EC2 launch type, the container
         /// instance they are launched on must allow ingress traffic on the <code>hostPort</code> of
         /// the port mapping.</p>
-        pub fn container_port(mut self, inp: i32) -> Self {
-            self.container_port = Some(inp);
+        pub fn container_port(mut self, input: i32) -> Self {
+            self.container_port = Some(input);
             self
         }
-        pub fn set_container_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.container_port = inp;
+        pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.container_port = input;
             self
         }
         /// Consumes the builder and constructs a [`LoadBalancer`](crate::model::LoadBalancer)
@@ -1198,15 +1207,15 @@ pub mod network_configuration {
         /// <note>
         /// <p>All specified subnets and security groups must be from the same VPC.</p>
         /// </note>
-        pub fn awsvpc_configuration(mut self, inp: crate::model::AwsVpcConfiguration) -> Self {
-            self.awsvpc_configuration = Some(inp);
+        pub fn awsvpc_configuration(mut self, input: crate::model::AwsVpcConfiguration) -> Self {
+            self.awsvpc_configuration = Some(input);
             self
         }
         pub fn set_awsvpc_configuration(
             mut self,
-            inp: std::option::Option<crate::model::AwsVpcConfiguration>,
+            input: std::option::Option<crate::model::AwsVpcConfiguration>,
         ) -> Self {
-            self.awsvpc_configuration = inp;
+            self.awsvpc_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::model::NetworkConfiguration)
@@ -1272,43 +1281,43 @@ pub mod aws_vpc_configuration {
         pub(crate) assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
     }
     impl Builder {
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subnets = Some(v);
             self
         }
         pub fn set_subnets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.subnets = inp;
+            self.subnets = input;
             self
         }
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_groups = Some(v);
             self
         }
         pub fn set_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.security_groups = inp;
+            self.security_groups = input;
             self
         }
         /// <p>Whether the task's elastic network interface receives a public IP address. The default
         /// value is <code>DISABLED</code>.</p>
-        pub fn assign_public_ip(mut self, inp: crate::model::AssignPublicIp) -> Self {
-            self.assign_public_ip = Some(inp);
+        pub fn assign_public_ip(mut self, input: crate::model::AssignPublicIp) -> Self {
+            self.assign_public_ip = Some(input);
             self
         }
         pub fn set_assign_public_ip(
             mut self,
-            inp: std::option::Option<crate::model::AssignPublicIp>,
+            input: std::option::Option<crate::model::AssignPublicIp>,
         ) -> Self {
-            self.assign_public_ip = inp;
+            self.assign_public_ip = input;
             self
         }
         /// Consumes the builder and constructs a [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration)
@@ -1456,15 +1465,15 @@ pub mod capacity_provider_strategy_item {
     }
     impl Builder {
         /// <p>The short name of the capacity provider.</p>
-        pub fn capacity_provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capacity_provider = Some(inp.into());
+        pub fn capacity_provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capacity_provider = Some(input.into());
             self
         }
         pub fn set_capacity_provider(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.capacity_provider = inp;
+            self.capacity_provider = input;
             self
         }
         /// <p>The <i>weight</i> value designates the relative percentage of the total
@@ -1486,24 +1495,24 @@ pub mod capacity_provider_strategy_item {
         /// <i>capacityProviderB</i>, then for every one task that is run using
         /// <i>capacityProviderA</i>, four tasks would use
         /// <i>capacityProviderB</i>.</p>
-        pub fn weight(mut self, inp: i32) -> Self {
-            self.weight = Some(inp);
+        pub fn weight(mut self, input: i32) -> Self {
+            self.weight = Some(input);
             self
         }
-        pub fn set_weight(mut self, inp: i32) -> Self {
-            self.weight = Some(inp);
+        pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
+            self.weight = input;
             self
         }
         /// <p>The <i>base</i> value designates how many tasks, at a minimum, to run on
         /// the specified capacity provider. Only one capacity provider in a capacity provider
         /// strategy can have a <i>base</i> defined. If no value is specified, the
         /// default value of <code>0</code> is used.</p>
-        pub fn base(mut self, inp: i32) -> Self {
-            self.base = Some(inp);
+        pub fn base(mut self, input: i32) -> Self {
+            self.base = Some(input);
             self
         }
-        pub fn set_base(mut self, inp: i32) -> Self {
-            self.base = Some(inp);
+        pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
+            self.base = input;
             self
         }
         /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem)
@@ -1882,125 +1891,128 @@ pub mod service {
     }
     impl Builder {
         /// <p>The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_arn = Some(inp.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_arn = Some(input.into());
             self
         }
-        pub fn set_service_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_arn = inp;
+        pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_arn = input;
             self
         }
         /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
         /// a cluster, but you can have similarly named services in multiple clusters within a
         /// Region or across multiple Regions.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cluster_arn = Some(inp.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
             self
         }
-        pub fn set_cluster_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = inp;
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
             self
         }
-        pub fn load_balancers(mut self, inp: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.load_balancers = Some(v);
             self
         }
         pub fn set_load_balancers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
         ) -> Self {
-            self.load_balancers = inp;
+            self.load_balancers = input;
             self
         }
-        pub fn service_registries(mut self, inp: impl Into<crate::model::ServiceRegistry>) -> Self {
+        pub fn service_registries(
+            mut self,
+            input: impl Into<crate::model::ServiceRegistry>,
+        ) -> Self {
             let mut v = self.service_registries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.service_registries = Some(v);
             self
         }
         pub fn set_service_registries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
         ) -> Self {
-            self.service_registries = inp;
+            self.service_registries = input;
             self
         }
         /// <p>The status of the service. The valid values are <code>ACTIVE</code>,
         /// <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The desired number of instantiations of the task definition to keep running on the
         /// service. This value is specified when the service is created with <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
-        pub fn desired_count(mut self, inp: i32) -> Self {
-            self.desired_count = Some(inp);
+        pub fn desired_count(mut self, input: i32) -> Self {
+            self.desired_count = Some(input);
             self
         }
-        pub fn set_desired_count(mut self, inp: i32) -> Self {
-            self.desired_count = Some(inp);
+        pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.desired_count = input;
             self
         }
         /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
-        pub fn running_count(mut self, inp: i32) -> Self {
-            self.running_count = Some(inp);
+        pub fn running_count(mut self, input: i32) -> Self {
+            self.running_count = Some(input);
             self
         }
-        pub fn set_running_count(mut self, inp: i32) -> Self {
-            self.running_count = Some(inp);
+        pub fn set_running_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.running_count = input;
             self
         }
         /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
-        pub fn pending_count(mut self, inp: i32) -> Self {
-            self.pending_count = Some(inp);
+        pub fn pending_count(mut self, input: i32) -> Self {
+            self.pending_count = Some(input);
             self
         }
-        pub fn set_pending_count(mut self, inp: i32) -> Self {
-            self.pending_count = Some(inp);
+        pub fn set_pending_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_count = input;
             self
         }
         /// <p>The infrastructure on which your service is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
         /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.launch_type = Some(inp);
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.launch_type = Some(input);
             self
         }
         pub fn set_launch_type(
             mut self,
-            inp: std::option::Option<crate::model::LaunchType>,
+            input: std::option::Option<crate::model::LaunchType>,
         ) -> Self {
-            self.launch_type = inp;
+            self.launch_type = input;
             self
         }
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: impl Into<crate::model::CapacityProviderStrategyItem>,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capacity_provider_strategy = Some(v);
             self
         }
         pub fn set_capacity_provider_strategy(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         ) -> Self {
-            self.capacity_provider_strategy = inp;
+            self.capacity_provider_strategy = input;
             self
         }
         /// <p>The platform version on which to run your service. A platform version is only
@@ -2008,161 +2020,161 @@ pub mod service {
         /// specified, the <code>LATEST</code> platform version is used by default. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_version = Some(inp.into());
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_version = Some(input.into());
             self
         }
         pub fn set_platform_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_version = inp;
+            self.platform_version = input;
             self
         }
         /// <p>The task definition to use for tasks in the service. This value is specified when the
         /// service is created with <a>CreateService</a>, and it can be modified with
         /// <a>UpdateService</a>.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_definition = Some(inp.into());
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_definition = Some(input.into());
             self
         }
         pub fn set_task_definition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.task_definition = inp;
+            self.task_definition = input;
             self
         }
         /// <p>Optional deployment parameters that control how many tasks run during the deployment
         /// and the ordering of stopping and starting tasks.</p>
         pub fn deployment_configuration(
             mut self,
-            inp: crate::model::DeploymentConfiguration,
+            input: crate::model::DeploymentConfiguration,
         ) -> Self {
-            self.deployment_configuration = Some(inp);
+            self.deployment_configuration = Some(input);
             self
         }
         pub fn set_deployment_configuration(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentConfiguration>,
+            input: std::option::Option<crate::model::DeploymentConfiguration>,
         ) -> Self {
-            self.deployment_configuration = inp;
+            self.deployment_configuration = input;
             self
         }
-        pub fn task_sets(mut self, inp: impl Into<crate::model::TaskSet>) -> Self {
+        pub fn task_sets(mut self, input: impl Into<crate::model::TaskSet>) -> Self {
             let mut v = self.task_sets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.task_sets = Some(v);
             self
         }
         pub fn set_task_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TaskSet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TaskSet>>,
         ) -> Self {
-            self.task_sets = inp;
+            self.task_sets = input;
             self
         }
-        pub fn deployments(mut self, inp: impl Into<crate::model::Deployment>) -> Self {
+        pub fn deployments(mut self, input: impl Into<crate::model::Deployment>) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.deployments = Some(v);
             self
         }
         pub fn set_deployments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
         ) -> Self {
-            self.deployments = inp;
+            self.deployments = input;
             self
         }
         /// <p>The ARN of the IAM role associated with the service that allows the Amazon ECS container
         /// agent to register container instances with an Elastic Load Balancing load balancer.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
-        pub fn events(mut self, inp: impl Into<crate::model::ServiceEvent>) -> Self {
+        pub fn events(mut self, input: impl Into<crate::model::ServiceEvent>) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.events = Some(v);
             self
         }
         pub fn set_events(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ServiceEvent>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceEvent>>,
         ) -> Self {
-            self.events = inp;
+            self.events = input;
             self
         }
         /// <p>The Unix timestamp for when the service was created.</p>
-        pub fn created_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_at = Some(inp);
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_at = inp;
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
             self
         }
         pub fn placement_constraints(
             mut self,
-            inp: impl Into<crate::model::PlacementConstraint>,
+            input: impl Into<crate::model::PlacementConstraint>,
         ) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.placement_constraints = Some(v);
             self
         }
         pub fn set_placement_constraints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
         ) -> Self {
-            self.placement_constraints = inp;
+            self.placement_constraints = input;
             self
         }
         pub fn placement_strategy(
             mut self,
-            inp: impl Into<crate::model::PlacementStrategy>,
+            input: impl Into<crate::model::PlacementStrategy>,
         ) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.placement_strategy = Some(v);
             self
         }
         pub fn set_placement_strategy(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
         ) -> Self {
-            self.placement_strategy = inp;
+            self.placement_strategy = input;
             self
         }
         /// <p>The VPC subnet and security group configuration for tasks that receive their own
         /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.network_configuration = Some(inp);
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.network_configuration = Some(input);
             self
         }
         pub fn set_network_configuration(
             mut self,
-            inp: std::option::Option<crate::model::NetworkConfiguration>,
+            input: std::option::Option<crate::model::NetworkConfiguration>,
         ) -> Self {
-            self.network_configuration = inp;
+            self.network_configuration = input;
             self
         }
         /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
         /// Elastic Load Balancing target health checks after a task has first started.</p>
-        pub fn health_check_grace_period_seconds(mut self, inp: i32) -> Self {
-            self.health_check_grace_period_seconds = Some(inp);
+        pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
+            self.health_check_grace_period_seconds = Some(input);
             self
         }
         pub fn set_health_check_grace_period_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.health_check_grace_period_seconds = inp;
+            self.health_check_grace_period_seconds = input;
             self
         }
         /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
@@ -2189,86 +2201,86 @@ pub mod service {
         /// </note>
         /// </li>
         /// </ul>
-        pub fn scheduling_strategy(mut self, inp: crate::model::SchedulingStrategy) -> Self {
-            self.scheduling_strategy = Some(inp);
+        pub fn scheduling_strategy(mut self, input: crate::model::SchedulingStrategy) -> Self {
+            self.scheduling_strategy = Some(input);
             self
         }
         pub fn set_scheduling_strategy(
             mut self,
-            inp: std::option::Option<crate::model::SchedulingStrategy>,
+            input: std::option::Option<crate::model::SchedulingStrategy>,
         ) -> Self {
-            self.scheduling_strategy = inp;
+            self.scheduling_strategy = input;
             self
         }
         /// <p>The deployment controller type the service is using. When using the DescribeServices
         /// API, this field is omitted if the service is using the <code>ECS</code> deployment
         /// controller type.</p>
-        pub fn deployment_controller(mut self, inp: crate::model::DeploymentController) -> Self {
-            self.deployment_controller = Some(inp);
+        pub fn deployment_controller(mut self, input: crate::model::DeploymentController) -> Self {
+            self.deployment_controller = Some(input);
             self
         }
         pub fn set_deployment_controller(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentController>,
+            input: std::option::Option<crate::model::DeploymentController>,
         ) -> Self {
-            self.deployment_controller = inp;
+            self.deployment_controller = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The principal that created the service.</p>
-        pub fn created_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.created_by = Some(inp.into());
+        pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_by = Some(input.into());
             self
         }
-        pub fn set_created_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.created_by = inp;
+        pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by = input;
             self
         }
         /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
         /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn enable_ecs_managed_tags(mut self, inp: bool) -> Self {
-            self.enable_ecs_managed_tags = Some(inp);
+        pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
+            self.enable_ecs_managed_tags = Some(input);
             self
         }
-        pub fn set_enable_ecs_managed_tags(mut self, inp: bool) -> Self {
-            self.enable_ecs_managed_tags = Some(inp);
+        pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_ecs_managed_tags = input;
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
         /// task. If no value is specified, the tags are not propagated.</p>
-        pub fn propagate_tags(mut self, inp: crate::model::PropagateTags) -> Self {
-            self.propagate_tags = Some(inp);
+        pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
+            self.propagate_tags = Some(input);
             self
         }
         pub fn set_propagate_tags(
             mut self,
-            inp: std::option::Option<crate::model::PropagateTags>,
+            input: std::option::Option<crate::model::PropagateTags>,
         ) -> Self {
-            self.propagate_tags = inp;
+            self.propagate_tags = input;
             self
         }
         /// <p>Whether or not the execute command functionality is enabled for the service. If
         /// <code>true</code>, the execute command functionality is enabled for all containers
         /// in tasks as part of the service.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.enable_execute_command = Some(inp);
+        pub fn enable_execute_command(mut self, input: bool) -> Self {
+            self.enable_execute_command = Some(input);
             self
         }
-        pub fn set_enable_execute_command(mut self, inp: bool) -> Self {
-            self.enable_execute_command = Some(inp);
+        pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_execute_command = input;
             self
         }
         /// Consumes the builder and constructs a [`Service`](crate::model::Service)
@@ -2443,15 +2455,15 @@ pub mod deployment_controller {
         /// process for an Amazon ECS service.</p>
         /// </dd>
         /// </dl>
-        pub fn r#type(mut self, inp: crate::model::DeploymentControllerType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::DeploymentControllerType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentControllerType>,
+            input: std::option::Option<crate::model::DeploymentControllerType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`DeploymentController`](crate::model::DeploymentController)
@@ -2635,15 +2647,15 @@ pub mod placement_strategy {
         /// least available amount of the resource that is specified with the <code>field</code>
         /// parameter. For example, if you binpack on memory, a task is placed on the instance with
         /// the least amount of remaining memory (but still enough to run the task).</p>
-        pub fn r#type(mut self, inp: crate::model::PlacementStrategyType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::PlacementStrategyType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::PlacementStrategyType>,
+            input: std::option::Option<crate::model::PlacementStrategyType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>The field to apply the placement strategy against. For the <code>spread</code>
@@ -2653,12 +2665,12 @@ pub mod placement_strategy {
         /// <code>binpack</code> placement strategy, valid values are <code>cpu</code> and
         /// <code>memory</code>. For the <code>random</code> placement strategy, this field is
         /// not used.</p>
-        pub fn field(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.field = Some(inp.into());
+        pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field = Some(input.into());
             self
         }
-        pub fn set_field(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.field = inp;
+        pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.field = input;
             self
         }
         /// Consumes the builder and constructs a [`PlacementStrategy`](crate::model::PlacementStrategy)
@@ -2783,27 +2795,27 @@ pub mod placement_constraint {
         /// a particular group is running on a different container instance. Use
         /// <code>memberOf</code> to restrict the selection to a group of valid
         /// candidates.</p>
-        pub fn r#type(mut self, inp: crate::model::PlacementConstraintType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::PlacementConstraintType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::PlacementConstraintType>,
+            input: std::option::Option<crate::model::PlacementConstraintType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
         /// expression if the constraint type is <code>distinctInstance</code>. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expression = Some(inp.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
             self
         }
-        pub fn set_expression(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expression = inp;
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
             self
         }
         /// Consumes the builder and constructs a [`PlacementConstraint`](crate::model::PlacementConstraint)
@@ -2919,30 +2931,30 @@ pub mod service_event {
     }
     impl Builder {
         /// <p>The ID string of the event.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The Unix timestamp for when the event was triggered.</p>
-        pub fn created_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_at = Some(inp);
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_at = inp;
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
             self
         }
         /// <p>The event message.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceEvent`](crate::model::ServiceEvent)
@@ -3126,12 +3138,12 @@ pub mod deployment {
     }
     impl Builder {
         /// <p>The ID of the deployment.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The status of the deployment. The following describes each state:</p>
@@ -3150,55 +3162,55 @@ pub mod deployment {
         /// <p>A deployment that has been completely replaced.</p>
         /// </dd>
         /// </dl>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The most recent task definition that was specified for the tasks in the service to
         /// use.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_definition = Some(inp.into());
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_definition = Some(input.into());
             self
         }
         pub fn set_task_definition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.task_definition = inp;
+            self.task_definition = input;
             self
         }
         /// <p>The most recent desired count of tasks that was specified for the service to deploy or
         /// maintain.</p>
-        pub fn desired_count(mut self, inp: i32) -> Self {
-            self.desired_count = Some(inp);
+        pub fn desired_count(mut self, input: i32) -> Self {
+            self.desired_count = Some(input);
             self
         }
-        pub fn set_desired_count(mut self, inp: i32) -> Self {
-            self.desired_count = Some(inp);
+        pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.desired_count = input;
             self
         }
         /// <p>The number of tasks in the deployment that are in the <code>PENDING</code>
         /// status.</p>
-        pub fn pending_count(mut self, inp: i32) -> Self {
-            self.pending_count = Some(inp);
+        pub fn pending_count(mut self, input: i32) -> Self {
+            self.pending_count = Some(input);
             self
         }
-        pub fn set_pending_count(mut self, inp: i32) -> Self {
-            self.pending_count = Some(inp);
+        pub fn set_pending_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_count = input;
             self
         }
         /// <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
         /// status.</p>
-        pub fn running_count(mut self, inp: i32) -> Self {
-            self.running_count = Some(inp);
+        pub fn running_count(mut self, input: i32) -> Self {
+            self.running_count = Some(input);
             self
         }
-        pub fn set_running_count(mut self, inp: i32) -> Self {
-            self.running_count = Some(inp);
+        pub fn set_running_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.running_count = input;
             self
         }
         /// <p>The number of consecutively failed tasks in the deployment. A task is considered a
@@ -3209,59 +3221,59 @@ pub mod deployment {
         /// <p>Once a service deployment has one or more successfully running tasks, the failed
         /// task count resets to zero and stops being evaluated.</p>
         /// </note>
-        pub fn failed_tasks(mut self, inp: i32) -> Self {
-            self.failed_tasks = Some(inp);
+        pub fn failed_tasks(mut self, input: i32) -> Self {
+            self.failed_tasks = Some(input);
             self
         }
-        pub fn set_failed_tasks(mut self, inp: i32) -> Self {
-            self.failed_tasks = Some(inp);
+        pub fn set_failed_tasks(mut self, input: std::option::Option<i32>) -> Self {
+            self.failed_tasks = input;
             self
         }
         /// <p>The Unix timestamp for when the service deployment was created.</p>
-        pub fn created_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_at = Some(inp);
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_at = inp;
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
             self
         }
         /// <p>The Unix timestamp for when the service deployment was last updated.</p>
-        pub fn updated_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.updated_at = Some(inp);
+        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.updated_at = inp;
+        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.updated_at = input;
             self
         }
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: impl Into<crate::model::CapacityProviderStrategyItem>,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capacity_provider_strategy = Some(v);
             self
         }
         pub fn set_capacity_provider_strategy(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         ) -> Self {
-            self.capacity_provider_strategy = inp;
+            self.capacity_provider_strategy = input;
             self
         }
         /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
         /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.launch_type = Some(inp);
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.launch_type = Some(input);
             self
         }
         pub fn set_launch_type(
             mut self,
-            inp: std::option::Option<crate::model::LaunchType>,
+            input: std::option::Option<crate::model::LaunchType>,
         ) -> Self {
-            self.launch_type = inp;
+            self.launch_type = input;
             self
         }
         /// <p>The platform version on which your tasks in the service are running. A platform
@@ -3269,28 +3281,28 @@ pub mod deployment {
         /// is not specified, the <code>LATEST</code> platform version is used by default. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_version = Some(inp.into());
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_version = Some(input.into());
             self
         }
         pub fn set_platform_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_version = inp;
+            self.platform_version = input;
             self
         }
         /// <p>The VPC subnet and security group configuration for tasks that receive their own
         /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.network_configuration = Some(inp);
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.network_configuration = Some(input);
             self
         }
         pub fn set_network_configuration(
             mut self,
-            inp: std::option::Option<crate::model::NetworkConfiguration>,
+            input: std::option::Option<crate::model::NetworkConfiguration>,
         ) -> Self {
-            self.network_configuration = inp;
+            self.network_configuration = input;
             self
         }
         /// <note>
@@ -3304,27 +3316,27 @@ pub mod deployment {
         /// reach a steady state and circuit breaker is enabled, the deployment will transition to a
         /// <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch no
         /// new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.</p>
-        pub fn rollout_state(mut self, inp: crate::model::DeploymentRolloutState) -> Self {
-            self.rollout_state = Some(inp);
+        pub fn rollout_state(mut self, input: crate::model::DeploymentRolloutState) -> Self {
+            self.rollout_state = Some(input);
             self
         }
         pub fn set_rollout_state(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentRolloutState>,
+            input: std::option::Option<crate::model::DeploymentRolloutState>,
         ) -> Self {
-            self.rollout_state = inp;
+            self.rollout_state = input;
             self
         }
         /// <p>A description of the rollout state of a deployment.</p>
-        pub fn rollout_state_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rollout_state_reason = Some(inp.into());
+        pub fn rollout_state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rollout_state_reason = Some(input.into());
             self
         }
         pub fn set_rollout_state_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.rollout_state_reason = inp;
+            self.rollout_state_reason = input;
             self
         }
         /// Consumes the builder and constructs a [`Deployment`](crate::model::Deployment)
@@ -3515,16 +3527,16 @@ pub mod deployment_configuration {
         /// service is rolled back to the last deployment that completed successfully.</p>
         pub fn deployment_circuit_breaker(
             mut self,
-            inp: crate::model::DeploymentCircuitBreaker,
+            input: crate::model::DeploymentCircuitBreaker,
         ) -> Self {
-            self.deployment_circuit_breaker = Some(inp);
+            self.deployment_circuit_breaker = Some(input);
             self
         }
         pub fn set_deployment_circuit_breaker(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentCircuitBreaker>,
+            input: std::option::Option<crate::model::DeploymentCircuitBreaker>,
         ) -> Self {
-            self.deployment_circuit_breaker = inp;
+            self.deployment_circuit_breaker = input;
             self
         }
         /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the
@@ -3546,12 +3558,12 @@ pub mod deployment_configuration {
         /// in the <code>DRAINING</code> state. If the tasks in the service use the
         /// Fargate launch type, the maximum percent value is not used, although it is
         /// returned when describing your service.</p>
-        pub fn maximum_percent(mut self, inp: i32) -> Self {
-            self.maximum_percent = Some(inp);
+        pub fn maximum_percent(mut self, input: i32) -> Self {
+            self.maximum_percent = Some(input);
             self
         }
-        pub fn set_maximum_percent(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_percent = inp;
+        pub fn set_maximum_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_percent = input;
             self
         }
         /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the
@@ -3576,12 +3588,12 @@ pub mod deployment_configuration {
         /// are in the <code>DRAINING</code> state. If the tasks in the service use the
         /// Fargate launch type, the minimum healthy percent value is not used,
         /// although it is returned when describing your service.</p>
-        pub fn minimum_healthy_percent(mut self, inp: i32) -> Self {
-            self.minimum_healthy_percent = Some(inp);
+        pub fn minimum_healthy_percent(mut self, input: i32) -> Self {
+            self.minimum_healthy_percent = Some(input);
             self
         }
-        pub fn set_minimum_healthy_percent(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_healthy_percent = inp;
+        pub fn set_minimum_healthy_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_healthy_percent = input;
             self
         }
         /// Consumes the builder and constructs a [`DeploymentConfiguration`](crate::model::DeploymentConfiguration)
@@ -3644,23 +3656,23 @@ pub mod deployment_circuit_breaker {
     }
     impl Builder {
         /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
-        pub fn enable(mut self, inp: bool) -> Self {
-            self.enable = Some(inp);
+        pub fn enable(mut self, input: bool) -> Self {
+            self.enable = Some(input);
             self
         }
-        pub fn set_enable(mut self, inp: bool) -> Self {
-            self.enable = Some(inp);
+        pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable = input;
             self
         }
         /// <p>Whether to enable Amazon ECS to roll back the service if a service deployment fails. If
         /// rollback is enabled, when a service deployment fails, the service is rolled back to the
         /// last deployment that completed successfully.</p>
-        pub fn rollback(mut self, inp: bool) -> Self {
-            self.rollback = Some(inp);
+        pub fn rollback(mut self, input: bool) -> Self {
+            self.rollback = Some(input);
             self
         }
-        pub fn set_rollback(mut self, inp: bool) -> Self {
-            self.rollback = Some(inp);
+        pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
+            self.rollback = input;
             self
         }
         /// Consumes the builder and constructs a [`DeploymentCircuitBreaker`](crate::model::DeploymentCircuitBreaker)
@@ -3718,30 +3730,30 @@ pub mod failure {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The reason for the failure.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reason = Some(inp.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
             self
         }
-        pub fn set_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reason = inp;
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
             self
         }
         /// <p>The details of the failure.</p>
-        pub fn detail(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.detail = Some(inp.into());
+        pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detail = Some(input.into());
             self
         }
-        pub fn set_detail(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.detail = inp;
+        pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detail = input;
             self
         }
         /// Consumes the builder and constructs a [`Failure`](crate::model::Failure)
@@ -3964,40 +3976,40 @@ pub mod container_instance {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
-        pub fn container_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_instance_arn = Some(inp.into());
+        pub fn container_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_instance_arn = Some(input.into());
             self
         }
         pub fn set_container_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.container_instance_arn = inp;
+            self.container_instance_arn = input;
             self
         }
         /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2
         /// instance ID. For external instances, this value is the AWS Systems Manager managed instance ID.</p>
-        pub fn ec2_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_instance_id = Some(inp.into());
+        pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_instance_id = Some(input.into());
             self
         }
         pub fn set_ec2_instance_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_instance_id = inp;
+            self.ec2_instance_id = input;
             self
         }
         /// <p>The capacity provider associated with the container instance.</p>
-        pub fn capacity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capacity_provider_name = Some(inp.into());
+        pub fn capacity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capacity_provider_name = Some(input.into());
             self
         }
         pub fn set_capacity_provider_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.capacity_provider_name = inp;
+            self.capacity_provider_name = input;
             self
         }
         /// <p>The version counter for the container instance. Every time a container instance
@@ -4007,51 +4019,51 @@ pub mod container_instance {
         /// with the version reported in CloudWatch Events for the container instance (inside the
         /// <code>detail</code> object) to verify that the version in your event stream is
         /// current.</p>
-        pub fn version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
         /// container instance.</p>
-        pub fn version_info(mut self, inp: crate::model::VersionInfo) -> Self {
-            self.version_info = Some(inp);
+        pub fn version_info(mut self, input: crate::model::VersionInfo) -> Self {
+            self.version_info = Some(input);
             self
         }
         pub fn set_version_info(
             mut self,
-            inp: std::option::Option<crate::model::VersionInfo>,
+            input: std::option::Option<crate::model::VersionInfo>,
         ) -> Self {
-            self.version_info = inp;
+            self.version_info = input;
             self
         }
-        pub fn remaining_resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
+        pub fn remaining_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.remaining_resources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.remaining_resources = Some(v);
             self
         }
         pub fn set_remaining_resources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         ) -> Self {
-            self.remaining_resources = inp;
+            self.remaining_resources = input;
             self
         }
-        pub fn registered_resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
+        pub fn registered_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.registered_resources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.registered_resources = Some(v);
             self
         }
         pub fn set_registered_resources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         ) -> Self {
-            self.registered_resources = inp;
+            self.registered_resources = input;
             self
         }
         /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>,
@@ -4071,117 +4083,120 @@ pub mod container_instance {
         /// instance and any service tasks running on the container instance are removed if
         /// possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container Instance Draining</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The reason that the container instance reached its current status.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_reason = Some(inp.into());
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
             self
         }
-        pub fn set_status_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_reason = inp;
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
             self
         }
         /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS.
         /// Registered instances with an agent that may be unhealthy or stopped return
         /// <code>false</code>. Only instances connected to an agent can accept placement
         /// requests.</p>
-        pub fn agent_connected(mut self, inp: bool) -> Self {
-            self.agent_connected = Some(inp);
+        pub fn agent_connected(mut self, input: bool) -> Self {
+            self.agent_connected = Some(input);
             self
         }
-        pub fn set_agent_connected(mut self, inp: bool) -> Self {
-            self.agent_connected = Some(inp);
+        pub fn set_agent_connected(mut self, input: std::option::Option<bool>) -> Self {
+            self.agent_connected = input;
             self
         }
         /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code>
         /// status.</p>
-        pub fn running_tasks_count(mut self, inp: i32) -> Self {
-            self.running_tasks_count = Some(inp);
+        pub fn running_tasks_count(mut self, input: i32) -> Self {
+            self.running_tasks_count = Some(input);
             self
         }
-        pub fn set_running_tasks_count(mut self, inp: i32) -> Self {
-            self.running_tasks_count = Some(inp);
+        pub fn set_running_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.running_tasks_count = input;
             self
         }
         /// <p>The number of tasks on the container instance that are in the <code>PENDING</code>
         /// status.</p>
-        pub fn pending_tasks_count(mut self, inp: i32) -> Self {
-            self.pending_tasks_count = Some(inp);
+        pub fn pending_tasks_count(mut self, input: i32) -> Self {
+            self.pending_tasks_count = Some(input);
             self
         }
-        pub fn set_pending_tasks_count(mut self, inp: i32) -> Self {
-            self.pending_tasks_count = Some(inp);
+        pub fn set_pending_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_tasks_count = input;
             self
         }
         /// <p>The status of the most recent agent update. If an update has never been requested,
         /// this value is <code>NULL</code>.</p>
-        pub fn agent_update_status(mut self, inp: crate::model::AgentUpdateStatus) -> Self {
-            self.agent_update_status = Some(inp);
+        pub fn agent_update_status(mut self, input: crate::model::AgentUpdateStatus) -> Self {
+            self.agent_update_status = Some(input);
             self
         }
         pub fn set_agent_update_status(
             mut self,
-            inp: std::option::Option<crate::model::AgentUpdateStatus>,
+            input: std::option::Option<crate::model::AgentUpdateStatus>,
         ) -> Self {
-            self.agent_update_status = inp;
+            self.agent_update_status = input;
             self
         }
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes = Some(v);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// <p>The Unix timestamp for when the container instance was registered.</p>
-        pub fn registered_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.registered_at = Some(inp);
+        pub fn registered_at(mut self, input: smithy_types::Instant) -> Self {
+            self.registered_at = Some(input);
             self
         }
         pub fn set_registered_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.registered_at = inp;
+            self.registered_at = input;
             self
         }
-        pub fn attachments(mut self, inp: impl Into<crate::model::Attachment>) -> Self {
+        pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attachments = Some(v);
             self
         }
         pub fn set_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
         ) -> Self {
-            self.attachments = inp;
+            self.attachments = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ContainerInstance`](crate::model::ContainerInstance)
@@ -4262,45 +4277,45 @@ pub mod attachment {
     }
     impl Builder {
         /// <p>The unique identifier for the attachment.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
         /// <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
         /// <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
-        pub fn details(mut self, inp: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn details(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.details = Some(v);
             self
         }
         pub fn set_details(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
         ) -> Self {
-            self.details = inp;
+            self.details = input;
             self
         }
         /// Consumes the builder and constructs a [`Attachment`](crate::model::Attachment)
@@ -4356,22 +4371,22 @@ pub mod key_value_pair {
     impl Builder {
         /// <p>The name of the key-value pair. For environment variables, this is the name of the
         /// environment variable.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value of the key-value pair. For environment variables, this is the value of the
         /// environment variable.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`KeyValuePair`](crate::model::KeyValuePair)
@@ -4445,47 +4460,47 @@ pub mod attribute {
         /// <p>The name of the attribute. The <code>name</code> must contain between 1 and 128
         /// characters and name may contain letters (uppercase and lowercase), numbers, hyphens,
         /// underscores, forward slashes, back slashes, or periods.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128
         /// characters and may contain letters (uppercase and lowercase), numbers, hyphens,
         /// underscores, periods, at signs (@), forward slashes, back slashes, colons, or spaces.
         /// The value cannot contain any leading or trailing whitespace.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The type of the target with which to attach the attribute. This parameter is required
         /// if you use the short form ID for a resource instead of the full ARN.</p>
-        pub fn target_type(mut self, inp: crate::model::TargetType) -> Self {
-            self.target_type = Some(inp);
+        pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
+            self.target_type = Some(input);
             self
         }
         pub fn set_target_type(
             mut self,
-            inp: std::option::Option<crate::model::TargetType>,
+            input: std::option::Option<crate::model::TargetType>,
         ) -> Self {
-            self.target_type = inp;
+            self.target_type = input;
             self
         }
         /// <p>The ID of the target. You can specify the short form ID for a resource or the full
         /// Amazon Resource Name (ARN).</p>
-        pub fn target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_id = Some(inp.into());
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_id = Some(input.into());
             self
         }
-        pub fn set_target_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_id = inp;
+        pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_id = input;
             self
         }
         /// Consumes the builder and constructs a [`Attribute`](crate::model::Attribute)
@@ -4690,65 +4705,65 @@ pub mod resource {
     impl Builder {
         /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
         /// <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
         /// <code>LONG</code>, or <code>STRINGSET</code>.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a
         /// double precision floating-point type.</p>
-        pub fn double_value(mut self, inp: f64) -> Self {
-            self.double_value = Some(inp);
+        pub fn double_value(mut self, input: f64) -> Self {
+            self.double_value = Some(input);
             self
         }
-        pub fn set_double_value(mut self, inp: f64) -> Self {
-            self.double_value = Some(inp);
+        pub fn set_double_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.double_value = input;
             self
         }
         /// <p>When the <code>longValue</code> type is set, the value of the resource must be an
         /// extended precision floating-point type.</p>
-        pub fn long_value(mut self, inp: i64) -> Self {
-            self.long_value = Some(inp);
+        pub fn long_value(mut self, input: i64) -> Self {
+            self.long_value = Some(input);
             self
         }
-        pub fn set_long_value(mut self, inp: i64) -> Self {
-            self.long_value = Some(inp);
+        pub fn set_long_value(mut self, input: std::option::Option<i64>) -> Self {
+            self.long_value = input;
             self
         }
         /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an
         /// integer.</p>
-        pub fn integer_value(mut self, inp: i32) -> Self {
-            self.integer_value = Some(inp);
+        pub fn integer_value(mut self, input: i32) -> Self {
+            self.integer_value = Some(input);
             self
         }
-        pub fn set_integer_value(mut self, inp: i32) -> Self {
-            self.integer_value = Some(inp);
+        pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
+            self.integer_value = input;
             self
         }
-        pub fn string_set_value(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn string_set_value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.string_set_value.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.string_set_value = Some(v);
             self
         }
         pub fn set_string_set_value(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.string_set_value = inp;
+            self.string_set_value = input;
             self
         }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource)
@@ -4811,31 +4826,37 @@ pub mod version_info {
     }
     impl Builder {
         /// <p>The version number of the Amazon ECS container agent.</p>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.agent_version = Some(inp.into());
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agent_version = Some(input.into());
             self
         }
-        pub fn set_agent_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.agent_version = inp;
+        pub fn set_agent_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.agent_version = input;
             self
         }
         /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
         /// </a> GitHub repository.</p>
-        pub fn agent_hash(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.agent_hash = Some(inp.into());
+        pub fn agent_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agent_hash = Some(input.into());
             self
         }
-        pub fn set_agent_hash(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.agent_hash = inp;
+        pub fn set_agent_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agent_hash = input;
             self
         }
         /// <p>The Docker version running on the container instance.</p>
-        pub fn docker_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.docker_version = Some(inp.into());
+        pub fn docker_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.docker_version = Some(input.into());
             self
         }
-        pub fn set_docker_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.docker_version = inp;
+        pub fn set_docker_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.docker_version = input;
             self
         }
         /// Consumes the builder and constructs a [`VersionInfo`](crate::model::VersionInfo)
@@ -5152,33 +5173,33 @@ pub mod cluster {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cluster_arn = Some(inp.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
             self
         }
-        pub fn set_cluster_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = inp;
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
             self
         }
         /// <p>A user-generated string that you use to identify your cluster.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cluster_name = Some(inp.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_name = Some(input.into());
             self
         }
-        pub fn set_cluster_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cluster_name = inp;
+        pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_name = input;
             self
         }
         /// <p>The execute command configuration for the cluster.</p>
-        pub fn configuration(mut self, inp: crate::model::ClusterConfiguration) -> Self {
-            self.configuration = Some(inp);
+        pub fn configuration(mut self, input: crate::model::ClusterConfiguration) -> Self {
+            self.configuration = Some(input);
             self
         }
         pub fn set_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ClusterConfiguration>,
+            input: std::option::Option<crate::model::ClusterConfiguration>,
         ) -> Self {
-            self.configuration = inp;
+            self.configuration = input;
             self
         }
         /// <p>The status of the cluster. The following are the possible states that will be
@@ -5212,131 +5233,134 @@ pub mod cluster {
         /// rely on <code>INACTIVE</code> clusters persisting.</p>
         /// </dd>
         /// </dl>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The number of container instances registered into the cluster. This includes container
         /// instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.</p>
-        pub fn registered_container_instances_count(mut self, inp: i32) -> Self {
-            self.registered_container_instances_count = Some(inp);
+        pub fn registered_container_instances_count(mut self, input: i32) -> Self {
+            self.registered_container_instances_count = Some(input);
             self
         }
-        pub fn set_registered_container_instances_count(mut self, inp: i32) -> Self {
-            self.registered_container_instances_count = Some(inp);
+        pub fn set_registered_container_instances_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.registered_container_instances_count = input;
             self
         }
         /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
-        pub fn running_tasks_count(mut self, inp: i32) -> Self {
-            self.running_tasks_count = Some(inp);
+        pub fn running_tasks_count(mut self, input: i32) -> Self {
+            self.running_tasks_count = Some(input);
             self
         }
-        pub fn set_running_tasks_count(mut self, inp: i32) -> Self {
-            self.running_tasks_count = Some(inp);
+        pub fn set_running_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.running_tasks_count = input;
             self
         }
         /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
-        pub fn pending_tasks_count(mut self, inp: i32) -> Self {
-            self.pending_tasks_count = Some(inp);
+        pub fn pending_tasks_count(mut self, input: i32) -> Self {
+            self.pending_tasks_count = Some(input);
             self
         }
-        pub fn set_pending_tasks_count(mut self, inp: i32) -> Self {
-            self.pending_tasks_count = Some(inp);
+        pub fn set_pending_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_tasks_count = input;
             self
         }
         /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code>
         /// state. You can view these services with <a>ListServices</a>.</p>
-        pub fn active_services_count(mut self, inp: i32) -> Self {
-            self.active_services_count = Some(inp);
+        pub fn active_services_count(mut self, input: i32) -> Self {
+            self.active_services_count = Some(input);
             self
         }
-        pub fn set_active_services_count(mut self, inp: i32) -> Self {
-            self.active_services_count = Some(inp);
+        pub fn set_active_services_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.active_services_count = input;
             self
         }
-        pub fn statistics(mut self, inp: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn statistics(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.statistics = Some(v);
             self
         }
         pub fn set_statistics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
         ) -> Self {
-            self.statistics = inp;
+            self.statistics = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
-        pub fn settings(mut self, inp: impl Into<crate::model::ClusterSetting>) -> Self {
+        pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.settings = Some(v);
             self
         }
         pub fn set_settings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
         ) -> Self {
-            self.settings = inp;
+            self.settings = input;
             self
         }
-        pub fn capacity_providers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.capacity_providers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capacity_providers = Some(v);
             self
         }
         pub fn set_capacity_providers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.capacity_providers = inp;
+            self.capacity_providers = input;
             self
         }
         pub fn default_capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: impl Into<crate::model::CapacityProviderStrategyItem>,
         ) -> Self {
             let mut v = self.default_capacity_provider_strategy.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.default_capacity_provider_strategy = Some(v);
             self
         }
         pub fn set_default_capacity_provider_strategy(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         ) -> Self {
-            self.default_capacity_provider_strategy = inp;
+            self.default_capacity_provider_strategy = input;
             self
         }
-        pub fn attachments(mut self, inp: impl Into<crate::model::Attachment>) -> Self {
+        pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attachments = Some(v);
             self
         }
         pub fn set_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
         ) -> Self {
-            self.attachments = inp;
+            self.attachments = input;
             self
         }
         /// <p>The status of the capacity providers associated with the cluster. The following are
@@ -5356,15 +5380,15 @@ pub mod cluster {
         /// <p>The capacity provider updates failed.</p>
         /// </dd>
         /// </dl>
-        pub fn attachments_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attachments_status = Some(inp.into());
+        pub fn attachments_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attachments_status = Some(input.into());
             self
         }
         pub fn set_attachments_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.attachments_status = inp;
+            self.attachments_status = input;
             self
         }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster)
@@ -5438,15 +5462,15 @@ pub mod cluster_setting {
     impl Builder {
         /// <p>The name of the cluster setting. The only supported value is
         /// <code>containerInsights</code>.</p>
-        pub fn name(mut self, inp: crate::model::ClusterSettingName) -> Self {
-            self.name = Some(inp);
+        pub fn name(mut self, input: crate::model::ClusterSettingName) -> Self {
+            self.name = Some(input);
             self
         }
         pub fn set_name(
             mut self,
-            inp: std::option::Option<crate::model::ClusterSettingName>,
+            input: std::option::Option<crate::model::ClusterSettingName>,
         ) -> Self {
-            self.name = inp;
+            self.name = input;
             self
         }
         /// <p>The value to set for the cluster setting. The supported values are
@@ -5455,12 +5479,12 @@ pub mod cluster_setting {
         /// disabled unless the <code>containerInsights</code> account setting is enabled. If a
         /// cluster value is specified, it will override the <code>containerInsights</code> value
         /// set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`ClusterSetting`](crate::model::ClusterSetting)
@@ -5565,16 +5589,16 @@ pub mod cluster_configuration {
         /// <p>The details of the execute command configuration.</p>
         pub fn execute_command_configuration(
             mut self,
-            inp: crate::model::ExecuteCommandConfiguration,
+            input: crate::model::ExecuteCommandConfiguration,
         ) -> Self {
-            self.execute_command_configuration = Some(inp);
+            self.execute_command_configuration = Some(input);
             self
         }
         pub fn set_execute_command_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ExecuteCommandConfiguration>,
+            input: std::option::Option<crate::model::ExecuteCommandConfiguration>,
         ) -> Self {
-            self.execute_command_configuration = inp;
+            self.execute_command_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`ClusterConfiguration`](crate::model::ClusterConfiguration)
@@ -5655,12 +5679,12 @@ pub mod execute_command_configuration {
     impl Builder {
         /// <p>Specify an AWS Key Management Service key ID to encrypt the data between the local
         /// client and the container.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The log setting to use for redirecting logs for your execute command results. The
@@ -5684,15 +5708,15 @@ pub mod execute_command_configuration {
         /// is specified, the <code>logConfiguration</code> is required.</p>
         /// </li>
         /// </ul>
-        pub fn logging(mut self, inp: crate::model::ExecuteCommandLogging) -> Self {
-            self.logging = Some(inp);
+        pub fn logging(mut self, input: crate::model::ExecuteCommandLogging) -> Self {
+            self.logging = Some(input);
             self
         }
         pub fn set_logging(
             mut self,
-            inp: std::option::Option<crate::model::ExecuteCommandLogging>,
+            input: std::option::Option<crate::model::ExecuteCommandLogging>,
         ) -> Self {
-            self.logging = inp;
+            self.logging = input;
             self
         }
         /// <p>The log configuration for the results of the execute command actions. The logs can be
@@ -5700,16 +5724,16 @@ pub mod execute_command_configuration {
         /// specified, a <code>logConfiguration</code> must be provided.</p>
         pub fn log_configuration(
             mut self,
-            inp: crate::model::ExecuteCommandLogConfiguration,
+            input: crate::model::ExecuteCommandLogConfiguration,
         ) -> Self {
-            self.log_configuration = Some(inp);
+            self.log_configuration = Some(input);
             self
         }
         pub fn set_log_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ExecuteCommandLogConfiguration>,
+            input: std::option::Option<crate::model::ExecuteCommandLogConfiguration>,
         ) -> Self {
-            self.log_configuration = inp;
+            self.log_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteCommandConfiguration`](crate::model::ExecuteCommandConfiguration)
@@ -5797,56 +5821,65 @@ pub mod execute_command_log_configuration {
         /// <note>
         /// <p>The CloudWatch log group must already be created.</p>
         /// </note>
-        pub fn cloud_watch_log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloud_watch_log_group_name = Some(inp.into());
+        pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_watch_log_group_name = Some(input.into());
             self
         }
         pub fn set_cloud_watch_log_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_watch_log_group_name = inp;
+            self.cloud_watch_log_group_name = input;
             self
         }
         /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
         /// encryption will be disabled.</p>
-        pub fn cloud_watch_encryption_enabled(mut self, inp: bool) -> Self {
-            self.cloud_watch_encryption_enabled = Some(inp);
+        pub fn cloud_watch_encryption_enabled(mut self, input: bool) -> Self {
+            self.cloud_watch_encryption_enabled = Some(input);
             self
         }
-        pub fn set_cloud_watch_encryption_enabled(mut self, inp: bool) -> Self {
-            self.cloud_watch_encryption_enabled = Some(inp);
+        pub fn set_cloud_watch_encryption_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.cloud_watch_encryption_enabled = input;
             self
         }
         /// <p>The name of the S3 bucket to send logs to.</p>
         /// <note>
         /// <p>The S3 bucket must already be created.</p>
         /// </note>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket_name = Some(inp.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
             self
         }
-        pub fn set_s3_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket_name = inp;
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
             self
         }
         /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
         /// encryption will be disabled.</p>
-        pub fn s3_encryption_enabled(mut self, inp: bool) -> Self {
-            self.s3_encryption_enabled = Some(inp);
+        pub fn s3_encryption_enabled(mut self, input: bool) -> Self {
+            self.s3_encryption_enabled = Some(input);
             self
         }
-        pub fn set_s3_encryption_enabled(mut self, inp: bool) -> Self {
-            self.s3_encryption_enabled = Some(inp);
+        pub fn set_s3_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.s3_encryption_enabled = input;
             self
         }
         /// <p>An optional folder in the S3 bucket to place logs in.</p>
-        pub fn s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_key_prefix = Some(inp.into());
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_key_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_key_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_key_prefix = inp;
+        pub fn set_s3_key_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_key_prefix = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteCommandLogConfiguration`](crate::model::ExecuteCommandLogConfiguration)
@@ -6048,53 +6081,53 @@ pub mod capacity_provider {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
-        pub fn capacity_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capacity_provider_arn = Some(inp.into());
+        pub fn capacity_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capacity_provider_arn = Some(input.into());
             self
         }
         pub fn set_capacity_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.capacity_provider_arn = inp;
+            self.capacity_provider_arn = input;
             self
         }
         /// <p>The name of the capacity provider.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The current status of the capacity provider. Only capacity providers in an
         /// <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
         /// successfully deleted, it will have an <code>INACTIVE</code> status.</p>
-        pub fn status(mut self, inp: crate::model::CapacityProviderStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::CapacityProviderStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::CapacityProviderStatus>,
+            input: std::option::Option<crate::model::CapacityProviderStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The Auto Scaling group settings for the capacity provider.</p>
         pub fn auto_scaling_group_provider(
             mut self,
-            inp: crate::model::AutoScalingGroupProvider,
+            input: crate::model::AutoScalingGroupProvider,
         ) -> Self {
-            self.auto_scaling_group_provider = Some(inp);
+            self.auto_scaling_group_provider = Some(input);
             self
         }
         pub fn set_auto_scaling_group_provider(
             mut self,
-            inp: std::option::Option<crate::model::AutoScalingGroupProvider>,
+            input: std::option::Option<crate::model::AutoScalingGroupProvider>,
         ) -> Self {
-            self.auto_scaling_group_provider = inp;
+            self.auto_scaling_group_provider = input;
             self
         }
         /// <p>The update status of the capacity provider. The following are the possible states that
@@ -6115,41 +6148,41 @@ pub mod capacity_provider {
         /// will provide further details about why the delete failed.</p>
         /// </dd>
         /// </dl>
-        pub fn update_status(mut self, inp: crate::model::CapacityProviderUpdateStatus) -> Self {
-            self.update_status = Some(inp);
+        pub fn update_status(mut self, input: crate::model::CapacityProviderUpdateStatus) -> Self {
+            self.update_status = Some(input);
             self
         }
         pub fn set_update_status(
             mut self,
-            inp: std::option::Option<crate::model::CapacityProviderUpdateStatus>,
+            input: std::option::Option<crate::model::CapacityProviderUpdateStatus>,
         ) -> Self {
-            self.update_status = inp;
+            self.update_status = input;
             self
         }
         /// <p>The update status reason. This provides further details about the update status for
         /// the capacity provider.</p>
-        pub fn update_status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.update_status_reason = Some(inp.into());
+        pub fn update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.update_status_reason = Some(input.into());
             self
         }
         pub fn set_update_status_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.update_status_reason = inp;
+            self.update_status_reason = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CapacityProvider`](crate::model::CapacityProvider)
@@ -6296,27 +6329,27 @@ pub mod auto_scaling_group_provider {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
-        pub fn auto_scaling_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.auto_scaling_group_arn = Some(inp.into());
+        pub fn auto_scaling_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auto_scaling_group_arn = Some(input.into());
             self
         }
         pub fn set_auto_scaling_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.auto_scaling_group_arn = inp;
+            self.auto_scaling_group_arn = input;
             self
         }
         /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
-        pub fn managed_scaling(mut self, inp: crate::model::ManagedScaling) -> Self {
-            self.managed_scaling = Some(inp);
+        pub fn managed_scaling(mut self, input: crate::model::ManagedScaling) -> Self {
+            self.managed_scaling = Some(input);
             self
         }
         pub fn set_managed_scaling(
             mut self,
-            inp: std::option::Option<crate::model::ManagedScaling>,
+            input: std::option::Option<crate::model::ManagedScaling>,
         ) -> Self {
-            self.managed_scaling = inp;
+            self.managed_scaling = input;
             self
         }
         /// <p>The managed termination protection setting to use for the Auto Scaling group capacity
@@ -6334,16 +6367,16 @@ pub mod auto_scaling_group_provider {
         /// protected from termination when the Auto Scaling group scales in.</p>
         pub fn managed_termination_protection(
             mut self,
-            inp: crate::model::ManagedTerminationProtection,
+            input: crate::model::ManagedTerminationProtection,
         ) -> Self {
-            self.managed_termination_protection = Some(inp);
+            self.managed_termination_protection = Some(input);
             self
         }
         pub fn set_managed_termination_protection(
             mut self,
-            inp: std::option::Option<crate::model::ManagedTerminationProtection>,
+            input: std::option::Option<crate::model::ManagedTerminationProtection>,
         ) -> Self {
-            self.managed_termination_protection = inp;
+            self.managed_termination_protection = input;
             self
         }
         /// Consumes the builder and constructs a [`AutoScalingGroupProvider`](crate::model::AutoScalingGroupProvider)
@@ -6483,59 +6516,59 @@ pub mod managed_scaling {
     }
     impl Builder {
         /// <p>Whether or not to enable managed scaling for the capacity provider.</p>
-        pub fn status(mut self, inp: crate::model::ManagedScalingStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ManagedScalingStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ManagedScalingStatus>,
+            input: std::option::Option<crate::model::ManagedScalingStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The target capacity value for the capacity provider. The specified value must be
         /// greater than <code>0</code> and less than or equal to <code>100</code>. A value of
         /// <code>100</code> will result in the Amazon EC2 instances in your Auto Scaling group being
         /// completely utilized.</p>
-        pub fn target_capacity(mut self, inp: i32) -> Self {
-            self.target_capacity = Some(inp);
+        pub fn target_capacity(mut self, input: i32) -> Self {
+            self.target_capacity = Some(input);
             self
         }
-        pub fn set_target_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.target_capacity = inp;
+        pub fn set_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.target_capacity = input;
             self
         }
         /// <p>The minimum number of container instances that Amazon ECS will scale in or scale out at one
         /// time. If this parameter is omitted, the default value of <code>1</code> is used.</p>
-        pub fn minimum_scaling_step_size(mut self, inp: i32) -> Self {
-            self.minimum_scaling_step_size = Some(inp);
+        pub fn minimum_scaling_step_size(mut self, input: i32) -> Self {
+            self.minimum_scaling_step_size = Some(input);
             self
         }
-        pub fn set_minimum_scaling_step_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_scaling_step_size = inp;
+        pub fn set_minimum_scaling_step_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_scaling_step_size = input;
             self
         }
         /// <p>The maximum number of container instances that Amazon ECS will scale in or scale out at one
         /// time. If this parameter is omitted, the default value of <code>10000</code> is
         /// used.</p>
-        pub fn maximum_scaling_step_size(mut self, inp: i32) -> Self {
-            self.maximum_scaling_step_size = Some(inp);
+        pub fn maximum_scaling_step_size(mut self, input: i32) -> Self {
+            self.maximum_scaling_step_size = Some(input);
             self
         }
-        pub fn set_maximum_scaling_step_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.maximum_scaling_step_size = inp;
+        pub fn set_maximum_scaling_step_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_scaling_step_size = input;
             self
         }
         /// <p>The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute
         /// to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value
         /// of <code>300</code> seconds is used.</p>
-        pub fn instance_warmup_period(mut self, inp: i32) -> Self {
-            self.instance_warmup_period = Some(inp);
+        pub fn instance_warmup_period(mut self, input: i32) -> Self {
+            self.instance_warmup_period = Some(input);
             self
         }
-        pub fn set_instance_warmup_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.instance_warmup_period = inp;
+        pub fn set_instance_warmup_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_warmup_period = input;
             self
         }
         /// Consumes the builder and constructs a [`ManagedScaling`](crate::model::ManagedScaling)
@@ -6718,15 +6751,15 @@ pub mod auto_scaling_group_provider_update {
     }
     impl Builder {
         /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
-        pub fn managed_scaling(mut self, inp: crate::model::ManagedScaling) -> Self {
-            self.managed_scaling = Some(inp);
+        pub fn managed_scaling(mut self, input: crate::model::ManagedScaling) -> Self {
+            self.managed_scaling = Some(input);
             self
         }
         pub fn set_managed_scaling(
             mut self,
-            inp: std::option::Option<crate::model::ManagedScaling>,
+            input: std::option::Option<crate::model::ManagedScaling>,
         ) -> Self {
-            self.managed_scaling = inp;
+            self.managed_scaling = input;
             self
         }
         /// <p>The managed termination protection setting to use for the Auto Scaling group capacity
@@ -6744,16 +6777,16 @@ pub mod auto_scaling_group_provider_update {
         /// protected from termination when the Auto Scaling group scales in.</p>
         pub fn managed_termination_protection(
             mut self,
-            inp: crate::model::ManagedTerminationProtection,
+            input: crate::model::ManagedTerminationProtection,
         ) -> Self {
-            self.managed_termination_protection = Some(inp);
+            self.managed_termination_protection = Some(input);
             self
         }
         pub fn set_managed_termination_protection(
             mut self,
-            inp: std::option::Option<crate::model::ManagedTerminationProtection>,
+            input: std::option::Option<crate::model::ManagedTerminationProtection>,
         ) -> Self {
-            self.managed_termination_protection = inp;
+            self.managed_termination_protection = input;
             self
         }
         /// Consumes the builder and constructs a [`AutoScalingGroupProviderUpdate`](crate::model::AutoScalingGroupProviderUpdate)
@@ -6816,42 +6849,45 @@ pub mod managed_agent_state_change {
     }
     impl Builder {
         /// <p>The name of the container associated with the managed agent.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_name = Some(inp.into());
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
             self
         }
-        pub fn set_container_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_name = inp;
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
             self
         }
         /// <p>The name of the managed agent.</p>
-        pub fn managed_agent_name(mut self, inp: crate::model::ManagedAgentName) -> Self {
-            self.managed_agent_name = Some(inp);
+        pub fn managed_agent_name(mut self, input: crate::model::ManagedAgentName) -> Self {
+            self.managed_agent_name = Some(input);
             self
         }
         pub fn set_managed_agent_name(
             mut self,
-            inp: std::option::Option<crate::model::ManagedAgentName>,
+            input: std::option::Option<crate::model::ManagedAgentName>,
         ) -> Self {
-            self.managed_agent_name = inp;
+            self.managed_agent_name = input;
             self
         }
         /// <p>The status of the managed agent.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The reason for the status of the managed agent.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reason = Some(inp.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
             self
         }
-        pub fn set_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reason = inp;
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
             self
         }
         /// Consumes the builder and constructs a [`ManagedAgentStateChange`](crate::model::ManagedAgentStateChange)
@@ -6957,21 +6993,24 @@ pub mod attachment_state_change {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
-        pub fn attachment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attachment_arn = Some(inp.into());
+        pub fn attachment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attachment_arn = Some(input.into());
             self
         }
-        pub fn set_attachment_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attachment_arn = inp;
+        pub fn set_attachment_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attachment_arn = input;
             self
         }
         /// <p>The status of the attachment.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachmentStateChange`](crate::model::AttachmentStateChange)
@@ -7054,71 +7093,74 @@ pub mod container_state_change {
     }
     impl Builder {
         /// <p>The name of the container.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_name = Some(inp.into());
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
             self
         }
-        pub fn set_container_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_name = inp;
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
             self
         }
         /// <p>The container image SHA 256 digest.</p>
-        pub fn image_digest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_digest = Some(inp.into());
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_digest = Some(input.into());
             self
         }
-        pub fn set_image_digest(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_digest = inp;
+        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_digest = input;
             self
         }
         /// <p>The ID of the Docker container.</p>
-        pub fn runtime_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.runtime_id = Some(inp.into());
+        pub fn runtime_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_id = Some(input.into());
             self
         }
-        pub fn set_runtime_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.runtime_id = inp;
+        pub fn set_runtime_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.runtime_id = input;
             self
         }
         /// <p>The exit code for the container, if the state change is a result of the container
         /// exiting.</p>
-        pub fn exit_code(mut self, inp: i32) -> Self {
-            self.exit_code = Some(inp);
+        pub fn exit_code(mut self, input: i32) -> Self {
+            self.exit_code = Some(input);
             self
         }
-        pub fn set_exit_code(mut self, inp: std::option::Option<i32>) -> Self {
-            self.exit_code = inp;
+        pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.exit_code = input;
             self
         }
-        pub fn network_bindings(mut self, inp: impl Into<crate::model::NetworkBinding>) -> Self {
+        pub fn network_bindings(mut self, input: impl Into<crate::model::NetworkBinding>) -> Self {
             let mut v = self.network_bindings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_bindings = Some(v);
             self
         }
         pub fn set_network_bindings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
         ) -> Self {
-            self.network_bindings = inp;
+            self.network_bindings = input;
             self
         }
         /// <p>The reason for the state change.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reason = Some(inp.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
             self
         }
-        pub fn set_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reason = inp;
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
             self
         }
         /// <p>The status of the container.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`ContainerStateChange`](crate::model::ContainerStateChange)
@@ -7189,42 +7231,42 @@ pub mod network_binding {
     }
     impl Builder {
         /// <p>The IP address that the container is bound to on the container instance.</p>
-        pub fn bind_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bind_ip = Some(inp.into());
+        pub fn bind_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bind_ip = Some(input.into());
             self
         }
-        pub fn set_bind_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bind_ip = inp;
+        pub fn set_bind_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bind_ip = input;
             self
         }
         /// <p>The port number on the container that is used with the network binding.</p>
-        pub fn container_port(mut self, inp: i32) -> Self {
-            self.container_port = Some(inp);
+        pub fn container_port(mut self, input: i32) -> Self {
+            self.container_port = Some(input);
             self
         }
-        pub fn set_container_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.container_port = inp;
+        pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.container_port = input;
             self
         }
         /// <p>The port number on the host that is used with the network binding.</p>
-        pub fn host_port(mut self, inp: i32) -> Self {
-            self.host_port = Some(inp);
+        pub fn host_port(mut self, input: i32) -> Self {
+            self.host_port = Some(input);
             self
         }
-        pub fn set_host_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.host_port = inp;
+        pub fn set_host_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.host_port = input;
             self
         }
         /// <p>The protocol used for the network binding.</p>
-        pub fn protocol(mut self, inp: crate::model::TransportProtocol) -> Self {
-            self.protocol = Some(inp);
+        pub fn protocol(mut self, input: crate::model::TransportProtocol) -> Self {
+            self.protocol = Some(input);
             self
         }
         pub fn set_protocol(
             mut self,
-            inp: std::option::Option<crate::model::TransportProtocol>,
+            input: std::option::Option<crate::model::TransportProtocol>,
         ) -> Self {
-            self.protocol = inp;
+            self.protocol = input;
             self
         }
         /// Consumes the builder and constructs a [`NetworkBinding`](crate::model::NetworkBinding)
@@ -7675,113 +7717,113 @@ pub mod task {
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
-        pub fn attachments(mut self, inp: impl Into<crate::model::Attachment>) -> Self {
+        pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attachments = Some(v);
             self
         }
         pub fn set_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
         ) -> Self {
-            self.attachments = inp;
+            self.attachments = input;
             self
         }
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes = Some(v);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// <p>The availability zone of the task.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>The capacity provider associated with the task.</p>
-        pub fn capacity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capacity_provider_name = Some(inp.into());
+        pub fn capacity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capacity_provider_name = Some(input.into());
             self
         }
         pub fn set_capacity_provider_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.capacity_provider_name = inp;
+            self.capacity_provider_name = input;
             self
         }
         /// <p>The ARN of the cluster that hosts the task.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cluster_arn = Some(inp.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
             self
         }
-        pub fn set_cluster_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = inp;
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
             self
         }
         /// <p>The connectivity status of a task.</p>
-        pub fn connectivity(mut self, inp: crate::model::Connectivity) -> Self {
-            self.connectivity = Some(inp);
+        pub fn connectivity(mut self, input: crate::model::Connectivity) -> Self {
+            self.connectivity = Some(input);
             self
         }
         pub fn set_connectivity(
             mut self,
-            inp: std::option::Option<crate::model::Connectivity>,
+            input: std::option::Option<crate::model::Connectivity>,
         ) -> Self {
-            self.connectivity = inp;
+            self.connectivity = input;
             self
         }
         /// <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
         /// status.</p>
-        pub fn connectivity_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.connectivity_at = Some(inp);
+        pub fn connectivity_at(mut self, input: smithy_types::Instant) -> Self {
+            self.connectivity_at = Some(input);
             self
         }
         pub fn set_connectivity_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.connectivity_at = inp;
+            self.connectivity_at = input;
             self
         }
         /// <p>The ARN of the container instances that host the task.</p>
-        pub fn container_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_instance_arn = Some(inp.into());
+        pub fn container_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_instance_arn = Some(input.into());
             self
         }
         pub fn set_container_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.container_instance_arn = inp;
+            self.container_instance_arn = input;
             self
         }
-        pub fn containers(mut self, inp: impl Into<crate::model::Container>) -> Self {
+        pub fn containers(mut self, input: impl Into<crate::model::Container>) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.containers = Some(v);
             self
         }
         pub fn set_containers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Container>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Container>>,
         ) -> Self {
-            self.containers = inp;
+            self.containers = input;
             self
         }
         /// <p>The number of CPU units used by the task as expressed in a task definition. It can be
@@ -7812,64 +7854,67 @@ pub mod task {
         /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
         /// </li>
         /// </ul>
-        pub fn cpu(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cpu = Some(inp.into());
+        pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cpu = Some(input.into());
             self
         }
-        pub fn set_cpu(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cpu = inp;
+        pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cpu = input;
             self
         }
         /// <p>The Unix timestamp for when the task was created (the task entered the
         /// <code>PENDING</code> state).</p>
-        pub fn created_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_at = Some(inp);
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_at = inp;
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
             self
         }
         /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
         /// Lifecycle</a>.</p>
-        pub fn desired_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.desired_status = Some(inp.into());
+        pub fn desired_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.desired_status = Some(input.into());
             self
         }
-        pub fn set_desired_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.desired_status = inp;
+        pub fn set_desired_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.desired_status = input;
             self
         }
         /// <p>Whether or not execute command functionality is enabled for this task. If
         /// <code>true</code>, this enables execute command functionality on all containers in
         /// the task.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.enable_execute_command = Some(inp);
+        pub fn enable_execute_command(mut self, input: bool) -> Self {
+            self.enable_execute_command = Some(input);
             self
         }
-        pub fn set_enable_execute_command(mut self, inp: bool) -> Self {
-            self.enable_execute_command = Some(inp);
+        pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_execute_command = input;
             self
         }
         /// <p>The Unix timestamp for when the task execution stopped.</p>
-        pub fn execution_stopped_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.execution_stopped_at = Some(inp);
+        pub fn execution_stopped_at(mut self, input: smithy_types::Instant) -> Self {
+            self.execution_stopped_at = Some(input);
             self
         }
         pub fn set_execution_stopped_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.execution_stopped_at = inp;
+            self.execution_stopped_at = input;
             self
         }
         /// <p>The name of the task group associated with the task.</p>
-        pub fn group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group = Some(inp.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group = Some(input.into());
             self
         }
-        pub fn set_group(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group = inp;
+        pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group = input;
             self
         }
         /// <p>The health status for the task, which is determined by the health of the essential
@@ -7885,54 +7930,54 @@ pub mod task {
         /// parameters that are specified in a container definition override any Docker health
         /// checks that exist in the container image.</p>
         /// </note>
-        pub fn health_status(mut self, inp: crate::model::HealthStatus) -> Self {
-            self.health_status = Some(inp);
+        pub fn health_status(mut self, input: crate::model::HealthStatus) -> Self {
+            self.health_status = Some(input);
             self
         }
         pub fn set_health_status(
             mut self,
-            inp: std::option::Option<crate::model::HealthStatus>,
+            input: std::option::Option<crate::model::HealthStatus>,
         ) -> Self {
-            self.health_status = inp;
+            self.health_status = input;
             self
         }
         pub fn inference_accelerators(
             mut self,
-            inp: impl Into<crate::model::InferenceAccelerator>,
+            input: impl Into<crate::model::InferenceAccelerator>,
         ) -> Self {
             let mut v = self.inference_accelerators.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.inference_accelerators = Some(v);
             self
         }
         pub fn set_inference_accelerators(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
         ) -> Self {
-            self.inference_accelerators = inp;
+            self.inference_accelerators = input;
             self
         }
         /// <p>The last known status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
         /// Lifecycle</a>.</p>
-        pub fn last_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_status = Some(inp.into());
+        pub fn last_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_status = Some(input.into());
             self
         }
-        pub fn set_last_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_status = inp;
+        pub fn set_last_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_status = input;
             self
         }
         /// <p>The infrastructure on which your task is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
         /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.launch_type = Some(inp);
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.launch_type = Some(input);
             self
         }
         pub fn set_launch_type(
             mut self,
-            inp: std::option::Option<crate::model::LaunchType>,
+            input: std::option::Option<crate::model::LaunchType>,
         ) -> Self {
-            self.launch_type = inp;
+            self.launch_type = input;
             self
         }
         /// <p>The amount of memory (in MiB) used by the task as expressed in a task definition. It
@@ -7961,24 +8006,24 @@ pub mod task {
         /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
         /// </li>
         /// </ul>
-        pub fn memory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.memory = Some(inp.into());
+        pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.memory = Some(input.into());
             self
         }
-        pub fn set_memory(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.memory = inp;
+        pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.memory = input;
             self
         }
         /// <p>One or more container overrides.</p>
-        pub fn overrides(mut self, inp: crate::model::TaskOverride) -> Self {
-            self.overrides = Some(inp);
+        pub fn overrides(mut self, input: crate::model::TaskOverride) -> Self {
+            self.overrides = Some(input);
             self
         }
         pub fn set_overrides(
             mut self,
-            inp: std::option::Option<crate::model::TaskOverride>,
+            input: std::option::Option<crate::model::TaskOverride>,
         ) -> Self {
-            self.overrides = inp;
+            self.overrides = input;
             self
         }
         /// <p>The platform version on which your task is running. A platform version is only
@@ -7986,136 +8031,142 @@ pub mod task {
         /// specified, the <code>LATEST</code> platform version is used by default. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform_version = Some(inp.into());
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_version = Some(input.into());
             self
         }
         pub fn set_platform_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.platform_version = inp;
+            self.platform_version = input;
             self
         }
         /// <p>The Unix timestamp for when the container image pull began.</p>
-        pub fn pull_started_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.pull_started_at = Some(inp);
+        pub fn pull_started_at(mut self, input: smithy_types::Instant) -> Self {
+            self.pull_started_at = Some(input);
             self
         }
         pub fn set_pull_started_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.pull_started_at = inp;
+            self.pull_started_at = input;
             self
         }
         /// <p>The Unix timestamp for when the container image pull completed.</p>
-        pub fn pull_stopped_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.pull_stopped_at = Some(inp);
+        pub fn pull_stopped_at(mut self, input: smithy_types::Instant) -> Self {
+            self.pull_stopped_at = Some(input);
             self
         }
         pub fn set_pull_stopped_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.pull_stopped_at = inp;
+            self.pull_stopped_at = input;
             self
         }
         /// <p>The Unix timestamp for when the task started (the task transitioned from the
         /// <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
-        pub fn started_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.started_at = Some(inp);
+        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+            self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.started_at = inp;
+        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.started_at = input;
             self
         }
         /// <p>The tag specified when a task is started. If the task is started by an Amazon ECS service,
         /// then the <code>startedBy</code> parameter contains the deployment ID of the service that
         /// starts it.</p>
-        pub fn started_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.started_by = Some(inp.into());
+        pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.started_by = Some(input.into());
             self
         }
-        pub fn set_started_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.started_by = inp;
+        pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.started_by = input;
             self
         }
         /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> may
         /// contain additional details.</p>
-        pub fn stop_code(mut self, inp: crate::model::TaskStopCode) -> Self {
-            self.stop_code = Some(inp);
+        pub fn stop_code(mut self, input: crate::model::TaskStopCode) -> Self {
+            self.stop_code = Some(input);
             self
         }
         pub fn set_stop_code(
             mut self,
-            inp: std::option::Option<crate::model::TaskStopCode>,
+            input: std::option::Option<crate::model::TaskStopCode>,
         ) -> Self {
-            self.stop_code = inp;
+            self.stop_code = input;
             self
         }
         /// <p>The Unix timestamp for when the task was stopped (the task transitioned from the
         /// <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
-        pub fn stopped_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.stopped_at = Some(inp);
+        pub fn stopped_at(mut self, input: smithy_types::Instant) -> Self {
+            self.stopped_at = Some(input);
             self
         }
-        pub fn set_stopped_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.stopped_at = inp;
+        pub fn set_stopped_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.stopped_at = input;
             self
         }
         /// <p>The reason that the task was stopped.</p>
-        pub fn stopped_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stopped_reason = Some(inp.into());
+        pub fn stopped_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stopped_reason = Some(input.into());
             self
         }
-        pub fn set_stopped_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stopped_reason = inp;
+        pub fn set_stopped_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stopped_reason = input;
             self
         }
         /// <p>The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code>
         /// state to <code>STOPPED</code>).</p>
-        pub fn stopping_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.stopping_at = Some(inp);
+        pub fn stopping_at(mut self, input: smithy_types::Instant) -> Self {
+            self.stopping_at = Some(input);
             self
         }
-        pub fn set_stopping_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.stopping_at = inp;
+        pub fn set_stopping_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.stopping_at = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task.</p>
-        pub fn task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_arn = Some(inp.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_arn = Some(input.into());
             self
         }
-        pub fn set_task_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = inp;
+        pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_arn = input;
             self
         }
         /// <p>The ARN of the task definition that creates the task.</p>
-        pub fn task_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_definition_arn = Some(inp.into());
+        pub fn task_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_definition_arn = Some(input.into());
             self
         }
         pub fn set_task_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.task_definition_arn = inp;
+            self.task_definition_arn = input;
             self
         }
         /// <p>The version counter for the task. Every time a task experiences a change that triggers
@@ -8124,24 +8175,24 @@ pub mod task {
         /// actions with the version reported in CloudWatch Events for the task (inside the
         /// <code>detail</code> object) to verify that the version in your event stream is
         /// current.</p>
-        pub fn version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i64) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The ephemeral storage settings for the task.</p>
-        pub fn ephemeral_storage(mut self, inp: crate::model::EphemeralStorage) -> Self {
-            self.ephemeral_storage = Some(inp);
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
             self
         }
         pub fn set_ephemeral_storage(
             mut self,
-            inp: std::option::Option<crate::model::EphemeralStorage>,
+            input: std::option::Option<crate::model::EphemeralStorage>,
         ) -> Self {
-            self.ephemeral_storage = inp;
+            self.ephemeral_storage = input;
             self
         }
         /// Consumes the builder and constructs a [`Task`](crate::model::Task)
@@ -8230,12 +8281,12 @@ pub mod ephemeral_storage {
         /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum
         /// supported value is <code>21</code> GiB and the maximum supported value is
         /// <code>200</code> GiB.</p>
-        pub fn size_in_gi_b(mut self, inp: i32) -> Self {
-            self.size_in_gi_b = Some(inp);
+        pub fn size_in_gi_b(mut self, input: i32) -> Self {
+            self.size_in_gi_b = Some(input);
             self
         }
-        pub fn set_size_in_gi_b(mut self, inp: i32) -> Self {
-            self.size_in_gi_b = Some(inp);
+        pub fn set_size_in_gi_b(mut self, input: std::option::Option<i32>) -> Self {
+            self.size_in_gi_b = input;
             self
         }
         /// Consumes the builder and constructs a [`EphemeralStorage`](crate::model::EphemeralStorage)
@@ -8386,74 +8437,77 @@ pub mod task_override {
     impl Builder {
         pub fn container_overrides(
             mut self,
-            inp: impl Into<crate::model::ContainerOverride>,
+            input: impl Into<crate::model::ContainerOverride>,
         ) -> Self {
             let mut v = self.container_overrides.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.container_overrides = Some(v);
             self
         }
         pub fn set_container_overrides(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContainerOverride>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContainerOverride>>,
         ) -> Self {
-            self.container_overrides = inp;
+            self.container_overrides = input;
             self
         }
         /// <p>The cpu override for the task.</p>
-        pub fn cpu(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cpu = Some(inp.into());
+        pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cpu = Some(input.into());
             self
         }
-        pub fn set_cpu(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cpu = inp;
+        pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cpu = input;
             self
         }
         pub fn inference_accelerator_overrides(
             mut self,
-            inp: impl Into<crate::model::InferenceAcceleratorOverride>,
+            input: impl Into<crate::model::InferenceAcceleratorOverride>,
         ) -> Self {
             let mut v = self.inference_accelerator_overrides.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.inference_accelerator_overrides = Some(v);
             self
         }
         pub fn set_inference_accelerator_overrides(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InferenceAcceleratorOverride>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InferenceAcceleratorOverride>>,
         ) -> Self {
-            self.inference_accelerator_overrides = inp;
+            self.inference_accelerator_overrides = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_arn = Some(inp.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_arn = Some(input.into());
             self
         }
         pub fn set_execution_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_arn = inp;
+            self.execution_role_arn = input;
             self
         }
         /// <p>The memory override for the task.</p>
-        pub fn memory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.memory = Some(inp.into());
+        pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.memory = Some(input.into());
             self
         }
-        pub fn set_memory(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.memory = inp;
+        pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.memory = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers
         /// in this task are granted the permissions that are specified in this role.</p>
-        pub fn task_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_role_arn = Some(inp.into());
+        pub fn task_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_role_arn = Some(input.into());
             self
         }
-        pub fn set_task_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.task_role_arn = inp;
+        pub fn set_task_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.task_role_arn = input;
             self
         }
         /// <p>The ephemeral storage setting override for the task.</p>
@@ -8461,15 +8515,15 @@ pub mod task_override {
         /// <p>This parameter is only supported for tasks hosted on AWS Fargate using platform
         /// version <code>1.4.0</code> or later.</p>
         /// </note>
-        pub fn ephemeral_storage(mut self, inp: crate::model::EphemeralStorage) -> Self {
-            self.ephemeral_storage = Some(inp);
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
             self
         }
         pub fn set_ephemeral_storage(
             mut self,
-            inp: std::option::Option<crate::model::EphemeralStorage>,
+            input: std::option::Option<crate::model::EphemeralStorage>,
         ) -> Self {
-            self.ephemeral_storage = inp;
+            self.ephemeral_storage = input;
             self
         }
         /// Consumes the builder and constructs a [`TaskOverride`](crate::model::TaskOverride)
@@ -8530,21 +8584,21 @@ pub mod inference_accelerator_override {
     impl Builder {
         /// <p>The Elastic Inference accelerator device name to override for the task. This parameter
         /// must match a <code>deviceName</code> specified in the task definition.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.device_name = Some(inp.into());
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_name = Some(input.into());
             self
         }
-        pub fn set_device_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.device_name = inp;
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_name = input;
             self
         }
         /// <p>The Elastic Inference accelerator type to use.</p>
-        pub fn device_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.device_type = Some(inp.into());
+        pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_type = Some(input.into());
             self
         }
-        pub fn set_device_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.device_type = inp;
+        pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_type = input;
             self
         }
         /// Consumes the builder and constructs a [`InferenceAcceleratorOverride`](crate::model::InferenceAcceleratorOverride)
@@ -8649,98 +8703,101 @@ pub mod container_override {
     impl Builder {
         /// <p>The name of the container that receives the override. This parameter is required if
         /// any override is specified.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
-        pub fn command(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.command = Some(v);
             self
         }
         pub fn set_command(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.command = inp;
+            self.command = input;
             self
         }
-        pub fn environment(mut self, inp: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.environment = Some(v);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
         ) -> Self {
-            self.environment = inp;
+            self.environment = input;
             self
         }
-        pub fn environment_files(mut self, inp: impl Into<crate::model::EnvironmentFile>) -> Self {
+        pub fn environment_files(
+            mut self,
+            input: impl Into<crate::model::EnvironmentFile>,
+        ) -> Self {
             let mut v = self.environment_files.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.environment_files = Some(v);
             self
         }
         pub fn set_environment_files(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EnvironmentFile>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentFile>>,
         ) -> Self {
-            self.environment_files = inp;
+            self.environment_files = input;
             self
         }
         /// <p>The number of <code>cpu</code> units reserved for the container, instead of the
         /// default value from the task definition. You must also specify a container name.</p>
-        pub fn cpu(mut self, inp: i32) -> Self {
-            self.cpu = Some(inp);
+        pub fn cpu(mut self, input: i32) -> Self {
+            self.cpu = Some(input);
             self
         }
-        pub fn set_cpu(mut self, inp: std::option::Option<i32>) -> Self {
-            self.cpu = inp;
+        pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+            self.cpu = input;
             self
         }
         /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default
         /// value from the task definition. If your container attempts to exceed the memory
         /// specified here, the container is killed. You must also specify a container name.</p>
-        pub fn memory(mut self, inp: i32) -> Self {
-            self.memory = Some(inp);
+        pub fn memory(mut self, input: i32) -> Self {
+            self.memory = Some(input);
             self
         }
-        pub fn set_memory(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory = inp;
+        pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory = input;
             self
         }
         /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default
         /// value from the task definition. You must also specify a container name.</p>
-        pub fn memory_reservation(mut self, inp: i32) -> Self {
-            self.memory_reservation = Some(inp);
+        pub fn memory_reservation(mut self, input: i32) -> Self {
+            self.memory_reservation = Some(input);
             self
         }
-        pub fn set_memory_reservation(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory_reservation = inp;
+        pub fn set_memory_reservation(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_reservation = input;
             self
         }
         pub fn resource_requirements(
             mut self,
-            inp: impl Into<crate::model::ResourceRequirement>,
+            input: impl Into<crate::model::ResourceRequirement>,
         ) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_requirements = Some(v);
             self
         }
         pub fn set_resource_requirements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
         ) -> Self {
-            self.resource_requirements = inp;
+            self.resource_requirements = input;
             self
         }
         /// Consumes the builder and constructs a [`ContainerOverride`](crate::model::ContainerOverride)
@@ -8816,22 +8873,22 @@ pub mod resource_requirement {
         /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should
         /// match the <code>deviceName</code> for an <a>InferenceAccelerator</a>
         /// specified in a task definition.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The type of resource to assign to a container. The supported values are
         /// <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ResourceType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::ResourceType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceRequirement`](crate::model::ResourceRequirement)
@@ -8954,24 +9011,24 @@ pub mod environment_file {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment
         /// variable file.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::EnvironmentFileType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::EnvironmentFileType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::EnvironmentFileType>,
+            input: std::option::Option<crate::model::EnvironmentFileType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`EnvironmentFile`](crate::model::EnvironmentFile)
@@ -9079,21 +9136,21 @@ pub mod inference_accelerator {
     impl Builder {
         /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also
         /// be referenced in a container definition as a <a>ResourceRequirement</a>.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.device_name = Some(inp.into());
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_name = Some(input.into());
             self
         }
-        pub fn set_device_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.device_name = inp;
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_name = input;
             self
         }
         /// <p>The Elastic Inference accelerator type to use.</p>
-        pub fn device_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.device_type = Some(inp.into());
+        pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_type = Some(input.into());
             self
         }
-        pub fn set_device_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.device_type = inp;
+        pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_type = input;
             self
         }
         /// Consumes the builder and constructs a [`InferenceAccelerator`](crate::model::InferenceAccelerator)
@@ -9306,39 +9363,42 @@ pub mod container {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the container.</p>
-        pub fn container_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_arn = Some(inp.into());
+        pub fn container_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_arn = Some(input.into());
             self
         }
-        pub fn set_container_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_arn = inp;
+        pub fn set_container_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_arn = input;
             self
         }
         /// <p>The ARN of the task.</p>
-        pub fn task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_arn = Some(inp.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_arn = Some(input.into());
             self
         }
-        pub fn set_task_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = inp;
+        pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_arn = input;
             self
         }
         /// <p>The name of the container.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The image used for the container.</p>
-        pub fn image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image = Some(inp.into());
+        pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image = Some(input.into());
             self
         }
-        pub fn set_image(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image = inp;
+        pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image = input;
             self
         }
         /// <p>The container image manifest digest.</p>
@@ -9346,150 +9406,150 @@ pub mod container {
         /// <p>The <code>imageDigest</code> is only returned if the container is using an image
         /// hosted in Amazon ECR, otherwise it is omitted.</p>
         /// </note>
-        pub fn image_digest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_digest = Some(inp.into());
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_digest = Some(input.into());
             self
         }
-        pub fn set_image_digest(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_digest = inp;
+        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_digest = input;
             self
         }
         /// <p>The ID of the Docker container.</p>
-        pub fn runtime_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.runtime_id = Some(inp.into());
+        pub fn runtime_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_id = Some(input.into());
             self
         }
-        pub fn set_runtime_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.runtime_id = inp;
+        pub fn set_runtime_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.runtime_id = input;
             self
         }
         /// <p>The last known status of the container.</p>
-        pub fn last_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_status = Some(inp.into());
+        pub fn last_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_status = Some(input.into());
             self
         }
-        pub fn set_last_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_status = inp;
+        pub fn set_last_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_status = input;
             self
         }
         /// <p>The exit code returned from the container.</p>
-        pub fn exit_code(mut self, inp: i32) -> Self {
-            self.exit_code = Some(inp);
+        pub fn exit_code(mut self, input: i32) -> Self {
+            self.exit_code = Some(input);
             self
         }
-        pub fn set_exit_code(mut self, inp: std::option::Option<i32>) -> Self {
-            self.exit_code = inp;
+        pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.exit_code = input;
             self
         }
         /// <p>A short (255 max characters) human-readable string to provide additional details about
         /// a running or stopped container.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reason = Some(inp.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
             self
         }
-        pub fn set_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reason = inp;
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
             self
         }
-        pub fn network_bindings(mut self, inp: impl Into<crate::model::NetworkBinding>) -> Self {
+        pub fn network_bindings(mut self, input: impl Into<crate::model::NetworkBinding>) -> Self {
             let mut v = self.network_bindings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_bindings = Some(v);
             self
         }
         pub fn set_network_bindings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
         ) -> Self {
-            self.network_bindings = inp;
+            self.network_bindings = input;
             self
         }
         pub fn network_interfaces(
             mut self,
-            inp: impl Into<crate::model::NetworkInterface>,
+            input: impl Into<crate::model::NetworkInterface>,
         ) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_interfaces = Some(v);
             self
         }
         pub fn set_network_interfaces(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
         ) -> Self {
-            self.network_interfaces = inp;
+            self.network_interfaces = input;
             self
         }
         /// <p>The health status of the container. If health checks are not configured for this
         /// container in its task definition, then it reports the health status as
         /// <code>UNKNOWN</code>.</p>
-        pub fn health_status(mut self, inp: crate::model::HealthStatus) -> Self {
-            self.health_status = Some(inp);
+        pub fn health_status(mut self, input: crate::model::HealthStatus) -> Self {
+            self.health_status = Some(input);
             self
         }
         pub fn set_health_status(
             mut self,
-            inp: std::option::Option<crate::model::HealthStatus>,
+            input: std::option::Option<crate::model::HealthStatus>,
         ) -> Self {
-            self.health_status = inp;
+            self.health_status = input;
             self
         }
-        pub fn managed_agents(mut self, inp: impl Into<crate::model::ManagedAgent>) -> Self {
+        pub fn managed_agents(mut self, input: impl Into<crate::model::ManagedAgent>) -> Self {
             let mut v = self.managed_agents.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.managed_agents = Some(v);
             self
         }
         pub fn set_managed_agents(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ManagedAgent>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ManagedAgent>>,
         ) -> Self {
-            self.managed_agents = inp;
+            self.managed_agents = input;
             self
         }
         /// <p>The number of CPU units set for the container. The value will be <code>0</code> if no
         /// value was specified in the container definition when the task definition was
         /// registered.</p>
-        pub fn cpu(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cpu = Some(inp.into());
+        pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cpu = Some(input.into());
             self
         }
-        pub fn set_cpu(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cpu = inp;
+        pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cpu = input;
             self
         }
         /// <p>The hard limit (in MiB) of memory set for the container.</p>
-        pub fn memory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.memory = Some(inp.into());
+        pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.memory = Some(input.into());
             self
         }
-        pub fn set_memory(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.memory = inp;
+        pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.memory = input;
             self
         }
         /// <p>The soft limit (in MiB) of memory set for the container.</p>
-        pub fn memory_reservation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.memory_reservation = Some(inp.into());
+        pub fn memory_reservation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.memory_reservation = Some(input.into());
             self
         }
         pub fn set_memory_reservation(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.memory_reservation = inp;
+            self.memory_reservation = input;
             self
         }
-        pub fn gpu_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn gpu_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.gpu_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.gpu_ids = Some(v);
             self
         }
         pub fn set_gpu_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.gpu_ids = inp;
+            self.gpu_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`Container`](crate::model::Container)
@@ -9571,46 +9631,46 @@ pub mod managed_agent {
     }
     impl Builder {
         /// <p>The Unix timestamp for when the managed agent was last started.</p>
-        pub fn last_started_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_started_at = Some(inp);
+        pub fn last_started_at(mut self, input: smithy_types::Instant) -> Self {
+            self.last_started_at = Some(input);
             self
         }
         pub fn set_last_started_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_started_at = inp;
+            self.last_started_at = input;
             self
         }
         /// <p>The name of the managed agent. When the execute command feature is enabled, the
         /// managed agent name is <code>ExecuteCommandAgent</code>.</p>
-        pub fn name(mut self, inp: crate::model::ManagedAgentName) -> Self {
-            self.name = Some(inp);
+        pub fn name(mut self, input: crate::model::ManagedAgentName) -> Self {
+            self.name = Some(input);
             self
         }
         pub fn set_name(
             mut self,
-            inp: std::option::Option<crate::model::ManagedAgentName>,
+            input: std::option::Option<crate::model::ManagedAgentName>,
         ) -> Self {
-            self.name = inp;
+            self.name = input;
             self
         }
         /// <p>The reason for why the managed agent is in the state it is in.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reason = Some(inp.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
             self
         }
-        pub fn set_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reason = inp;
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
             self
         }
         /// <p>The last known status of the managed agent.</p>
-        pub fn last_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_status = Some(inp.into());
+        pub fn last_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_status = Some(input.into());
             self
         }
-        pub fn set_last_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.last_status = inp;
+        pub fn set_last_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_status = input;
             self
         }
         /// Consumes the builder and constructs a [`ManagedAgent`](crate::model::ManagedAgent)
@@ -9670,33 +9730,36 @@ pub mod network_interface {
     }
     impl Builder {
         /// <p>The attachment ID for the network interface.</p>
-        pub fn attachment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attachment_id = Some(inp.into());
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attachment_id = Some(input.into());
             self
         }
-        pub fn set_attachment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attachment_id = inp;
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attachment_id = input;
             self
         }
         /// <p>The private IPv4 address for the network interface.</p>
-        pub fn private_ipv4_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.private_ipv4_address = Some(inp.into());
+        pub fn private_ipv4_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.private_ipv4_address = Some(input.into());
             self
         }
         pub fn set_private_ipv4_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.private_ipv4_address = inp;
+            self.private_ipv4_address = input;
             self
         }
         /// <p>The private IPv6 address for the network interface.</p>
-        pub fn ipv6_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ipv6_address = Some(inp.into());
+        pub fn ipv6_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv6_address = Some(input.into());
             self
         }
-        pub fn set_ipv6_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ipv6_address = inp;
+        pub fn set_ipv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv6_address = input;
             self
         }
         /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface)
@@ -10118,31 +10181,31 @@ pub mod task_definition {
     }
     impl Builder {
         /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
-        pub fn task_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_definition_arn = Some(inp.into());
+        pub fn task_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_definition_arn = Some(input.into());
             self
         }
         pub fn set_task_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.task_definition_arn = inp;
+            self.task_definition_arn = input;
             self
         }
         pub fn container_definitions(
             mut self,
-            inp: impl Into<crate::model::ContainerDefinition>,
+            input: impl Into<crate::model::ContainerDefinition>,
         ) -> Self {
             let mut v = self.container_definitions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.container_definitions = Some(v);
             self
         }
         pub fn set_container_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
         ) -> Self {
-            self.container_definitions = inp;
+            self.container_definitions = input;
             self
         }
         /// <p>The name of a family that this task definition is registered to. Up to 255 letters
@@ -10150,12 +10213,12 @@ pub mod task_definition {
         /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task
         /// definition that you registered to a family a revision number of 1. Amazon ECS gives
         /// sequential revision numbers to each task definition that you add.</p>
-        pub fn family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.family = Some(inp.into());
+        pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.family = Some(input.into());
             self
         }
-        pub fn set_family(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.family = inp;
+        pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.family = input;
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants containers in the
@@ -10166,27 +10229,30 @@ pub mod task_definition {
         /// configuration code in order to take advantage of the feature. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles
         /// for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn task_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_role_arn = Some(inp.into());
+        pub fn task_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_role_arn = Some(input.into());
             self
         }
-        pub fn set_task_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.task_role_arn = inp;
+        pub fn set_task_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.task_role_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
         /// permission to make AWS API calls on your behalf. The task execution IAM role is required
         /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
         /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.execution_role_arn = Some(inp.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_arn = Some(input.into());
             self
         }
         pub fn set_execution_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.execution_role_arn = inp;
+            self.execution_role_arn = input;
             self
         }
         /// <p>The Docker networking mode to use for the containers in the task. The valid values are
@@ -10226,15 +10292,15 @@ pub mod task_definition {
         /// choose the <code><default></code> network mode object. </p>
         /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
         /// settings</a> in the <i>Docker run reference</i>.</p>
-        pub fn network_mode(mut self, inp: crate::model::NetworkMode) -> Self {
-            self.network_mode = Some(inp);
+        pub fn network_mode(mut self, input: crate::model::NetworkMode) -> Self {
+            self.network_mode = Some(input);
             self
         }
         pub fn set_network_mode(
             mut self,
-            inp: std::option::Option<crate::model::NetworkMode>,
+            input: std::option::Option<crate::model::NetworkMode>,
         ) -> Self {
-            self.network_mode = inp;
+            self.network_mode = input;
             self
         }
         /// <p>The revision of the task in a particular family. The revision is a version number of a
@@ -10242,97 +10308,97 @@ pub mod task_definition {
         /// revision is <code>1</code>. Each time that you register a new revision of a task
         /// definition in the same family, the revision value always increases by one, even if you
         /// have deregistered previous revisions in this family.</p>
-        pub fn revision(mut self, inp: i32) -> Self {
-            self.revision = Some(inp);
+        pub fn revision(mut self, input: i32) -> Self {
+            self.revision = Some(input);
             self
         }
-        pub fn set_revision(mut self, inp: i32) -> Self {
-            self.revision = Some(inp);
+        pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
+            self.revision = input;
             self
         }
-        pub fn volumes(mut self, inp: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.volumes = Some(v);
             self
         }
         pub fn set_volumes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Volume>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
         ) -> Self {
-            self.volumes = inp;
+            self.volumes = input;
             self
         }
         /// <p>The status of the task definition.</p>
-        pub fn status(mut self, inp: crate::model::TaskDefinitionStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::TaskDefinitionStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::TaskDefinitionStatus>,
+            input: std::option::Option<crate::model::TaskDefinitionStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
-        pub fn requires_attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
+        pub fn requires_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.requires_attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.requires_attributes = Some(v);
             self
         }
         pub fn set_requires_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
         ) -> Self {
-            self.requires_attributes = inp;
+            self.requires_attributes = input;
             self
         }
         pub fn placement_constraints(
             mut self,
-            inp: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
+            input: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
         ) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.placement_constraints = Some(v);
             self
         }
         pub fn set_placement_constraints(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::TaskDefinitionPlacementConstraint>,
             >,
         ) -> Self {
-            self.placement_constraints = inp;
+            self.placement_constraints = input;
             self
         }
-        pub fn compatibilities(mut self, inp: impl Into<crate::model::Compatibility>) -> Self {
+        pub fn compatibilities(mut self, input: impl Into<crate::model::Compatibility>) -> Self {
             let mut v = self.compatibilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.compatibilities = Some(v);
             self
         }
         pub fn set_compatibilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
         ) -> Self {
-            self.compatibilities = inp;
+            self.compatibilities = input;
             self
         }
         pub fn requires_compatibilities(
             mut self,
-            inp: impl Into<crate::model::Compatibility>,
+            input: impl Into<crate::model::Compatibility>,
         ) -> Self {
             let mut v = self.requires_compatibilities.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.requires_compatibilities = Some(v);
             self
         }
         pub fn set_requires_compatibilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
         ) -> Self {
-            self.requires_compatibilities = inp;
+            self.requires_compatibilities = input;
             self
         }
         /// <p>The number of <code>cpu</code> units used by the task. If you are using the EC2 launch
@@ -10356,12 +10422,12 @@ pub mod task_definition {
         /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
         /// </li>
         /// </ul>
-        pub fn cpu(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cpu = Some(inp.into());
+        pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cpu = Some(input.into());
             self
         }
-        pub fn set_cpu(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cpu = inp;
+        pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cpu = input;
             self
         }
         /// <p>The amount (in MiB) of memory used by the task.</p>
@@ -10390,28 +10456,28 @@ pub mod task_definition {
         /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
         /// </li>
         /// </ul>
-        pub fn memory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.memory = Some(inp.into());
+        pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.memory = Some(input.into());
             self
         }
-        pub fn set_memory(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.memory = inp;
+        pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.memory = input;
             self
         }
         pub fn inference_accelerators(
             mut self,
-            inp: impl Into<crate::model::InferenceAccelerator>,
+            input: impl Into<crate::model::InferenceAccelerator>,
         ) -> Self {
             let mut v = self.inference_accelerators.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.inference_accelerators = Some(v);
             self
         }
         pub fn set_inference_accelerators(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
         ) -> Self {
-            self.inference_accelerators = inp;
+            self.inference_accelerators = input;
             self
         }
         /// <p>The process namespace to use for the containers in the task. The valid
@@ -10430,12 +10496,12 @@ pub mod task_definition {
         /// <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on AWS Fargate.</p>
         /// </note>
-        pub fn pid_mode(mut self, inp: crate::model::PidMode) -> Self {
-            self.pid_mode = Some(inp);
+        pub fn pid_mode(mut self, input: crate::model::PidMode) -> Self {
+            self.pid_mode = Some(input);
             self
         }
-        pub fn set_pid_mode(mut self, inp: std::option::Option<crate::model::PidMode>) -> Self {
-            self.pid_mode = inp;
+        pub fn set_pid_mode(mut self, input: std::option::Option<crate::model::PidMode>) -> Self {
+            self.pid_mode = input;
             self
         }
         /// <p>The IPC resource namespace to use for the containers in the task. The valid values are
@@ -10470,12 +10536,12 @@ pub mod task_definition {
         /// <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on AWS Fargate.</p>
         /// </note>
-        pub fn ipc_mode(mut self, inp: crate::model::IpcMode) -> Self {
-            self.ipc_mode = Some(inp);
+        pub fn ipc_mode(mut self, input: crate::model::IpcMode) -> Self {
+            self.ipc_mode = Some(input);
             self
         }
-        pub fn set_ipc_mode(mut self, inp: std::option::Option<crate::model::IpcMode>) -> Self {
-            self.ipc_mode = inp;
+        pub fn set_ipc_mode(mut self, input: std::option::Option<crate::model::IpcMode>) -> Self {
+            self.ipc_mode = input;
             self
         }
         /// <p>The configuration details for the App Mesh proxy.</p>
@@ -10484,60 +10550,63 @@ pub mod task_definition {
         /// configuration. If your container instances are launched from the Amazon ECS-optimized AMI
         /// version <code>20190301</code> or later, then they contain the required versions of the
         /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn proxy_configuration(mut self, inp: crate::model::ProxyConfiguration) -> Self {
-            self.proxy_configuration = Some(inp);
+        pub fn proxy_configuration(mut self, input: crate::model::ProxyConfiguration) -> Self {
+            self.proxy_configuration = Some(input);
             self
         }
         pub fn set_proxy_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ProxyConfiguration>,
+            input: std::option::Option<crate::model::ProxyConfiguration>,
         ) -> Self {
-            self.proxy_configuration = inp;
+            self.proxy_configuration = input;
             self
         }
         /// <p>The Unix timestamp for when the task definition was registered.</p>
-        pub fn registered_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.registered_at = Some(inp);
+        pub fn registered_at(mut self, input: smithy_types::Instant) -> Self {
+            self.registered_at = Some(input);
             self
         }
         pub fn set_registered_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.registered_at = inp;
+            self.registered_at = input;
             self
         }
         /// <p>The Unix timestamp for when the task definition was deregistered.</p>
-        pub fn deregistered_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.deregistered_at = Some(inp);
+        pub fn deregistered_at(mut self, input: smithy_types::Instant) -> Self {
+            self.deregistered_at = Some(input);
             self
         }
         pub fn set_deregistered_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.deregistered_at = inp;
+            self.deregistered_at = input;
             self
         }
         /// <p>The principal that registered the task definition.</p>
-        pub fn registered_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.registered_by = Some(inp.into());
+        pub fn registered_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registered_by = Some(input.into());
             self
         }
-        pub fn set_registered_by(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.registered_by = inp;
+        pub fn set_registered_by(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.registered_by = input;
             self
         }
         /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
-        pub fn ephemeral_storage(mut self, inp: crate::model::EphemeralStorage) -> Self {
-            self.ephemeral_storage = Some(inp);
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
             self
         }
         pub fn set_ephemeral_storage(
             mut self,
-            inp: std::option::Option<crate::model::EphemeralStorage>,
+            input: std::option::Option<crate::model::EphemeralStorage>,
         ) -> Self {
-            self.ephemeral_storage = inp;
+            self.ephemeral_storage = input;
             self
         }
         /// Consumes the builder and constructs a [`TaskDefinition`](crate::model::TaskDefinition)
@@ -10667,37 +10736,40 @@ pub mod proxy_configuration {
     }
     impl Builder {
         /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ProxyConfigurationType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ProxyConfigurationType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::ProxyConfigurationType>,
+            input: std::option::Option<crate::model::ProxyConfigurationType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_name = Some(inp.into());
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
             self
         }
-        pub fn set_container_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_name = inp;
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
             self
         }
-        pub fn properties(mut self, inp: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn properties(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.properties = Some(v);
             self
         }
         pub fn set_properties(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
         ) -> Self {
-            self.properties = inp;
+            self.properties = input;
             self
         }
         /// Consumes the builder and constructs a [`ProxyConfiguration`](crate::model::ProxyConfiguration)
@@ -10985,26 +11057,29 @@ pub mod task_definition_placement_constraint {
     impl Builder {
         /// <p>The type of constraint. The <code>MemberOf</code> constraint restricts selection to be
         /// from a group of valid candidates.</p>
-        pub fn r#type(mut self, inp: crate::model::TaskDefinitionPlacementConstraintType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(
+            mut self,
+            input: crate::model::TaskDefinitionPlacementConstraintType,
+        ) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::TaskDefinitionPlacementConstraintType>,
+            input: std::option::Option<crate::model::TaskDefinitionPlacementConstraintType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>A cluster query language expression to apply to the constraint. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expression = Some(inp.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
             self
         }
-        pub fn set_expression(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expression = inp;
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
             self
         }
         /// Consumes the builder and constructs a [`TaskDefinitionPlacementConstraint`](crate::model::TaskDefinitionPlacementConstraint)
@@ -11220,12 +11295,12 @@ pub mod volume {
         /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the
         /// <code>sourceVolume</code> parameter of container definition
         /// <code>mountPoints</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>This parameter is specified when you are using bind mount host volumes. The contents
@@ -11239,15 +11314,15 @@ pub mod volume {
         /// different drive, and mount point cannot be across drives. For example, you can mount
         /// <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
         /// <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
-        pub fn host(mut self, inp: crate::model::HostVolumeProperties) -> Self {
-            self.host = Some(inp);
+        pub fn host(mut self, input: crate::model::HostVolumeProperties) -> Self {
+            self.host = Some(input);
             self
         }
         pub fn set_host(
             mut self,
-            inp: std::option::Option<crate::model::HostVolumeProperties>,
+            input: std::option::Option<crate::model::HostVolumeProperties>,
         ) -> Self {
-            self.host = inp;
+            self.host = input;
             self
         }
         /// <p>This parameter is specified when you are using Docker volumes.</p>
@@ -11258,48 +11333,48 @@ pub mod volume {
         /// </note>
         pub fn docker_volume_configuration(
             mut self,
-            inp: crate::model::DockerVolumeConfiguration,
+            input: crate::model::DockerVolumeConfiguration,
         ) -> Self {
-            self.docker_volume_configuration = Some(inp);
+            self.docker_volume_configuration = Some(input);
             self
         }
         pub fn set_docker_volume_configuration(
             mut self,
-            inp: std::option::Option<crate::model::DockerVolumeConfiguration>,
+            input: std::option::Option<crate::model::DockerVolumeConfiguration>,
         ) -> Self {
-            self.docker_volume_configuration = inp;
+            self.docker_volume_configuration = input;
             self
         }
         /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for task
         /// storage.</p>
         pub fn efs_volume_configuration(
             mut self,
-            inp: crate::model::EFSVolumeConfiguration,
+            input: crate::model::EFSVolumeConfiguration,
         ) -> Self {
-            self.efs_volume_configuration = Some(inp);
+            self.efs_volume_configuration = Some(input);
             self
         }
         pub fn set_efs_volume_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EFSVolumeConfiguration>,
+            input: std::option::Option<crate::model::EFSVolumeConfiguration>,
         ) -> Self {
-            self.efs_volume_configuration = inp;
+            self.efs_volume_configuration = input;
             self
         }
         /// <p>This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
         /// storage.</p>
         pub fn fsx_windows_file_server_volume_configuration(
             mut self,
-            inp: crate::model::FSxWindowsFileServerVolumeConfiguration,
+            input: crate::model::FSxWindowsFileServerVolumeConfiguration,
         ) -> Self {
-            self.fsx_windows_file_server_volume_configuration = Some(inp);
+            self.fsx_windows_file_server_volume_configuration = Some(input);
             self
         }
         pub fn set_fsx_windows_file_server_volume_configuration(
             mut self,
-            inp: std::option::Option<crate::model::FSxWindowsFileServerVolumeConfiguration>,
+            input: std::option::Option<crate::model::FSxWindowsFileServerVolumeConfiguration>,
         ) -> Self {
-            self.fsx_windows_file_server_volume_configuration = inp;
+            self.fsx_windows_file_server_volume_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`Volume`](crate::model::Volume)
@@ -11366,37 +11441,43 @@ pub mod f_sx_windows_file_server_volume_configuration {
     }
     impl Builder {
         /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.file_system_id = Some(inp.into());
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_id = Some(input.into());
             self
         }
-        pub fn set_file_system_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.file_system_id = inp;
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_id = input;
             self
         }
         /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory
         /// inside the host.</p>
-        pub fn root_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.root_directory = Some(inp.into());
+        pub fn root_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.root_directory = Some(input.into());
             self
         }
-        pub fn set_root_directory(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.root_directory = inp;
+        pub fn set_root_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.root_directory = input;
             self
         }
         /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
         pub fn authorization_config(
             mut self,
-            inp: crate::model::FSxWindowsFileServerAuthorizationConfig,
+            input: crate::model::FSxWindowsFileServerAuthorizationConfig,
         ) -> Self {
-            self.authorization_config = Some(inp);
+            self.authorization_config = Some(input);
             self
         }
         pub fn set_authorization_config(
             mut self,
-            inp: std::option::Option<crate::model::FSxWindowsFileServerAuthorizationConfig>,
+            input: std::option::Option<crate::model::FSxWindowsFileServerAuthorizationConfig>,
         ) -> Self {
-            self.authorization_config = inp;
+            self.authorization_config = input;
             self
         }
         /// Consumes the builder and constructs a [`FSxWindowsFileServerVolumeConfiguration`](crate::model::FSxWindowsFileServerVolumeConfiguration)
@@ -11456,25 +11537,25 @@ pub mod f_sx_windows_file_server_authorization_config {
         /// <p>The authorization credential option to use. The authorization credential options can
         /// be provided using either the Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager
         /// Parameter Store parameter. The ARNs refer to the stored credentials.</p>
-        pub fn credentials_parameter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.credentials_parameter = Some(inp.into());
+        pub fn credentials_parameter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.credentials_parameter = Some(input.into());
             self
         }
         pub fn set_credentials_parameter(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.credentials_parameter = inp;
+            self.credentials_parameter = input;
             self
         }
         /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on
         /// Amazon EC2.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// Consumes the builder and constructs a [`FSxWindowsFileServerAuthorizationConfig`](crate::model::FSxWindowsFileServerAuthorizationConfig)
@@ -11559,12 +11640,15 @@ pub mod efs_volume_configuration {
     }
     impl Builder {
         /// <p>The Amazon EFS file system ID to use.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.file_system_id = Some(inp.into());
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_id = Some(input.into());
             self
         }
-        pub fn set_file_system_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.file_system_id = inp;
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_id = input;
             self
         }
         /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the
@@ -11575,12 +11659,15 @@ pub mod efs_volume_configuration {
         /// root directory parameter must either be omitted or set to <code>/</code> which will
         /// enforce the path set on the EFS access point.</p>
         /// </important>
-        pub fn root_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.root_directory = Some(inp.into());
+        pub fn root_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.root_directory = Some(input.into());
             self
         }
-        pub fn set_root_directory(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.root_directory = inp;
+        pub fn set_root_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.root_directory = input;
             self
         }
         /// <p>Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host
@@ -11588,39 +11675,39 @@ pub mod efs_volume_configuration {
         /// used. If this parameter is omitted, the default value of <code>DISABLED</code> is used.
         /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in
         /// the <i>Amazon Elastic File System User Guide</i>.</p>
-        pub fn transit_encryption(mut self, inp: crate::model::EfsTransitEncryption) -> Self {
-            self.transit_encryption = Some(inp);
+        pub fn transit_encryption(mut self, input: crate::model::EfsTransitEncryption) -> Self {
+            self.transit_encryption = Some(input);
             self
         }
         pub fn set_transit_encryption(
             mut self,
-            inp: std::option::Option<crate::model::EfsTransitEncryption>,
+            input: std::option::Option<crate::model::EfsTransitEncryption>,
         ) -> Self {
-            self.transit_encryption = inp;
+            self.transit_encryption = input;
             self
         }
         /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS
         /// server. If you do not specify a transit encryption port, it will use the port selection
         /// strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
         /// Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-        pub fn transit_encryption_port(mut self, inp: i32) -> Self {
-            self.transit_encryption_port = Some(inp);
+        pub fn transit_encryption_port(mut self, input: i32) -> Self {
+            self.transit_encryption_port = Some(input);
             self
         }
-        pub fn set_transit_encryption_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.transit_encryption_port = inp;
+        pub fn set_transit_encryption_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.transit_encryption_port = input;
             self
         }
         /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-        pub fn authorization_config(mut self, inp: crate::model::EFSAuthorizationConfig) -> Self {
-            self.authorization_config = Some(inp);
+        pub fn authorization_config(mut self, input: crate::model::EFSAuthorizationConfig) -> Self {
+            self.authorization_config = Some(input);
             self
         }
         pub fn set_authorization_config(
             mut self,
-            inp: std::option::Option<crate::model::EFSAuthorizationConfig>,
+            input: std::option::Option<crate::model::EFSAuthorizationConfig>,
         ) -> Self {
-            self.authorization_config = inp;
+            self.authorization_config = input;
             self
         }
         /// Consumes the builder and constructs a [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
@@ -11688,15 +11775,15 @@ pub mod efs_authorization_config {
         /// point is used, transit encryption must be enabled in the
         /// <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon
         /// EFS Access Points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-        pub fn access_point_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.access_point_id = Some(inp.into());
+        pub fn access_point_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_point_id = Some(input.into());
             self
         }
         pub fn set_access_point_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.access_point_id = inp;
+            self.access_point_id = input;
             self
         }
         /// <p>Whether or not to use the Amazon ECS task IAM role defined in a task definition when
@@ -11704,15 +11791,15 @@ pub mod efs_authorization_config {
         /// <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value
         /// of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
         /// Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn iam(mut self, inp: crate::model::EfsAuthorizationConfigIam) -> Self {
-            self.iam = Some(inp);
+        pub fn iam(mut self, input: crate::model::EfsAuthorizationConfigIam) -> Self {
+            self.iam = Some(input);
             self
         }
         pub fn set_iam(
             mut self,
-            inp: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
+            input: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
         ) -> Self {
-            self.iam = inp;
+            self.iam = input;
             self
         }
         /// Consumes the builder and constructs a [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
@@ -11926,12 +12013,12 @@ pub mod docker_volume_configuration {
         /// scoped to a <code>task</code> are automatically provisioned when the task starts and
         /// destroyed when the task stops. Docker volumes that are scoped as <code>shared</code>
         /// persist after the task stops.</p>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.scope = Some(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.scope = Some(input);
             self
         }
-        pub fn set_scope(mut self, inp: std::option::Option<crate::model::Scope>) -> Self {
-            self.scope = inp;
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.scope = input;
             self
         }
         /// <p>If this value is <code>true</code>, the Docker volume is created if it does not
@@ -11939,12 +12026,12 @@ pub mod docker_volume_configuration {
         /// <note>
         /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
         /// </note>
-        pub fn autoprovision(mut self, inp: bool) -> Self {
-            self.autoprovision = Some(inp);
+        pub fn autoprovision(mut self, input: bool) -> Self {
+            self.autoprovision = Some(input);
             self
         }
-        pub fn set_autoprovision(mut self, inp: std::option::Option<bool>) -> Self {
-            self.autoprovision = inp;
+        pub fn set_autoprovision(mut self, input: std::option::Option<bool>) -> Self {
+            self.autoprovision = input;
             self
         }
         /// <p>The Docker volume driver to use. The driver value must match the driver name provided
@@ -11956,12 +12043,12 @@ pub mod docker_volume_configuration {
         /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
         /// <code>xxdriver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
         /// volume create</a>.</p>
-        pub fn driver(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.driver = Some(inp.into());
+        pub fn driver(mut self, input: impl Into<std::string::String>) -> Self {
+            self.driver = Some(input.into());
             self
         }
-        pub fn set_driver(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.driver = inp;
+        pub fn set_driver(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.driver = input;
             self
         }
         pub fn driver_opts(
@@ -11976,11 +12063,11 @@ pub mod docker_volume_configuration {
         }
         pub fn set_driver_opts(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.driver_opts = inp;
+            self.driver_opts = input;
             self
         }
         pub fn labels(
@@ -11995,11 +12082,11 @@ pub mod docker_volume_configuration {
         }
         pub fn set_labels(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.labels = inp;
+            self.labels = input;
             self
         }
         /// Consumes the builder and constructs a [`DockerVolumeConfiguration`](crate::model::DockerVolumeConfiguration)
@@ -12121,12 +12208,12 @@ pub mod host_volume_properties {
         /// contents of the source path folder are exported.</p>
         /// <p>If you are using the Fargate launch type, the <code>sourcePath</code>
         /// parameter is not supported.</p>
-        pub fn source_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_path = Some(inp.into());
+        pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_path = Some(input.into());
             self
         }
-        pub fn set_source_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_path = inp;
+        pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_path = input;
             self
         }
         /// Consumes the builder and constructs a [`HostVolumeProperties`](crate::model::HostVolumeProperties)
@@ -12924,12 +13011,12 @@ pub mod container_definition {
         /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
         /// <code>--name</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The image used to start a container. This string is passed directly to the Docker
@@ -12971,24 +13058,27 @@ pub mod container_definition {
         /// (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>
         /// </li>
         /// </ul>
-        pub fn image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image = Some(inp.into());
+        pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image = Some(input.into());
             self
         }
-        pub fn set_image(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image = inp;
+        pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image = input;
             self
         }
         /// <p>The private repository authentication credentials to use.</p>
-        pub fn repository_credentials(mut self, inp: crate::model::RepositoryCredentials) -> Self {
-            self.repository_credentials = Some(inp);
+        pub fn repository_credentials(
+            mut self,
+            input: crate::model::RepositoryCredentials,
+        ) -> Self {
+            self.repository_credentials = Some(input);
             self
         }
         pub fn set_repository_credentials(
             mut self,
-            inp: std::option::Option<crate::model::RepositoryCredentials>,
+            input: std::option::Option<crate::model::RepositoryCredentials>,
         ) -> Self {
-            self.repository_credentials = inp;
+            self.repository_credentials = input;
             self
         }
         /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps
@@ -13037,12 +13127,12 @@ pub mod container_definition {
         /// quota. Windows containers only have access to the specified amount of CPU that is
         /// described in the task definition. A null or zero CPU value is passed to Docker as
         /// <code>0</code>, which Windows interprets as 1% of one CPU.</p>
-        pub fn cpu(mut self, inp: i32) -> Self {
-            self.cpu = Some(inp);
+        pub fn cpu(mut self, input: i32) -> Self {
+            self.cpu = Some(input);
             self
         }
-        pub fn set_cpu(mut self, inp: i32) -> Self {
-            self.cpu = Some(inp);
+        pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+            self.cpu = input;
             self
         }
         /// <p>The amount (in MiB) of memory to present to the container. If your container attempts
@@ -13061,12 +13151,12 @@ pub mod container_definition {
         /// the value of <code>memory</code> is used.</p>
         /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
         /// not specify fewer than 4 MiB of memory for your containers.</p>
-        pub fn memory(mut self, inp: i32) -> Self {
-            self.memory = Some(inp);
+        pub fn memory(mut self, input: i32) -> Self {
+            self.memory = Some(input);
             self
         }
-        pub fn set_memory(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory = inp;
+        pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory = input;
             self
         }
         /// <p>The soft limit (in MiB) of memory to reserve for the container. When system memory is
@@ -13091,38 +13181,38 @@ pub mod container_definition {
         /// consume more memory resources when needed.</p>
         /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
         /// not specify fewer than 4 MiB of memory for your containers. </p>
-        pub fn memory_reservation(mut self, inp: i32) -> Self {
-            self.memory_reservation = Some(inp);
+        pub fn memory_reservation(mut self, input: i32) -> Self {
+            self.memory_reservation = Some(input);
             self
         }
-        pub fn set_memory_reservation(mut self, inp: std::option::Option<i32>) -> Self {
-            self.memory_reservation = inp;
+        pub fn set_memory_reservation(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_reservation = input;
             self
         }
-        pub fn links(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn links(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.links.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.links = Some(v);
             self
         }
         pub fn set_links(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.links = inp;
+            self.links = input;
             self
         }
-        pub fn port_mappings(mut self, inp: impl Into<crate::model::PortMapping>) -> Self {
+        pub fn port_mappings(mut self, input: impl Into<crate::model::PortMapping>) -> Self {
             let mut v = self.port_mappings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.port_mappings = Some(v);
             self
         }
         pub fn set_port_mappings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
         ) -> Self {
-            self.port_mappings = inp;
+            self.port_mappings = input;
             self
         }
         /// <p>If the <code>essential</code> parameter of a container is marked as <code>true</code>,
@@ -13135,90 +13225,93 @@ pub mod container_definition {
         /// common purpose into components, and separate the different components into multiple task
         /// definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
         /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn essential(mut self, inp: bool) -> Self {
-            self.essential = Some(inp);
+        pub fn essential(mut self, input: bool) -> Self {
+            self.essential = Some(input);
             self
         }
-        pub fn set_essential(mut self, inp: std::option::Option<bool>) -> Self {
-            self.essential = inp;
+        pub fn set_essential(mut self, input: std::option::Option<bool>) -> Self {
+            self.essential = input;
             self
         }
-        pub fn entry_point(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entry_point.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.entry_point = Some(v);
             self
         }
         pub fn set_entry_point(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.entry_point = inp;
+            self.entry_point = input;
             self
         }
-        pub fn command(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.command = Some(v);
             self
         }
         pub fn set_command(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.command = inp;
+            self.command = input;
             self
         }
-        pub fn environment(mut self, inp: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.environment = Some(v);
             self
         }
         pub fn set_environment(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
         ) -> Self {
-            self.environment = inp;
+            self.environment = input;
             self
         }
-        pub fn environment_files(mut self, inp: impl Into<crate::model::EnvironmentFile>) -> Self {
+        pub fn environment_files(
+            mut self,
+            input: impl Into<crate::model::EnvironmentFile>,
+        ) -> Self {
             let mut v = self.environment_files.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.environment_files = Some(v);
             self
         }
         pub fn set_environment_files(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EnvironmentFile>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentFile>>,
         ) -> Self {
-            self.environment_files = inp;
+            self.environment_files = input;
             self
         }
-        pub fn mount_points(mut self, inp: impl Into<crate::model::MountPoint>) -> Self {
+        pub fn mount_points(mut self, input: impl Into<crate::model::MountPoint>) -> Self {
             let mut v = self.mount_points.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.mount_points = Some(v);
             self
         }
         pub fn set_mount_points(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MountPoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MountPoint>>,
         ) -> Self {
-            self.mount_points = inp;
+            self.mount_points = input;
             self
         }
-        pub fn volumes_from(mut self, inp: impl Into<crate::model::VolumeFrom>) -> Self {
+        pub fn volumes_from(mut self, input: impl Into<crate::model::VolumeFrom>) -> Self {
             let mut v = self.volumes_from.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.volumes_from = Some(v);
             self
         }
         pub fn set_volumes_from(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VolumeFrom>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeFrom>>,
         ) -> Self {
-            self.volumes_from = inp;
+            self.volumes_from = input;
             self
         }
         /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel
@@ -13226,41 +13319,41 @@ pub mod container_definition {
         /// <note>
         /// <p>This parameter is not supported for Windows containers.</p>
         /// </note>
-        pub fn linux_parameters(mut self, inp: crate::model::LinuxParameters) -> Self {
-            self.linux_parameters = Some(inp);
+        pub fn linux_parameters(mut self, input: crate::model::LinuxParameters) -> Self {
+            self.linux_parameters = Some(input);
             self
         }
         pub fn set_linux_parameters(
             mut self,
-            inp: std::option::Option<crate::model::LinuxParameters>,
+            input: std::option::Option<crate::model::LinuxParameters>,
         ) -> Self {
-            self.linux_parameters = inp;
+            self.linux_parameters = input;
             self
         }
-        pub fn secrets(mut self, inp: impl Into<crate::model::Secret>) -> Self {
+        pub fn secrets(mut self, input: impl Into<crate::model::Secret>) -> Self {
             let mut v = self.secrets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.secrets = Some(v);
             self
         }
         pub fn set_secrets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Secret>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Secret>>,
         ) -> Self {
-            self.secrets = inp;
+            self.secrets = input;
             self
         }
-        pub fn depends_on(mut self, inp: impl Into<crate::model::ContainerDependency>) -> Self {
+        pub fn depends_on(mut self, input: impl Into<crate::model::ContainerDependency>) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.depends_on = Some(v);
             self
         }
         pub fn set_depends_on(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContainerDependency>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContainerDependency>>,
         ) -> Self {
-            self.depends_on = inp;
+            self.depends_on = input;
             self
         }
         /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a
@@ -13286,12 +13379,12 @@ pub mod container_definition {
         /// the <code>ecs-init</code> package. If your container instances are launched from version
         /// <code>20190301</code> or later, then they contain the required versions of the
         /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn start_timeout(mut self, inp: i32) -> Self {
-            self.start_timeout = Some(inp);
+        pub fn start_timeout(mut self, input: i32) -> Self {
+            self.start_timeout = Some(input);
             self
         }
-        pub fn set_start_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.start_timeout = inp;
+        pub fn set_start_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.start_timeout = input;
             self
         }
         /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it
@@ -13314,12 +13407,12 @@ pub mod container_definition {
         /// <code>ecs-init</code> package. If your container instances are launched from version
         /// <code>20190301</code> or later, then they contain the required versions of the
         /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn stop_timeout(mut self, inp: i32) -> Self {
-            self.stop_timeout = Some(inp);
+        pub fn stop_timeout(mut self, input: i32) -> Self {
+            self.stop_timeout = Some(input);
             self
         }
-        pub fn set_stop_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.stop_timeout = inp;
+        pub fn set_stop_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.stop_timeout = input;
             self
         }
         /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code>
@@ -13330,12 +13423,12 @@ pub mod container_definition {
         /// <p>The <code>hostname</code> parameter is not supported if you are using the
         /// <code>awsvpc</code> network mode.</p>
         /// </note>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hostname = Some(inp.into());
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hostname = Some(input.into());
             self
         }
-        pub fn set_hostname(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hostname = inp;
+        pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname = input;
             self
         }
         /// <p>The user to use inside the container. This parameter maps to <code>User</code> in the
@@ -13384,26 +13477,26 @@ pub mod container_definition {
         /// <note>
         /// <p>This parameter is not supported for Windows containers.</p>
         /// </note>
-        pub fn user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user = Some(inp.into());
+        pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user = Some(input.into());
             self
         }
-        pub fn set_user(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user = inp;
+        pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user = input;
             self
         }
         /// <p>The working directory in which to run commands inside the container. This parameter
         /// maps to <code>WorkingDir</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
         /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--workdir</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.working_directory = Some(inp.into());
+        pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.working_directory = Some(input.into());
             self
         }
         pub fn set_working_directory(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.working_directory = inp;
+            self.working_directory = input;
             self
         }
         /// <p>When this parameter is true, networking is disabled within the container. This
@@ -13412,12 +13505,12 @@ pub mod container_definition {
         /// <note>
         /// <p>This parameter is not supported for Windows containers.</p>
         /// </note>
-        pub fn disable_networking(mut self, inp: bool) -> Self {
-            self.disable_networking = Some(inp);
+        pub fn disable_networking(mut self, input: bool) -> Self {
+            self.disable_networking = Some(input);
             self
         }
-        pub fn set_disable_networking(mut self, inp: std::option::Option<bool>) -> Self {
-            self.disable_networking = inp;
+        pub fn set_disable_networking(mut self, input: std::option::Option<bool>) -> Self {
+            self.disable_networking = input;
             self
         }
         /// <p>When this parameter is true, the container is given elevated privileges on the host
@@ -13427,12 +13520,12 @@ pub mod container_definition {
         /// <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on AWS Fargate.</p>
         /// </note>
-        pub fn privileged(mut self, inp: bool) -> Self {
-            self.privileged = Some(inp);
+        pub fn privileged(mut self, input: bool) -> Self {
+            self.privileged = Some(input);
             self
         }
-        pub fn set_privileged(mut self, inp: std::option::Option<bool>) -> Self {
-            self.privileged = inp;
+        pub fn set_privileged(mut self, input: std::option::Option<bool>) -> Self {
+            self.privileged = input;
             self
         }
         /// <p>When this parameter is true, the container is given read-only access to its root file
@@ -13443,87 +13536,87 @@ pub mod container_definition {
         /// <note>
         /// <p>This parameter is not supported for Windows containers.</p>
         /// </note>
-        pub fn readonly_root_filesystem(mut self, inp: bool) -> Self {
-            self.readonly_root_filesystem = Some(inp);
+        pub fn readonly_root_filesystem(mut self, input: bool) -> Self {
+            self.readonly_root_filesystem = Some(input);
             self
         }
-        pub fn set_readonly_root_filesystem(mut self, inp: std::option::Option<bool>) -> Self {
-            self.readonly_root_filesystem = inp;
+        pub fn set_readonly_root_filesystem(mut self, input: std::option::Option<bool>) -> Self {
+            self.readonly_root_filesystem = input;
             self
         }
-        pub fn dns_servers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn dns_servers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_servers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.dns_servers = Some(v);
             self
         }
         pub fn set_dns_servers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.dns_servers = inp;
+            self.dns_servers = input;
             self
         }
-        pub fn dns_search_domains(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn dns_search_domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_search_domains.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.dns_search_domains = Some(v);
             self
         }
         pub fn set_dns_search_domains(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.dns_search_domains = inp;
+            self.dns_search_domains = input;
             self
         }
-        pub fn extra_hosts(mut self, inp: impl Into<crate::model::HostEntry>) -> Self {
+        pub fn extra_hosts(mut self, input: impl Into<crate::model::HostEntry>) -> Self {
             let mut v = self.extra_hosts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.extra_hosts = Some(v);
             self
         }
         pub fn set_extra_hosts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HostEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HostEntry>>,
         ) -> Self {
-            self.extra_hosts = inp;
+            self.extra_hosts = input;
             self
         }
-        pub fn docker_security_options(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn docker_security_options(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.docker_security_options.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.docker_security_options = Some(v);
             self
         }
         pub fn set_docker_security_options(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.docker_security_options = inp;
+            self.docker_security_options = input;
             self
         }
         /// <p>When this parameter is <code>true</code>, this allows you to deploy containerized
         /// applications that require <code>stdin</code> or a <code>tty</code> to be allocated. This
         /// parameter maps to <code>OpenStdin</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
         /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--interactive</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-        pub fn interactive(mut self, inp: bool) -> Self {
-            self.interactive = Some(inp);
+        pub fn interactive(mut self, input: bool) -> Self {
+            self.interactive = Some(input);
             self
         }
-        pub fn set_interactive(mut self, inp: std::option::Option<bool>) -> Self {
-            self.interactive = inp;
+        pub fn set_interactive(mut self, input: std::option::Option<bool>) -> Self {
+            self.interactive = input;
             self
         }
         /// <p>When this parameter is <code>true</code>, a TTY is allocated. This parameter maps to
         /// <code>Tty</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
         /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--tty</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-        pub fn pseudo_terminal(mut self, inp: bool) -> Self {
-            self.pseudo_terminal = Some(inp);
+        pub fn pseudo_terminal(mut self, input: bool) -> Self {
+            self.pseudo_terminal = Some(input);
             self
         }
-        pub fn set_pseudo_terminal(mut self, inp: std::option::Option<bool>) -> Self {
-            self.pseudo_terminal = inp;
+        pub fn set_pseudo_terminal(mut self, input: std::option::Option<bool>) -> Self {
+            self.pseudo_terminal = input;
             self
         }
         pub fn docker_labels(
@@ -13538,24 +13631,24 @@ pub mod container_definition {
         }
         pub fn set_docker_labels(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.docker_labels = inp;
+            self.docker_labels = input;
             self
         }
-        pub fn ulimits(mut self, inp: impl Into<crate::model::Ulimit>) -> Self {
+        pub fn ulimits(mut self, input: impl Into<crate::model::Ulimit>) -> Self {
             let mut v = self.ulimits.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ulimits = Some(v);
             self
         }
         pub fn set_ulimits(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Ulimit>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Ulimit>>,
         ) -> Self {
-            self.ulimits = inp;
+            self.ulimits = input;
             self
         }
         /// <p>The log configuration specification for the container.</p>
@@ -13585,15 +13678,15 @@ pub mod container_definition {
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
         /// Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
-        pub fn log_configuration(mut self, inp: crate::model::LogConfiguration) -> Self {
-            self.log_configuration = Some(inp);
+        pub fn log_configuration(mut self, input: crate::model::LogConfiguration) -> Self {
+            self.log_configuration = Some(input);
             self
         }
         pub fn set_log_configuration(
             mut self,
-            inp: std::option::Option<crate::model::LogConfiguration>,
+            input: std::option::Option<crate::model::LogConfiguration>,
         ) -> Self {
-            self.log_configuration = inp;
+            self.log_configuration = input;
             self
         }
         /// <p>The container health check command and associated configuration parameters for the
@@ -13601,58 +13694,61 @@ pub mod container_definition {
         /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
         /// <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.</p>
-        pub fn health_check(mut self, inp: crate::model::HealthCheck) -> Self {
-            self.health_check = Some(inp);
+        pub fn health_check(mut self, input: crate::model::HealthCheck) -> Self {
+            self.health_check = Some(input);
             self
         }
         pub fn set_health_check(
             mut self,
-            inp: std::option::Option<crate::model::HealthCheck>,
+            input: std::option::Option<crate::model::HealthCheck>,
         ) -> Self {
-            self.health_check = inp;
+            self.health_check = input;
             self
         }
-        pub fn system_controls(mut self, inp: impl Into<crate::model::SystemControl>) -> Self {
+        pub fn system_controls(mut self, input: impl Into<crate::model::SystemControl>) -> Self {
             let mut v = self.system_controls.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.system_controls = Some(v);
             self
         }
         pub fn set_system_controls(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SystemControl>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SystemControl>>,
         ) -> Self {
-            self.system_controls = inp;
+            self.system_controls = input;
             self
         }
         pub fn resource_requirements(
             mut self,
-            inp: impl Into<crate::model::ResourceRequirement>,
+            input: impl Into<crate::model::ResourceRequirement>,
         ) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_requirements = Some(v);
             self
         }
         pub fn set_resource_requirements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
         ) -> Self {
-            self.resource_requirements = inp;
+            self.resource_requirements = input;
             self
         }
         /// <p>The FireLens configuration for the container. This is used to specify and configure a
         /// log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn firelens_configuration(mut self, inp: crate::model::FirelensConfiguration) -> Self {
-            self.firelens_configuration = Some(inp);
+        pub fn firelens_configuration(
+            mut self,
+            input: crate::model::FirelensConfiguration,
+        ) -> Self {
+            self.firelens_configuration = Some(input);
             self
         }
         pub fn set_firelens_configuration(
             mut self,
-            inp: std::option::Option<crate::model::FirelensConfiguration>,
+            input: std::option::Option<crate::model::FirelensConfiguration>,
         ) -> Self {
-            self.firelens_configuration = inp;
+            self.firelens_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`ContainerDefinition`](crate::model::ContainerDefinition)
@@ -13758,15 +13854,15 @@ pub mod firelens_configuration {
     impl Builder {
         /// <p>The log router to use. The valid values are <code>fluentd</code> or
         /// <code>fluentbit</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::FirelensConfigurationType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::FirelensConfigurationType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::FirelensConfigurationType>,
+            input: std::option::Option<crate::model::FirelensConfigurationType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         pub fn options(
@@ -13781,11 +13877,11 @@ pub mod firelens_configuration {
         }
         pub fn set_options(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.options = inp;
+            self.options = input;
             self
         }
         /// Consumes the builder and constructs a [`FirelensConfiguration`](crate::model::FirelensConfiguration)
@@ -13914,22 +14010,22 @@ pub mod system_control {
     }
     impl Builder {
         /// <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.namespace = Some(inp.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
             self
         }
-        pub fn set_namespace(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.namespace = inp;
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
             self
         }
         /// <p>The value for the namespaced kernel parameter specified in
         /// <code>namespace</code>.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`SystemControl`](crate::model::SystemControl)
@@ -14082,48 +14178,48 @@ pub mod health_check {
         pub(crate) start_period: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn command(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.command = Some(v);
             self
         }
         pub fn set_command(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.command = inp;
+            self.command = input;
             self
         }
         /// <p>The time period in seconds between each health check execution. You may specify
         /// between 5 and 300 seconds. The default value is 30 seconds.</p>
-        pub fn interval(mut self, inp: i32) -> Self {
-            self.interval = Some(inp);
+        pub fn interval(mut self, input: i32) -> Self {
+            self.interval = Some(input);
             self
         }
-        pub fn set_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.interval = inp;
+        pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.interval = input;
             self
         }
         /// <p>The time period in seconds to wait for a health check to succeed before it is
         /// considered a failure. You may specify between 2 and 60 seconds. The default value is
         /// 5.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.timeout = Some(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.timeout = inp;
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
             self
         }
         /// <p>The number of times to retry a failed health check before the container is considered
         /// unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
-        pub fn retries(mut self, inp: i32) -> Self {
-            self.retries = Some(inp);
+        pub fn retries(mut self, input: i32) -> Self {
+            self.retries = Some(input);
             self
         }
-        pub fn set_retries(mut self, inp: std::option::Option<i32>) -> Self {
-            self.retries = inp;
+        pub fn set_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.retries = input;
             self
         }
         /// <p>The optional grace period within which to provide containers time to bootstrap before
@@ -14134,12 +14230,12 @@ pub mod health_check {
         /// is considered healthy and any subsequent failures count toward the maximum number of
         /// retries.</p>
         /// </note>
-        pub fn start_period(mut self, inp: i32) -> Self {
-            self.start_period = Some(inp);
+        pub fn start_period(mut self, input: i32) -> Self {
+            self.start_period = Some(input);
             self
         }
-        pub fn set_start_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.start_period = inp;
+        pub fn set_start_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.start_period = input;
             self
         }
         /// Consumes the builder and constructs a [`HealthCheck`](crate::model::HealthCheck)
@@ -14277,12 +14373,15 @@ pub mod log_configuration {
         /// do not currently provide support for running modified copies of this
         /// software.</p>
         /// </note>
-        pub fn log_driver(mut self, inp: crate::model::LogDriver) -> Self {
-            self.log_driver = Some(inp);
+        pub fn log_driver(mut self, input: crate::model::LogDriver) -> Self {
+            self.log_driver = Some(input);
             self
         }
-        pub fn set_log_driver(mut self, inp: std::option::Option<crate::model::LogDriver>) -> Self {
-            self.log_driver = inp;
+        pub fn set_log_driver(
+            mut self,
+            input: std::option::Option<crate::model::LogDriver>,
+        ) -> Self {
+            self.log_driver = input;
             self
         }
         pub fn options(
@@ -14297,24 +14396,24 @@ pub mod log_configuration {
         }
         pub fn set_options(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.options = inp;
+            self.options = input;
             self
         }
-        pub fn secret_options(mut self, inp: impl Into<crate::model::Secret>) -> Self {
+        pub fn secret_options(mut self, input: impl Into<crate::model::Secret>) -> Self {
             let mut v = self.secret_options.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.secret_options = Some(v);
             self
         }
         pub fn set_secret_options(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Secret>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Secret>>,
         ) -> Self {
-            self.secret_options = inp;
+            self.secret_options = input;
             self
         }
         /// Consumes the builder and constructs a [`LogConfiguration`](crate::model::LogConfiguration)
@@ -14385,12 +14484,12 @@ pub mod secret {
     }
     impl Builder {
         /// <p>The name of the secret.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The secret to expose to the container. The supported values are either the full ARN of
@@ -14400,12 +14499,12 @@ pub mod secret {
         /// are launching, then you can use either the full ARN or name of the parameter. If the
         /// parameter exists in a different Region, then the full ARN must be specified.</p>
         /// </note>
-        pub fn value_from(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value_from = Some(inp.into());
+        pub fn value_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value_from = Some(input.into());
             self
         }
-        pub fn set_value_from(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value_from = inp;
+        pub fn set_value_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value_from = input;
             self
         }
         /// Consumes the builder and constructs a [`Secret`](crate::model::Secret)
@@ -14543,30 +14642,30 @@ pub mod ulimit {
     }
     impl Builder {
         /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-        pub fn name(mut self, inp: crate::model::UlimitName) -> Self {
-            self.name = Some(inp);
+        pub fn name(mut self, input: crate::model::UlimitName) -> Self {
+            self.name = Some(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<crate::model::UlimitName>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<crate::model::UlimitName>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The soft limit for the ulimit type.</p>
-        pub fn soft_limit(mut self, inp: i32) -> Self {
-            self.soft_limit = Some(inp);
+        pub fn soft_limit(mut self, input: i32) -> Self {
+            self.soft_limit = Some(input);
             self
         }
-        pub fn set_soft_limit(mut self, inp: i32) -> Self {
-            self.soft_limit = Some(inp);
+        pub fn set_soft_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.soft_limit = input;
             self
         }
         /// <p>The hard limit for the ulimit type.</p>
-        pub fn hard_limit(mut self, inp: i32) -> Self {
-            self.hard_limit = Some(inp);
+        pub fn hard_limit(mut self, input: i32) -> Self {
+            self.hard_limit = Some(input);
             self
         }
-        pub fn set_hard_limit(mut self, inp: i32) -> Self {
-            self.hard_limit = Some(inp);
+        pub fn set_hard_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.hard_limit = input;
             self
         }
         /// Consumes the builder and constructs a [`Ulimit`](crate::model::Ulimit)
@@ -14714,21 +14813,21 @@ pub mod host_entry {
     }
     impl Builder {
         /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hostname = Some(inp.into());
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hostname = Some(input.into());
             self
         }
-        pub fn set_hostname(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hostname = inp;
+        pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname = input;
             self
         }
         /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip_address = Some(inp.into());
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
             self
         }
-        pub fn set_ip_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = inp;
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
             self
         }
         /// Consumes the builder and constructs a [`HostEntry`](crate::model::HostEntry)
@@ -14824,12 +14923,15 @@ pub mod container_dependency {
     }
     impl Builder {
         /// <p>The name of a container.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_name = Some(inp.into());
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
             self
         }
-        pub fn set_container_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_name = inp;
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
             self
         }
         /// <p>The dependency condition of the container. The following are the available conditions
@@ -14863,15 +14965,15 @@ pub mod container_dependency {
         /// This condition is confirmed only at task startup.</p>
         /// </li>
         /// </ul>
-        pub fn condition(mut self, inp: crate::model::ContainerCondition) -> Self {
-            self.condition = Some(inp);
+        pub fn condition(mut self, input: crate::model::ContainerCondition) -> Self {
+            self.condition = Some(input);
             self
         }
         pub fn set_condition(
             mut self,
-            inp: std::option::Option<crate::model::ContainerCondition>,
+            input: std::option::Option<crate::model::ContainerCondition>,
         ) -> Self {
-            self.condition = inp;
+            self.condition = input;
             self
         }
         /// Consumes the builder and constructs a [`ContainerDependency`](crate::model::ContainerDependency)
@@ -15069,39 +15171,39 @@ pub mod linux_parameters {
         /// <code>add</code> parameter is only supported if using platform version 1.4.0 or
         /// later.</p>
         /// </note>
-        pub fn capabilities(mut self, inp: crate::model::KernelCapabilities) -> Self {
-            self.capabilities = Some(inp);
+        pub fn capabilities(mut self, input: crate::model::KernelCapabilities) -> Self {
+            self.capabilities = Some(input);
             self
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<crate::model::KernelCapabilities>,
+            input: std::option::Option<crate::model::KernelCapabilities>,
         ) -> Self {
-            self.capabilities = inp;
+            self.capabilities = input;
             self
         }
-        pub fn devices(mut self, inp: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.devices = Some(v);
             self
         }
         pub fn set_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Device>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Device>>,
         ) -> Self {
-            self.devices = inp;
+            self.devices = input;
             self
         }
         /// <p>Run an <code>init</code> process inside the container that forwards signals and reaps
         /// processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
         /// </p>
-        pub fn init_process_enabled(mut self, inp: bool) -> Self {
-            self.init_process_enabled = Some(inp);
+        pub fn init_process_enabled(mut self, input: bool) -> Self {
+            self.init_process_enabled = Some(input);
             self
         }
-        pub fn set_init_process_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.init_process_enabled = inp;
+        pub fn set_init_process_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.init_process_enabled = input;
             self
         }
         /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter
@@ -15111,25 +15213,25 @@ pub mod linux_parameters {
         /// <p>If you are using tasks that use the Fargate launch type, the
         /// <code>sharedMemorySize</code> parameter is not supported.</p>
         /// </note>
-        pub fn shared_memory_size(mut self, inp: i32) -> Self {
-            self.shared_memory_size = Some(inp);
+        pub fn shared_memory_size(mut self, input: i32) -> Self {
+            self.shared_memory_size = Some(input);
             self
         }
-        pub fn set_shared_memory_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.shared_memory_size = inp;
+        pub fn set_shared_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.shared_memory_size = input;
             self
         }
-        pub fn tmpfs(mut self, inp: impl Into<crate::model::Tmpfs>) -> Self {
+        pub fn tmpfs(mut self, input: impl Into<crate::model::Tmpfs>) -> Self {
             let mut v = self.tmpfs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tmpfs = Some(v);
             self
         }
         pub fn set_tmpfs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tmpfs>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tmpfs>>,
         ) -> Self {
-            self.tmpfs = inp;
+            self.tmpfs = input;
             self
         }
         /// <p>The total amount of swap memory (in MiB) a container can use. This parameter will be
@@ -15144,12 +15246,12 @@ pub mod linux_parameters {
         /// <p>If you are using tasks that use the Fargate launch type, the
         /// <code>maxSwap</code> parameter is not supported.</p>
         /// </note>
-        pub fn max_swap(mut self, inp: i32) -> Self {
-            self.max_swap = Some(inp);
+        pub fn max_swap(mut self, input: i32) -> Self {
+            self.max_swap = Some(input);
             self
         }
-        pub fn set_max_swap(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_swap = inp;
+        pub fn set_max_swap(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_swap = input;
             self
         }
         /// <p>This allows you to tune a container's memory swappiness behavior. A
@@ -15164,12 +15266,12 @@ pub mod linux_parameters {
         /// <p>If you are using tasks that use the Fargate launch type, the
         /// <code>swappiness</code> parameter is not supported.</p>
         /// </note>
-        pub fn swappiness(mut self, inp: i32) -> Self {
-            self.swappiness = Some(inp);
+        pub fn swappiness(mut self, input: i32) -> Self {
+            self.swappiness = Some(input);
             self
         }
-        pub fn set_swappiness(mut self, inp: std::option::Option<i32>) -> Self {
-            self.swappiness = inp;
+        pub fn set_swappiness(mut self, input: std::option::Option<i32>) -> Self {
+            self.swappiness = input;
             self
         }
         /// Consumes the builder and constructs a [`LinuxParameters`](crate::model::LinuxParameters)
@@ -15238,34 +15340,37 @@ pub mod tmpfs {
     }
     impl Builder {
         /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-        pub fn container_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_path = Some(inp.into());
+        pub fn container_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_path = Some(input.into());
             self
         }
-        pub fn set_container_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_path = inp;
+        pub fn set_container_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_path = input;
             self
         }
         /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
-        pub fn size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn size(mut self, input: i32) -> Self {
+            self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.size = input;
             self
         }
-        pub fn mount_options(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn mount_options(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.mount_options.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.mount_options = Some(v);
             self
         }
         pub fn set_mount_options(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.mount_options = inp;
+            self.mount_options = input;
             self
         }
         /// Consumes the builder and constructs a [`Tmpfs`](crate::model::Tmpfs)
@@ -15326,34 +15431,40 @@ pub mod device {
     }
     impl Builder {
         /// <p>The path for the device on the host container instance.</p>
-        pub fn host_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.host_path = Some(inp.into());
+        pub fn host_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_path = Some(input.into());
             self
         }
-        pub fn set_host_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.host_path = inp;
+        pub fn set_host_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_path = input;
             self
         }
         /// <p>The path inside the container at which to expose the host device.</p>
-        pub fn container_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_path = Some(inp.into());
+        pub fn container_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_path = Some(input.into());
             self
         }
-        pub fn set_container_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_path = inp;
+        pub fn set_container_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_path = input;
             self
         }
-        pub fn permissions(mut self, inp: impl Into<crate::model::DeviceCgroupPermission>) -> Self {
+        pub fn permissions(
+            mut self,
+            input: impl Into<crate::model::DeviceCgroupPermission>,
+        ) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.permissions = Some(v);
             self
         }
         pub fn set_permissions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DeviceCgroupPermission>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DeviceCgroupPermission>>,
         ) -> Self {
-            self.permissions = inp;
+            self.permissions = input;
             self
         }
         /// Consumes the builder and constructs a [`Device`](crate::model::Device)
@@ -15497,30 +15608,30 @@ pub mod kernel_capabilities {
         pub(crate) drop: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn add(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.add.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.add = Some(v);
             self
         }
         pub fn set_add(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.add = inp;
+            self.add = input;
             self
         }
-        pub fn drop(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn drop(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.drop.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.drop = Some(v);
             self
         }
         pub fn set_drop(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.drop = inp;
+            self.drop = input;
             self
         }
         /// Consumes the builder and constructs a [`KernelCapabilities`](crate::model::KernelCapabilities)
@@ -15575,26 +15686,26 @@ pub mod volume_from {
     impl Builder {
         /// <p>The name of another container within the same task definition from which to mount
         /// volumes.</p>
-        pub fn source_container(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_container = Some(inp.into());
+        pub fn source_container(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_container = Some(input.into());
             self
         }
         pub fn set_source_container(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_container = inp;
+            self.source_container = input;
             self
         }
         /// <p>If this value is <code>true</code>, the container has read-only access to the volume.
         /// If this value is <code>false</code>, then the container can write to the volume. The
         /// default value is <code>false</code>.</p>
-        pub fn read_only(mut self, inp: bool) -> Self {
-            self.read_only = Some(inp);
+        pub fn read_only(mut self, input: bool) -> Self {
+            self.read_only = Some(input);
             self
         }
-        pub fn set_read_only(mut self, inp: std::option::Option<bool>) -> Self {
-            self.read_only = inp;
+        pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.read_only = input;
             self
         }
         /// Consumes the builder and constructs a [`VolumeFrom`](crate::model::VolumeFrom)
@@ -15655,32 +15766,38 @@ pub mod mount_point {
     impl Builder {
         /// <p>The name of the volume to mount. Must be a volume name referenced in the
         /// <code>name</code> parameter of task definition <code>volume</code>.</p>
-        pub fn source_volume(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_volume = Some(inp.into());
+        pub fn source_volume(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_volume = Some(input.into());
             self
         }
-        pub fn set_source_volume(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_volume = inp;
+        pub fn set_source_volume(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_volume = input;
             self
         }
         /// <p>The path on the container to mount the host volume at.</p>
-        pub fn container_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.container_path = Some(inp.into());
+        pub fn container_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_path = Some(input.into());
             self
         }
-        pub fn set_container_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.container_path = inp;
+        pub fn set_container_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_path = input;
             self
         }
         /// <p>If this value is <code>true</code>, the container has read-only access to the volume.
         /// If this value is <code>false</code>, then the container can write to the volume. The
         /// default value is <code>false</code>.</p>
-        pub fn read_only(mut self, inp: bool) -> Self {
-            self.read_only = Some(inp);
+        pub fn read_only(mut self, input: bool) -> Self {
+            self.read_only = Some(input);
             self
         }
-        pub fn set_read_only(mut self, inp: std::option::Option<bool>) -> Self {
-            self.read_only = inp;
+        pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.read_only = input;
             self
         }
         /// Consumes the builder and constructs a [`MountPoint`](crate::model::MountPoint)
@@ -15797,12 +15914,12 @@ pub mod port_mapping {
         /// a host port in the ephemeral port range. For more information, see
         /// <code>hostPort</code>. Port mappings that are automatically assigned in this way do not
         /// count toward the 100 reserved ports limit of a container instance.</p>
-        pub fn container_port(mut self, inp: i32) -> Self {
-            self.container_port = Some(inp);
+        pub fn container_port(mut self, input: i32) -> Self {
+            self.container_port = Some(input);
             self
         }
-        pub fn set_container_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.container_port = inp;
+        pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.container_port = input;
             self
         }
         /// <p>The port number on the container instance to reserve for your container.</p>
@@ -15833,25 +15950,25 @@ pub mod port_mapping {
         /// output. A container instance can have up to 100 reserved ports at a time, including the
         /// default reserved ports. Automatically assigned ports don't count toward the 100 reserved
         /// ports limit.</p>
-        pub fn host_port(mut self, inp: i32) -> Self {
-            self.host_port = Some(inp);
+        pub fn host_port(mut self, input: i32) -> Self {
+            self.host_port = Some(input);
             self
         }
-        pub fn set_host_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.host_port = inp;
+        pub fn set_host_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.host_port = input;
             self
         }
         /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
         /// <code>udp</code>. The default is <code>tcp</code>.</p>
-        pub fn protocol(mut self, inp: crate::model::TransportProtocol) -> Self {
-            self.protocol = Some(inp);
+        pub fn protocol(mut self, input: crate::model::TransportProtocol) -> Self {
+            self.protocol = Some(input);
             self
         }
         pub fn set_protocol(
             mut self,
-            inp: std::option::Option<crate::model::TransportProtocol>,
+            input: std::option::Option<crate::model::TransportProtocol>,
         ) -> Self {
-            self.protocol = inp;
+            self.protocol = input;
             self
         }
         /// Consumes the builder and constructs a [`PortMapping`](crate::model::PortMapping)
@@ -15911,15 +16028,15 @@ pub mod repository_credentials {
         /// or the name of the secret. When you are using the AWS Management Console, you must specify the
         /// full ARN of the secret.</p>
         /// </note>
-        pub fn credentials_parameter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.credentials_parameter = Some(inp.into());
+        pub fn credentials_parameter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.credentials_parameter = Some(input.into());
             self
         }
         pub fn set_credentials_parameter(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.credentials_parameter = inp;
+            self.credentials_parameter = input;
             self
         }
         /// Consumes the builder and constructs a [`RepositoryCredentials`](crate::model::RepositoryCredentials)
@@ -15975,25 +16092,25 @@ pub mod platform_device {
         /// <p>The ID for the GPU(s) on the container instance. The available GPU IDs can also be
         /// obtained on the container instance in the
         /// <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The type of device that is available on the container instance. The only supported
         /// value is <code>GPU</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::PlatformDeviceType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::PlatformDeviceType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::PlatformDeviceType>,
+            input: std::option::Option<crate::model::PlatformDeviceType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`PlatformDevice`](crate::model::PlatformDevice)
@@ -16104,31 +16221,34 @@ pub mod setting {
     }
     impl Builder {
         /// <p>The Amazon ECS resource name.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.name = Some(inp);
+        pub fn name(mut self, input: crate::model::SettingName) -> Self {
+            self.name = Some(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<crate::model::SettingName>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
+            self.name = input;
             self
         }
         /// <p>Whether the account setting is enabled or disabled for the specified resource.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
         /// this field is omitted, the authenticated user is assumed.</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.principal_arn = Some(inp.into());
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.principal_arn = Some(input.into());
             self
         }
-        pub fn set_principal_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.principal_arn = inp;
+        pub fn set_principal_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.principal_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`Setting`](crate::model::Setting)
@@ -16427,32 +16547,32 @@ pub mod session {
     }
     impl Builder {
         /// <p>The ID of the execute command session.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.session_id = Some(inp.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
             self
         }
-        pub fn set_session_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.session_id = inp;
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
             self
         }
         /// <p>A URL back to managed agent on the container that the SSM Session Manager client uses
         /// to send commands and receive output from the container.</p>
-        pub fn stream_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_url = Some(inp.into());
+        pub fn stream_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_url = Some(input.into());
             self
         }
-        pub fn set_stream_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_url = inp;
+        pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_url = input;
             self
         }
         /// <p>An encrypted token value containing session and caller information. Used to
         /// authenticate the connection to the container.</p>
-        pub fn token_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.token_value = Some(inp.into());
+        pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token_value = Some(input.into());
             self
         }
-        pub fn set_token_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.token_value = inp;
+        pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token_value = input;
             self
         }
         /// Consumes the builder and constructs a [`Session`](crate::model::Session)

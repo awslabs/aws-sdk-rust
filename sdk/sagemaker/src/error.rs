@@ -66,6 +66,15 @@ impl AddAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddAssociationErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, AddAssociationErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for AddAssociationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -216,6 +225,18 @@ impl AssociateTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateTrialComponentErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateTrialComponentErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for AssociateTrialComponentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -291,6 +312,9 @@ impl CreateActionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateActionErrorKind::ResourceLimitExceeded(_))
     }
 }
 impl std::error::Error for CreateActionError {
@@ -441,6 +465,12 @@ impl CreateAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateAppErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateAppErrorKind::ResourceLimitExceeded(_))
+    }
 }
 impl std::error::Error for CreateAppError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -517,6 +547,9 @@ impl CreateAppImageConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateAppImageConfigErrorKind::ResourceInUse(_))
+    }
 }
 impl std::error::Error for CreateAppImageConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -591,6 +624,12 @@ impl CreateArtifactError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateArtifactErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateArtifactError {
@@ -668,6 +707,15 @@ impl CreateAutoMLJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateAutoMLJobErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAutoMLJobErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateAutoMLJobError {
@@ -819,6 +867,15 @@ impl CreateCompilationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateCompilationJobErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCompilationJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateCompilationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -894,6 +951,9 @@ impl CreateContextError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateContextErrorKind::ResourceLimitExceeded(_))
     }
 }
 impl std::error::Error for CreateContextError {
@@ -971,6 +1031,18 @@ impl CreateDataQualityJobDefinitionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataQualityJobDefinitionErrorKind::ResourceInUse(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataQualityJobDefinitionErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateDataQualityJobDefinitionError {
@@ -1050,6 +1122,15 @@ impl CreateDeviceFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateDeviceFleetErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeviceFleetErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateDeviceFleetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1128,6 +1209,12 @@ impl CreateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateDomainErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateDomainErrorKind::ResourceLimitExceeded(_))
+    }
 }
 impl std::error::Error for CreateDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1204,6 +1291,12 @@ impl CreateEdgePackagingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEdgePackagingJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateEdgePackagingJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1278,6 +1371,12 @@ impl CreateEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEndpointErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateEndpointError {
@@ -1354,6 +1453,12 @@ impl CreateEndpointConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEndpointConfigErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateEndpointConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1428,6 +1533,12 @@ impl CreateExperimentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateExperimentErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateExperimentError {
@@ -1505,6 +1616,15 @@ impl CreateFeatureGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateFeatureGroupErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFeatureGroupErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateFeatureGroupError {
@@ -1584,6 +1704,15 @@ impl CreateFlowDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateFlowDefinitionErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFlowDefinitionErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateFlowDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1661,6 +1790,15 @@ impl CreateHumanTaskUiError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateHumanTaskUiErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHumanTaskUiErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateHumanTaskUiError {
@@ -1740,6 +1878,18 @@ impl CreateHyperParameterTuningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHyperParameterTuningJobErrorKind::ResourceInUse(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHyperParameterTuningJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateHyperParameterTuningJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1817,6 +1967,12 @@ impl CreateImageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateImageErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateImageErrorKind::ResourceLimitExceeded(_))
     }
 }
 impl std::error::Error for CreateImageError {
@@ -1898,6 +2054,18 @@ impl CreateImageVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateImageVersionErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImageVersionErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, CreateImageVersionErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for CreateImageVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1977,6 +2145,15 @@ impl CreateLabelingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateLabelingJobErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLabelingJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateLabelingJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2052,6 +2229,9 @@ impl CreateModelError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::ResourceLimitExceeded(_))
     }
 }
 impl std::error::Error for CreateModelError {
@@ -2129,6 +2309,18 @@ impl CreateModelBiasJobDefinitionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelBiasJobDefinitionErrorKind::ResourceInUse(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelBiasJobDefinitionErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateModelBiasJobDefinitionError {
@@ -2213,6 +2405,18 @@ impl CreateModelExplainabilityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelExplainabilityJobDefinitionErrorKind::ResourceInUse(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelExplainabilityJobDefinitionErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateModelExplainabilityJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2295,6 +2499,15 @@ impl CreateModelPackageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateModelPackageErrorKind::ConflictError(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelPackageErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateModelPackageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2370,6 +2583,12 @@ impl CreateModelPackageGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelPackageGroupErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateModelPackageGroupError {
@@ -2450,6 +2669,18 @@ impl CreateModelQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelQualityJobDefinitionErrorKind::ResourceInUse(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelQualityJobDefinitionErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateModelQualityJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2528,6 +2759,18 @@ impl CreateMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMonitoringScheduleErrorKind::ResourceInUse(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMonitoringScheduleErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateMonitoringScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2603,6 +2846,12 @@ impl CreateNotebookInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNotebookInstanceErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateNotebookInstanceError {
@@ -2683,6 +2932,12 @@ impl CreateNotebookInstanceLifecycleConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNotebookInstanceLifecycleConfigErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateNotebookInstanceLifecycleConfigError {
@@ -2765,6 +3020,15 @@ impl CreatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePipelineErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, CreatePipelineErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for CreatePipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2840,6 +3104,12 @@ impl CreatePresignedDomainUrlError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePresignedDomainUrlErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for CreatePresignedDomainUrlError {
@@ -2995,6 +3265,21 @@ impl CreateProcessingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateProcessingJobErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateProcessingJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateProcessingJobErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for CreateProcessingJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3071,6 +3356,9 @@ impl CreateProjectError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateProjectErrorKind::ResourceLimitExceeded(_))
     }
 }
 impl std::error::Error for CreateProjectError {
@@ -3150,6 +3438,18 @@ impl CreateTrainingJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateTrainingJobErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrainingJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, CreateTrainingJobErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for CreateTrainingJobError {
@@ -3232,6 +3532,18 @@ impl CreateTransformJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateTransformJobErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTransformJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, CreateTransformJobErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for CreateTransformJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3311,6 +3623,12 @@ impl CreateTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateTrialErrorKind::ResourceLimitExceeded(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, CreateTrialErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for CreateTrialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3386,6 +3704,12 @@ impl CreateTrialComponentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrialComponentErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateTrialComponentError {
@@ -3463,6 +3787,15 @@ impl CreateUserProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateUserProfileErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserProfileErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for CreateUserProfileError {
@@ -3614,6 +3947,15 @@ impl CreateWorkteamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, CreateWorkteamErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkteamErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for CreateWorkteamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3689,6 +4031,9 @@ impl DeleteActionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteActionErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DeleteActionError {
@@ -3839,6 +4184,12 @@ impl DeleteAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteAppErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteAppErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DeleteAppError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3915,6 +4266,12 @@ impl DeleteAppImageConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAppImageConfigErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DeleteAppImageConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3990,6 +4347,9 @@ impl DeleteArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteArtifactErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DeleteArtifactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4064,6 +4424,9 @@ impl DeleteAssociationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteAssociationErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DeleteAssociationError {
@@ -4212,6 +4575,9 @@ impl DeleteContextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteContextErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DeleteContextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4287,6 +4653,12 @@ impl DeleteDataQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataQualityJobDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDataQualityJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4361,6 +4733,9 @@ impl DeleteDeviceFleetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteDeviceFleetErrorKind::ResourceInUse(_))
     }
 }
 impl std::error::Error for DeleteDeviceFleetError {
@@ -4438,6 +4813,12 @@ impl DeleteDomainError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteDomainErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteDomainErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DeleteDomainError {
@@ -4659,6 +5040,9 @@ impl DeleteExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteExperimentErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DeleteExperimentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4733,6 +5117,9 @@ impl DeleteFeatureGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteFeatureGroupErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DeleteFeatureGroupError {
@@ -4811,6 +5198,15 @@ impl DeleteFlowDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteFlowDefinitionErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFlowDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DeleteFlowDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4886,6 +5282,9 @@ impl DeleteHumanTaskUiError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteHumanTaskUiErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DeleteHumanTaskUiError {
@@ -4964,6 +5363,12 @@ impl DeleteImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteImageErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteImageErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DeleteImageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5041,6 +5446,12 @@ impl DeleteImageVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteImageVersionErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteImageVersionErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DeleteImageVersionError {
@@ -5190,6 +5601,12 @@ impl DeleteModelBiasJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteModelBiasJobDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DeleteModelBiasJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5270,6 +5687,12 @@ impl DeleteModelExplainabilityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteModelExplainabilityJobDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DeleteModelExplainabilityJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5348,6 +5771,9 @@ impl DeleteModelPackageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteModelPackageErrorKind::ConflictError(_))
     }
 }
 impl std::error::Error for DeleteModelPackageError {
@@ -5568,6 +5994,12 @@ impl DeleteModelQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteModelQualityJobDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DeleteModelQualityJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5642,6 +6074,12 @@ impl DeleteMonitoringScheduleError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMonitoringScheduleErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DeleteMonitoringScheduleError {
@@ -5867,6 +6305,9 @@ impl DeletePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeletePipelineErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DeletePipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6086,6 +6527,9 @@ impl DeleteTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteTrialErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DeleteTrialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6160,6 +6604,12 @@ impl DeleteTrialComponentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrialComponentErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DeleteTrialComponentError {
@@ -6237,6 +6687,12 @@ impl DeleteUserProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, DeleteUserProfileErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteUserProfileErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DeleteUserProfileError {
@@ -6386,6 +6842,12 @@ impl DeleteWorkteamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWorkteamErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for DeleteWorkteamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6532,6 +6994,9 @@ impl DescribeActionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeActionErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DescribeActionError {
@@ -6680,6 +7145,9 @@ impl DescribeAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeAppErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DescribeAppError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6754,6 +7222,12 @@ impl DescribeAppImageConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAppImageConfigErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeAppImageConfigError {
@@ -6830,6 +7304,9 @@ impl DescribeArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeArtifactErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DescribeArtifactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6904,6 +7381,9 @@ impl DescribeAutoMLJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeAutoMLJobErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DescribeAutoMLJobError {
@@ -7052,6 +7532,12 @@ impl DescribeCompilationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCompilationJobErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeCompilationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7126,6 +7612,9 @@ impl DescribeContextError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeContextErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DescribeContextError {
@@ -7202,6 +7691,12 @@ impl DescribeDataQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDataQualityJobDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDataQualityJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7276,6 +7771,9 @@ impl DescribeDeviceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeDeviceErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DescribeDeviceError {
@@ -7352,6 +7850,12 @@ impl DescribeDeviceFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDeviceFleetErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDeviceFleetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7427,6 +7931,9 @@ impl DescribeDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeDomainErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DescribeDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7501,6 +8008,12 @@ impl DescribeEdgePackagingJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEdgePackagingJobErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeEdgePackagingJobError {
@@ -7721,6 +8234,9 @@ impl DescribeExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeExperimentErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DescribeExperimentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7795,6 +8311,12 @@ impl DescribeFeatureGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFeatureGroupErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeFeatureGroupError {
@@ -7871,6 +8393,12 @@ impl DescribeFlowDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFlowDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeFlowDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7945,6 +8473,12 @@ impl DescribeHumanTaskUiError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHumanTaskUiErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeHumanTaskUiError {
@@ -8021,6 +8555,12 @@ impl DescribeHyperParameterTuningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHyperParameterTuningJobErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeHyperParameterTuningJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8095,6 +8635,9 @@ impl DescribeImageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeImageErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for DescribeImageError {
@@ -8171,6 +8714,12 @@ impl DescribeImageVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageVersionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeImageVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8245,6 +8794,12 @@ impl DescribeLabelingJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLabelingJobErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeLabelingJobError {
@@ -8393,6 +8948,12 @@ impl DescribeModelBiasJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeModelBiasJobDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeModelBiasJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8472,6 +9033,12 @@ impl DescribeModelExplainabilityJobDefinitionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeModelExplainabilityJobDefinitionErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeModelExplainabilityJobDefinitionError {
@@ -8699,6 +9266,12 @@ impl DescribeModelQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeModelQualityJobDefinitionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeModelQualityJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8773,6 +9346,12 @@ impl DescribeMonitoringScheduleError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMonitoringScheduleErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeMonitoringScheduleError {
@@ -8998,6 +9577,9 @@ impl DescribePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribePipelineErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DescribePipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9078,6 +9660,12 @@ impl DescribePipelineDefinitionForExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePipelineDefinitionForExecutionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribePipelineDefinitionForExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9157,6 +9745,12 @@ impl DescribePipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePipelineExecutionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribePipelineExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9231,6 +9825,12 @@ impl DescribeProcessingJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeProcessingJobErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeProcessingJobError {
@@ -9451,6 +10051,12 @@ impl DescribeTrainingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTrainingJobErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeTrainingJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9525,6 +10131,12 @@ impl DescribeTransformJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTransformJobErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeTransformJobError {
@@ -9601,6 +10213,9 @@ impl DescribeTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeTrialErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for DescribeTrialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9676,6 +10291,12 @@ impl DescribeTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTrialComponentErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for DescribeTrialComponentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9750,6 +10371,12 @@ impl DescribeUserProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUserProfileErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DescribeUserProfileError {
@@ -10046,6 +10673,12 @@ impl DisassociateTrialComponentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateTrialComponentErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for DisassociateTrialComponentError {
@@ -10492,6 +11125,9 @@ impl ListActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ListActionsErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for ListActionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10783,6 +11419,9 @@ impl ListArtifactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ListArtifactsErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for ListArtifactsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10857,6 +11496,9 @@ impl ListAssociationsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ListAssociationsErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for ListAssociationsError {
@@ -11004,6 +11646,12 @@ impl ListCandidatesForAutoMLJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCandidatesForAutoMLJobErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for ListCandidatesForAutoMLJobError {
@@ -11223,6 +11871,9 @@ impl ListContextsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ListContextsErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for ListContextsError {
@@ -12235,6 +12886,9 @@ impl ListImageVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ListImageVersionsErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for ListImageVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12381,6 +13035,12 @@ impl ListLabelingJobsForWorkteamError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLabelingJobsForWorkteamErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for ListLabelingJobsForWorkteamError {
@@ -13187,6 +13847,12 @@ impl ListPipelineExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPipelineExecutionsErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for ListPipelineExecutionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -13261,6 +13927,12 @@ impl ListPipelineExecutionStepsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPipelineExecutionStepsErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for ListPipelineExecutionStepsError {
@@ -13339,6 +14011,12 @@ impl ListPipelineParametersForExecutionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPipelineParametersForExecutionErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for ListPipelineParametersForExecutionError {
@@ -13852,6 +14530,12 @@ impl ListTrainingJobsForHyperParameterTuningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrainingJobsForHyperParameterTuningJobErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for ListTrainingJobsForHyperParameterTuningJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -14003,6 +14687,12 @@ impl ListTrialComponentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTrialComponentsErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for ListTrialComponentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -14077,6 +14767,9 @@ impl ListTrialsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, ListTrialsErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for ListTrialsError {
@@ -14441,6 +15134,12 @@ impl RegisterDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDevicesErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for RegisterDevicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -14515,6 +15214,9 @@ impl RenderUiTemplateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, RenderUiTemplateErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for RenderUiTemplateError {
@@ -14667,6 +15369,18 @@ impl SendPipelineExecutionStepFailureError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendPipelineExecutionStepFailureErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendPipelineExecutionStepFailureErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for SendPipelineExecutionStepFailureError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -14749,6 +15463,18 @@ impl SendPipelineExecutionStepSuccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendPipelineExecutionStepSuccessErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendPipelineExecutionStepSuccessErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for SendPipelineExecutionStepSuccessError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -14827,6 +15553,12 @@ impl StartMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMonitoringScheduleErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for StartMonitoringScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -14901,6 +15633,12 @@ impl StartNotebookInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartNotebookInstanceErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for StartNotebookInstanceError {
@@ -14979,6 +15717,18 @@ impl StartPipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartPipelineExecutionErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartPipelineExecutionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for StartPipelineExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -15055,6 +15805,9 @@ impl StopAutoMLJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, StopAutoMLJobErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for StopAutoMLJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -15129,6 +15882,9 @@ impl StopCompilationJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, StopCompilationJobErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for StopCompilationJobError {
@@ -15277,6 +16033,12 @@ impl StopHyperParameterTuningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopHyperParameterTuningJobErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for StopHyperParameterTuningJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -15352,6 +16114,9 @@ impl StopLabelingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, StopLabelingJobErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for StopLabelingJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -15426,6 +16191,12 @@ impl StopMonitoringScheduleError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMonitoringScheduleErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for StopMonitoringScheduleError {
@@ -15574,6 +16345,12 @@ impl StopPipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopPipelineExecutionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for StopPipelineExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -15648,6 +16425,9 @@ impl StopProcessingJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, StopProcessingJobErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for StopProcessingJobError {
@@ -15724,6 +16504,9 @@ impl StopTrainingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, StopTrainingJobErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for StopTrainingJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -15798,6 +16581,9 @@ impl StopTransformJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, StopTransformJobErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for StopTransformJobError {
@@ -15876,6 +16662,12 @@ impl UpdateActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateActionErrorKind::ConflictError(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateActionErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for UpdateActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -15951,6 +16743,12 @@ impl UpdateAppImageConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAppImageConfigErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for UpdateAppImageConfigError {
@@ -16028,6 +16826,12 @@ impl UpdateArtifactError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateArtifactErrorKind::ConflictError(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateArtifactErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for UpdateArtifactError {
@@ -16179,6 +16983,12 @@ impl UpdateContextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateContextErrorKind::ConflictError(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateContextErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for UpdateContextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -16254,6 +17064,9 @@ impl UpdateDeviceFleetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, UpdateDeviceFleetErrorKind::ResourceInUse(_))
     }
 }
 impl std::error::Error for UpdateDeviceFleetError {
@@ -16406,6 +17219,15 @@ impl UpdateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, UpdateDomainErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, UpdateDomainErrorKind::ResourceLimitExceeded(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateDomainErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for UpdateDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -16482,6 +17304,12 @@ impl UpdateEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEndpointErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for UpdateEndpointError {
@@ -16563,6 +17391,12 @@ impl UpdateEndpointWeightsAndCapacitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEndpointWeightsAndCapacitiesErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for UpdateEndpointWeightsAndCapacitiesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -16642,6 +17476,12 @@ impl UpdateExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateExperimentErrorKind::ConflictError(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateExperimentErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for UpdateExperimentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -16719,6 +17559,12 @@ impl UpdateImageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, UpdateImageErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateImageErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for UpdateImageError {
@@ -16870,6 +17716,18 @@ impl UpdateMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMonitoringScheduleErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMonitoringScheduleErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for UpdateMonitoringScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -16945,6 +17803,12 @@ impl UpdateNotebookInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotebookInstanceErrorKind::ResourceLimitExceeded(_)
+        )
     }
 }
 impl std::error::Error for UpdateNotebookInstanceError {
@@ -17026,6 +17890,12 @@ impl UpdateNotebookInstanceLifecycleConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotebookInstanceLifecycleConfigErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for UpdateNotebookInstanceLifecycleConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -17105,6 +17975,9 @@ impl UpdatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdatePipelineErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for UpdatePipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -17180,6 +18053,12 @@ impl UpdatePipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePipelineExecutionErrorKind::ResourceNotFound(_)
+        )
+    }
 }
 impl std::error::Error for UpdatePipelineExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -17254,6 +18133,9 @@ impl UpdateTrainingJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateTrainingJobErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for UpdateTrainingJobError {
@@ -17332,6 +18214,12 @@ impl UpdateTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateTrialErrorKind::ConflictError(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateTrialErrorKind::ResourceNotFound(_))
+    }
 }
 impl std::error::Error for UpdateTrialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -17409,6 +18297,15 @@ impl UpdateTrialComponentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateTrialComponentErrorKind::ConflictError(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrialComponentErrorKind::ResourceNotFound(_)
+        )
     }
 }
 impl std::error::Error for UpdateTrialComponentError {
@@ -17489,6 +18386,18 @@ impl UpdateUserProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(&self.kind, UpdateUserProfileErrorKind::ResourceInUse(_))
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserProfileErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateUserProfileErrorKind::ResourceNotFound(_))
     }
 }
 impl std::error::Error for UpdateUserProfileError {
@@ -17639,6 +18548,12 @@ impl UpdateWorkteamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWorkteamErrorKind::ResourceLimitExceeded(_)
+        )
+    }
 }
 impl std::error::Error for UpdateWorkteamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -17689,12 +18604,12 @@ pub mod resource_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded)
@@ -17751,12 +18666,12 @@ pub mod resource_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound)
@@ -17813,12 +18728,12 @@ pub mod resource_in_use {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceInUse`](crate::error::ResourceInUse)
@@ -17876,12 +18791,12 @@ pub mod conflict_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)

@@ -2,7 +2,10 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_activate_key_signing_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ActivateKeySigningKeyOutput, crate::error::ActivateKeySigningKeyError> {
+) -> std::result::Result<
+    crate::output::ActivateKeySigningKeyOutput,
+    crate::error::ActivateKeySigningKeyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -87,7 +90,10 @@ pub fn parse_activate_key_signing_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_activate_key_signing_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ActivateKeySigningKeyOutput, crate::error::ActivateKeySigningKeyError> {
+) -> std::result::Result<
+    crate::output::ActivateKeySigningKeyOutput,
+    crate::error::ActivateKeySigningKeyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::activate_key_signing_key_output::Builder::default();
@@ -104,7 +110,7 @@ pub fn parse_activate_key_signing_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_vpc_with_hosted_zone_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateVPCWithHostedZoneOutput,
     crate::error::AssociateVPCWithHostedZoneError,
 > {
@@ -238,7 +244,7 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_vpc_with_hosted_zone_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateVPCWithHostedZoneOutput,
     crate::error::AssociateVPCWithHostedZoneError,
 > {
@@ -258,7 +264,7 @@ pub fn parse_associate_vpc_with_hosted_zone_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_resource_record_sets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ChangeResourceRecordSetsOutput,
     crate::error::ChangeResourceRecordSetsError,
 > {
@@ -350,7 +356,7 @@ pub fn parse_change_resource_record_sets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_resource_record_sets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ChangeResourceRecordSetsOutput,
     crate::error::ChangeResourceRecordSetsError,
 > {
@@ -370,7 +376,10 @@ pub fn parse_change_resource_record_sets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ChangeTagsForResourceOutput, crate::error::ChangeTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ChangeTagsForResourceOutput,
+    crate::error::ChangeTagsForResourceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -455,7 +464,10 @@ pub fn parse_change_tags_for_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_tags_for_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ChangeTagsForResourceOutput, crate::error::ChangeTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ChangeTagsForResourceOutput,
+    crate::error::ChangeTagsForResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::change_tags_for_resource_output::Builder::default();
@@ -467,7 +479,8 @@ pub fn parse_change_tags_for_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_health_check_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateHealthCheckOutput, crate::error::CreateHealthCheckError> {
+) -> std::result::Result<crate::output::CreateHealthCheckOutput, crate::error::CreateHealthCheckError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateHealthCheckError::unhandled)?;
     let error_code = match generic.code() {
@@ -524,7 +537,8 @@ pub fn parse_create_health_check_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_health_check_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateHealthCheckOutput, crate::error::CreateHealthCheckError> {
+) -> std::result::Result<crate::output::CreateHealthCheckOutput, crate::error::CreateHealthCheckError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_health_check_output::Builder::default();
@@ -547,7 +561,8 @@ pub fn parse_create_health_check_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_hosted_zone_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateHostedZoneOutput, crate::error::CreateHostedZoneError> {
+) -> std::result::Result<crate::output::CreateHostedZoneOutput, crate::error::CreateHostedZoneError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateHostedZoneError::unhandled)?;
     let error_code = match generic.code() {
@@ -688,7 +703,8 @@ pub fn parse_create_hosted_zone_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_hosted_zone_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateHostedZoneOutput, crate::error::CreateHostedZoneError> {
+) -> std::result::Result<crate::output::CreateHostedZoneOutput, crate::error::CreateHostedZoneError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_hosted_zone_output::Builder::default();
@@ -711,7 +727,10 @@ pub fn parse_create_hosted_zone_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_key_signing_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateKeySigningKeyOutput, crate::error::CreateKeySigningKeyError> {
+) -> std::result::Result<
+    crate::output::CreateKeySigningKeyOutput,
+    crate::error::CreateKeySigningKeyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -866,7 +885,10 @@ pub fn parse_create_key_signing_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_key_signing_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateKeySigningKeyOutput, crate::error::CreateKeySigningKeyError> {
+) -> std::result::Result<
+    crate::output::CreateKeySigningKeyOutput,
+    crate::error::CreateKeySigningKeyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_key_signing_key_output::Builder::default();
@@ -891,7 +913,7 @@ pub fn parse_create_key_signing_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_query_logging_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateQueryLoggingConfigOutput,
     crate::error::CreateQueryLoggingConfigError,
 > {
@@ -949,7 +971,7 @@ pub fn parse_create_query_logging_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_query_logging_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateQueryLoggingConfigOutput,
     crate::error::CreateQueryLoggingConfigError,
 > {
@@ -979,7 +1001,7 @@ pub fn parse_create_query_logging_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_reusable_delegation_set_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateReusableDelegationSetOutput,
     crate::error::CreateReusableDelegationSetError,
 > {
@@ -1103,7 +1125,7 @@ pub fn parse_create_reusable_delegation_set_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_reusable_delegation_set_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateReusableDelegationSetOutput,
     crate::error::CreateReusableDelegationSetError,
 > {
@@ -1133,7 +1155,10 @@ pub fn parse_create_reusable_delegation_set_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateTrafficPolicyOutput, crate::error::CreateTrafficPolicyError> {
+) -> std::result::Result<
+    crate::output::CreateTrafficPolicyOutput,
+    crate::error::CreateTrafficPolicyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateTrafficPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -1204,7 +1229,10 @@ pub fn parse_create_traffic_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateTrafficPolicyOutput, crate::error::CreateTrafficPolicyError> {
+) -> std::result::Result<
+    crate::output::CreateTrafficPolicyOutput,
+    crate::error::CreateTrafficPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_traffic_policy_output::Builder::default();
@@ -1229,7 +1257,7 @@ pub fn parse_create_traffic_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_policy_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficPolicyInstanceOutput,
     crate::error::CreateTrafficPolicyInstanceError,
 > {
@@ -1281,7 +1309,7 @@ pub fn parse_create_traffic_policy_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_policy_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficPolicyInstanceOutput,
     crate::error::CreateTrafficPolicyInstanceError,
 > {
@@ -1311,7 +1339,7 @@ pub fn parse_create_traffic_policy_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_policy_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficPolicyVersionOutput,
     crate::error::CreateTrafficPolicyVersionError,
 > {
@@ -1363,7 +1391,7 @@ pub fn parse_create_traffic_policy_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_policy_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficPolicyVersionOutput,
     crate::error::CreateTrafficPolicyVersionError,
 > {
@@ -1393,7 +1421,7 @@ pub fn parse_create_traffic_policy_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_association_authorization_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVPCAssociationAuthorizationOutput,
     crate::error::CreateVPCAssociationAuthorizationError,
 > {
@@ -1443,7 +1471,7 @@ pub fn parse_create_vpc_association_authorization_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_association_authorization_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVPCAssociationAuthorizationOutput,
     crate::error::CreateVPCAssociationAuthorizationError,
 > {
@@ -1464,8 +1492,10 @@ pub fn parse_create_vpc_association_authorization_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deactivate_key_signing_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeactivateKeySigningKeyOutput, crate::error::DeactivateKeySigningKeyError>
-{
+) -> std::result::Result<
+    crate::output::DeactivateKeySigningKeyOutput,
+    crate::error::DeactivateKeySigningKeyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -1569,8 +1599,10 @@ pub fn parse_deactivate_key_signing_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deactivate_key_signing_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeactivateKeySigningKeyOutput, crate::error::DeactivateKeySigningKeyError>
-{
+) -> std::result::Result<
+    crate::output::DeactivateKeySigningKeyOutput,
+    crate::error::DeactivateKeySigningKeyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::deactivate_key_signing_key_output::Builder::default();
@@ -1587,7 +1619,8 @@ pub fn parse_deactivate_key_signing_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_health_check_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteHealthCheckOutput, crate::error::DeleteHealthCheckError> {
+) -> std::result::Result<crate::output::DeleteHealthCheckOutput, crate::error::DeleteHealthCheckError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
     let error_code = match generic.code() {
@@ -1644,7 +1677,8 @@ pub fn parse_delete_health_check_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_health_check_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteHealthCheckOutput, crate::error::DeleteHealthCheckError> {
+) -> std::result::Result<crate::output::DeleteHealthCheckOutput, crate::error::DeleteHealthCheckError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_health_check_output::Builder::default();
@@ -1656,7 +1690,8 @@ pub fn parse_delete_health_check_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_hosted_zone_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteHostedZoneOutput, crate::error::DeleteHostedZoneError> {
+) -> std::result::Result<crate::output::DeleteHostedZoneOutput, crate::error::DeleteHostedZoneError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
     let error_code = match generic.code() {
@@ -1741,7 +1776,8 @@ pub fn parse_delete_hosted_zone_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_hosted_zone_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteHostedZoneOutput, crate::error::DeleteHostedZoneError> {
+) -> std::result::Result<crate::output::DeleteHostedZoneOutput, crate::error::DeleteHostedZoneError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_hosted_zone_output::Builder::default();
@@ -1756,7 +1792,10 @@ pub fn parse_delete_hosted_zone_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_key_signing_key_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteKeySigningKeyOutput, crate::error::DeleteKeySigningKeyError> {
+) -> std::result::Result<
+    crate::output::DeleteKeySigningKeyOutput,
+    crate::error::DeleteKeySigningKeyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
     let error_code = match generic.code() {
@@ -1841,7 +1880,10 @@ pub fn parse_delete_key_signing_key_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_key_signing_key_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteKeySigningKeyOutput, crate::error::DeleteKeySigningKeyError> {
+) -> std::result::Result<
+    crate::output::DeleteKeySigningKeyOutput,
+    crate::error::DeleteKeySigningKeyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_key_signing_key_output::Builder::default();
@@ -1858,7 +1900,7 @@ pub fn parse_delete_key_signing_key_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_query_logging_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteQueryLoggingConfigOutput,
     crate::error::DeleteQueryLoggingConfigError,
 > {
@@ -1922,7 +1964,7 @@ pub fn parse_delete_query_logging_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_query_logging_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteQueryLoggingConfigOutput,
     crate::error::DeleteQueryLoggingConfigError,
 > {
@@ -1937,7 +1979,7 @@ pub fn parse_delete_query_logging_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_reusable_delegation_set_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteReusableDelegationSetOutput,
     crate::error::DeleteReusableDelegationSetError,
 > {
@@ -2015,7 +2057,7 @@ pub fn parse_delete_reusable_delegation_set_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_reusable_delegation_set_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteReusableDelegationSetOutput,
     crate::error::DeleteReusableDelegationSetError,
 > {
@@ -2030,7 +2072,10 @@ pub fn parse_delete_reusable_delegation_set_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteTrafficPolicyOutput, crate::error::DeleteTrafficPolicyError> {
+) -> std::result::Result<
+    crate::output::DeleteTrafficPolicyOutput,
+    crate::error::DeleteTrafficPolicyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -2101,7 +2146,10 @@ pub fn parse_delete_traffic_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteTrafficPolicyOutput, crate::error::DeleteTrafficPolicyError> {
+) -> std::result::Result<
+    crate::output::DeleteTrafficPolicyOutput,
+    crate::error::DeleteTrafficPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_traffic_policy_output::Builder::default();
@@ -2113,7 +2161,7 @@ pub fn parse_delete_traffic_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_policy_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficPolicyInstanceOutput,
     crate::error::DeleteTrafficPolicyInstanceError,
 > {
@@ -2179,7 +2227,7 @@ pub fn parse_delete_traffic_policy_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_policy_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficPolicyInstanceOutput,
     crate::error::DeleteTrafficPolicyInstanceError,
 > {
@@ -2194,7 +2242,7 @@ pub fn parse_delete_traffic_policy_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_association_authorization_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVPCAssociationAuthorizationOutput,
     crate::error::DeleteVPCAssociationAuthorizationError,
 > {
@@ -2244,7 +2292,7 @@ pub fn parse_delete_vpc_association_authorization_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_association_authorization_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVPCAssociationAuthorizationOutput,
     crate::error::DeleteVPCAssociationAuthorizationError,
 > {
@@ -2260,8 +2308,10 @@ pub fn parse_delete_vpc_association_authorization_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_hosted_zone_dnssec_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DisableHostedZoneDNSSECOutput, crate::error::DisableHostedZoneDNSSECError>
-{
+) -> std::result::Result<
+    crate::output::DisableHostedZoneDNSSECOutput,
+    crate::error::DisableHostedZoneDNSSECError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
     let error_code = match generic.code() {
@@ -2379,8 +2429,10 @@ pub fn parse_disable_hosted_zone_dnssec_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_hosted_zone_dnssec_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DisableHostedZoneDNSSECOutput, crate::error::DisableHostedZoneDNSSECError>
-{
+) -> std::result::Result<
+    crate::output::DisableHostedZoneDNSSECOutput,
+    crate::error::DisableHostedZoneDNSSECError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::disable_hosted_zone_dnssec_output::Builder::default();
@@ -2397,7 +2449,7 @@ pub fn parse_disable_hosted_zone_dnssec_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_vpc_from_hosted_zone_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateVPCFromHostedZoneOutput,
     crate::error::DisassociateVPCFromHostedZoneError,
 > {
@@ -2489,7 +2541,7 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_vpc_from_hosted_zone_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateVPCFromHostedZoneOutput,
     crate::error::DisassociateVPCFromHostedZoneError,
 > {
@@ -2510,8 +2562,10 @@ pub fn parse_disassociate_vpc_from_hosted_zone_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_hosted_zone_dnssec_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::EnableHostedZoneDNSSECOutput, crate::error::EnableHostedZoneDNSSECError>
-{
+) -> std::result::Result<
+    crate::output::EnableHostedZoneDNSSECOutput,
+    crate::error::EnableHostedZoneDNSSECError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
     let error_code = match generic.code() {
@@ -2640,8 +2694,10 @@ pub fn parse_enable_hosted_zone_dnssec_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_hosted_zone_dnssec_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::EnableHostedZoneDNSSECOutput, crate::error::EnableHostedZoneDNSSECError>
-{
+) -> std::result::Result<
+    crate::output::EnableHostedZoneDNSSECOutput,
+    crate::error::EnableHostedZoneDNSSECError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::enable_hosted_zone_dnssec_output::Builder::default();
@@ -2658,7 +2714,7 @@ pub fn parse_enable_hosted_zone_dnssec_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_limit_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccountLimitOutput, crate::error::GetAccountLimitError> {
+) -> std::result::Result<crate::output::GetAccountLimitOutput, crate::error::GetAccountLimitError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetAccountLimitError::unhandled)?;
     let error_code = match generic.code() {
@@ -2687,7 +2743,7 @@ pub fn parse_get_account_limit_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_account_limit_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetAccountLimitOutput, crate::error::GetAccountLimitError> {
+) -> std::result::Result<crate::output::GetAccountLimitOutput, crate::error::GetAccountLimitError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_account_limit_output::Builder::default();
@@ -2702,7 +2758,7 @@ pub fn parse_get_account_limit_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_change_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetChangeOutput, crate::error::GetChangeError> {
+) -> std::result::Result<crate::output::GetChangeOutput, crate::error::GetChangeError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetChangeError::unhandled)?;
     let error_code = match generic.code() {
@@ -2745,7 +2801,7 @@ pub fn parse_get_change_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_change_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetChangeOutput, crate::error::GetChangeError> {
+) -> std::result::Result<crate::output::GetChangeOutput, crate::error::GetChangeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_change_output::Builder::default();
@@ -2759,7 +2815,10 @@ pub fn parse_get_change_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_checker_ip_ranges_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetCheckerIpRangesOutput, crate::error::GetCheckerIpRangesError> {
+) -> std::result::Result<
+    crate::output::GetCheckerIpRangesOutput,
+    crate::error::GetCheckerIpRangesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetCheckerIpRangesError::unhandled)?;
     Err(crate::error::GetCheckerIpRangesError::generic(generic))
@@ -2768,7 +2827,10 @@ pub fn parse_get_checker_ip_ranges_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_checker_ip_ranges_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetCheckerIpRangesOutput, crate::error::GetCheckerIpRangesError> {
+) -> std::result::Result<
+    crate::output::GetCheckerIpRangesOutput,
+    crate::error::GetCheckerIpRangesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_checker_ip_ranges_output::Builder::default();
@@ -2785,7 +2847,7 @@ pub fn parse_get_checker_ip_ranges_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dnssec_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError> {
+) -> std::result::Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetDNSSECError::unhandled)?;
     let error_code = match generic.code() {
@@ -2828,7 +2890,7 @@ pub fn parse_get_dnssec_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dnssec_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError> {
+) -> std::result::Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_dnssec_output::Builder::default();
@@ -2842,7 +2904,7 @@ pub fn parse_get_dnssec_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_geo_location_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetGeoLocationOutput, crate::error::GetGeoLocationError> {
+) -> std::result::Result<crate::output::GetGeoLocationOutput, crate::error::GetGeoLocationError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetGeoLocationError::unhandled)?;
     let error_code = match generic.code() {
@@ -2885,7 +2947,7 @@ pub fn parse_get_geo_location_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_geo_location_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetGeoLocationOutput, crate::error::GetGeoLocationError> {
+) -> std::result::Result<crate::output::GetGeoLocationOutput, crate::error::GetGeoLocationError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_geo_location_output::Builder::default();
@@ -2900,7 +2962,7 @@ pub fn parse_get_geo_location_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_health_check_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHealthCheckOutput, crate::error::GetHealthCheckError> {
+) -> std::result::Result<crate::output::GetHealthCheckOutput, crate::error::GetHealthCheckError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetHealthCheckError::unhandled)?;
     let error_code = match generic.code() {
@@ -2957,7 +3019,7 @@ pub fn parse_get_health_check_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_health_check_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHealthCheckOutput, crate::error::GetHealthCheckError> {
+) -> std::result::Result<crate::output::GetHealthCheckOutput, crate::error::GetHealthCheckError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_health_check_output::Builder::default();
@@ -2972,7 +3034,10 @@ pub fn parse_get_health_check_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_health_check_count_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHealthCheckCountOutput, crate::error::GetHealthCheckCountError> {
+) -> std::result::Result<
+    crate::output::GetHealthCheckCountOutput,
+    crate::error::GetHealthCheckCountError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetHealthCheckCountError::unhandled)?;
     Err(crate::error::GetHealthCheckCountError::generic(generic))
@@ -2981,7 +3046,10 @@ pub fn parse_get_health_check_count_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_health_check_count_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHealthCheckCountOutput, crate::error::GetHealthCheckCountError> {
+) -> std::result::Result<
+    crate::output::GetHealthCheckCountOutput,
+    crate::error::GetHealthCheckCountError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_health_check_count_output::Builder::default();
@@ -2998,7 +3066,7 @@ pub fn parse_get_health_check_count_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_health_check_last_failure_reason_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetHealthCheckLastFailureReasonOutput,
     crate::error::GetHealthCheckLastFailureReasonError,
 > {
@@ -3044,7 +3112,7 @@ pub fn parse_get_health_check_last_failure_reason_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_health_check_last_failure_reason_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetHealthCheckLastFailureReasonOutput,
     crate::error::GetHealthCheckLastFailureReasonError,
 > {
@@ -3065,7 +3133,10 @@ pub fn parse_get_health_check_last_failure_reason_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_health_check_status_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHealthCheckStatusOutput, crate::error::GetHealthCheckStatusError> {
+) -> std::result::Result<
+    crate::output::GetHealthCheckStatusOutput,
+    crate::error::GetHealthCheckStatusError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
     let error_code = match generic.code() {
@@ -3108,7 +3179,10 @@ pub fn parse_get_health_check_status_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_health_check_status_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHealthCheckStatusOutput, crate::error::GetHealthCheckStatusError> {
+) -> std::result::Result<
+    crate::output::GetHealthCheckStatusOutput,
+    crate::error::GetHealthCheckStatusError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_health_check_status_output::Builder::default();
@@ -3125,7 +3199,7 @@ pub fn parse_get_health_check_status_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_hosted_zone_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHostedZoneOutput, crate::error::GetHostedZoneError> {
+) -> std::result::Result<crate::output::GetHostedZoneOutput, crate::error::GetHostedZoneError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetHostedZoneError::unhandled)?;
     let error_code = match generic.code() {
@@ -3168,7 +3242,7 @@ pub fn parse_get_hosted_zone_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_hosted_zone_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHostedZoneOutput, crate::error::GetHostedZoneError> {
+) -> std::result::Result<crate::output::GetHostedZoneOutput, crate::error::GetHostedZoneError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_hosted_zone_output::Builder::default();
@@ -3183,7 +3257,10 @@ pub fn parse_get_hosted_zone_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_hosted_zone_count_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHostedZoneCountOutput, crate::error::GetHostedZoneCountError> {
+) -> std::result::Result<
+    crate::output::GetHostedZoneCountOutput,
+    crate::error::GetHostedZoneCountError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetHostedZoneCountError::unhandled)?;
     let error_code = match generic.code() {
@@ -3212,7 +3289,10 @@ pub fn parse_get_hosted_zone_count_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_hosted_zone_count_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHostedZoneCountOutput, crate::error::GetHostedZoneCountError> {
+) -> std::result::Result<
+    crate::output::GetHostedZoneCountOutput,
+    crate::error::GetHostedZoneCountError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_hosted_zone_count_output::Builder::default();
@@ -3229,7 +3309,10 @@ pub fn parse_get_hosted_zone_count_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_hosted_zone_limit_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHostedZoneLimitOutput, crate::error::GetHostedZoneLimitError> {
+) -> std::result::Result<
+    crate::output::GetHostedZoneLimitOutput,
+    crate::error::GetHostedZoneLimitError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetHostedZoneLimitError::unhandled)?;
     let error_code = match generic.code() {
@@ -3286,7 +3369,10 @@ pub fn parse_get_hosted_zone_limit_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_hosted_zone_limit_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetHostedZoneLimitOutput, crate::error::GetHostedZoneLimitError> {
+) -> std::result::Result<
+    crate::output::GetHostedZoneLimitOutput,
+    crate::error::GetHostedZoneLimitError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_hosted_zone_limit_output::Builder::default();
@@ -3303,7 +3389,10 @@ pub fn parse_get_hosted_zone_limit_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_query_logging_config_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetQueryLoggingConfigOutput, crate::error::GetQueryLoggingConfigError> {
+) -> std::result::Result<
+    crate::output::GetQueryLoggingConfigOutput,
+    crate::error::GetQueryLoggingConfigError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetQueryLoggingConfigError::unhandled)?;
     let error_code = match generic.code() {
@@ -3346,7 +3435,10 @@ pub fn parse_get_query_logging_config_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_query_logging_config_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetQueryLoggingConfigOutput, crate::error::GetQueryLoggingConfigError> {
+) -> std::result::Result<
+    crate::output::GetQueryLoggingConfigOutput,
+    crate::error::GetQueryLoggingConfigError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_query_logging_config_output::Builder::default();
@@ -3363,7 +3455,7 @@ pub fn parse_get_query_logging_config_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_reusable_delegation_set_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetReusableDelegationSetOutput,
     crate::error::GetReusableDelegationSetError,
 > {
@@ -3427,7 +3519,7 @@ pub fn parse_get_reusable_delegation_set_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_reusable_delegation_set_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetReusableDelegationSetOutput,
     crate::error::GetReusableDelegationSetError,
 > {
@@ -3447,7 +3539,7 @@ pub fn parse_get_reusable_delegation_set_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_reusable_delegation_set_limit_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetReusableDelegationSetLimitOutput,
     crate::error::GetReusableDelegationSetLimitError,
 > {
@@ -3497,7 +3589,7 @@ pub fn parse_get_reusable_delegation_set_limit_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_reusable_delegation_set_limit_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetReusableDelegationSetLimitOutput,
     crate::error::GetReusableDelegationSetLimitError,
 > {
@@ -3518,7 +3610,8 @@ pub fn parse_get_reusable_delegation_set_limit_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_traffic_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetTrafficPolicyOutput, crate::error::GetTrafficPolicyError> {
+) -> std::result::Result<crate::output::GetTrafficPolicyOutput, crate::error::GetTrafficPolicyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetTrafficPolicyError::unhandled)?;
     let error_code = match generic.code() {
@@ -3561,7 +3654,8 @@ pub fn parse_get_traffic_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_traffic_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetTrafficPolicyOutput, crate::error::GetTrafficPolicyError> {
+) -> std::result::Result<crate::output::GetTrafficPolicyOutput, crate::error::GetTrafficPolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_traffic_policy_output::Builder::default();
@@ -3576,7 +3670,7 @@ pub fn parse_get_traffic_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_traffic_policy_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTrafficPolicyInstanceOutput,
     crate::error::GetTrafficPolicyInstanceError,
 > {
@@ -3626,7 +3720,7 @@ pub fn parse_get_traffic_policy_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_traffic_policy_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTrafficPolicyInstanceOutput,
     crate::error::GetTrafficPolicyInstanceError,
 > {
@@ -3646,7 +3740,7 @@ pub fn parse_get_traffic_policy_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_traffic_policy_instance_count_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTrafficPolicyInstanceCountOutput,
     crate::error::GetTrafficPolicyInstanceCountError,
 > {
@@ -3660,7 +3754,7 @@ pub fn parse_get_traffic_policy_instance_count_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_traffic_policy_instance_count_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTrafficPolicyInstanceCountOutput,
     crate::error::GetTrafficPolicyInstanceCountError,
 > {
@@ -3681,7 +3775,8 @@ pub fn parse_get_traffic_policy_instance_count_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_geo_locations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListGeoLocationsOutput, crate::error::ListGeoLocationsError> {
+) -> std::result::Result<crate::output::ListGeoLocationsOutput, crate::error::ListGeoLocationsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListGeoLocationsError::unhandled)?;
     let error_code = match generic.code() {
@@ -3710,7 +3805,8 @@ pub fn parse_list_geo_locations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_geo_locations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListGeoLocationsOutput, crate::error::ListGeoLocationsError> {
+) -> std::result::Result<crate::output::ListGeoLocationsOutput, crate::error::ListGeoLocationsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_geo_locations_output::Builder::default();
@@ -3725,7 +3821,8 @@ pub fn parse_list_geo_locations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_health_checks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHealthChecksOutput, crate::error::ListHealthChecksError> {
+) -> std::result::Result<crate::output::ListHealthChecksOutput, crate::error::ListHealthChecksError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListHealthChecksError::unhandled)?;
     let error_code = match generic.code() {
@@ -3768,7 +3865,8 @@ pub fn parse_list_health_checks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_health_checks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHealthChecksOutput, crate::error::ListHealthChecksError> {
+) -> std::result::Result<crate::output::ListHealthChecksOutput, crate::error::ListHealthChecksError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_health_checks_output::Builder::default();
@@ -3783,7 +3881,7 @@ pub fn parse_list_health_checks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_hosted_zones_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHostedZonesOutput, crate::error::ListHostedZonesError> {
+) -> std::result::Result<crate::output::ListHostedZonesOutput, crate::error::ListHostedZonesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListHostedZonesError::unhandled)?;
     let error_code = match generic.code() {
@@ -3840,7 +3938,7 @@ pub fn parse_list_hosted_zones_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_hosted_zones_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHostedZonesOutput, crate::error::ListHostedZonesError> {
+) -> std::result::Result<crate::output::ListHostedZonesOutput, crate::error::ListHostedZonesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_hosted_zones_output::Builder::default();
@@ -3855,7 +3953,10 @@ pub fn parse_list_hosted_zones_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_hosted_zones_by_name_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHostedZonesByNameOutput, crate::error::ListHostedZonesByNameError> {
+) -> std::result::Result<
+    crate::output::ListHostedZonesByNameOutput,
+    crate::error::ListHostedZonesByNameError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListHostedZonesByNameError::unhandled)?;
     let error_code = match generic.code() {
@@ -3898,7 +3999,10 @@ pub fn parse_list_hosted_zones_by_name_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_hosted_zones_by_name_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHostedZonesByNameOutput, crate::error::ListHostedZonesByNameError> {
+) -> std::result::Result<
+    crate::output::ListHostedZonesByNameOutput,
+    crate::error::ListHostedZonesByNameError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_hosted_zones_by_name_output::Builder::default();
@@ -3915,7 +4019,10 @@ pub fn parse_list_hosted_zones_by_name_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_hosted_zones_by_vpc_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHostedZonesByVPCOutput, crate::error::ListHostedZonesByVPCError> {
+) -> std::result::Result<
+    crate::output::ListHostedZonesByVPCOutput,
+    crate::error::ListHostedZonesByVPCError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListHostedZonesByVPCError::unhandled)?;
     let error_code = match generic.code() {
@@ -3958,7 +4065,10 @@ pub fn parse_list_hosted_zones_by_vpc_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_hosted_zones_by_vpc_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHostedZonesByVPCOutput, crate::error::ListHostedZonesByVPCError> {
+) -> std::result::Result<
+    crate::output::ListHostedZonesByVPCOutput,
+    crate::error::ListHostedZonesByVPCError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_hosted_zones_by_vpc_output::Builder::default();
@@ -3975,8 +4085,10 @@ pub fn parse_list_hosted_zones_by_vpc_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_query_logging_configs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListQueryLoggingConfigsOutput, crate::error::ListQueryLoggingConfigsError>
-{
+) -> std::result::Result<
+    crate::output::ListQueryLoggingConfigsOutput,
+    crate::error::ListQueryLoggingConfigsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListQueryLoggingConfigsError::unhandled)?;
     let error_code = match generic.code() {
@@ -4037,8 +4149,10 @@ pub fn parse_list_query_logging_configs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_query_logging_configs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListQueryLoggingConfigsOutput, crate::error::ListQueryLoggingConfigsError>
-{
+) -> std::result::Result<
+    crate::output::ListQueryLoggingConfigsOutput,
+    crate::error::ListQueryLoggingConfigsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_query_logging_configs_output::Builder::default();
@@ -4055,8 +4169,10 @@ pub fn parse_list_query_logging_configs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_resource_record_sets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListResourceRecordSetsOutput, crate::error::ListResourceRecordSetsError>
-{
+) -> std::result::Result<
+    crate::output::ListResourceRecordSetsOutput,
+    crate::error::ListResourceRecordSetsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListResourceRecordSetsError::unhandled)?;
     let error_code = match generic.code() {
@@ -4103,8 +4219,10 @@ pub fn parse_list_resource_record_sets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_resource_record_sets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListResourceRecordSetsOutput, crate::error::ListResourceRecordSetsError>
-{
+) -> std::result::Result<
+    crate::output::ListResourceRecordSetsOutput,
+    crate::error::ListResourceRecordSetsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_resource_record_sets_output::Builder::default();
@@ -4121,7 +4239,7 @@ pub fn parse_list_resource_record_sets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_reusable_delegation_sets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListReusableDelegationSetsOutput,
     crate::error::ListReusableDelegationSetsError,
 > {
@@ -4157,7 +4275,7 @@ pub fn parse_list_reusable_delegation_sets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_reusable_delegation_sets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListReusableDelegationSetsOutput,
     crate::error::ListReusableDelegationSetsError,
 > {
@@ -4177,7 +4295,10 @@ pub fn parse_list_reusable_delegation_sets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -4262,7 +4383,10 @@ pub fn parse_list_tags_for_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
@@ -4279,7 +4403,10 @@ pub fn parse_list_tags_for_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resources_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourcesOutput, crate::error::ListTagsForResourcesError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourcesOutput,
+    crate::error::ListTagsForResourcesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
     let error_code = match generic.code() {
@@ -4364,7 +4491,10 @@ pub fn parse_list_tags_for_resources_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resources_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourcesOutput, crate::error::ListTagsForResourcesError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourcesOutput,
+    crate::error::ListTagsForResourcesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resources_output::Builder::default();
@@ -4381,7 +4511,10 @@ pub fn parse_list_tags_for_resources_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTrafficPoliciesOutput, crate::error::ListTrafficPoliciesError> {
+) -> std::result::Result<
+    crate::output::ListTrafficPoliciesOutput,
+    crate::error::ListTrafficPoliciesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTrafficPoliciesError::unhandled)?;
     let error_code = match generic.code() {
@@ -4410,7 +4543,10 @@ pub fn parse_list_traffic_policies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTrafficPoliciesOutput, crate::error::ListTrafficPoliciesError> {
+) -> std::result::Result<
+    crate::output::ListTrafficPoliciesOutput,
+    crate::error::ListTrafficPoliciesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_traffic_policies_output::Builder::default();
@@ -4427,7 +4563,7 @@ pub fn parse_list_traffic_policies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policy_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListTrafficPolicyInstancesOutput,
     crate::error::ListTrafficPolicyInstancesError,
 > {
@@ -4477,7 +4613,7 @@ pub fn parse_list_traffic_policy_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policy_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListTrafficPolicyInstancesOutput,
     crate::error::ListTrafficPolicyInstancesError,
 > {
@@ -4497,7 +4633,7 @@ pub fn parse_list_traffic_policy_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policy_instances_by_hosted_zone_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListTrafficPolicyInstancesByHostedZoneOutput,
     crate::error::ListTrafficPolicyInstancesByHostedZoneError,
 > {
@@ -4537,7 +4673,7 @@ pub fn parse_list_traffic_policy_instances_by_hosted_zone_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policy_instances_by_hosted_zone_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListTrafficPolicyInstancesByHostedZoneOutput,
     crate::error::ListTrafficPolicyInstancesByHostedZoneError,
 > {
@@ -4558,7 +4694,7 @@ pub fn parse_list_traffic_policy_instances_by_hosted_zone_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policy_instances_by_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListTrafficPolicyInstancesByPolicyOutput,
     crate::error::ListTrafficPolicyInstancesByPolicyError,
 > {
@@ -4596,7 +4732,7 @@ pub fn parse_list_traffic_policy_instances_by_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policy_instances_by_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListTrafficPolicyInstancesByPolicyOutput,
     crate::error::ListTrafficPolicyInstancesByPolicyError,
 > {
@@ -4617,7 +4753,7 @@ pub fn parse_list_traffic_policy_instances_by_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policy_versions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListTrafficPolicyVersionsOutput,
     crate::error::ListTrafficPolicyVersionsError,
 > {
@@ -4667,7 +4803,7 @@ pub fn parse_list_traffic_policy_versions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_traffic_policy_versions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListTrafficPolicyVersionsOutput,
     crate::error::ListTrafficPolicyVersionsError,
 > {
@@ -4687,7 +4823,7 @@ pub fn parse_list_traffic_policy_versions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_vpc_association_authorizations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListVPCAssociationAuthorizationsOutput,
     crate::error::ListVPCAssociationAuthorizationsError,
 > {
@@ -4751,7 +4887,7 @@ pub fn parse_list_vpc_association_authorizations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_vpc_association_authorizations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListVPCAssociationAuthorizationsOutput,
     crate::error::ListVPCAssociationAuthorizationsError,
 > {
@@ -4772,7 +4908,7 @@ pub fn parse_list_vpc_association_authorizations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_test_dns_answer_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError> {
+) -> std::result::Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TestDNSAnswerError::unhandled)?;
     let error_code = match generic.code() {
@@ -4815,7 +4951,7 @@ pub fn parse_test_dns_answer_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_test_dns_answer_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError> {
+) -> std::result::Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::test_dns_answer_output::Builder::default();
@@ -4830,7 +4966,8 @@ pub fn parse_test_dns_answer_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_health_check_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateHealthCheckOutput, crate::error::UpdateHealthCheckError> {
+) -> std::result::Result<crate::output::UpdateHealthCheckOutput, crate::error::UpdateHealthCheckError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateHealthCheckError::unhandled)?;
     let error_code = match generic.code() {
@@ -4887,7 +5024,8 @@ pub fn parse_update_health_check_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_health_check_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateHealthCheckOutput, crate::error::UpdateHealthCheckError> {
+) -> std::result::Result<crate::output::UpdateHealthCheckOutput, crate::error::UpdateHealthCheckError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_health_check_output::Builder::default();
@@ -4902,8 +5040,10 @@ pub fn parse_update_health_check_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_hosted_zone_comment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateHostedZoneCommentOutput, crate::error::UpdateHostedZoneCommentError>
-{
+) -> std::result::Result<
+    crate::output::UpdateHostedZoneCommentOutput,
+    crate::error::UpdateHostedZoneCommentError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateHostedZoneCommentError::unhandled)?;
     let error_code = match generic.code() {
@@ -4950,8 +5090,10 @@ pub fn parse_update_hosted_zone_comment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_hosted_zone_comment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateHostedZoneCommentOutput, crate::error::UpdateHostedZoneCommentError>
-{
+) -> std::result::Result<
+    crate::output::UpdateHostedZoneCommentOutput,
+    crate::error::UpdateHostedZoneCommentError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_hosted_zone_comment_output::Builder::default();
@@ -4968,7 +5110,7 @@ pub fn parse_update_hosted_zone_comment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_traffic_policy_comment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateTrafficPolicyCommentOutput,
     crate::error::UpdateTrafficPolicyCommentError,
 > {
@@ -5032,7 +5174,7 @@ pub fn parse_update_traffic_policy_comment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_traffic_policy_comment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateTrafficPolicyCommentOutput,
     crate::error::UpdateTrafficPolicyCommentError,
 > {
@@ -5052,7 +5194,7 @@ pub fn parse_update_traffic_policy_comment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_traffic_policy_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateTrafficPolicyInstanceOutput,
     crate::error::UpdateTrafficPolicyInstanceError,
 > {
@@ -5146,7 +5288,7 @@ pub fn parse_update_traffic_policy_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_traffic_policy_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateTrafficPolicyInstanceOutput,
     crate::error::UpdateTrafficPolicyInstanceError,
 > {
